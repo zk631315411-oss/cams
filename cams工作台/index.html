@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMS 教研工作台</title>
+  <link rel="stylesheet" href="css/workbench.css?v=20260622-qa-evidence-page-1">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="toc-pane" aria-label="目录">
+      <div class="toc-head">
+        <strong>V6 全教材目录</strong>
+        <button class="icon-button toc-toggle" id="tocToggleButton" type="button" aria-label="收起目录" aria-controls="tocList" aria-expanded="true" title="收起目录">‹</button>
+      </div>
+      <div id="tocList" class="toc-list"></div>
+    </aside>
+
+    <section class="reader-pane" aria-label="教材阅读区">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <div>
+            <h1>CAMS 教研工作台</h1>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div class="work-mode-switch" aria-label="工作状态">
+            <button class="work-mode-button active" type="button" data-work-mode="read">看书备课</button>
+            <button class="work-mode-button" type="button" data-work-mode="explain">新题解析</button>
+            <button class="work-mode-button" type="button" data-work-mode="qa">学生答疑</button>
+          </div>
+          <div class="search-box">
+            <input id="searchInput" type="search" autocomplete="off" placeholder="搜索教材原文、题目或答疑">
+            <div class="search-results" id="searchResults" hidden></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="reader-scroll" id="reader" tabindex="-1"></main>
+    </section>
+
+    <aside class="detail-pane" id="detailPane" aria-label="教材考点详情">
+      <div class="detail-content" id="detailContent">
+        <div class="empty-panel">
+          <div class="empty-icon" aria-hidden="true">⌁</div>
+          <h2>全教材阅读模式</h2>
+          <p>当前先展示 V6 全教材原文，考点、题目和答疑关联后续再接入。</p>
+        </div>
+      </div>
+      <div class="feedback-bar" id="feedbackBar" style="display:none"></div>
+    </aside>
+  </div>
+
+  <script src="js/workbench-utils.js?v=20260608-source-check-copy-1"></script>
+  <script src="js/workbench-store.js?v=20260622-page-map-1"></script>
+  <script src="js/workbench-reader.js?v=20260613-brief-ep-1"></script>
+  <script src="js/workbench-panel.js?v=20260622-page-map-9"></script>
+  <script src="js/workbench-feedback.js?v=20260608-source-check-copy-1"></script>
+  <script src="js/workbench-search.js?v=20260608-source-check-copy-1"></script>
+  <script src="js/workbench-app.js?v=20260622-page-map-1"></script>
+</body>
+</html>

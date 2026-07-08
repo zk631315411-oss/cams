@@ -1,0 +1,8 @@
+[tool.vulture]
+paths = [".."]
+min_confidence = 60
+exclude = ["*/tests/*", ".codex-tmp/*"]
+
+# 排除已知误报：rerank_server.py 是 FastAPI 服务，vulture 检测不了路由
+# MODEL/V4_NO_THINK 是属性赋值，vulture 跟踪不了
+ignore_names = ["MODEL", "V4_NO_THINK"]

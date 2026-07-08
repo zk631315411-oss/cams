@@ -1,0 +1,910 @@
+{
+  "schema_version": "p4_vector_batch_decisions_v1",
+  "run_slug": "p4_vector_first10_llm_100_selected_batch5x10_v3",
+  "batch_size": 5,
+  "concurrency": 10,
+  "candidate_count": 100,
+  "batch_count": 20,
+  "decisions": [
+    {
+      "candidate_id": "p4vec_0001",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in banking, but CH07 covers commercial banking risks (front companies, complex ownership) while CH09 covers M&A risks (acquisitions, shell companies). They share similar methods (front companies, complex structures) but do not form a direct summary, illustration, grounding, or contrast relationship. Better handled by P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0002",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability (volume, global reach, complex products, customer relationships). CH07_S01_002 discusses specific commercial banking risks (front companies, complex ownership). The source is a broad vulnerability overview without a concrete taxonomy, process, or framework that the target directly applies. The target does not expand the specific factor list; it is a separate risk discussion.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0003",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S02_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Similar to p4vec_0002, CH06_S06_003 provides general banking vulnerability factors, while CH07_S02_002 details commercial banking risks (front companies, cash-intensive businesses). No direct grounding: the target does not apply the source's factor list as a framework. They share the broad topic of banking vulnerability but lack a specific dependency.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0004",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S02_002",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06_S06_002 classifies different banking services (retail, commercial, private, correspondent) and states each has unique vulnerabilities. CH07_S02_002 expands on commercial banking risks, directly applying the classification framework. The source provides a concrete structure (service-type classification) that the target develops.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0005",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks involving front companies and complex structures, but CH07_S02_002 focuses on commercial banking risks while CH09_S04_001 focuses on M&A risks. They share methods but do not have a direct summary, illustration, grounding, or contrast relationship. Better suited for P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0006",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss inherent risks in different banking sectors (commercial vs. private banking). They share the broad topic of financial crime risks but do not form a summary, illustration, grounding, or contrast relationship. The source does not provide a framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0007",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability (volume, global reach, complex products, customer relationships). CH09_S04_001 describes specific M&A risks. The source is a broad vulnerability overview without a concrete taxonomy, process, or rule that the target directly expands. The target does not apply the specific factor list from the source.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0008",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S01_002",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06_S06_002 classifies different banking services (retail, commercial, private, correspondent) and states each has unique vulnerabilities. CH07_S01_002 expands on one classified service type (commercial banking) by detailing its specific risks. The source provides a concrete classification framework that the target directly develops.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0009",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 describes AFC program setup essentials for corporate banking (risk assessment, CDD, transaction monitoring). CH09_S04_001 describes M&A money laundering risks. The source is about controls and program setup, while the target is about specific risk scenarios. They do not have a direct grounding, illustration, or summary relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0010",
+      "source_core_point_id": "cp_CH07_S05_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S05_001 defines credit unions and building societies and their risks. CH09_S04_001 describes M&A risks. The two CPs are about different financial sectors and risk types. No direct dependency, illustration, or contrast exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0011",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in different banking sectors (commercial vs. private banking). They share the broad topic of banking risks but do not form a summary, illustration, grounding, or contrast relationship. The source does not provide a framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0012",
+      "source_core_point_id": "cp_CH08_S01_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss inherent risks in different financial services (private banking vs. M&A). They share the broad theme of financial crime risks but do not have a direct summary, illustration, grounding, or contrast relationship. The source does not provide a concrete framework that the target directly expands.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0013",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "The source lists general factors increasing banking vulnerability, while the target details specific retail banking risks. The source is a broad vulnerability overview without a concrete taxonomy, process, or framework that the target directly applies. The target does not expand on the specific factors listed in the source.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0014",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both are introductory CPs stating the vulnerability of financial sectors to money laundering. They share a broad topic but do not have a summary, illustration, grounding, or contrast relationship. The source is a general background CP that does not provide a concrete framework for the target.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0015",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "The source explains the banking sector's inherent vulnerability due to involvement in all three stages of money laundering. The target discusses M&A risks, which are a specific type of corporate banking activity. The source provides a general process framework (three stages), but the target does not directly apply or expand that framework; it describes a distinct risk area. No direct grounding relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0016",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss vulnerability factors, but CH06 lists general banking factors (volume, global reach, complex products, customer relationships) while CH08 describes inherent risks specific to private banking (culture of discretion, compensation conflicts). They share a broad topic of banking vulnerability but do not form a summary, illustration, grounding, or contrast relationship. CH06 does not provide a concrete framework that CH08 directly applies or expands.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0017",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S03_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 lists general factors increasing banking vulnerability, while CH07 discusses specific challenges in closing accounts with outstanding credit balances. The two CPs are only loosely related by the broad theme of banking risks. CH06 does not provide a definition, framework, or classification that CH07 directly applies or expands. No summary, illustration, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0018",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 describes AFC program setup essentials for corporate banking (risk assessment, CDD, transaction monitoring), while CH09 lists high-risk characteristics of correspondent banking. Both relate to corporate/investment banking risks, but CH06 does not provide a concrete framework that CH09 directly applies. The CPs are different aspects of banking risk management without a direct review relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0019",
+      "source_core_point_id": "cp_CH09_S04_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH09 covers money laundering risks in M&A, while CH10 is an introduction to money laundering risks in nonbank financial institutions. They share the broad theme of financial crime risks but are about different sectors (investment banking vs. nonbank institutions). No direct summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0020",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH07_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 describes AFC program setup for corporate banking (risk assessment, CDD, monitoring), while CH07 defines commercial banking and its money laundering risks (front companies, complex ownership). Both relate to corporate/commercial banking, but CH06 does not provide a definition or framework that CH07 directly applies. They are complementary but not in a summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0021",
+      "source_core_point_id": "cp_CH07_S03_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in banking, but CH07 focuses on account closure challenges with outstanding credit, while CH09 covers M&A risks. They share the broad topic of banking risks but do not have a direct summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0022",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 states the banking sector is inherently vulnerable to money laundering due to involvement in all three stages. CH07 describes commercial banking risks. The source is a broad vulnerability statement, not a concrete framework that the target directly applies or expands. Reject per grounds gate 1.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0023",
+      "source_core_point_id": "cp_CH08_S04_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss risks involving complex structures and shell companies, but CH08 covers offshore financial center red flags, while CH09 covers M&A risks. They share similar methods (shell companies, complex ownership) but do not have a direct review relationship. Better handled by P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0024",
+      "source_core_point_id": "cp_CH06_S07_003",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "The Danske Bank case involves shell companies and complex structures, but it does not directly illustrate the M&A risks CP. The case demonstrates money laundering through shell companies, not the specific M&A process or risks. Reject per illustrates rule: case does not directly demonstrate the target concept.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0025",
+      "source_core_point_id": "cp_CH07_S01_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Retail banking risks (remote onboarding, diverse customers, synthetic identities) and M&A risks are different specific risk areas. They share the broad domain of financial crime risks but do not have a direct summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0026",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH07_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S01_001 is a broad introduction stating the financial sector is vulnerable to money laundering. CH07_S01_002 defines commercial banking and its specific risks. The source does not provide a concrete framework, classification, or definition that the target directly applies or expands; it is only general background context.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0027",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S03_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_001 explains why banking is inherently vulnerable due to involvement in all three money laundering stages. CH07_S03_002 discusses challenges in closing accounts with outstanding credit balances. The source provides a general vulnerability explanation, not a concrete framework or rule that the target directly applies. The target is a specific operational complication, not an expansion of the three-stage process.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0028",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S02_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_001 describes the banking sector's inherent vulnerability and involvement in money laundering stages. CH07_S02_002 details commercial banking risks like front companies and cash-intensive businesses. The source is a general vulnerability statement, not a specific framework or classification that the target directly develops. The target discusses risks that are related but not a direct application of the three-stage process.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0029",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S01_002 defines commercial banking and its money laundering risks. CH10_S01_001 introduces money laundering risks in nonbank financial institutions. They share the broad topic of financial crime risks but are about different sectors (banking vs. nonbank). There is no direct summary, illustration, grounding, or contrast relationship; they are merely different topics.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0030",
+      "source_core_point_id": "cp_CH09_S01_004",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH09_S01_004 states the overall vulnerability of corporate and investment banks to money laundering. CH10_S01_001 introduces money laundering risks in nonbank financial institutions. Both discuss vulnerability to money laundering but in different institutional contexts (corporate/investment banking vs. nonbank). There is no concrete framework, illustration, or contrast; they are separate topics.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0031",
+      "source_core_point_id": "cp_CH09_S01_004",
+      "target_core_point_id": "cp_CH06_S03_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH09_S01_004 is a broad vulnerability overview of corporate and investment banking. CH06_S03_001 is a set of AFC program setup recommendations for a corporate banking role. The vulnerability overview does not provide a concrete definition, framework, classification, process, or rule that the AFC program setup directly applies or expands. They share the corporate banking domain but lack a direct review dependency.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0032",
+      "source_core_point_id": "cp_CH07_S05_001",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S05_001 describes the nature and risks of credit unions and building societies, including their membership structure and FATF classification. CH08_S01_002 explains inherent financial crime risks in private banking, such as culture of discretion and compensation conflicts. Both discuss financial institution risks, but they are different sectors with distinct risk profiles. There is no direct definition/framework dependency, comparison, or summary relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0033",
+      "source_core_point_id": "cp_CH08_S03_005",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH08_S03_005 covers risks and misuse of trusts for concealment, focusing on trust structures and secrecy. CH09_S04_001 covers money laundering risks in mergers and acquisitions, focusing on M&A complexity and shell companies. Both involve concealment methods and complex structures, but they are distinct topics. There is no direct framework dependency, illustration, or summary relationship; they merely share the broad theme of concealment in financial crime.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0034",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 is a set of AFC program setup recommendations for corporate banking. CH08_S01_002 explains inherent financial crime risks in private banking. They address different banking sectors (corporate vs. private) and different aspects (controls vs. inherent risks). There is no direct dependency, illustration, or summary relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0035",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH07_S02_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 provides AFC program setup recommendations for a corporate banking role, including risk assessment, CDD, and transaction monitoring. CH07_S02_002 describes commercial banking money laundering risks, such as front companies and cash-intensive businesses. While both relate to corporate/commercial banking, the former is about controls and the latter about risks. There is no direct framework dependency, illustration, or summary relationship; they are complementary but not a review edge.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0036",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH08_S02_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability (volume, global reach, complex products, customer relationships). CH08_S02_005 discusses customer risk factors in private banking (jurisdiction, business structure). They share the broad topic of risk factors but CH06_S06_003 does not provide a concrete framework that CH08_S02_005 directly applies or expands. The dependency is not explicit enough for a grounds relation.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0037",
+      "source_core_point_id": "cp_CH06_S07_002",
+      "target_core_point_id": "cp_CH08_S04_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S07_002 covers risks and typologies of shell companies in general. CH08_S04_002 covers risks and red flags of offshore financial centers, including shell companies. Both mention shell companies and complex ownership, but CH06_S07_002 does not provide a definition, framework, or classification that CH08_S04_002 directly applies. They are related by shared methods (shell companies) but this is better handled by P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0038",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S01_001 is a broad introduction stating the financial sector's vulnerability to money laundering and the importance of understanding risks. CH08_S01_002 discusses inherent financial crime risks in private banking (culture of discretion, compensation conflicts). CH06_S01_001 is a general background CP and does not provide a concrete framework that CH08_S01_002 directly expands. The relation is too broad for grounds.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0039",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S02_002 discusses commercial banking money laundering risks (front companies, cash-intensive businesses). CH10_S01_001 is an introduction to money laundering risks in nonbank financial institutions. They share the broad topic of money laundering risks but CH07_S02_002 does not provide a framework that CH10_S01_001 applies. The connection is too general.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0040",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S01_001",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06_S06_002 classifies different banking services (retail, commercial, private, correspondent) and states each has unique vulnerabilities. CH07_S01_001 expands on retail banking, detailing its specific money laundering risks. CH06_S06_002 provides the classification framework that CH07_S01_001 directly applies and expands.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0041",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S02_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability (volume, global reach, complex products, customer relationships). CH07_S02_001 describes specific retail banking risks (synthetic identities, mule accounts). The source does not provide a concrete framework, classification, or rule that the target directly applies or expands; it is only broad background context.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0042",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general banking vulnerability factors. CH09_S05_004 describes high-risk characteristics of correspondent banking. The source does not provide a definition, classification, or framework that the target directly applies; it is only broad background.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0043",
+      "source_core_point_id": "cp_CH08_S01_003",
+      "target_core_point_id": "cp_CH09_S05_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs list high-risk customer types, but in different sectors (private banking vs. corporate/investment banking). They share the broad topic of customer risk profiles but do not form a summary, illustration, grounding, or contrast relationship. No direct dependency or comparison is present.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0044",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S01_001 is a broad introduction stating the financial sector's vulnerability to money laundering. CH09_S04_001 details specific M&A money laundering risks. The source is only general background and does not provide a concrete framework, definition, or rule that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0045",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S01_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S01_002 defines commercial banking and its specific risks (front companies, complex ownership). CH09_S01_004 states the overall vulnerability of corporate and investment banks. Both discuss banking vulnerability, but the source does not provide a framework that the target directly expands; they are parallel descriptions of different banking segments.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0046",
+      "source_core_point_id": "cp_CH07_S02_003",
+      "target_core_point_id": "cp_CH08-S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss TBML, but CH07 lists general TBML risks while CH08 describes a specific TBML process using SPVs/PIVs. They share a method (TBML) but do not form a direct summary, illustration, grounds, or contrast relationship. Better handled by P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0047",
+      "source_core_point_id": "cp_CH08-S05_005",
+      "target_core_point_id": "cp_CH09_S04_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs prescribe due diligence measures (EDD, CDD, beneficial ownership verification), but they apply to different contexts (SPVs/PIVs vs. M&A). They share compliance methods but do not have a direct review relationship. Better handled by P5 term indexing.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0048",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH09_S01_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07 discusses specific commercial banking risks (front companies, cash-intensive businesses), while CH09 provides a broad overview of corporate and investment banking vulnerability. They share the general topic of banking vulnerability but do not form a direct summary, illustration, grounds, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0049",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S05_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 lists general factors increasing banking vulnerability (volume, global reach, complex products, customer relationships). CH07 describes the nature and risks of credit unions and building societies. The source is a broad vulnerability overview without a concrete framework that the target directly develops. Reject per grounds gate 1.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0050",
+      "source_core_point_id": "cp_CH05_S01_003",
+      "target_core_point_id": "cp_CH06_S05_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH05 prescribes compliance programs and governance to mitigate financial crime risks. CH06 defines financial crime risk. They share the broad domain of financial crime risk but do not have a direct summary, illustration, grounds, or contrast relationship. The definition in CH06 is not a concrete framework that CH05 directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0051",
+      "source_core_point_id": "cp_CH08_S02_005",
+      "target_core_point_id": "cp_CH09_S05_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss high-risk customer types in different banking sectors (private banking vs. corporate/investment banking). They share a broad topic but do not form a summary, illustration, grounding, or contrast relationship. No direct dependency or comparison is present.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0052",
+      "source_core_point_id": "cp_CH08_S01_002",
+      "target_core_point_id": "cp_CH09_S01_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs describe inherent financial crime risks in different banking sectors (private banking vs. corporate/investment banking). They are parallel discussions of sector-specific vulnerabilities without a direct summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0053",
+      "source_core_point_id": "cp_CH07_S03_002",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CP A discusses challenges in closing accounts with outstanding credit balances in retail/commercial banking, while CP B discusses inherent financial crime risks in private banking. They address different risk areas and do not form a direct summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0054",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S05_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CP A explains the banking sector's inherent vulnerability to money laundering due to involvement in all three stages, while CP B defines credit unions and building societies and their risks. Although both relate to financial institution risks, CP A is a broad banking vulnerability statement and does not provide a concrete framework that CP B directly applies or expands. No summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0055",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CP A discusses banking sector vulnerability to money laundering, while CP B introduces money laundering risks in nonbank financial institutions. They cover different sectors and do not have a direct summary, illustration, grounding, or contrast relationship. The similarity is only at the broad topic level of money laundering risks.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0056",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 classifies banking services and their unique vulnerabilities; CH09 discusses M&A risks. M&A is not a banking service type classified in CH06, and CH09 does not directly apply or expand the CH06 classification. They share the broad topic of money laundering risks but lack a direct review relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0057",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 lists factors increasing banking sector vulnerability; CH10 introduces money laundering risks in nonbank financial institutions. The source is specific to banking, while the target is a broad introduction to nonbank risks. No concrete framework from CH06 is directly applied or expanded in CH10.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0058",
+      "source_core_point_id": "cp_CH08_S01_002",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH08 details inherent risks in private banking (culture, compensation); CH10 is a general introduction to nonbank financial institution risks. Private banking is a subset of banking, not nonbank, and CH10 does not directly apply or expand the specific risks from CH08. They are different sectors with no direct dependency.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0059",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH08_S03_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 covers corporate banking AFC program setup (risk assessment, CDD, monitoring); CH08 covers trust risks and misuse for concealment. While both relate to financial crime controls and risks, CH06 does not provide a definition, framework, or rule that CH08 directly applies. They are distinct topics without a clear review path.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0060",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S01_001",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06 establishes the banking sector's inherent vulnerability due to involvement in all three money laundering stages (placement, layering, integration). CH07 discusses retail banking risks, which are a specific subset of banking services. The three-stage framework from CH06 grounds the understanding of why retail banking is vulnerable, and CH07 directly applies that inherent vulnerability to a specific banking segment.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0061",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss inherent vulnerabilities in banking sectors, but CH06 covers general banking vulnerability while CH08 covers private banking risks. They share a broad topic but do not form a summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0062",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH07_S02_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 is a broad introduction to financial services vulnerability; CH07 is a specific risk discussion on commercial banking. The source does not provide a concrete framework that the target directly applies or expands.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0063",
+      "source_core_point_id": "cp_CH07_S02_001",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss specific banking risks (retail banking vs. correspondent banking), but they are different risk areas without a direct review relationship. No summary, illustration, grounding, or contrast.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0064",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Commercial banking risks and correspondent banking risks are distinct topics. They share the broad domain of banking risks but do not have a direct dependency or comparison relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0065",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S03_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 classifies vulnerabilities across banking services; CH07 discusses challenges in closing accounts with credit balances. The source does not provide a definition, framework, or rule that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0066",
+      "source_core_point_id": "cp_CH07_S01_001",
+      "target_core_point_id": "cp_CH08_S01_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in different banking sectors (retail vs. private banking). They share the broad topic of financial crime risks but do not form a summary, illustration, grounding, or contrast relationship. The source does not provide a concrete framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0067",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S05_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S01_002 covers commercial banking risks (front companies, complex ownership), while CH09_S05_005 covers correspondent banking due diligence and risk-based services. They share the broad domain of banking risks but the source does not provide a definition, framework, or classification that the target directly applies. No summary, illustration, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0068",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss risks related to corporate structures (complex ownership, beneficial ownership identification). However, CH07_S01_002 is a general commercial banking risk overview, while CH09_S01_001 focuses specifically on corporate lending risks. The source does not provide a concrete framework that the target directly expands; they are parallel risk discussions in different contexts.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0069",
+      "source_core_point_id": "cp_CH08_S02_003",
+      "target_core_point_id": "cp_CH09_S05_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH08_S02_003 discusses high-value assets (real estate, art, etc.) as money laundering vehicles in private banking, while CH09_S05_001 discusses high-risk corporate banking products (trade finance, structured products). They are different asset classes and product types; no direct grounding, illustration, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0070",
+      "source_core_point_id": "cp_CH07_S02_001",
+      "target_core_point_id": "cp_CH09_S04_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S02_001 covers retail banking risks (synthetic identities, mule accounts), while CH09_S04_001 covers M&A risks (acquisition of tainted companies, complex structures). They are distinct risk areas with no direct dependency, illustration, or contrast. The similarity is superficial, based on both being financial crime risks.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0071",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in banking (commercial banking vs. correspondent banking), but they are distinct risk areas without a direct summary, illustration, grounding, or contrast relationship. They share the broad topic of banking risks but do not form a useful cross-chapter review edge.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0072",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S02_004",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06 provides a classification of banking services (retail, commercial, private, correspondent) each with unique vulnerabilities. CH07 expands on one classified service type (commercial banking) by detailing specific vulnerable trade finance products. The target directly applies the classification framework from the source.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0073",
+      "source_core_point_id": "cp_CH08_S01_002",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss inherent risks in banking (private banking vs. correspondent banking), but they are different risk areas. The source describes risks from culture and compensation in private banking, while the target lists operational risks in correspondent banking. No direct summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0074",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH07_S02_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "The source explains the banking sector's inherent vulnerability due to involvement in all three money laundering stages. The target discusses specific retail banking risks (synthetic identities, mule accounts). While both relate to banking vulnerability, the source is a broad background statement and does not provide a concrete framework that the target directly expands. The target does not apply the three-stage process; it lists distinct risks.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0075",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH09_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "The source prescribes AFC program setup measures for corporate banking (risk assessment, CDD, monitoring). The target identifies specific money laundering risks in corporate lending (beneficial ownership, third-party verification). The source does not provide a definition, framework, or rule that the target directly applies; they are related but not in a grounding relationship. The target is a risk identification, not an application of the source's program setup measures.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0076",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH09_S01_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss general vulnerability factors for banking sectors, but CH06_S06_003 lists broad factors (volume, global reach, complex products, customer relationships) while CH09_S01_004 is a general statement about corporate and investment banking vulnerability. The source does not provide a concrete framework that the target directly expands; they are parallel vulnerability overviews.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0077",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH07_S02_001",
+      "relation_type": "grounds",
+      "decision": "accept",
+      "reason": "CH06_S06_002 classifies banking services (retail, commercial, private, correspondent) and states each has unique vulnerabilities. CH07_S02_001 expands on retail banking risks, directly applying the classification framework.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0078",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH09_S05_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 prescribes AFC program setup measures (risk assessment, CDD, transaction monitoring) for corporate banking, while CH09_S05_005 describes a risk-based approach for correspondent banking due diligence. They share a compliance theme but the source does not provide a definition/framework/rule that the target directly applies; they are different control areas.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0079",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH08_S02_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S01_002 defines commercial banking and its specific money laundering risks (front companies, complex ownership). CH08_S02_005 discusses customer risk factors in private banking and wealth management (jurisdiction, complex structures). Both mention complex structures as a risk, but they are different banking sectors and do not form a direct dependency; the source does not ground the target.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0080",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH07_S02_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability (volume, global reach, complex products). CH07_S02_004 lists specific vulnerable trade finance products. The source mentions complex products as a factor, but it does not provide a concrete framework that the target directly expands; they are related only at a broad thematic level.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0081",
+      "source_core_point_id": "cp_CH08_S02_005",
+      "target_core_point_id": "cp_CH09_S05_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss risk-based approaches in different banking sectors (PBWM customer risk factors vs. correspondent banking risk-based approach). They share a broad topic of risk differentiation but do not have a direct summary, illustration, grounding, or contrast relationship. The source does not provide a concrete framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0082",
+      "source_core_point_id": "cp_CH06_S01_001",
+      "target_core_point_id": "cp_CH08_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S01_001 is a broad introduction to financial services sector vulnerability, while CH08_S01_001 defines private banking and wealth management. The source is general background and does not provide a concrete definition, framework, or classification that the target directly expands or applies. No direct review relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0083",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH08_S02_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss customer risk factors in different banking contexts (commercial banking risks vs. PBWM customer risk factors). They share similar risk concepts like front companies and complex structures, but there is no direct summary, illustration, grounding, or contrast relationship. The source does not provide a framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0084",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S05_003",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S01_002 defines commercial banking and its risks, while CH09_S05_003 defines correspondent banking. Both are definitions of different banking services. They share the broad topic of banking but do not have a direct summary, illustration, grounding, or contrast relationship. The source does not provide a framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0085",
+      "source_core_point_id": "cp_CH06_S06_003",
+      "target_core_point_id": "cp_CH09_S01_003",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S06_003 lists general factors increasing banking vulnerability to money laundering, while CH09_S01_003 lists specific market manipulation and insider trading forms. The source is a broad vulnerability overview without a concrete taxonomy or framework that the target directly applies. No direct review relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0086",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH09_S05_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss high-risk customer types in banking, but CH07 covers commercial banking risks (front companies, complex ownership) while CH09 covers corporate/investment banking high-risk customer types (embassies, SPVs, charities, defense). They share the broad topic of high-risk customers but do not have a direct summary, illustration, grounding, or contrast relationship. CH07 does not provide a concrete framework that CH09 directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0087",
+      "source_core_point_id": "cp_CH08_S01_003",
+      "target_core_point_id": "cp_CH09_S05_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH08 covers high-risk customer profiles in private banking (opaque ownership, multi-jurisdictional wealth, PEPs), while CH09 covers high-risk products in corporate/investment banking (trade finance, structured products). They are different risk areas (customer profiles vs. products) and different banking sectors. No direct summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0088",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH09_S05_005",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07 discusses commercial banking money laundering risks (front companies, cash-intensive businesses, transaction monitoring challenges), while CH09 discusses correspondent banking risk-based approach (due diligence, service differentiation). Both relate to banking risks and controls, but CH07 does not provide a definition, framework, or rule that CH09 directly applies. They are separate topics within banking.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0089",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 covers corporate banking AFC program setup essentials (risk assessment, CDD, transaction monitoring), while CH10 is an introduction to money laundering risks in nonbank financial institutions. They are different sectors (corporate banking vs. nonbank) and different purposes (program setup vs. risk overview). No direct relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0090",
+      "source_core_point_id": "cp_CH07_S01_002",
+      "target_core_point_id": "cp_CH08_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07 defines commercial banking and its money laundering risks, while CH08 defines private banking and wealth management. They are definitions of different banking sectors. They could be contrasted, but the CPs do not explicitly form a comparison or distinction; they are merely two different topics. No direct summary, illustration, or grounding relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0091",
+      "source_core_point_id": "cp_CH06_S06_002",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering vulnerabilities in financial institutions, but CH06 focuses on banking services while CH10 is a broad introduction to nonbank financial institutions. They share the same broad topic but do not form a summary, illustration, grounding, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0092",
+      "source_core_point_id": "cp_CH06_S06_001",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06 discusses the inherent vulnerability of the banking sector due to involvement in all three stages of money laundering, while CH09 details high-risk characteristics of correspondent banking. They share the broad theme of banking risks but CH06 does not provide a concrete framework that CH09 directly applies or expands; it is merely background context.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0093",
+      "source_core_point_id": "cp_CH09_S01_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH09 covers specific money laundering risks in corporate lending, while CH10 is a general introduction to risks in nonbank financial institutions. They are different sectors and risk types; no direct summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0094",
+      "source_core_point_id": "cp_CH07_S01_001",
+      "target_core_point_id": "cp_CH09_S01_003",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07 describes retail banking risks (remote onboarding, diverse backgrounds, synthetic identities), while CH09 lists forms of market manipulation and insider trading. They are distinct risk areas with no direct dependency or comparison; merely both relate to financial crime risks.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0095",
+      "source_core_point_id": "cp_CH07_S01_001",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07 covers retail banking risks, while CH09 details correspondent banking high-risk characteristics. They are different banking sub-sectors with no direct grounding or illustrative link; the similarity is only at the broad level of banking-related money laundering risks.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0096",
+      "source_core_point_id": "cp_CH07_S02_001",
+      "target_core_point_id": "cp_CH10_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "Both CPs discuss money laundering risks in different banking sectors (retail vs. nonbank), but they are separate topics without a direct summary, illustration, grounding, or contrast relationship. They share the broad theme of ML risks but do not form a useful cross-chapter review edge.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0097",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH07_S03_002",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 prescribes AFC program setup measures for corporate banking, while CH07_S03_002 describes challenges in closing accounts with outstanding credit balances. They are related to banking risk management but do not have a direct summary, illustration, grounding, or contrast relationship. The source does not provide a concrete framework that the target directly applies.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0098",
+      "source_core_point_id": "cp_CH07_S02_002",
+      "target_core_point_id": "cp_CH08_S01_001",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S02_002 covers commercial banking ML risks (front companies, cash-intensive businesses), while CH08_S01_001 defines private banking and wealth management. They are distinct banking sectors with different risk profiles. No direct summary, illustration, grounding, or contrast relationship exists.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0099",
+      "source_core_point_id": "cp_CH06_S03_001",
+      "target_core_point_id": "cp_CH09_S05_003",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH06_S03_001 prescribes AFC program setup for corporate banking, while CH09_S05_003 defines correspondent banking mechanics. The source does not provide a definition or framework that the target directly applies, and there is no summary, illustration, or contrast relationship.",
+      "risk_flags": []
+    },
+    {
+      "candidate_id": "p4vec_0100",
+      "source_core_point_id": "cp_CH07_S03_002",
+      "target_core_point_id": "cp_CH09_S05_004",
+      "relation_type": "none",
+      "decision": "reject",
+      "reason": "CH07_S03_002 discusses challenges in closing accounts with outstanding credit, while CH09_S05_004 lists high-risk characteristics of correspondent banking. They are different risk topics without a direct dependency or comparison. No grounding, summary, illustration, or contrast relationship.",
+      "risk_flags": []
+    }
+  ]
+}

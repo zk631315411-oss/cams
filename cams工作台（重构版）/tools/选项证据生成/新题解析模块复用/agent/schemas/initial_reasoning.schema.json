@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": ["initial_answer", "confidence", "question_focus", "option_hypotheses", "possible_textbook_topics"],
+  "properties": {
+    "initial_answer": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "question_focus": { "type": "string" },
+    "option_hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["option", "claim", "initial_judgement", "reasoning", "needs_evidence_for"],
+        "properties": {
+          "option": { "type": "string" },
+          "claim": { "type": "string" },
+          "initial_judgement": {
+            "type": "string",
+            "enum": ["likely_correct", "likely_incorrect", "uncertain"]
+          },
+          "reasoning": { "type": "string" },
+          "needs_evidence_for": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "possible_textbook_topics": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

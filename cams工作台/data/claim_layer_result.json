@@ -1,0 +1,319 @@
+{
+  "claim": {
+    "option": "D",
+    "claim_text": "公司税的增加",
+    "full_context": "洗钱会对金融机构FI造成公司税的增加",
+    "decomposition": {
+      "subject": "金融机构 (FI)",
+      "object": "公司税/企业所得税",
+      "direction": "增加"
+    },
+    "claim_type": "后果归因 — 将洗钱后果归因到FI的税务负担",
+    "misunderstanding": {
+      "type": "税务主体/方向误配",
+      "description": "学生把洗钱过程中的税务现象（犯罪分子逃税、政府税收减少）错误归因到FI身上，且方向相反",
+      "student_typical_question": "虚假交易不会交税吗？为什么D不选？"
+    },
+    "evidence_frames": [
+      {
+        "frame_id": "F1",
+        "frame_name": "直接反证：洗钱的税收后果不是FI公司税增加，而是政府税收减少",
+        "rationale": "教材明确指出洗钱的经济影响是政府税收缩水，与FI公司税增加主体不同、方向相反",
+        "anchors": [
+          "税收损失 政府税收缩水 征税困难 税率上升",
+          "洗钱使政府税收缩水 收入损失 危害纳税人"
+        ],
+        "expected_card": "v6_b03_N18"
+      },
+      {
+        "frame_id": "F2",
+        "frame_name": "机制解释1：贸易洗钱中的避税行为",
+        "rationale": "贸易洗钱的核心手段（高/低开发票）目的之一是避税，说明洗钱关联的是逃税而非增税",
+        "anchors": [
+          "贸易洗钱 TBML 操纵贸易价格 避税活动",
+          "高开发票 低开发票 虚报价格 避税"
+        ],
+        "expected_card": "v6_b29_N05"
+      },
+      {
+        "frame_id": "F3",
+        "frame_name": "机制解释2：空壳公司/虚假发票/税务欺诈",
+        "rationale": "空壳公司和虚假发票是洗钱常用手段，用于伪造交易和税务欺诈，犯罪分子借此逃税",
+        "anchors": [
+          "空壳公司 壳公司 降低透明度",
+          "虚假发票 假发票 伪造发票 发票欺诈",
+          "税务欺诈 增值税链条 VAT 伪造买卖记录"
+        ],
+        "expected_card": "v6_b33_N23"
+      },
+      {
+        "frame_id": "F4",
+        "frame_name": "具体案例：黑市比索交易规避税收和关税",
+        "rationale": "BMPE机制的设计初衷就是规避国内税收和关税，直接说明洗钱活动逃税而非增税",
+        "anchors": [
+          "黑市比索交易 BMPE 规避关税 规避国内税收",
+          "哥伦比亚进口商 黑市美元 规避税收 关税"
+        ],
+        "expected_card": "v6_b33_N38"
+      }
+    ]
+  },
+  "anchors": {
+    "lexical": [
+      "公司税的增加",
+      "金融机构 (FI) 公司税/企业所得税 增加"
+    ],
+    "structural": [
+      "洗钱 税收 政府 减少 缩水 损失",
+      "逃税 避税 税务欺诈 犯罪分子 规避"
+    ],
+    "mechanism": [
+      "税收损失 政府税收缩水 征税困难 税率上升",
+      "洗钱使政府税收缩水 收入损失 危害纳税人",
+      "贸易洗钱 TBML 操纵贸易价格 避税活动",
+      "高开发票 低开发票 虚报价格 避税",
+      "空壳公司 壳公司 降低透明度",
+      "虚假发票 假发票 伪造发票 发票欺诈",
+      "税务欺诈 增值税链条 VAT 伪造买卖记录",
+      "黑市比索交易 BMPE 规避关税 规避国内税收",
+      "哥伦比亚进口商 黑市美元 规避税收 关税"
+    ]
+  },
+  "results": {
+    "lexical": {
+      "recalled": "2/4",
+      "noise": 10,
+      "best_matches": {
+        "E1_税收损失": {
+          "best_rank": null,
+          "best_card": null,
+          "matched_keyword": null
+        },
+        "E2_贸易洗钱避税": {
+          "best_rank": 1,
+          "best_card": "v6_b11_N09",
+          "matched_keyword": "避税"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "best_rank": 6,
+          "best_card": "v6_b33_N25",
+          "matched_keyword": "增值税",
+          "sub_matches": {
+            "空壳公司": {
+              "best_rank": null,
+              "best_card": null,
+              "matched_keyword": null
+            },
+            "虚假发票": {
+              "best_rank": 45,
+              "best_card": "v6_b41_N08",
+              "matched_keyword": "虚假发票"
+            },
+            "税务欺诈/VAT": {
+              "best_rank": 6,
+              "best_card": "v6_b33_N25",
+              "matched_keyword": "税务欺诈"
+            }
+          }
+        },
+        "E4_黑市比索规避税收": {
+          "best_rank": null,
+          "best_card": null,
+          "matched_keyword": null
+        }
+      },
+      "details": {
+        "E1_税收损失": {
+          "recalled": false,
+          "hit_keywords": [],
+          "description": "洗钱使政府税收缩水，征税变得困难"
+        },
+        "E2_贸易洗钱避税": {
+          "recalled": true,
+          "hit_keywords": [
+            "贸易洗钱",
+            "避税"
+          ],
+          "description": "操纵贸易价格的做法表明存在洗钱、避税活动"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "recalled": true,
+          "hit_keywords": [
+            "税务欺诈",
+            "增值税"
+          ],
+          "description": "空壳公司和虚假发票是常见手段；伪造买卖记录文件包括增值税链条"
+        },
+        "E4_黑市比索规避税收": {
+          "recalled": false,
+          "hit_keywords": [],
+          "description": "黑市比索交易规避从官方渠道购买美元的国内税收和关税"
+        }
+      }
+    },
+    "structural": {
+      "recalled": "4/4",
+      "noise": 3,
+      "best_matches": {
+        "E1_税收损失": {
+          "best_rank": 1,
+          "best_card": "v6_b03_N18",
+          "matched_keyword": "税收缩水"
+        },
+        "E2_贸易洗钱避税": {
+          "best_rank": 4,
+          "best_card": "v6_b02_N59",
+          "matched_keyword": "避税"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "best_rank": 5,
+          "best_card": "v6_b33_N24",
+          "matched_keyword": "伪造买卖记录",
+          "sub_matches": {
+            "空壳公司": {
+              "best_rank": 16,
+              "best_card": "v6_b33_N23",
+              "matched_keyword": "空壳公司"
+            },
+            "虚假发票": {
+              "best_rank": null,
+              "best_card": null,
+              "matched_keyword": null
+            },
+            "税务欺诈/VAT": {
+              "best_rank": 5,
+              "best_card": "v6_b33_N24",
+              "matched_keyword": "税务欺诈"
+            }
+          }
+        },
+        "E4_黑市比索规避税收": {
+          "best_rank": 8,
+          "best_card": "v6_b16_N29",
+          "matched_keyword": "规避"
+        }
+      },
+      "details": {
+        "E1_税收损失": {
+          "recalled": true,
+          "hit_keywords": [
+            "税收缩水",
+            "政府税收",
+            "税收损失",
+            "征税变得更加困难",
+            "税收缩水"
+          ],
+          "description": "洗钱使政府税收缩水，征税变得困难"
+        },
+        "E2_贸易洗钱避税": {
+          "recalled": true,
+          "hit_keywords": [
+            "贸易洗钱",
+            "避税"
+          ],
+          "description": "操纵贸易价格的做法表明存在洗钱、避税活动"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "recalled": true,
+          "hit_keywords": [
+            "税务欺诈",
+            "增值税",
+            "VAT",
+            "伪造买卖记录"
+          ],
+          "description": "空壳公司和虚假发票是常见手段；伪造买卖记录文件包括增值税链条"
+        },
+        "E4_黑市比索规避税收": {
+          "recalled": true,
+          "hit_keywords": [
+            "规避"
+          ],
+          "description": "黑市比索交易规避从官方渠道购买美元的国内税收和关税"
+        }
+      }
+    },
+    "mechanism": {
+      "recalled": "4/4",
+      "noise": 0,
+      "best_matches": {
+        "E1_税收损失": {
+          "best_rank": 7,
+          "best_card": "v6_b03_N18",
+          "matched_keyword": "税收缩水"
+        },
+        "E2_贸易洗钱避税": {
+          "best_rank": 1,
+          "best_card": "v6_b33_N20",
+          "matched_keyword": "贸易洗钱"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "best_rank": 3,
+          "best_card": "v6_b23_N30",
+          "matched_keyword": "虚假发票",
+          "sub_matches": {
+            "空壳公司": {
+              "best_rank": 6,
+              "best_card": "v6_b32_N19",
+              "matched_keyword": "空壳公司"
+            },
+            "虚假发票": {
+              "best_rank": 1,
+              "best_card": "v6_b33_N20",
+              "matched_keyword": "伪造发票"
+            },
+            "税务欺诈/VAT": {
+              "best_rank": 16,
+              "best_card": "v6_b33_N24",
+              "matched_keyword": "税务欺诈"
+            }
+          }
+        },
+        "E4_黑市比索规避税收": {
+          "best_rank": 2,
+          "best_card": "v6_b32_N21",
+          "matched_keyword": "黑市比索"
+        }
+      },
+      "details": {
+        "E1_税收损失": {
+          "recalled": true,
+          "hit_keywords": [
+            "税收缩水",
+            "政府税收",
+            "税收损失",
+            "征税变得更加困难",
+            "税收缩水"
+          ],
+          "description": "洗钱使政府税收缩水，征税变得困难"
+        },
+        "E2_贸易洗钱避税": {
+          "recalled": true,
+          "hit_keywords": [
+            "贸易洗钱",
+            "低开发票"
+          ],
+          "description": "操纵贸易价格的做法表明存在洗钱、避税活动"
+        },
+        "E3_空壳虚假发票税务欺诈": {
+          "recalled": true,
+          "hit_keywords": [
+            "空壳公司",
+            "虚假发票"
+          ],
+          "description": "空壳公司和虚假发票是常见手段；伪造买卖记录文件包括增值税链条"
+        },
+        "E4_黑市比索规避税收": {
+          "recalled": true,
+          "hit_keywords": [
+            "黑市比索",
+            "规避",
+            "国内税收",
+            "关税",
+            "哥伦比亚进口商"
+          ],
+          "description": "黑市比索交易规避从官方渠道购买美元的国内税收和关税"
+        }
+      }
+    }
+  }
+}

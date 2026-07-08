@@ -1,0 +1,61 @@
+# v7 选项证据与解析生成 — 全局配置
+
+## 路径配置
+
+```yaml
+paths:
+  # V7 核心资产
+  v7_units_as_cards: "../../work/base_units/units/v7_units_as_cards.json"
+  v7_bilingual_units: "../../work/base_units/units/v7_bilingual_units.json"
+  
+  # 习题
+  v7_questions_raw: "../../../教材、答疑记录、习题与参考文献/习题/v7习题/v7结构化文本/CAMS_v7_questions.jsonl"
+  v7_questions_prepared: "phase3.5_questions/output/v7_questions.json"
+  
+  # 索引
+  index_dir: "phase3_index/output/index"
+  
+  # 知识图谱（可选候选扩展）
+  kg_graph_path: "../知识图谱提取/phases/phase06_kg_views/outputs/kg_retrieval_graph.json"
+  p5_alias_index: "../知识图谱提取/phases/phase05_terms/outputs/p5c_alias_index.json"
+  
+  # 输出
+  evidence_output_dir: "phase4_evidence/output"
+```
+
+## 检索配置
+
+```yaml
+retrieval:
+  # BGE 模型（中英双语）
+  bge_model: "BAAI/bge-m3"
+  bge_device: "cpu"
+  
+  # 检索参数
+  top_k: 80
+  bm25_top_k: 40
+  bge_top_k: 40
+  exact_phrase_window: 3
+  
+  # KG 导航：只扩展候选 unit，不作为裁判证据
+  enable_kg: false
+  enable_p5: false
+  kg_max_extra: 30
+  kg_node_top_k: 5
+  kg_edge_expand_depth: 1
+  
+  # MMR
+  mmr_lambda: 0.7
+  mmr_top_k_factor: 4
+```
+
+## 裁判配置
+
+```yaml
+adjudicator:
+  model: "deepseek-v4-pro"
+  thinking_mode: false
+  # 中英结合：裁判既看 en_quote 也看 knowledge_zh
+  evidence_lang: "zh_en"
+  # 前端展示用中文
+  display_lang: "zh"

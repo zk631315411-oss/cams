@@ -1,0 +1,210 @@
+{
+  "schema_version": "exam_point_production_manifest_v1",
+  "current_version": "v15_current_v10_822_ds_full_prompt_v3_rules_v4b",
+  "final_asset_dir": "work/preview_v15_full_dry_run_v15_current_v10_822_ds_full_prompt_v3_rules_v4b",
+  "current_batch": {
+    "v8_named_batch": "v15_current_v10_822_ds_full_prompt_v3",
+    "v9_rules_batch": "v15_current_v10_822_ds_full_prompt_v3_rules_v4b",
+    "v10_base_dir": "work/preview_v10_full828",
+    "v14_relation_layer": "work/preview_v14_relation_layer/relation_layer_strict_trace_all100_review_merged.json"
+  },
+  "runbook_scripts": [
+    {
+      "script": "run_current_pipeline_no_api.ps1",
+      "role": "rerun v1/v5/v6/v10/v8/v9/v15 using existing DS naming output",
+      "runs_external_api": false
+    },
+    {
+      "script": "run_current_full_dry_run.ps1",
+      "role": "repackage current v15 asset from existing v10/v8/v9/v14 outputs",
+      "runs_external_api": false
+    }
+  ],
+  "production_scripts": [
+    {
+      "script": "preview_v1_seed_points.py",
+      "stage": 1,
+      "role": "build strong seed points from per-question evidence",
+      "runs_external_api": false,
+      "inputs": [
+        "../选项证据生成/新题解析模块复用/output/questions/q_*.json"
+      ],
+      "outputs": [
+        "work/preview_v1/seed_points.json",
+        "work/preview_v1/strong_edges.json"
+      ]
+    },
+    {
+      "script": "preview_v5_structure_preview.py",
+      "stage": 2,
+      "role": "build candidate points, contrast classification, and relation recall candidates",
+      "runs_external_api": false,
+      "required_env_for_current_version": {
+        "PREVIEW_V5_RELATION_REVIEW_LIMIT": "3814",
+        "PREVIEW_V5_MAX_RELATION_CANDIDATES_PER_POINT": "999",
+        "PREVIEW_V5_RELATION_MIN_SCORE": "50"
+      },
+      "inputs": [
+        "work/preview_v1/seed_points.json",
+        "work/preview_v1/strong_edges.json"
+      ],
+      "outputs": [
+        "work/preview_v5/all_candidate_points.json",
+        "work/preview_v5/contrast_classification.json",
+        "work/preview_v5/merge_parent_child_candidates.json"
+      ]
+    },
+    {
+      "script": "preview_v6_structure_draft.py",
+      "stage": 3,
+      "role": "label relation and contrast drafts with current rules",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v5/all_candidate_points.json",
+        "work/preview_v5/contrast_classification.json",
+        "work/preview_v5/merge_parent_child_candidates.json"
+      ],
+      "outputs": [
+        "work/preview_v6/relation_draft.json",
+        "work/preview_v6/contrast_draft.json"
+      ]
+    },
+    {
+      "script": "preview_v10_full828_materialize.py",
+      "stage": 4,
+      "role": "materialize the current strict exam-point base",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v1/strong_edges.json",
+        "work/preview_v5/all_candidate_points.json",
+        "work/preview_v6/relation_draft.json",
+        "work/preview_v6/contrast_draft.json"
+      ],
+      "outputs": [
+        "work/preview_v10_full828/exam_point_system_full828.json",
+        "work/preview_v10_full828/exam_point_question_card_edges.json",
+        "work/preview_v10_full828/relation_judgement_records.jsonl"
+      ]
+    },
+    {
+      "script": "preview_v8_naming_sample.py",
+      "stage": 5,
+      "role": "build naming tasks and integrate model naming output",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v10_full828/exam_point_system_full828.json",
+        "work/preview_v10_full828/exam_point_question_card_edges.json",
+        "work/preview_v10_full828/relation_judgement_records.jsonl"
+      ],
+      "outputs": [
+        "work/preview_v8_naming_sample/agent_naming_input_<batch>.json",
+        "work/preview_v8_naming_sample/named_exam_points_sample_<batch>.json"
+      ]
+    },
+    {
+      "script": "preview_v11_ds_naming_executor.py",
+      "stage": 6,
+      "role": "send v8 naming tasks to DeepSeek and checkpoint raw/model outputs",
+      "runs_external_api": true,
+      "inputs": [
+        "work/preview_v8_naming_sample/agent_naming_input_<batch>.json",
+        "work/preview_v8_naming_sample/agent_prompt.md"
+      ],
+      "outputs": [
+        "work/preview_v8_naming_sample/agent_naming_output_<batch>.json",
+        "work/preview_v8_naming_sample/ds_raw_<batch>/"
+      ]
+    },
+    {
+      "script": "preview_v9_admission_gate.py",
+      "stage": 7,
+      "role": "classify named points into ready/review/evidence queues",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v8_naming_sample/named_exam_points_sample_<batch>.json"
+      ],
+      "outputs": [
+        "work/preview_v9_admission_gate/admission_decisions_<batch>.json",
+        "work/preview_v9_admission_gate/formal_candidate_draft_<batch>.json",
+        "work/preview_v9_admission_gate/summary_<batch>.json"
+      ]
+    },
+    {
+      "script": "preview_v13_relation_review.py",
+      "stage": 8,
+      "role": "build or validate relation review decision batches",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v10_full828/relation_judgement_records.jsonl"
+      ],
+      "outputs": [
+        "work/preview_v13_relation_review/relation_review_input_<batch>.json",
+        "work/preview_v13_relation_review/relation_review_decisions_<batch>.json"
+      ],
+      "optional_for_base_asset": true
+    },
+    {
+      "script": "preview_v14_apply_relation_review.py",
+      "stage": 9,
+      "role": "apply reviewed relation decisions into relation layer",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v13_relation_review/relation_review_decisions_<batch>.json"
+      ],
+      "outputs": [
+        "work/preview_v14_relation_layer/relation_layer_<batch>.json"
+      ],
+      "optional_for_base_asset": true
+    },
+    {
+      "script": "preview_v15_full_dry_run_asset.py",
+      "stage": 10,
+      "role": "assemble v10 base, v8 names, v9 gates, and v14 relation layer into review asset",
+      "runs_external_api": false,
+      "inputs": [
+        "work/preview_v10_full828/exam_point_system_full828.json",
+        "work/preview_v8_naming_sample/named_exam_points_sample_v15_current_v10_822_ds_full_prompt_v3.json",
+        "work/preview_v9_admission_gate/admission_decisions_v15_current_v10_822_ds_full_prompt_v3_rules_v4b.json",
+        "work/preview_v9_admission_gate/summary_v15_current_v10_822_ds_full_prompt_v3_rules_v4b.json",
+        "work/preview_v14_relation_layer/relation_layer_strict_trace_all100_review_merged.json"
+      ],
+      "outputs": [
+        "work/preview_v15_full_dry_run_v15_current_v10_822_ds_full_prompt_v3_rules_v4b/full_dry_run_asset.json",
+        "work/preview_v15_full_dry_run_v15_current_v10_822_ds_full_prompt_v3_rules_v4b/risk_queues.json",
+        "work/preview_v15_full_dry_run_v15_current_v10_822_ds_full_prompt_v3_rules_v4b/summary.json"
+      ]
+    }
+  ],
+  "support_scripts": [
+    "preview_v12_evidence_context.py",
+    "check_preview_v6_regression.py",
+    "check_preview_v6_dry_run.py",
+    "inspect_preview_v6_samples.py"
+  ],
+  "archived_scripts": {
+    "archive_root": "archive/legacy_scripts_20260703_110354",
+    "manifest": "archive/legacy_scripts_20260703_110354/manifest.json",
+    "historical_preview_scripts": [
+      "archive/legacy_scripts_20260703_110354/historical_preview_scripts/preview_v2_merge_candidates.py",
+      "archive/legacy_scripts_20260703_110354/historical_preview_scripts/preview_v3_reviewed_groups.py",
+      "archive/legacy_scripts_20260703_110354/historical_preview_scripts/preview_v4_name_high_frequency.py",
+      "archive/legacy_scripts_20260703_110354/historical_preview_scripts/preview_v7_materialize_sample.py"
+    ],
+    "deprecated_patch_scripts": [
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/step1_aggregate.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/step2_cluster.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/step3_merge.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/step4_name.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/step5_stats.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/fix_duplicates.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/fix_fallbacks.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/fix_names_final.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/fix_titles_final.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/retry_last.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/retry_stubborn.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/patch_last.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/test_max_tokens.py",
+      "archive/legacy_scripts_20260703_110354/deprecated_patch_scripts/test_run_sample.py"
+    ]
+  }
+}

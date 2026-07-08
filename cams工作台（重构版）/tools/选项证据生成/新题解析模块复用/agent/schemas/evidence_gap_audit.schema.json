@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "required": ["coverage_by_option", "followup_tasks", "stop_reason"],
+  "properties": {
+    "coverage_by_option": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["option", "coverage", "supporting_card_ids", "missing_points", "needs_followup"],
+        "properties": {
+          "option": { "type": "string" },
+          "coverage": {
+            "type": "string",
+            "enum": ["direct", "partial", "none", "conflict"]
+          },
+          "supporting_card_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "missing_points": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "needs_followup": { "type": "boolean" }
+        }
+      }
+    },
+    "followup_tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "queries", "why"],
+        "properties": {
+          "target": { "type": "string" },
+          "queries": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "why": { "type": "string" }
+        }
+      }
+    },
+    "stop_reason": {
+      "type": "string",
+      "enum": ["sufficient", "needs_followup", "max_rounds", "manual_review"]
+    }
+  }
+}

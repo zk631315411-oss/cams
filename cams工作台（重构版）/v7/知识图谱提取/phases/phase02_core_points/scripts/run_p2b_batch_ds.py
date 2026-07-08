@@ -1,0 +1,171 @@
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PHASE_DIR = SCRIPT_DIR.parent
+DEFAULT_P2A_RUNS_DIR = PHASE_DIR / "runs"
+DEFAULT_P2A_PREFIX = "p2a_batch_first5_chapters_20260706_"
+DEFAULT_PROMPT = PHASE_DIR / "prompts" / "p2b_core_point_unit_edges_v1.md"
+SINGLE_RUNNER = SCRIPT_DIR / "run_p2b_core_point_ds.py"
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def discover_core_points(runs_dir: Path, prefix: str) -> list[dict[str, Any]]:
+    tasks: list[dict[str, Any]] = []
+    for run_dir in sorted(runs_dir.glob(f"{prefix}*")):
+        if not run_dir.is_dir():
+            continue
+        input_path = run_dir / "input_section.json"
+        output_path = run_dir / "parsed_response.json"
+        if not input_path.exists() or not output_path.exists():
+            continue
+        section_input = read_json(input_path)
+        section_id = str(section_input.get("section_id") or "")
+        reviewed_path = PHASE_DIR / "outputs" / f"p2a_reviewed_core_points.{section_id}.json"
+        if reviewed_path.exists():
+            core_points = read_json(reviewed_path).get("core_points") or []
+            core_point_source = "p2a_review"
+        else:
+            p2a_output = read_json(output_path)
+            if not section_id:
+                section_id = str(p2a_output.get("section_id") or "")
+            core_points = p2a_output.get("core_points") or []
+            core_point_source = "p2a_raw"
+        for index, cp in enumerate(core_points):
+            cp_id = str(cp.get("draft_core_point_id") or "")
+            if not section_id or not cp_id:
+                continue
+            tasks.append(
+                {
+                    "chapter_id": section_input.get("chapter_id"),
+                    "section_id": section_id,
+                    "section_order": section_input.get("section_order"),
+                    "core_point_index": index,
+                    "core_point_id": cp_id,
+                    "core_point_source": core_point_source,
+                    "title_zh": cp.get("title_zh"),
+                }
+            )
+    return sorted(
+        tasks,
+        key=lambda row: (
+            str(row.get("chapter_id") or ""),
+            int(row.get("section_order") or 0),
+            str(row.get("section_id") or ""),
+            int(row.get("core_point_index") or 0),
+        ),
+    )
+
+
+def run_one(args: argparse.Namespace, task: dict[str, Any]) -> dict[str, Any]:
+    run_slug = f"{args.run_prefix}{task['core_point_id']}"
+    cmd = [
+        sys.executable,
+        str(SINGLE_RUNNER),
+        "--section-id",
+        str(task["section_id"]),
+        "--core-point-id",
+        str(task["core_point_id"]),
+        "--p2a-runs-dir",
+        str(args.p2a_runs_dir),
+        "--p2a-run-prefix",
+        args.p2a_run_prefix,
+        "--prompt-file",
+        str(args.prompt_file),
+        "--run-slug",
+        run_slug,
+        "--model",
+        args.model,
+        "--max-tokens",
+        str(args.max_tokens),
+        "--no-copy-outputs",
+    ]
+    if args.disable_thinking:
+        cmd.append("--disable-thinking")
+    proc = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    status = "passed" if proc.returncode == 0 else "failed"
+    return {
+        **task,
+        "run_slug": run_slug,
+        "status": status,
+        "returncode": proc.returncode,
+        "stdout": proc.stdout.strip(),
+        "stderr": proc.stderr.strip(),
+    }
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--p2a-runs-dir", type=Path, default=DEFAULT_P2A_RUNS_DIR)
+    parser.add_argument("--p2a-run-prefix", default=DEFAULT_P2A_PREFIX)
+    parser.add_argument("--prompt-file", type=Path, default=DEFAULT_PROMPT)
+    parser.add_argument("--run-prefix", default=None)
+    parser.add_argument("--limit", type=int, default=20)
+    parser.add_argument("--start-index", type=int, default=0)
+    parser.add_argument("--concurrency", type=int, default=20)
+    parser.add_argument("--model", default="deepseek-v4-pro")
+    parser.add_argument("--max-tokens", type=int, default=20000)
+    parser.add_argument("--disable-thinking", action="store_true", default=True)
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    args.p2a_runs_dir = args.p2a_runs_dir.resolve()
+    args.prompt_file = args.prompt_file.resolve()
+    if args.run_prefix is None:
+        args.run_prefix = "p2b_first20_cp_edge_type_v2_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_"
+
+    all_tasks = discover_core_points(args.p2a_runs_dir, args.p2a_run_prefix)
+    selected = all_tasks[args.start_index : args.start_index + args.limit]
+    if not selected:
+        raise SystemExit("No P2A core_points found for P2B batch.")
+
+    results: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=max(1, args.concurrency)) as executor:
+        future_map = {executor.submit(run_one, args, task): task for task in selected}
+        for future in as_completed(future_map):
+            result = future.result()
+            results.append(result)
+            print(json.dumps({"status": result["status"], "section_id": result["section_id"], "core_point_id": result["core_point_id"]}, ensure_ascii=False))
+
+    results.sort(key=lambda row: selected.index(next(task for task in selected if task["core_point_id"] == row["core_point_id"])))
+    summary = {
+        "schema_version": "p2b_batch_ds_summary_v1",
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "run_prefix": args.run_prefix,
+        "model": args.model,
+        "max_tokens": args.max_tokens,
+        "disable_thinking": args.disable_thinking,
+        "concurrency": args.concurrency,
+        "selected_count": len(selected),
+        "passed_count": sum(1 for row in results if row["status"] == "passed"),
+        "failed_count": sum(1 for row in results if row["status"] != "passed"),
+        "results": results,
+    }
+    summary_path = PHASE_DIR / "reports" / f"{args.run_prefix.rstrip('_')}_summary.json"
+    write_json(summary_path, summary)
+    print(json.dumps({"summary_path": str(summary_path), "passed": summary["passed_count"], "failed": summary["failed_count"]}, ensure_ascii=False))
+    if summary["failed_count"]:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

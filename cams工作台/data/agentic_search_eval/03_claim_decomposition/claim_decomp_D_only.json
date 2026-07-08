@@ -1,0 +1,27 @@
+{
+  "option": "D",
+  "claim": "洗钱会导致金融机构FI的公司税增加",
+  "expected_relation": "likely_false",
+  "needed_checks": [
+    {
+      "check": "主体维度检查：洗钱对税收影响的实际承担者",
+      "search_intent": "查明洗钱行为导致的税收变化主要作用于政府税收还是金融机构税负",
+      "query_draft": "洗钱 政府 税收 损失 金融机构 利润 减少",
+      "observable_source": {
+        "词1": "洗钱",
+        "词2": "政府税收损失",
+        "词3": "controller_inference"
+      }
+    },
+    {
+      "check": "方向维度检查：洗钱对税收的净影响方向",
+      "search_intent": "确认洗钱通常导致税收总量下降而非上升",
+      "query_draft": "洗钱 隐瞒 收入 逃避 纳税 税收 减少",
+      "observable_source": {
+        "词1": "洗钱",
+        "词2": "税收减少",
+        "词3": "controller_inference"
+      }
+    }
+  ]
+}

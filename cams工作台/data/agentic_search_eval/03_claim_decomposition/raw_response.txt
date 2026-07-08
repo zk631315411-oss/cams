@@ -1,0 +1,109 @@
+[
+  {
+    "option": "A",
+    "claim": "盈利业务的减少或损失",
+    "expected_relation": "must_be_true",
+    "needed_checks": [
+      {
+        "check": "主体归属检查",
+        "search_intent": "验证该后果是否直接发生在金融机构(FI)身上",
+        "query_draft": "洗钱 对 金融机构 盈利 影响 损失",
+        "observable_source": {
+          "洗钱": "question_text",
+          "对": "question_text",
+          "金融机构": "question_text",
+          "盈利": "question_text",
+          "影响": "controller_inference",
+          "损失": "question_text"
+        }
+      },
+      {
+        "check": "方向与机制验证",
+        "search_intent": "确认洗钱是否导致金融机构盈利减少或损失，以及背后的机制（如声誉风险、客户流失）",
+        "query_draft": "洗钱 导致 金融机构 盈利 减少 损失 机制",
+        "observable_source": {
+          "洗钱": "question_text",
+          "导致": "controller_inference",
+          "金融机构": "question_text",
+          "盈利": "question_text",
+          "减少": "question_text",
+          "损失": "question_text",
+          "机制": "controller_inference"
+        }
+      }
+    ]
+  },
+  {
+    "option": "B",
+    "claim": "代理银行设施的增加",
+    "expected_relation": "likely_false",
+    "needed_checks": [
+      {
+        "check": "主体归属检查",
+        "search_intent": "验证该后果是否直接涉及金融机构(FI)的代理银行设施",
+        "query_draft": "洗钱 对 金融机构 代理银行 设施 影响",
+        "observable_source": {
+          "洗钱": "question_text",
+          "对": "question_text",
+          "金融机构": "question_text",
+          "代理银行": "question_text",
+          "设施": "question_text",
+          "影响": "controller_inference"
+        }
+      },
+      {
+        "check": "方向与机制验证（正确方向应为减少）",
+        "search_intent": "确认洗钱实际导致代理银行设施减少或中断，而非增加；寻找教材中关于代理行关系终止的论述",
+        "query_draft": "洗钱 导致 代理银行 关系 中断 减少 金融机构",
+        "observable_source": {
+          "洗钱": "question_text",
+          "导致": "controller_inference",
+          "代理银行": "question_text",
+          "关系": "controller_inference",
+          "中断": "controller_inference",
+          "减少": "controller_inference",
+          "金融机构": "question_text"
+        }
+      }
+    ]
+  },
+  {
+    "option": "C",
+    "claim": "雇员人数减少",
+    "expected_relation": "likely_false",
+    "needed_checks": [
+      {
+        "check": "主体归属检查",
+        "search_intent": "验证该后果是否发生在金融机构(FI)的雇员规模上",
+        "query_draft": "洗钱 对 金融机构 雇员 人数 影响",
+        "observable_source": {
+          "洗钱": "question_text",
+          "对": "question_text",
+          "金融机构": "question_text",
+          "雇员": "question_text",
+          "人数": "question_text",
+          "影响": "controller_inference"
+        }
+      },
+      {
+        "check": "方向与机制验证（正确方向应为增加）",
+        "search_intent": "确认洗钱实际导致金融机构合规人员增加或总雇员增加，而非减少；寻找反洗钱岗位增设的论述",
+        "query_draft": "洗钱 导致 金融机构 合规 人员 增加 雇员 规模",
+        "observable_source": {
+          "洗钱": "question_text",
+          "导致": "controller_inference",
+          "金融机构": "question_text",
+          "合规": "controller_inference",
+          "人员": "controller_inference",
+          "增加": "controller_inference",
+          "雇员": "question_text",
+          "规模": "controller_inference"
+        }
+      }
+    ]
+  },
+  {
+    "option": "D",
+    "claim": "公司税的增加",
+    "expected_relation": "likely_false",
+    "needed

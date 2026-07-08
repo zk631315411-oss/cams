@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMS 教研工作台 - 原型</title>
+  <script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.js"></script>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --panel-soft: #fafbfc;
+      --line: #e5e7eb;
+      --line-strong: #d1d5db;
+      --text: #111827;
+      --muted: #6b7280;
+      --subtle: #9ca3af;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --orange: #ea580c;
+      --orange-soft: #fff7ed;
+      --green: #15803d;
+      --green-soft: #f0fdf4;
+      --red: #b91c1c;
+      --red-soft: #fef2f2;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 1180px;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 248px minmax(560px, 1fr) 420px;
+      height: 100vh;
+    }
+
+    .sidebar,
+    .reader,
+    .panel {
+      min-height: 0;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 70px;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: #172554;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .side-scroll {
+      flex: 1;
+      overflow: auto;
+      padding: 14px;
+    }
+
+    .side-block {
+      margin-bottom: 18px;
+    }
+
+    .side-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .nav-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 6px;
+      padding: 10px 11px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      background: transparent;
+      color: #374151;
+      text-align: left;
+    }
+
+    .nav-button.active,
+    .nav-button:hover {
+      border-color: #bfdbfe;
+      background: var(--blue-soft);
+      color: #1d4ed8;
+    }
+
+    .nav-button small {
+      color: var(--subtle);
+      font-size: 11px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .queue-item {
+      margin-bottom: 8px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .queue-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .queue-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .reader {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      background: var(--panel);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .chapter-select {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chapter-select label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    select,
+    .search {
+      height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #111827;
+      outline: none;
+    }
+
+    select {
+      min-width: 290px;
+      padding: 0 10px;
+    }
+
+    .search {
+      width: 260px;
+      padding: 0 12px;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-button,
+    .text-button,
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 36px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: #374151;
+    }
+
+    .icon-button {
+      width: 36px;
+      padding: 0;
+    }
+
+    .text-button,
+    .primary-button {
+      padding: 0 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .primary-button {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .section-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .section-tab {
+      height: 32px;
+      padding: 0 13px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section-tab.active {
+      border-color: #bfdbfe;
+      background: var(--blue-soft);
+      color: #1d4ed8;
+    }
+
+    .reader-scroll {
+      flex: 1;
+      overflow: auto;
+      padding: 30px 42px 56px;
+    }
+
+    .notice-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 920px;
+      margin: 0 auto 22px;
+    }
+
+    .notice {
+      min-height: 84px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-soft);
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .notice span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    article {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .article-card h2 {
+      margin: 0 0 22px;
+      padding-left: 14px;
+      border-left: 4px solid var(--blue);
+      font-size: 26px;
+      line-height: 1.25;
+    }
+
+    .article-card {
+      padding: 28px 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .para {
+      margin: 0 0 20px;
+      color: #374151;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .exam-point {
+      display: inline;
+      padding: 1px 3px;
+      border-bottom: 2px solid #f59e0b;
+      border-radius: 3px;
+      background: #fffbeb;
+      color: #92400e;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .exam-point:hover,
+    .exam-point.active {
+      background: #fed7aa;
+      color: #7c2d12;
+      outline: 2px solid #fdba74;
+    }
+
+    .card-id {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      margin-left: 5px;
+      padding: 0 5px;
+      border-radius: 4px;
+      background: #f3f4f6;
+      color: #4b5563;
+      font-size: 11px;
+      vertical-align: text-top;
+    }
+
+    .evidence-block {
+      margin: 26px 0 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfe;
+    }
+
+    .evidence-block h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .evidence-list li {
+      display: flex;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .panel-head {
+      min-height: 70px;
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .panel-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .panel-head h2 {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 18px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .panel-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .panel-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .panel-tab {
+      height: 42px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .panel-tab.active {
+      border-bottom-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .panel-body {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 16px;
+    }
+
+    .panel-section {
+      margin-bottom: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .panel-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .panel-section p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #4b5563;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tag.blue {
+      border-color: #bfdbfe;
+      background: var(--blue-soft);
+      color: #1d4ed8;
+    }
+
+    .tag.orange {
+      border-color: #fed7aa;
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .tag.green {
+      border-color: #bbf7d0;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .question-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .question-head {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .question-head strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .question-head span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .option-list {
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .option-row {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 8px;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      text-align: left;
+    }
+
+    .option-row.active {
+      border-color: #fdba74;
+      background: var(--orange-soft);
+    }
+
+    .option-key {
+      display: grid;
+      width: 26px;
+      height: 26px;
+      place-items: center;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .option-row.correct .option-key {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .option-content strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .option-content span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .graph {
+      position: relative;
+      height: 238px;
+      margin-top: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(#fff, #fbfcfe);
+      overflow: hidden;
+    }
+
+    .graph svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .node {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 118px;
+      min-height: 44px;
+      padding: 8px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #374151;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .node.active {
+      border-color: var(--orange);
+      background: var(--orange-soft);
+      color: #9a3412;
+    }
+
+    .node.source {
+      border-color: #bfdbfe;
+      background: var(--blue-soft);
+      color: #1d4ed8;
+    }
+
+    .edge-label {
+      position: absolute;
+      padding: 3px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .path-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .path-step {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .path-step span:first-child {
+      display: grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .source-card {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfe;
+    }
+
+    .source-card strong {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    .source-card p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .qa-item {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .qa-item + .qa-item {
+      margin-top: 8px;
+    }
+
+    .qa-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .qa-item p {
+      margin: 0 0 8px;
+      color: #374151;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .qa-item .reply {
+      padding: 8px;
+      border-left: 3px solid var(--blue);
+      background: var(--blue-soft);
+      color: #1e3a8a;
+    }
+
+    .review-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .review-action {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .review-action iconify-icon {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 20px;
+    }
+
+    .review-action strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    .review-action span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .panel-foot {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .panel-foot button {
+      flex: 1;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      z-index: 20;
+      transform: translateX(-50%) translateY(20px);
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111827;
+      color: #fff;
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 1280px) {
+      .app {
+        grid-template-columns: 220px minmax(520px, 1fr) 390px;
+      }
+
+      .notice-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="教研工作台导航">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div>
+          <h1>CAMS 教研工作台</h1>
+          <p>教材证据驱动原型</p>
+        </div>
+      </div>
+
+      <div class="side-scroll">
+        <section class="side-block">
+          <h2 class="side-title">今日工作</h2>
+          <button class="nav-button active" type="button" onclick="showToast('当前原型聚焦：题目归因审阅')">
+            <span>题目归因审阅</span>
+            <small>12</small>
+          </button>
+          <button class="nav-button" type="button" onclick="showToast('原型态：可作为后续题库页面入口')">
+            <span>题库质量复盘</span>
+            <small>179</small>
+          </button>
+          <button class="nav-button" type="button" onclick="showToast('原型态：用于沉淀易错专题')">
+            <span>易错专题沉淀</span>
+            <small>7</small>
+          </button>
+          <button class="nav-button" type="button" onclick="showToast('原型态：用于追踪答疑高频点')">
+            <span>学生答疑池</span>
+            <small>37</small>
+          </button>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">数据概览</h2>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>1950</strong>
+              <span>教材句卡</span>
+            </div>
+            <div class="metric">
+              <strong>4771</strong>
+              <span>图谱实体</span>
+            </div>
+            <div class="metric">
+              <strong>287</strong>
+              <span>有题/答疑考点</span>
+            </div>
+            <div class="metric">
+              <strong>12</strong>
+              <span>需人工复核</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="side-block">
+          <h2 class="side-title">复核队列</h2>
+          <div class="queue-item">
+            <strong>2.1_19 金融机构后果</strong>
+            <p>A/E 已命中同一节点，B 为方向相反，D 为主体不同。</p>
+          </div>
+          <div class="queue-item">
+            <strong>2.1_07 上游犯罪范围</strong>
+            <p>需确认普通诈骗与金融诈骗的边界提示。</p>
+          </div>
+          <div class="queue-item">
+            <strong>2.2_14 离析阶段</strong>
+            <p>学生常把资金转移与资金投放混用。</p>
+          </div>
+        </section>
+      </div>
+    </aside>
+
+    <section class="reader" aria-label="教材阅读区">
+      <header class="topbar">
+        <div class="chapter-select">
+          <label for="chapterSelect">教材位置</label>
+          <select id="chapterSelect" onchange="showToast('已切换到：' + this.options[this.selectedIndex].text)">
+            <option>第一章 反洗钱概述</option>
+            <option selected>第二章 洗钱和恐怖融资活动的风险及方法</option>
+            <option>第三章 反洗钱义务与监管</option>
+            <option>第四章 客户尽职调查</option>
+          </select>
+        </div>
+        <div class="toolbar">
+          <input class="search" type="search" placeholder="搜索考点、题号、card_id" onkeydown="if(event.key==='Enter') searchPrototype(this.value)">
+          <button class="icon-button" type="button" title="上一处" onclick="showToast('已定位到上一处证据')">
+            <iconify-icon icon="mdi:chevron-up"></iconify-icon>
+          </button>
+          <button class="icon-button" type="button" title="下一处" onclick="showToast('已定位到下一处证据')">
+            <iconify-icon icon="mdi:chevron-down"></iconify-icon>
+          </button>
+          <button class="text-button" type="button" onclick="showToast('已生成本题复核清单')">
+            <iconify-icon icon="mdi:clipboard-check-outline"></iconify-icon>
+            复核清单
+          </button>
+        </div>
+      </header>
+
+      <nav class="section-tabs" aria-label="小节导航">
+        <button class="section-tab active" type="button">2.1 风险概念</button>
+        <button class="section-tab" type="button" onclick="showToast('原型中暂以 2.1 演示交互')">2.2 洗钱方法</button>
+        <button class="section-tab" type="button" onclick="showToast('原型中暂以 2.1 演示交互')">2.3 恐怖融资</button>
+        <button class="section-tab" type="button" onclick="showToast('原型中暂以 2.1 演示交互')">2.4 风险指标</button>
+        <button class="section-tab" type="button" onclick="showToast('原型中暂以 2.1 演示交互')">2.5 防控措施</button>
+      </nav>
+
+      <main class="reader-scroll" id="readerScroll">
+        <div class="notice-row">
+          <div class="notice">
+            <strong>精选标注</strong>
+            <span>只标出教研复核需要的核心概念，避免大面积标黄。</span>
+          </div>
+          <div class="notice">
+            <strong>自动定位</strong>
+            <span>点击选项或节点后，左侧自动定位到对应证据句卡。</span>
+          </div>
+          <div class="notice">
+            <strong>归因路径</strong>
+            <span>显示选项、知识节点、关系边和 card_id。</span>
+          </div>
+          <div class="notice">
+            <strong>人工复核</strong>
+            <span>教研可以确认、驳回、标记“教材落空”。</span>
+          </div>
+        </div>
+
+        <article>
+          <div class="breadcrumb">
+            <span>V6 教材</span>
+            <span>/</span>
+            <span>第 2 章</span>
+            <span>/</span>
+            <strong>2.1 洗钱风险的基本概念</strong>
+          </div>
+
+          <div class="article-card">
+            <h2>2.1 洗钱风险的基本概念</h2>
+            <p class="para">
+              在现代金融体系中，
+              <span id="risk" class="exam-point" onclick="selectPoint('risk')">洗钱风险<span class="card-id">v6_b04_N03</span></span>
+              是指由于洗钱活动给金融机构或特定非金融机构带来的法律制裁、监管处罚、经济损失和声誉损害。理解这一概念，是判断题目是否真正落在教材证据上的基础。
+            </p>
+            <p class="para">
+              与单纯的金融风险不同，洗钱风险往往伴随
+              <span id="terror" class="exam-point" onclick="selectPoint('terror')">恐怖融资<span class="card-id">v6_b04_N06</span></span>
+              。恐怖融资的关键差异在于资金用途可能指向恐怖活动，资金来源并不必然是非法所得。
+            </p>
+            <p class="para">
+              任何洗钱行为通常都需要关注其
+              <span id="upstream" class="exam-point" onclick="selectPoint('upstream')">上游犯罪<span class="card-id">v6_b04_N08</span></span>
+              。教材将毒品犯罪、黑社会性质组织犯罪、恐怖活动犯罪、走私犯罪、贪污贿赂犯罪、破坏金融管理秩序犯罪、金融诈骗犯罪作为洗钱罪关联判断的重要范围。
+            </p>
+            <p class="para">
+              对金融机构而言，洗钱风险会带来一组具体后果：
+              <span id="fiImpact" class="exam-point" onclick="selectPoint('fiImpact')">调查费用、罚金、业务损失与声誉损害<span class="card-id">v6_b04_N09</span></span>
+              。题目干扰项常把这些后果的主体、方向或范围替换掉。
+            </p>
+            <p class="para">
+              从公共治理角度看，洗钱活动也可能造成
+              <span id="taxLoss" class="exam-point" onclick="selectPoint('taxLoss')">政府税收缩水<span class="card-id">v6_b03_N18</span></span>
+              。该节点与金融机构后果有关联，但主体不同，不能直接等同为“公司税增加”。
+            </p>
+            <p class="para">
+              为了防范风险，金融机构的首要职责之一是履行
+              <span id="kyc" class="exam-point" onclick="selectPoint('kyc')">客户身份识别<span class="card-id">v6_b05_N02</span></span>
+              ，包括核实身份、了解业务背景、识别受益所有人，并持续评估客户风险等级。
+            </p>
+
+            <div class="evidence-block">
+              <h3>本小节证据索引</h3>
+              <ul class="evidence-list">
+                <li><strong>v6_b04_N09</strong><span>金融机构后果列表，是本题 A/E 的直接支撑节点。</span></li>
+                <li><strong>v6_b03_N18</strong><span>政府税收损失节点，与金融机构后果通过“主体不同”相连。</span></li>
+                <li><strong>v6_b04_N08</strong><span>上游犯罪范围节点，用于解释题目中常见的范围干扰。</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </main>
+    </section>
+
+    <aside class="panel" aria-label="考点与题目归因面板">
+      <header class="panel-head">
+        <div class="panel-title-row">
+          <h2 id="panelTitle">金融机构后果列表</h2>
+          <span class="status-pill" id="panelStatus">
+            <iconify-icon icon="mdi:alert-circle-outline"></iconify-icon>
+            待教研复核
+          </span>
+        </div>
+        <p id="panelSummary">当前展示 2.1_19 的选项归因：正确项落到同一节点，干扰项通过“方向相反”“主体不同”解释。</p>
+      </header>
+
+      <nav class="panel-tabs">
+        <button id="tab-attribution" class="panel-tab active" type="button" onclick="switchPanelTab('attribution')">归因</button>
+        <button id="tab-graph" class="panel-tab" type="button" onclick="switchPanelTab('graph')">图谱</button>
+        <button id="tab-evidence" class="panel-tab" type="button" onclick="switchPanelTab('evidence')">证据</button>
+        <button id="tab-review" class="panel-tab" type="button" onclick="switchPanelTab('review')">复核</button>
+      </nav>
+
+      <div class="panel-body">
+        <section id="view-attribution">
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:format-list-checks"></iconify-icon>题目 2.1_19</h3>
+            <div class="question-card">
+              <div class="question-head">
+                <strong>以下哪些属于洗钱风险可能给金融机构造成的后果？</strong>
+                <span>多选题，系统先做归因，教研在此确认或修正。</span>
+              </div>
+              <div class="option-list" id="optionList"></div>
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:map-marker-path"></iconify-icon>当前选项路径</h3>
+            <div class="path-list" id="pathList"></div>
+          </div>
+        </section>
+
+        <section id="view-graph" hidden>
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:graph-outline"></iconify-icon>选项落点图</h3>
+            <p>从图上看选项是否落到教材节点，以及节点之间的边能否解释干扰关系。</p>
+            <div class="graph" id="graphBox">
+              <svg viewBox="0 0 360 238" aria-hidden="true">
+                <line x1="72" y1="64" x2="180" y2="116" stroke="#93c5fd" stroke-width="2"></line>
+                <line x1="72" y1="174" x2="180" y2="116" stroke="#fdba74" stroke-width="2"></line>
+                <line x1="292" y1="70" x2="180" y2="116" stroke="#d1d5db" stroke-width="2" stroke-dasharray="5 4"></line>
+                <line x1="292" y1="176" x2="180" y2="116" stroke="#fdba74" stroke-width="2"></line>
+              </svg>
+              <div class="node source" style="left:16px; top:38px;">A/E<br>正确项</div>
+              <div class="node" data-node="fiImpact" style="left:121px; top:94px;">FI 后果列表<br>v6_b04_N09</div>
+              <div class="node" data-node="opposite" style="right:16px; top:42px;">代理银行<br>方向相反</div>
+              <div class="node" data-node="taxLoss" style="right:16px; top:150px;">税收损失<br>v6_b03_N18</div>
+              <span class="edge-label" style="left:90px; top:82px;">挂载</span>
+              <span class="edge-label" style="left:219px; top:92px;">方向相反</span>
+              <span class="edge-label" style="left:214px; top:142px;">主体不同</span>
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:transit-connection-variant"></iconify-icon>关系边说明</h3>
+            <p id="edgeExplain">A/E 与 v6_b04_N09 是直接挂载关系；B 与该节点方向相反；D 落到税收损失，但税收损失主体是政府，不是金融机构。</p>
+          </div>
+        </section>
+
+        <section id="view-evidence" hidden>
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:file-document-check-outline"></iconify-icon>原文证据</h3>
+            <div class="card-list" id="sourceCards"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:comment-question-outline"></iconify-icon>学生答疑线索</h3>
+            <div id="qaList"></div>
+          </div>
+        </section>
+
+        <section id="view-review" hidden>
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:shield-check-outline"></iconify-icon>复核动作</h3>
+            <div class="review-grid">
+              <button class="review-action" type="button" onclick="showToast('已确认：当前归因可进入题库解析')">
+                <iconify-icon icon="mdi:check-circle-outline"></iconify-icon>
+                <span><strong>确认归因</strong><span>保留节点、边和 card_id，作为本题解析依据。</span></span>
+              </button>
+              <button class="review-action" type="button" onclick="showToast('已标记：需要重新匹配主考点')">
+                <iconify-icon icon="mdi:source-branch-refresh"></iconify-icon>
+                <span><strong>改主考点</strong><span>系统记录原落点，进入人工修正队列。</span></span>
+              </button>
+              <button class="review-action" type="button" onclick="showToast('已标记：教材落空，不强行归因')">
+                <iconify-icon icon="mdi:map-marker-off-outline"></iconify-icon>
+                <span><strong>教材落空</strong><span>适合处理法律常识、综合推理或教材未覆盖项。</span></span>
+              </button>
+              <button class="review-action" type="button" onclick="showToast('已生成：易错专题候选卡片')">
+                <iconify-icon icon="mdi:cards-outline"></iconify-icon>
+                <span><strong>生成专题卡</strong><span>沉淀为“主体不同”“方向相反”等易错专题。</span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="panel-section">
+            <h3><iconify-icon icon="mdi:history"></iconify-icon>审计记录</h3>
+            <p>构建输入：教材原文 + 句卡 + LLM 输出；验证数据：题目与答疑只用于验收。每条边保留 prompt、输出和 card_id。</p>
+            <div class="tag-row">
+              <span class="tag green">可追溯</span>
+              <span class="tag blue">未喂教研答案</span>
+              <span class="tag orange">待人工确认</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="panel-foot">
+        <button class="text-button" type="button" onclick="selectOption('A')">
+          <iconify-icon icon="mdi:target"></iconify-icon>
+          看正确项
+        </button>
+        <button class="primary-button" type="button" onclick="switchPanelTab('review')">
+          <iconify-icon icon="mdi:check-decagram-outline"></iconify-icon>
+          去复核
+        </button>
+      </footer>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script>
+    const pointsData = {
+      risk: {
+        title: "洗钱风险",
+        status: "核心概念",
+        summary: "用于解释洗钱活动带来的法律、监管、经济和声誉影响，是后续题目归因的基础节点。",
+        tags: ["风险定义", "综合概念", "教材直引"],
+        cards: [
+          { id: "v6_b04_N03", text: "洗钱风险包括法律制裁、监管处罚、经济损失和声誉损害等后果。" }
+        ],
+        qa: [
+          { q: "洗钱风险和合规风险有什么区别？", a: "合规风险侧重程序违规，洗钱风险侧重违法资金活动及其连锁后果。" }
+        ]
+      },
+      terror: {
+        title: "恐怖融资",
+        status: "易混概念",
+        summary: "与洗钱的关键差异在于资金目的和资金来源，常用于解释“来源合法但用途非法”的题目。",
+        tags: ["目的差异", "资金来源", "反恐融资"],
+        cards: [
+          { id: "v6_b04_N06", text: "恐怖融资可能使用合法资金支持恐怖活动，判断时重点关注最终用途。" }
+        ],
+        qa: [
+          { q: "合法捐赠也可能构成恐怖融资吗？", a: "可能。关键在资金最终是否用于支持恐怖主义活动。" }
+        ]
+      },
+      upstream: {
+        title: "上游犯罪",
+        status: "范围判断",
+        summary: "用于判断题目是否考察洗钱罪前置犯罪范围，普通诈骗和金融诈骗的边界需要特别提示。",
+        tags: ["七类犯罪", "范围边界", "刑法关联"],
+        cards: [
+          { id: "v6_b04_N08", text: "洗钱罪关联的上游犯罪包括毒品犯罪、黑社会性质组织犯罪、恐怖活动犯罪、走私犯罪、贪污贿赂犯罪、破坏金融管理秩序犯罪、金融诈骗犯罪。" }
+        ],
+        qa: [
+          { q: "普通诈骗罪算洗钱罪上游犯罪吗？", a: "普通诈骗不等同于金融诈骗，不能只看“诈骗”两个字做关键词归因。" }
+        ]
+      },
+      fiImpact: {
+        title: "金融机构后果列表",
+        status: "待教研复核",
+        summary: "当前展示 2.1_19 的选项归因：正确项落到同一节点，干扰项通过“方向相反”“主体不同”解释。",
+        tags: ["题目 2.1_19", "FI 主体", "正确项支撑"],
+        cards: [
+          { id: "v6_b04_N09", text: "金融机构可能面临调查费用、罚金、盈利业务减少或损失、代理银行业务关系终止、声誉损害等后果。" },
+          { id: "v6_b03_N18", text: "洗钱活动可能造成政府税收缩水，但该主体是政府，并非金融机构。" }
+        ],
+        qa: [
+          { q: "为什么“公司税增加”不是金融机构后果？", a: "教材证据对应的是政府税收缩水，主体和方向都与选项不同。" },
+          { q: "代理银行设施增加为什么不选？", a: "教材表达的是代理银行业务可能被终止，选项把方向改成了增加。" }
+        ]
+      },
+      taxLoss: {
+        title: "政府税收缩水",
+        status: "干扰项关联",
+        summary: "与金融机构后果有联系，但关系边是“主体不同、方向不同”，适合作为 D 项误选解释。",
+        tags: ["主体不同", "政府影响", "干扰项"],
+        cards: [
+          { id: "v6_b03_N18", text: "洗钱活动会损害国家税收，造成政府税收缩水。" },
+          { id: "v6_b04_N09", text: "金融机构后果强调罚金、调查费用、业务损失和声誉损害。" }
+        ],
+        qa: [
+          { q: "税收损失和金融机构罚金是不是一类？", a: "不是。一条边是公共财政影响，一条边是金融机构自身后果。" }
+        ]
+      },
+      kyc: {
+        title: "客户身份识别",
+        status: "措施节点",
+        summary: "用于定位防控措施类题目，包含身份核实、受益所有人识别和持续风险评估。",
+        tags: ["KYC", "受益所有人", "持续识别"],
+        cards: [
+          { id: "v6_b05_N02", text: "客户身份识别包括核实客户身份、了解业务背景、识别受益所有人并持续监测风险。" }
+        ],
+        qa: [
+          { q: "什么是受益所有人？", a: "指最终控制客户或交易的自然人。" }
+        ]
+      }
+    };
+
+    const optionData = {
+      A: {
+        text: "盈利业务的减少或损失",
+        correct: true,
+        point: "fiImpact",
+        verdict: "命中 FI 后果列表",
+        path: ["选项 A", "盈利业务减少", "FI 后果列表 v6_b04_N09", "正确项，有原文支撑"]
+      },
+      B: {
+        text: "代理银行设施的增加",
+        correct: false,
+        point: "fiImpact",
+        verdict: "方向相反",
+        path: ["选项 B", "代理银行关系", "教材是业务关系终止", "选项改成增加，方向相反"]
+      },
+      C: {
+        text: "雇员人数减少",
+        correct: false,
+        point: "none",
+        verdict: "教材落空",
+        path: ["选项 C", "雇员人数", "图谱无稳定节点", "不强行归因，作为落空干扰项"]
+      },
+      D: {
+        text: "公司税的增加",
+        correct: false,
+        point: "taxLoss",
+        verdict: "主体不同",
+        path: ["选项 D", "税收影响", "政府税收缩水 v6_b03_N18", "政府不等于金融机构，缩水不等于增加"]
+      },
+      E: {
+        text: "调查费用和罚金的增加",
+        correct: true,
+        point: "fiImpact",
+        verdict: "命中 FI 后果列表",
+        path: ["选项 E", "调查费用和罚金", "FI 后果列表 v6_b04_N09", "正确项，有原文支撑"]
+      }
+    };
+
+    let currentPoint = "fiImpact";
+    let currentOption = "A";
+    let toastTimer = null;
+
+    function renderOptions() {
+      const optionList = document.getElementById("optionList");
+      optionList.innerHTML = Object.entries(optionData).map(([key, item]) => {
+        const classes = ["option-row", item.correct ? "correct" : "", currentOption === key ? "active" : ""].join(" ");
+        return `
+          <button class="${classes}" type="button" onclick="selectOption('${key}')">
+            <span class="option-key">${key}</span>
+            <span class="option-content">
+              <strong>${item.text}</strong>
+              <span>${item.verdict}</span>
+            </span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function renderPath() {
+      const option = optionData[currentOption];
+      const pathList = document.getElementById("pathList");
+      pathList.innerHTML = option.path.map((step, index) => `
+        <div class="path-step">
+          <span>${index + 1}</span>
+          <p>${step}</p>
+        </div>
+      `).join("");
+    }
+
+    function renderPoint(id) {
+      const point = pointsData[id] || pointsData.fiImpact;
+      currentPoint = id;
+      document.getElementById("panelTitle").textContent = point.title;
+      document.getElementById("panelStatus").innerHTML = `<iconify-icon icon="mdi:alert-circle-outline"></iconify-icon>${point.status}`;
+      document.getElementById("panelSummary").textContent = point.summary;
+
+      const sourceCards = document.getElementById("sourceCards");
+      sourceCards.innerHTML = point.cards.map(card => `
+        <div class="source-card">
+          <strong><span>${card.id}</span><span class="tag blue">card_id</span></strong>
+          <p>${card.text}</p>
+        </div>
+      `).join("");
+
+      const qaList = document.getElementById("qaList");
+      qaList.innerHTML = point.qa.map(item => `
+        <div class="qa-item">
+          <strong>学生问：${item.q}</strong>
+          <p class="reply">教研答：${item.a}</p>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".exam-point").forEach(el => el.classList.toggle("active", el.id === id));
+      document.querySelectorAll(".node").forEach(el => el.classList.toggle("active", el.dataset.node === id));
+    }
+
+    function selectPoint(id) {
+      renderPoint(id);
+      if (id === "taxLoss") {
+        currentOption = "D";
+      } else if (id === "fiImpact") {
+        currentOption = currentOption === "D" ? "A" : currentOption;
+      }
+      renderOptions();
+      renderPath();
+      switchPanelTab("evidence");
+      showToast("已定位到考点：" + pointsData[id].title);
+    }
+
+    function selectOption(key) {
+      currentOption = key;
+      const option = optionData[key];
+      if (option.point !== "none") {
+        renderPoint(option.point);
+        const target = document.getElementById(option.point);
+        if (target) target.scrollIntoView({ block: "center" });
+      } else {
+        renderPoint("fiImpact");
+        showToast("C 项没有稳定教材落点，已标为教材落空");
+      }
+      renderOptions();
+      renderPath();
+      switchPanelTab("attribution");
+    }
+
+    function switchPanelTab(tab) {
+      ["attribution", "graph", "evidence", "review"].forEach(name => {
+        document.getElementById("view-" + name).hidden = name !== tab;
+        document.getElementById("tab-" + name).classList.toggle("active", name === tab);
+      });
+    }
+
+    function searchPrototype(value) {
+      const keyword = value.trim();
+      if (!keyword) {
+        showToast("请输入考点、题号或 card_id");
+        return;
+      }
+      const match = Object.entries(pointsData).find(([, point]) => {
+        return point.title.includes(keyword) || point.cards.some(card => card.id.includes(keyword));
+      });
+      if (match) {
+        const id = match[0];
+        renderPoint(id);
+        const target = document.getElementById(id);
+        if (target) target.scrollIntoView({ block: "center" });
+        switchPanelTab("evidence");
+        showToast("已找到：" + match[1].title);
+      } else {
+        showToast("原型数据中没有找到匹配项");
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    renderOptions();
+    renderPath();
+    renderPoint("fiImpact");
+  </script>
+</body>
+</html>

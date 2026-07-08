@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CAMS v7 structured question",
+  "type": "object",
+  "required": [
+    "id",
+    "cn_qno",
+    "en_qno",
+    "type",
+    "raw_question_cn",
+    "raw_question_en",
+    "answer_final"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "cn_qno": {
+      "type": "integer"
+    },
+    "en_qno": {
+      "type": "integer"
+    },
+    "type": {
+      "enum": [
+        "single",
+        "multiple",
+        "unknown"
+      ]
+    },
+    "topic_cn": {
+      "type": "string"
+    },
+    "topic_en": {
+      "type": "string"
+    },
+    "stem_cn": {
+      "type": "string"
+    },
+    "stem_en": {
+      "type": "string"
+    },
+    "options_cn": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/option"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/option"
+      }
+    },
+    "answer_cn": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "answer_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "answer_final": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "answer_status": {
+      "type": "string"
+    },
+    "explanation_cn": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "raw_question_cn": {
+      "type": "string"
+    },
+    "raw_question_en": {
+      "type": "string"
+    },
+    "parse_status": {
+      "type": "object"
+    },
+    "risk_flags": {
+      "type": "array"
+    },
+    "source": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "option": {
+      "type": "object",
+      "required": [
+        "key",
+        "text"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
