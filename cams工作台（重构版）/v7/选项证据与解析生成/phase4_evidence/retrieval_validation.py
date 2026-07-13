@@ -32,10 +32,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # ── 路径 ─────────────────────────────────────────────────────────────
 
-HERE = Path(__file__).resolve().parent
-PHASE4 = HERE.parent  # phase4_evidence/
-V7_ROOT = HERE.parents[1]  # v7/
-PROJECT_ROOT = HERE.parents[2]  # cams工作台（重构版）
+HERE = Path(__file__).resolve().parent  # phase4_evidence/
+PHASE4 = HERE
+V7_ROOT = HERE.parent  # 选项证据与解析生成/
+PROJECT_ROOT = HERE.parents[1]  # v7/
 
 QUESTIONS_PATH = (
     V7_ROOT / "phase3.5_questions" / "output" / "v7_questions.json"

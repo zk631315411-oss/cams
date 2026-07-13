@@ -18,10 +18,10 @@ from pathlib import Path
 from typing import Any
 
 
-HERE = Path(__file__).resolve().parent
-PHASE4 = HERE.parent
-V7_EVIDENCE_ROOT = HERE.parents[1]
-CAMS_ROOT = HERE.parents[4]
+HERE = Path(__file__).resolve().parent  # phase4_evidence/
+PHASE4 = HERE
+V7_EVIDENCE_ROOT = HERE.parent  # 选项证据与解析生成/
+CAMS_ROOT = HERE.parents[3]  # cams工作台（重构版）/
 DEFAULT_OUTPUT_DIR = PHASE4 / "output"
 DEFAULT_QUESTIONS_PATH = (
     V7_EVIDENCE_ROOT / "phase3.5_questions" / "output" / "v7_questions.json"

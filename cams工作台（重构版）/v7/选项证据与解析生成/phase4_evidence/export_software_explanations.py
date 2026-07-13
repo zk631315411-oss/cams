@@ -13,8 +13,8 @@ import generate_evidence_explanations as master
 
 
 EXPORT_SCHEMA_VERSION = "software_explanation_export_v1_1"
-HERE = Path(__file__).resolve().parent
-PHASE4 = HERE.parent
+HERE = Path(__file__).resolve().parent  # phase4_evidence/
+PHASE4 = HERE
 
 
 def _append_unique(values: list[str], message: str) -> None:

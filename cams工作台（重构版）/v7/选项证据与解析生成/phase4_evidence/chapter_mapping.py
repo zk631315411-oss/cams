@@ -30,8 +30,8 @@ from blind_adjudication import (
 )
 
 
-HERE = Path(__file__).resolve().parent
-PHASE4 = HERE.parent
+HERE = Path(__file__).resolve().parent  # phase4_evidence/
+PHASE4 = HERE
 DEFAULT_OUTPUT_DIR = PHASE4 / "chapter_mapping"
 DEFAULT_CANDIDATES_PATH = DEFAULT_OUTPUT_DIR / "chapter_similarity_candidates.jsonl"
 DEFAULT_MAPPINGS_PATH = DEFAULT_OUTPUT_DIR / "question_chapter_mappings.jsonl"
