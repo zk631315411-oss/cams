@@ -3,7 +3,7 @@
 Phase 4.0 — 检索质量验证脚本
 ==============================
 
-从 clean tier 题目中按章节比例抽样，对每道题执行 3 路检索（BGE / bm25_zh / bm25_en），
+从 clean tier 题目中按章节比例抽样，对每道题执行三路检索（BGE / bm25_zh / bm25_en），
 输出 JSONL 候选记录 + Markdown 人读报告，用于人工验证检索质量。
 
 用法:
@@ -49,7 +49,7 @@ INDEX_PKL = (
 )
 OUTPUT_DIR = PHASE4 / "output"
 
-# ── tokenizer（与 phase3 build_index 一致） ──────────────────────────
+# ── 分词器（与 phase3 build_index 一致） ──────────────────────────
 
 
 def tokenize(text: str) -> list[str]:
@@ -62,7 +62,7 @@ def tokenize(text: str) -> list[str]:
     # 英文/数字 token：连续字母数字，允许 _ - / .
     tokens.extend(re.findall(r"[a-z0-9][a-z0-9_\-/.]*", text))
     # 中文 token：CJK 字符的 2-gram 和 3-gram 子串
-    cjk_runs = re.findall(r"[\u4e00-\u9fff]+", text)
+    cjk_runs = re.findall(r"[一-鿿]+", text)
     for run in cjk_runs:
         if len(run) == 1:
             tokens.append(run)
@@ -238,7 +238,6 @@ def sample_questions(
         # 如果该章可选数量不足，从另一类补
         if len(chosen) < num:
             deficit = num - len(chosen)
-            # 尝试从另一类补
             other_type = "multiple" if take_from_single < len(singles) else "single"
             other_pool = pools.get(other_type, [])
             # 排除已选的
@@ -381,7 +380,7 @@ def bm25_search(
     return rows
 
 
-# ── 对一道题执行全部 3 路检索 ─────────────────────────────────────
+# ── 对一道题执行全部三路检索 ─────────────────────────────────────
 
 
 def search_question(
@@ -393,7 +392,7 @@ def search_question(
     bm25_en_index: BM25,
     top_k: int = 20,
 ) -> list[dict[str, Any]]:
-    """对一道题执行 3 路检索，返回所有候选记录。"""
+    """对一道题执行三路检索，返回所有候选记录。"""
     qid = question["question_id"]
     query_zh, query_en = build_queries(question)
     all_records: list[dict] = []

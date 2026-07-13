@@ -48,6 +48,7 @@
 | Phase 4.0 | 验证检索召回质量 | `phase4_evidence/scripts/retrieval_validation.py` | 可抽样执行 |
 | Phase 4.1 | 盲判裁判，生成选项级证据判断 | `phase4_evidence/scripts/blind_adjudication.py` | 当前主入口 |
 | Phase 4.x | 解析整理，生成教研可读 Markdown | `phase4_evidence/scripts/generate_evidence_explanations.py` | 后处理 |
+| Phase 3.6 | 题目到真实教材 CH01-CH59 的直接相似度候选与人工确认映射 | `phase4_evidence/scripts/chapter_mapping.py` | 已接入 |
 | 后置审计 | 比对 AI 答案、中英参考答案和参考解析 | 当前为临时汇总流程 | 待固化脚本 |
 | Phase 5~8 | 考点生成与后续生产链路 | 待定 | 后续扩展 |
 

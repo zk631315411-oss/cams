@@ -37,7 +37,45 @@ output/<run_name>/explanations/*.md
 后置审计：AI答案 vs 中文参考答案/英文参考答案/参考解析
 ```
 
-`blind_adjudication.py` 是当前 Phase 4 的主入口。它加载题库和索引，执行 BGE、中文 BM25、英文 BM25、P5 术语别名召回，并可通过 KG 从直接命中的 seed unit 扩展同考点、同节、同章或跨章相邻考点的候选 unit。随后脚本调用 LLM 进行盲判，输出 `predicted_answer` 和各选项的 `option_analysis`。
+## 真实教材章节映射
+
+题库历史 `chapter_code` 不用于生产选题。真实章节以 P6 KG 的 59 个教材章
+`CH01` 至 `CH59` 为准；一道题可以并列映射多个章节。
+
+```powershell
+# 生成不调用 LLM 的 BGE/BM25 分头相似度候选
+python scripts/chapter_mapping.py candidates
+
+# 人工确认 reviewed_decisions.json 后物化并校验最终映射
+python scripts/chapter_mapping.py finalize
+python scripts/chapter_mapping.py validate
+
+# 按真实教材第一章运行，不受默认 --limit 10 截断
+python scripts/blind_adjudication.py `
+  --chapter-map chapter_mapping/question_chapter_mappings.jsonl `
+  --chapter-id CH01 --enable-kg --enable-p5 `
+  --output-dir output/ch01_s6_draft
+```
+
+章节映射候选只使用直接 BGE、中文 BM25 和英文 BM25；KG 仅用于把 unit
+还原到章节/小节，不做扩展，P5 和参考答案不进入章节判断。
+
+## V2 教研解析
+
+`generate_evidence_explanations.py` 固定输出 AI 答案、考点、核心解析、
+选项分析、易错提醒、教材原文依据和参考答案与参考解析。AI 答案锁定为盲判
+`predicted_answer`，选项引用 unit 必须来自该选项自己的证据卡。教材原文附录由本地代码
+根据 unit_id 确定性生成，不接受模型改写的“原文”。
+
+无教材引用的选项只能使用经过逐字校验的题干对照模板，或明确标记证据不足；
+模型不得在无证据时补写概念定义、机制或通常做法。选项正文不展示 unit_id，
+所有实际引用在主体末尾的教材原文附录中去重展示并标明用途。
+
+参考工作簿中的中英文答案和原始解析由本地代码追加在正文末尾，不进入
+生成 prompt。每题 Markdown 生成后，还会按多章映射写入
+`explanations/chapters/CHxx.md` 合并草稿。
+
+`blind_adjudication.py` 是当前 Phase 4 的主入口。它加载题库和索引，将中文和英文分别拆成题干、题干加单个选项的主检索头，再执行 BGE 和对应语言的 BM25 召回。每个中英文选项还会独立执行补召回，每项最多保留 3 个候选并单独写入 `option_supplement_pool`；补充候选不挤占主池、不参与 KG 扩展，也不会自动成为证据。P5 术语别名召回及 KG 扩展保持原有逻辑。随后脚本调用 LLM 进行盲判，输出 `predicted_answer` 和各选项的 `option_analysis`。
 
 `generate_evidence_explanations.py` 是后处理脚本。它读取盲判产出的 `q_*.json`，把已有裁判结论、证据卡和 unit 原文整理成教研可读解析。解析阶段的设计目标是不重新判题；裁判答案必须以 `blind_adjudication.py` 的 `predicted_answer` 为准。
 
@@ -68,15 +106,21 @@ output/<run_name>/
 └── explanations/
     ├── v7_q_*.md
     ├── index.md
-    └── generation_results.json
+    ├── generation_results.json
+    └── chapters/
+        └── CHxx.md
 ```
 
-后置参考答案审计目前尚未固化为正式脚本，现有 `output/总输出/q001_q020_*`、`output/总输出/q001_q050_*` 是基于盲判结果和 `CAMS_v7_questions.jsonl` 临时汇总生成的结构化对照材料。
+V2 的逐题参考答案与原始参考解析附录已由
+`generate_evidence_explanations.py` 固化：本地代码在正文生成后确定性追加，参考材料
+不进入模型 prompt，也不参与改判。更广泛的跨题分歧统计和聚合审计尚未固化为
+正式流程；现有 `output/总输出/q001_q020_*`、`output/总输出/q001_q050_*`
+仍是基于盲判结果和 `CAMS_v7_questions.jsonl` 临时汇总的结构化对照材料。
 
 ## 关键约束
 
 1. 盲判阶段不读取参考答案。题库中的 `answer_cn`、`answer_en`、`answer_final` 和参考解析只用于后置审计与分歧诊断。
 2. KG 与 P5 只用于扩展候选证据池，不直接作为答案依据。最终引用必须回到候选 unit 的中英文原文。
 3. 裁判答案以 `blind_adjudication.py` 输出的 `predicted_answer` 为准；解析阶段不得覆盖裁判答案。
-4. 机械校验只检查 unit_id 是否真实、是否来自候选池、证据卡结构是否合规；它不等同于语义蕴含校验。
+4. 机械校验检查 unit_id 白名单、答案锁定、题干逐字引用和无证据文本降级；它仍不等同于语义蕴含校验。
 5. 当前系统仍缺少跨运行一致性检测和“证据是否真正支持选项”的二次 verifier。对象错配、条件跳跃、题源 OCR 错位等问题仍需进入人工复核或后续校验阶段。

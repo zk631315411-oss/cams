@@ -5,9 +5,9 @@ Phase 4.1 — 小批量盲判脚本（Blind Adjudication）
 
 从 manual_reviewed 标记的题目中抽样（默认前 10 题），对每道题执行：
 
-  1. 3 路检索（BGE + BM25_zh + BM25_en），合并去重取 top-30 候选池
+  1. 按题干/单选项分头执行 BGE + 对应语言 BM25，合并取 top-30 候选池
   2. 构建裁判 prompt（不含参考答案），调用 LLM 裁判
-  3. 解析 LLM 响应并做机械校验 (validation checks)
+  3. 解析 LLM 响应并做机械校验
   4. 输出每题详情 JSON + 汇总 JSONL + Markdown 报告
 
 用法:
@@ -70,20 +70,23 @@ P5_ALIAS_INDEX_PATH = (
     / "p5c_alias_index.json"
 )
 OUTPUT_DIR = PHASE4 / "output"
+QUESTION_TEXT_OVERRIDES_PATH = PHASE4 / "question_text_overrides.jsonl"
 
 API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 
 
-# ── Tokenizer（复用 P4.0 / phase3 实现） ──────────────────────────────
+# ── 分词器（复用 P4.0 / phase3 实现） ──────────────────────────────
 
 
 def tokenize(text: str) -> list[str]:
     """与 v6 / phase3 一致的 tokenizer：英文按单词，中文按 2/3-gram 子串。"""
     text = (text or "").lower()
     tokens: list[str] = []
+    # 英文/数字 token：连续字母数字，允许 _ - / .
     tokens.extend(re.findall(r"[a-z0-9][a-z0-9_\-/.]*", text))
-    cjk_runs = re.findall(r"[\u4e00-\u9fff]+", text)
+    # 中文 token：CJK 字符的 2-gram 和 3-gram 子串
+    cjk_runs = re.findall(r"[一-鿿]+", text)
     for run in cjk_runs:
         if len(run) == 1:
             tokens.append(run)
@@ -167,28 +170,154 @@ def load_index(pkl_path: str | Path) -> dict[str, Any]:
     return idx
 
 
-def load_questions(json_path: str | Path) -> list[dict[str, Any]]:
-    """加载 v7 题库 JSON，返回 items 列表。"""
+def load_question_text_overrides(
+    jsonl_path: str | Path,
+) -> dict[str, dict[str, Any]]:
+    """加载可审计的题目显示文本修订，不接触原始题库。"""
+    path = Path(jsonl_path)
+    if not path.exists():
+        raise RuntimeError(f"题目文本 override 文件不存在: {path}")
+
+    overrides: dict[str, dict[str, Any]] = {}
+    with open(path, "r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise RuntimeError(
+                    f"{path}:{line_no}: JSON 解析失败: {exc}"
+                ) from exc
+            qid = str(row.get("question_id", "")).strip()
+            if not qid:
+                raise RuntimeError(f"{path}:{line_no}: 缺少 question_id")
+            if qid in overrides:
+                raise RuntimeError(f"题目文本 override question_id 重复: {qid}")
+            overrides[qid] = row
+    return overrides
+
+
+def apply_question_text_overrides(
+    items: list[dict[str, Any]],
+    overrides: dict[str, dict[str, Any]],
+    override_source: str | Path,
+) -> list[dict[str, Any]]:
+    """校验上游原文后应用显示值，并把原值与来源写入审计元数据。"""
+    item_ids = {str(item.get("question_id", "")) for item in items}
+    unknown_ids = sorted(set(overrides) - item_ids)
+    if unknown_ids:
+        raise RuntimeError(
+            "题目文本 override 指向不存在的题号: " + ", ".join(unknown_ids)
+        )
+
+    applied: list[dict[str, Any]] = []
+    for item in items:
+        qid = str(item.get("question_id", ""))
+        override = overrides.get(qid)
+        if not override:
+            applied.append(item)
+            continue
+
+        normalized = dict(item)
+        normalized["options"] = dict(item.get("options", {}) or {})
+        normalized["options_en"] = dict(item.get("options_en", {}) or {})
+        audit_options: dict[str, dict[str, Any]] = {}
+
+        option_overrides = override.get("option_overrides", {}) or {}
+        if not isinstance(option_overrides, dict) or not option_overrides:
+            raise RuntimeError(f"{qid}: override 缺少 option_overrides")
+
+        for raw_label, option_override in option_overrides.items():
+            label = str(raw_label).upper()
+            if not isinstance(option_override, dict):
+                raise RuntimeError(f"{qid} {label}: option override 必须是对象")
+            actual_zh = normalized["options"].get(label)
+            actual_en = normalized["options_en"].get(label)
+            expected_zh = option_override.get("expected_source_zh")
+            expected_en = option_override.get("expected_source_en")
+            if actual_zh != expected_zh or actual_en != expected_en:
+                raise RuntimeError(
+                    f"{qid} {label}: 上游题源文本已变化，拒绝应用 override; "
+                    f"中文 actual={actual_zh!r} expected={expected_zh!r}; "
+                    f"英文 actual={actual_en!r} expected={expected_en!r}"
+                )
+            display_zh = str(option_override.get("display_zh", "")).strip()
+            if not display_zh:
+                raise RuntimeError(f"{qid} {label}: 缺少 display_zh")
+            normalized["options"][label] = display_zh
+            audit_options[label] = {
+                "source_zh": actual_zh,
+                "source_en": actual_en,
+                "display_zh": display_zh,
+                "flags": list(option_override.get("flags", []) or []),
+                "source_screenshots": dict(
+                    option_override.get("source_screenshots", {}) or {}
+                ),
+                "reason": str(option_override.get("reason", "")),
+            }
+
+        normalized["_question_text_override"] = {
+            "override_source": str(Path(override_source).resolve()),
+            "options": audit_options,
+        }
+        applied.append(normalized)
+    return applied
+
+
+def load_questions(
+    json_path: str | Path,
+    overrides_path: str | Path | None = QUESTION_TEXT_OVERRIDES_PATH,
+) -> list[dict[str, Any]]:
+    """加载 v7 题库，并在副本上应用可审计的显示文本修订。"""
     print(f"[load] 读取题库: {json_path}")
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     items = data["items"]
+    if overrides_path is not None:
+        overrides = load_question_text_overrides(overrides_path)
+        items = apply_question_text_overrides(items, overrides, overrides_path)
+        print(f"[load] 题目文本 override 已应用 | 共 {len(overrides)} 题")
     print(f"[load] 题库加载完成 | 共 {len(items)} 题")
     return items
 
 
+def load_chapter_mapping_index(
+    jsonl_path: str | Path,
+) -> dict[str, dict[str, Any]]:
+    """加载按 question_id 索引的已审核章节决定。"""
+    path = Path(jsonl_path)
+    if not path.exists():
+        raise RuntimeError(f"章节映射文件不存在: {path}")
+    index: dict[str, dict[str, Any]] = {}
+    with open(path, "r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise RuntimeError(f"{path}:{line_no}: JSON 解析失败: {exc}") from exc
+            qid = str(row.get("question_id", ""))
+            if not qid:
+                raise RuntimeError(f"{path}:{line_no}: 缺少 question_id")
+            if qid in index:
+                raise RuntimeError(f"章节映射 question_id 重复: {qid}")
+            index[qid] = row
+    return index
+
+
 def _append_unique(bucket: list[str], value: str) -> None:
-    """Append value while preserving insertion order and uniqueness."""
+    """保持插入顺序的无重复追加。"""
     if value and value not in bucket:
         bucket.append(value)
 
 
 def load_kg_graph(json_path: str | Path) -> dict[str, Any]:
-    """Load the P6 KG graph and build lightweight navigation indexes.
+    """加载 P6 KG 母版并构建轻量级导航索引。
 
-    KG is used only to expand candidate units from retrieval seed units. It does
-    not replace evidence judgement, and it must not introduce unit ids outside
-    the phase3 unit index.
+    KG 仅用于从检索种子单元扩展候选单元。它不替代证据判断，
+    且绝不可引入 phase3 单元索引之外的 unit_id。
     """
     json_path = Path(json_path)
     print(f"[kg] 读取 KG 母版: {json_path}")
@@ -238,6 +367,7 @@ def load_kg_graph(json_path: str | Path) -> dict[str, Any]:
             relation_edges_by_cp[source_id].append(edge)
             relation_edges_by_cp[target_id].append(edge)
 
+    # 按章节/unit_order 对 core_point 下单元排序
     def unit_sort_key(uid: str) -> tuple[str, int, str]:
         meta = unit_meta.get(uid, {})
         return (
@@ -272,7 +402,7 @@ def _normalize_term(text: str) -> str:
 
 
 def _term_in_query(term: str, query: str) -> bool:
-    """Match P5 terms conservatively; short Latin aliases need word bounds."""
+    """保守匹配 P5 术语；短拉丁文别名需词边界检查。"""
     term = _normalize_term(term)
     query = _normalize_term(query)
     if not term or not query:
@@ -284,7 +414,7 @@ def _term_in_query(term: str, query: str) -> bool:
 
 
 def load_p5_alias_index(json_path: str | Path) -> dict[str, Any]:
-    """Load P5C alias groups as an external retrieval helper."""
+    """加载 P5C 别名组作为外部检索辅助。"""
     json_path = Path(json_path)
     print(f"[p5] 读取 P5 术语索引: {json_path}")
     with open(json_path, "r", encoding="utf-8") as f:
@@ -345,7 +475,7 @@ def get_llm_config() -> tuple[str, str, str]:
 def build_queries(
     question: dict[str, Any],
 ) -> tuple[str, str | None]:
-    """为一道题构建中文和英文查询。
+    """构建供 P5 和 KG 相关度计算使用的整题查询。
 
     返回:
         query_zh: 中文查询 (stem + options)
@@ -364,6 +494,260 @@ def build_queries(
     opt_en_text = " ".join(options_en.values())
     query_en = f"{stem_en} {opt_en_text}".strip()
     return query_zh, query_en
+
+
+def build_retrieval_heads(question: dict[str, Any]) -> list[dict[str, Any]]:
+    """构建正式直接召回使用的题干和题干加单选项检索头。"""
+    heads: list[dict[str, Any]] = []
+    stem = str(question.get("stem", "") or "").strip()
+    stem_en = str(question.get("stem_en", "") or "").strip()
+    options = question.get("options", {}) or {}
+    options_en = question.get("options_en", {}) or {}
+
+    if stem:
+        heads.append(
+            {
+                "head_id": "stem_zh",
+                "head_kind": "stem",
+                "option": None,
+                "language": "zh",
+                "query": stem,
+            }
+        )
+    for label, text in options.items():
+        query = f"{stem} {text}".strip()
+        if query:
+            heads.append(
+                {
+                    "head_id": f"option_{label}_zh",
+                    "head_kind": "option",
+                    "option": str(label),
+                    "language": "zh",
+                    "query": query,
+                }
+            )
+
+    if stem_en:
+        heads.append(
+            {
+                "head_id": "stem_en",
+                "head_kind": "stem",
+                "option": None,
+                "language": "en",
+                "query": stem_en,
+            }
+        )
+    for label, text in options_en.items():
+        query = f"{stem_en} {text}".strip()
+        if query:
+            heads.append(
+                {
+                    "head_id": f"option_{label}_en",
+                    "head_kind": "option",
+                    "option": str(label),
+                    "language": "en",
+                    "query": query,
+                }
+            )
+    return heads
+
+
+def build_option_only_heads(question: dict[str, Any]) -> list[dict[str, Any]]:
+    """构建不含题干的中英文单选项补充检索头。"""
+    heads: list[dict[str, Any]] = []
+    for language, field in (("zh", "options"), ("en", "options_en")):
+        for label, text in (question.get(field, {}) or {}).items():
+            query = str(text or "").strip()
+            if not query:
+                continue
+            heads.append(
+                {
+                    "head_id": f"option_only_{label}_{language}",
+                    "head_kind": "option_only_supplement",
+                    "option": str(label),
+                    "language": language,
+                    "query": query,
+                }
+            )
+    return heads
+
+
+def aggregate_option_supplements(
+    retrieval_rows: list[dict[str, Any]],
+    unit_lookup: dict[str, dict[str, Any]],
+    excluded_unit_ids: set[str],
+    per_option_limit: int = 3,
+) -> dict[str, list[dict[str, Any]]]:
+    """按选项对 option-only 命中做确定性 RRF 汇总。"""
+    grouped: dict[str, dict[str, list[dict[str, Any]]]] = defaultdict(
+        lambda: defaultdict(list)
+    )
+    for row in retrieval_rows:
+        option = str(row.get("option", "") or "").strip().upper()
+        uid = str(row.get("unit_id", "") or "").strip()
+        if option and uid and uid not in excluded_unit_ids and uid in unit_lookup:
+            grouped[option][uid].append(row)
+
+    result: dict[str, list[dict[str, Any]]] = {}
+    for option, by_uid in sorted(grouped.items()):
+        ranked: list[dict[str, Any]] = []
+        for uid, rows in by_uid.items():
+            hits = [
+                {
+                    "head_id": row["head_id"],
+                    "language": row["language"],
+                    "route": row["route"],
+                    "rank": int(row.get("rank") or 0),
+                    "raw_score": row.get("raw_score", row.get("score", 0.0)),
+                    "query": row.get("query", ""),
+                }
+                for row in rows
+            ]
+            hits.sort(key=lambda hit: (hit["rank"], hit["head_id"], hit["route"]))
+            routes = sorted({hit["route"] for hit in hits})
+            languages = sorted({hit["language"] for hit in hits})
+            fusion_score = sum(
+                1.0 / (60 + int(hit.get("rank") or 1)) for hit in hits
+            )
+            best_rank = min(int(hit.get("rank") or 999999) for hit in hits)
+            unit = unit_lookup[uid]
+            ranked.append(
+                {
+                    "unit_id": uid,
+                    "knowledge_zh": unit.get("knowledge_zh", ""),
+                    "knowledge_en": unit.get("knowledge_en", ""),
+                    "en_quote": unit.get("en_quote", ""),
+                    "heading_context": unit.get("heading_context", []),
+                    "type": unit.get("type", ""),
+                    "supplement_only": True,
+                    "fusion_score": round(fusion_score, 8),
+                    "routes": routes,
+                    "languages": languages,
+                    "best_rank": best_rank,
+                    "retrieval_hits": hits,
+                }
+            )
+        ranked.sort(
+            key=lambda row: (
+                -float(row["fusion_score"]),
+                -len(row["routes"]),
+                -len(row["languages"]),
+                int(row["best_rank"]),
+                row["unit_id"],
+            )
+        )
+        result[option] = ranked[: max(0, per_option_limit)]
+    return result
+
+
+def retrieve_option_supplements(
+    question: dict[str, Any],
+    bge_vecs: np.ndarray,
+    card_ids: list[str],
+    unit_lookup: dict[str, dict[str, Any]],
+    bm25_zh_index: BM25,
+    bm25_en_index: BM25,
+    excluded_unit_ids: set[str],
+    top_k: int = 20,
+    per_option_limit: int = 3,
+) -> dict[str, list[dict[str, Any]]]:
+    """执行 option-only BGE/BM25 补召回，不参与主池或 KG 扩展。"""
+    heads = build_option_only_heads(question)
+    retrieval_rows: list[dict[str, Any]] = []
+
+    if heads:
+        model = get_bge_model()
+        vectors = model.encode(
+            [head["query"] for head in heads], normalize_embeddings=True
+        )
+        similarities = cosine_similarity(vectors, bge_vecs)
+        for head, scores in zip(heads, similarities):
+            for rank, idx in enumerate(np.argsort(scores)[::-1][:top_k], start=1):
+                retrieval_rows.append(
+                    {
+                        **head,
+                        "route": "bge",
+                        "rank": rank,
+                        "raw_score": round(float(scores[idx]), 6),
+                        "unit_id": card_ids[idx],
+                    }
+                )
+
+    for head in heads:
+        if head["language"] == "en":
+            bm25_index = bm25_en_index
+            route = "bm25_en"
+        else:
+            bm25_index = bm25_zh_index
+            route = "bm25_zh"
+        for row in bm25_search(
+            head["query"], bm25_index, card_ids, unit_lookup, top_k
+        ):
+            retrieval_rows.append(
+                {
+                    **head,
+                    "route": route,
+                    "rank": int(row["rank"]),
+                    "raw_score": float(row["score"]),
+                    "unit_id": row["unit_id"],
+                }
+            )
+
+    return aggregate_option_supplements(
+        retrieval_rows,
+        unit_lookup,
+        excluded_unit_ids,
+        per_option_limit=per_option_limit,
+    )
+
+
+def select_head_balanced_candidates(
+    merged: list[dict[str, Any]],
+    heads: list[dict[str, Any]],
+    limit: int,
+    per_head_minimum: int = 2,
+) -> list[dict[str, Any]]:
+    """先保证各检索头的候选覆盖，再按全局融合排名补足候选池。"""
+    if limit <= 0:
+        return []
+
+    selected_ids: set[str] = set()
+    for _ in range(per_head_minimum):
+        for head in heads:
+            if len(selected_ids) >= limit:
+                break
+            head_id = head["head_id"]
+            ranked: list[tuple[float, float, str, dict[str, Any]]] = []
+            for candidate in merged:
+                hits = [
+                    hit
+                    for hit in candidate.get("retrieval_hits", [])
+                    if hit.get("head_id") == head_id
+                ]
+                if not hits:
+                    continue
+                head_score = sum(
+                    1.0 / (60 + int(hit.get("rank") or 1)) for hit in hits
+                )
+                best_raw = max(float(hit.get("raw_score") or 0.0) for hit in hits)
+                ranked.append(
+                    (head_score, best_raw, candidate["unit_id"], candidate)
+                )
+            ranked.sort(key=lambda row: (-row[0], -row[1], row[2]))
+            for _, _, uid, _candidate in ranked:
+                if uid not in selected_ids:
+                    selected_ids.add(uid)
+                    break
+
+    # 从全局剩余候选补足达到 limit
+    for candidate in merged:
+        if len(selected_ids) >= limit:
+            break
+        selected_ids.add(candidate["unit_id"])
+
+    return [
+        candidate for candidate in merged if candidate["unit_id"] in selected_ids
+    ][:limit]
 
 
 # ── BGE 模型（全局单例） ─────────────────────────────────────────────
@@ -465,6 +849,7 @@ def _candidate_from_unit(
     score: float,
     kg_info: dict[str, Any],
 ) -> dict[str, Any] | None:
+    """从 unit_lookup 构建统一的候选记录。"""
     unit = unit_lookup.get(unit_id)
     if not unit:
         return None
@@ -482,6 +867,7 @@ def _candidate_from_unit(
 
 
 def _relation_route(edge_scope: str) -> str:
+    """将 KG 边作用域映射为候选路由标签。"""
     if edge_scope == "same_section_core_point":
         return "kg_same_section_cp"
     if edge_scope == "same_chapter_core_point":
@@ -492,7 +878,7 @@ def _relation_route(edge_scope: str) -> str:
 
 
 def _normalize_route_scores(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Normalize scores inside a route so heterogeneous retrievers can merge."""
+    """路由内分数归一化，使异构检索器可以合并。"""
     if not records:
         return []
     scores = [float(r.get("score") or 0.0) for r in records]
@@ -520,7 +906,7 @@ def p5_alias_search(
     unit_lookup: dict[str, dict],
     top_k: int = 12,
 ) -> list[dict[str, Any]]:
-    """Use P5 alias groups as external term-to-unit recall."""
+    """使用 P5 别名组作为外部术语到单元的召回通道。"""
     if not p5_index or top_k <= 0:
         return []
     haystack = _normalize_term(f"{query_zh} {query_en or ''}")
@@ -581,7 +967,7 @@ def expand_with_kg(
     seed_limit: int = 12,
     per_seed_limit: int = 3,
 ) -> list[dict[str, Any]]:
-    """Expand retrieved seed units through KG core-point neighborhoods."""
+    """通过 KG core-point 邻域扩展检索种子单元。"""
     if not kg_index or max_extra <= 0:
         return []
 
@@ -596,6 +982,7 @@ def expand_with_kg(
     existing = {c["unit_id"] for c in direct_candidates}
     proposed: dict[str, dict[str, Any]] = {}
 
+    # 路由权重：同核心点 > 同节 > 同章 > 跨章 > 其他
     route_weight = {
         "kg_same_core_point": 1.0,
         "kg_same_section_cp": 0.86,
@@ -605,6 +992,7 @@ def expand_with_kg(
     }
 
     def text_relevance(unit: dict[str, Any]) -> float:
+        """计算查询与单元文本的 token 重叠度。"""
         tokens = set(
             tokenize(
                 " ".join(
@@ -630,6 +1018,7 @@ def expand_with_kg(
         target_cp_id: str,
         edge: dict[str, Any] | None = None,
     ) -> None:
+        """将单元加入候选并记录 KG 导航元数据。"""
         if uid in existing or uid == seed["unit_id"]:
             return
         unit = unit_lookup.get(uid)
@@ -656,6 +1045,7 @@ def expand_with_kg(
                     "reason": edge.get("reason", ""),
                 }
             )
+        # 候选得分 = 种子得分 × 0.48 + 路由权重 × 0.32 + 文本相关度 × 0.20
         score = (
             seed_score * 0.48
             + route_weight.get(route, 0.55) * 0.32
@@ -668,6 +1058,7 @@ def expand_with_kg(
             if not existing_candidate or candidate["score"] > existing_candidate["score"]:
                 proposed[uid] = candidate
 
+    # 优先以 bge/bm25 直接命中为种子，不足时补充其他路由
     seed_candidates = [
         c for c in direct_candidates
         if c.get("route") in {"bge", "bm25_zh", "bm25_en"}
@@ -682,7 +1073,7 @@ def expand_with_kg(
         seed_added_before = len(proposed)
         seed_uid = seed["unit_id"]
         for cp_id in unit_to_cps.get(seed_uid, [])[:3]:
-            # First: siblings inside the same core point.
+            # 第一步：同 core_point 内的兄弟单元
             for uid in cp_to_units.get(cp_id, [])[:10]:
                 add_unit(uid, "kg_same_core_point", seed, cp_id, cp_id)
                 if len(proposed) - seed_added_before >= per_seed_limit:
@@ -690,7 +1081,7 @@ def expand_with_kg(
             if len(proposed) - seed_added_before >= per_seed_limit:
                 break
 
-            # Then: units attached to related core points.
+            # 第二步：关联 core_point 下的单元
             for edge in relation_edges_by_cp.get(cp_id, [])[:6]:
                 other_cp_id = (
                     edge.get("target_id")
@@ -726,51 +1117,103 @@ def search_and_merge(
     kg_max_extra: int = 30,
     p5_index: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
-    """3 路检索 -> 合并去重 -> KG 可选扩展。
+    """按题干/单选项分头直接召回，合并去重后执行可选 KG 扩展。
 
     返回的每条记录包含: unit_id, knowledge_zh, en_quote, knowledge_en,
-    heading_context, type, route, score。
+    heading_context, type, route, score；直接命中还保留 retrieval_hits。
     """
+    heads = build_retrieval_heads(question)
     query_zh, query_en = build_queries(question)
-
-    # 1. BGE 检索（中英混合查询）
-    query_bge = query_zh
-    if query_en:
-        query_bge = query_zh + " " + query_en
-    bge_results = _normalize_route_scores(
-        bge_search(query_bge, bge_vecs, card_ids, unit_lookup, top_k)
-    )
     route_map: dict[str, list[dict]] = {}
-    for r in bge_results:
-        r["route"] = "bge"
-        route_map.setdefault(r["unit_id"], []).append(r)
 
-    # 2. 中文 BM25
-    bm25_zh_results = _normalize_route_scores(
-        bm25_search(query_zh, bm25_zh_index, card_ids, unit_lookup, top_k)
-    )
-    for r in bm25_zh_results:
-        r["route"] = "bm25_zh"
-        route_map.setdefault(r["unit_id"], []).append(r)
-
-    # 3. 英文 BM25（如有英文查询）
-    if query_en:
-        bm25_en_results = _normalize_route_scores(
-            bm25_search(query_en, bm25_en_index, card_ids, unit_lookup, top_k)
+    # 1. 所有中文/英文检索头批量执行 BGE，避免逐头重复编码
+    if heads:
+        model = get_bge_model()
+        query_vectors = model.encode(
+            [head["query"] for head in heads], normalize_embeddings=True
         )
-        for r in bm25_en_results:
-            r["route"] = "bm25_en"
-            route_map.setdefault(r["unit_id"], []).append(r)
+        similarities = cosine_similarity(query_vectors, bge_vecs)
+        for head, scores in zip(heads, similarities):
+            top_indices = np.argsort(scores)[::-1][:top_k]
+            rows: list[dict[str, Any]] = []
+            for rank, idx in enumerate(top_indices, start=1):
+                uid = card_ids[idx]
+                unit = unit_lookup.get(uid, {})
+                rows.append(
+                    {
+                        "rank": rank,
+                        "score": round(float(scores[idx]), 6),
+                        "unit_id": uid,
+                        "knowledge_zh": unit.get("knowledge_zh", ""),
+                        "knowledge_en": unit.get("knowledge_en", ""),
+                        "en_quote": unit.get("en_quote", ""),
+                        "heading_context": unit.get("heading_context", []),
+                        "type": unit.get("type", ""),
+                    }
+                )
+            for row in _normalize_route_scores(rows):
+                row.update(
+                    {
+                        "route": "bge",
+                        "head_id": head["head_id"],
+                        "head_kind": head["head_kind"],
+                        "option": head["option"],
+                        "language": head["language"],
+                    }
+                )
+                route_map.setdefault(row["unit_id"], []).append(row)
 
-    # 4. P5 术语/别名索引（外部检索辅助，不作为 KG 边）
+    # 2. 中文头只跑中文 BM25，英文头只跑英文 BM25
+    for head in heads:
+        if head["language"] == "en":
+            bm25_index = bm25_en_index
+            route = "bm25_en"
+        else:
+            bm25_index = bm25_zh_index
+            route = "bm25_zh"
+        rows = _normalize_route_scores(
+            bm25_search(head["query"], bm25_index, card_ids, unit_lookup, top_k)
+        )
+        for row in rows:
+            row.update(
+                {
+                    "route": route,
+                    "head_id": head["head_id"],
+                    "head_kind": head["head_kind"],
+                    "option": head["option"],
+                    "language": head["language"],
+                }
+            )
+            route_map.setdefault(row["unit_id"], []).append(row)
+
+    # 3. P5 术语/别名索引保持原有整题匹配方式，不作为 KG 边
     p5_results = p5_alias_search(query_zh, query_en, p5_index, unit_lookup, top_k=12)
     for r in p5_results:
         route_map.setdefault(r["unit_id"], []).append(r)
 
-    # 合并去重：取每条 unit_id 下的最高分
+    # 合并去重：用确定性 RRF 汇总各检索头，同时保留原始分数和排名
     merged: list[dict[str, Any]] = []
     for uid, records in route_map.items():
         best = max(records, key=lambda x: x["score"])
+        retrieval_hits = [
+            {
+                "head_id": row["head_id"],
+                "head_kind": row["head_kind"],
+                "option": row["option"],
+                "language": row["language"],
+                "route": row["route"],
+                "rank": int(row.get("rank") or 0),
+                "raw_score": row.get("raw_score", row.get("score", 0.0)),
+            }
+            for row in records
+            if row.get("head_id")
+        ]
+        retrieval_hits.sort(
+            key=lambda hit: (hit["rank"], hit["head_id"], hit["route"])
+        )
+        fusion_score = sum(
+            1.0 / (60 + int(row.get("rank") or 1)) for row in records
+        )
         merged.append(
             {
                 "unit_id": uid,
@@ -782,14 +1225,24 @@ def search_and_merge(
                 "route": best["route"],
                 "score": best["score"],
                 "raw_score": best.get("raw_score", best.get("score", 0.0)),
+                "fusion_score": round(fusion_score, 8),
+                "retrieval_hits": retrieval_hits,
             }
         )
         if best.get("p5"):
             merged[-1]["p5"] = best["p5"]
 
-    # 按 score 降序，取 top-merge_top_k
-    merged.sort(key=lambda x: x["score"], reverse=True)
-    direct_candidates = merged[:merge_top_k]
+    # 按跨检索头融合分数排序，稳定保留被多个头共同支持的单元
+    merged.sort(
+        key=lambda x: (
+            -float(x["fusion_score"]),
+            -float(x["score"]),
+            x["unit_id"],
+        )
+    )
+    direct_candidates = select_head_balanced_candidates(
+        merged, heads, merge_top_k
+    )
 
     kg_candidates = expand_with_kg(
         direct_candidates,
@@ -831,7 +1284,43 @@ def format_candidates(candidates: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
-def build_prompt(question: dict[str, Any], candidates: list[dict[str, Any]]) -> str:
+def format_option_supplements(
+    question: dict[str, Any],
+    supplement_pool: dict[str, list[dict[str, Any]]],
+) -> str:
+    """按选项渲染仅供语义核验的补召回候选。"""
+    lines: list[str] = []
+    options = question.get("options", {}) or {}
+    options_en = question.get("options_en", {}) or {}
+    for label in options:
+        rows = supplement_pool.get(str(label).upper(), []) or []
+        lines.append(
+            f"[选项 {label} 补充候选] 中文={options.get(label, '')}"
+            f" | 英文={options_en.get(label, '')}"
+        )
+        if not rows:
+            lines.append("  无")
+            continue
+        for row in rows:
+            lines.append(f"  - unit_id: {row['unit_id']}")
+            if row.get("knowledge_zh"):
+                lines.append(f"    中文: {row['knowledge_zh']}")
+            en = row.get("en_quote") or row.get("knowledge_en", "")
+            if en:
+                lines.append(f"    英文: {en}")
+            hit_text = ", ".join(
+                f"{hit['head_id']}/{hit['route']}/rank={hit['rank']}"
+                for hit in row.get("retrieval_hits", [])
+            )
+            lines.append(f"    补召回路径: {hit_text}")
+    return "\n".join(lines)
+
+
+def build_prompt(
+    question: dict[str, Any],
+    candidates: list[dict[str, Any]],
+    supplement_pool: dict[str, list[dict[str, Any]]] | None = None,
+) -> str:
     """构建裁判 prompt，不包含参考答案。"""
     stem = question.get("stem", "")
     options = question.get("options", {})
@@ -840,6 +1329,9 @@ def build_prompt(question: dict[str, Any], candidates: list[dict[str, Any]]) -> 
 
     opt_lines = "\n".join(f"  {k}: {v}" for k, v in options.items())
     candidates_text = format_candidates(candidates)
+    supplements_text = format_option_supplements(
+        question, supplement_pool or {}
+    )
 
     prompt = f"""你是一个 CAMS 反洗钱考试题目裁判。你需要判断每道题的每个选项是否正确。
 
@@ -855,15 +1347,58 @@ def build_prompt(question: dict[str, Any], candidates: list[dict[str, Any]]) -> 
 
 {candidates_text}
 
+### 单选项独立补充候选
+以下内容由单个选项独立召回，只表示"可能与该选项概念相关"，不是已经成立的证据：
+- 只有当某个 unit 同时解释选项含义及其与本题题干的关系时，才能引用。
+- 不得因为某个选项没有补充候选就判定该选项错误。
+- 不得引用仅因同词异义、翻译偏差或宽泛词命中的 unit。
+- 补充候选不会自动改变答案；必须回到教材中英文原文做判断。
+
+{supplements_text}
+
 ### 输出要求
 以 JSON 格式输出，不要包含其他内容：
+- 先选择整题的 `decision_framework.type`：
+  - `definition_taxonomy`：定义、类别或"哪些属于"题。必须先引用定义或明确分类规则，提取 `required_conditions`，再把规则逐项应用到选项。
+  - `domain_specificity`：询问某一特定领域、计划或产品的警示信号。必须先建立领域边界，再区分"通用风险/通用渠道"和"该领域特有信号"。
+  - `scenario_match`：其余场景匹配题。必须从题干事实与教材规则之间建立对应关系。
+- 定义/类别题不得用"教材没有列举该选项"直接证明选项错误；只有引用材料明确给出穷尽分类时，未列入才可作为分类依据。
+- 必须按选项原文判断，不得补充题干或选项没有提供的特殊事实、动机、后果或运作机制。
+- 定义应用必须区分"选项明确违反必要条件"和"题目没有提供该条件"。只有前者可以据定义判错并使用 `definition_application`；仅仅没有写出某个条件，不能证明选项错误，应标为 `insufficient`，除非教材给出了明确穷尽分类或题干事实可直接排除。
+  排除选项时必须使用演绎逻辑：列出必要条件 → 指出选项文本缺少哪个条件 → 结论"不满足条件"。不得使用"通常""一般""往往"等概率措辞。
+  示例——"上游犯罪的必要条件是产生非法收益（v7u_N000017）。选项X是暴力人身犯罪，题干未提供其产生非法收益的信息，不满足必要条件，因此不构成上游犯罪。"
+- `required_conditions` 只是逐项核对规则，不允许据此推测选项通常具有或不具有题目未说明的动机、收益、伤害程度或附加情境。
+- 特定领域题中，"某工具一般存在洗钱风险"不等于"该工具是题目所问领域的特有警示信号"。
+- `domain_contrast` 必须用所引 unit 正面说明"通用概念"和"特定领域规则"的边界，不得以"教材清单未列举该选项"为理由。
+- 如果某个选项按其普通字面就不包含题干所要求的领域要素，可用 `stem_contrast` 和 `evidence_status=none` 判错；理由应直接对照题干领域边界，不得写成"没有召回/教材没有单元提及"。
+- 每个选项的 `decision_basis` 必须是以下五种之一（注意与 `decision_framework.type` 是两套独立的分类，不要混淆）：
+  - `direct_taxonomy`：教材原文直接支持或反驳该选项。
+  - `definition_application`：基于整题定义框架提取的必要条件，逐项核对该选项。
+  - `domain_contrast`：基于教材原文建立的领域边界，判断选项属于领域内还是领域外。
+  - `stem_contrast`：仅基于题干和选项的可见文字直接对照得出结论，不需教材单元。当你能从题干文字推理出选项正误但无教材 unit 引用时，使用此值而非 `insufficient`。
+  - `insufficient`：现有材料无法做出任何可靠判断时才使用。如果你的 `judgement` 是 `correct` 或 `incorrect` 且写出了实质 `decision_reason`，说明你已做出判断，不应标 `insufficient`。
+- `definition_application` 必须在 evidence_cards 中绑定整题所引定义 unit；`direct_taxonomy` 必须绑定明确分类 unit；`domain_contrast` 必须绑定领域规则或选项概念 unit。
+- `decision_reason` 只写实体判断，不得出现"候选池、召回、提示词、约束、模型输出"等内部过程词。
+- 在输出 JSON 前逐项自检：
+  1. `definition_application` 的每个选项都必须从 `decision_framework.cited_unit_ids` 复制至少一个定义 unit 到本选项 `evidence_cards`。
+  2. `direct_taxonomy` 和 `domain_contrast` 的 `evidence_cards` 不得为空；若理由同时比较通用概念和领域规则，应分别绑定相应 unit。
+  3. `decision_reason` 中写出的每个 unit_id 都必须同时出现在本选项 `evidence_cards` 或整题 `decision_framework.cited_unit_ids`，不得只在 prose 中提 ID。
+  4. 有 `indirect` 卡片时 `evidence_status` 不得写 `none`；只有确实没有卡片的 `stem_contrast` 才可使用 `none`。
 - `evidence_status=direct` 表示教材直接支持该选项；`indirect` 表示只能间接支持；`negative` 表示教材证据反驳该选项；`none` 表示没有可引用证据，且 evidence_cards 必须为空。
 {{
   "predicted_answer": ["A"],
+  "decision_framework": {{
+    "type": "definition_taxonomy|domain_specificity|scenario_match",
+    "rule_summary": "题目采用的判断规则",
+    "cited_unit_ids": ["v7u_N000001"],
+    "required_conditions": ["规则成立所需条件"]
+  }},
   "option_analysis": [
     {{
       "option": "A",
       "judgement": "correct|incorrect|insufficient",
+      "decision_basis": "direct_taxonomy|definition_application|domain_contrast|stem_contrast|insufficient",
+      "decision_reason": "从整题规则到该选项结论的完整判断理由",
       "evidence_status": "direct|indirect|negative|none",
       "evidence_cards": [
         {{"unit_id": "v7u_N000001", "support_type": "direct|indirect|negative", "reason": "为什么这个单元支持或反驳该选项"}}
@@ -872,6 +1407,7 @@ def build_prompt(question: dict[str, Any], candidates: list[dict[str, Any]]) -> 
   ]
 }}"""
     return prompt
+
 
 
 # ── LLM 调用 ──────────────────────────────────────────────────────────
@@ -900,6 +1436,7 @@ def call_llm(
 
 
 def strip_json_fence(text: str) -> str:
+    """去除 markdown 代码块标记。"""
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*\n?", "", text)
     text = re.sub(r"\n?```\s*$", "", text)
@@ -950,14 +1487,93 @@ def normalize_llm_result(parsed: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(evidence_cards, list):
             continue
 
-        has_negative_card = any(
-            isinstance(card, dict) and card.get("support_type") == "negative"
+        # 当 evidence_status 与 evidence_cards 矛盾时自动修正
+        support_types = {
+            card.get("support_type")
             for card in evidence_cards
-        )
-        if opt.get("evidence_status") == "none" and has_negative_card:
-            opt["evidence_status"] = "negative"
+            if isinstance(card, dict)
+        }
+        if opt.get("evidence_status") == "none" and evidence_cards:
+            if "negative" in support_types:
+                opt["evidence_status"] = "negative"
+            elif "direct" in support_types:
+                opt["evidence_status"] = "direct"
+            else:
+                opt["evidence_status"] = "indirect"
 
     return parsed
+
+
+def filter_llm_citations(
+    parsed: dict[str, Any],
+    allowed_unit_ids: set[str],
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """删除池外引用并保留审计记录，不猜测或修复相邻 unit_id。"""
+    dropped: list[dict[str, Any]] = []
+    framework = parsed.get("decision_framework")
+    if isinstance(framework, dict):
+        raw_framework_ids = framework.get("cited_unit_ids", [])
+        if not isinstance(raw_framework_ids, list):
+            raw_framework_ids = []
+        legal_framework_ids: list[str] = []
+        for raw_uid in raw_framework_ids:
+            uid = str(raw_uid or "").strip()
+            if uid in allowed_unit_ids and uid not in legal_framework_ids:
+                legal_framework_ids.append(uid)
+            elif uid not in allowed_unit_ids:
+                dropped.append(
+                    {
+                        "location": "decision_framework",
+                        "unit_id": uid,
+                        "reason": "unit_id 不在本题主候选池或选项补充池",
+                    }
+                )
+        framework["cited_unit_ids"] = legal_framework_ids
+
+    option_analysis = parsed.get("option_analysis", [])
+    if not isinstance(option_analysis, list):
+        return parsed, dropped
+
+    for option in option_analysis:
+        if not isinstance(option, dict):
+            continue
+        cards = option.get("evidence_cards", [])
+        if not isinstance(cards, list):
+            continue
+        legal_cards: list[dict[str, Any]] = []
+        for card in cards:
+            if not isinstance(card, dict):
+                continue
+            uid = str(card.get("unit_id", "") or "").strip()
+            if uid in allowed_unit_ids:
+                legal_cards.append(card)
+            else:
+                dropped.append(
+                    {
+                        "location": "option_analysis",
+                        "option": option.get("option", ""),
+                        "unit_id": uid,
+                        "support_type": card.get("support_type", ""),
+                        "reason": card.get("reason", ""),
+                    }
+                )
+        option["evidence_cards"] = legal_cards
+        # 证据卡被清空后降级处理
+        if not legal_cards and option.get("evidence_status") != "none":
+            option["evidence_status"] = "none"
+        if (
+            not legal_cards
+            and option.get("decision_basis")
+            in {"direct_taxonomy", "definition_application", "domain_contrast"}
+        ):
+            option["decision_basis"] = "insufficient"
+            option["judgement"] = "insufficient"
+            original_reason = str(option.get("decision_reason", "")).strip()
+            option["decision_reason"] = (
+                "引用单元不在本题可用教材证据范围内，缺少合法依据。"
+                + (f" 原始判定理由：{original_reason}" if original_reason else "")
+            )
+    return parsed, dropped
 
 
 # ── 机械校验 ──────────────────────────────────────────────────────────
@@ -967,33 +1583,149 @@ def validate_result(
     result: dict[str, Any],
     candidates: list[dict[str, Any]],
     unit_lookup: dict[str, dict],
+    supplement_pool: dict[str, list[dict[str, Any]]] | None = None,
 ) -> list[str]:
     """执行机械校验，返回问题列表。"""
     issues: list[str] = []
 
     # 候选池 unit_id 集合
     candidate_unit_ids = {c["unit_id"] for c in candidates}
+    candidate_unit_ids.update(
+        row["unit_id"]
+        for rows in (supplement_pool or {}).values()
+        for row in rows
+        if row.get("unit_id")
+    )
     # 真实 unit_id 集合（索引中存在）
     valid_unit_ids = set(unit_lookup.keys())
 
     option_analysis = result.get("option_analysis", [])
     options = result.get("options", {})
+    predicted_answer = result.get("predicted_answer", [])
 
-    # 检查 option_analysis 长度
+    # 答案合法性检查
+    if not isinstance(predicted_answer, list):
+        issues.append("predicted_answer 必须是数组")
+    else:
+        option_labels = {str(label) for label in options}
+        invalid_answers = [
+            str(answer) for answer in predicted_answer
+            if str(answer) not in option_labels
+        ]
+        if invalid_answers:
+            issues.append(
+                "predicted_answer 包含不存在的选项: "
+                + ",".join(invalid_answers)
+            )
+        if (
+            result.get("question_type") == "single"
+            and len(predicted_answer) != 1
+        ):
+            issues.append(
+                "单选题 predicted_answer 必须且只能包含一个答案"
+            )
+
+    # decision_framework 校验
+    framework = result.get("decision_framework")
+    framework_ids: set[str] = set()
+    if not isinstance(framework, dict):
+        issues.append("缺少 decision_framework")
+    else:
+        framework_type = framework.get("type", "")
+        if framework_type not in {
+            "definition_taxonomy",
+            "domain_specificity",
+            "scenario_match",
+        }:
+            issues.append(f"非法 decision_framework.type={framework_type}")
+        if not str(framework.get("rule_summary", "")).strip():
+            issues.append("decision_framework 缺少 rule_summary")
+        required_conditions = framework.get("required_conditions", [])
+        if not isinstance(required_conditions, list):
+            issues.append("decision_framework.required_conditions 必须是数组")
+        elif framework_type == "definition_taxonomy" and not required_conditions:
+            issues.append("definition_taxonomy 类型必须给出 required_conditions")
+        cited_ids = framework.get("cited_unit_ids", [])
+        if not isinstance(cited_ids, list):
+            issues.append("decision_framework.cited_unit_ids 必须是数组")
+            cited_ids = []
+        for uid in cited_ids:
+            uid = str(uid or "").strip()
+            if not uid:
+                issues.append("decision_framework 含空 unit_id")
+                continue
+            if uid in framework_ids:
+                issues.append(f"decision_framework: unit_id={uid} 重复引用")
+            framework_ids.add(uid)
+            if uid not in valid_unit_ids:
+                issues.append(f"decision_framework: 幻觉 unit_id={uid}（不在索引中）")
+            if uid not in candidate_unit_ids:
+                issues.append(
+                    f"decision_framework: unit_id={uid} 不在本题候选池中"
+                )
+
+    # 选项数量一致性
     if len(option_analysis) != len(options):
         issues.append(
             f"选项数量不匹配: analysis={len(option_analysis)} vs options={len(options)}"
         )
 
+    # 逐选项校验
     for opt in option_analysis:
         label = opt.get("option", "?")
         judgement = opt.get("judgement", "")
+        decision_basis = opt.get("decision_basis", "")
+        decision_reason = str(opt.get("decision_reason", "")).strip()
         evidence_status = opt.get("evidence_status", "")
         evidence_cards = opt.get("evidence_cards", [])
 
         # 选项完整性：每个选项都有 judgement 和 evidence_status
         if not judgement:
             issues.append(f"选项{label}: 缺少 judgement")
+        if decision_basis not in {
+            "direct_taxonomy",
+            "definition_application",
+            "domain_contrast",
+            "stem_contrast",
+            "insufficient",
+        }:
+            issues.append(f"选项{label}: 非法 decision_basis={decision_basis}")
+        if not decision_reason:
+            issues.append(f"选项{label}: 缺少 decision_reason")
+        else:
+            # 检查是否泄露内部过程词
+            if re.search(
+                r"候选池|补充池|召回|提示词|按约束|模型输出|原模型|白名单过滤|本次修复",
+                decision_reason,
+            ):
+                issues.append(f"选项{label}: decision_reason 泄露内部检索或生成过程")
+            # 检查是否用了"教材未列举"来证明错误（穷尽分类除外）
+            absence_claim = re.search(
+                r"教材.{0,20}(?:未|没有).{0,20}(?:列|提及|单元|认定|提供)",
+                decision_reason,
+            )
+            exhaustive_taxonomy = (
+                decision_basis == "direct_taxonomy"
+                and isinstance(framework, dict)
+                and framework.get("type") == "definition_taxonomy"
+                and re.search(
+                    r"穷尽|完整|全部|21\s*类|21\s*categories",
+                    str(framework.get("rule_summary", "")),
+                    flags=re.IGNORECASE,
+                )
+            )
+            if absence_claim and not exhaustive_taxonomy:
+                issues.append(
+                    f"选项{label}: 不得用教材未列举或未召回直接证明选项错误"
+                )
+            # 检查 definition_application 是否有推测性措辞
+            if (
+                decision_basis == "definition_application"
+                and re.search(r"通常不|一般不|不必然", decision_reason)
+            ):
+                issues.append(
+                    f"选项{label}: definition_application 不得推测选项通常具有或不具有的事实"
+                )
         if not evidence_status:
             issues.append(f"选项{label}: 缺少 evidence_status")
         elif evidence_status not in {"direct", "indirect", "negative", "none"}:
@@ -1014,7 +1746,7 @@ def validate_result(
         if evidence_status == "none" and evidence_cards:
             issues.append(f"选项{label}: evidence_status=none 但 evidence_cards 不为空")
 
-        # evidence_cards 无重复
+        # evidence_cards 无重复、来源合法
         seen_uids: set[str] = set()
         for card in evidence_cards:
             uid = card.get("unit_id", "")
@@ -1038,6 +1770,43 @@ def validate_result(
             if uid in seen_uids:
                 issues.append(f"选项{label}: unit_id={uid} 重复引用")
             seen_uids.add(uid)
+
+        # decision_reason 中引用的 unit_id 必须在 evidence_cards 或 framework 中有结构化绑定
+        mentioned_unit_ids = set(
+            re.findall(r"v7u_N\d+", decision_reason)
+        )
+        unbound_mentions = sorted(
+            mentioned_unit_ids - seen_uids - framework_ids
+        )
+        if unbound_mentions:
+            issues.append(
+                f"选项{label}: decision_reason 提到未结构化绑定的 unit_id="
+                + ",".join(unbound_mentions)
+            )
+
+        # decision_basis 为教材型时必须有合法 evidence_cards
+        if decision_basis in {
+            "direct_taxonomy",
+            "definition_application",
+            "domain_contrast",
+        } and not evidence_cards:
+            issues.append(
+                f"选项{label}: decision_basis={decision_basis} 但没有合法 evidence_cards"
+            )
+        if decision_basis == "definition_application":
+            if not framework_ids:
+                issues.append(
+                    f"选项{label}: definition_application 但整题未引用定义 unit"
+                )
+            elif not (seen_uids & framework_ids):
+                issues.append(
+                    f"选项{label}: definition_application 未在 evidence_cards "
+                    "绑定整题定义 unit"
+                )
+        if decision_basis == "insufficient" and judgement != "insufficient":
+            issues.append(
+                f"选项{label}: decision_basis=insufficient 时 judgement 必须为 insufficient"
+            )
 
     return issues
 
@@ -1074,9 +1843,15 @@ def process_question(
         "tier": tier,
         "pipeline_status": "ok",
     }
+    if question.get("_chapter_mappings") is not None:
+        result["chapter_mappings"] = question.get("_chapter_mappings", [])
+    if question.get("_question_text_override") is not None:
+        result["question_text_override"] = question.get(
+            "_question_text_override", {}
+        )
 
     try:
-        # Step 1: 检索 -> 候选池
+        # 步骤 1: 检索 → 候选池
         candidates = search_and_merge(
             question,
             bge_vecs=bge_vecs,
@@ -1097,16 +1872,33 @@ def process_question(
         result["kg_enabled"] = kg_index is not None
         result["p5_enabled"] = p5_index is not None
 
-        # Step 2: 构建 prompt
-        prompt = build_prompt(question, candidates)
+        # 选项独立补充召回
+        supplement_pool = retrieve_option_supplements(
+            question,
+            bge_vecs=bge_vecs,
+            card_ids=card_ids,
+            unit_lookup=unit_lookup,
+            bm25_zh_index=bm25_zh_index,
+            bm25_en_index=bm25_en_index,
+            excluded_unit_ids={row["unit_id"] for row in candidates},
+            top_k=top_k,
+            per_option_limit=3,
+        )
+        result["option_supplement_pool"] = supplement_pool
+        result["option_supplement_counts"] = {
+            label: len(rows) for label, rows in supplement_pool.items()
+        }
 
-        # Step 3: LLM 调用（每个线程独立的 client）
+        # 步骤 2: 构建 prompt
+        prompt = build_prompt(question, candidates, supplement_pool)
+
+        # 步骤 3: LLM 调用（每个线程独立的 client）
         from openai import OpenAI
         client = OpenAI(api_key=api_key, base_url=base_url)
         llm_output = call_llm(client, prompt, model=model)
         result["llm_output"] = llm_output
 
-        # Step 4: 解析 LLM 响应
+        # 步骤 4: 解析 LLM 响应
         parsed = parse_llm_output(llm_output)
         if parsed is None:
             result["pipeline_status"] = "llm_parse_failed"
@@ -1116,11 +1908,63 @@ def process_question(
             return result
         parsed = normalize_llm_result(parsed)
 
+        # 过滤池外引用
+        allowed_unit_ids = {row["unit_id"] for row in candidates}
+        allowed_unit_ids.update(
+            row["unit_id"]
+            for rows in supplement_pool.values()
+            for row in rows
+        )
+        parsed, citation_drops = filter_llm_citations(
+            parsed, allowed_unit_ids
+        )
+        result["citation_filter_drops"] = citation_drops
+
+        # 确定性修复 LLM 的机械一致性错误
+        framework_ids = {
+            str(uid) for uid in
+            (parsed.get("decision_framework") or {}).get("cited_unit_ids", []) or []
+        }
+        for opt in parsed.get("option_analysis", []) or []:
+            cards = opt.get("evidence_cards", [])
+            if not isinstance(cards, list):
+                cards = []
+                opt["evidence_cards"] = cards
+            # (a) evidence_status=negative 但没有 negative card → 对齐
+            if (opt.get("evidence_status") == "negative"
+                    and not any(c.get("support_type") == "negative" for c in cards if isinstance(c, dict))):
+                if cards:
+                    for c in cards:
+                        if isinstance(c, dict):
+                            c["support_type"] = "negative"
+                            break
+                else:
+                    opt["evidence_status"] = "none"
+            # (b) decision_reason 提到但未绑定的 unit_id → 自动补到 evidence_cards
+            reason = str(opt.get("decision_reason", "") or "")
+            mentioned = set(re.findall(r"v7u_N\d+", reason))
+            bound = {str(c.get("unit_id", "")) for c in cards if isinstance(c, dict)}
+            bound.update(framework_ids)
+            unbound = mentioned - bound
+            for uid in sorted(unbound):
+                if uid in allowed_unit_ids:
+                    cards.append({
+                        "unit_id": uid,
+                        "support_type": "indirect",
+                        "reason": "从 decision_reason 自动绑定",
+                    })
+            # (c) 有 evidence_cards 但 evidence_status=none → 对齐
+            if cards and opt.get("evidence_status") == "none":
+                opt["evidence_status"] = "indirect"
+
         result["option_analysis"] = parsed.get("option_analysis", [])
         result["predicted_answer"] = parsed.get("predicted_answer", [])
+        result["decision_framework"] = parsed.get("decision_framework")
 
-        # Step 5: 机械校验
-        validation_issues = validate_result(result, candidates, unit_lookup)
+        # 步骤 5: 机械校验（仅检查，不修复）
+        validation_issues = validate_result(
+            result, candidates, unit_lookup, supplement_pool
+        )
         result["validation_checks"] = validation_issues
         if validation_issues:
             result["pipeline_status"] = "validation_failed"
@@ -1164,8 +2008,13 @@ def write_summary_jsonl(
                 "question_type": r.get("question_type", ""),
                 "predicted_answer": r.get("predicted_answer", []),
                 "option_analysis": r.get("option_analysis", []),
+                "decision_framework": r.get("decision_framework"),
                 "validation_passed": r.get("pipeline_status") == "ok",
                 "pipeline_status": r.get("pipeline_status", "error"),
+                "chapter_mappings": r.get("chapter_mappings", []),
+                "option_supplement_counts": r.get(
+                    "option_supplement_counts", {}
+                ),
             }
             f.write(json.dumps(summary, ensure_ascii=False) + "\n")
     print(f"[output] JSONL 已写入: {path} ({len(results)} 行)")
@@ -1184,7 +2033,7 @@ def write_markdown_report(
     ok_count = sum(1 for r in results if r.get("pipeline_status") == "ok")
     vf_count = sum(1 for r in results if r.get("pipeline_status") == "validation_failed")
     pf_count = sum(1 for r in results if r.get("pipeline_status") == "llm_parse_failed")
-    lines.append(f"总题数: {total} | ✅ ok: {ok_count} | ⚠️ validation_failed: {vf_count} | ❌ llm_parse_failed: {pf_count}\n")
+    lines.append(f"总题数: {total} | ok: {ok_count} | validation_failed: {vf_count} | llm_parse_failed: {pf_count}\n")
     lines.append("---\n")
 
     for r in results:
@@ -1202,6 +2051,12 @@ def write_markdown_report(
         # 候选池统计
         candidates = r.get("candidate_pool", [])
         lines.append(f"**候选池**: {len(candidates)} 个知识单元\n")
+        supplement_counts = r.get("option_supplement_counts", {})
+        if supplement_counts:
+            text = ", ".join(
+                f"{label}={count}" for label, count in supplement_counts.items()
+            )
+            lines.append(f"**选项独立补充池**: {text}\n")
         route_counts = r.get("candidate_route_counts", {})
         if route_counts:
             route_text = ", ".join(f"{k}={v}" for k, v in route_counts.items())
@@ -1277,6 +2132,18 @@ def main() -> None:
         help="指定题号，可重复传入；例如 --question-id v7_q_000009",
     )
     parser.add_argument(
+        "--chapter-map",
+        type=str,
+        default="",
+        help="人工确认的 question_chapter_mappings.jsonl",
+    )
+    parser.add_argument(
+        "--chapter-id",
+        type=str,
+        default="",
+        help="按真实教材章节选择全部题目，例如 CH01",
+    )
+    parser.add_argument(
         "--enable-kg",
         action="store_true",
         help="启用 KG 候选扩展（默认关闭）",
@@ -1312,6 +2179,11 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    if args.question_id and args.chapter_id:
+        parser.error("--question-id 与 --chapter-id 不能同时使用")
+    if args.chapter_id and not args.chapter_map:
+        parser.error("使用 --chapter-id 时必须同时提供 --chapter-map")
+
     print("=" * 60)
     print("Phase 4.1 — 小批量盲判脚本")
     print("=" * 60)
@@ -1328,6 +2200,19 @@ def main() -> None:
     # 1. 加载数据
     questions = load_questions(QUESTIONS_PATH)
     index = load_index(INDEX_PKL)
+    chapter_mapping_index = (
+        load_chapter_mapping_index(args.chapter_map) if args.chapter_map else {}
+    )
+    if chapter_mapping_index:
+        enriched_questions: list[dict[str, Any]] = []
+        for question in questions:
+            row = chapter_mapping_index.get(question["question_id"])
+            enriched = dict(question)
+            enriched["_chapter_mappings"] = (
+                row.get("chapter_mappings", []) if row else []
+            )
+            enriched_questions.append(enriched)
+        questions = enriched_questions
 
     card_ids: list[str] = index["card_ids"]
     bge_vecs: np.ndarray = index["bge_vecs"]
@@ -1352,7 +2237,7 @@ def main() -> None:
     print()
     get_bge_model()
 
-    # 3.5 可选加载 KG 导航索引
+    # 3.5 可选加载 KG 导航索引与 P5 术语索引
     kg_index = load_kg_graph(args.kg_graph_path) if args.enable_kg else None
     p5_index = load_p5_alias_index(args.p5_alias_path) if args.enable_p5 else None
 
@@ -1370,6 +2255,19 @@ def main() -> None:
         if missing:
             raise RuntimeError(f"指定题号不存在: {', '.join(missing)}")
         print(f"\n[sample] 指定题号 {len(sampled)} 题")
+    elif args.chapter_id:
+        chapter_id = args.chapter_id.strip().upper()
+        sampled = [
+            q for q in questions
+            if any(
+                mapping.get("chapter_id") == chapter_id
+                for mapping in q.get("_chapter_mappings", []) or []
+            )
+        ]
+        sampled.sort(key=lambda x: x["question_id"])
+        if not sampled:
+            raise RuntimeError(f"章节 {chapter_id} 没有已确认题目")
+        print(f"\n[sample] 教材章节 {chapter_id} 共 {len(sampled)} 题（不应用 --limit）")
     else:
         manual_questions = [
             q for q in questions
@@ -1382,7 +2280,11 @@ def main() -> None:
             f"取前 {len(sampled)} 题"
         )
     for q in sampled:
-        print(f"  {q['question_id']} | {q.get('chapter_code','?')} | {q.get('question_type','?')}")
+        mapped = ",".join(
+            row.get("chapter_id", "")
+            for row in q.get("_chapter_mappings", []) or []
+        ) or "unmapped"
+        print(f"  {q['question_id']} | {mapped} | {q.get('question_type','?')}")
 
     # 6. 并发处理
     print(f"\n[run] 开始并发处理（{args.concurrency} 线程）...")
@@ -1446,9 +2348,16 @@ def main() -> None:
                     "tier": q.get("tier", ""),
                     "pipeline_status": "llm_parse_failed",
                     "candidate_pool": [],
+                    "option_supplement_pool": {},
+                    "option_supplement_counts": {},
                     "option_analysis": [],
                     "validation_checks": [f"线程异常: {str(exc)[:200]}"],
                     "predicted_answer": [],
+                    "chapter_mappings": q.get("_chapter_mappings", []),
+                    "question_text_override": q.get(
+                        "_question_text_override", {}
+                    ),
+                    "decision_framework": None,
                 }
                 results.append(error_result)
                 write_question_json(error_result, output_dir)
