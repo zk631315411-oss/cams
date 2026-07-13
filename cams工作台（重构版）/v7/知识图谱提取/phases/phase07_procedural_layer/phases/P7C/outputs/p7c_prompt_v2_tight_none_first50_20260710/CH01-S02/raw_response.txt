@@ -1,0 +1,163 @@
+{
+  "section_id": "CH01-S02",
+  "section_title": "Money Laundering and Financial Crime > Case example: Linguistix’s suspicious transactions",
+  "cards": [
+    {
+      "card_id": "card_CH01_S02_001",
+      "section_id": "CH01-S02",
+      "card_nature": "execution",
+      "title": "Linguistix Case: Suspicious Transaction Detection to Preliminary Money Laundering Conclusion",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Joyce notices unusual transaction volume spike for Linguistix",
+          "evidence_unit_ids": ["v7u_N000004"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Preliminary investigation: contact operations team, confirm revenue surge and high-risk jurisdictions",
+          "evidence_unit_ids": ["v7u_N000005"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Deep analysis: discover transaction linked to organized drug trafficking group",
+          "evidence_unit_ids": ["v7u_N000006"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Gather more data on transactions and customer profiles, assess evidence",
+          "evidence_unit_ids": ["v7u_N000007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Conclusion: Linguistix likely being used to launder illicit funds",
+          "evidence_unit_ids": ["v7u_N000007"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000004", "v7u_N000005"],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000005", "v7u_N000006"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N000006", "v7u_N000007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": ["v7u_N000007"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000004", "v7u_N000005", "v7u_N000006", "v7u_N000007"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：发现异常交易量（n1）--PRECEDES-->初步调查确认高风险（n2），--PRECEDES-->深入分析发现贩毒关联（n3），--PRECEDES-->收集数据（n4），--PRODUCES-->可能洗钱结论（n5）。基础KG不能表达调查步骤的因果顺序和结论生成过程。选项判断：可确认发现异常后需要进一步调查而不是直接报告，以及调查顺序。"
+    },
+    {
+      "card_id": "card_CH01_S02_002",
+      "section_id": "CH01-S02",
+      "card_nature": "execution",
+      "title": "Linguistix Case: Escalation and Advanced Analysis Confirming Money Laundering",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Case complexity triggers need for escalation (combine with preliminary conclusion)",
+          "evidence_unit_ids": ["v7u_N000008", "v7u_N000007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Joyce escalates case to financial crime compliance team",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Advanced analytical tools applied to trace fund flows and confirm links to organized crime",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Confirmed: Linguistix used as front to launder drug trafficking proceeds, disguising origins",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N000008"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000007", "v7u_N000008"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：案件复杂性和可能洗钱结论（n1）--PRECEDES-->升级到合规团队（n2），--PRECEDES-->高级分析（n3），--PRODUCES-->确认洗钱（n4）。基础KG不能表达升级决策与后续行动的依赖关系。选项判断：可确认复杂案件需要升级到专业团队处理。"
+    }
+  ],
+  "skip_reason": ""
+}

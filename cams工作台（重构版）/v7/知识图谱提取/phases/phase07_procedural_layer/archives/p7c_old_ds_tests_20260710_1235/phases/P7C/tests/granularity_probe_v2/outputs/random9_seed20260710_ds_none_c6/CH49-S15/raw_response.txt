@@ -1,0 +1,321 @@
+{
+  "section_id": "CH49-S15",
+  "section_title": "Concluding an investigation and suspicious activity reporting > De-risking",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S15_001",
+      "section_id": "CH49-S15",
+      "card_nature": "assessment",
+      "title": "De-risking Assessment: Identifying Broad Risk Aversion",
+      "summary": "Assess whether an organization's decision to terminate or restrict customer relationships constitutes de-risking and conflicts with FATF Recommendations.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_de_risking",
+          "node_type": "trigger",
+          "label": "Organization considers terminating or restricting customer relationships",
+          "evidence_unit_ids": ["v7u_N003678", "v7u_N003679"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess",
+          "node_type": "action",
+          "label": "Assess whether decision is based on broad risk aversion",
+          "evidence_unit_ids": ["v7u_N003679"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_fatf_def",
+          "node_type": "standard",
+          "label": "FATF definition: terminating/restricting relationships for entire categories, not risk-based",
+          "evidence_unit_ids": ["v7u_N003678"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_avoidance",
+          "node_type": "standard",
+          "label": "Risk avoidance instead of risk-based management",
+          "evidence_unit_ids": ["v7u_N003679"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_fin_exclusion",
+          "node_type": "standard",
+          "label": "Results in financial exclusion or debanking",
+          "evidence_unit_ids": ["v7u_N003680", "v7u_N003681"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_innocent_affected",
+          "node_type": "standard",
+          "label": "Categories lose access even if not involved in illicit activity",
+          "evidence_unit_ids": ["v7u_N003682"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_sector_impact",
+          "node_type": "standard",
+          "label": "Reduced correspondent banking, restricted MSBs, crypto, NPOs",
+          "evidence_unit_ids": ["v7u_N003683"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_fatf_conflict",
+          "node_type": "standard",
+          "label": "Conflicts with FATF's Recommendations",
+          "evidence_unit_ids": ["v7u_N003690"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_result",
+          "node_type": "output",
+          "label": "De-risking identified; practice conflicts with FATF and should be avoided",
+          "evidence_unit_ids": ["v7u_N003690", "v7u_N003680"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_de_risking",
+          "target": "n_action_assess",
+          "evidence_unit_ids": ["v7u_N003678", "v7u_N003679"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_fatf_def",
+          "evidence_unit_ids": ["v7u_N003678"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_003",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_avoidance",
+          "evidence_unit_ids": ["v7u_N003679"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_004",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_fin_exclusion",
+          "evidence_unit_ids": ["v7u_N003680", "v7u_N003681"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_005",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_innocent_affected",
+          "evidence_unit_ids": ["v7u_N003682"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_006",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_sector_impact",
+          "evidence_unit_ids": ["v7u_N003683"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_007",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_fatf_conflict",
+          "evidence_unit_ids": ["v7u_N003690"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess",
+          "target": "n_output_result",
+          "evidence_unit_ids": ["v7u_N003690", "v7u_N003680"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003678", "v7u_N003679", "v7u_N003680", "v7u_N003681", "v7u_N003682", "v7u_N003683", "v7u_N003690"],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into an assessment card. The trigger-action flow is implied by the descriptive text rather than explicit procedural steps."
+    },
+    {
+      "card_id": "p7card_CH49-S15_002",
+      "section_id": "CH49-S15",
+      "card_nature": "control",
+      "title": "De-risking Mitigation Controls: Risk-Based Measures",
+      "summary": "Apply FATF-recommended risk-based controls to mitigate de-risking and avoid financial exclusion.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_mitigate",
+          "node_type": "trigger",
+          "label": "Mitigate de-risking",
+          "evidence_unit_ids": ["v7u_N003690"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_implement",
+          "node_type": "action",
+          "label": "Implement risk-based controls",
+          "evidence_unit_ids": ["v7u_N003690", "v7u_N003692"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_committee",
+          "node_type": "standard",
+          "label": "Form a de-risking committee with business, legal, compliance",
+          "evidence_unit_ids": ["v7u_N003691"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_casebycase",
+          "node_type": "standard",
+          "label": "Adopt risk-based approach with case-by-case assessments",
+          "evidence_unit_ids": ["v7u_N003692"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_questionnaire",
+          "node_type": "standard",
+          "label": "Develop sector-specific Wolfsberg-type questionnaire",
+          "evidence_unit_ids": ["v7u_N003693"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_monitoring",
+          "node_type": "standard",
+          "label": "Implement advanced transaction monitoring",
+          "evidence_unit_ids": ["v7u_N003694"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_stakeholder",
+          "node_type": "standard",
+          "label": "Engage in multi-stakeholder discussions with regulators",
+          "evidence_unit_ids": ["v7u_N003695"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_tiers",
+          "node_type": "standard",
+          "label": "Develop nuanced risk tiers beyond jurisdiction/nationality",
+          "evidence_unit_ids": ["v7u_N003696"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_tiered_accounts",
+          "node_type": "standard",
+          "label": "Provide tiered accounts with risk-appropriate transaction limits",
+          "evidence_unit_ids": ["v7u_N003697"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_EDD",
+          "node_type": "standard",
+          "label": "Conduct due diligence or EDD appropriate to specific risks",
+          "evidence_unit_ids": ["v7u_N003698"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_inclusion",
+          "node_type": "output",
+          "label": "Reduced financial exclusion and FATF-compliant risk management",
+          "evidence_unit_ids": ["v7u_N003697", "v7u_N003690"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_mitigate",
+          "target": "n_action_implement",
+          "evidence_unit_ids": ["v7u_N003690"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_002",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_committee",
+          "evidence_unit_ids": ["v7u_N003691"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_003",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_casebycase",
+          "evidence_unit_ids": ["v7u_N003692"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_004",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_questionnaire",
+          "evidence_unit_ids": ["v7u_N003693"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_005",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_monitoring",
+          "evidence_unit_ids": ["v7u_N003694"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_006",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_stakeholder",
+          "evidence_unit_ids": ["v7u_N003695"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_007",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_tiers",
+          "evidence_unit_ids": ["v7u_N003696"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_008",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_tiered_accounts",
+          "evidence_unit_ids": ["v7u_N003697"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_009",
+          "edge_type": "USES",
+          "source": "n_action_implement",
+          "target": "n_std_EDD",
+          "evidence_unit_ids": ["v7u_N003698"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S15_002_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_implement",
+          "target": "n_output_inclusion",
+          "evidence_unit_ids": ["v7u_N003697", "v7u_N003690"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003690", "v7u_N003691", "v7u_N003692", "v7u_N003693", "v7u_N003694", "v7u_N003695", "v7u_N003696", "v7u_N003697", "v7u_N003698"],
+      "review_status": "needs_review",
+      "review_notes": "Control requirements extracted from a list of suggested measures; not a strict sequential workflow. The trigger-action relationship is inferred as a general best practice."
+    }
+  ],
+  "skip_reason": null
+}

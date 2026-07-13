@@ -1,0 +1,255 @@
+{
+  "section_id": "CH47-S11",
+  "section_title": "Transaction monitoring > Communication channels and tipping off",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S11_001",
+      "section_id": "CH47-S11",
+      "card_nature": "control",
+      "title": "Customer outreach controls during transaction monitoring investigations",
+      "summary": "When analysts require additional customer information that is not available internally, a controlled outreach process is used involving assessment, planning, and communication with adherence to confidentiality, clarity, professionalism, anti-tipping-off, regulatory compliance, and documentation standards.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Analyst needs customer information not available internally or publicly",
+          "evidence_unit_ids": [
+            "v7u_N003361",
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess if information is critical and not available internally/externally",
+          "actor": "analyst",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Plan outreach methods and approach",
+          "actor": "analyst",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_03",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Conduct customer outreach",
+          "actor": "front line staff / relationship manager",
+          "evidence_unit_ids": [
+            "v7u_N003362",
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Confidentiality: share information securely and only with authorized parties",
+          "evidence_unit_ids": [
+            "v7u_N003365"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Clarity and precision: avoid misunderstandings",
+          "evidence_unit_ids": [
+            "v7u_N003366"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Professionalism: maintain professional tone",
+          "evidence_unit_ids": [
+            "v7u_N003367"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Avoid tipping off: do not alert subject of investigation",
+          "evidence_unit_ids": [
+            "v7u_N003368"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Compliance with regulations (e.g., data protection laws)",
+          "evidence_unit_ids": [
+            "v7u_N003369"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Documentation: record all communications, dates, times, and content",
+          "evidence_unit_ids": [
+            "v7u_N003370"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "Information obtained and provided to analyst",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_process_01",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit",
+          "condition": "if conditions are met"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_process_02",
+          "target": "n_process_03",
+          "evidence_unit_ids": [
+            "v7u_N003362",
+            "v7u_N003364"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_03",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_005",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N003365"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_006",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N003366"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_007",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_03",
+          "evidence_unit_ids": [
+            "v7u_N003367"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_008",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_04",
+          "evidence_unit_ids": [
+            "v7u_N003368"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_009",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_05",
+          "evidence_unit_ids": [
+            "v7u_N003369"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_010",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_06",
+          "evidence_unit_ids": [
+            "v7u_N003370"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003361",
+        "v7u_N003362",
+        "v7u_N003363",
+        "v7u_N003364",
+        "v7u_N003365",
+        "v7u_N003366",
+        "v7u_N003367",
+        "v7u_N003368",
+        "v7u_N003369",
+        "v7u_N003370"
+      ],
+      "review_status": "accepted",
+      "review_notes": "The card captures the controlled outreach process and the standards that must be observed. The flow from planning to outreach is functional_dependency due to paragraph structure. Tipping off is modeled as a standard to avoid, with severe consequences noted in the source."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,124 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "card_nature": "assessment",
+      "title": "Alert review for explainability assessment",
+      "summary": "Review transaction monitoring alerts to determine if unusual customer behavior is explainable or potentially suspicious.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_alert",
+          "node_type": "trigger",
+          "label": "Alert generated (automated or manual)",
+          "evidence_unit_ids": [
+            "v7u_N003233",
+            "v7u_N003235",
+            "v7u_N003237"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_review",
+          "node_type": "action",
+          "label": "Review alert",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_explainable",
+          "node_type": "decision",
+          "label": "Is unusual behavior explainable?",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_explained",
+          "node_type": "output",
+          "label": "Behavior explained",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_suspicious",
+          "node_type": "output",
+          "label": "Potentially suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_alert",
+          "target": "n_action_review",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review",
+          "target": "n_decision_explainable",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable",
+          "target": "n_output_explained",
+          "condition": "yes",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable",
+          "target": "n_output_suspicious",
+          "condition": "no",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003233",
+        "v7u_N003234",
+        "v7u_N003235",
+        "v7u_N003237"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order: alert generation to review and review to decision are functional dependencies, not explicitly sequenced. The assessment ends at determining explainable/suspicious; no downstream actions are described in this section, limiting the card's closure. The manual alert evidence includes an example unit (v7u_N003237), which may not represent a full requirement."
+    }
+  ],
+  "skip_reason": null
+}

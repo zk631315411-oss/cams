@@ -1,0 +1,219 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "title": "Transaction monitoring alert generation and review",
+      "summary": "Transaction monitoring controls monitor customer activity against profile parameters and thresholds, generate automated or manual alerts, and review alerts to determine whether unusual behavior is explainable or potentially suspicious.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Apply transaction monitoring controls to manage ongoing risks",
+          "evidence_unit_ids": ["v7u_N003232"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_activity",
+          "node_type": "input",
+          "label": "Customer account activity and transactions",
+          "evidence_unit_ids": ["v7u_N003241"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_thresholds",
+          "node_type": "standard",
+          "label": "Normal customer-profile parameters and account-specific thresholds",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_monitor",
+          "node_type": "action",
+          "label": "Monitor customer account activity and assess transactions using thresholds",
+          "evidence_unit_ids": ["v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_trigger_beyond_parameters",
+          "node_type": "trigger",
+          "label": "Customer activity or behavior is beyond normal parameters for the customer profile",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_generate_automated_alert",
+          "node_type": "action",
+          "label": "Transaction monitoring system generates an automated alert",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003235", "v7u_N003238"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_trigger_manual_needed",
+          "node_type": "trigger",
+          "label": "Staff determines that a manual alert is needed",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_raise_manual_alert",
+          "node_type": "action",
+          "label": "Staff raises a manual alert",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_alert",
+          "node_type": "output",
+          "label": "Transaction monitoring alert",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003235"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_review_alert",
+          "node_type": "action",
+          "label": "Review the alert and assess the unusual behavior",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_explained_or_suspicious",
+          "node_type": "decision",
+          "label": "Can the unusual behavior be explained, or is it potentially suspicious?",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_explained",
+          "node_type": "output",
+          "label": "Unusual behavior is assessed as explainable",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_potentially_suspicious",
+          "node_type": "output",
+          "label": "Unusual behavior is assessed as potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_monitor",
+          "evidence_unit_ids": ["v7u_N003232", "v7u_N003241"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_002",
+          "edge_type": "USES",
+          "source": "n_action_monitor",
+          "target": "n_input_activity",
+          "evidence_unit_ids": ["v7u_N003241"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_003",
+          "edge_type": "USES",
+          "source": "n_action_monitor",
+          "target": "n_standard_thresholds",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_monitor",
+          "target": "n_trigger_beyond_parameters",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003241"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_beyond_parameters",
+          "target": "n_action_generate_automated_alert",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_generate_automated_alert",
+          "target": "n_output_alert",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003238"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_manual_needed",
+          "target": "n_action_raise_manual_alert",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_raise_manual_alert",
+          "target": "n_output_alert",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_output_alert",
+          "target": "n_action_review_alert",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review_alert",
+          "target": "n_decision_explained_or_suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_011",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explained_or_suspicious",
+          "target": "n_output_explained",
+          "condition": "if unusual behavior can be explained",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_012",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explained_or_suspicious",
+          "target": "n_output_potentially_suspicious",
+          "condition": "if unusual behavior is potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003232",
+        "v7u_N003233",
+        "v7u_N003234",
+        "v7u_N003235",
+        "v7u_N003237",
+        "v7u_N003238",
+        "v7u_N003240",
+        "v7u_N003241",
+        "v7u_N003242"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The source explicitly states alert generation and review outcomes. The connection from monitoring activity to the trigger event is marked functional_dependency because the text describes the relationship across adjacent units rather than as a single procedural sentence. Unit v7u_N003236 is contextual evolution of controls and is not included as a procedural node. Unit v7u_N003239 only contextualizes the automated-control example and is not modeled as a separate step."
+    }
+  ],
+  "skip_reason": null
+}

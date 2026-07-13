@@ -1,0 +1,176 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "card_nature": "execution",
+      "title": "Transaction Monitoring Alert Generation and Review",
+      "summary": "TM systems generate alerts when activity exceeds thresholds; alerts are then reviewed to determine if behavior is explainable or potentially suspicious.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_auto",
+          "node_type": "trigger",
+          "label": "Customer activity exceeds defined thresholds (beyond normal parameters for the customer profile)",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241"],
+          "evidence_strength": "explicit",
+          "actor": "Transaction monitoring system",
+          "description": "Automated detection of unusual activity based on thresholds."
+        },
+        {
+          "node_id": "n_generate_alert",
+          "node_type": "action",
+          "label": "Generate automated alert",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit",
+          "actor": "Transaction monitoring system"
+        },
+        {
+          "node_id": "n_trigger_manual",
+          "node_type": "trigger",
+          "label": "Staff raises manual alert (e.g., front office report of cash deposit)",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit",
+          "actor": "Bank staff",
+          "description": "Manual alert triggered by staff when needed."
+        },
+        {
+          "node_id": "n_review_alert",
+          "node_type": "action",
+          "label": "Review alert to assess unusual behavior",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit",
+          "actor": "Compliance/operations staff"
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "Is the unusual behavior explainable?",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_explain",
+          "node_type": "output",
+          "label": "Behavior explained / no further action",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "node_id": "n_output_suspicious",
+          "node_type": "output",
+          "label": "Potentially suspicious behavior (requires further investigation/hand-off)",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "node_id": "n_standard_threshold",
+          "node_type": "standard",
+          "label": "Threshold criteria (different thresholds and scenarios for different customer types/accounts)",
+          "evidence_unit_ids": ["v7u_N003240", "v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit",
+          "description": "Thresholds define normal parameters; e.g., different thresholds for large corporates vs. individuals."
+        },
+        {
+          "node_id": "n_end_explain",
+          "node_type": "end",
+          "label": "Case closed (explained)",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "node_id": "n_end_suspicious",
+          "node_type": "end",
+          "label": "Case escalated (suspicious)",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_auto",
+          "target": "n_generate_alert",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_generate_alert",
+          "target": "n_review_alert",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_manual",
+          "target": "n_review_alert",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_review_alert",
+          "target": "n_decision",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_output_explain",
+          "condition": "yes, explainable",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_output_suspicious",
+          "condition": "no, potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_output_explain",
+          "target": "n_end_explain",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_output_suspicious",
+          "target": "n_end_suspicious",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_009",
+          "edge_type": "USES",
+          "source": "n_trigger_auto",
+          "target": "n_standard_threshold",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "Automated detection relies on defined thresholds to determine when activity is 'beyond normal parameters'."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003232", "v7u_N003233", "v7u_N003234", "v7u_N003235",
+        "v7u_N003237", "v7u_N003240", "v7u_N003241", "v7u_N003242"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Missing downstream handoff: the suspicious branch ends at a local exit ('Potentially suspicious behavior'), but the source section does not describe subsequent escalation steps. The card covers only generation and review within this section boundary."
+    }
+  ],
+  "skip_reason": null
+}

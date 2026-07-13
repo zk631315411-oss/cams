@@ -1,0 +1,339 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "cards": [
+    {
+      "card_id": "CH03-S07-P7C-001",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "Terrorist Financing Scheme: Fundraising Phase",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Mr. Wolfe decides to conduct a terrorist financing scheme",
+          "evidence_unit_ids": ["v7u_N000270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Generate and conceal funds through legitimate businesses and illicit activities",
+          "evidence_unit_ids": [
+            "v7u_N000272",
+            "v7u_N000273",
+            "v7u_N000274",
+            "v7u_N000275",
+            "v7u_N000276"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Funds obtained by financiers",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000270", "v7u_N000272"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit",
+          "relation_type": "result_handoffs_stage"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000270",
+        "v7u_N000272",
+        "v7u_N000273",
+        "v7u_N000274",
+        "v7u_N000275",
+        "v7u_N000276",
+        "v7u_N000277"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：Wolfe的决定（entry）PRECEDES 筹集和隐藏资金（process），该process PRODUCES 资金已筹集的状态（exit）。KG不足：基础KG只能存储融资计划的分类和定义，无法表达具体案例中从决策到资金筹集的顺序和因果链。选项判断：用于判断恐怖融资案例中资金筹集阶段的动作顺序和产出。"
+    },
+    {
+      "card_id": "CH03-S07-P7C-002",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "Terrorist Financing Scheme: Money Laundering Phase",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Financiers provide funds to facilitators",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Facilitators launder funds using trade-based ML, layering, cash smuggling, and hawala",
+          "evidence_unit_ids": [
+            "v7u_N000279",
+            "v7u_N000280",
+            "v7u_N000281",
+            "v7u_N000282"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Funds origins and destinations obscured",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000277"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000277",
+        "v7u_N000279",
+        "v7u_N000280",
+        "v7u_N000281",
+        "v7u_N000282"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：资金提供给中间人（entry）后，中间人执行洗钱方法（process），最终掩盖资金来源和去向（exit）。KG不足：基础KG可以列举洗钱方法，但无法表达案例中从资金交付到洗钱完成的顺序和目的实现。选项判断：判断洗钱流程中各步骤的顺序和功能。"
+    },
+    {
+      "card_id": "CH03-S07-P7C-003",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "Detection and Flagging of Illicit Financial Activity",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Money laundering activities underway",
+          "evidence_unit_ids": [
+            "v7u_N000277",
+            "v7u_N000279",
+            "v7u_N000280",
+            "v7u_N000281",
+            "v7u_N000282"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Financial institutions' transaction monitoring systems flag structured deposits, rapid layering, and anomalous fund movements",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "SARs and flagged transactions (from banks)",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "Blockchain analytics firms provide forensic intelligence on cryptoasset flows",
+          "evidence_unit_ids": ["v7u_N000284"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Blockchain forensic intelligence",
+          "evidence_unit_ids": ["v7u_N000284"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU synthesizes bank SARs with cross-border activity and triggers red flags",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N7",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Case escalated and red flags triggered internationally",
+          "evidence_unit_ids": ["v7u_N000285", "v7u_N000286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N4",
+          "evidence_unit_ids": [],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N4",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N000284"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N6",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "REFERENCES",
+          "source": "N6",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "E7",
+          "edge_type": "PRODUCES",
+          "source": "N6",
+          "target": "N7",
+          "evidence_unit_ids": ["v7u_N000285", "v7u_N000286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000277",
+        "v7u_N000279",
+        "v7u_N000280",
+        "v7u_N000281",
+        "v7u_N000282",
+        "v7u_N000283",
+        "v7u_N000284",
+        "v7u_N000285",
+        "v7u_N000286"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：洗钱活动（entry）触发金融机构监测（process1）和区块链分析（process2），各自产生信息输入，FIU评估（process3）综合后升级案件并触发红旗（exit）。KG不足：基础KG可以定义监控和红旗，但无法表达案例中从洗钱到检测再到红旗触发的因果和顺序链。选项判断：用于判断检测流程的顺序（金融机构先发现，然后是区块链和FIU）以及信息如何综合触发升级。"
+    },
+    {
+      "card_id": "CH03-S07-P7C-004",
+      "section_id": "CH03-S07",
+      "card_nature": "control",
+      "title": "Law Enforcement Response and Judicial Outcome",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "FIU escalates the case to law enforcement",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Law enforcement agencies conduct surveillance, track cash smugglers and hawala networks, and coordinate asset freezes and seizure of digital wallets and companies",
+          "evidence_unit_ids": ["v7u_N000286", "v7u_N000287"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Mr. Wolfe and associates sentenced to lengthy prison terms and heavy fines; terrorist financing network dismantled",
+          "evidence_unit_ids": ["v7u_N000288"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000287", "v7u_N000288"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000286",
+        "v7u_N000287",
+        "v7u_N000288"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：FIU案件升级（entry）触发执法机构监视、追踪和冻结资产（process），最终导致定罪和网络瓦解（exit）。KG不足：基础KG可记录判决事实，但无法表达从升级到行动再到结果的执法响应序列。选项判断：用于判断执法流程的顺序和因果关系。"
+    }
+  ],
+  "skip_reason": ""
+}

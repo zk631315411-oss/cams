@@ -1,115 +1,127 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CAMS v7 structured question",
+  "title": "CAMS v7 cleaned question bank",
   "type": "object",
   "required": [
-    "id",
-    "cn_qno",
-    "en_qno",
-    "type",
-    "raw_question_cn",
-    "raw_question_en",
-    "answer_final"
+    "schema_version",
+    "generated_at",
+    "total_items",
+    "items"
   ],
   "properties": {
-    "id": {
+    "schema_version": {
+      "const": "v7_questions_v1"
+    },
+    "generated_at": {
       "type": "string"
     },
-    "cn_qno": {
+    "total_items": {
       "type": "integer"
     },
-    "en_qno": {
-      "type": "integer"
-    },
-    "type": {
-      "enum": [
-        "single",
-        "multiple",
-        "unknown"
-      ]
-    },
-    "topic_cn": {
-      "type": "string"
-    },
-    "topic_en": {
-      "type": "string"
-    },
-    "stem_cn": {
-      "type": "string"
-    },
-    "stem_en": {
-      "type": "string"
-    },
-    "options_cn": {
+    "items": {
       "type": "array",
       "items": {
-        "$ref": "#/$defs/option"
+        "$ref": "#/$defs/question"
       }
-    },
-    "options_en": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/option"
-      }
-    },
-    "answer_cn": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "answer_en": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "answer_final": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "answer_status": {
-      "type": "string"
-    },
-    "explanation_cn": {
-      "type": "string"
-    },
-    "explanation_en": {
-      "type": "string"
-    },
-    "raw_question_cn": {
-      "type": "string"
-    },
-    "raw_question_en": {
-      "type": "string"
-    },
-    "parse_status": {
-      "type": "object"
-    },
-    "risk_flags": {
-      "type": "array"
-    },
-    "source": {
-      "type": "object"
     }
   },
   "$defs": {
-    "option": {
+    "question": {
       "type": "object",
       "required": [
-        "key",
-        "text"
+        "question_id",
+        "source_question_id",
+        "chapter_code",
+        "question_type",
+        "stem",
+        "options",
+        "answer",
+        "answer_source",
+        "risk_flags",
+        "tier",
+        "stem_en",
+        "options_en"
       ],
       "properties": {
-        "key": {
+        "question_id": {
+          "type": "string",
+          "pattern": "^v7_q_[0-9]{6}$"
+        },
+        "source_question_id": {
           "type": "string"
         },
-        "text": {
+        "section_code": {
+          "type": "string"
+        },
+        "chapter_code": {
+          "type": "string"
+        },
+        "chapter_path_en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chapter_path_zh": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "display_chapter_path": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "question_type": {
+          "enum": [
+            "single",
+            "multiple",
+            "unknown"
+          ]
+        },
+        "stem": {
+          "type": "string"
+        },
+        "options": {
+          "$ref": "#/$defs/options"
+        },
+        "answer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "answer_source": {
+          "type": "string"
+        },
+        "risk_flags": {
+          "type": "array"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "stem_en": {
+          "type": "string"
+        },
+        "options_en": {
+          "$ref": "#/$defs/options"
+        },
+        "raw_question_en": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": true
+    },
+    "options": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-F]$": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

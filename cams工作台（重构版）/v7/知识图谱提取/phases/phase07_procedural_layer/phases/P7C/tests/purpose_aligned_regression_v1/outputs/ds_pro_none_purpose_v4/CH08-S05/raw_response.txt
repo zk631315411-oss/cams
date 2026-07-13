@@ -1,0 +1,77 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "cards": [
+    {
+      "card_id": "P7C_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "金融机构对SPV/PIV的强化尽职调查与受益所有人识别",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "SPV或PIV (特殊目的载体/集合投资工具)",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构进行强化尽职调查 (EDD)，包括识别最终受益所有人 (UBO) 并了解实体真实目的",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "最终受益所有人 (UBO) 被识别，实体真实目的被了解",
+          "evidence_unit_ids": ["v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "客户尽职调查规则 (CDD regulations)，例如FinCEN的CDD规则",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit",
+          "condition": "确保这些投资符合CDD规则",
+          "source_quote": "ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：面对SPV或PIV时，金融机构必须执行强化尽职调查（EDD）以识别最终受益所有人并了解真实目的，此过程需符合CDD规则，并有助于减轻金融犯罪风险。\nKG不足：基础KG仅记载了EDD要求的一般规则，但未表达SPV/PIV对象触发EDD、EDD内部包含识别UBO和了解目的的具体步骤，以及这些动作与合规标准（CDD规则）的约束关系。\n选项判断：可确认有关EDD适用范围、识别UBO义务和合规标准引用的题目选项。\nLLM推理：无。"
+    }
+  ]
+}

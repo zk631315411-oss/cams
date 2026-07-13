@@ -1,0 +1,170 @@
+{
+  "section_id": "CH49-S13",
+  "section_title": "Concluding an investigation and suspicious activity reporting > How law enforcement case investigators read a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S13_001",
+      "section_id": "CH49-S13",
+      "card_nature": "assessment",
+      "title": "Use SAR data to develop investigative intelligence",
+      "summary": "Law enforcement and analysts search SAR data and narrative information to identify illicit activity patterns, possible charges, money trails, and further investigative targets.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_sar_available",
+          "node_type": "start",
+          "label": "SAR is available to law enforcement and analysts for investigative use",
+          "evidence_unit_ids": ["v7u_N003645", "v7u_N003651", "v7u_N003654"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_sar_content",
+          "node_type": "input",
+          "label": "SAR data, form fields, and narrative information",
+          "evidence_unit_ids": ["v7u_N003648", "v7u_N003654", "v7u_N003655"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_not_evidence",
+          "node_type": "standard",
+          "label": "SARs assist intelligence collection but cannot be used as evidence",
+          "evidence_unit_ids": ["v7u_N003649", "v7u_N003650", "v7u_N003651"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_search_database",
+          "node_type": "action",
+          "label": "Access the relevant database and search names, identifiers, data, filing entities, subject entities, and narrative information",
+          "evidence_unit_ids": ["v7u_N003655"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_identify_activity",
+          "node_type": "action",
+          "label": "Identify what illicit activity occurred, where and when, products used, and why the activity is suspicious",
+          "evidence_unit_ids": ["v7u_N003656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_cross_search_sars",
+          "node_type": "action",
+          "label": "Search other SARs for suspect mentions, filing institution, and possible movement of illicit money",
+          "evidence_unit_ids": ["v7u_N003657"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_activity_pattern",
+          "node_type": "standard",
+          "label": "Activity pattern: who, what, where, when, how, and why",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_develop_charges",
+          "node_type": "action",
+          "label": "Develop or add criminal charges for underlying activity and possible money laundering",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_follow_money",
+          "node_type": "action",
+          "label": "Follow the money and other supporting data",
+          "evidence_unit_ids": ["v7u_N003652", "v7u_N003659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_expand_investigation",
+          "node_type": "output",
+          "label": "Other criminals identified and investigation expanded further",
+          "evidence_unit_ids": ["v7u_N003646", "v7u_N003653", "v7u_N003659"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_sar_available",
+          "target": "n_action_search_database",
+          "evidence_unit_ids": ["v7u_N003655"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_002",
+          "edge_type": "USES",
+          "source": "n_action_search_database",
+          "target": "n_input_sar_content",
+          "evidence_unit_ids": ["v7u_N003654", "v7u_N003655"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_003",
+          "edge_type": "USES",
+          "source": "n_action_search_database",
+          "target": "n_standard_not_evidence",
+          "evidence_unit_ids": ["v7u_N003650", "v7u_N003651"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_search_database",
+          "target": "n_action_identify_activity",
+          "evidence_unit_ids": ["v7u_N003655", "v7u_N003656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_identify_activity",
+          "target": "n_action_cross_search_sars",
+          "evidence_unit_ids": ["v7u_N003656", "v7u_N003657"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_006",
+          "edge_type": "USES",
+          "source": "n_action_develop_charges",
+          "target": "n_standard_activity_pattern",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_cross_search_sars",
+          "target": "n_action_develop_charges",
+          "evidence_unit_ids": ["v7u_N003657", "v7u_N003658"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_develop_charges",
+          "target": "n_action_follow_money",
+          "evidence_unit_ids": ["v7u_N003658", "v7u_N003659"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_follow_money",
+          "target": "n_output_expand_investigation",
+          "evidence_unit_ids": ["v7u_N003659"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003645", "v7u_N003646", "v7u_N003648", "v7u_N003649", "v7u_N003650", "v7u_N003651", "v7u_N003652", "v7u_N003653", "v7u_N003654", "v7u_N003655", "v7u_N003656", "v7u_N003657", "v7u_N003658", "v7u_N003659"],
+      "review_status": "needs_review",
+      "review_notes": "The database search and specific information targets are explicit. Later links from identifying SAR information to developing charges and expanding the investigation are modeled as functional dependencies because the section describes possible investigative uses rather than a mandatory chronological workflow."
+    }
+  ],
+  "skip_reason": null
+}

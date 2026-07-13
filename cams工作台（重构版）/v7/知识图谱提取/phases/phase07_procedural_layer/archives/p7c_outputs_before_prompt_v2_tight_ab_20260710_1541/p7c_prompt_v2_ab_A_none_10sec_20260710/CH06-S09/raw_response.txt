@@ -1,0 +1,62 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "cards": [
+    {
+      "card_id": "card_CH06_S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "\"Once a PEP, always a PEP\" approach triggered by sustained influence after stepping down",
+      "flow_nodes": [
+        {
+          "node_id": "CH06-S09-N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Individual remains in same circles of influence after stepping down",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S09-N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Adopt \"once a PEP, always a PEP\" approach",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S09-N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Individual permanently classified as PEP",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "CH06-S09-E1",
+          "edge_type": "PRECEDES",
+          "source": "CH06-S09-N1",
+          "target": "CH06-S09-N2",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "explicit",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "CH06-S09-E2",
+          "edge_type": "PRODUCES",
+          "source": "CH06-S09-N2",
+          "target": "CH06-S09-N3",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "component_assembles_product"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000477"],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：个人卸任后仍保留影响力（发现） --触发--> 采用永久PEP方法 --产生--> 永久分类为PEP；KG不足：基础KG未表达这种具体因果机制；选项判断：可判断机构采取永久PEP方法的原因及结果。"
+    }
+  ],
+  "skip_reason": ""
+}

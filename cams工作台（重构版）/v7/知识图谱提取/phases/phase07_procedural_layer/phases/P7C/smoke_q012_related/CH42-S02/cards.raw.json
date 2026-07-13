@@ -1,0 +1,160 @@
+{
+  "section_id": "CH42-S02",
+  "section_title": "Onboarding AFC controls > • Risk assessment:",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S02_001",
+      "section_id": "CH42-S02",
+      "title": "Customer risk assessment and due diligence routing",
+      "summary": "The institution assesses customer risk using risk factors or a numerical score, assigns a risk status, and routes high-risk customers to enhanced due diligence while standard-risk customers still undergo due diligence.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_customer_risk_assessment",
+          "node_type": "trigger",
+          "label": "Customer is assessed for risk",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess_customer_risk",
+          "node_type": "action",
+          "label": "Assess customer risk",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_risk_factors",
+          "node_type": "standard",
+          "label": "Industry type, jurisdictional exposure, and transaction behaviors",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_risk_score",
+          "node_type": "standard",
+          "label": "Advanced approaches may use a 1 to 100 risk score for a more nuanced risk-based approach",
+          "evidence_unit_ids": ["v7u_N003028"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_risk_status_assigned",
+          "node_type": "output",
+          "label": "Customer is assigned low-, medium-, or high-risk status",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_risk_status",
+          "node_type": "decision",
+          "label": "Is the customer high risk or standard risk?",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_enhanced_due_diligence",
+          "node_type": "action",
+          "label": "Examine high-risk customer more deeply through enhanced due diligence",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_standard_due_diligence",
+          "node_type": "action",
+          "label": "Apply due diligence process to standard-risk customer",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_due_diligence_route",
+          "node_type": "output",
+          "label": "Due diligence route is determined according to risk status",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_customer_risk_assessment",
+          "target": "n_action_assess_customer_risk",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess_customer_risk",
+          "target": "n_standard_risk_factors",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_003",
+          "edge_type": "USES",
+          "source": "n_action_assess_customer_risk",
+          "target": "n_standard_risk_score",
+          "evidence_unit_ids": ["v7u_N003028"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess_customer_risk",
+          "target": "n_output_risk_status_assigned",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_output_risk_status_assigned",
+          "target": "n_decision_risk_status",
+          "evidence_unit_ids": ["v7u_N003027", "v7u_N003029"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_risk_status",
+          "target": "n_action_enhanced_due_diligence",
+          "condition": "if customer is deemed high risk",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decision_risk_status",
+          "target": "n_action_standard_due_diligence",
+          "condition": "if customer is deemed standard risk, including low or medium risk",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_enhanced_due_diligence",
+          "target": "n_output_due_diligence_route",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S02_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_standard_due_diligence",
+          "target": "n_output_due_diligence_route",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003027", "v7u_N003028", "v7u_N003029"],
+      "review_status": "needs_review",
+      "review_notes": "Industry type, jurisdictional exposure, transaction behaviors, and numerical risk score are modeled as parallel assessment standards used by the risk assessment action. The link from assigned risk status to the routing decision is a functional dependency because the section states both assignment and due-diligence routing but does not specify a separate procedural handoff."
+    }
+  ],
+  "skip_reason": null
+}

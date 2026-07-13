@@ -1,0 +1,80 @@
+{
+  "section_id": "CH03-S02",
+  "section_title": "Examples of predicate crimes > Environmental crime",
+  "cards": [
+    {
+      "card_id": "P7C_CH03_S02_001",
+      "section_id": "CH03-S02",
+      "card_nature": "execution",
+      "title": "Waste Management Front Company Used for Placement and Layering",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "TCO partially owns a waste management and transportation front company",
+          "evidence_unit_ids": ["v7u_N000224"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "TCO may inflate contracts to place illicit funds",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "TCO may then execute contracts with complicit accountholders to layer funds",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Illicit funds are layered",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit",
+          "condition": "ownership allows contract inflation",
+          "source_quote": "Their ownership would allow the TCO to inflate contracts"
+        },
+        {
+          "edge_id": "E002",
+          "edge_type": "PRECEDES",
+          "source": "N002",
+          "target": "N003",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit",
+          "source_quote": "could then execute those contracts"
+        },
+        {
+          "edge_id": "E003",
+          "edge_type": "PRODUCES",
+          "source": "N003",
+          "target": "N004",
+          "evidence_unit_ids": ["v7u_N000225"],
+          "evidence_strength": "explicit",
+          "source_quote": "to layer the funds"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000224", "v7u_N000225"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：TCO部分拥有幌子公司 -> 虚增合同注入非法资金 -> 执行合同分层 -> 资金被分层；KG不足：基础KG将此事例作为整体过程描述，未表达虚增合同注入资金与执行合同分层之间的有向步骤顺序及产生的状态变化；选项判断：可确认关于洗钱放置与分层步骤顺序的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

@@ -1,0 +1,74 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "E2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process'明确支持存在退出超风险容忍度客户关系且仍有贷款余额的情境。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'writing off a loan'明确支持银行核销贷款的动作。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文并未指示退出情境先于核销贷款发生，而是将其作为该情境下的重大决策，属于伴随解释关系，不满足PRECEDES要求的方向明示或必要功能依赖。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文将退出情境与核销决策作为同一事件的组成部分，并非先后发生，错误将伴随关系标为PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000555"],
+      "source_quotes": ["When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."],
+      "reason": "两端节点均有原文支撑，但方向缺乏依据，PRECEDES关系不成立，建议拒绝该边。"
+    },
+    {
+      "edge_id": "E3",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'writing off a loan'直接对应核销贷款动作。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'often requiring extensive justification and approval'明确表达了需要充分理由和批准的要求。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表明核销贷款需要（requiring）理由和批准，因此动作参照标准，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文中的'often'被目标节点中的'通常'保留，频率限定未改变。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "需求关系非并列或相关，REFERENCES正确。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000555"],
+      "source_quotes": ["writing off a loan is a significant financial decision, often requiring extensive justification and approval."],
+      "reason": "原文明确支持核销贷款参照需要理由和批准的标准，各项检查均通过。"
+    }
+  ]
+}

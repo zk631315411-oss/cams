@@ -1,0 +1,189 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "cards": [
+    {
+      "card_id": "card_CH06_S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "UBO识别流程与例外分支",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "审查所有权结构",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "识别最终受益所有人(UBO)",
+          "evidence_unit_ids": [
+            "v7u_N000488",
+            "v7u_N000493"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "受益所有权识别阈值（通常25%，高风险可低至10%或5%）",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000490",
+            "v7u_N000491"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "直接和间接持股信息",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "判断是否存在自然人受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n7",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "自然人UBO被认定",
+          "evidence_unit_ids": [
+            "v7u_N000488",
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n8",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "控制人或名义受益所有人被识别",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000490",
+            "v7u_N000491"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "DECIDES",
+          "source": "n5",
+          "target": "n7",
+          "condition": "存在自然人受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "DECIDES",
+          "source": "n5",
+          "target": "n6",
+          "condition": "不存在自然人受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e7",
+          "edge_type": "PRODUCES",
+          "source": "n6",
+          "target": "n8",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489",
+        "v7u_N000490",
+        "v7u_N000491",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000496"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：审查所有权结构 → 识别最终受益所有人（引用直接和间接持股信息及基于风险设定的阈值） → 判断是否存在自然人受益所有人 → 如果不存在，则识别并核实控制人或名义受益所有人。KG不足：基础KG已包含UBO定义、阈值规则和例外规则，但未表达其内部条件化的决策流程和明确的程序性步骤，特别是从识别UBO到无自然人时转向识别控制人的分支链路。选项判断：该结构可用于确认或排除关于UBO识别步骤、阈值应用和例外处理的题目选项，例如是否必须在无自然人UBO时识别控制人。LLM推理：边e4（识别UBO→判断是否存在自然人UBO）和e5（判断存在自然人→UBO认定）标记为functional_dependency，因原文明示了条件逻辑但未直接陈述该流程衔接，但此方向是完成识别功能所必需的唯一合理连接。"
+    }
+  ],
+  "skip_reason": ""
+}

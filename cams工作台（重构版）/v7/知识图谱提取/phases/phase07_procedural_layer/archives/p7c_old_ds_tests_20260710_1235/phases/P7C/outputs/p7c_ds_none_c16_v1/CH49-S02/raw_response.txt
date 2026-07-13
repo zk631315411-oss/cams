@@ -1,0 +1,216 @@
+{
+  "section_id": "CH49-S02",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Duty to report",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S02_001",
+      "section_id": "CH49-S02",
+      "card_nature": "execution",
+      "title": "Duty to Report Suspicious Activity Process",
+      "summary": "Describes the process from suspicion of financial crime to reporting: staff report to a compliance officer, who assesses the information and decides whether to stop the process or submit a suspicious activity report. Legal duties, willful blindness, policies, and timelines serve as assessment standards.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_suspicion",
+          "node_type": "trigger",
+          "label": "Suspicion of financial crime by customer",
+          "evidence_unit_ids": ["v7u_N003475", "v7u_N003483"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_report",
+          "node_type": "action",
+          "label": "Staff report suspicion to assigned compliance officer",
+          "evidence_unit_ids": ["v7u_N003483", "v7u_N003484"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_assess",
+          "node_type": "action",
+          "label": "Compliance officer assesses reported information",
+          "evidence_unit_ids": ["v7u_N003485"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_sufficient",
+          "node_type": "decision",
+          "label": "Is activity or explanation sufficient?",
+          "evidence_unit_ids": ["v7u_N003486", "v7u_N003487"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_stop",
+          "node_type": "output",
+          "label": "Process stops (no further action)",
+          "evidence_unit_ids": ["v7u_N003486"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_sar",
+          "node_type": "output",
+          "label": "Submit suspicious activity report (SAR) to authority",
+          "evidence_unit_ids": ["v7u_N003487", "v7u_N003488"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_legal_duty",
+          "node_type": "standard",
+          "label": "Legal duty to report financial crime",
+          "evidence_unit_ids": ["v7u_N003475", "v7u_N003476", "v7u_N003480"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_willful_blindness",
+          "node_type": "standard",
+          "label": "Willful blindness liability standard",
+          "evidence_unit_ids": ["v7u_N003481", "v7u_N003482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_policies",
+          "node_type": "standard",
+          "label": "Organizational policies and procedures for reporting",
+          "evidence_unit_ids": ["v7u_N003477", "v7u_N003483", "v7u_N003484"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_timelines",
+          "node_type": "standard",
+          "label": "Reporting within agreed timelines",
+          "evidence_unit_ids": ["v7u_N003488"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_unusual",
+          "node_type": "standard",
+          "label": "Unusual activity reporting requirement",
+          "evidence_unit_ids": ["v7u_N003489"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_trigger_to_report",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_suspicion",
+          "target": "n_action_report",
+          "evidence_unit_ids": ["v7u_N003483"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e_report_to_assess",
+          "edge_type": "PRECEDES",
+          "source": "n_action_report",
+          "target": "n_action_assess",
+          "evidence_unit_ids": ["v7u_N003485"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e_assess_to_decision",
+          "edge_type": "PRECEDES",
+          "source": "n_action_assess",
+          "target": "n_decision_sufficient",
+          "evidence_unit_ids": ["v7u_N003485"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e_decision_yes_stop",
+          "edge_type": "DECIDES",
+          "source": "n_decision_sufficient",
+          "target": "n_output_stop",
+          "condition": "yes (sufficient explanation/activity)",
+          "evidence_unit_ids": ["v7u_N003486"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e_decision_no_sar",
+          "edge_type": "DECIDES",
+          "source": "n_decision_sufficient",
+          "target": "n_output_sar",
+          "condition": "no (facts indicate external report required)",
+          "evidence_unit_ids": ["v7u_N003487"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e_uses_legal_duty",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_legal_duty",
+          "evidence_unit_ids": ["v7u_N003475"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "If an organization suspects... it has a duty to report it to the authorities.",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "e_uses_willful_blindness",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_willful_blindness",
+          "evidence_unit_ids": ["v7u_N003481"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "In some jurisdictions, an individual can be prosecuted for 'willful blindness'...",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "e_uses_policies",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_policies",
+          "evidence_unit_ids": ["v7u_N003477"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "an organization will have clearly defined policies and procedures to ensure reporting is clear and factual...",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "e_uses_timelines",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_timelines",
+          "evidence_unit_ids": ["v7u_N003488"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Reporting within agreed timelines ensures that the individual and the organization effectively discharge their responsibilities.",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "e_uses_unusual",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_std_unusual",
+          "evidence_unit_ids": ["v7u_N003489"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Some jurisdictions may require unusual activities to be reported, in addition to those that are deemed suspicious.",
+          "qualifier": "standard"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003475", "v7u_N003476", "v7u_N003477", "v7u_N003478",
+        "v7u_N003479", "v7u_N003480", "v7u_N003481", "v7u_N003482",
+        "v7u_N003483", "v7u_N003484", "v7u_N003485", "v7u_N003486",
+        "v7u_N003487", "v7u_N003488", "v7u_N003489"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The USES edges from the assessment action to the legal, policy, and timeline standards are inferred as functional dependencies since the section does not explicitly state that the compliance officer uses these specific standards in the assessment step. The card captures the high-level reporting duty and decision process, but the exact criteria for the sufficiency decision are not detailed. Card may require downstream handoff to SAR filing procedures."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,88 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_001",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000132明确描述Sophie发现客户负面新闻。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138明确描述Sophie进行初步调查。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文叙述先发现新闻后调查，方向不可逆。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "condition“发现负面新闻后”与原文先后顺序一致。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "发现新闻和调查不是并列或共同结果，具有先后顺序。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000138"
+      ],
+      "source_quotes": [
+        "One day, she came across negative news concerning their customer FullTechGlobal Services",
+        "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts."
+      ],
+      "reason": "原文未用明确先后连接词，但叙述顺序和功能依赖支持时间先后，需人工确认。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138明确提到Sophie的初步调查。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138-140明确描述了识别到的具体贿赂手段。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "调查产生识别结果，原文用‘revealed’明示关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "调查与识别手段是产生关系，不是并列或共同结果。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "source_quotes": [
+        "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts.",
+        "it appeared the subsidiary was systematically obscuring illicit financial flows through inflated consultancy fees, fabricated invoicing practices, and opaque shell companies.",
+        "evidence suggested that FullTechGlobal provided sophisticated inducements, including lavish gifts and premium travel arrangements to public officials and high-ranking executives to unlawfully influence decision-making processes."
+      ],
+      "reason": "原文明确调查揭示贿赂手段，PRODUCES关系充分。"
+    }
+  ]
+}

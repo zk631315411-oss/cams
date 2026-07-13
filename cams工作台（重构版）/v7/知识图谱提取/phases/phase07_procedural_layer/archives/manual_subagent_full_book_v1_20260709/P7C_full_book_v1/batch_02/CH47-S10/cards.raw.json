@@ -1,0 +1,235 @@
+{
+  "section_id": "CH47-S10",
+  "section_title": "Transaction monitoring > How much research is reasonably enough?",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S10_001",
+      "section_id": "CH47-S10",
+      "card_nature": "assessment",
+      "title": "Assess whether research or due diligence is reasonable",
+      "summary": "Reasonableness is assessed from the content, documentation, steps followed, and whether another person would find the conclusion justifiable.",
+      "objective": "Judge whether investigation work or due diligence is reasonable rather than merely exhaustive.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_reasonableness_review",
+          "node_type": "start",
+          "label": "Research or due diligence needs to be evaluated for reasonableness",
+          "evidence_unit_ids": ["v7u_N003349", "v7u_N003352"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_evaluate_work",
+          "node_type": "action",
+          "label": "Evaluate the work based on content, documentation, and steps followed",
+          "evidence_unit_ids": ["v7u_N003352"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_justifiable_conclusion",
+          "node_type": "standard",
+          "label": "Another person would find the conclusions justifiable",
+          "evidence_unit_ids": ["v7u_N003352"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_verified_ubo_docs",
+          "node_type": "standard",
+          "label": "Primary verified documentation is on file for ultimate beneficial owners holding 10 percent or more",
+          "evidence_unit_ids": ["v7u_N003357"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_unverified_media_insufficient",
+          "node_type": "standard",
+          "label": "An unverified online public-media ownership search alone is insufficient",
+          "evidence_unit_ids": ["v7u_N003358"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_reasonable_or_insufficient",
+          "node_type": "output",
+          "label": "Reasonable or insufficient due diligence conclusion",
+          "evidence_unit_ids": ["v7u_N003352", "v7u_N003357", "v7u_N003358"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_reasonableness_review",
+          "target": "n_action_evaluate_work",
+          "evidence_unit_ids": ["v7u_N003352"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_work",
+          "target": "n_standard_justifiable_conclusion",
+          "evidence_unit_ids": ["v7u_N003352"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_work",
+          "target": "n_standard_verified_ubo_docs",
+          "evidence_unit_ids": ["v7u_N003357"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_work",
+          "target": "n_standard_unverified_media_insufficient",
+          "evidence_unit_ids": ["v7u_N003358"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_evaluate_work",
+          "target": "n_output_reasonable_or_insufficient",
+          "evidence_unit_ids": ["v7u_N003352", "v7u_N003357", "v7u_N003358"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003349", "v7u_N003352", "v7u_N003357", "v7u_N003358"],
+      "review_status": "accepted",
+      "review_notes": "This is an assessment card, not a strict operating workflow; parallel standards are represented through USES edges."
+    },
+    {
+      "card_id": "p7card_CH47-S10_002",
+      "section_id": "CH47-S10",
+      "card_nature": "control",
+      "title": "Design reasonable AML program controls",
+      "summary": "A reasonable AML program uses a risk-based approach, verifies beneficial ownership, establishes minimum enterprise standards, and develops systems to detect, monitor, and report riskier customers and transactions.",
+      "objective": "Set controls that make the AML program reasonably effective at identifying risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_program_design",
+          "node_type": "start",
+          "label": "Organization designs or evaluates AML policies, processes, and procedures",
+          "evidence_unit_ids": ["v7u_N003351"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess_overall_program",
+          "node_type": "action",
+          "label": "Assess whether the overall program is reasonably effective at identifying risk",
+          "evidence_unit_ids": ["v7u_N003351"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_risk_based_ubo",
+          "node_type": "standard",
+          "label": "Use a risk-based approach and take reasonable measures to verify beneficial owner identity and ownership/control structure",
+          "evidence_unit_ids": ["v7u_N003353"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_establish_minimum_standards",
+          "node_type": "action",
+          "label": "Establish minimum enterprise standards reasonably designed to comply with applicable laws and regulations",
+          "evidence_unit_ids": ["v7u_N003354"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_supplement_by_business_lines",
+          "node_type": "action",
+          "label": "Supplement enterprise standards with policies and procedures for specific business lines or legal entities",
+          "evidence_unit_ids": ["v7u_N003355"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_governance_risk_management",
+          "node_type": "standard",
+          "label": "Include corporate governance and overall management of money laundering and terrorist financing risks",
+          "evidence_unit_ids": ["v7u_N003356"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_detect_monitor_report",
+          "node_type": "action",
+          "label": "Develop systems and procedures to detect, monitor, and report riskier customers and transactions",
+          "evidence_unit_ids": ["v7u_N003360"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_reduced_sanction_exposure",
+          "node_type": "output",
+          "label": "Improved ability to avoid harm from criminals and government sanctions or penalties",
+          "evidence_unit_ids": ["v7u_N003360"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_program_design",
+          "target": "n_action_assess_overall_program",
+          "evidence_unit_ids": ["v7u_N003351"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_002",
+          "edge_type": "USES",
+          "source": "n_action_assess_overall_program",
+          "target": "n_standard_risk_based_ubo",
+          "evidence_unit_ids": ["v7u_N003351", "v7u_N003353"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_assess_overall_program",
+          "target": "n_action_establish_minimum_standards",
+          "evidence_unit_ids": ["v7u_N003351", "v7u_N003354"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_establish_minimum_standards",
+          "target": "n_action_supplement_by_business_lines",
+          "evidence_unit_ids": ["v7u_N003354", "v7u_N003355"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_005",
+          "edge_type": "USES",
+          "source": "n_action_establish_minimum_standards",
+          "target": "n_standard_governance_risk_management",
+          "evidence_unit_ids": ["v7u_N003354", "v7u_N003356"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_establish_minimum_standards",
+          "target": "n_action_detect_monitor_report",
+          "evidence_unit_ids": ["v7u_N003354", "v7u_N003360"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S10_002_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_detect_monitor_report",
+          "target": "n_output_reduced_sanction_exposure",
+          "evidence_unit_ids": ["v7u_N003360"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003351", "v7u_N003353", "v7u_N003354", "v7u_N003355", "v7u_N003356", "v7u_N003360"],
+      "review_status": "needs_review",
+      "review_notes": "Possible card granularity issue: this control card combines program design standards and monitoring/reporting system expectations. Several edges represent functional dependency among control requirements rather than explicit chronological order."
+    }
+  ],
+  "skip_reason": null
+}

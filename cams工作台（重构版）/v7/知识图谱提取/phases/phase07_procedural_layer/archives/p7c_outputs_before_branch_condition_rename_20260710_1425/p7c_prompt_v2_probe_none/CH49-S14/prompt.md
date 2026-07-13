@@ -1,0 +1,469 @@
+# P7C Section Judgement Card Extraction Prompt v1
+
+## Role
+
+You are a P7C section-local evidence-matching judgement card extractor.
+
+Read one textbook section and extract zero or more `p7_card` objects. Each card must help a later system judge whether a question option, business handling, risk response, control, or assessment is consistent with CAMS requirements. The source of truth is `flow_nodes` + `flow_edges`.
+
+## Boundary
+
+Only use the current section.
+
+Do not create `BRIDGES_TO`, clusters, scenario paths, explanations, Mermaid, draw.io, SVG, or PNG.
+
+If the section contains no executable process, no assessment standard, no control requirement, no risk-indicator rule, and no discouraged practice useful for judging business handling or exam options, return an empty `cards` array and a concise `skip_reason`.
+
+## Reading Order
+
+Read `section_text_with_unit_anchors`. It is the only extraction source and contains unit anchors such as:
+
+```text
+[v7u_N003233|3233] Transaction monitoring systems generate alerts...
+```
+
+Use these `unit_id` values as evidence anchors. The `allowed_unit_ids` list is only a whitelist for evidence IDs.
+
+Do not use core points, CP-unit edges, CP-CP edges, alias metadata, KG edges, or package-level summaries to infer card structure. If a card cannot be extracted from the section text itself, return no cards or mark the uncertain part as `needs_review`.
+
+## Evidence-Matching Goal
+
+The cards will be used later to match exam questions and options against textbook evidence. Therefore, a useful card is not only a workflow. It may also preserve:
+
+```text
+what situation or condition the section is talking about
+what action, control, assessment, or judgement is expected
+what standards, criteria, indicators, limits, or components must be considered
+what output, effect, risk finding, deficiency, or consequence follows
+what practice is discouraged, insufficient, or harmful
+```
+
+When deciding whether to extract, ask: could this section help judge whether an answer option is correct, incorrect, too broad, too narrow, or missing a condition? If yes, extract a card unless the evidence is too vague to model.
+
+## Extraction Scope
+
+Extract a card only when the section provides at least one of these useful judgement structures:
+
+```text
+execution       what to do, in what order, and with what branch or output
+assessment      how to judge, evaluate, screen, or determine a result
+control         what control or governance requirement applies and what effect it should have
+risk_indicator  what risk factor, red flag, or warning indicator should be used to identify elevated risk
+```
+
+Do not limit extraction to strict chronological processes. However, do not convert non-chronological judgement material into a fake sequence.
+
+Use this default structure when the source is not a strict execution process:
+
+```text
+assessment:     start/trigger -> assess/check/review action --USES--> parallel standards -> output result/finding
+control:        start/trigger -> apply/maintain/review control --USES--> inputs or standards -> output control effect
+risk_indicator: start/trigger -> screen/review action --USES--> parallel indicators -> output risk finding
+```
+
+Before skipping, check whether the section contains any of the following:
+
+```text
+a control effectiveness requirement or expected control effect
+an assessment or judgement standard
+a risk indicator, red flag, or risk factor
+an anti-pattern, discouraged practice, or negative consequence
+a condition or trigger that changes the required handling
+a business response useful for evaluating an exam option
+```
+
+If any item is present, do not skip. Extract the smallest useful `assessment`, `control`, or `risk_indicator` card. Use `review_status: "needs_review"` when the material is useful but not a strict process.
+
+Skip purely descriptive background, isolated examples, technology capability descriptions, definitions, or historical notes only when they provide no judgement rule, control requirement, risk indicator, condition, limitation, or option-evaluation value.
+
+Definitions may be extracted when they define a condition, threshold, control component, prohibited/discouraged pattern, or judgement category useful for evidence matching. Technology or control capability descriptions may be extracted when they state what the control should achieve, how it should be tuned or reviewed, when it should be reassessed, or what its limitations are.
+
+Examples may support `description` or `source_quote`, but do not promote an example into the main flow unless the section presents it as a required or generally applicable handling rule.
+
+## Card Granularity
+
+One card = one section-local, locally closed judgement unit with one primary objective.
+
+A card should have:
+
+```text
+an entry point
+a set of actions, decisions, standards, controls, or indicators
+a clear output, stable result, or handoff point
+```
+
+Prefer fewer, clearer cards. Do not force a card when the section only defines concepts and gives no business-handling judgement value.
+
+Split a section into multiple cards when it contains separate local process objectives that can each stand on their own. A common case is:
+
+```text
+primary assessment flow
+remediation or corrective-action subflow
+```
+
+For example, an assessment/result-calculation flow and a remediation/corrective-action workflow may be separate cards if each has its own entry, decision point, and output.
+
+Another common case is an optional preliminary path plus a main process. For example, a pre-onboarding committee suitability assessment for specific customer profiles should usually be a separate card from the typical KYC/CDD process if both have their own entry, decision, and output.
+
+Do not over-split examples, definitions, list items, or parallel standards into separate cards. Parallel standards should usually remain nodes inside the same card and be connected with `USES` edges.
+
+Risk-factor material may be extracted as an assessment or risk-indicator card when it gives usable screening or evaluation criteria, even if it does not specify a step-by-step workflow. In that case, set `card_nature` to `assessment` or `risk_indicator`, model the risk indicators as `standard` nodes used by an `action` such as assess, review, or screen, and explain in `review_notes` that the card is not a strict operating workflow.
+
+For `risk_indicator` cards, do not force a chronological sequence among risk factors. The usual structure is `start/trigger -> assess/review/screen action`, parallel `standard` nodes connected by `USES`, and an `output` risk finding.
+
+Discouraged-practice or anti-pattern material should usually be extracted as `assessment` or `control`, not as a new card nature. Model the questionable practice as a trigger, input, or standard; model the harm, deficiency, or required judgement as outputs or standards. If helpful, add optional metadata such as:
+
+```json
+{
+  "negative_pattern": true,
+  "evidence_matching_value": "high",
+  "not_strict_workflow": true,
+  "missing_context_risk": false
+}
+```
+
+Metadata is optional. It must not replace `flow_nodes`, `flow_edges`, evidence IDs, or review notes.
+
+## Required Card Fields
+
+Each card must include:
+
+```text
+card_id
+section_id
+card_nature
+title
+flow_nodes
+flow_edges
+source_unit_ids
+review_status
+```
+
+`card_nature` must be one of:
+
+```text
+execution       strict execution process: trigger, steps, branches, output
+assessment      judgement process: assessment object, criteria, result
+risk_indicator  risk-factor or red-flag card: risk scenario, indicators, risk conclusion
+control         control or governance requirement: control action, control objective, applicable context, expected effect
+```
+
+Use `execution` for strict operational handling sequences. Use `assessment`, `control`, or `risk_indicator` for non-sequential judgement material that is still useful for deciding whether a business response is CAMS-compliant.
+
+## Card Nature Decision Rules
+
+Choose `card_nature` by the card's primary objective, not by the mere presence of actions or decisions.
+
+Use `execution` when the card's primary objective is to perform an operational process or handling sequence, such as collecting information, verifying identity, conducting screening, filing a report, escalating a case, reviewing alerts, or completing a monitoring workflow.
+
+Use `assessment` when the card's primary objective is to:
+
+```text
+evaluate a profile, control, risk, result, or suitability
+screen against criteria
+determine whether to proceed
+determine risk level
+determine required due diligence or handling level
+decide whether standard or enhanced handling is required
+```
+
+This remains `assessment` even if the card has a trigger, action node, decision node, and output branches.
+
+Use `control` when the card's primary objective is to state a control or governance requirement, its applicable context, and its expected control effect. A control card may be non-chronological.
+
+Use `risk_indicator` when the source mainly lists risk factors, red flags, or warning indicators used to identify elevated risk or problematic conduct.
+
+If the boundary between card natures is uncertain, choose the closest primary objective, set `review_status` to `needs_review`, and explain the boundary issue in `review_notes`.
+
+Optional fields are allowed but must not replace the graph:
+
+```text
+summary
+scenario
+trigger
+actor
+objective
+inputs
+decision_standard
+outputs
+steps
+review_notes
+metadata
+```
+
+`summary` is only a human-readable description. `scenario`, `trigger`, and `objective` are retrieval or review aids. The formal trigger should be represented as a `trigger` node when the source text supports it.
+
+For later retrieval and evidence matching, preserve important condition words in titles and node labels, such as `when`, `if`, `unless`, `insufficient`, `defensive`, `effective`, `residual risk`, `tuning`, `threshold`, `high risk`, `significant event`, and similar source-supported qualifiers. Do not hide exceptions, limits, negative consequences, or branch conditions inside generic labels.
+
+## Flow Nodes
+
+Allowed node types:
+
+```text
+start
+trigger
+action
+decision
+input
+standard
+output
+end
+```
+
+Required node fields:
+
+```text
+node_id
+node_type
+label
+evidence_unit_ids
+evidence_strength
+```
+
+Optional node fields:
+
+```text
+actor
+description
+source_quote
+modality
+review_status
+```
+
+`review_status` must be exactly one of:
+
+```text
+needs_review
+accepted
+rejected
+```
+
+Do not output `reviewed`, `pass`, `valid`, `ok`, or other review status values.
+
+Rules:
+
+1. Every card must contain at least one `start` or `trigger` node.
+2. A `start` node may be structural, but it must not add business action not stated by the source.
+3. If the source text states a clear trigger condition or trigger event, create a `trigger` node.
+4. Any `input`, `standard`, or `output` referenced by `USES`, `PRODUCES`, or `FEEDBACK` must appear as a node.
+5. Do not create an `end` node unless it can cite at least one current-section `unit_id`. If the local exit is only inferred, use an `output` node with evidence instead of adding an unsupported `end` node.
+6. `evidence_unit_ids` must never be an empty list. Every node must cite at least one current-section `unit_id` from `allowed_unit_ids`.
+
+## Flow Edges
+
+Allowed card-internal edge types:
+
+```text
+PRECEDES
+USES
+PRODUCES
+DECIDES
+FEEDBACK
+```
+
+Required edge fields:
+
+```text
+edge_id
+edge_type
+source
+target
+evidence_unit_ids
+evidence_strength
+```
+
+Optional edge fields:
+
+```text
+condition
+qualifier
+modality
+source_quote
+review_status
+```
+
+Rules:
+
+1. `source` and `target` must reference `node_id` values in the same card.
+2. Conditional branches must use a `decision` node and `DECIDES` edges.
+3. Every `DECIDES` edge must include `condition`, such as `yes`, `no`, `if needed`, `if explainable`, or `if potentially suspicious`.
+4. Do not use `PRECEDES` to hide a condition branch.
+5. Do not turn parallel assessment dimensions into a chronological chain. When the source says `both A and B`, `A and B`, `includes A and B`, `consists of A and B`, `key elements include`, or similar list language, treat the items as parallel standards, inputs, outputs, or branches unless the source explicitly states sequence. Keep all parallel criteria that affect judgement; do not collapse them into one vague node.
+6. For assessment, control, and risk-indicator cards, prefer `action --USES--> standard` edges for criteria, requirements, controls, indicators, and judgement dimensions. For example, `Evaluate control effectiveness --USES--> design effectiveness` and `Evaluate control effectiveness --USES--> operational effectiveness` is better than `design effectiveness --PRECEDES--> operational effectiveness` unless the source explicitly states that sequence.
+7. Use `PRECEDES` only for explicit or strongly implied process order. If an edge is a `functional_dependency` rather than explicit sequence, add `review_status: "needs_review"` and explain in card `review_notes` whether it represents a parallel assessment dimension, condition dependency, outcome inference, or weak sequence reconstruction.
+8. `evidence_unit_ids` must never be an empty list. Every edge must cite at least one current-section `unit_id` from `allowed_unit_ids`.
+9. `qualifier` is optional and must be one of: `input`, `standard`, `context`, `record`, `finding`. Do not put explanatory sentences in `qualifier`; put explanations in `review_notes` or `source_quote` instead.
+
+When setting card-level `review_status: "needs_review"`, explain the reason in `review_notes`. Use one or more of these categories when applicable: weak inferred process order; non-procedural source material converted into an assessment/control/risk-indicator card; possible card granularity problem; missing downstream handoff; limited single-unit evidence; useful option-evaluation material but not a strict workflow; other.
+
+Card-level `review_status` must be exactly one of:
+
+```text
+needs_review
+accepted
+rejected
+```
+
+Do not output `reviewed`, `pass`, `valid`, `ok`, or other review status values.
+
+## Evidence Strength
+
+Use only:
+
+```text
+explicit
+functional_dependency
+needs_review
+rejected
+```
+
+Do not use `co_listed_input`, `weak_inference`, `no_relation`, `high`, `medium`, or `low`.
+
+Evidence must be current-section unit evidence. Do not cite CP titles, P2B labels, or alias metadata as evidence.
+
+Only use IDs listed in `allowed_unit_ids`. Do not invent unit IDs.
+
+## Output JSON Shape
+
+Return strict JSON only. Do not include markdown fences.
+
+```json
+{
+  "section_id": "<section_id>",
+  "section_title": "<section_title>",
+  "cards": [
+    {
+      "card_id": "p7card_<section_id>_001",
+      "section_id": "<section_id>",
+      "card_nature": "execution",
+      "title": "Short card title",
+      "summary": "Optional one-sentence human-readable description.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": ["v7u_..."],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_<section_id>_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_01",
+          "evidence_unit_ids": ["v7u_..."],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_..."],
+      "review_status": "needs_review",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}
+```
+
+If no cards should be extracted:
+
+```json
+{
+  "section_id": "<section_id>",
+  "section_title": "<section_title>",
+  "cards": [],
+  "skip_reason": "No section-level executable process, assessment standard, control requirement, or risk-indicator rule found."
+}
+```
+
+## Current Section
+
+section_id: `CH49-S14`
+
+section_title: `Concluding an investigation and suspicious activity reporting > Refusing or terminating a customer`
+
+section_text_with_unit_anchors:
+
+```text
+[v7u_N003660|3660] Refusing to onboard a customer can take place at different points in the customer cycle.
+ZH: 拒绝接纳客户可能发生在客户周期的不同阶段
+
+[v7u_N003661|3661] The organization may choose to not accept a new customer because, after conducting customer due diligence, you discover the customer is outside your organization’s risk appetite. Or the customer might have raised enough red flags for financial crime.
+ZH: 客户尽职调查后，若客户超出风险偏好或出现红旗信号信号，可拒绝接纳新客户。
+
+[v7u_N003662|3662] The organization may also decide to exit an existing customer after a standard review cycle, either because their activities look suspicious, or because your firm’s risk appetite has changed.
+ZH: 标准审查后，因客户活动可疑或风险偏好变化，可终止现有客户关系。
+
+[v7u_N003663|3663] If, for example, the organization does not accept embassies as customers, it is safe to say and document the reason.
+ZH: 若机构不接受使馆类客户，应安全记录拒绝原因。
+
+[v7u_N003664|3664] If there are underlying suspicions of financial crime, you must take care not to tip off the customer.
+ZH: 存在金融犯罪嫌疑时，必须注意不得向客户通风报信。
+
+[v7u_N003665|3665] Potential new customers who fail your organization’s CDD or are outside the stated risk appetite are the simplest to exit.
+ZH: 未通过客户尽职调查或超出风险偏好的潜在新客户最容易终止关系。
+
+[v7u_N003666|3666] If it is a risk appetite matter, such as not accepting certain sectors, it is safe to tell the potential customer.
+ZH: 若因风险偏好（如不接受特定行业）而拒绝客户，可安全告知潜在客户。
+
+[v7u_N003667|3667] However, if it is because of financial crime suspicions, care must be taken not to tip off the customer.
+ZH: 若因金融犯罪嫌疑而拒绝客户，必须注意不得通风报信。
+
+[v7u_N003668|3668] A simple explanation of “outside of risk appetite” should be sufficient.
+ZH: 以“超出风险偏好”作为简单解释通常足够。
+
+[v7u_N003669|3669] If you exit a new customer, you must keep a file stating your reasons.
+ZH: 终止新客户关系时，必须保留记录说明原因。
+
+[v7u_N003670|3670] If you suspect financial crime, your organization must make the necessary suspicious activity reports.
+ZH: 若怀疑金融犯罪，机构必须提交可疑活动报告。
+
+[v7u_N003671|3671] Exiting an established customer requires additional steps.
+ZH: 终止既有客户关系需要额外步骤。
+
+[v7u_N003672|3672] If your organization has decided to exit a sector or jurisdiction, there might be a press release or standard statement and customer communications that can be used to inform the customer of the decision.
+ZH: 退出某个行业或司法管辖区时，可使用新闻稿或标准声明通知客户。
+
+[v7u_N003673|3673] Exiting a customer because of suspicious activity is more difficult.
+ZH: 因可疑活动而终止客户关系更为困难。
+
+[v7u_N003674|3674] You should follow your organization's policies and procedures.
+ZH: 应遵循机构的政策和程序。
+
+[v7u_N003675|3675] It should be followed by a very generic letter or communication saying the organization wishes to discontinue the relationship.
+ZH: 应使用非常通用的信函或沟通方式表示机构希望终止关系。
+
+[v7u_N003676|3676] Your company might have a template for this communication.
+ZH: 公司可能有此类沟通的模板。
+
+[v7u_N003677|3677] Provided there is no legal requirement for you to do otherwise, you must give your customer reasonable time to make other arrangements.
+ZH: 除非法律另有要求，必须给予客户合理时间做出其他安排。
+```
+
+allowed_unit_ids:
+
+```json
+[
+  "v7u_N003660",
+  "v7u_N003661",
+  "v7u_N003662",
+  "v7u_N003663",
+  "v7u_N003664",
+  "v7u_N003665",
+  "v7u_N003666",
+  "v7u_N003667",
+  "v7u_N003668",
+  "v7u_N003669",
+  "v7u_N003670",
+  "v7u_N003671",
+  "v7u_N003672",
+  "v7u_N003673",
+  "v7u_N003674",
+  "v7u_N003675",
+  "v7u_N003676",
+  "v7u_N003677"
+]
+```

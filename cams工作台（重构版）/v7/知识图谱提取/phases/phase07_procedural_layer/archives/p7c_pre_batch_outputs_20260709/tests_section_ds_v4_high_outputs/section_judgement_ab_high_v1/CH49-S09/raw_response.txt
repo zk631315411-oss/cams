@@ -1,0 +1,235 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S09_001",
+      "section_id": "CH49-S09",
+      "card_nature": "execution",
+      "title": "Follow-up actions when SAR is not filed",
+      "summary": "After deciding not to file a SAR, organizations must document the rationale, conduct a trigger-event KYC review, re-perform CRA if risk profile changed, update client files, ensure ongoing monitoring, and maintain accessible records.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trig_nofile",
+          "node_type": "trigger",
+          "label": "Decision not to file SAR made",
+          "evidence_unit_ids": ["v7u_N003588", "v7u_N003589"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_act_doc_rationale",
+          "node_type": "action",
+          "label": "Document rationale for not filing SAR",
+          "evidence_unit_ids": ["v7u_N003590"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Document the rationale for not filing a SAR in detail. This includes describing the activity that prompted the review, the steps taken to analyze it, the reasoning behind the decision not to file, and any supporting documents..."
+        },
+        {
+          "node_id": "n_act_kyc_review",
+          "node_type": "action",
+          "label": "Conduct trigger-event KYC review",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "A trigger-event KYC review should be conducted to reassess the customer's risk profile based on recent changes..."
+        },
+        {
+          "node_id": "n_inp_kyc_triggers",
+          "node_type": "input",
+          "label": "Updated customer information, unusual transactions, negative news, changes in ownership",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "...such as updated customer information, unusual transaction patterns, negative news, or changes in ownership."
+        },
+        {
+          "node_id": "n_act_doc_kyc",
+          "node_type": "action",
+          "label": "Document KYC review and actions taken",
+          "evidence_unit_ids": ["v7u_N003592"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Thoroughly document the review and actions taken."
+        },
+        {
+          "node_id": "n_dec_risk_change",
+          "node_type": "decision",
+          "label": "Is there a change in customer risk profile?",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "...if there is a change in the customer’s risk profile."
+        },
+        {
+          "node_id": "n_act_reperform_cra",
+          "node_type": "action",
+          "label": "Re-perform CRA and consider further risk mitigants",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "The customer’s CRA should be reperformed and further risk mitigants considered if there is a change in the customer’s risk profile."
+        },
+        {
+          "node_id": "n_act_doc_cra",
+          "node_type": "action",
+          "label": "Document CRA re-performance",
+          "evidence_unit_ids": ["v7u_N003594"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "This process should also be documented."
+        },
+        {
+          "node_id": "n_act_update_file",
+          "node_type": "action",
+          "label": "Update client file with investigation documentation",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Additionally, update the client file with all investigation-related documentation."
+        },
+        {
+          "node_id": "n_act_ongoing_mon",
+          "node_type": "action",
+          "label": "Ensure ongoing monitoring for further unusual activity",
+          "evidence_unit_ids": ["v7u_N003596"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Ongoing monitoring should track customer activity for further unusual or suspicious behavior."
+        },
+        {
+          "node_id": "n_out_records",
+          "node_type": "output",
+          "label": "Accessible and retrievable records; compliance maintained",
+          "evidence_unit_ids": ["v7u_N003598", "v7u_N003599", "v7u_N003600", "v7u_N003601"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Proper record keeping ensures that the organization can readily provide necessary information... All records should be easily accessible and retrievable. ...organizations demonstrate their commitment to compliance... Organizations must continue to follow internal procedures..."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trig_nofile",
+          "target": "n_act_doc_rationale",
+          "evidence_unit_ids": ["v7u_N003588", "v7u_N003589", "v7u_N003590"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "In cases where a SAR is not filed... must still adhere to internal procedures... Document the rationale for not filing a SAR..."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_act_doc_rationale",
+          "target": "n_act_kyc_review",
+          "evidence_unit_ids": ["v7u_N003590", "v7u_N003591"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Document the rationale... A trigger-event KYC review should be conducted..."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_003",
+          "edge_type": "USES",
+          "source": "n_act_kyc_review",
+          "target": "n_inp_kyc_triggers",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "A trigger-event KYC review should be conducted... based on recent changes, such as updated customer information, unusual transaction patterns, negative news, or changes in ownership."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_act_kyc_review",
+          "target": "n_act_doc_kyc",
+          "evidence_unit_ids": ["v7u_N003591", "v7u_N003592"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "...conduct a trigger-event KYC review... Thoroughly document the review and actions taken."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_act_doc_kyc",
+          "target": "n_dec_risk_change",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "...document the review... The customer’s CRA should be reperformed... if there is a change in the customer’s risk profile."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_dec_risk_change",
+          "target": "n_act_reperform_cra",
+          "condition": "yes, risk profile changed",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "if there is a change in the customer’s risk profile."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_dec_risk_change",
+          "target": "n_act_update_file",
+          "condition": "no, no risk profile change",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Implied by the conditional 'if there is a change'; otherwise proceed to update client file."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_act_reperform_cra",
+          "target": "n_act_doc_cra",
+          "evidence_unit_ids": ["v7u_N003593", "v7u_N003594"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "The customer’s CRA should be reperformed... This process should also be documented."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_act_doc_cra",
+          "target": "n_act_update_file",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Additionally, update the client file with all investigation-related documentation."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_act_update_file",
+          "target": "n_act_ongoing_mon",
+          "evidence_unit_ids": ["v7u_N003595", "v7u_N003596"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "update the client file... Ongoing monitoring should track customer activity..."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_act_ongoing_mon",
+          "target": "n_out_records",
+          "evidence_unit_ids": ["v7u_N003596", "v7u_N003598", "v7u_N003599"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Ongoing monitoring... Proper record keeping ensures... accessible and retrievable..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003588", "v7u_N003589", "v7u_N003590", "v7u_N003591", "v7u_N003592",
+        "v7u_N003593", "v7u_N003594", "v7u_N003595", "v7u_N003596", "v7u_N003598",
+        "v7u_N003599", "v7u_N003600", "v7u_N003601"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order: text listing used to arrange documentation, KYC review, CRA re-performance, file update, and ongoing monitoring as a sequence; some steps may be parallel. Decision branch 'no' (no risk profile change) is implicit from the conditional language. Connective edges marked as functional_dependency due to lack of explicit sequential connectors."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,266 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "PEP Identification Based on Broad Definition",
+      "summary": "Assess whether an individual qualifies as a politically exposed person (PEP) using a broad definition that includes prominent roles, government positions, family, associates, and related businesses.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Individual subject to PEP identification",
+          "evidence_unit_ids": ["v7u_N000459"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess PEP status using broad definition",
+          "evidence_unit_ids": ["v7u_N000467", "v7u_N000468"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_role",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Prominent decision-making or influential role",
+          "evidence_unit_ids": ["v7u_N000469"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_govt",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Royal, military, legislative, judicial, executive, or similar government position",
+          "evidence_unit_ids": ["v7u_N000470"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_family",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Immediate family",
+          "evidence_unit_ids": ["v7u_N000473"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_associate",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Close friends or associates",
+          "evidence_unit_ids": ["v7u_N000474"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_business",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Businesses owned or held by those individuals",
+          "evidence_unit_ids": ["v7u_N000475"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "PEP status determined",
+          "evidence_unit_ids": ["v7u_N000467"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": ["v7u_N000459"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_std_role",
+          "evidence_unit_ids": ["v7u_N000469"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_std_govt",
+          "evidence_unit_ids": ["v7u_N000470"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_std_family",
+          "evidence_unit_ids": ["v7u_N000473"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_005",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_std_associate",
+          "evidence_unit_ids": ["v7u_N000474"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_006",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_std_business",
+          "evidence_unit_ids": ["v7u_N000475"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": ["v7u_N000467"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000459",
+        "v7u_N000467",
+        "v7u_N000468",
+        "v7u_N000469",
+        "v7u_N000470",
+        "v7u_N000473",
+        "v7u_N000474",
+        "v7u_N000475"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Extracted as an assessment card from PEP definition material. The entry trigger is inferential (based on obligation to identify PEPs) and the exit classification is implicit, not a strict workflow. Parallel standards for PEP identification are modeled via REFERENCES."
+    },
+    {
+      "card_id": "p7card_CH06-S09_002",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "Risk-Based PEP Management and Ongoing Monitoring",
+      "summary": "Organizations must implement a risk-based approach to manage PEP clients, choosing a monitoring strategy (e.g., once a PEP always a PEP or time/influence-based) and adjusting transaction monitoring and KYC reviews accordingly.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_02",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "Regulatory or internal requirement to manage PEP risk continuously",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement risk-based PEP management approach",
+          "evidence_unit_ids": ["v7u_N000476", "v7u_N000482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_rba",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "PEP risk is manageable under a risk-based approach",
+          "evidence_unit_ids": ["v7u_N000476"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_approach",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Approach options: once a PEP always a PEP, or consider current influence and time as PEP",
+          "evidence_unit_ids": ["v7u_N000477", "v7u_N000479", "v7u_N000480"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing PEP monitoring and escalation adjusted per risk appetite",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH06-S09_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_02",
+          "target": "n_process_02",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_std_rba",
+          "evidence_unit_ids": ["v7u_N000476"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_002_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_std_approach",
+          "evidence_unit_ids": ["v7u_N000477", "v7u_N000479", "v7u_N000480"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH06-S09_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_02",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000476",
+        "v7u_N000477",
+        "v7u_N000479",
+        "v7u_N000480",
+        "v7u_N000482"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Control card extracted from explicit regulatory requirement to manage PEP risk continuously using a risk-based approach, with references to common implementation options. Not a strict step-by-step execution flow."
+    }
+  ],
+  "skip_reason": null
+}

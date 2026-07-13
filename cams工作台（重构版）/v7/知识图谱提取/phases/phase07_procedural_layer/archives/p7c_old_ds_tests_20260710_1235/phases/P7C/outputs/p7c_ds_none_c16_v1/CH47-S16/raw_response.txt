@@ -1,0 +1,174 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "assessment",
+      "title": "SAR Filing Decision Process",
+      "summary": "Process for MLRO to review suspected activity, conduct additional research if needed, and decide whether to file a SAR, adhering to jurisdictional deadlines.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Detection of suspicious or potentially illicit activity",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_review",
+          "node_type": "action",
+          "label": "MLRO or secondary reviewer reads the SAR and raises questions",
+          "evidence_unit_ids": ["v7u_N003442"],
+          "evidence_strength": "explicit",
+          "actor": "MLRO or designated secondary reviewer",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_need_research",
+          "node_type": "decision",
+          "label": "Is further research needed?",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_conduct_research",
+          "node_type": "action",
+          "label": "Conduct additional research",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_decision",
+          "node_type": "decision",
+          "label": "MLRO decides whether to file SAR",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_output",
+          "node_type": "output",
+          "label": "SAR filed with FIU",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_not_file_output",
+          "node_type": "output",
+          "label": "SAR not filed",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_deadlines",
+          "node_type": "standard",
+          "label": "Jurisdictional reporting deadlines (e.g., 30 days from alert, extension, expedited for high-risk)",
+          "evidence_unit_ids": ["v7u_N003444", "v7u_N003445", "v7u_N003446", "v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_review",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003442", "v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_review",
+          "target": "n_need_research",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_need_research",
+          "target": "n_conduct_research",
+          "condition": "yes",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_need_research",
+          "target": "n_file_decision",
+          "condition": "no",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_005",
+          "edge_type": "FEEDBACK",
+          "source": "n_conduct_research",
+          "target": "n_review",
+          "condition": "research completed, feedback provided",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_file_decision",
+          "target": "n_file_output",
+          "condition": "file",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_file_decision",
+          "target": "n_not_file_output",
+          "condition": "do not file",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_008",
+          "edge_type": "USES",
+          "source": "n_file_decision",
+          "target": "n_standard_deadlines",
+          "evidence_unit_ids": ["v7u_N003444", "v7u_N003445", "v7u_N003446", "v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003439",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443",
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card includes inferred decision branches and feedback loop based on need for additional research and internal timelines; 'not filing SAR' option is not explicitly mentioned but implied by decision process."
+    }
+  ],
+  "skip_reason": null
+}

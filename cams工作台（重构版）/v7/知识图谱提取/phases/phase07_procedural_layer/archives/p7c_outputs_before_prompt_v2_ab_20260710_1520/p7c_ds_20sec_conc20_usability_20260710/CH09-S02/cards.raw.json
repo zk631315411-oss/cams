@@ -1,0 +1,448 @@
+{
+  "section_id": "CH09-S02",
+  "section_title": "Corporate and investment banking risks > Wire transfer risks",
+  "cards": [
+    {
+      "card_id": "p7card_CH09-S02_001",
+      "section_id": "CH09-S02",
+      "card_nature": "risk_indicator",
+      "title": "Wire Transfer Risk Factors and Red Flags",
+      "summary": "Identifies inherent wire transfer risk characteristics, potential illicit uses, and specific red flags used to detect suspicious activity.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Wire transfer initiated or under review",
+          "evidence_unit_ids": [
+            "v7u_N000677"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_assess_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess wire transfer risk based on red flags and risk factors",
+          "evidence_unit_ids": [
+            "v7u_N000686",
+            "v7u_N000689"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_01",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Risk characteristics: immediate, cross-border, large amounts, difficult to reverse",
+          "evidence_unit_ids": [
+            "v7u_N000678",
+            "v7u_N000679",
+            "v7u_N000680"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_02",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Potential illicit uses: terrorism financing, sanctions breach, concealment of crime proceeds, fraudulent transfers",
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N000683",
+            "v7u_N000684",
+            "v7u_N000685"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Red flag: High-risk jurisdictions",
+          "evidence_unit_ids": [
+            "v7u_N000687"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Red flag: Sanctioned individuals or entities",
+          "evidence_unit_ids": [
+            "v7u_N000688"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_05",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Unusual volume or amount",
+          "evidence_unit_ids": [
+            "v7u_N000690"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_06",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Unusual timing",
+          "evidence_unit_ids": [
+            "v7u_N000691"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_07",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Complex transaction paths",
+          "evidence_unit_ids": [
+            "v7u_N000692"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_08",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Unusual instructions (e.g., sequence, unrelated party name)",
+          "evidence_unit_ids": [
+            "v7u_N000693"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_09",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Concealing information (e.g., inadequate beneficiary information)",
+          "evidence_unit_ids": [
+            "v7u_N000694"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Wire transfer classified as suspicious or high-risk if red flags present",
+          "evidence_unit_ids": [
+            "v7u_N000697"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_assess_01",
+          "evidence_unit_ids": [
+            "v7u_N000677"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_01",
+          "evidence_unit_ids": [
+            "v7u_N000678",
+            "v7u_N000679",
+            "v7u_N000680"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_02",
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N000683",
+            "v7u_N000684",
+            "v7u_N000685"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "mechanism_explains_risk"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_03",
+          "evidence_unit_ids": [
+            "v7u_N000687"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_005",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_04",
+          "evidence_unit_ids": [
+            "v7u_N000688"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_006",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_05",
+          "evidence_unit_ids": [
+            "v7u_N000690"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_007",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_06",
+          "evidence_unit_ids": [
+            "v7u_N000691"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_008",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_07",
+          "evidence_unit_ids": [
+            "v7u_N000692"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_009",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_08",
+          "evidence_unit_ids": [
+            "v7u_N000693"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_010",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_01",
+          "target": "n_std_09",
+          "evidence_unit_ids": [
+            "v7u_N000694"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_001_011",
+          "edge_type": "PRODUCES",
+          "source": "n_assess_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N000697"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000677",
+        "v7u_N000678",
+        "v7u_N000679",
+        "v7u_N000680",
+        "v7u_N000682",
+        "v7u_N000683",
+        "v7u_N000684",
+        "v7u_N000685",
+        "v7u_N000686",
+        "v7u_N000687",
+        "v7u_N000688",
+        "v7u_N000689",
+        "v7u_N000690",
+        "v7u_N000691",
+        "v7u_N000692",
+        "v7u_N000693",
+        "v7u_N000694",
+        "v7u_N000697"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into a risk indicator card. The card compiles inherent risk characteristics and red flags as assessment references; the entry trigger and classification output are inferred. Useful for judging whether an exam option correctly describes wire transfer risk factors or red flags, but it is not a strict operating workflow."
+    },
+    {
+      "card_id": "p7card_CH09-S02_002",
+      "section_id": "CH09-S02",
+      "card_nature": "control",
+      "title": "Wire Transfer Risk Mitigation Controls",
+      "summary": "Organizations should implement payment screening, transaction monitoring, and fraud detection to detect risk typologies, ensure regulatory adherence, and protect customer funds.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_02",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Need to reduce wire transfer risk identified",
+          "evidence_unit_ids": [
+            "v7u_N000695"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement wire transfer controls",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_11",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Payment screening",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_12",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Transaction monitoring technology",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_13",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Fraud detection",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Risk typologies detected, regulations adhered to, customer funds protected",
+          "evidence_unit_ids": [
+            "v7u_N000697",
+            "v7u_N000698"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH09-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_02",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N000695"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_std_11",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_002_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_std_12",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_002_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_std_13",
+          "evidence_unit_ids": [
+            "v7u_N000696"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH09-S02_002_005",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_02",
+          "evidence_unit_ids": [
+            "v7u_N000697",
+            "v7u_N000698"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "component_assembles_product"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000695",
+        "v7u_N000696",
+        "v7u_N000697",
+        "v7u_N000698"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-chronological control requirement converted into a control card. The entry trigger and the aggregated output are inferred; control standards are explicitly stated. Useful for judging whether an exam option correctly identifies required wire transfer controls and their objectives, but it is not a strict operating workflow."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,195 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "Defensive SAR Evaluation",
+      "summary": "Evaluates whether a SAR filing is defensive and the consequences, using definitional, impact, and best-practice standards to conclude that defensive SARs should be avoided.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_defensive_sar",
+          "node_type": "trigger",
+          "label": "Filing a Defensive SAR ('just in case')",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_evaluate_sar_filing",
+          "node_type": "action",
+          "label": "Evaluate SAR Filing Decision",
+          "evidence_unit_ids": [
+            "v7u_N003604",
+            "v7u_N003605"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_defensive_sar_definition",
+          "node_type": "standard",
+          "label": "Defensive SAR Definition",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_negative_consequences",
+          "node_type": "standard",
+          "label": "Negative Consequences of Defensive SARs",
+          "evidence_unit_ids": [
+            "v7u_N003606",
+            "v7u_N003607"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_reasons_defensive_sar",
+          "node_type": "standard",
+          "label": "Reasons for Defensive SAR Filings",
+          "evidence_unit_ids": [
+            "v7u_N003608"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_best_practice_alternative",
+          "node_type": "standard",
+          "label": "Best Practice Alternative",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_afc_deficiencies_sign",
+          "node_type": "standard",
+          "label": "Defensive SARs Indicate AFC Program Deficiencies",
+          "evidence_unit_ids": [
+            "v7u_N003609",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_avoid_defensive_sar",
+          "node_type": "output",
+          "label": "Avoid Defensive SAR Filing; Address AFC Deficiencies",
+          "evidence_unit_ids": [
+            "v7u_N003609",
+            "v7u_N003611",
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_defensive_sar",
+          "target": "n_evaluate_sar_filing",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_defensive_sar_definition",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_negative_consequences",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_reasons_defensive_sar",
+          "evidence_unit_ids": [
+            "v7u_N003608"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_005",
+          "edge_type": "USES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_best_practice_alternative",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_006",
+          "edge_type": "USES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_afc_deficiencies_sign",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_evaluate_sar_filing",
+          "target": "n_output_avoid_defensive_sar",
+          "evidence_unit_ids": [
+            "v7u_N003610",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003602",
+        "v7u_N003603",
+        "v7u_N003604",
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003607",
+        "v7u_N003608",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into an assessment card. Conceptual sequence reconstructed to support evaluation of defensive SAR practice. Useful for judging exam options regarding SAR filing appropriateness."
+    }
+  ],
+  "skip_reason": null
+}

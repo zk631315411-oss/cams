@@ -1,0 +1,209 @@
+{
+  "section_id": "CH47-S11",
+  "section_title": "Transaction monitoring > Communication channels and tipping off",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S11_001",
+      "section_id": "CH47-S11",
+      "card_nature": "execution",
+      "title": "Customer Outreach for AML Alert Review",
+      "summary": "Analysts and front-line staff follow this process when additional customer information is needed for alert review or investigation, while avoiding tipping off.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Additional customer information required for alert/investigation",
+          "evidence_unit_ids": ["v7u_N003361", "v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_check_necessity",
+          "node_type": "action",
+          "label": "Ensure information is critical and not available internally/externally",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_plan_outreach",
+          "node_type": "action",
+          "label": "Plan outreach method",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_conduct_outreach",
+          "node_type": "action",
+          "label": "Conduct customer outreach",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_confidentiality",
+          "node_type": "standard",
+          "label": "Confidentiality: share securely, authorized parties only",
+          "evidence_unit_ids": ["v7u_N003365"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_clarity",
+          "node_type": "standard",
+          "label": "Clarity and precision: avoid misunderstandings",
+          "evidence_unit_ids": ["v7u_N003366"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_professionalism",
+          "node_type": "standard",
+          "label": "Professionalism: maintain professional tone",
+          "evidence_unit_ids": ["v7u_N003367"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_avoid_tipping",
+          "node_type": "standard",
+          "label": "Avoid tipping off: do not alert subject of monitoring",
+          "evidence_unit_ids": ["v7u_N003368"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_compliance",
+          "node_type": "standard",
+          "label": "Compliance: adhere to data protection laws and regulations",
+          "evidence_unit_ids": ["v7u_N003369"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_documentation",
+          "node_type": "standard",
+          "label": "Documentation: record all communications",
+          "evidence_unit_ids": ["v7u_N003370"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Outreach completed with documentation, no tipping off",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003370"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_check_necessity",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_check_necessity",
+          "target": "n_plan_outreach",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_plan_outreach",
+          "target": "n_conduct_outreach",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_004",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_confidentiality",
+          "evidence_unit_ids": ["v7u_N003365"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_005",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_clarity",
+          "evidence_unit_ids": ["v7u_N003366"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_006",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_professionalism",
+          "evidence_unit_ids": ["v7u_N003367"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_007",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_avoid_tipping",
+          "evidence_unit_ids": ["v7u_N003368"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_008",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_compliance",
+          "evidence_unit_ids": ["v7u_N003369"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_009",
+          "edge_type": "USES",
+          "source": "n_conduct_outreach",
+          "target": "n_documentation",
+          "evidence_unit_ids": ["v7u_N003370"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_conduct_outreach",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003370"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003361",
+        "v7u_N003362",
+        "v7u_N003364",
+        "v7u_N003365",
+        "v7u_N003366",
+        "v7u_N003367",
+        "v7u_N003368",
+        "v7u_N003369",
+        "v7u_N003370"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

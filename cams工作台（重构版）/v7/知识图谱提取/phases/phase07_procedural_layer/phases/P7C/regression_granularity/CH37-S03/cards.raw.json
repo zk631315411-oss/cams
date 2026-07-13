@@ -1,0 +1,463 @@
+{
+  "section_id": "CH37-S03",
+  "section_title": "Enterprise-wide risk assessment > Measuring control effectiveness",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S03_001",
+      "section_id": "CH37-S03",
+      "title": "Mitigate inherent risk and calculate residual risk",
+      "summary": "After inherent risks are identified, the organization applies controls, evaluates whether they reduce inherent risk, and uses the residual-risk formula to determine the resulting residual risk.",
+      "objective": "Determine residual AML/CTF risk after control mitigation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_inherent_risk_identified",
+          "node_type": "trigger",
+          "label": "Inherent risks are identified in the risk assessment",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_inherent_risk",
+          "node_type": "input",
+          "label": "Inherent AML/CTF risk for customers, jurisdictions, products, and delivery channels",
+          "evidence_unit_ids": ["v7u_N002769", "v7u_N002774"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_control_measures",
+          "node_type": "input",
+          "label": "AML/CFT measures, policies, procedures, systems, and controls",
+          "evidence_unit_ids": ["v7u_N002770", "v7u_N002773", "v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_apply_controls",
+          "node_type": "action",
+          "label": "Apply control measures to mitigate inherent risks",
+          "evidence_unit_ids": ["v7u_N002773", "v7u_N002774", "v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_evaluate_control_effectiveness",
+          "node_type": "action",
+          "label": "Evaluate control measures for effectiveness in reducing inherent risks",
+          "evidence_unit_ids": ["v7u_N002771", "v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_effectiveness_factors",
+          "node_type": "standard",
+          "label": "Proper application, functionality, and organization-wide consistency",
+          "evidence_unit_ids": ["v7u_N002772"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_risk_appetite",
+          "node_type": "standard",
+          "label": "Residual risk must be acceptable and consistent with the risk appetite statement",
+          "evidence_unit_ids": ["v7u_N002773", "v7u_N002774"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_controls_effective",
+          "node_type": "decision",
+          "label": "Are the controls judged effective?",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_calculate_residual_risk",
+          "node_type": "action",
+          "label": "Calculate residual risk as inherent risk minus control effectiveness",
+          "evidence_unit_ids": ["v7u_N002769"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_residual_risk_formula",
+          "node_type": "standard",
+          "label": "Residual risk = inherent risk - control effectiveness",
+          "evidence_unit_ids": ["v7u_N002769"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_residual_risk_result",
+          "node_type": "output",
+          "label": "Residual risk result, potentially lowered to medium or low",
+          "evidence_unit_ids": ["v7u_N002769", "v7u_N002775"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_inherent_risk_identified",
+          "target": "n_action_apply_controls",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_input_inherent_risk",
+          "evidence_unit_ids": ["v7u_N002773", "v7u_N002774"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_input_control_measures",
+          "evidence_unit_ids": ["v7u_N002770", "v7u_N002773", "v7u_N002775"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_standard_risk_appetite",
+          "evidence_unit_ids": ["v7u_N002773", "v7u_N002774"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_apply_controls",
+          "target": "n_action_evaluate_control_effectiveness",
+          "evidence_unit_ids": ["v7u_N002771", "v7u_N002773"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_006",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_control_effectiveness",
+          "target": "n_standard_effectiveness_factors",
+          "evidence_unit_ids": ["v7u_N002771", "v7u_N002772"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_evaluate_control_effectiveness",
+          "target": "n_decision_controls_effective",
+          "evidence_unit_ids": ["v7u_N002771", "v7u_N002775"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_008",
+          "edge_type": "DECIDES",
+          "source": "n_decision_controls_effective",
+          "target": "n_action_calculate_residual_risk",
+          "condition": "if controls are judged effective",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_009",
+          "edge_type": "USES",
+          "source": "n_action_calculate_residual_risk",
+          "target": "n_input_inherent_risk",
+          "evidence_unit_ids": ["v7u_N002769"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_010",
+          "edge_type": "USES",
+          "source": "n_action_calculate_residual_risk",
+          "target": "n_standard_residual_risk_formula",
+          "evidence_unit_ids": ["v7u_N002769"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_011",
+          "edge_type": "USES",
+          "source": "n_action_calculate_residual_risk",
+          "target": "n_standard_risk_appetite",
+          "evidence_unit_ids": ["v7u_N002773", "v7u_N002774"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_001_012",
+          "edge_type": "PRODUCES",
+          "source": "n_action_calculate_residual_risk",
+          "target": "n_output_residual_risk_result",
+          "evidence_unit_ids": ["v7u_N002769", "v7u_N002775"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002769",
+        "v7u_N002770",
+        "v7u_N002771",
+        "v7u_N002772",
+        "v7u_N002773",
+        "v7u_N002774",
+        "v7u_N002775"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Split from the detailed control-effectiveness assessment/remediation card because this card has its own entry condition (inherent risks identified), objective (mitigate inherent risk and compute residual risk), and output (residual risk result). Functional-dependency PRECEDES edges connect applying controls to evaluating effectiveness and evaluating effectiveness to the effectiveness decision; these are process dependencies reconstructed from units 2771, 2773, and 2775 rather than separate explicit sequence sentences. The effectiveness factors are modeled as a parallel standard node via USES, not as a time chain."
+    },
+    {
+      "card_id": "p7card_CH37-S03_002",
+      "section_id": "CH37-S03",
+      "title": "Assess control effectiveness and remediate control gaps",
+      "summary": "Control measures are assessed against design and operational effectiveness criteria, and identified design gaps or operational failures lead to corrective actions such as redesign, root-cause correction, QC redesign, or training.",
+      "objective": "Evaluate whether controls are properly designed and operating as intended, then remediate identified deficiencies.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_control_assessment_required",
+          "node_type": "trigger",
+          "label": "Control measures must be assessed for design and operational effectiveness",
+          "evidence_unit_ids": ["v7u_N002776"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess_controls",
+          "node_type": "action",
+          "label": "Assess control measures for effectiveness",
+          "evidence_unit_ids": ["v7u_N002771", "v7u_N002776"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_design_effectiveness",
+          "node_type": "standard",
+          "label": "Design effectiveness: control is appropriately built to mitigate inherent risk and covers salient policy requirements",
+          "evidence_unit_ids": ["v7u_N002777", "v7u_N002778", "v7u_N002780"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_operational_effectiveness",
+          "node_type": "standard",
+          "label": "Operational effectiveness: control functions as intended",
+          "evidence_unit_ids": ["v7u_N002781"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_sufficient_operating_period",
+          "node_type": "standard",
+          "label": "Operational effectiveness measurement requires a sufficient operating period and data, such as three to six months for monthly controls",
+          "evidence_unit_ids": ["v7u_N002785", "v7u_N002786"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_design_gap",
+          "node_type": "decision",
+          "label": "Are there gaps or flaws in process design?",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_redesign_control",
+          "node_type": "action",
+          "label": "Redesign the control",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_operational_failure",
+          "node_type": "decision",
+          "label": "Does testing indicate an operational failure caused by human or system error?",
+          "evidence_unit_ids": ["v7u_N002782"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_analyze_correct_root_cause",
+          "node_type": "action",
+          "label": "Analyze and correct the root cause of the error",
+          "evidence_unit_ids": ["v7u_N002783"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_root_cause_type",
+          "node_type": "decision",
+          "label": "Which root-cause response is indicated?",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_redesign_qc",
+          "node_type": "action",
+          "label": "Redesign the QC process when missing screening results were not captured",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_add_training",
+          "node_type": "action",
+          "label": "Provide additional training when human error is identified",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_remediated_control",
+          "node_type": "output",
+          "label": "Control deficiency corrected to avoid recurrence",
+          "evidence_unit_ids": ["v7u_N002783", "v7u_N002784"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_control_assessment_required",
+          "target": "n_action_assess_controls",
+          "evidence_unit_ids": ["v7u_N002776"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_002",
+          "edge_type": "USES",
+          "source": "n_action_assess_controls",
+          "target": "n_standard_design_effectiveness",
+          "evidence_unit_ids": ["v7u_N002776", "v7u_N002777", "v7u_N002778", "v7u_N002780"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_003",
+          "edge_type": "USES",
+          "source": "n_action_assess_controls",
+          "target": "n_standard_operational_effectiveness",
+          "evidence_unit_ids": ["v7u_N002776", "v7u_N002781"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_004",
+          "edge_type": "USES",
+          "source": "n_action_assess_controls",
+          "target": "n_standard_sufficient_operating_period",
+          "evidence_unit_ids": ["v7u_N002785", "v7u_N002786"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_assess_controls",
+          "target": "n_decision_design_gap",
+          "evidence_unit_ids": ["v7u_N002777", "v7u_N002779"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_design_gap",
+          "target": "n_action_redesign_control",
+          "condition": "if there are gaps or flaws in the process design",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_redesign_control",
+          "target": "n_output_remediated_control",
+          "evidence_unit_ids": ["v7u_N002779", "v7u_N002783"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_assess_controls",
+          "target": "n_decision_operational_failure",
+          "evidence_unit_ids": ["v7u_N002781", "v7u_N002782"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_009",
+          "edge_type": "DECIDES",
+          "source": "n_decision_operational_failure",
+          "target": "n_action_analyze_correct_root_cause",
+          "condition": "if operational failure caused by human or system error is indicated",
+          "evidence_unit_ids": ["v7u_N002782", "v7u_N002783"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_010",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze_correct_root_cause",
+          "target": "n_decision_root_cause_type",
+          "evidence_unit_ids": ["v7u_N002783", "v7u_N002784"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_011",
+          "edge_type": "DECIDES",
+          "source": "n_decision_root_cause_type",
+          "target": "n_action_redesign_qc",
+          "condition": "if missing screening results were not captured",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_012",
+          "edge_type": "DECIDES",
+          "source": "n_decision_root_cause_type",
+          "target": "n_action_add_training",
+          "condition": "if human error is identified",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_013",
+          "edge_type": "PRODUCES",
+          "source": "n_action_analyze_correct_root_cause",
+          "target": "n_output_remediated_control",
+          "evidence_unit_ids": ["v7u_N002783"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_014",
+          "edge_type": "PRODUCES",
+          "source": "n_action_redesign_qc",
+          "target": "n_output_remediated_control",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S03_002_015",
+          "edge_type": "PRODUCES",
+          "source": "n_action_add_training",
+          "target": "n_output_remediated_control",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002771",
+        "v7u_N002776",
+        "v7u_N002777",
+        "v7u_N002778",
+        "v7u_N002779",
+        "v7u_N002780",
+        "v7u_N002781",
+        "v7u_N002782",
+        "v7u_N002783",
+        "v7u_N002784",
+        "v7u_N002785",
+        "v7u_N002786"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Split from residual-risk calculation because this card has an independent assessment/remediation objective: assess controls against design and operational effectiveness, then remediate gaps or failures. Design effectiveness, operational effectiveness, and sufficient operating period are parallel assessment standards connected by USES edges from the assessment action; no PRECEDES edge orders those dimensions. Functional-dependency PRECEDES edges from assessment to design-gap and operational-failure decisions represent condition dependencies reconstructed from the assessment standards and the subsequent if-statements. The remediation branches are kept inside this card because redesign, QC redesign, root-cause correction, and training are corrective responses to the same control-effectiveness assessment rather than standalone section-local processes."
+    }
+  ],
+  "skip_reason": null
+}

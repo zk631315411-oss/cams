@@ -1,0 +1,221 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "cards": [
+    {
+      "card_id": "P7C_CH02_S04_C01",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "Event Signal Triggers Initial Investigation and Fact-Finding",
+      "flow_nodes": [
+        {
+          "node_id": "FN01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Negative news concerning customer FullTechGlobal Services (US subsidiary of UK parent, accused of bribery and corruption)",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie conducts initial investigation",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN03",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Investigation findings: use of intermediaries in high-risk jurisdictions, inflated consultancy fees, fabricated invoicing, shell companies, gifts and travel to influence officials",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "FE01",
+          "edge_type": "PRECEDES",
+          "source": "FN01",
+          "target": "FN02",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "FE02",
+          "edge_type": "PRODUCES",
+          "source": "FN02",
+          "target": "FN03",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：负面新闻事件 --> 触发初步调查 --> 产出发现（中间人、虚增费用、贿赂行为等）。基础KG无法表达这一具体调查步骤的顺序和触发关系。可用于判断选项：在发现负面新闻后，合规经理首先采取了什么行动？或是调查发现了什么？"
+    },
+    {
+      "card_id": "P7C_CH02_S04_C02",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Initial Findings Lead to Review and Identification of Internal Control Deficiencies",
+      "flow_nodes": [
+        {
+          "node_id": "FN04",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Preliminary investigation findings of potential bribery and corruption (intermediaries, financial manipulation, inducements)",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN05",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie follows up on investigation and conducts a review of FullTechGlobal's ABC framework and internal controls",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN06",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Identification of failures in ABC framework and internal controls, deficiencies in oversight",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "FE03",
+          "edge_type": "PRECEDES",
+          "source": "FN04",
+          "target": "FN05",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "FE04",
+          "edge_type": "PRODUCES",
+          "source": "FN05",
+          "target": "FN06",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140",
+        "v7u_N000141"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：初步发现（贿赂嫌疑） --> 跟进审查 --> 产出内控缺陷识别（ABC框架缺失、监管不足）。基础KG无法表达从情报到审查的触发和缺陷认定过程。可用于判断选项：在发现贿赂行为后，她进一步做了什么？审查发现了什么？"
+    },
+    {
+      "card_id": "P7C_CH02_S04_C03",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Deficiency Findings Lead to Recognition of Regulatory Implications and Compliance Obligations",
+      "flow_nodes": [
+        {
+          "node_id": "FN07",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Findings of internal control deficiencies and oversight failures",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN08",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie recognizes profound regulatory implications and need for compliance integrity",
+          "evidence_unit_ids": [
+            "v7u_N000143",
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "FN09",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Obligation for institution to maintain compliance integrity and mitigate bribery and corruption risks",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "FE05",
+          "edge_type": "PRECEDES",
+          "source": "FN07",
+          "target": "FN08",
+          "evidence_unit_ids": [
+            "v7u_N000141",
+            "v7u_N000143"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "FE06",
+          "edge_type": "PRODUCES",
+          "source": "FN08",
+          "target": "FN09",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000141",
+        "v7u_N000143",
+        "v7u_N000144"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：内控缺陷发现 --> 评估监管影响与合规需求 --> 产生持续合规义务（机构需维护诚信、降低风险）。基础KG无法表达这一认知和后续义务的有向关系。可用于判断选项：在发现缺陷后，Sophie认识到什么？机构需要做什么？"
+    }
+  ],
+  "skip_reason": null
+}

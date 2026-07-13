@@ -1,0 +1,178 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "card_nature": "execution",
+      "title": "Generate and review transaction monitoring alerts",
+      "summary": "Transaction monitoring controls monitor customer activity against parameters or thresholds, generate automated or manual alerts, and review the alerts to determine whether unusual behavior is explainable or potentially suspicious.",
+      "objective": "Manage ongoing risk by identifying customer activity beyond expected parameters and reviewing resulting alerts.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Apply transaction monitoring controls to ongoing customer activity",
+          "evidence_unit_ids": ["v7u_N003232", "v7u_N003241"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_activity",
+          "node_type": "input",
+          "label": "Customer account activity and transactions",
+          "evidence_unit_ids": ["v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_thresholds",
+          "node_type": "standard",
+          "label": "Customer profile parameters, scenarios, and thresholds",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_monitor",
+          "node_type": "action",
+          "label": "Monitor activity using automated or rules-based controls",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003236", "v7u_N003241"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_alert",
+          "node_type": "output",
+          "label": "Alert generated when activity is beyond normal parameters",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_manual_alert",
+          "node_type": "action",
+          "label": "Staff manually raise an alert when needed",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_review",
+          "node_type": "action",
+          "label": "Review the alert",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_explainable",
+          "node_type": "decision",
+          "label": "Determine whether unusual behavior is explainable or potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_explained",
+          "node_type": "output",
+          "label": "Unusual behavior is explained",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_suspicious",
+          "node_type": "output",
+          "label": "Behavior is potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_monitor",
+          "evidence_unit_ids": ["v7u_N003232", "v7u_N003241"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_002",
+          "edge_type": "USES",
+          "source": "n_action_monitor",
+          "target": "n_input_activity",
+          "evidence_unit_ids": ["v7u_N003241"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_003",
+          "edge_type": "USES",
+          "source": "n_action_monitor",
+          "target": "n_standard_thresholds",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003240", "v7u_N003241", "v7u_N003242"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_monitor",
+          "target": "n_output_alert",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_output_alert",
+          "target": "n_action_review",
+          "evidence_unit_ids": ["v7u_N003233", "v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_manual_alert",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237"],
+          "evidence_strength": "explicit",
+          "condition": "when needed"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_manual_alert",
+          "target": "n_action_review",
+          "evidence_unit_ids": ["v7u_N003235", "v7u_N003237", "v7u_N003234"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review",
+          "target": "n_decision_explainable",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_009",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable",
+          "target": "n_output_explained",
+          "condition": "if explainable",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_010",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable",
+          "target": "n_output_suspicious",
+          "condition": "if potentially suspicious",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003232", "v7u_N003233", "v7u_N003234", "v7u_N003235", "v7u_N003236", "v7u_N003237", "v7u_N003240", "v7u_N003241", "v7u_N003242"],
+      "review_status": "needs_review",
+      "review_notes": "Manual alert routing into the same review step is a functional dependency because the section says staff can manually raise alerts but does not spell out a separate downstream path. Category: weak inferred process order."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,184 @@
+{
+  "section_id": "CH42-S06",
+  "section_title": "Onboarding AFC controls > Customer risk assessment",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S06_001",
+      "section_id": "CH42-S06",
+      "title": "Customer risk assessment using parallel risk elements",
+      "summary": "A CRA evaluates multiple risk factors to determine the level of monitoring and scrutiny required for each customer.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_cra",
+          "node_type": "start",
+          "label": "Begin customer risk assessment",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_evaluate_risk_factors",
+          "node_type": "action",
+          "label": "Evaluate multiple customer risk factors",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_customer_profile",
+          "node_type": "standard",
+          "label": "Customer profile risk element",
+          "description": "Natural person or legal person, ownership structure, nature of business, industry, and presence of PEPs.",
+          "evidence_unit_ids": ["v7u_N003041", "v7u_N003042"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_jurisdiction",
+          "node_type": "standard",
+          "label": "Jurisdiction risk element",
+          "description": "Customer origin or business in high-risk jurisdictions identified by FATF, OFAC, EU, or local regulator lists.",
+          "evidence_unit_ids": ["v7u_N003041", "v7u_N003043"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_product",
+          "node_type": "standard",
+          "label": "Product risk element",
+          "description": "How products or services used by the customer could be misused for financial crime.",
+          "evidence_unit_ids": ["v7u_N003041", "v7u_N003044"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_delivery_channel",
+          "node_type": "standard",
+          "label": "Delivery channel risk element",
+          "description": "Whether the customer is onboarded in person or online; non-face-to-face transactions tend to be higher risk.",
+          "evidence_unit_ids": ["v7u_N003041", "v7u_N003045"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_transactional_behavior",
+          "node_type": "standard",
+          "label": "Transactional behavior risk element",
+          "description": "Deviations from expected transaction patterns, unexplained high-volume cross-border transactions, or complex payment structures.",
+          "evidence_unit_ids": ["v7u_N003041", "v7u_N003046"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_determine_monitoring_level",
+          "node_type": "action",
+          "label": "Determine appropriate monitoring and scrutiny level",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_monitoring_scrutiny_level",
+          "node_type": "output",
+          "label": "Appropriate monitoring and scrutiny required for each customer",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_framework_benefits",
+          "node_type": "output",
+          "label": "Enhanced detection, compliance, and risk management strategies",
+          "evidence_unit_ids": ["v7u_N003053"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_cra",
+          "target": "n_action_evaluate_risk_factors",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_002",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_standard_customer_profile",
+          "evidence_unit_ids": ["v7u_N003040", "v7u_N003041", "v7u_N003042"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_003",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_standard_jurisdiction",
+          "evidence_unit_ids": ["v7u_N003040", "v7u_N003041", "v7u_N003043"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_004",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_standard_product",
+          "evidence_unit_ids": ["v7u_N003040", "v7u_N003041", "v7u_N003044"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_005",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_standard_delivery_channel",
+          "evidence_unit_ids": ["v7u_N003040", "v7u_N003041", "v7u_N003045"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_006",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_standard_transactional_behavior",
+          "evidence_unit_ids": ["v7u_N003040", "v7u_N003041", "v7u_N003046"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_action_determine_monitoring_level",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_determine_monitoring_level",
+          "target": "n_output_monitoring_scrutiny_level",
+          "evidence_unit_ids": ["v7u_N003040"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S06_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_evaluate_risk_factors",
+          "target": "n_output_framework_benefits",
+          "evidence_unit_ids": ["v7u_N003053"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003040",
+        "v7u_N003041",
+        "v7u_N003042",
+        "v7u_N003043",
+        "v7u_N003044",
+        "v7u_N003045",
+        "v7u_N003046",
+        "v7u_N003053"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The five risk elements are modeled as parallel standards used by the CRA evaluation, not as a chronological sequence. The framework-benefit output is supported by the section but its edge from evaluation is a functional dependency rather than an explicit step."
+    }
+  ],
+  "skip_reason": null
+}

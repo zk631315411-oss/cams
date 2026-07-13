@@ -1,0 +1,352 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "SAR internal review and decision process",
+      "summary": "Process from detection of suspicious activity to filing decision, including further investigation, MLRO review, and timeline creation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Suspicious or potentially illicit activity detected",
+          "evidence_unit_ids": [
+            "v7u_N003438"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "Conduct further research to obtain additional information",
+          "evidence_unit_ids": [
+            "v7u_N003441"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO reviews SAR and raises questions to ensure narrative is cohesive and robust",
+          "evidence_unit_ids": [
+            "v7u_N003442"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_03",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "Create internal investigation and review timelines allowing for feedback and additional research",
+          "evidence_unit_ids": [
+            "v7u_N003443"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_04",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "MLRO makes final decision on SAR filing",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "SAR filed with FIU",
+          "evidence_unit_ids": [
+            "v7u_N003438"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Process ended without SAR filing",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N003441"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_process_01",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N003441",
+            "v7u_N003442"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_process_02",
+          "target": "n_process_03",
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_process_03",
+          "target": "n_process_04",
+          "evidence_unit_ids": [
+            "v7u_N003443",
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_process_04",
+          "target": "n_exit_01",
+          "condition": "decision to file SAR",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_process_04",
+          "target": "n_exit_02",
+          "condition": "decision not to file SAR",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order for initial steps; exit for non-filing is functional dependency without explicit text."
+    },
+    {
+      "card_id": "p7card_CH47-S16_002",
+      "section_id": "CH47-S16",
+      "card_nature": "assessment",
+      "title": "SAR filing deadline determination based on jurisdiction rules",
+      "summary": "Assessment of applicable SAR filing deadline under US FinCEN rules: 30 days, additional 30 days, or immediate reporting for high-risk activities.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_02",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Obligation to file SAR arises",
+          "evidence_unit_ids": [
+            "v7u_N003444"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_05",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Determine applicable filing deadline",
+          "evidence_unit_ids": [
+            "v7u_N003444"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_std_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Standard 30-calendar-day filing rule",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Additional 30 days permitted if initial detection does not identify a suspect and further investigation is required",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Expedited filing requirement for high-risk activities",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_03",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Immediate filing required",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_04",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Filing within 30 days",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_05",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Filing within 60 days",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_001",
+          "edge_type": "REFERENCES",
+          "source": "n_process_05",
+          "target": "n_std_01",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_05",
+          "target": "n_std_02",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_05",
+          "target": "n_std_03",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_004",
+          "edge_type": "DECIDES",
+          "source": "n_process_05",
+          "target": "n_exit_03",
+          "condition": "high-risk activity",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_005",
+          "edge_type": "DECIDES",
+          "source": "n_process_05",
+          "target": "n_exit_04",
+          "condition": "not high-risk and not eligible for extension",
+          "evidence_unit_ids": [
+            "v7u_N003445",
+            "v7u_N003446"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_002_006",
+          "edge_type": "DECIDES",
+          "source": "n_process_05",
+          "target": "n_exit_05",
+          "condition": "not high-risk, suspect not initially identified, and further investigation required",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Decision logic for 30-day vs. 60-day condition partly inferred; functional dependency for non-extended case."
+    }
+  ],
+  "skip_reason": null
+}

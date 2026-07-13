@@ -1,0 +1,232 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Intelligent Transaction Monitoring Capabilities",
+      "summary": "Transaction monitoring systems should apply intelligent analysis techniques, including contextual rules, network analysis, and AI/ML, to generate useful alerts, reduce false positives, and identify hidden connections.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_001",
+          "node_type": "start",
+          "label": "Implement intelligent transaction monitoring solutions",
+          "evidence_unit_ids": ["v7u_N003256"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_001",
+          "node_type": "action",
+          "label": "Analyze transactions using intelligent techniques",
+          "evidence_unit_ids": ["v7u_N003257", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_001_01",
+          "node_type": "standard",
+          "label": "Threshold-based rule with additional criteria (behavior change, peer comparison, high-risk industry)",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_001_02",
+          "node_type": "standard",
+          "label": "Network pattern detection among beneficiaries and contacts",
+          "evidence_unit_ids": ["v7u_N003258"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_001_03",
+          "node_type": "standard",
+          "label": "Automated identification of hidden links using common data features (email domains, phone numbers, addresses)",
+          "evidence_unit_ids": ["v7u_N003259", "v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_001_04",
+          "node_type": "standard",
+          "label": "Real-time AI/ML analysis of large transaction data to identify suspicious patterns and behaviors",
+          "evidence_unit_ids": ["v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_001",
+          "node_type": "output",
+          "label": "Useful alerts, reduced false positives, identified hidden connections, enhanced detection of suspicious patterns",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003260", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_001",
+          "target": "n_action_001",
+          "evidence_unit_ids": ["v7u_N003256"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_standard_001_01",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_standard_001_02",
+          "evidence_unit_ids": ["v7u_N003258"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_standard_001_03",
+          "evidence_unit_ids": ["v7u_N003259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_standard_001_04",
+          "evidence_unit_ids": ["v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_001",
+          "target": "n_output_001",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003260", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003256", "v7u_N003257", "v7u_N003258", "v7u_N003259", "v7u_N003260", "v7u_N003262", "v7u_N003265"],
+      "review_status": "needs_review",
+      "review_notes": "Non-sequential capability material modeled as a control card; parallel standards represent criteria used by the monitoring action. The start node is inferred from organizational intent."
+    },
+    {
+      "card_id": "p7card_CH47-S03_002",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Safeguards for AI Implementation in Transaction Monitoring",
+      "summary": "AI solutions must be tested for bias, be explainable, transparent, and relevant to the organization’s context, to support effective financial crime risk management.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_002",
+          "node_type": "trigger",
+          "label": "AI solutions are implemented (inherent risk)",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_002",
+          "node_type": "action",
+          "label": "Apply safeguards to AI solutions",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_002_01",
+          "node_type": "standard",
+          "label": "Test with diverse data sets to eliminate bias",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_002_02",
+          "node_type": "standard",
+          "label": "Ensure explainability",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_002_03",
+          "node_type": "standard",
+          "label": "Ensure transparency",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_002_04",
+          "node_type": "standard",
+          "label": "Ensure relevance to organization’s specific context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_002",
+          "node_type": "output",
+          "label": "AI supports effective financial crime risk management",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_002",
+          "target": "n_action_002",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_002",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_standard_002_01",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_003",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_standard_002_02",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_004",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_standard_002_03",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_005",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_standard_002_04",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_002",
+          "target": "n_output_002",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003268", "v7u_N003269", "v7u_N003270", "v7u_N003271"],
+      "review_status": "needs_review",
+      "review_notes": "Non-sequential control material; parallel standards represent requirements for AI solutions. The trigger is from the inherent risk statement."
+    }
+  ],
+  "skip_reason": null
+}

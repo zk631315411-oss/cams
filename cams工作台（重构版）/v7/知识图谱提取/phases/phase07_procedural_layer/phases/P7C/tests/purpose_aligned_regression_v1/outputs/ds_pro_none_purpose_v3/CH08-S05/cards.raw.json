@@ -1,0 +1,83 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "cards": [
+    {
+      "card_id": "card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "SPV/PIV的强化尽职调查（EDD）与风险缓解",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "SPV/PIV（特殊目的载体/集合投资工具）",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构：对SPV/PIV进行强化尽职调查（EDD），包括识别最终受益所有人并了解实体的真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "潜在金融犯罪风险得到帮助性减轻（有助于减轻风险）",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": null,
+          "review_status": null
+        },
+        {
+          "edge_id": "edge_2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs.",
+          "review_status": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：金融机构对SPV/PIV执行强化尽职调查（EDD）并具体识别最终受益所有人及了解真实目的，进而有助于减轻潜在金融犯罪风险。KG不足：基础KG能保存“金融机构需对SPV/PIV进行EDD”的一般规则，但无法表达EDD内部的具体程序性步骤（识别UBO、了解目的）及其产生的风险缓解效果导向。选项判断：可用于确认金融机构面对SPV/PIV时必须执行的具体动作及预期效果，排除仅做简单CDD或无需关注真实目的的选项。LLM推理：边PRECEDES为functional_dependency，原文未明确陈述先存在SPV/PIV实体后金融机构方才执行EDD的顺序，但根据业务逻辑，实体存在是执行EDD的必要前提，方向唯一合理。"
+    }
+  ],
+  "skip_reason": null
+}

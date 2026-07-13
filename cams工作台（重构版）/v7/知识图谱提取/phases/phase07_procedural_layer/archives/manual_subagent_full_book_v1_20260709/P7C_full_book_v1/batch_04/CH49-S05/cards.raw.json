@@ -1,0 +1,272 @@
+{
+  "section_id": "CH49-S05",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Case example: SAR for a family trust",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S05_001",
+      "section_id": "CH49-S05",
+      "card_nature": "execution",
+      "title": "Prepare and submit the Citizen Family Trust SAR",
+      "summary": "The MLRO identifies suspicious trust-account activity, compiles SAR facts and analysis, prepares supporting material and narrative controls, and submits the SAR through FinCEN within the deadline.",
+      "scenario": "Citizen Family Trust unusual withdrawals and inconsistent account behavior.",
+      "trigger": "Unusual large withdrawals with unclear purpose are detected in the trust account.",
+      "actor": "MLRO",
+      "objective": "File a clear, supported SAR that gives law enforcement actionable information.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_unusual_activity",
+          "node_type": "trigger",
+          "label": "Unusual trust-account activity is detected",
+          "evidence_unit_ids": ["v7u_N003529"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess_suspicion",
+          "node_type": "action",
+          "label": "Assess suspicious indicators and inconsistencies",
+          "evidence_unit_ids": ["v7u_N003530", "v7u_N003531", "v7u_N003544", "v7u_N003546"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_suspicion_indicators",
+          "node_type": "standard",
+          "label": "Indicators include rapid large withdrawals, high-risk source of funds, inconsistent wealth/activity, and withdrawals larger than typical family-trust transactions",
+          "evidence_unit_ids": ["v7u_N003530", "v7u_N003531", "v7u_N003544"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_suspicion_basis",
+          "node_type": "output",
+          "label": "Potential money laundering suspicion is formed",
+          "evidence_unit_ids": ["v7u_N003546"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_gather_initial_sar_info",
+          "node_type": "action",
+          "label": "Gather customer, account, source-of-funds, control-person, business-relationship, and investigator information for the SAR",
+          "evidence_unit_ids": ["v7u_N003533", "v7u_N003534", "v7u_N003535", "v7u_N003536", "v7u_N003537", "v7u_N003538", "v7u_N003539", "v7u_N003540", "v7u_N003545"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_initial_sar_info",
+          "node_type": "input",
+          "label": "Customer identity, contact, tax, account-opening, source-of-wealth, control-person, relationship, and investigator details",
+          "evidence_unit_ids": ["v7u_N003534", "v7u_N003535", "v7u_N003536", "v7u_N003537", "v7u_N003538", "v7u_N003539", "v7u_N003540", "v7u_N003545"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_record_transaction_details",
+          "node_type": "action",
+          "label": "Record unusual transaction dates and amounts",
+          "evidence_unit_ids": ["v7u_N003542", "v7u_N003543"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_transaction_details",
+          "node_type": "input",
+          "label": "Dates and amounts of unusual withdrawals",
+          "evidence_unit_ids": ["v7u_N003542", "v7u_N003543"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_attach_documentation",
+          "node_type": "action",
+          "label": "Attach and clearly label transaction records, customer identification information, and internal review notes",
+          "evidence_unit_ids": ["v7u_N003547"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_supporting_documents",
+          "node_type": "input",
+          "label": "Transaction records, customer identification information, and internal review notes",
+          "evidence_unit_ids": ["v7u_N003547"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_prepare_narrative",
+          "node_type": "action",
+          "label": "Prepare the SAR narrative and impact statement",
+          "evidence_unit_ids": ["v7u_N003548", "v7u_N003549", "v7u_N003550", "v7u_N003551"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_narrative_quality",
+          "node_type": "standard",
+          "label": "Narrative uses plain English, avoids jargon, answers who/what/where/when/why/how, includes internal control number and prior law-enforcement contact status, and uses clear headings and bullet points",
+          "evidence_unit_ids": ["v7u_N003548", "v7u_N003549", "v7u_N003551"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_apply_legal_controls",
+          "node_type": "action",
+          "label": "Maintain strict confidentiality and avoid tipping off account holders",
+          "evidence_unit_ids": ["v7u_N003552"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_submit_sar",
+          "node_type": "action",
+          "label": "Submit the SAR to FinCEN's online portal within the standard 30-day deadline",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_clear_sar",
+          "node_type": "output",
+          "label": "Clear, well-structured SAR supports compliance and law-enforcement investigation",
+          "evidence_unit_ids": ["v7u_N003554"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_unusual_activity",
+          "target": "n_action_assess_suspicion",
+          "evidence_unit_ids": ["v7u_N003529", "v7u_N003530"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess_suspicion",
+          "target": "n_standard_suspicion_indicators",
+          "evidence_unit_ids": ["v7u_N003530", "v7u_N003531", "v7u_N003544"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess_suspicion",
+          "target": "n_output_suspicion_basis",
+          "evidence_unit_ids": ["v7u_N003546"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_output_suspicion_basis",
+          "target": "n_action_gather_initial_sar_info",
+          "evidence_unit_ids": ["v7u_N003533", "v7u_N003546"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_005",
+          "edge_type": "USES",
+          "source": "n_action_gather_initial_sar_info",
+          "target": "n_input_initial_sar_info",
+          "evidence_unit_ids": ["v7u_N003533", "v7u_N003534", "v7u_N003545"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_gather_initial_sar_info",
+          "target": "n_action_record_transaction_details",
+          "evidence_unit_ids": ["v7u_N003542"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_007",
+          "edge_type": "USES",
+          "source": "n_action_record_transaction_details",
+          "target": "n_input_transaction_details",
+          "evidence_unit_ids": ["v7u_N003542", "v7u_N003543"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_record_transaction_details",
+          "target": "n_action_attach_documentation",
+          "evidence_unit_ids": ["v7u_N003547"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_009",
+          "edge_type": "USES",
+          "source": "n_action_attach_documentation",
+          "target": "n_input_supporting_documents",
+          "evidence_unit_ids": ["v7u_N003547"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_action_attach_documentation",
+          "target": "n_action_prepare_narrative",
+          "evidence_unit_ids": ["v7u_N003548"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_011",
+          "edge_type": "USES",
+          "source": "n_action_prepare_narrative",
+          "target": "n_standard_narrative_quality",
+          "evidence_unit_ids": ["v7u_N003548", "v7u_N003549", "v7u_N003551"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_012",
+          "edge_type": "PRECEDES",
+          "source": "n_action_prepare_narrative",
+          "target": "n_action_apply_legal_controls",
+          "evidence_unit_ids": ["v7u_N003552"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_013",
+          "edge_type": "PRECEDES",
+          "source": "n_action_apply_legal_controls",
+          "target": "n_action_submit_sar",
+          "evidence_unit_ids": ["v7u_N003552", "v7u_N003553"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_014",
+          "edge_type": "PRODUCES",
+          "source": "n_action_submit_sar",
+          "target": "n_output_clear_sar",
+          "evidence_unit_ids": ["v7u_N003553", "v7u_N003554"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003529",
+        "v7u_N003530",
+        "v7u_N003531",
+        "v7u_N003533",
+        "v7u_N003534",
+        "v7u_N003535",
+        "v7u_N003536",
+        "v7u_N003537",
+        "v7u_N003538",
+        "v7u_N003539",
+        "v7u_N003540",
+        "v7u_N003542",
+        "v7u_N003543",
+        "v7u_N003544",
+        "v7u_N003545",
+        "v7u_N003546",
+        "v7u_N003547",
+        "v7u_N003548",
+        "v7u_N003549",
+        "v7u_N003550",
+        "v7u_N003551",
+        "v7u_N003552",
+        "v7u_N003553",
+        "v7u_N003554"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Case narrative converted into a single SAR preparation flow. Several PRECEDES edges are weak sequence reconstruction from prose order, while the supporting documents, narrative quality, confidentiality, and submission requirements are explicit."
+    }
+  ],
+  "skip_reason": null
+}

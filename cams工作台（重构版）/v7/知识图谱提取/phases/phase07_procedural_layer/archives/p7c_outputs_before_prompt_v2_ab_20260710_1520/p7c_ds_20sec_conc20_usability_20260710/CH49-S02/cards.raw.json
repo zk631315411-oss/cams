@@ -1,0 +1,263 @@
+{
+  "section_id": "CH49-S02",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Duty to report",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S02_001",
+      "section_id": "CH49-S02",
+      "card_nature": "execution",
+      "title": "Suspicious activity reporting process: staff escalation to compliance officer decision",
+      "summary": "Staff report suspicions to the compliance officer, who assesses the information and decides whether to stop the process or submit a SAR to the relevant authority within agreed timelines.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_staff_suspect",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Staff identifies potential suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003483"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_report",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Staff reports suspicion to compliance officer",
+          "evidence_unit_ids": [
+            "v7u_N003483",
+            "v7u_N003485"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_assess",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Compliance officer assesses information",
+          "evidence_unit_ids": [
+            "v7u_N003485"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_sufficient",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Decide if activity/explanation is sufficient or external report needed",
+          "evidence_unit_ids": [
+            "v7u_N003486",
+            "v7u_N003487"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_stop",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Process stops (activity/explanation sufficient)",
+          "evidence_unit_ids": [
+            "v7u_N003486"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_sar",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "Submit SAR to relevant authority within agreed timelines",
+          "evidence_unit_ids": [
+            "v7u_N003487",
+            "v7u_N003488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_policy",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Clear policies and procedures for reporting ensure factual basis and staff protection",
+          "evidence_unit_ids": [
+            "v7u_N003477",
+            "v7u_N003483"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_staff_suspect",
+          "target": "n_process_report",
+          "evidence_unit_ids": [
+            "v7u_N003483"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_process_report",
+          "target": "n_process_assess",
+          "evidence_unit_ids": [
+            "v7u_N003485"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_report",
+          "target": "n_std_policy",
+          "evidence_unit_ids": [
+            "v7u_N003483"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_process_assess",
+          "target": "n_decision_sufficient",
+          "evidence_unit_ids": [
+            "v7u_N003486"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_sufficient",
+          "target": "n_exit_stop",
+          "condition": "sufficient",
+          "evidence_unit_ids": [
+            "v7u_N003486"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_sufficient",
+          "target": "n_exit_sar",
+          "condition": "facts indicate external report must be made",
+          "evidence_unit_ids": [
+            "v7u_N003487"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_001_007",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess",
+          "target": "n_std_policy",
+          "evidence_unit_ids": [
+            "v7u_N003477"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003477",
+        "v7u_N003483",
+        "v7u_N003485",
+        "v7u_N003486",
+        "v7u_N003487",
+        "v7u_N003488"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The edge from compliance officer assessment to policies (n_process_assess -> n_std_policy) is a functional dependency not explicitly stated; marked needs_review."
+    },
+    {
+      "card_id": "p7card_CH49-S02_002",
+      "section_id": "CH49-S02",
+      "card_nature": "assessment",
+      "title": "Willful blindness as equivalent to actual knowledge",
+      "summary": "In assessing whether an individual had knowledge of financial crime, deliberate avoidance of facts (willful blindness) is treated as equivalent to actual knowledge under law.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_knowledge_assess",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Assessment of individual's knowledge of financial crime",
+          "evidence_unit_ids": [
+            "v7u_N003481"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_assess_wb",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess willful blindness based on transaction circumstances and defendant conduct",
+          "evidence_unit_ids": [
+            "v7u_N003481",
+            "v7u_N003482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_wb_def",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Willful blindness: deliberate avoidance of knowledge of facts",
+          "evidence_unit_ids": [
+            "v7u_N003482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_actual_knowledge",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Deemed actual knowledge of illegal source or customer intentions",
+          "evidence_unit_ids": [
+            "v7u_N003482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_knowledge_assess",
+          "target": "n_process_assess_wb",
+          "evidence_unit_ids": [
+            "v7u_N003481"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess_wb",
+          "target": "n_std_wb_def",
+          "evidence_unit_ids": [
+            "v7u_N003482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S02_002_003",
+          "edge_type": "PRODUCES",
+          "source": "n_process_assess_wb",
+          "target": "n_exit_actual_knowledge",
+          "evidence_unit_ids": [
+            "v7u_N003482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003481",
+        "v7u_N003482"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Willful blindness assessment is not a strict operational workflow but provides a legal standard used in evaluating individual culpability."
+    }
+  ],
+  "skip_reason": null
+}

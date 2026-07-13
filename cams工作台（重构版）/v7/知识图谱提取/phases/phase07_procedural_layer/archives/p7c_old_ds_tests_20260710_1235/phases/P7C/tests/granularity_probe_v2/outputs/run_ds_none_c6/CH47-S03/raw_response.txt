@@ -1,0 +1,251 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Intelligent Transaction Monitoring Capabilities",
+      "summary": "Intelligent transaction monitoring systems employ contextual analysis, network analysis, and AI to analyze transactions against thresholds, behavioral patterns, network relationships, and data features, producing more useful alerts with reduced false positives and uncovering hidden connections.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_001",
+          "node_type": "start",
+          "label": "Transaction monitoring system processes transactions",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_001",
+          "node_type": "action",
+          "label": "Apply intelligent transaction monitoring analysis",
+          "evidence_unit_ids": ["v7u_N003257", "v7u_N003258", "v7u_N003259", "v7u_N003265"],
+          "evidence_strength": "explicit",
+          "description": "Use intelligent contextual analysis, network analysis, and AI-powered analysis to evaluate transactions."
+        },
+        {
+          "node_id": "n_std_001_01",
+          "node_type": "standard",
+          "label": "Threshold and additional criteria (behavior vs history/peers, high-risk sector)",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_001_02",
+          "node_type": "standard",
+          "label": "Network relationship patterns among beneficiaries",
+          "evidence_unit_ids": ["v7u_N003258"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_001_03",
+          "node_type": "standard",
+          "label": "Common data features (email domains, phone numbers, addresses)",
+          "evidence_unit_ids": ["v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_001_04",
+          "node_type": "standard",
+          "label": "AI-identified suspicious patterns/behaviors",
+          "evidence_unit_ids": ["v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_001",
+          "node_type": "output",
+          "label": "Useful alerts with reduced false positives and identified hidden links/patterns",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_001",
+          "target": "n_action_001",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_std_001_01",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_std_001_02",
+          "evidence_unit_ids": ["v7u_N003258"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_std_001_03",
+          "evidence_unit_ids": ["v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_action_001",
+          "target": "n_std_001_04",
+          "evidence_unit_ids": ["v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_001",
+          "target": "n_output_001",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003256",
+        "v7u_N003257",
+        "v7u_N003258",
+        "v7u_N003259",
+        "v7u_N003260",
+        "v7u_N003261",
+        "v7u_N003262",
+        "v7u_N003263",
+        "v7u_N003264",
+        "v7u_N003265"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into a control card describing transaction monitoring capabilities. Trigger is implied; card is useful for evaluating technology capability-related exam options."
+    },
+    {
+      "card_id": "p7card_CH47-S03_002",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "AI Implementation Controls for Transaction Monitoring",
+      "summary": "When implementing AI solutions for transaction monitoring, organizations must ensure the AI is tested with diverse datasets to eliminate bias, and that it is explainable, transparent, and relevant to the organization's context, in order to achieve effective AI-supported financial crime risk management.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_002",
+          "node_type": "start",
+          "label": "AI solution implementation initiated",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_002",
+          "node_type": "action",
+          "label": "Apply AI implementation safeguards (testing, explainability, transparency, relevance)",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003270"],
+          "evidence_strength": "explicit",
+          "description": "Implement required controls when deploying AI for transaction monitoring."
+        },
+        {
+          "node_id": "n_std_002_01",
+          "node_type": "standard",
+          "label": "Test with diverse datasets to eliminate bias",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_002_02",
+          "node_type": "standard",
+          "label": "Explainable",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_002_03",
+          "node_type": "standard",
+          "label": "Transparent",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_002_04",
+          "node_type": "standard",
+          "label": "Relevant to organization's specific context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_002",
+          "node_type": "output",
+          "label": "Effective AI-supported financial crime risk management",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_002",
+          "target": "n_action_002",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_002",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_std_002_01",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_003",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_std_002_02",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_004",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_std_002_03",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_005",
+          "edge_type": "USES",
+          "source": "n_action_002",
+          "target": "n_std_002_04",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_002",
+          "target": "n_output_002",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003268",
+        "v7u_N003269",
+        "v7u_N003270",
+        "v7u_N003271"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into a control card for AI implementation requirements. Useful for evaluating AI governance exam options."
+    }
+  ],
+  "skip_reason": null
+}

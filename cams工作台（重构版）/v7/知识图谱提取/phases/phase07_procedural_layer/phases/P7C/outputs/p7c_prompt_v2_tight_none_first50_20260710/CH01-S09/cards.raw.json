@@ -1,0 +1,243 @@
+{
+  "section_id": "CH01-S09",
+  "section_title": "Money Laundering and Financial Crime > • Shell companies and front businesses:",
+  "cards": [
+    {
+      "card_id": "card_CH01_S09_001",
+      "section_id": "CH01-S09",
+      "card_nature": "execution",
+      "title": "欺诈邮件诱骗电汇并快速转移资金",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "创建虚假邮件地址模仿合法公司",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "诱骗受害者将资金电汇至钱骡账户",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通过取现、ATM交易、借记卡消费快速提取资金",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "资金转移至同伙控制的外国账户",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "N3",
+          "target": "N4",
+          "evidence_unit_ids": [
+            "v7u_N000050"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000050"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：创建虚假邮件（N1） --PRECEDES--> 诱骗电汇（N2） --PRECEDES--> 快速提取资金（N3） --PRODUCES--> 资金转移至外国账户（N4）；KG不足：基础KG将v7u_N000050作为案例内容存储，但无法表达欺诈过程中的明确步骤顺序和资金流动的有向关系；选项判断：可确认洗钱手法包括先诱骗电汇再快速提取转移，排除其他非顺序或无关选项。"
+    },
+    {
+      "card_id": "card_CH01_S09_002",
+      "section_id": "CH01-S09",
+      "card_nature": "execution",
+      "title": "利用钱骡网络创建多层交易以阻碍追踪",
+      "flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "招募并监督钱骡",
+          "evidence_unit_ids": [
+            "v7u_N000054"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "钱骡进行国内外电汇",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N7",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "创建多层交易",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N8",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "阻碍金融调查人员追踪",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRECEDES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000054",
+            "v7u_N000056"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "PRODUCES",
+          "source": "N6",
+          "target": "N7",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "PRODUCES",
+          "source": "N7",
+          "target": "N8",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000054",
+        "v7u_N000056"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：招募钱骡（N5） --PRECEDES--> 钱骡进行国内外电汇（N6） --PRODUCES--> 创建多层交易（N7） --PRODUCES--> 阻碍追踪（N8）；KG不足：基础KG记录钱骡的使用作为案例事实，但未表达从招募到转账的顺序关系和转账到阻碍追踪的因果链；选项判断：可确认洗钱者通过钱骡网络的多层转账来阻碍金融调查，排除单一账户直接转移的选项。"
+    },
+    {
+      "card_id": "card_CH01_S09_003",
+      "section_id": "CH01-S09",
+      "card_nature": "control",
+      "title": "银行因欺诈嫌疑冻结和追回非法资金",
+      "flow_nodes": [
+        {
+          "node_id": "N9",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "银行怀疑欺诈",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N10",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行冻结和追回部分资金",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N11",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "部分资金被冻结和追回",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E7",
+          "edge_type": "PRECEDES",
+          "source": "N9",
+          "target": "N10",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E8",
+          "edge_type": "PRODUCES",
+          "source": "N10",
+          "target": "N11",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000057"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：银行怀疑欺诈（N9） --PRECEDES--> 银行冻结和追回资金（N10） --PRODUCES--> 部分资金被冻结和追回（N11）；KG不足：基础KG记录银行干预作为案例事实，但未表达从怀疑到干预的触发关系和干预产生的结果状态变化；选项判断：可确认银行行动由欺诈嫌疑触发，导致资金冻结和追回，排除其他非触发或结果不明的选项。"
+    }
+  ]
+}

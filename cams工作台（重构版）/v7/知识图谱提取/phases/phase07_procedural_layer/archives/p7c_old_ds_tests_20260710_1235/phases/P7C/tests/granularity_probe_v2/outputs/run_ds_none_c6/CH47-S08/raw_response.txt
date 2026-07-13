@@ -1,0 +1,133 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation investigation steps",
+      "summary": "Steps analyst takes before escalating investigation to confirm and report suspicion: understand suspicion, review transaction patterns, use onboarding/historical data, and document findings with missing info noted.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Trigger: Before escalating investigation to confirm and report suspicion",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "description": "The process is triggered when an investigation is about to be escalated."
+        },
+        {
+          "node_id": "n_a1",
+          "node_type": "action",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "description": "Analyst is expected to understand the suspicion and determine if there is a possible explanation for the transaction."
+        },
+        {
+          "node_id": "n_a2",
+          "node_type": "action",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "description": "Check for any patterns in previous transactions that may be relevant."
+        },
+        {
+          "node_id": "n_a3",
+          "node_type": "action",
+          "label": "Use onboarding information and historical transaction data for context",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "description": "Leverage information gathered during onboarding and historical data to provide helpful context."
+        },
+        {
+          "node_id": "n_a4",
+          "node_type": "action",
+          "label": "Document all research clearly, indicating any missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "description": "Finally, clearly document the research, noting what information might be missing."
+        },
+        {
+          "node_id": "n_o1",
+          "node_type": "output",
+          "label": "Documented investigation with missing information noted",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "description": "The output is a documented record of the investigation, including any gaps."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_a1",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_a2",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "review_notes": "Parallel step implied by 'should also be reviewed', not strict sequence."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_a3",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "review_notes": "Parallel step; text says information 'can provide helpful context', not explicit trigger sequence."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_a1",
+          "target": "n_a4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "review_notes": "Documentation occurs after all investigation steps, per 'Finally'."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_a2",
+          "target": "n_a4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_a3",
+          "target": "n_a4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_a4",
+          "target": "n_o1",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003330", "v7u_N003331", "v7u_N003332", "v7u_N003333"],
+      "review_status": "needs_review",
+      "review_notes": "The section lists investigation steps loosely. The order among understanding, reviewing patterns, and using context is not explicit; they are treated as parallel tasks before documentation. This may need refinement based on actual workflow."
+    }
+  ],
+  "skip_reason": null
+}

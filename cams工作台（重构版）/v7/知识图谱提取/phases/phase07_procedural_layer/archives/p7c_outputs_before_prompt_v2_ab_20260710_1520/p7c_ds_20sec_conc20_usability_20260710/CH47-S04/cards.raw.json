@@ -1,0 +1,174 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "TM system tuning control",
+      "summary": "TM system tuning is a control that ensures effective suspicious activity detection, reduces false positives, enables efficient resource use, adapts to changes, and ensures regulatory compliance. It involves scenario setting, customer segmentation, threshold setting, and frequency, with dynamic adjustments triggered by significant events or trends.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Transaction monitoring system requires tuning",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Perform tuning",
+          "evidence_unit_ids": [
+            "v7u_N003272",
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_objectives",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Tuning objectives: effective detection, reduce false positives, efficient resource use, adapt to changes, regulatory compliance",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_components",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Tuning components: scenario setting, customer segmentation, threshold setting, frequency",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279",
+            "v7u_N003280",
+            "v7u_N003284"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_triggers",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Dynamic tuning triggers: significant events, trends, business strategy changes, anomalies, regulatory updates, market changes",
+          "evidence_unit_ids": [
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "x_exit_01",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing tuning obligation to maintain effective monitoring system",
+          "evidence_unit_ids": [
+            "v7u_N003277",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "std_objectives",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "std_components",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279",
+            "v7u_N003280",
+            "v7u_N003284"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "std_triggers",
+          "evidence_unit_ids": [
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "x_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N003277",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into a control card; useful for evaluating tuning requirements but not a strict workflow. Process order and exit are inferred functional dependencies."
+    }
+  ],
+  "skip_reason": null
+}

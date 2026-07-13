@@ -1,0 +1,107 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation alert investigation review",
+      "summary": "Before escalating an investigation, the analyst reviews the suspicion, contextual transaction information, and documents the research performed.",
+      "actor": "Analyst",
+      "objective": "Determine whether the transaction has a possible explanation before confirming and reporting suspicion.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_pre_escalation",
+          "node_type": "trigger",
+          "label": "Investigation is being considered for escalation to confirm and report suspicion",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_understand_suspicion",
+          "node_type": "action",
+          "label": "Understand the nature of the suspicion and determine whether the transaction has a possible explanation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_review_previous_patterns",
+          "node_type": "action",
+          "label": "Review previous transaction patterns from the same account or customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_context_data",
+          "node_type": "input",
+          "label": "Onboarding information and historical transaction data used as context",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document_research",
+          "node_type": "action",
+          "label": "Clearly document all research and indicate any missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_documented_review",
+          "node_type": "output",
+          "label": "Documented investigation research with missing information identified",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_pre_escalation",
+          "target": "n_action_understand_suspicion",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_understand_suspicion",
+          "target": "n_action_review_previous_patterns",
+          "evidence_unit_ids": ["v7u_N003330", "v7u_N003331"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "USES",
+          "source": "n_action_review_previous_patterns",
+          "target": "n_input_context_data",
+          "evidence_unit_ids": ["v7u_N003331", "v7u_N003332"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review_previous_patterns",
+          "target": "n_action_document_research",
+          "evidence_unit_ids": ["v7u_N003331", "v7u_N003333"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_document_research",
+          "target": "n_output_documented_review",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003330", "v7u_N003331", "v7u_N003332", "v7u_N003333"],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order: the text states a review sequence and a final documentation step, but the exact order between understanding suspicion and reviewing historical context is partly reconstructed."
+    }
+  ],
+  "skip_reason": null
+}

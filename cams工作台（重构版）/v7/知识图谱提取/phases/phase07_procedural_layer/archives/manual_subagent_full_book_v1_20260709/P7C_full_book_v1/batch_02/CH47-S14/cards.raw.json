@@ -1,0 +1,264 @@
+{
+  "section_id": "CH47-S14",
+  "section_title": "Transaction monitoring > Analysis of information",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S14_001",
+      "section_id": "CH47-S14",
+      "card_nature": "assessment",
+      "title": "Analyze investigation information into actionable intelligence",
+      "summary": "Analysts examine collected data, relationship networks, and cash or fund flows to validate suspicions, detect irregularities, and consult AFC compliance when new networks or patterns are discovered.",
+      "actor": "Analyst or investigator",
+      "objective": "Transform collected internal and external data into actionable intelligence and determine whether further investigation, reporting, or action is warranted.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_collected_data",
+          "node_type": "start",
+          "label": "Analysts and investigators have collected and documented internal and external data",
+          "evidence_unit_ids": ["v7u_N003396"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_analyze_data",
+          "node_type": "action",
+          "label": "Analyze data to transform it into actionable intelligence and insights",
+          "evidence_unit_ids": ["v7u_N003397"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_review_materials",
+          "node_type": "input",
+          "label": "Transaction histories, customer profiles, and regulatory alerts",
+          "evidence_unit_ids": ["v7u_N003398"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_map_relationships",
+          "node_type": "action",
+          "label": "Identify and map relevant relationships between individuals and entities",
+          "evidence_unit_ids": ["v7u_N003399", "v7u_N003400"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_network_analysis",
+          "node_type": "action",
+          "label": "Use network analysis to visualize complex relationships and transaction flows, identify behavioral patterns, and clarify complicated relationships",
+          "evidence_unit_ids": ["v7u_N003401"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_analyze_fund_flows",
+          "node_type": "action",
+          "label": "Trace movement of funds across accounts and financial institutions to assess transaction legitimacy and identify potential illicit activity",
+          "evidence_unit_ids": ["v7u_N003402"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_transaction_patterns",
+          "node_type": "standard",
+          "label": "Evaluate transaction frequency, volume, timing, unusual spikes, deviations, and large transactions to high-risk jurisdictions",
+          "evidence_unit_ids": ["v7u_N003403"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_source_destination",
+          "node_type": "standard",
+          "label": "Determine fund origin and destination and ensure sources align with customer profile and business",
+          "evidence_unit_ids": ["v7u_N003404"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_layering",
+          "node_type": "standard",
+          "label": "Identify complex transaction layering that might obscure the fund trail",
+          "evidence_unit_ids": ["v7u_N003405"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_external_validation",
+          "node_type": "standard",
+          "label": "Combine cash flow findings with external data such as public records or sanctions lists for context and validation",
+          "evidence_unit_ids": ["v7u_N003406"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_visualize_flows",
+          "node_type": "action",
+          "label": "Visualize cash flows and relationships to comprehend transaction dynamics and detect irregularities requiring further scrutiny",
+          "evidence_unit_ids": ["v7u_N003407"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_new_networks",
+          "node_type": "decision",
+          "label": "Does in-depth analysis reveal previously unknown or overlooked networks or patterns?",
+          "evidence_unit_ids": ["v7u_N003408"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_consult_afc",
+          "node_type": "action",
+          "label": "Promptly consult the AFC compliance team to determine how to proceed with new information",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_analysis_decision",
+          "node_type": "output",
+          "label": "Validated suspicion and decision on whether further investigation, reporting, or action is warranted",
+          "evidence_unit_ids": ["v7u_N003398"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_clear_path",
+          "node_type": "output",
+          "label": "Clear path for proceeding with new information and meeting regulatory timelines",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_collected_data",
+          "target": "n_action_analyze_data",
+          "evidence_unit_ids": ["v7u_N003396", "v7u_N003397"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_002",
+          "edge_type": "USES",
+          "source": "n_action_analyze_data",
+          "target": "n_input_review_materials",
+          "evidence_unit_ids": ["v7u_N003397", "v7u_N003398"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze_data",
+          "target": "n_action_map_relationships",
+          "evidence_unit_ids": ["v7u_N003397", "v7u_N003399", "v7u_N003400"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_map_relationships",
+          "target": "n_action_network_analysis",
+          "evidence_unit_ids": ["v7u_N003400", "v7u_N003401"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze_data",
+          "target": "n_action_analyze_fund_flows",
+          "evidence_unit_ids": ["v7u_N003397", "v7u_N003402"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_006",
+          "edge_type": "USES",
+          "source": "n_action_analyze_fund_flows",
+          "target": "n_standard_transaction_patterns",
+          "evidence_unit_ids": ["v7u_N003402", "v7u_N003403"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_007",
+          "edge_type": "USES",
+          "source": "n_action_analyze_fund_flows",
+          "target": "n_standard_source_destination",
+          "evidence_unit_ids": ["v7u_N003402", "v7u_N003404"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_008",
+          "edge_type": "USES",
+          "source": "n_action_analyze_fund_flows",
+          "target": "n_standard_layering",
+          "evidence_unit_ids": ["v7u_N003402", "v7u_N003405"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_009",
+          "edge_type": "USES",
+          "source": "n_action_analyze_fund_flows",
+          "target": "n_standard_external_validation",
+          "evidence_unit_ids": ["v7u_N003402", "v7u_N003406"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze_fund_flows",
+          "target": "n_action_visualize_flows",
+          "evidence_unit_ids": ["v7u_N003402", "v7u_N003407"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_action_network_analysis",
+          "target": "n_decision_new_networks",
+          "evidence_unit_ids": ["v7u_N003401", "v7u_N003408"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_012",
+          "edge_type": "PRECEDES",
+          "source": "n_action_visualize_flows",
+          "target": "n_decision_new_networks",
+          "evidence_unit_ids": ["v7u_N003407", "v7u_N003408"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_013",
+          "edge_type": "DECIDES",
+          "source": "n_decision_new_networks",
+          "target": "n_action_consult_afc",
+          "condition": "new information reveals previously unknown or overlooked networks or patterns",
+          "evidence_unit_ids": ["v7u_N003408", "v7u_N003409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_014",
+          "edge_type": "DECIDES",
+          "source": "n_decision_new_networks",
+          "target": "n_output_analysis_decision",
+          "condition": "no new network or pattern requires AFC consultation",
+          "evidence_unit_ids": ["v7u_N003398", "v7u_N003408"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_015",
+          "edge_type": "PRODUCES",
+          "source": "n_action_analyze_data",
+          "target": "n_output_analysis_decision",
+          "evidence_unit_ids": ["v7u_N003397", "v7u_N003398"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_016",
+          "edge_type": "PRODUCES",
+          "source": "n_action_consult_afc",
+          "target": "n_output_clear_path",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003396", "v7u_N003397", "v7u_N003398", "v7u_N003399", "v7u_N003400", "v7u_N003401", "v7u_N003402", "v7u_N003403", "v7u_N003404", "v7u_N003405", "v7u_N003406", "v7u_N003407", "v7u_N003408", "v7u_N003409"],
+      "review_status": "needs_review",
+      "review_notes": "Parallel analysis techniques are modeled inside one assessment card. Functional dependency edges indicate that relationship mapping/network analysis and cash-flow analysis are parallel methods rather than strict chronological steps."
+    }
+  ],
+  "skip_reason": null
+}

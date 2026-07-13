@@ -1,0 +1,148 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000141"
+      ],
+      "proposition": "发现客户负面新闻触发Sophie开展审计，审计识别出FullTechGlobal反贿赂和腐败框架及内部控制的缺陷",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "该链明确表达了事件触发调查、调查产生发现的有向结构，超出基础KG能表达的事实陈述，可辅助判断审计的触发和结果"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000135",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "proposition": "英国反贿赂法2010的域外条款适用于任何与英国有关联的公司，母公司可能因子公司腐败被起诉",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律定义和适用范围属于基础KG可表达的一般事实和规则"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "proposition": "调查揭示FullTechGlobal利用中间人、虚增咨询费、伪造发票和壳公司等方式掩盖非法资金流动，并向官员提供贿赂",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例中具体的犯罪方法和洗钱手法属于基础KG可保存的犯罪机制，未形成机构响应的有向链"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "贿赂被识别为上游犯罪，导致通过复杂金融网络洗钱以逃避监管审查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "上游犯罪与洗钱的因果联系属于基础KG可表达的一般性知识"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "基于审计发现，FullTechGlobal面临英国反贿赂法下的严重罚款、国际监管审查和刑事责任",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "特定案件的监管后果属于事实陈述，可被基础KG保存，未增加新的程序性结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "AFC经理认识到其机构在与全球企业交易中需要维护合规诚信并降低贿赂风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性的合规义务认知，无具体有向处理步骤"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "FullTechGlobal 负面新闻触发审计和内部控制缺陷识别",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发现客户 FullTechGlobal 的负面新闻（涉及广泛贿赂和腐败指控）",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133",
+            "v7u_N000134"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie 作为 AFC 经理开展审计，审查 FullTechGlobal 的反贿赂和腐败框架及内部控制",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "审计识别出内部控制机制缺陷和监督不足，助长了长期未被发现的腐败活动",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000134",
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000141"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：发现客户负面新闻（事件）→ Sophie 开展审计 → 发现内控缺陷；KG不足：基础KG可保存FullTechGlobal内控缺陷的事实，但无法表达审计动作与发现的触发及产出关系；选项判断：可帮助确认审计的触发条件或发现的具体内容，例如“什么导致Sophie进行审计？”或“审计发现了什么？”；LLM推理：无"
+    }
+  ],
+  "skip_reason": null
+}

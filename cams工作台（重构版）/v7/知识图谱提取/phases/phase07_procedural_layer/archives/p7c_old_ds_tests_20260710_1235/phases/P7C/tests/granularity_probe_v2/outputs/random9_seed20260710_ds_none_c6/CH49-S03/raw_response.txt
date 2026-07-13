@@ -1,0 +1,153 @@
+{
+  "section_id": "CH49-S03",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S03_001",
+      "section_id": "CH49-S03",
+      "card_nature": "control",
+      "title": "SAR Filing Regulatory Requirements",
+      "summary": "Key regulatory requirements for filing a SAR, covering timelines, content, confidentiality, and consequences of non-compliance.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Activity deemed suspicious",
+          "evidence_unit_ids": ["v7u_N003493"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_sar",
+          "node_type": "action",
+          "label": "File SAR in compliance with regulations",
+          "evidence_unit_ids": ["v7u_N003491", "v7u_N003498"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_timely",
+          "node_type": "standard",
+          "label": "File within regulatory timeline: US 30 calendar days, possible 30-day extension; other jurisdictions vary",
+          "evidence_unit_ids": ["v7u_N003502", "v7u_N003503"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_content",
+          "node_type": "standard",
+          "label": "Include customer info, services, transactions, rationale, and evidence supporting suspicion (not evidence of crime)",
+          "evidence_unit_ids": ["v7u_N003504", "v7u_N003505", "v7u_N003506"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_confidentiality",
+          "node_type": "standard",
+          "label": "Do not disclose SAR outside FI and law enforcement; restrict internal access; avoid tipping off",
+          "evidence_unit_ids": ["v7u_N003495", "v7u_N003496", "v7u_N003507", "v7u_N003508"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_jurisdiction",
+          "node_type": "standard",
+          "label": "Follow jurisdiction-specific SAR regulations",
+          "evidence_unit_ids": ["v7u_N003497", "v7u_N003510"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_penalty",
+          "node_type": "standard",
+          "label": "Failure to file may lead to fines, regulatory restrictions, or imprisonment",
+          "evidence_unit_ids": ["v7u_N003509"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_compliance",
+          "node_type": "output",
+          "label": "SAR filed in compliance (timely and effective)",
+          "evidence_unit_ids": ["v7u_N003491"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_file_sar",
+          "evidence_unit_ids": ["v7u_N003493"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_std_timely",
+          "evidence_unit_ids": ["v7u_N003502", "v7u_N003503"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_std_content",
+          "evidence_unit_ids": ["v7u_N003504", "v7u_N003505", "v7u_N003506"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_std_confidentiality",
+          "evidence_unit_ids": ["v7u_N003495", "v7u_N003496", "v7u_N003507", "v7u_N003508"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_std_jurisdiction",
+          "evidence_unit_ids": ["v7u_N003497", "v7u_N003510"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_006",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_std_penalty",
+          "evidence_unit_ids": ["v7u_N003509"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_file_sar",
+          "target": "n_output_compliance",
+          "evidence_unit_ids": ["v7u_N003491"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003491", "v7u_N003493", "v7u_N003495", "v7u_N003496",
+        "v7u_N003497", "v7u_N003498", "v7u_N003502", "v7u_N003503",
+        "v7u_N003504", "v7u_N003505", "v7u_N003506", "v7u_N003507",
+        "v7u_N003508", "v7u_N003509", "v7u_N003510"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card extracted from a list of regulatory requirements; lacks strict operational workflow. Output node n_output_compliance is inferred from requirement 'timely and effective' (v7u_N003491) with evidence_strength functional_dependency."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,82 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到交易监控系统标记了结构化存款、快速跨境分层和与恐怖相关钱包关联的异常资金流动。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到金融机构通过交易监控系统检测到非法活动。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文中标记是检测的手段或伴随现象，未明示标记先于检测发生，无法确定n1到n2的顺序关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "没有相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "标记与检测是同一过程的不同方面，不是顺序关系，不应视为PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "边e1声称标记先于检测，但原文未明确顺序，标记是检测的组成部分，PRECEDES类型不成立。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到金融机构通过系统检测到非法活动。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文隐含了非法活动被检测到的状态。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "n2和n3描述相同事件，不存在从过程到结果的产出关系，方向不成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "没有相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "n2和n3是同义反复，不是顺序或因果，不应视为PRODUCES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "边e2声称检测过程产生检测结果，但实际两者表述同一事实，无真正产出关系，PRODUCES类型不成立。"
+    }
+  ]
+}

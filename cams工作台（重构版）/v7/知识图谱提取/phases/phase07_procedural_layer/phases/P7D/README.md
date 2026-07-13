@@ -1,0 +1,148 @@
+# P7D：Flow Edge证据审核
+
+## 定位
+
+P7整体目标是“离线局部流程知识 + 按题生成证明路径”。P7C生成section-local候选card，允许保留一定候选噪声；P7D对现有`flow_edges`逐边审核，决定哪些边可以进入最终程序性证明。
+
+P7D不重新抽card，不修改P7C正本，不新增或连接card，不读取题目、选项或参考答案，也不自动修复P7C产物。
+
+## 两类校验
+
+### 规则校验
+
+规则校验器只处理可确定的结构合同：
+
+- JSON、必填字段和枚举
+- card/node/edge ID及重复ID
+- edge端点引用和同card边界
+- node_category与node_type前缀
+- P7B unit引用及同section证据范围
+- `DECIDES`必须有condition等schema约束
+
+规则校验器不能确认节点语义、边方向、condition事实、限定词强度或先后关系是否成立。
+
+### 独立LLM证据审核
+
+独立审核器读取P7C card和对应P7B `task.json`中的原始unit、双语教材文本，对每条edge分别检查：
+
+```text
+source节点依据
+target节点依据
+方向依据
+condition依据
+限定词保留
+并列/相关关系是否被误写为先后或产出
+```
+
+审核器只返回对现有edge的判断，不生成替代边。
+
+## derivation与review_status
+
+两者必须分开保存：
+
+```text
+derivation:
+  explicit_text   原文明示关系与方向
+  llm_inference   两端有证据，但关系依赖必要功能推理
+  unsupported     关系或端点缺少依据
+
+review_status:
+  pending         可用于扩展检索，不可用于最终程序断言
+  accepted        可用于检索和最终证明路径
+  rejected        不可用于检索扩展或最终证明
+```
+
+P7C边的`derivation`记录提取器当时的声明；P7D也兼容旧边的`evidence_strength`并统一保存为`declared_derivation`。该字段不能直接当成审核结论。
+
+第一版采用保守规则：只要P7C声明或P7D审核认为边属于`llm_inference`，该边就保持`pending`并进入人工队列。人工决定后才能变为`accepted`或`rejected`。
+
+## Card结论
+
+Card最终只给：
+
+```text
+pass  结构通过，且所有flow edge均为accepted
+fail  结构失败，或至少一条edge为pending/rejected
+```
+
+Card结论只是汇总，不覆盖边级状态。即使card为fail，也必须保留每条边的独立审核记录。
+
+## 最终答案使用规则
+
+只有`review_status=accepted`的边可以支撑“首先、随后、必须、禁止、如果则进入”等程序断言。
+
+`pending`边可以用于离线召回和扩展检索，但必须携带`answer_eligible=false`，不得进入最终证明路径。
+
+## 输入
+
+```text
+P7C cards.raw.json（只读）
+P7B section_packages/<section_id>/task.json
+inputs/procedural_schema_v2.json
+phases/P7D/inputs/p7d_edge_review_schema_v1.json
+```
+
+规则结构校验在本地读取完整card、section package和schema，不产生LLM token。
+
+结构通过后，语义审核LLM按card接收：
+
+```text
+section_id / section_title
+完整section_text_with_unit_anchors
+allowed_unit_ids
+精简p7c_card_under_review
+```
+
+精简card保留title、card_nature、flow_nodes、flow_edges、condition、relation_type和证据unit IDs；移除`candidate_status`、`review_notes`、展示字段、P7C声明的`derivation/source_quote`及旧审核字段。完整section原文仍是唯一事实证据，不再重复发送`section_units`。Runner在LLM审核后使用原始P7C edge另行恢复`declared_derivation`并计算最终状态。
+
+## 输出
+
+```text
+p7d_structure_manifest.jsonl       纯结构检查结果
+p7d_edge_reviews.jsonl             每条边的当前审核快照
+p7d_review_manifest.jsonl          card级pass/fail汇总
+p7d_review_history.jsonl           追加式完整审核历史
+p7d_human_review_queue.jsonl       llm_inference及其他pending边
+p7d_rejected_edge_queue.jsonl      被拒绝边
+p7d_run_manifest.json              模型、Prompt、输入和调用记录
+p7d_edge_review_report.md          汇总报告
+```
+
+上述输出均不回写P7C card。
+
+## 命令
+
+纯结构检查：
+
+```powershell
+python scripts\validate_and_route_cards.py `
+  --input-dir phases\P7C\outputs\<run_id> `
+  --output-dir phases\P7D\outputs\<review_run_id>\structure
+```
+
+独立边级审核：
+
+```powershell
+python scripts\run_p7d_edge_review_ds.py `
+  --input-dir phases\P7C\outputs\<run_id> `
+  --output-dir phases\P7D\outputs `
+  --run-id <review_run_id> `
+  --model deepseek-v4-pro `
+  --thinking-effort none `
+  --concurrency 10
+```
+
+应用人工决定时，决定JSONL每行必须包含`section_id, card_id, edge_id, decision, decided_by, reason`，其中`decision`只能为`accepted`或`rejected`。
+
+## 执行顺序
+
+```text
+P7C候选card
+  -> P7D规则结构检查
+  -> 对结构通过的card逐边LLM审核
+  -> 生成edge review、card manifest、history与人工队列
+  -> 人工处理关键llm_inference边
+  -> 下游按accepted/pending/rejected使用
+```
+
+旧目录`outputs/p7c_v5_focus_sections`属于P7D第一版card级启发式产物，只作历史归档，不符合当前边级审核合同。

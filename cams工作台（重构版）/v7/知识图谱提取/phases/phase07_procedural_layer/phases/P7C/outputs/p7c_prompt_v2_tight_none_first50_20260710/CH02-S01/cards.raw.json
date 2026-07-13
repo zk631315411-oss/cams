@@ -1,0 +1,228 @@
+{
+  "section_id": "CH02-S01",
+  "section_title": "Types of financial crime > Predicate crimes and money laundering",
+  "cards": [
+    {
+      "card_id": "card_CH02_S01_001",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "Komarov Sanctions Evasion and Laundering Execution Chain",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "面临财务崩溃，Komarov决心继续交易 (Facing financial collapse, Komarov is determined to continue trading)",
+          "evidence_unit_ids": [
+            "v7u_N000104"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "创建壳公司RedStar Solutions (Creates shell company RedStar Solutions)",
+          "evidence_unit_ids": [
+            "v7u_N000105"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "在反洗钱监管宽松的司法管辖区注册壳公司，并伪装成技术服务提供商 (Incorporates RedStar in lax AML jurisdiction and masks it as technical service provider)",
+          "evidence_unit_ids": [
+            "v7u_N000106"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "利用转运点和伪造发票（半导体标为工业机械）恢复出口 (Resumes exports using transshipment points and falsified invoices)",
+          "evidence_unit_ids": [
+            "v7u_N000107"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "雇佣当地分销商以拉开距离并确保货物接收 (Employs local distributors to distance from transactions)",
+          "evidence_unit_ids": [
+            "v7u_N000108"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通过离岸账户和壳公司间接付款，将收益洗回Volkof Industries (Routes payments through offshore accounts and shell companies to launder proceeds back)",
+          "evidence_unit_ids": [
+            "v7u_N000109"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n7",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Volkof Industries得以继续交易，履行贷款义务，保留员工，并加强与外国政府的主客户关系 (Volkof continues trading, meets loan obligations, retains employees, strengthens ties with foreign government)",
+          "evidence_unit_ids": [
+            "v7u_N000110"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000104",
+            "v7u_N000105"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000105",
+            "v7u_N000106"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N000106",
+            "v7u_N000107"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000107",
+            "v7u_N000108"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRECEDES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": [
+            "v7u_N000108",
+            "v7u_N000109"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRODUCES",
+          "source": "n6",
+          "target": "n7",
+          "evidence_unit_ids": [
+            "v7u_N000109",
+            "v7u_N000110"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000104",
+        "v7u_N000105",
+        "v7u_N000106",
+        "v7u_N000107",
+        "v7u_N000108",
+        "v7u_N000109",
+        "v7u_N000110"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：面临制裁导致的财务崩溃 → Komarov决心继续交易 → 创建壳公司 → 在监管宽松地注册并伪装 → 通过转运和伪造发票恢复出口 → 利用当地分销商 → 通过离岸账户洗钱回Volkof → Volkof维持运营。KG不足：基础KG只能将该案例作为制裁规避的示例保存，无法表达这一系列具体行动的顺序及其产生的结果。选项判断：可确认Komarov在面临制裁后采取了哪些具体步骤以及这些步骤的顺序，并可排除不符合案例顺序的描述。"
+    },
+    {
+      "card_id": "card_CH02_S01_002",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "Detection and Unraveling of Komarov Scheme",
+      "flow_nodes": [
+        {
+          "node_id": "n8",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Compliance officer flags irregular payment flows linked to RedStar (合规官标记与RedStar相关的异常支付流)",
+          "evidence_unit_ids": [
+            "v7u_N000111"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n9",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Further investigation exposes the illicit network (进一步调查揭露非法网络)",
+          "evidence_unit_ids": [
+            "v7u_N000111"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n10",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Scheme unraveled; Komarov and Volkof Industries' crimes revealed (计划暴露；Komarov和Volkof的犯罪被揭露)",
+          "evidence_unit_ids": [
+            "v7u_N000111"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e7",
+          "edge_type": "PRECEDES",
+          "source": "n8",
+          "target": "n9",
+          "evidence_unit_ids": [
+            "v7u_N000111"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e8",
+          "edge_type": "PRODUCES",
+          "source": "n9",
+          "target": "n10",
+          "evidence_unit_ids": [
+            "v7u_N000111"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000111"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：合规官发现异常支付流 → 进一步调查 → 揭露整个非法网络。KG不足：基础KG无法表达这一发现、调查和揭露的具体因果链。选项判断：可确认揭露是由银行合规官标记异常支付启动的，并可排除基于其他触发因素的选项。"
+    }
+  ]
+}

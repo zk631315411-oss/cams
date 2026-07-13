@@ -1,0 +1,88 @@
+{
+  "section_id": "CH42-S03",
+  "section_title": "Onboarding AFC controls > • EDD:",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S03_001",
+      "section_id": "CH42-S03",
+      "title": "Enhanced due diligence verification of wealth and funds claims",
+      "summary": "Enhanced due diligence verifies source of wealth and source of funds more deeply and checks related claims through supporting documentation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_edd",
+          "node_type": "start",
+          "label": "Enhanced due diligence is performed",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_verify_wealth_and_funds",
+          "node_type": "action",
+          "label": "Verify source of wealth and source of funds more deeply",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_supporting_documentation",
+          "node_type": "input",
+          "label": "Supporting documentation for claims",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_examine_verify_claims",
+          "node_type": "action",
+          "label": "Examine and verify any claims through supporting documentation",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_verified_edd_claims",
+          "node_type": "output",
+          "label": "Wealth, funds, and related claims are more deeply verified",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_edd",
+          "target": "n_action_verify_wealth_and_funds",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S03_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_verify_wealth_and_funds",
+          "target": "n_action_examine_verify_claims",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action_examine_verify_claims",
+          "target": "n_input_supporting_documentation",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S03_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_examine_verify_claims",
+          "target": "n_output_verified_edd_claims",
+          "evidence_unit_ids": ["v7u_N003030"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003030"],
+      "review_status": "needs_review",
+      "review_notes": "This is a conservative single-unit card. The unit provides an executable EDD activity and documentation input, but it does not provide branching, actor, or downstream handoff."
+    }
+  ],
+  "skip_reason": null
+}

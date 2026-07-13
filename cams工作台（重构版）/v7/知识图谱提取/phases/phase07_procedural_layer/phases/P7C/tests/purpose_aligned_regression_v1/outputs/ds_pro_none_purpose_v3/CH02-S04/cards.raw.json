@@ -1,0 +1,124 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "cards": [
+    {
+      "card_id": "P7C_CH02_S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie从发现客户负面新闻到识别监管影响的调查流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "客户FullTechGlobal的负面新闻（涉及贿赂和腐败指控）",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie初步调查：发现在高风险司法管辖区雇佣中间人获取合同",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie进一步调查：发现通过虚增咨询费、伪造发票和壳公司掩盖资金流动，并提供奢华礼品和旅行安排贿赂公职人员",
+          "evidence_unit_ids": [
+            "v7u_N000139",
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie跟进审查（审计）：发现FullTechGlobal的ABC框架和内部控制缺陷，监管不足助长了长期腐败活动",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出UKBA下的监管影响：严厉罚款、国际监管审查增加、子公司和母公司及高管刑事责任",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P2",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRECEDES",
+          "source": "P2",
+          "target": "P3",
+          "evidence_unit_ids": [
+            "v7u_N000139",
+            "v7u_N000140",
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "P3",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000141",
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140",
+        "v7u_N000141",
+        "v7u_N000143"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：负面新闻→初步调查→进一步调查→审查审计→识别监管影响；KG不足：基础KG概括了UKBA域外效力和合规教训，但未表达Sophie的具体调查步骤及其如何导向监管后果的识别；选项判断：可确认事件顺序（如首先发现新闻然后调查），以及审计发现如何导致识别监管影响；LLM推理：无"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "section_id": "CH49-S11",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S11_001",
+      "section_id": "CH49-S11",
+      "card_nature": "control",
+      "title": "Respond to formal law enforcement information requests",
+      "summary": "The organization uses designated contacts and written procedures to respond to written law enforcement requests, subpoenas, court orders, or urgent search warrants.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_formal_request",
+          "node_type": "trigger",
+          "label": "Law enforcement submits a written formal request for information",
+          "evidence_unit_ids": ["v7u_N003619", "v7u_N003620"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_use_contact",
+          "node_type": "action",
+          "label": "Use the designated law enforcement point of contact",
+          "evidence_unit_ids": ["v7u_N003618"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_follow_written_procedures",
+          "node_type": "action",
+          "label": "Follow written procedures for communicating and responding",
+          "evidence_unit_ids": ["v7u_N003619"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_written_request",
+          "node_type": "input",
+          "label": "Written request in one of several possible forms",
+          "evidence_unit_ids": ["v7u_N003620"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_request_form",
+          "node_type": "decision",
+          "label": "Determine whether the request is deadline-based or urgent",
+          "evidence_unit_ids": ["v7u_N003621", "v7u_N003623"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_deadline",
+          "node_type": "standard",
+          "label": "Subpoenas and court orders specify record production deadlines",
+          "evidence_unit_ids": ["v7u_N003621", "v7u_N003622"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_produce_records_by_deadline",
+          "node_type": "action",
+          "label": "Produce requested records by the specified deadline unless extended",
+          "evidence_unit_ids": ["v7u_N003621"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_immediate_compliance",
+          "node_type": "action",
+          "label": "Comply immediately when an urgent search warrant requires it",
+          "evidence_unit_ids": ["v7u_N003623"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_noncompliance_penalty",
+          "node_type": "standard",
+          "label": "Failure to comply with court-ordered requests can cause civil and criminal penalties",
+          "evidence_unit_ids": ["v7u_N003624"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_compliant_response",
+          "node_type": "output",
+          "label": "Compliant response or record production to law enforcement",
+          "evidence_unit_ids": ["v7u_N003615", "v7u_N003621", "v7u_N003623"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_formal_request",
+          "target": "n_action_use_contact",
+          "evidence_unit_ids": ["v7u_N003618", "v7u_N003619", "v7u_N003620"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_use_contact",
+          "target": "n_action_follow_written_procedures",
+          "evidence_unit_ids": ["v7u_N003618", "v7u_N003619"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_003",
+          "edge_type": "USES",
+          "source": "n_action_follow_written_procedures",
+          "target": "n_input_written_request",
+          "evidence_unit_ids": ["v7u_N003619", "v7u_N003620"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_follow_written_procedures",
+          "target": "n_decision_request_form",
+          "evidence_unit_ids": ["v7u_N003619", "v7u_N003621", "v7u_N003623"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_request_form",
+          "target": "n_action_produce_records_by_deadline",
+          "condition": "if subpoena or court order specifies a deadline",
+          "evidence_unit_ids": ["v7u_N003621", "v7u_N003622"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_request_form",
+          "target": "n_action_immediate_compliance",
+          "condition": "if urgent search warrant requires immediate compliance",
+          "evidence_unit_ids": ["v7u_N003623"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_007",
+          "edge_type": "USES",
+          "source": "n_action_produce_records_by_deadline",
+          "target": "n_standard_deadline",
+          "evidence_unit_ids": ["v7u_N003621", "v7u_N003622"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_008",
+          "edge_type": "USES",
+          "source": "n_action_produce_records_by_deadline",
+          "target": "n_standard_noncompliance_penalty",
+          "evidence_unit_ids": ["v7u_N003624"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_produce_records_by_deadline",
+          "target": "n_output_compliant_response",
+          "evidence_unit_ids": ["v7u_N003615", "v7u_N003621"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_immediate_compliance",
+          "target": "n_output_compliant_response",
+          "evidence_unit_ids": ["v7u_N003623"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003615", "v7u_N003618", "v7u_N003619", "v7u_N003620", "v7u_N003621", "v7u_N003622", "v7u_N003623", "v7u_N003624"],
+      "review_status": "needs_review",
+      "review_notes": "The request handling sequence is reconstructed from explicit setup, written-request, deadline, and urgent-warrant rules. Contact assignment and procedure use are functional dependencies rather than a fully narrated operating sequence."
+    },
+    {
+      "card_id": "p7card_CH49-S11_002",
+      "section_id": "CH49-S11",
+      "card_nature": "control",
+      "title": "Document law enforcement communications",
+      "summary": "Communications with law enforcement should be clear, concise, fully documented, accurately retained, and put in writing whenever possible.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_communication",
+          "node_type": "trigger",
+          "label": "Organization communicates with law enforcement",
+          "evidence_unit_ids": ["v7u_N003612", "v7u_N003625"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_clear_concise_documented",
+          "node_type": "action",
+          "label": "Communicate clearly, concisely, and with full documentation",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_court_evidence",
+          "node_type": "standard",
+          "label": "Communication could be used as evidence in court",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_maintain_records",
+          "node_type": "action",
+          "label": "Maintain accurate records consistent with recordkeeping requirements",
+          "evidence_unit_ids": ["v7u_N003626"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_mode",
+          "node_type": "decision",
+          "label": "Determine whether communication can be in writing",
+          "evidence_unit_ids": ["v7u_N003627", "v7u_N003628"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_write_communication",
+          "node_type": "action",
+          "label": "Use written communication wherever possible",
+          "evidence_unit_ids": ["v7u_N003627"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_note_verbal_points",
+          "node_type": "action",
+          "label": "If communication is verbal, document key points in written notes as soon as possible",
+          "evidence_unit_ids": ["v7u_N003628"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_communication_record",
+          "node_type": "output",
+          "label": "Accurate written record of law enforcement communication",
+          "evidence_unit_ids": ["v7u_N003625", "v7u_N003626", "v7u_N003627", "v7u_N003628"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_communication",
+          "target": "n_action_clear_concise_documented",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_002",
+          "edge_type": "USES",
+          "source": "n_action_clear_concise_documented",
+          "target": "n_standard_court_evidence",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_clear_concise_documented",
+          "target": "n_action_maintain_records",
+          "evidence_unit_ids": ["v7u_N003625", "v7u_N003626"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_maintain_records",
+          "target": "n_decision_mode",
+          "evidence_unit_ids": ["v7u_N003626", "v7u_N003627", "v7u_N003628"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_mode",
+          "target": "n_action_write_communication",
+          "condition": "if written communication is possible",
+          "evidence_unit_ids": ["v7u_N003627"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_mode",
+          "target": "n_action_note_verbal_points",
+          "condition": "if communication is verbal",
+          "evidence_unit_ids": ["v7u_N003628"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_write_communication",
+          "target": "n_output_communication_record",
+          "evidence_unit_ids": ["v7u_N003627"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_002_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_note_verbal_points",
+          "target": "n_output_communication_record",
+          "evidence_unit_ids": ["v7u_N003628"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003612", "v7u_N003625", "v7u_N003626", "v7u_N003627", "v7u_N003628"],
+      "review_status": "needs_review",
+      "review_notes": "The written-versus-verbal branch is explicit. The ordering among documentation, recordkeeping, and communication mode is a functional reconstruction from adjacent documentation requirements."
+    }
+  ],
+  "skip_reason": null
+}

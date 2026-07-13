@@ -1,0 +1,421 @@
+{
+  "section_id": "CH12-S04",
+  "section_title": "Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks",
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "Transaction monitoring to identify suspicious activities",
+      "summary": "Robust transaction monitoring systems flag suspicious transactions based on predefined criteria to identify unusual patterns indicative of money laundering.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_tx",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Trading activities occur",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "node_id": "n_monitor",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Continuous monitoring of trading activities",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_flag",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Flag suspicious transactions based on predefined criteria",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_criteria",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Predefined criteria (large/unusual trades, rapid patterns, high-frequency, high-risk jurisdictions)",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_suspicious",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Unusual patterns or suspicious transactions identified",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH12-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_tx",
+          "target": "n_monitor",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_monitor",
+          "target": "n_flag",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_flag",
+          "target": "n_criteria",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_flag",
+          "target": "n_exit_suspicious",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH12-S04_002",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "Customer due diligence for source of funds and segmentation",
+      "summary": "Conducting CDD ensures the legitimacy of the source of funds and correct customer segmentation based on expected and historical trading patterns.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_cdd",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Customer or transaction requires CDD",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_cdd_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Conduct CDD",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_funds",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Legitimacy of source of funds",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_seg",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Expected and historical trading patterns for segmentation",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_done",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Customer verified and correctly segmented",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH12-S04_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_cdd",
+          "target": "n_cdd_process",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_cdd_process",
+          "target": "n_std_funds",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_002_003",
+          "edge_type": "REFERENCES",
+          "source": "n_cdd_process",
+          "target": "n_std_seg",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_cdd_process",
+          "target": "n_exit_done",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000924"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Entry node is inferred (functional dependency); CDD process is explicit. The card structures the CDD obligation as an execution flow."
+    },
+    {
+      "card_id": "p7card_CH12-S04_003",
+      "section_id": "CH12-S04",
+      "card_nature": "risk_indicator",
+      "title": "Securities and brokerage money laundering risk indicators",
+      "summary": "Key risk factors making the sector vulnerable, including inherent characteristics, complex products, offshore accounts, high-risk customers, and electronic platforms.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_risk",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Assessing money laundering risk in securities sector",
+          "evidence_unit_ids": [
+            "v7u_N000916",
+            "v7u_N000918"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_assess_risk",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Identify risk indicators",
+          "evidence_unit_ids": [
+            "v7u_N000918",
+            "v7u_N000919",
+            "v7u_N000920",
+            "v7u_N000921",
+            "v7u_N000922"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_sector_char",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Sector characteristics (high interaction, large volumes, rapid execution, anonymity)",
+          "evidence_unit_ids": [
+            "v7u_N000918"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_complex",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Complex financial products obscuring source of funds",
+          "evidence_unit_ids": [
+            "v7u_N000919"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_offshore",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Offshore accounts providing anonymity and lax jurisdictions",
+          "evidence_unit_ids": [
+            "v7u_N000920"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_highrisk",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "High-risk customers (PEPs, intermediaries) requiring careful assessment",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_electronic",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Electronic trading platforms emphasizing speed and high volumes",
+          "evidence_unit_ids": [
+            "v7u_N000922"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_risk",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Sector risk indicators identified",
+          "evidence_unit_ids": [
+            "v7u_N000918",
+            "v7u_N000919",
+            "v7u_N000920",
+            "v7u_N000921",
+            "v7u_N000922"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_risk",
+          "target": "n_assess_risk",
+          "evidence_unit_ids": [
+            "v7u_N000916",
+            "v7u_N000918"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_002",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_risk",
+          "target": "n_std_sector_char",
+          "evidence_unit_ids": [
+            "v7u_N000918"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_003",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_risk",
+          "target": "n_std_complex",
+          "evidence_unit_ids": [
+            "v7u_N000919"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_004",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_risk",
+          "target": "n_std_offshore",
+          "evidence_unit_ids": [
+            "v7u_N000920"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_005",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_risk",
+          "target": "n_std_highrisk",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_006",
+          "edge_type": "REFERENCES",
+          "source": "n_assess_risk",
+          "target": "n_std_electronic",
+          "evidence_unit_ids": [
+            "v7u_N000922"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH12-S04_003_007",
+          "edge_type": "PRODUCES",
+          "source": "n_assess_risk",
+          "target": "n_exit_risk",
+          "evidence_unit_ids": [
+            "v7u_N000918",
+            "v7u_N000919",
+            "v7u_N000920",
+            "v7u_N000921",
+            "v7u_N000922"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000916",
+        "v7u_N000918",
+        "v7u_N000919",
+        "v7u_N000920",
+        "v7u_N000921",
+        "v7u_N000922"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Not a strict workflow; extracted as a risk indicator card from descriptive material. Entry and exit are inferred. Useful for evidence matching on risk factors in the securities sector."
+    }
+  ],
+  "skip_reason": null
+}

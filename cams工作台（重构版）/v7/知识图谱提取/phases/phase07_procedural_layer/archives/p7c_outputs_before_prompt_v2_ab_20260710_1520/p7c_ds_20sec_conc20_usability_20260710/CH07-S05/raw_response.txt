@@ -1,0 +1,120 @@
+{
+  "section_id": "CH07-S05",
+  "section_title": "Money laundering risks associated with retail and commercial banking > Credit unions and building societies risks",
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S05_001",
+      "section_id": "CH07-S05",
+      "card_nature": "assessment",
+      "title": "Assess ML/TF risk of credit unions and building societies per JMLSG guidance",
+      "summary": "Evaluate money laundering and terrorist financing risk for credit unions/buildings societies using JMLSG factors: restricted customer base, limited products, but potential TF residual risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Credit union or building society under risk assessment",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess ML/TF risk using JMLSG factors",
+          "evidence_unit_ids": ["v7u_N000573", "v7u_N000574"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Restricted or localized customer base (lower risk)",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Fewer products and services, with more limitations (lower risk)",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Limited functionality and flexibility reduce ML risk but may not deter TF",
+          "evidence_unit_ids": ["v7u_N000574"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Risk classification: lower overall ML risk; residual TF risk",
+          "evidence_unit_ids": ["v7u_N000573", "v7u_N000574"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH07-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH07-S05_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH07-S05_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": ["v7u_N000573"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH07-S05_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_03",
+          "evidence_unit_ids": ["v7u_N000574"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH07-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": ["v7u_N000573", "v7u_N000574"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000573", "v7u_N000574"],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into an assessment card; derived from JMLSG guidance statements, not a step-by-step workflow."
+    }
+  ],
+  "skip_reason": null
+}

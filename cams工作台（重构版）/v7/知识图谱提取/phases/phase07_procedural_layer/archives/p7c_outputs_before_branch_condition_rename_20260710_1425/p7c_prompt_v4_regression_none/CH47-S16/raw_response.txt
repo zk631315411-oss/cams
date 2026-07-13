@@ -1,0 +1,208 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "SAR Filing Decision and Review Process",
+      "summary": "Process triggered by suspicious activity detection; MLRO reviews the case, determines need for further research, ensures SAR quality, then files within applicable jurisdictional deadlines, with conditions for standard, extended, or expedited filing.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Suspicious or potentially illicit activity detected",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003439"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_mlro_review",
+          "node_type": "action",
+          "label": "MLRO or designated officer reviews the SAR, raises questions, and ensures cohesive and robust narrative",
+          "evidence_unit_ids": ["v7u_N003440", "v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_additional_info",
+          "node_type": "decision",
+          "label": "Is additional information needed?",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_conduct_research",
+          "node_type": "action",
+          "label": "Conduct further research to obtain additional information",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_sar",
+          "node_type": "action",
+          "label": "Prepare and file SAR",
+          "evidence_unit_ids": ["v7u_N003444", "v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_internal_timelines",
+          "node_type": "standard",
+          "label": "Internal investigation and review timelines allow for feedback and additional research",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_deadline_30days",
+          "node_type": "standard",
+          "label": "Standard deadline: 30 calendar days from initial alert (US FinCEN example)",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_extension_30days",
+          "node_type": "standard",
+          "label": "Extension deadline: additional 30 days if suspect not identified and further investigation needed",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_expedited",
+          "node_type": "standard",
+          "label": "Expedited filing for high-risk activities, necessitating immediate reporting",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_sar_filed",
+          "node_type": "output",
+          "label": "SAR filed with FIU",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003444"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_mlro_review",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_mlro_review",
+          "target": "n_decision_additional_info",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_additional_info",
+          "target": "n_conduct_research",
+          "condition": "yes",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_004",
+          "edge_type": "FEEDBACK",
+          "source": "n_conduct_research",
+          "target": "n_mlro_review",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003442"],
+          "evidence_strength": "needs_review",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_additional_info",
+          "target": "n_file_sar",
+          "condition": "no",
+          "evidence_unit_ids": ["v7u_N003444"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_file_sar",
+          "target": "n_output_sar_filed",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_007",
+          "edge_type": "USES",
+          "source": "n_mlro_review",
+          "target": "n_standard_internal_timelines",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_008",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_standard_deadline_30days",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_009",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_standard_extension_30days",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_010",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_standard_expedited",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003439",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443",
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The feedback loop from 'Conduct further research' back to MLRO review is inferred from the text's implication that research results inform the MLRO's ongoing review. The sequence from trigger to MLRO review is a functional dependency rather than explicit sequential language. The SAR filing action uses jurisdictional deadlines as standards; the application of specific deadlines (standard, extension, expedited) depends on case conditions not modeled as explicit decisions. Overall, the card captures the core execution flow based on explicit evidence, with some inferred process links."
+    }
+  ],
+  "skip_reason": null
+}

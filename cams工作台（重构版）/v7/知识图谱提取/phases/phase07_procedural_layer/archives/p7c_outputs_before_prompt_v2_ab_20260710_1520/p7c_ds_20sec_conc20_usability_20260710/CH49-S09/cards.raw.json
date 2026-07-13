@@ -1,0 +1,318 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S09_001",
+      "section_id": "CH49-S09",
+      "card_nature": "execution",
+      "title": "Follow-up actions when no SAR is filed",
+      "summary": "Process of required actions after a decision not to file a SAR, including documentation, KYC review, possible CRA re-performance, file update, and ongoing monitoring.",
+      "flow_nodes": [
+        {
+          "node_id": "n_e1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Decision not to file a SAR",
+          "evidence_unit_ids": [
+            "v7u_N003588",
+            "v7u_N003589"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document rationale for not filing SAR",
+          "evidence_unit_ids": [
+            "v7u_N003589",
+            "v7u_N003590"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conduct trigger-event KYC review and document",
+          "evidence_unit_ids": [
+            "v7u_N003591",
+            "v7u_N003592"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_d1",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Is there a change in customer risk profile?",
+          "evidence_unit_ids": [
+            "v7u_N003593"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_p3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Reperform CRA, consider further risk mitigants, and document",
+          "evidence_unit_ids": [
+            "v7u_N003593",
+            "v7u_N003594"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Update client file with investigation-related documentation",
+          "evidence_unit_ids": [
+            "v7u_N003595"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Initiate ongoing monitoring of customer activity",
+          "evidence_unit_ids": [
+            "v7u_N003596"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_x1",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing monitoring for further unusual or suspicious behavior",
+          "evidence_unit_ids": [
+            "v7u_N003596"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_x2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Client file updated and documentation readily accessible for future reviews",
+          "evidence_unit_ids": [
+            "v7u_N003595",
+            "v7u_N003597",
+            "v7u_N003598",
+            "v7u_N003599"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Record-keeping requirements: detailed documentation of rationale, review, actions, and supporting documents",
+          "evidence_unit_ids": [
+            "v7u_N003590",
+            "v7u_N003592",
+            "v7u_N003594",
+            "v7u_N003598",
+            "v7u_N003599"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_e1",
+          "target": "n_p1",
+          "evidence_unit_ids": [
+            "v7u_N003588",
+            "v7u_N003589"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_p1",
+          "target": "n_p2",
+          "evidence_unit_ids": [
+            "v7u_N003590",
+            "v7u_N003591"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_p2",
+          "target": "n_d1",
+          "evidence_unit_ids": [
+            "v7u_N003591",
+            "v7u_N003593"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_d1",
+          "target": "n_p3",
+          "condition": "yes (change in risk profile)",
+          "evidence_unit_ids": [
+            "v7u_N003593"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_d1",
+          "target": "n_p5",
+          "condition": "no (no change)",
+          "evidence_unit_ids": [
+            "v7u_N003593",
+            "v7u_N003595",
+            "v7u_N003596"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_p3",
+          "target": "n_p5",
+          "evidence_unit_ids": [
+            "v7u_N003594",
+            "v7u_N003595"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_p5",
+          "target": "n_p6",
+          "evidence_unit_ids": [
+            "v7u_N003595",
+            "v7u_N003596"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_p6",
+          "target": "n_x1",
+          "evidence_unit_ids": [
+            "v7u_N003596"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_p5",
+          "target": "n_x2",
+          "evidence_unit_ids": [
+            "v7u_N003595",
+            "v7u_N003597",
+            "v7u_N003598",
+            "v7u_N003599"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_010",
+          "edge_type": "REFERENCES",
+          "source": "n_p1",
+          "target": "n_std1",
+          "evidence_unit_ids": [
+            "v7u_N003590"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_011",
+          "edge_type": "REFERENCES",
+          "source": "n_p2",
+          "target": "n_std1",
+          "evidence_unit_ids": [
+            "v7u_N003592"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_012",
+          "edge_type": "REFERENCES",
+          "source": "n_p3",
+          "target": "n_std1",
+          "evidence_unit_ids": [
+            "v7u_N003594"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S09_001_013",
+          "edge_type": "REFERENCES",
+          "source": "n_p5",
+          "target": "n_std1",
+          "evidence_unit_ids": [
+            "v7u_N003595",
+            "v7u_N003598",
+            "v7u_N003599"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003588",
+        "v7u_N003589",
+        "v7u_N003590",
+        "v7u_N003591",
+        "v7u_N003592",
+        "v7u_N003593",
+        "v7u_N003594",
+        "v7u_N003595",
+        "v7u_N003596",
+        "v7u_N003597",
+        "v7u_N003598",
+        "v7u_N003599",
+        "v7u_N003600",
+        "v7u_N003601"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card models the follow-up process when no SAR is filed, including a conditional branch for CRA re-performance. Some edges use functional_dependency due to inferred sequence or branch logic (e.g., KYC review to risk change assessment, no-change path to file update). Overall structure serves evidence matching but sequence and conditionality are partially inferred."
+    }
+  ],
+  "skip_reason": null
+}

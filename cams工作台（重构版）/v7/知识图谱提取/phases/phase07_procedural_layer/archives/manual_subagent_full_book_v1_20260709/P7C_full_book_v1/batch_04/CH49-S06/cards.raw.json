@@ -1,0 +1,129 @@
+{
+  "section_id": "CH49-S06",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Key takeaways",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S06_001",
+      "section_id": "CH49-S06",
+      "card_nature": "control",
+      "title": "Apply SAR submission quality controls",
+      "summary": "When submitting a SAR, apply communication, evidence, structure, plain-language, timeliness, and confidentiality controls.",
+      "trigger": "When submitting a SAR.",
+      "objective": "Support investigations with a clear, evidence-based, compliant SAR submission.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "A SAR is being submitted",
+          "evidence_unit_ids": ["v7u_N003555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_apply_controls",
+          "node_type": "action",
+          "label": "Apply SAR submission controls",
+          "evidence_unit_ids": ["v7u_N003556", "v7u_N003557", "v7u_N003558", "v7u_N003559"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_communication",
+          "node_type": "standard",
+          "label": "Provide clear communication, evidence-based analysis, and strict compliance protocols",
+          "evidence_unit_ids": ["v7u_N003556"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_structure",
+          "node_type": "standard",
+          "label": "Use headings, bullet points, and logical sequencing to simplify complex details",
+          "evidence_unit_ids": ["v7u_N003557"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_plain_language",
+          "node_type": "standard",
+          "label": "Write in plain English and highlight contradictions to justify concerns",
+          "evidence_unit_ids": ["v7u_N003558"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_timeliness_confidentiality",
+          "node_type": "standard",
+          "label": "Submit reports promptly and avoid tipping off",
+          "evidence_unit_ids": ["v7u_N003559"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_submission_ready",
+          "node_type": "output",
+          "label": "SAR submission is clear, evidence-based, compliant, timely, and confidential",
+          "evidence_unit_ids": ["v7u_N003556", "v7u_N003559"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_apply_controls",
+          "evidence_unit_ids": ["v7u_N003555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_002",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_standard_communication",
+          "evidence_unit_ids": ["v7u_N003556"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_003",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_standard_structure",
+          "evidence_unit_ids": ["v7u_N003557"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_004",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_standard_plain_language",
+          "evidence_unit_ids": ["v7u_N003558"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_005",
+          "edge_type": "USES",
+          "source": "n_action_apply_controls",
+          "target": "n_standard_timeliness_confidentiality",
+          "evidence_unit_ids": ["v7u_N003559"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S06_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_apply_controls",
+          "target": "n_output_submission_ready",
+          "evidence_unit_ids": ["v7u_N003556", "v7u_N003559"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003555",
+        "v7u_N003556",
+        "v7u_N003557",
+        "v7u_N003558",
+        "v7u_N003559"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural key-takeaway list converted into a control card; standards are parallel controls, not chronological steps."
+    }
+  ],
+  "skip_reason": null
+}

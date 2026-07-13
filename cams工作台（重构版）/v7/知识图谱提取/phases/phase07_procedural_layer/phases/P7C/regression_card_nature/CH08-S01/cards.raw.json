@@ -1,0 +1,355 @@
+{
+  "section_id": "CH08-S01",
+  "section_title": "Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management",
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S01_001",
+      "section_id": "CH08-S01",
+      "card_nature": "risk_indicator",
+      "title": "Screen inherent private banking financial crime risk drivers",
+      "summary": "Screen private banking and wealth management activity against inherent risk drivers created by profitability, discretion, relationship incentives, and AUM-based compensation.",
+      "scenario": "Private banking and wealth management for high-net-worth and ultrahigh-net-worth customers.",
+      "objective": "Identify inherent financial crime risk drivers in the private banking model.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Private banking or wealth management context exists",
+          "evidence_unit_ids": ["v7u_N000575", "v7u_N000577"],
+          "evidence_strength": "explicit",
+          "source_quote": "Private banking and wealth management offer high-net-worth and ultrahigh-net-worth individuals personalized and confidential banking services... Private banking often operates semi-autonomously from other parts of a bank."
+        },
+        {
+          "node_id": "n_action_screen",
+          "node_type": "action",
+          "label": "Screen the private banking model for inherent financial crime risk drivers",
+          "evidence_unit_ids": ["v7u_N000578", "v7u_N000581"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_profit_discretion",
+          "node_type": "standard",
+          "label": "High profitability and a culture of discretion and trust may generate financial crime risk",
+          "evidence_unit_ids": ["v7u_N000578"],
+          "evidence_strength": "explicit",
+          "source_quote": "Some of the financial crime risks associated with private banking stem from its perceived high profitability... and the culture of discretion and trust..."
+        },
+        {
+          "node_id": "n_standard_warning_signs",
+          "node_type": "standard",
+          "label": "Close customer relationships may cause relationship managers to overlook warning signs",
+          "evidence_unit_ids": ["v7u_N000579"],
+          "evidence_strength": "explicit",
+          "source_quote": "The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs."
+        },
+        {
+          "node_id": "n_standard_aum_pressure",
+          "node_type": "standard",
+          "label": "Competition and AUM-based compensation pressure managers to obtain customers and increase AUM",
+          "evidence_unit_ids": ["v7u_N000580"],
+          "evidence_strength": "explicit",
+          "source_quote": "Competition for high-net-worth individuals increases the pressure on relationship managers to obtain new customers, to increase their AUM..."
+        },
+        {
+          "node_id": "n_standard_conflict",
+          "node_type": "standard",
+          "label": "AUM compensation creates conflict of interest and may obscure high-risk activity from an AFC perspective",
+          "evidence_unit_ids": ["v7u_N000581"],
+          "evidence_strength": "explicit",
+          "source_quote": "Due to this compensation structure, private banking managers might not recognize certain aspects of their customer activities as high risk from an AFC perspective."
+        },
+        {
+          "node_id": "n_output_inherent_risk",
+          "node_type": "output",
+          "label": "Inherent private banking and wealth management financial crime risk finding",
+          "evidence_unit_ids": ["v7u_N000578", "v7u_N000581"],
+          "evidence_strength": "explicit",
+          "source_quote": "This conflict of interest is an inherent risk of private banking and wealth management."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_screen",
+          "evidence_unit_ids": ["v7u_N000575", "v7u_N000577", "v7u_N000578"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_002",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_profit_discretion",
+          "evidence_unit_ids": ["v7u_N000578"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_003",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_warning_signs",
+          "evidence_unit_ids": ["v7u_N000579"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_004",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_aum_pressure",
+          "evidence_unit_ids": ["v7u_N000580"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_005",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_conflict",
+          "evidence_unit_ids": ["v7u_N000581"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_screen",
+          "target": "n_output_inherent_risk",
+          "evidence_unit_ids": ["v7u_N000578", "v7u_N000581"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "finding",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000575", "v7u_N000577", "v7u_N000578", "v7u_N000579", "v7u_N000580", "v7u_N000581"],
+      "review_status": "needs_review",
+      "review_notes": "Risk-factor material is modeled as a risk_indicator card, not a strict operating workflow. The listed drivers are parallel screening standards connected with USES edges; the only PRECEDES edge is a structural context-to-screening dependency.",
+      "metadata": {
+        "extraction_profile": "P7C regression_card_nature",
+        "non_procedural_conversion": true
+      }
+    },
+    {
+      "card_id": "p7card_CH08-S01_002",
+      "section_id": "CH08-S01",
+      "card_nature": "risk_indicator",
+      "title": "Identify high-risk private banking customer profiles",
+      "summary": "Review private banking customers for example risk indicators involving opaque ownership, unjustified multi-jurisdictional wealth, and PEP exposure.",
+      "scenario": "Private banking customer profile review.",
+      "trigger": "Other examples of financial crime risk in private banking include specified customer characteristics.",
+      "objective": "Identify customer profile indicators that elevate financial crime risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_examples",
+          "node_type": "trigger",
+          "label": "Private banking financial crime risk examples are being reviewed",
+          "evidence_unit_ids": ["v7u_N000582"],
+          "evidence_strength": "explicit",
+          "source_quote": "Other examples of financial crime risk in private banking include:"
+        },
+        {
+          "node_id": "n_action_review_profile",
+          "node_type": "action",
+          "label": "Review customer profile for high-risk private banking indicators",
+          "evidence_unit_ids": ["v7u_N000582", "v7u_N000583", "v7u_N000584", "v7u_N000585"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_opaque_ubo",
+          "node_type": "standard",
+          "label": "Use of private investment companies or complex ownership structures reduces UBO transparency",
+          "evidence_unit_ids": ["v7u_N000583"],
+          "evidence_strength": "explicit",
+          "source_quote": "Customers who use private investment companies or complex ownership structures to reduce the transparency of the ultimate beneficial owners."
+        },
+        {
+          "node_id": "n_standard_multi_jurisdiction_tax",
+          "node_type": "standard",
+          "label": "Personal and business wealth is maintained in numerous jurisdictions without justified business reasons to evade tax",
+          "evidence_unit_ids": ["v7u_N000584"],
+          "evidence_strength": "explicit",
+          "source_quote": "Customers who choose to maintain personal and business wealth in numerous jurisdictions without justified business reasons to evade tax."
+        },
+        {
+          "node_id": "n_standard_pep_exposure",
+          "node_type": "standard",
+          "label": "Customer is a PEP or has close associates who are PEPs, increasing bribery and corruption risk",
+          "evidence_unit_ids": ["v7u_N000585"],
+          "evidence_strength": "explicit",
+          "source_quote": "Customers who are considered PEPs or have close associates who are PEPs increase the bribery and corruption risk of the business."
+        },
+        {
+          "node_id": "n_output_profile_risk",
+          "node_type": "output",
+          "label": "Customer profile presents elevated private banking financial crime risk",
+          "evidence_unit_ids": ["v7u_N000582", "v7u_N000583", "v7u_N000584", "v7u_N000585"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S01_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_examples",
+          "target": "n_action_review_profile",
+          "evidence_unit_ids": ["v7u_N000582"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_002_002",
+          "edge_type": "USES",
+          "source": "n_action_review_profile",
+          "target": "n_standard_opaque_ubo",
+          "evidence_unit_ids": ["v7u_N000583"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_002_003",
+          "edge_type": "USES",
+          "source": "n_action_review_profile",
+          "target": "n_standard_multi_jurisdiction_tax",
+          "evidence_unit_ids": ["v7u_N000584"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_002_004",
+          "edge_type": "USES",
+          "source": "n_action_review_profile",
+          "target": "n_standard_pep_exposure",
+          "evidence_unit_ids": ["v7u_N000585"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_002_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_review_profile",
+          "target": "n_output_profile_risk",
+          "evidence_unit_ids": ["v7u_N000582", "v7u_N000583", "v7u_N000584", "v7u_N000585"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "finding",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000582", "v7u_N000583", "v7u_N000584", "v7u_N000585"],
+      "review_status": "needs_review",
+      "review_notes": "The source lists examples of risk indicators rather than a chronological process. The indicators are modeled as parallel standard nodes used by a review action, with no PRECEDES chain among the risk factors.",
+      "metadata": {
+        "extraction_profile": "P7C regression_card_nature",
+        "non_procedural_conversion": true
+      }
+    },
+    {
+      "card_id": "p7card_CH08-S01_003",
+      "section_id": "CH08-S01",
+      "card_nature": "control",
+      "title": "Apply governance controls to private banking risk management",
+      "summary": "Apply compliance oversight and performance-evaluation controls so risk management remains embedded in the private banker's role.",
+      "scenario": "Private banking governance and performance management.",
+      "objective": "Provide oversight, challenge the business, and keep risk management central to private banking performance.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Private banking risk management controls are required",
+          "evidence_unit_ids": ["v7u_N000586", "v7u_N000587"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_empower_compliance",
+          "node_type": "action",
+          "label": "Empower the compliance department and make its approach robust",
+          "actor": "Compliance department",
+          "evidence_unit_ids": ["v7u_N000586"],
+          "evidence_strength": "explicit",
+          "modality": "required",
+          "source_quote": "The compliance department must be empowered and robust..."
+        },
+        {
+          "node_id": "n_output_oversight_challenge",
+          "node_type": "output",
+          "label": "Proper oversight and challenge are provided to the business",
+          "evidence_unit_ids": ["v7u_N000586"],
+          "evidence_strength": "explicit",
+          "source_quote": "...providing proper oversight and challenges to the business."
+        },
+        {
+          "node_id": "n_action_balanced_scorecard",
+          "node_type": "action",
+          "label": "Use a balanced scorecard for performance evaluation",
+          "actor": "Business leaders",
+          "evidence_unit_ids": ["v7u_N000587"],
+          "evidence_strength": "explicit",
+          "modality": "required",
+          "source_quote": "Business leaders should use a balanced scorecard for performance evaluation."
+        },
+        {
+          "node_id": "n_output_risk_role",
+          "node_type": "output",
+          "label": "Managing risk remains a fundamental part of the private banker's role",
+          "evidence_unit_ids": ["v7u_N000587"],
+          "evidence_strength": "explicit",
+          "source_quote": "This ensures that managing risk remains a fundamental part of the private banker's role."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S01_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_empower_compliance",
+          "evidence_unit_ids": ["v7u_N000586"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_003_002",
+          "edge_type": "PRODUCES",
+          "source": "n_action_empower_compliance",
+          "target": "n_output_oversight_challenge",
+          "evidence_unit_ids": ["v7u_N000586"],
+          "evidence_strength": "explicit",
+          "qualifier": "record",
+          "modality": "required"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_003_003",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_balanced_scorecard",
+          "evidence_unit_ids": ["v7u_N000587"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S01_003_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_balanced_scorecard",
+          "target": "n_output_risk_role",
+          "evidence_unit_ids": ["v7u_N000587"],
+          "evidence_strength": "explicit",
+          "qualifier": "record",
+          "modality": "required"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000586", "v7u_N000587"],
+      "review_status": "needs_review",
+      "review_notes": "The two controls are parallel governance requirements, not a stated sequence. PRECEDES edges from the start node are structural entry dependencies; PRODUCES edges are explicit control-effect relationships from the source units.",
+      "metadata": {
+        "extraction_profile": "P7C regression_card_nature",
+        "parallel_controls": true
+      }
+    }
+  ],
+  "skip_reason": null
+}

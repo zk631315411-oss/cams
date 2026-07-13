@@ -1,0 +1,211 @@
+{
+  "section_id": "CH47-S12",
+  "section_title": "Transaction monitoring > Communicating with customers",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S12_001",
+      "section_id": "CH47-S12",
+      "card_nature": "execution",
+      "title": "Customer Communication for Information Gathering",
+      "summary": "This card outlines the process for customer-facing employees to engage with customers to collect additional due diligence or investigation information, including advance notification, meeting conduct, and post-meeting recording and verification.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Need to gather additional customer info for due diligence or investigation",
+          "evidence_unit_ids": ["v7u_N003371"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_notify",
+          "node_type": "action",
+          "label": "Provide advance notification of information collection and data usage if required or advisable",
+          "evidence_unit_ids": ["v7u_N003372", "v7u_N003373"],
+          "evidence_strength": "explicit",
+          "modality": "conditional",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_meeting",
+          "node_type": "action",
+          "label": "Conduct information gathering meeting with customer",
+          "evidence_unit_ids": ["v7u_N003371"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_record",
+          "node_type": "action",
+          "label": "Record meeting details in writing and verify information through other sources",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Accurate record of meeting and verified information",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_template",
+          "node_type": "standard",
+          "label": "Use template and script for complete and detailed collection",
+          "evidence_unit_ids": ["v7u_N003378"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_free_speech",
+          "node_type": "standard",
+          "label": "Allow customer to speak freely",
+          "evidence_unit_ids": ["v7u_N003377"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_interpersonal",
+          "node_type": "standard",
+          "label": "Employ good interpersonal skills and conversational manner",
+          "evidence_unit_ids": ["v7u_N003376"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_alert",
+          "node_type": "standard",
+          "label": "Remain alert to responses requiring follow-up or clarification",
+          "evidence_unit_ids": ["v7u_N003379"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_discretion",
+          "node_type": "standard",
+          "label": "Assure customer of data discretion and regulatory compliance",
+          "evidence_unit_ids": ["v7u_N003375"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "s_uncooperative",
+          "node_type": "standard",
+          "label": "Be aware that uncooperative customer behavior may raise suspicions",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_notify",
+          "evidence_unit_ids": ["v7u_N003371", "v7u_N003372"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_notify",
+          "target": "n_meeting",
+          "evidence_unit_ids": ["v7u_N003372", "v7u_N003371"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_meeting",
+          "target": "n_record",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_record",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_005",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_template",
+          "evidence_unit_ids": ["v7u_N003378"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_006",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_free_speech",
+          "evidence_unit_ids": ["v7u_N003377"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_007",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_interpersonal",
+          "evidence_unit_ids": ["v7u_N003376"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_008",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_alert",
+          "evidence_unit_ids": ["v7u_N003379"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_009",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_discretion",
+          "evidence_unit_ids": ["v7u_N003375"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_010",
+          "edge_type": "USES",
+          "source": "n_meeting",
+          "target": "s_uncooperative",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003371",
+        "v7u_N003372",
+        "v7u_N003373",
+        "v7u_N003375",
+        "v7u_N003376",
+        "v7u_N003377",
+        "v7u_N003378",
+        "v7u_N003379",
+        "v7u_N003380",
+        "v7u_N003381"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Inferred sequence between trigger, notification, and meeting; notification requirement is conditional. Edge evidence strength set accordingly. Card is otherwise based on explicit guidance."
+    }
+  ],
+  "skip_reason": null
+}

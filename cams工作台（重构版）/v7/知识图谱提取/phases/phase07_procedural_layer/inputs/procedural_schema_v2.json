@@ -1,0 +1,266 @@
+﻿{
+  "schema_version": "p7_procedural_schema_v2",
+  "schema_status": "minimal_p7a_contract",
+  "source_of_truth": "p7_card.flow_nodes and p7_card.flow_edges",
+  "review_ownership": {
+    "p7c_evidence_strength": "Legacy node evidence field; not a final semantic approval.",
+    "p7c_candidate_status": "P7C candidate declaration only; not answer eligibility.",
+    "p7c_edge_derivation": "P7C edge derivation declaration: explicit_text or llm_inference.",
+    "p7d_edge_review": "Final edge-level pending/accepted/rejected status is stored separately under P7D using p7d_edge_review_schema_v1.json.",
+    "mutation_policy": "P7D never writes review decisions back into p7_card."
+  },
+  "object_order": [
+    "p7_card",
+    "p7_bridge_edge"
+  ],
+  "derived_outputs": [
+    "p7_flow_edge_index.jsonl",
+    "p7_node_index.jsonl",
+    "p7_mermaid_preview.md",
+    "p7_drawio_preview.drawio"
+  ],
+  "id_prefixes": {
+    "card_id": "p7card_",
+    "flow_edge_id": "p7flowedge_",
+    "bridge_id": "p7bridge_",
+    "cluster_id": "p7cluster_",
+    "scenario_path_id": "p7path_"
+  },
+  "node_categories": ["entry", "process", "exit", "auxiliary"],
+  "flow_node_types": [
+    "E1_event_signal",
+    "E2_object_entry",
+    "E3_state_threshold",
+    "E4_handoff",
+    "E5_time_cycle",
+    "E6_change_exception",
+    "E7_external_command",
+    "E8_decision_finding",
+    "P1_assessment",
+    "P2_execution",
+    "P3_branch_routing",
+    "P4_collection",
+    "P5_coordination",
+    "P6_feedback",
+    "P7_monitoring",
+    "P8_constrained_action",
+    "P9_planning",
+    "P10_sufficiency",
+    "X1_classification",
+    "X2_product",
+    "X3_state_change",
+    "X4_handoff",
+    "X5_config_change",
+    "X6_termination",
+    "X7_continuing_obligation",
+    "input",
+    "standard"
+  ],
+  "flow_edge_types": [
+    "PRECEDES",
+    "REFERENCES",
+    "PRODUCES",
+    "DECIDES",
+    "FEEDBACK"
+  ],
+  "relation_types": [
+    "clue_supports_identification",
+    "mechanism_explains_risk",
+    "identification_leads_to_conclusion",
+    "conclusion_triggers_response",
+    "branch_condition_routes_path",
+    "component_assembles_product",
+    "standard_constrains_action",
+    "result_handoffs_stage",
+    "feedback_requests_completion",
+    "cycle_requires_monitoring",
+    "standard_transmits_requirement",
+    "parallel_alternative_no_sequence"
+  ],
+  "bridge_edge_types": [
+    "BRIDGES_TO"
+  ],
+  "edge_types": [
+    "PRECEDES",
+    "REFERENCES",
+    "PRODUCES",
+    "DECIDES",
+    "FEEDBACK",
+    "BRIDGES_TO"
+  ],
+  "evidence_strength": {
+    "allowed": [
+      "explicit",
+      "functional_dependency",
+      "needs_review",
+      "rejected"
+    ],
+    "p7c_current_allowed": [
+      "explicit",
+      "functional_dependency"
+    ],
+    "formal_edge_allowed": [
+      "explicit",
+      "functional_dependency"
+    ]
+  },
+  "candidate_statuses": [
+    "candidate"
+  ],
+  "edge_derivations": [
+    "explicit_text",
+    "llm_inference"
+  ],
+  "review_statuses": [
+    "needs_review",
+    "accepted",
+    "rejected"
+  ],
+  "card_natures": [
+    "execution",
+    "assessment",
+    "risk_indicator",
+    "control"
+  ],
+  "edge_properties": {
+    "qualifier_allowed": [
+      "input",
+      "standard",
+      "context",
+      "record",
+      "finding"
+    ],
+    "modality_allowed": [
+      "required",
+      "permitted",
+      "prohibited",
+      "risky",
+      "optional"
+    ]
+  },
+  "object_schemas": {
+    "p7_card": {
+      "required": [
+        "card_id",
+        "section_id",
+        "card_nature",
+        "title",
+        "flow_nodes",
+        "flow_edges",
+        "source_unit_ids",
+        "candidate_status"
+      ],
+      "optional": [
+        "summary",
+        "scenario",
+        "trigger",
+        "objective",
+        "actor",
+        "inputs",
+        "decision_standard",
+        "outputs",
+        "steps",
+        "review_notes",
+        "metadata",
+        "review_status"
+      ],
+      "notes": [
+        "card_nature must be one of execution, assessment, risk_indicator, or control.",
+        "execution/control cards primarily support what-to-do paths; assessment/risk_indicator cards primarily support how-to-judge standards and scenario triggers.",
+        "summary is a short human-readable description only.",
+        "scenario, trigger, and objective are retrieval/readability aids, not required source-of-truth fields.",
+        "Formal triggers should be represented by trigger nodes in flow_nodes.",
+        "steps are human-readable aids derived from flow_nodes and flow_edges."
+      ]
+    },
+    "flow_node": {
+      "required": [
+        "node_id",
+        "node_category",
+        "node_type",
+        "label",
+        "evidence_unit_ids",
+        "evidence_strength"
+      ],
+      "optional": [
+        "actor",
+        "description",
+        "source_quote",
+        "modality",
+        "review_status"
+      ],
+      "constraints": [
+        "node_type must be one of flow_node_types.",
+        "A card may be a closed flow or an open local relation; do not invent an entry or exit only to close the graph.",
+        "E-prefix nodes are local entries of the current card.",
+        "X-prefix nodes are local exits, stable results, or handoff points of the current card."
+      ]
+    },
+    "flow_edge": {
+      "required": [
+        "edge_id",
+        "edge_type",
+        "source",
+        "target",
+        "evidence_unit_ids",
+        "derivation"
+      ],
+      "optional": [
+        "condition",
+        "qualifier",
+        "modality",
+        "source_quote",
+        "relation_type",
+        "evidence_strength",
+        "review_status"
+      ],
+      "constraints": [
+        "edge_type must be one of PRECEDES, REFERENCES, PRODUCES, DECIDES, FEEDBACK.",
+        "derivation must be explicit_text or llm_inference for current P7C output.",
+        "REFERENCES means a process node points to a non-sequential auxiliary input, clue, standard, judgement dimension, or component.",
+        "relation_type 若填写，必须为 relation_types 中的值，用于补充 edge_type 无法表达的语义关系。",
+        "source and target must reference node_id values in the same card.",
+        "DECIDES edges must include condition.",
+        "BRIDGES_TO is not allowed inside p7_card.flow_edges."
+      ]
+    },
+    "p7_bridge_edge": {
+      "required": [
+        "bridge_id",
+        "edge_type",
+        "source_card_id",
+        "target_card_id",
+        "bridge_basis",
+        "review_status"
+      ],
+      "optional": [
+        "source_node_id",
+        "target_node_id",
+        "evidence_unit_ids",
+        "condition",
+        "notes"
+      ],
+      "constraints": [
+        "edge_type must be BRIDGES_TO.",
+        "bridge_edges connect card to card, or a card output to another card trigger.",
+        "bridge_edges are not stored in p7_card.flow_edges."
+      ]
+    }
+  },
+  "validation_rules": [
+    "Every p7_card must include the minimal required fields.",
+    "Every p7_card must declare card_nature.",
+    "flow_nodes and flow_edges are the formal process graph and the source of truth.",
+    "Every flow_node and flow_edge must include evidence_unit_ids and evidence_strength.",
+    "Every evidence_unit_ids value must exist in the P6 base graph.",
+    "flow_edges source and target must point to node_id values inside the same card.",
+    "DECIDES edges must include condition.",
+    "REFERENCES targets should be input or standard nodes.",
+    "PRODUCES targets should be X-prefix exit nodes.",
+    "BRIDGES_TO must be represented as p7_bridge_edge, not as p7_card.flow_edges.",
+    "P5 alias may normalize terms, but cannot be used as edge evidence.",
+    "Derived indexes and render views are not knowledge source-of-truth objects."
+  ]
+}
+
+

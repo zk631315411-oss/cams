@@ -1,0 +1,174 @@
+{
+  "section_id": "CH49-S12",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S12_001",
+      "section_id": "CH49-S12",
+      "card_nature": "execution",
+      "title": "Responding to Law Enforcement Requests",
+      "summary": "Process for handling law enforcement information requests, including initial assessment, coordination with internal teams, and ensuring response proportionality and confidentiality.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_request",
+          "node_type": "trigger",
+          "label": "Receipt of law enforcement request",
+          "evidence_unit_ids": ["v7u_N003636"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_initial_assessment",
+          "node_type": "action",
+          "label": "Initial assessment by designated officer",
+          "description": "Designated officer assesses legality, urgency, and relevance of request to ensure response is proportionate and justifiable.",
+          "evidence_unit_ids": ["v7u_N003636", "v7u_N003637", "v7u_N003638", "v7u_N003639"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_assessment_criteria",
+          "node_type": "standard",
+          "label": "Assessment criteria: legality, urgency, relevance",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_proportionality",
+          "node_type": "standard",
+          "label": "Response proportionality and justification",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003639"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_information_integrity",
+          "node_type": "standard",
+          "label": "Information integrity and confidentiality",
+          "evidence_unit_ids": ["v7u_N003635", "v7u_N003632"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_coordinate_response",
+          "node_type": "action",
+          "label": "Coordinate response with internal teams and maintain relationships",
+          "description": "Coordinate among intelligence/SAR teams and other departments to ensure confidentiality and compliance, while leveraging established relationships with legal, recordkeeping, etc.",
+          "evidence_unit_ids": ["v7u_N003640", "v7u_N003641", "v7u_N003642", "v7u_N003643"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_integrated_response",
+          "node_type": "output",
+          "label": "Integrated and compliant response",
+          "description": "Response provided with emphasis on compliance, responsiveness, and maintaining confidentiality and integrity of customer data.",
+          "evidence_unit_ids": ["v7u_N003644"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_request",
+          "target": "n_action_initial_assessment",
+          "evidence_unit_ids": ["v7u_N003636"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_002",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_std_assessment_criteria",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_003",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_std_proportionality",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003639"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_004",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_std_information_integrity",
+          "evidence_unit_ids": ["v7u_N003635", "v7u_N003632"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_initial_assessment",
+          "target": "n_action_coordinate_response",
+          "evidence_unit_ids": ["v7u_N003641"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "condition": null,
+          "source_quote": "They should coordinate their activities strategically and tactically..."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_006",
+          "edge_type": "USES",
+          "source": "n_action_coordinate_response",
+          "target": "n_std_proportionality",
+          "evidence_unit_ids": ["v7u_N003634"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Appropriate compliance ensures responses are proportionate and justified within legal frameworks."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_007",
+          "edge_type": "USES",
+          "source": "n_action_coordinate_response",
+          "target": "n_std_information_integrity",
+          "evidence_unit_ids": ["v7u_N003635"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Information integrity ensures the accuracy and sensitive handling of disclosed information."
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_coordinate_response",
+          "target": "n_output_integrated_response",
+          "evidence_unit_ids": ["v7u_N003644"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "An integrated approach emphasizes both compliance and responsiveness while maintaining the confidentiality and integrity of customer data throughout the process."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003629",
+        "v7u_N003630",
+        "v7u_N003631",
+        "v7u_N003632",
+        "v7u_N003633",
+        "v7u_N003634",
+        "v7u_N003635",
+        "v7u_N003636",
+        "v7u_N003637",
+        "v7u_N003638",
+        "v7u_N003639",
+        "v7u_N003640",
+        "v7u_N003641",
+        "v7u_N003642",
+        "v7u_N003643",
+        "v7u_N003644"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order: PRECEDES from initial assessment to coordinate response is functional dependency rather than explicit sequence. Also, USES edges from coordinate response to proportionality and integrity are inferred from general compliance requirements, not directly stated as used by the coordination action. The card represents a high-level execution process with some sequence reconstruction."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,276 @@
+{
+  "section_id": "CH37-S04",
+  "section_title": "Enterprise-wide risk assessment > Residual risks action plan",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S04_001",
+      "section_id": "CH37-S04",
+      "title": "Residual risk tolerance assessment and action plan development",
+      "summary": "After residual risk is computed and understood, the organization determines whether it is within tolerance; if mitigation is required, it develops an action plan with control measures, response strategy, ownership, review cadence, and governance escalation arrangements.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_compute_residual_risk",
+          "node_type": "start",
+          "label": "Residual risk is computed from inherent risk and mitigating control effectiveness",
+          "evidence_unit_ids": ["v7u_N002787"],
+          "evidence_strength": "explicit",
+          "source_quote": "Residual risk is computed based on an understanding of the inherent risk and the effectiveness of the control mitigating that risk."
+        },
+        {
+          "node_id": "n_input_inherent_risk_and_control_effectiveness",
+          "node_type": "input",
+          "label": "Inherent risk and effectiveness of controls mitigating that risk",
+          "evidence_unit_ids": ["v7u_N002787"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_understand_residual_risks",
+          "node_type": "action",
+          "label": "Understand the organization's residual risks",
+          "evidence_unit_ids": ["v7u_N002788"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_within_tolerance",
+          "node_type": "decision",
+          "label": "Is residual risk within tolerance levels?",
+          "evidence_unit_ids": ["v7u_N002788"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_within_tolerance",
+          "node_type": "output",
+          "label": "Residual risk is determined to be within tolerance levels",
+          "evidence_unit_ids": ["v7u_N002788"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_understand_origins_and_mitigations",
+          "node_type": "action",
+          "label": "Understand where inherent risk originates and how mitigation measures can control it",
+          "evidence_unit_ids": ["v7u_N002790"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_identify_unmitigated_risks",
+          "node_type": "action",
+          "label": "Identify risks existing AFC controls cannot mitigate",
+          "evidence_unit_ids": ["v7u_N002791"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_evaluate_other_controls",
+          "node_type": "action",
+          "label": "Evaluate whether other control measures would minimize the risks",
+          "evidence_unit_ids": ["v7u_N002792"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_alternative_control_measures",
+          "node_type": "standard",
+          "label": "Alternative control measures such as reducing transaction limits or limiting products offered",
+          "evidence_unit_ids": ["v7u_N002792"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_include_escalation_response",
+          "node_type": "action",
+          "label": "Include a response strategy in case the risk escalates",
+          "evidence_unit_ids": ["v7u_N002793"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_escalation_responses",
+          "node_type": "standard",
+          "label": "Escalation responses such as additional monitoring or limiting transactions",
+          "evidence_unit_ids": ["v7u_N002793"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_define_plan_actions",
+          "node_type": "action",
+          "label": "Define actions to implement across a range of residual risks",
+          "evidence_unit_ids": ["v7u_N002794"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_actions_may_cover_multiple_risks",
+          "node_type": "standard",
+          "label": "Some actions may address more than one residual risk",
+          "evidence_unit_ids": ["v7u_N002794"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_plan_operating_details",
+          "node_type": "standard",
+          "label": "Business owners, operational owners, due dates, and review process and frequency",
+          "evidence_unit_ids": ["v7u_N002795"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_governance_reporting",
+          "node_type": "standard",
+          "label": "Plan sponsor and governance forum for reporting and escalating issues",
+          "evidence_unit_ids": ["v7u_N002796"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_residual_risks_action_plan",
+          "node_type": "output",
+          "label": "Residual risks action plan documented for implementation, review, reporting, and escalation",
+          "evidence_unit_ids": ["v7u_N002793", "v7u_N002794", "v7u_N002795", "v7u_N002796"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_001",
+          "edge_type": "USES",
+          "source": "n_start_compute_residual_risk",
+          "target": "n_input_inherent_risk_and_control_effectiveness",
+          "evidence_unit_ids": ["v7u_N002787"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_start_compute_residual_risk",
+          "target": "n_action_understand_residual_risks",
+          "evidence_unit_ids": ["v7u_N002787", "v7u_N002788"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_understand_residual_risks",
+          "target": "n_decision_within_tolerance",
+          "evidence_unit_ids": ["v7u_N002788"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_within_tolerance",
+          "target": "n_output_within_tolerance",
+          "condition": "if residual risk is within tolerance levels",
+          "evidence_unit_ids": ["v7u_N002788"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_within_tolerance",
+          "target": "n_action_understand_origins_and_mitigations",
+          "condition": "if an action plan is required to mitigate residual risks",
+          "evidence_unit_ids": ["v7u_N002788", "v7u_N002790"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_understand_origins_and_mitigations",
+          "target": "n_action_identify_unmitigated_risks",
+          "evidence_unit_ids": ["v7u_N002790", "v7u_N002791"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_identify_unmitigated_risks",
+          "target": "n_action_evaluate_other_controls",
+          "evidence_unit_ids": ["v7u_N002791", "v7u_N002792"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_008",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_other_controls",
+          "target": "n_standard_alternative_control_measures",
+          "evidence_unit_ids": ["v7u_N002792"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_action_evaluate_other_controls",
+          "target": "n_action_include_escalation_response",
+          "evidence_unit_ids": ["v7u_N002792", "v7u_N002793"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_010",
+          "edge_type": "USES",
+          "source": "n_action_include_escalation_response",
+          "target": "n_standard_escalation_responses",
+          "evidence_unit_ids": ["v7u_N002793"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_action_include_escalation_response",
+          "target": "n_action_define_plan_actions",
+          "evidence_unit_ids": ["v7u_N002793", "v7u_N002794"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_012",
+          "edge_type": "USES",
+          "source": "n_action_define_plan_actions",
+          "target": "n_standard_actions_may_cover_multiple_risks",
+          "evidence_unit_ids": ["v7u_N002794"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_013",
+          "edge_type": "USES",
+          "source": "n_action_define_plan_actions",
+          "target": "n_standard_plan_operating_details",
+          "evidence_unit_ids": ["v7u_N002795"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_014",
+          "edge_type": "USES",
+          "source": "n_action_define_plan_actions",
+          "target": "n_standard_governance_reporting",
+          "evidence_unit_ids": ["v7u_N002796"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH37-S04_001_015",
+          "edge_type": "PRODUCES",
+          "source": "n_action_define_plan_actions",
+          "target": "n_output_residual_risks_action_plan",
+          "evidence_unit_ids": ["v7u_N002794", "v7u_N002795", "v7u_N002796"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002787",
+        "v7u_N002788",
+        "v7u_N002790",
+        "v7u_N002791",
+        "v7u_N002792",
+        "v7u_N002793",
+        "v7u_N002794",
+        "v7u_N002795",
+        "v7u_N002796"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The tolerance decision is explicit in unit v7u_N002788. The action-plan branch is modeled from units v7u_N002790 through v7u_N002796. Operating details and governance reporting are modeled as parallel standards used by the plan-definition action, not as chronological steps. Functional_dependency edges represent weak sequence reconstruction from adjacent plan-development statements and the inferred production of a documented action plan. Unit v7u_N002789 is an illustrative example and is not used as formal graph evidence for this card."
+    }
+  ],
+  "skip_reason": null
+}

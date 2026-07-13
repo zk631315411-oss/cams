@@ -1,0 +1,133 @@
+{
+  "section_id": "CH49-S13",
+  "section_title": "Concluding an investigation and suspicious activity reporting > How law enforcement case investigators read a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S13_001",
+      "section_id": "CH49-S13",
+      "card_type": "process_card",
+      "card_nature": "execution",
+      "title": "Law Enforcement SAR Investigation Process",
+      "summary": "Describes how law enforcement uses a SAR to initiate or enhance an investigation, from accessing the database to expanding the probe by following financial leads.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "trigger",
+          "label": "Investigation initiated or enhanced using SAR",
+          "evidence_unit_ids": ["v7u_N003646", "v7u_N003653"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_access",
+          "node_type": "action",
+          "label": "Access relevant SAR database",
+          "evidence_unit_ids": ["v7u_N003655"],
+          "evidence_strength": "explicit",
+          "actor": "law enforcement"
+        },
+        {
+          "node_id": "n_search",
+          "node_type": "action",
+          "label": "Search database using names, identifiers, data, entities, and narrative",
+          "evidence_unit_ids": ["v7u_N003655", "v7u_N003657"],
+          "evidence_strength": "explicit",
+          "actor": "law enforcement"
+        },
+        {
+          "node_id": "n_identify",
+          "node_type": "action",
+          "label": "Identify illicit activity details (what, where, when, products, why suspicious)",
+          "evidence_unit_ids": ["v7u_N003656"],
+          "evidence_strength": "explicit",
+          "actor": "law enforcement"
+        },
+        {
+          "node_id": "n_evaluate_pattern",
+          "node_type": "decision",
+          "label": "Evaluate pattern of activity (who, what, where, when, how, why)",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_develop_charges",
+          "node_type": "action",
+          "label": "Develop or add criminal charges for underlying activity and money laundering",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit",
+          "actor": "law enforcement"
+        },
+        {
+          "node_id": "n_expand",
+          "node_type": "action",
+          "label": "Follow the money, determine other criminals, and expand investigation",
+          "evidence_unit_ids": ["v7u_N003659"],
+          "evidence_strength": "explicit",
+          "actor": "law enforcement"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_access",
+          "evidence_unit_ids": ["v7u_N003646", "v7u_N003653", "v7u_N003655"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_access",
+          "target": "n_search",
+          "evidence_unit_ids": ["v7u_N003655"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_search",
+          "target": "n_identify",
+          "evidence_unit_ids": ["v7u_N003656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_identify",
+          "target": "n_evaluate_pattern",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_evaluate_pattern",
+          "target": "n_develop_charges",
+          "condition": "If pattern of activity supports criminal charges",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_develop_charges",
+          "target": "n_expand",
+          "evidence_unit_ids": ["v7u_N003659"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003646",
+        "v7u_N003653",
+        "v7u_N003655",
+        "v7u_N003657",
+        "v7u_N003656",
+        "v7u_N003658",
+        "v7u_N003659"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

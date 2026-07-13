@@ -1,0 +1,46 @@
+{
+  "section_id": "CH05-S04",
+  "card_id": "p7card_CH05-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "E1",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000377 明确定义了法规演变可能与业务模式和控制错位的风险，与N1节点完全一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000378 明确要求合规计划必须持续更新，与N2节点完全一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "法规错位是合规失效的风险源，逻辑上必然要求合规计划更新以应对，反向不成立，属于必要功能先后。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "edge条件“当法规演变可能导致错位时”直接取自N1原文，保留了可能性限定。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "N1的might在条件中保留可能性，N2的must未被削弱，限定词得到完整转述。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "两者非并列事实或共同结果，错位风险是更新合规计划的触发前提，属于逻辑先后而非简单相邻或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000377",
+        "v7u_N000378"
+      ],
+      "source_quotes": [
+        "Evolving regulations might become misaligned with current business models and controls.",
+        "Compliance programs must continually be updated."
+      ],
+      "reason": "原文虽无显式连接词，但法规错位风险是合规计划持续更新的必要前提，方向不可逆，符合PRECEDES的逻辑先后定义，推理充分。"
+    }
+  ]
+}

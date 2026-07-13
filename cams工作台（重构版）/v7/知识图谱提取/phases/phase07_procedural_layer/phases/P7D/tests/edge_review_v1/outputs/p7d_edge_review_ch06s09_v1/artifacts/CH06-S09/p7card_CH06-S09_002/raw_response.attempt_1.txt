@@ -1,0 +1,78 @@
+{
+  "section_id": "CH06-S09",
+  "card_id": "p7card_CH06-S09_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e001",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提及'risk appetite'（风险偏好），节点n001有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确说明'organizations may choose to enforce higher standards'，节点n002有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'based on their risk appetite'表明风险偏好是决策的基础，方向从风险偏好到行动选择，交换方向将违反功能依赖。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文'may choose'的限定词已被保留在节点n002中，且边未改变限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文'based on'表示依赖关系，并非并列、相关或一般主题关系，没有错误归为PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000460"],
+      "source_quotes": [
+        "Organizations may choose to enforce higher standards based on their risk appetite."
+      ],
+      "reason": "原文'based on their risk appetite'直接支持从风险偏好到选择执行更高标准的关系，但方向性依赖推理，建议pending。"
+    },
+    {
+      "edge_id": "e002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确说明'organizations may choose to enforce higher standards'，节点n002有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "'enforce higher standards'意味着更高的标准被应用，节点n003由其推理得出，有间接依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "选择执行更高标准（n002）产生结果'更高的标准被应用'（n003），方向从过程到结果，交换方向不合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文'may'的限定体现在节点n002的可选择性上，边从n002到n003是若选择执行则必然应用的关系，未改变原文可能性的整体含义。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "并非并列或相关，而是产生关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000460"],
+      "source_quotes": [
+        "Organizations may choose to enforce higher standards based on their risk appetite."
+      ],
+      "reason": "原文'enforce higher standards'隐含了标准被应用的结果，从选择执行到结果的关系需要推理，建议pending。"
+    }
+  ]
+}

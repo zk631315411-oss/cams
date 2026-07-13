@@ -1,0 +1,84 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "EDGE_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000553和v7u_N000555描述了银行在客户仍有贷款余额时退出超出风险容忍度的客户关系面临的挑战，明确支持该节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000555将核销贷款称为重大财务决策，隐含需要作出决策，因此节点有依据。"
+        },
+        "direction_support": {
+          "status": "pending",
+          "reason": "原文没有明确的时间顺序词（如before/after），只描述了退出关系时核销决策是复杂因素，前后顺序依赖逻辑推理，没有明示E1先于P2。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词（must/should等），原文也未对此关系施加限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文将退出关系与核销决策作为同一情境的两个方面，而非先后事件，将叙述顺序当作时间顺序可能导致误用PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000553",
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "Banks often face significant challenges when attempting to close customer accounts due to money laundering concerns, while the customer still owes money on credit-related products.",
+        "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision"
+      ],
+      "reason": "原文未明示退出关系一定先于核销决策，两者更多是条件与解释关系，PRECEDES边证据不足，关键检查不成立。"
+    },
+    {
+      "edge_id": "EDGE_003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000555将核销贷款称为重大财务决策，隐含决策动作，支持该节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000555明确表述‘often requiring extensive justification and approval’，直接支持节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文指出核销决策通常需要充分理由和批准，决策与需求之间存在指向关系，方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文的限定词‘often’已在目标节点标签中保留为‘通常’，未被强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文描述的是核销决策具有‘需要理由和批准’的属性，而非决策产生该需求，PRODUCES关系不准确。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "writing off a loan is a significant financial decision, often requiring extensive justification and approval"
+      ],
+      "reason": "‘需要理由和批准’是核销决策的固有属性，不是决策产生的结果，PRODUCES边类型不适用，关键检查不成立。"
+    }
+  ]
+}

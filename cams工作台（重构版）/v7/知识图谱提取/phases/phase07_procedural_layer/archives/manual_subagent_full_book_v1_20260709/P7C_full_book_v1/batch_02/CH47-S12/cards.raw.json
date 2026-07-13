@@ -1,0 +1,181 @@
+{
+  "section_id": "CH47-S12",
+  "section_title": "Transaction monitoring > Communicating with customers",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S12_001",
+      "section_id": "CH47-S12",
+      "card_nature": "execution",
+      "title": "Conduct customer meeting for additional due diligence information",
+      "summary": "Customer-facing employees conduct customer meetings, provide notice where required or advisable, put the customer at ease, collect required information, watch for suspicious responses, and promptly document the meeting.",
+      "actor": "Customer-facing employee or relationship manager",
+      "objective": "Gather reliable additional information for due diligence or investigative purposes.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_customer_engagement",
+          "node_type": "trigger",
+          "label": "It is necessary to engage with customers to gather additional information for due diligence or investigation",
+          "evidence_unit_ids": ["v7u_N003371"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_prepare_notice",
+          "node_type": "action",
+          "label": "Provide advance notice where required or advisable and tell the customer how data will be used",
+          "evidence_unit_ids": ["v7u_N003372", "v7u_N003373"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_customer_wariness",
+          "node_type": "input",
+          "label": "Customer may be wary that personal information will be used for marketing, resold, or compromised",
+          "evidence_unit_ids": ["v7u_N003374"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_put_customer_at_ease",
+          "node_type": "action",
+          "label": "Put the customer at ease through discretion assurances, interpersonal skills, conversational manner, and allowing free speech",
+          "evidence_unit_ids": ["v7u_N003375", "v7u_N003376", "v7u_N003377"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_collect_with_template",
+          "node_type": "action",
+          "label": "Use a template and script to collect all required information with appropriate detail",
+          "evidence_unit_ids": ["v7u_N003378"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_monitor_responses",
+          "node_type": "action",
+          "label": "Remain alert to customer responses that may require follow-up or clarification",
+          "evidence_unit_ids": ["v7u_N003379"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_customer_uncooperative",
+          "node_type": "decision",
+          "label": "Is the customer uncooperative after being put at ease?",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_suspicion_indicator",
+          "node_type": "output",
+          "label": "Uncooperative behavior may raise suspicions",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_verify_and_record",
+          "node_type": "action",
+          "label": "Ensure the meeting provides reliable detail for verification through other sources and record the details in writing as soon as possible",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_complete_record",
+          "node_type": "output",
+          "label": "Complete and accurate meeting record supporting verification",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_customer_engagement",
+          "target": "n_action_prepare_notice",
+          "evidence_unit_ids": ["v7u_N003371", "v7u_N003372", "v7u_N003373"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_002",
+          "edge_type": "USES",
+          "source": "n_action_put_customer_at_ease",
+          "target": "n_input_customer_wariness",
+          "evidence_unit_ids": ["v7u_N003374", "v7u_N003375"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_prepare_notice",
+          "target": "n_action_put_customer_at_ease",
+          "evidence_unit_ids": ["v7u_N003373", "v7u_N003375", "v7u_N003376", "v7u_N003377"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_put_customer_at_ease",
+          "target": "n_action_collect_with_template",
+          "evidence_unit_ids": ["v7u_N003375", "v7u_N003376", "v7u_N003377", "v7u_N003378"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_collect_with_template",
+          "target": "n_action_monitor_responses",
+          "evidence_unit_ids": ["v7u_N003378", "v7u_N003379"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_monitor_responses",
+          "target": "n_decision_customer_uncooperative",
+          "evidence_unit_ids": ["v7u_N003379", "v7u_N003380"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decision_customer_uncooperative",
+          "target": "n_output_suspicion_indicator",
+          "condition": "customer remains uncooperative",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_008",
+          "edge_type": "DECIDES",
+          "source": "n_decision_customer_uncooperative",
+          "target": "n_action_verify_and_record",
+          "condition": "continue meeting documentation and verification",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_action_monitor_responses",
+          "target": "n_action_verify_and_record",
+          "evidence_unit_ids": ["v7u_N003379", "v7u_N003381"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S12_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_verify_and_record",
+          "target": "n_output_complete_record",
+          "evidence_unit_ids": ["v7u_N003381"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003371", "v7u_N003372", "v7u_N003373", "v7u_N003374", "v7u_N003375", "v7u_N003376", "v7u_N003377", "v7u_N003378", "v7u_N003379", "v7u_N003380", "v7u_N003381"],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order: the section provides meeting techniques and final documentation requirements, so several edges reconstruct a practical meeting flow. The uncooperative-customer branch is an explicit risk indicator inside the workflow."
+    }
+  ],
+  "skip_reason": null
+}

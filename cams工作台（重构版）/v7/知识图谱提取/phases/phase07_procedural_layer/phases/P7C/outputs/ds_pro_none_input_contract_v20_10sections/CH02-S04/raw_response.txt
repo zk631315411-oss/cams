@@ -1,0 +1,193 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000131"],
+      "proposition": "Sophie是金融机构的AFC经理",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅人物背景介绍，无程序性或判断性有向结构，基础KG可保存为事实。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000132", "v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "proposition": "Sophie发现负面新闻触发初步调查，并识别出贿赂手段",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "发现事件触发了主体的调查动作，调查产生识别结论，形成明确的有向链，超出基础KG能表达的独立事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000133"],
+      "proposition": "FullTechGlobal面临贿赂腐败指控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例事实陈述，无主体动作或判断，基础KG可存储为事件。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000134"],
+      "proposition": "负面新闻引发对英国反贿赂法域外条款的关切",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达抽象关切，无明确主体动作或具体判断流程，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000135"],
+      "proposition": "英国反贿赂法是全球最严格的反腐败法之一",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律定义或特点描述，属于一般知识，基础KG承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000136"],
+      "proposition": "英国反贿赂法适用于有英国关联的公司，母公司对子公司腐败负责",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律适用范围规则，属于一般知识关系，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000137"],
+      "proposition": "域外管辖意味着非英国企业的英国母公司可能被起诉",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律后果说明，无主体动作或判断，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000141"],
+      "proposition": "Sophie审计发现内控缺陷和监管不足",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "审计动作明确产生内控缺陷的识别结论，构成有向程序链，基础KG不能表达该生产关系。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N000142"],
+      "proposition": "贿赂作为上游犯罪导致洗钱",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪机制解释，属于普通案例机制，基础KG承接。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N000143"],
+      "proposition": "FullTechGlobal面临严厉处罚、监管审查和刑事责任",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案件后果描述，无主体判断或应对动作，基础KG可存储。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": ["v7u_N000144"],
+      "proposition": "Sophie认识到机构需要维护合规诚信并降低贿赂风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性认识或义务认知，未形成带明确主体现流程的有向结构，基础KG可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "发现负面新闻触发初步调查并识别贿赂手段",
+      "flow_nodes": [
+        {
+          "node_id": "E1_news_discovery",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Sophie发现客户FullTechGlobal Services的负面新闻",
+          "evidence_unit_ids": ["v7u_N000132"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_initial_investigation",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie进行初步调查",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_bribery_methods",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别到贿赂手段：利用中间人获取合同、虚增咨询费、伪造发票、使用壳公司、提供豪华礼品和旅行安排以影响决策",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_news_discovery",
+          "target": "P2_initial_investigation",
+          "evidence_unit_ids": ["v7u_N000132", "v7u_N000138"],
+          "derivation": "llm_inference",
+          "condition": "发现负面新闻后",
+          "source_quote": "she came across negative news concerning their customer FullTechGlobal Services"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "P2_initial_investigation",
+          "target": "X1_bribery_methods",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "initial investigation revealed that FullTechGlobal had strategically employed intermediaries... it appeared the subsidiary was systematically obscuring... evidence suggested that FullTechGlobal provided sophisticated inducements..."
+        }
+      ],
+      "source_unit_ids": ["v7u_N000132", "v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：发现负面新闻（事件）→初步调查（过程）→识别贿赂手段（结论）；KG不足：基础KG可将各单元作为独立事实存储，但不能表达事件触发调查及调查产生识别结论的有向关系；选项判断：可确认事件触发的顺序和调查产生的具体识别结果；LLM推理：edge_001为llm_inference，因原文未直述发现新闻直接导致调查，但根据时间顺序和AFC经理职责，是完成原文明示调查行为的必要前提，无其他合理解释。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "审计发现内控缺陷和监管不足",
+      "flow_nodes": [
+        {
+          "node_id": "P2_audit_review",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie跟进调查并开展审计",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_control_deficiencies",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现FullTechGlobal的ABC框架和内控失灵，包括内部监控机制缺陷和监督不足，助长了长期未被发现的腐败活动",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "P2_audit_review",
+          "target": "X1_control_deficiencies",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "She followed up on the investigation and conducted a review that identified failures within FullTechGlobal’s ABC framework and internal controls. Her audit uncovered deficiencies in internal control mechanisms and inadequate oversight, which facilitated prolonged and undetected corrupt activities."
+        }
+      ],
+      "source_unit_ids": ["v7u_N000141"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：审计过程→识别内控缺陷和监管不足（结论）；KG不足：基础KG可将审计及缺陷作为事实存储，但不能表达审计产生该识别结论的有向过程；选项判断：可确认审计动作是否导致特定内控缺陷的识别；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

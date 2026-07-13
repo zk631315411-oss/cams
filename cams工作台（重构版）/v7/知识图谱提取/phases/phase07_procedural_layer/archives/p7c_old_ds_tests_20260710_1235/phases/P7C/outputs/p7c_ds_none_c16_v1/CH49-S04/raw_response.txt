@@ -1,0 +1,166 @@
+{
+  "section_id": "CH49-S04",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Suspicious activity report structure",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S04_001",
+      "section_id": "CH49-S04",
+      "card_nature": "execution",
+      "title": "Completing the Suspicious Activity Report (SAR)",
+      "summary": "Gather all required information, including subject demographics, institution details, activity location, regulator, point of contact, law enforcement contact, and a comprehensive narrative, to accurately complete the SAR form.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Decision to file SAR",
+          "evidence_unit_ids": ["v7u_N003511"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Gather all required information and complete SAR",
+          "evidence_unit_ids": ["v7u_N003512", "v7u_N003513"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_subject",
+          "node_type": "standard",
+          "label": "Subject demographics (name, birthdate, address, ID numbers, phone; if unknown, note in SAR)",
+          "evidence_unit_ids": ["v7u_N003512", "v7u_N003523", "v7u_N003524"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_filing_loc_reg_contact",
+          "node_type": "standard",
+          "label": "Filing institution, activity location, primary regulator, and point of contact",
+          "evidence_unit_ids": ["v7u_N003514", "v7u_N003515", "v7u_N003516", "v7u_N003517", "v7u_N003525"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_report_type_ctrl",
+          "node_type": "standard",
+          "label": "Report type (initial/continuing) and internal control number",
+          "evidence_unit_ids": ["v7u_N003521", "v7u_N003522"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_law_enforcement",
+          "node_type": "standard",
+          "label": "Contact with law enforcement and subpoena/judgment details",
+          "evidence_unit_ids": ["v7u_N003526"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_narrative",
+          "node_type": "standard",
+          "label": "Narrative: introduction/impact statement, background, transaction, conclusion; answers who, what, where, when, why, how",
+          "evidence_unit_ids": ["v7u_N003518", "v7u_N003527", "v7u_N003528"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Completed SAR",
+          "evidence_unit_ids": ["v7u_N003520"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003511", "v7u_N003512"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_subject",
+          "evidence_unit_ids": ["v7u_N003512", "v7u_N003523", "v7u_N003524"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_filing_loc_reg_contact",
+          "evidence_unit_ids": ["v7u_N003514", "v7u_N003515", "v7u_N003516", "v7u_N003517", "v7u_N003525"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_report_type_ctrl",
+          "evidence_unit_ids": ["v7u_N003521", "v7u_N003522"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_law_enforcement",
+          "evidence_unit_ids": ["v7u_N003526"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_006",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_narrative",
+          "evidence_unit_ids": ["v7u_N003518", "v7u_N003527", "v7u_N003528"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S04_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003520"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003511",
+        "v7u_N003512",
+        "v7u_N003513",
+        "v7u_N003514",
+        "v7u_N003515",
+        "v7u_N003516",
+        "v7u_N003517",
+        "v7u_N003518",
+        "v7u_N003520",
+        "v7u_N003521",
+        "v7u_N003522",
+        "v7u_N003523",
+        "v7u_N003524",
+        "v7u_N003525",
+        "v7u_N003526",
+        "v7u_N003527",
+        "v7u_N003528"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "weak inferred process order; the source lists SAR structure requirements rather than a strict step-by-step sequence, and the sequential flow from start to action is inferred; review_status set to needs_review."
+    }
+  ],
+  "skip_reason": null
+}

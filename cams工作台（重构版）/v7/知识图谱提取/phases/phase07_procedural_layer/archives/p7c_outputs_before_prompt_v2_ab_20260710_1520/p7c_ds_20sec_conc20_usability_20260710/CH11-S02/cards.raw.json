@@ -1,0 +1,356 @@
+{
+  "section_id": "CH11-S02",
+  "section_title": "Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S02_001",
+      "section_id": "CH11-S02",
+      "card_nature": "risk_indicator",
+      "title": "Unbanked Customer Risk Indicators for MSBs",
+      "summary": "MSBs serving customers without access to traditional banking face elevated ML/TF risks due to lack of financial history and reliance on cash transactions.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "MSB serves customers lacking access to mainstream banking services",
+          "evidence_unit_ids": [
+            "v7u_N000832"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess ML/TF risks of unbanked customers",
+          "evidence_unit_ids": [
+            "v7u_N000832"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Lack of financial history",
+          "evidence_unit_ids": [
+            "v7u_N000833"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Cash transactions – high volume, difficult to track source of funds",
+          "evidence_unit_ids": [
+            "v7u_N000834"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Elevated risk – falls outside risk appetite of traditional financial institutions",
+          "evidence_unit_ids": [
+            "v7u_N000835"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N000832"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N000833"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N000834"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N000835"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000832",
+        "v7u_N000833",
+        "v7u_N000834",
+        "v7u_N000835"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH11-S02_002",
+      "section_id": "CH11-S02",
+      "card_nature": "control",
+      "title": "MSB Additional Controls for High-Risk Customers",
+      "summary": "MSBs must implement enhanced due diligence and limit exposure to high-risk customers.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_02",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "MSB faces high-risk customers (e.g., unbanked) or cross-border exposure",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement additional strategic ML and operational controls",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Enhanced due diligence (EDD)",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Limit exposure to high-risk customers",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing risk mitigation and compliance obligations",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_02",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_002_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_standard_03",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_002_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_standard_04",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_02",
+          "evidence_unit_ids": [
+            "v7u_N000836"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "cycle_requires_monitoring"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000836"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Trigger is inferred from context (MSB with high-risk customers). Exit obligation is implied by ongoing need for controls, not explicitly stated."
+    },
+    {
+      "card_id": "p7card_CH11-S02_003",
+      "section_id": "CH11-S02",
+      "card_nature": "assessment",
+      "title": "Correspondent Bank Assessment of MSB Compliance Program",
+      "summary": "Correspondent banks must assess the soundness of the MSB's compliance program and alignment with risk appetite.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_03",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "Correspondent bank considers MSB relationship",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_03",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess MSB compliance program soundness and risk appetite alignment",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Soundness of MSB's compliance program",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Alignment of MSB's activities with correspondent bank's risk appetite",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_03",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Relationship approved or rejected",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S02_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_03",
+          "target": "n_process_03",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_003_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_05",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_003_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_03",
+          "target": "n_standard_06",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S02_003_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_03",
+          "target": "n_exit_03",
+          "evidence_unit_ids": [
+            "v7u_N000840"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000840"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Entry and exit nodes are inferred; the assessment is explicit, but the decision outcome is not stated in the unit."
+    }
+  ],
+  "skip_reason": null
+}

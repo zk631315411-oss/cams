@@ -1,0 +1,384 @@
+{
+  "section_id": "CH49-S14",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Refusing or terminating a customer",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S14_001",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Refusing a new customer",
+      "summary": "Process for refusing a new customer after CDD reveals the customer is outside risk appetite or raises financial crime red flags.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_nc",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": ["v7u_N003660"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_trigger_nc",
+          "node_type": "trigger",
+          "label": "New customer refusal considered (after CDD reveals outside risk appetite or red flags)",
+          "evidence_unit_ids": ["v7u_N003660", "v7u_N003661", "v7u_N003665"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_nc",
+          "node_type": "decision",
+          "label": "Reason for refusal?",
+          "evidence_unit_ids": ["v7u_N003661", "v7u_N003665"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_inform_ra_nc",
+          "node_type": "action",
+          "label": "Inform customer of reason (risk appetite)",
+          "evidence_unit_ids": ["v7u_N003663", "v7u_N003666", "v7u_N003668"],
+          "evidence_strength": "explicit",
+          "description": "Safe to tell customer; use simple explanation like 'outside of risk appetite'."
+        },
+        {
+          "node_id": "n_doc_ra_nc",
+          "node_type": "action",
+          "label": "Document refusal reason",
+          "evidence_unit_ids": ["v7u_N003669", "v7u_N003663"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_ra_nc",
+          "node_type": "output",
+          "label": "Customer refused",
+          "evidence_unit_ids": ["v7u_N003665"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_notip_sus_nc",
+          "node_type": "action",
+          "label": "Do not tip off customer",
+          "evidence_unit_ids": ["v7u_N003664", "v7u_N003667"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_doc_sus_nc",
+          "node_type": "action",
+          "label": "Document refusal reason",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_sar_sus_nc",
+          "node_type": "action",
+          "label": "File suspicious activity report",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sus_nc",
+          "node_type": "output",
+          "label": "Customer refused and SAR filed",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_start_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_start_nc",
+          "target": "n_trigger_nc",
+          "evidence_unit_ids": ["v7u_N003660"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_trigger_dec_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_nc",
+          "target": "n_decision_nc",
+          "evidence_unit_ids": ["v7u_N003661"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_dec_inform_nc",
+          "edge_type": "DECIDES",
+          "source": "n_decision_nc",
+          "target": "n_inform_ra_nc",
+          "condition": "Risk appetite",
+          "evidence_unit_ids": ["v7u_N003666"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_dec_notip_nc",
+          "edge_type": "DECIDES",
+          "source": "n_decision_nc",
+          "target": "n_notip_sus_nc",
+          "condition": "Financial crime suspicion",
+          "evidence_unit_ids": ["v7u_N003667"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_inform_doc_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_inform_ra_nc",
+          "target": "n_doc_ra_nc",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_doc_out_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_doc_ra_nc",
+          "target": "n_output_ra_nc",
+          "evidence_unit_ids": ["v7u_N003665"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_notip_doc_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_notip_sus_nc",
+          "target": "n_doc_sus_nc",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_doc_sar_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_doc_sus_nc",
+          "target": "n_sar_sus_nc",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_sar_out_nc",
+          "edge_type": "PRECEDES",
+          "source": "n_sar_sus_nc",
+          "target": "n_output_sus_nc",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003660",
+        "v7u_N003661",
+        "v7u_N003663",
+        "v7u_N003664",
+        "v7u_N003665",
+        "v7u_N003666",
+        "v7u_N003667",
+        "v7u_N003668",
+        "v7u_N003669",
+        "v7u_N003670"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Extracted from section discussing refusal of new customers. Process order is inferred; some edges marked as functional_dependency. Specifically, the sequence of informing, documenting, and filing SAR is not explicitly ordered."
+    },
+    {
+      "card_id": "p7card_CH49-S14_002",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Exiting an existing customer",
+      "summary": "Process for exiting an existing customer after a standard review cycle reveals suspicious activity or a change in risk appetite.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_ec",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": ["v7u_N003662"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_trigger_ec",
+          "node_type": "trigger",
+          "label": "Existing customer exit considered (after standard review reveals suspicion or risk appetite change)",
+          "evidence_unit_ids": ["v7u_N003662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_ec",
+          "node_type": "decision",
+          "label": "Reason for exit?",
+          "evidence_unit_ids": ["v7u_N003662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_inform_press_ec",
+          "node_type": "action",
+          "label": "Inform customer using press release/standard statement",
+          "evidence_unit_ids": ["v7u_N003672"],
+          "evidence_strength": "explicit",
+          "description": "If exiting a sector or jurisdiction, a press release or standard statement may be available."
+        },
+        {
+          "node_id": "n_time_ra_ec",
+          "node_type": "action",
+          "label": "Give reasonable time to make other arrangements",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "explicit",
+          "description": "Must give reasonable time unless legal requirement prevents it."
+        },
+        {
+          "node_id": "n_output_ra_ec",
+          "node_type": "output",
+          "label": "Customer exited",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_follow_policy_ec",
+          "node_type": "action",
+          "label": "Follow organization policies (including no tipping off)",
+          "evidence_unit_ids": ["v7u_N003674", "v7u_N003673", "v7u_N003664", "v7u_N003667"],
+          "evidence_strength": "explicit",
+          "description": "Exiting due to suspicious activity is more difficult; must follow internal policies and not tip off."
+        },
+        {
+          "node_id": "n_generic_letter_ec",
+          "node_type": "action",
+          "label": "Send generic discontinuation letter",
+          "evidence_unit_ids": ["v7u_N003675", "v7u_N003676"],
+          "evidence_strength": "explicit",
+          "description": "Use a very generic communication or template stating the wish to discontinue the relationship."
+        },
+        {
+          "node_id": "n_sar_ec",
+          "node_type": "action",
+          "label": "File suspicious activity report",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_time_sus_ec",
+          "node_type": "action",
+          "label": "Give reasonable time to make other arrangements",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sus_ec",
+          "node_type": "output",
+          "label": "Customer exited and SAR filed",
+          "evidence_unit_ids": ["v7u_N003670", "v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_start_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_start_ec",
+          "target": "n_trigger_ec",
+          "evidence_unit_ids": ["v7u_N003662"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_trigger_dec_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_ec",
+          "target": "n_decision_ec",
+          "evidence_unit_ids": ["v7u_N003662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_dec_inform_ec",
+          "edge_type": "DECIDES",
+          "source": "n_decision_ec",
+          "target": "n_inform_press_ec",
+          "condition": "Risk appetite change (e.g., exit sector/jurisdiction)",
+          "evidence_unit_ids": ["v7u_N003672"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_dec_follow_ec",
+          "edge_type": "DECIDES",
+          "source": "n_decision_ec",
+          "target": "n_follow_policy_ec",
+          "condition": "Suspicious activity",
+          "evidence_unit_ids": ["v7u_N003673", "v7u_N003674"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_inform_time_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_inform_press_ec",
+          "target": "n_time_ra_ec",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_time_out_ra_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_time_ra_ec",
+          "target": "n_output_ra_ec",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_follow_letter_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_follow_policy_ec",
+          "target": "n_generic_letter_ec",
+          "evidence_unit_ids": ["v7u_N003675"],
+          "evidence_strength": "explicit",
+          "description": "'It should be followed by a very generic letter'"
+        },
+        {
+          "edge_id": "e_letter_sar_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_generic_letter_ec",
+          "target": "n_sar_ec",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_sar_time_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_sar_ec",
+          "target": "n_time_sus_ec",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e_time_out_sus_ec",
+          "edge_type": "PRECEDES",
+          "source": "n_time_sus_ec",
+          "target": "n_output_sus_ec",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003662",
+        "v7u_N003664",
+        "v7u_N003667",
+        "v7u_N003670",
+        "v7u_N003672",
+        "v7u_N003673",
+        "v7u_N003674",
+        "v7u_N003675",
+        "v7u_N003676",
+        "v7u_N003677"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Extracted from section on exiting existing customers. The requirement to give reasonable time (v7u_N003677) appears at the end and is applied to both exit reasons as a general requirement, though its applicability to pure risk appetite exits may be implicit. Process edges for giving time and SAR filing order are functional_dependency."
+    }
+  ],
+  "skip_reason": null
+}

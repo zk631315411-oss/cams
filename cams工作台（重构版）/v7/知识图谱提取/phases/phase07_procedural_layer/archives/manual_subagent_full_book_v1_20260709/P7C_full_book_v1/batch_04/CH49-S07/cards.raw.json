@@ -1,0 +1,236 @@
+{
+  "section_id": "CH49-S07",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Maintaining an account after unusual activity",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S07_001",
+      "section_id": "CH49-S07",
+      "card_nature": "assessment",
+      "title": "Decide whether to maintain or close an account after SAR filing",
+      "summary": "After a SAR is filed, the institution decides whether to maintain or close the impacted account using risk appetite, law-enforcement directives, customer risk rating, and legal/reporting requirements.",
+      "trigger": "A SAR has been filed for the impacted account.",
+      "objective": "Determine the post-SAR account disposition.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_sar_filed",
+          "node_type": "trigger",
+          "label": "SAR is filed for an impacted account",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_evaluate_account_disposition",
+          "node_type": "action",
+          "label": "Evaluate whether to maintain or close the account",
+          "evidence_unit_ids": ["v7u_N003560", "v7u_N003561", "v7u_N003563"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_risk_appetite",
+          "node_type": "standard",
+          "label": "Institution risk appetite, tolerance, standards, and guidelines",
+          "evidence_unit_ids": ["v7u_N003561"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_law_enforcement_directive",
+          "node_type": "standard",
+          "label": "Law-enforcement directive may require the account to remain open for investigation",
+          "evidence_unit_ids": ["v7u_N003562"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_customer_risk_rating",
+          "node_type": "standard",
+          "label": "Customer risk rating after SAR filing",
+          "evidence_unit_ids": ["v7u_N003563", "v7u_N003564"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_continue_relationship",
+          "node_type": "decision",
+          "label": "Will the institution continue the business relationship?",
+          "evidence_unit_ids": ["v7u_N003565"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_maintain_with_requirements",
+          "node_type": "output",
+          "label": "Account or relationship is maintained subject to applicable legal and reporting requirements",
+          "evidence_unit_ids": ["v7u_N003565"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_close_or_change_relationship",
+          "node_type": "output",
+          "label": "Account is closed or the customer relationship is changed according to institutional standards",
+          "evidence_unit_ids": ["v7u_N003560", "v7u_N003561"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_sar_filed",
+          "target": "n_action_evaluate_account_disposition",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_002",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_account_disposition",
+          "target": "n_standard_risk_appetite",
+          "evidence_unit_ids": ["v7u_N003561"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_003",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_account_disposition",
+          "target": "n_standard_law_enforcement_directive",
+          "evidence_unit_ids": ["v7u_N003562"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_004",
+          "edge_type": "USES",
+          "source": "n_action_evaluate_account_disposition",
+          "target": "n_standard_customer_risk_rating",
+          "evidence_unit_ids": ["v7u_N003563", "v7u_N003564"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_evaluate_account_disposition",
+          "target": "n_decision_continue_relationship",
+          "evidence_unit_ids": ["v7u_N003560", "v7u_N003565"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_continue_relationship",
+          "target": "n_output_maintain_with_requirements",
+          "condition": "if continuing the business relationship",
+          "evidence_unit_ids": ["v7u_N003565"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decision_continue_relationship",
+          "target": "n_output_close_or_change_relationship",
+          "condition": "if not continuing or if institutional standards require closure/change",
+          "evidence_unit_ids": ["v7u_N003560", "v7u_N003561"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003560", "v7u_N003561", "v7u_N003562", "v7u_N003563", "v7u_N003564", "v7u_N003565"],
+      "review_status": "needs_review",
+      "review_notes": "The close/change branch is inferred from the stated maintain-or-close decision and institution standards; source gives the continue branch more explicitly."
+    },
+    {
+      "card_id": "p7card_CH49-S07_002",
+      "section_id": "CH49-S07",
+      "card_nature": "control",
+      "title": "Manage an account that remains open after SAR filing",
+      "summary": "If an account remains open after a SAR, the institution applies regular review, enhanced monitoring, EDD updates, legal restrictions, and controls for hard-to-terminate relationships.",
+      "trigger": "The account remains open after SAR filing.",
+      "objective": "Manage post-SAR account risk while respecting legal and product constraints.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_account_remains_open",
+          "node_type": "trigger",
+          "label": "Account remains open after SAR submission",
+          "evidence_unit_ids": ["v7u_N003567"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_manage_open_account",
+          "node_type": "action",
+          "label": "Apply post-SAR account management measures",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003567", "v7u_N003568", "v7u_N003569", "v7u_N003570", "v7u_N003571"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_regular_review",
+          "node_type": "standard",
+          "label": "Regularly review transactions to monitor for additional suspicious activity",
+          "evidence_unit_ids": ["v7u_N003567"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_enhanced_measures",
+          "node_type": "standard",
+          "label": "Use enhanced measures for risks involving other accounts of the same customer",
+          "evidence_unit_ids": ["v7u_N003568"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_edd_update",
+          "node_type": "standard",
+          "label": "Update account purpose and expected activity for enhanced due diligence when needed",
+          "evidence_unit_ids": ["v7u_N003569"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_extra_approval",
+          "node_type": "standard",
+          "label": "Introduce extra measures such as senior management approval before executing transactions when circumstances require",
+          "evidence_unit_ids": ["v7u_N003570"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_law_enforcement_restrictions",
+          "node_type": "standard",
+          "label": "Know and adhere to law-enforcement restrictions",
+          "evidence_unit_ids": ["v7u_N003571"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_relationship_hard_to_terminate",
+          "node_type": "decision",
+          "label": "Is the relationship or product difficult or legally restricted to terminate?",
+          "evidence_unit_ids": ["v7u_N003572", "v7u_N003573", "v7u_N003574"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_apply_lending_controls",
+          "node_type": "action",
+          "label": "Maintain the account or lending relationship while preventing new accounts and checking that principal and interest payments are not proceeds of crime",
+          "evidence_unit_ids": ["v7u_N003574", "v7u_N003575"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_managed_open_account",
+          "node_type": "output",
+          "label": "Open account is managed under enhanced monitoring, legal restrictions, and residual-risk controls",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003575"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {"edge_id": "p7flowedge_CH49-S07_002_001", "edge_type": "PRECEDES", "source": "n_trigger_account_remains_open", "target": "n_action_manage_open_account", "evidence_unit_ids": ["v7u_N003567"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_002", "edge_type": "USES", "source": "n_action_manage_open_account", "target": "n_standard_regular_review", "evidence_unit_ids": ["v7u_N003567"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_003", "edge_type": "USES", "source": "n_action_manage_open_account", "target": "n_standard_enhanced_measures", "evidence_unit_ids": ["v7u_N003568"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_004", "edge_type": "USES", "source": "n_action_manage_open_account", "target": "n_standard_edd_update", "evidence_unit_ids": ["v7u_N003569"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_005", "edge_type": "USES", "source": "n_action_manage_open_account", "target": "n_standard_extra_approval", "evidence_unit_ids": ["v7u_N003570"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_006", "edge_type": "USES", "source": "n_action_manage_open_account", "target": "n_standard_law_enforcement_restrictions", "evidence_unit_ids": ["v7u_N003571"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_007", "edge_type": "PRECEDES", "source": "n_action_manage_open_account", "target": "n_decision_relationship_hard_to_terminate", "evidence_unit_ids": ["v7u_N003572", "v7u_N003573"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S07_002_008", "edge_type": "DECIDES", "source": "n_decision_relationship_hard_to_terminate", "target": "n_action_apply_lending_controls", "condition": "if difficult or not permitted to terminate", "evidence_unit_ids": ["v7u_N003572", "v7u_N003573", "v7u_N003574", "v7u_N003575"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S07_002_009", "edge_type": "DECIDES", "source": "n_decision_relationship_hard_to_terminate", "target": "n_output_managed_open_account", "condition": "if ordinary open-account management applies", "evidence_unit_ids": ["v7u_N003566", "v7u_N003567"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S07_002_010", "edge_type": "PRODUCES", "source": "n_action_apply_lending_controls", "target": "n_output_managed_open_account", "evidence_unit_ids": ["v7u_N003575"], "evidence_strength": "explicit"}
+      ],
+      "source_unit_ids": ["v7u_N003566", "v7u_N003567", "v7u_N003568", "v7u_N003569", "v7u_N003570", "v7u_N003571", "v7u_N003572", "v7u_N003573", "v7u_N003574", "v7u_N003575"],
+      "review_status": "needs_review",
+      "review_notes": "Parallel post-SAR measures are modeled as standards used by one control action. The relationship-termination decision is reconstructed from explanatory constraints and may need review for granularity."
+    }
+  ],
+  "skip_reason": null
+}

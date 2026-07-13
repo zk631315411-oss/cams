@@ -1,0 +1,193 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "CH49_S09_card_1",
+      "section_id": "CH49-S09",
+      "card_nature": "execution",
+      "title": "Post-decision follow-up sequence when no SAR is filed",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Decision not to file SAR",
+          "evidence_unit_ids": ["v7u_N003589", "v7u_N003588"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Evaluate unusual activity, including escalation procedure",
+          "evidence_unit_ids": ["v7u_N003589"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document rationale for not filing SAR in detail (activity description, analysis steps, reasoning, supporting documents)",
+          "evidence_unit_ids": ["v7u_N003590"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Conduct trigger-event KYC review to reassess customer risk profile",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "If customer risk profile has changed, reperform CRA and consider further risk mitigants",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Update client file with all investigation-related documentation",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N7",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Perform ongoing monitoring of customer activity for further unusual or suspicious behavior",
+          "evidence_unit_ids": ["v7u_N003596"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N8",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Maintain AFC compliance by following internal procedures (despite no SAR filed)",
+          "evidence_unit_ids": ["v7u_N003600", "v7u_N003601"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N003589"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N003590"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "N3",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "N4",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRECEDES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRECEDES",
+          "source": "N6",
+          "target": "N7",
+          "evidence_unit_ids": ["v7u_N003596"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e7",
+          "edge_type": "PRECEDES",
+          "source": "N7",
+          "target": "N8",
+          "evidence_unit_ids": ["v7u_N003600", "v7u_N003601"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003588", "v7u_N003589", "v7u_N003590", "v7u_N003591", "v7u_N003593", "v7u_N003595", "v7u_N003596", "v7u_N003600", "v7u_N003601"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：决定不提交SAR后，按顺序执行评估异常活动→记录决策理由→触发KYC审查重新评估风险→若风险状况变化则重新执行CRA并考虑缓释措施→更新客户档案→持续监控→维持合规义务。基础KG无法表达此流程的顺序、条件和后续动作链。此链可判断选项关于不提交SAR后应采取的步骤顺序和条件义务。"
+    },
+    {
+      "card_id": "CH49_S09_card_2",
+      "section_id": "CH49-S09",
+      "card_nature": "assessment",
+      "title": "Future event-triggered review of historical records",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Future triggering event (suspicious activity by same customer, regulatory review, or law enforcement inquiry)",
+          "evidence_unit_ids": ["v7u_N003597"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Review client's transaction history and investigation records",
+          "evidence_unit_ids": ["v7u_N003597"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Necessary information provided to regulators / law enforcement; compliance demonstrated",
+          "evidence_unit_ids": ["v7u_N003598", "v7u_N003599"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N003597"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N003598", "v7u_N003599"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003597", "v7u_N003598", "v7u_N003599"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：未来发生同一客户的可疑活动、监管审查或执法查询等事件→触发审查客户交易历史及调查记录→提供必要信息给监管/执法部门并展示合规。基础KG仅笼统提及记录保存以备提供，未表达具体触发事件和审查动作链。此链可判断选项关于何种情况下需重新审查历史记录。"
+    }
+  ],
+  "skip_reason": null
+}

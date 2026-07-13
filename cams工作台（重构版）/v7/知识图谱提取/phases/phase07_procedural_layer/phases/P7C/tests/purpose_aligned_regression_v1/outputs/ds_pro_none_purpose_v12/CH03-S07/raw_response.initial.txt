@@ -1,0 +1,247 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000283"],
+      "proposition": "交易监控系统标记结构化存款等可疑交易信号，促使金融机构检测到非法活动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03_S07_001",
+      "reason": "具体线索触发检测形成有向链，基础KG不能充分表达案例中的具体识别过程。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000284"],
+      "proposition": "区块链分析公司通过分析暗网和风险交易所的加密资产流动，提供取证情报。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "缺少明确的触发事件和完整有向结构，且属于一般分析技术应用，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000285"],
+      "proposition": "FIUs综合银行SAR与跨境金融活动触发国际红旗信号。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03_S07_002",
+      "reason": "FIUs的综合判断产生红旗，形成有向链，基础KG无法表达此具体研判过程。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000286"],
+      "proposition": "因FIU升级案件，执法机构对Wolfe及其同伙进行针对性监控并指定为关注对象。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03_S07_003",
+      "reason": "案件升级触发执法监控和对象分类，构成完整交接-行动-结果链，增量于基础KG。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000287"],
+      "proposition": "执法机构协调资产冻结，导致数字钱包被查封和公司被瓦解。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "缺少明确的触发事件，且后续结果属于案例事实，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000270",
+        "v7u_N000271",
+        "v7u_N000272",
+        "v7u_N000273",
+        "v7u_N000274",
+        "v7u_N000275",
+        "v7u_N000276",
+        "v7u_N000277",
+        "v7u_N000278",
+        "v7u_N000279",
+        "v7u_N000280",
+        "v7u_N000281",
+        "v7u_N000282"
+      ],
+      "proposition": "Wolfe及其同伙使用多种方法筹集资金并通过各种洗钱手段掩饰来源。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "均为犯罪分子的行为和方法，属于基础KG可保存的洗钱案例和手法，不涉及机构程序性判断与应对。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000288"],
+      "proposition": "Wolfe及其同伙被判处长期监禁和巨额罚款。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "司法判决结果，不是机构程序性过程，且未与前置行动形成明确有向链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000289"],
+      "proposition": "情报主导调查、机构间协作和高级分析在打击恐怖融资中发挥关键作用。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性陈述，无有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH03_S07_001",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "金融机构通过交易监控检测到恐怖融资非法活动",
+      "flow_nodes": [
+        {
+          "node_id": "E1_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "交易监控系统标记的可疑活动信号（结构化存款、快速跨境分层、关联恐怖钱包的异常资金流动）",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构：检测到非法活动",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_001",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "非法活动被发现",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_001_1",
+          "edge_type": "PRECEDES",
+          "source": "E1_001",
+          "target": "P2_001",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_001_2",
+          "edge_type": "PRODUCES",
+          "source": "P2_001",
+          "target": "X1_001",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000283"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：可疑交易信号 -> 金融机构检测 -> 发现非法活动；KG不足：基础KG仅能保存‘金融机构使用交易监控检测可疑活动’的一般事实，无法表达本案例中具体交易模式（结构化存款、分层、关联恐怖钱包）如何促成检测；选项判断：可确认金融机构通过特定交易模式识别恐怖融资活动的具体过程。"
+    },
+    {
+      "card_id": "p7card_CH03_S07_002",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIUs综合银行SAR与跨境金融活动触发国际红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "E2_002",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "银行可疑交易报告（SAR）与跨境金融活动数据",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIUs：综合银行SAR与跨境金融活动进行分析",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发国际监管网络红旗信号",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_002_1",
+          "edge_type": "PRECEDES",
+          "source": "E2_002",
+          "target": "P1_002",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e_002_2",
+          "edge_type": "PRODUCES",
+          "source": "P1_002",
+          "target": "X1_002",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000285"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：银行SAR与跨境活动数据 -> FIU综合分析 -> 触发红旗；KG不足：基础KG可保存‘FIU分析SAR’的一般描述，但无法表达本案例中具体输入来源（银行SAR+跨境活动）及由此产生的国际红旗信号这一有向判断；选项判断：可确认FIU如何综合多源信息生成红旗的具体过程。"
+    },
+    {
+      "card_id": "p7card_CH03_S07_003",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU案件升级导致执法机构启动针对性监控并指定关注对象",
+      "flow_nodes": [
+        {
+          "node_id": "E4_003",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "FIUs：升级案件",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构（Europol、Interpol、国家反恐特遣队）：对Wolfe及其犯罪同伙进行针对性监控",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Wolfe及同伙被指定为关注对象并处于监控之下",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_003_1",
+          "edge_type": "PRECEDES",
+          "source": "E4_003",
+          "target": "P2_003",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit",
+          "relation_type": "result_handoffs_stage"
+        },
+        {
+          "edge_id": "e_003_2",
+          "edge_type": "PRODUCES",
+          "source": "P2_003",
+          "target": "X1_003",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000286"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：FIU案件升级 -> 执法机构监控 -> 对象被指定为关注对象并监控；KG不足：基础KG仅能表达‘执法机构监控恐怖融资嫌疑人’的事实，无法表达FIU升级这一具体触发及监控导致对象被分类的过程；选项判断：可确认FIU与执法机构交接案件及监控启动的具体流程。"
+    }
+  ],
+  "skip_reason": null
+}

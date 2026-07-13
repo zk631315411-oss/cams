@@ -1,0 +1,256 @@
+{
+  "section_id": "CH47-S06",
+  "section_title": "Transaction monitoring > Procedures for alerts review",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S06_001",
+      "section_id": "CH47-S06",
+      "card_type": "process_card",
+      "card_nature": "execution",
+      "title": "Multi-Level Alert Review Process",
+      "summary": "Operational sequence for reviewing transaction monitoring alerts in larger organizations, including Level 1, 2, and 3 reviews, escalation conditions, SAR filing, and ongoing monitoring.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "TM system generates alert",
+          "evidence_unit_ids": [
+            "v7u_N003297"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_level1",
+          "node_type": "action",
+          "label": "Level 1 Review: Examine alert validity",
+          "description": "Analyst examines alert's nature, transaction type, customer profile, account history, and previous alert history to determine if activity aligns with expected customer behavioral patterns.",
+          "evidence_unit_ids": [
+            "v7u_N003297",
+            "v7u_N003298",
+            "v7u_N003299"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision1",
+          "node_type": "decision",
+          "label": "Is activity abnormal or exceed thresholds?",
+          "evidence_unit_ids": [
+            "v7u_N003300"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_dismiss",
+          "node_type": "action",
+          "label": "Dismiss as false positive and document rationale",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_level2",
+          "node_type": "action",
+          "label": "Level 2 Review: Detailed analysis",
+          "description": "Perform detailed analysis including: analyzing transaction patterns/frequency, assessing source/destination of funds, reviewing KYC and risk profile, gathering additional records, conducting open-source research, and determining if activity is suspicious with robust rationale.",
+          "evidence_unit_ids": [
+            "v7u_N003302",
+            "v7u_N003303",
+            "v7u_N003304",
+            "v7u_N003305",
+            "v7u_N003306",
+            "v7u_N003307",
+            "v7u_N003308"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision2",
+          "node_type": "decision",
+          "label": "Is highly suspicious or involves numerous transactions or sensitive situations?",
+          "evidence_unit_ids": [
+            "v7u_N003309"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_level3",
+          "node_type": "action",
+          "label": "Level 3 Review: Complex analysis",
+          "description": "Senior analysts/compliance officers conduct comprehensive assessment including cross-department collaboration, complex risk assessments, and intricate transaction network analysis.",
+          "evidence_unit_ids": [
+            "v7u_N003309",
+            "v7u_N003310"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_file_sar",
+          "node_type": "action",
+          "label": "Document steps and file SAR if required",
+          "description": "Analysts document each step and file Suspicious Activity Report with regulatory authorities, including all pertinent information and rationale.",
+          "evidence_unit_ids": [
+            "v7u_N003311"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_post_sar",
+          "node_type": "action",
+          "label": "Ongoing monitoring and preventive measures",
+          "description": "Engage in ongoing monitoring and recommend enhanced customer monitoring or account restrictions to mitigate further issues.",
+          "evidence_unit_ids": [
+            "v7u_N003312",
+            "v7u_N003313"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_end_dismiss",
+          "node_type": "end",
+          "label": "End",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_01",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_level1",
+          "evidence_unit_ids": [
+            "v7u_N003297"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_02",
+          "edge_type": "PRECEDES",
+          "source": "n_level1",
+          "target": "n_decision1",
+          "evidence_unit_ids": [
+            "v7u_N003298",
+            "v7u_N003299",
+            "v7u_N003300"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_03",
+          "edge_type": "DECIDES",
+          "source": "n_decision1",
+          "target": "n_level2",
+          "condition": "Activity is abnormal or exceeds thresholds",
+          "evidence_unit_ids": [
+            "v7u_N003300"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_04",
+          "edge_type": "DECIDES",
+          "source": "n_decision1",
+          "target": "n_dismiss",
+          "condition": "Activity is normal",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_05",
+          "edge_type": "PRECEDES",
+          "source": "n_dismiss",
+          "target": "n_end_dismiss",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_06",
+          "edge_type": "PRECEDES",
+          "source": "n_level2",
+          "target": "n_decision2",
+          "evidence_unit_ids": [
+            "v7u_N003308",
+            "v7u_N003309"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_07",
+          "edge_type": "DECIDES",
+          "source": "n_decision2",
+          "target": "n_level3",
+          "condition": "Highly suspicious or involves numerous transactions or sensitive situations",
+          "evidence_unit_ids": [
+            "v7u_N003309"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_08",
+          "edge_type": "DECIDES",
+          "source": "n_decision2",
+          "target": "n_file_sar",
+          "condition": "Not highly suspicious",
+          "qualifier": "context",
+          "evidence_unit_ids": [
+            "v7u_N003311"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_09",
+          "edge_type": "PRECEDES",
+          "source": "n_level3",
+          "target": "n_file_sar",
+          "evidence_unit_ids": [
+            "v7u_N003311"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_10",
+          "edge_type": "PRECEDES",
+          "source": "n_file_sar",
+          "target": "n_post_sar",
+          "evidence_unit_ids": [
+            "v7u_N003312",
+            "v7u_N003313"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003295",
+        "v7u_N003297",
+        "v7u_N003298",
+        "v7u_N003299",
+        "v7u_N003300",
+        "v7u_N003301",
+        "v7u_N003302",
+        "v7u_N003303",
+        "v7u_N003304",
+        "v7u_N003305",
+        "v7u_N003306",
+        "v7u_N003307",
+        "v7u_N003308",
+        "v7u_N003309",
+        "v7u_N003310",
+        "v7u_N003311",
+        "v7u_N003312",
+        "v7u_N003313"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Edge 08 (DECIDES from n_decision2 to n_file_sar) is inferred; SAR filing is only triggered if activity is considered suspicious, which is determined during Level 2 review. The exact branch for non-suspicious Level 2 outcomes is not explicitly stated. One-touch system for smaller organizations (v7u_N003296) is mentioned but not detailed, so no separate card created."
+    }
+  ],
+  "skip_reason": null
+}

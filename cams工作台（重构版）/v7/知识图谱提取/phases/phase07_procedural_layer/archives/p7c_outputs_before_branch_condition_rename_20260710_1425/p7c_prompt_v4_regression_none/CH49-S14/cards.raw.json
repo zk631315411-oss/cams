@@ -1,0 +1,477 @@
+{
+  "section_id": "CH49-S14",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Refusing or terminating a customer",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S14_001",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Refusing to onboard a new customer",
+      "summary": "Process for refusing a new customer based on risk appetite or financial crime suspicion, ensuring proper documentation and reporting while avoiding tipping off.",
+      "flow_nodes": [
+        {
+          "node_id": "n_card1_trigger",
+          "node_type": "trigger",
+          "label": "New customer fails CDD, is outside risk appetite, or raises red flags for financial crime",
+          "evidence_unit_ids": [
+            "v7u_N003661",
+            "v7u_N003665",
+            "v7u_N003660"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_decision",
+          "node_type": "decision",
+          "label": "Reason for refusal",
+          "evidence_unit_ids": [
+            "v7u_N003661",
+            "v7u_N003666",
+            "v7u_N003667"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_inform_risk",
+          "node_type": "action",
+          "label": "Inform customer of refusal due to risk appetite",
+          "evidence_unit_ids": [
+            "v7u_N003666",
+            "v7u_N003668"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_inform_generic",
+          "node_type": "action",
+          "label": "Inform customer with generic “outside of risk appetite“ explanation, without tipping off",
+          "evidence_unit_ids": [
+            "v7u_N003667",
+            "v7u_N003668",
+            "v7u_N003664"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_keep_file_risk",
+          "node_type": "action",
+          "label": "Keep a file stating reasons for refusal (risk appetite case)",
+          "evidence_unit_ids": [
+            "v7u_N003669"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_keep_file_susp",
+          "node_type": "action",
+          "label": "Keep a file stating reasons for refusal (suspicion case)",
+          "evidence_unit_ids": [
+            "v7u_N003669"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_sar",
+          "node_type": "action",
+          "label": "File suspicious activity report",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_output",
+          "node_type": "output",
+          "label": "Customer not onboarded",
+          "evidence_unit_ids": [
+            "v7u_N003661",
+            "v7u_N003665"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card1_standard_tipoff",
+          "node_type": "standard",
+          "label": "Do not tip off the customer if financial crime suspected",
+          "evidence_unit_ids": [
+            "v7u_N003664"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_trigger",
+          "target": "n_card1_decision",
+          "evidence_unit_ids": [
+            "v7u_N003661"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_002",
+          "edge_type": "DECIDES",
+          "source": "n_card1_decision",
+          "target": "n_card1_inform_risk",
+          "condition": "No financial crime suspicion (risk appetite reason)",
+          "evidence_unit_ids": [
+            "v7u_N003666"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_card1_decision",
+          "target": "n_card1_inform_generic",
+          "condition": "Yes, financial crime suspicion",
+          "evidence_unit_ids": [
+            "v7u_N003667"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_inform_risk",
+          "target": "n_card1_keep_file_risk",
+          "evidence_unit_ids": [
+            "v7u_N003669"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "qualifier": "record"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_inform_generic",
+          "target": "n_card1_keep_file_susp",
+          "evidence_unit_ids": [
+            "v7u_N003669"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "qualifier": "record"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_keep_file_risk",
+          "target": "n_card1_output",
+          "evidence_unit_ids": [
+            "v7u_N003669",
+            "v7u_N003661"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_keep_file_susp",
+          "target": "n_card1_sar",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_card1_sar",
+          "target": "n_card1_output",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_009",
+          "edge_type": "USES",
+          "source": "n_card1_inform_generic",
+          "target": "n_card1_standard_tipoff",
+          "evidence_unit_ids": [
+            "v7u_N003664",
+            "v7u_N003667"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003660",
+        "v7u_N003661",
+        "v7u_N003664",
+        "v7u_N003665",
+        "v7u_N003666",
+        "v7u_N003667",
+        "v7u_N003668",
+        "v7u_N003669",
+        "v7u_N003670"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Sequence between informing, file keeping, and SAR is inferred; no explicit order in source. File keeping may occur before or after SAR. Card is functional for evidence matching."
+    },
+    {
+      "card_id": "p7card_CH49-S14_002",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Exiting an existing customer",
+      "summary": "Process for exiting an existing customer after a review, distinguishing sector/jurisdiction exit from suspicious activity exit, with appropriate communication and reporting.",
+      "flow_nodes": [
+        {
+          "node_id": "n_card2_trigger",
+          "node_type": "trigger",
+          "label": "Decision to exit existing customer after review (suspicious activity or risk appetite change)",
+          "evidence_unit_ids": [
+            "v7u_N003662"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_decision",
+          "node_type": "decision",
+          "label": "Reason for exit",
+          "evidence_unit_ids": [
+            "v7u_N003662",
+            "v7u_N003672",
+            "v7u_N003673"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_inform_sector",
+          "node_type": "action",
+          "label": "Inform customer using press release or standard statement",
+          "evidence_unit_ids": [
+            "v7u_N003672"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_output_sector",
+          "node_type": "output",
+          "label": "Customer exit communicated (sector/jurisdiction)",
+          "evidence_unit_ids": [
+            "v7u_N003672"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_follow_policies",
+          "node_type": "action",
+          "label": "Follow organization's policies and procedures for exiting customer",
+          "evidence_unit_ids": [
+            "v7u_N003674"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_send_letter",
+          "node_type": "action",
+          "label": "Send very generic letter indicating wish to discontinue relationship",
+          "evidence_unit_ids": [
+            "v7u_N003675",
+            "v7u_N003676"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_give_time",
+          "node_type": "action",
+          "label": "Give customer reasonable time to make other arrangements (unless legal requirement otherwise)",
+          "evidence_unit_ids": [
+            "v7u_N003677"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_sar",
+          "node_type": "action",
+          "label": "File suspicious activity report",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_output",
+          "node_type": "output",
+          "label": "Customer exited",
+          "evidence_unit_ids": [
+            "v7u_N003662"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_card2_standard_tipoff",
+          "node_type": "standard",
+          "label": "Do not tip off the customer",
+          "evidence_unit_ids": [
+            "v7u_N003664"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_trigger",
+          "target": "n_card2_decision",
+          "evidence_unit_ids": [
+            "v7u_N003662"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_002",
+          "edge_type": "DECIDES",
+          "source": "n_card2_decision",
+          "target": "n_card2_inform_sector",
+          "condition": "Sector/jurisdiction exit (no suspicion)",
+          "evidence_unit_ids": [
+            "v7u_N003672"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_003",
+          "edge_type": "DECIDES",
+          "source": "n_card2_decision",
+          "target": "n_card2_follow_policies",
+          "condition": "Suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003673"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_004",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_inform_sector",
+          "target": "n_card2_output_sector",
+          "evidence_unit_ids": [
+            "v7u_N003672"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_follow_policies",
+          "target": "n_card2_send_letter",
+          "evidence_unit_ids": [
+            "v7u_N003674",
+            "v7u_N003675"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_006",
+          "edge_type": "USES",
+          "source": "n_card2_send_letter",
+          "target": "n_card2_standard_tipoff",
+          "evidence_unit_ids": [
+            "v7u_N003664",
+            "v7u_N003675"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_007",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_send_letter",
+          "target": "n_card2_give_time",
+          "evidence_unit_ids": [
+            "v7u_N003677"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_008",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_send_letter",
+          "target": "n_card2_sar",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_009",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_give_time",
+          "target": "n_card2_output",
+          "evidence_unit_ids": [
+            "v7u_N003677"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_010",
+          "edge_type": "PRECEDES",
+          "source": "n_card2_sar",
+          "target": "n_card2_output",
+          "evidence_unit_ids": [
+            "v7u_N003670"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003662",
+        "v7u_N003664",
+        "v7u_N003670",
+        "v7u_N003672",
+        "v7u_N003673",
+        "v7u_N003674",
+        "v7u_N003675",
+        "v7u_N003676",
+        "v7u_N003677"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Sequence for suspicion branch: follow policies -> send letter is explicit, but ordering of giving time and filing SAR is not specified; both are required but may be concurrent. Edge review_status set to needs_review for inferred sequences."
+    }
+  ],
+  "skip_reason": null
+}

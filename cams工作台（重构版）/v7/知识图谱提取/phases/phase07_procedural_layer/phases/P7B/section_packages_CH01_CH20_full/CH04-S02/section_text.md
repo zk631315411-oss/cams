@@ -1,0 +1,38 @@
+[v7u_N000321|321] Financial crime undermines economic stability and has wider negative societal consequences if ignored.
+ZH: 金融犯罪破坏经济稳定并带来负面社会后果。
+
+[v7u_N000322|322] Imposing strict obligations through legislation and regulation on institutions with the objective of preventing illicit funds entering and flowing through the financial system is one of the ways to fight financial crime.
+ZH: 通过立法和监管对机构施加义务是打击金融犯罪的方式之一。
+
+[v7u_N000323|323] Depending upon the entity type, how regulation is applied can differ greatly due to the distinct differences between regulated entities and obliged entities.
+ZH: 受监管实体与义务实体因类型不同，监管适用方式差异很大。
+
+[v7u_N000324|324] A regulated entity is a business that falls under the direct supervision of financial regulators, such as banks, money services businesses, and other financial institutions.
+ZH: 受监管实体是直接受金融监管机构监督的企业，如银行、货币服务企业等。
+
+[v7u_N000325|325] These entities must comply with detailed AML/CFT requirements which include, but are not limited to, implementing comprehensive AML programs, conducting customer due diligence, real-time transaction monitoring, and promptly reporting suspicious activity.
+ZH: 受监管实体必须遵守详细的反洗钱/反恐怖融资要求，包括实施反洗钱计划、客户尽职调查、实时交易监控和可疑活动报告。
+
+[v7u_N000326|326] An obliged entity is a broader category that includes both regulated entities and nonfinancial organizations subject to other financial crime laws, such as ABC and sanctions regulations.
+ZH: 义务实体是更广泛的类别，包括受监管实体和受其他金融犯罪法律约束的非金融组织。
+
+[v7u_N000327|327] For example, sectors like energy, mining, logistics, pharmaceuticals, and real estate might not be directly regulated by financial authorities, yet they must perform risk assessments and have adequate and effective controls to deter financial crime.
+ZH: 非金融行业如能源、采矿、物流、制药和房地产等也须进行风险评估并采取控制措施。
+
+[v7u_N000328|328] These organizations are expected to take reasonable steps to prevent illicit activities and to implement remediation measures following enforcement actions, such as fines or leadership changes.
+ZH: 义务实体应采取合理措施预防非法活动，并在执法行动后实施补救措施。
+
+[v7u_N000329|329] An entity can be both regulated and obliged, meaning all relevant financial crime laws and regulations will apply to the institution.
+ZH: 一个实体可以同时是受监管实体和义务实体，适用所有相关金融犯罪法律。
+
+[v7u_N000330|330] Regulatory developments, such as the AML Act in the US, the Economic Crime and Corporate Transparency Act 2023 in the UK, the EU AML Package, and updated guidelines from FATF, have heightened industry-wide standards.
+ZH: 美国反洗钱法案、英国经济犯罪法案、欧盟反洗钱一揽子计划及FATF指南等监管发展提高了行业标准。
+
+[v7u_N000331|331] Failure to comply with these obligations can result in severe consequences, including heavy fines, operational restrictions, and substantial reputational damage.
+ZH: 不遵守义务可能导致巨额罚款、运营限制和声誉损害等严重后果。
+
+[v7u_N000332|332] In extreme cases, repeat offenders risk disqualification from critical markets, loss of operating licenses, or entering into a deferred prosecution agreement whereby the offending entity agrees to fulfill certain requirements, such as an overhaul of the AML/CTF compliance program in exchange for the postponement of prosecution.
+ZH: 屡犯者可能面临市场禁入、吊销执照或达成暂缓起诉协议。
+
+[v7u_N000333|333] All institutions, irrespective of whether regulated or obliged, must invest in appropriate and effective compliance strategies, staff training, and advanced monitoring technologies to safeguard against financial crime in an increasingly complex environment. These measures not only protect the institution from regulatory scrutiny, but also safeguard consumers and investors, which builds confidence and supports long-term business sustainability.
+ZH: 所有机构必须投资合规策略、员工培训和先进监控技术以防范金融犯罪。

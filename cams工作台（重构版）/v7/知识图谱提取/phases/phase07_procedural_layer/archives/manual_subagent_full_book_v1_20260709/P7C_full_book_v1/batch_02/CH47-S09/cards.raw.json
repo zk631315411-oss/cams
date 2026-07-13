@@ -1,0 +1,185 @@
+{
+  "section_id": "CH47-S09",
+  "section_title": "Transaction monitoring > Information gathering",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S09_001",
+      "section_id": "CH47-S09",
+      "card_nature": "assessment",
+      "title": "Alert information gathering and next-step determination",
+      "summary": "Alert reviewers gather internal and external information, use RFI where needed, review the sources holistically, and document the basis for dismissing or escalating the alert.",
+      "actor": "Employees responsible for reviewing and investigating alerts",
+      "objective": "Determine alert validity and the next step for the alert investigation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_alert_review",
+          "node_type": "start",
+          "label": "Alert review or investigation requires sufficient information",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_gather_information",
+          "node_type": "action",
+          "label": "Gather sufficient information using internal and external information sources",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_internal_sources",
+          "node_type": "input",
+          "label": "Internal sources: KYC data, transaction data, alert and investigation history, account history and activity",
+          "evidence_unit_ids": ["v7u_N003335", "v7u_N003336", "v7u_N003337", "v7u_N003338", "v7u_N003339"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_external_sources",
+          "node_type": "input",
+          "label": "External sources: open sources, social media, partners, collaborating institutions, regulators and law enforcement",
+          "evidence_unit_ids": ["v7u_N003340", "v7u_N003341", "v7u_N003342", "v7u_N003343", "v7u_N003344"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_request_information",
+          "node_type": "action",
+          "label": "Use an RFI process to gather more details about transactions that triggered alerts and may indicate suspicious activity",
+          "evidence_unit_ids": ["v7u_N003345"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_holistic_review",
+          "node_type": "action",
+          "label": "Review internal and external information sources holistically",
+          "evidence_unit_ids": ["v7u_N003346"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_alert_disposition",
+          "node_type": "decision",
+          "label": "Determine whether to dismiss or escalate the alert",
+          "evidence_unit_ids": ["v7u_N003346", "v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document_investigation",
+          "node_type": "action",
+          "label": "Document searches performed, relevant information identified or missing, supporting data points, source, access date, and available contact details",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_dismissed_alert",
+          "node_type": "output",
+          "label": "Alert dismissed with documented decision basis",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_escalated_alert",
+          "node_type": "output",
+          "label": "Alert escalated with documentation supporting future investigation",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_alert_review",
+          "target": "n_action_gather_information",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_002",
+          "edge_type": "USES",
+          "source": "n_action_gather_information",
+          "target": "n_input_internal_sources",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003335", "v7u_N003336", "v7u_N003337", "v7u_N003338", "v7u_N003339"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_003",
+          "edge_type": "USES",
+          "source": "n_action_gather_information",
+          "target": "n_input_external_sources",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003340", "v7u_N003341", "v7u_N003342", "v7u_N003343", "v7u_N003344"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_gather_information",
+          "target": "n_action_request_information",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003345"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_gather_information",
+          "target": "n_action_holistic_review",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003346"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_request_information",
+          "target": "n_action_holistic_review",
+          "evidence_unit_ids": ["v7u_N003345", "v7u_N003346"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_holistic_review",
+          "target": "n_decision_alert_disposition",
+          "evidence_unit_ids": ["v7u_N003346", "v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_decision_alert_disposition",
+          "target": "n_action_document_investigation",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_009",
+          "edge_type": "DECIDES",
+          "source": "n_decision_alert_disposition",
+          "target": "n_output_dismissed_alert",
+          "condition": "dismiss alert",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_010",
+          "edge_type": "DECIDES",
+          "source": "n_decision_alert_disposition",
+          "target": "n_output_escalated_alert",
+          "condition": "escalate alert",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_011",
+          "edge_type": "PRODUCES",
+          "source": "n_action_document_investigation",
+          "target": "n_output_escalated_alert",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003334", "v7u_N003335", "v7u_N003336", "v7u_N003337", "v7u_N003338", "v7u_N003339", "v7u_N003340", "v7u_N003341", "v7u_N003342", "v7u_N003343", "v7u_N003344", "v7u_N003345", "v7u_N003346", "v7u_N003347", "v7u_N003348"],
+      "review_status": "needs_review",
+      "review_notes": "RFI is modeled as an optional information-gathering action inside the same card. Functional dependencies mark reconstructed order where the source lists sources and then states holistic review/documentation."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,322 @@
+{
+  "section_id": "CH47-S09",
+  "section_title": "Transaction monitoring > Information gathering",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S09_001",
+      "section_id": "CH47-S09",
+      "card_nature": "execution",
+      "title": "Alert Investigation Information Gathering and Documentation",
+      "summary": "Process for gathering internal and external information to review transaction monitoring alerts, determining next steps (dismiss or escalate), and documenting the investigation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Alert requires investigation",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_gather_int",
+          "node_type": "action",
+          "label": "Gather internal information",
+          "evidence_unit_ids": ["v7u_N003335"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_kyc",
+          "node_type": "standard",
+          "label": "KYC data",
+          "evidence_unit_ids": ["v7u_N003336"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_txn",
+          "node_type": "standard",
+          "label": "Transaction data",
+          "evidence_unit_ids": ["v7u_N003337"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_alert_hist",
+          "node_type": "standard",
+          "label": "Alert and investigation history",
+          "evidence_unit_ids": ["v7u_N003338"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_acct_hist",
+          "node_type": "standard",
+          "label": "Account history and activity",
+          "evidence_unit_ids": ["v7u_N003339"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_gather_ext",
+          "node_type": "action",
+          "label": "Gather external information",
+          "evidence_unit_ids": ["v7u_N003340"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_open_src",
+          "node_type": "standard",
+          "label": "Open sources",
+          "evidence_unit_ids": ["v7u_N003341"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_soc_med",
+          "node_type": "standard",
+          "label": "Social media profiles",
+          "evidence_unit_ids": ["v7u_N003342"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_partners",
+          "node_type": "standard",
+          "label": "Partners and collaborating institutions",
+          "evidence_unit_ids": ["v7u_N003343"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_lea",
+          "node_type": "standard",
+          "label": "Law enforcement agencies",
+          "evidence_unit_ids": ["v7u_N003344"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_rfi",
+          "node_type": "standard",
+          "label": "Request for Information (RFI)",
+          "evidence_unit_ids": ["v7u_N003345"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_holistic",
+          "node_type": "action",
+          "label": "Holistically review internal and external information",
+          "evidence_unit_ids": ["v7u_N003346"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "Determine next steps: dismiss or escalate",
+          "evidence_unit_ids": ["v7u_N003346", "v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_dismiss",
+          "node_type": "output",
+          "label": "Decision: Dismiss alert",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_escalate",
+          "node_type": "output",
+          "label": "Decision: Escalate alert",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_document",
+          "node_type": "action",
+          "label": "Document investigation",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_doc",
+          "node_type": "output",
+          "label": "Investigation documentation",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_01",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_gather_int",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_02",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_gather_ext",
+          "evidence_unit_ids": ["v7u_N003334"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_03",
+          "edge_type": "USES",
+          "source": "n_gather_int",
+          "target": "n_kyc",
+          "evidence_unit_ids": ["v7u_N003336"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_04",
+          "edge_type": "USES",
+          "source": "n_gather_int",
+          "target": "n_txn",
+          "evidence_unit_ids": ["v7u_N003337"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_05",
+          "edge_type": "USES",
+          "source": "n_gather_int",
+          "target": "n_alert_hist",
+          "evidence_unit_ids": ["v7u_N003338"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_06",
+          "edge_type": "USES",
+          "source": "n_gather_int",
+          "target": "n_acct_hist",
+          "evidence_unit_ids": ["v7u_N003339"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_07",
+          "edge_type": "USES",
+          "source": "n_gather_ext",
+          "target": "n_open_src",
+          "evidence_unit_ids": ["v7u_N003341"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_08",
+          "edge_type": "USES",
+          "source": "n_gather_ext",
+          "target": "n_soc_med",
+          "evidence_unit_ids": ["v7u_N003342"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_09",
+          "edge_type": "USES",
+          "source": "n_gather_ext",
+          "target": "n_partners",
+          "evidence_unit_ids": ["v7u_N003343"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_10",
+          "edge_type": "USES",
+          "source": "n_gather_ext",
+          "target": "n_lea",
+          "evidence_unit_ids": ["v7u_N003344"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_11",
+          "edge_type": "USES",
+          "source": "n_gather_ext",
+          "target": "n_rfi",
+          "evidence_unit_ids": ["v7u_N003345"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_12",
+          "edge_type": "PRECEDES",
+          "source": "n_gather_int",
+          "target": "n_holistic",
+          "evidence_unit_ids": ["v7u_N003346"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_13",
+          "edge_type": "PRECEDES",
+          "source": "n_gather_ext",
+          "target": "n_holistic",
+          "evidence_unit_ids": ["v7u_N003346"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_14",
+          "edge_type": "PRECEDES",
+          "source": "n_holistic",
+          "target": "n_decision",
+          "evidence_unit_ids": ["v7u_N003346", "v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_15",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_dismiss",
+          "condition": "dismiss",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_16",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_escalate",
+          "condition": "escalate",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_17",
+          "edge_type": "PRECEDES",
+          "source": "n_dismiss",
+          "target": "n_document",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_18",
+          "edge_type": "PRECEDES",
+          "source": "n_escalate",
+          "target": "n_document",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S09_001_19",
+          "edge_type": "PRODUCES",
+          "source": "n_document",
+          "target": "n_output_doc",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003334",
+        "v7u_N003335",
+        "v7u_N003336",
+        "v7u_N003337",
+        "v7u_N003338",
+        "v7u_N003339",
+        "v7u_N003340",
+        "v7u_N003341",
+        "v7u_N003342",
+        "v7u_N003343",
+        "v7u_N003344",
+        "v7u_N003345",
+        "v7u_N003346",
+        "v7u_N003347",
+        "v7u_N003348"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The process order (trigger to gather actions) is inferred from context; the section describes the investigation context but does not explicitly state a sequential trigger. The gathering of internal and external information may occur simultaneously or in any order. The card is modeled as an execution process to judge compliance with information gathering and documentation steps."
+    }
+  ],
+  "skip_reason": null
+}

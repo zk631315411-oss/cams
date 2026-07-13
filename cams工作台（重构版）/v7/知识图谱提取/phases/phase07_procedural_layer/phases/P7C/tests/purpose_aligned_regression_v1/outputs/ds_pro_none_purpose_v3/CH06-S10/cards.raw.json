@@ -1,0 +1,142 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "cards": [
+    {
+      "card_id": "P7C_CH06_S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "审查所有权结构时识别最终受益所有人 (UBO)",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "审查所有权结构 (when reviewing ownership structures)",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构识别客户的最终受益所有人 (UBO) (regulatory obligation to identify the UBO of a customer)",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户的 UBO 被识别",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "regulatory obligation to identify the UBO"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000488"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：审查所有权结构事件（E1）→（PRECEDES）机构识别客户的 UBO（P1）→（PRODUCES）UBO 被识别（X1）。基础 KG 不足以表达该条件触发义务的局部有向关系；选项判断价值：可确认在审查所有权结构时需识别 UBO，排除仅在特定情况下识别等干扰项。LLM推理：无。"
+    },
+    {
+      "card_id": "P7C_CH06_S10_002",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人受益所有人时识别控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司中不存在自然人受益所有人 (in companies where there is no natural beneficial owner)",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构识别并核实控制人或名义受益所有人 (a controller or a notional beneficial owner should be identified and verified)",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "控制人或名义受益所有人被识别，以了解谁控制公司决策 (understand who is in control of the decision-making)",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit",
+          "condition": "当公司中没有自然人受益所有人时",
+          "source_quote": "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000496"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当不存在自然人受益所有人时（E1）→（PRECEDES）识别并核实控制人（P1）→（PRODUCES）控制人被识别以了解决策控制（X1）。基础 KG 不足以表达这一例外情形的完整有向处置链；选项判断价值：可确认在无自然人 UBO 时的替代识别义务及目的。LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

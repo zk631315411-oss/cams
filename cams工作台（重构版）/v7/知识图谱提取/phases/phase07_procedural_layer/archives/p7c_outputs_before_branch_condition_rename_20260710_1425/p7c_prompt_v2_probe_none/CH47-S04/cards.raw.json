@@ -1,0 +1,191 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "assessment",
+      "title": "TM system tuning assessment and adjustment",
+      "summary": "Tuning involves assessing and adjusting detection scenarios, thresholds, customer segmentation, and frequency to maintain effective transaction monitoring, driven by regular schedules or significant events.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Tuning trigger (scheduled or significant event)",
+          "evidence_unit_ids": [
+            "v7u_N003284",
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Perform TM system tuning",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_scenario",
+          "node_type": "standard",
+          "label": "Scenario setting",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_custseg",
+          "node_type": "standard",
+          "label": "Customer segmentation",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_threshold",
+          "node_type": "standard",
+          "label": "Threshold setting",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280",
+            "v7u_N003281",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_frequency",
+          "node_type": "standard",
+          "label": "Tuning frequency determination",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284",
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Effective, efficient, and compliant TM system",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": [
+            "v7u_N003272",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_scenario",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_custseg",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_threshold",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_frequency",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003281",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,145 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation investigation steps",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Pre-escalation investigation triggered",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Onboarding information and historical transaction data",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document all research and note missing information",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Documented research record",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRODUCES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "review_status": "accepted"
+    }
+  ],
+  "skip_reason": null
+}

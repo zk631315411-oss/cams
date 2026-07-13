@@ -1,0 +1,227 @@
+{
+  "section_id": "CH47-S07",
+  "section_title": "Transaction monitoring > Other sources of investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S07_001",
+      "section_id": "CH47-S07",
+      "card_nature": "assessment",
+      "title": "Identify non-TM sources that trigger AML investigations",
+      "summary": "AML investigations can originate from internal and external referrals, RFIs, information-sharing requests, negative news, regulatory findings, and law enforcement requests.",
+      "objective": "Recognize investigation leads outside transaction monitoring systems and decide when they prompt review or internal investigation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Review potential AML investigation sources beyond transaction monitoring systems",
+          "evidence_unit_ids": ["v7u_N003314"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess_source",
+          "node_type": "action",
+          "label": "Assess whether a source prompts review or an internal investigation",
+          "evidence_unit_ids": ["v7u_N003318", "v7u_N003319", "v7u_N003320", "v7u_N003325"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_referrals",
+          "node_type": "standard",
+          "label": "Internal referrals, external referrals, hotlines, and whistleblower complaints",
+          "evidence_unit_ids": ["v7u_N003315", "v7u_N003316"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_rfi",
+          "node_type": "standard",
+          "label": "Requests for information and broader information-sharing requests that can trigger additional internal investigation",
+          "evidence_unit_ids": ["v7u_N003317", "v7u_N003318"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_negative_news",
+          "node_type": "standard",
+          "label": "Ongoing negative news screening that prompts reviews and generates investigative leads",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_regulatory",
+          "node_type": "standard",
+          "label": "Regulatory findings and recommendations that identify additional risks and initiate reviews",
+          "evidence_unit_ids": ["v7u_N003320"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_lea",
+          "node_type": "standard",
+          "label": "Court orders, subpoenas, search warrants, and direct law enforcement inquiries",
+          "evidence_unit_ids": ["v7u_N003321", "v7u_N003322", "v7u_N003323", "v7u_N003324", "v7u_N003325"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_review",
+          "node_type": "output",
+          "label": "Review or AML investigation is initiated",
+          "evidence_unit_ids": ["v7u_N003318", "v7u_N003319", "v7u_N003320", "v7u_N003325"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_assess_source",
+          "evidence_unit_ids": ["v7u_N003314"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess_source",
+          "target": "n_standard_referrals",
+          "evidence_unit_ids": ["v7u_N003315", "v7u_N003316"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_003",
+          "edge_type": "USES",
+          "source": "n_action_assess_source",
+          "target": "n_standard_rfi",
+          "evidence_unit_ids": ["v7u_N003317", "v7u_N003318"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_004",
+          "edge_type": "USES",
+          "source": "n_action_assess_source",
+          "target": "n_standard_negative_news",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_005",
+          "edge_type": "USES",
+          "source": "n_action_assess_source",
+          "target": "n_standard_regulatory",
+          "evidence_unit_ids": ["v7u_N003320"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_006",
+          "edge_type": "USES",
+          "source": "n_action_assess_source",
+          "target": "n_standard_lea",
+          "evidence_unit_ids": ["v7u_N003321", "v7u_N003322", "v7u_N003323", "v7u_N003324", "v7u_N003325"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess_source",
+          "target": "n_output_review",
+          "evidence_unit_ids": ["v7u_N003318", "v7u_N003319", "v7u_N003320", "v7u_N003325"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003314", "v7u_N003315", "v7u_N003316", "v7u_N003317", "v7u_N003318", "v7u_N003319", "v7u_N003320", "v7u_N003321", "v7u_N003322", "v7u_N003323", "v7u_N003324", "v7u_N003325"],
+      "review_status": "needs_review",
+      "review_notes": "This card converts source-list material into an assessment card. The source types are parallel standards, not a chronological investigation workflow. Category: non-procedural source material converted into an assessment card."
+    },
+    {
+      "card_id": "p7card_CH47-S07_002",
+      "section_id": "CH47-S07",
+      "card_nature": "control",
+      "title": "Handle sensitive investigation sources with extra care",
+      "summary": "Because investigation sources are likely material and sensitive, organizations must handle them with extra care, avoid tipping off potential subjects, and use robust procedures to minimize information leaks.",
+      "objective": "Reduce information-leak and tipping-off risk when managing sensitive investigations.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_sensitive_source",
+          "node_type": "trigger",
+          "label": "Investigation source has high materiality and sensitivity",
+          "evidence_unit_ids": ["v7u_N003326"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_extra_care",
+          "node_type": "action",
+          "label": "Handle investigation sources with extra care",
+          "evidence_unit_ids": ["v7u_N003326"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_standard_tipping_off",
+          "node_type": "standard",
+          "label": "Avoid tipping off a potential subject of an investigation",
+          "evidence_unit_ids": ["v7u_N003327", "v7u_N003328"],
+          "evidence_strength": "explicit",
+          "modality": "prohibited"
+        },
+        {
+          "node_id": "n_action_procedures",
+          "node_type": "action",
+          "label": "Maintain robust procedures for managing investigations",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_output_leak_control",
+          "node_type": "output",
+          "label": "Risk of information leaks is minimized",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S07_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_sensitive_source",
+          "target": "n_action_extra_care",
+          "evidence_unit_ids": ["v7u_N003326"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_002_002",
+          "edge_type": "USES",
+          "source": "n_action_extra_care",
+          "target": "n_standard_tipping_off",
+          "evidence_unit_ids": ["v7u_N003327", "v7u_N003328"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_extra_care",
+          "target": "n_action_procedures",
+          "evidence_unit_ids": ["v7u_N003326", "v7u_N003329"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_procedures",
+          "target": "n_output_leak_control",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003326", "v7u_N003327", "v7u_N003328", "v7u_N003329"],
+      "review_status": "needs_review",
+      "review_notes": "Extra care, anti-tipping-off, and robust procedures are related control requirements; the exact order is partly reconstructed. Category: weak inferred process order."
+    }
+  ],
+  "skip_reason": null
+}

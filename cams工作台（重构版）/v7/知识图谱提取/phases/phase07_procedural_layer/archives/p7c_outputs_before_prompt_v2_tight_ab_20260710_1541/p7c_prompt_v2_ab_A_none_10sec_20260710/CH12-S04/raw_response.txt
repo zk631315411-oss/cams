@@ -1,0 +1,74 @@
+{
+  "section_id": "CH12-S04",
+  "section_title": "Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks",
+  "cards": [
+    {
+      "card_id": "CH12-S04-C01",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "Securities Transaction Monitoring Flags Suspicious Transactions Based on Predefined Criteria",
+      "flow_nodes": [
+        {
+          "node_id": "node_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Trading activity occurs",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_02",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Evaluate transactions against predefined criteria",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_03",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Flagged as suspicious transaction",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_01",
+          "edge_type": "PRECEDES",
+          "source": "node_01",
+          "target": "node_02",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge_02",
+          "edge_type": "DECIDES",
+          "source": "node_02",
+          "target": "node_03",
+          "condition": "transaction meets predefined criteria for suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "branch_condition_routes_path",
+          "modality": "can"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：交易活动 --作为输入--> 基于预定义标准评估交易 --若符合标准则--> 标记为可疑交易；KG不足：基础KG无法表达条件分支和基于标准的决策过程，只能记录监控系统存在和可疑交易概念；选项判断：可判断交易监控系统如何基于预定义标准标记可疑交易的条件。"
+    }
+  ]
+}

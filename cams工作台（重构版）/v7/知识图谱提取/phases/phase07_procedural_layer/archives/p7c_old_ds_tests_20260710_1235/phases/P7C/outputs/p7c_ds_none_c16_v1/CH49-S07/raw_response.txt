@@ -1,0 +1,299 @@
+{
+  "section_id": "CH49-S07",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Maintaining an account after unusual activity",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S07_001",
+      "section_id": "CH49-S07",
+      "card_nature": "assessment",
+      "title": "Post-SAR account decision assessment",
+      "summary": "After filing a SAR, assess risk appetite, law enforcement directives, and customer risk rating to decide whether to maintain or close the impacted account.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_sar_filed",
+          "node_type": "trigger",
+          "label": "SAR filed",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_decide",
+          "node_type": "action",
+          "label": "Decide to maintain or close account",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_risk_appetite",
+          "node_type": "standard",
+          "label": "Financial institution’s risk appetite, tolerance, standards, and guidelines",
+          "evidence_unit_ids": ["v7u_N003561"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_le_directive",
+          "node_type": "standard",
+          "label": "Law enforcement directive to keep account open",
+          "evidence_unit_ids": ["v7u_N003562"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_risk_rating",
+          "node_type": "standard",
+          "label": "Customer risk rating after SAR filing",
+          "evidence_unit_ids": ["v7u_N003563"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_decision",
+          "node_type": "output",
+          "label": "Account disposition decision (maintain or close)",
+          "evidence_unit_ids": ["v7u_N003560", "v7u_N003565"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_sar_filed",
+          "target": "n_action_decide",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_002",
+          "edge_type": "USES",
+          "source": "n_action_decide",
+          "target": "n_standard_risk_appetite",
+          "evidence_unit_ids": ["v7u_N003561"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_003",
+          "edge_type": "USES",
+          "source": "n_action_decide",
+          "target": "n_standard_le_directive",
+          "evidence_unit_ids": ["v7u_N003562"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_004",
+          "edge_type": "USES",
+          "source": "n_action_decide",
+          "target": "n_standard_risk_rating",
+          "evidence_unit_ids": ["v7u_N003563"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_decide",
+          "target": "n_output_decision",
+          "evidence_unit_ids": ["v7u_N003560"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003560", "v7u_N003561", "v7u_N003562", "v7u_N003563", "v7u_N003565"],
+      "review_status": "accepted",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH49-S07_002",
+      "section_id": "CH49-S07",
+      "card_nature": "control",
+      "title": "Post-SAR monitoring and controls for maintained accounts",
+      "summary": "If the account remains open after a SAR, apply a set of enhanced monitoring, due diligence, legal compliance, and risk mitigation controls.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_account_open",
+          "node_type": "trigger",
+          "label": "Account remains open after SAR",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003567"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_manage_risk",
+          "node_type": "action",
+          "label": "Apply post-SAR risk management controls",
+          "evidence_unit_ids": ["v7u_N003566"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_regular_review",
+          "node_type": "standard",
+          "label": "Perform regular transaction review for suspicious activity",
+          "evidence_unit_ids": ["v7u_N003567"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_enhanced_measures",
+          "node_type": "standard",
+          "label": "Apply enhanced measures to other accounts of same customer",
+          "evidence_unit_ids": ["v7u_N003568"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_edd_update",
+          "node_type": "standard",
+          "label": "Perform enhanced due diligence (update account purpose/expected activity)",
+          "evidence_unit_ids": ["v7u_N003569"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_senior_approval",
+          "node_type": "standard",
+          "label": "Introduce senior management approval for transactions (if extra measures needed)",
+          "evidence_unit_ids": ["v7u_N003570"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_le_restrictions",
+          "node_type": "standard",
+          "label": "Adhere to all law enforcement agency restrictions",
+          "evidence_unit_ids": ["v7u_N003571"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_high_risk_controls",
+          "node_type": "standard",
+          "label": "If high‑risk customer, perform EDD and enhanced monitoring",
+          "evidence_unit_ids": ["v7u_N003564"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_prevent_new_verify",
+          "node_type": "standard",
+          "label": "Prevent new account openings and verify principal/interest are not proceeds of crime (when termination is not possible)",
+          "evidence_unit_ids": ["v7u_N003575"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_controls_executed",
+          "node_type": "output",
+          "label": "Account risk management controls applied",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003565"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_account_open",
+          "target": "n_action_manage_risk",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003567"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_002",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_regular_review",
+          "evidence_unit_ids": ["v7u_N003567"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_003",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_enhanced_measures",
+          "evidence_unit_ids": ["v7u_N003568"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_004",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_edd_update",
+          "evidence_unit_ids": ["v7u_N003569"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_005",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_senior_approval",
+          "evidence_unit_ids": ["v7u_N003570"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_006",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_le_restrictions",
+          "evidence_unit_ids": ["v7u_N003571"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_007",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_high_risk_controls",
+          "evidence_unit_ids": ["v7u_N003564"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_008",
+          "edge_type": "USES",
+          "source": "n_action_manage_risk",
+          "target": "n_standard_prevent_new_verify",
+          "evidence_unit_ids": ["v7u_N003575"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S07_002_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_manage_risk",
+          "target": "n_output_controls_executed",
+          "evidence_unit_ids": ["v7u_N003566", "v7u_N003565"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003564",
+        "v7u_N003565",
+        "v7u_N003566",
+        "v7u_N003567",
+        "v7u_N003568",
+        "v7u_N003569",
+        "v7u_N003570",
+        "v7u_N003571",
+        "v7u_N003575"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

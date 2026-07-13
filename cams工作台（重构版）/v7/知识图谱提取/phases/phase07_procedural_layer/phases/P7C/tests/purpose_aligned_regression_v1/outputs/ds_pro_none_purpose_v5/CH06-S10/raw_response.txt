@@ -1,0 +1,132 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "cards": [
+    {
+      "card_id": "CH06-S10-01",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "基于所有权结构和风险门槛识别最终受益所有人（UBO）",
+      "flow_nodes": [
+        {
+          "node_id": "E2_object_entry",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "客户所有权结构（直接和间接持股信息）",
+          "evidence_unit_ids": ["v7u_N000488", "v7u_N000493"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_assessment",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构合计直接与间接持股比例，并与适用风险阈值比较，判断UBO",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_classification",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "UBO识别结论（特定自然人或无UBO）",
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "standard",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "受益所有权阈值：通常25%，高风险可能低至10%甚至5%（风险为本）",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E2_object_entry",
+          "target": "P1_assessment",
+          "evidence_unit_ids": ["v7u_N000488", "v7u_N000493"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "edge2",
+          "edge_type": "REFERENCES",
+          "source": "P1_assessment",
+          "target": "standard",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491"],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge3",
+          "edge_type": "PRODUCES",
+          "source": "P1_assessment",
+          "target": "X1_classification",
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000488", "v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：机构根据客户所有权结构（直接和间接持股）和适用风险阈值（通常25%，高风险可能10%/5%）判断最终受益所有人，并得出UBO识别结论。KG不足：基础KG可保存门槛规则，但不能表达机构如何综合信息进行判断的评估过程。选项判断：可帮助区分是否根据直接和间接持股合计判断UBO，以及门槛如何随风险变化。LLM推理：边E2_object_entry→P1_assessment为功能依赖，因原文未明示顺序但必要；其余边均显式。"
+    },
+    {
+      "card_id": "CH06-S10-02",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人受益所有人时识别控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "E6_change_exception",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司不存在自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_execution",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_classification",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "控制人或名义受益所有人被识别并核实，明确公司决策控制人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E6_change_exception",
+          "target": "P2_execution",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge2",
+          "edge_type": "PRODUCES",
+          "source": "P2_execution",
+          "target": "X1_classification",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当公司不存在自然人受益所有人时，机构应识别并核实控制人或名义受益所有人，从而明确谁控制公司决策。KG不足：基础KG可存储需要识别控制人的规则，但不能表达条件触发具体行动和结果的有向结构。选项判断：可确认在何种异常条件下应执行控制人识别。LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

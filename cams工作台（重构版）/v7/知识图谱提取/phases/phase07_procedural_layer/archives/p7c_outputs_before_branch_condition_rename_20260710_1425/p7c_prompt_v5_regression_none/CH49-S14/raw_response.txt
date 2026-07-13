@@ -1,0 +1,331 @@
+{
+  "section_id": "CH49-S14",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Refusing or terminating a customer",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S14_001",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Customer refusal or termination based on risk appetite",
+      "summary": "When refusing or terminating a customer due to being outside the organization's risk appetite, safely inform the customer with a simple explanation, and if a new customer, document the reasons in a file.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trig_risk",
+          "node_type": "trigger",
+          "label": "Decision to refuse/exit customer due to risk appetite",
+          "evidence_unit_ids": ["v7u_N003661", "v7u_N003662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_inform",
+          "node_type": "action",
+          "label": "Inform customer of refusal/exit",
+          "evidence_unit_ids": ["v7u_N003663", "v7u_N003666"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_safe",
+          "node_type": "standard",
+          "label": "Safe to communicate; simple explanation 'outside of risk appetite' sufficient",
+          "evidence_unit_ids": ["v7u_N003666", "v7u_N003668"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_doc",
+          "node_type": "action",
+          "label": "Keep file with reasons (new customer exit)",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_informed",
+          "node_type": "output",
+          "label": "Customer informed of decision",
+          "evidence_unit_ids": ["v7u_N003663", "v7u_N003666"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_out_doc",
+          "node_type": "output",
+          "label": "File with reasons documented",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trig_risk",
+          "target": "n_act_inform",
+          "evidence_unit_ids": ["v7u_N003663"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_002",
+          "edge_type": "USES",
+          "source": "n_act_inform",
+          "target": "n_std_safe",
+          "evidence_unit_ids": ["v7u_N003666", "v7u_N003668"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_act_inform",
+          "target": "n_out_informed",
+          "evidence_unit_ids": ["v7u_N003663"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_trig_risk",
+          "target": "n_act_doc",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_act_doc",
+          "target": "n_out_doc",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003661",
+        "v7u_N003662",
+        "v7u_N003663",
+        "v7u_N003666",
+        "v7u_N003668",
+        "v7u_N003669"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Simplified execution flow; the sequence from decision to communication is logical but not explicitly ordered in the source text. Documentation step is conditional on new customer but not linked via a decision node; the parallel structure may require review."
+    },
+    {
+      "card_id": "p7card_CH49-S14_002",
+      "section_id": "CH49-S14",
+      "card_nature": "execution",
+      "title": "Customer refusal or termination due to suspicion of financial crime",
+      "summary": "When refusing or terminating a customer due to suspicion of financial crime, avoid tipping off, file a SAR, document reasons, and for existing customers, follow policies, communicate via a generic letter without tipping off, and provide reasonable time to exit.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trig_susp",
+          "node_type": "trigger",
+          "label": "Suspicion of financial crime detected, decision to refuse/exit",
+          "evidence_unit_ids": ["v7u_N003661", "v7u_N003662", "v7u_N003664"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_sar",
+          "node_type": "action",
+          "label": "File necessary suspicious activity reports (SARs)",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_dec_type",
+          "node_type": "decision",
+          "label": "New or existing customer?",
+          "evidence_unit_ids": ["v7u_N003671"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_doc",
+          "node_type": "action",
+          "label": "Keep file with reasons (new customer exit)",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_policy",
+          "node_type": "action",
+          "label": "Follow organizational policies and procedures for exit",
+          "evidence_unit_ids": ["v7u_N003674"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_letter",
+          "node_type": "action",
+          "label": "Send generic communication letter discontinuing relationship",
+          "evidence_unit_ids": ["v7u_N003675"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_template",
+          "node_type": "standard",
+          "label": "Use communication template if available",
+          "evidence_unit_ids": ["v7u_N003676"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_notip",
+          "node_type": "standard",
+          "label": "Care not to tip off the customer",
+          "evidence_unit_ids": ["v7u_N003664", "v7u_N003667"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act_time",
+          "node_type": "action",
+          "label": "Give customer reasonable time to make other arrangements (unless legal requirement otherwise)",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_sar",
+          "node_type": "output",
+          "label": "SAR filed",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_doc",
+          "node_type": "output",
+          "label": "File with reasons documented",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_letter",
+          "node_type": "output",
+          "label": "Generic communication sent",
+          "evidence_unit_ids": ["v7u_N003675"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_time",
+          "node_type": "output",
+          "label": "Reasonable time provided",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trig_susp",
+          "target": "n_act_sar",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trig_susp",
+          "target": "n_dec_type",
+          "evidence_unit_ids": ["v7u_N003671"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_003",
+          "edge_type": "DECIDES",
+          "source": "n_dec_type",
+          "target": "n_act_doc",
+          "condition": "new",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_004",
+          "edge_type": "DECIDES",
+          "source": "n_dec_type",
+          "target": "n_act_policy",
+          "condition": "existing",
+          "evidence_unit_ids": ["v7u_N003671", "v7u_N003674"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_act_policy",
+          "target": "n_act_letter",
+          "evidence_unit_ids": ["v7u_N003675"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_006",
+          "edge_type": "USES",
+          "source": "n_act_letter",
+          "target": "n_std_template",
+          "evidence_unit_ids": ["v7u_N003676"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_007",
+          "edge_type": "USES",
+          "source": "n_act_letter",
+          "target": "n_std_notip",
+          "evidence_unit_ids": ["v7u_N003664", "v7u_N003667"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_008",
+          "edge_type": "PRECEDES",
+          "source": "n_act_letter",
+          "target": "n_act_time",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_009",
+          "edge_type": "PRODUCES",
+          "source": "n_act_sar",
+          "target": "n_out_sar",
+          "evidence_unit_ids": ["v7u_N003670"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_010",
+          "edge_type": "PRODUCES",
+          "source": "n_act_doc",
+          "target": "n_out_doc",
+          "evidence_unit_ids": ["v7u_N003669"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_011",
+          "edge_type": "PRODUCES",
+          "source": "n_act_letter",
+          "target": "n_out_letter",
+          "evidence_unit_ids": ["v7u_N003675"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S14_002_012",
+          "edge_type": "PRODUCES",
+          "source": "n_act_time",
+          "target": "n_out_time",
+          "evidence_unit_ids": ["v7u_N003677"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003661",
+        "v7u_N003662",
+        "v7u_N003664",
+        "v7u_N003667",
+        "v7u_N003669",
+        "v7u_N003670",
+        "v7u_N003671",
+        "v7u_N003674",
+        "v7u_N003675",
+        "v7u_N003676",
+        "v7u_N003677"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card combines several rules from the section into an execution flow; the decision on customer type and sequence of existing customer exit steps are inferred from the text and may need review. The tip-off standard is applied to the generic letter, reflecting the source's emphasis. Some edges use functional_dependency due to implicit sequencing."
+    }
+  ],
+  "skip_reason": null
+}

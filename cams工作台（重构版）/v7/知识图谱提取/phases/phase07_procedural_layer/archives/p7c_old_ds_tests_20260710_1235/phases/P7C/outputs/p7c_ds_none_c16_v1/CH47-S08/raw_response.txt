@@ -1,0 +1,114 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Investigation Steps Before Escalation",
+      "summary": "Analyst performs investigation steps: understand suspicion, review previous transaction patterns, review historical data, and document findings prior to escalation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Trigger: Investigation needs review before escalation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action1",
+          "node_type": "action",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action2",
+          "node_type": "action",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action3",
+          "node_type": "action",
+          "label": "Review historical transaction data and onboarding information for context",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action4",
+          "node_type": "action",
+          "label": "Document all research clearly, indicating missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Output: Documented investigation findings with missing information noted",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action1",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action1",
+          "target": "n_action2",
+          "evidence_unit_ids": ["v7u_N003330", "v7u_N003331"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action2",
+          "target": "n_action3",
+          "evidence_unit_ids": ["v7u_N003331", "v7u_N003332"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action3",
+          "target": "n_action4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action4",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003330", "v7u_N003331", "v7u_N003332", "v7u_N003333"],
+      "review_status": "needs_review",
+      "review_notes": "Edge n_action1->n_action2 and n_action2->n_action3 are based on listing order and functional dependency (steps should logically follow understanding), not explicit sequence wording. Card is otherwise directly supported by source text."
+    }
+  ],
+  "skip_reason": null
+}

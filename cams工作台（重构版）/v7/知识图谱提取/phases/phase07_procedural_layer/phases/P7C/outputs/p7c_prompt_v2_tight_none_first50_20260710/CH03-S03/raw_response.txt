@@ -1,0 +1,60 @@
+{
+  "section_id": "CH03-S03",
+  "section_title": "Examples of predicate crimes > Drug trafficking",
+  "cards": [
+    {
+      "card_id": "card_CH03_S03_001",
+      "section_id": "CH03-S03",
+      "card_nature": "execution",
+      "title": "Colombian BMPE Money Laundering Process",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "拥有以美元计价的毒品收益",
+          "evidence_unit_ids": ["v7u_N000240"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通过哥伦比亚黑市比索兑换系统(BMPE)兑换美元为比索",
+          "evidence_unit_ids": ["v7u_N000240"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "资金以比索形式可用于结算债务或购买货物，并掩盖资金来源",
+          "evidence_unit_ids": ["v7u_N000240"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000240"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000240"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000240"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：哥伦比亚贩毒者持有美元毒品收益（入口）--通过BMPE系统兑换-->掩盖资金来源并获得比索以结算债务或购买货物（出口）。KG不足：基础KG仅将BMPE作为洗钱方法案例列举，未表达其内部动作顺序和目的关系。选项判断：可确认贩毒者利用BMPE的具体目的和掩盖效果，用于判断相关选项正确性。"
+    }
+  ],
+  "skip_reason": ""
+}

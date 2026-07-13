@@ -1,0 +1,130 @@
+{
+  "section_id": "CH01-S08",
+  "section_title": "Money Laundering and Financial Crime > • Commodity-based money laundering:",
+  "cards": [
+    {
+      "card_id": "p7card_CH01-S08_001",
+      "section_id": "CH01-S08",
+      "card_nature": "risk_indicator",
+      "title": "Commodity-based money laundering indicators",
+      "summary": "Commodity-based money laundering involves purchasing high-value assets with illicit funds and reselling or smuggling them to avoid scrutiny and transfer value anonymously.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Suspicious commodity transaction pattern",
+          "evidence_unit_ids": ["v7u_N000044", "v7u_N000045"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Transactions involving high-value commodities such as gold, diamonds, luxury watches, or fine art may indicate money laundering."
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess for commodity-based money laundering",
+          "evidence_unit_ids": ["v7u_N000044", "v7u_N000045"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Evaluate whether the transaction involves commodity-based money laundering using indicators."
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Assets bought with illicit funds",
+          "evidence_unit_ids": ["v7u_N000044"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "These assets are bought with illicit funds"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Resold or smuggled to avoid scrutiny",
+          "evidence_unit_ids": ["v7u_N000044"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "resold, or smuggled to avoid scrutiny"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "High-value commodities used to transfer value anonymously",
+          "evidence_unit_ids": ["v7u_N000045"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Commodity-based money laundering identified",
+          "evidence_unit_ids": ["v7u_N000044", "v7u_N000045"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "If the indicators match, the transaction may be classified as commodity-based money laundering."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH01-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": ["v7u_N000044", "v7u_N000045"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH01-S08_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": ["v7u_N000044"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH01-S08_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": ["v7u_N000044"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH01-S08_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_03",
+          "evidence_unit_ids": ["v7u_N000045"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH01-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": ["v7u_N000044", "v7u_N000045"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000044", "v7u_N000045"],
+      "review_status": "needs_review",
+      "review_notes": "Weak card: section provides only a high-level definition of commodity-based money laundering with indicators. No process or control details. Card structure is inferred as a risk_indicator; all edges are functional_dependency except explicit REFERENCES to indicators. Useful for evidence matching on basic characteristics but may be too generic."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,78 @@
+{
+  "section_id": "CH06-S09",
+  "card_id": "p7card_CH06-S09_004",
+  "edge_reviews": [
+    {
+      "edge_id": "e001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文提到'based on their risk appetite'，明确机构具有风险偏好。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求机构采取必要步骤调整交易监控和KYC审查并升级处理。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'based on their risk appetite'表明调整依赖于风险偏好，交换方向将违反功能依赖。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文中的'must'在target node中被保留，无其他限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "风险偏好和调整动作并非并列或相关，而是条件与动作关系，非错误写成顺序。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000482"],
+      "source_quotes": [
+        "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+      ],
+      "reason": "风险偏好是调整动作的先决条件，原文虽然没有明确时间顺序，但基于功能依赖，方向成立，且两端均有依据。"
+    },
+    {
+      "edge_id": "e002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文要求机构采取必要步骤调整交易监控和KYC审查并升级处理。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文的要求隐含了机构调整和升级的义务。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文仅陈述了必须采取行动，并未说明该行动产生义务；义务是既存的，过程只是履行义务，而非产生义务。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文中的'must'在source node中体现，target node的'义务'本身具有强制性。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "将同一要求拆分为动作和义务并连接为PRODUCES，属于同义反复，并非真正的产生关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000482"],
+      "source_quotes": [
+        "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+      ],
+      "reason": "该边将同一义务分解为动作和结果，PRODUCES关系不成立，义务并非由动作产生。"
+    }
+  ]
+}

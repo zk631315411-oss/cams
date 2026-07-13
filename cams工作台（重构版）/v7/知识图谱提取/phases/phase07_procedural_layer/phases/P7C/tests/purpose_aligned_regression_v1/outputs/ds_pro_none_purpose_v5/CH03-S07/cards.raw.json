@@ -1,0 +1,139 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "cards": [
+    {
+      "card_id": "CH03-S07-C001",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIUs综合银行SAR与跨境活动触发红旗",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "银行可疑交易报告(SARs)与跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU综合银行SAR与跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "在国际监管网络内触发红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：银行SAR与跨境金融活动被FIU综合后，触发国际监管网络中的红旗信号；基础KG不足：基础KG仅概括案例，未表达此具体的信息综合导致特定警报的判断链；选项判断：可确认FIU综合不同来源信息并产生警报的流程顺序；LLM推理：无。"
+    },
+    {
+      "card_id": "CH03-S07-C002",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU升级案件触发执法机构定向监控",
+      "flow_nodes": [
+        {
+          "node_id": "N4",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "FIU升级案件",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构(欧洲刑警组织、国际刑警组织、国家反恐特遣队)开展定向监控",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "定向监控启动，追踪现金走私者和哈瓦拉网络",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E3",
+          "edge_type": "PRECEDES",
+          "source": "N4",
+          "target": "N5",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000286"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：FIU升级案件后，执法机构随即启动定向监控以追踪现金走私者和哈瓦拉网络；基础KG不足：基础KG未表达案件升级触发监控的具体程序连接；选项判断：可确认FIU升级与执法监控之间的触发顺序；LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

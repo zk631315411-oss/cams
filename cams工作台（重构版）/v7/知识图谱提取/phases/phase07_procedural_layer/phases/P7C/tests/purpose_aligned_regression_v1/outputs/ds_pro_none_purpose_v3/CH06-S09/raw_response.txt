@@ -1,0 +1,78 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "cards": [
+    {
+      "card_id": "CH06-S09-C01",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "机构基于风险偏好调整交易监控和KYC审查并升级",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好要求",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构：基于风险偏好调整交易监控、KYC审查并升级",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "交易监控和KYC审查按风险偏好调整",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "形成根据风险偏好进行升级的义务",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "source_quote": "based on their risk appetite"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "source_quote": "adapt transaction monitoring and KYC reviews"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "source_quote": "escalate"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000482"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好要求（E3）--PRECEDES--> 机构基于风险偏好调整交易监控、KYC审查并升级（P8）--PRODUCES--> 交易监控和KYC审查按风险偏好调整（X5）及形成升级义务（X7）。KG不足：基础KG可能保存了“机构必须基于风险偏好调整监控”的规则，但未表达从风险偏好到具体调整动作再到升级义务的有向顺序和结果。选项判断：可帮助确认机构在PEP情境下必须根据风险偏好调整监控和审查，并产生升级义务，而非只是可选措施。LLM推理：无。"
+    }
+  ]
+}

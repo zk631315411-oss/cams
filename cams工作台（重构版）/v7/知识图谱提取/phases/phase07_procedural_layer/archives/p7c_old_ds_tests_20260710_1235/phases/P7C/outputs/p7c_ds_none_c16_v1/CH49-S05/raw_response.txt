@@ -1,0 +1,176 @@
+{
+  "section_id": "CH49-S05",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Case example: SAR for a family trust",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S05_001",
+      "section_id": "CH49-S05",
+      "card_nature": "execution",
+      "title": "SAR Filing Process for Family Trust Case",
+      "summary": "MLRO detects unusual activity, gathers information, analyzes risk, prepares SAR narrative and attachments, and submits SAR to FinCEN within 30 days while maintaining confidentiality.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Detection of unusual activity in family trust account",
+          "description": "Large withdrawals totaling millions of USD over three weeks, inconsistent with typical activity, suggesting possible money laundering.",
+          "source_quote": "The downtown branch of North Bank detects unusual activity in the Citizen Family Trust account, including large withdrawals totaling millions of US dollars over a three-week period. ... The large, rapid withdrawals combined with a high-risk source of funds, or windfall, suggest possible money laundering.",
+          "evidence_unit_ids": ["v7u_N003529", "v7u_N003530", "v7u_N003531"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_gather",
+          "node_type": "action",
+          "label": "Gather information for initial SAR filing",
+          "description": "MLRO collects customer/account details, transaction data, and other required fields for the SAR.",
+          "source_quote": "The MLRO gathers information to include in the initial SAR: Customers’ names and birthdates... Addresses, phone numbers... Tax identification numbers... Account opening date... Declared wealth and funds... Names of controlling persons... Business relationship... The next section of the SAR requests information about the dates and amounts of the unusual transactions.",
+          "evidence_unit_ids": [
+            "v7u_N003533", "v7u_N003534", "v7u_N003535", "v7u_N003536",
+            "v7u_N003537", "v7u_N003538", "v7u_N003539", "v7u_N003540",
+            "v7u_N003541", "v7u_N003542", "v7u_N003543", "v7u_N003544",
+            "v7u_N003545"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_analyze",
+          "node_type": "action",
+          "label": "Analyze transaction activity and assess money laundering risk",
+          "description": "MLRO evaluates gathered information, identifies suspicious patterns (structuring, illicit placement), notes inconsistencies with declared purpose, and concludes money laundering suspicion.",
+          "source_quote": "The MLRO’s analysis suggests the activity might involve structuring or illicit fund placement, with the high-risk source of funds raising additional concerns. ... leading the MLRO to suspect potential money laundering.",
+          "evidence_unit_ids": ["v7u_N003546"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_prepare",
+          "node_type": "action",
+          "label": "Prepare SAR narrative and attachments",
+          "description": "MLRO writes narrative in plain English, includes internal control number, confirms no prior law enforcement contact, attaches supporting documents, and formats with headings/bullet points.",
+          "source_quote": "To support the SAR filing, the MLRO attaches relevant documentation... The narrative is written in plain English, avoiding jargon... The MLRO clearly states the internal control number... Before presenting the SAR to the SAR review committee, the MLRO ensures the narrative is written with clear headings and bullet points.",
+          "evidence_unit_ids": ["v7u_N003547", "v7u_N003548", "v7u_N003549", "v7u_N003551"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_submit",
+          "node_type": "action",
+          "label": "Submit SAR to FinCEN online portal within 30 days",
+          "description": "MLRO submits the completed SAR within the standard regulatory deadline.",
+          "source_quote": "The SAR is submitted to FinCEN’s online portal within the standard 30-day deadline.",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_end",
+          "node_type": "end",
+          "label": "SAR submission completed",
+          "description": "The SAR filing process concludes.",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_conf",
+          "node_type": "standard",
+          "label": "Maintain strict confidentiality and no tipping off",
+          "description": "Legal obligation to keep SAR-related information confidential and avoid alerting account holders.",
+          "source_quote": "The MLRO adheres to legal considerations by maintaining strict confidentiality and ensuring that account holders are not tipped off.",
+          "evidence_unit_ids": ["v7u_N003552"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_dead",
+          "node_type": "standard",
+          "label": "30-day filing deadline",
+          "description": "SAR must be submitted to FinCEN within 30 days of detection.",
+          "source_quote": "The SAR is submitted ... within the standard 30-day deadline.",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_gather",
+          "evidence_unit_ids": ["v7u_N003533"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_gather",
+          "target": "n_analyze",
+          "evidence_unit_ids": ["v7u_N003546"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_analyze",
+          "target": "n_prepare",
+          "evidence_unit_ids": ["v7u_N003547", "v7u_N003548"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_prepare",
+          "target": "n_submit",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_submit",
+          "target": "n_end",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_006",
+          "edge_type": "USES",
+          "source": "n_prepare",
+          "target": "n_std_conf",
+          "evidence_unit_ids": ["v7u_N003552"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S05_001_007",
+          "edge_type": "USES",
+          "source": "n_submit",
+          "target": "n_std_dead",
+          "evidence_unit_ids": ["v7u_N003553"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003529", "v7u_N003530", "v7u_N003531", "v7u_N003532",
+        "v7u_N003533", "v7u_N003534", "v7u_N003535", "v7u_N003536",
+        "v7u_N003537", "v7u_N003538", "v7u_N003539", "v7u_N003540",
+        "v7u_N003541", "v7u_N003542", "v7u_N003543", "v7u_N003544",
+        "v7u_N003545", "v7u_N003546", "v7u_N003547", "v7u_N003548",
+        "v7u_N003549", "v7u_N003550", "v7u_N003551", "v7u_N003552",
+        "v7u_N003553", "v7u_N003554"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card derived from a case example; some sequential edges are functional dependencies rather than explicit temporal order. The SAR review committee step (v7u_N003551) is only hinted at and not fully modeled; the card focuses on direct MLRO actions described. The process from gathering to analysis and analysis to preparation is logically ordered but not explicitly sequenced in the source text, requiring review."
+    }
+  ],
+  "skip_reason": null
+}

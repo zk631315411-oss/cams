@@ -1,0 +1,180 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_type": "process_card",
+      "card_nature": "execution",
+      "title": "Transaction Monitoring System Tuning Process",
+      "summary": "Process for tuning TM system parameters, including scenario setting, customer segmentation, threshold setting, and frequency determination, triggered by schedule or significant events, with inputs such as previous suspicious activity experiences, false positive reduction goals, and business environment factors.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "TM system tuning initiation (scheduled frequency or significant event/trend)",
+          "evidence_unit_ids": [
+            "v7u_N003284",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_scenario_setting",
+          "node_type": "action",
+          "label": "Set detection scenarios (create, modify, or remove rules based on previous experiences)",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_customer_seg",
+          "node_type": "action",
+          "label": "Perform customer segmentation",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_threshold_setting",
+          "node_type": "action",
+          "label": "Set alert thresholds (define minimum activity level to trigger alert, adjust for sensitivity/accuracy, reduce false positives)",
+          "evidence_unit_ids": [
+            "v7u_N003280",
+            "v7u_N003281",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_frequency_setting",
+          "node_type": "action",
+          "label": "Determine tuning frequency (consider business strategy, anomalies, regulatory updates, market changes)",
+          "evidence_unit_ids": [
+            "v7u_N003284",
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_prev_exp",
+          "node_type": "input",
+          "label": "Previous experiences with suspicious activity and actual incidents",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_fp_reduction",
+          "node_type": "standard",
+          "label": "False positive reduction goal to make efficient use of resources",
+          "evidence_unit_ids": [
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_freq_factors",
+          "node_type": "input",
+          "label": "Factors influencing tuning frequency: business strategy changes, anomalies, regulatory updates, market changes",
+          "evidence_unit_ids": [
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_scenario_setting",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_customer_seg",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_threshold_setting",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_frequency_setting",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_scenario_setting",
+          "target": "n_input_prev_exp",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "USES",
+          "source": "n_threshold_setting",
+          "target": "n_standard_fp_reduction",
+          "evidence_unit_ids": [
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_007",
+          "edge_type": "USES",
+          "source": "n_frequency_setting",
+          "target": "n_input_freq_factors",
+          "evidence_unit_ids": [
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003281",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

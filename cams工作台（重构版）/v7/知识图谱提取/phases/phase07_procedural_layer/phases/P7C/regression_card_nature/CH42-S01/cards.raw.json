@@ -1,0 +1,453 @@
+{
+  "section_id": "CH42-S01",
+  "section_title": "Onboarding AFC controls > The KYC process",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S01_001",
+      "section_id": "CH42-S01",
+      "card_nature": "assessment",
+      "title": "Pre-KYC onboarding committee suitability assessment",
+      "summary": "For specific customer profiles, a pre-KYC onboarding committee assesses suitability before formal identification and determines whether the customer proceeds to full KYC and which due diligence level is required.",
+      "scenario": "Specific customer profiles such as PEPs, high-net-worth individuals, or customers from high-risk jurisdictions before formal identification.",
+      "trigger": "Specific customer profile requires pre-KYC suitability review before formal identification.",
+      "actor": "Pre-KYC onboarding committee including compliance experts, risk managers, legal advisors, and business unit leaders.",
+      "objective": "Assess suitability, filter unsuitable clients early, and determine the required due diligence level.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_specific_profile",
+          "node_type": "trigger",
+          "label": "Specific customer profile is reviewed before formal identification",
+          "evidence_unit_ids": ["v7u_N003013"],
+          "evidence_strength": "explicit",
+          "source_quote": "For specific customer profiles, such as PEPs, high-net-worth individuals, and customers from high-risk jurisdictions, a pre-KYC onboarding committee might assess suitability before formal identification."
+        },
+        {
+          "node_id": "n_action_committee_assessment",
+          "node_type": "action",
+          "label": "Committee collectively assesses customer suitability",
+          "actor": "Pre-KYC onboarding committee",
+          "evidence_unit_ids": ["v7u_N003013", "v7u_N003014"],
+          "evidence_strength": "explicit",
+          "source_quote": "The committee typically includes compliance experts, risk managers, legal advisors, and business unit leaders, who collectively evaluate jurisdictional risks, business activities, and strategic fit."
+        },
+        {
+          "node_id": "n_standard_jurisdictional_risks",
+          "node_type": "standard",
+          "label": "Jurisdictional risks",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_business_activities",
+          "node_type": "standard",
+          "label": "Business activities",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_strategic_fit",
+          "node_type": "standard",
+          "label": "Strategic fit",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_assessment_outcome",
+          "node_type": "decision",
+          "label": "Determine progression to full KYC and required due diligence level",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "explicit",
+          "source_quote": "The outcome determines whether customers proceed to full KYC and what level of due diligence-standard or enhanced-is required."
+        },
+        {
+          "node_id": "n_output_standard_dd",
+          "node_type": "output",
+          "label": "Customer proceeds to full KYC with standard due diligence",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_enhanced_dd",
+          "node_type": "output",
+          "label": "Customer proceeds to full KYC with enhanced due diligence",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_unsuitable_filtered",
+          "node_type": "output",
+          "label": "Unsuitable client is filtered out early",
+          "evidence_unit_ids": ["v7u_N003016"],
+          "evidence_strength": "explicit",
+          "source_quote": "This step ensures efficient resource use, early risk mitigation, and regulatory alignment by filtering out unsuitable clients early in the process."
+        },
+        {
+          "node_id": "n_end_pre_kyc_result",
+          "node_type": "end",
+          "label": "Pre-KYC suitability result is available for onboarding handling",
+          "evidence_unit_ids": ["v7u_N003015", "v7u_N003016"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_specific_profile",
+          "target": "n_action_committee_assessment",
+          "evidence_unit_ids": ["v7u_N003013"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_002",
+          "edge_type": "USES",
+          "source": "n_action_committee_assessment",
+          "target": "n_standard_jurisdictional_risks",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_003",
+          "edge_type": "USES",
+          "source": "n_action_committee_assessment",
+          "target": "n_standard_business_activities",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_004",
+          "edge_type": "USES",
+          "source": "n_action_committee_assessment",
+          "target": "n_standard_strategic_fit",
+          "evidence_unit_ids": ["v7u_N003014"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_committee_assessment",
+          "target": "n_decision_assessment_outcome",
+          "evidence_unit_ids": ["v7u_N003014", "v7u_N003015"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_assessment_outcome",
+          "target": "n_output_standard_dd",
+          "condition": "if suitable and standard due diligence is required",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decision_assessment_outcome",
+          "target": "n_output_enhanced_dd",
+          "condition": "if suitable and enhanced due diligence is required",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_008",
+          "edge_type": "DECIDES",
+          "source": "n_decision_assessment_outcome",
+          "target": "n_output_unsuitable_filtered",
+          "condition": "if unsuitable",
+          "evidence_unit_ids": ["v7u_N003016"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_output_standard_dd",
+          "target": "n_end_pre_kyc_result",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_output_enhanced_dd",
+          "target": "n_end_pre_kyc_result",
+          "evidence_unit_ids": ["v7u_N003015"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_output_unsuitable_filtered",
+          "target": "n_end_pre_kyc_result",
+          "evidence_unit_ids": ["v7u_N003016"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003013", "v7u_N003014", "v7u_N003015", "v7u_N003016"],
+      "review_status": "needs_review",
+      "review_notes": "Split as a separate optional preliminary assessment path because the source gives its own trigger, assessment criteria, and outputs before formal identification. The three terminal edges to the end node are functional dependencies used only to close the local card.",
+      "outputs": [
+        {
+          "description": "Proceed to full KYC with standard due diligence, proceed to full KYC with enhanced due diligence, or filter out the unsuitable client early.",
+          "evidence_unit_ids": ["v7u_N003015", "v7u_N003016"]
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH42-S01_002",
+      "section_id": "CH42-S01",
+      "card_nature": "execution",
+      "title": "Typical KYC/CDD process before onboarding or relationship maintenance",
+      "summary": "The typical KYC/CDD process identifies, verifies, and assesses customer risk through ID&V, relationship-purpose information, beneficial ownership determination, and pre-onboarding screening.",
+      "scenario": "Customer onboarding or maintenance of a business relationship under AFC compliance.",
+      "trigger": "Before establishing or maintaining business relationships, the KYC process is required to identify, verify, and assess customer risk.",
+      "actor": "Financial institution or organization",
+      "objective": "Identify, verify, and assess customer risks before onboarding or maintaining a business relationship.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_kyc_required",
+          "node_type": "trigger",
+          "label": "KYC/CDD is required before establishing or maintaining a business relationship",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003017"],
+          "evidence_strength": "explicit",
+          "source_quote": "The KYC process is a core requirement in AFC compliance, ensuring financial institutions identify, verify, and assess customer risks before establishing or maintaining business relationships."
+        },
+        {
+          "node_id": "n_action_identification",
+          "node_type": "action",
+          "label": "Collect personal and business details",
+          "evidence_unit_ids": ["v7u_N003018", "v7u_N003019"],
+          "evidence_strength": "explicit",
+          "source_quote": "Identification is the collection of personal and business details, including name, date of birth, nationality, address, tax identification number, and company registration data."
+        },
+        {
+          "node_id": "n_input_personal_business_details",
+          "node_type": "input",
+          "label": "Personal and business details including name, date of birth, nationality, address, tax identification number, and company registration data",
+          "evidence_unit_ids": ["v7u_N003019"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_verification",
+          "node_type": "action",
+          "label": "Authenticate provided information",
+          "evidence_unit_ids": ["v7u_N003020"],
+          "evidence_strength": "explicit",
+          "source_quote": "Verification is the authentication of provided information using government-issued documents, biometric authentication, AI-driven verification tools, and forensic analysis of identification records."
+        },
+        {
+          "node_id": "n_standard_authentication_methods",
+          "node_type": "standard",
+          "label": "Government-issued documents, biometric authentication, AI-driven verification tools, and forensic analysis of identification records",
+          "evidence_unit_ids": ["v7u_N003020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_understand_relationship",
+          "node_type": "action",
+          "label": "Understand and obtain information on the purpose and intended nature of the customer relationship",
+          "evidence_unit_ids": ["v7u_N003021"],
+          "evidence_strength": "explicit",
+          "modality": "required",
+          "source_quote": "Organizations must understand and obtain information, as appropriate, on the purpose and intended nature of the customer's relationship with the organization."
+        },
+        {
+          "node_id": "n_action_determine_ubos",
+          "node_type": "action",
+          "label": "Determine ultimate beneficial owners for corporate accounts under enhanced regulations",
+          "evidence_unit_ids": ["v7u_N003022"],
+          "evidence_strength": "explicit",
+          "modality": "required",
+          "source_quote": "Enhanced regulations require organizations to determine the ultimate beneficial owners (UBOs) of corporate accounts."
+        },
+        {
+          "node_id": "n_action_pre_onboarding_screening",
+          "node_type": "action",
+          "label": "Conduct screening prior to onboarding to determine risk",
+          "evidence_unit_ids": ["v7u_N003023"],
+          "evidence_strength": "explicit",
+          "source_quote": "Screening is conducted prior to onboarding to determine risk."
+        },
+        {
+          "node_id": "n_standard_sanctions_screening",
+          "node_type": "standard",
+          "label": "Cross-check customer details against UN, EU, OFAC, and national sanctions lists",
+          "evidence_unit_ids": ["v7u_N003024"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_adverse_media",
+          "node_type": "standard",
+          "label": "Identify links to financial crime, corruption, and fraudulent activities through adverse media monitoring",
+          "evidence_unit_ids": ["v7u_N003025"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_pep_screening",
+          "node_type": "standard",
+          "label": "Determine whether the individual or beneficial owner is a PEP, or a relative or close associate of a PEP",
+          "evidence_unit_ids": ["v7u_N003026"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_customer_risk_determined",
+          "node_type": "output",
+          "label": "Customer risk is determined before onboarding or relationship handling",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003023"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_end_kyc_cdd_result",
+          "node_type": "end",
+          "label": "KYC/CDD risk assessment result is available for onboarding decisioning",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003023"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_kyc_required",
+          "target": "n_action_identification",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003017", "v7u_N003018", "v7u_N003019"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_002",
+          "edge_type": "USES",
+          "source": "n_action_identification",
+          "target": "n_input_personal_business_details",
+          "evidence_unit_ids": ["v7u_N003019"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_identification",
+          "target": "n_action_verification",
+          "evidence_unit_ids": ["v7u_N003018", "v7u_N003019", "v7u_N003020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_004",
+          "edge_type": "USES",
+          "source": "n_action_verification",
+          "target": "n_standard_authentication_methods",
+          "evidence_unit_ids": ["v7u_N003020"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_verification",
+          "target": "n_action_understand_relationship",
+          "evidence_unit_ids": ["v7u_N003017", "v7u_N003020", "v7u_N003021"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_understand_relationship",
+          "target": "n_action_determine_ubos",
+          "evidence_unit_ids": ["v7u_N003021", "v7u_N003022"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_determine_ubos",
+          "target": "n_action_pre_onboarding_screening",
+          "evidence_unit_ids": ["v7u_N003022", "v7u_N003023"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_008",
+          "edge_type": "USES",
+          "source": "n_action_pre_onboarding_screening",
+          "target": "n_standard_sanctions_screening",
+          "evidence_unit_ids": ["v7u_N003023", "v7u_N003024"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_009",
+          "edge_type": "USES",
+          "source": "n_action_pre_onboarding_screening",
+          "target": "n_standard_adverse_media",
+          "evidence_unit_ids": ["v7u_N003023", "v7u_N003025"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_010",
+          "edge_type": "USES",
+          "source": "n_action_pre_onboarding_screening",
+          "target": "n_standard_pep_screening",
+          "evidence_unit_ids": ["v7u_N003023", "v7u_N003026"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_011",
+          "edge_type": "PRODUCES",
+          "source": "n_action_pre_onboarding_screening",
+          "target": "n_output_customer_risk_determined",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003023"],
+          "evidence_strength": "explicit",
+          "qualifier": "finding"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_012",
+          "edge_type": "PRECEDES",
+          "source": "n_output_customer_risk_determined",
+          "target": "n_end_kyc_cdd_result",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003023"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003011",
+        "v7u_N003012",
+        "v7u_N003017",
+        "v7u_N003018",
+        "v7u_N003019",
+        "v7u_N003020",
+        "v7u_N003021",
+        "v7u_N003022",
+        "v7u_N003023",
+        "v7u_N003024",
+        "v7u_N003025",
+        "v7u_N003026"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The card preserves the section's typical KYC/CDD process as one main execution path. The order after ID&V is reconstructed from the 'following steps' framing and neighboring units, so those PRECEDES edges are marked as functional_dependency. Sanctions screening, adverse-media monitoring, and PEP screening are modeled as parallel screening standards, not chronological substeps.",
+      "inputs": [
+        {
+          "description": "Personal and business details collected for identification.",
+          "evidence_unit_ids": ["v7u_N003019"]
+        }
+      ],
+      "outputs": [
+        {
+          "description": "Customer risk determined before onboarding or relationship handling.",
+          "evidence_unit_ids": ["v7u_N003012", "v7u_N003023"]
+        }
+      ]
+    }
+  ],
+  "skip_reason": null
+}

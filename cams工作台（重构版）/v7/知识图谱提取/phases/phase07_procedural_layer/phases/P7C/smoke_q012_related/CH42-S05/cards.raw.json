@@ -1,0 +1,330 @@
+{
+  "section_id": "CH42-S05",
+  "section_title": "Onboarding AFC controls > Ongoing due diligence, screening, monitoring, and KYC refresh",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S05_001",
+      "section_id": "CH42-S05",
+      "title": "Risk-based KYC refresh and EDD trigger",
+      "summary": "Organizations periodically refresh KYC based on customer category and jurisdictional requirements, update risk ratings, and may trigger EDD when risk increases.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_periodic_refresh",
+          "node_type": "trigger",
+          "label": "Periodic risk-based KYC refresh is due",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_refresh_basis",
+          "node_type": "input",
+          "label": "Customer category and jurisdictional requirements",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_apply_refresh",
+          "node_type": "action",
+          "label": "Apply risk-based KYC refresh cycle",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_note_changes",
+          "node_type": "action",
+          "label": "Note changes in customer or business circumstances",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_update_risk_rating",
+          "node_type": "action",
+          "label": "Update the customer risk rating appropriately",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_updated_rating",
+          "node_type": "output",
+          "label": "Updated customer risk rating",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_higher_risk",
+          "node_type": "decision",
+          "label": "Does the refresh present a higher degree of risk?",
+          "evidence_unit_ids": ["v7u_N003033"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_edd_triggered",
+          "node_type": "output",
+          "label": "Enhanced due diligence may be triggered",
+          "evidence_unit_ids": ["v7u_N003033"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_periodic_refresh",
+          "target": "n_action_apply_refresh",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action_apply_refresh",
+          "target": "n_input_refresh_basis",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_apply_refresh",
+          "target": "n_action_note_changes",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_note_changes",
+          "target": "n_action_update_risk_rating",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_update_risk_rating",
+          "target": "n_output_updated_rating",
+          "evidence_unit_ids": ["v7u_N003032"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_output_updated_rating",
+          "target": "n_decision_higher_risk",
+          "evidence_unit_ids": ["v7u_N003032", "v7u_N003033"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decision_higher_risk",
+          "target": "n_output_edd_triggered",
+          "condition": "if the refresh presents a higher degree of risk",
+          "evidence_unit_ids": ["v7u_N003033"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003032", "v7u_N003033"],
+      "review_status": "needs_review",
+      "review_notes": "The ordering from updated rating to higher-risk decision is a functional dependency reconstructed from adjacent units; the source explicitly states the high-risk trigger but does not describe a full no-risk branch."
+    },
+    {
+      "card_id": "p7card_CH42-S05_002",
+      "section_id": "CH42-S05",
+      "title": "Transaction sanctions exposure screening response",
+      "summary": "Organizations screen each customer transaction for sanctions exposure and block and escalate when exposure is detected.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_customer_transaction",
+          "node_type": "trigger",
+          "label": "Customer carries out a transaction",
+          "evidence_unit_ids": ["v7u_N003035"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_sanctions_exposure",
+          "node_type": "standard",
+          "label": "Sanctions exposure detection standard",
+          "evidence_unit_ids": ["v7u_N003035"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_screen_transaction",
+          "node_type": "action",
+          "label": "Screen each customer transaction",
+          "evidence_unit_ids": ["v7u_N003035"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_decision_exposure_detected",
+          "node_type": "decision",
+          "label": "Is sanctions exposure detected?",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_block_payments",
+          "node_type": "action",
+          "label": "Block payments",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_escalate",
+          "node_type": "action",
+          "label": "Escalate to establish further steps",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_further_steps",
+          "node_type": "output",
+          "label": "Further steps established after escalation",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_customer_transaction",
+          "target": "n_action_screen_transaction",
+          "evidence_unit_ids": ["v7u_N003035"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_002",
+          "edge_type": "USES",
+          "source": "n_action_screen_transaction",
+          "target": "n_standard_sanctions_exposure",
+          "evidence_unit_ids": ["v7u_N003035"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_screen_transaction",
+          "target": "n_decision_exposure_detected",
+          "evidence_unit_ids": ["v7u_N003035", "v7u_N003036"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_exposure_detected",
+          "target": "n_action_block_payments",
+          "condition": "if sanctions exposure is detected",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_block_payments",
+          "target": "n_action_escalate",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_002_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_escalate",
+          "target": "n_output_further_steps",
+          "evidence_unit_ids": ["v7u_N003036"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003035", "v7u_N003036"],
+      "review_status": "needs_review",
+      "review_notes": "The card is limited to transaction-level sanctions exposure because the section states a concrete required action and response; ongoing PEP and adverse-news screening is not expanded into steps."
+    },
+    {
+      "card_id": "p7card_CH42-S05_003",
+      "section_id": "CH42-S05",
+      "title": "Transaction monitoring for suspicious patterns",
+      "summary": "Monitoring transactions for suspicious patterns detects anomalous behavior, triggers alerts, and dynamically adjusts risk profiles.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_transaction_patterns",
+          "node_type": "trigger",
+          "label": "Transactions are monitored for patterns of suspicion",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_patterns_of_suspicion",
+          "node_type": "standard",
+          "label": "Patterns of suspicion",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_detect_anomalies",
+          "node_type": "action",
+          "label": "Detect anomalous behaviors",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_alerts",
+          "node_type": "output",
+          "label": "Alerts triggered",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_risk_profile_adjusted",
+          "node_type": "output",
+          "label": "Risk profiles adjusted dynamically",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S05_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_transaction_patterns",
+          "target": "n_action_detect_anomalies",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_003_002",
+          "edge_type": "USES",
+          "source": "n_action_detect_anomalies",
+          "target": "n_standard_patterns_of_suspicion",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_003_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action_detect_anomalies",
+          "target": "n_output_alerts",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S05_003_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_detect_anomalies",
+          "target": "n_output_risk_profile_adjusted",
+          "evidence_unit_ids": ["v7u_N003037"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003037"],
+      "review_status": "accepted",
+      "review_notes": "Alerts and risk-profile adjustment are modeled as parallel outputs of monitoring, not as a forced sequence."
+    }
+  ],
+  "skip_reason": null
+}

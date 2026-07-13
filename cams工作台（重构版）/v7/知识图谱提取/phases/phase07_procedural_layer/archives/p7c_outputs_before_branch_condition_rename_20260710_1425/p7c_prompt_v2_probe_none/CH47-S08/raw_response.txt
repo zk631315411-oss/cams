@@ -1,0 +1,120 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation Investigation Steps",
+      "summary": "Before escalating an investigation to confirm and report suspicion, an analyst follows these steps: understand nature of suspicion and possible explanation, review previous transaction patterns, consider onboarding and historical data, and document research noting any missing information.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_investigation",
+          "node_type": "trigger",
+          "label": "Investigation case opened",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Inferred trigger: the section begins with 'Before escalating an investigation', implying an existing investigation is being worked."
+        },
+        {
+          "node_id": "n_understand_suspicion",
+          "node_type": "action",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_review_patterns",
+          "node_type": "action",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_review_context",
+          "node_type": "action",
+          "label": "Review onboarding information and historical transaction data for context",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_document_research",
+          "node_type": "action",
+          "label": "Document research and indicate what information is missing",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_documentation",
+          "node_type": "output",
+          "label": "Documented investigation findings with missing information noted",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_investigation",
+          "target": "n_understand_suspicion",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_understand_suspicion",
+          "target": "n_review_patterns",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_review_patterns",
+          "target": "n_review_context",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_review_context",
+          "target": "n_document_research",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_document_research",
+          "target": "n_output_documentation",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Trigger node is inferred from context; the section begins by referencing an existing investigation. All other steps and their order are explicitly stated in the source text."
+    }
+  ],
+  "skip_reason": null
+}

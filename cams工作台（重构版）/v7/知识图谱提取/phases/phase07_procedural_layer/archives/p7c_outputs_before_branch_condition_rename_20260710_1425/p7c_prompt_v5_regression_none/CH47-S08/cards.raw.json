@@ -1,0 +1,147 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation investigation steps",
+      "summary": "Analyst pre-escalation investigation steps: understand suspicion, review past transactions, use onboarding/historical data, and document research including missing information.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Investigation initiated",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n1",
+          "node_type": "action",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Before escalating an investigation to confirm and report suspicion, an analyst is expected to understand the nature of the suspicion and determine whether there is a possible explanation for the transaction."
+        },
+        {
+          "node_id": "n2",
+          "node_type": "action",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Any patterns of previous transactions from the same account or customer should also be reviewed."
+        },
+        {
+          "node_id": "n3",
+          "node_type": "action",
+          "label": "Gather context from onboarding information and historical transaction data",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Information gathered during onboarding, along with historical transaction data, can provide helpful context."
+        },
+        {
+          "node_id": "n4",
+          "node_type": "action",
+          "label": "Document all research and note missing information",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Finally, all research should be clearly documented, indicating what information—if any—is missing."
+        },
+        {
+          "node_id": "n_out",
+          "node_type": "output",
+          "label": "Documented research with missing information noted",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n1",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n4",
+          "target": "n_out",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Start node is inferred; sequence between steps is partially inferred from text order and words 'also' and 'finally'. Handoff after documentation is not described."
+    }
+  ],
+  "skip_reason": null
+}

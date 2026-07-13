@@ -1,0 +1,124 @@
+{
+  "section_id": "CH47-S07",
+  "section_title": "Transaction monitoring > Other sources of investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S07_001",
+      "section_id": "CH47-S07",
+      "card_nature": "control",
+      "title": "Sensitive Investigation Source Handling Control",
+      "summary": "Establish robust investigation management procedures to minimize risk of information leaks and avoid tipping off when investigations originate from high-materiality/sensitivity sources.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Investigation originates from sensitive source (internal/external referral, RFI, negative news, regulatory finding, law enforcement request)",
+          "evidence_unit_ids": [
+            "v7u_N003314",
+            "v7u_N003326"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_robust_procedures",
+          "node_type": "action",
+          "label": "Apply robust investigation management procedures",
+          "evidence_unit_ids": [
+            "v7u_N003329"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_avoid_tipping",
+          "node_type": "standard",
+          "label": "Avoid tipping off potential subject (felony risk)",
+          "evidence_unit_ids": [
+            "v7u_N003327",
+            "v7u_N003328"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_extra_care",
+          "node_type": "standard",
+          "label": "Handle with extra care due to high materiality and sensitivity",
+          "evidence_unit_ids": [
+            "v7u_N003326"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_minimized_leaks",
+          "node_type": "output",
+          "label": "Risk of information leaks minimized",
+          "evidence_unit_ids": [
+            "v7u_N003329"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_robust_procedures",
+          "evidence_unit_ids": [
+            "v7u_N003326"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_002",
+          "edge_type": "USES",
+          "source": "n_action_robust_procedures",
+          "target": "n_standard_avoid_tipping",
+          "evidence_unit_ids": [
+            "v7u_N003327",
+            "v7u_N003328"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_003",
+          "edge_type": "USES",
+          "source": "n_action_robust_procedures",
+          "target": "n_standard_extra_care",
+          "evidence_unit_ids": [
+            "v7u_N003326"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S07_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_robust_procedures",
+          "target": "n_output_minimized_leaks",
+          "evidence_unit_ids": [
+            "v7u_N003329"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003314",
+        "v7u_N003326",
+        "v7u_N003327",
+        "v7u_N003328",
+        "v7u_N003329"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Control card extracted from requirement to handle sensitive investigation sources with robust procedures to avoid tipping off. Edge from trigger to action inferred as functional dependency; no explicit sequence stated."
+    }
+  ],
+  "skip_reason": null
+}

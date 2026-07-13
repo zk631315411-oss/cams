@@ -1,0 +1,186 @@
+{
+  "section_id": "CH47-S11",
+  "section_title": "Transaction monitoring > Communication channels and tipping off",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S11_001",
+      "section_id": "CH47-S11",
+      "card_nature": "control",
+      "title": "Customer outreach for missing investigation information",
+      "summary": "When needed information is critical and unavailable internally or externally, analysts plan customer outreach through appropriate staff while controlling confidentiality, clarity, professionalism, compliance, and documentation.",
+      "actor": "Analyst, relationship managers, or front-line staff",
+      "objective": "Obtain missing investigation information without tipping off the customer or breaching communication controls.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_missing_information",
+          "node_type": "trigger",
+          "label": "Alert review or AML investigation requires information unavailable through internal data or public sources",
+          "evidence_unit_ids": ["v7u_N003361"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_outreach_needed",
+          "node_type": "decision",
+          "label": "Is the requested information critical for an informed determination and unavailable internally or externally?",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_plan_outreach",
+          "node_type": "action",
+          "label": "Consider the best outreach methods and plan accordingly",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_contact_parties",
+          "node_type": "action",
+          "label": "Relationship managers or front-line staff contact the customer, organizational partners, other financial institutions, or correspondent branches",
+          "evidence_unit_ids": ["v7u_N003362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_confidentiality",
+          "node_type": "standard",
+          "label": "Maintain confidentiality and ensure sensitive information is shared securely only with authorized parties",
+          "evidence_unit_ids": ["v7u_N003363", "v7u_N003365"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_clarity_professionalism",
+          "node_type": "standard",
+          "label": "Communicate clearly, precisely, and professionally",
+          "evidence_unit_ids": ["v7u_N003366", "v7u_N003367"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_no_tipping_off",
+          "node_type": "standard",
+          "label": "Avoid tipping off the investigation subject that activities are being monitored",
+          "evidence_unit_ids": ["v7u_N003363", "v7u_N003368"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_compliance",
+          "node_type": "standard",
+          "label": "Adhere to legal and regulatory guidelines governing sensitive communications",
+          "evidence_unit_ids": ["v7u_N003369"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document_communications",
+          "node_type": "action",
+          "label": "Record all communications, dates, times, and content discussed for accountability and audit purposes",
+          "evidence_unit_ids": ["v7u_N003370"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_findings_to_analyst",
+          "node_type": "output",
+          "label": "Outreach findings communicated to analysts with documented communication record",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003370"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_no_outreach",
+          "node_type": "output",
+          "label": "Do not conduct outreach under this process",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_missing_information",
+          "target": "n_decision_outreach_needed",
+          "evidence_unit_ids": ["v7u_N003361", "v7u_N003364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_002",
+          "edge_type": "DECIDES",
+          "source": "n_decision_outreach_needed",
+          "target": "n_action_plan_outreach",
+          "condition": "both conditions met",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_outreach_needed",
+          "target": "n_output_no_outreach",
+          "condition": "information is not critical or is otherwise available",
+          "evidence_unit_ids": ["v7u_N003364"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_plan_outreach",
+          "target": "n_action_contact_parties",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003364"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_005",
+          "edge_type": "USES",
+          "source": "n_action_contact_parties",
+          "target": "n_standard_confidentiality",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003363", "v7u_N003365"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_006",
+          "edge_type": "USES",
+          "source": "n_action_contact_parties",
+          "target": "n_standard_clarity_professionalism",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003366", "v7u_N003367"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_007",
+          "edge_type": "USES",
+          "source": "n_action_contact_parties",
+          "target": "n_standard_no_tipping_off",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003363", "v7u_N003368"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_008",
+          "edge_type": "USES",
+          "source": "n_action_contact_parties",
+          "target": "n_standard_compliance",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003369"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_action_contact_parties",
+          "target": "n_action_document_communications",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003370"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S11_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_document_communications",
+          "target": "n_output_findings_to_analyst",
+          "evidence_unit_ids": ["v7u_N003362", "v7u_N003370"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003361", "v7u_N003362", "v7u_N003363", "v7u_N003364", "v7u_N003365", "v7u_N003366", "v7u_N003367", "v7u_N003368", "v7u_N003369", "v7u_N003370"],
+      "review_status": "needs_review",
+      "review_notes": "Communication requirements are modeled as parallel standards used during outreach. The no-outreach branch is inferred from the 'if both conditions are met' wording."
+    }
+  ],
+  "skip_reason": null
+}

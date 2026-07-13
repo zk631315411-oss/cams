@@ -1,0 +1,125 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-Escalation Investigation Steps",
+      "summary": "Analyst must understand suspicion, review past patterns, gather context, and document findings before escalating an investigation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Investigation initiated and ready for pre-escalation review",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Review patterns of previous transactions from same account/customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Gather context from onboarding information and historical transaction data",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_p4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document all research, indicating missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "Documented research ready for escalation decision",
+          "evidence_unit_ids": ["v7u_N003330", "v7u_N003333"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry",
+          "target": "n_p1",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_p1",
+          "target": "n_p2",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_p2",
+          "target": "n_p3",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_p3",
+          "target": "n_p4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_p4",
+          "target": "n_exit",
+          "evidence_unit_ids": ["v7u_N003330", "v7u_N003333"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted",
+          "relation_type": "result_handoffs_stage"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003330", "v7u_N003331", "v7u_N003332", "v7u_N003333"],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

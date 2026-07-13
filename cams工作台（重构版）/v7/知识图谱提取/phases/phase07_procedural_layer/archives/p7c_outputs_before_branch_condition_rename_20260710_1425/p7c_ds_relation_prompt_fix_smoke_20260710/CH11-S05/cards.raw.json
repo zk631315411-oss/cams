@@ -1,0 +1,309 @@
+{
+  "section_id": "CH11-S05",
+  "section_title": "Money laundering risks associated with MSBs, payment service providers, and ecommerce > Case example: LotusMall and illegal gambling",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S05_001",
+      "section_id": "CH11-S05",
+      "card_nature": "risk_indicator",
+      "title": "Red flags for e-commerce money laundering: LotusMall case",
+      "summary": "Risk indicators extracted from the LotusMall case, including pricing anomalies, transaction volume anomalies, fake delivery records, offshore servers, and multiple accounts linked to a single entity.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Suspicious e-commerce merchant activity",
+          "evidence_unit_ids": [
+            "v7u_N000867"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Review for money laundering red flags",
+          "evidence_unit_ids": [
+            "v7u_N000871",
+            "v7u_N000872"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_std_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Product pricing far above market value",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "High daily transaction volume on low-value products",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Fake delivery records",
+          "evidence_unit_ids": [
+            "v7u_N000874"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Use of offshore servers for anonymity",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_05",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Multiple seller accounts linked to a single entity",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Identified as potential money laundering activity",
+          "evidence_unit_ids": [
+            "v7u_N000874"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N000867"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_std_01",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_std_02",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_std_03",
+          "evidence_unit_ids": [
+            "v7u_N000874"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_005",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_std_04",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_006",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_std_05",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N000874"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000867",
+        "v7u_N000871",
+        "v7u_N000872",
+        "v7u_N000873",
+        "v7u_N000874",
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Red flags derived from case example; not a strict sequential workflow. The review process is inferred from the presence of explicitly labeled red flags."
+    },
+    {
+      "card_id": "p7card_CH11-S05_002",
+      "section_id": "CH11-S05",
+      "card_nature": "control",
+      "title": "E-commerce platform risk monitoring controls",
+      "summary": "Authorities urged e-commerce platforms to improve risk monitoring, flag high-risk patterns (e.g., multiple seller accounts linked to a single entity), and take a proactive stance against fraud and collusion.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_02",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "Authorities urge e-commerce platforms to enhance risk monitoring",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement improved risk monitoring controls",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_06",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Flag high-risk patterns such as multiple seller accounts linked to single entity",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_07",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Take proactive stance against fraud and collusion",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing risk monitoring obligation",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_02",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_002",
+          "edge_type": "USES",
+          "source": "n_process_02",
+          "target": "n_std_06",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_transmits_requirement"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_003",
+          "edge_type": "USES",
+          "source": "n_process_02",
+          "target": "n_std_07",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_transmits_requirement"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "cycle_requires_monitoring"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Control expectation derived from single unit; the implementation sequence is explicit, but the ongoing obligation exit is inferred."
+    }
+  ],
+  "skip_reason": null
+}

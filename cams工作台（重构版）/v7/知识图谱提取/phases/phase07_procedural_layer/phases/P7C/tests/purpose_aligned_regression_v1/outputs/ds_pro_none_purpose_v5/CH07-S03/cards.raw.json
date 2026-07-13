@@ -1,0 +1,75 @@
+{
+  "section_id": "CH07-S03",
+  "section_title": "Money laundering risks associated with retail and commercial banking > Credit-related product risks",
+  "cards": [
+    {
+      "card_id": "P7C_CH07_S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "execution",
+      "title": "知道或怀疑非法资金还贷时银行应拒绝接受资金",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "银行知道或怀疑客户使用非法资金偿还贷款",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行拒绝接受该资金用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "资金未被接受用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P2",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit",
+          "condition": "如果银行知道或怀疑",
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, ... the bank should not accept funds"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X3",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "should not accept funds"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000554"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当银行知道或怀疑客户使用非法资金还贷时，银行拒绝接受该资金，导致资金不被接受用于还贷。KG不足：基础KG仅将提前还贷列为洗钱风险指标，未表达此条件导向的禁止性行动及结果。选项判断：可确认银行在知道或怀疑非法资金时不得接受还款，排除其可能接受的情形；可帮助判断有关资金处置的题目选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

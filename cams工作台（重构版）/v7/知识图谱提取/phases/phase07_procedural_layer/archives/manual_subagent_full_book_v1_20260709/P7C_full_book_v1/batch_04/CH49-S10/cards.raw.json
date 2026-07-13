@@ -1,0 +1,45 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "risk_indicator",
+      "title": "Identify and mitigate defensive SAR risk",
+      "summary": "Defensive SARs are 'just in case' filings that can burden law enforcement, hinder suspicious activity reporting, and signal AFC compliance program deficiencies; organizations should address root constraints rather than simply filing defensively.",
+      "scenario": "Potential defensive SAR filing.",
+      "objective": "Recognize defensive SAR risk and select a better risk-based response.",
+      "flow_nodes": [
+        {"node_id": "n_start", "node_type": "start", "label": "Review SAR filing quality and defensive SAR risk", "evidence_unit_ids": ["v7u_N003602", "v7u_N003604"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"node_id": "n_action_screen_defensive_sar", "node_type": "action", "label": "Screen whether a contemplated or filed SAR is defensive", "evidence_unit_ids": ["v7u_N003605", "v7u_N003608", "v7u_N003609"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"node_id": "n_standard_sar_goal", "node_type": "standard", "label": "SARs should provide law enforcement with actionable intelligence and be accurate and effective", "evidence_unit_ids": ["v7u_N003603", "v7u_N003604", "v7u_N003607"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_defensive_definition", "node_type": "standard", "label": "Defensive SAR is filed 'just in case' to cover the organization if activity later meets regulatory SAR criteria", "evidence_unit_ids": ["v7u_N003605"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_defensive_reasons", "node_type": "standard", "label": "Reasons include staffing shortages, avoiding regulatory scrutiny, and lacking time to perform necessary research", "evidence_unit_ids": ["v7u_N003608"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_negative_impacts", "node_type": "standard", "label": "Defensive SARs burden law enforcement, impede action on genuine suspicious activity, and hinder organizational detection and reporting", "evidence_unit_ids": ["v7u_N003606", "v7u_N003607", "v7u_N003611"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_program_deficiency_signal", "node_type": "standard", "label": "Defensive SARs can indicate weakness or deficiencies in an AFC compliance program", "evidence_unit_ids": ["v7u_N003609", "v7u_N003611"], "evidence_strength": "explicit"},
+        {"node_id": "n_decision_constraints_present", "node_type": "decision", "label": "Does the organization lack sufficient time or business-model understanding to properly monitor and research the activity?", "evidence_unit_ids": ["v7u_N003610"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_consider_risk_appetite_relationship", "node_type": "action", "label": "Consider business risk appetite and the customer relationship instead of simply filing defensively", "evidence_unit_ids": ["v7u_N003610", "v7u_N003611"], "evidence_strength": "explicit"},
+        {"node_id": "n_output_defensive_sar_risk_finding", "node_type": "output", "label": "Defensive SAR risk is identified, with impacts and program-deficiency implications documented for review", "evidence_unit_ids": ["v7u_N003606", "v7u_N003609", "v7u_N003611"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"node_id": "n_output_risk_based_response", "node_type": "output", "label": "Risk appetite and customer relationship are considered as a better practice response", "evidence_unit_ids": ["v7u_N003610"], "evidence_strength": "explicit"}
+      ],
+      "flow_edges": [
+        {"edge_id": "p7flowedge_CH49-S10_001_001", "edge_type": "PRECEDES", "source": "n_start", "target": "n_action_screen_defensive_sar", "evidence_unit_ids": ["v7u_N003602", "v7u_N003604", "v7u_N003605"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S10_001_002", "edge_type": "USES", "source": "n_action_screen_defensive_sar", "target": "n_standard_sar_goal", "evidence_unit_ids": ["v7u_N003603", "v7u_N003604", "v7u_N003607"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_003", "edge_type": "USES", "source": "n_action_screen_defensive_sar", "target": "n_standard_defensive_definition", "evidence_unit_ids": ["v7u_N003605"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_004", "edge_type": "USES", "source": "n_action_screen_defensive_sar", "target": "n_standard_defensive_reasons", "evidence_unit_ids": ["v7u_N003608"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_005", "edge_type": "USES", "source": "n_action_screen_defensive_sar", "target": "n_standard_negative_impacts", "evidence_unit_ids": ["v7u_N003606", "v7u_N003611"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_006", "edge_type": "USES", "source": "n_action_screen_defensive_sar", "target": "n_standard_program_deficiency_signal", "evidence_unit_ids": ["v7u_N003609", "v7u_N003611"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_007", "edge_type": "PRODUCES", "source": "n_action_screen_defensive_sar", "target": "n_output_defensive_sar_risk_finding", "evidence_unit_ids": ["v7u_N003606", "v7u_N003609", "v7u_N003611"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S10_001_008", "edge_type": "PRECEDES", "source": "n_action_screen_defensive_sar", "target": "n_decision_constraints_present", "evidence_unit_ids": ["v7u_N003610"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S10_001_009", "edge_type": "DECIDES", "source": "n_decision_constraints_present", "target": "n_action_consider_risk_appetite_relationship", "condition": "if time or business-model understanding is insufficient", "evidence_unit_ids": ["v7u_N003610"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S10_001_010", "edge_type": "DECIDES", "source": "n_decision_constraints_present", "target": "n_output_defensive_sar_risk_finding", "condition": "if defensive filing is identified without adequate root-cause response", "evidence_unit_ids": ["v7u_N003609", "v7u_N003611"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S10_001_011", "edge_type": "PRODUCES", "source": "n_action_consider_risk_appetite_relationship", "target": "n_output_risk_based_response", "evidence_unit_ids": ["v7u_N003610"], "evidence_strength": "explicit"}
+      ],
+      "source_unit_ids": ["v7u_N003602", "v7u_N003603", "v7u_N003604", "v7u_N003605", "v7u_N003606", "v7u_N003607", "v7u_N003608", "v7u_N003609", "v7u_N003610", "v7u_N003611"],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural explanatory material converted into a risk_indicator card. The risk factors are parallel standards; sequence from screening to mitigation is a weak inferred process order."
+    }
+  ],
+  "skip_reason": null
+}

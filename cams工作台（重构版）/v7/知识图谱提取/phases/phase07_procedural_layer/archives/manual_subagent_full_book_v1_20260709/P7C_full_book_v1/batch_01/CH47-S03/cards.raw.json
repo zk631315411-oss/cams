@@ -1,0 +1,225 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Use intelligent monitoring tools to improve alert usefulness",
+      "summary": "Organizations implement intelligent contextual analysis, network analysis, and AI-powered monitoring to produce more useful alerts, reduce false positives, and uncover hidden suspicious links.",
+      "objective": "Improve suspicious activity detection while reducing wasteful effort from false positives.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Seek and implement solutions that generate more useful alerts",
+          "evidence_unit_ids": ["v7u_N003256"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_contextual",
+          "node_type": "action",
+          "label": "Apply intelligent contextual analysis to transactions",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_context",
+          "node_type": "standard",
+          "label": "Threshold exceedance plus behavior changes, peer comparison, or high-risk industry criteria",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_network",
+          "node_type": "action",
+          "label": "Use network analysis to detect patterns among beneficiaries and related parties",
+          "evidence_unit_ids": ["v7u_N003258", "v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_automated_analysis",
+          "node_type": "action",
+          "label": "Automatically analyze large transaction data sets and hidden links",
+          "evidence_unit_ids": ["v7u_N003259", "v7u_N003261", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_detection",
+          "node_type": "output",
+          "label": "Suspicious patterns, hidden links, fraud, or money laundering indicators are identified",
+          "evidence_unit_ids": ["v7u_N003258", "v7u_N003259", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_resource_use",
+          "node_type": "output",
+          "label": "False positives and manual tracing effort are reduced while resources focus on genuine threats",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003260", "v7u_N003263"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_contextual",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003257"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action_contextual",
+          "target": "n_standard_context",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_network",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003258"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_automated_analysis",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003259", "v7u_N003265"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_contextual",
+          "target": "n_output_detection",
+          "evidence_unit_ids": ["v7u_N003257", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_network",
+          "target": "n_output_detection",
+          "evidence_unit_ids": ["v7u_N003258", "v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_automated_analysis",
+          "target": "n_output_detection",
+          "evidence_unit_ids": ["v7u_N003259", "v7u_N003265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_automated_analysis",
+          "target": "n_output_resource_use",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003260", "v7u_N003263"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003256", "v7u_N003257", "v7u_N003258", "v7u_N003259", "v7u_N003260", "v7u_N003261", "v7u_N003262", "v7u_N003263", "v7u_N003265"],
+      "review_status": "needs_review",
+      "review_notes": "The tool types are parallel solution patterns, not a strict chronological sequence. Functional_dependency edges represent parallel control options tied to the common objective. Category: parallel assessment dimension."
+    },
+    {
+      "card_id": "p7card_CH47-S03_002",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Mitigate AI transaction monitoring implementation risks",
+      "summary": "When implementing AI solutions, organizations should test with diverse data sets and ensure explainability, transparency, and contextual relevance so AI supports effective financial crime risk management.",
+      "objective": "Control risks introduced by AI transaction monitoring solutions.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_ai_risk",
+          "node_type": "trigger",
+          "label": "AI solutions are implemented and introduce their own risks",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_test",
+          "node_type": "action",
+          "label": "Test AI solutions with diverse data sets",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_standard_quality",
+          "node_type": "standard",
+          "label": "Explainability, transparency, and relevance to the organization's context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_bias_control",
+          "node_type": "output",
+          "label": "Bias is helped to be eliminated",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_effective_fcrm",
+          "node_type": "output",
+          "label": "AI supports effective financial crime risk management with proper care and diligence",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_ai_risk",
+          "target": "n_action_test",
+          "evidence_unit_ids": ["v7u_N003268", "v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_002",
+          "edge_type": "USES",
+          "source": "n_action_test",
+          "target": "n_standard_quality",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003270"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action_test",
+          "target": "n_output_bias_control",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_test",
+          "target": "n_output_effective_fcrm",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003271"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003268", "v7u_N003269", "v7u_N003270", "v7u_N003271"],
+      "review_status": "needs_review",
+      "review_notes": "The quality attributes are stated as requirements for AI solutions but not as a separate test sequence. Functional_dependency edges represent control standards and outcome inference."
+    }
+  ],
+  "skip_reason": null
+}

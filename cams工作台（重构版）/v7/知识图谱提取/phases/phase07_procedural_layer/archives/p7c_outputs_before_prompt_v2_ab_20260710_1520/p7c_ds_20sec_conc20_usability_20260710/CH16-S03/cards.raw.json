@@ -1,0 +1,786 @@
+{
+  "section_id": "CH16-S03",
+  "section_title": "High-risk business sectors > Key takeaways",
+  "cards": [
+    {
+      "card_id": "p7card_CH16-S03_001",
+      "section_id": "CH16-S03",
+      "card_nature": "risk_indicator",
+      "title": "Unusual hour large transactions as illegal activity indicator",
+      "summary": "Large cash or credit transactions outside usual business hours may indicate illegal activities, serving as a red flag for monitoring.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Large cash or credit transaction outside usual or expected hours",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess transaction for illegal activity indicator",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Large transactions outside usual hours are an illegal activity indicator",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Transaction flagged as potential illegal activity",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_001_001",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001160"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak process order inferred; the card is based on a brief red flag statement without explicit assessment steps, requiring functional dependency assumptions."
+    },
+    {
+      "card_id": "p7card_CH16-S03_002",
+      "section_id": "CH16-S03",
+      "card_nature": "assessment",
+      "title": "Negative media triggering customer review and risk assessment refresh",
+      "summary": "Negative media coverage or allegations should prompt a customer review refresh and, if appropriate, a refresh of the customer risk assessment tool.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Negative media coverage or allegations",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Refresh customer review",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_branch_01",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Check if appropriate to refresh risk assessment tool",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Refresh customer risk assessment tool",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Customer review and risk assessment refreshed",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_002_002",
+          "edge_type": "PRECEDES",
+          "source": "n_process_01",
+          "target": "n_branch_01",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_002_003",
+          "edge_type": "DECIDES",
+          "source": "n_branch_01",
+          "target": "n_process_02",
+          "condition": "if appropriate",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_002_005",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001161"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into an assessment card; order and branching condition are implicit. Exit node is functionally dependent."
+    },
+    {
+      "card_id": "p7card_CH16-S03_003",
+      "section_id": "CH16-S03",
+      "card_nature": "control",
+      "title": "Enhanced due diligence for high-risk diversified businesses",
+      "summary": "Businesses with diversified operations in high-value and risky sectors should undergo enhanced due diligence to evaluate their activities and risks.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Business with diversified operations in high-value/risky sectors",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Enhanced due diligence requirement for diversified high-risk businesses",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Apply enhanced due diligence and evaluate activities and risks",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Risk evaluation result",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_003_001",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_003_002",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_003_003",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001162"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Control requirement card based on a single unit; process flow is normative rather than event-driven. Exit is functionally dependent."
+    },
+    {
+      "card_id": "p7card_CH16-S03_004",
+      "section_id": "CH16-S03",
+      "card_nature": "risk_indicator",
+      "title": "Trade-based money laundering methods",
+      "summary": "Various methods used in trade-based money laundering, including under/over-invoicing, multiple invoicing, short/over-shipping, ghost-shipping, and L/C fraud.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Import/export trade transactions",
+          "evidence_unit_ids": [
+            "v7u_N001163"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Under-invoicing (price below fair market value)",
+          "evidence_unit_ids": [
+            "v7u_N001164"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Over-invoicing (price above fair market value)",
+          "evidence_unit_ids": [
+            "v7u_N001165"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Multiple invoicing (multiple invoices for same shipment)",
+          "evidence_unit_ids": [
+            "v7u_N001166"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Short-shipping (shipped quantity less than invoiced)",
+          "evidence_unit_ids": [
+            "v7u_N001167"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Over-shipping (shipped quantity more than invoiced)",
+          "evidence_unit_ids": [
+            "v7u_N001168"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Ghost-shipping (fictitious trades, no actual goods shipped)",
+          "evidence_unit_ids": [
+            "v7u_N001169"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_07",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Letters of credit fraud (manipulated prices or nonexistent goods)",
+          "evidence_unit_ids": [
+            "v7u_N001170"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Screen trade transactions for TBML methods",
+          "evidence_unit_ids": [
+            "v7u_N001163"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Potential trade-based money laundering scheme identified",
+          "evidence_unit_ids": [
+            "v7u_N001163"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001163"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N001164"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N001165"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_03",
+          "evidence_unit_ids": [
+            "v7u_N001166"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_005",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_04",
+          "evidence_unit_ids": [
+            "v7u_N001167"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_006",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_05",
+          "evidence_unit_ids": [
+            "v7u_N001168"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_007",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_06",
+          "evidence_unit_ids": [
+            "v7u_N001169"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_008",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_07",
+          "evidence_unit_ids": [
+            "v7u_N001170"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_004_009",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001163"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001163",
+        "v7u_N001164",
+        "v7u_N001165",
+        "v7u_N001166",
+        "v7u_N001167",
+        "v7u_N001168",
+        "v7u_N001169",
+        "v7u_N001170"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural risk indicator card; assessment process is implicit, based on a list of TBML methods presented as indicators. Exit node is functionally dependent."
+    },
+    {
+      "card_id": "p7card_CH16-S03_005",
+      "section_id": "CH16-S03",
+      "card_nature": "risk_indicator",
+      "title": "Dual-use goods as money laundering and sanctions evasion risk",
+      "summary": "Trade in dual-use goods poses unique risks of money laundering and sanctions evasion, as criminals may use these goods to disguise transactions and launder proceeds.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Trade in dual-use goods",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Dual-use goods pose unique ML and sanctions evasion risks",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Criminals use dual-use goods to evade sanctions and launder proceeds",
+          "evidence_unit_ids": [
+            "v7u_N001172"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess for money laundering and sanctions evasion risks from dual-use trade",
+          "evidence_unit_ids": [
+            "v7u_N001171",
+            "v7u_N001172"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Potential ML/sanctions evasion risk identified",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_005_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_005_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_005_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N001172"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_005_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001171"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001171",
+        "v7u_N001172"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural risk indicator card; assessment process and exit classification are implicit. Functional dependency assumptions applied."
+    },
+    {
+      "card_id": "p7card_CH16-S03_006",
+      "section_id": "CH16-S03",
+      "card_nature": "risk_indicator",
+      "title": "Source of funds risk in multi-jurisdictional import/export sectors",
+      "summary": "Import/export sectors are vulnerable to source of funds risk due to cross-border transactions, and criminals exploit jurisdictions with weak AML regulations to enter the financial system.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Import/export business with multi-jurisdictional transactions",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Multi-jurisdictional transactions heighten source of funds vulnerability",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Criminals exploit weak AML jurisdictions to enter financial system",
+          "evidence_unit_ids": [
+            "v7u_N001174"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Evaluate source of funds risk for cross-border trade",
+          "evidence_unit_ids": [
+            "v7u_N001173",
+            "v7u_N001174"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Heightened source of funds risk",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH16-S03_006_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_006_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_006_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N001174"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH16-S03_006_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N001173"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001173",
+        "v7u_N001174"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural risk indicator card; assessment process and exit classification are implicit. Functional dependency assumptions applied."
+    }
+  ],
+  "skip_reason": null
+}

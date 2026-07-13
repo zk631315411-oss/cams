@@ -1,0 +1,370 @@
+{
+  "section_id": "CH42-S01",
+  "section_title": "Onboarding AFC controls > The KYC process",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S01_001",
+      "section_id": "CH42-S01",
+      "card_nature": "assessment",
+      "title": "Pre-KYC Onboarding Committee Suitability Assessment",
+      "summary": "For specific high-risk customer profiles (PEPs, HNWI, high-risk jurisdictions), a pre-KYC committee assesses suitability before formal identification, determining whether to proceed and the required level of due diligence.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Specific customer profile identified (PEP, HNWI, high-risk jurisdiction)",
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_assess",
+          "node_type": "action",
+          "label": "Committee assesses suitability (evaluate jurisdictional risks, business activities, strategic fit)",
+          "actor": "Pre-KYC onboarding committee (compliance, risk, legal, business)",
+          "evidence_unit_ids": [
+            "v7u_N003013",
+            "v7u_N003014"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "Suitability decision",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_proceed_standard",
+          "node_type": "output",
+          "label": "Proceed to full KYC with standard due diligence",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_proceed_enhanced",
+          "node_type": "output",
+          "label": "Proceed to full KYC with enhanced due diligence",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_reject",
+          "node_type": "output",
+          "label": "Do not proceed (unsuitable client filtered out)",
+          "evidence_unit_ids": [
+            "v7u_N003016"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_assess",
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_assess",
+          "target": "n_decision",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_out_proceed_standard",
+          "condition": "suitable and lower risk → standard DD",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_out_proceed_enhanced",
+          "condition": "suitable and higher risk → enhanced DD",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_out_reject",
+          "condition": "unsuitable → reject/do not proceed",
+          "evidence_unit_ids": [
+            "v7u_N003016",
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003013",
+        "v7u_N003014",
+        "v7u_N003015",
+        "v7u_N003016"
+      ],
+      "review_status": "reviewed",
+      "review_notes": "Card extracted as assessment because primary objective is suitability evaluation and due diligence level determination. The reject branch is explicitly supported by unit 3016."
+    },
+    {
+      "card_id": "p7card_CH42-S01_002",
+      "section_id": "CH42-S01",
+      "card_nature": "execution",
+      "title": "KYC/CDD Process",
+      "summary": "The typical KYC/CDD process consists of identity & verification, understanding purpose and beneficial ownership, and pre-onboarding screening to determine risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start KYC/CDD",
+          "evidence_unit_ids": [
+            "v7u_N003017"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_idv",
+          "node_type": "action",
+          "label": "Perform Identity and Verification (ID&V)",
+          "evidence_unit_ids": [
+            "v7u_N003018",
+            "v7u_N003019",
+            "v7u_N003020"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_identification_std",
+          "node_type": "standard",
+          "label": "Identification requirements (collect personal and business details)",
+          "description": "Name, date of birth, nationality, address, tax ID, company registration data",
+          "evidence_unit_ids": [
+            "v7u_N003019"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_verification_std",
+          "node_type": "standard",
+          "label": "Verification requirements (authenticate provided information)",
+          "description": "Government-issued documents, biometric authentication, AI-driven verification, forensic analysis",
+          "evidence_unit_ids": [
+            "v7u_N003020"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_purpose",
+          "node_type": "action",
+          "label": "Obtain information on purpose and intended nature of relationship",
+          "evidence_unit_ids": [
+            "v7u_N003021"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_ubo",
+          "node_type": "action",
+          "label": "Determine Ultimate Beneficial Owners (UBOs)",
+          "evidence_unit_ids": [
+            "v7u_N003022"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_screening",
+          "node_type": "action",
+          "label": "Conduct screening",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_sanctions_std",
+          "node_type": "standard",
+          "label": "Sanctions screening (cross-check against UN, EU, OFAC, national lists)",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_adverse_std",
+          "node_type": "standard",
+          "label": "Adverse media monitoring (identify links to financial crime, corruption, fraud)",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_pep_std",
+          "node_type": "standard",
+          "label": "PEP screening (determine if individual/UBO is PEP, relative, or close associate)",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out_risk",
+          "node_type": "output",
+          "label": "Risk determination completed",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_idv",
+          "evidence_unit_ids": [
+            "v7u_N003017"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_002",
+          "edge_type": "USES",
+          "source": "n_idv",
+          "target": "n_identification_std",
+          "evidence_unit_ids": [
+            "v7u_N003019"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_003",
+          "edge_type": "USES",
+          "source": "n_idv",
+          "target": "n_verification_std",
+          "evidence_unit_ids": [
+            "v7u_N003020"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_004",
+          "edge_type": "PRECEDES",
+          "source": "n_idv",
+          "target": "n_purpose",
+          "evidence_unit_ids": [
+            "v7u_N003017"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_purpose",
+          "target": "n_ubo",
+          "evidence_unit_ids": [
+            "v7u_N003017"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_006",
+          "edge_type": "PRECEDES",
+          "source": "n_ubo",
+          "target": "n_screening",
+          "evidence_unit_ids": [
+            "v7u_N003017",
+            "v7u_N003023"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_007",
+          "edge_type": "USES",
+          "source": "n_screening",
+          "target": "n_sanctions_std",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_008",
+          "edge_type": "USES",
+          "source": "n_screening",
+          "target": "n_adverse_std",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_009",
+          "edge_type": "USES",
+          "source": "n_screening",
+          "target": "n_pep_std",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH42-S01_002_010",
+          "edge_type": "PRODUCES",
+          "source": "n_screening",
+          "target": "n_out_risk",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003017",
+        "v7u_N003018",
+        "v7u_N003019",
+        "v7u_N003020",
+        "v7u_N003021",
+        "v7u_N003022",
+        "v7u_N003023",
+        "v7u_N003024",
+        "v7u_N003025",
+        "v7u_N003026"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Sequential order among ID&V, purpose, UBO, and screening is inferred from the list structure in unit 3017. The process does not include downstream handoff or decision points beyond risk determination. Start node added with functional_dependency due to missing explicit trigger."
+    }
+  ],
+  "skip_reason": null
+}

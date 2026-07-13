@@ -1,0 +1,110 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation investigation steps",
+      "summary": "Before escalating, analyst understands suspicion, reviews past transactions, gathers onboarding/historical context, and documents findings with missing information noted.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trig",
+          "node_type": "trigger",
+          "label": "Investigation required before escalation",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act1",
+          "node_type": "action",
+          "label": "Understand nature of suspicion and determine if possible explanation exists",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act2",
+          "node_type": "action",
+          "label": "Review previous transaction patterns for same account/customer",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act3",
+          "node_type": "action",
+          "label": "Gather context from onboarding and historical transaction data",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_act4",
+          "node_type": "action",
+          "label": "Document all research clearly, noting missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_out",
+          "node_type": "output",
+          "label": "Documented investigation with identification of missing information",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trig",
+          "target": "n_act1",
+          "evidence_unit_ids": ["v7u_N003330"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_act1",
+          "target": "n_act2",
+          "evidence_unit_ids": ["v7u_N003331"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_act2",
+          "target": "n_act3",
+          "evidence_unit_ids": ["v7u_N003332"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_act3",
+          "target": "n_act4",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_act4",
+          "target": "n_out",
+          "evidence_unit_ids": ["v7u_N003333"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Sequence between understand suspicion and review transactions is inferred from 'also' (functional_dependency). Sequence between review transactions and gather context is inferred from paragraph order (functional_dependency). Overall process is clear but some edges are functional_dependency."
+    }
+  ],
+  "skip_reason": null
+}

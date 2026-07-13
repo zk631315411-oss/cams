@@ -1,0 +1,122 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "execution",
+      "title": "Pre-escalation investigation steps for analysts",
+      "summary": "Analyst follows a sequence of steps to understand suspicion, review patterns, gather context, and document findings before escalating.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_category": "入口类型",
+          "node_type": "E1_event_signal",
+          "label": "Investigation assigned to analyst",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_step1",
+          "node_category": "处理类型",
+          "node_type": "P1_assessment",
+          "label": "Understand nature of suspicion and determine possible explanation",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_step2",
+          "node_category": "处理类型",
+          "node_type": "P1_assessment",
+          "label": "Review previous transaction patterns for same account or customer",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_step3",
+          "node_category": "处理类型",
+          "node_type": "P1_assessment",
+          "label": "Review onboarding information and historical transaction data for context",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_step4",
+          "node_category": "处理类型",
+          "node_type": "P2_execution",
+          "label": "Document all research clearly, noting any missing information",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_step1",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_step1",
+          "target": "n_step2",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_step2",
+          "target": "n_step3",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S08_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_step3",
+          "target": "n_step4",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "condition_routes_path"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Steps inferred from sequential text; no explicit branching or end state defined. Start node is functional. Process represents analyst pre-escalation investigation steps."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,263 @@
+{
+  "section_id": "CH49-S08",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S08_001",
+      "section_id": "CH49-S08",
+      "card_nature": "assessment",
+      "title": "Risk-based SAR filing decision",
+      "summary": "This card outlines the risk-based process for deciding whether to file a suspicious activity report (SAR) after detecting unusual activity, including analysis against regulatory guidelines, decision points, and mandatory documentation of the rationale.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "trigger",
+          "label": "Detection of unusual activity",
+          "evidence_unit_ids": [
+            "v7u_N003576",
+            "v7u_N003577"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_examine",
+          "node_type": "action",
+          "label": "Examine case facts",
+          "evidence_unit_ids": [
+            "v7u_N003577"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_analyze",
+          "node_type": "action",
+          "label": "Analyze facts and compare with regulatory guidelines",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_regs",
+          "node_type": "standard",
+          "label": "Regulatory guidelines",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_dec_suspicious",
+          "node_type": "decision",
+          "label": "Does analysis reveal suspicious activity?",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_dec_meets_guidelines",
+          "node_type": "decision",
+          "label": "Does it meet regulatory guidelines for filing a SAR?",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_file",
+          "node_type": "output",
+          "label": "Decision to file SAR",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_no_file",
+          "node_type": "output",
+          "label": "Decision to not file SAR",
+          "evidence_unit_ids": [
+            "v7u_N003583",
+            "v7u_N003579"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_document",
+          "node_type": "action",
+          "label": "Document findings and rationale for decision",
+          "evidence_unit_ids": [
+            "v7u_N003579",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_documented",
+          "node_type": "output",
+          "label": "Documented SAR decision rationale",
+          "evidence_unit_ids": [
+            "v7u_N003579",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_01",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_examine",
+          "evidence_unit_ids": [
+            "v7u_N003577"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_02",
+          "edge_type": "PRECEDES",
+          "source": "n_action_examine",
+          "target": "n_action_analyze",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_03",
+          "edge_type": "USES",
+          "source": "n_action_analyze",
+          "target": "n_standard_regs",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_04",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze",
+          "target": "n_dec_suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_05",
+          "edge_type": "DECIDES",
+          "source": "n_dec_suspicious",
+          "target": "n_dec_meets_guidelines",
+          "condition": "Yes - suspicious activity revealed",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_06",
+          "edge_type": "DECIDES",
+          "source": "n_dec_suspicious",
+          "target": "n_output_no_file",
+          "condition": "No - insufficient suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003581",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_07",
+          "edge_type": "DECIDES",
+          "source": "n_dec_meets_guidelines",
+          "target": "n_output_file",
+          "condition": "Yes - meets regulatory filing guidelines",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_08",
+          "edge_type": "DECIDES",
+          "source": "n_dec_meets_guidelines",
+          "target": "n_output_no_file",
+          "condition": "No - does not meet regulatory filing guidelines",
+          "evidence_unit_ids": [
+            "v7u_N003582",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_09",
+          "edge_type": "PRECEDES",
+          "source": "n_output_file",
+          "target": "n_action_document",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_10",
+          "edge_type": "PRECEDES",
+          "source": "n_output_no_file",
+          "target": "n_action_document",
+          "evidence_unit_ids": [
+            "v7u_N003579",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_11",
+          "edge_type": "PRODUCES",
+          "source": "n_action_document",
+          "target": "n_output_documented",
+          "evidence_unit_ids": [
+            "v7u_N003579",
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003576",
+        "v7u_N003577",
+        "v7u_N003579",
+        "v7u_N003581",
+        "v7u_N003582",
+        "v7u_N003583"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card assembles a decision process from fragmented statements across the section. The explicit sequence only covers the positive path; negative branches are logically inferred and supported by examples of reasons for not filing (insufficient evidence, legal orders without enough support). The PRECEDES edge from examine facts to analyze facts is inferred as a logical next step in the risk-based decision process."
+    }
+  ],
+  "skip_reason": null
+}

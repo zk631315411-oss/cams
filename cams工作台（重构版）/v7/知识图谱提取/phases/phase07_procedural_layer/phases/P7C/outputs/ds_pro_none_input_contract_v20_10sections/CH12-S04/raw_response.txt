@@ -1,0 +1,123 @@
+{
+  "section_id": "CH12-S04",
+  "section_title": "Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000916", "v7u_N000917", "v7u_N000918"],
+      "proposition": "证券业在洗钱分层和融合阶段脆弱，且可用于产生非法资金，其高互动性等特性为洗钱创造机会",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险陈述和因果关系，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000919", "v7u_N000920", "v7u_N000922", "v7u_N000935"],
+      "proposition": "复杂金融产品、离岸账户、电子交易平台的高速度和交易量以及产品多样性使得洗钱检测和监控更具挑战性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通因果和挑战说明，基础KG可表达"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000921"],
+      "proposition": "PEPs等高风险客户和中介需要进行仔细的风险评估",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立要求，未描述具体有向判断链，基础KG可将其作为风险指标和一般要求保存"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000924"],
+      "proposition": "执行客户尽职调查有助于确保资金来源合法并正确细分客户",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述CDD的目的，但结果非独立，未形成有向判断或程序链，KG可保存措施"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000925", "v7u_N000926", "v7u_N000927", "v7u_N000928",
+        "v7u_N000929", "v7u_N000930", "v7u_N000931", "v7u_N000932",
+        "v7u_N000933", "v7u_N000934"
+      ],
+      "proposition": "资产管理公司提供的各种金融产品（ETF、衍生品、对冲基金等）及其相关洗钱风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "产品定义、分类和一般风险指标，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000936"],
+      "proposition": "资产管理的CDD过程复杂，需要了解所有交易方",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述过程的要求，未形成有向判断链，KG可保存"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000937"],
+      "proposition": "采用强调强CDD和持续监控的风险为本方法可以满足监管要求并应对新兴资产类别的风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象结果说明，非有向结构，KG可表达措施效果"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000923"],
+      "proposition": "机构持续监控交易活动，基于预定义标准标记可疑交易，以帮助识别异常模式和可疑交易",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_001",
+      "reason": "包含标准约束监控动作的有向关系，超出基础KG的表达能力"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N000912", "v7u_N000913", "v7u_N000914", "v7u_N000915"],
+      "proposition": "证券服务商范围、提供的服务、服务对象和交易工具",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯粹背景信息和分类，无程序性或判断性结构"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "持续交易监控与基于预定义标准的可疑交易标记",
+      "flow_nodes": [
+        {
+          "node_id": "std_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预定义标准 (predefined criteria)",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "proc_001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "机构持续监控交易活动并基于预定义标准标记可疑交易，以帮助识别异常模式和可疑交易行为",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "proc_001",
+          "target": "std_001",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000923"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构持续监控交易活动并基于预定义标准标记可疑交易，这有助于识别异常模式和可疑交易（标准约束监控动作）；KG不足：基础KG可以保存'持续监控是控制措施'这一事实，但无法表达监控动作参照了预定义标准并据此标记可疑交易的有向约束关系；选项判断：可用于确认或排除关于监控机制如何运作的选项，比如是否基于预定义标准标记可疑交易；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

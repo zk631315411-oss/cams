@@ -1,0 +1,289 @@
+{
+  "section_id": "CH47-S14",
+  "section_title": "Transaction monitoring > Analysis of information",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S14_001",
+      "section_id": "CH47-S14",
+      "card_nature": "execution",
+      "title": "Analysis of Information in Transaction Monitoring Alert Review",
+      "summary": "Process of collecting, analyzing, and validating information during transaction monitoring alert review to produce actionable intelligence and handle unexpected complexity.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start analysis of information",
+          "evidence_unit_ids": [
+            "v7u_N003396"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Implied start of analysis process during alert review."
+        },
+        {
+          "node_id": "n_collect",
+          "node_type": "action",
+          "label": "Collect and document data from internal and external sources",
+          "evidence_unit_ids": [
+            "v7u_N003396"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_analyze",
+          "node_type": "action",
+          "label": "Analyze data by examining transactions, profiles, alerts, relationships, and cash flows",
+          "evidence_unit_ids": [
+            "v7u_N003397",
+            "v7u_N003398",
+            "v7u_N003399",
+            "v7u_N003402"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_relationships",
+          "node_type": "standard",
+          "label": "Identify and map relationships between individuals and entities",
+          "evidence_unit_ids": [
+            "v7u_N003400"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_network",
+          "node_type": "standard",
+          "label": "Network analysis for visualizing relationships and identifying patterns",
+          "evidence_unit_ids": [
+            "v7u_N003401"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_trans_patterns",
+          "node_type": "standard",
+          "label": "Evaluate transaction patterns (frequency, volume, timing)",
+          "evidence_unit_ids": [
+            "v7u_N003403"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_source_dest",
+          "node_type": "standard",
+          "label": "Determine source and destination of funds alignment with customer profile",
+          "evidence_unit_ids": [
+            "v7u_N003404"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_layering",
+          "node_type": "standard",
+          "label": "Identify complex layering transactions obscuring fund trail",
+          "evidence_unit_ids": [
+            "v7u_N003405"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_integration",
+          "node_type": "standard",
+          "label": "Combine cash flow findings with external information (public records, sanctions lists)",
+          "evidence_unit_ids": [
+            "v7u_N003406"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_intel",
+          "node_type": "output",
+          "label": "Actionable intelligence and validated suspicions",
+          "evidence_unit_ids": [
+            "v7u_N003397",
+            "v7u_N003398"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_dec_unexpected",
+          "node_type": "decision",
+          "label": "Discover previously unknown networks or patterns?",
+          "evidence_unit_ids": [
+            "v7u_N003408"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "description": "During analysis, investigators might discover more complicated case."
+        },
+        {
+          "node_id": "n_consult_afc",
+          "node_type": "action",
+          "label": "Consult AFC compliance team promptly for guidance",
+          "evidence_unit_ids": [
+            "v7u_N003409"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_collect",
+          "evidence_unit_ids": [
+            "v7u_N003396"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_collect",
+          "target": "n_analyze",
+          "evidence_unit_ids": [
+            "v7u_N003396",
+            "v7u_N003397"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_003",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_relationships",
+          "evidence_unit_ids": [
+            "v7u_N003399",
+            "v7u_N003400"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_004",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_network",
+          "evidence_unit_ids": [
+            "v7u_N003401"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_005",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_trans_patterns",
+          "evidence_unit_ids": [
+            "v7u_N003403"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_006",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_source_dest",
+          "evidence_unit_ids": [
+            "v7u_N003404"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_007",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_layering",
+          "evidence_unit_ids": [
+            "v7u_N003405"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_008",
+          "edge_type": "USES",
+          "source": "n_analyze",
+          "target": "n_std_integration",
+          "evidence_unit_ids": [
+            "v7u_N003406"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_analyze",
+          "target": "n_output_intel",
+          "evidence_unit_ids": [
+            "v7u_N003397",
+            "v7u_N003398"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_analyze",
+          "target": "n_dec_unexpected",
+          "evidence_unit_ids": [
+            "v7u_N003408"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "condition": "during analysis",
+          "qualifier": "finding"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S14_001_011",
+          "edge_type": "DECIDES",
+          "source": "n_dec_unexpected",
+          "target": "n_consult_afc",
+          "evidence_unit_ids": [
+            "v7u_N003408",
+            "v7u_N003409"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "condition": "yes (if case more complicated or new networks discovered)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003396",
+        "v7u_N003397",
+        "v7u_N003398",
+        "v7u_N003399",
+        "v7u_N003400",
+        "v7u_N003401",
+        "v7u_N003402",
+        "v7u_N003403",
+        "v7u_N003404",
+        "v7u_N003405",
+        "v7u_N003406",
+        "v7u_N003408",
+        "v7u_N003409"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card synthesized from descriptive section text. Start node and initial edge are inferred. Analysis incorporates parallel dimensions (relationships, cash flow) modeled as USES standards; no explicit sequence between them. Decision for unexpected complexity lacks a defined negative branch; omitted to avoid unsupported inference. Overall process flow is functional but review for completeness is advised."
+    }
+  ],
+  "skip_reason": null
+}

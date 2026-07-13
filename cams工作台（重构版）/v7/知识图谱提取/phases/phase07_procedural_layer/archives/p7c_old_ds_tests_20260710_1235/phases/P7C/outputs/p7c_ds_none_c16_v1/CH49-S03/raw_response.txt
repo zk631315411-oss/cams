@@ -1,0 +1,130 @@
+{
+  "section_id": "CH49-S03",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S03_001",
+      "section_id": "CH49-S03",
+      "card_nature": "control",
+      "title": "SAR Regulatory Filing Requirements",
+      "summary": "This card outlines the regulatory requirements for filing a Suspicious Activity Report (SAR) upon suspicion of criminal activity, including timely filing, content standards, and non-disclosure obligations.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Suspicion of criminal activity detected",
+          "evidence_unit_ids": ["v7u_N003493", "v7u_N003501"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_sar",
+          "node_type": "action",
+          "label": "File SAR according to regulations",
+          "evidence_unit_ids": ["v7u_N003493", "v7u_N003498", "v7u_N003491"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_timeline_standard",
+          "node_type": "standard",
+          "label": "Timely filing within jurisdictional timelines",
+          "evidence_unit_ids": ["v7u_N003502", "v7u_N003503", "v7u_N003493"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_content_standard",
+          "node_type": "standard",
+          "label": "Include appropriate, complete, factual information and reason for suspicion",
+          "evidence_unit_ids": ["v7u_N003494", "v7u_N003504", "v7u_N003505", "v7u_N003506"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_nondisclosure_standard",
+          "node_type": "standard",
+          "label": "Do not disclose SAR to unauthorized parties; avoid tipping off",
+          "evidence_unit_ids": ["v7u_N003495", "v7u_N003496", "v7u_N003507", "v7u_N003508"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "SAR filed in compliance with regulations",
+          "evidence_unit_ids": ["v7u_N003491", "v7u_N003493", "v7u_N003510"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_file_sar",
+          "evidence_unit_ids": ["v7u_N003493"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_timeline_standard",
+          "evidence_unit_ids": ["v7u_N003493", "v7u_N003502", "v7u_N003503"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_content_standard",
+          "evidence_unit_ids": ["v7u_N003494", "v7u_N003504", "v7u_N003505", "v7u_N003506"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_file_sar",
+          "target": "n_nondisclosure_standard",
+          "evidence_unit_ids": ["v7u_N003495", "v7u_N003496", "v7u_N003507", "v7u_N003508"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S03_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_file_sar",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003491"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003491",
+        "v7u_N003493",
+        "v7u_N003494",
+        "v7u_N003495",
+        "v7u_N003496",
+        "v7u_N003498",
+        "v7u_N003501",
+        "v7u_N003502",
+        "v7u_N003503",
+        "v7u_N003504",
+        "v7u_N003505",
+        "v7u_N003506",
+        "v7u_N003507",
+        "v7u_N003508",
+        "v7u_N003510"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Converted regulatory requirements into a control card. The sequence from suspicion to filing is explicit, but the content and non-disclosure standards are parallel and modeled as USES edges. Output node is inferred functional dependency. Card represents a simplified view and may need refinement for operational process."
+    }
+  ],
+  "skip_reason": null
+}

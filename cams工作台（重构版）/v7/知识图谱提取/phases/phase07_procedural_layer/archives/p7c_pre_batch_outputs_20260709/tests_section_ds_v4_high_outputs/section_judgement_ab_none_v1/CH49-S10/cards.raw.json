@@ -1,0 +1,160 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "control",
+      "title": "Control to Avoid Defensive SAR Filings",
+      "summary": "Governance requirement to prevent defensive SAR filings, which indicate program deficiencies and burden law enforcement, and to instead assess risk appetite and customer relationship.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": [
+            "v7u_N003602"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "SAR filing consideration",
+          "description": "Triggered when an organization considers filing a suspicious activity report.",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Evaluate whether proposed SAR is defensive",
+          "description": "Assess if the SAR is being filed 'just in case' without full investigation.",
+          "evidence_unit_ids": [
+            "v7u_N003604",
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard1",
+          "node_type": "standard",
+          "label": "Defensive SAR definition and consequences",
+          "description": "Defensive SAR: filed to cover future regulatory risk; burdens law enforcement, impedes identification of genuine activity, sign of program deficiencies.",
+          "source_quote": "[v7u_N003605|3605] A defensive SAR is a report is filed “just in case,” to cover an organization if, in the future, the identified activity meets the regulatory criteria for requiring a SAR. ... [v7u_N003606|3606] ... filing defensive SARs can unduly burden law enforcement agencies ... [v7u_N003609|3609] Defensive SARs are a sign of weakness or deficiencies in an AFC compliance program.",
+          "evidence_unit_ids": [
+            "v7u_N003605",
+            "v7u_N003606",
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard2",
+          "node_type": "standard",
+          "label": "Best practice: Consider risk appetite and customer relationship",
+          "description": "If lacking time or understanding, assess business risk appetite and customer relationship rather than defaulting to a defensive SAR.",
+          "source_quote": "[v7u_N003610|3610] If an organization lacks sufficient time or a complete understanding of the business model necessary to properly monitor and research a customer activity, as a best practice, the organization should consider its business risk appetite and the relationship with the customer.",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Decision: Avoid defensive SAR, address deficiencies",
+          "description": "Refrain from filing a defensive SAR; identify and correct compliance program weaknesses instead.",
+          "evidence_unit_ids": [
+            "v7u_N003609",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_trigger",
+          "evidence_unit_ids": [
+            "v7u_N003602"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard1",
+          "evidence_unit_ids": [
+            "v7u_N003605",
+            "v7u_N003606",
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard2",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003609",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003602",
+        "v7u_N003604",
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "non-procedural source material converted into a control card; weak inferred process order (trigger to action to output); missing downstream handoff."
+    }
+  ],
+  "skip_reason": null
+}

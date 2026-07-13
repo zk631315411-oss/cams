@@ -1,0 +1,74 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "proposition": "金融机构必须对SPV和PIV执行强化尽职调查，识别最终受益所有人并了解真实目的，这有助于减轻潜在金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "该部分包含金融机构的特定动作链：基于监管要求（必须进行EDD）触发具体执行动作（识别UBO和了解目的），并产生控制效果（有助于减轻风险），形成了条件-动作-结果的程序性有向结构，基础KG无法表达这种具体动作与结果的关联，有助于判断关于CDD/EDD实施义务和影响的选项。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "SPV/PIV强化尽职调查与风险缓解",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs and ensure compliance with CDD regulations such as the Financial Crime Enforcement Network's CDD rule",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions identify ultimate beneficial owners and understand the true purpose of these entities",
+          "evidence_unit_ids": ["v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Help mitigate any potential financial crime risks associated with SPVs",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "source_quote": "Financial institutions must be vigilant in conducting enhanced due diligence... Financial institutions must identify ultimate beneficial owners..."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000659", "v7u_N000660"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "source_quote": "Financial institutions must identify... This will help mitigate..."
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：金融机构根据监管要求对SPV/PIV执行EDD（识别UBO和目的）-> 帮助减轻金融犯罪风险；KG不足：基础KG只能保存“必须进行EDD”的事实，不能表达该动作产生具体控制效果的程序性方向；选项判断：可确认或排除关于EDD实施义务及其风险缓解效果的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

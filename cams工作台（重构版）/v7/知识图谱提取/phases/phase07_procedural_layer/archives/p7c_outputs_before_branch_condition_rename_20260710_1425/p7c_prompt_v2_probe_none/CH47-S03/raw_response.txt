@@ -1,0 +1,163 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Controls for AI Solutions in Transaction Monitoring",
+      "summary": "When implementing AI solutions for transaction monitoring, organizations must test with diverse data sets to eliminate bias, and should ensure explainability, transparency, and relevance to their specific context to support effective financial crime risk management.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Implementing AI solutions for transaction monitoring",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit",
+          "description": "Implementing AI solutions comes with its own risks, necessitating controls.",
+          "source_quote": "Implementing AI solutions comes with its own risks.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Apply required AI controls",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003270", "v7u_N003271"],
+          "evidence_strength": "explicit",
+          "description": "Organizations must apply controls to AI solutions: testing for bias, ensuring explainability, transparency, and relevance.",
+          "source_quote": "These solutions must be tested with diverse data sets to help eliminate bias. They should also be explainable, transparent, and relevant to the organization’s specific context.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_testing",
+          "node_type": "standard",
+          "label": "Test with diverse data sets to eliminate bias",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit",
+          "description": "AI solutions must be tested with diverse data sets to help eliminate bias.",
+          "source_quote": "These solutions must be tested with diverse data sets to help eliminate bias.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_explainable",
+          "node_type": "standard",
+          "label": "Ensure explainability",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "description": "AI solutions should be explainable.",
+          "source_quote": "They should also be explainable, transparent, and relevant to the organization’s specific context.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_transparent",
+          "node_type": "standard",
+          "label": "Ensure transparency",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "description": "AI solutions should be transparent.",
+          "source_quote": "They should also be explainable, transparent, and relevant to the organization’s specific context.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_relevant",
+          "node_type": "standard",
+          "label": "Ensure relevance to organization's context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "description": "AI solutions should be relevant to the organization’s specific context.",
+          "source_quote": "...and relevant to the organization’s specific context.",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "AI supports effective financial crime risk management",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit",
+          "description": "With proper care and diligence, AI can support effective financial crime risk management.",
+          "source_quote": "With proper care and diligence, AI can support effective financial crime risk management.",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003268", "v7u_N003269"],
+          "evidence_strength": "functional_dependency",
+          "condition": null,
+          "qualifier": null,
+          "review_status": "needs_review",
+          "source_quote": null
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_testing",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "qualifier": "standard",
+          "review_status": "accepted",
+          "source_quote": "These solutions must be tested with diverse data sets to help eliminate bias."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_explainable",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "qualifier": "standard",
+          "review_status": "accepted",
+          "source_quote": "They should also be explainable..."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_transparent",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "qualifier": "standard",
+          "review_status": "accepted",
+          "source_quote": "They should also be... transparent..."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_relevant",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "qualifier": "standard",
+          "review_status": "accepted",
+          "source_quote": "...and relevant to the organization’s specific context."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit",
+          "condition": null,
+          "qualifier": "output",
+          "review_status": "accepted",
+          "source_quote": "With proper care and diligence, AI can support effective financial crime risk management."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003268", "v7u_N003269", "v7u_N003270", "v7u_N003271"],
+      "review_status": "needs_review",
+      "review_notes": "The control requirements are explicit, but the process order from trigger to action is inferred (functional dependency). Edge review_status reflects this weak sequence; overall card represents a control requirement derived from normative statements rather than a strict workflow."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,251 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "CH49-S09-C1",
+      "section_id": "CH49-S09",
+      "card_nature": "assessment",
+      "title": "Follow-up process and ongoing obligations when no SAR is filed",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Decision not to file a SAR",
+          "evidence_unit_ids": ["v7u_N003588", "v7u_N003589"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Evaluate unusual activity with escalation procedure",
+          "evidence_unit_ids": ["v7u_N003589"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document rationale, analysis steps, and supporting documents",
+          "evidence_unit_ids": ["v7u_N003590"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conduct trigger-event KYC review to reassess customer risk profile",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Assess if customer risk profile has changed",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Reperform CRA and consider further risk mitigants",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n7",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document CRA reperformance and actions taken",
+          "evidence_unit_ids": ["v7u_N003594"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n8",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Update client file with investigation documentation",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n9",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Establish ongoing monitoring for further suspicious activity",
+          "evidence_unit_ids": ["v7u_N003596"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n10",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Continuing compliance obligations with ongoing monitoring and recordkeeping",
+          "evidence_unit_ids": ["v7u_N003596", "v7u_N003600", "v7u_N003601"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003588", "v7u_N003589"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N003590"],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N003591"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "DECIDES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": ["v7u_N003593"],
+          "evidence_strength": "explicit",
+          "relation_type": "branch_condition_routes_path",
+          "condition": "Customer risk profile has changed",
+          "qualifier": "if there is a change",
+          "modality": "should",
+          "source_quote": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "DECIDES",
+          "source": "n5",
+          "target": "n8",
+          "evidence_unit_ids": ["v7u_N003593", "v7u_N003595"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "branch_condition_routes_path",
+          "condition": "Customer risk profile has not changed",
+          "qualifier": "if no change",
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e7",
+          "edge_type": "PRECEDES",
+          "source": "n6",
+          "target": "n7",
+          "evidence_unit_ids": ["v7u_N003594"],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e8",
+          "edge_type": "PRECEDES",
+          "source": "n7",
+          "target": "n8",
+          "evidence_unit_ids": ["v7u_N003595"],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "e9",
+          "edge_type": "PRECEDES",
+          "source": "n8",
+          "target": "n9",
+          "evidence_unit_ids": ["v7u_N003596"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "e10",
+          "edge_type": "PRODUCES",
+          "source": "n9",
+          "target": "n10",
+          "evidence_unit_ids": ["v7u_N003596", "v7u_N003600", "v7u_N003601"],
+          "evidence_strength": "functional_dependency",
+          "relation_type": null,
+          "condition": null,
+          "qualifier": null,
+          "modality": null,
+          "source_quote": null,
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003588",
+        "v7u_N003589",
+        "v7u_N003590",
+        "v7u_N003591",
+        "v7u_N003593",
+        "v7u_N003594",
+        "v7u_N003595",
+        "v7u_N003596",
+        "v7u_N003600",
+        "v7u_N003601"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：决定不提交SAR后，依次执行异常活动评估与升级、记录决策理由与分析、触发KYC审查重新评估风险，若风险状况变化则重新执行CRA并考虑缓释、记录过程、更新客户档案，随后建立持续监控，最终进入包含持续监控与记录保存的合规义务状态。条件分支：风险状况变化导向额外CRA步骤。KG不足：基础KG只能列举不提交SAR时需遵循的内部程序、记录要求、审查措施等孤立规则，无法表达动作间的顺序、条件分支及产出导致的持续义务状态演变。选项判断：可确认或排除关于不提交SAR后必须执行的步骤先后顺序、风险变化时的特殊程序要求、以及持续监控与记录保存义务的起止点等选项。"
+    }
+  ],
+  "skip_reason": null
+}

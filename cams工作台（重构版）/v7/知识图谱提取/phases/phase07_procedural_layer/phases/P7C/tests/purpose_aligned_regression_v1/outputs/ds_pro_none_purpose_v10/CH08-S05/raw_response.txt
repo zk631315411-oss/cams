@@ -1,0 +1,143 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000642",
+        "v7u_N000643",
+        "v7u_N000644",
+        "v7u_N000645"
+      ],
+      "proposition": "SPV定义及合法用途举例（并购、合资、房地产、知识产权管理、复杂金融交易等）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和事实举例，基础KG能够充分表达，不涉及程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000646",
+        "v7u_N000647",
+        "v7u_N000648",
+        "v7u_N000649",
+        "v7u_N000650",
+        "v7u_N000651",
+        "v7u_N000652",
+        "v7u_N000653"
+      ],
+      "proposition": "SPV金融犯罪风险、复杂结构掩盖受益所有权、分层手法、红旗信号列表及犯罪分子选择宽松辖区",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG能够充分表达风险说明、犯罪手法机制和孤立红旗信号，无机构的识别、评估、决策或应对流程，不构成P7C增量。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000654",
+        "v7u_N000655"
+      ],
+      "proposition": "PIV定义及被用于庞氏骗局和内幕交易的风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和风险事实，基础KG能够充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000656",
+        "v7u_N000657"
+      ],
+      "proposition": "犯罪分子利用SPV和PIV通过操纵交易价格进行贸易洗钱的手法",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通犯罪案例机制，说明非法资金转移伪装为合法贸易的过程，无机构应对结构，由基础KG承接。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "proposition": "CDD法规要求触发金融机构必须对SPV和PIV执行强化尽职调查并识别最终受益所有人，以帮助缓解金融犯罪风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "原文明示由外部法规（FinCEN CDD规则）强制要求金融机构执行特定控制动作，并产生有方向性的风险缓解结果，构成完整的程序性有向链，基础KG无法表达这种从要求到动作再到效果的定向增量结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "Enhanced Due Diligence on SPVs and PIVs",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "CDD法规要求（如FinCEN CDD规则）",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构对SPV和PIV进行强化尽职调查，并识别最终受益所有人及了解真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "帮助缓解与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：CDD法规要求 → 金融机构执行EDD并识别UBO → 帮助缓解风险；KG不足：基础KG仅能保存为一般规则和后果，不能表达CDD要求触发金融机构具体执行动作并产生风险缓解效果的定向链；选项判断：可确认或排除关于EDD要求、识别UBO义务和风险缓解效果的顺序和因果关系的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

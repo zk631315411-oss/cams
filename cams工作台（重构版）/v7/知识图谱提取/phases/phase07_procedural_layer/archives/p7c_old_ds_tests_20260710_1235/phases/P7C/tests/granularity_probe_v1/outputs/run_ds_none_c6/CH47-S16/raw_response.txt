@@ -1,0 +1,144 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "SAR Filing Decision Process",
+      "summary": "Process and considerations for filing a SAR, including MLRO review, further research, investigator feedback, and compliance with jurisdictional reporting deadlines.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Detection of suspicious or potentially illicit activity",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action1",
+          "node_type": "action",
+          "label": "MLRO reads SAR and raises questions for investigator",
+          "evidence_unit_ids": ["v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action2",
+          "node_type": "action",
+          "label": "Investigator addresses questions and conducts further research",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "MLRO final decision on SAR filing",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard",
+          "node_type": "standard",
+          "label": "Jurisdictional reporting deadlines (e.g., 30 days, possible extension, expedited for high-risk)",
+          "evidence_unit_ids": ["v7u_N003444", "v7u_N003445", "v7u_N003446", "v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output1",
+          "node_type": "output",
+          "label": "SAR filed within applicable deadline",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003439"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output2",
+          "node_type": "output",
+          "label": "SAR not filed",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_01",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action1",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003442"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_02",
+          "edge_type": "PRECEDES",
+          "source": "n_action1",
+          "target": "n_action2",
+          "evidence_unit_ids": ["v7u_N003442", "v7u_N003443"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_03",
+          "edge_type": "PRECEDES",
+          "source": "n_action2",
+          "target": "n_decision",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_04",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_output1",
+          "condition": "yes",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_05",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_output2",
+          "condition": "no",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_06",
+          "edge_type": "USES",
+          "source": "n_decision",
+          "target": "n_standard",
+          "evidence_unit_ids": ["v7u_N003444"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003439",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443",
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card models SAR filing decision process with some inferred sequence and weak evidence for 'not filed' output. Functional dependencies exist for several edges and the negative decision branch. Limited explicit process steps; some steps like investigator addressing questions are indirectly supported. The standard node aggregates multiple deadlines, which is appropriate for local scope."
+    }
+  ],
+  "skip_reason": null
+}

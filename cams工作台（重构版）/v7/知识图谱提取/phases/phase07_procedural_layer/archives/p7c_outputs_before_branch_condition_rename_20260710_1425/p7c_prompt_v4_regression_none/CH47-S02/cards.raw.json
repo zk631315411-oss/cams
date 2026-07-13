@@ -1,0 +1,353 @@
+{
+  "section_id": "CH47-S02",
+  "section_title": "Transaction monitoring > Transaction monitoring versus payment screening",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S02_001",
+      "section_id": "CH47-S02",
+      "card_nature": "assessment",
+      "title": "Transaction Monitoring and SAR Filing",
+      "summary": "Continuous post-onboarding monitoring of customer transactions to detect unusual or suspicious activity; if confirmed as potential money laundering, a SAR must be submitted.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Customer onboarded and transactions occurring",
+          "evidence_unit_ids": [
+            "v7u_N003244",
+            "v7u_N003249"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_observe",
+          "node_type": "action",
+          "label": "Observe customer transactions continuously",
+          "evidence_unit_ids": [
+            "v7u_N003244"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_detect",
+          "node_type": "action",
+          "label": "Detect unusual or suspicious activity and complex patterns",
+          "evidence_unit_ids": [
+            "v7u_N003245",
+            "v7u_N003249"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Transaction monitoring detects unusual or suspicious activity during or after transactions occur. It helps detect complex patterns that might indicate money laundering, tax evasion, or other financial crimes."
+        },
+        {
+          "node_id": "n_indicators",
+          "node_type": "standard",
+          "label": "Indicators: Large transactions, frequent transfers, high-risk jurisdictions",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "For example, large transactions, frequent transfers, or transactions involving high-risk jurisdictions might trigger alerts for further investigation."
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "Confirmed as potential money laundering?",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_submit_sar",
+          "node_type": "output",
+          "label": "Submit SAR",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "If unusual or suspicious activity is detected and confirmed as potential money laundering, a SAR must be submitted."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_observe",
+          "evidence_unit_ids": [
+            "v7u_N003244"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_observe",
+          "target": "n_detect",
+          "evidence_unit_ids": [
+            "v7u_N003244",
+            "v7u_N003245"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_003",
+          "edge_type": "USES",
+          "source": "n_detect",
+          "target": "n_indicators",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_detect",
+          "target": "n_decision",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_submit_sar",
+          "condition": "Yes, confirmed as potential money laundering",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003244",
+        "v7u_N003245",
+        "v7u_N003246",
+        "v7u_N003247",
+        "v7u_N003249"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Card extracts the SAR filing process from transaction monitoring. Edge from observe to detect is inferred as functional dependency. No explicit no branch text."
+    },
+    {
+      "card_id": "p7card_CH47-S02_002",
+      "section_id": "CH47-S02",
+      "card_nature": "control",
+      "title": "Payment Screening Stop-and-Hold Process",
+      "summary": "Before a transaction is completed, screen payments against sanctions lists; if a match is detected, stop and hold payment until investigation is complete.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Before transaction completion",
+          "evidence_unit_ids": [
+            "v7u_N003250"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_review",
+          "node_type": "action",
+          "label": "Review payments made and received by customers",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_screen",
+          "node_type": "action",
+          "label": "Screen against sanctions lists",
+          "evidence_unit_ids": [
+            "v7u_N003253",
+            "v7u_N003250"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Payment screening identifies high-risk individuals and entities, including the institution’s customers and the transaction counterparties, before transactions are completed. Payment or transaction screening reviews payments made and received by customers. It reviews payments made to or from parties on sanctions lists."
+        },
+        {
+          "node_id": "n_decision",
+          "node_type": "decision",
+          "label": "Match detected?",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_stop_hold",
+          "node_type": "action",
+          "label": "Stop and hold payment",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Payment held pending investigation",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_review",
+          "evidence_unit_ids": [
+            "v7u_N003250"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_002",
+          "edge_type": "PRECEDES",
+          "source": "n_review",
+          "target": "n_screen",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_screen",
+          "target": "n_decision",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision",
+          "target": "n_stop_hold",
+          "condition": "Yes, match detected",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_005",
+          "edge_type": "PRECEDES",
+          "source": "n_stop_hold",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003250",
+        "v7u_N003253"
+      ],
+      "review_status": "accepted",
+      "review_notes": "No explicit no-branch for match not detected. Card represents the control process for payment screening."
+    },
+    {
+      "card_id": "p7card_CH47-S02_003",
+      "section_id": "CH47-S02",
+      "card_nature": "assessment",
+      "title": "Screening and Monitoring Timing Requirements",
+      "summary": "Assess whether sanctions, PEP, and adverse media screening occur pre-onboarding and ongoing, while transaction monitoring only begins after onboarding.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Assess screening and monitoring timing",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_screening",
+          "node_type": "standard",
+          "label": "Sanctions, PEP, and adverse media screening: occur before onboarding and on an ongoing basis",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Sanctions, PEP, and adverse media screening occur before onboarding and continue on an ongoing basis."
+        },
+        {
+          "node_id": "n_standard_tm",
+          "node_type": "standard",
+          "label": "Transaction monitoring: begins only after onboarding",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Transactions monitoring begins only after onboarding."
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Timing compliance assessment",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_003_001",
+          "edge_type": "USES",
+          "source": "n_start",
+          "target": "n_standard_screening",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_003_002",
+          "edge_type": "USES",
+          "source": "n_start",
+          "target": "n_standard_tm",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_003_003",
+          "edge_type": "PRODUCES",
+          "source": "n_start",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003248"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003248"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card converts a factual statement about timing into an assessment. Output node inferred as timing compliance assessment; review required to confirm if this representation is valid."
+    }
+  ],
+  "skip_reason": null
+}

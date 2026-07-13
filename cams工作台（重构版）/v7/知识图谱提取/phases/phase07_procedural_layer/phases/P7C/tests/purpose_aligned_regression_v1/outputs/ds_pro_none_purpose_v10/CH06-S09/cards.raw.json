@@ -1,0 +1,191 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000460"
+      ],
+      "proposition": "机构基于风险偏好选择执行更高的PEP标准，产生更高的标准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_001",
+      "reason": "风险偏好约束主体选择并产生标准变化，基础KG无法表达该动作-产出结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000482"
+      ],
+      "proposition": "机构基于风险偏好必须调整交易监控和KYC审查并升级，产生调整后的配置及升级义务。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_002",
+      "reason": "风险偏好约束具体控制动作调整并产生产出，基础KG无法表达该有向链。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000459"
+      ],
+      "proposition": "机构在识别PEP时必须遵守当地监管要求。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅一般义务陈述，无明确动作产出结果，基础KG可表达该规则。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000477"
+      ],
+      "proposition": "机构采用“一旦是PEP永远是PEP”方法，导致个人即使离职也持续被归类为PEP。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述一种分类观点，无具体动作流程，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "proposition": "机构考察个人影响力和分类时间长短以决定是否保持PEP分类。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "未说明如何基于考察结果做出决策或产生结果，无法形成有向链。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "基于风险偏好执行更高PEP标准",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构选择执行更高的PEP标准",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "更高的PEP标准/要求",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000460"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好 --约束--> 机构选择执行更高的PEP标准 --产生--> 更高的PEP标准/要求；KG不足：基础KG不能表达风险偏好如何约束主体选择并产出标准变化的有向结构；选项判断：可确认或排除关于机构基于风险偏好主动提升PEP标准的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_002",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "基于风险偏好调整交易监控与KYC审查并升级",
+      "flow_nodes": [
+        {
+          "node_id": "n4",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须调整交易监控和KYC审查并升级",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "交易监控和KYC审查配置调整并带有升级要求",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000482"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好 --约束--> 机构调整交易监控和KYC审查并升级 --产生--> 监控和审查配置调整并带有升级要求；KG不足：基础KG不能表达风险偏好如何约束具体控制动作调整并产生产出；选项判断：可确认或排除关于机构必须基于风险偏好调整监控审查的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

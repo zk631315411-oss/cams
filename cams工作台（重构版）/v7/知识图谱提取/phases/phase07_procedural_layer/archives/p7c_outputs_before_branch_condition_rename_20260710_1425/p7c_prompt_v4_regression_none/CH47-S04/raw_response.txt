@@ -1,0 +1,217 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "TM system tuning objectives and components",
+      "summary": "Defines TM system tuning as a control process with four key components (scenario setting, customer segmentation, threshold setting, frequency) and five primary objectives (effective detection, reduced false positives, efficient resources, adaptability to change, regulatory compliance).",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "TM system requires tuning",
+          "evidence_unit_ids": ["v7u_N003272"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "The section opens by defining tuning as a necessary process."
+        },
+        {
+          "node_id": "n_action_tune",
+          "node_type": "action",
+          "label": "Conduct TM system tuning",
+          "evidence_unit_ids": ["v7u_N003272", "v7u_N003278"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "description": "The process of refining and adjusting parameters and thresholds of detection logic rules/scenarios, comprising four key components."
+        },
+        {
+          "node_id": "n_standard_scenario",
+          "node_type": "standard",
+          "label": "Scenario setting: create, modify, or remove detection rules based on experience",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003279"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_customer",
+          "node_type": "standard",
+          "label": "Customer segmentation",
+          "evidence_unit_ids": ["v7u_N003278"],
+          "evidence_strength": "explicit",
+          "review_status": "needs_review",
+          "description": "Mentioned as a key component but not elaborated in this section."
+        },
+        {
+          "node_id": "n_standard_threshold",
+          "node_type": "standard",
+          "label": "Threshold setting: define minimum activity level for alert; adjust to refine sensitivity/accuracy; key goal: reduce false positives",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003280", "v7u_N003282", "v7u_N003283"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_frequency",
+          "node_type": "standard",
+          "label": "Frequency: determine tuning intervals; influenced by business changes, anomalies, regulatory updates, market changes; should be dynamic with special assessments for significant events/trends",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003284", "v7u_N003285", "v7u_N003286"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_out_detect",
+          "node_type": "output",
+          "label": "Effective detection of suspicious activity",
+          "evidence_unit_ids": ["v7u_N003273"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_out_false_pos",
+          "node_type": "output",
+          "label": "Reduced false positives",
+          "evidence_unit_ids": ["v7u_N003274"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_out_resource",
+          "node_type": "output",
+          "label": "Efficient resource use",
+          "evidence_unit_ids": ["v7u_N003275"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_out_change",
+          "node_type": "output",
+          "label": "Ability to manage changes in financial crime and business operations",
+          "evidence_unit_ids": ["v7u_N003276"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_out_compliance",
+          "node_type": "output",
+          "label": "Regulatory compliance",
+          "evidence_unit_ids": ["v7u_N003277"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_tune",
+          "evidence_unit_ids": ["v7u_N003272"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_scenario",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003279"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_customer",
+          "evidence_unit_ids": ["v7u_N003278"],
+          "evidence_strength": "explicit",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_threshold",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003280"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_frequency",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003284"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_out_detect",
+          "evidence_unit_ids": ["v7u_N003273"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_out_false_pos",
+          "evidence_unit_ids": ["v7u_N003274"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_out_resource",
+          "evidence_unit_ids": ["v7u_N003275"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_out_change",
+          "evidence_unit_ids": ["v7u_N003276"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_out_compliance",
+          "evidence_unit_ids": ["v7u_N003277"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

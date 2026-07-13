@@ -1,0 +1,292 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "cards": [
+    {
+      "card_id": "card_CH03_S07_001",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "Mr. Wolfe's terrorist financing execution chain",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Mr. Wolfe decides to conduct a terrorist financing scheme to support ISIS operations",
+          "evidence_unit_ids": [
+            "v7u_N000270"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Generate authentic income through import-export firms, travel agencies, and retail businesses",
+          "evidence_unit_ids": [
+            "v7u_N000272"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Conceal portions of legitimate revenues through deceptive channels (e.g., privacy-centered cryptocurrencies)",
+          "evidence_unit_ids": [
+            "v7u_N000273"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Criminal associates raise funds via illegal activities (cybercrimes, ransomware, hacking, credit card fraud, narcotics trafficking, large-scale fraud)",
+          "evidence_unit_ids": [
+            "v7u_N000274",
+            "v7u_N000275",
+            "v7u_N000276"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Facilitators launder funds using sophisticated methods: trade-based ML, layering through fintech/crypto, bulk cash smuggling, hawala",
+          "evidence_unit_ids": [
+            "v7u_N000277",
+            "v7u_N000279",
+            "v7u_N000280",
+            "v7u_N000281",
+            "v7u_N000282"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Funds reach terrorist networks without detection",
+          "evidence_unit_ids": [
+            "v7u_N000273",
+            "v7u_N000276"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000270",
+            "v7u_N000272"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000272",
+            "v7u_N000273"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000273",
+            "v7u_N000277"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000274",
+            "v7u_N000275",
+            "v7u_N000276",
+            "v7u_N000277"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRODUCES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": [
+            "v7u_N000273",
+            "v7u_N000276",
+            "v7u_N000277"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000270",
+        "v7u_N000272",
+        "v7u_N000273",
+        "v7u_N000274",
+        "v7u_N000275",
+        "v7u_N000276",
+        "v7u_N000277",
+        "v7u_N000279",
+        "v7u_N000280",
+        "v7u_N000281",
+        "v7u_N000282"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Incremental proposition: Decision → legitimate income → concealment → illegal fund raising → laundering → funds reach terrorist networks; KG shortfall: base KG stores these as isolated case facts, cannot express the sequential execution dependencies; Option judgment: can confirm or rule out the correct order of fund flow steps."
+    },
+    {
+      "card_id": "card_CH03_S07_002",
+      "section_id": "CH03-S07",
+      "card_nature": "control",
+      "title": "Detection-to-prosecution control chain for Mr. Wolfe's case",
+      "flow_nodes": [
+        {
+          "node_id": "n7",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Transaction monitoring systems flag structured deposits, interjurisdictional layering, anomalous fund movements linked to terror-affiliated wallets",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n8",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "Blockchain analytics firms provide forensic intelligence on illicit cryptoasset flows through darknet and high-risk exchanges",
+          "evidence_unit_ids": [
+            "v7u_N000284"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n9",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FIUs synthesize bank SARs with cross-border financial activity, triggering red flags within international regulatory networks",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n10",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Law enforcement (Europol, Interpol, national task forces) conducts targeted surveillance, traces cash smugglers and hawala networks",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n11",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Coordinated asset freezes to disrupt financial channels, seize digital wallets, and dismantle companies used to finance terrorism",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n12",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Mr. Wolfe and associates receive lengthy prison sentences and heavy fines",
+          "evidence_unit_ids": [
+            "v7u_N000288"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e6",
+          "edge_type": "PRECEDES",
+          "source": "n7",
+          "target": "n8",
+          "evidence_unit_ids": [
+            "v7u_N000283",
+            "v7u_N000284"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e7",
+          "edge_type": "PRECEDES",
+          "source": "n7",
+          "target": "n9",
+          "evidence_unit_ids": [
+            "v7u_N000283",
+            "v7u_N000285"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e8",
+          "edge_type": "PRECEDES",
+          "source": "n9",
+          "target": "n10",
+          "evidence_unit_ids": [
+            "v7u_N000285",
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e9",
+          "edge_type": "PRECEDES",
+          "source": "n10",
+          "target": "n11",
+          "evidence_unit_ids": [
+            "v7u_N000286",
+            "v7u_N000287"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e10",
+          "edge_type": "PRODUCES",
+          "source": "n11",
+          "target": "n12",
+          "evidence_unit_ids": [
+            "v7u_N000287",
+            "v7u_N000288"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000283",
+        "v7u_N000284",
+        "v7u_N000285",
+        "v7u_N000286",
+        "v7u_N000287",
+        "v7u_N000288"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Incremental proposition: Transaction monitoring alerts → blockchain forensic intelligence / FIU synthesis → law enforcement surveillance → asset freeze → conviction; KG shortfall: base KG lists individual detection and response measures without causal/sequential linkage; Option judgment: can determine the correct sequence of a terrorist financing control chain. Review due to some functional‑dependency edges (e6, e7, e9) where textual order indicators are absent but logically implicit."
+    }
+  ],
+  "skip_reason": null
+}

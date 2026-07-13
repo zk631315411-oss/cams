@@ -1,0 +1,357 @@
+{
+  "section_id": "CH47-S15",
+  "section_title": "Transaction monitoring > Suspicious activity escalation process",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S15_001",
+      "section_id": "CH47-S15",
+      "card_nature": "execution",
+      "title": "Escalate unresolved risk indicators for SAR decision",
+      "summary": "When investigation identifies unmitigated risk indicators, the case is escalated through the organization's internal process for review and possible reporting.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_unmitigated_risk",
+          "node_type": "trigger",
+          "label": "Research identifies risk indicators that cannot be mitigated",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_escalate_customer",
+          "node_type": "action",
+          "label": "Escalate the customer for additional investigation",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_policy_process",
+          "node_type": "standard",
+          "label": "Follow the jurisdiction and organization's escalation policy and process",
+          "evidence_unit_ids": ["v7u_N003411", "v7u_N003416", "v7u_N003417", "v7u_N003418"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_internal_review",
+          "node_type": "action",
+          "label": "Additional internal reviewers collaborate on next-step decision",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003415"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_file_report",
+          "node_type": "decision",
+          "label": "Choose whether to file a report with authorities",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sar_possible",
+          "node_type": "output",
+          "label": "SAR may be filed with the FIU according to organizational process",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003425"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_no_external_report",
+          "node_type": "output",
+          "label": "No authority report is filed after review",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_unmitigated_risk",
+          "target": "n_action_escalate_customer",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_002",
+          "edge_type": "USES",
+          "source": "n_action_escalate_customer",
+          "target": "n_standard_policy_process",
+          "evidence_unit_ids": ["v7u_N003411", "v7u_N003416", "v7u_N003417", "v7u_N003418"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_escalate_customer",
+          "target": "n_action_internal_review",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003415"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_internal_review",
+          "target": "n_decision_file_report",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003415"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_file_report",
+          "target": "n_output_sar_possible",
+          "condition": "if the organization chooses to report based on the investigative results",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003425"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_file_report",
+          "target": "n_output_no_external_report",
+          "condition": "if the review does not choose authority reporting",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003410", "v7u_N003411", "v7u_N003415", "v7u_N003416", "v7u_N003417", "v7u_N003418", "v7u_N003425"],
+      "review_status": "needs_review",
+      "review_notes": "The no-report branch is a functional complement to the stated choice whether to file; source text explicitly supports the decision and possible filing outcome but does not name the negative outcome."
+    },
+    {
+      "card_id": "p7card_CH47-S15_002",
+      "section_id": "CH47-S15",
+      "card_nature": "control",
+      "title": "Use controlled terminology for internal escalation reports",
+      "summary": "Internal escalation reporting should use the organization's correct report name and avoid casual suspicious or unusual labels in documentation.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_internal_report",
+          "node_type": "start",
+          "label": "Internal escalation report may be the next step",
+          "evidence_unit_ids": ["v7u_N003419", "v7u_N003420"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_language_sensitivity",
+          "node_type": "standard",
+          "label": "Report language is important where unusual activity may have to be reported to authorities",
+          "evidence_unit_ids": ["v7u_N003421"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_learn_name",
+          "node_type": "action",
+          "label": "Learn the organization's correct internal report name",
+          "evidence_unit_ids": ["v7u_N003422"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_use_only_name",
+          "node_type": "action",
+          "label": "Use only the organization's correct report name",
+          "evidence_unit_ids": ["v7u_N003422"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_avoid_casual_terms",
+          "node_type": "action",
+          "label": "Avoid casual references to activity as unusual or suspicious when documenting",
+          "evidence_unit_ids": ["v7u_N003423"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_controlled_record",
+          "node_type": "output",
+          "label": "Internal escalation documentation uses controlled terminology",
+          "evidence_unit_ids": ["v7u_N003421", "v7u_N003422", "v7u_N003423"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_001",
+          "edge_type": "USES",
+          "source": "n_action_learn_name",
+          "target": "n_standard_language_sensitivity",
+          "evidence_unit_ids": ["v7u_N003421", "v7u_N003422"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_002",
+          "edge_type": "PRECEDES",
+          "source": "n_start_internal_report",
+          "target": "n_action_learn_name",
+          "evidence_unit_ids": ["v7u_N003419", "v7u_N003422"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_learn_name",
+          "target": "n_action_use_only_name",
+          "evidence_unit_ids": ["v7u_N003422"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_use_only_name",
+          "target": "n_action_avoid_casual_terms",
+          "evidence_unit_ids": ["v7u_N003422", "v7u_N003423"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_avoid_casual_terms",
+          "target": "n_output_controlled_record",
+          "evidence_unit_ids": ["v7u_N003421", "v7u_N003422", "v7u_N003423"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "record",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003419", "v7u_N003420", "v7u_N003421", "v7u_N003422", "v7u_N003423"],
+      "review_status": "needs_review",
+      "review_notes": "This is a control card rather than a strict workflow. Some PRECEDES edges reconstruct a weak sequence from adjacent requirements: identify the correct terminology, then use it consistently and avoid casual labels."
+    },
+    {
+      "card_id": "p7card_CH47-S15_003",
+      "section_id": "CH47-S15",
+      "card_nature": "control",
+      "title": "Create and retain an audit trail for SAR research",
+      "summary": "Research should be documented as it is performed, retained under policy, and stored securely to support a defensible risk-based process.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_research_documentation",
+          "node_type": "start",
+          "label": "Research is performed and information is collected",
+          "evidence_unit_ids": ["v7u_N003426", "v7u_N003436"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document_steps",
+          "node_type": "action",
+          "label": "Document all steps taken by the team",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_resolve_inaccuracies",
+          "node_type": "action",
+          "label": "Document how inaccuracies or false matches were resolved",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_capture_search_method",
+          "node_type": "action",
+          "label": "Document search strings, logic, keywords, and timestamped searches",
+          "evidence_unit_ids": ["v7u_N003432", "v7u_N003433"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_retention_policy",
+          "node_type": "standard",
+          "label": "Follow the organization's record retention policy",
+          "evidence_unit_ids": ["v7u_N003428"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_privacy_security",
+          "node_type": "standard",
+          "label": "Respect privacy laws and data security protocols",
+          "evidence_unit_ids": ["v7u_N003430", "v7u_N003434", "v7u_N003435"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_save_store",
+          "node_type": "action",
+          "label": "Save and securely store research documentation",
+          "evidence_unit_ids": ["v7u_N003428", "v7u_N003430"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_defensible_audit_trail",
+          "node_type": "output",
+          "label": "Defensible audit trail supporting the risk-based approach",
+          "evidence_unit_ids": ["v7u_N003426", "v7u_N003429", "v7u_N003431", "v7u_N003433"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_research_documentation",
+          "target": "n_action_document_steps",
+          "evidence_unit_ids": ["v7u_N003426", "v7u_N003436"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_document_steps",
+          "target": "n_action_resolve_inaccuracies",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_resolve_inaccuracies",
+          "target": "n_action_capture_search_method",
+          "evidence_unit_ids": ["v7u_N003426", "v7u_N003432", "v7u_N003433"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_004",
+          "edge_type": "USES",
+          "source": "n_action_save_store",
+          "target": "n_standard_retention_policy",
+          "evidence_unit_ids": ["v7u_N003428"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_005",
+          "edge_type": "USES",
+          "source": "n_action_save_store",
+          "target": "n_standard_privacy_security",
+          "evidence_unit_ids": ["v7u_N003430", "v7u_N003434", "v7u_N003435"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_capture_search_method",
+          "target": "n_action_save_store",
+          "evidence_unit_ids": ["v7u_N003428", "v7u_N003430", "v7u_N003432", "v7u_N003433"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_003_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_save_store",
+          "target": "n_output_defensible_audit_trail",
+          "evidence_unit_ids": ["v7u_N003426", "v7u_N003429", "v7u_N003431"],
+          "evidence_strength": "explicit",
+          "qualifier": "record"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003426", "v7u_N003428", "v7u_N003429", "v7u_N003430", "v7u_N003431", "v7u_N003432", "v7u_N003433", "v7u_N003434", "v7u_N003435", "v7u_N003436"],
+      "review_status": "needs_review",
+      "review_notes": "Documentation requirements are partly parallel standards. Functional-dependency edges reflect a weak reconstructed order for capturing, retaining, and storing the audit trail."
+    }
+  ],
+  "skip_reason": null
+}

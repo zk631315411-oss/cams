@@ -1,0 +1,84 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003285"
+      ],
+      "proposition": "业务策略变化、异常、监管更新或市场变化影响调优频率",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅表达调优频率可能受业务策略变化、异常、监管更新或市场变化影响，属于一般因果关系，未明确特定主体动作或判断，基础KG可直接保存该事实。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003286"
+      ],
+      "proposition": "重大事件或趋势触发机构进行专项调优评估",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S04_001",
+      "reason": "明确条件-动作链：重大事件或趋势作为条件触发专项评估义务，超出基础KG的事实保存。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "assessment",
+      "title": "动态调优要求：重大事件或趋势触发专项评估",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "重大事件或趋势发生 (Significant events or trends)",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构应进行专项调优评估 (Special assessments should be triggered)",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "derivation": "explicit_text",
+          "condition": "重大事件或趋势触发 (triggered by significant events or trends)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：重大事件或趋势 --触发--> 机构应进行专项调优评估；KG不足：基础KG仅能保存“调优应是动态的”这一事实，无法表达条件触发动作的有向关系；选项判断：可确认或排除有关调优触发条件的选项，如特定事件是否要求调优；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅表达调优频率可能受业务策略变化、异常、监管更新或市场变化影响，属于一般因果关系，未明确特定主体动作或判断，基础KG可直接保存该事实。"
+    }
+  ]
+}

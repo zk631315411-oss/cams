@@ -1,0 +1,153 @@
+{
+  "section_id": "CH49-S11",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S11_001",
+      "section_id": "CH49-S11",
+      "card_nature": "control",
+      "title": "Law Enforcement Communication Handling Controls",
+      "summary": "Control requirements for managing communications with law enforcement during AFC investigations, including designated point of contact, written procedures, formal request handling, and documentation standards.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "AFC investigation in progress",
+          "evidence_unit_ids": ["v7u_N003612"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Law enforcement communication needed (seek guidance, respond to requests, cooperate, refer cases)",
+          "evidence_unit_ids": ["v7u_N003612", "v7u_N003613"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_manage",
+          "node_type": "action",
+          "label": "Manage law enforcement communication",
+          "evidence_unit_ids": ["v7u_N003614", "v7u_N003615", "v7u_N003616", "v7u_N003617"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_contact",
+          "node_type": "standard",
+          "label": "Designated law enforcement point of contact",
+          "evidence_unit_ids": ["v7u_N003618"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_procedures",
+          "node_type": "standard",
+          "label": "Written procedures for law enforcement communication",
+          "evidence_unit_ids": ["v7u_N003619"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_requests",
+          "node_type": "standard",
+          "label": "Formal request handling and compliance requirements (subpoenas, court orders, search warrants, deadlines, penalties)",
+          "evidence_unit_ids": ["v7u_N003620", "v7u_N003621", "v7u_N003622", "v7u_N003623", "v7u_N003624"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_documentation",
+          "node_type": "standard",
+          "label": "Documentation and recordkeeping standards (clear, concise, written, timely notes)",
+          "evidence_unit_ids": ["v7u_N003625", "v7u_N003626", "v7u_N003627", "v7u_N003628"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Compliant law enforcement communication record and outcome",
+          "evidence_unit_ids": ["v7u_N003625", "v7u_N003624"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_trigger",
+          "evidence_unit_ids": ["v7u_N003612"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_manage",
+          "condition": "When law enforcement interaction occurs",
+          "evidence_unit_ids": ["v7u_N003612"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_003",
+          "edge_type": "USES",
+          "source": "n_action_manage",
+          "target": "n_std_contact",
+          "evidence_unit_ids": ["v7u_N003618"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_004",
+          "edge_type": "USES",
+          "source": "n_action_manage",
+          "target": "n_std_procedures",
+          "evidence_unit_ids": ["v7u_N003619"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_005",
+          "edge_type": "USES",
+          "source": "n_action_manage",
+          "target": "n_std_requests",
+          "evidence_unit_ids": ["v7u_N003620"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_006",
+          "edge_type": "USES",
+          "source": "n_action_manage",
+          "target": "n_std_documentation",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S11_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_manage",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003625"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003612", "v7u_N003613", "v7u_N003614", "v7u_N003615", "v7u_N003616", "v7u_N003617",
+        "v7u_N003618", "v7u_N003619", "v7u_N003620", "v7u_N003621", "v7u_N003622", "v7u_N003623",
+        "v7u_N003624", "v7u_N003625", "v7u_N003626", "v7u_N003627", "v7u_N003628"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "This card models control requirements rather than a strict sequential execution process. The trigger and start nodes use functional dependency; the output node is inferred from documentation and compliance expectations. The USES edges capture parallel control standards applicable when managing law enforcement communications."
+    }
+  ],
+  "skip_reason": null
+}

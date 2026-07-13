@@ -1,0 +1,2 @@
+[v7u_N000410|410] Please note that “risks” in this context means financial crime risks. The risks we are focusing on include money laundering risk, terrorist financing risk, and many other types of financial crime risk.
+ZH: 本教材中“风险”特指金融犯罪风险，包括洗钱、恐怖融资等

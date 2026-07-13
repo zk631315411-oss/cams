@@ -1,0 +1,270 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "Intelligent transaction monitoring capabilities",
+      "summary": "Technology solutions analyze transactions using thresholds, behavioral comparisons, industry risk, network patterns, and common data features to identify suspicious activity and generate alerts.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Transaction monitoring process",
+          "evidence_unit_ids": ["v7u_N003256"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_01",
+          "node_type": "action",
+          "label": "Automated analysis of transactions",
+          "actor": "system",
+          "evidence_unit_ids": ["v7u_N003259", "v7u_N003261"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_type": "standard",
+          "label": "Transaction exceeds threshold",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_type": "standard",
+          "label": "Deviations from customer's historical or peer behavior",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_type": "standard",
+          "label": "Transaction in higher-risk industry sector",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_type": "standard",
+          "label": "Network patterns among beneficiaries and connections",
+          "evidence_unit_ids": ["v7u_N003258", "v7u_N003259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_type": "standard",
+          "label": "Common data features across accounts (email, phone, address)",
+          "evidence_unit_ids": ["v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_type": "output",
+          "label": "Alerts on suspicious activity and identified hidden links",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003259", "v7u_N003260"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_01",
+          "evidence_unit_ids": ["v7u_N003256"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_01",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_02",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_03",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_04",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003258", "v7u_N003259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_05",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_01",
+          "target": "n_output_01",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003259", "v7u_N003260"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003256",
+        "v7u_N003257",
+        "v7u_N003258",
+        "v7u_N003259",
+        "v7u_N003260",
+        "v7u_N003261",
+        "v7u_N003262"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-strict workflow converted to control card from descriptive technology capability units; start node is inferred from section intent."
+    },
+    {
+      "card_id": "p7card_CH47-S03_002",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "AI implementation safeguards",
+      "summary": "Implementing AI solutions requires testing with diverse data to eliminate bias and ensuring AI is explainable, transparent, and relevant for effective financial crime risk management.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_02",
+          "node_type": "trigger",
+          "label": "Implementing AI solutions for transaction monitoring",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_02",
+          "node_type": "action",
+          "label": "Apply AI controls and due diligence",
+          "actor": "AFC professionals",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_type": "standard",
+          "label": "Test with diverse data sets to eliminate bias",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_07",
+          "node_type": "standard",
+          "label": "Explainable",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_08",
+          "node_type": "standard",
+          "label": "Transparent",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_09",
+          "node_type": "standard",
+          "label": "Relevant to organization's specific context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_02",
+          "node_type": "output",
+          "label": "Effective financial crime risk management",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_02",
+          "target": "n_action_02",
+          "evidence_unit_ids": ["v7u_N003268", "v7u_N003271"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_002",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_06",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_003",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_07",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_004",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_08",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_005",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_09",
+          "qualifier": "standard",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_002_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_02",
+          "target": "n_output_02",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003268",
+        "v7u_N003269",
+        "v7u_N003270",
+        "v7u_N003271"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural control material converted into control card; edges use inferred functional dependencies."
+    }
+  ],
+  "skip_reason": null
+}

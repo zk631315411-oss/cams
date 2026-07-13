@@ -1,0 +1,149 @@
+{
+  "section_id": "CH03-S06",
+  "section_title": "Examples of predicate crimes > How terrorists move and store funds",
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S06_001",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "恐怖融资资金转移和存储的风险指标",
+      "summary": "汇总恐怖分子利用传统银行、预付卡、加密货币和替代汇款系统转移和存储资金的红旗信号，以及银行应全面了解客户和交易性质的控制要求，用于识别潜在的恐怖融资风险。",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_cmd",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "银行必须全面了解客户和交易性质以应对恐怖融资风险",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_process_assess",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估客户和交易是否匹配恐怖融资风险指标",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_std_nested",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "嵌套交易模式：资金通过嵌套交易支付给无关第三方或不同业务线",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_prepaid",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预付卡滥用模式：虚假身份购买多张预付卡，用非法现金或盗刷信用卡充值",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_crypto",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "加密货币可疑模式：大量看似无关的小额存款快速转换为稳定币或法币后提现",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std_ars",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "替代汇款系统非法使用模式：在一个司法管辖区重复存款后在另一司法管辖区立即ATM取款",
+          "evidence_unit_ids": ["v7u_N000269"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_exit_class",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别为潜在的恐怖融资风险",
+          "evidence_unit_ids": ["v7u_N000262", "v7u_N000266", "v7u_N000269"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_cmd",
+          "target": "n_process_assess",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess",
+          "target": "n_std_nested",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess",
+          "target": "n_std_prepaid",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_004",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess",
+          "target": "n_std_crypto",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_005",
+          "edge_type": "REFERENCES",
+          "source": "n_process_assess",
+          "target": "n_std_ars",
+          "evidence_unit_ids": ["v7u_N000269"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_process_assess",
+          "target": "n_exit_class",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000259",
+        "v7u_N000262",
+        "v7u_N000264",
+        "v7u_N000266",
+        "v7u_N000269"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "基于描述性风险指标材料重构的风险指标卡；入口、流程和出口节点依赖功能性依赖而非显式步骤；适用于判断考试选项中涉及恐怖融资洗钱风险指标的问题。"
+    }
+  ],
+  "skip_reason": null
+}

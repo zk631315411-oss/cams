@@ -1,0 +1,292 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "title": "Screen SPVs for disguise or fraud red flags",
+      "summary": "Screen SPV activity for red flags indicating attempts to disguise illicit funds or conduct fraudulent activity.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_red_flags",
+          "node_type": "trigger",
+          "label": "Red flags indicate attempts to disguise illicit funds or conduct fraud using SPVs",
+          "evidence_unit_ids": ["v7u_N000649"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_screen_spv",
+          "node_type": "action",
+          "label": "Screen SPV activity against red flag indicators",
+          "evidence_unit_ids": ["v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_complex_layers",
+          "node_type": "standard",
+          "label": "Complex ownership structures involving multiple company layers",
+          "evidence_unit_ids": ["v7u_N000650"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_lack_transparency",
+          "node_type": "standard",
+          "label": "Lack of transparency",
+          "evidence_unit_ids": ["v7u_N000651"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_unclear_purpose",
+          "node_type": "standard",
+          "label": "Unclear purpose of the SPV",
+          "evidence_unit_ids": ["v7u_N000652"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_red_flag_found",
+          "node_type": "output",
+          "label": "SPV disguise or fraud red flag identified",
+          "evidence_unit_ids": ["v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_red_flags",
+          "target": "n_action_screen_spv",
+          "evidence_unit_ids": ["v7u_N000649"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action_screen_spv",
+          "target": "n_standard_complex_layers",
+          "evidence_unit_ids": ["v7u_N000650"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_action_screen_spv",
+          "target": "n_standard_lack_transparency",
+          "evidence_unit_ids": ["v7u_N000651"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_action_screen_spv",
+          "target": "n_standard_unclear_purpose",
+          "evidence_unit_ids": ["v7u_N000652"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_screen_spv",
+          "target": "n_output_red_flag_found",
+          "evidence_unit_ids": ["v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "finding",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652"],
+      "review_status": "needs_review",
+      "review_notes": "The red flags are co-listed indicators and are modeled as parallel standards, not as a chronological chain."
+    },
+    {
+      "card_id": "p7card_CH08-S05_002",
+      "section_id": "CH08-S05",
+      "title": "Model trade-based laundering through SPVs and PIVs",
+      "summary": "Represent the stated laundering process in which criminals manipulate SPV/PIV trade prices to move illicit funds as legitimate trade activity.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_tbml",
+          "node_type": "trigger",
+          "label": "Criminals engage in trade-based money laundering using SPVs and PIVs",
+          "evidence_unit_ids": ["v7u_N000656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_spv_piv_trade",
+          "node_type": "input",
+          "label": "Trade transactions between SPVs and PIVs",
+          "evidence_unit_ids": ["v7u_N000656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_manipulate_prices",
+          "node_type": "action",
+          "label": "Manipulate trade transactions by deflating or inflating prices",
+          "evidence_unit_ids": ["v7u_N000656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_disguised_movement",
+          "node_type": "output",
+          "label": "Illicit funds move while disguised as legitimate trade activity",
+          "evidence_unit_ids": ["v7u_N000657"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S05_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_tbml",
+          "target": "n_action_manipulate_prices",
+          "evidence_unit_ids": ["v7u_N000656"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_002_002",
+          "edge_type": "USES",
+          "source": "n_action_manipulate_prices",
+          "target": "n_input_spv_piv_trade",
+          "evidence_unit_ids": ["v7u_N000656"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_002_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action_manipulate_prices",
+          "target": "n_output_disguised_movement",
+          "evidence_unit_ids": ["v7u_N000657"],
+          "evidence_strength": "explicit",
+          "qualifier": "finding"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000656", "v7u_N000657"],
+      "review_status": "accepted",
+      "review_notes": "This card uses only the explicit two-unit process statement and outcome."
+    },
+    {
+      "card_id": "p7card_CH08-S05_003",
+      "section_id": "CH08-S05",
+      "title": "Conduct EDD and CDD checks on SPVs and PIVs",
+      "summary": "Conduct enhanced due diligence, apply CDD requirements, identify ultimate beneficial owners, and understand entity purpose to mitigate SPV-related financial crime risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_fi_edd",
+          "node_type": "trigger",
+          "label": "Financial institutions must conduct EDD on SPVs and PIVs",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_action_conduct_edd",
+          "node_type": "action",
+          "label": "Conduct enhanced due diligence on SPVs and PIVs",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_standard_cdd_rule",
+          "node_type": "standard",
+          "label": "Ensure investments comply with CDD regulations such as FinCEN's CDD rule",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_action_identify_ubo",
+          "node_type": "action",
+          "label": "Identify ultimate beneficial owners",
+          "evidence_unit_ids": ["v7u_N000659"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_action_understand_purpose",
+          "node_type": "action",
+          "label": "Understand the true purpose of the entities",
+          "evidence_unit_ids": ["v7u_N000659"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_output_mitigate_risk",
+          "node_type": "output",
+          "label": "Potential financial crime risks associated with SPVs are mitigated",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_fi_edd",
+          "target": "n_action_conduct_edd",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_002",
+          "edge_type": "USES",
+          "source": "n_action_conduct_edd",
+          "target": "n_standard_cdd_rule",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_conduct_edd",
+          "target": "n_action_identify_ubo",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_conduct_edd",
+          "target": "n_action_understand_purpose",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_identify_ubo",
+          "target": "n_output_mitigate_risk",
+          "evidence_unit_ids": ["v7u_N000659", "v7u_N000660"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "finding",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH08-S05_003_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_understand_purpose",
+          "target": "n_output_mitigate_risk",
+          "evidence_unit_ids": ["v7u_N000659", "v7u_N000660"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "finding",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "review_status": "needs_review",
+      "review_notes": "The section states EDD, CDD compliance, UBO identification, and purpose understanding as required checks, but does not state an order between UBO identification and purpose understanding."
+    }
+  ],
+  "skip_reason": null
+}

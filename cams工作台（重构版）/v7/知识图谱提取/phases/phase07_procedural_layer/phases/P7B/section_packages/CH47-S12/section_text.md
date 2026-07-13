@@ -1,0 +1,32 @@
+[v7u_N003371|3371] At times it will be necessary to engage with customers to gather additional information for due diligence or investigative purposes. Customer-facing employees, such as relationship managers, typically conduct these meetings, as they might already have a relationship with the customer.
+ZH: 必要时需与客户接触以收集尽职调查或调查所需的额外信息，通常由客户经理等面向客户的员工进行。
+
+[v7u_N003372|3372] Some jurisdictions require advanced notification to customers that the organization will collect information.
+ZH: 某些司法管辖区要求提前通知客户机构将收集信息。
+
+[v7u_N003373|3373] Even if not required, providing this notice is advisable, as it helps reduce the impression that the organization is asking unnecessary questions. It is also advisable to tell the customer how the data will be used.
+ZH: 即使未要求，也建议提前通知客户并说明数据用途，以减少客户疑虑。
+
+[v7u_N003374|3374] Customers are often wary of giving out personal information because they believe it will be used for marketing, resold, or otherwise compromised.
+ZH: 客户常因担心个人信息被用于营销、转售或泄露而不愿提供。
+
+[v7u_N003375|3375] There is a difference between anonymity and discretion. Discretion is good, and commonly sought by customers, so assure them that the organization will treat their data with care and in adherence with relevant data regulations.
+ZH: 区分匿名与谨慎，向客户保证机构将谨慎处理数据并遵守数据法规。
+
+[v7u_N003376|3376] Having good interpersonal skills and engaging in a conversational manner is more likely to put the customer at ease, as opposed to making the meeting feel like an interrogation.
+ZH: 良好的人际交往能力和对话式沟通更容易让客户放松，而非像审讯。
+
+[v7u_N003377|3377] The staff member should allow the customer to speak freely.
+ZH: 工作人员应允许客户自由发言。
+
+[v7u_N003378|3378] Using a template and script ensures that all required information is collected with an appropriate level of detail.
+ZH: 使用模板和脚本可确保以适当详细程度收集所有必要信息。
+
+[v7u_N003379|3379] However, it is important for the staff member to remain alert to customer responses that might require follow-up or clarification.
+ZH: 工作人员必须对客户可能需要跟进或澄清的回应保持警觉。
+
+[v7u_N003380|3380] If the staff member puts the customer at ease, but that customer is uncooperative, this might raise suspicions. While not every uncooperative customer is laundering money, many violations could have been prevented had suspicions been raised earlier.
+ZH: 客户不合作可能引起怀疑，许多违规行为本可通过及早怀疑而预防。
+
+[v7u_N003381|3381] Finally, ensure the meeting provides enough reliable detail to verify the information through other sources. Record the details of the meeting in writing as soon as possible to ensure a complete and accurate record.
+ZH: 及时书面记录会议细节，确保信息可验证

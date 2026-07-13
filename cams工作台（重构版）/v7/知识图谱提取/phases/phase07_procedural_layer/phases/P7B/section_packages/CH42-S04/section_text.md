@@ -1,0 +1,2 @@
+[v7u_N003031|3031] If, upon conducting due diligence, the organization is not comfortable with the level of risk a client presents, it might request additional documentation. Ultimately, if additional information also does not suffice, the organization might reject the customer to protect itself.
+ZH: 尽职调查后若风险不可接受，机构可要求补充文件或拒绝客户

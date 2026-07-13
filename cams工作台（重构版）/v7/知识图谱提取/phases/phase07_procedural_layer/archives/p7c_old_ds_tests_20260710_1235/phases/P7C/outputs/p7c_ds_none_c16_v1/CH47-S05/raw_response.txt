@@ -1,0 +1,120 @@
+{
+  "section_id": "CH47-S05",
+  "section_title": "Transaction monitoring > Typical scenarios that would generate an alert",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S05_001",
+      "section_id": "CH47-S05",
+      "card_nature": "risk_indicator",
+      "title": "Identification of red flag scenarios for transaction monitoring alerts",
+      "summary": "Screen transaction activity for red flag scenarios: excessive channel usage, round trip transactions, one-to-many/many-to-one without explanation, to identify potential alert-worthy risk.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Transaction monitoring scenario assessment",
+          "evidence_unit_ids": ["v7u_N003287"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Screen customer activity for red flag scenarios",
+          "evidence_unit_ids": ["v7u_N003287"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_1",
+          "node_type": "standard",
+          "label": "Excessive channel usage compared to customer type (e.g., high cash over electronic)",
+          "evidence_unit_ids": ["v7u_N003292"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_2",
+          "node_type": "standard",
+          "label": "Round trip transactions: sent remittance returned as received shortly after",
+          "evidence_unit_ids": ["v7u_N003293"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_3",
+          "node_type": "standard",
+          "label": "One to N parties or N parties to one without logical explanation",
+          "evidence_unit_ids": ["v7u_N003294"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Red flag alert generation indicator",
+          "evidence_unit_ids": ["v7u_N003291"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003287"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_1",
+          "evidence_unit_ids": ["v7u_N003292"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_2",
+          "evidence_unit_ids": ["v7u_N003293"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_3",
+          "evidence_unit_ids": ["v7u_N003294"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003291"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003287",
+        "v7u_N003291",
+        "v7u_N003292",
+        "v7u_N003293",
+        "v7u_N003294"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "weak inferred process order; non-procedural source material converted into risk_indicator card; trigger node is functional dependency"
+    }
+  ],
+  "skip_reason": null
+}

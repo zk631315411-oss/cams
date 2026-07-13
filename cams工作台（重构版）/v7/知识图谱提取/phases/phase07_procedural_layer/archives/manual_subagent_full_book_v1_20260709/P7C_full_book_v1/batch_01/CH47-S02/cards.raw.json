@@ -1,0 +1,228 @@
+{
+  "section_id": "CH47-S02",
+  "section_title": "Transaction monitoring > Transaction monitoring versus payment screening",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S02_001",
+      "section_id": "CH47-S02",
+      "card_nature": "assessment",
+      "title": "Assess post-onboarding transactions for suspicious activity",
+      "summary": "Transaction monitoring continuously observes customer transactions after onboarding to detect unusual or illicit activity and, when potential money laundering is confirmed, leads to SAR submission.",
+      "objective": "Identify unusual or illicit activity and determine whether a SAR is required.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_post_onboarding",
+          "node_type": "trigger",
+          "label": "Customer transactions occur after onboarding",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003248", "v7u_N003249"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_monitor",
+          "node_type": "action",
+          "label": "Continuously observe customer transactions",
+          "evidence_unit_ids": ["v7u_N003244"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_patterns",
+          "node_type": "standard",
+          "label": "Large transactions, frequent transfers, high-risk jurisdictions, and complex patterns",
+          "evidence_unit_ids": ["v7u_N003245", "v7u_N003246"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_alert",
+          "node_type": "output",
+          "label": "Unusual or suspicious activity is detected",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003246", "v7u_N003249"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_ml_confirmed",
+          "node_type": "decision",
+          "label": "Confirm whether detected activity is potential money laundering",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sar",
+          "node_type": "output",
+          "label": "Submit a suspicious activity report",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_output_no_sar",
+          "node_type": "output",
+          "label": "No SAR submission triggered by this confirmation step",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_post_onboarding",
+          "target": "n_action_monitor",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003248"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_002",
+          "edge_type": "USES",
+          "source": "n_action_monitor",
+          "target": "n_standard_patterns",
+          "evidence_unit_ids": ["v7u_N003245", "v7u_N003246"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action_monitor",
+          "target": "n_output_alert",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003246", "v7u_N003249"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_output_alert",
+          "target": "n_decision_ml_confirmed",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_ml_confirmed",
+          "target": "n_output_sar",
+          "condition": "if confirmed as potential money laundering",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_ml_confirmed",
+          "target": "n_output_no_sar",
+          "condition": "if not confirmed as potential money laundering",
+          "evidence_unit_ids": ["v7u_N003247"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003244", "v7u_N003245", "v7u_N003246", "v7u_N003247", "v7u_N003248", "v7u_N003249"],
+      "review_status": "needs_review",
+      "review_notes": "The negative branch is reconstructed from the mandatory SAR condition and is not separately stated. Category: condition dependency."
+    },
+    {
+      "card_id": "p7card_CH47-S02_002",
+      "section_id": "CH47-S02",
+      "card_nature": "execution",
+      "title": "Screen payments before completion and hold sanctions matches",
+      "summary": "Payment screening identifies high-risk individuals and entities before completion, reviews payments against sanctions lists, and stops matched payments until investigations are complete.",
+      "objective": "Prevent high-risk or sanctions-matched payments from completing before review.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_pre_completion",
+          "node_type": "trigger",
+          "label": "Payment or transaction is pending completion",
+          "evidence_unit_ids": ["v7u_N003250", "v7u_N003253"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_screen_parties",
+          "node_type": "action",
+          "label": "Identify high-risk individuals and entities, including customers and counterparties",
+          "evidence_unit_ids": ["v7u_N003250"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_watchlists",
+          "node_type": "standard",
+          "label": "Sanctions lists, watchlists, PEP connections, and adverse media indicators",
+          "evidence_unit_ids": ["v7u_N003252", "v7u_N003253", "v7u_N003254", "v7u_N003255"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_match",
+          "node_type": "decision",
+          "label": "Determine whether a sanctions or high-risk match is detected",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_hold",
+          "node_type": "output",
+          "label": "Stop and hold the payment until investigations are complete",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_output_clear",
+          "node_type": "output",
+          "label": "No screening hold is triggered",
+          "evidence_unit_ids": ["v7u_N003250", "v7u_N003253"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_pre_completion",
+          "target": "n_action_screen_parties",
+          "evidence_unit_ids": ["v7u_N003250"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_002",
+          "edge_type": "USES",
+          "source": "n_action_screen_parties",
+          "target": "n_standard_watchlists",
+          "evidence_unit_ids": ["v7u_N003252", "v7u_N003253", "v7u_N003254", "v7u_N003255"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_screen_parties",
+          "target": "n_decision_match",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_match",
+          "target": "n_output_hold",
+          "condition": "if a match is detected",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_match",
+          "target": "n_output_clear",
+          "condition": "if no match is detected",
+          "evidence_unit_ids": ["v7u_N003250", "v7u_N003253"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003250", "v7u_N003252", "v7u_N003253", "v7u_N003254", "v7u_N003255"],
+      "review_status": "needs_review",
+      "review_notes": "The no-match branch is a functional dependency inferred from the stated match-hold rule. Category: condition dependency."
+    }
+  ],
+  "skip_reason": null
+}

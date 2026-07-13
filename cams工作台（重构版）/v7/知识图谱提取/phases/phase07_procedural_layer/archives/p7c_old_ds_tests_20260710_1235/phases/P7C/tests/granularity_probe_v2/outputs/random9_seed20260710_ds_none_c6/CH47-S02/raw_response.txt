@@ -1,0 +1,232 @@
+{
+  "section_id": "CH47-S02",
+  "section_title": "Transaction monitoring > Transaction monitoring versus payment screening",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S02_001",
+      "section_id": "CH47-S02",
+      "card_nature": "assessment",
+      "title": "Distinguishing transaction monitoring from payment screening",
+      "summary": "Assess whether a described process is transaction monitoring or payment screening based on timing, scope, and target characteristics.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_01",
+          "node_type": "trigger",
+          "label": "Need to determine if a process is transaction monitoring or payment screening",
+          "evidence_unit_ids": ["v7u_N003243"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Organizations use transaction monitoring and payment screening... they differ in timing and scope."
+        },
+        {
+          "node_id": "n_action_01",
+          "node_type": "action",
+          "label": "Assess process timing, scope, and target",
+          "evidence_unit_ids": ["v7u_N003243"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "they differ in timing and scope"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_type": "standard",
+          "label": "Transaction monitoring: continuous observation after onboarding; detects unusual/illicit activity during or after transactions",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003249"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_type": "standard",
+          "label": "Payment screening: identifies high-risk individuals/entities before transactions are completed; includes sanctions, PEP, adverse media screening",
+          "evidence_unit_ids": ["v7u_N003250", "v7u_N003248"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_type": "output",
+          "label": "Process classified as transaction monitoring or payment screening",
+          "evidence_unit_ids": ["v7u_N003243"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "The distinction is explicitly drawn; classification is the natural output of comparing characteristics."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_01",
+          "target": "n_action_01",
+          "evidence_unit_ids": ["v7u_N003243"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_002",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": ["v7u_N003244", "v7u_N003249"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_003",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": ["v7u_N003250", "v7u_N003248"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action_01",
+          "target": "n_output_01",
+          "evidence_unit_ids": ["v7u_N003243"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003243", "v7u_N003244", "v7u_N003248", "v7u_N003249", "v7u_N003250"],
+      "review_status": "accepted",
+      "review_notes": "Card models the comparative assessment explicitly provided by the source. The trigger–action and action–output links are functional dependencies; classification is implied but not stated as a separate step."
+    },
+    {
+      "card_id": "p7card_CH47-S02_002",
+      "section_id": "CH47-S02",
+      "card_nature": "assessment",
+      "title": "Identifying types of screening",
+      "summary": "Determine the type of screening being described based on its target, data sources, and timing.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_02",
+          "node_type": "trigger",
+          "label": "Need to identify a screening type",
+          "evidence_unit_ids": ["v7u_N003251"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "There are several types of screening, including:"
+        },
+        {
+          "node_id": "n_action_02",
+          "node_type": "action",
+          "label": "Match process characteristics to screening type definitions",
+          "evidence_unit_ids": ["v7u_N003251"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_type": "standard",
+          "label": "Name screening: screens customer names against watchlists; pre‑onboarding and ongoing batch screening",
+          "evidence_unit_ids": ["v7u_N003252"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_type": "standard",
+          "label": "Payment/transaction screening: reviews payments against sanctions lists; stops and holds matches until investigation",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_type": "standard",
+          "label": "Adverse media screening: reviews negative news about customer, UBO, shareholders, or associated parties",
+          "evidence_unit_ids": ["v7u_N003254"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_type": "standard",
+          "label": "PEP screening: reviews customer names, payment details, adverse media, and PEP connections",
+          "evidence_unit_ids": ["v7u_N003255"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_02",
+          "node_type": "output",
+          "label": "Screening type identified",
+          "evidence_unit_ids": ["v7u_N003251"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Output is inferred; the source lists types but does not state a concluding identification step."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_02",
+          "target": "n_action_02",
+          "evidence_unit_ids": ["v7u_N003251"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_002",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_03",
+          "evidence_unit_ids": ["v7u_N003252"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_003",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_04",
+          "evidence_unit_ids": ["v7u_N003253"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_004",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_05",
+          "evidence_unit_ids": ["v7u_N003254"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_005",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_06",
+          "evidence_unit_ids": ["v7u_N003255"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S02_002_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_02",
+          "target": "n_output_02",
+          "evidence_unit_ids": ["v7u_N003251"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003251", "v7u_N003252", "v7u_N003253", "v7u_N003254", "v7u_N003255"],
+      "review_status": "accepted",
+      "review_notes": "Card captures the screening typology definitions as parallel standards for an identification assessment. The trigger–action and action–output links are functional dependencies; the source lists types without an explicit identification step."
+    }
+  ],
+  "skip_reason": null
+}

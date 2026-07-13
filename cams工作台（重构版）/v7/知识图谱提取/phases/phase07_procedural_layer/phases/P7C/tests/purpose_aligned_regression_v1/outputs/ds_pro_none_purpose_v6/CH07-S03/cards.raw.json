@@ -1,0 +1,211 @@
+{
+  "section_id": "CH07-S03",
+  "section_title": "Money laundering risks associated with retail and commercial banking > Credit-related product risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000546",
+        "v7u_N000547",
+        "v7u_N000548",
+        "v7u_N000549",
+        "v7u_N000550",
+        "v7u_N000551"
+      ],
+      "proposition": "信贷相关产品是零售和商业银行的基础，虽然带来洗钱风险，但这些介绍属于一般性事实和主题相关性，不构成特定的程序性或判断性有向结构。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG能够充分表达这些一般定义、分类和风险概述，没有条件导向的具体主体动作或判断链。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000552"
+      ],
+      "proposition": "犯罪分子使用提前还贷手段将非法资金转化为看似合法的资金，这是普通犯罪方法说明，没有涉及银行或其他主体的具体识别、评估、决策或应对。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可以保存这一风险指标和犯罪机制，无需抽取为程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000554"
+      ],
+      "proposition": "如果银行知道或怀疑客户使用非法资金还贷，银行不应接受该资金用于还贷。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_001",
+      "reason": "明确的条件导向银行禁止性应对，形成完整的条件-动作-结果链，基础KG虽可记录规则但未表达内部有向判断结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000555"
+      ],
+      "proposition": "退出超出风险容忍度的客户关系且存在贷款余额时，核销贷款通常需要充分理由和批准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "特定情境下对银行决策的约束要求，构成条件-决策要求链，超出基础KG一般性风险说明。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000553",
+        "v7u_N000556"
+      ],
+      "proposition": "关闭有贷款余额的账户面临资金回收、风险偏好和声誉风险等挑战，这些是一般性后果和风险描述，没有具体的条件分支或判断动作链。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可以表达这些挑战事实和后果，无需抽取程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "execution",
+      "title": "银行在怀疑非法资金还贷时不应接受资金",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行不应接受该资金用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "资金未被接受",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "conclusion_triggers_response",
+          "condition": null,
+          "source_quote": null,
+          "review_status": null
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": null,
+          "review_status": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000554"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：银行知道或怀疑非法资金还贷 -> 不应接受资金 -> 资金未被接受；KG不足：基础KG只能记录为一般风险规则，无法表达内部的条件判断与禁止性应对链；选项判断：可确认银行在特定条件下必须拒绝还款的情形；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH07-S03_002",
+      "section_id": "CH07-S03",
+      "card_nature": "assessment",
+      "title": "退出风险容忍度外客户时贷款余额导致核销需批准",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "银行退出超出风险容忍度的客户且客户仍有贷款余额",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "银行处理核销贷款决策",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "核销通常需要充分理由和批准",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": null,
+          "review_status": null
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": null,
+          "review_status": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000555"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：退出风险容忍度外客户且有贷款余额 -> 核销成为重大决策 -> 通常需理由和批准；KG不足：基础KG只能描述挑战，不能表达特定情境下对银行决策的程序约束；选项判断：可确认在退出高风险客户时贷款余额带来的决策审批要求；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

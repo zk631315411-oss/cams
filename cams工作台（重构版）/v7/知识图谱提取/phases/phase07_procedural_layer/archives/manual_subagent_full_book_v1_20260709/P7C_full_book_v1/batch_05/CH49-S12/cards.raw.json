@@ -1,0 +1,196 @@
+{
+  "section_id": "CH49-S12",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S12_001",
+      "section_id": "CH49-S12",
+      "card_nature": "execution",
+      "title": "Assess and coordinate a law enforcement request response",
+      "summary": "Upon receiving an FIU or law enforcement request, the FI conducts an initial assessment and coordinates internal teams to deliver a proportionate, legally compliant, confidential response.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_request_received",
+          "node_type": "trigger",
+          "label": "FI receives an FIU or law enforcement request for transaction or account ownership information",
+          "evidence_unit_ids": ["v7u_N003629", "v7u_N003636"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_input_request_types",
+          "node_type": "input",
+          "label": "Court subpoenas, production orders, specific inquiries, or account-monitoring requests",
+          "evidence_unit_ids": ["v7u_N003630", "v7u_N003631"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_request_demands",
+          "node_type": "standard",
+          "label": "High confidentiality, urgency, and accuracy demands",
+          "evidence_unit_ids": ["v7u_N003632"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_initial_assessment",
+          "node_type": "action",
+          "label": "Make an initial assessment of the request",
+          "evidence_unit_ids": ["v7u_N003636"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_actor_designated_officer",
+          "node_type": "input",
+          "label": "Nominated or designated compliance officer assigned to conduct the assessment",
+          "evidence_unit_ids": ["v7u_N003637"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_assessment_purpose",
+          "node_type": "standard",
+          "label": "Assess legality, urgency, and relevance",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_response_quality",
+          "node_type": "standard",
+          "label": "Response must be proportionate, justifiable, legally aligned, and operationally feasible",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003639"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_coordinate_teams",
+          "node_type": "action",
+          "label": "Coordinate teams delivering requested intelligence and disclosures",
+          "evidence_unit_ids": ["v7u_N003640", "v7u_N003641"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_build_relationships",
+          "node_type": "action",
+          "label": "Develop relationships with legal, recordkeeping, and other involved departments",
+          "evidence_unit_ids": ["v7u_N003642", "v7u_N003643"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_information_integrity",
+          "node_type": "standard",
+          "label": "Maintain confidentiality, integrity, accuracy, and sensitive handling of disclosed information",
+          "evidence_unit_ids": ["v7u_N003635", "v7u_N003641", "v7u_N003644"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_integrated_response",
+          "node_type": "output",
+          "label": "Integrated response that balances compliance, responsiveness, confidentiality, and customer data integrity",
+          "evidence_unit_ids": ["v7u_N003641", "v7u_N003644"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_request_received",
+          "target": "n_action_initial_assessment",
+          "evidence_unit_ids": ["v7u_N003636"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_002",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_input_request_types",
+          "evidence_unit_ids": ["v7u_N003630", "v7u_N003631", "v7u_N003636"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_003",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_actor_designated_officer",
+          "evidence_unit_ids": ["v7u_N003637"],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_004",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_standard_assessment_purpose",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_005",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_standard_request_demands",
+          "evidence_unit_ids": ["v7u_N003632"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_006",
+          "edge_type": "USES",
+          "source": "n_action_initial_assessment",
+          "target": "n_standard_response_quality",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003639"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_initial_assessment",
+          "target": "n_action_coordinate_teams",
+          "evidence_unit_ids": ["v7u_N003636", "v7u_N003640", "v7u_N003641"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_coordinate_teams",
+          "target": "n_action_build_relationships",
+          "evidence_unit_ids": ["v7u_N003641", "v7u_N003642", "v7u_N003643"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_009",
+          "edge_type": "USES",
+          "source": "n_action_coordinate_teams",
+          "target": "n_standard_information_integrity",
+          "evidence_unit_ids": ["v7u_N003635", "v7u_N003641", "v7u_N003644"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_010",
+          "edge_type": "USES",
+          "source": "n_action_build_relationships",
+          "target": "n_standard_information_integrity",
+          "evidence_unit_ids": ["v7u_N003642", "v7u_N003644"],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_011",
+          "edge_type": "PRODUCES",
+          "source": "n_action_coordinate_teams",
+          "target": "n_output_integrated_response",
+          "evidence_unit_ids": ["v7u_N003641", "v7u_N003644"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003629", "v7u_N003630", "v7u_N003631", "v7u_N003632", "v7u_N003634", "v7u_N003635", "v7u_N003636", "v7u_N003637", "v7u_N003638", "v7u_N003639", "v7u_N003640", "v7u_N003641", "v7u_N003642", "v7u_N003643", "v7u_N003644"],
+      "review_status": "needs_review",
+      "review_notes": "The initial assessment trigger is explicit. The move from assessment to coordination and relationship management is a functional reconstruction from adjacent response-protocol requirements, especially for complex requests."
+    }
+  ],
+  "skip_reason": null
+}

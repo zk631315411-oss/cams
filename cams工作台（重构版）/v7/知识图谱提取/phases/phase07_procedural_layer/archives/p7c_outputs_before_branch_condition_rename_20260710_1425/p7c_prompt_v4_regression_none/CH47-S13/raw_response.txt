@@ -1,0 +1,329 @@
+{
+  "section_id": "CH47-S13",
+  "section_title": "Transaction monitoring > Investigating someone inside the organization",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S13_001",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "Investigating internal misconduct: from allegations to case presentation",
+      "summary": "Process for investigating an internal employee, from receiving allegations through planning, evidence collection (including HR/IT engagement, interviews, witness statements), to presenting a case for formal consideration.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start investigation",
+          "evidence_unit_ids": ["v7u_N003382"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Allegations of internal misconduct received",
+          "evidence_unit_ids": ["v7u_N003383", "v7u_N003386"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_create_plan",
+          "node_type": "action",
+          "label": "Create investigation plan",
+          "description": "Set goal, evidence required, scope, limitations, and potential information sources",
+          "evidence_unit_ids": ["v7u_N003386"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_investigation_factors",
+          "node_type": "standard",
+          "label": "Consider confidentiality, protection, stakeholder engagement, recordkeeping, and evidence preservation",
+          "evidence_unit_ids": ["v7u_N003382"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decide_actions",
+          "node_type": "decision",
+          "label": "Determine necessary investigation actions based on allegations and scope",
+          "evidence_unit_ids": ["v7u_N003384", "v7u_N003387", "v7u_N003388"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_engage_hr",
+          "node_type": "action",
+          "label": "Engage HR department to consider employee suspension",
+          "evidence_unit_ids": ["v7u_N003387"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_engage_it",
+          "node_type": "action",
+          "label": "Engage IT department to secure emails, voice recordings, or system logs",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_prep_interview_plan",
+          "node_type": "action",
+          "label": "Prepare interview plan",
+          "description": "Structure interview, question guide",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_collect_witness_statements",
+          "node_type": "action",
+          "label": "Collect witness statements",
+          "evidence_unit_ids": ["v7u_N003389"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_avoid_leading",
+          "node_type": "standard",
+          "label": "Avoid leading the witness",
+          "evidence_unit_ids": ["v7u_N003390"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_conduct_employee_interview",
+          "node_type": "action",
+          "label": "Conduct employee interview sensitively",
+          "evidence_unit_ids": ["v7u_N003394", "v7u_N003391"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_conduct_sensitively",
+          "node_type": "standard",
+          "label": "Conduct interview in a sensitive manner, not to judge",
+          "evidence_unit_ids": ["v7u_N003394"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_law_policy_compliance",
+          "node_type": "standard",
+          "label": "All actions must comply with law and organization policies",
+          "evidence_unit_ids": ["v7u_N003385", "v7u_N003391"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_hr_presence",
+          "node_type": "standard",
+          "label": "Independent third party or HR representative present if required",
+          "evidence_unit_ids": ["v7u_N003392"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_collect_evidence",
+          "node_type": "action",
+          "label": "Collect, collate, assess, and preserve evidence",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_confidentiality_recordkeeping",
+          "node_type": "standard",
+          "label": "Confidentiality and proper recordkeeping",
+          "description": "Fundamental elements of a successful investigation",
+          "evidence_unit_ids": ["v7u_N003395"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_present_case",
+          "node_type": "output",
+          "label": "Case presented to appropriate department for formal consideration",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_trigger",
+          "evidence_unit_ids": ["v7u_N003382"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_create_plan",
+          "evidence_unit_ids": ["v7u_N003386"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_003",
+          "edge_type": "USES",
+          "source": "n_create_plan",
+          "target": "n_investigation_factors",
+          "evidence_unit_ids": ["v7u_N003382"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_create_plan",
+          "target": "n_decide_actions",
+          "evidence_unit_ids": ["v7u_N003384", "v7u_N003386"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decide_actions",
+          "target": "n_engage_hr",
+          "condition": "if employee suspension needed",
+          "evidence_unit_ids": ["v7u_N003387"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decide_actions",
+          "target": "n_engage_it",
+          "condition": "if emails/voice recordings/system logs need securing",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_decide_actions",
+          "target": "n_prep_interview_plan",
+          "condition": "if witness/employee interviews needed",
+          "evidence_unit_ids": ["v7u_N003384"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_prep_interview_plan",
+          "target": "n_collect_witness_statements",
+          "evidence_unit_ids": ["v7u_N003393", "v7u_N003389"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_prep_interview_plan",
+          "target": "n_conduct_employee_interview",
+          "evidence_unit_ids": ["v7u_N003393", "v7u_N003394"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_010",
+          "edge_type": "USES",
+          "source": "n_collect_witness_statements",
+          "target": "n_avoid_leading",
+          "evidence_unit_ids": ["v7u_N003390"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_011",
+          "edge_type": "USES",
+          "source": "n_conduct_employee_interview",
+          "target": "n_conduct_sensitively",
+          "evidence_unit_ids": ["v7u_N003394"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_012",
+          "edge_type": "USES",
+          "source": "n_conduct_employee_interview",
+          "target": "n_law_policy_compliance",
+          "evidence_unit_ids": ["v7u_N003391"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_013",
+          "edge_type": "USES",
+          "source": "n_conduct_employee_interview",
+          "target": "n_hr_presence",
+          "condition": "if required",
+          "evidence_unit_ids": ["v7u_N003392"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_014",
+          "edge_type": "PRECEDES",
+          "source": "n_collect_witness_statements",
+          "target": "n_collect_evidence",
+          "evidence_unit_ids": ["v7u_N003383", "v7u_N003389"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_015",
+          "edge_type": "PRECEDES",
+          "source": "n_conduct_employee_interview",
+          "target": "n_collect_evidence",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_016",
+          "edge_type": "PRECEDES",
+          "source": "n_engage_hr",
+          "target": "n_collect_evidence",
+          "evidence_unit_ids": ["v7u_N003387"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_017",
+          "edge_type": "PRECEDES",
+          "source": "n_engage_it",
+          "target": "n_collect_evidence",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_018",
+          "edge_type": "USES",
+          "source": "n_collect_evidence",
+          "target": "n_confidentiality_recordkeeping",
+          "evidence_unit_ids": ["v7u_N003395"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_019",
+          "edge_type": "USES",
+          "source": "n_collect_evidence",
+          "target": "n_law_policy_compliance",
+          "evidence_unit_ids": ["v7u_N003385"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_020",
+          "edge_type": "PRECEDES",
+          "source": "n_collect_evidence",
+          "target": "n_present_case",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003382",
+        "v7u_N003383",
+        "v7u_N003384",
+        "v7u_N003385",
+        "v7u_N003386",
+        "v7u_N003387",
+        "v7u_N003388",
+        "v7u_N003389",
+        "v7u_N003390",
+        "v7u_N003391",
+        "v7u_N003392",
+        "v7u_N003393",
+        "v7u_N003394",
+        "v7u_N003395"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The card synthesizes the investigation process from the section. The decision node 'n_decide_actions' and the multiple DECIDES edges are inferred from the source's conditional language ('depending on...', 'might need to...'). Some PRECEDES edges leading into the central 'collect evidence' action represent functional dependencies rather than strict chronological order, as the text does not prescribe a rigid sequence for parallel activities like HR engagement, IT support, and interviews. The overall process flow is useful for evidence matching, but individual edge timing should be treated as indicative."
+    }
+  ],
+  "skip_reason": null
+}

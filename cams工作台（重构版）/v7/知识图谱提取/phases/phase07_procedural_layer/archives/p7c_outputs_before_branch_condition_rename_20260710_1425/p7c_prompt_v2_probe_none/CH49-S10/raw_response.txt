@@ -1,0 +1,143 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "Defensive SAR Assessment",
+      "summary": "When an organization lacks sufficient time or understanding to investigate, filing a defensive SAR is a discouraged practice that burdens law enforcement and signals compliance program deficiencies; instead, the organization should consider its business risk appetite and customer relationship.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Lack sufficient time or complete understanding to properly monitor and research customer activity",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_def",
+          "node_type": "standard",
+          "label": "Defensive SAR: filed 'just in case' without full investigation",
+          "evidence_unit_ids": ["v7u_N003605"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_burden",
+          "node_type": "standard",
+          "label": "Defensive SARs unduly burden law enforcement and impede action on genuine suspicious activity",
+          "evidence_unit_ids": ["v7u_N003606"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_deficiency",
+          "node_type": "standard",
+          "label": "Defensive SARs indicate AFC compliance program weaknesses or deficiencies",
+          "evidence_unit_ids": ["v7u_N003609"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_accuracy",
+          "node_type": "standard",
+          "label": "SARs must be as accurate and effective as possible",
+          "evidence_unit_ids": ["v7u_N003604"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Instead of defensive SAR, consider organization's business risk appetite and relationship with the customer",
+          "evidence_unit_ids": ["v7u_N003610", "v7u_N003611"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Avoid filing defensive SARs; address underlying AFC compliance program deficiencies",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_def",
+          "evidence_unit_ids": ["v7u_N003605"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_burden",
+          "evidence_unit_ids": ["v7u_N003606"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_deficiency",
+          "evidence_unit_ids": ["v7u_N003609"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard_accuracy",
+          "evidence_unit_ids": ["v7u_N003604"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003604",
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Constructed from non-procedural source material into an assessment card; functional dependencies inferred from text. The card captures that defensive SAR filing is a discouraged practice, indicated by compliance deficiencies, and should be replaced by consideration of business risk appetite and customer relationship.",
+      "metadata": {
+        "negative_pattern": true,
+        "evidence_matching_value": "high",
+        "not_strict_workflow": true
+      }
+    }
+  ],
+  "skip_reason": null
+}

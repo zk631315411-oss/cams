@@ -1,0 +1,277 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000270",
+        "v7u_N000271",
+        "v7u_N000272",
+        "v7u_N000273",
+        "v7u_N000274",
+        "v7u_N000275",
+        "v7u_N000276",
+        "v7u_N000277",
+        "v7u_N000278",
+        "v7u_N000279",
+        "v7u_N000280",
+        "v7u_N000281",
+        "v7u_N000282"
+      ],
+      "proposition": "沃尔夫先生策划并实施恐怖融资计划，利用合法企业收入通过加密货币隐藏并转移至恐怖组织，同时同伙通过非法活动筹集资金，并使用贸易洗钱、加密货币分层、现金走私、哈瓦拉等方法掩盖资金来源。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪手法和计划描述为基础KG可表达的案例事实，无局部程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000283"
+      ],
+      "proposition": "金融机构通过交易监控系统检测到非法活动，标记了结构化存款、快速跨辖区分层和与已知恐怖相关钱包关联的异常资金流动。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "金融机构的检测活动为一般案例机制，基础KG可表达为事实，内部未产生有向结构或后续应对链。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000284"
+      ],
+      "proposition": "区块链分析公司提供取证情报，绘制通过暗网市场和高风险交易所的非法加密资产流动图。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅提供情报，未形成局部判断或应对结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000285"
+      ],
+      "proposition": "金融情报机构综合银行可疑交易报告(SARs)与跨境金融活动，触发国际监管网络内的红旗信号。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_001",
+      "reason": "包含局部有向结构：FIU综合信息产生红旗触发；基础KG无法表达综合导致触发的指涉关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000286"
+      ],
+      "proposition": "当FIU升级案件时，执法机构（包括欧洲刑警组织、国际刑警组织和国家反恐特遣部队）对沃尔夫及其同伙进行针对性监控，以追踪现金走私者和哈瓦拉网络。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_002",
+      "reason": "明确的条件触发链：FIU升级案件导致执法机构实施监控；基础KG不能表达升级作为监控的触发前提。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000287"
+      ],
+      "proposition": "执法机构协调资产冻结以切断金融渠道，导致查封与恐怖主义融资相关的数字钱包，并瓦解沃尔夫用于资助恐怖主义的公司。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_003",
+      "reason": "资产冻结产生具体查封和瓦解后果，为有向产果关系；基础KG仅能记录资产冻结这一措施，不能表达其直接产出。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N000288"
+      ],
+      "proposition": "沃尔夫及其同伙被判处长期监禁和巨额罚款。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "判刑罚款为独立事实，非有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N000289"
+      ],
+      "proposition": "情报主导调查、实时机构间协作和高级分析在打击恐怖融资网络中发挥关键作用。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性陈述，无局部有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S07_001",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIU综合SAR与跨境活动触发红旗",
+      "flow_nodes": [
+        {
+          "node_id": "in_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "银行可疑交易报告(SARs)与跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p_001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融情报机构(FIUs): 综合银行可疑交易报告(SARs)与跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x_001",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发国际监管网络内红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_001",
+          "edge_type": "REFERENCES",
+          "source": "p_001",
+          "target": "in_001",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_002",
+          "edge_type": "PRODUCES",
+          "source": "p_001",
+          "target": "x_001",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融情报机构综合银行SAR与跨境金融活动 → 触发国际监管网络红旗信号；KG不足：基础KG可能将FIU分析作为一般规则保存，但不能表达“综合信息导致触发”的有向关系；选项判断：可确认FIU的动作顺序和红旗触发的关系。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_002",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU升级案件后执法机构实施监控",
+      "flow_nodes": [
+        {
+          "node_id": "e_001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "FIU升级该案件",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构（欧洲刑警组织、国际刑警组织、国家反恐特遣部队等）: 对Wolfe先生及其犯罪同伙进行针对性监控，以追踪现金走私者和哈瓦拉网络",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_001",
+          "edge_type": "PRECEDES",
+          "source": "e_001",
+          "target": "p_001",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当FIU升级该案件时"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：FIU升级案件 → 执法机构进行针对性监控；KG不足：基础KG可能记录FIU与执法机构协作，但无法表达升级作为触发监控的明确条件；选项判断：可确认执法机构介入的前提条件。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_003",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "执法机构协调资产冻结导致资产查封和公司瓦解",
+      "flow_nodes": [
+        {
+          "node_id": "p_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构: 协调资产冻结以切断金融渠道",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x_001",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "查封与恐怖主义融资相关的数字钱包",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x_002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "瓦解Wolfe先生用于资助恐怖主义的公司",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_001",
+          "edge_type": "PRODUCES",
+          "source": "p_001",
+          "target": "x_001",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_002",
+          "edge_type": "PRODUCES",
+          "source": "p_001",
+          "target": "x_002",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000287"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：执法机构协调资产冻结 → 查封数字钱包和瓦解公司；KG不足：基础KG可能记录资产冻结作为一般措施，但不能表达冻结导致具体查封和瓦解的产果关系；选项判断：可确认资产冻结的具体后果。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

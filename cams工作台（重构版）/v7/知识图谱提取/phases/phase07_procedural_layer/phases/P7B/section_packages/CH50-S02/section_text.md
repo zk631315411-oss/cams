@@ -1,0 +1,41 @@
+[v7u_N003711|3711] Senior management at a US bank set a strategic goal to enhance its AFC compliance program over the next three years by investing in technology infrastructure. The bank assigns Anna, the BSA Officer, the task of reviewing existing AFC technology, identifying gaps, and preparing a proposal for integrating advanced solutions. The bank's ultimate goal is to enhance efficiency, effectiveness, accuracy, and regulatory compliance across all domains throughout the organization.
+ZH: 某美国银行设定三年战略目标，通过投资技术基础设施加强金融犯罪防控合规计划，并指派《银行保密法》官员Anna负责审查和提出整合方案。
+
+[v7u_N003712|3712] She begins by assessing the bank's technological needs, using a risk-based approach that prioritizes areas that have the greatest exposure.
+ZH: Anna采用基于风险的方法评估银行的技术需求，优先处理风险暴露最大的领域。
+
+[v7u_N003713|3713] Since the last risk assessment was a year ago, she includes a review of regulatory changes, guidance, and enforcement actions.
+ZH: 她审查监管变化、指引和执法行动，因为上次风险评估已过去一年。
+
+[v7u_N003714|3714] Anna then conducts a current-state assessment of technology across these needs, mapping out the systems, tools, and processes currently in place.
+ZH: Anna进行技术现状评估，绘制当前系统、工具和流程的图谱。
+
+[v7u_N003715|3715] She identifies and prioritizes the gaps, determining which areas will benefit from new technology, which areas can be enhanced by augmenting existing technology with additional solutions, and which ones do not merit additional investment.
+ZH: 她识别并优先处理差距，确定哪些领域需要新技术、增强现有技术或不值得额外投资。
+
+[v7u_N003716|3716] As a result of the review, she decides that the priority should be upgrading technology in customer onboarding/KYC and transaction monitoring.
+ZH: 审查后她决定优先升级客户准入/了解你的客户和交易监控领域的技术。
+
+[v7u_N003717|3717] In each of these areas, Anna completes a full market assessment of available technology, focusing on enhancements that become available as technology advances.
+ZH: Anna完成可用技术的全面市场评估，重点关注技术进步带来的增强功能。
+
+[v7u_N003718|3718] For KYC, she seeks enhanced digital identity verification technology and aims to use perpetual KYC models to move from periodic KYC reviews to continuous customer risk analysis.
+ZH: 对于了解你的客户，她寻求增强的数字身份验证技术，并采用持续了解你的客户模型实现持续客户风险分析。
+
+[v7u_N003719|3719] The goal for transaction monitoring is to adopt AI contextual monitoring models that leverage internal and external data to detect complex and evolving financial crime patterns.
+ZH: 交易监控的目标是采用AI上下文监控模型，利用内外部数据检测复杂且不断演变的金融犯罪模式。
+
+[v7u_N003720|3720] Having identified the types of solutions that fit the bank's needs, Anna begins the process of selecting and implementing tools in partnership with the technology services function at her organization.
+ZH: Anna开始与组织内的技术服务部门合作，选择和实施适合银行需求的解决方案。
+
+[v7u_N003721|3721] This involves assessing whether to build in-house solutions or buy from a vendor, considering vendor risks, integration with legacy systems and data, total cost of ownership, and return on investment.
+ZH: 评估自建与采购方案，考虑供应商风险、系统集成、总拥有成本和投资回报
+
+[v7u_N003722|3722] Anna and her technology partners also consider how to manage and maintain data in the new systems on an ongoing basis.
+ZH: 考虑新系统中数据的持续管理和维护
+
+[v7u_N003723|3723] They will need to carefully prepare, manage, and inspect quality control guidelines to ensure effective deployment and ongoing usage of AFC technology.
+ZH: 准备、管理和检查质量控制指南，确保金融犯罪防控技术的有效部署和持续使用
+
+[v7u_N003724|3724] This process takes considerable time and effort. However, after thorough analysis, Anna and her technology partners present a well-reasoned and documented proposal for enhanced technology, including specific solutions, timelines, and budgets to meet the organization's strategic goals.
+ZH: 案例：经过分析后提出包含具体方案、时间表和预算的技术升级提案

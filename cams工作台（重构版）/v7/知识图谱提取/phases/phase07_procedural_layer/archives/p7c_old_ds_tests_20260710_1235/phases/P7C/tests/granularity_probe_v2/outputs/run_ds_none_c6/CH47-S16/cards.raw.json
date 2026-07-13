@@ -1,0 +1,263 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "SAR Filing Decision Process with Timeline Rules",
+      "summary": "Describes the process from detection of suspicious activity through MLRO review, final filing decision, and applicable jurisdictional deadlines, including US FinCEN 30-day rule, extension, and high-risk expedited filing.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Suspicious or potentially illicit activity detected",
+          "evidence_unit_ids": [
+            "v7u_N003438"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Initial alert generated (start of 30-day clock per US FinCEN rule)",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_research",
+          "node_type": "action",
+          "label": "Conduct further research if additional information needed",
+          "evidence_unit_ids": [
+            "v7u_N003441"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_review",
+          "node_type": "action",
+          "label": "MLRO reviews SAR narrative, raises questions; investigator responds (internal timelines allow feedback and additional research)",
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_final_decision",
+          "node_type": "decision",
+          "label": "Sufficient grounds to file SAR?",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_timeline_decision",
+          "node_type": "decision",
+          "label": "Is the activity high-risk?",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_suspect_decision",
+          "node_type": "decision",
+          "label": "Was suspect identified in initial detection?",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_no_filing",
+          "node_type": "output",
+          "label": "No SAR filed (insufficient grounds)",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_file_expedited",
+          "node_type": "action",
+          "label": "File SAR with expedited timing (high-risk)",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_30days",
+          "node_type": "action",
+          "label": "File SAR within 30 calendar days of initial alert",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_file_extended",
+          "node_type": "action",
+          "label": "File SAR within additional 30-day period (up to 60 days total) if further investigation needed",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_trigger",
+          "evidence_unit_ids": [
+            "v7u_N003438",
+            "v7u_N003445"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_research",
+          "evidence_unit_ids": [
+            "v7u_N003441",
+            "v7u_N003445"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_research",
+          "target": "n_review",
+          "evidence_unit_ids": [
+            "v7u_N003441",
+            "v7u_N003442"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_review",
+          "target": "n_final_decision",
+          "evidence_unit_ids": [
+            "v7u_N003440",
+            "v7u_N003442"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_final_decision",
+          "target": "n_no_filing",
+          "condition": "no",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_final_decision",
+          "target": "n_timeline_decision",
+          "condition": "yes",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_007",
+          "edge_type": "DECIDES",
+          "source": "n_timeline_decision",
+          "target": "n_file_expedited",
+          "condition": "yes",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_008",
+          "edge_type": "DECIDES",
+          "source": "n_timeline_decision",
+          "target": "n_suspect_decision",
+          "condition": "no",
+          "evidence_unit_ids": [
+            "v7u_N003447"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_009",
+          "edge_type": "DECIDES",
+          "source": "n_suspect_decision",
+          "target": "n_file_30days",
+          "condition": "yes",
+          "evidence_unit_ids": [
+            "v7u_N003445"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_010",
+          "edge_type": "DECIDES",
+          "source": "n_suspect_decision",
+          "target": "n_file_extended",
+          "condition": "no",
+          "evidence_unit_ids": [
+            "v7u_N003446"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003439",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443",
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Consolidated feedback loop into single review action; negative filing outcome implied; genericizing US-specific timeline as example of jurisdictional deadlines."
+    }
+  ],
+  "skip_reason": null
+}

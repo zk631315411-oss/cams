@@ -1,0 +1,116 @@
+{
+  "section_id": "CH03-S05",
+  "section_title": "Examples of predicate crimes > Terrorism financing",
+  "cards": [
+    {
+      "card_id": "card_CH03_S05_001",
+      "section_id": "CH03-S05",
+      "card_nature": "execution",
+      "title": "Money Laundering Process Flow",
+      "flow_nodes": [
+        {
+          "node_id": "e1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Illicit funds from predicate crimes (corruption, fraud, organized crime)",
+          "evidence_unit_ids": [
+            "v7u_N000252"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Placement: illicit funds introduced into financial system",
+          "evidence_unit_ids": [
+            "v7u_N000254"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Layering: funds moved through numerous transactions to confuse tracing",
+          "evidence_unit_ids": [
+            "v7u_N000255"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Integration: laundered money mingled with legitimate funds, appearing lawful",
+          "evidence_unit_ids": [
+            "v7u_N000256"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Laundered money appears as lawful assets",
+          "evidence_unit_ids": [
+            "v7u_N000256"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "e1",
+          "target": "p1",
+          "evidence_unit_ids": [
+            "v7u_N000252",
+            "v7u_N000254"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "p1",
+          "target": "p2",
+          "evidence_unit_ids": [
+            "v7u_N000255"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "p2",
+          "target": "p3",
+          "evidence_unit_ids": [
+            "v7u_N000256"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "p3",
+          "target": "x1",
+          "evidence_unit_ids": [
+            "v7u_N000256"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000252",
+        "v7u_N000254",
+        "v7u_N000255",
+        "v7u_N000256"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：Illicit funds --PRECEDES--> Placement --PRECEDES--> Layering --PRECEDES--> Integration --PRODUCES--> Laundered money（无额外条件）。KG不足：基础KG可存储各阶段定义但无法表达明确顺序。选项判断：可确认洗钱阶段先后顺序，排除颠倒选项。"
+    }
+  ],
+  "skip_reason": null
+}

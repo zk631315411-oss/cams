@@ -1,0 +1,104 @@
+{
+  "section_id": "CH49-S08",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S08_001",
+      "section_id": "CH49-S08",
+      "card_nature": "assessment",
+      "title": "Make and document a risk-based SAR filing decision",
+      "summary": "When unusual activity is detected, the institution analyzes case facts against regulatory guidelines, decides whether SAR filing criteria are met, and documents the filing or non-filing rationale while avoiding false or inaccurate filing.",
+      "trigger": "Unusual activity is detected through monitoring, media, or manual/legal-request methods.",
+      "objective": "Reach a documented SAR filing or non-filing decision.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_unusual_activity_detected",
+          "node_type": "trigger",
+          "label": "Unusual activity is detected by alerts, negative media, or manual methods",
+          "evidence_unit_ids": ["v7u_N003576", "v7u_N003577"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_examine_case_facts",
+          "node_type": "action",
+          "label": "Examine case facts and analyze them using a risk-based approach",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_regulatory_guidelines",
+          "node_type": "standard",
+          "label": "Regulatory guidelines for SAR filing",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_suspicious_activity_revealed",
+          "node_type": "decision",
+          "label": "Does analysis reveal suspicious activity?",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_meets_filing_guidelines",
+          "node_type": "decision",
+          "label": "Does the suspicious activity meet regulatory SAR filing guidelines?",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_file_sar",
+          "node_type": "output",
+          "label": "Decision to file a SAR is reached and documented",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_do_not_file",
+          "node_type": "output",
+          "label": "Decision not to file a SAR is reached because supporting evidence or filing criteria are insufficient",
+          "evidence_unit_ids": ["v7u_N003579", "v7u_N003581", "v7u_N003582", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document_findings",
+          "node_type": "action",
+          "label": "Document findings and reasons for the decision to file or not file",
+          "evidence_unit_ids": ["v7u_N003579", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_accuracy_compliance",
+          "node_type": "standard",
+          "label": "Avoid false SAR filing or knowingly inaccurate SAR information",
+          "evidence_unit_ids": ["v7u_N003584"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_compliance_risk",
+          "node_type": "output",
+          "label": "Improper non-filing, false filing, or willful violation can trigger fines, penalties, imprisonment, and remedial actions",
+          "evidence_unit_ids": ["v7u_N003580", "v7u_N003584", "v7u_N003585", "v7u_N003586"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {"edge_id": "p7flowedge_CH49-S08_001_001", "edge_type": "PRECEDES", "source": "n_trigger_unusual_activity_detected", "target": "n_action_examine_case_facts", "evidence_unit_ids": ["v7u_N003577"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_002", "edge_type": "USES", "source": "n_action_examine_case_facts", "target": "n_standard_regulatory_guidelines", "evidence_unit_ids": ["v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_003", "edge_type": "PRECEDES", "source": "n_action_examine_case_facts", "target": "n_decision_suspicious_activity_revealed", "evidence_unit_ids": ["v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_004", "edge_type": "DECIDES", "source": "n_decision_suspicious_activity_revealed", "target": "n_decision_meets_filing_guidelines", "condition": "if analysis reveals suspicious activity", "evidence_unit_ids": ["v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_005", "edge_type": "DECIDES", "source": "n_decision_suspicious_activity_revealed", "target": "n_output_do_not_file", "condition": "if analysis does not reveal suspicious activity or supporting information is insufficient", "evidence_unit_ids": ["v7u_N003581", "v7u_N003582", "v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_006", "edge_type": "DECIDES", "source": "n_decision_meets_filing_guidelines", "target": "n_output_file_sar", "condition": "if regulatory filing guidelines are met", "evidence_unit_ids": ["v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_007", "edge_type": "DECIDES", "source": "n_decision_meets_filing_guidelines", "target": "n_output_do_not_file", "condition": "if regulatory filing guidelines are not met", "evidence_unit_ids": ["v7u_N003581", "v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_008", "edge_type": "PRECEDES", "source": "n_output_file_sar", "target": "n_action_document_findings", "evidence_unit_ids": ["v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_009", "edge_type": "PRECEDES", "source": "n_output_do_not_file", "target": "n_action_document_findings", "evidence_unit_ids": ["v7u_N003579", "v7u_N003583"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S08_001_010", "edge_type": "USES", "source": "n_action_document_findings", "target": "n_standard_accuracy_compliance", "evidence_unit_ids": ["v7u_N003584"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S08_001_011", "edge_type": "PRODUCES", "source": "n_action_document_findings", "target": "n_output_compliance_risk", "evidence_unit_ids": ["v7u_N003580", "v7u_N003584", "v7u_N003585", "v7u_N003586"], "evidence_strength": "functional_dependency", "review_status": "needs_review"}
+      ],
+      "source_unit_ids": ["v7u_N003576", "v7u_N003577", "v7u_N003579", "v7u_N003580", "v7u_N003581", "v7u_N003582", "v7u_N003583", "v7u_N003584", "v7u_N003585", "v7u_N003586"],
+      "review_status": "needs_review",
+      "review_notes": "The main assessment sequence is explicit in unit 3583. Compliance-risk consequences are included as a terminal risk output; the link from documentation to consequences is an outcome inference rather than a strict process step."
+    }
+  ],
+  "skip_reason": null
+}

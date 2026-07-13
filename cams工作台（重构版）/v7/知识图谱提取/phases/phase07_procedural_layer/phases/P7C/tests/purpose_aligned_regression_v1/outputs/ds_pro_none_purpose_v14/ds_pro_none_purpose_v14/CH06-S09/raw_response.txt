@@ -1,0 +1,103 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000482"],
+      "proposition": "机构必须基于风险偏好调整交易监控、KYC审查并升级处理",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_001",
+      "reason": "该规则内部存在风险偏好约束特定控制动作并产生调整义务的有向结构，超出基础KG表达范围。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000459"],
+      "proposition": "机构必须遵守当地监管要求识别PEP",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，无复杂条件、分支或具体步骤，基础KG足以表达规则。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000460"],
+      "proposition": "机构可根据风险偏好选择执行更高的PEP标准",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "可选性动作陈述，无具体程序或结果，基础KG可保存为规则。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000477"],
+      "proposition": "部分机构采用一旦PEP永远是PEP方法，因为个人可能保持影响力",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "因果解释和方法描述，未形成条件触发或判断程序，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000478", "v7u_N000479", "v7u_N000480"],
+      "proposition": "其他机构考察个人当前影响力和被归类为PEP的时间长短",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "考察因素列举，无明确的判断结果或出口，基础KG足以表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "基于风险偏好调整交易监控、KYC审查并升级",
+      "flow_nodes": [
+        {
+          "node_id": "node_E3_001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好要求 (Risk appetite)",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_P8_001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须采取必要步骤调整交易监控、KYC审查并升级处理 (Organizations must take necessary steps to adapt transaction monitoring and KYC reviews and escalate)",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_X7_001",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "机构必须调整交易监控、KYC审查并升级处理的义务 (Obligation to adapt transaction monitoring, KYC reviews and escalation)",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "node_E3_001",
+          "target": "node_P8_001",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit",
+          "source_quote": "based on their risk appetite"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "node_P8_001",
+          "target": "node_X7_001",
+          "evidence_unit_ids": ["v7u_N000482"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000482"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好要求 → 机构必须采取调整交易监控、KYC审查和升级处理的步骤 → 产生机构必须调整监控、审查并升级的义务；KG不足：基础KG可以保存该规则事实，但不能表达风险偏好如何约束具体控制动作并产生调整义务的有向结构；选项判断：可确认或排除关于机构基于风险偏好应如何调整控制和升级的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

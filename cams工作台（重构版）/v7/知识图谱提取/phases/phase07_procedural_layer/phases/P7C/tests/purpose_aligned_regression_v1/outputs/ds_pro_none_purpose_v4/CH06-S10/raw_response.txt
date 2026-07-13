@@ -1,0 +1,134 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "cards": [
+    {
+      "card_id": "CH06-S10-C01",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "UBO Identification via Risk-Based Thresholds and Direct/Indirect Shareholding Calculation",
+      "flow_nodes": [
+        {
+          "node_id": "CH06-S10-C01-E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "机构审查客户的所有权结构",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S10-C01-P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构合计直接和间接持股，并依据适用阈值判断是否达到UBO标准",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000493"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S10-C01-S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UBO识别阈值：基准25%；机构采用风险为本方法设定适当阈值，高风险客户可能低至10%或5%",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000492"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S10-C01-X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "UBO识别结论（达到或未达到阈值）",
+          "evidence_unit_ids": ["v7u_N000488", "v7u_N000489", "v7u_N000491", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "CH06-S10-C01-E1-P1",
+          "edge_type": "PRECEDES",
+          "source": "CH06-S10-C01-E1",
+          "target": "CH06-S10-C01-P1",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "CH06-S10-C01-P1-S1",
+          "edge_type": "REFERENCES",
+          "source": "CH06-S10-C01-P1",
+          "target": "CH06-S10-C01-S1",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491"],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "CH06-S10-C01-P1-X1",
+          "edge_type": "PRODUCES",
+          "source": "CH06-S10-C01-P1",
+          "target": "CH06-S10-C01-X1",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000491", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000488", "v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000492", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当机构审查所有权结构时，机构基于风险法阈值合计直接和间接持股以判断UBO，从而形成UBO识别结论。KG不足：基础KG只能保存“审查时需识别UBO”的规则和阈值事实，但无法表达使用阈值结合直接间接持股进行判断并得出分类结论的程序性判断链。选项判断：可确认或排除关于UBO识别步骤、阈值适用条件和计算方法的选项（如是否需同时考虑间接持股，高风险阈值可低至多少）。LLM推理：无。"
+    },
+    {
+      "card_id": "CH06-S10-C02",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "Identification of Controller or Notional Beneficial Owner in Absence of Natural UBO",
+      "flow_nodes": [
+        {
+          "node_id": "CH06-S10-C02-E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司不存在自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S10-C02-P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "CH06-S10-C02-X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "控制人或名义受益所有人被识别，以了解公司决策控制者",
+          "evidence_unit_ids": ["v7u_N000496", "v7u_N000497"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "CH06-S10-C02-E1-P1",
+          "edge_type": "PRECEDES",
+          "source": "CH06-S10-C02-E1",
+          "target": "CH06-S10-C02-P1",
+          "evidence_unit_ids": ["v7u_N000496", "v7u_N000497"],
+          "evidence_strength": "explicit",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "CH06-S10-C02-P1-X1",
+          "edge_type": "PRODUCES",
+          "source": "CH06-S10-C02-P1",
+          "target": "CH06-S10-C02-X1",
+          "evidence_unit_ids": ["v7u_N000496", "v7u_N000497"],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496", "v7u_N000497"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当公司不存在自然人受益所有人时，机构应识别并核实控制人或名义受益所有人，以了解决策控制者。KG不足：基础KG只能保存“无自然人时识别控制人”的规则，但无法表达该例外条件导向不同识别主体及结论的有向结构。选项判断：可确认或排除关于无自然人UBO时的应对措施（是识别控制人还是放弃等）的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

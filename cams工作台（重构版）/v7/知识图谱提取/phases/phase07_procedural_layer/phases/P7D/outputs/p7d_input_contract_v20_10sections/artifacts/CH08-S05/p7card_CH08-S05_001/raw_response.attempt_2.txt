@@ -1,0 +1,78 @@
+{
+  "section_id": "CH08-S05",
+  "card_id": "p7card_CH08-S05_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求金融机构对SPV和PIV进行强化尽职调查（EDD）且识别最终受益所有人（UBO），支持P1节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文提到'ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule'，明确存在CDD规则及FinCEN规则，支持S1节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表述'ensure these investments comply with CDD regulations'说明EDD行动需参照CDD规则，方向为从行动到规则，非反向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文关系无条件要求，缺少condition合理。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文对参照关系未使用must、should等限定词，边无qualifier，强度一致。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文直接要求EDD符合CDD规则，不是并列、共同出现或教材顺序，边类型合适。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000658"],
+      "source_quotes": [
+        "It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+      ],
+      "reason": "原文明确要求EDD需确保符合CDD规则，REFERENCES关系成立，方向、限定均与原文一致。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求金融机构进行EDD并识别UBO，支持P1节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'This will help mitigate any potential financial crime risks associated with SPVs'明确说明有助于减轻风险，支持X1节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'This will help mitigate'表明EDD行为导致减轻风险的效果，方向为从P1到X1，非反向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文关系无附加条件，缺少condition合理。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'will help mitigate'，其中'help'为辅助性限定，表示并非必然直接减轻风险；而PRODUCES关系暗示直接产生减轻结果，限定被强化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文描述的是手段-目的关系，不是并列、共同来源或教材顺序。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000660"],
+      "source_quotes": [
+        "This will help mitigate any potential financial crime risks associated with SPVs."
+      ],
+      "reason": "原文为辅助性减轻（'help mitigate'），PRODUCES强化为直接产生，限定不匹配，因此rejected。"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000356"],
+      "proposition": "汇丰因不充分的交易监控和碎片化合规框架，允许贩毒集团洗钱超过8.8亿美元。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通机制因果关系陈述，基础KG足以表达薄弱控制导致洗钱风险的事件。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000357"],
+      "proposition": "美国联邦监管机构对汇丰处以19亿美元罚款。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立处罚事实，未经由特定主体识别、评估或反应过程，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000358"],
+      "proposition": "美国司法部与汇丰签订五年延期起诉协议，命令全面整改全球合规运作。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "外部命令构成业务触发器，直接驱动后续组织整改动作，属于增量局部程序链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000359"],
+      "proposition": "调查导致多名高管（含全球合规主管）被迫辞职。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "调查结果事实，未形成主体应对或控制步骤的有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000360"],
+      "proposition": "监管指出汇丰内部常将本地业务利益和利润置于集中合规控制之上。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "监管发现的问题陈述，属于事实/评价，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000361"],
+      "proposition": "丑闻引发监管反弹、财务损失和持久声誉损害。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "后果罗列，非由明确处置动作产生的结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000362"],
+      "proposition": "汇丰被迫重新平衡权力、加强中央监督和合规职能、限制地方自主权，并减少高风险辖区敞口。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "具体的组织纠正措施，与DPA命令联合构成外部命令-内部执行的有向链，超出基础KG的孤立事实范畴。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000363"],
+      "proposition": "汇丰案例警示薄弱的金融犯罪控制导致严厉处罚和声誉损害，强调强合规文化的重要性。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "知识总结与教训，无局部程序性或判断性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "美国司法部延期起诉协议驱动汇丰组织合规整改",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "美国司法部五年延期起诉协议要求汇丰全面整改全球合规运作",
+          "evidence_unit_ids": ["v7u_N000358"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "汇丰银行：重新平衡组织内权力动态，加强中央监督和合规职能，限制地方业务部门自主权，并通过战略性去风险化减少高风险司法管辖区敞口",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "中央监督与合规职能加强，地方自主权受限，高风险辖区敞口降低",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000358", "v7u_N000362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000358", "v7u_N000362"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：美国司法部DPA命令 --PRECEDES--> 汇丰银行执行具体组织整改（加强中央监督、限制地方自主权、去风险化） --PRODUCES--> 治理架构与风险敞口发生改变。KG不足：基础KG可分别存储DPA命令和纠正措施的事实，但无法表达命令直接驱动特定主体执行特定控制动作的局部有向结构。选项判断：可确认或排除关于整改措施发起原因、责任主体及具体动作顺序的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

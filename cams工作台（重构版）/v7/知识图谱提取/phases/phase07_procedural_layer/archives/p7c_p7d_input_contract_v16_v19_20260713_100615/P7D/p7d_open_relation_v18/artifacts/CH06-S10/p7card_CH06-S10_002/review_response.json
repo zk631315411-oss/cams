@@ -1,0 +1,82 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "p7e_CH06S10_002_01",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确指出“In companies where there is no natural beneficial owner”对应节点“公司不存在自然人受益所有人”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文要求“a controller or a notional beneficial owner should be identified and verified”，对应节点“机构识别并核实控制人或名义受益所有人”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文为条件句式，条件（不存在自然人BO）是动作（识别核实控制人）的前提，方向符合必要功能先后。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未携带限定词，原文中的'should'为义务性要求，序关系不依赖限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不存在并列或相关关系误判为先后顺序，原文明确表达条件触发逻辑。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "条件与动作顺序明确，边类型PRECEDES成立，节点信息均有原文支撑。"
+    },
+    {
+      "edge_id": "p7e_CH06S10_002_02",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文要求识别并核实控制人或名义受益所有人，对应“机构识别并核实控制人或名义受益所有人”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文说明识别核实后“allows you to understand who is in control”，节点后半部分有依据；但“被识别”是同一动作的被动表述。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "“控制人被识别”是“机构识别”的主动式/被动式同义改写，不构成独立的状态变化，不符合PRODUCES对独立产生结果的要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无边限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "节点target中的“被识别”与source中的“识别”是同一事实的主动/被动两面，属于同义重复，不能构成真正的PRODUCES关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified. This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."
+      ],
+      "reason": "PRODUCES关系不成立：target节点的“控制人被识别”是source“识别控制人”的被动式同义改写，双方非独立事实，审核口径明确此类情况应判为unsupported。"
+    }
+  ]
+}

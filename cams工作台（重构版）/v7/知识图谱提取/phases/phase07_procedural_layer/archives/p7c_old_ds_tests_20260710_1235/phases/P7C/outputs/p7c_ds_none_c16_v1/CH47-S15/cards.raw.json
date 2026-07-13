@@ -1,0 +1,345 @@
+{
+  "section_id": "CH47-S15",
+  "section_title": "Transaction monitoring > Suspicious activity escalation process",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S15_001",
+      "section_id": "CH47-S15",
+      "card_nature": "execution",
+      "title": "Suspicious activity escalation and documentation process",
+      "summary": "Process to escalate customers with unmitigated risk indicators, file internal escalation report, possibly file SAR, while adhering to documentation, policy, and terminology standards.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Unmitigated risk indicators identified",
+          "evidence_unit_ids": [
+            "v7u_N003410"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_escalate",
+          "node_type": "action",
+          "label": "Escalate customer for additional investigation",
+          "evidence_unit_ids": [
+            "v7u_N003410"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_collaborate",
+          "node_type": "action",
+          "label": "Collaborate with others on next steps",
+          "evidence_unit_ids": [
+            "v7u_N003415"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_internal_report",
+          "node_type": "action",
+          "label": "File internal escalation report",
+          "evidence_unit_ids": [
+            "v7u_N003419"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decide_sar",
+          "node_type": "decision",
+          "label": "Determine if SAR should be filed",
+          "evidence_unit_ids": [
+            "v7u_N003424",
+            "v7u_N003425"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_file_sar",
+          "node_type": "action",
+          "label": "MLRO files SAR with FIU",
+          "evidence_unit_ids": [
+            "v7u_N003425"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_sar_filed",
+          "node_type": "output",
+          "label": "SAR filed with FIU",
+          "evidence_unit_ids": [
+            "v7u_N003425"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_documentation",
+          "node_type": "standard",
+          "label": "Documentation and record-keeping requirements",
+          "evidence_unit_ids": [
+            "v7u_N003414",
+            "v7u_N003426",
+            "v7u_N003428",
+            "v7u_N003429",
+            "v7u_N003430",
+            "v7u_N003432",
+            "v7u_N003433",
+            "v7u_N003436",
+            "v7u_N003437"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_policies",
+          "node_type": "standard",
+          "label": "Organizational policies and jurisdictional requirements",
+          "evidence_unit_ids": [
+            "v7u_N003411",
+            "v7u_N003416",
+            "v7u_N003417"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_terminology",
+          "node_type": "standard",
+          "label": "Precise terminology and correct report names",
+          "evidence_unit_ids": [
+            "v7u_N003421",
+            "v7u_N003422",
+            "v7u_N003423"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_escalate",
+          "evidence_unit_ids": [
+            "v7u_N003410"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_escalate",
+          "target": "n_action_collaborate",
+          "evidence_unit_ids": [
+            "v7u_N003410",
+            "v7u_N003415"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_collaborate",
+          "target": "n_action_internal_report",
+          "evidence_unit_ids": [
+            "v7u_N003415",
+            "v7u_N003419"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_internal_report",
+          "target": "n_decide_sar",
+          "evidence_unit_ids": [
+            "v7u_N003419",
+            "v7u_N003425"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decide_sar",
+          "target": "n_action_file_sar",
+          "condition": "yes",
+          "evidence_unit_ids": [
+            "v7u_N003425"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_file_sar",
+          "target": "n_output_sar_filed",
+          "evidence_unit_ids": [
+            "v7u_N003425"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_007",
+          "edge_type": "USES",
+          "source": "n_action_escalate",
+          "target": "n_standard_documentation",
+          "evidence_unit_ids": [
+            "v7u_N003426"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_008",
+          "edge_type": "USES",
+          "source": "n_action_collaborate",
+          "target": "n_standard_documentation",
+          "evidence_unit_ids": [
+            "v7u_N003426"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_009",
+          "edge_type": "USES",
+          "source": "n_action_internal_report",
+          "target": "n_standard_documentation",
+          "evidence_unit_ids": [
+            "v7u_N003426"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_010",
+          "edge_type": "USES",
+          "source": "n_action_file_sar",
+          "target": "n_standard_documentation",
+          "evidence_unit_ids": [
+            "v7u_N003426"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_011",
+          "edge_type": "USES",
+          "source": "n_action_escalate",
+          "target": "n_standard_policies",
+          "evidence_unit_ids": [
+            "v7u_N003411"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_012",
+          "edge_type": "USES",
+          "source": "n_action_collaborate",
+          "target": "n_standard_policies",
+          "evidence_unit_ids": [
+            "v7u_N003411"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_013",
+          "edge_type": "USES",
+          "source": "n_action_internal_report",
+          "target": "n_standard_policies",
+          "evidence_unit_ids": [
+            "v7u_N003411"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_014",
+          "edge_type": "USES",
+          "source": "n_action_file_sar",
+          "target": "n_standard_policies",
+          "evidence_unit_ids": [
+            "v7u_N003411"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_015",
+          "edge_type": "USES",
+          "source": "n_action_internal_report",
+          "target": "n_standard_terminology",
+          "evidence_unit_ids": [
+            "v7u_N003422"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_016",
+          "edge_type": "USES",
+          "source": "n_action_file_sar",
+          "target": "n_standard_terminology",
+          "evidence_unit_ids": [
+            "v7u_N003421"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003410",
+        "v7u_N003415",
+        "v7u_N003419",
+        "v7u_N003424",
+        "v7u_N003425",
+        "v7u_N003414",
+        "v7u_N003426",
+        "v7u_N003428",
+        "v7u_N003429",
+        "v7u_N003430",
+        "v7u_N003432",
+        "v7u_N003433",
+        "v7u_N003436",
+        "v7u_N003437",
+        "v7u_N003411",
+        "v7u_N003416",
+        "v7u_N003417",
+        "v7u_N003421",
+        "v7u_N003422",
+        "v7u_N003423"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Edge p7flowedge_CH47-S15_001_004 (File internal escalation report -> Determine if SAR should be filed) is based on functional dependency rather than explicit sequence in the source text. The section does not explicitly state that the internal report immediately precedes the SAR decision; it is inferred from the overall escalation process. Card review_status set to needs_review due to this inference."
+    }
+  ],
+  "skip_reason": null
+}

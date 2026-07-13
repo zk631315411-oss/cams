@@ -1,0 +1,41 @@
+[v7u_N001250|1250] Foreign embassies, foreign consulates, and missions are commonly seen in host countries.
+ZH: 外国大使馆、领事馆和使团在东道国普遍存在
+
+[v7u_N001251|1251] An embassy is usually located in the host country's capital city and contains the office of the foreign ambassador, the diplomatic representatives, and their staff. It handles political and economic matters between the two countries, facilitating communication and negotiation.
+ZH: 大使馆通常位于东道国首都，包含大使办公室、外交代表及工作人员，处理两国政治经济事务
+
+[v7u_N001252|1252] Consulates act as branches of embassies and are typically located in major cities of the host country. They provide various administrative and governmental functions, such as issuing visas and handling immigration matters, similar to what an embassy provides but on a smaller scale.
+ZH: 领事馆是大使馆的分支机构，通常位于东道国主要城市，提供签证和移民等行政服务
+
+[v7u_N001253|1253] A foreign mission refers to a group of people that conducts diplomatic business in a foreign country to serve the interests of their home country. A foreign mission can include embassies and consulates.
+ZH: 外国使团指在外国从事外交事务以服务本国利益的一群人，包括大使馆和领事馆
+
+[v7u_N001254|1254] These organizations require access to financial services to meet their daily financial responsibilities. Services can range from operational expenses, such as payroll, rent, and utilities, to intergovernmental and intragovernmental transactions, such as commercial and military purchase payments.
+ZH: 大使馆和使团需要金融服务以满足日常财务责任，包括运营开支和政府间交易
+
+[v7u_N001255|1255] Some banks also offer ancillary services or accounts to government personnel, including embassy staff, their families, and former foreign officials.
+ZH: 一些银行还向政府人员（包括使馆工作人员及其家属和前外国官员）提供辅助服务或账户
+
+[v7u_N001256|1256] Each of these governmental relationships poses different levels of risk to the bank because the individuals involved are usually classified as PEPs in most host countries.
+ZH: 使馆相关政府关系因涉及政治敏感人物而给银行带来不同程度的风险
+
+[v7u_N001257|1257] A PEP is an individual in a prominent political function, or their immediate family or close associates, who could be at higher risk for involvement in bribery and corruption.
+ZH: 政治敏感人物指担任显要公职的个人及其直系亲属或密切关联人，可能面临更高的贿赂和腐败风险
+
+[v7u_N001258|1258] Additionally, embassy, foreign consulate, and mission accounts can pose a higher risk in certain circumstances, including:
+ZH: 大使馆、领事馆和使团账户在某些情况下可能构成更高风险
+
+[v7u_N001259|1259] Accounts held in jurisdictions designated as higher money laundering or corruption risk by FATF or other regulatory bodies.
+ZH: 账户位于FATF或其他监管机构认定的洗钱或腐败高风险管辖区
+
+[v7u_N001260|1260] Substantial cash transactions, which might indicate potential illicit activities.
+ZH: 大额现金交易可能表明潜在的非法活动
+
+[v7u_N001261|1261] Account activity that is not consistent with the account’s purpose, or transactions that do not align with anticipated activities, such as unusual amounts or types of transactions.
+ZH: 账户活动与账户目的不一致，或交易金额/类型异常，属于风险指标。
+
+[v7u_N001262|1262] Accounts directly funding personal expenses of foreign nationals, including, but not limited to, expenses for education fees, which might mix official and personal finances.
+ZH: 直接为外国国民个人开支（如教育费）提供资金的账户，可能混淆官方与个人财务。
+
+[v7u_N001263|1263] Official embassy business conducted through personal accounts, raising concerns about the transparency and legitimacy of transactions.
+ZH: 通过个人账户进行使馆官方业务，引发交易透明度和合法性问题。

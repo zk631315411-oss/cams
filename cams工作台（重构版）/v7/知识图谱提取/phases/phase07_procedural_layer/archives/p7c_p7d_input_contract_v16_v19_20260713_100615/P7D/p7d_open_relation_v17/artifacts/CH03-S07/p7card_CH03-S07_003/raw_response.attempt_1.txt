@@ -1,0 +1,44 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_003",
+  "edge_reviews": [
+    {
+      "edge_id": "E1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000286 明确提及 'As FIUs escalated the case'，说明 FIU 升级案件的行为存在。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000286 明确提及 'law enforcement agencies... conducted targeted surveillance'，说明执法机构的监控行为存在。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文使用 'As' 连接两个事件，仅表示时间上的伴随或原因关联，未使用 'after'、'then' 等明确顺序词，无法确认升级案件必然在监控之前发生，不符合 PRECEDES 的明示顺序要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未对事件顺序附加限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "升级案件与执法监控仅为同一句子中出现的关联事件，属于共同出现，并无明确的先后依赖关系，容易误判为 PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000286"
+      ],
+      "source_quotes": [
+        "As FIUs escalated the case, law enforcement agencies, including Europol, Interpol, and national counterterrorism task forces, conducted targeted surveillance on Mr. Wolfe and his criminal associates."
+      ],
+      "reason": "源节点与目标节点均有原文依据，但原文仅用 'As' 连接，未明示严格先后顺序，方向支持不足，且存在将平行关联误判为顺序关系的风险，因此该边不建议保留。"
+    }
+  ]
+}

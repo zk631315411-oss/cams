@@ -1,0 +1,123 @@
+{
+  "section_id": "CH47-S05",
+  "section_title": "Transaction monitoring > Typical scenarios that would generate an alert",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S05_001",
+      "section_id": "CH47-S05",
+      "card_nature": "risk_indicator",
+      "title": "Screen transaction scenarios for alert-generating patterns",
+      "summary": "Transaction monitoring scenarios analyze customer activity and contextual factors to set alerts, including deviations from expected patterns and specific red-flag transaction behaviors.",
+      "objective": "Identify transaction patterns that are likely to generate alerts.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Analyze transaction monitoring scenario factors",
+          "evidence_unit_ids": ["v7u_N003287"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_screen",
+          "node_type": "action",
+          "label": "Screen customer activity against expected patterns and scenario factors",
+          "evidence_unit_ids": ["v7u_N003287", "v7u_N003291"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_context",
+          "node_type": "standard",
+          "label": "Industry size, jurisdiction, customer activity, complex data sets, and expected pattern",
+          "evidence_unit_ids": ["v7u_N003287", "v7u_N003290", "v7u_N003291"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_channel",
+          "node_type": "standard",
+          "label": "Excessive use of a particular channel compared with what is expected for the customer type",
+          "evidence_unit_ids": ["v7u_N003292"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_round_trip",
+          "node_type": "standard",
+          "label": "Round trip transaction where a sent remittance returns immediately or shortly afterward",
+          "evidence_unit_ids": ["v7u_N003293"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_one_to_many",
+          "node_type": "standard",
+          "label": "One-to-many or many-to-one remittances without a logical explanation",
+          "evidence_unit_ids": ["v7u_N003294"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_alert_likely",
+          "node_type": "output",
+          "label": "Alert is more likely to be generated",
+          "evidence_unit_ids": ["v7u_N003291"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_screen",
+          "evidence_unit_ids": ["v7u_N003287", "v7u_N003291"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_context",
+          "evidence_unit_ids": ["v7u_N003287", "v7u_N003290", "v7u_N003291"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_channel",
+          "evidence_unit_ids": ["v7u_N003292"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_round_trip",
+          "evidence_unit_ids": ["v7u_N003293"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_005",
+          "edge_type": "USES",
+          "source": "n_action_screen",
+          "target": "n_standard_one_to_many",
+          "evidence_unit_ids": ["v7u_N003294"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S05_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_screen",
+          "target": "n_output_alert_likely",
+          "evidence_unit_ids": ["v7u_N003291"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003287", "v7u_N003290", "v7u_N003291", "v7u_N003292", "v7u_N003293", "v7u_N003294"],
+      "review_status": "accepted",
+      "review_notes": "This is a risk-indicator card rather than a strict operating workflow; red flags are modeled as parallel standards used by screening."
+    }
+  ],
+  "skip_reason": null
+}

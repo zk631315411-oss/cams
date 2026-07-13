@@ -1,0 +1,161 @@
+{
+  "section_id": "CH11-S05",
+  "section_title": "Money laundering risks associated with MSBs, payment service providers, and ecommerce > Case example: LotusMall and illegal gambling",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S05_001",
+      "section_id": "CH11-S05",
+      "card_nature": "risk_indicator",
+      "title": "E-commerce money laundering red flags: LotusMall case indicators",
+      "summary": "Red flags identified from the LotusMall case, including pricing anomalies, high transaction volumes for low-value goods, and multiple seller accounts linked to a single entity, as indicators of potential money laundering.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_category": "入口类型",
+          "node_type": "E1_event_signal",
+          "label": "E-commerce platform transaction monitoring",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Regulatory and public expectation for e-commerce platforms to monitor transactions for money laundering risks."
+        },
+        {
+          "node_id": "n_action",
+          "node_category": "处理类型",
+          "node_type": "P1_assessment",
+          "label": "Review merchant transactions and accounts",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "source_quote": "Authorities urged e-commerce platforms to improve risk monitoring, flag high-risk patterns..."
+        },
+        {
+          "node_id": "n_standard1",
+          "node_category": "辅助类型",
+          "node_type": "standard",
+          "label": "Product listings priced far above market value",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "For some merchants, product listings were priced far above the expected market value, a red flag for fraud."
+        },
+        {
+          "node_id": "n_standard2",
+          "node_category": "辅助类型",
+          "node_type": "standard",
+          "label": "Low-value products with extremely high daily transaction counts",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Other merchants had many low-value products listed, but had extremely high numbers of transactions per day, which is another red flag."
+        },
+        {
+          "node_id": "n_standard3",
+          "node_category": "辅助类型",
+          "node_type": "standard",
+          "label": "Multiple seller accounts linked to a single entity",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...flag high-risk patterns such as multiple seller accounts linked to a single entity..."
+        },
+        {
+          "node_id": "n_output",
+          "node_category": "出口类型",
+          "node_type": "X1_classification",
+          "label": "Identified potential money laundering activity",
+          "evidence_unit_ids": [
+            "v7u_N000874",
+            "v7u_N000866"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "In total, more than CNY¥10 billion was laundered through LotusMall."
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard1",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard2",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard3",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N000874"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000866",
+        "v7u_N000871",
+        "v7u_N000872",
+        "v7u_N000874",
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Risk indicators derived from a case example; transformation into actionable monitoring rules may require additional context. Trigger and action are functionally inferred from regulatory urging, not a direct procedure from the text.",
+      "metadata": {
+        "negative_pattern": true,
+        "evidence_matching_value": "high",
+        "not_strict_workflow": true,
+        "missing_context_risk": false
+      }
+    }
+  ],
+  "skip_reason": null
+}

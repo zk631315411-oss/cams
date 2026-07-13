@@ -1,0 +1,205 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "SAR Filing Decision Process",
+      "summary": "Process for MLRO review, possible additional research, and final decision to file a SAR, subject to jurisdictional deadlines and expedited requirements.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Detection of suspicious activity",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_review",
+          "node_type": "action",
+          "label": "MLRO reviews SAR narrative and identifies any questions",
+          "evidence_unit_ids": ["v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_robust",
+          "node_type": "decision",
+          "label": "Is SAR narrative robust and complete?",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003442"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_research",
+          "node_type": "action",
+          "label": "Conduct further research and update SAR narrative",
+          "evidence_unit_ids": ["v7u_N003441"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_file",
+          "node_type": "decision",
+          "label": "MLRO decides to file SAR",
+          "evidence_unit_ids": ["v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_file",
+          "node_type": "output",
+          "label": "File SAR with FIU",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_timelines",
+          "node_type": "standard",
+          "label": "Internal investigation and review timelines for feedback and research",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_deadline_30",
+          "node_type": "standard",
+          "label": "30-day filing deadline from initial alert",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_extension",
+          "node_type": "standard",
+          "label": "Additional 30 days if no suspect initially and investigation needed",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_expedited",
+          "node_type": "standard",
+          "label": "Expedited filing for high-risk activities",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_review",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003442"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review",
+          "target": "n_decision_robust",
+          "evidence_unit_ids": ["v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_robust",
+          "target": "n_action_research",
+          "condition": "if not robust",
+          "evidence_unit_ids": ["v7u_N003441", "v7u_N003442"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_robust",
+          "target": "n_decision_file",
+          "condition": "if robust",
+          "evidence_unit_ids": ["v7u_N003440", "v7u_N003442"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_research",
+          "target": "n_action_review",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_file",
+          "target": "n_output_file",
+          "condition": "if decision is to file",
+          "evidence_unit_ids": ["v7u_N003438", "v7u_N003440"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_007",
+          "edge_type": "USES",
+          "source": "n_action_review",
+          "target": "n_standard_timelines",
+          "evidence_unit_ids": ["v7u_N003443"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_008",
+          "edge_type": "USES",
+          "source": "n_decision_file",
+          "target": "n_standard_deadline_30",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_009",
+          "edge_type": "USES",
+          "source": "n_decision_file",
+          "target": "n_standard_extension",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S16_001_010",
+          "edge_type": "USES",
+          "source": "n_decision_file",
+          "target": "n_standard_expedited",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003439",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443",
+        "v7u_N003444",
+        "v7u_N003445",
+        "v7u_N003446",
+        "v7u_N003447"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Simplified iterative review-research-decision loop. Several edges rely on functional dependency rather than explicit sequence. The no-file branch is omitted as not covered in section."
+    }
+  ],
+  "skip_reason": null
+}

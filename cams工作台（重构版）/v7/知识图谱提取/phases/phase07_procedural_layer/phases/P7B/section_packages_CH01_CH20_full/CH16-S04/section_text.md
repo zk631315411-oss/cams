@@ -1,0 +1,56 @@
+[v7u_N001175|1175] A free-trade zone (FTZ) is a designated area within a country treated as outside its customs territory, allowing businesses to import, store, handle, manufacture, and distribute goods without incurring customs duties until those goods enter the domestic market.
+ZH: 自由贸易区（FTZ）是境内关外的指定区域，货物入区免关税。
+
+[v7u_N001176|1176] FTZs were originally set up to attract foreign direct investments and create jobs, and they are often located in developing countries.
+ZH: 自由贸易区最初旨在吸引外资和创造就业，多位于发展中国家。
+
+[v7u_N001177|1177] According to the think tank Global Financial Integrity, approximately 4,500 FTZs exist in more than 130 countries as of 2025.
+ZH: 截至2025年，全球约130个国家拥有约4500个自由贸易区。
+
+[v7u_N001178|1178] FTZs benefit companies by offering cost savings, enhancing cash flow, and boosting their competitiveness in international trade.
+ZH: 自由贸易区为企业节省成本、改善现金流并提升国际竞争力。
+
+[v7u_N001179|1179] FTZs can lower or remove taxes, customs duties, and business registration regulations.
+ZH: 自由贸易区可降低或取消税收、关税及商业注册监管要求。
+
+[v7u_N001180|1180] Many zones globally offer special exemptions from standard immigration procedures and foreign investment restrictions, among other benefits.
+ZH: 许多自由贸易区提供标准移民程序和外资限制的特别豁免。
+
+[v7u_N001181|1181] These zones aim to promote economic activity and employment that might otherwise take place elsewhere.
+ZH: 自由贸易区旨在促进经济活动和就业
+
+[v7u_N001182|1182] However, their business-friendly features attract criminals to exploit them.
+ZH: 自由贸易区的商业友好特征吸引犯罪分子利用
+
+[v7u_N001183|1183] The EU has commented that FTZs have a high incidence of corruption, tax evasion, and other criminal activities, such as fraud and sanctions evasion.
+ZH: 欧盟指出自由贸易区腐败、逃税、欺诈和制裁规避高发
+
+[v7u_N001184|1184] The European Commission has also pointed out that since FTZs are popular for storing artwork, antiquities, precious metals, and wine, and that they pose emerging threats to the integrity of the trade system.
+ZH: 欧盟委员会指出自由贸易区对贸易体系构成新兴威胁
+
+[v7u_N001185|1185] According to FATF, systemic weaknesses for FTZs include:
+ZH: FATF指出的自由贸易区系统性弱点列表
+
+[v7u_N001186|1186] Inadequate AML/CFT safeguards.
+ZH: 自由贸易区反洗钱/反恐怖融资保障措施不足
+
+[v7u_N001187|1187] Minimal oversight by local authorities.
+ZH: 地方当局对自由贸易区监管极少
+
+[v7u_N001188|1188] Weak procedures to inspect goods and legal entities, including inadequate recordkeeping and information technology systems.
+ZH: 自由贸易区货物和法人检查程序薄弱，记录保存和IT系统不足
+
+[v7u_N001189|1189] Lack of cooperation between FTZs and local customs authorities.
+ZH: 自由贸易区与当地海关当局缺乏合作
+
+[v7u_N001190|1190] FTZs might enable TBML by importing consignments with counterfeit or tampered paperwork and then re-exporting the goods to other countries while disguising their actual origin and nature.
+ZH: 自由贸易区通过伪造文件进口再出口货物，便利贸易洗钱
+
+[v7u_N001191|1191] This environment also provides a platform for illegal trades, such as drug trafficking, ivory trade, stolen artwork, and people smuggling.
+ZH: 自由贸易区为毒品、象牙、艺术品走私和人口贩运提供平台
+
+[v7u_N001192|1192] Additionally, FTZ regulations with inadequate enforcement might facilitate tax evasion and VAT fraud by allowing criminals to obscure the actual beneficial owners of assets derived from crimes.
+ZH: 自由贸易区执法不力便利逃税和增值税欺诈
+
+[v7u_N001193|1193] This can hinder authorities and law enforcement agencies from tracing and recovering proceeds of crime due to relaxed oversight.
+ZH: 监管宽松阻碍当局追踪和追回犯罪所得

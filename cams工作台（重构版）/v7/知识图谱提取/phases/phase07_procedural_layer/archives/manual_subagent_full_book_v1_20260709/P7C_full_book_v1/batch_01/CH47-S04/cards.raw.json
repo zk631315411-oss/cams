@@ -1,0 +1,173 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "Tune transaction monitoring scenarios and thresholds",
+      "summary": "Transaction monitoring tuning refines detection logic, scenarios, parameters, thresholds, and frequency so the system detects suspicious activity, reduces false positives, uses resources efficiently, adapts to changes, and supports compliance.",
+      "objective": "Maintain effective and efficient transaction monitoring detection logic.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Refine and adjust TM detection logic parameters and thresholds",
+          "evidence_unit_ids": ["v7u_N003272"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_scenario",
+          "node_type": "action",
+          "label": "Create, modify, or remove detection rules and scenarios based on suspicious activity experience and actual incidents",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003279"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_segment",
+          "node_type": "action",
+          "label": "Apply customer segmentation as a tuning component",
+          "evidence_unit_ids": ["v7u_N003278"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_threshold",
+          "node_type": "action",
+          "label": "Set and adjust thresholds defining the minimum activity level required to trigger an alert",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003280", "v7u_N003282", "v7u_N003283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_threshold_goal",
+          "node_type": "standard",
+          "label": "Sensitivity, accuracy, false-positive reduction, and efficient resource use",
+          "evidence_unit_ids": ["v7u_N003274", "v7u_N003275", "v7u_N003282", "v7u_N003283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_frequency",
+          "node_type": "action",
+          "label": "Determine how often tuning should occur",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003284", "v7u_N003285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_trigger_special_assessment",
+          "node_type": "trigger",
+          "label": "Significant events or trends occur",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_special_assessment",
+          "node_type": "action",
+          "label": "Trigger a special tuning assessment",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_tuned_system",
+          "node_type": "output",
+          "label": "TM system detects suspicious activity effectively, reduces false positives, adapts to changes, and supports compliance",
+          "evidence_unit_ids": ["v7u_N003273", "v7u_N003274", "v7u_N003276", "v7u_N003277"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_scenario",
+          "evidence_unit_ids": ["v7u_N003272", "v7u_N003279"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_segment",
+          "evidence_unit_ids": ["v7u_N003278"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_threshold",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003280"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action_threshold",
+          "target": "n_standard_threshold_goal",
+          "evidence_unit_ids": ["v7u_N003282", "v7u_N003283"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_frequency",
+          "evidence_unit_ids": ["v7u_N003278", "v7u_N003284", "v7u_N003285"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_special_assessment",
+          "target": "n_action_special_assessment",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_scenario",
+          "target": "n_output_tuned_system",
+          "evidence_unit_ids": ["v7u_N003273", "v7u_N003276", "v7u_N003277", "v7u_N003279"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_threshold",
+          "target": "n_output_tuned_system",
+          "evidence_unit_ids": ["v7u_N003273", "v7u_N003274", "v7u_N003282", "v7u_N003283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_frequency",
+          "target": "n_output_tuned_system",
+          "evidence_unit_ids": ["v7u_N003276", "v7u_N003284", "v7u_N003285"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_special_assessment",
+          "target": "n_output_tuned_system",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003272", "v7u_N003273", "v7u_N003274", "v7u_N003275", "v7u_N003276", "v7u_N003277", "v7u_N003278", "v7u_N003279", "v7u_N003280", "v7u_N003282", "v7u_N003283", "v7u_N003284", "v7u_N003285", "v7u_N003286"],
+      "review_status": "needs_review",
+      "review_notes": "The four tuning components are parallel components, not a stated sequence. Functional_dependency edges represent component membership and expected effects."
+    }
+  ],
+  "skip_reason": null
+}

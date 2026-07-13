@@ -1,0 +1,257 @@
+{
+  "section_id": "CH47-S06",
+  "section_title": "Transaction monitoring > Procedures for alerts review",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S06_001",
+      "section_id": "CH47-S06",
+      "card_nature": "execution",
+      "title": "Review transaction monitoring alerts through escalation levels",
+      "summary": "Transaction monitoring alerts are reviewed at Level 1, escalated to Level 2 when abnormal or above threshold, further escalated to Level 3 for highly suspicious or complex cases, and may lead to SAR filing and post-filing monitoring.",
+      "objective": "Resolve transaction monitoring alerts with documented rationale, escalation when warranted, and regulatory reporting when required.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_alert",
+          "node_type": "trigger",
+          "label": "TM system generates an alert",
+          "evidence_unit_ids": ["v7u_N003297"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_l1",
+          "node_type": "action",
+          "label": "Level 1 analyst examines alert validity",
+          "evidence_unit_ids": ["v7u_N003297", "v7u_N003298"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_l1_data",
+          "node_type": "standard",
+          "label": "Alert nature, transaction type, customer profile, account history, previous alert history, and expected behavior",
+          "evidence_unit_ids": ["v7u_N003298", "v7u_N003299"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_l1",
+          "node_type": "decision",
+          "label": "Determine whether activity appears abnormal or exceeds accepted thresholds",
+          "evidence_unit_ids": ["v7u_N003300", "v7u_N003301"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_false_positive",
+          "node_type": "output",
+          "label": "Dismiss alert as false positive and document sufficient rationale",
+          "evidence_unit_ids": ["v7u_N003301"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_l2",
+          "node_type": "action",
+          "label": "Level 2 analysts perform detailed investigation of the alert and initial-review data",
+          "evidence_unit_ids": ["v7u_N003300", "v7u_N003302"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_l2_data",
+          "node_type": "standard",
+          "label": "Transaction patterns, fund source and destination, KYC information, risk profile, additional records, prior investigations, and open-source research",
+          "evidence_unit_ids": ["v7u_N003303", "v7u_N003304", "v7u_N003305", "v7u_N003306", "v7u_N003307"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_suspicious",
+          "node_type": "decision",
+          "label": "Determine whether the activity is suspicious based on collected data",
+          "evidence_unit_ids": ["v7u_N003308", "v7u_N003309"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_l3",
+          "node_type": "action",
+          "label": "Senior analysts or compliance officers conduct Level 3 complex analysis",
+          "evidence_unit_ids": ["v7u_N003309", "v7u_N003310"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_l3_work",
+          "node_type": "standard",
+          "label": "Cross-department collaboration, complex risk assessments, and analysis of transaction networks",
+          "evidence_unit_ids": ["v7u_N003310"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_document",
+          "node_type": "action",
+          "label": "Document each step and rationale throughout the review process",
+          "evidence_unit_ids": ["v7u_N003311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_sar_required",
+          "node_type": "decision",
+          "label": "Determine whether a SAR is required",
+          "evidence_unit_ids": ["v7u_N003311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sar",
+          "node_type": "output",
+          "label": "File SAR with regulatory authorities including pertinent information and rationale",
+          "evidence_unit_ids": ["v7u_N003311"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n_action_ongoing_monitoring",
+          "node_type": "action",
+          "label": "Conduct ongoing monitoring after filing and recommend enhanced monitoring or account restrictions",
+          "evidence_unit_ids": ["v7u_N003312", "v7u_N003313"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_mitigated",
+          "node_type": "output",
+          "label": "Further issues are mitigated and additional criminal activities are identified",
+          "evidence_unit_ids": ["v7u_N003312", "v7u_N003313"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_alert",
+          "target": "n_action_l1",
+          "evidence_unit_ids": ["v7u_N003297"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_002",
+          "edge_type": "USES",
+          "source": "n_action_l1",
+          "target": "n_standard_l1_data",
+          "evidence_unit_ids": ["v7u_N003298", "v7u_N003299"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_l1",
+          "target": "n_decision_l1",
+          "evidence_unit_ids": ["v7u_N003300", "v7u_N003301"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_l1",
+          "target": "n_action_l2",
+          "condition": "if activity appears abnormal or exceeds accepted thresholds",
+          "evidence_unit_ids": ["v7u_N003300"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_l1",
+          "target": "n_output_false_positive",
+          "condition": "if not abnormal and not above accepted thresholds",
+          "evidence_unit_ids": ["v7u_N003301"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_006",
+          "edge_type": "USES",
+          "source": "n_action_l2",
+          "target": "n_standard_l2_data",
+          "evidence_unit_ids": ["v7u_N003303", "v7u_N003304", "v7u_N003305", "v7u_N003306", "v7u_N003307"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_l2",
+          "target": "n_decision_suspicious",
+          "evidence_unit_ids": ["v7u_N003308", "v7u_N003309"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_008",
+          "edge_type": "DECIDES",
+          "source": "n_decision_suspicious",
+          "target": "n_action_l3",
+          "condition": "if highly suspicious, numerous transactions, or sensitive situation",
+          "evidence_unit_ids": ["v7u_N003309"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_009",
+          "edge_type": "DECIDES",
+          "source": "n_decision_suspicious",
+          "target": "n_action_document",
+          "condition": "if suspicious determination does not require Level 3 complex analysis",
+          "evidence_unit_ids": ["v7u_N003308", "v7u_N003311"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_010",
+          "edge_type": "USES",
+          "source": "n_action_l3",
+          "target": "n_standard_l3_work",
+          "evidence_unit_ids": ["v7u_N003310"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_action_l3",
+          "target": "n_action_document",
+          "evidence_unit_ids": ["v7u_N003310", "v7u_N003311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_012",
+          "edge_type": "PRECEDES",
+          "source": "n_action_document",
+          "target": "n_decision_sar_required",
+          "evidence_unit_ids": ["v7u_N003311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_013",
+          "edge_type": "DECIDES",
+          "source": "n_decision_sar_required",
+          "target": "n_output_sar",
+          "condition": "if SAR is required",
+          "evidence_unit_ids": ["v7u_N003311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_014",
+          "edge_type": "PRECEDES",
+          "source": "n_output_sar",
+          "target": "n_action_ongoing_monitoring",
+          "evidence_unit_ids": ["v7u_N003312"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S06_001_015",
+          "edge_type": "PRODUCES",
+          "source": "n_action_ongoing_monitoring",
+          "target": "n_output_mitigated",
+          "evidence_unit_ids": ["v7u_N003312", "v7u_N003313"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003297", "v7u_N003298", "v7u_N003299", "v7u_N003300", "v7u_N003301", "v7u_N003302", "v7u_N003303", "v7u_N003304", "v7u_N003305", "v7u_N003306", "v7u_N003307", "v7u_N003308", "v7u_N003309", "v7u_N003310", "v7u_N003311", "v7u_N003312", "v7u_N003313"],
+      "review_status": "needs_review",
+      "review_notes": "The section explicitly describes the major escalation path. The branch from Level 2 directly to documentation is inferred for cases that are suspicious but not Level 3-worthy; the text does not spell out the non-Level-3 resolution path. Category: condition dependency."
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,201 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "Assessment of Defensive SAR Practice and Recommended Alternative",
+      "summary": "Evaluates defensive SARs as a sign of AFC program deficiencies that burden law enforcement and hinder internal capabilities, while recommending that when time or understanding is lacking, organizations should instead consider risk appetite and customer relationship as a best practice.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_defensiveSAR",
+          "node_type": "trigger",
+          "label": "Filing a SAR 'just in case' (defensive SAR)",
+          "evidence_unit_ids": [
+            "v7u_N003605"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess",
+          "node_type": "action",
+          "label": "Assess impact of defensive SAR",
+          "evidence_unit_ids": [
+            "v7u_N003606",
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_burden",
+          "node_type": "standard",
+          "label": "Undue burden on law enforcement agencies",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_hinder",
+          "node_type": "standard",
+          "label": "Hinders organization's ability to identify and report suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_deficiency",
+          "node_type": "standard",
+          "label": "Sign of weakness/deficiencies in AFC compliance program",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_deficiency",
+          "node_type": "output",
+          "label": "Deficiency in AFC compliance program",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_trigger_lacking",
+          "node_type": "trigger",
+          "label": "Organization lacks sufficient time or complete understanding of business model to properly monitor/research customer activity",
+          "evidence_unit_ids": [
+            "v7u_N003608",
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_consider",
+          "node_type": "action",
+          "label": "Consider business risk appetite and customer relationship",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_bestpractice",
+          "node_type": "standard",
+          "label": "Best practice: assess risk appetite and relationship instead of filing defensive SAR",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_improved",
+          "node_type": "output",
+          "label": "Avoids ignoring compliance deficiencies and negative effects on organization and law enforcement",
+          "evidence_unit_ids": [
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_defensiveSAR",
+          "target": "n_action_assess",
+          "evidence_unit_ids": [
+            "v7u_N003605",
+            "v7u_N003606"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_burden",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_hinder",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_deficiency",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess",
+          "target": "n_output_deficiency",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_lacking",
+          "target": "n_action_consider",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_007",
+          "edge_type": "USES",
+          "source": "n_action_consider",
+          "target": "n_standard_bestpractice",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_consider",
+          "target": "n_output_improved",
+          "evidence_unit_ids": [
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003608",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into an assessment card. The card models the negative assessment of defensive SAR practice and the recommended best practice when lacking time or understanding. This helps evaluate exam options about SAR filing decisions. Two independent but related paths are presented without a common decision point; no strict sequential workflow is enforced."
+    }
+  ],
+  "skip_reason": null
+}

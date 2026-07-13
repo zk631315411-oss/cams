@@ -1,0 +1,183 @@
+{
+  "section_id": "CH49-S12",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S12_001",
+      "section_id": "CH49-S12",
+      "card_nature": "execution",
+      "title": "Responding to Law Enforcement Information Requests",
+      "summary": "Upon receiving a law enforcement request, the FI must conduct an initial assessment of legality, urgency, and relevance, then coordinate internal teams to compile a response that meets confidentiality, accuracy, and legal compliance requirements.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Receipt of law enforcement request (subpoena, production order, inquiry)",
+          "evidence_unit_ids": [
+            "v7u_N003629",
+            "v7u_N003630",
+            "v7u_N003636"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conduct initial assessment of request's legality, urgency, and relevance by designated officer",
+          "evidence_unit_ids": [
+            "v7u_N003636",
+            "v7u_N003637",
+            "v7u_N003638"
+          ],
+          "evidence_strength": "explicit",
+          "actor": "designated officer"
+        },
+        {
+          "node_id": "n_process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Coordinate intelligence analysis, SAR teams, and other departments to compile response while maintaining confidentiality, accuracy, and legal compliance",
+          "evidence_unit_ids": [
+            "v7u_N003640",
+            "v7u_N003641",
+            "v7u_N003642",
+            "v7u_N003643"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Assessment criteria: legality, urgency, relevance of request",
+          "evidence_unit_ids": [
+            "v7u_N003638"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Compliance and integrity requirements: confidentiality, urgency, accuracy, proportional and justified within legal frameworks, information integrity, legal compliance",
+          "evidence_unit_ids": [
+            "v7u_N003632",
+            "v7u_N003634",
+            "v7u_N003635",
+            "v7u_N003639",
+            "v7u_N003641",
+            "v7u_N003644"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "Response provided to law enforcement agency (compliant, accurate, confidential)",
+          "evidence_unit_ids": [
+            "v7u_N003641",
+            "v7u_N003644"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N003636"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_002",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N003638"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_003",
+          "edge_type": "REFERENCES",
+          "source": "n_process_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N003639",
+            "v7u_N003634"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_process_01",
+          "target": "n_process_02",
+          "evidence_unit_ids": [
+            "v7u_N003640",
+            "v7u_N003641"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_005",
+          "edge_type": "REFERENCES",
+          "source": "n_process_02",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N003641",
+            "v7u_N003635",
+            "v7u_N003632"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "standard_constrains_action",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_process_02",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N003641",
+            "v7u_N003644"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "result_handoffs_stage"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003629",
+        "v7u_N003630",
+        "v7u_N003632",
+        "v7u_N003634",
+        "v7u_N003635",
+        "v7u_N003636",
+        "v7u_N003637",
+        "v7u_N003638",
+        "v7u_N003639",
+        "v7u_N003640",
+        "v7u_N003641",
+        "v7u_N003642",
+        "v7u_N003643",
+        "v7u_N003644"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The PRECEDES edge from initial assessment to internal coordination is a functional dependency inferred from logical flow; the section does not explicitly sequence these steps. The standard for 'effective relationships' (unit 3642) is absorbed into coordination requirements. The card omits the specific request to keep account open and monitor (unit 3631) as the section provides no further process detail."
+    }
+  ],
+  "skip_reason": null
+}

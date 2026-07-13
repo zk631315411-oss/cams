@@ -1,0 +1,202 @@
+{
+  "section_id": "CH49-S13",
+  "section_title": "Concluding an investigation and suspicious activity reporting > How law enforcement case investigators read a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S13_001",
+      "section_id": "CH49-S13",
+      "card_nature": "execution",
+      "title": "Law enforcement SAR analysis process",
+      "summary": "Describes the process law enforcement follows when using SARs to initiate or enhance investigations, including key actions and the limitation that SARs are not admissible as evidence.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Law enforcement investigation or intelligence gathering initiates SAR analysis",
+          "evidence_unit_ids": [
+            "v7u_N003646"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_access",
+          "node_type": "action",
+          "label": "Access relevant SAR database",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_search",
+          "node_type": "action",
+          "label": "Search SAR database for names, identifiers, data, entities, and narrative information",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_identify",
+          "node_type": "action",
+          "label": "Identify illicit activity details: what, where, when, products used, and why suspicious (most important)",
+          "evidence_unit_ids": [
+            "v7u_N003656"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_search_suspect",
+          "node_type": "action",
+          "label": "Search SAR database for suspect mentions in other SARs, filing institution, and illicit money destination",
+          "evidence_unit_ids": [
+            "v7u_N003657"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_develop_charges",
+          "node_type": "action",
+          "label": "Based on activity pattern, develop or add criminal charges and expand investigation",
+          "evidence_unit_ids": [
+            "v7u_N003658",
+            "v7u_N003659"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_outcomes",
+          "node_type": "output",
+          "label": "Investigation outcomes: new cases initiated, ongoing investigations enhanced, broader financial intelligence developed",
+          "evidence_unit_ids": [
+            "v7u_N003646",
+            "v7u_N003653",
+            "v7u_N003658",
+            "v7u_N003659"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_evidence",
+          "node_type": "standard",
+          "label": "SARs cannot be used as evidence",
+          "evidence_unit_ids": [
+            "v7u_N003650"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_access",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_access",
+          "target": "n_action_search",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_search",
+          "target": "n_action_identify",
+          "evidence_unit_ids": [
+            "v7u_N003655",
+            "v7u_N003656"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_004",
+          "edge_type": "PRECEDES",
+          "source": "n_action_identify",
+          "target": "n_action_search_suspect",
+          "evidence_unit_ids": [
+            "v7u_N003657"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_search_suspect",
+          "target": "n_action_develop_charges",
+          "evidence_unit_ids": [
+            "v7u_N003658",
+            "v7u_N003659"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_develop_charges",
+          "target": "n_output_outcomes",
+          "evidence_unit_ids": [
+            "v7u_N003658",
+            "v7u_N003659"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S13_001_007",
+          "edge_type": "USES",
+          "source": "n_start",
+          "target": "n_standard_evidence",
+          "evidence_unit_ids": [
+            "v7u_N003650"
+          ],
+          "evidence_strength": "functional_dependency",
+          "qualifier": "standard",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003645",
+        "v7u_N003646",
+        "v7u_N003647",
+        "v7u_N003648",
+        "v7u_N003649",
+        "v7u_N003650",
+        "v7u_N003651",
+        "v7u_N003652",
+        "v7u_N003653",
+        "v7u_N003654",
+        "v7u_N003655",
+        "v7u_N003656",
+        "v7u_N003657",
+        "v7u_N003658",
+        "v7u_N003659"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Extracted from a description of how law enforcement uses SARs. The sequential order is inferred from text flow; some steps may be parallel (e.g., searching for suspect mentions could occur simultaneously with initial identification). Key limitation: SARs cannot be used as evidence. Card is useful for exam option evaluation regarding SAR purpose and LE usage."
+    }
+  ],
+  "skip_reason": null
+}

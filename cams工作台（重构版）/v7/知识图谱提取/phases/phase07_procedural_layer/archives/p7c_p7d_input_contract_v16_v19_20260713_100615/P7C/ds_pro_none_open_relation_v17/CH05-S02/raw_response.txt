@@ -1,0 +1,110 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357",
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "proposition": "HSBC洗钱丑闻及监管处罚触发银行采取纠正措施，加强中央监督、限制地方自主权并实施去风险化，重构金融犯罪风险管理框架",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05_S02_001",
+      "reason": "该有向链表达了外部事件触发特定应对动作并产生配置变化，超出基础KG的事实列举，可用于判断选项中的因果和措施"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000359",
+        "v7u_N000360",
+        "v7u_N000361",
+        "v7u_N000363"
+      ],
+      "proposition": "高管辞职、监管批评、声誉损害等后果及总结教训，属于案例背景和事实，无明确的识别、评估、决策或应对的有向结构",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元提供原因、并列后果或总结，基础KG可充分表达为事实或教训，不存在可供选项判断的局部程序性或判断性有向链"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05_S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "汇丰银行纠正措施：加强中央监督、限制地方自主权与去风险化",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "HSBC洗钱丑闻曝光并遭受19亿美元罚款及五年延期起诉协议要求全面整改",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000357",
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "HSBC被迫执行纠正措施：重新平衡内部权力，加强中央监督和合规职能，限制地方业务部门自主权，并通过战略性去风险化减少高风险司法管辖区敞口",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "HSBC金融犯罪风险管理框架重构：中央监督加强，地方自主权受限，去风险化实施（旨在恢复完整性并减少敞口）",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000357",
+            "v7u_N000358",
+            "v7u_N000362"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "As a corrective measure, the bank was compelled to rebalance power dynamics... (v7u_N000362)"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "This restructuring aimed to restore the integrity of its financial crime risk management framework and reduce exposure to high-risk jurisdictions... (v7u_N000362)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357",
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：HSBC洗钱丑闻及监管处罚触发银行执行纠正措施，导致金融犯罪风险管理框架重构（加强中央监督、限制地方自主权、去风险化）。KG不足：基础KG可保存案例事实，但无法表达从外部事件到具体应对措施再到配置变化的有向判断链。选项判断：可确认或排除关于汇丰后丑闻应对措施、组织结构变化的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

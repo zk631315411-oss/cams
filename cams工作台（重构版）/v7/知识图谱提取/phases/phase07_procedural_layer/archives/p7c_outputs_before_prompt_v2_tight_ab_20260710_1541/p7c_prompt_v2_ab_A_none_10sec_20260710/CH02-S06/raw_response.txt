@@ -1,0 +1,60 @@
+{
+  "section_id": "CH02-S06",
+  "section_title": "Types of financial crime > Cyber-enabled crime",
+  "cards": [
+    {
+      "card_id": "card_CH02_S06_001",
+      "section_id": "CH02-S06",
+      "card_nature": "execution",
+      "title": "Spy/corrupt/extort intention triggers malicious software infection",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Criminal scheme intention: spy, corrupt, or extort",
+          "evidence_unit_ids": ["v7u_N000194"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Installed malicious computer programs infect target's operating system",
+          "evidence_unit_ids": ["v7u_N000194"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Target's operating system infected",
+          "evidence_unit_ids": ["v7u_N000194"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000194"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000194"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000194"],
+      "review_status": "accepted",
+      "review_notes": "Incremental proposition: Intention to spy, corrupt, or extort (E1) triggers malicious software infection (P2→X3). KG limitation: The base KG only lists methods and outcomes; it cannot express the conditional trigger. Option judgment: Can test options like 'malicious software infection only occurs for ransomware' as false."
+    }
+  ],
+  "skip_reason": null
+}

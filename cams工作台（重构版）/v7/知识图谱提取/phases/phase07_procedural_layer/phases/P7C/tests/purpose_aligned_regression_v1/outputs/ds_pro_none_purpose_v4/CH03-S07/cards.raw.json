@@ -1,0 +1,170 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "cards": [
+    {
+      "card_id": "CH03-S07-1",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIU综合金融情报触发红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "E2_SAR_crossborder",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "银行可疑交易报告(SARs)与跨境金融活动信息",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_FIU_assessment",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU综合评估SARs与跨境活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_red_flag",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发国际监管网络红旗信号/案件升级",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "E2_SAR_crossborder",
+          "target": "P1_FIU_assessment",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1_FIU_assessment",
+          "target": "X1_red_flag",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：FIU接收SAR和跨境活动信息，综合评估后触发国际红旗/案件升级。KG不足：基础KG可以知道FIU接收报告，但无法表达本案例中FIU基于SAR和跨境活动信息综合评估并产生案件升级的具体判断链。选项判断：可帮助确认FIU在何种条件下升级案件，以及升级后的行动。LLM推理：无。"
+    },
+    {
+      "card_id": "CH03-S07-2",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU案件升级触发执法机构监控与资产冻结",
+      "flow_nodes": [
+        {
+          "node_id": "E4_FIU_escalation",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "FIU升级案件",
+          "evidence_unit_ids": [
+            "v7u_N000285",
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_surveillance",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构(Europol, Interpol等)对Wolfe及其同伙进行定向监控",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_asset_freeze",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构协调进行资产冻结",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X3_dismantled",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "数字钱包被查封，Wolfe用于恐怖融资的公司被瓦解",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "E4_FIU_escalation",
+          "target": "P2_surveillance",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit",
+          "condition": "As FIUs escalated the case",
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "As FIUs escalated the case, law enforcement agencies... conducted targeted surveillance"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "P2_surveillance",
+          "target": "P2_asset_freeze",
+          "evidence_unit_ids": [
+            "v7u_N000286",
+            "v7u_N000287"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "They conducted coordinated asset freezes to disrupt financial channels"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "P2_asset_freeze",
+          "target": "X3_dismantled",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "resulting in the seizure of digital wallets and the dismantling of Mr. Wolfe’s companies used to finance terrorism"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285",
+        "v7u_N000286",
+        "v7u_N000287"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：FIU升级案件后，执法机构进行定向监控；随后进行资产冻结，导致数字钱包被查封和公司瓦解。KG不足：基础KG可以知道执法机构会采取行动，但无法表达案例中从升级到监控，再到资产冻结并产生具体结果的有序应对链。选项判断：可确认在FIU升级后，执法机构采取的步骤顺序和结果。LLM推理：边E2（监控到资产冻结）为functional_dependency，原文未明示监控直接导致冻结，但两者同属执法机构响应，且监控为冻结提供情报支持，是必要前序；待复核。"
+    }
+  ],
+  "skip_reason": ""
+}

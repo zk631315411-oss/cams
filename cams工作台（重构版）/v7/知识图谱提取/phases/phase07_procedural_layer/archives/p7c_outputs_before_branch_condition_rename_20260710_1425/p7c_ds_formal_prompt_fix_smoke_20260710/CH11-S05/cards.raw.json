@@ -1,0 +1,280 @@
+{
+  "section_id": "CH11-S05",
+  "section_title": "Money laundering risks associated with MSBs, payment service providers, and ecommerce > Case example: LotusMall and illegal gambling",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S05_001",
+      "section_id": "CH11-S05",
+      "card_nature": "risk_indicator",
+      "title": "Red flags for identifying money laundering through e-commerce (LotusMall case)",
+      "summary": "Extracts red flags from the LotusMall case that indicate potential money laundering in e-commerce transactions.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Online transaction occurs on e-commerce platform",
+          "evidence_unit_ids": [
+            "v7u_N000867",
+            "v7u_N000865"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_risk_assess_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess transaction for potential money laundering red flags",
+          "evidence_unit_ids": [
+            "v7u_N000867",
+            "v7u_N000871",
+            "v7u_N000872",
+            "v7u_N000873"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "std_pricing_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Product pricing far above expected market value",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_volume_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "High number of low-value daily transactions",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_offshore_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Use of offshore servers adding anonymity",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Transaction flagged as suspicious for money laundering",
+          "evidence_unit_ids": [
+            "v7u_N000874",
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_risk_assess_01",
+          "evidence_unit_ids": [
+            "v7u_N000867"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_risk_assess_01",
+          "target": "std_pricing_01",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_risk_assess_01",
+          "target": "std_volume_01",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_risk_assess_01",
+          "target": "std_offshore_01",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_005",
+          "edge_type": "PRODUCES",
+          "source": "n_risk_assess_01",
+          "target": "n_output_01",
+          "evidence_unit_ids": [
+            "v7u_N000874",
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000865",
+        "v7u_N000867",
+        "v7u_N000871",
+        "v7u_N000872",
+        "v7u_N000873",
+        "v7u_N000874",
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card models risk indicators described in the LotusMall case example. Red flags are explicitly listed; assessment process and output are inferred from case context and authority urges. Needs review due to weak process order and inferred output."
+    },
+    {
+      "card_id": "p7card_CH11-S05_002",
+      "section_id": "CH11-S05",
+      "card_nature": "control",
+      "title": "Authorities urge e-commerce platforms to improve risk monitoring",
+      "summary": "Models the control recommendation from authorities for e-commerce platforms to enhance risk monitoring and proactively address fraud.",
+      "flow_nodes": [
+        {
+          "node_id": "n_cmd_02",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "Authorities urge e-commerce platforms to improve risk monitoring",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_monitor_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement improved risk monitoring measures",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "std_pattern_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Flag high-risk patterns such as multiple seller accounts linked to a single entity",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "std_stance_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Take proactive stance against fraud and collusion between buyers and sellers",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_02",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "Enhanced risk monitoring system in place",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_cmd_02",
+          "target": "n_monitor_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_002",
+          "edge_type": "USES",
+          "source": "n_monitor_02",
+          "target": "std_pattern_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_003",
+          "edge_type": "USES",
+          "source": "n_monitor_02",
+          "target": "std_stance_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_002_004",
+          "edge_type": "PRODUCES",
+          "source": "n_monitor_02",
+          "target": "n_output_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card models authorities' urging as a control requirement for e-commerce platforms. The recommendation is explicit, but implementation steps and final output are inferred. Needs review due to weak process order and inferred output. The source is a recommendation, not a binding rule, but provides exam-relevant control standard."
+    }
+  ],
+  "skip_reason": null
+}

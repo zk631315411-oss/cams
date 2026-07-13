@@ -1,0 +1,242 @@
+{
+  "section_id": "CH49-S08",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S08_001",
+      "section_id": "CH49-S08",
+      "card_nature": "assessment",
+      "title": "Risk-based decision on SAR filing and documentation",
+      "summary": "This card models the risk-based process for deciding whether to file a SAR, including analysis, regulatory guideline comparison, documentation of rationale, and critical standards regarding false filing and penalties.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Unusual activity detected",
+          "evidence_unit_ids": ["v7u_N003577"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_analyze",
+          "node_type": "action",
+          "label": "Analyze case facts and compare with regulatory guidelines",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_suspicious",
+          "node_type": "decision",
+          "label": "Suspicious activity identified?",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_decision_meets",
+          "node_type": "decision",
+          "label": "Meets regulatory guidelines for filing SAR?",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_doc_no",
+          "node_type": "action",
+          "label": "Document decision and rationale for not filing SAR",
+          "evidence_unit_ids": ["v7u_N003579", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_no_sar",
+          "node_type": "output",
+          "label": "No SAR filed, documentation recorded",
+          "evidence_unit_ids": ["v7u_N003579", "v7u_N003583"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_file",
+          "node_type": "action",
+          "label": "File SAR",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_doc_file",
+          "node_type": "action",
+          "label": "Document decision and rationale for filing SAR",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_sar",
+          "node_type": "output",
+          "label": "SAR filed, documentation recorded",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_standard_doc_importance",
+          "node_type": "standard",
+          "label": "Documenting rationale for not filing is equally important as for filing",
+          "evidence_unit_ids": ["v7u_N003579"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_false_filing",
+          "node_type": "standard",
+          "label": "Filing false SAR or providing inaccurate information is non-compliance",
+          "evidence_unit_ids": ["v7u_N003584"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_insufficient_evidence",
+          "node_type": "standard",
+          "label": "Reasons for not filing may include insufficient evidence or lack of supporting information (e.g., subpoena does not automatically result in SAR)",
+          "evidence_unit_ids": ["v7u_N003581", "v7u_N003582"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_penalty",
+          "node_type": "standard",
+          "label": "Failure to file SAR when suspicious activity exists can result in severe fines and penalties; willful violations subject to criminal penalties",
+          "evidence_unit_ids": ["v7u_N003580", "v7u_N003585"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_analyze",
+          "evidence_unit_ids": ["v7u_N003577"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_analyze",
+          "target": "n_decision_suspicious",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_suspicious",
+          "target": "n_decision_meets",
+          "condition": "Yes, suspicious activity identified",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_suspicious",
+          "target": "n_action_doc_no",
+          "condition": "No, no suspicious activity or insufficient evidence",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_meets",
+          "target": "n_action_file",
+          "condition": "Yes, meets regulatory guidelines",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_006",
+          "edge_type": "DECIDES",
+          "source": "n_decision_meets",
+          "target": "n_action_doc_no",
+          "condition": "No, does not meet guidelines",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_action_doc_no",
+          "target": "n_output_no_sar",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_008",
+          "edge_type": "PRECEDES",
+          "source": "n_action_file",
+          "target": "n_action_doc_file",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_action_doc_file",
+          "target": "n_output_sar",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_010",
+          "edge_type": "USES",
+          "source": "n_action_analyze",
+          "target": "n_standard_penalty",
+          "evidence_unit_ids": ["v7u_N003580"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_011",
+          "edge_type": "USES",
+          "source": "n_action_analyze",
+          "target": "n_standard_insufficient_evidence",
+          "evidence_unit_ids": ["v7u_N003581", "v7u_N003582"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_012",
+          "edge_type": "USES",
+          "source": "n_action_file",
+          "target": "n_standard_false_filing",
+          "evidence_unit_ids": ["v7u_N003584"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_013",
+          "edge_type": "USES",
+          "source": "n_action_doc_no",
+          "target": "n_standard_doc_importance",
+          "evidence_unit_ids": ["v7u_N003579"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S08_001_014",
+          "edge_type": "USES",
+          "source": "n_action_doc_file",
+          "target": "n_standard_doc_importance",
+          "evidence_unit_ids": ["v7u_N003579"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003577",
+        "v7u_N003579",
+        "v7u_N003580",
+        "v7u_N003581",
+        "v7u_N003582",
+        "v7u_N003583",
+        "v7u_N003584",
+        "v7u_N003585"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Card synthesizes risk-based SAR decision process from v7u_N003583 and supporting requirements. Some PRECEDES edges to output nodes are functional dependencies; the original text does not prescribe strict chronological sequence. No strict workflow, but provides clear assessment standards."
+    }
+  ],
+  "skip_reason": null
+}

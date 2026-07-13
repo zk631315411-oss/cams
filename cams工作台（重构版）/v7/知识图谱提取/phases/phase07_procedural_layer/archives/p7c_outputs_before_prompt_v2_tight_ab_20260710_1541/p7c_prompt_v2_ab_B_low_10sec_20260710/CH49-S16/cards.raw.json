@@ -1,0 +1,76 @@
+{
+  "section_id": "CH49-S16",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Financial inclusion",
+  "cards": [
+    {
+      "card_id": "CH49-S16-C1",
+      "section_id": "CH49-S16",
+      "card_nature": "assessment",
+      "title": "Documentation Requirements Exclude Vulnerable Customers from Financial Services",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "Strict documentation requirements imposed by financial institutions",
+          "evidence_unit_ids": [
+            "v7u_N003704"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assessment of customer's ability to provide required documentation",
+          "evidence_unit_ids": [
+            "v7u_N003704"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Exclusion of vulnerable customers from financial services",
+          "evidence_unit_ids": [
+            "v7u_N003704"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003704"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003704"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "mechanism_explains_risk",
+          "condition": "When customer is unable to provide required documentation",
+          "qualifier": "can inadvertently",
+          "modality": "may"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003704"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：严格的文档要求 --机制解释风险--> 弱势客户被排斥（当无法提供文件时）；KG不足：基础KG只能表达AFC措施与金融普惠冲突的事实，不能表达细粒度因果机制；选项判断：可分析特定文档要求如何通过排斥机制影响金融普惠，判断AFC措施的具体影响路径。"
+    }
+  ],
+  "skip_reason": null
+}

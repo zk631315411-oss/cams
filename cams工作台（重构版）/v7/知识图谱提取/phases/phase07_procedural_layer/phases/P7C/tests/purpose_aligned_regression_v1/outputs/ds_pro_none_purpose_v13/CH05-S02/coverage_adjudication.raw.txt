@@ -1,0 +1,185 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "仅案例背景事实，无内部有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "单一处罚结果，无内部有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "单一人事后果，无内部判断或程序。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "诊断性陈述，无触发动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "一系列并列后果，基础KG可表达，无有向流程。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "reason": "总结性教训，无需程序性结构。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000356"
+      ],
+      "proposition": "汇丰因反洗钱失败允许洗钱8.8亿美元",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅案例背景事实，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000357"
+      ],
+      "proposition": "美国监管机构罚款19亿美元",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "单一处罚结果，无内部有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "proposition": "延期起诉协议要求整改，触发汇丰加强中央监督、限制自主权、去风险化",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "外部命令触发具体执行动作并产生配置变化，形成程序性有向链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000359"
+      ],
+      "proposition": "调查导致高管辞职",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "单一人事后果，无内部判断或程序。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000360"
+      ],
+      "proposition": "监管指出汇丰将本地利益置于合规之上",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "诊断性陈述，无触发动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000361"
+      ],
+      "proposition": "丑闻引发监管反弹、声誉损害和客户信任丧失",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一系列并列后果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N000363"
+      ],
+      "proposition": "案例提供薄弱控制导致运营和声誉风险的教训",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性教训，无需程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "HSBC延期起诉协议触发组织整改与权力重平衡",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "美国司法部与汇丰的五年延期起诉协议，要求全面整改全球合规运营",
+          "evidence_unit_ids": [
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "汇丰采取纠正措施：加强中央监督和合规职能，限制地方业务部门自主权，通过战略去风险化减少高风险辖区敞口",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "组织权力重新平衡：中央监督和合规职能加强，地方自主权受限，去风险化实施",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000358",
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：美国司法部延期起诉协议要求全面整改（E7_external_command）→触发汇丰执行纠正措施（P2_execution）→产生组织权力重配置和控制加强（X5_config_change）。基础KG不足以表达外部命令到具体执行动作再到配置变化的指向因果。该结构可帮助判断应对违反的具体措施顺序、主体职责和结果类型。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

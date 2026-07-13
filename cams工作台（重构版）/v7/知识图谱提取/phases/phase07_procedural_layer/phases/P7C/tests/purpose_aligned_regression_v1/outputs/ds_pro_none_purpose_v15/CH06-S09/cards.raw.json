@@ -1,0 +1,317 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000459"
+      ],
+      "proposition": "机构必须遵守当地监管要求识别PEP",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_001",
+      "reason": "形成监管要求到识别义务的有向链，基础KG仅保存整体规则。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000460"
+      ],
+      "proposition": "机构可根据风险偏好选择执行更高PEP标准",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_002",
+      "reason": "风险偏好导向可选标准升级，基础KG没有表达该决策链。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000477"
+      ],
+      "proposition": "部分机构因个人卸任后可能保持影响力而维持PEP分类",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_003",
+      "reason": "卸任后影响力判断导致分类维持，基础KG没有表达该判断链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000482"
+      ],
+      "proposition": "机构必须根据风险偏好调整交易监控和KYC审查并升级处理",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_004",
+      "reason": "风险偏好约束机构的具体控制调整和升级，基础KG没有表达该控制链。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "机构必须遵守当地监管要求识别政治敏感人物",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "当地监管要求 (local regulatory requirements)",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须识别政治敏感人物 (Organizations must identify PEPs)",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "识别政治敏感人物的义务 (Obligation to identify PEPs)",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations must adhere to their local regulatory requirements in identifying PEPs."
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations must adhere to their local regulatory requirements in identifying PEPs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000459"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：当地监管要求 --约束--> 机构必须识别PEP --产生--> 识别义务；KG不足：基础KG将本规则作为整体事实保存，无法表达监管要求如何约束机构的具体识别动作并形成义务的有向链；选项判断：可以确认机构在识别PEP时必须遵守当地监管要求，排除可以无视当地要求的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_002",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "机构可根据风险偏好选择执行更高的PEP标准",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好 (Organizations' risk appetite)",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构可选择执行更高的PEP标准 (Organizations may choose to enforce higher PEP standards)",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "更高的PEP标准被应用 (Higher PEP standards enforced)",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations may choose to enforce higher standards based on their risk appetite."
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations may choose to enforce higher standards based on their risk appetite."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000460"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好 --允许选择--> 执行更高PEP标准 --产生--> 标准配置提高；KG不足：基础KG只能保存\"机构可根据风险偏好执行更高标准\"这一事实，无法表达风险偏好作为条件如何导向可选的标准升级决策链；选项判断：可确认机构可以根据风险偏好提高标准，排除必须提高或禁止提高的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_003",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "部分机构采用“一旦是PEP，永远是PEP”的方法维持PEP分类",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "个人已卸任但可能仍保持影响力 (Individual has stepped down but may remain in the same circles of influence)",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "部分机构维持PEP分类 (Some organizations maintain PEP classification)",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "PEP分类被维持 (PEP classification maintained)",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Some organizations follow a “once a PEP, always a PEP” approach because the individual may remain in the same circles of influence, even if they have stepped down."
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Some organizations follow a “once a PEP, always a PEP” approach because the individual may remain in the same circles of influence, even if they have stepped down."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000477"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：个人卸任但可能保持影响力 --促使--> 部分机构维持PEP分类 --产生--> 分类维持；KG不足：基础KG将这一方法作为整体事实保存，无法表达卸任后影响力判断如何导致分类维持的决策链；选项判断：可确认部分机构可能基于影响力持续性而维持分类，排除所有机构都自动移除分类的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_004",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "机构必须根据风险偏好调整交易监控和KYC审查并升级处理",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "机构的风险偏好 (Organizations' risk appetite)",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须采取必要步骤调整交易监控和KYC审查，并根据风险偏好升级处理 (Organizations must take necessary steps to adapt transaction monitoring and KYC reviews and escalate based on risk appetite)",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "调整交易监控和KYC审查并升级处理的义务 (Obligation to adapt transaction monitoring and KYC reviews and escalate)",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000482"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：机构的风险偏好 --约束--> 机构必须调整监控/KYC并升级 --产生--> 调整与升级义务；KG不足：基础KG无法表达风险偏好如何具体约束机构调整监控、审查和升级动作的完整有向链；选项判断：可确认机构必须基于风险偏好采取这些措施，排除可以不调整或不升级的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

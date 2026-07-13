@@ -1,0 +1,398 @@
+{
+  "section_id": "CH47-S13",
+  "section_title": "Transaction monitoring > Investigating someone inside the organization",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S13_001",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "Internal Investigation Process",
+      "summary": "Process for investigating an internal allegation: creating an investigation plan, engaging HR/IT as needed, conducting witness and suspect interviews, and collating evidence to present a case.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Allegation received",
+          "evidence_unit_ids": ["v7u_N003386"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_plan",
+          "node_type": "action",
+          "label": "Create investigation plan",
+          "evidence_unit_ids": ["v7u_N003386"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_decision_actions",
+          "node_type": "decision",
+          "label": "Determine required actions based on allegations and scope",
+          "evidence_unit_ids": ["v7u_N003384", "v7u_N003387", "v7u_N003388"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_prepare_iv_plan",
+          "node_type": "action",
+          "label": "Prepare interview plan",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_interview",
+          "node_type": "action",
+          "label": "Conduct witness and suspect interviews",
+          "evidence_unit_ids": ["v7u_N003384", "v7u_N003389", "v7u_N003390", "v7u_N003391", "v7u_N003392", "v7u_N003394"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_hr",
+          "node_type": "action",
+          "label": "Engage HR for possible suspension",
+          "evidence_unit_ids": ["v7u_N003387"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_it",
+          "node_type": "action",
+          "label": "Engage IT to secure digital evidence",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_collate",
+          "node_type": "action",
+          "label": "Collate, assess, and preserve evidence",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_case",
+          "node_type": "output",
+          "label": "Case presented to department for formal consideration",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_interview_plan",
+          "node_type": "input",
+          "label": "Interview plan",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_witness_statements",
+          "node_type": "input",
+          "label": "Witness statements",
+          "evidence_unit_ids": ["v7u_N003389", "v7u_N003390"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_digital_evidence",
+          "node_type": "input",
+          "label": "Digital evidence (emails, logs, recordings)",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_confidentiality",
+          "node_type": "standard",
+          "label": "Confidentiality",
+          "evidence_unit_ids": ["v7u_N003382", "v7u_N003395"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_recordkeeping",
+          "node_type": "standard",
+          "label": "Proper recordkeeping",
+          "evidence_unit_ids": ["v7u_N003382", "v7u_N003395"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_law_policy",
+          "node_type": "standard",
+          "label": "Within the law and organization's policies",
+          "evidence_unit_ids": ["v7u_N003385"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_protection",
+          "node_type": "standard",
+          "label": "Protection of organization and employee",
+          "evidence_unit_ids": ["v7u_N003382"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_not_lead",
+          "node_type": "standard",
+          "label": "Not leading the witness",
+          "evidence_unit_ids": ["v7u_N003390"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_sensitive",
+          "node_type": "standard",
+          "label": "Sensitive manner during interviews",
+          "evidence_unit_ids": ["v7u_N003394"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_independent",
+          "node_type": "standard",
+          "label": "Independent third party or HR representative present",
+          "evidence_unit_ids": ["v7u_N003392"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_plan",
+          "evidence_unit_ids": ["v7u_N003386"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_plan",
+          "target": "n_decision_actions",
+          "evidence_unit_ids": ["v7u_N003384", "v7u_N003387", "v7u_N003388"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_003",
+          "edge_type": "DECIDES",
+          "source": "n_decision_actions",
+          "target": "n_action_interview",
+          "condition": "If interview needed",
+          "evidence_unit_ids": ["v7u_N003384"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_actions",
+          "target": "n_action_hr",
+          "condition": "If HR involvement needed",
+          "evidence_unit_ids": ["v7u_N003387"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_actions",
+          "target": "n_action_it",
+          "condition": "If IT support needed",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_action_prepare_iv_plan",
+          "target": "n_action_interview",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_prepare_iv_plan",
+          "target": "n_input_interview_plan",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_008",
+          "edge_type": "USES",
+          "source": "n_action_interview",
+          "target": "n_input_interview_plan",
+          "evidence_unit_ids": ["v7u_N003393"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_interview",
+          "target": "n_input_witness_statements",
+          "evidence_unit_ids": ["v7u_N003389", "v7u_N003390"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_it",
+          "target": "n_input_digital_evidence",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_011",
+          "edge_type": "PRECEDES",
+          "source": "n_action_interview",
+          "target": "n_action_collate",
+          "evidence_unit_ids": ["v7u_N003383", "v7u_N003389"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_012",
+          "edge_type": "PRECEDES",
+          "source": "n_action_it",
+          "target": "n_action_collate",
+          "evidence_unit_ids": ["v7u_N003383", "v7u_N003388"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_013",
+          "edge_type": "USES",
+          "source": "n_action_collate",
+          "target": "n_input_witness_statements",
+          "evidence_unit_ids": ["v7u_N003389"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_014",
+          "edge_type": "USES",
+          "source": "n_action_collate",
+          "target": "n_input_digital_evidence",
+          "evidence_unit_ids": ["v7u_N003388"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_015",
+          "edge_type": "USES",
+          "source": "n_action_interview",
+          "target": "n_standard_not_lead",
+          "evidence_unit_ids": ["v7u_N003390"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_016",
+          "edge_type": "USES",
+          "source": "n_action_interview",
+          "target": "n_standard_sensitive",
+          "evidence_unit_ids": ["v7u_N003394"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_017",
+          "edge_type": "USES",
+          "source": "n_action_interview",
+          "target": "n_standard_law_policy",
+          "evidence_unit_ids": ["v7u_N003391"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_018",
+          "edge_type": "USES",
+          "source": "n_action_interview",
+          "target": "n_standard_independent",
+          "evidence_unit_ids": ["v7u_N003392"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_019",
+          "edge_type": "USES",
+          "source": "n_action_hr",
+          "target": "n_standard_protection",
+          "evidence_unit_ids": ["v7u_N003382", "v7u_N003387"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_020",
+          "edge_type": "USES",
+          "source": "n_action_collate",
+          "target": "n_standard_confidentiality",
+          "evidence_unit_ids": ["v7u_N003382", "v7u_N003395"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_021",
+          "edge_type": "USES",
+          "source": "n_action_collate",
+          "target": "n_standard_recordkeeping",
+          "evidence_unit_ids": ["v7u_N003382", "v7u_N003395"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_022",
+          "edge_type": "USES",
+          "source": "n_action_collate",
+          "target": "n_standard_law_policy",
+          "evidence_unit_ids": ["v7u_N003385"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S13_001_023",
+          "edge_type": "PRODUCES",
+          "source": "n_action_collate",
+          "target": "n_output_case",
+          "evidence_unit_ids": ["v7u_N003383"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003382",
+        "v7u_N003383",
+        "v7u_N003384",
+        "v7u_N003385",
+        "v7u_N003386",
+        "v7u_N003387",
+        "v7u_N003388",
+        "v7u_N003389",
+        "v7u_N003390",
+        "v7u_N003391",
+        "v7u_N003392",
+        "v7u_N003393",
+        "v7u_N003394",
+        "v7u_N003395"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Weak inferred process order for plan-to-decision linkage and interview/IT-to-collate sequence; investigation steps may not be strictly linear. Decision node evidence is aggregated functional dependency."
+    }
+  ],
+  "skip_reason": null
+}

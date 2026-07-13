@@ -1,0 +1,102 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000358", "v7u_N000362"],
+      "proposition": "美国司法部的延期起诉协议要求全面整改，触发汇丰银行加强中央监督和合规职能、限制地方自治，并通过去风险减少高风险敞口",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "该链包含外部命令触发银行具体纠正动作并产生组织结构与风险策略变化的程序性结构，超出了基础KG保存孤立事实的能力，有助于判断合规整改的触发与执行方式。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000356", "v7u_N000357", "v7u_N000359"],
+      "proposition": "洗钱丑闻导致罚款和高管辞职",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些后果是事件事实的结果，基础KG可直接保存'事件导致后果'的关联，无需提取为程序性链。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000356", "v7u_N000361"],
+      "proposition": "洗钱丑闻导致监管反弹、声誉损害和市场地位削弱",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些是事件带来的多个并行后果，属于普通因果事实，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000360"],
+      "proposition": "监管指出汇丰内部环境优先利润于合规",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这是对内部环境的发现，没有形成触发后续动作的程序性结构，属于基础KG可保存的孤立判断事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000363"],
+      "proposition": "汇丰案例作为教训，警示弱金融犯罪控制导致运营和声誉风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这是对案例的总结和一般性教训，基础KG可保存为知识，没有局部程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "汇丰银行在延期起诉协议要求下实施组织整改与去风险化",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "美国司法部与汇丰银行签订五年延期起诉协议，要求全面整改全球合规运营",
+          "evidence_unit_ids": ["v7u_N000358"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "汇丰银行被强制重新平衡内部权力，加强中央监督和合规职能，限制地方业务部门自主权，并通过战略性去风险过程减少高风险司法管辖区敞口",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "组织架构调整：中央合规监督增强，地方自治受限；高风险敞口减少",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000358", "v7u_N000362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000362"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000358", "v7u_N000362"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：美国司法部的延期起诉协议要求 → 汇丰银行执行组织整改与去风险化 → 产生中央监督加强、地方自治限制、高风险敞口减少的配置变化。基础KG不足：基础KG可保存DPA、整改事实等孤立信息，但无法表达命令触发具体纠正动作并产出组织与风险策略变化的程序性链，该链为局部判断程序性结构。选项判断：可帮助判断合规整改的触发来源（DPA）与实施路径（内部权力再平衡、去风险），以及确认动作是否已被强制执行。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

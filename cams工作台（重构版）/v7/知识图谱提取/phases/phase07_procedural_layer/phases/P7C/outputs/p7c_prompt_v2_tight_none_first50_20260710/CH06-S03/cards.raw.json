@@ -1,0 +1,95 @@
+{
+  "section_id": "CH06-S03",
+  "section_title": "Money Laundering Risks in Financial Services > Case example: A new corporate banking role",
+  "cards": [
+    {
+      "card_id": "P7C_CH06_S03_001",
+      "section_id": "CH06-S03",
+      "card_nature": "assessment",
+      "title": "Risk and Control Assessment Workflow for New AFC Role",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Elena starts new role overseeing AFC in corporate banking",
+          "evidence_unit_ids": [
+            "v7u_N000396"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conduct risk assessment of corporate banking products, services, and customer base",
+          "evidence_unit_ids": [
+            "v7u_N000397"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess existing systems and controls for commensurability with ML/TF risks",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Determination of whether systems/controls are commensurate with risks",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "PRECEDES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": [
+            "v7u_N000396",
+            "v7u_N000397"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "E002",
+          "edge_type": "PRECEDES",
+          "source": "N002",
+          "target": "N003",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "E003",
+          "edge_type": "PRODUCES",
+          "source": "N003",
+          "target": "N004",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000396",
+        "v7u_N000397",
+        "v7u_N000398"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：新任企业银行AFC角色（Elena starts new role）--首先进行-->风险评估（conduct risk assessment）--然后进行-->系统与控制评估（assess systems and controls）--产出-->控制相称性判断（determination of commensurability）；KG不足：基础KG可以保存风险评估、系统评估等孤立措施，但不能表达它们之间的先后顺序和产出关系；选项判断：可确认风险评估必须在系统评估之前进行，排除顺序逆反的选项。"
+    }
+  ],
+  "skip_reason": ""
+}

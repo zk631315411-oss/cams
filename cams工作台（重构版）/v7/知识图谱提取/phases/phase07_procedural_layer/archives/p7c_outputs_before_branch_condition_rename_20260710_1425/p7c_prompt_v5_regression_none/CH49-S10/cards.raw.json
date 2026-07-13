@@ -1,0 +1,121 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "Avoiding Defensive SARs: Best Practice Assessment",
+      "summary": "When an organization lacks sufficient time or understanding for proper monitoring and research, it should consider its risk appetite and customer relationship rather than filing a defensive SAR, which signals compliance deficiencies and burdens law enforcement.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Lack of sufficient time or complete understanding of business model to properly monitor/research customer activity",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "actor": "organization"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Consider business risk appetite and customer relationship",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit",
+          "actor": "organization"
+        },
+        {
+          "node_id": "n_standard1",
+          "node_type": "standard",
+          "label": "Defensive SARs are a sign of weakness or deficiencies in AFC compliance program",
+          "evidence_unit_ids": [
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard2",
+          "node_type": "standard",
+          "label": "Defensive SARs unduly burden law enforcement, impede ability to quickly act on genuine suspicious activity, and hinder organization's ability to identify/report suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003606"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Avoid filing defensive SAR; instead address underlying compliance program deficiencies",
+          "evidence_unit_ids": [
+            "v7u_N003611",
+            "v7u_N003606",
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard1",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003609",
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard2",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003606",
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003611",
+            "v7u_N003606",
+            "v7u_N003609"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003606",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Card captures the best practice assessment for avoiding defensive SARs. Evidence is explicit, with clear trigger (v7u_N003610), action (v7u_N003610), standards (v7u_N003609, v7u_N003606), and output (v7u_N003611). No strict process order reconstruction needed."
+    }
+  ],
+  "skip_reason": null
+}

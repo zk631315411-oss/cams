@@ -1,0 +1,332 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "title": "Generate and review transaction monitoring alerts",
+      "summary": "Transaction monitoring controls generate or receive alerts, then the alerts are reviewed to determine whether unusual behavior is explainable or potentially suspicious.",
+      "objective": "Use transaction monitoring controls to manage ongoing risk by generating and reviewing alerts.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Apply transaction monitoring controls to ongoing risk",
+          "evidence_unit_ids": [
+            "v7u_N003232"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Organizations apply transaction monitoring controls to manage ongoing risks."
+        },
+        {
+          "node_id": "n_standard_customer_profile_parameters",
+          "node_type": "standard",
+          "label": "Normal parameters for the customer profile",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...beyond normal parameters for the customer profile."
+        },
+        {
+          "node_id": "n_standard_thresholds",
+          "node_type": "standard",
+          "label": "Thresholds and criteria for behavior",
+          "evidence_unit_ids": [
+            "v7u_N003240",
+            "v7u_N003241",
+            "v7u_N003242"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "A threshold is criteria for behavior."
+        },
+        {
+          "node_id": "n_input_customer_activity",
+          "node_type": "input",
+          "label": "Customer activity, behavior, account activity, or transactions",
+          "evidence_unit_ids": [
+            "v7u_N003233",
+            "v7u_N003241"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...customer activity or behavior... monitor customer account activity, assessing transactions..."
+        },
+        {
+          "node_id": "n_action_monitor_activity",
+          "node_type": "action",
+          "label": "Monitor customer activity or transactions",
+          "evidence_unit_ids": [
+            "v7u_N003233",
+            "v7u_N003241",
+            "v7u_N003242"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "A TM system might be applied to monitor customer account activity..."
+        },
+        {
+          "node_id": "n_trigger_beyond_normal_parameters",
+          "node_type": "trigger",
+          "label": "Customer activity or behavior is beyond normal parameters",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...generate alerts when customer activity or behavior is beyond normal parameters for the customer profile."
+        },
+        {
+          "node_id": "n_action_generate_system_alert",
+          "node_type": "action",
+          "label": "Transaction monitoring system generates alert",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "Transaction monitoring systems generate alerts..."
+        },
+        {
+          "node_id": "n_action_raise_manual_alert",
+          "node_type": "action",
+          "label": "Staff raises alert manually when needed",
+          "evidence_unit_ids": [
+            "v7u_N003235",
+            "v7u_N003237"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...staff can still raise alerts manually, when needed."
+        },
+        {
+          "node_id": "n_output_alert",
+          "node_type": "output",
+          "label": "Alert for review",
+          "evidence_unit_ids": [
+            "v7u_N003233",
+            "v7u_N003234",
+            "v7u_N003235"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "The alerts are reviewed..."
+        },
+        {
+          "node_id": "n_action_review_alert",
+          "node_type": "action",
+          "label": "Review alert",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "The alerts are reviewed..."
+        },
+        {
+          "node_id": "n_decision_explainable_or_suspicious",
+          "node_type": "decision",
+          "label": "Assess whether unusual behavior is explainable or potentially suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...assess whether unusual behavior can be explained or if it is potentially suspicious."
+        },
+        {
+          "node_id": "n_output_explained_behavior",
+          "node_type": "output",
+          "label": "Unusual behavior can be explained",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...whether unusual behavior can be explained..."
+        },
+        {
+          "node_id": "n_output_potentially_suspicious",
+          "node_type": "output",
+          "label": "Unusual behavior is potentially suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit",
+          "source_quote": "...or if it is potentially suspicious."
+        },
+        {
+          "node_id": "n_end_review_outcome",
+          "node_type": "end",
+          "label": "Alert review reaches local assessment outcome",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_monitor_activity",
+          "evidence_unit_ids": [
+            "v7u_N003232",
+            "v7u_N003241"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_002",
+          "edge_type": "USES",
+          "source": "n_action_monitor_activity",
+          "target": "n_input_customer_activity",
+          "evidence_unit_ids": [
+            "v7u_N003233",
+            "v7u_N003241"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "input"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_003",
+          "edge_type": "USES",
+          "source": "n_action_monitor_activity",
+          "target": "n_standard_customer_profile_parameters",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_004",
+          "edge_type": "USES",
+          "source": "n_action_monitor_activity",
+          "target": "n_standard_thresholds",
+          "evidence_unit_ids": [
+            "v7u_N003240",
+            "v7u_N003241",
+            "v7u_N003242"
+          ],
+          "evidence_strength": "explicit",
+          "qualifier": "standard"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_005",
+          "edge_type": "PRECEDES",
+          "source": "n_action_monitor_activity",
+          "target": "n_trigger_beyond_normal_parameters",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_006",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_beyond_normal_parameters",
+          "target": "n_action_generate_system_alert",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_generate_system_alert",
+          "target": "n_output_alert",
+          "evidence_unit_ids": [
+            "v7u_N003233"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_raise_manual_alert",
+          "target": "n_output_alert",
+          "evidence_unit_ids": [
+            "v7u_N003235",
+            "v7u_N003237"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_009",
+          "edge_type": "PRECEDES",
+          "source": "n_output_alert",
+          "target": "n_action_review_alert",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_010",
+          "edge_type": "PRECEDES",
+          "source": "n_action_review_alert",
+          "target": "n_decision_explainable_or_suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_011",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable_or_suspicious",
+          "target": "n_output_explained_behavior",
+          "condition": "if explainable",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_012",
+          "edge_type": "DECIDES",
+          "source": "n_decision_explainable_or_suspicious",
+          "target": "n_output_potentially_suspicious",
+          "condition": "if potentially suspicious",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_013",
+          "edge_type": "PRECEDES",
+          "source": "n_output_explained_behavior",
+          "target": "n_end_review_outcome",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S01_001_014",
+          "edge_type": "PRECEDES",
+          "source": "n_output_potentially_suspicious",
+          "target": "n_end_review_outcome",
+          "evidence_unit_ids": [
+            "v7u_N003234"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003232",
+        "v7u_N003233",
+        "v7u_N003234",
+        "v7u_N003235",
+        "v7u_N003237",
+        "v7u_N003240",
+        "v7u_N003241",
+        "v7u_N003242"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Kept as one card because the section describes one local closed process: transaction monitoring controls generate or receive alerts, then those alerts are reviewed for explainability or potential suspiciousness. Manual and automated alerting are alternative ways to produce the same alert output, not separate workflows. Thresholds, customer-profile parameters, scenarios, and account-type differences are represented as standards/inputs used by monitoring rather than chronological stages. Functional_dependency edges only connect the structural entry and local review outcomes; they do not convert parallel standards into a time sequence. AI-based and rules-based systems are treated as context and are not modeled as a separate executable flow because the section does not specify a review workflow for choosing or operating those technologies."
+    }
+  ],
+  "skip_reason": null
+}

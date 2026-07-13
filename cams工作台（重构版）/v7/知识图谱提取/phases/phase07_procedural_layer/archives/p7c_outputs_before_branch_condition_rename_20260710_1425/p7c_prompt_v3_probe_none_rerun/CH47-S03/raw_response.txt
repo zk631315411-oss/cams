@@ -1,0 +1,122 @@
+{
+  "section_id": "CH47-S03",
+  "section_title": "Transaction monitoring > Technology solutions for transaction monitoring",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S03_001",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "AI implementation control requirements",
+      "summary": "When implementing AI solutions, organizations must apply proper care and diligence, including testing for bias with diverse data sets, and ensuring explainability, transparency, and relevance, to effectively support financial crime risk management.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Implementing AI solutions comes with its own risks",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Apply proper care and diligence",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_std1",
+          "node_type": "standard",
+          "label": "Test with diverse data sets to eliminate bias",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std2",
+          "node_type": "standard",
+          "label": "AI solutions should be explainable",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std3",
+          "node_type": "standard",
+          "label": "AI solutions should be transparent",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std4",
+          "node_type": "standard",
+          "label": "AI solutions should be relevant to the organization's specific context",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "AI supports effective financial crime risk management",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003268", "v7u_N003271"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std1",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std2",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std3",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std4",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S03_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003268", "v7u_N003269", "v7u_N003270", "v7u_N003271"],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural control requirements extracted as a control card. The PRECEDES edge from trigger to action is inferred and set to needs_review. Parallel standards are connected via USES edges. The card is useful for evaluating AI implementation controls in exam options."
+    }
+  ],
+  "skip_reason": null
+}

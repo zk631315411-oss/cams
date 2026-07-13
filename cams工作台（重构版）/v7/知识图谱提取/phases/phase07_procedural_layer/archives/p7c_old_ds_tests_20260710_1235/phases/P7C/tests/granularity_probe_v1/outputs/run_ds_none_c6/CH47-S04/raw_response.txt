@@ -1,0 +1,273 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "TM system tuning control requirement",
+      "summary": "Organizations must perform dynamic transaction monitoring system tuning, encompassing scenario setting, customer segmentation, threshold setting, and frequency, to achieve effective detection, reduced false positives, resource efficiency, adaptability, and regulatory compliance.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_action_tune",
+          "node_type": "action",
+          "label": "Conduct TM system tuning",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_scenario",
+          "node_type": "standard",
+          "label": "Scenario setting (create/modify/remove detection rules based on experience)",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_segmentation",
+          "node_type": "standard",
+          "label": "Customer segmentation",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_threshold",
+          "node_type": "standard",
+          "label": "Threshold setting (minimum activity level; aim to reduce false positives)",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_frequency",
+          "node_type": "standard",
+          "label": "Frequency (determines how often tuning occurs; influenced by business strategy changes, anomalies, regulatory updates, market changes)",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284",
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_dynamic",
+          "node_type": "standard",
+          "label": "Dynamic tuning with special assessments triggered by significant events or trends",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_effective",
+          "node_type": "output",
+          "label": "Effective detection of suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003273"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_falsepositives",
+          "node_type": "output",
+          "label": "Reduced false positives",
+          "evidence_unit_ids": [
+            "v7u_N003274"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_resources",
+          "node_type": "output",
+          "label": "Efficient resource use",
+          "evidence_unit_ids": [
+            "v7u_N003275"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_adapt",
+          "node_type": "output",
+          "label": "Manage changes in financial crime and business operations",
+          "evidence_unit_ids": [
+            "v7u_N003276"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_compliance",
+          "node_type": "output",
+          "label": "Ensure regulatory compliance",
+          "evidence_unit_ids": [
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action_tune",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_scenario",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_segmentation",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_threshold",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_frequency",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284",
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "USES",
+          "source": "n_action_tune",
+          "target": "n_standard_dynamic",
+          "qualifier": "standard",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_output_effective",
+          "evidence_unit_ids": [
+            "v7u_N003273"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_008",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_output_falsepositives",
+          "evidence_unit_ids": [
+            "v7u_N003274"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_output_resources",
+          "evidence_unit_ids": [
+            "v7u_N003275"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_010",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_output_adapt",
+          "evidence_unit_ids": [
+            "v7u_N003276"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_011",
+          "edge_type": "PRODUCES",
+          "source": "n_action_tune",
+          "target": "n_output_compliance",
+          "evidence_unit_ids": [
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": "The card models a control requirement rather than an executable process. The four components are parallel standards used by the tuning action; dynamic tuning is an additional standard. Outputs are the stated goals of tuning. The start node is structural with functional dependency."
+    }
+  ],
+  "skip_reason": null
+}

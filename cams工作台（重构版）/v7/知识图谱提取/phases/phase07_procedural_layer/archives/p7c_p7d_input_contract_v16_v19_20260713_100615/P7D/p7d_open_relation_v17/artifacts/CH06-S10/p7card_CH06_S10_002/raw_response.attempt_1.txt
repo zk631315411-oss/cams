@@ -1,0 +1,78 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06_S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_002_1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中 'In companies where there is no natural beneficial owner' 明确表示了不存在自然人UBO这一条件，与节点 E6_no_natural_ubo 一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文 'a controller or a notional beneficial owner should be identified and verified' 直接支持节点 P2_identify_controller。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以条件句 'In companies where...' 引出动作，表明先存在“没有自然人UBO”的前提，然后执行识别，方向明确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件 'In companies where there is no natural beneficial owner' 直接来自原文，完全匹配。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文使用 'should' 表示义务，边未改变或强化限定，保留了原意。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这里不是并列或相关关系，而是明确的条件与动作的逻辑顺序，符合 PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000496"],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "该边完美匹配原文，方向、条件和两端节点均有明确文本支持，无需推理，通过所有检查。"
+    },
+    {
+      "edge_id": "edge_002_2",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文要求 'a controller or a notional beneficial owner should be identified and verified'，直接支持识别动作。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文中的 'identified' 一词蕴含了识别结果，因此控制人被识别的状态有合理依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "识别动作指向识别结果，逻辑方向唯一，不可逆。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文中的 'should' 限定了动作的义务性，边未附加其他限定词，保持了原有语气。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "识别动作和识别结果属于因果产出关系，不是并列或相关，符合 PRODUCES。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000496"],
+      "source_quotes": [
+        "a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "该边通过语义推理得出，原文虽未明示“产生”结果，但‘识别’动作自然包含‘被识别’的结果，属于功能必然推理，审查通过。"
+    }
+  ]
+}

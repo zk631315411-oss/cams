@@ -1,0 +1,120 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000642", "v7u_N000643", "v7u_N000644", "v7u_N000645"],
+      "proposition": "SPV的定义和合法用途，包括并购、合资、房地产、知识产权管理等。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达SPV定义与合法用途，属于纯事实列举和定义，无增量程序性或判断性结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000646", "v7u_N000647", "v7u_N000648", "v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652", "v7u_N000653"],
+      "proposition": "SPV金融犯罪风险与红旗信号：SPV可能通过复杂结构掩饰受益所有权，犯罪分子利用SPV分层非法资金，选择宽松辖区；红旗包括复杂所有权结构、缺乏透明度、目的不明确。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达SPV金融犯罪风险、洗钱手法、红旗信号及管辖选择，均为一般风险描述和孤立指标，无机构应对的有向判断结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000654", "v7u_N000655"],
+      "proposition": "PIV的定义和风险：集合投资工具从小投资者汇集资金，可能被用于庞氏骗局和内幕交易。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达PIV定义和相关欺诈风险，属于孤立事实和风险指标，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000656", "v7u_N000657"],
+      "proposition": "犯罪分子利用SPV和PIV进行贸易洗钱，通过操纵价格将非法资金伪装成合法贸易活动。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述犯罪分子的具体作案方法，属于普通案例机制，基础KG核心点004已覆盖，无机构应对或有向判断链。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "proposition": "金融机构必须对SPV和PIV执行强化尽职调查（EDD），识别最终受益所有人并了解真实目的，这有助于减轻潜在金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "基础KG核心点005仅概括EDD和CDD要求，未表达“识别UBO与了解真实目的”的具体执行动作和“有助于减轻风险”的有向传导关系，属于增量程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "金融机构对SPV和PIV的强化尽职调查程序",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构：对特殊目的载体和集合投资工具执行强化尽职调查，识别最终受益所有人并了解真实目的",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "特殊目的载体和集合投资工具（潜在交易/投资）",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "客户尽职调查规则（如FinCEN CDD规则）",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "潜在金融犯罪风险可能得到减轻",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E002",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N003",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "E003",
+          "edge_type": "PRODUCES",
+          "source": "N001",
+          "target": "N004",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "derivation": "explicit_text",
+          "source_quote": "This will help mitigate any potential financial crime risks"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构在涉及特殊目的载体和集合投资工具的业务中，必须执行强化尽职调查并识别最终受益所有人及真实目的，进而有助于减轻潜在金融犯罪风险。KG不足：基础KG核心点005仅概括了'EDD和CDD要求'这一规则，但未表达'识别UBO与了解真实目的'作为具体执行动作，以及该动作与'帮助减轻风险'之间的有向传导关系。选项判断：可据此确认或排除关于SPV/PIV的EDD义务主体、具体动作内容以及风险减轻效果的强度（'有助于'而非必然消除）。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,81 @@
+{
+  "section_id": "CH05-S02",
+  "card_id": "p7card_CH05_S02_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "源节点E1（丑闻曝光、罚款、延期起诉协议）在v7u_N000356、v7u_N000357、v7u_N000358中有明确对应表述。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "目标节点P1（银行被迫采取纠正措施）在v7u_N000362中明确表述为“As a corrective measure, the bank was compelled to rebalance power dynamics...”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文逻辑为先有违规和处罚，然后银行被迫采取纠正措施，存在明确的时间先后和因果顺序。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "边标签中的“被迫”与原文“compelled”一致，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列来源或共同结果，是直接的应对关系，不构成错误连接。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000356", "v7u_N000357", "v7u_N000358", "v7u_N000362"],
+      "source_quotes": [
+        "In 2012, HSBC was involved in a money laundering scandal...",
+        "US federal regulators imposed a record fine of US$1.9 billion...",
+        "The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul...",
+        "As a corrective measure, the bank was compelled to rebalance power dynamics within its organization..."
+      ],
+      "reason": "原文明示丑闻及监管处罚后，银行被迫采取纠正措施，形成明确的先后（PRECEDES）关系。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "源节点P1（纠正措施包括权力再平衡、加强中央监督、去风险化等）在v7u_N000362中有明确表述。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "目标节点X1（框架重构，旨在恢复完整性并减少敞口）在v7u_N000362中“This restructuring aimed to restore the integrity...”有直接对应。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文显示纠正措施的实施旨在导致风险管理框架的重构，方向为从过程到产出。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "X1标签中的“旨在”与原文“aimed to”一致，保留了目的限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系，是过程与结果的直接产出。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000362"],
+      "source_quotes": [
+        "As a corrective measure, the bank was compelled to rebalance power dynamics within its organization, strengthening central oversight and compliance functions while limiting the autonomy of local business units. This restructuring aimed to restore the integrity of its financial crime risk management framework and reduce exposure to high-risk jurisdictions..."
+      ],
+      "reason": "原文明示银行执行纠正措施，这些措施旨在重构金融犯罪风险管理框架，构成产生（PRODUCES）关系。"
+    }
+  ]
+}

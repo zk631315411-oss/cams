@@ -1,0 +1,187 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "CH49-S09-C1",
+      "section_id": "CH49-S09",
+      "card_nature": "execution",
+      "title": "Documenting rationale for not filing SAR enables regulator understanding",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Decision not to file a SAR",
+          "evidence_unit_ids": [
+            "v7u_N003589"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Document the rationale for not filing a SAR in detail",
+          "evidence_unit_ids": [
+            "v7u_N003590"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Regulators are able to understand the decision",
+          "evidence_unit_ids": [
+            "v7u_N003590"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003589",
+            "v7u_N003590"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003590"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003589",
+        "v7u_N003590"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：决定不提交SAR —(触发)→ 详细记录理由 —(产生效果)→ 监管者能够理解决策。KG不足：基础KG只规定了记录要求，未表达记录导致监管者理解这一因果关系。选项判断：可确认记录的目的之一是确保监管者理解，从而排除其他无关目的选项。"
+    },
+    {
+      "card_id": "CH49-S09-C2",
+      "section_id": "CH49-S09",
+      "card_nature": "assessment",
+      "title": "Conditional CRA reperformance following KYC review when not filing SAR",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Decision not to file a SAR",
+          "evidence_unit_ids": [
+            "v7u_N003589"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conduct trigger-event KYC review",
+          "evidence_unit_ids": [
+            "v7u_N003591"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Check if there is a change in the customer's risk profile",
+          "evidence_unit_ids": [
+            "v7u_N003593"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Reperform CRA and consider further risk mitigants",
+          "evidence_unit_ids": [
+            "v7u_N003593"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "Client file updated with all investigation-related documentation",
+          "evidence_unit_ids": [
+            "v7u_N003595"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003589",
+            "v7u_N003591"
+          ],
+          "evidence_strength": "functional_dependency",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003591",
+            "v7u_N003593"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "DECIDES",
+          "source": "n3",
+          "target": "n4",
+          "condition": "if there is a change in the customer's risk profile",
+          "evidence_unit_ids": [
+            "v7u_N003593"
+          ],
+          "evidence_strength": "explicit",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N003595"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003589",
+        "v7u_N003591",
+        "v7u_N003593",
+        "v7u_N003595"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：决定不提交SAR —(触发)→ 进行触发事件KYC审查 —(结果导致)→ 检查风险状况是否变化 —(如变化)→ 重做CRA并考虑缓释措施 —(产出)→ 更新客户档案。KG不足：基础KG虽包含这些独立要求，但未表达顺序和条件触发关系。选项判断：可判断不提交SAR后应依次进行的步骤，及在何种条件下需要重做CRA并更新档案。"
+    }
+  ]
+}

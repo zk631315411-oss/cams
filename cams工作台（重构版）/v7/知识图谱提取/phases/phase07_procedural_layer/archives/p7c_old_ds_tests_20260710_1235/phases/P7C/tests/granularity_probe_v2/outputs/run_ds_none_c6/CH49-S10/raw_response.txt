@@ -1,0 +1,94 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "control",
+      "title": "Defensive SAR avoidance and best practice",
+      "summary": "Defensive SARs are harmful and indicate AFC program weakness. When lacking time or understanding, organizations should consider business risk appetite and customer relationship instead of filing defensively.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Insufficient time or complete understanding for proper monitoring and research",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Consider business risk appetite and customer relationship (avoid filing defensive SAR)",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard",
+          "node_type": "standard",
+          "label": "Defensive SARs: 'just in case' reports that burden law enforcement, impede investigations, and indicate AFC program weakness",
+          "evidence_unit_ids": [
+            "v7u_N003605",
+            "v7u_N003606",
+            "v7u_N003607",
+            "v7u_N003609",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Risk-based SAR decision (defensive filing avoided)",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_standard",
+          "evidence_unit_ids": [
+            "v7u_N003605",
+            "v7u_N003606",
+            "v7u_N003607",
+            "v7u_N003609",
+            "v7u_N003611"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003607",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Non-procedural source material converted into a control card. The USES and PRODUCES edges are functional dependencies reconstructed from the textual relationship between the best practice advice and the harms of defensive SARs. The trigger and action are explicitly linked in the source."
+    }
+  ],
+  "skip_reason": null
+}

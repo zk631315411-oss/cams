@@ -1,0 +1,60 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "cards": [
+    {
+      "card_id": "CH08-S05-C001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "EDD on SPVs and PIVs to Mitigate Financial Crime Risks",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "SPV or PIV (special purpose vehicles and pooled investment vehicles)",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions conduct enhanced due diligence (EDD), identify ultimate beneficial owners (UBOs), and understand the true purpose of these entities, ensuring compliance with CDD regulations",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Potential financial crime risks associated with SPVs are mitigated",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：SPV或PIV（对象） -> 金融机构进行EDD，识别UBO并了解真实目的 -> 减轻潜在金融犯罪风险。KG不足：基础KG能表达EDD要求和UBO识别规则，但不能表达该程序性链条如何从对象触发，到控制动作，再到风险缓解结果的局部有向结构。选项判断：可确认金融机构对SPV/PIV的EDD义务、识别UBO的具体要求，以及这些措施的目的是减轻风险，而非其他目的。LLM推理：无。"
+    }
+  ],
+  "skip_reason": ""
+}

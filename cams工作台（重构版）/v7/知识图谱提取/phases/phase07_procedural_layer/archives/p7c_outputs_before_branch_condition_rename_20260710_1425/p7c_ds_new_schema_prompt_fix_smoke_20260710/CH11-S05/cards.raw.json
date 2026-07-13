@@ -1,0 +1,208 @@
+{
+  "section_id": "CH11-S05",
+  "section_title": "Money laundering risks associated with MSBs, payment service providers, and ecommerce > Case example: LotusMall and illegal gambling",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S05_001",
+      "section_id": "CH11-S05",
+      "card_nature": "risk_indicator",
+      "title": "Red flags for illegal gambling money laundering through e-commerce platforms",
+      "summary": "Identifying scheme of fake storefronts, overpricing, high transaction volume, and offshore servers as indicators of illegal gambling money laundering.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Unusual e-commerce transaction patterns detected",
+          "evidence_unit_ids": [
+            "v7u_N000871",
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_01",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Product listings priced far above market value",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_02",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Many low-value products with extremely high daily transaction numbers",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_03",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Storefronts that never ship products and use fake delivery records",
+          "evidence_unit_ids": [
+            "v7u_N000869",
+            "v7u_N000870"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_input_04",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Operation via offshore servers increasing anonymity",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess whether indicators point to illegal gambling money laundering",
+          "evidence_unit_ids": [
+            "v7u_N000867",
+            "v7u_N000868"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Potential illegal gambling money laundering scheme identified",
+          "evidence_unit_ids": [
+            "v7u_N000867",
+            "v7u_N000868"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_exit_02",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing obligation for e-commerce platforms to monitor high-risk patterns",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_process_01",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_002",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_input_01",
+          "evidence_unit_ids": [
+            "v7u_N000871"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_003",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_input_02",
+          "evidence_unit_ids": [
+            "v7u_N000872"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_004",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_input_03",
+          "evidence_unit_ids": [
+            "v7u_N000869",
+            "v7u_N000870"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_005",
+          "edge_type": "USES",
+          "source": "n_process_01",
+          "target": "n_input_04",
+          "evidence_unit_ids": [
+            "v7u_N000873"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_process_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": [
+            "v7u_N000867",
+            "v7u_N000868"
+          ],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "p7flowedge_CH11-S05_001_007",
+          "edge_type": "PRECEDES",
+          "source": "n_exit_01",
+          "target": "n_exit_02",
+          "evidence_unit_ids": [
+            "v7u_N000876"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000865",
+        "v7u_N000866",
+        "v7u_N000867",
+        "v7u_N000868",
+        "v7u_N000869",
+        "v7u_N000870",
+        "v7u_N000871",
+        "v7u_N000872",
+        "v7u_N000873",
+        "v7u_N000874",
+        "v7u_N000875",
+        "v7u_N000876"
+      ],
+      "review_status": "needs_review",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,151 @@
+{
+  "section_id": "CH03-S06",
+  "section_title": "Examples of predicate crimes > How terrorists move and store funds",
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S06_001",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "Terrorist financing red flags via fund movement and storage methods",
+      "summary": "This card lists red flags indicating possible terrorist financing through various fund movement and storage channels, such as nested correspondent banking, prepaid card abuse, cryptocurrency rapid conversion, and alternative remittance system misuse.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Transactions or customer behaviour involving fund movement or storage",
+          "evidence_unit_ids": ["v7u_N000258"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_proc_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess for terrorist financing red flags",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_std_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Nested transactions through correspondent banking with unrelated third parties or inconsistent business lines",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_02",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Prepaid cards purchased with false identities and funded via illicit cash or stolen credit cards",
+          "evidence_unit_ids": ["v7u_N000263", "v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_03",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Numerous unrelated cryptocurrency deposits quickly converted to stablecoins or fiat and withdrawn via VASP/jurisdiction with poor AFC controls",
+          "evidence_unit_ids": ["v7u_N000265", "v7u_N000266"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_04",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Repeated deposits in one jurisdiction followed by immediate ATM withdrawals in another jurisdiction (ARS misuse)",
+          "evidence_unit_ids": ["v7u_N000267", "v7u_N000268", "v7u_N000269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Transaction/activity flagged as potential terrorist financing",
+          "evidence_unit_ids": ["v7u_N000262", "v7u_N000266", "v7u_N000269"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_01",
+          "target": "n_proc_01",
+          "evidence_unit_ids": ["v7u_N000258", "v7u_N000259"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "condition_routes_path"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_002",
+          "edge_type": "USES",
+          "source": "n_proc_01",
+          "target": "n_std_01",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_003",
+          "edge_type": "USES",
+          "source": "n_proc_01",
+          "target": "n_std_02",
+          "evidence_unit_ids": ["v7u_N000263", "v7u_N000264"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_004",
+          "edge_type": "USES",
+          "source": "n_proc_01",
+          "target": "n_std_03",
+          "evidence_unit_ids": ["v7u_N000265", "v7u_N000266"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_005",
+          "edge_type": "USES",
+          "source": "n_proc_01",
+          "target": "n_std_04",
+          "evidence_unit_ids": ["v7u_N000267", "v7u_N000268", "v7u_N000269"],
+          "evidence_strength": "explicit",
+          "qualifier": "standard",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_proc_01",
+          "target": "n_exit_01",
+          "evidence_unit_ids": ["v7u_N000262", "v7u_N000266", "v7u_N000269"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000258",
+        "v7u_N000259",
+        "v7u_N000262",
+        "v7u_N000263",
+        "v7u_N000264",
+        "v7u_N000265",
+        "v7u_N000266",
+        "v7u_N000267",
+        "v7u_N000268",
+        "v7u_N000269"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "Risk indicator card constructed from red flag descriptions; not a strict workflow. Entry trigger and exit classification are inferred but supported by red flag patterns and the requirement for banks to understand customer transactions."
+    }
+  ],
+  "skip_reason": null
+}

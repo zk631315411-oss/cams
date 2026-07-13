@@ -1,0 +1,142 @@
+{
+  "section_id": "CH01-S09",
+  "section_title": "Money Laundering and Financial Crime > • Shell companies and front businesses:",
+  "cards": [
+    {
+      "card_id": "card_CH01_S09_001",
+      "section_id": "CH01-S09",
+      "card_nature": "execution",
+      "title": "Tamayo Money Laundering Operation: Evasion Techniques",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Fraudulent email scheme deceives victims into wiring funds over $1.5 million",
+          "evidence_unit_ids": ["v7u_N000050"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Systematic structuring of cash deposits under $10,000 and microstructuring under $1,000 to avoid reporting thresholds",
+          "evidence_unit_ids": ["v7u_N000051", "v7u_N000052", "v7u_N000053"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Recruitment and direction of money mules to transfer funds across banks/jurisdictions, creating multiple layers to obstruct tracing",
+          "evidence_unit_ids": ["v7u_N000054", "v7u_N000056"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Successfully laundered over $700,000 before banks froze and reclaimed some funds on suspicion of fraud",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000051"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000054"],
+          "evidence_strength": "explicit",
+          "source_quote": "To further obscure the source of the illicit funds, Tamayo recruited and supervised money mules..."
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000050",
+        "v7u_N000051",
+        "v7u_N000052",
+        "v7u_N000053",
+        "v7u_N000054",
+        "v7u_N000056",
+        "v7u_N000057"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：骗取电汇后，通过结构化存款和多账户转移，最终成功洗钱并部分被冻结；KG不足：基础KG保存了各事实，但未表达步骤顺序和因果链；选项判断：可确认洗钱流程中的先后步骤和逃避检测的方法。"
+    },
+    {
+      "card_id": "card_CH01_S09_002",
+      "section_id": "CH01-S09",
+      "card_nature": "execution",
+      "title": "Tamayo Investigation and Sentencing Outcome",
+      "flow_nodes": [
+        {
+          "node_id": "n5",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Banks froze and reclaimed funds on suspicion of fraud",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Extensive investigation by US authorities",
+          "evidence_unit_ids": ["v7u_N000058"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n7",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Tamayo pleaded guilty; sentenced to 63 months, 3 years supervised release, $700,474.97 restitution",
+          "evidence_unit_ids": ["v7u_N000058", "v7u_N000049", "v7u_N000059"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": ["v7u_N000058"],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRODUCES",
+          "source": "n6",
+          "target": "n7",
+          "evidence_unit_ids": ["v7u_N000058", "v7u_N000049"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000057",
+        "v7u_N000058",
+        "v7u_N000049",
+        "v7u_N000059"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：银行冻结资金触发调查，调查导致认罪和判刑；KG不足：基础KG保存了判刑事实，但未表达事件间的触发和导致关系；选项判断：可确认触发调查的事件和调查结果。"
+    }
+  ]
+}

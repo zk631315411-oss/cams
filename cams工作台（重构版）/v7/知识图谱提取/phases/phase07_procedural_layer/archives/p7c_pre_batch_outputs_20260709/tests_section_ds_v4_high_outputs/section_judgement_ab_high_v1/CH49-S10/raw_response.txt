@@ -1,0 +1,158 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "Evaluating Defensive SAR Filings",
+      "summary": "Assess whether a suspicious activity report (SAR) filing decision amounts to a defensive SAR, which indicates AFC program deficiencies and should be avoided.",
+      "flow_nodes": [
+        {
+          "node_id": "n_001_start",
+          "node_type": "start",
+          "label": "Start",
+          "evidence_unit_ids": ["v7u_N003603"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_002_trigger",
+          "node_type": "trigger",
+          "label": "Organization faces a SAR filing decision",
+          "evidence_unit_ids": ["v7u_N003605", "v7u_N003608"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "node_id": "n_003_action",
+          "node_type": "action",
+          "label": "Evaluate if the SAR filing would be defensive",
+          "evidence_unit_ids": ["v7u_N003605", "v7u_N003606", "v7u_N003609"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_004_standard",
+          "node_type": "standard",
+          "label": "SARs must be accurate and effective",
+          "evidence_unit_ids": ["v7u_N003604"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_005_standard",
+          "node_type": "standard",
+          "label": "Defensive SARs burden law enforcement and hinder identification of genuine suspicious activity",
+          "evidence_unit_ids": ["v7u_N003606"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_006_standard",
+          "node_type": "standard",
+          "label": "Defensive SARs indicate AFC program deficiencies",
+          "evidence_unit_ids": ["v7u_N003609"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_007_standard",
+          "node_type": "standard",
+          "label": "Organizations should consider risk appetite and customer relationship instead of filing defensive SARs",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_008_output",
+          "node_type": "output",
+          "label": "Decision: Avoid defensive SAR filing; address program deficiencies",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_001_start",
+          "target": "n_002_trigger",
+          "evidence_unit_ids": ["v7u_N003605"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_002_trigger",
+          "target": "n_003_action",
+          "evidence_unit_ids": ["v7u_N003605", "v7u_N003608"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "USES",
+          "source": "n_003_action",
+          "target": "n_004_standard",
+          "evidence_unit_ids": ["v7u_N003604"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_004",
+          "edge_type": "USES",
+          "source": "n_003_action",
+          "target": "n_005_standard",
+          "evidence_unit_ids": ["v7u_N003606"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_005",
+          "edge_type": "USES",
+          "source": "n_003_action",
+          "target": "n_006_standard",
+          "evidence_unit_ids": ["v7u_N003609"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_006",
+          "edge_type": "USES",
+          "source": "n_003_action",
+          "target": "n_007_standard",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_003_action",
+          "target": "n_008_output",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003602",
+        "v7u_N003603",
+        "v7u_N003604",
+        "v7u_N003605",
+        "v7u_N003606",
+        "v7u_N003608",
+        "v7u_N003609",
+        "v7u_N003610",
+        "v7u_N003611"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "non-procedural source material converted into an assessment card; trigger node evidence is inferred from sections describing defensive SARs filing reasons and definition"
+    }
+  ],
+  "skip_reason": null
+}

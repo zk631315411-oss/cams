@@ -1,0 +1,264 @@
+{
+  "section_id": "CH03-S06",
+  "section_title": "Examples of predicate crimes > How terrorists move and store funds",
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S06_001",
+      "section_id": "CH03-S06",
+      "card_nature": "control",
+      "title": "Bank must comprehensively understand customers and transactions to counter terrorism financing",
+      "summary": "Banks should have a comprehensive understanding of their customers and the nature of their transactions due to the exploitative nature of TF.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_control",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Terrorism financing risk necessitates enhanced customer understanding",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_control",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Implement comprehensive customer and transaction understanding",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_control",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Comprehensive understanding of customer and transaction nature",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_control",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ongoing obligation to understand customers and transactions",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_control",
+          "target": "n_process_control",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_002",
+          "edge_type": "USES",
+          "source": "n_process_control",
+          "target": "n_standard_control",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_process_control",
+          "target": "n_exit_control",
+          "evidence_unit_ids": ["v7u_N000259"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000259"],
+      "review_status": "needs_review",
+      "review_notes": "Control card extracted from a non-procedural source; represents a governance requirement rather than a strict execution flow."
+    },
+    {
+      "card_id": "p7card_CH03-S06_002",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "Nested correspondent banking transactions as a terrorism financing red flag",
+      "summary": "Nested transactions where funds are paid to unrelated third parties or in different lines of business are a red flag for TF.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_corr",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Correspondent banking transaction observed",
+          "evidence_unit_ids": ["v7u_N000261"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_corr",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess nested transaction red flags",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_corr",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Funds paid to unrelated third parties or in lines of business different from the customer of record",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_corr",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Potential terrorism financing risk identified",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH03-S06_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_corr",
+          "target": "n_process_corr",
+          "evidence_unit_ids": ["v7u_N000261", "v7u_N000262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_002_002",
+          "edge_type": "USES",
+          "source": "n_process_corr",
+          "target": "n_standard_corr",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_002_003",
+          "edge_type": "PRODUCES",
+          "source": "n_process_corr",
+          "target": "n_exit_corr",
+          "evidence_unit_ids": ["v7u_N000262"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000261", "v7u_N000262"],
+      "review_status": "needs_review",
+      "review_notes": "Risk indicator card extracted from descriptive source material; not a strict workflow."
+    },
+    {
+      "card_id": "p7card_CH03-S06_003",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "Prepaid card abuse as terrorism financing red flags",
+      "summary": "Using false identities to buy multiple prepaid cards and loading them with illicit cash or stolen credit cards are TF red flags.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_pp",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Prepaid card usage under review",
+          "evidence_unit_ids": ["v7u_N000263"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_pp",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess prepaid card abuse red flags",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_pp1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Use of false identities to purchase multiple prepaid cards",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_pp2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Funding prepaid cards with illicit cash or stolen credit cards",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_pp",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Potential terrorism financing risk identified",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH03-S06_003_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_pp",
+          "target": "n_process_pp",
+          "evidence_unit_ids": ["v7u_N000263", "v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_003_002",
+          "edge_type": "USES",
+          "source": "n_process_pp",
+          "target": "n_standard_pp1",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_003_003",
+          "edge_type": "USES",
+          "source": "n_process_pp",
+          "target": "n_standard_pp2",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH03-S06_003_004",
+          "edge_type": "PRODUCES",
+          "source": "n_process_pp",
+          "target": "n_exit_pp",
+          "evidence_unit_ids": ["v7u_N000264"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000263", "v7u_N000264"],
+      "review_status": "needs_review",
+      "review_notes": "Risk indicator card extracted from descriptive source material; includes parallel red flags."
+    },
+    {
+      "card_id": "p7card_CH03-S06_004",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "Cryptocurrency deposit patterns as terrorism financing red flag",
+      "summary": "Numerous unrelated cryptocurrency deposits quickly converted to stablecoins or fiat and withdrawn in weak AFC jurisdictions is a TF red flag.",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_crypto",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Cryptocurrency transactions under review",
+          "evidence_unit_ids": ["v7u_N000265"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_process_crypto",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assess cryptocurrency red flags",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_crypto",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Numerous unrelated deposits quickly converted to stablecoins/fiat and withdrawn in jurisdictions with poor AFC controls",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_exit_crypto",
+          "node

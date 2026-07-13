@@ -1,0 +1,110 @@
+{
+  "section_id": "CH05-S04",
+  "section_title": "Financial crime risks in relation to other types of risks > Operational, legal, concentration, and reputational risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000376"],
+      "proposition": "全球组织以母国监管政策为基础标准，根据东道国法律调整，产生适应性合规配置",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S04_001",
+      "reason": "存在外部命令→调整动作→配置变化的有向程序链，基础KG不能表达该方向性"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000369"],
+      "proposition": "组织面临的主要风险类型包括运营、法律、集中度、声誉风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯粹分类列举，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000370", "v7u_N000375", "v7u_N000377", "v7u_N000378"],
+      "proposition": "运营风险的复杂性定义、法规错位风险及合规计划更新义务",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性和一般规则说明，未形成有向链"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000371", "v7u_N000379", "v7u_N000380", "v7u_N000381"],
+      "proposition": "法律风险定义、来源、后果及AFC保护功能",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义、可能后果及控制效果，无具体有向动作"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000372", "v7u_N000382", "v7u_N000384", "v7u_N000385", "v7u_N000383"],
+      "proposition": "集中度风险定义、出现领域、风险增加原因及缓解方法",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义、列举和一般性缓解知识，未构成有向结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000373", "v7u_N000386", "v7u_N000387", "v7u_N000388"],
+      "proposition": "声誉风险定义、难以量化、信任丧失及声誉来源",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述性事实，无程序或判断结构"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S04_001",
+      "section_id": "CH05-S04",
+      "card_nature": "execution",
+      "title": "全球组织基于母国监管政策进行本地化调整",
+      "flow_nodes": [
+        {
+          "node_id": "node_001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "母国监管政策（home regulator policies）通常作为基础标准",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "全球组织根据东道国法律（host country laws）调整政策和控制",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "合规政策配置（compliance policy configuration）适应东道国法律",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "node_001",
+          "target": "node_002",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "node_002",
+          "target": "node_003",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000376"],
+      "review_status": "accepted",
+      "review_notes": "增量命题：母国监管政策作为基础标准 → 全球组织根据东道国法律调整 → 合规政策配置适应东道国法律；KG不足：基础KG只能保存政策调整的事实，无法表达该过程中外部命令、调整动作和配置变化之间的有向关系；选项判断：可确认或排除涉及合规政策本地化的顺序、主体和结果选项；LLM推理：无"
+    }
+  ],
+  "skip_reason": null
+}

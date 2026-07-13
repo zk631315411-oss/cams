@@ -1,0 +1,150 @@
+{
+  "section_id": "CH49-S12",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S12_001",
+      "section_id": "CH49-S12",
+      "card_nature": "assessment",
+      "title": "Responding to Law Enforcement Requests: Initial Assessment and Coordination",
+      "summary": "Upon receiving a law enforcement request, the designated officer conducts an initial assessment of legality, urgency, relevance, and proportionality, while ensuring confidentiality, accuracy, coordination, and interdepartmental relationships to produce a compliant response.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger",
+          "node_type": "trigger",
+          "label": "Law enforcement request received (subpoena, production order, inquiry, account monitoring request)",
+          "evidence_unit_ids": ["v7u_N003629", "v7u_N003630", "v7u_N003631"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_assess",
+          "node_type": "action",
+          "label": "Initial assessment by designated officer",
+          "evidence_unit_ids": ["v7u_N003636", "v7u_N003637", "v7u_N003638", "v7u_N003639"],
+          "evidence_strength": "explicit",
+          "actor": "Designated/nominated officer from compliance team"
+        },
+        {
+          "node_id": "n_standard_legality",
+          "node_type": "standard",
+          "label": "Legality, urgency, relevance of request",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_proportionality",
+          "node_type": "standard",
+          "label": "Proportionality and justification within legal frameworks",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003639"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_confidentiality",
+          "node_type": "standard",
+          "label": "Confidentiality, accuracy, and sensitive handling of information",
+          "evidence_unit_ids": ["v7u_N003632", "v7u_N003635"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_coordination",
+          "node_type": "standard",
+          "label": "Coordination among intelligence, SAR, and other relevant teams",
+          "evidence_unit_ids": ["v7u_N003640", "v7u_N003641"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_relationships",
+          "node_type": "standard",
+          "label": "Effective relationships with legal, recordkeeping, and other departments",
+          "evidence_unit_ids": ["v7u_N003642", "v7u_N003643"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Proportionate, justified, accurate, and legally compliant response to law enforcement",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003635", "v7u_N003644"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger",
+          "target": "n_action_assess",
+          "evidence_unit_ids": ["v7u_N003636"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_002",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_legality",
+          "evidence_unit_ids": ["v7u_N003638"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_003",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_proportionality",
+          "evidence_unit_ids": ["v7u_N003639"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_004",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_confidentiality",
+          "evidence_unit_ids": ["v7u_N003632", "v7u_N003635"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_005",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_coordination",
+          "evidence_unit_ids": ["v7u_N003641"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_006",
+          "edge_type": "USES",
+          "source": "n_action_assess",
+          "target": "n_standard_relationships",
+          "evidence_unit_ids": ["v7u_N003642"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S12_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action_assess",
+          "target": "n_output",
+          "evidence_unit_ids": ["v7u_N003634", "v7u_N003644"],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003629",
+        "v7u_N003630",
+        "v7u_N003631",
+        "v7u_N003632",
+        "v7u_N003634",
+        "v7u_N003635",
+        "v7u_N003636",
+        "v7u_N003637",
+        "v7u_N003638",
+        "v7u_N003639",
+        "v7u_N003640",
+        "v7u_N003641",
+        "v7u_N003642",
+        "v7u_N003643",
+        "v7u_N003644"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "The card models initial assessment and coordination requirements as a unified assessment process. The step from assessment to compliant response output is inferred, and the standards encompass both assessment criteria and ongoing relationship requirements. Not a strict sequential workflow."
+    }
+  ],
+  "skip_reason": null
+}

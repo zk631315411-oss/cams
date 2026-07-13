@@ -1,0 +1,95 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "cards": [
+    {
+      "card_id": "CH08-S05-C01",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "金融机构对SPV和PIV的强化尽职调查（EDD）要求",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "金融机构对SPV和PIV负有强化尽职调查（EDD）义务",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构：执行EDD，包括识别最终受益所有人并了解SPV/PIV的真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD regulations (e.g., FinCEN CDD rule)",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：金融机构对SPV和PIV负有EDD义务 --PRECEDES--> 金融机构执行EDD（识别UBO和了解真实目的） --PRODUCES--> 有助于减轻相关金融犯罪风险；执行EDD时 --REFERENCES--> CDD规则；KG不足：基础KG可表达EDD规则，但不能表达该规则内部的主体、动作序列与预期效果的有向链；选项判断：可确认或排除关于金融机构必须对SPV进行EDD、识别UBO、了解目的及EDD有助于减轻风险的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

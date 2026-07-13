@@ -1,0 +1,159 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140",
+        "v7u_N000141",
+        "v7u_N000142"
+      ],
+      "proposition": "Sophie发现客户负面新闻后，进行初步调查和后续审查，识别出FullTechGlobal的ABC框架和内控缺陷，以及使用中间人、虚增发票、壳公司、提供贿赂等腐败洗钱行为，并认定贿赂为上游犯罪。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "该链体现了从触发事件、调查动作到具体发现的程序性判断过程，超出基础KG对孤立案例事实的保存，能帮助判断合规经理在发现负面新闻后的调查步骤和可能发现。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000134",
+        "v7u_N000135",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "proposition": "英国反贿赂法规定，有英国联系的公司适用，母公司对子公司腐败行为负责，英国母公司可能被起诉，强调合规措施需要。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于法律规则的一般陈述，不涉及机构的具体识别、评估、决策或应对流程，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "FullTechGlobal面临英国反贿赂法下的严厉财务处罚、强化监管审查和潜在刑事责任。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为案例中的法律后果叙述，无机构应对或判断，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "AFC经理认识到机构需要维护合规诚信并降低贿赂风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为认知和一般义务感，未构成具体行动或程序性结果，基础KG可表达合规义务。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie对FullTechGlobal负面新闻的调查与发现链",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Sophie发现客户FullTechGlobal的负面新闻，该公司面临广泛贿赂和腐败指控",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie对FullTechGlobal进行初步调查和后续审查",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "审计发现FullTechGlobal的ABC框架和内部控制存在缺陷，监督不足，助长了长期未被发现的腐败活动",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "调查发现FullTechGlobal战略性地使用中间人、通过虚增咨询费、伪造发票和壳公司掩盖非法资金流，并提供奢华礼品和旅行安排进行贿赂；识别贿赂为上游犯罪并导致洗钱",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140",
+            "v7u_N000142"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133",
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140",
+            "v7u_N000142"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140",
+        "v7u_N000141",
+        "v7u_N000142"
+      ],
+      "review_status": "accepted",
+      "review_notes": "增量命题：负面新闻（触发）——>调查（过程）——>发现内控缺陷和腐败行为（结论）；KG不足：基础KG无法表达从特定事件到调查行动再到具体发现的程序性判断链接，尤其是案例中合规经理的调查步骤与发现之间的有向关系；选项判断：可确认在发现负面新闻后，合规经理应采取调查行动并可能识别出控制缺陷和腐败行为，可排除调查无发现或无需调查的错误选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

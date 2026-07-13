@@ -1,0 +1,141 @@
+{
+  "section_id": "CH02-S06",
+  "section_title": "Types of financial crime > Cyber-enabled crime",
+  "cards": [
+    {
+      "card_id": "card_CH02_S06_001",
+      "section_id": "CH02-S06",
+      "card_nature": "execution",
+      "title": "Trust-based success condition for cyber deception",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Cybercriminals decide to use deceptive practices based on intended outcome",
+          "evidence_unit_ids": [
+            "v7u_N000193"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Cybercriminals create a combination of urgency and source reliability to earn trust",
+          "evidence_unit_ids": [
+            "v7u_N000193"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Deceptive technique succeeds (obtain sensitive information or convince target to click fraudulent link)",
+          "evidence_unit_ids": [
+            "v7u_N000193"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000193"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "condition": "only when the cybercriminal has earned the target’s trust",
+          "qualifier": "only when",
+          "modality": "must",
+          "evidence_unit_ids": [
+            "v7u_N000193"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000193"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：犯罪分子创造紧迫感和来源可靠性，只有赢得目标信任时，才能成功获取信息或点击链接；KG不足：基础KG只能存储信任作为基础，不能表达创造手段、条件成功链；选项判断：可确认欺骗成功依赖于赢得信任和创造紧迫感，排除无条件成功的选项。"
+    },
+    {
+      "card_id": "card_CH02_S06_002",
+      "section_id": "CH02-S06",
+      "card_nature": "execution",
+      "title": "Conditional infection of OS by malicious programs",
+      "flow_nodes": [
+        {
+          "node_id": "m1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Malicious computer programs installed on target system",
+          "evidence_unit_ids": [
+            "v7u_N000194"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "m2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Infect the target’s operating system",
+          "evidence_unit_ids": [
+            "v7u_N000194"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "m3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Target operating system infected",
+          "evidence_unit_ids": [
+            "v7u_N000194"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "m1",
+          "target": "m2",
+          "evidence_unit_ids": [
+            "v7u_N000194"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "m2",
+          "target": "m3",
+          "condition": "when the intention of the criminal scheme is to spy, corrupt, or extort",
+          "modality": "can",
+          "evidence_unit_ids": [
+            "v7u_N000194"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000194"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：已安装的恶意程序，当犯罪意图是间谍、破坏或勒索时，会感染目标操作系统；KG不足：基础KG只能存储恶意程序可能产生的结果，不能表达特定意图触发特定行为的条件分支；选项判断：可区分不同意图下恶意程序是否感染操作系统，排除无关或错误条件。"
+    }
+  ]
+}

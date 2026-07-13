@@ -1,0 +1,191 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "TM System Tuning Control",
+      "summary": "Control requirements for TM system tuning: dynamic process triggered by events, using four key components to ensure detection effectiveness, reduced false positives, resource efficiency, adaptation, and compliance.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_01",
+          "node_type": "trigger",
+          "label": "Trigger: Changes in business strategy, anomalies, regulatory updates, market changes, or significant events",
+          "evidence_unit_ids": [
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_action_01",
+          "node_type": "action",
+          "label": "Perform TM system tuning (refine detection scenarios, thresholds, customer segmentation, frequency)",
+          "evidence_unit_ids": [
+            "v7u_N003272",
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_type": "standard",
+          "label": "Scenario setting: create/modify/remove detection rules based on past suspicious activity",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_type": "standard",
+          "label": "Threshold setting: define minimum activity level to trigger alert; refine sensitivity/accuracy; reduce false positives",
+          "evidence_unit_ids": [
+            "v7u_N003280",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_type": "standard",
+          "label": "Customer segmentation: segment customers for appropriate monitoring",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_type": "standard",
+          "label": "Frequency determination: set tuning frequency, adjusted dynamically based on influences and triggers",
+          "evidence_unit_ids": [
+            "v7u_N003284",
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_type": "output",
+          "label": "Tuned TM system: ensures effective suspicious activity detection, reduced false positives, efficient resource use, adaptation to changes, regulatory compliance",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_01",
+          "target": "n_action_01",
+          "evidence_unit_ids": [
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_03",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_04",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_01",
+          "target": "n_output_01",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003281",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Control card describing key components and triggers for TM system tuning; not a strict operational workflow but provides control requirements and standards."
+    }
+  ],
+  "skip_reason": null
+}

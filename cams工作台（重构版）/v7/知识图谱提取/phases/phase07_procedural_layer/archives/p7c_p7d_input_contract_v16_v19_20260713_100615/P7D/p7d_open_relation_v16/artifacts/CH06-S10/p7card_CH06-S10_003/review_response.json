@@ -1,0 +1,83 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_003",
+  "edge_reviews": [
+    {
+      "edge_id": "e3_precedes_1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000496明确描述'In companies where there is no natural beneficial owner'，即source节点条件。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文同一句'a controller...should be identified and verified'直接对应target节点动作。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以条件从句引出动作，明确先有条件再有动作，方向不可逆。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition字段。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "边未显式携带限定词；节点标签未保留原文的should，但未改变关系性质。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系，而是条件到动作的顺序依赖，未错误建模。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "原文明确表达条件与动作的先后依赖，PRECEDES建模正确，所有关键检查均支持。"
+    },
+    {
+      "edge_id": "e3_produces_1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'a controller...should be identified and verified'直接支持source节点动作。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'This allows you to understand who is in control'表明识别核实的目的是确定控制人，目标节点总结为该结果，有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文动作是手段，结果是了解控制人，方向从process到exit合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition字段。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "边未显式携带限定词；目标节点表述为完成状态，未涉及should。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关，而是手段-目的/产出关系，PRODUCES恰当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496",
+        "v7u_N000497"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified. This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."
+      ],
+      "reason": "原文直接指出识别核实的目的是了解控制人，构成产出关系，PRODUCES建模正确，所有检查支持。"
+    }
+  ]
+}

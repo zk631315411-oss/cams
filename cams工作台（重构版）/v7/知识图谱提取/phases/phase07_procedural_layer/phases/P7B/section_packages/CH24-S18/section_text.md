@@ -1,0 +1,32 @@
+[v7u_N001952|1952] The UAE aligns its regulatory approach with FATF requirements, including the FATF Recommendations, to strengthen oversight, risk-based monitoring, and enforcement mechanisms.
+ZH: 阿联酋使其监管方法与金融行动特别工作组要求保持一致，包括其建议，以加强监督、风险监测和执行机制。
+
+[v7u_N001953|1953] Federal Decree No. 20 of 2018, as amended by Decree-Law No. 26 of 2021, is a fundamental pillar of the UAE’s AML/CFT regulatory framework.
+ZH: 2018年第20号联邦法令（经2021年第26号法令修订）是阿联酋反洗钱/反恐怖融资监管框架的基本支柱。
+
+[v7u_N001954|1954] This decree defines AML offenses, enforcement mechanisms, and penalties for noncompliance.
+ZH: 该法令界定了反洗钱犯罪、执行机制和违规处罚。
+
+[v7u_N001955|1955] It stipulates the establishment of a committee dedicated to AML/CFT objectives.
+ZH: 该法令规定设立一个专门负责反洗钱/反恐怖融资目标的委员会。
+
+[v7u_N001956|1956] It also requires an independent FIU to receive and investigate all reports submitted by financial institutions and other corporate establishments.
+ZH: 该法令还要求设立独立的金融情报中心，接收和调查金融机构及其他企业提交的所有报告。
+
+[v7u_N001957|1957] Cabinet Decision No. 10 of 2019, as amended by Decision No. 24 of 2022, raises the effectiveness of the legal and institutional AML/CFT framework. It establishes AML compliance obligations, risk-based due diligence measures, and regulatory oversight.
+ZH: 2019年第10号内阁决定（经2022年第24号决定修订）提高了法律和制度性反洗钱/反恐怖融资框架的有效性，确立了合规义务、风险为本的尽职调查措施和监管监督。
+
+[v7u_N001958|1958] As part of their compliance obligations, all regulated entities, including financial institutions and DNFBPs, must conduct CDD and KYC.
+ZH: 所有受监管实体（包括金融机构和指定非金融行业与职业）必须进行客户尽职调查和了解你的客户。
+
+[v7u_N001959|1959] These efforts include verifying customer identity, beneficial ownership, risk classification, and source of funds.
+ZH: 这些工作包括核实客户身份、受益所有人、风险分类和资金来源。
+
+[v7u_N001960|1960] Additionally, financial institutions and DNFBPs must monitor transactions and report suspicious activity to the UAE FIU in compliance with AML regulations.
+ZH: 金融机构和指定非金融行业与职业必须监控交易并向阿联酋金融情报中心报告可疑活动以遵守反洗钱法规。
+
+[v7u_N001961|1961] Financial institutions and DNFBPs must implement sanctions screening programs in line with UN, UAE, and FATF sanctions lists.
+ZH: 金融机构和DNFBP必须根据联合国、阿联酋和FATF制裁名单实施制裁筛查
+
+[v7u_N001962|1962] According to the 2024-2027 National Strategy for AML/CFT, the UAE aims to strengthen risk-based supervision, enforcement measures, and international cooperation to support their FATF Mutual Evaluation set for 2025 to 2027.
+ZH: 阿联酋2024-2027年反洗钱/反恐怖融资国家战略旨在加强风险为本监管、执法和国际合作

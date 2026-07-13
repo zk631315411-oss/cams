@@ -1,0 +1,170 @@
+{
+  "section_id": "CH47-S06",
+  "flow_node_candidates": [
+    {
+      "candidate_id": "cand_CH47-S06_001",
+      "candidate_kind": "condition",
+      "candidate_label": "Organizational Size Determines Review Approach",
+      "candidate_role": "Sets the context for the alert review process: large organizations use multi-level review, small organizations use one-touch. This may branch the handling path.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003295", "v7u_N003296"],
+      "cp_match_status": "exact",
+      "confidence": "medium",
+      "reason": "Directly from CP content; influences the structure of the review procedure but is not a dynamic handling step."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_002",
+      "candidate_kind": "trigger",
+      "candidate_label": "TM Alert Generation Triggers Level 1 Review",
+      "candidate_role": "Initiates the Level 1 initial review when the TM system generates an alert.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003297"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Clearly defines the event that starts the review process."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_003",
+      "candidate_kind": "action",
+      "candidate_label": "Level 1 Initial Review",
+      "candidate_role": "Analyst examines alert validity by evaluating data points such as nature, transaction type, customer profile, account history, and previous alerts.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003298", "v7u_N003299"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Core procedural step in the alert review handling path."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_004",
+      "candidate_kind": "decision",
+      "candidate_label": "Determine if Activity is Abnormal or Exceeds Thresholds",
+      "candidate_role": "Decides whether to escalate to Level 2 or dismiss as false positive based on abnormality/threshold check.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003300"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Key decision gate in the Level 1 review."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_005",
+      "candidate_kind": "action",
+      "candidate_label": "Escalate Alert to Level 2 Review",
+      "candidate_role": "Action taken when Level 1 activity appears abnormal or exceeds thresholds.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003300"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Directly stated escalation path."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_006",
+      "candidate_kind": "action",
+      "candidate_label": "Dismiss Alert as False Positive",
+      "candidate_role": "Analyst dismisses the alert and documents sufficient rationale when activity is not abnormal.",
+      "source_core_point_ids": ["cp_CH47_S06_001"],
+      "evidence_unit_ids": ["v7u_N003301"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Explicit disposal path for non-suspicious alerts."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_007",
+      "candidate_kind": "action",
+      "candidate_label": "Level 2 Investigation",
+      "candidate_role": "Detailed analysis of alert and data to establish if unusual behavior indicates financial crime. Includes analyzing transaction patterns, source/destination of funds, KYC review, gathering additional records, and open-source research.",
+      "source_core_point_ids": ["cp_CH47_S06_002"],
+      "evidence_unit_ids": ["v7u_N003302", "v7u_N003303", "v7u_N003304", "v7u_N003305", "v7u_N003306", "v7u_N003307"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Core investigative procedure step."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_008",
+      "candidate_kind": "decision",
+      "candidate_label": "Determine if Activity is Suspicious",
+      "candidate_role": "Based on Level 2 investigation data, analysts decide whether the activity is suspicious, providing robust rationale.",
+      "source_core_point_ids": ["cp_CH47_S06_002"],
+      "evidence_unit_ids": ["v7u_N003308"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Final decision gate of Level 2 review."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_009",
+      "candidate_kind": "action",
+      "candidate_label": "Escalate to Level 3 Complex Analysis",
+      "candidate_role": "Highly suspicious cases or those with numerous transactions/sensitive situations are escalated to Level 3.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003309"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Escalation rule for advanced analysis."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_010",
+      "candidate_kind": "action",
+      "candidate_label": "Level 3 Complex Analysis",
+      "candidate_role": "Senior analysts/compliance officers conduct comprehensive assessment including cross-department collaboration, complex risk assessments, and transaction network analysis.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003310"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Defined advanced review stage."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_011",
+      "candidate_kind": "action",
+      "candidate_label": "Document Review Steps",
+      "candidate_role": "Throughout the review process, analysts meticulously document each step.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003311"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Required documentation action applicable across review stages."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_012",
+      "candidate_kind": "action",
+      "candidate_label": "File SAR with Regulatory Authorities",
+      "candidate_role": "If required, file Suspicious Activity Reports with all pertinent information and rationale.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003311"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Critical regulatory action after suspicion determination."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_013",
+      "candidate_kind": "action",
+      "candidate_label": "Conduct Ongoing Monitoring",
+      "candidate_role": "After SAR filing, ongoing monitoring is critical to mitigate further issues and identify additional criminal activities.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003312"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Post-filing risk mitigation step."
+    },
+    {
+      "candidate_id": "cand_CH47-S06_014",
+      "candidate_kind": "action",
+      "candidate_label": "Recommend Enhanced Monitoring or Account Restrictions",
+      "candidate_role": "Analysts often recommend enhanced customer monitoring or account restrictions as preventive measures.",
+      "source_core_point_ids": ["cp_CH47_S06_003"],
+      "evidence_unit_ids": ["v7u_N003313"],
+      "cp_match_status": "exact",
+      "confidence": "high",
+      "reason": "Preventive action based on review outcomes."
+    }
+  ],
+  "rejected_core_points": [],
+  "cp_edge_notes": [
+    {
+      "edge_id": "p2c_rel_CH47_S06_001_002",
+      "note": "Topic organization edge: Level 1 prepares for Level 2. Not a P7 flow edge."
+    },
+    {
+      "edge_id": "p2c_rel_CH47_S06_002_003",
+      "note": "Topic organization edge: Level 2 prepares for Level 3. Not a P7 flow edge."
+    }
+  ]
+}

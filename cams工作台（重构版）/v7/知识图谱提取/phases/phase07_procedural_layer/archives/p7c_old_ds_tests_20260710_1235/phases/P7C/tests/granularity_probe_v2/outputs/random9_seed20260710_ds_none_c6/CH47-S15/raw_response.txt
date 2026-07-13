@@ -1,0 +1,397 @@
+{
+  "section_id": "CH47-S15",
+  "section_title": "Transaction monitoring > Suspicious activity escalation process",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S15_001",
+      "section_id": "CH47-S15",
+      "card_nature": "execution",
+      "title": "Escalation of unmitigated risk indicators to SAR filing",
+      "summary": "Investigators escalate customers for additional investigation when risk indicators cannot be mitigated, potentially leading to filing a SAR after internal review, while adhering to terminology and timing requirements.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_01",
+          "node_type": "trigger",
+          "label": "Unmitigated risk indicators identified after research",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "If investigators have completed the research and identified risk indicators that cannot be mitigated, they might need to escalate..."
+        },
+        {
+          "node_id": "n_action_01",
+          "node_type": "action",
+          "label": "Escalate for additional investigation",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit",
+          "actor": "investigator",
+          "review_status": "accepted",
+          "source_quote": "...they might need to escalate this customer for additional investigation."
+        },
+        {
+          "node_id": "n_action_02",
+          "node_type": "action",
+          "label": "File internal escalation report (UAR/internal SAR)",
+          "evidence_unit_ids": ["v7u_N003419", "v7u_N003420"],
+          "evidence_strength": "explicit",
+          "actor": "investigator",
+          "review_status": "accepted",
+          "source_quote": "One potential next step is to file an internal escalation report."
+        },
+        {
+          "node_id": "n_decision_01",
+          "node_type": "decision",
+          "label": "Review and decide whether to file SAR",
+          "evidence_unit_ids": ["v7u_N003410", "v7u_N003425"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "description": "One or more additional people review the research before choosing whether to file a report with authorities."
+        },
+        {
+          "node_id": "n_action_03",
+          "node_type": "action",
+          "label": "File SAR to FIU",
+          "evidence_unit_ids": ["v7u_N003425"],
+          "evidence_strength": "explicit",
+          "actor": "MLRO",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_type": "output",
+          "label": "SAR filed",
+          "evidence_unit_ids": ["v7u_N003425"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_02",
+          "node_type": "output",
+          "label": "No SAR filed",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review",
+          "description": "Inferred from the option not to file."
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_type": "standard",
+          "label": "Use correct internal escalation report name",
+          "evidence_unit_ids": ["v7u_N003419", "v7u_N003420", "v7u_N003422"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "learn the correct report name for the organization and use only that name."
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_type": "standard",
+          "label": "Avoid casual language like 'unusual' or 'suspicious' in documentation",
+          "evidence_unit_ids": ["v7u_N003423"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_type": "standard",
+          "label": "Adhere to jurisdiction-specific SAR filing timing requirements",
+          "evidence_unit_ids": ["v7u_N003424"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_01",
+          "target": "n_action_01",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_action_01",
+          "target": "n_action_02",
+          "evidence_unit_ids": ["v7u_N003419"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "One potential next step is to file an internal escalation report."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_003",
+          "edge_type": "PRECEDES",
+          "source": "n_action_02",
+          "target": "n_decision_01",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "Based on the organization's processes, one or more additional people might review the research before choosing whether to file a report..."
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_004",
+          "edge_type": "DECIDES",
+          "source": "n_decision_01",
+          "target": "n_action_03",
+          "condition": "yes",
+          "evidence_unit_ids": ["v7u_N003425"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_005",
+          "edge_type": "DECIDES",
+          "source": "n_decision_01",
+          "target": "n_output_02",
+          "condition": "no",
+          "evidence_unit_ids": ["v7u_N003410"],
+          "evidence_strength": "functional_dependency",
+          "review_status": "needs_review"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action_03",
+          "target": "n_output_01",
+          "evidence_unit_ids": ["v7u_N003425"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_007",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_01",
+          "evidence_unit_ids": ["v7u_N003422"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_008",
+          "edge_type": "USES",
+          "source": "n_action_02",
+          "target": "n_standard_02",
+          "evidence_unit_ids": ["v7u_N003423"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_001_009",
+          "edge_type": "USES",
+          "source": "n_action_03",
+          "target": "n_standard_03",
+          "evidence_unit_ids": ["v7u_N003424"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003410",
+        "v7u_N003419",
+        "v7u_N003420",
+        "v7u_N003422",
+        "v7u_N003423",
+        "v7u_N003424",
+        "v7u_N003425"
+      ],
+      "review_status": "needs_review",
+      "review_notes": "High-level process with jurisdictional/organizational variation; negative branch (no SAR) is inferred; missing detailed decision criteria."
+    },
+    {
+      "card_id": "p7card_CH47-S15_002",
+      "section_id": "CH47-S15",
+      "card_nature": "control",
+      "title": "Documentation requirements for suspicious activity investigation audit trail",
+      "summary": "Documenting all research steps, search methodologies, and resolutions at the time of performance creates a defensible audit trail that supports the risk-based approach and may be reviewed by auditors, regulators, and law enforcement.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_01",
+          "node_type": "trigger",
+          "label": "Suspicious activity research activities",
+          "evidence_unit_ids": ["v7u_N003436", "v7u_N003432"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted",
+          "source_quote": "A process should be in place to document the research as information is collected"
+        },
+        {
+          "node_id": "n_action_01",
+          "node_type": "action",
+          "label": "Document investigation findings",
+          "evidence_unit_ids": [
+            "v7u_N003426",
+            "v7u_N003429",
+            "v7u_N003432",
+            "v7u_N003433",
+            "v7u_N003437"
+          ],
+          "evidence_strength": "explicit",
+          "actor": "investigator",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_01",
+          "node_type": "standard",
+          "label": "Document all steps taken",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_02",
+          "node_type": "standard",
+          "label": "Resolve and document inaccuracies or false matches",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_03",
+          "node_type": "standard",
+          "label": "Save documentation per record retention policy (e.g., PDFs)",
+          "evidence_unit_ids": ["v7u_N003428"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_04",
+          "node_type": "standard",
+          "label": "Record date and time stamps for all searches (including non-matches)",
+          "evidence_unit_ids": ["v7u_N003432"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_05",
+          "node_type": "standard",
+          "label": "Document search strings, logic, and keywords",
+          "evidence_unit_ids": ["v7u_N003433"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_06",
+          "node_type": "standard",
+          "label": "Comply with data privacy laws and data security protocols",
+          "evidence_unit_ids": ["v7u_N003434", "v7u_N003430"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_standard_07",
+          "node_type": "standard",
+          "label": "Use research notes and standard templates",
+          "evidence_unit_ids": ["v7u_N003437"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "node_id": "n_output_01",
+          "node_type": "output",
+          "label": "Defensible audit trail that may be reviewed by auditors, regulators, and law enforcement",
+          "evidence_unit_ids": ["v7u_N003429", "v7u_N003431"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_01",
+          "target": "n_action_01",
+          "evidence_unit_ids": ["v7u_N003436"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_002",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_01",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_003",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_02",
+          "evidence_unit_ids": ["v7u_N003426"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_004",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_03",
+          "evidence_unit_ids": ["v7u_N003428"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_005",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_04",
+          "evidence_unit_ids": ["v7u_N003432"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_006",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_05",
+          "evidence_unit_ids": ["v7u_N003433"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_007",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_06",
+          "evidence_unit_ids": ["v7u_N003434", "v7u_N003430"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_008",
+          "edge_type": "USES",
+          "source": "n_action_01",
+          "target": "n_standard_07",
+          "evidence_unit_ids": ["v7u_N003437"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S15_002_009",
+          "edge_type": "PRODUCES",
+          "source": "n_action_01",
+          "target": "n_output_01",
+          "evidence_unit_ids": ["v7u_N003429", "v7u_N003431"],
+          "evidence_strength": "explicit",
+          "review_status": "accepted"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003426",
+        "v7u_N003428",
+        "v7u_N003429",
+        "v7u_N003430",
+        "v7u_N003431",
+        "v7u_N003432",
+        "v7u_N003433",
+        "v7u_N003434",
+        "v7u_N003436",
+        "v7u_N003437"
+      ],
+      "review_status": "accepted",
+      "review_notes": "Extracted as a control card because the source outlines specific documentation requirements to create an audit trail. The card models the documentation action and its standards."
+    }
+  ],
+  "skip_reason": null
+}

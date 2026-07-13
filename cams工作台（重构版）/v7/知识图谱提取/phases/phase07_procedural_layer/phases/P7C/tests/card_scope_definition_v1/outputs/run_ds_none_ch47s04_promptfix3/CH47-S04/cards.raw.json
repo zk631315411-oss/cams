@@ -1,0 +1,208 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_type": "judgement_card",
+      "card_nature": "control",
+      "title": "Transaction Monitoring System Tuning Control",
+      "summary": "TM system tuning is a control process that refines detection logic parameters and thresholds. It must address scenario setting, threshold setting, customer segmentation, and frequency. Tuning is driven by objectives: effective suspicious activity detection, false positive reduction, efficient resource use, adaptability to change, and regulatory compliance. Frequency is influenced by periodic cycles, business strategy changes, anomalies, regulatory updates, market changes, and significant events, which trigger special assessments.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "TM System Tuning Process",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Implement Tuning Components",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_scenario",
+          "node_type": "standard",
+          "label": "Scenario Setting",
+          "description": "Creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents.",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_threshold",
+          "node_type": "standard",
+          "label": "Threshold Setting",
+          "description": "Defining the minimum activity level to trigger an alert. Adjusting thresholds refines sensitivity and accuracy, aiming to reduce false positives and make efficient use of resources.",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_segmentation",
+          "node_type": "standard",
+          "label": "Customer Segmentation",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_frequency",
+          "node_type": "standard",
+          "label": "Tuning Frequency Determination",
+          "description": "Determines how often tuning occurs. Influenced by changes in business strategy, anomalies, regulatory updates, or market changes. Should be dynamic, with special assessments triggered by significant events or trends.",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284",
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_objectives",
+          "node_type": "standard",
+          "label": "Tuning Objectives",
+          "description": "Ensure effective suspicious activity detection; reduce false positives; ensure efficient resource use; allow management of changes in financial crime and business operations; ensure regulatory compliance.",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Tuned TM System",
+          "description": "A transaction monitoring system with refined parameters, thresholds, scenarios, and frequency that meets detection, efficiency, and compliance objectives.",
+          "evidence_unit_ids": [
+            "v7u_N003272",
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start",
+          "target": "n_action",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_scenario",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_threshold",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003280",
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_segmentation",
+          "evidence_unit_ids": [
+            "v7u_N003278"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_frequency",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003284",
+            "v7u_N003285",
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_objectives",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_007",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003272",
+            "v7u_N003278"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003280",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003284",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

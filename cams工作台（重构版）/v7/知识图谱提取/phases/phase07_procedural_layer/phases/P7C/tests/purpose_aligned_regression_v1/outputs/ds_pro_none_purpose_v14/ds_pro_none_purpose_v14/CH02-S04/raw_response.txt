@@ -1,0 +1,122 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000132", "v7u_N000133", "v7u_N000134", "v7u_N000138", "v7u_N000139", "v7u_N000140", "v7u_N000141", "v7u_N000142"],
+      "proposition": "Sophie发现客户FullTechGlobal负面新闻（指控其海外销售贿赂腐败，引发英国反贿赂法关切）→启动调查，发现中间人、虚增发票、壳公司等证据→进行审计→发现ABC框架和内控缺陷，并识别贿赂为上游犯罪。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "案例中实际发生的多步骤调查审计应对链，包含明确的先后顺序和动作-产出关系，基础KG无法表达该程序性有向结构，有助于选项判断类似情境下的调查流程与发现之间的因果。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000135", "v7u_N000136", "v7u_N000137"],
+      "proposition": "英国反贿赂法2010域外效力规则：公司有英国关联则法适用，母公司对子公司腐败负责，英国母公司可能被起诉。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于法律规则定义和一般性后果陈述，基础KG可直接保存完整规则，无程序性动作、判断或主体应对的有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000143", "v7u_N000141"],
+      "proposition": "审计发现内控缺陷和贿赂后，FullTechGlobal面临严重监管后果（罚款、审查、刑事责任）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为因果事实与后果列表，缺少明确的程序性process主体动作，基础KG可记录该后果信息。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "Sophie对FullTechGlobal腐败案的调查审计链",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发现客户FullTechGlobal负面新闻，指控其海外销售涉及广泛贿赂和腐败，引发英国反贿赂法域外条款关切",
+          "evidence_unit_ids": ["v7u_N000132", "v7u_N000133", "v7u_N000134"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie启动调查，发现中间人使用、虚增咨询费、伪造发票、壳公司和奢华礼品等贿赂腐败证据",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie进行审计，检查ABC框架和内控机制",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现ABC框架和内控机制存在缺陷，监督不足",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "贿赂被识别为上游犯罪",
+          "evidence_unit_ids": ["v7u_N000142"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000132", "v7u_N000138"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P2",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X2",
+          "evidence_unit_ids": ["v7u_N000141", "v7u_N000142"],
+          "evidence_strength": "functional_dependency",
+          "condition": null,
+          "source_quote": "Her audit uncovered deficiencies... Bribery was identified as the predicate crime...",
+          "relation_type": "identification_leads_to_conclusion",
+          "review_status": "LLM推理：审计发现内控缺陷与识别贿赂为上游犯罪原文未用明确因果词连接，但基于案例上下文，审计是识别贿赂的必要前置步骤，故标记为functional_dependency待复核。"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000132", "v7u_N000133", "v7u_N000134", "v7u_N000138", "v7u_N000139", "v7u_N000140", "v7u_N000141", "v7u_N000142"],
+      "review_status": "needs_review",
+      "review_notes": "增量命题：发现客户负面新闻触发调查，调查后审计，审计产生发现内控缺陷和识别贿赂为上游犯罪。KG不足：基础KG无法表达该调查步骤顺序及动作-产出的有向关系。选项判断：可确认或排除关于案例中Sophie行动顺序、调查步骤与发现之间因果关系的选项。LLM推理：边edge_004（审计→识别贿赂为上游犯罪）原文未直接明确，但审计揭示的腐败活动自然包含识别上游犯罪，存在功能依赖，已标记为functional_dependency。"
+    }
+  ],
+  "skip_reason": null
+}

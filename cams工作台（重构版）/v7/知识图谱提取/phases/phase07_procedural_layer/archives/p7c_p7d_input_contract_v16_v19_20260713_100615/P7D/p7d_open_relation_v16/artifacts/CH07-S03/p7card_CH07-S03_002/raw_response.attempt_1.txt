@@ -1,0 +1,74 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文“When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process”明确描述了退出超出风险容忍度的客户关系且存在贷款余额的情形，支持节点E6_002。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“writing off a loan is a significant financial decision”表明核销贷款是一项决策，支持节点P2_002。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文仅说明退出时贷款余额使流程复杂，因核销是重大决策，未明示退出关系先于核销决策发生的顺序。‘退出’与‘核销决策’是同一情境下的关联行为，并非先后关系，不符合PRECEDES的时序要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文将退出和核销决策描述为因果关联但非顺序关系，将此关系归为PRECEDES属于错误，未发现并列或相关系被误用的情形。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000555"],
+      "source_quotes": ["When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."],
+      "reason": "e1的PRECEDES方向无原文支持，退出关系与核销决策并非先后顺序，而是同时发生的关联；边方向不支持，建议拒绝。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文“writing off a loan is a significant financial decision”对应节点P2_002，说明核销是重大决策，支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“often requiring extensive justification and approval”对应节点X3_002，说明核销决策通常需要充分理由和批准，支持。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "PRODUCES要求source process产生target结果，但“核销决策通常需要充分理由和批准”是核销决策的固有属性，不是决策产生的后果；原文仅揭示既存状态，未表示决策产生该要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文中的“often”在节点中保留为“通常”，未被强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "未将并列或相关关系误判为PRODUCES，属于关系类型选择错误而非并列/相关误判。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000555"],
+      "source_quotes": ["as writing off a loan is a significant financial decision, often requiring extensive justification and approval"],
+      "reason": "e2的PRODUCES方向不成立，target是source的属性而非产物；除qualifier外关键检查不通过，建议拒绝。"
+    }
+  ]
+}

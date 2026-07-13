@@ -1,0 +1,2 @@
+[v7u_N001664|1664] This module will cover the key global AFC rules and regulations. We will cover the various jurisdictions at a high level. For a detailed overview and analysis, please refer to our AML regulatory framework courses to learn more about the regulatory landscape of a specific jurisdiction.
+ZH: 本模块概述全球金融犯罪防控规则与法规，详细内容参见反洗钱监管框架课程

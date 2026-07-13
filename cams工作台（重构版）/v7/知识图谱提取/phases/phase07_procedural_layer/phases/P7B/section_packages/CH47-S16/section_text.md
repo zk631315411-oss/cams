@@ -1,0 +1,29 @@
+[v7u_N003438|3438] A SAR is a document that obliged parties must file with their FIU when they detect suspicious or potentially illicit activity.
+ZH: 可疑交易报告（SAR）是义务主体在发现可疑或潜在非法活动时必须向金融情报机构（FIU）提交的文件
+
+[v7u_N003439|3439] Filing SARs is a key part of an organization’s AFC program and a vital element in combating money laundering and terrorism financing.
+ZH: 提交可疑交易报告（SAR）是金融犯罪防控（金融犯罪防控）计划的关键部分，也是打击洗钱和恐怖融资的重要环节
+
+[v7u_N003440|3440] The MLRO, nominated officer, or equivalent is usually the individual responsible for overseeing the organization's AFC compliance program and making the final decision on SAR filing.
+ZH: 洗钱报告官（MLRO）或指定官员负责监督金融犯罪防控（金融犯罪防控）合规计划并最终决定是否提交可疑交易报告（SAR）
+
+[v7u_N003441|3441] Before deciding to file a SAR, the organization might need to conduct further research to obtain additional information. This need becomes evident during the SAR review process.
+ZH: 提交可疑活动报告前可能需要进一步调查以获取更多信息。
+
+[v7u_N003442|3442] The MLRO, or designated secondary reviewer, reads the SAR and might raise questions for the investigator. This ensures the SAR narrative is cohesive and sufficiently robust.
+ZH: 反洗钱报告负责人审查可疑活动报告并提出问题以确保叙述完整有力。
+
+[v7u_N003443|3443] Therefore, MLROs and investigation teams should create internal investigation and review timelines that allow for feedback and additional research.
+ZH: 反洗钱报告负责人和调查团队应制定允许反馈和补充调查的内部时间表。
+
+[v7u_N003444|3444] Jurisdictions have reporting rules and deadlines for submitting reports.
+ZH: 各司法管辖区对提交报告有报告规则和截止日期。
+
+[v7u_N003445|3445] For example, in the US, FinCEN requires SARs to be filed within 30 calendar days of the initial alert.
+ZH: 美国金融犯罪执法网络要求可疑活动报告在初始警报后30个日历日内提交。
+
+[v7u_N003446|3446] If the initial detection does not identify a suspect and further investigation is required, an additional 30 calendar days might be permitted.
+ZH: 若初始检测未识别嫌疑人且需进一步调查，可额外延长30个日历日。
+
+[v7u_N003447|3447] However, for high-risk activities, expedited filing requirements might apply, necessitating immediate reporting.
+ZH: 高风险活动可能适用加速提交要求，需立即报告。

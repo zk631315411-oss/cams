@@ -1,0 +1,49 @@
+{
+  "section_id": "CH49-S09",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S09_001",
+      "section_id": "CH49-S09",
+      "card_nature": "control",
+      "title": "Execute follow-up controls when no SAR is filed",
+      "summary": "When an organization decides not to file a SAR, it still follows internal procedures, documents the rationale, reassesses risk through trigger-event KYC/CRA where appropriate, updates files, and maintains ongoing monitoring and retrievable records.",
+      "trigger": "A decision is made not to file a SAR.",
+      "objective": "Maintain AFC compliance and mitigate risk after a non-filing decision.",
+      "flow_nodes": [
+        {"node_id": "n_trigger_no_sar", "node_type": "trigger", "label": "A SAR is not filed", "evidence_unit_ids": ["v7u_N003588"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_follow_internal_procedures", "node_type": "action", "label": "Follow internal procedures to ensure compliance and mitigate risks", "evidence_unit_ids": ["v7u_N003588", "v7u_N003601"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_clear_evaluation_escalation", "node_type": "standard", "label": "Use a clear unusual-activity evaluation process that includes escalation", "evidence_unit_ids": ["v7u_N003589"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_document_nonfiling_rationale", "node_type": "action", "label": "Document the rationale for not filing in detail", "evidence_unit_ids": ["v7u_N003590"], "evidence_strength": "explicit"},
+        {"node_id": "n_input_documentation_items", "node_type": "input", "label": "Activity description, analysis steps, non-filing reasoning, and supporting documents such as transaction records or memos", "evidence_unit_ids": ["v7u_N003590"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_trigger_event_kyc", "node_type": "action", "label": "Conduct trigger-event KYC review to reassess the customer's risk profile", "evidence_unit_ids": ["v7u_N003591", "v7u_N003592"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_kyc_triggers", "node_type": "standard", "label": "Recent changes include updated customer information, unusual transaction patterns, negative news, or ownership changes", "evidence_unit_ids": ["v7u_N003591"], "evidence_strength": "explicit"},
+        {"node_id": "n_decision_risk_profile_changed", "node_type": "decision", "label": "Has the customer's risk profile changed?", "evidence_unit_ids": ["v7u_N003593"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_reperform_cra", "node_type": "action", "label": "Reperform CRA and consider further risk mitigants", "evidence_unit_ids": ["v7u_N003593", "v7u_N003594"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_update_client_file", "node_type": "action", "label": "Update the client file with all investigation-related documentation", "evidence_unit_ids": ["v7u_N003595"], "evidence_strength": "explicit"},
+        {"node_id": "n_action_ongoing_monitoring", "node_type": "action", "label": "Track customer activity for further unusual or suspicious behavior", "evidence_unit_ids": ["v7u_N003596"], "evidence_strength": "explicit"},
+        {"node_id": "n_standard_future_retrieval", "node_type": "standard", "label": "Keep records accessible and retrievable for future suspicious activity, regulatory reviews, or government/law-enforcement inquiries", "evidence_unit_ids": ["v7u_N003597", "v7u_N003598", "v7u_N003599"], "evidence_strength": "explicit"},
+        {"node_id": "n_output_compliance_maintained", "node_type": "output", "label": "AFC compliance obligations continue and records remain available for review", "evidence_unit_ids": ["v7u_N003598", "v7u_N003599", "v7u_N003600", "v7u_N003601"], "evidence_strength": "explicit"}
+      ],
+      "flow_edges": [
+        {"edge_id": "p7flowedge_CH49-S09_001_001", "edge_type": "PRECEDES", "source": "n_trigger_no_sar", "target": "n_action_follow_internal_procedures", "evidence_unit_ids": ["v7u_N003588"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_002", "edge_type": "USES", "source": "n_action_follow_internal_procedures", "target": "n_standard_clear_evaluation_escalation", "evidence_unit_ids": ["v7u_N003589"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_003", "edge_type": "PRECEDES", "source": "n_action_follow_internal_procedures", "target": "n_action_document_nonfiling_rationale", "evidence_unit_ids": ["v7u_N003590"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S09_001_004", "edge_type": "USES", "source": "n_action_document_nonfiling_rationale", "target": "n_input_documentation_items", "evidence_unit_ids": ["v7u_N003590"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_005", "edge_type": "PRECEDES", "source": "n_action_document_nonfiling_rationale", "target": "n_action_trigger_event_kyc", "evidence_unit_ids": ["v7u_N003591"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S09_001_006", "edge_type": "USES", "source": "n_action_trigger_event_kyc", "target": "n_standard_kyc_triggers", "evidence_unit_ids": ["v7u_N003591"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_007", "edge_type": "PRECEDES", "source": "n_action_trigger_event_kyc", "target": "n_decision_risk_profile_changed", "evidence_unit_ids": ["v7u_N003593"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_008", "edge_type": "DECIDES", "source": "n_decision_risk_profile_changed", "target": "n_action_reperform_cra", "condition": "if the customer's risk profile has changed", "evidence_unit_ids": ["v7u_N003593"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_009", "edge_type": "DECIDES", "source": "n_decision_risk_profile_changed", "target": "n_action_update_client_file", "condition": "if no CRA reperformance is needed after review", "evidence_unit_ids": ["v7u_N003591", "v7u_N003595"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S09_001_010", "edge_type": "PRECEDES", "source": "n_action_reperform_cra", "target": "n_action_update_client_file", "evidence_unit_ids": ["v7u_N003594", "v7u_N003595"], "evidence_strength": "explicit"},
+        {"edge_id": "p7flowedge_CH49-S09_001_011", "edge_type": "PRECEDES", "source": "n_action_update_client_file", "target": "n_action_ongoing_monitoring", "evidence_unit_ids": ["v7u_N003595", "v7u_N003596"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S09_001_012", "edge_type": "USES", "source": "n_action_ongoing_monitoring", "target": "n_standard_future_retrieval", "evidence_unit_ids": ["v7u_N003597", "v7u_N003598", "v7u_N003599"], "evidence_strength": "functional_dependency", "review_status": "needs_review"},
+        {"edge_id": "p7flowedge_CH49-S09_001_013", "edge_type": "PRODUCES", "source": "n_action_ongoing_monitoring", "target": "n_output_compliance_maintained", "evidence_unit_ids": ["v7u_N003598", "v7u_N003599", "v7u_N003600", "v7u_N003601"], "evidence_strength": "functional_dependency", "review_status": "needs_review"}
+      ],
+      "source_unit_ids": ["v7u_N003588", "v7u_N003589", "v7u_N003590", "v7u_N003591", "v7u_N003592", "v7u_N003593", "v7u_N003594", "v7u_N003595", "v7u_N003596", "v7u_N003597", "v7u_N003598", "v7u_N003599", "v7u_N003600", "v7u_N003601"],
+      "review_status": "needs_review",
+      "review_notes": "The section lists required controls after no SAR is filed. Some order is reconstructed from prose order; KYC/CRA, file update, ongoing monitoring, and recordkeeping may also operate as parallel obligations."
+    }
+  ],
+  "skip_reason": null
+}

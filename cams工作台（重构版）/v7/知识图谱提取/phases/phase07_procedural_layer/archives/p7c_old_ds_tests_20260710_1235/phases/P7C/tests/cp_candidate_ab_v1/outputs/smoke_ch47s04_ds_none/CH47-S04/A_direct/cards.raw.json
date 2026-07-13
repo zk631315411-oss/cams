@@ -1,0 +1,181 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_type": "judgement_card",
+      "card_nature": "control",
+      "title": "TM System Tuning Control Judgement",
+      "summary": "Evaluates whether TM system tuning is adequate based on its purposes, components, threshold goals, frequency determinants, and dynamic assessment triggers.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start",
+          "node_type": "start",
+          "label": "TM system tuning assessment",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action",
+          "node_type": "action",
+          "label": "Evaluate tuning adequacy",
+          "evidence_unit_ids": [
+            "v7u_N003272"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_purposes",
+          "node_type": "standard",
+          "label": "Tuning purposes (effective detection, false positive reduction, resource efficiency, adaptation to change, regulatory compliance)",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_components",
+          "node_type": "standard",
+          "label": "Four key components (scenario setting, customer segmentation, threshold setting, frequency)",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_threshold_goal",
+          "node_type": "standard",
+          "label": "Threshold setting goal: refine sensitivity/accuracy and reduce false positives",
+          "evidence_unit_ids": [
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_frequency_determinants",
+          "node_type": "standard",
+          "label": "Frequency determinants (business strategy changes, anomalies, regulatory updates, market changes)",
+          "evidence_unit_ids": [
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_std_dynamic",
+          "node_type": "standard",
+          "label": "Dynamic tuning: special assessments triggered by significant events/trends",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output",
+          "node_type": "output",
+          "label": "Tuning is effective and compliant",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_001",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_purposes",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003274",
+            "v7u_N003275",
+            "v7u_N003276",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_002",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_components",
+          "evidence_unit_ids": [
+            "v7u_N003278",
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_003",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_threshold_goal",
+          "evidence_unit_ids": [
+            "v7u_N003282",
+            "v7u_N003283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_004",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_frequency_determinants",
+          "evidence_unit_ids": [
+            "v7u_N003285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_005",
+          "edge_type": "USES",
+          "source": "n_action",
+          "target": "n_std_dynamic",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH47-S04_001_006",
+          "edge_type": "PRODUCES",
+          "source": "n_action",
+          "target": "n_output",
+          "evidence_unit_ids": [
+            "v7u_N003273",
+            "v7u_N003277"
+          ],
+          "evidence_strength": "functional_dependency"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003272",
+        "v7u_N003273",
+        "v7u_N003274",
+        "v7u_N003275",
+        "v7u_N003276",
+        "v7u_N003277",
+        "v7u_N003278",
+        "v7u_N003279",
+        "v7u_N003282",
+        "v7u_N003283",
+        "v7u_N003285",
+        "v7u_N003286"
+      ],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}

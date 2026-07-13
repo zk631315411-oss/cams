@@ -1,0 +1,126 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_type": "judgement_card",
+      "card_nature": "assessment",
+      "title": "Assessment of Defensive SARs",
+      "summary": "Defensive SARs are filed 'just in case' and indicate compliance program weaknesses; they burden law enforcement and hinder suspicious activity identification.",
+      "flow_nodes": [
+        {
+          "node_id": "n_start_def",
+          "node_type": "start",
+          "label": "Defensive SAR definition: filed 'just in case' to cover future regulatory criteria",
+          "evidence_unit_ids": ["v7u_N003605"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_reasons",
+          "node_type": "standard",
+          "label": "Common reasons for defensive SARs: staffing shortages, avoiding regulatory scrutiny, lacking time to research",
+          "evidence_unit_ids": ["v7u_N003608"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_standard_effects",
+          "node_type": "standard",
+          "label": "Negative effects: burden law enforcement, impede genuine suspicious activity action, hinder organization's identification",
+          "evidence_unit_ids": ["v7u_N003606", "v7u_N003607", "v7u_N003609"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_def",
+          "node_type": "output",
+          "label": "Defensive SARs negatively affect the organization and law enforcement, indicating compliance deficiencies",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_001",
+          "edge_type": "PRECEDES",
+          "source": "n_start_def",
+          "target": "n_standard_reasons",
+          "evidence_unit_ids": ["v7u_N003605", "v7u_N003608"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_002",
+          "edge_type": "PRECEDES",
+          "source": "n_standard_reasons",
+          "target": "n_standard_effects",
+          "evidence_unit_ids": ["v7u_N003608", "v7u_N003606"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_001_003",
+          "edge_type": "PRODUCES",
+          "source": "n_standard_effects",
+          "target": "n_output_def",
+          "evidence_unit_ids": ["v7u_N003606", "v7u_N003607", "v7u_N003609", "v7u_N003611"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003605", "v7u_N003606", "v7u_N003607", "v7u_N003608", "v7u_N003609", "v7u_N003611"],
+      "review_status": "accepted",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH49-S10_002",
+      "section_id": "CH49-S10",
+      "card_type": "process_card",
+      "card_nature": "execution",
+      "title": "Best Practice to Avoid Defensive SARs",
+      "summary": "When lacking time or understanding to properly monitor, consider business risk appetite and customer relationship instead of filing a defensive SAR.",
+      "flow_nodes": [
+        {
+          "node_id": "n_trigger_lack",
+          "node_type": "trigger",
+          "label": "Organization lacks sufficient time or complete understanding of business model to properly monitor and research customer activity",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_action_consider",
+          "node_type": "action",
+          "label": "Consider business risk appetite and relationship with the customer",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_output_avoid",
+          "node_type": "output",
+          "label": "Informed decision avoids defensive SAR; addresses compliance deficiencies appropriately",
+          "evidence_unit_ids": ["v7u_N003611"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7flowedge_CH49-S10_002_001",
+          "edge_type": "PRECEDES",
+          "source": "n_trigger_lack",
+          "target": "n_action_consider",
+          "evidence_unit_ids": ["v7u_N003610"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "edge_id": "p7flowedge_CH49-S10_002_002",
+          "edge_type": "PRODUCES",
+          "source": "n_action_consider",
+          "target": "n_output_avoid",
+          "evidence_unit_ids": ["v7u_N003610", "v7u_N003611"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003610", "v7u_N003611"],
+      "review_status": "accepted",
+      "review_notes": ""
+    }
+  ],
+  "skip_reason": null
+}
