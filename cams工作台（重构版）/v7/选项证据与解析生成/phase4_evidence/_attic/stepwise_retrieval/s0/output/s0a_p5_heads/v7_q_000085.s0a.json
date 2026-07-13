@@ -1,0 +1,288 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000085",
+  "stem": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常：",
+  "options": {
+    "A": "个人或实体之间存在非正式的业务安排",
+    "B": "位于不受美国法律约束的地区",
+    "C": "包括信托、投资基金和保险公司",
+    "D": "对设立这些商业实体的组织披露和记录保存要求有限"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常：",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "offshore financial center",
+        "离岸金融中心",
+        "OFC"
+      ],
+      "normalized_text": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "个人或实体之间存在非正式的业务安排",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "个人或实体之间存在非正式的业务安排"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "位于不受美国法律约束的地区",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "位于不受美国法律约束的地区"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "包括信托、投资基金和保险公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "包括信托、投资基金和保险公司"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "对设立这些商业实体的组织披露和记录保存要求有限",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000077",
+          "matched_term": "记录保存",
+          "canonical_en": "recordkeeping",
+          "canonical_zh": "记录保存",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "record keeping",
+            "recordkeeping",
+            "记录保存"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003598",
+            "v7u_N003599",
+            "v7u_N001684",
+            "v7u_N001700",
+            "v7u_N003626"
+          ],
+          "not_kg_edge": true,
+          "review_note": "recordkeeping and record keeping are spelling variants; both match 记录保存.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "recordkeeping",
+        "记录保存",
+        "record keeping"
+      ],
+      "normalized_text": "对设立这些商业实体的组织披露和记录保存要求有限 recordkeeping 记录保存 record keeping"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC 个人或实体之间存在非正式的业务安排",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC 位于不受美国法律约束的地区",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC 包括信托、投资基金和保险公司",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常： offshore financial center 离岸金融中心 OFC 对设立这些商业实体的组织披露和记录保存要求有限 recordkeeping 记录保存 record keeping",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000158",
+          "matched_term": "离岸金融中心",
+          "canonical_en": "offshore financial center",
+          "canonical_zh": "离岸金融中心",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "offshore financial center",
+            "离岸金融中心",
+            "OFC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000622",
+            "v7u_N000641"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFC is the abbreviation for offshore financial center; 离岸金融中心 is the Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000077",
+          "matched_term": "记录保存",
+          "canonical_en": "recordkeeping",
+          "canonical_zh": "记录保存",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "record keeping",
+            "recordkeeping",
+            "记录保存"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003598",
+            "v7u_N003599",
+            "v7u_N001684",
+            "v7u_N001700",
+            "v7u_N003626"
+          ],
+          "not_kg_edge": true,
+          "review_note": "recordkeeping and record keeping are spelling variants; both match 记录保存.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

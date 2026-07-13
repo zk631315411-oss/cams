@@ -1,0 +1,203 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000243",
+  "stem": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.)",
+  "options": {
+    "A": "购买房产能够在一笔交易中实现大额资金的流动.",
+    "B": "制毒团伙可能会购置房产用作供应站或种植、制造、分销非法毒品的场所.",
+    "C": "市场可能波动不定,买家可能无法获得丰厚的投资回报.",
+    "D": "实益所有权信息可能不透明,犯罪分子可能会滥用空壳公司和信托等安排.",
+    "E": "房地产交易通常涉及金融机构和其他专业把关人",
+    "F": "房产的高价值可能需要多种类型的融"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "购买房产能够在一笔交易中实现大额资金的流动.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "购买房产能够在一笔交易中实现大额资金的流动."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "制毒团伙可能会购置房产用作供应站或种植、制造、分销非法毒品的场所.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "制毒团伙可能会购置房产用作供应站或种植、制造、分销非法毒品的场所."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "市场可能波动不定,买家可能无法获得丰厚的投资回报.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "市场可能波动不定,买家可能无法获得丰厚的投资回报."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "实益所有权信息可能不透明,犯罪分子可能会滥用空壳公司和信托等安排.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "shell company",
+        "壳公司",
+        "shell corporation"
+      ],
+      "normalized_text": "实益所有权信息可能不透明,犯罪分子可能会滥用空壳公司和信托等安排. shell company 壳公司 shell corporation"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "房地产交易通常涉及金融机构和其他专业把关人",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "房地产交易通常涉及金融机构和其他专业把关人"
+    },
+    "option_F": {
+      "field_id": "option_F",
+      "text": "房产的高价值可能需要多种类型的融",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "房产的高价值可能需要多种类型的融"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 购买房产能够在一笔交易中实现大额资金的流动.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 制毒团伙可能会购置房产用作供应站或种植、制造、分销非法毒品的场所.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 市场可能波动不定,买家可能无法获得丰厚的投资回报.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 实益所有权信息可能不透明,犯罪分子可能会滥用空壳公司和信托等安排. shell company 壳公司 shell corporation",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 房地产交易通常涉及金融机构和其他专业把关人",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_F",
+      "head_kind": "option",
+      "option": "F",
+      "parts": [
+        "stem",
+        "option_F"
+      ],
+      "query_zh": "以下哪些是与房地产公司相关的重大金融犯罪风险？(选择四项.) 房产的高价值可能需要多种类型的融",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

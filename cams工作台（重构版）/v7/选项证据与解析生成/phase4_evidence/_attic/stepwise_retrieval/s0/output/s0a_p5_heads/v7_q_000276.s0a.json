@@ -1,0 +1,461 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000276",
+  "stem": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.)",
+  "options": {
+    "A": "对虚拟资产有大致的了解.",
+    "B": "持续审查法定货币与虚拟货币之间的交易.",
+    "C": "实施强化的客户身份识别措施.",
+    "D": "自身持有虚拟货币."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "virtual asset service provider",
+        "虚拟资产服务提供商",
+        "加密资产服务提供商",
+        "VASP",
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "对虚拟资产有大致的了解.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对虚拟资产有大致的了解."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "持续审查法定货币与虚拟货币之间的交易.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "fiat currency",
+        "法定货币",
+        "fiat currencies",
+        "法币"
+      ],
+      "normalized_text": "持续审查法定货币与虚拟货币之间的交易. fiat currency 法定货币 fiat currencies 法币"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "实施强化的客户身份识别措施.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "实施强化的客户身份识别措施."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "自身持有虚拟货币.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "自身持有虚拟货币."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 对虚拟资产有大致的了解.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 持续审查法定货币与虚拟货币之间的交易. fiat currency 法定货币 fiat currencies 法币",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 实施强化的客户身份识别措施.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]当一家金融机构(FI)考虑向虚拟资产服务提供商(VASP)提供传统银行服务时,应考虑该金融机构是否:(选择两项.) virtual asset service provider 虚拟资产服务提供商 加密资产服务提供商 VASP terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 自身持有虚拟货币.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000013",
+          "matched_term": "虚拟资产服务提供商",
+          "canonical_en": "virtual asset service provider",
+          "canonical_zh": "虚拟资产服务提供商",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "virtual asset service provider",
+            "虚拟资产服务提供商",
+            "加密资产服务提供商",
+            "VASP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000956",
+            "v7u_N000960",
+            "v7u_N000994",
+            "v7u_N001842",
+            "v7u_N001843"
+          ],
+          "not_kg_edge": true,
+          "review_note": "VASP is the abbreviation for virtual asset service provider; 加密资产服务提供商 and 虚拟资产服务提供商 are both Chinese translations used interchangeably for VASP.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

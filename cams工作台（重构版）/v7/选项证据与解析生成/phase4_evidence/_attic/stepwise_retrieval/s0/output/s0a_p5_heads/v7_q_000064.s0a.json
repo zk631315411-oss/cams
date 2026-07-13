@@ -1,0 +1,464 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000064",
+  "stem": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？",
+  "options": {
+    "A": "将此事提交给机构的高风险客户委员会，呈交调查结果并建议终止业务往来，同时也考虑客户经理的顾虑",
+    "B": "根据其调查结果和反洗钱（AML）方面的顾虑，单方面终止与客户的业务关系",
+    "C": "试图说服客户经理同意终止合作的建议，强调维持合作关系可能带来的声誉和监管风险",
+    "D": "推迟终止合作的决定，继续监控客户的活动，等待更多证据来巩固终止合作的理由"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理",
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "将此事提交给机构的高风险客户委员会，呈交调查结果并建议终止业务往来，同时也考虑客户经理的顾虑",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "将此事提交给机构的高风险客户委员会，呈交调查结果并建议终止业务往来，同时也考虑客户经理的顾虑 relationship manager 关系经理 客户经理"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "根据其调查结果和反洗钱（AML）方面的顾虑，单方面终止与客户的业务关系",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "根据其调查结果和反洗钱（AML）方面的顾虑，单方面终止与客户的业务关系"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "试图说服客户经理同意终止合作的建议，强调维持合作关系可能带来的声誉和监管风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "试图说服客户经理同意终止合作的建议，强调维持合作关系可能带来的声誉和监管风险 relationship manager 关系经理 客户经理"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "推迟终止合作的决定，继续监控客户的活动，等待更多证据来巩固终止合作的理由",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "推迟终止合作的决定，继续监控客户的活动，等待更多证据来巩固终止合作的理由"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers 将此事提交给机构的高风险客户委员会，呈交调查结果并建议终止业务往来，同时也考虑客户经理的顾虑 relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers 根据其调查结果和反洗钱（AML）方面的顾虑，单方面终止与客户的业务关系",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers 试图说服客户经理同意终止合作的建议，强调维持合作关系可能带来的声誉和监管风险 relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家金融机构的合规官完成了一位高风险客户的活动调查，发现有强烈的洗钱迹象。该合规官已将调查结果记录在案，并准备建议终止与该客户的业务关系。然而，负责该客户的客户经理对此表示反对，理由是该客户为机构带来了可观的收入。合规官接下来应采取什么措施以确保遵循适当的上报和决策流程？ relationship manager 关系经理 客户经理 compliance officer 合规官 compliance officers 推迟终止合作的决定，继续监控客户的活动，等待更多证据来巩固终止合作的理由",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

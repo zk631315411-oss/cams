@@ -1,0 +1,658 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000113",
+  "stem": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？",
+  "options": {
+    "A": "记录客户的交易历史，并在发现进一步可疑活动之前对调查内容保密",
+    "B": "立即将此情况上报给高级管理层，建议因潜在的声誉风险关闭该客户的账户",
+    "C": "将调查情况报告给外部审计员，并在采取任何行动之前等待进一步的指示",
+    "D": "拟写一份可疑活动报告，其中应包含交易的详细时间线、客户背景以及产生怀疑的理由，并在监管规定的时间内提交给相关金融情报机构（FIU）"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "transaction data",
+        "交易数据",
+        "transactional data",
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "记录客户的交易历史，并在发现进一步可疑活动之前对调查内容保密",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "记录客户的交易历史，并在发现进一步可疑活动之前对调查内容保密"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "立即将此情况上报给高级管理层，建议因潜在的声誉风险关闭该客户的账户",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "立即将此情况上报给高级管理层，建议因潜在的声誉风险关闭该客户的账户"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "将调查情况报告给外部审计员，并在采取任何行动之前等待进一步的指示",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将调查情况报告给外部审计员，并在采取任何行动之前等待进一步的指示"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "拟写一份可疑活动报告，其中应包含交易的详细时间线、客户背景以及产生怀疑的理由，并在监管规定的时间内提交给相关金融情报机构（FIU）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "拟写一份可疑活动报告，其中应包含交易的详细时间线、客户背景以及产生怀疑的理由，并在监管规定的时间内提交给相关金融情报机构（FIU） suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers 记录客户的交易历史，并在发现进一步可疑活动之前对调查内容保密",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers 立即将此情况上报给高级管理层，建议因潜在的声誉风险关闭该客户的账户",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers 将调查情况报告给外部审计员，并在采取任何行动之前等待进一步的指示",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？ suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports transaction data 交易数据 transactional data compliance officer 合规官 compliance officers 拟写一份可疑活动报告，其中应包含交易的详细时间线、客户背景以及产生怀疑的理由，并在监管规定的时间内提交给相关金融情报机构（FIU） suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000092",
+          "matched_term": "交易数据",
+          "canonical_en": "transaction data",
+          "canonical_zh": "交易数据",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional data",
+            "transaction data",
+            "交易数据"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003337",
+            "v7u_N004590"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction data and transactional data are minor wording variants for the same concept; both translate to 交易数据.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

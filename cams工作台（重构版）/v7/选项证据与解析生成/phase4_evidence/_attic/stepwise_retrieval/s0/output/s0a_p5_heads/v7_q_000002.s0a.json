@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000002",
+  "stem": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？",
+  "options": {
+    "A": "不包括从暗网获取的信息",
+    "B": "仅依赖国际新闻机构提供的信息",
+    "C": "通过多个来源进行交叉核验",
+    "D": "忽略社交媒体来源"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "不包括从暗网获取的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "不包括从暗网获取的信息"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "仅依赖国际新闻机构提供的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "仅依赖国际新闻机构提供的信息"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "通过多个来源进行交叉核验",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过多个来源进行交叉核验"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "忽略社交媒体来源",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "忽略社交媒体来源"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？ 不包括从暗网获取的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？ 仅依赖国际新闻机构提供的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？ 通过多个来源进行交叉核验",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "开源情报（OSINT）是收集、分析和传播公开来源信息以满足特定情报需求的做法。确保开源信息可靠性的最有效方法是什么？ 忽略社交媒体来源",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

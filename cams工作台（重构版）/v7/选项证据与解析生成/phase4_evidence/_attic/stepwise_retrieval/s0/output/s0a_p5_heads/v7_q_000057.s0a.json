@@ -1,0 +1,159 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000057",
+  "stem": "哪种情形表明律师可能存在洗钱活动？",
+  "options": {
+    "A": "一位身处高风险国家的律师将其律师事务所从信托账户开出的银行汇票存入位于低风险国家的另一位律师的信托账户，以支付所提供的法律服务费用。",
+    "B": "一名律师的信托账户经常收到来自高风险国家的不明汇款人的电汇，并立即将收到的相同金额资金转至低风险国家的一名已知受益人的账户。",
+    "C": "一名律师的信托账户收到一家受监管保险公司的大额电汇，并立即将收到的相同金额资金转至位于低风险国家的受益人银行账户。",
+    "D": "一位律师的信托账户收到一位想购买房产的客户的大额电汇存款，随后该律师将相同金额转至房产出售方律师的信托账户。"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪种情形表明律师可能存在洗钱活动？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "哪种情形表明律师可能存在洗钱活动？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "一位身处高风险国家的律师将其律师事务所从信托账户开出的银行汇票存入位于低风险国家的另一位律师的信托账户，以支付所提供的法律服务费用。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位身处高风险国家的律师将其律师事务所从信托账户开出的银行汇票存入位于低风险国家的另一位律师的信托账户，以支付所提供的法律服务费用。"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "一名律师的信托账户经常收到来自高风险国家的不明汇款人的电汇，并立即将收到的相同金额资金转至低风险国家的一名已知受益人的账户。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000104",
+          "matched_term": "汇款",
+          "canonical_en": "money transfer",
+          "canonical_zh": "汇款",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "money transfer",
+            "remittance",
+            "汇款"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000818",
+            "v7u_N002317"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Allowed for option evidence retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "money transfer",
+        "汇款",
+        "remittance"
+      ],
+      "normalized_text": "一名律师的信托账户经常收到来自高风险国家的不明汇款人的电汇，并立即将收到的相同金额资金转至低风险国家的一名已知受益人的账户。 money transfer 汇款 remittance"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "一名律师的信托账户收到一家受监管保险公司的大额电汇，并立即将收到的相同金额资金转至位于低风险国家的受益人银行账户。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一名律师的信托账户收到一家受监管保险公司的大额电汇，并立即将收到的相同金额资金转至位于低风险国家的受益人银行账户。"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "一位律师的信托账户收到一位想购买房产的客户的大额电汇存款，随后该律师将相同金额转至房产出售方律师的信托账户。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位律师的信托账户收到一位想购买房产的客户的大额电汇存款，随后该律师将相同金额转至房产出售方律师的信托账户。"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪种情形表明律师可能存在洗钱活动？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪种情形表明律师可能存在洗钱活动？ 一位身处高风险国家的律师将其律师事务所从信托账户开出的银行汇票存入位于低风险国家的另一位律师的信托账户，以支付所提供的法律服务费用。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪种情形表明律师可能存在洗钱活动？ 一名律师的信托账户经常收到来自高风险国家的不明汇款人的电汇，并立即将收到的相同金额资金转至低风险国家的一名已知受益人的账户。 money transfer 汇款 remittance",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000104",
+          "matched_term": "汇款",
+          "canonical_en": "money transfer",
+          "canonical_zh": "汇款",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "money transfer",
+            "remittance",
+            "汇款"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000818",
+            "v7u_N002317"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Allowed for option evidence retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪种情形表明律师可能存在洗钱活动？ 一名律师的信托账户收到一家受监管保险公司的大额电汇，并立即将收到的相同金额资金转至位于低风险国家的受益人银行账户。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪种情形表明律师可能存在洗钱活动？ 一位律师的信托账户收到一位想购买房产的客户的大额电汇存款，随后该律师将相同金额转至房产出售方律师的信托账户。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

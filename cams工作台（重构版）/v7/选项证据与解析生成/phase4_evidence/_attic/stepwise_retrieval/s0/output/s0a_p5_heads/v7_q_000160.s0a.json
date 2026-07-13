@@ -1,0 +1,258 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000160",
+  "stem": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是:",
+  "options": {
+    "A": "企业风险管理体系",
+    "B": "基于人工智能的交易监控系统",
+    "C": "独立且专业的审计职能",
+    "D": "基于人工智能的强化尽职调查系统"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "企业风险管理体系",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "企业风险管理体系"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "基于人工智能的交易监控系统",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "基于人工智能的交易监控系统 artificial intelligence 人工智能 AI"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "独立且专业的审计职能",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "独立且专业的审计职能"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "基于人工智能的强化尽职调查系统",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000127",
+          "matched_term": "强化尽职调查",
+          "canonical_en": "enhanced due diligence",
+          "canonical_zh": "强化尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enhanced due diligence",
+            "强化尽职调查",
+            "EDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N001429",
+            "v7u_N001706"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EDD is the widely used abbreviation for enhanced due diligence; 强化尽职调查 is the standard Chinese translation. Well-established in AML/CFT terminology with high frequency in the textbook.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "enhanced due diligence",
+        "强化尽职调查",
+        "EDD",
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "基于人工智能的强化尽职调查系统 enhanced due diligence 强化尽职调查 EDD artificial intelligence 人工智能 AI"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是: 企业风险管理体系",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是: 基于人工智能的交易监控系统 artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是: 独立且专业的审计职能",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "有效的反洗钱/打击资助恐怖主义合规计划的基本要素之一是: 基于人工智能的强化尽职调查系统 enhanced due diligence 强化尽职调查 EDD artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000127",
+          "matched_term": "强化尽职调查",
+          "canonical_en": "enhanced due diligence",
+          "canonical_zh": "强化尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enhanced due diligence",
+            "强化尽职调查",
+            "EDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N001429",
+            "v7u_N001706"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EDD is the widely used abbreviation for enhanced due diligence; 强化尽职调查 is the standard Chinese translation. Well-established in AML/CFT terminology with high frequency in the textbook.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

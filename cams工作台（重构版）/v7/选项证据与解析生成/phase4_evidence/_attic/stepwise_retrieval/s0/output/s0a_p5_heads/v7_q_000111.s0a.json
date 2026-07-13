@@ -1,0 +1,196 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000111",
+  "stem": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？",
+  "options": {
+    "A": "确保在企业范围风险评估（EWRA）中已将管辖权风险及其他相关因素纳入考量，且剩余风险在公司的风险承受范围内",
+    "B": "与当地成熟企业合作，借助其知识和人脉，同时共担风险",
+    "C": "确保公司与当地政府官员保持密切联系，以影响政策制定并避免受到负面审查",
+    "D": "致力于开放沟通、道德实践和社区参与，以与利益相关者建立信任",
+    "E": "尽可能减少公司在该国的直接存在，以降低潜在风险的影响"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "确保在企业范围风险评估（EWRA）中已将管辖权风险及其他相关因素纳入考量，且剩余风险在公司的风险承受范围内",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000007",
+          "matched_term": "企业范围风险评估",
+          "canonical_en": "enterprise-wide risk assessment",
+          "canonical_zh": "企业全面风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enterprise-wide risk assessments",
+            "enterprise-wide risk assessment",
+            "企业范围风险评估",
+            "企业全面风险评估",
+            "企业级风险评估",
+            "全机构风险评估",
+            "企业风险评估",
+            "EWRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002641",
+            "v7u_N002645",
+            "v7u_N001681",
+            "v7u_N002617",
+            "v7u_N002619"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EWRA abbreviation; Chinese terms are translation variants used for the same AML concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "enterprise-wide risk assessment",
+        "企业全面风险评估",
+        "enterprise-wide risk assessments",
+        "企业范围风险评估"
+      ],
+      "normalized_text": "确保在企业范围风险评估（EWRA）中已将管辖权风险及其他相关因素纳入考量，且剩余风险在公司的风险承受范围内 enterprise-wide risk assessment 企业全面风险评估 enterprise-wide risk assessments 企业范围风险评估"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "与当地成熟企业合作，借助其知识和人脉，同时共担风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与当地成熟企业合作，借助其知识和人脉，同时共担风险"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "确保公司与当地政府官员保持密切联系，以影响政策制定并避免受到负面审查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确保公司与当地政府官员保持密切联系，以影响政策制定并避免受到负面审查"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "致力于开放沟通、道德实践和社区参与，以与利益相关者建立信任",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "致力于开放沟通、道德实践和社区参与，以与利益相关者建立信任"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "尽可能减少公司在该国的直接存在，以降低潜在风险的影响",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "尽可能减少公司在该国的直接存在，以降低潜在风险的影响"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？ 确保在企业范围风险评估（EWRA）中已将管辖权风险及其他相关因素纳入考量，且剩余风险在公司的风险承受范围内 enterprise-wide risk assessment 企业全面风险评估 enterprise-wide risk assessments 企业范围风险评估",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000007",
+          "matched_term": "企业范围风险评估",
+          "canonical_en": "enterprise-wide risk assessment",
+          "canonical_zh": "企业全面风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enterprise-wide risk assessments",
+            "enterprise-wide risk assessment",
+            "企业范围风险评估",
+            "企业全面风险评估",
+            "企业级风险评估",
+            "全机构风险评估",
+            "企业风险评估",
+            "EWRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002641",
+            "v7u_N002645",
+            "v7u_N001681",
+            "v7u_N002617",
+            "v7u_N002619"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EWRA abbreviation; Chinese terms are translation variants used for the same AML concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？ 与当地成熟企业合作，借助其知识和人脉，同时共担风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？ 确保公司与当地政府官员保持密切联系，以影响政策制定并避免受到负面审查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？ 致力于开放沟通、道德实践和社区参与，以与利益相关者建立信任",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "一家跨国公司正在考虑进入一个政治局势不稳定且腐败现象严重的新兴市场。从金融犯罪的角度来看，哪种策略在缓解与这种扩张相关的声誉风险方面最为有效？ 尽可能减少公司在该国的直接存在，以降低潜在风险的影响",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

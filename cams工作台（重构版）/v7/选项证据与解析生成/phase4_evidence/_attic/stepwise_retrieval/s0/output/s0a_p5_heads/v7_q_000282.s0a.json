@@ -1,0 +1,316 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000282",
+  "stem": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.)",
+  "options": {
+    "A": "通过反馈和调查分析客户情绪",
+    "B": "识别与犯罪活动或制裁有关的个人或实体",
+    "C": "定期监测关联实体的监管更新和执法行动",
+    "D": "检索公开发布的新闻报道和监管警报",
+    "E": "监测个人或实体信用评分的变化"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "通过反馈和调查分析客户情绪",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过反馈和调查分析客户情绪"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "识别与犯罪活动或制裁有关的个人或实体",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "识别与犯罪活动或制裁有关的个人或实体"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "定期监测关联实体的监管更新和执法行动",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "定期监测关联实体的监管更新和执法行动"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "检索公开发布的新闻报道和监管警报",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "检索公开发布的新闻报道和监管警报"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "监测个人或实体信用评分的变化",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "监测个人或实体信用评分的变化"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 通过反馈和调查分析客户情绪",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 识别与犯罪活动或制裁有关的个人或实体",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 定期监测关联实体的监管更新和执法行动",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 检索公开发布的新闻报道和监管警报",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]哪些活动属于负面新闻和声誉风险的不良媒体筛查？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 监测个人或实体信用评分的变化",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

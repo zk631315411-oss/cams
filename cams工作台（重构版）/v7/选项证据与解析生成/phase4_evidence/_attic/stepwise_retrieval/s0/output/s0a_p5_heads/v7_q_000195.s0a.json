@@ -1,0 +1,252 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000195",
+  "stem": "以下哪一项最能描述扩散融资的主要威胁之一？",
+  "options": {
+    "A": "敌对政府利用复杂攻击手段威胁关键基础设施和行业,包括金融、医疗保健和能源领域",
+    "B": "利用金融系统转移资金以获取大规模杀伤性武器或其部件的个人和实体网络",
+    "C": "跨国犯罪组织将其活动范围扩大到更多种类的非法活动,包括人口贩运和腐败.",
+    "D": "通过非法暴力或武力行为全部或部分为其意识形态目标筹集资金的个人和实体网络"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪一项最能描述扩散融资的主要威胁之一？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪一项最能描述扩散融资的主要威胁之一？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "敌对政府利用复杂攻击手段威胁关键基础设施和行业,包括金融、医疗保健和能源领域",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "敌对政府利用复杂攻击手段威胁关键基础设施和行业,包括金融、医疗保健和能源领域"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "利用金融系统转移资金以获取大规模杀伤性武器或其部件的个人和实体网络",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000085",
+          "matched_term": "大规模杀伤性武器",
+          "canonical_en": "weapons of mass destruction (WMD)",
+          "canonical_zh": "大规模杀伤性武器",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "weapons of mass destruction (WMD)",
+            "大规模杀伤性武器",
+            "WMD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001244",
+            "v7u_N001249",
+            "v7u_N002270"
+          ],
+          "not_kg_edge": true,
+          "review_note": "manual review accepted",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "weapons of mass destruction (WMD)",
+        "大规模杀伤性武器",
+        "WMD"
+      ],
+      "normalized_text": "利用金融系统转移资金以获取大规模杀伤性武器或其部件的个人和实体网络 weapons of mass destruction (WMD) 大规模杀伤性武器 WMD"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "跨国犯罪组织将其活动范围扩大到更多种类的非法活动,包括人口贩运和腐败.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000178",
+          "matched_term": "跨国犯罪组织",
+          "canonical_en": "transnational criminal organization",
+          "canonical_zh": "跨国犯罪组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "transnational criminal organization",
+            "跨国犯罪组织",
+            "TCO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000202",
+            "v7u_N000209",
+            "v7u_N000215"
+          ],
+          "not_kg_edge": true,
+          "review_note": "TCO is the abbreviation for transnational criminal organization; Chinese translation is a direct match.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000026",
+          "matched_term": "人口贩运",
+          "canonical_en": "human trafficking",
+          "canonical_zh": "人口贩运",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "human trafficking",
+            "人口贩运",
+            "人口贩卖"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000064",
+            "v7u_N000069",
+            "v7u_N000199",
+            "v7u_N002120"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'人口贩卖' and '人口贩运' are synonymous Chinese terms for 'human trafficking'; both used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "transnational criminal organization",
+        "跨国犯罪组织",
+        "TCO",
+        "human trafficking",
+        "人口贩运",
+        "人口贩卖"
+      ],
+      "normalized_text": "跨国犯罪组织将其活动范围扩大到更多种类的非法活动,包括人口贩运和腐败. transnational criminal organization 跨国犯罪组织 TCO human trafficking 人口贩运 人口贩卖"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "通过非法暴力或武力行为全部或部分为其意识形态目标筹集资金的个人和实体网络",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过非法暴力或武力行为全部或部分为其意识形态目标筹集资金的个人和实体网络"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪一项最能描述扩散融资的主要威胁之一？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪一项最能描述扩散融资的主要威胁之一？ 敌对政府利用复杂攻击手段威胁关键基础设施和行业,包括金融、医疗保健和能源领域",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪一项最能描述扩散融资的主要威胁之一？ 利用金融系统转移资金以获取大规模杀伤性武器或其部件的个人和实体网络 weapons of mass destruction (WMD) 大规模杀伤性武器 WMD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000085",
+          "matched_term": "大规模杀伤性武器",
+          "canonical_en": "weapons of mass destruction (WMD)",
+          "canonical_zh": "大规模杀伤性武器",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "weapons of mass destruction (WMD)",
+            "大规模杀伤性武器",
+            "WMD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001244",
+            "v7u_N001249",
+            "v7u_N002270"
+          ],
+          "not_kg_edge": true,
+          "review_note": "manual review accepted",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪一项最能描述扩散融资的主要威胁之一？ 跨国犯罪组织将其活动范围扩大到更多种类的非法活动,包括人口贩运和腐败. transnational criminal organization 跨国犯罪组织 TCO human trafficking 人口贩运 人口贩卖",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000178",
+          "matched_term": "跨国犯罪组织",
+          "canonical_en": "transnational criminal organization",
+          "canonical_zh": "跨国犯罪组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "transnational criminal organization",
+            "跨国犯罪组织",
+            "TCO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000202",
+            "v7u_N000209",
+            "v7u_N000215"
+          ],
+          "not_kg_edge": true,
+          "review_note": "TCO is the abbreviation for transnational criminal organization; Chinese translation is a direct match.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000026",
+          "matched_term": "人口贩运",
+          "canonical_en": "human trafficking",
+          "canonical_zh": "人口贩运",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "human trafficking",
+            "人口贩运",
+            "人口贩卖"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000064",
+            "v7u_N000069",
+            "v7u_N000199",
+            "v7u_N002120"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'人口贩卖' and '人口贩运' are synonymous Chinese terms for 'human trafficking'; both used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪一项最能描述扩散融资的主要威胁之一？ 通过非法暴力或武力行为全部或部分为其意识形态目标筹集资金的个人和实体网络",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

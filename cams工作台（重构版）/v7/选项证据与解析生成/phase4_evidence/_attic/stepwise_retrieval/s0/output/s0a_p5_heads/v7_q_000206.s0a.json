@@ -1,0 +1,286 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000206",
+  "stem": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.)",
+  "options": {
+    "A": "犯罪记录查询",
+    "B": "个人简历",
+    "C": "互联网和公共媒体搜索",
+    "D": "过去的工作记录",
+    "E": "亲近同事的个人推荐信"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "犯罪记录查询",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "犯罪记录查询"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "个人简历",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "个人简历"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "互联网和公共媒体搜索",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "互联网和公共媒体搜索"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "过去的工作记录",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "过去的工作记录"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "亲近同事的个人推荐信",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "亲近同事的个人推荐信"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理 犯罪记录查询",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理 个人简历",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理 互联网和公共媒体搜索",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理 过去的工作记录",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "某银行人力资源部的一位招聘经理已将一名候选人列入其私人银行部门客户经理职位的最终候选名单.该银行的合规政策规定,必须对新员工进行适当的背景调查.必须由招聘团队完成,以保护银行免受潜在风险,包括欺诈和洗钱的侵害.在确定有关入围候选人的任何潜在负面信息时,哪些资源最有用？(请选三项.) relationship manager 关系经理 客户经理 亲近同事的个人推荐信",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

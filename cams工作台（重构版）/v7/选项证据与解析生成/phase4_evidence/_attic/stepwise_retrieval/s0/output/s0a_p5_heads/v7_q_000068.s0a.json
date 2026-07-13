@@ -1,0 +1,171 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000068",
+  "stem": "联合国安全理事会在实施制裁方面的首要作用在于其有权：",
+  "options": {
+    "A": "为维护或恢复国际和平与安全而实施制裁",
+    "B": "对缺乏反洗钱/反恐怖融资控制措施的国家实施制裁",
+    "C": "开展研究并分析制裁的影响，以提高制裁制度的有效性",
+    "D": "对经济目标实施制裁，以维持或恢复一国的金融稳定"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "联合国安全理事会在实施制裁方面的首要作用在于其有权：",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "联合国安全理事会在实施制裁方面的首要作用在于其有权："
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "为维护或恢复国际和平与安全而实施制裁",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为维护或恢复国际和平与安全而实施制裁"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "对缺乏反洗钱/反恐怖融资控制措施的国家实施制裁",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "对缺乏反洗钱/反恐怖融资控制措施的国家实施制裁 terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "开展研究并分析制裁的影响，以提高制裁制度的有效性",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "开展研究并分析制裁的影响，以提高制裁制度的有效性"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "对经济目标实施制裁，以维持或恢复一国的金融稳定",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对经济目标实施制裁，以维持或恢复一国的金融稳定"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "联合国安全理事会在实施制裁方面的首要作用在于其有权：",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "联合国安全理事会在实施制裁方面的首要作用在于其有权： 为维护或恢复国际和平与安全而实施制裁",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "联合国安全理事会在实施制裁方面的首要作用在于其有权： 对缺乏反洗钱/反恐怖融资控制措施的国家实施制裁 terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "联合国安全理事会在实施制裁方面的首要作用在于其有权： 开展研究并分析制裁的影响，以提高制裁制度的有效性",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "联合国安全理事会在实施制裁方面的首要作用在于其有权： 对经济目标实施制裁，以维持或恢复一国的金融稳定",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

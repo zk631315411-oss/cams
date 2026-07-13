@@ -1,0 +1,524 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000210",
+  "stem": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？",
+  "options": {
+    "A": "交易的受益人是政治公众人物.",
+    "B": "金融机构无法核实相关客户尽职调查文件.",
+    "C": "FI确认付款人是贵金属或宝石的经销商.",
+    "D": "一笔交易涉及从加密货币兑换为法定货币的资金交易."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Action Task Force",
+        "金融行动特别工作组",
+        "FATF",
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports"
+      ],
+      "normalized_text": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "交易的受益人是政治公众人物.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "交易的受益人是政治公众人物."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "金融机构无法核实相关客户尽职调查文件.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "customer due diligence",
+        "客户尽职调查",
+        "CDD"
+      ],
+      "normalized_text": "金融机构无法核实相关客户尽职调查文件. customer due diligence 客户尽职调查 CDD"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "FI确认付款人是贵金属或宝石的经销商.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "FI确认付款人是贵金属或宝石的经销商."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "一笔交易涉及从加密货币兑换为法定货币的资金交易.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "fiat currency",
+        "法定货币",
+        "fiat currencies",
+        "法币"
+      ],
+      "normalized_text": "一笔交易涉及从加密货币兑换为法定货币的资金交易. fiat currency 法定货币 fiat currencies 法币"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 交易的受益人是政治公众人物.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 金融机构无法核实相关客户尽职调查文件. customer due diligence 客户尽职调查 CDD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports FI确认付款人是贵金属或宝石的经销商.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？ Financial Action Task Force 金融行动特别工作组 FATF suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 一笔交易涉及从加密货币兑换为法定货币的资金交易. fiat currency 法定货币 fiat currencies 法币",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

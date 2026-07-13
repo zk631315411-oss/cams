@@ -1,0 +1,671 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000388",
+  "stem": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。)",
+  "options": {
+    "A": "私人银行家应接受反洗钱程序培训",
+    "B": "管理层应在私人银行部门实施质量保证计划",
+    "C": "董事会应审查并批准一项修订后的反洗钱政策，以改变私人银行的客户尽职调查要求",
+    "D": "法务部门应进行审查，以评估潜在的法律后果",
+    "E": "所有员工都应接受反洗钱复训"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "risk-based due diligence",
+        "基于风险的尽职调查",
+        "风险为本的尽职调查",
+        "internal audit",
+        "内部审计",
+        "internal auditing",
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "私人银行家应接受反洗钱程序培训",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "私人银行家应接受反洗钱程序培训"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "管理层应在私人银行部门实施质量保证计划",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "管理层应在私人银行部门实施质量保证计划"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "董事会应审查并批准一项修订后的反洗钱政策，以改变私人银行的客户尽职调查要求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "customer due diligence",
+        "客户尽职调查",
+        "CDD",
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "董事会应审查并批准一项修订后的反洗钱政策，以改变私人银行的客户尽职调查要求 customer due diligence 客户尽职调查 CDD board of directors 董事会 board"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "法务部门应进行审查，以评估潜在的法律后果",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "法务部门应进行审查，以评估潜在的法律后果"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "所有员工都应接受反洗钱复训",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "所有员工都应接受反洗钱复训"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers 私人银行家应接受反洗钱程序培训",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers 管理层应在私人银行部门实施质量保证计划",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers 董事会应审查并批准一项修订后的反洗钱政策，以改变私人银行的客户尽职调查要求 customer due diligence 客户尽职调查 CDD board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers 法务部门应进行审查，以评估潜在的法律后果",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "一家大型银行的反洗钱合规官收到一份关于私人银行部门的内部审计报告。报告指出，员工未遵循基于风险的尽职调查程序，导致该部门未能有效运行。反洗钱合规官应考虑采取哪些紧急措施来处理这些发现？(选择两项。) risk-based due diligence 基于风险的尽职调查 风险为本的尽职调查 internal audit 内部审计 internal auditing compliance officer 合规官 compliance officers 所有员工都应接受反洗钱复训",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000058",
+          "matched_term": "基于风险的尽职调查",
+          "canonical_en": "risk-based due diligence",
+          "canonical_zh": "基于风险的尽职调查",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk-based due diligence",
+            "基于风险的尽职调查",
+            "风险为本的尽职调查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003011",
+            "v7u_N001957"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“基于风险的尽职调查”和“风险为本的尽职调查”是同一英文术语的不同翻译方式，可互换使用。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

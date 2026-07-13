@@ -1,0 +1,161 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000250",
+  "stem": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)",
+  "options": {
+    "A": "加强的客户尽职调查要求",
+    "B": "洗钱非法所得的更大潜力",
+    "C": "与低风险客户相比,监管审查力度降低",
+    "D": "更有可能从事金融犯罪活动"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "加强的客户尽职调查要求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "customer due diligence",
+        "客户尽职调查",
+        "CDD"
+      ],
+      "normalized_text": "加强的客户尽职调查要求 customer due diligence 客户尽职调查 CDD"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "洗钱非法所得的更大潜力",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "洗钱非法所得的更大潜力"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "与低风险客户相比,监管审查力度降低",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与低风险客户相比,监管审查力度降低"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "更有可能从事金融犯罪活动",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "更有可能从事金融犯罪活动"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.) 加强的客户尽职调查要求 customer due diligence 客户尽职调查 CDD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.) 洗钱非法所得的更大潜力",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.) 与低风险客户相比,监管审查力度降低",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.) 更有可能从事金融犯罪活动",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,455 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000208",
+  "stem": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？",
+  "options": {
+    "A": "精简媒体来源，避免无关文章",
+    "B": "依靠调查人员的人工筛选",
+    "C": "提高向媒体渠道更新的频率",
+    "D": "调整人工智能/机器学习模型，使其重点关注来自知名媒体来源的高风险关键词/短语"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "adverse media",
+        "负面媒体",
+        "negative media coverage",
+        "negative media",
+        "负面媒体报道",
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "精简媒体来源，避免无关文章",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "精简媒体来源，避免无关文章"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "依靠调查人员的人工筛选",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "依靠调查人员的人工筛选"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "提高向媒体渠道更新的频率",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "提高向媒体渠道更新的频率"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "调整人工智能/机器学习模型，使其重点关注来自知名媒体来源的高风险关键词/短语",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "调整人工智能/机器学习模型，使其重点关注来自知名媒体来源的高风险关键词/短语 artificial intelligence 人工智能 AI"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI 精简媒体来源，避免无关文章",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI 依靠调查人员的人工筛选",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI 提高向媒体渠道更新的频率",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？ adverse media 负面媒体 negative media coverage negative media 负面媒体报道 artificial intelligence 人工智能 AI 调整人工智能/机器学习模型，使其重点关注来自知名媒体来源的高风险关键词/短语 artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000059",
+  "stem": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须:",
+  "options": {
+    "A": "与企业的规模和性质相称,经高级管理层批准,并定期审查",
+    "B": "仅由第一道防线创建、批准和拥有,并每年进行审查",
+    "C": "由业务部门完成并由外部公司进行验证",
+    "D": "采用最新的可用技术,纳入复杂且自动化的控制措施"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "与企业的规模和性质相称,经高级管理层批准,并定期审查",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "periodic review",
+        "定期审查",
+        "regular review"
+      ],
+      "normalized_text": "与企业的规模和性质相称,经高级管理层批准,并定期审查 periodic review 定期审查 regular review"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "仅由第一道防线创建、批准和拥有,并每年进行审查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "仅由第一道防线创建、批准和拥有,并每年进行审查"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "由业务部门完成并由外部公司进行验证",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "由业务部门完成并由外部公司进行验证"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "采用最新的可用技术,纳入复杂且自动化的控制措施",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "采用最新的可用技术,纳入复杂且自动化的控制措施"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须: 与企业的规模和性质相称,经高级管理层批准,并定期审查 periodic review 定期审查 regular review",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须: 仅由第一道防线创建、批准和拥有,并每年进行审查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须: 由业务部门完成并由外部公司进行验证",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "为防范金融犯罪风险,所实施的政策、控制措施和程序必须: 采用最新的可用技术,纳入复杂且自动化的控制措施",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

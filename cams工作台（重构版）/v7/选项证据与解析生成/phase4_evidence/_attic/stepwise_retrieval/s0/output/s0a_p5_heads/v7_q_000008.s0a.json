@@ -1,0 +1,354 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000008",
+  "stem": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？",
+  "options": {
+    "A": "提交转介以提交可疑活动报告(SAR)",
+    "B": "评估客户身份识别(KYC)审查流程以了解为何审查未按要求进行,并在必要时采取纠正措施",
+    "C": "联系客户的客户经理,在完成定期的“了解您的客户”审查之前暂停账户访问权限",
+    "D": "将客户从银行的高风险名单中移除"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "customer due diligence",
+        "客户尽职调查",
+        "CDD"
+      ],
+      "normalized_text": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "提交转介以提交可疑活动报告(SAR)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports"
+      ],
+      "normalized_text": "提交转介以提交可疑活动报告(SAR) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "评估客户身份识别(KYC)审查流程以了解为何审查未按要求进行,并在必要时采取纠正措施",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "评估客户身份识别(KYC)审查流程以了解为何审查未按要求进行,并在必要时采取纠正措施"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "联系客户的客户经理,在完成定期的“了解您的客户”审查之前暂停账户访问权限",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "联系客户的客户经理,在完成定期的“了解您的客户”审查之前暂停账户访问权限 relationship manager 关系经理 客户经理"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "将客户从银行的高风险名单中移除",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将客户从银行的高风险名单中移除"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD 提交转介以提交可疑活动报告(SAR) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD 评估客户身份识别(KYC)审查流程以了解为何审查未按要求进行,并在必要时采取纠正措施",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD 联系客户的客户经理,在完成定期的“了解您的客户”审查之前暂停账户访问权限 relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？ customer due diligence 客户尽职调查 CDD 将客户从银行的高风险名单中移除",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

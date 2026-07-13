@@ -1,0 +1,165 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000070",
+  "stem": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险：",
+  "options": {
+    "A": "对所有客户实施统一的控制措施，而不考虑其风险状况",
+    "B": "根据已识别风险的程度分配资源并实施控制措施",
+    "C": "将监管合规置于客户体验和运营效率之上",
+    "D": "依靠自动化系统来检测和缓解AFC风险"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险：",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险："
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "对所有客户实施统一的控制措施，而不考虑其风险状况",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000021",
+          "matched_term": "风险状况",
+          "canonical_en": "risk profile",
+          "canonical_zh": "风险状况",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk profile",
+            "风险画像",
+            "风险状况"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002811",
+            "v7u_N002927",
+            "v7u_N004318",
+            "v7u_N004695",
+            "v7u_N004704"
+          ],
+          "not_kg_edge": true,
+          "review_note": "risk profiling is an activity and is excluded.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "risk profile",
+        "风险状况",
+        "风险画像"
+      ],
+      "normalized_text": "对所有客户实施统一的控制措施，而不考虑其风险状况 risk profile 风险状况 风险画像"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "根据已识别风险的程度分配资源并实施控制措施",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "根据已识别风险的程度分配资源并实施控制措施"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "将监管合规置于客户体验和运营效率之上",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将监管合规置于客户体验和运营效率之上"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "依靠自动化系统来检测和缓解AFC风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "依靠自动化系统来检测和缓解AFC风险"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险：",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险： 对所有客户实施统一的控制措施，而不考虑其风险状况 risk profile 风险状况 风险画像",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000021",
+          "matched_term": "风险状况",
+          "canonical_en": "risk profile",
+          "canonical_zh": "风险状况",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "risk profile",
+            "风险画像",
+            "风险状况"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002811",
+            "v7u_N002927",
+            "v7u_N004318",
+            "v7u_N004695",
+            "v7u_N004704"
+          ],
+          "not_kg_edge": true,
+          "review_note": "risk profiling is an activity and is excluded.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险： 根据已识别风险的程度分配资源并实施控制措施",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险： 将监管合规置于客户体验和运营效率之上",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "基于风险的反金融犯罪（AFC）方法涉及通过以下方式了解和管理风险： 依靠自动化系统来检测和缓解AFC风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

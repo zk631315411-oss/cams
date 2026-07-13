@@ -1,0 +1,752 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000112",
+  "stem": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以：",
+  "options": {
+    "A": "提供其掌握的信息，因为该交换发生在两个均为埃格蒙特集团成员的金融情报机构之间，且正式请求是通过安全通信渠道提出的",
+    "B": "仅在A国与B国签署谅解备忘录（MoU）的情况下提供所要求的信息",
+    "C": "指示A国金融情报机构向开设账户的金融机构进一步了解情况",
+    "D": "如果B国金融情报机构未收到开设账户的金融机构提交的可疑活动报告（SAR），则拒绝该请求"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以：",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心",
+        "politically exposed person",
+        "政治敏感人物",
+        "PEP",
+        "bribery",
+        "贿赂",
+        "bribe"
+      ],
+      "normalized_text": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "提供其掌握的信息，因为该交换发生在两个均为埃格蒙特集团成员的金融情报机构之间，且正式请求是通过安全通信渠道提出的",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "提供其掌握的信息，因为该交换发生在两个均为埃格蒙特集团成员的金融情报机构之间，且正式请求是通过安全通信渠道提出的 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "仅在A国与B国签署谅解备忘录（MoU）的情况下提供所要求的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "仅在A国与B国签署谅解备忘录（MoU）的情况下提供所要求的信息"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "指示A国金融情报机构向开设账户的金融机构进一步了解情况",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "指示A国金融情报机构向开设账户的金融机构进一步了解情况 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "如果B国金融情报机构未收到开设账户的金融机构提交的可疑活动报告（SAR），则拒绝该请求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "如果B国金融情报机构未收到开设账户的金融机构提交的可疑活动报告（SAR），则拒绝该请求 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe 提供其掌握的信息，因为该交换发生在两个均为埃格蒙特集团成员的金融情报机构之间，且正式请求是通过安全通信渠道提出的 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe 仅在A国与B国签署谅解备忘录（MoU）的情况下提供所要求的信息",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe 指示A国金融情报机构向开设账户的金融机构进一步了解情况 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以： Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 politically exposed person 政治敏感人物 PEP bribery 贿赂 bribe 如果B国金融情报机构未收到开设账户的金融机构提交的可疑活动报告（SAR），则拒绝该请求 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

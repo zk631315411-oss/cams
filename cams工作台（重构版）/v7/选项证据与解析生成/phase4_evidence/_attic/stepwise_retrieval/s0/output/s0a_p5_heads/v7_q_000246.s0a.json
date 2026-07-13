@@ -1,0 +1,343 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000246",
+  "stem": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.)",
+  "options": {
+    "A": "一位客户存入了大量连续编号的汇票.",
+    "B": "一位客户要求提供向当地公司发放的贷款或由当地银行的债务作担保的贷款.",
+    "C": "一位客户主要通过电汇进行定期的存款和取款.",
+    "D": "一名客户收到来自不同未知账户的电汇款项,这些款项随即又被电汇给第三方.",
+    "E": "一位客户每次取款金额都略低于报告限额."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious transaction",
+        "可疑交易",
+        "suspicious transactions"
+      ],
+      "normalized_text": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "一位客户存入了大量连续编号的汇票.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位客户存入了大量连续编号的汇票."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "一位客户要求提供向当地公司发放的贷款或由当地银行的债务作担保的贷款.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位客户要求提供向当地公司发放的贷款或由当地银行的债务作担保的贷款."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "一位客户主要通过电汇进行定期的存款和取款.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位客户主要通过电汇进行定期的存款和取款."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "一名客户收到来自不同未知账户的电汇款项,这些款项随即又被电汇给第三方.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000104",
+          "matched_term": "汇款",
+          "canonical_en": "money transfer",
+          "canonical_zh": "汇款",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "money transfer",
+            "remittance",
+            "汇款"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000818",
+            "v7u_N002317"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Allowed for option evidence retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "money transfer",
+        "汇款",
+        "remittance"
+      ],
+      "normalized_text": "一名客户收到来自不同未知账户的电汇款项,这些款项随即又被电汇给第三方. money transfer 汇款 remittance"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "一位客户每次取款金额都略低于报告限额.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位客户每次取款金额都略低于报告限额."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions 一位客户存入了大量连续编号的汇票.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions 一位客户要求提供向当地公司发放的贷款或由当地银行的债务作担保的贷款.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions 一位客户主要通过电汇进行定期的存款和取款.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions 一名客户收到来自不同未知账户的电汇款项,这些款项随即又被电汇给第三方. money transfer 汇款 remittance",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000104",
+          "matched_term": "汇款",
+          "canonical_en": "money transfer",
+          "canonical_zh": "汇款",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "money transfer",
+            "remittance",
+            "汇款"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000818",
+            "v7u_N002317"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Allowed for option evidence retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "以下哪些是与客户潜在可疑交易有关的危险信号？(选择三项.) suspicious transaction 可疑交易 suspicious transactions 一位客户每次取款金额都略低于报告限额.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

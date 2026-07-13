@@ -1,0 +1,1240 @@
+{
+  "question_id": "v7_q_000026",
+  "stem": "大量汇入的电汇交易触发对某客户的警报.资金随即通过现金提取和汇出交易被迅速转走.要调查此警报/案例,应首先审查哪些信息？",
+  "options": {
+    "A": "开源信息",
+    "B": "客户概况",
+    "C": "不良媒体搜索",
+    "D": "账户活动"
+  },
+  "question_type": "single",
+  "tier": "clean",
+  "prompt_version": "intent_v1",
+  "pipeline_status": "ok",
+  "candidate_pool": [
+    {
+      "unit_id": "v7u_N003246",
+      "knowledge_zh": "大额交易、频繁转账或涉及高风险司法管辖区的交易可能触发警报。",
+      "en_quote": "For example, large transactions, frequent transfers, or transactions involving high-risk jurisdictions might trigger alerts for further investigation.",
+      "knowledge_en": "examples of transactions triggering alerts",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring versus payment screening"
+      ],
+      "type": "case",
+      "route": "bge",
+      "score": 0.925,
+      "raw_score": 0.733416
+    },
+    {
+      "unit_id": "v7u_N000679",
+      "knowledge_zh": "电汇可即时到账且难以撤销，增加风险。",
+      "en_quote": "Wire transfers can send funds immediately, and it can be difficult to reverse a transaction.",
+      "knowledge_en": "Wire transfer risk: immediacy and irreversibility",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.925,
+      "raw_score": 42.401269
+    },
+    {
+      "unit_id": "v7u_N004364",
+      "knowledge_zh": "举例：金融机构设定1万美元阈值，超限交易触发警报和加强审查。",
+      "en_quote": "For example, many financial institutions establish rule thresholds, such as US$10,000, to limit the potential impact of financial crime. Conducting a transaction above the threshold results in alerts, required reporting, and increased scrutiny of the transaction.",
+      "knowledge_en": "Example of rule thresholds and their consequences",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Rules-based transaction monitoring"
+      ],
+      "type": "case",
+      "route": "bm25_zh",
+      "score": 0.925,
+      "raw_score": 50.122784
+    },
+    {
+      "unit_id": "v7u_N003073",
+      "knowledge_zh": "EDD包括额外的不良媒体筛查",
+      "en_quote": "Additional adverse media screening.",
+      "knowledge_en": "Additional adverse media screening",
+      "heading_context": [
+        "Onboarding AFC controls",
+        "KYC for a natural person"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.702272,
+      "raw_score": 44.474338
+    },
+    {
+      "unit_id": "v7u_N000696",
+      "knowledge_zh": "电汇控制措施包括支付筛查、交易监控技术和欺诈检测",
+      "en_quote": "Controls include payment screening, transaction monitoring technology, and fraud detection.",
+      "knowledge_en": "Examples of wire transfer controls",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "classification",
+      "route": "bge",
+      "score": 0.564909,
+      "raw_score": 0.701673
+    },
+    {
+      "unit_id": "v7u_N000674",
+      "knowledge_zh": "电汇是通过安全支付网络（如SWIFT）进行的电子资金转账，可用于国内和跨境。",
+      "en_quote": "A wire transfer is an electronic transfer of funds between two parties. A wire transfer is conducted over a secure payment network such as SWIFT. Wire transfers are conducted domestically and cross-border.",
+      "knowledge_en": "wire transfer definition and characteristics",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "definition",
+      "route": "bm25_en",
+      "score": 0.557059,
+      "raw_score": 36.515113
+    },
+    {
+      "unit_id": "v7u_N004776",
+      "knowledge_zh": "合规专家可获取外部信息，如已知罪犯名单、负面媒体报道等。",
+      "en_quote": "Compliance specialists may also decide to source external information such as lists of known criminals and terrorists, adverse media reports, and other useful material to help systems better detect risk within their customer or transactional base.",
+      "knowledge_en": "External information sources for compliance",
+      "heading_context": [
+        "Data as an input for solutions",
+        "Data quality"
+      ],
+      "type": "fact",
+      "route": "p5_alias",
+      "score": 0.515,
+      "raw_score": 13,
+      "p5": {
+        "alias_group_id": "p5c_alias_000016",
+        "canonical_en": "adverse media",
+        "canonical_zh": "负面媒体",
+        "matched_term": "adverse media",
+        "alias_scope": "exact_alias"
+      }
+    },
+    {
+      "unit_id": "v7u_N003105",
+      "knowledge_zh": "负面媒体：客户与负面报道、法律诉讼、监管罚款或金融犯罪调查相关",
+      "en_quote": "Adverse media: Customers linked to adverse media reports, undergoing legal proceedings, regulatory fines, or financial crime investigations",
+      "knowledge_en": "Adverse media: Customers linked to adverse media reports, undergoing legal proceedings, regulatory fines, or financial crime investigations",
+      "heading_context": [
+        "Additional onboarding controls for high-risk scenarios"
+      ],
+      "type": "fact",
+      "route": "p5_alias",
+      "score": 0.515,
+      "raw_score": 13,
+      "p5": {
+        "alias_group_id": "p5c_alias_000016",
+        "canonical_en": "adverse media",
+        "canonical_zh": "负面媒体",
+        "matched_term": "adverse media",
+        "alias_scope": "exact_alias"
+      }
+    },
+    {
+      "unit_id": "v7u_N003190",
+      "knowledge_zh": "负面媒体检查（不良新闻筛查）用于识别与金融犯罪风险相关的公开信息",
+      "en_quote": "Adverse media checks—also known as negative news screening— identify publicly available information linking individuals or entities to financial crime risks.",
+      "knowledge_en": "definition of adverse media checks",
+      "heading_context": [
+        "Ongoing AFC controls",
+        "Politically exposed persons screening"
+      ],
+      "type": "definition",
+      "route": "p5_alias",
+      "score": 0.515,
+      "raw_score": 13,
+      "p5": {
+        "alias_group_id": "p5c_alias_000016",
+        "canonical_en": "adverse media",
+        "canonical_zh": "负面媒体",
+        "matched_term": "adverse media",
+        "alias_scope": "exact_alias"
+      }
+    },
+    {
+      "unit_id": "v7u_N003191",
+      "knowledge_zh": "金融机构须对负面媒体筛查采取基于风险的方法，确保准确可信",
+      "en_quote": "With the increasing de-escalation of fact-checking on social media platforms, and the rise of automated software-as-a-service screening solutions, financial institutions must take a risk-based approach to adverse media screening, ensuring accurate and credible risk assessments.",
+      "knowledge_en": "risk-based approach to adverse media screening",
+      "heading_context": [
+        "Ongoing AFC controls",
+        "Politically exposed persons screening"
+      ],
+      "type": "rule",
+      "route": "p5_alias",
+      "score": 0.515,
+      "raw_score": 13,
+      "p5": {
+        "alias_group_id": "p5c_alias_000016",
+        "canonical_en": "adverse media",
+        "canonical_zh": "负面媒体",
+        "matched_term": "adverse media",
+        "alias_scope": "exact_alias"
+      }
+    },
+    {
+      "unit_id": "v7u_N004754",
+      "knowledge_zh": "组织应考虑外部数据来源，并评估是否需要额外检查以验证质量或识别恶意数据。",
+      "en_quote": "Organizations should consider the source of external data and whether additional checks are needed to validate its quality or assess potential malicious data or misinformation, such as incorrect adverse media reports.",
+      "knowledge_en": "Consider source and quality of external data",
+      "heading_context": [
+        "Data as an input for solutions",
+        "External data"
+      ],
+      "type": "rule",
+      "route": "p5_alias",
+      "score": 0.515,
+      "raw_score": 13,
+      "p5": {
+        "alias_group_id": "p5c_alias_000016",
+        "canonical_en": "adverse media",
+        "canonical_zh": "负面媒体",
+        "matched_term": "adverse media",
+        "alias_scope": "exact_alias"
+      }
+    },
+    {
+      "unit_id": "v7u_N003298",
+      "knowledge_zh": "分析师通过评估警报性质、交易类型、客户资料、账户历史等数据点检查警报有效性",
+      "en_quote": "An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history.",
+      "knowledge_en": "Analyst examination of alert validity",
+      "heading_context": [
+        "Transaction monitoring",
+        "Procedures for alerts review"
+      ],
+      "type": "process",
+      "route": "bm25_en",
+      "score": 0.495064,
+      "raw_score": 35.665592
+    },
+    {
+      "unit_id": "v7u_N003291",
+      "knowledge_zh": "客户活动偏离预期模式时更可能触发警报",
+      "en_quote": "If a customer’s activity deviates from the expected pattern, an alert is more likely to be generated.",
+      "knowledge_en": "Alert generation on deviation from expected pattern",
+      "heading_context": [
+        "Transaction monitoring",
+        "Typical scenarios that would generate an alert"
+      ],
+      "type": "rule",
+      "route": "bm25_zh",
+      "score": 0.446664,
+      "raw_score": 37.529541
+    },
+    {
+      "unit_id": "v7u_N004541",
+      "knowledge_zh": "反洗钱系统整合多源信息、自动化风险评级、持续监控客户活动并加速调查数据访问。",
+      "en_quote": "These systems consolidate information from various sources, automate risk ratings, monitor ongoing customer activity, and allow investigators to access data more quickly.",
+      "knowledge_en": "Functions of AML systems",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing",
+        "Network analysis solutions for transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.425789,
+      "raw_score": 37.147461
+    },
+    {
+      "unit_id": "v7u_N000681",
+      "knowledge_zh": "电汇可能被用于的非法活动列表",
+      "en_quote": "Some of the illicit activity that wire transfers can be used for include:",
+      "knowledge_en": "Some of the illicit activity that wire transfers can be used for include",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "classification",
+      "route": "bm25_en",
+      "score": 0.40661,
+      "raw_score": 34.276118
+    },
+    {
+      "unit_id": "v7u_N001361",
+      "knowledge_zh": "金融机构需评估新技术风险并确保电汇中发端人和受益人数据准确",
+      "en_quote": "Financial institutions should assess risks from new technologies and ensure accurate originator and beneficiary data in wire transfers.",
+      "knowledge_en": "New technology risk assessment and wire transfer data",
+      "heading_context": [
+        "Financial Action Task Force",
+        "FATF Recommendations 9-23"
+      ],
+      "type": "rule",
+      "route": "bge",
+      "score": 0.384636,
+      "raw_score": 0.68578
+    },
+    {
+      "unit_id": "v7u_N003989",
+      "knowledge_zh": "示例：客户从小额国内转账突然发起大额国际电汇至高风险地区被标记",
+      "en_quote": "For example, if a customer typically sends small domestic transfers and suddenly initiates a large international wire to a high-risk jurisdiction, this deviation is flagged.",
+      "knowledge_en": "Example of flagged deviation",
+      "heading_context": [
+        "Technology and tools used across the customer life cycle",
+        "Behavioral and profile monitoring"
+      ],
+      "type": "case",
+      "route": "bge",
+      "score": 0.374919,
+      "raw_score": 0.68557
+    },
+    {
+      "unit_id": "v7u_N003307",
+      "knowledge_zh": "开展开源研究，包括社交媒体、新闻、公共记录及监管机构发布的警报和指引",
+      "en_quote": "Conducting open-source research to include social media, news articles, public records and notices, alerts, or guidance issued by law enforcement and regulatory agencies, to inform their opinion on the escalated activity.",
+      "knowledge_en": "Conducting open-source research to include social media, news articles, public records and notices, alerts, or guidance issued by law enforcement and regulatory agencies, to inform their opinion on the escalated activity",
+      "heading_context": [
+        "Transaction monitoring",
+        "Procedures for alerts review"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.362783,
+      "raw_score": 35.490403
+    },
+    {
+      "unit_id": "v7u_N004531",
+      "knowledge_zh": "网络分析识别快速大额交易、循环资金流等洗钱可疑模式",
+      "en_quote": "It helps identify suspicious transaction patterns that might indicate money laundering activities such as rapid, high-volume transactions, circular money flows, or structured deposits designed to evade reporting thresholds.",
+      "knowledge_en": "Network analysis identifies suspicious transaction patterns",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing",
+        "Network analysis solutions for transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "bge",
+      "score": 0.345492,
+      "raw_score": 0.683256
+    },
+    {
+      "unit_id": "v7u_N003241",
+      "knowledge_zh": "交易监控系统可应用于监控客户账户活动，对不同类型账户设置特定阈值。",
+      "en_quote": "A TM system might be applied to monitor customer account activity, assessing transactions to and from customers, or checking accounts, with specific thresholds for different types of customer accounts.",
+      "knowledge_en": "application of TM system with thresholds",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring controls"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.314512,
+      "raw_score": 34.213493
+    },
+    {
+      "unit_id": "v7u_N003233",
+      "knowledge_zh": "交易监控系统在客户活动超出正常参数时生成警报。",
+      "en_quote": "Transaction monitoring systems generate alerts when customer activity or behavior is beyond normal parameters for the customer profile.",
+      "knowledge_en": "Alert generation by transaction monitoring systems",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring controls"
+      ],
+      "type": "process",
+      "route": "bm25_zh",
+      "score": 0.307216,
+      "raw_score": 34.081582
+    },
+    {
+      "unit_id": "v7u_N001261",
+      "knowledge_zh": "账户活动与账户目的不一致，或交易金额/类型异常，属于风险指标。",
+      "en_quote": "Account activity that is not consistent with the account’s purpose, or transactions that do not align with anticipated activities, such as unusual amounts or types of transactions.",
+      "knowledge_en": "Account activity that is not consistent with the account’s purpose, or transactions that do not align with anticipated activities, such as unusual amounts or types of transactions",
+      "heading_context": [
+        "Providing financial services to embassies, foreign consulates, and missions"
+      ],
+      "type": "risk_indicator",
+      "route": "bm25_zh",
+      "score": 0.256145,
+      "raw_score": 32.682171
+    },
+    {
+      "unit_id": "v7u_N000834",
+      "knowledge_zh": "无银行账户者依赖现金交易，给货币服务企业带来追踪和资金来源确认困难",
+      "en_quote": "Cash transactions: Unbanked individuals rely on cash, which can create vulnerabilities for MSBs, such as difficulty in tracking a high volume of transactions and ascertaining the source of these funds.",
+      "knowledge_en": "Cash transactions: Unbanked individuals rely on cash, which can create vulnerabilities for MSBs, such as difficulty in tracking a high volume of transactions and ascertaining the source of these funds",
+      "heading_context": [
+        "Money laundering risks associated with MSBs, payment service providers, and ecommerce",
+        "Money services business"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.251767,
+      "raw_score": 31.704257
+    },
+    {
+      "unit_id": "v7u_N003342",
+      "knowledge_zh": "社交媒体资料可提供客户或相关方的额外背景信息。",
+      "en_quote": "Social media profiles: Information from social media that might provide additional context about a customer or related parties.",
+      "knowledge_en": "Social media profiles: Information from social media that might provide additional context about a customer or related parties",
+      "heading_context": [
+        "Transaction monitoring",
+        "Information gathering"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.239675,
+      "raw_score": 31.558019
+    },
+    {
+      "unit_id": "v7u_N000695",
+      "knowledge_zh": "机构应使用控制措施降低电汇风险",
+      "en_quote": "Organizations should use controls to reduce the risk associated with wire transfers.",
+      "knowledge_en": "Use controls to reduce wire transfer risk",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "rule",
+      "route": "bm25_en",
+      "score": 0.23141,
+      "raw_score": 31.462134
+    },
+    {
+      "unit_id": "v7u_N004460",
+      "knowledge_zh": "警报总量是监控校准的关键指标",
+      "en_quote": "The overall volume of alerts generated is a key metric.",
+      "knowledge_en": "alert volume as key metric",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.219993,
+      "raw_score": 31.301926
+    },
+    {
+      "unit_id": "v7u_N003314",
+      "knowledge_zh": "反洗钱调查来源包括内部和外部转介、信息请求、负面新闻、监管发现及执法请求",
+      "en_quote": "AML investigations might originate from a wide range of sources beyond transaction monitoring systems. These sources include internal and external referrals, requests for information from counterparties or correspondent banks, negative news, regulatory findings and recommendations, and law enforcement requests.",
+      "knowledge_en": "Sources of AML investigations beyond transaction monitoring",
+      "heading_context": [
+        "Transaction monitoring",
+        "Other sources of investigation"
+      ],
+      "type": "fact",
+      "route": "bge",
+      "score": 0.193131,
+      "raw_score": 0.669415
+    },
+    {
+      "unit_id": "v7u_N003331",
+      "knowledge_zh": "应审查同一账户或客户的过往交易模式",
+      "en_quote": "Any patterns of previous transactions from the same account or customer should also be reviewed.",
+      "knowledge_en": "Review patterns of previous transactions",
+      "heading_context": [
+        "Transaction monitoring",
+        "Steps applied to an investigation"
+      ],
+      "type": "rule",
+      "route": "bm25_zh",
+      "score": 0.179749,
+      "raw_score": 30.547398
+    },
+    {
+      "unit_id": "v7u_N003402",
+      "knowledge_zh": "分析现金和资金流以评估交易合法性并识别潜在非法活动。",
+      "en_quote": "Analyzing cash and fund flows helps assess transaction legitimacy and identify potential illicit activity. This process involves tracing the movement of funds across accounts and financial institutions. Key considerations include:",
+      "knowledge_en": "Analyzing cash and fund flows helps assess transaction legitimacy and identify potential illicit activity. This process involves tracing the movement of funds across accounts and financial institutions. Key considerations include",
+      "heading_context": [
+        "Transaction monitoring",
+        "Analysis of information"
+      ],
+      "type": "classification",
+      "route": "bge",
+      "score": 0.177398,
+      "raw_score": 0.668122
+    },
+    {
+      "unit_id": "v7u_N003975",
+      "knowledge_zh": "被抑制的警报需按正式计划定期重新审查。",
+      "en_quote": "These \"hibernated\" alerts may need to be revisited periodically through a formal schedule.",
+      "knowledge_en": "hibernated alerts need periodic review",
+      "heading_context": [
+        "Technology and tools used across the customer life cycle",
+        "Robotic process automation"
+      ],
+      "type": "rule",
+      "route": "bm25_zh",
+      "score": 0.174973,
+      "raw_score": 30.4499
+    },
+    {
+      "unit_id": "v7u_N003244",
+      "knowledge_zh": "交易监控是开户后持续观察客户交易以识别异常或非法活动。",
+      "en_quote": "Transaction monitoring is the continuous observation of customer transactions after onboarding to identify unusual or illicit activity and the risk it might have to the organization.",
+      "knowledge_en": "definition of transaction monitoring",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring versus payment screening"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.776658,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003246",
+        "source_core_point_id": "cp_CH47_S02_001",
+        "source_core_point_title_zh": "交易监控",
+        "target_core_point_id": "cp_CH47_S02_001",
+        "target_core_point_title_zh": "交易监控",
+        "text_relevance": 0.063291,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000680",
+      "knowledge_zh": "电汇可转移大额资金，风险更高。",
+      "en_quote": "They can also transfer a large amount of funds, which makes them riskier.",
+      "knowledge_en": "Wire transfer risk: large fund amounts",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.774127,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000679",
+        "source_core_point_id": "cp_CH09_S02_002",
+        "source_core_point_title_zh": "电汇风险因素",
+        "target_core_point_id": "cp_CH09_S02_002",
+        "target_core_point_title_zh": "电汇风险因素",
+        "text_relevance": 0.050633,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N004365",
+      "knowledge_zh": "犯罪分子通过拆分交易至阈值以下（即结构化交易）规避控制。",
+      "en_quote": "But criminals can evade triggering these controls by breaking down large transactions into multiple smaller ones, each of which is just below the reporting threshold, a practice known as structuring.",
+      "knowledge_en": "Definition of structuring",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Rules-based transaction monitoring"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.774127,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004364",
+        "source_core_point_id": "cp_CH56_S02_002",
+        "source_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "target_core_point_id": "cp_CH56_S02_002",
+        "target_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "text_relevance": 0.050633,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000677",
+      "knowledge_zh": "电汇可被用于向犯罪分子转移资金，存在风险。",
+      "en_quote": "Wire transfers carry risk because they can be used to send money to criminals.",
+      "knowledge_en": "Wire transfer risk: criminal use",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.772861,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000679",
+        "source_core_point_id": "cp_CH09_S02_002",
+        "source_core_point_title_zh": "电汇风险因素",
+        "target_core_point_id": "cp_CH09_S02_002",
+        "target_core_point_title_zh": "电汇风险因素",
+        "text_relevance": 0.044304,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000678",
+      "knowledge_zh": "电汇具有国际性，更易用于跨境转移资金。",
+      "en_quote": "They are international, which makes them more attractive to use to send money across jurisdictions.",
+      "knowledge_en": "Wire transfer risk: international nature",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.772861,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000679",
+        "source_core_point_id": "cp_CH09_S02_002",
+        "source_core_point_title_zh": "电汇风险因素",
+        "target_core_point_id": "cp_CH09_S02_002",
+        "target_core_point_title_zh": "电汇风险因素",
+        "text_relevance": 0.044304,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N004366",
+      "knowledge_zh": "大多数司法管辖区将结构化交易视为金融犯罪，无论资金来源如何。",
+      "en_quote": "Most jurisdictions consider structuring a financial crime, regardless of the source of funds.",
+      "knowledge_en": "Structuring as financial crime",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Rules-based transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.772861,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004364",
+        "source_core_point_id": "cp_CH56_S02_002",
+        "source_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "target_core_point_id": "cp_CH56_S02_002",
+        "target_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "text_relevance": 0.044304,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N003247",
+      "knowledge_zh": "若发现并确认可疑活动可能涉及洗钱，必须提交可疑活动报告。",
+      "en_quote": "If unusual or suspicious activity is detected and confirmed as potential money laundering, a SAR must be submitted.",
+      "knowledge_en": "SAR submission obligation upon confirmed suspicious activity",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring versus payment screening"
+      ],
+      "type": "rule",
+      "route": "kg_same_core_point",
+      "score": 0.771595,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003246",
+        "source_core_point_id": "cp_CH47_S02_001",
+        "source_core_point_title_zh": "交易监控",
+        "target_core_point_id": "cp_CH47_S02_001",
+        "target_core_point_title_zh": "交易监控",
+        "text_relevance": 0.037975,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N004363",
+      "knowledge_zh": "仅靠刚性阈值不足以有效监控交易。",
+      "en_quote": "However, rigid thresholds alone are not sufficient.",
+      "knowledge_en": "Insufficiency of rigid thresholds alone",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Rules-based transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.769063,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004364",
+        "source_core_point_id": "cp_CH56_S02_002",
+        "source_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "target_core_point_id": "cp_CH56_S02_002",
+        "target_core_point_title_zh": "刚性阈值的局限性与结构化交易风险",
+        "text_relevance": 0.025316,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N003245",
+      "knowledge_zh": "交易监控有助于发现可能表明洗钱、逃税或其他金融犯罪的复杂模式。",
+      "en_quote": "It helps detect complex patterns that might indicate money laundering, tax evasion, or other financial crimes.",
+      "knowledge_en": "purpose of transaction monitoring",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring versus payment screening"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.767797,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003246",
+        "source_core_point_id": "cp_CH47_S02_001",
+        "source_core_point_title_zh": "交易监控",
+        "target_core_point_id": "cp_CH47_S02_001",
+        "target_core_point_title_zh": "交易监控",
+        "text_relevance": 0.018987,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N003071",
+      "knowledge_zh": "EDD包括全面的财富和资金来源验证",
+      "en_quote": "Comprehensive source of wealth and funds verification.",
+      "knowledge_en": "Comprehensive source of wealth and funds verification",
+      "heading_context": [
+        "Onboarding AFC controls",
+        "KYC for a natural person"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.664685,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003073",
+        "source_core_point_id": "cp_CH42_S07_004",
+        "source_core_point_title_zh": "EDD要求",
+        "target_core_point_id": "cp_CH42_S07_004",
+        "target_core_point_title_zh": "EDD要求",
+        "text_relevance": 0.037975,
+        "seed_score": 0.702272
+      }
+    },
+    {
+      "unit_id": "v7u_N003070",
+      "knowledge_zh": "高风险客户（如政治敏感人物）通常需要强化尽职调查（EDD）",
+      "en_quote": "EDD is typically required for high-risk customers, such as PEPs or individuals operating in high-risk jurisdictions. EDD includes, but is not limited to:",
+      "knowledge_en": "EDD is typically required for high-risk customers, such as PEPs or individuals operating in high-risk jurisdictions. EDD includes, but is not limited to",
+      "heading_context": [
+        "Onboarding AFC controls",
+        "KYC for a natural person"
+      ],
+      "type": "classification",
+      "route": "kg_same_core_point",
+      "score": 0.66342,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003073",
+        "source_core_point_id": "cp_CH42_S07_004",
+        "source_core_point_title_zh": "EDD要求",
+        "target_core_point_id": "cp_CH42_S07_004",
+        "target_core_point_title_zh": "EDD要求",
+        "text_relevance": 0.031646,
+        "seed_score": 0.702272
+      }
+    },
+    {
+      "unit_id": "v7u_N003072",
+      "knowledge_zh": "EDD包括强化交易监控和更频繁的审查",
+      "en_quote": "Enhanced transaction monitoring and more frequent reviews.",
+      "knowledge_en": "Enhanced transaction monitoring and more frequent reviews",
+      "heading_context": [
+        "Onboarding AFC controls",
+        "KYC for a natural person"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.662154,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003073",
+        "source_core_point_id": "cp_CH42_S07_004",
+        "source_core_point_title_zh": "EDD要求",
+        "target_core_point_id": "cp_CH42_S07_004",
+        "target_core_point_title_zh": "EDD要求",
+        "text_relevance": 0.025316,
+        "seed_score": 0.702272
+      }
+    },
+    {
+      "unit_id": "v7u_N000698",
+      "knowledge_zh": "必须使用控制措施以确保合规并保护客户资金",
+      "en_quote": "They must be used to ensure adherence to regulations and protect customers' funds.",
+      "knowledge_en": "Mandatory use of controls for compliance and protection",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "rule",
+      "route": "kg_same_core_point",
+      "score": 0.600017,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000696",
+        "source_core_point_id": "cp_CH09_S02_004",
+        "source_core_point_title_zh": "电汇风险控制措施",
+        "target_core_point_id": "cp_CH09_S02_004",
+        "target_core_point_title_zh": "电汇风险控制措施",
+        "text_relevance": 0.044304,
+        "seed_score": 0.564909
+      }
+    },
+    {
+      "unit_id": "v7u_N000675",
+      "knowledge_zh": "银行转账是银行间的电子资金转账方式，通常为国内转账。",
+      "en_quote": "A bank transfer is a different method used to electronically transfer funds. This is conducted between two banks and is usually domestic.",
+      "knowledge_en": "A bank transfer electronically transfers funds between two banks and is usually domestic",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.598781,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000674",
+        "source_core_point_id": "cp_CH09_S02_001",
+        "source_core_point_title_zh": "电汇和银行转账定义",
+        "target_core_point_id": "cp_CH09_S02_001",
+        "target_core_point_title_zh": "电汇和银行转账定义",
+        "text_relevance": 0.056962,
+        "seed_score": 0.557059
+      }
+    },
+    {
+      "unit_id": "v7u_N000676",
+      "knowledge_zh": "银行转账使用自动清算所（ACH）结算系统，支持银行间的借贷记转账。",
+      "en_quote": "Bank transfers use a settlement system called an automated clearing house (ACH). This system supports the transfer of credits and debits between banks.",
+      "knowledge_en": "Bank transfers use ACH settlement to support bank credit and debit transfers",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "process",
+      "route": "kg_same_core_point",
+      "score": 0.598781,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000674",
+        "source_core_point_id": "cp_CH09_S02_001",
+        "source_core_point_title_zh": "电汇和银行转账定义",
+        "target_core_point_id": "cp_CH09_S02_001",
+        "target_core_point_title_zh": "电汇和银行转账定义",
+        "text_relevance": 0.056962,
+        "seed_score": 0.557059
+      }
+    },
+    {
+      "unit_id": "v7u_N000697",
+      "knowledge_zh": "控制措施有助于检测不同的风险类型",
+      "en_quote": "These controls help detect different risk typologies.",
+      "knowledge_en": "Purpose of controls: detect risk typologies",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.594954,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000696",
+        "source_core_point_id": "cp_CH09_S02_004",
+        "source_core_point_title_zh": "电汇风险控制措施",
+        "target_core_point_id": "cp_CH09_S02_004",
+        "target_core_point_title_zh": "电汇风险控制措施",
+        "text_relevance": 0.018987,
+        "seed_score": 0.564909
+      }
+    },
+    {
+      "unit_id": "v7u_N003297",
+      "knowledge_zh": "一级审查是交易监控系统生成警报后的初始审查阶段",
+      "en_quote": "When multiple levels of reviews are used, Level 1 review—or the initial review stage—occurs when a TM system generates an alert.",
+      "knowledge_en": "Level 1 review definition",
+      "heading_context": [
+        "Transaction monitoring",
+        "Procedures for alerts review"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.570289,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003298",
+        "source_core_point_id": "cp_CH47_S06_001",
+        "source_core_point_title_zh": "警报审查方法和一级初步审查",
+        "target_core_point_id": "cp_CH47_S06_001",
+        "target_core_point_title_zh": "警报审查方法和一级初步审查",
+        "text_relevance": 0.063291,
+        "seed_score": 0.495064
+      }
+    },
+    {
+      "unit_id": "v7u_N003295",
+      "knowledge_zh": "大型机构采用多级警报审查流程，涉及多级审查和信息收集",
+      "en_quote": "In larger organizations, the process for reviewing transaction monitoring alerts typically involves multiple levels of review and information gathering.",
+      "knowledge_en": "Larger organizations: multi-level alert review",
+      "heading_context": [
+        "Transaction monitoring",
+        "Procedures for alerts review"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.567757,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003298",
+        "source_core_point_id": "cp_CH47_S06_001",
+        "source_core_point_title_zh": "警报审查方法和一级初步审查",
+        "target_core_point_id": "cp_CH47_S06_001",
+        "target_core_point_title_zh": "警报审查方法和一级初步审查",
+        "text_relevance": 0.050633,
+        "seed_score": 0.495064
+      }
+    },
+    {
+      "unit_id": "v7u_N003296",
+      "knowledge_zh": "小型机构可能采用单点接触系统，由一名分析师处理从警报生成到提交可疑活动报告的全过程",
+      "en_quote": "Smaller organizations might use a one-touch system, where a single analyst handles the alert from generation through the submission of a SAR.",
+      "knowledge_en": "Smaller organizations: one-touch alert system",
+      "heading_context": [
+        "Transaction monitoring",
+        "Procedures for alerts review"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.565226,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003298",
+        "source_core_point_id": "cp_CH47_S06_001",
+        "source_core_point_title_zh": "警报审查方法和一级初步审查",
+        "target_core_point_id": "cp_CH47_S06_001",
+        "target_core_point_title_zh": "警报审查方法和一级初步审查",
+        "text_relevance": 0.037975,
+        "seed_score": 0.495064
+      }
+    },
+    {
+      "unit_id": "v7u_N000682",
+      "knowledge_zh": "电汇可能被用于恐怖融资",
+      "en_quote": "Financing of terrorism",
+      "knowledge_en": "Financing of terrorism",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_section_cp",
+      "score": 0.55142,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000696",
+        "source_core_point_id": "cp_CH09_S02_004",
+        "source_core_point_title_zh": "电汇风险控制措施",
+        "target_core_point_id": "cp_CH09_S02_003",
+        "target_core_point_title_zh": "电汇非法活动和红旗信号",
+        "text_relevance": 0.025316,
+        "edge_id": "p2c_rel_CH09_S02_003_004",
+        "edge_scope": "same_section_core_point",
+        "relation_type": "prepares",
+        "reason": "CP3 identifies the illicit activities and red flags, which directly motivate the need for the risk controls described in CP4.",
+        "seed_score": 0.564909
+      }
+    },
+    {
+      "unit_id": "v7u_N003287",
+      "knowledge_zh": "交易监控场景分析行业规模、司法管辖区和客户活动等因素以设置警报，场景从简单到复杂",
+      "en_quote": "Transaction monitoring scenarios analyze factors such as industry size, jurisdiction, and customer activity to set alerts. Scenarios can range from basic to more complex.",
+      "knowledge_en": "Transaction monitoring scenarios: factors and complexity range",
+      "heading_context": [
+        "Transaction monitoring",
+        "Typical scenarios that would generate an alert"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.549589,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003291",
+        "source_core_point_id": "cp_CH47_S05_001",
+        "source_core_point_title_zh": "典型的交易监控警报场景",
+        "target_core_point_id": "cp_CH47_S05_001",
+        "target_core_point_title_zh": "典型的交易监控警报场景",
+        "text_relevance": 0.075949,
+        "seed_score": 0.446664
+      }
+    },
+    {
+      "unit_id": "v7u_N003288",
+      "knowledge_zh": "传统场景简单，仅基于有限或特定信息生成警报",
+      "en_quote": "Traditionally, scenarios were simple, focusing on limited or specific information to generate alerts.",
+      "knowledge_en": "Traditional simple scenarios",
+      "heading_context": [
+        "Transaction monitoring",
+        "Typical scenarios that would generate an alert"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.543259,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003291",
+        "source_core_point_id": "cp_CH47_S05_001",
+        "source_core_point_title_zh": "典型的交易监控警报场景",
+        "target_core_point_id": "cp_CH47_S05_001",
+        "target_core_point_title_zh": "典型的交易监控警报场景",
+        "text_relevance": 0.044304,
+        "seed_score": 0.446664
+      }
+    },
+    {
+      "unit_id": "v7u_N003289",
+      "knowledge_zh": "简单规则示例：识别所有超过特定金额的交易",
+      "en_quote": "For example, one rule identified all transactions above a specific monetary amount.",
+      "knowledge_en": "Example of a simple rule",
+      "heading_context": [
+        "Transaction monitoring",
+        "Typical scenarios that would generate an alert"
+      ],
+      "type": "case",
+      "route": "kg_same_core_point",
+      "score": 0.540728,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003291",
+        "source_core_point_id": "cp_CH47_S05_001",
+        "source_core_point_title_zh": "典型的交易监控警报场景",
+        "target_core_point_id": "cp_CH47_S05_001",
+        "target_core_point_title_zh": "典型的交易监控警报场景",
+        "text_relevance": 0.031646,
+        "seed_score": 0.446664
+      }
+    },
+    {
+      "unit_id": "v7u_N004542",
+      "knowledge_zh": "案件管理工具通过追踪可疑活动、标记高风险交易和组织监管报告文件来简化调查。",
+      "en_quote": "Case management tools within these platforms streamline investigations by tracking suspicious activities, flagging high-risk transactions, and organizing case files for regulatory reporting.",
+      "knowledge_en": "Functions of case management tools",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing",
+        "Network analysis solutions for transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.534505,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004541",
+        "source_core_point_id": "cp_CH57_S05_002",
+        "source_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "target_core_point_id": "cp_CH57_S05_002",
+        "target_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "text_relevance": 0.050633,
+        "seed_score": 0.425789
+      }
+    },
+    {
+      "unit_id": "v7u_N004540",
+      "knowledge_zh": "现代反洗钱解决方案是基于网络的平台，集中客户与账户数据",
+      "en_quote": "Modern AML solutions are web-based platforms that centralize customer and account data, supporting KYC requirements and risk assessments.",
+      "knowledge_en": "Modern AML solutions definition",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing",
+        "Network analysis solutions for transaction monitoring"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.531974,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004541",
+        "source_core_point_id": "cp_CH57_S05_002",
+        "source_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "target_core_point_id": "cp_CH57_S05_002",
+        "target_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "text_relevance": 0.037975,
+        "seed_score": 0.425789
+      }
+    },
+    {
+      "unit_id": "v7u_N004539",
+      "knowledge_zh": "技术强化全球反洗钱合规框架，尤其在案件管理方面",
+      "en_quote": "Technology strengthens global AML compliance frameworks, particularly in case management.",
+      "knowledge_en": "Technology strengthens AML compliance",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing",
+        "Network analysis solutions for transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.525645,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004541",
+        "source_core_point_id": "cp_CH57_S05_002",
+        "source_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "target_core_point_id": "cp_CH57_S05_002",
+        "target_core_point_title_zh": "现代反洗钱案件管理解决方案",
+        "text_relevance": 0.006329,
+        "seed_score": 0.425789
+      }
+    },
+    {
+      "unit_id": "v7u_N000684",
+      "knowledge_zh": "电汇可能被用于隐瞒犯罪所得",
+      "en_quote": "Concealing the proceeds of crime",
+      "knowledge_en": "Concealing the proceeds of crime",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.521502,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000681",
+        "source_core_point_id": "cp_CH09_S02_003",
+        "source_core_point_title_zh": "电汇非法活动和红旗信号",
+        "target_core_point_id": "cp_CH09_S02_003",
+        "target_core_point_title_zh": "电汇非法活动和红旗信号",
+        "text_relevance": 0.031646,
+        "seed_score": 0.40661
+      }
+    },
+    {
+      "unit_id": "v7u_N000683",
+      "knowledge_zh": "电汇可能被用于违反制裁",
+      "en_quote": "Breach of sanctions",
+      "knowledge_en": "Breach of sanctions",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.520236,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000681",
+        "source_core_point_id": "cp_CH09_S02_003",
+        "source_core_point_title_zh": "电汇非法活动和红旗信号",
+        "target_core_point_id": "cp_CH09_S02_003",
+        "target_core_point_title_zh": "电汇非法活动和红旗信号",
+        "text_relevance": 0.025316,
+        "seed_score": 0.40661
+      }
+    },
+    {
+      "unit_id": "v7u_N000685",
+      "knowledge_zh": "电汇可能被用于协助欺诈性电汇",
+      "en_quote": "Facilitating fraudulent wire transfers",
+      "knowledge_en": "Facilitating fraudulent wire transfers",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.520236,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000681",
+        "source_core_point_id": "cp_CH09_S02_003",
+        "source_core_point_title_zh": "电汇非法活动和红旗信号",
+        "target_core_point_id": "cp_CH09_S02_003",
+        "target_core_point_title_zh": "电汇非法活动和红旗信号",
+        "text_relevance": 0.025316,
+        "seed_score": 0.40661
+      }
+    },
+    {
+      "unit_id": "v7u_N003988",
+      "knowledge_zh": "行为交易监控通过分析客户历史行为构建动态画像并检测异常",
+      "en_quote": "Instead of relying solely on static rules-based thresholds, behavioral transaction monitoring analyzes a customer’s historical transaction behavior to build dynamic profiles and detect anomalies that may signal suspicious activity.",
+      "knowledge_en": "Behavioral transaction monitoring definition",
+      "heading_context": [
+        "Technology and tools used across the customer life cycle",
+        "Behavioral and profile monitoring"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.512619,
+      "kg": {
+        "source_seed_unit_id": "v7u_N003989",
+        "source_core_point_id": "cp_CH52_S04_001",
+        "source_core_point_title_zh": "行为交易监控",
+        "target_core_point_id": "cp_CH52_S04_001",
+        "target_core_point_title_zh": "行为交易监控",
+        "text_relevance": 0.063291,
+        "seed_score": 0.374919
+      }
+    }
+  ],
+  "candidate_route_counts": {
+    "bge": 7,
+    "bm25_en": 8,
+    "bm25_zh": 10,
+    "p5_alias": 5,
+    "kg_same_core_point": 29,
+    "kg_same_section_cp": 1
+  },
+  "kg_enabled": true,
+  "p5_enabled": true,
+  "llm_output": "{\n  \"prompt_version\": \"intent_v1\",\n  \"question_intent\": {\n    \"intent_type\": \"first_step\",\n    \"asked_object\": \"调查警报/案例时应首先审查的信息\",\n    \"key_constraint\": \"首先\",\n    \"intent_reasoning\": \"题干明确询问'应首先审查哪些信息'，属于调查流程的第一步，需要判断在接到警报后初始审查的优先对象。\"\n  },\n  \"judgment_standard\": {\n    \"standard_type\": \"sequence_priority\",\n    \"standard_explanation\": \"题目要求确定调查警报的第一步，因此必须按流程顺序判断，优先考虑作为调查基线或前置条件的信息，而不是所有相关的信息。\",\n    \"decisive_rule\": \"当多个选项都是调查应审查的信息时，优先选择能够提供正常行为基线、帮助判断异常来源的前置信息，而非直接查看触发警报的原始数据。\"\n  },\n  \"competing_option_analysis\": [\n    {\n      \"options\": [\"B\", \"D\"],\n      \"why_each_is_plausible\": \"B客户概况提供了客户的预期行为模式，是判断交易是否异常的基础；D账户活动是触发警报的直接数据，调查时必然会审查。两者都是教材(v7u_N003298)列出的评估数据点。\",\n      \"decisive_dimension\": \"调查流程顺序：教材v7u_N003291指出警报因活动偏离预期模式而触发，而预期模式来自客户概况，因此在调查时需要先了解客户概况才能有效评估账户活动是否异常。\",\n      \"winner\": \"B\",\n      \"needs_human_review\": false,\n      \"review_reason\": \"\"\n    }\n  ],\n  \"predicted_answer\": [\"B\"],\n  \"option_analysis\": [\n    {\n      \"option\": \"A\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"low\",\n      \"evidence_status\": \"indirect\",\n      \"evidence_cards\": [\n        {\n          \"unit_id\": \"v7u_N003307\",\n          \"support_type\": \"indirect\",\n          \"reason\": \"该单元说明开源研究可用于形成对升级活动的意见，但未表明它是调查警报的第一步，属于后续信息收集阶段。\"\n        }\n      ],\n      \"basis\": \"开源信息不是调查警报的首步，通常在初步分析客户和账户信息后才可能进行。\"\n    },\n    {\n      \"option\": \"B\",\n      \"judgement\": \"correct\",\n      \"intent_fit\": \"high\",\n      \"evidence_status\": \"direct\",\n      \"evidence_cards\": [\n        {\n          \"unit_id\": \"v7u_N003298\",\n          \"support_type\": \"direct\",\n          \"reason\": \"该单元明确将客户资料(customer profile)列为检查警报有效性时需评估的数据点之一，且客户概况是判断活动是否偏离预期模式的基础。\"\n        },\n        {\n          \"unit_id\": \"v7u_N003291\",\n          \"support_type\": \"direct\",\n          \"reason\": \"该单元指出警报因活动偏离预期模式而触发，而预期模式来源于客户概况，因此审查客户概况是理解异常的第一步。\"\n        }\n      ],\n      \"basis\": \"客户概况提供了客户的正常行为基线，调查触发警报的活动时，首先需要了解这一基线，才能有效评估账户活动是否异常。这符合教材对调查警报初始步骤的要求。\"\n    },\n    {\n      \"option\": \"C\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"low\",\n      \"evidence_status\": \"indirect\",\n      \"evidence_cards\": [\n        {\n          \"unit_id\": \"v7u_N003073\",\n          \"support_type\": \"indirect\",\n          \"reason\": \"不良媒体筛查属于强化尽职调查(EDD)的组成部分，不是每一笔警报调查的第一步。\"\n        },\n        {\n          \"unit_id\": \"v7u_N003190\",\n          \"support_type\": \"indirect\",\n          \"reason\": \"不良媒体检查用于识别与金融犯罪风险相关的公开信息，但通常在初步分析后才会进行。\"\n        }\n      ],\n      \"basis\": \"不良媒体搜索不是调查警报的首选信息，通常用于后续深入调查或高风险客户的强化审查。\"\n    },\n    {\n      \"option\": \"D\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"medium\",\n      \"evidence_status\": \"indirect\",\n      \"evidence_cards\": [\n        {\n          \"unit_id\": \"v7u_N003298\",\n          \"support_type\": \"indirect\",\n          \"reason\": \"该单元将账户历史(account history)列为评估数据点，但并未指明它是第一步，且账户活动需要结合客户概况来理解其正常性。\"\n        }\n      ],\n      \"basis\": \"账户活动虽是警报的直接诱因，但调查的初始步骤需要先确定客户的预期模式（客户概况），然后才能评估账户活动是否真的异常。因此账户活动不是唯一最先审查的信息。\"\n    }\n  ],\n  \"teacher_review_note\": \"教材未明确列出调查警报的步骤顺序，但通过v7u_N003291和v7u_N003298可推断客户概况是建立预期模式的前提，支持将其作为第一步。\"\n}",
+  "option_analysis": [
+    {
+      "option": "A",
+      "judgement": "incorrect",
+      "intent_fit": "low",
+      "evidence_status": "indirect",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N003307",
+          "support_type": "indirect",
+          "reason": "该单元说明开源研究可用于形成对升级活动的意见，但未表明它是调查警报的第一步，属于后续信息收集阶段。"
+        }
+      ],
+      "basis": "开源信息不是调查警报的首步，通常在初步分析客户和账户信息后才可能进行。"
+    },
+    {
+      "option": "B",
+      "judgement": "correct",
+      "intent_fit": "high",
+      "evidence_status": "direct",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N003298",
+          "support_type": "direct",
+          "reason": "该单元明确将客户资料(customer profile)列为检查警报有效性时需评估的数据点之一，且客户概况是判断活动是否偏离预期模式的基础。"
+        },
+        {
+          "unit_id": "v7u_N003291",
+          "support_type": "direct",
+          "reason": "该单元指出警报因活动偏离预期模式而触发，而预期模式来源于客户概况，因此审查客户概况是理解异常的第一步。"
+        }
+      ],
+      "basis": "客户概况提供了客户的正常行为基线，调查触发警报的活动时，首先需要了解这一基线，才能有效评估账户活动是否异常。这符合教材对调查警报初始步骤的要求。"
+    },
+    {
+      "option": "C",
+      "judgement": "incorrect",
+      "intent_fit": "low",
+      "evidence_status": "indirect",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N003073",
+          "support_type": "indirect",
+          "reason": "不良媒体筛查属于强化尽职调查(EDD)的组成部分，不是每一笔警报调查的第一步。"
+        },
+        {
+          "unit_id": "v7u_N003190",
+          "support_type": "indirect",
+          "reason": "不良媒体检查用于识别与金融犯罪风险相关的公开信息，但通常在初步分析后才会进行。"
+        }
+      ],
+      "basis": "不良媒体搜索不是调查警报的首选信息，通常用于后续深入调查或高风险客户的强化审查。"
+    },
+    {
+      "option": "D",
+      "judgement": "incorrect",
+      "intent_fit": "medium",
+      "evidence_status": "indirect",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N003298",
+          "support_type": "indirect",
+          "reason": "该单元将账户历史(account history)列为评估数据点，但并未指明它是第一步，且账户活动需要结合客户概况来理解其正常性。"
+        }
+      ],
+      "basis": "账户活动虽是警报的直接诱因，但调查的初始步骤需要先确定客户的预期模式（客户概况），然后才能评估账户活动是否真的异常。因此账户活动不是唯一最先审查的信息。"
+    }
+  ],
+  "predicted_answer": [
+    "B"
+  ],
+  "question_intent": {
+    "intent_type": "first_step",
+    "asked_object": "调查警报/案例时应首先审查的信息",
+    "key_constraint": "首先",
+    "intent_reasoning": "题干明确询问'应首先审查哪些信息'，属于调查流程的第一步，需要判断在接到警报后初始审查的优先对象。"
+  },
+  "judgment_standard": {
+    "standard_type": "sequence_priority",
+    "standard_explanation": "题目要求确定调查警报的第一步，因此必须按流程顺序判断，优先考虑作为调查基线或前置条件的信息，而不是所有相关的信息。",
+    "decisive_rule": "当多个选项都是调查应审查的信息时，优先选择能够提供正常行为基线、帮助判断异常来源的前置信息，而非直接查看触发警报的原始数据。"
+  },
+  "competing_option_analysis": [
+    {
+      "options": [
+        "B",
+        "D"
+      ],
+      "why_each_is_plausible": "B客户概况提供了客户的预期行为模式，是判断交易是否异常的基础；D账户活动是触发警报的直接数据，调查时必然会审查。两者都是教材(v7u_N003298)列出的评估数据点。",
+      "decisive_dimension": "调查流程顺序：教材v7u_N003291指出警报因活动偏离预期模式而触发，而预期模式来自客户概况，因此在调查时需要先了解客户概况才能有效评估账户活动是否异常。",
+      "winner": "B",
+      "needs_human_review": false,
+      "review_reason": ""
+    }
+  ],
+  "teacher_review_note": "教材未明确列出调查警报的步骤顺序，但通过v7u_N003291和v7u_N003298可推断客户概况是建立预期模式的前提，支持将其作为第一步。",
+  "validation_checks": []
+}

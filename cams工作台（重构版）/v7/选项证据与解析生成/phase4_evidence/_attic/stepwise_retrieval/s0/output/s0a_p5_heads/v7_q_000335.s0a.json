@@ -1,0 +1,210 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000335",
+  "stem": "一个恰当的组织政策是:(选择两项.)",
+  "options": {
+    "A": "最新且反映了所有相关的监管动态",
+    "B": "经董事会和监管机构批准通过",
+    "C": "经客户和第三方批准",
+    "D": "向员工清晰传达并被其理解"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一个恰当的组织政策是:(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一个恰当的组织政策是:(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "最新且反映了所有相关的监管动态",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "最新且反映了所有相关的监管动态"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "经董事会和监管机构批准通过",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body",
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "经董事会和监管机构批准通过 regulator 监管机构 regulatory body board of directors 董事会 board"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "经客户和第三方批准",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "经客户和第三方批准"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "向员工清晰传达并被其理解",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "向员工清晰传达并被其理解"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一个恰当的组织政策是:(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一个恰当的组织政策是:(选择两项.) 最新且反映了所有相关的监管动态",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一个恰当的组织政策是:(选择两项.) 经董事会和监管机构批准通过 regulator 监管机构 regulatory body board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一个恰当的组织政策是:(选择两项.) 经客户和第三方批准",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一个恰当的组织政策是:(选择两项.) 向员工清晰传达并被其理解",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

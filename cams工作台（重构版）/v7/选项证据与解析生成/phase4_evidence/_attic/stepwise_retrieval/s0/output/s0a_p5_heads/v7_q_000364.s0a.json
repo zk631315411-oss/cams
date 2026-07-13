@@ -1,0 +1,323 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000364",
+  "stem": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.)",
+  "options": {
+    "A": "带有递延收益流的年金产品",
+    "B": "允许在保单生效后变更指定受益人的产品",
+    "C": "具有国际健康保险保障的产品",
+    "D": "允许有现金退保价值的产品",
+    "E": "限制资金从一份保单转移到另一份保单的产品"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "money laundering reporting officer",
+        "洗钱报告官",
+        "反洗钱报告负责人",
+        "洗钱报告负责人",
+        "反洗钱报告官"
+      ],
+      "normalized_text": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "带有递延收益流的年金产品",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "带有递延收益流的年金产品"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "允许在保单生效后变更指定受益人的产品",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "允许在保单生效后变更指定受益人的产品"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "具有国际健康保险保障的产品",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "具有国际健康保险保障的产品"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "允许有现金退保价值的产品",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "允许有现金退保价值的产品"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "限制资金从一份保单转移到另一份保单的产品",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "限制资金从一份保单转移到另一份保单的产品"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官 带有递延收益流的年金产品",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官 允许在保单生效后变更指定受益人的产品",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官 具有国际健康保险保障的产品",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官 允许有现金退保价值的产品",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.) money laundering reporting officer 洗钱报告官 反洗钱报告负责人 洗钱报告负责人 反洗钱报告官 限制资金从一份保单转移到另一份保单的产品",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000006",
+          "matched_term": "反洗钱报告官",
+          "canonical_en": "money laundering reporting officer",
+          "canonical_zh": "洗钱报告官",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money laundering reporting officer",
+            "反洗钱报告负责人",
+            "洗钱报告负责人",
+            "反洗钱报告官",
+            "洗钱报告官",
+            "MLRO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003442",
+            "v7u_N003443",
+            "v7u_N000449",
+            "v7u_N002498",
+            "v7u_N002942"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MLRO abbreviates money laundering reporting officer; Chinese terms all denote the same compliance role, differing only in word choice (anti-money laundering vs. money laundering wording).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

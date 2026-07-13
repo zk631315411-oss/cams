@@ -1,0 +1,164 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000363",
+  "stem": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.)",
+  "options": {
+    "A": "提前退保以变现资金",
+    "B": "过度关注保险产品的投资表现",
+    "C": "使用信用卡购买保险单",
+    "D": "使用加密货币或其他非法定货币为保险单提供资金"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "提前退保以变现资金",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "提前退保以变现资金"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "过度关注保险产品的投资表现",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "过度关注保险产品的投资表现"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "使用信用卡购买保险单",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "使用信用卡购买保险单"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "使用加密货币或其他非法定货币为保险单提供资金",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "fiat currency",
+        "法定货币",
+        "fiat currencies",
+        "法币"
+      ],
+      "normalized_text": "使用加密货币或其他非法定货币为保险单提供资金 fiat currency 法定货币 fiat currencies 法币"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.) 提前退保以变现资金",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.) 过度关注保险产品的投资表现",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.) 使用信用卡购买保险单",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些风险因素通常与保险产品中的洗钱活动相关？(选择两项.) 使用加密货币或其他非法定货币为保险单提供资金 fiat currency 法定货币 fiat currencies 法币",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000049",
+          "matched_term": "法定货币",
+          "canonical_en": "fiat currency",
+          "canonical_zh": "法定货币",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "fiat currencies",
+            "fiat currency",
+            "法定货币",
+            "法币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004450",
+            "v7u_N000992",
+            "v7u_N004350"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Fiat currency and fiat currencies are spelling variants. 法定货币 and 法币 are full form and abbreviation in Chinese, both referring to fiat currency.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

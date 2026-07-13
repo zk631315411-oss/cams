@@ -1,0 +1,257 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000222",
+  "stem": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.)",
+  "options": {
+    "A": "从各种渠道募集捐款,其主要目标是慈善事业和社会福社",
+    "B": "通常是合法机构,不会将通过捐赠筹集的资金用于个人或实体谋取私利",
+    "C": "具备全球业务布局,为国家和国际运营以及金融交易提供框架,而这些运营和交易往往发生在或临近恐怖活动高发地区.",
+    "D": "享有公众信任,能够获取大量资金来源,其活动往往资金密集"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Action Task Force",
+        "金融行动特别工作组",
+        "FATF"
+      ],
+      "normalized_text": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "从各种渠道募集捐款,其主要目标是慈善事业和社会福社",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "从各种渠道募集捐款,其主要目标是慈善事业和社会福社"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "通常是合法机构,不会将通过捐赠筹集的资金用于个人或实体谋取私利",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通常是合法机构,不会将通过捐赠筹集的资金用于个人或实体谋取私利"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "具备全球业务布局,为国家和国际运营以及金融交易提供框架,而这些运营和交易往往发生在或临近恐怖活动高发地区.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "具备全球业务布局,为国家和国际运营以及金融交易提供框架,而这些运营和交易往往发生在或临近恐怖活动高发地区."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "享有公众信任,能够获取大量资金来源,其活动往往资金密集",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "享有公众信任,能够获取大量资金来源,其活动往往资金密集"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF 从各种渠道募集捐款,其主要目标是慈善事业和社会福社",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF 通常是合法机构,不会将通过捐赠筹集的资金用于个人或实体谋取私利",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF 具备全球业务布局,为国家和国际运营以及金融交易提供框架,而这些运营和交易往往发生在或临近恐怖活动高发地区.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.) Financial Action Task Force 金融行动特别工作组 FATF 享有公众信任,能够获取大量资金来源,其活动往往资金密集",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000004",
+          "matched_term": "金融行动特别工作组",
+          "canonical_en": "Financial Action Task Force",
+          "canonical_zh": "金融行动特别工作组",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Action Task Force",
+            "金融行动特别工作组",
+            "FATF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000062",
+            "v7u_N000571",
+            "v7u_N000615",
+            "v7u_N001878",
+            "v7u_N003459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FATF is the widely recognized abbreviation for Financial Action Task Force; 金融行动特别工作组 is the official Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000215",
+  "stem": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？",
+  "options": {
+    "A": "就如何通过反洗钱工作提高盈利能力向私人金融机构提供建议",
+    "B": "建立并执行法律框架,以发现、预防和惩处洗钱及相关金融犯罪",
+    "C": "为私营企业和非政府组织(NGO)提供资金,用于开发先进的合规技术",
+    "D": "在私营企业和非政府组织(NGO)之间充当中间人,以简化反洗钱合规计划"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "就如何通过反洗钱工作提高盈利能力向私人金融机构提供建议",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "就如何通过反洗钱工作提高盈利能力向私人金融机构提供建议"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "建立并执行法律框架,以发现、预防和惩处洗钱及相关金融犯罪",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "建立并执行法律框架,以发现、预防和惩处洗钱及相关金融犯罪"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "为私营企业和非政府组织(NGO)提供资金,用于开发先进的合规技术",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "nongovernmental organization",
+        "非政府组织",
+        "NGO"
+      ],
+      "normalized_text": "为私营企业和非政府组织(NGO)提供资金,用于开发先进的合规技术 nongovernmental organization 非政府组织 NGO"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "在私营企业和非政府组织(NGO)之间充当中间人,以简化反洗钱合规计划",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中间人",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "nongovernmental organization",
+        "非政府组织",
+        "NGO",
+        "intermediaries",
+        "中介",
+        "中间人"
+      ],
+      "normalized_text": "在私营企业和非政府组织(NGO)之间充当中间人,以简化反洗钱合规计划 nongovernmental organization 非政府组织 NGO intermediaries 中介 中间人"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？ 就如何通过反洗钱工作提高盈利能力向私人金融机构提供建议",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？ 建立并执行法律框架,以发现、预防和惩处洗钱及相关金融犯罪",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？ 为私营企业和非政府组织(NGO)提供资金,用于开发先进的合规技术 nongovernmental organization 非政府组织 NGO",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪一项是公共部门团体在打击洗钱活动中的首要目标？ 在私营企业和非政府组织(NGO)之间充当中间人,以简化反洗钱合规计划 nongovernmental organization 非政府组织 NGO intermediaries 中介 中间人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中间人",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

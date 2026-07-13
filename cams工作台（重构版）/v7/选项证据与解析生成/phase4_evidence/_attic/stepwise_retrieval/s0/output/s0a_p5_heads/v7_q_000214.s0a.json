@@ -1,0 +1,211 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000214",
+  "stem": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？",
+  "options": {
+    "A": "确保该结构由外部审计员或顾问进行审查",
+    "B": "建立与机构规模和复杂程度相适应的内部控制体系",
+    "C": "指定一个合格的董事会来监督日常合规情况",
+    "D": "明确AFC风险升级和问题处理中的角色与职责"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "确保该结构由外部审计员或顾问进行审查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确保该结构由外部审计员或顾问进行审查"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "建立与机构规模和复杂程度相适应的内部控制体系",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000084",
+          "matched_term": "内部控制",
+          "canonical_en": "internal controls",
+          "canonical_zh": "内部控制",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal controls",
+            "internal control",
+            "内部控制"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003112",
+            "v7u_N000141",
+            "v7u_N002394"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal control and internal controls are singular/plural variants of the same concept; both translate to 内部控制.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "internal controls",
+        "内部控制",
+        "internal control"
+      ],
+      "normalized_text": "建立与机构规模和复杂程度相适应的内部控制体系 internal controls 内部控制 internal control"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "指定一个合格的董事会来监督日常合规情况",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "指定一个合格的董事会来监督日常合规情况 board of directors 董事会 board"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "明确AFC风险升级和问题处理中的角色与职责",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "明确AFC风险升级和问题处理中的角色与职责"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？ 确保该结构由外部审计员或顾问进行审查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？ 建立与机构规模和复杂程度相适应的内部控制体系 internal controls 内部控制 internal control",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000084",
+          "matched_term": "内部控制",
+          "canonical_en": "internal controls",
+          "canonical_zh": "内部控制",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal controls",
+            "internal control",
+            "内部控制"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003112",
+            "v7u_N000141",
+            "v7u_N002394"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal control and internal controls are singular/plural variants of the same concept; both translate to 内部控制.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？ 指定一个合格的董事会来监督日常合规情况 board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？ 明确AFC风险升级和问题处理中的角色与职责",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

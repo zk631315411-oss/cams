@@ -1,0 +1,51 @@
+﻿question_id,baseline_ai_answer,intent_ai_answer,reference_final,intent_reference_conflict,baseline_reference_conflict,cn_en_answer_conflict,pipeline_status,intent_type,standard_type,competing_options,teacher_review_note
+v7_q_000001,C,C,C,False,False,False,ok,best_action,best_remediation,,教材中未直接出现‘审计后应进行根本原因分析’的表述，仅在数据库场景提到根本原因分析（v7u_N004829）。选项C依赖‘确定补救措施’这一合理流程推断，证据强度为间接。若参考答案为其他选项，可能需要更具体的教材条文支持。建议人工复核是否存在更直接描述审计后根本原因分析的证据。
+v7_q_000002,C,C,C,False,False,False,ok,best_action,evidence_specificity,,教材未直接给出‘通过多个来源交叉核验’的表述，但通过排除法和对可靠性验证要求的推导，选项C是唯一符合教材逻辑的答案。若需更直接证据，可能需要查阅教材是否在其他章节明确提及交叉核验原则，但在给定候选池内，该判断是合理的。
+v7_q_000003,A,A,A,False,False,False,ok,best_action,scope_authority,,候选池中缺乏直接规定董事会应接收SAR统计数据的教材原文，仅依据v7u_N002560间接推断。若教材另有明确关于董事会接收信息层级的章节，则可能产生分歧。
+v7_q_000004,D,C,D,True,False,True,ok,authority,scope_authority,C/D -> C; 条款的具体功能：扣押资金是第319(b)款的典型授权，而第319(a)款主要涉及对外国银行的管辖与送达。证据库中描述的功能（扣押代理账户资金）直接匹配319(b)。; review=False,证据单元v7u_N001707未注明具体条款编号，仅功能描述指向扣押代理账户资金。根据爱国者法案的常规理解，该功能对应第319(b)条。若存在教材版本将扣押资金归于319(a)的表述，则可能产生分歧，建议人工复核教材原文确认编号。
+v7_q_000005,A,A,A,False,False,False,ok,red_flag,red_flag_fit,,本题所有选项的评判均基于教材中对博彩业洗钱手法的直接描述，尤其是客户转换非法资金并极少赌博的模式。选项A与教材内容高度吻合，其他选项无有效证据支持，判断明确，无需人工复核。
+v7_q_000006,A,B,B,False,True,False,validation_failed,red_flag,red_flag_fit,A/B -> B; 证据的直接性与场景匹配度; review=False,
+v7_q_000007,D,D,D,False,False,False,ok,best_action,evidence_specificity,,证据充分，选项D直接对应教材中关于跨国组织必须使政策符合各国法律的核心原则，其他选项均被明确反驳或缺乏依据。
+v7_q_000008,B,B,B,False,False,False,ok,best_action,best_remediation,,
+v7_q_000009,C,D,C,True,False,False,ok,best_action,best_remediation,C/D -> D; 所针对的系统类型与漏洞的直接性。教材明确指出制裁筛查系统可通过调优模糊逻辑级别来调整警报量（v7u_N004239），而‘交易后监控系统’通常指交易监控场景，并非制裁筛查系统的直接表述。因此D更精确匹配‘制裁筛查警报’的生成机制。; review=False,
+v7_q_000010,A,A,A,False,False,False,ok,concept_definition,concept_definition,,
+v7_q_000011,C,C,C,False,False,False,ok,definition,concept_definition,,教材未专门给出FIU间通过MOU进行信息共享的直接段落，但v7u_N002283提及MOU可作为补充协议简化联合调查程序，结合FIU合作实践，MOU是常见的正式化信息共享工具，故判断C为最佳选项。
+v7_q_000012,A,B,A,True,False,True,ok,control_effectiveness,control_effect,A/B -> B; 流程完整性——剩余风险评估并非仅仅得出‘降低’的结论，还需判断是否在容忍度内，并可能要求进一步行动。A 选项未体现这一后续判断，B 选项更全面地反映了这一现实。; review=False,选项 A 在大学教材 v7u_N002775 中似有一定依据，但整体评估流程强调行动计划，B 更精确。如有争议，请参照 EWRA 流程文献。
+v7_q_000013,D,D,D,False,False,False,ok,risk_effect,evidence_specificity,B/D -> D; 题干明确行为是“设立复杂的离岸公司架构”且“不报告可疑活动”，教材直接指出此类行为是律师充当看门人、隐藏真实受益人的洗钱风险，而非单纯的税务筹划；并且题干未提及税务目的，选项B缺乏直接关联。; review=False,
+v7_q_000014,C,C,C,False,False,True,ok,red_flag,red_flag_fit,B/C -> C; 与客户业务画像的匹配度以及教材中危险信号的明确适用性; review=False,
+v7_q_000015,A,A,A,False,False,False,ok,definition,concept_definition,A/D -> A; 教材对交易监控系统的功能定义仅限于监控和识别可疑活动，而监管报告提交属于独立的报告职能，不属于交易监控系统本身的能力范畴。; review=False,
+v7_q_000016,C,C,C,False,False,False,ok,purpose,concept_definition,A/C -> C; 整体目的与局部应用：题干未限定于支付场景，而是问对整个名单筛查的重要性，C更全面地反映了满足国际监管要求和识别跨司法管辖区风险的核心目的。; review=False,A选项有支付筛查的局部支持，但C选项有直接的整体目的证据，且与题干未限定支付场景的口径更吻合，因此判定C为正确答案。无需人工复核。
+v7_q_000017,B,B,B,False,False,False,ok,best_action,procedure_sequence,B/D -> B; 流程优先权：内部举报/SAR提交优先于直接执法联系，且教材明确在提交SAR前未曾联系执法部门，表明直接联系执法部门不是合规官恰当的第一步。; review=False,教材候选池未直接禁止“告知客户可疑行为”，但基于反洗钱基本原则和内部报告要求，选项C明显不当；同样，直接联系执法部门缺乏流程依据。选项B被多项教材证据直接支持，答案明确。
+v7_q_000018,D,D,D,False,False,False,ok,purpose,concept_definition,"B/D -> D; 教材中对FATF核心作用的直接描述更接近‘协调努力、提供建议和指导’（v7u_N001303, v7u_N001305），而不是仅仅或主要作为一个信息交流平台；且FATF被称为‘唯一标准制定机构’（v7u_N001312），其信息交流功能从属于标准制定与协调。D项表述更完整、更贴近教材所强调的FATF使命。; review=False",
+v7_q_000019,D,D,D,False,False,False,ok,red_flag,red_flag_fit,B/D -> D; 是否与题干给出的明确事实一致; review=False,
+v7_q_000020,D,D,D,False,False,False,ok,definition,concept_definition,,
+v7_q_000021,A,A,A,False,False,False,ok,definition,concept_definition,A/D -> A; 教材定义定位：MLAT是基础法律文书，而谅解备忘录是辅助性文件，题干限定“规范跨境信息共享的法律文书”应指向根本法律工具。; review=False,
+v7_q_000022,D,D,D,False,False,False,ok,best_action,evidence_specificity,A/D -> D; 教材明确将国际合作的成功归因于正式的多边框架和FIU间的协作（如单元21、26、38），而选项A的“依靠现有法律框架和非正式沟通渠道”正好是题干中导致调查挑战的根源，不足以作为最佳解决方案。; review=False,
+v7_q_000023,B,B,B,False,False,False,ok,definition,concept_definition,,
+v7_q_000024,B,B,B,False,False,False,ok,procedure_sequence,evidence_specificity,B/C -> B; 教材v7u_N003582明确收到传票不自动导致提交SAR，因此直接提交SAR与流程冲突；而进行审查并回应才是正确步骤。; review=False,
+v7_q_000025,B,B,B,False,False,False,ok,best_action,evidence_specificity,B/D -> B; 证据获取的法律效力与用途——起诉需要的是可在法庭使用的证据，而不仅仅是情报或可疑活动信息。; review=False,教材候选池中关于司法协助条约（MLAT）的单元直接支持其作为获取起诉证据的法律框架，选项B最强地与题干意图匹配；而选项D的埃格蒙特网络虽在反洗钱合作中有用，但仅限于情报共享，不足以直接满足起诉证据需求。证据充分，无需人工复核。
+v7_q_000026,D,B,B,False,True,False,ok,first_step,sequence_priority,B/D -> B; 调查的初始步骤逻辑：交易监控系统因客户活动偏离正常参数才生成警报（v7u_N003233），正常参数的依据是客户概况。要评估警报的有效性，必须先掌握客户的预期行为，因此客户概况是前置步骤。; review=False,教材证据未明确写明第一步的先后顺序，仅列出评估警报时需考虑的数据点。本题依赖标准调查逻辑：必须先行理解客户正常行为模式（客户概况），才能有效评估账户活动的异常性。因此选项B最为合理。如有教材明确说明顺序的记录，可进一步加强佐证。
+v7_q_000027,A,A,A,False,False,False,ok,other,evidence_specificity,,
+v7_q_000028,C,C,C,False,False,False,ok,authority,scope_authority,,
+v7_q_000029,C,C,C,False,False,False,ok,concept_definition,concept_definition,B/C -> C; 教材证据（知识单元25）明确数据主体权利并非绝对，泄密罪限制客户知情权，间接说明删除权不适用于反洗钱调查所必需的处理。C虽无直接教材支持，但排除明显错误选项后该陈述最合理。; review=True,选项C在给定教材候选池中缺乏直接陈述FIU应记录共享目的的原文，其判断依据为排除法和对数据保护原则的推论。建议人工复核以确保预期答案的准确性。
+v7_q_000030,C,C,C,False,False,False,ok,procedure_sequence,sequence_priority,,
+v7_q_000031,D,D,D,False,False,False,ok,definition,concept_definition,A/D -> D; 证据直接性：教材v7u_N001390明确说明相互评估要求辖区必须向其他FATF成员证明其合规才能被视为合规，直接命中题干‘证明其拥有有效框架’的意图，而其他单元对正式评估的描述未强调‘证明’这一关键约束。; review=False,
+v7_q_000032,B,B,B,False,False,False,ok,best_action,best_remediation,B/C -> B; 教材证据支持度; review=False,
+v7_q_000033,B,B,B,False,False,False,ok,purpose,concept_definition,,
+v7_q_000034,C,C,C,False,False,False,ok,definition,concept_definition,,
+v7_q_000035,B,B,B,False,False,False,ok,definition,concept_definition,B/A/C/D -> B; 定义精确度。只有次级制裁明确定义为针对非美国人与受制裁对手方的交易，其他选项要么针对对象不同（国家、名单、部门），要么不强调非美国人的交易行为。; review=False,
+v7_q_000036,A,C,A,True,False,False,ok,red_flag,red_flag_fit,,教材中赌场洗钱最直接的描述为购买筹码、短暂赌博后兑现，选项C只体现购买大量筹码，未包含后续兑现，但在各选项中唯一获得教材直接支持，且与现金密集型行业风险一致，故判定为最强迹象。若在实际考试中，标准答案可能为要求转移赢钱至另一博彩运营商或公司转账，但基于盲判规则只能依据给定教材，现有证据支持C。”
+v7_q_000037,D,D,D,False,False,False,ok,definition,concept_definition,,
+v7_q_000038,B,B,B,False,False,False,ok,authority,scope_authority,B/D -> B; 董事会是否承担最终责任并需定期获取合规信息，决定其不能仅被选择性通报。教材明确董事会承担最终责任并需获得定期报告，因此 D 选项不符合其监督作用的完整性。; review=False,教材中没有直接复制BCBS公司治理原则的原始条文，但基于BCBS指南单元（v7u_N001541）和相关董事会职责单元，可以明确推断董事会应设立合规职能并批准相关政策的职责。选项B与教材最吻合，但仍建议参考BCBS原则原文进行最终确认。
+v7_q_000039,B,B,D,True,True,True,ok,authority,scope_authority,B/D -> B; 教材是否直接赋予FIU“协助另一国执法部门”的权限，还是仅限定在FIU对FIU的情报共享渠道。; review=False,
+v7_q_000040,D,D,D,False,False,False,ok,authority,evidence_specificity,B/D -> D; 教材直接支持与否。教材明确说明FIU可通过埃格蒙特集团相互请求信息，而国家主权并不禁止此类合作。; review=False,
+v7_q_000041,D,D,D,False,False,False,ok,definition,concept_definition,B/D -> D; 职能归属：起诉属于执法机构，而FIU是情报分析与分发中心，教材多处明确FIU本身不起诉，选项D精准匹配教材中FATF要求的接收、分析、传播职能。; review=False,
+v7_q_000042,A,A,A,False,False,False,ok,purpose,concept_definition,,
+v7_q_000043,D,D,D,False,False,False,ok,authority,scope_authority,B/D -> D; 最终责任（ultimate accountability）; review=False,
+v7_q_000044,A,A,A,False,False,False,ok,best_action,best_remediation,,
+v7_q_000045,B,B,B,False,False,False,validation_failed,purpose,concept_definition,,教材明确将NRA定位为提供风险信息和优先事项的文件，B选项直接对应其指导作用。其他选项均超越NRA实际功能，无有效竞争选项，无需人工复核。
+v7_q_000046,B,B,B,False,False,False,ok,authority,scope_authority,,
+v7_q_000047,B,B,B,False,False,False,ok,definition,concept_definition,,
+v7_q_000048,A,A,A,False,False,False,ok,red_flag,red_flag_fit,,教材候选池中未直接提供大面额钞票需求增加作为洗钱指标的证据，只能通过处置阶段的货币工具购买间接推断。选项A是唯一可能表示可疑活动的选项，其他选项明显不是洗钱迹象。建议确认更全面的教材内容以增强判断依据。
+v7_q_000049,D,D,D,False,False,False,ok,best_action,evidence_specificity,B/D -> D; 教材的核心论点是全球组织的政策必须符合当地法律，而非优先遵循某一外国法规；选项B仅反映了美国制裁的重要性，但忽略了当地法规的强制性，因此被否定。; review=False,
+v7_q_000050,D,D,D,False,False,False,ok,purpose,concept_definition,,

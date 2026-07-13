@@ -1,0 +1,271 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000251",
+  "stem": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.)",
+  "options": {
+    "A": "如果根据当地法律法规被定性,试图规避或逃避联合国安理会实施的制裁可能构成犯罪行为.",
+    "B": "联合国可以实施武器禁运,但不能禁止向特定国家直接或间接出口其他货物.",
+    "C": "联合国会员国应执行并落实联合国安理会实施的制裁措施.",
+    "D": "直接违反联合国安理会实施的制裁在所有成员国均构成犯罪行为"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "如果根据当地法律法规被定性,试图规避或逃避联合国安理会实施的制裁可能构成犯罪行为.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "如果根据当地法律法规被定性,试图规避或逃避联合国安理会实施的制裁可能构成犯罪行为."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "联合国可以实施武器禁运,但不能禁止向特定国家直接或间接出口其他货物.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "联合国可以实施武器禁运,但不能禁止向特定国家直接或间接出口其他货物."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "联合国会员国应执行并落实联合国安理会实施的制裁措施.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "联合国会员国应执行并落实联合国安理会实施的制裁措施."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "直接违反联合国安理会实施的制裁在所有成员国均构成犯罪行为",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "直接违反联合国安理会实施的制裁在所有成员国均构成犯罪行为"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 如果根据当地法律法规被定性,试图规避或逃避联合国安理会实施的制裁可能构成犯罪行为.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 联合国可以实施武器禁运,但不能禁止向特定国家直接或间接出口其他货物.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 联合国会员国应执行并落实联合国安理会实施的制裁措施.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 直接违反联合国安理会实施的制裁在所有成员国均构成犯罪行为",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

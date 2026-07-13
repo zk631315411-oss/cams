@@ -1,0 +1,293 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000344",
+  "stem": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。)",
+  "options": {
+    "A": "交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符",
+    "B": "合同、发票或其他贸易单据，其中包含所交易商品的详细描述",
+    "C": "现金存款或其他交易持续低于相关报告门槛",
+    "D": "从事不符合标准商业惯例的交易、运输路线或运输方式",
+    "E": "透明的定价结构，当价格波动超过10%时向接收银行提供额外信息"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "trade-based money laundering",
+        "贸易洗钱",
+        "贸易型洗钱"
+      ],
+      "normalized_text": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "合同、发票或其他贸易单据，其中包含所交易商品的详细描述",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "合同、发票或其他贸易单据，其中包含所交易商品的详细描述"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "现金存款或其他交易持续低于相关报告门槛",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "现金存款或其他交易持续低于相关报告门槛"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "从事不符合标准商业惯例的交易、运输路线或运输方式",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "从事不符合标准商业惯例的交易、运输路线或运输方式"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "透明的定价结构，当价格波动超过10%时向接收银行提供额外信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "透明的定价结构，当价格波动超过10%时向接收银行提供额外信息"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱 交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱 合同、发票或其他贸易单据，其中包含所交易商品的详细描述",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱 现金存款或其他交易持续低于相关报告门槛",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱 从事不符合标准商业惯例的交易、运输路线或运输方式",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。) trade-based money laundering 贸易洗钱 贸易型洗钱 透明的定价结构，当价格波动超过10%时向接收银行提供额外信息",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易型洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

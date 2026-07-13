@@ -1,0 +1,227 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000341",
+  "stem": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。)",
+  "options": {
+    "A": "从事现金密集型业务且不受许可要求约束的公司",
+    "B": "经营医院和医疗保健服务的公司",
+    "C": "从事现金密集型业务且受许可要求约束的公司",
+    "D": "生产药品和医疗器械的公司、从事矿业的公司",
+    "E": "在全国范围内经营零售店的公司"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "从事现金密集型业务且不受许可要求约束的公司",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000035",
+          "matched_term": "现金密集型业务",
+          "canonical_en": "cash-intensive business",
+          "canonical_zh": "现金密集型业务",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "cash-intensive business",
+            "现金密集型业务",
+            "现金密集型行业"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003102",
+            "v7u_N000526",
+            "v7u_N000527"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'Cash-intensive business' has two Chinese variants meaning the same thing: '现金密集型业务' (business) and '现金密集型行业' (industry), used interchangeably in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "cash-intensive business",
+        "现金密集型业务",
+        "现金密集型行业"
+      ],
+      "normalized_text": "从事现金密集型业务且不受许可要求约束的公司 cash-intensive business 现金密集型业务 现金密集型行业"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "经营医院和医疗保健服务的公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "经营医院和医疗保健服务的公司"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "从事现金密集型业务且受许可要求约束的公司",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000035",
+          "matched_term": "现金密集型业务",
+          "canonical_en": "cash-intensive business",
+          "canonical_zh": "现金密集型业务",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "cash-intensive business",
+            "现金密集型业务",
+            "现金密集型行业"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003102",
+            "v7u_N000526",
+            "v7u_N000527"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'Cash-intensive business' has two Chinese variants meaning the same thing: '现金密集型业务' (business) and '现金密集型行业' (industry), used interchangeably in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "cash-intensive business",
+        "现金密集型业务",
+        "现金密集型行业"
+      ],
+      "normalized_text": "从事现金密集型业务且受许可要求约束的公司 cash-intensive business 现金密集型业务 现金密集型行业"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "生产药品和医疗器械的公司、从事矿业的公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "生产药品和医疗器械的公司、从事矿业的公司"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "在全国范围内经营零售店的公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在全国范围内经营零售店的公司"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。) 从事现金密集型业务且不受许可要求约束的公司 cash-intensive business 现金密集型业务 现金密集型行业",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000035",
+          "matched_term": "现金密集型业务",
+          "canonical_en": "cash-intensive business",
+          "canonical_zh": "现金密集型业务",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "cash-intensive business",
+            "现金密集型业务",
+            "现金密集型行业"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003102",
+            "v7u_N000526",
+            "v7u_N000527"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'Cash-intensive business' has two Chinese variants meaning the same thing: '现金密集型业务' (business) and '现金密集型行业' (industry), used interchangeably in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。) 经营医院和医疗保健服务的公司",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。) 从事现金密集型业务且受许可要求约束的公司 cash-intensive business 现金密集型业务 现金密集型行业",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000035",
+          "matched_term": "现金密集型业务",
+          "canonical_en": "cash-intensive business",
+          "canonical_zh": "现金密集型业务",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "cash-intensive business",
+            "现金密集型业务",
+            "现金密集型行业"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003102",
+            "v7u_N000526",
+            "v7u_N000527"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'Cash-intensive business' has two Chinese variants meaning the same thing: '现金密集型业务' (business) and '现金密集型行业' (industry), used interchangeably in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。) 生产药品和医疗器械的公司、从事矿业的公司",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。) 在全国范围内经营零售店的公司",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

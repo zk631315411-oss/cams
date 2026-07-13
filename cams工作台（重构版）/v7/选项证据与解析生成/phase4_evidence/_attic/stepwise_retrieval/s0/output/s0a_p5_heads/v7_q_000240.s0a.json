@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000240",
+  "stem": "持续的客户身份识别包括:(选择两项.)",
+  "options": {
+    "A": "触发器能够实时识别静态数据变化以及基于客户行为的数据",
+    "B": "每年、每三年和每五年定期更新",
+    "C": "能够根据客户数据而非仅依据时间表来更好地确定优先级",
+    "D": "将客户分类为不同风险类别"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "持续的客户身份识别包括:(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "持续的客户身份识别包括:(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "触发器能够实时识别静态数据变化以及基于客户行为的数据",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "触发器能够实时识别静态数据变化以及基于客户行为的数据"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "每年、每三年和每五年定期更新",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "每年、每三年和每五年定期更新"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "能够根据客户数据而非仅依据时间表来更好地确定优先级",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "能够根据客户数据而非仅依据时间表来更好地确定优先级"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "将客户分类为不同风险类别",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将客户分类为不同风险类别"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "持续的客户身份识别包括:(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "持续的客户身份识别包括:(选择两项.) 触发器能够实时识别静态数据变化以及基于客户行为的数据",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "持续的客户身份识别包括:(选择两项.) 每年、每三年和每五年定期更新",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "持续的客户身份识别包括:(选择两项.) 能够根据客户数据而非仅依据时间表来更好地确定优先级",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "持续的客户身份识别包括:(选择两项.) 将客户分类为不同风险类别",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

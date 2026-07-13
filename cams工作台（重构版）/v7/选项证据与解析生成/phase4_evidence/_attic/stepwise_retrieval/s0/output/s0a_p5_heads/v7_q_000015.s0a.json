@@ -1,0 +1,221 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000015",
+  "stem": "一个强大的交易监控系统应具备以下能力:",
+  "options": {
+    "A": "监控交易并识别可能表明可疑活动的异常情况",
+    "B": "自动翻译文档",
+    "C": "整合社交媒体资料",
+    "D": "提交可疑活动报告(SAR)、货币交易报告(CTR)及其他监管报告"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一个强大的交易监控系统应具备以下能力:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一个强大的交易监控系统应具备以下能力:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "监控交易并识别可能表明可疑活动的异常情况",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "监控交易并识别可能表明可疑活动的异常情况"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "自动翻译文档",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "自动翻译文档"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "整合社交媒体资料",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "整合社交媒体资料"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "提交可疑活动报告(SAR)、货币交易报告(CTR)及其他监管报告",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000125",
+          "matched_term": "货币交易报告",
+          "canonical_en": "currency transaction report",
+          "canonical_zh": "货币交易报告",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "currency transaction report",
+            "货币交易报告",
+            "CTR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002467",
+            "v7u_N003281"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CTR is the standard abbreviation for currency transaction report; 货币交易报告 is the direct Chinese translation. Evidence examples consistently use CTR parenthetically after the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "currency transaction report",
+        "货币交易报告",
+        "CTR"
+      ],
+      "normalized_text": "提交可疑活动报告(SAR)、货币交易报告(CTR)及其他监管报告 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports currency transaction report 货币交易报告 CTR"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一个强大的交易监控系统应具备以下能力:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一个强大的交易监控系统应具备以下能力: 监控交易并识别可能表明可疑活动的异常情况",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一个强大的交易监控系统应具备以下能力: 自动翻译文档",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一个强大的交易监控系统应具备以下能力: 整合社交媒体资料",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一个强大的交易监控系统应具备以下能力: 提交可疑活动报告(SAR)、货币交易报告(CTR)及其他监管报告 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports currency transaction report 货币交易报告 CTR",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000125",
+          "matched_term": "货币交易报告",
+          "canonical_en": "currency transaction report",
+          "canonical_zh": "货币交易报告",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "currency transaction report",
+            "货币交易报告",
+            "CTR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002467",
+            "v7u_N003281"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CTR is the standard abbreviation for currency transaction report; 货币交易报告 is the direct Chinese translation. Evidence examples consistently use CTR parenthetically after the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

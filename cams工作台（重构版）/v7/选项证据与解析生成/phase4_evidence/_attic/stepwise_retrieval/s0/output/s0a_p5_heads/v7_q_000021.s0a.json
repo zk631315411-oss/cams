@@ -1,0 +1,159 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000021",
+  "stem": "在两个国家之间签署并规范跨境信息共享的法律文书被称为:",
+  "options": {
+    "A": "司法互助条约",
+    "B": "意向书",
+    "C": "紧急信息请求",
+    "D": "协议备忘录"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在两个国家之间签署并规范跨境信息共享的法律文书被称为:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在两个国家之间签署并规范跨境信息共享的法律文书被称为:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "司法互助条约",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "司法互助条约"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "意向书",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "意向书"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "紧急信息请求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000057",
+          "matched_term": "信息请求",
+          "canonical_en": "request for information",
+          "canonical_zh": "信息请求",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "request for information",
+            "信息请求（RFI）",
+            "信息请求"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003317",
+            "v7u_N003345"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“信息请求”和“信息请求（RFI）”均指“request for information”，其中（RFI）是英文缩写的补充标注，属于同一术语。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "request for information",
+        "信息请求",
+        "信息请求（RFI）"
+      ],
+      "normalized_text": "紧急信息请求 request for information 信息请求 信息请求（RFI）"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "协议备忘录",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "协议备忘录"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在两个国家之间签署并规范跨境信息共享的法律文书被称为:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在两个国家之间签署并规范跨境信息共享的法律文书被称为: 司法互助条约",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在两个国家之间签署并规范跨境信息共享的法律文书被称为: 意向书",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在两个国家之间签署并规范跨境信息共享的法律文书被称为: 紧急信息请求 request for information 信息请求 信息请求（RFI）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000057",
+          "matched_term": "信息请求",
+          "canonical_en": "request for information",
+          "canonical_zh": "信息请求",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "request for information",
+            "信息请求（RFI）",
+            "信息请求"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003317",
+            "v7u_N003345"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“信息请求”和“信息请求（RFI）”均指“request for information”，其中（RFI）是英文缩写的补充标注，属于同一术语。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在两个国家之间签署并规范跨境信息共享的法律文书被称为: 协议备忘录",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

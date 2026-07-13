@@ -1,0 +1,301 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000308",
+  "stem": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。）",
+  "options": {
+    "A": "货币服务业务（MSB）",
+    "B": "跨国公司",
+    "C": "个人外国客户",
+    "D": "具有国际业务的非营利组织"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "de-risking",
+        "去风险化",
+        "derisking"
+      ],
+      "normalized_text": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "货币服务业务（MSB）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000151",
+          "matched_term": "MSB",
+          "canonical_en": "money services business",
+          "canonical_zh": "货币服务企业",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money services business",
+            "money service business",
+            "货币服务企业",
+            "MSB"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000768",
+            "v7u_N000781",
+            "v7u_N000784",
+            "v7u_N000813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MSB is the abbreviation; money service business and money services business are singular/plural spelling variants; all refer to the same entity type; Chinese 货币服务企业 is the translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "money services business",
+        "货币服务企业",
+        "money service business",
+        "MSB"
+      ],
+      "normalized_text": "货币服务业务（MSB） money services business 货币服务企业 money service business MSB"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "跨国公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "跨国公司"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "个人外国客户",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "个人外国客户"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "具有国际业务的非营利组织",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "具有国际业务的非营利组织"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking 货币服务业务（MSB） money services business 货币服务企业 money service business MSB",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000151",
+          "matched_term": "MSB",
+          "canonical_en": "money services business",
+          "canonical_zh": "货币服务企业",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "money services business",
+            "money service business",
+            "货币服务企业",
+            "MSB"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000768",
+            "v7u_N000781",
+            "v7u_N000784",
+            "v7u_N000813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "MSB is the abbreviation; money service business and money services business are singular/plural spelling variants; all refer to the same entity type; Chinese 货币服务企业 is the translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking 跨国公司",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking 个人外国客户",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "美国财政部指出，以下哪些在被传统金融机构（FIs）去风险化后代表较高洗钱风险？（选择两项。） de-risking 去风险化 derisking 具有国际业务的非营利组织",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000079",
+          "matched_term": "去风险化",
+          "canonical_en": "de-risking",
+          "canonical_zh": "去风险化",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "de-risking",
+            "derisking",
+            "去风险化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000362",
+            "v7u_N003678",
+            "v7u_N003681",
+            "v7u_N002080"
+          ],
+          "not_kg_edge": true,
+          "review_note": "English terms 'de-risking' and 'derisking' are spelling variants; both translate to '去风险化' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

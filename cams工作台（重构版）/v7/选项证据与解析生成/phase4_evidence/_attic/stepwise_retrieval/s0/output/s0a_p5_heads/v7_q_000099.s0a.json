@@ -1,0 +1,218 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000099",
+  "stem": "埃格蒙特集团的一项基本原则是：",
+  "options": {
+    "A": "发布有关报告可疑情况的标准",
+    "B": "促进监管机构的组织工作",
+    "C": "发布关于国际调查所作决定的信息",
+    "D": "安排金融情报机构（FIU）之间的信息共享协议"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "埃格蒙特集团的一项基本原则是：",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "埃格蒙特集团的一项基本原则是："
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "发布有关报告可疑情况的标准",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "发布有关报告可疑情况的标准"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "促进监管机构的组织工作",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body"
+      ],
+      "normalized_text": "促进监管机构的组织工作 regulator 监管机构 regulatory body"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "发布关于国际调查所作决定的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "发布关于国际调查所作决定的信息"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "安排金融情报机构（FIU）之间的信息共享协议",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "安排金融情报机构（FIU）之间的信息共享协议 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "埃格蒙特集团的一项基本原则是：",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "埃格蒙特集团的一项基本原则是： 发布有关报告可疑情况的标准",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "埃格蒙特集团的一项基本原则是： 促进监管机构的组织工作 regulator 监管机构 regulatory body",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "埃格蒙特集团的一项基本原则是： 发布关于国际调查所作决定的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "埃格蒙特集团的一项基本原则是： 安排金融情报机构（FIU）之间的信息共享协议 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

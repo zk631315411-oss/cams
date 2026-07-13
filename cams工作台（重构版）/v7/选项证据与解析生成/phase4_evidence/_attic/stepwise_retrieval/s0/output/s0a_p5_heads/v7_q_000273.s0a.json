@@ -1,0 +1,441 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000273",
+  "stem": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.)",
+  "options": {
+    "A": "证明因变更而增加的剩余风险在银行的风险偏好范围内.",
+    "B": "反洗钱报告专员对提案的批准.",
+    "C": "在较低生产率阈值上投入了多少资源以及相关的成本.",
+    "D": "不会提起诉讼的案件数量以及能够为其他任务释放的资源.",
+    "E": "与监管机构举行会议的纪要,其中达成一致意见,认为提高门槛是合理的.",
+    "F": "历史分析表明,当前的情形导致了过多警报"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports"
+      ],
+      "normalized_text": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "证明因变更而增加的剩余风险在银行的风险偏好范围内.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "证明因变更而增加的剩余风险在银行的风险偏好范围内."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "反洗钱报告专员对提案的批准.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "反洗钱报告专员对提案的批准."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "在较低生产率阈值上投入了多少资源以及相关的成本.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在较低生产率阈值上投入了多少资源以及相关的成本."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "不会提起诉讼的案件数量以及能够为其他任务释放的资源.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "不会提起诉讼的案件数量以及能够为其他任务释放的资源."
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "与监管机构举行会议的纪要,其中达成一致意见,认为提高门槛是合理的.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body"
+      ],
+      "normalized_text": "与监管机构举行会议的纪要,其中达成一致意见,认为提高门槛是合理的. regulator 监管机构 regulatory body"
+    },
+    "option_F": {
+      "field_id": "option_F",
+      "text": "历史分析表明,当前的情形导致了过多警报",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "历史分析表明,当前的情形导致了过多警报"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 证明因变更而增加的剩余风险在银行的风险偏好范围内.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 反洗钱报告专员对提案的批准.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 在较低生产率阈值上投入了多少资源以及相关的成本.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 不会提起诉讼的案件数量以及能够为其他任务释放的资源.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 与监管机构举行会议的纪要,其中达成一致意见,认为提高门槛是合理的. regulator 监管机构 regulatory body",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_F",
+      "head_kind": "option",
+      "option": "F",
+      "parts": [
+        "stem",
+        "option_F"
+      ],
+      "query_zh": "[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.) suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports 历史分析表明,当前的情形导致了过多警报",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

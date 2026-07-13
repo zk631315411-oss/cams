@@ -1,0 +1,1168 @@
+{
+  "question_id": "v7_q_000006",
+  "stem": "一家房地产投资公司的所有者在三个月内分多次存入用现金购买的多张银行本票,这些本票来自两套公寓的销售所得.该账户还收到了来自其他金融机构的几笔每笔1万美元的电子转账.哪些活动被视为洗钱的可疑行为？",
+  "options": {
+    "A": "接收来自其他金融机构的10,000美元金额的电子转账",
+    "B": "在一段时间内用现金购买多张银行本票",
+    "C": "与房地产投资公司开展业务操作",
+    "D": "银行本票"
+  },
+  "question_type": "single",
+  "tier": "clean",
+  "prompt_version": "intent_v1",
+  "pipeline_status": "ok",
+  "candidate_pool": [
+    {
+      "unit_id": "v7u_N001105",
+      "knowledge_zh": "频繁或快速转手的房产应引起洗钱怀疑",
+      "en_quote": "Properties that frequently change ownership or are involved in a series of rapid transactions should also raise suspicions.",
+      "knowledge_en": "Frequent or rapid property transactions",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "risk_indicator",
+      "route": "bge",
+      "score": 0.925,
+      "raw_score": 0.760861
+    },
+    {
+      "unit_id": "v7u_N000939",
+      "knowledge_zh": "托管银行通常服务于银行和其他金融机构",
+      "en_quote": "Custodian banks typically serve banks and other financial institutions, including securities intermediaries.",
+      "knowledge_en": "typical clients of custodian banks",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Custodial services risks"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.925,
+      "raw_score": 97.631938
+    },
+    {
+      "unit_id": "v7u_N004452",
+      "knowledge_zh": "例如，若监管要求报告超过1万美元的现金存款，客户多次存入9900美元可能构成拆分交易",
+      "en_quote": "For example, if regulatory guidelines require reporting for cash deposits above US$10,000, a customer consistently depositing US$9,900 in multiple transactions might be structuring.",
+      "knowledge_en": "example of structuring with cash deposits",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing"
+      ],
+      "type": "case",
+      "route": "bm25_en",
+      "score": 0.925,
+      "raw_score": 72.659494
+    },
+    {
+      "unit_id": "v7u_N000933",
+      "knowledge_zh": "房地产投资涉及多方利益相关者，需全面审查以降低洗钱风险",
+      "en_quote": "Real estate investments: Investing in real estate involves various stakeholders, including sellers, buyers, renters, property managers, and agents, all of whom should be thoroughly vetted to mitigate money laundering risks.",
+      "knowledge_en": "Real estate investments: Investing in real estate involves various stakeholders, including sellers, buyers, renters, property managers, and agents, all of whom should be thoroughly vetted to mitigate money laundering risks",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Securities and brokerage risks"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.869878,
+      "raw_score": 96.1216
+    },
+    {
+      "unit_id": "v7u_N001102",
+      "knowledge_zh": "现金交易因难以追踪而增加洗钱风险",
+      "en_quote": "Cash transactions remain relatively common in some markets and increase the potential for money laundering, as cash is more challenging to trace than payments made through financial institutions.",
+      "knowledge_en": "Cash transactions increase ML risk due to traceability",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "fact",
+      "route": "bge",
+      "score": 0.715185,
+      "raw_score": 0.744773
+    },
+    {
+      "unit_id": "v7u_N002968",
+      "knowledge_zh": "现金交易报告（CTR）针对超过国家特定阈值的现金交易，美国阈值为单日超过10,000美元，欧盟和中东各有不同。",
+      "en_quote": "CTRs: These reports are mandated for cash transactions above countryspecific thresholds. For the US, the requirement is any cash transaction that exceeds US$10,000 in a single day. The EU and Middle East have varying limits.",
+      "knowledge_en": "CTRs: These reports are mandated for cash transactions above countryspecific thresholds. For the US, the requirement is any cash transaction that exceeds US$10,000 in a single day. The EU and Middle East have varying limits",
+      "heading_context": [
+        "Governance and oversight",
+        "Regulatory reporting for AFC compliance"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.497345,
+      "raw_score": 59.598551
+    },
+    {
+      "unit_id": "v7u_N001810",
+      "knowledge_zh": "反洗钱R设定现金交易1万欧元限额，并加强政治敏感人物、受益所有人及披露规则",
+      "en_quote": "This regulation sets a €10,000 limit for cash-based transactions and strengthens rules on PEPs, beneficial ownership, and beneficial owner disclosure obligations for firms in developing nations purchasing high-worth vehicles and real estate assets.",
+      "knowledge_en": "Cash transaction limit and strengthened rules",
+      "heading_context": [
+        "US AML/CFT regulatory landscape",
+        "EU AML package"
+      ],
+      "type": "rule",
+      "route": "bm25_en",
+      "score": 0.456768,
+      "raw_score": 58.687813
+    },
+    {
+      "unit_id": "v7u_N003546",
+      "knowledge_zh": "洗钱RO 分析认为该活动可能涉及拆分交易或非法资金处置阶段，且缺乏合理理由，怀疑洗钱。",
+      "en_quote": "The MLRO’s analysis suggests the activity might involve structuring or illicit fund placement, with the high-risk source of funds raising additional concerns. Furthermore, there is no clear rationale for the withdrawals, especially with the customers nearing retirement age. The large transactions contradict the stated goal of “building wealth,” leading the MLRO to suspect potential money laundering.",
+      "knowledge_en": "MLRO analysis of suspicious activity in family trust case",
+      "heading_context": [
+        "Concluding an investigation and suspicious activity reporting",
+        "Case example: SAR for a family trust"
+      ],
+      "type": "case",
+      "route": "bge",
+      "score": 0.442867,
+      "raw_score": 0.722156
+    },
+    {
+      "unit_id": "v7u_N004400",
+      "knowledge_zh": "1970年《银行保密法》要求银行识别并报告超过1万美元的现金交易及可疑活动",
+      "en_quote": "Back then, the bank’s primary guidance was the recently passed BSA of 1970. The BSA set the foundation for TM. Specifically, it required banks to identify and report cash transactions over US$10,000 and suspicious activities.",
+      "knowledge_en": "BSA 1970 foundation for transaction monitoring",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Case example: Evolution of transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.390895,
+      "raw_score": 56.794375
+    },
+    {
+      "unit_id": "v7u_N001141",
+      "knowledge_zh": "大额现金购买缺乏明确资金来源或证明文件",
+      "en_quote": "Large cash purchases without a clear source of funds or with insufficient supporting documents",
+      "knowledge_en": "Large cash purchases without a clear source of funds or with insufficient supporting documents",
+      "heading_context": [
+        "High-risk business sectors",
+        "High-value asset risks"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.387367,
+      "raw_score": 72.930581
+    },
+    {
+      "unit_id": "v7u_N001103",
+      "knowledge_zh": "全部或主要用现金支付的买家是房地产洗钱红旗信号信号",
+      "en_quote": "Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm.",
+      "knowledge_en": "Cash payments as red flag in real estate",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "risk_indicator",
+      "route": "bm25_zh",
+      "score": 0.382179,
+      "raw_score": 72.921126
+    },
+    {
+      "unit_id": "v7u_N003247",
+      "knowledge_zh": "若发现并确认可疑活动可能涉及洗钱，必须提交可疑活动报告。",
+      "en_quote": "If unusual or suspicious activity is detected and confirmed as potential money laundering, a SAR must be submitted.",
+      "knowledge_en": "SAR submission obligation upon confirmed suspicious activity",
+      "heading_context": [
+        "Transaction monitoring",
+        "Transaction monitoring versus payment screening"
+      ],
+      "type": "rule",
+      "route": "bge",
+      "score": 0.358882,
+      "raw_score": 0.715498
+    },
+    {
+      "unit_id": "v7u_N000901",
+      "knowledge_zh": "Tom与妻子拥有一家离岸投资公司，管理保单资金，该公司似乎无牌经营。",
+      "en_quote": "Tom and his wife owned an offshore investment firm managing the policy funds, which appeared unlicensed.",
+      "knowledge_en": "Tom and his wife owned an offshore investment firm managing the policy funds, which appeared unlicensed",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Case example: Investment product misuse"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.336488,
+      "raw_score": 70.809196
+    },
+    {
+      "unit_id": "v7u_N000675",
+      "knowledge_zh": "银行转账是银行间的电子资金转账方式，通常为国内转账。",
+      "en_quote": "A bank transfer is a different method used to electronically transfer funds. This is conducted between two banks and is usually domestic.",
+      "knowledge_en": "A bank transfer electronically transfers funds between two banks and is usually domestic",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Wire transfer risks"
+      ],
+      "type": "definition",
+      "route": "bm25_zh",
+      "score": 0.32881,
+      "raw_score": 70.558506
+    },
+    {
+      "unit_id": "v7u_N003952",
+      "knowledge_zh": "转账涉及远离客户运营区域的机构是地理定位相关的风险指标。",
+      "en_quote": "Transfers involve institutions in regions far from the customer’s operations.",
+      "knowledge_en": "Transfers involve institutions in regions far from the customer’s operations",
+      "heading_context": [
+        "Technology and tools used across the customer life cycle",
+        "Geolocation technology"
+      ],
+      "type": "fact",
+      "route": "bm25_en",
+      "score": 0.317416,
+      "raw_score": 54.573116
+    },
+    {
+      "unit_id": "v7u_N000763",
+      "knowledge_zh": "本模块涵盖洗钱对非银行金融机构的重大风险。",
+      "en_quote": "This module covers the significant risks money laundering poses to nonbank financial institutions.",
+      "knowledge_en": "Module covers money laundering risks to nonbank financial institutions",
+      "heading_context": [
+        "Money Laundering Risks in Nonbank Financial Institutions",
+        "Introduction: Money laundering risks in nonbank financial institutions"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.308751,
+      "raw_score": 69.657209
+    },
+    {
+      "unit_id": "v7u_N001149",
+      "knowledge_zh": "反洗钱官员发现 Goodwish Jade 近期有多笔午夜大额现金交易，与营业时间不符",
+      "en_quote": "During the review, the AML officer discovered several cash transactions exceeding US$500,000 that occurred at midnight in recent months. Notably, GJ's website states that the shop operates daily from 10 a.m. to 6 p.m., and does not run an online store, raising questions about the legitimacy of these late-night transactions.",
+      "knowledge_en": "Suspicious late-night cash transactions at Goodwish Jade",
+      "heading_context": [
+        "High-risk business sectors",
+        "Case example: Suspicious transactions at Goodwish Jade"
+      ],
+      "type": "case",
+      "route": "bm25_en",
+      "score": 0.303577,
+      "raw_score": 54.240067
+    },
+    {
+      "unit_id": "v7u_N001048",
+      "knowledge_zh": "Hendricks从拉脱维亚和瑞士的低监管账户电汇近400万美元，通过英属维尔京群岛公司实体完成房地产交易。",
+      "en_quote": "He wired nearly US$4 million from overseas accounts in Latvia and Switzerland, where there are lower regulatory expectations with response to AML/CFT, to fund a US$3 million real estate transaction through a corporate entity set up by the nominee in the British Virgin Islands.",
+      "knowledge_en": "Hendricks case: wire transfer from low-regulation jurisdictions for real estate",
+      "heading_context": [
+        "Money Laundering Risks in DNFBPs and Other High-Risk Sectors",
+        "Case example: DNFBP risks in the Hendricks case"
+      ],
+      "type": "case",
+      "route": "bm25_en",
+      "score": 0.245201,
+      "raw_score": 52.433415
+    },
+    {
+      "unit_id": "v7u_N000051",
+      "knowledge_zh": "Tamayo通过低于1万美元的存款进行结构化操作，规避报告门槛",
+      "en_quote": "Tamayo systematically structured cash deposits to avoid triggering financial reporting thresholds. He would use deposit amounts slightly under the mandated reporting threshold of US$10,000.",
+      "knowledge_en": "Structuring deposits to avoid reporting threshold",
+      "heading_context": [
+        "Money Laundering and Financial Crime",
+        "• Shell companies and front businesses:"
+      ],
+      "type": "case",
+      "route": "bm25_en",
+      "score": 0.237652,
+      "raw_score": 52.256113
+    },
+    {
+      "unit_id": "v7u_N000126",
+      "knowledge_zh": "案例：国有投资公司首席财务官将公司资金转入个人账户。",
+      "en_quote": "For example, a CFO at a stateowned investment firm misuses his position for self-enrichment by transferring money out of the firm's account into his own personal account.",
+      "knowledge_en": "CFO embezzlement example",
+      "heading_context": [
+        "Types of financial crime",
+        "Bribery and corruption"
+      ],
+      "type": "case",
+      "route": "bm25_zh",
+      "score": 0.236444,
+      "raw_score": 66.115198
+    },
+    {
+      "unit_id": "v7u_N000661",
+      "knowledge_zh": "企业与投资银行业务因交易量大、结构复杂，易被用于洗钱等金融犯罪。",
+      "en_quote": "Corporate and investment banks engage in a wide range of activities that are susceptible to money laundering and other financial crimes. The volume and value of transactions, coupled with complex financial instruments and global operations, create numerous opportunities for illicit activities to go undetected.",
+      "knowledge_en": "Susceptibility of corporate and investment banking to financial crime",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Corporate and investment banking risks"
+      ],
+      "type": "fact",
+      "route": "bge",
+      "score": 0.235767,
+      "raw_score": 0.705527
+    },
+    {
+      "unit_id": "v7u_N001074",
+      "knowledge_zh": "赌场和在线运营商均易遭受多种洗钱方式，如筹码转换和伪造文件开户",
+      "en_quote": "For example, both casinos and online operators are vulnerable to many forms of money laundering, such as customers converting illicit funds into chips, engaging in minimal play, and using falsified documents to open multiple accounts.",
+      "knowledge_en": "Money laundering examples in casinos and online operators",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Gaming sector risks"
+      ],
+      "type": "case",
+      "route": "bge",
+      "score": 0.188148,
+      "raw_score": 0.701615
+    },
+    {
+      "unit_id": "v7u_N000894",
+      "knowledge_zh": "保单价值10万美元，Peter仅需预付3万美元，剩余7万美元以年利率10%融资",
+      "en_quote": "The policy was valued at US$100,000, but Peter only needed to contribute US$30,000 upfront. The remaining US$70,000 would be financed at a 10% annual interest rate.",
+      "knowledge_en": "Policy financing structure",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Case example: Investment product misuse"
+      ],
+      "type": "case",
+      "route": "bm25_en",
+      "score": 0.182322,
+      "raw_score": 50.515442
+    },
+    {
+      "unit_id": "v7u_N001063",
+      "knowledge_zh": "房地产经纪人可能通过虚增房产价值或复杂所有权结构洗钱",
+      "en_quote": "Real estate agents: Real estate transactions can be used to launder money by inflating property values or creating complex ownership structures that obscure true ownership. The risk increases with international buyers and high-value assets, especially in markets with limited regulatory oversight.",
+      "knowledge_en": "Real estate agents: Real estate transactions can be used to launder money by inflating property values or creating complex ownership structures that obscure true ownership. The risk increases with international buyers and high-value assets, especially in markets with limited regulatory oversight",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Risks of banking designated nonfinancial businesses and professions"
+      ],
+      "type": "fact",
+      "route": "bge",
+      "score": 0.168282,
+      "raw_score": 0.700067
+    },
+    {
+      "unit_id": "v7u_N001691",
+      "knowledge_zh": "现金购买货币工具需提交货币与货币工具报告",
+      "en_quote": "Currency and monetary instrument reports for cash purchases of monetary instruments",
+      "knowledge_en": "Currency and monetary instrument reports for cash purchases of monetary instruments",
+      "heading_context": [
+        "US AML/CFT regulatory landscape",
+        "Bank Secrecy Act"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.166076,
+      "raw_score": 62.712191
+    },
+    {
+      "unit_id": "v7u_N000758",
+      "knowledge_zh": "洗钱者可用非法资金购买证券，持有后出售以产生清洁资金",
+      "en_quote": "Money launderers can use securities by purchasing them with illicit funds, holding them for a period, and then selling them to generate clean money.",
+      "knowledge_en": "money laundering through securities",
+      "heading_context": [
+        "Corporate and investment banking risks",
+        "Capital markets risks"
+      ],
+      "type": "process",
+      "route": "bge",
+      "score": 0.1553,
+      "raw_score": 0.699082
+    },
+    {
+      "unit_id": "v7u_N000529",
+      "knowledge_zh": "商业银行业务中的高价值交易可能被用于洗钱，与大量交易混合后难以追踪。",
+      "en_quote": "Commercial banking might involve high-value transactions, which can be exploited for money laundering purposes. When combined with the large volume of transactions, this can obscure the movement of illicit funds, as they become mixed seamlessly with legitimate cash flows.",
+      "knowledge_en": "High-value commercial transactions as money laundering risk",
+      "heading_context": [
+        "Money laundering risks associated with retail and commercial banking",
+        "High-risk retail and commercial banking products"
+      ],
+      "type": "risk_indicator",
+      "route": "bge",
+      "score": 0.132006,
+      "raw_score": 0.697173
+    },
+    {
+      "unit_id": "v7u_N003292",
+      "knowledge_zh": "红旗信号信号：与客户类型预期相比过度使用特定渠道，如大量使用现金而非电子支付",
+      "en_quote": "Excessive use of a particular channel compared to what is expected for that customer type, such as high use of cash over electronic payments",
+      "knowledge_en": "excessive channel use as red flag",
+      "heading_context": [
+        "Transaction monitoring",
+        "Typical scenarios that would generate an alert"
+      ],
+      "type": "risk_indicator",
+      "route": "bm25_en",
+      "score": 0.127418,
+      "raw_score": 48.778757
+    },
+    {
+      "unit_id": "v7u_N001106",
+      "knowledge_zh": "房地产专业人士应与其他DNFBP合作预防洗钱",
+      "en_quote": "Real estate professionals should collaborate with other DNFBPs to identify and prevent money laundering.",
+      "knowledge_en": "Real estate professionals should collaborate with other DNFBPs",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "rule",
+      "route": "bm25_en",
+      "score": 0.121236,
+      "raw_score": 48.615085
+    },
+    {
+      "unit_id": "v7u_N000129",
+      "knowledge_zh": "贿赂和腐败常与其他金融犯罪（如洗钱）相关联。",
+      "en_quote": "Bribery and corruption are often linked to other financial crimes, such as money laundering.",
+      "knowledge_en": "Link between bribery/corruption and other financial crimes",
+      "heading_context": [
+        "Types of financial crime",
+        "Bribery and corruption"
+      ],
+      "type": "fact",
+      "route": "bm25_zh",
+      "score": 0.119963,
+      "raw_score": 60.448245
+    },
+    {
+      "unit_id": "v7u_N001092",
+      "knowledge_zh": "房地产行业因交易金额大和资产有形性而固有洗钱风险",
+      "en_quote": "The real estate sector is inherently susceptible to money laundering due to the substantial sums involved in property transactions and the tangible nature of these assets.",
+      "knowledge_en": "Real estate sector inherent susceptibility to money laundering",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.774606,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001105",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.05303,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N001094",
+      "knowledge_zh": "出售房地产时通过完整的文件记录使非法收益合法化",
+      "en_quote": "The gains or profits are realized upon the sale of the asset, which, by then, is fully supported and legitimized in the paper trail of sale documentation, allowing money launderers to benefit from it.",
+      "knowledge_en": "Realization of gains through sale with legitimized paper trail",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "process",
+      "route": "kg_same_core_point",
+      "score": 0.774606,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001105",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.05303,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000938",
+      "knowledge_zh": "托管银行是保管客户资产（如股票和债券）的金融机构",
+      "en_quote": "A custodian bank is a financial institution that safeguards its customers' assets, including stocks and bonds.",
+      "knowledge_en": "definition of custodian bank",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Custodial services risks"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.774606,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000939",
+        "source_core_point_id": "cp_CH12_S05_001",
+        "source_core_point_title_zh": "托管银行的定义与服务",
+        "target_core_point_id": "cp_CH12_S05_001",
+        "target_core_point_title_zh": "托管银行的定义与服务",
+        "text_relevance": 0.05303,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N001093",
+      "knowledge_zh": "犯罪分子通过购买高价值房地产将非法资金融入合法经济",
+      "en_quote": "Criminals can utilize real estate to integrate illicit funds into the legitimate economy by purchasing tangible assets, typically of significant value.",
+      "knowledge_en": "Criminals use real estate to integrate illicit funds",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "process",
+      "route": "kg_same_core_point",
+      "score": 0.773848,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001105",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.049242,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N004453",
+      "knowledge_zh": "有效校准包括设置频率检查、监控特定时间段内的总交易量以及分析行为模式",
+      "en_quote": "Effective calibration includes setting velocity checks, monitoring aggregate transactions over specific time frames, and analyzing behavioral patterns to detect such activity.",
+      "knowledge_en": "effective calibration measures for detecting structuring",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing"
+      ],
+      "type": "rule",
+      "route": "kg_same_core_point",
+      "score": 0.769303,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004452",
+        "source_core_point_id": "cp_CH57_S01_002",
+        "source_core_point_title_zh": "通过校准检测拆分交易",
+        "target_core_point_id": "cp_CH57_S01_002",
+        "target_core_point_title_zh": "通过校准检测拆分交易",
+        "text_relevance": 0.026515,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000940",
+      "knowledge_zh": "托管银行提供证券保管、结算指令处理、过渡管理和基金分销等服务",
+      "en_quote": "They provide a range of services, including securities safekeeping, processing and execution of settlement instructions, transition management, and funds distribution.",
+      "knowledge_en": "services provided by custodian banks",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Custodial services risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.768545,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000939",
+        "source_core_point_id": "cp_CH12_S05_001",
+        "source_core_point_title_zh": "托管银行的定义与服务",
+        "target_core_point_id": "cp_CH12_S05_001",
+        "target_core_point_title_zh": "托管银行的定义与服务",
+        "text_relevance": 0.022727,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000941",
+      "knowledge_zh": "托管银行可能提供报告和税务合规等附加服务。",
+      "en_quote": "They might also provide reporting and tax compliance services.",
+      "knowledge_en": "additional services: reporting and tax compliance",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Custodial services risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.767788,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000939",
+        "source_core_point_id": "cp_CH12_S05_001",
+        "source_core_point_title_zh": "托管银行的定义与服务",
+        "target_core_point_id": "cp_CH12_S05_001",
+        "target_core_point_title_zh": "托管银行的定义与服务",
+        "text_relevance": 0.018939,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N004451",
+      "knowledge_zh": "场景校准的另一个关键方面是检测拆分交易",
+      "en_quote": "Another key aspect of scenario calibration is detecting structuring.",
+      "knowledge_en": "detecting structuring as key aspect of scenario calibration",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.765515,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004452",
+        "source_core_point_id": "cp_CH57_S01_002",
+        "source_core_point_title_zh": "通过校准检测拆分交易",
+        "target_core_point_id": "cp_CH57_S01_002",
+        "target_core_point_title_zh": "通过校准检测拆分交易",
+        "text_relevance": 0.007576,
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N000926",
+      "knowledge_zh": "资产管理公司有义务了解其业务中的洗钱风险",
+      "en_quote": "Asset managers are required to understand the money laundering risks of their business as they handle large volumes of capital across multiple jurisdictions, in diverse and evolving asset classes, often with anonymity in transactions, using complex financial products and third parties.",
+      "knowledge_en": "Obligation to understand ML risks",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Securities and brokerage risks"
+      ],
+      "type": "rule",
+      "route": "kg_same_core_point",
+      "score": 0.746632,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000933",
+        "source_core_point_id": "cp_CH12_S04_002",
+        "source_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "target_core_point_id": "cp_CH12_S04_002",
+        "target_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "text_relevance": 0.045455,
+        "seed_score": 0.869878
+      }
+    },
+    {
+      "unit_id": "v7u_N000927",
+      "knowledge_zh": "资产管理公司提供的金融产品和服务列表",
+      "en_quote": "Asset managers provide a variety of financial products and services, including:",
+      "knowledge_en": "incomplete list introduction",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Securities and brokerage risks"
+      ],
+      "type": "classification",
+      "route": "kg_same_core_point",
+      "score": 0.743602,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000933",
+        "source_core_point_id": "cp_CH12_S04_002",
+        "source_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "target_core_point_id": "cp_CH12_S04_002",
+        "target_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "text_relevance": 0.030303,
+        "seed_score": 0.869878
+      }
+    },
+    {
+      "unit_id": "v7u_N000925",
+      "knowledge_zh": "资产管理公司代表客户进行投资和资产管理",
+      "en_quote": "Asset managers or asset management companies conduct investments and handle assets on behalf of their customers.",
+      "knowledge_en": "Definition of asset managers",
+      "heading_context": [
+        "Money laundering risks associated with insurance, securities, brokerage, and custodian services",
+        "Securities and brokerage risks"
+      ],
+      "type": "definition",
+      "route": "kg_same_core_point",
+      "score": 0.742844,
+      "kg": {
+        "source_seed_unit_id": "v7u_N000933",
+        "source_core_point_id": "cp_CH12_S04_002",
+        "source_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "target_core_point_id": "cp_CH12_S04_002",
+        "target_core_point_title_zh": "资产管理：产品、风险与控制措施",
+        "text_relevance": 0.026515,
+        "seed_score": 0.869878
+      }
+    },
+    {
+      "unit_id": "v7u_N004445",
+      "knowledge_zh": "交易监控场景校准涉及基于交易数据、风险模型和风险为本方法调整参数",
+      "en_quote": "Transaction monitoring scenarios require careful calibration to effectively detect suspicious activities while minimizing false positives. Calibration, or threshold tuning, involves adjusting parameters based on empirical transaction data, risk models, and a broader risk-based approach.",
+      "knowledge_en": "Calibration of transaction monitoring scenarios",
+      "heading_context": [
+        "Transaction monitoring scenario calibration testing"
+      ],
+      "type": "definition",
+      "route": "kg_same_section_cp",
+      "score": 0.72223,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004452",
+        "source_core_point_id": "cp_CH57_S01_002",
+        "source_core_point_title_zh": "通过校准检测拆分交易",
+        "target_core_point_id": "cp_CH57_S01_001",
+        "target_core_point_title_zh": "交易监控场景校准",
+        "text_relevance": 0.015152,
+        "edge_id": "p2c_rel_CH57_S01_001_002",
+        "edge_scope": "same_section_core_point",
+        "relation_type": "contains",
+        "reason": "CP1 covers general scenario calibration, and CP2 details a specific aspect: detecting structuring through calibration.",
+        "seed_score": 0.925
+      }
+    },
+    {
+      "unit_id": "v7u_N001096",
+      "knowledge_zh": "买卖或租赁房地产为犯罪分子通过模糊所有权结构掩饰资金来源提供机会",
+      "en_quote": "Buying, selling, or renting properties presents opportunities for criminals to disguise the origin of funds through obscured ownership structures.",
+      "knowledge_en": "Real estate transactions as money laundering opportunity",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.673137,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001102",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.049242,
+        "seed_score": 0.715185
+      }
+    },
+    {
+      "unit_id": "v7u_N001095",
+      "knowledge_zh": "房地产交易中律师等第三方的参与进一步使资金流动合法化",
+      "en_quote": "Real estate transactions often involve lawyers and other third parties, further legitimizing the movement of funds.",
+      "knowledge_en": "Involvement of lawyers and third parties legitimizes fund movement",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.671622,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001102",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.041667,
+        "seed_score": 0.715185
+      }
+    },
+    {
+      "unit_id": "v7u_N001097",
+      "knowledge_zh": "由公司、信托或代名人购买房产且无合理解释是红旗信号信号",
+      "en_quote": "For example, properties acquired by corporate entities, trusts, or nominees without a clear justification as to why they were not purchased directly by an individual are red flags.",
+      "knowledge_en": "For example, properties acquired by corporate entities, trusts, or nominees without a clear justification as to why they were not purchased directly by an indiv",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "risk_indicator",
+      "route": "kg_same_core_point",
+      "score": 0.671622,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001102",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.041667,
+        "seed_score": 0.715185
+      }
+    },
+    {
+      "unit_id": "v7u_N002967",
+      "knowledge_zh": "可疑活动报告（SAR）在交易异常、缺乏经济理由或引发金融犯罪防控担忧时提交，截止日期因地区而异。",
+      "en_quote": "SARs: These are required when a transaction appears unusual, lacks an economic rationale, or raises AFC concerns. Deadlines vary globally.",
+      "knowledge_en": "SARs: These are required when a transaction appears unusual, lacks an economic rationale, or raises AFC concerns. Deadlines vary globally",
+      "heading_context": [
+        "Governance and oversight",
+        "Regulatory reporting for AFC compliance"
+      ],
+      "type": "risk_indicator",
+      "route": "kg_same_core_point",
+      "score": 0.562513,
+      "kg": {
+        "source_seed_unit_id": "v7u_N002968",
+        "source_core_point_id": "cp_CH41_S06_003",
+        "source_core_point_title_zh": "持续报告的子类型",
+        "target_core_point_id": "cp_CH41_S06_003",
+        "target_core_point_title_zh": "持续报告的子类型",
+        "text_relevance": 0.018939,
+        "seed_score": 0.497345
+      }
+    },
+    {
+      "unit_id": "v7u_N002969",
+      "knowledge_zh": "制裁报告在客户、交易或实体与受制裁个人、组织或国家关联时提交，依据联合国、OFAC、欧盟或国家制裁名单。",
+      "en_quote": "Sanctions reports: These are filed when a customer, transaction, or entity is linked to a sanctioned individual, organization, or country based on UN, OFAC, EU, or national sanctions lists.",
+      "knowledge_en": "Sanctions reports: These are filed when a customer, transaction, or entity is linked to a sanctioned individual, organization, or country based on UN, OFAC, EU, or national sanctions lists",
+      "heading_context": [
+        "Governance and oversight",
+        "Regulatory reporting for AFC compliance"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.561756,
+      "kg": {
+        "source_seed_unit_id": "v7u_N002968",
+        "source_core_point_id": "cp_CH41_S06_003",
+        "source_core_point_title_zh": "持续报告的子类型",
+        "target_core_point_id": "cp_CH41_S06_003",
+        "target_core_point_title_zh": "持续报告的子类型",
+        "text_relevance": 0.015152,
+        "seed_score": 0.497345
+      }
+    },
+    {
+      "unit_id": "v7u_N002966",
+      "knowledge_zh": "持续报告子类型的列表引导。",
+      "en_quote": "Ongoing reports include, but are not limited to:",
+      "knowledge_en": "Ongoing reports include, but are not limited to",
+      "heading_context": [
+        "Governance and oversight",
+        "Regulatory reporting for AFC compliance"
+      ],
+      "type": "classification",
+      "route": "kg_same_core_point",
+      "score": 0.560241,
+      "kg": {
+        "source_seed_unit_id": "v7u_N002968",
+        "source_core_point_id": "cp_CH41_S06_003",
+        "source_core_point_title_zh": "持续报告的子类型",
+        "target_core_point_id": "cp_CH41_S06_003",
+        "target_core_point_title_zh": "持续报告的子类型",
+        "text_relevance": 0.007576,
+        "seed_score": 0.497345
+      }
+    },
+    {
+      "unit_id": "v7u_N001809",
+      "knowledge_zh": "反洗钱R旨在统一各成员国的客户尽职调查和风险评估要求",
+      "en_quote": "The goal of AMLR is to harmonize CDD and risk assessment requirements across member states.",
+      "knowledge_en": "Goal of AMLR",
+      "heading_context": [
+        "US AML/CFT regulatory landscape",
+        "EU AML package"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.543794,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001810",
+        "source_core_point_id": "cp_CH24_S08_002",
+        "source_core_point_title_zh": "AMLR - 核心条款",
+        "target_core_point_id": "cp_CH24_S08_002",
+        "target_core_point_title_zh": "AMLR - 核心条款",
+        "text_relevance": 0.022727,
+        "seed_score": 0.456768
+      }
+    },
+    {
+      "unit_id": "v7u_N001811",
+      "knowledge_zh": "反洗钱R要求义务实体评估反洗钱人员的技能、声誉、诚实和正直",
+      "en_quote": "AMLR requires obliged entities to assess all AML staff for skills, good repute, honesty, and integrity.",
+      "knowledge_en": "Staff assessment requirement",
+      "heading_context": [
+        "US AML/CFT regulatory landscape",
+        "EU AML package"
+      ],
+      "type": "rule",
+      "route": "kg_same_core_point",
+      "score": 0.542279,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001810",
+        "source_core_point_id": "cp_CH24_S08_002",
+        "source_core_point_title_zh": "AMLR - 核心条款",
+        "target_core_point_id": "cp_CH24_S08_002",
+        "target_core_point_title_zh": "AMLR - 核心条款",
+        "text_relevance": 0.015152,
+        "seed_score": 0.456768
+      }
+    },
+    {
+      "unit_id": "v7u_N001802",
+      "knowledge_zh": "欧盟反洗钱条例（反洗钱R）",
+      "en_quote": "Regulation (EU) 2024/1624, also called AMLR.",
+      "knowledge_en": "Regulation (EU) 2024/1624, also called AMLR",
+      "heading_context": [
+        "US AML/CFT regulatory landscape",
+        "EU AML package"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.541521,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001810",
+        "source_core_point_id": "cp_CH24_S08_002",
+        "source_core_point_title_zh": "AMLR - 核心条款",
+        "target_core_point_id": "cp_CH24_S08_002",
+        "target_core_point_title_zh": "AMLR - 核心条款",
+        "text_relevance": 0.011364,
+        "seed_score": 0.456768
+      }
+    },
+    {
+      "unit_id": "v7u_N004396",
+      "knowledge_zh": "Thomas被聘为美国中型区域银行的新任MLRO，负责更新交易监控系统",
+      "en_quote": "Thomas has recently been hired as the new MLRO of a mid-sized regional bank in the US. One of his responsibilities is to update its TM system.",
+      "knowledge_en": "New MLRO hired, tasked with updating TM system",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Case example: Evolution of transaction monitoring"
+      ],
+      "type": "case",
+      "route": "kg_same_core_point",
+      "score": 0.51369,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004400",
+        "source_core_point_id": "cp_CH56_S04_001",
+        "source_core_point_title_zh": "交易监控的历史演变",
+        "target_core_point_id": "cp_CH56_S04_001",
+        "target_core_point_title_zh": "交易监控的历史演变",
+        "text_relevance": 0.030303,
+        "seed_score": 0.390895
+      }
+    },
+    {
+      "unit_id": "v7u_N004397",
+      "knowledge_zh": "交易监控随着技术、金融犯罪类型和法规变化而不断演进",
+      "en_quote": "From experience, he knows that TM is constantly evolving as technology, financia crime typologies, and regulations change.",
+      "knowledge_en": "TM constantly evolving due to technology, typologies, regulations",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Case example: Evolution of transaction monitoring"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.512933,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004400",
+        "source_core_point_id": "cp_CH56_S04_001",
+        "source_core_point_title_zh": "交易监控的历史演变",
+        "target_core_point_id": "cp_CH56_S04_001",
+        "target_core_point_title_zh": "交易监控的历史演变",
+        "text_relevance": 0.026515,
+        "seed_score": 0.390895
+      }
+    },
+    {
+      "unit_id": "v7u_N004398",
+      "knowledge_zh": "MLRO查阅银行存档文件以了解其数十年来监控方法的演变",
+      "en_quote": "To learn about how his bank has adapted its approach over the decades, he decides to review the bank’s archived documents.",
+      "knowledge_en": "MLRO reviews archived documents to learn bank's adaptation",
+      "heading_context": [
+        "Technology for payment and batch screening",
+        "Case example: Evolution of transaction monitoring"
+      ],
+      "type": "case",
+      "route": "kg_same_core_point",
+      "score": 0.512933,
+      "kg": {
+        "source_seed_unit_id": "v7u_N004400",
+        "source_core_point_id": "cp_CH56_S04_001",
+        "source_core_point_title_zh": "交易监控的历史演变",
+        "target_core_point_id": "cp_CH56_S04_001",
+        "target_core_point_title_zh": "交易监控的历史演变",
+        "text_relevance": 0.026515,
+        "seed_score": 0.390895
+      }
+    },
+    {
+      "unit_id": "v7u_N001098",
+      "knowledge_zh": "购买实体业务活动极少且无合理解释进一步引起担忧",
+      "en_quote": "The lack of justification raises further concerns if the entity has minimal business activity.",
+      "knowledge_en": "Lack of justification with minimal business activity",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "risk_indicator",
+      "route": "kg_same_core_point",
+      "score": 0.511779,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001103",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.041667,
+        "seed_score": 0.382179
+      }
+    },
+    {
+      "unit_id": "v7u_N001099",
+      "knowledge_zh": "实体位于公司保密司法管辖区（如开曼群岛或巴哈马）也是风险信号",
+      "en_quote": "It is also a concern if the entity is based in a jurisdiction known for its corporate secrecy for example, the Cayman Islands or the Bahamas.",
+      "knowledge_en": "Entity based in secrecy jurisdiction",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "risk_indicator",
+      "route": "kg_same_core_point",
+      "score": 0.511779,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001103",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.041667,
+        "seed_score": 0.382179
+      }
+    },
+    {
+      "unit_id": "v7u_N001139",
+      "knowledge_zh": "多个红旗信号信号可提醒金融犯罪防控专业人员注意高价值资产交易中的潜在洗钱。",
+      "en_quote": "Several red flags can alert AFC professionals to potential money laundering when dealing with high-value assets.",
+      "knowledge_en": "Red flags alert AFC professionals to potential money laundering in high-value assets",
+      "heading_context": [
+        "High-risk business sectors",
+        "High-value asset risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.511239,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001141",
+        "source_core_point_id": "cp_CH16_S01_002",
+        "source_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "target_core_point_id": "cp_CH16_S01_002",
+        "target_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "text_relevance": 0.026515,
+        "seed_score": 0.387367
+      }
+    },
+    {
+      "unit_id": "v7u_N001100",
+      "knowledge_zh": "房地产市场的全球性使检测工作更加复杂",
+      "en_quote": "The global nature of the real estate market further complicates detection efforts. International buyers and cross-border transactions can mask illicit activities.",
+      "knowledge_en": "Global real estate market complicates detection",
+      "heading_context": [
+        "Money laundering risks associated with DNFBPs",
+        "Real estate sector risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.511022,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001103",
+        "source_core_point_id": "cp_CH15_S03_001",
+        "source_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "target_core_point_id": "cp_CH15_S03_001",
+        "target_core_point_title_zh": "房地产行业洗钱风险与缓解措施",
+        "text_relevance": 0.037879,
+        "seed_score": 0.382179
+      }
+    },
+    {
+      "unit_id": "v7u_N001140",
+      "knowledge_zh": "涉及来源不明或可疑资金的交易是洗钱红旗信号。",
+      "en_quote": "Transactions which involve funds from unknown or suspicious sources",
+      "knowledge_en": "Transactions which involve funds from unknown or suspicious sources",
+      "heading_context": [
+        "High-risk business sectors",
+        "High-value asset risks"
+      ],
+      "type": "risk_indicator",
+      "route": "kg_same_core_point",
+      "score": 0.508966,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001141",
+        "source_core_point_id": "cp_CH16_S01_002",
+        "source_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "target_core_point_id": "cp_CH16_S01_002",
+        "target_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "text_relevance": 0.015152,
+        "seed_score": 0.387367
+      }
+    },
+    {
+      "unit_id": "v7u_N001142",
+      "knowledge_zh": "无关联第三方之间的贷款协议缺乏合法经济理由，用于转移非法资金",
+      "en_quote": "Loan agreements between unrelated third parties: The lender and borrower lack a legitimate connection or economic justification for the loan. Instead, the loan serves as a way to transfer illicit funds.",
+      "knowledge_en": "Loan agreements between unrelated third parties: The lender and borrower lack a legitimate connection or economic justification for the loan. Instead, the loan serves as a way to transfer illicit funds",
+      "heading_context": [
+        "High-risk business sectors",
+        "High-value asset risks"
+      ],
+      "type": "fact",
+      "route": "kg_same_core_point",
+      "score": 0.508966,
+      "kg": {
+        "source_seed_unit_id": "v7u_N001141",
+        "source_core_point_id": "cp_CH16_S01_002",
+        "source_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "target_core_point_id": "cp_CH16_S01_002",
+        "target_core_point_title_zh": "高价值资产洗钱红旗信号",
+        "text_relevance": 0.015152,
+        "seed_score": 0.387367
+      }
+    }
+  ],
+  "candidate_route_counts": {
+    "bge": 9,
+    "bm25_zh": 10,
+    "bm25_en": 11,
+    "kg_same_core_point": 29,
+    "kg_same_section_cp": 1
+  },
+  "kg_enabled": true,
+  "p5_enabled": true,
+  "llm_output": "{\n  \"prompt_version\": \"intent_v1\",\n  \"question_intent\": {\n    \"intent_type\": \"red_flag\",\n    \"asked_object\": \"交易/活动\",\n    \"key_constraint\": \"无明确限定词，要求识别题干场景中的可疑行为\",\n    \"intent_reasoning\": \"题干描述房地产投资公司账户的一系列活动，直接提问哪些活动被视为洗钱的可疑行为，典型红旗信号识别题。\"\n  },\n  \"judgment_standard\": {\n    \"standard_type\": \"red_flag_fit\",\n    \"standard_explanation\": \"本题要求判断选项描述的活动是否构成洗钱可疑行为（红旗信号），需要在给定教材证据中查找该活动是否被明确列为或隐含为可疑/需报告的行为，并与题干场景匹配。\",\n    \"decisive_rule\": \"若多个选项均看似可疑，优先选择教材中直接定义为需报告或监控的活动，且行为描述与题干事实最吻合的选项；间接或笼统的风险描述不敌具体红旗信号。\"\n  },\n  \"competing_option_analysis\": [],\n  \"predicted_answer\": [\"B\"],\n  \"option_analysis\": [\n    {\n      \"option\": \"A\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"low\",\n      \"evidence_status\": \"none\",\n      \"evidence_cards\": [],\n      \"basis\": \"接收来自其他金融机构的每笔1万美元的电子转账，金额恰好等于1万美元。教材中有关于现金交易拆分（如每次存入9900美元规避现金报告阈值）的证据，但未提供电子转账1万美元本身构成可疑行为的直接红旗信号。现有教材证据集中在现金交易的拆分或报告，无法支持该电子转账活动为可疑行为，故判定为不正确。\"\n    },\n    {\n      \"option\": \"B\",\n      \"judgement\": \"correct\",\n      \"intent_fit\": \"high\",\n      \"evidence_status\": \"direct\",\n      \"evidence_cards\": [\n        {\n          \"unit_id\": \"v7u_N001691\",\n          \"support_type\": \"direct\",\n          \"reason\": \"该单元直接指出现金购买货币工具需提交货币与货币工具报告，表明此类活动被监管视为需特别关注和报告的行为，与题干中用现金购买多张银行本票的活动直接对应，命中洗钱可疑行为的意图。\"\n        },\n        {\n          \"unit_id\": \"v7u_N001102\",\n          \"support_type\": \"indirect\",\n          \"reason\": \"该单元说明现金交易因难以追踪而增加洗钱风险，间接支持用现金购买银行本票属于高风险行为。\"\n        }\n      ],\n      \"basis\": \"用现金购买多张银行本票是典型的现金购买货币工具行为，教材明确要求对此类行为提交货币与货币工具报告，表明其具备洗钱可疑特征，与题干描述完全吻合，故为正确答案。\"\n    },\n    {\n      \"option\": \"C\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"none\",\n      \"evidence_status\": \"none\",\n      \"evidence_cards\": [],\n      \"basis\": \"与房地产投资公司开展业务操作本身是正常的商业行为，题干场景也未显示该操作有任何异常，教材中无任何内容将其列为可疑活动，因此不属于洗钱可疑行为。\"\n    },\n    {\n      \"option\": \"D\",\n      \"judgement\": \"incorrect\",\n      \"intent_fit\": \"none\",\n      \"evidence_status\": \"none\",\n      \"evidence_cards\": [],\n      \"basis\": \"银行本票是一种常规金融工具，其存在本身并不构成可疑行为，可疑的是购买本票的方式（如大量现金、拆分购买等），教材未将银行本票单独列为红旗信号，故不正确。\"\n    }\n  ],\n  \"teacher_review_note\": \"证据充分且明确，选项B直接命中教材中现金购买货币工具需报告的规则，无证据支持其他选项的争议，判断无分歧。\"\n}",
+  "option_analysis": [
+    {
+      "option": "A",
+      "judgement": "incorrect",
+      "intent_fit": "low",
+      "evidence_status": "none",
+      "evidence_cards": [],
+      "basis": "接收来自其他金融机构的每笔1万美元的电子转账，金额恰好等于1万美元。教材中有关于现金交易拆分（如每次存入9900美元规避现金报告阈值）的证据，但未提供电子转账1万美元本身构成可疑行为的直接红旗信号。现有教材证据集中在现金交易的拆分或报告，无法支持该电子转账活动为可疑行为，故判定为不正确。"
+    },
+    {
+      "option": "B",
+      "judgement": "correct",
+      "intent_fit": "high",
+      "evidence_status": "direct",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N001691",
+          "support_type": "direct",
+          "reason": "该单元直接指出现金购买货币工具需提交货币与货币工具报告，表明此类活动被监管视为需特别关注和报告的行为，与题干中用现金购买多张银行本票的活动直接对应，命中洗钱可疑行为的意图。"
+        },
+        {
+          "unit_id": "v7u_N001102",
+          "support_type": "indirect",
+          "reason": "该单元说明现金交易因难以追踪而增加洗钱风险，间接支持用现金购买银行本票属于高风险行为。"
+        }
+      ],
+      "basis": "用现金购买多张银行本票是典型的现金购买货币工具行为，教材明确要求对此类行为提交货币与货币工具报告，表明其具备洗钱可疑特征，与题干描述完全吻合，故为正确答案。"
+    },
+    {
+      "option": "C",
+      "judgement": "incorrect",
+      "intent_fit": "none",
+      "evidence_status": "none",
+      "evidence_cards": [],
+      "basis": "与房地产投资公司开展业务操作本身是正常的商业行为，题干场景也未显示该操作有任何异常，教材中无任何内容将其列为可疑活动，因此不属于洗钱可疑行为。"
+    },
+    {
+      "option": "D",
+      "judgement": "incorrect",
+      "intent_fit": "none",
+      "evidence_status": "none",
+      "evidence_cards": [],
+      "basis": "银行本票是一种常规金融工具，其存在本身并不构成可疑行为，可疑的是购买本票的方式（如大量现金、拆分购买等），教材未将银行本票单独列为红旗信号，故不正确。"
+    }
+  ],
+  "predicted_answer": [
+    "B"
+  ],
+  "question_intent": {
+    "intent_type": "red_flag",
+    "asked_object": "交易/活动",
+    "key_constraint": "无明确限定词，要求识别题干场景中的可疑行为",
+    "intent_reasoning": "题干描述房地产投资公司账户的一系列活动，直接提问哪些活动被视为洗钱的可疑行为，典型红旗信号识别题。"
+  },
+  "judgment_standard": {
+    "standard_type": "red_flag_fit",
+    "standard_explanation": "本题要求判断选项描述的活动是否构成洗钱可疑行为（红旗信号），需要在给定教材证据中查找该活动是否被明确列为或隐含为可疑/需报告的行为，并与题干场景匹配。",
+    "decisive_rule": "若多个选项均看似可疑，优先选择教材中直接定义为需报告或监控的活动，且行为描述与题干事实最吻合的选项；间接或笼统的风险描述不敌具体红旗信号。"
+  },
+  "competing_option_analysis": [],
+  "teacher_review_note": "证据充分且明确，选项B直接命中教材中现金购买货币工具需报告的规则，无证据支持其他选项的争议，判断无分歧。",
+  "validation_checks": []
+}

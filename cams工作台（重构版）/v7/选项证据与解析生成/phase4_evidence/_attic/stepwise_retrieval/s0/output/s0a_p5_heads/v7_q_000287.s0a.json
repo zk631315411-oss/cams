@@ -1,0 +1,525 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000287",
+  "stem": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.)",
+  "options": {
+    "A": "长期内假阳性数量的减少",
+    "B": "合规流程的全面自动化",
+    "C": "消除对人工监督的需求",
+    "D": "更强的适应不断变化的金融犯罪风险的灵活性",
+    "E": "更强的检测新出现的模式和异常的能力"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing",
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "长期内假阳性数量的减少",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000010",
+          "matched_term": "假阳性",
+          "canonical_en": "false positive",
+          "canonical_zh": "误报",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "false positives",
+            "false positive",
+            "假阳性",
+            "误报"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004151",
+            "v7u_N003283",
+            "v7u_N003301",
+            "v7u_N003844",
+            "v7u_N003734"
+          ],
+          "not_kg_edge": true,
+          "review_note": "False positive and false positives are spelling variants. 假阳性 and 误报 are Chinese translations used interchangeably for the same concept, as shown in the evidence (误报（假阳性）).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "false positive",
+        "误报",
+        "false positives",
+        "假阳性"
+      ],
+      "normalized_text": "长期内假阳性数量的减少 false positive 误报 false positives 假阳性"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "合规流程的全面自动化",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "合规流程的全面自动化"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "消除对人工监督的需求",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "消除对人工监督的需求"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "更强的适应不断变化的金融犯罪风险的灵活性",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "更强的适应不断变化的金融犯罪风险的灵活性"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "更强的检测新出现的模式和异常的能力",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "更强的检测新出现的模式和异常的能力"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI 长期内假阳性数量的减少 false positive 误报 false positives 假阳性",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000010",
+          "matched_term": "假阳性",
+          "canonical_en": "false positive",
+          "canonical_zh": "误报",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "false positives",
+            "false positive",
+            "假阳性",
+            "误报"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004151",
+            "v7u_N003283",
+            "v7u_N003301",
+            "v7u_N003844",
+            "v7u_N003734"
+          ],
+          "not_kg_edge": true,
+          "review_note": "False positive and false positives are spelling variants. 假阳性 and 误报 are Chinese translations used interchangeably for the same concept, as shown in the evidence (误报（假阳性）).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI 合规流程的全面自动化",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI 消除对人工监督的需求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI 更强的适应不断变化的金融犯罪风险的灵活性",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在交易监控中,从基于规则的方法转向基于人工智能(AI)和机器学习的工具,通常会带来哪些好处？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing artificial intelligence 人工智能 AI 更强的检测新出现的模式和异常的能力",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

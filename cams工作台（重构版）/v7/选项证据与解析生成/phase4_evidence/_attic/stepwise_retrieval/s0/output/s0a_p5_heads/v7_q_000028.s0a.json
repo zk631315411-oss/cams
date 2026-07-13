@@ -1,0 +1,444 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000028",
+  "stem": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息:",
+  "options": {
+    "A": "公共行政.",
+    "B": "法律评估.",
+    "C": "执法部门.",
+    "D": "合法活动."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息:",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "公共行政.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "公共行政."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "法律评估.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "法律评估."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "执法部门.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "执法部门."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "合法活动.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "合法活动."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 公共行政.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 法律评估.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 执法部门.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "金融情报机构(FIU)作为国家中心,负责接收和分析可疑活动报告(SAR),并可从其他报告实体获取与以下方面相关的更多信息: suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 合法活动.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

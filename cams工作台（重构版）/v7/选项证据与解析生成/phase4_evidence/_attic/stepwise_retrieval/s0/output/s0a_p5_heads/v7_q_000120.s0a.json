@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000120",
+  "stem": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？",
+  "options": {
+    "A": "潜在客户提供的信息",
+    "B": "政府颁发的身份证明文件的复印件的复印件",
+    "C": "从开源数据库获取的信息",
+    "D": "直接从政府管理的登记处获取的信息"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "潜在客户提供的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "潜在客户提供的信息"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "政府颁发的身份证明文件的复印件的复印件",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "政府颁发的身份证明文件的复印件的复印件"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "从开源数据库获取的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "从开源数据库获取的信息"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "直接从政府管理的登记处获取的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "直接从政府管理的登记处获取的信息"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？ 潜在客户提供的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？ 政府颁发的身份证明文件的复印件的复印件",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？ 从开源数据库获取的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪一项可被视为可靠、独立的原始文件、数据或信息？ 直接从政府管理的登记处获取的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

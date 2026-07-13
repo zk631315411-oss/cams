@@ -1,0 +1,135 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000362",
+  "stem": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.)",
+  "options": {
+    "A": "利用游戏账号在玩家之间转移非法资金而不被察觉",
+    "B": "通过将交易金额控制在一定限度以下来安排交易,以规避报告门槛",
+    "C": "提供虚假个人信息以逃避监管审查",
+    "D": "确保在新客户入职前完成身份验证工作",
+    "E": "将所有博彩赢来的钱投入高风险股票以隐匿资金"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用游戏账号在玩家之间转移非法资金而不被察觉",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用游戏账号在玩家之间转移非法资金而不被察觉"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "通过将交易金额控制在一定限度以下来安排交易,以规避报告门槛",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过将交易金额控制在一定限度以下来安排交易,以规避报告门槛"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "提供虚假个人信息以逃避监管审查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "提供虚假个人信息以逃避监管审查"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "确保在新客户入职前完成身份验证工作",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确保在新客户入职前完成身份验证工作"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "将所有博彩赢来的钱投入高风险股票以隐匿资金",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将所有博彩赢来的钱投入高风险股票以隐匿资金"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.) 利用游戏账号在玩家之间转移非法资金而不被察觉",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.) 通过将交易金额控制在一定限度以下来安排交易,以规避报告门槛",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.) 提供虚假个人信息以逃避监管审查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.) 确保在新客户入职前完成身份验证工作",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "在金融犯罪中,游戏账户被滥用会带来哪些具体风险？(选择三项.) 将所有博彩赢来的钱投入高风险股票以隐匿资金",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

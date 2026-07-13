@@ -1,0 +1,163 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000154",
+  "stem": "欧盟《第六项反洗钱指令》(6AMLD):",
+  "options": {
+    "A": "将反洗钱监管范围扩大至众筹平台和职业足球俱乐部",
+    "B": "取消了要求欧盟委员会进行风险评估的规定",
+    "C": "设立了一个欧盟中央监管机构来打击洗钱活动",
+    "D": "加强有关提交至中央受益所有权登记册的数据准确性的规定"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "欧盟《第六项反洗钱指令》(6AMLD):",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "欧盟《第六项反洗钱指令》(6AMLD):"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "将反洗钱监管范围扩大至众筹平台和职业足球俱乐部",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将反洗钱监管范围扩大至众筹平台和职业足球俱乐部"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "取消了要求欧盟委员会进行风险评估的规定",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "取消了要求欧盟委员会进行风险评估的规定"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "设立了一个欧盟中央监管机构来打击洗钱活动",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body"
+      ],
+      "normalized_text": "设立了一个欧盟中央监管机构来打击洗钱活动 regulator 监管机构 regulatory body"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "加强有关提交至中央受益所有权登记册的数据准确性的规定",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "加强有关提交至中央受益所有权登记册的数据准确性的规定"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "欧盟《第六项反洗钱指令》(6AMLD):",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "欧盟《第六项反洗钱指令》(6AMLD): 将反洗钱监管范围扩大至众筹平台和职业足球俱乐部",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "欧盟《第六项反洗钱指令》(6AMLD): 取消了要求欧盟委员会进行风险评估的规定",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "欧盟《第六项反洗钱指令》(6AMLD): 设立了一个欧盟中央监管机构来打击洗钱活动 regulator 监管机构 regulatory body",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "欧盟《第六项反洗钱指令》(6AMLD): 加强有关提交至中央受益所有权登记册的数据准确性的规定",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

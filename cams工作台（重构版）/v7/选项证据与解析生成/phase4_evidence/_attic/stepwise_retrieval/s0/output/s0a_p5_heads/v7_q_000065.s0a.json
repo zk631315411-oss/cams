@@ -1,0 +1,211 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000065",
+  "stem": "金融机构在遵守制裁要求时应采取哪一个步骤？",
+  "options": {
+    "A": "若现有客户成为受制裁实体，则将其风险等级变更为高风险并继续对其后续交易进行监控",
+    "B": "采用自动筛查系统来识别指定人员和实体",
+    "C": "对制裁名单上的禁止实体开展强化尽职调查",
+    "D": "本决定经董事会批准后，冻结指定个人和实体的资金或资产"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "金融机构在遵守制裁要求时应采取哪一个步骤？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "金融机构在遵守制裁要求时应采取哪一个步骤？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "若现有客户成为受制裁实体，则将其风险等级变更为高风险并继续对其后续交易进行监控",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "若现有客户成为受制裁实体，则将其风险等级变更为高风险并继续对其后续交易进行监控"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "采用自动筛查系统来识别指定人员和实体",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "采用自动筛查系统来识别指定人员和实体"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "对制裁名单上的禁止实体开展强化尽职调查",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000127",
+          "matched_term": "强化尽职调查",
+          "canonical_en": "enhanced due diligence",
+          "canonical_zh": "强化尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enhanced due diligence",
+            "强化尽职调查",
+            "EDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N001429",
+            "v7u_N001706"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EDD is the widely used abbreviation for enhanced due diligence; 强化尽职调查 is the standard Chinese translation. Well-established in AML/CFT terminology with high frequency in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "enhanced due diligence",
+        "强化尽职调查",
+        "EDD"
+      ],
+      "normalized_text": "对制裁名单上的禁止实体开展强化尽职调查 enhanced due diligence 强化尽职调查 EDD"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "本决定经董事会批准后，冻结指定个人和实体的资金或资产",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "本决定经董事会批准后，冻结指定个人和实体的资金或资产 board of directors 董事会 board"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "金融机构在遵守制裁要求时应采取哪一个步骤？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "金融机构在遵守制裁要求时应采取哪一个步骤？ 若现有客户成为受制裁实体，则将其风险等级变更为高风险并继续对其后续交易进行监控",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "金融机构在遵守制裁要求时应采取哪一个步骤？ 采用自动筛查系统来识别指定人员和实体",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "金融机构在遵守制裁要求时应采取哪一个步骤？ 对制裁名单上的禁止实体开展强化尽职调查 enhanced due diligence 强化尽职调查 EDD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000127",
+          "matched_term": "强化尽职调查",
+          "canonical_en": "enhanced due diligence",
+          "canonical_zh": "强化尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "enhanced due diligence",
+            "强化尽职调查",
+            "EDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N001429",
+            "v7u_N001706"
+          ],
+          "not_kg_edge": true,
+          "review_note": "EDD is the widely used abbreviation for enhanced due diligence; 强化尽职调查 is the standard Chinese translation. Well-established in AML/CFT terminology with high frequency in the textbook.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "金融机构在遵守制裁要求时应采取哪一个步骤？ 本决定经董事会批准后，冻结指定个人和实体的资金或资产 board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

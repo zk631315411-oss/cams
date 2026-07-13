@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000089",
+  "stem": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？",
+  "options": {
+    "A": "电汇的受益人是一家外国公司，其股东和董事均为其他公司",
+    "B": "这些电汇的金额各不相同，但收款人相同",
+    "C": "电汇的受益人是来自灰名单国家的居民",
+    "D": "电汇的受益人是与企业主同姓的外国居民"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "电汇的受益人是一家外国公司，其股东和董事均为其他公司",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "电汇的受益人是一家外国公司，其股东和董事均为其他公司"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "这些电汇的金额各不相同，但收款人相同",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "这些电汇的金额各不相同，但收款人相同"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "电汇的受益人是来自灰名单国家的居民",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "电汇的受益人是来自灰名单国家的居民"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "电汇的受益人是与企业主同姓的外国居民",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "电汇的受益人是与企业主同姓的外国居民"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？ 电汇的受益人是一家外国公司，其股东和董事均为其他公司",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？ 这些电汇的金额各不相同，但收款人相同",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？ 电汇的受益人是来自灰名单国家的居民",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家银行的交易监控系统对一位洗车行客户发出了警报。该客户在存入大量现金后，又安排了国际电汇业务。还有哪些其他情况会让这个案子更可疑？ 电汇的受益人是与企业主同姓的外国居民",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

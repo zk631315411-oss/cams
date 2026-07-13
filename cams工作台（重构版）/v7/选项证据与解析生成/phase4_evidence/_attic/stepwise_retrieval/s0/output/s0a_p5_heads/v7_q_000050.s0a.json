@@ -1,0 +1,163 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000050",
+  "stem": "当一国政府对某一目标实施经济制裁时,其目的在于:",
+  "options": {
+    "A": "保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。",
+    "B": "表明除非该国家或非国家目标服从政府的要求，否则很可能会动用军事力量。",
+    "C": "鼓励非政府组织增加向目标对象提供人道主义和慈善援助。",
+    "D": "改变威胁该国政府利益或违反国际规范的国家或非国家目标的行为。"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "当一国政府对某一目标实施经济制裁时,其目的在于:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "当一国政府对某一目标实施经济制裁时,其目的在于:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "表明除非该国家或非国家目标服从政府的要求，否则很可能会动用军事力量。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "表明除非该国家或非国家目标服从政府的要求，否则很可能会动用军事力量。"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "鼓励非政府组织增加向目标对象提供人道主义和慈善援助。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "nongovernmental organization",
+        "非政府组织",
+        "NGO"
+      ],
+      "normalized_text": "鼓励非政府组织增加向目标对象提供人道主义和慈善援助。 nongovernmental organization 非政府组织 NGO"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "改变威胁该国政府利益或违反国际规范的国家或非国家目标的行为。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "改变威胁该国政府利益或违反国际规范的国家或非国家目标的行为。"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "当一国政府对某一目标实施经济制裁时,其目的在于:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "当一国政府对某一目标实施经济制裁时,其目的在于: 保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "当一国政府对某一目标实施经济制裁时,其目的在于: 表明除非该国家或非国家目标服从政府的要求，否则很可能会动用军事力量。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "当一国政府对某一目标实施经济制裁时,其目的在于: 鼓励非政府组织增加向目标对象提供人道主义和慈善援助。 nongovernmental organization 非政府组织 NGO",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000080",
+          "matched_term": "非政府组织",
+          "canonical_en": "nongovernmental organization",
+          "canonical_zh": "非政府组织",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "nongovernmental organization",
+            "非政府组织",
+            "NGO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000731",
+            "v7u_N001222",
+            "v7u_N001208",
+            "v7u_N001209"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NGO is the standard abbreviation for nongovernmental organization; the Chinese term is the direct translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "当一国政府对某一目标实施经济制裁时,其目的在于: 改变威胁该国政府利益或违反国际规范的国家或非国家目标的行为。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

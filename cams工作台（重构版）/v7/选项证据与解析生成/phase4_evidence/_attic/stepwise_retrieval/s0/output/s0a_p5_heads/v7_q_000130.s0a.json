@@ -1,0 +1,421 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000130",
+  "stem": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？",
+  "options": {
+    "A": "美国的反洗钱法规比欧盟的反洗钱指令更为严格，这使得这家全球性银行在欧盟更容易做到合规",
+    "B": "美国和欧盟的法规要求银行组建独立的合规团队，因此有必要为美国和欧盟的业务分别建立完全独立的系统",
+    "C": "欧盟的制裁制度比美国海外资产控制办公室（OFAC）的更为严格，因此该银行必须优先遵守欧盟法规而非美国法律，并相应地对欧洲的员工进行培训",
+    "D": "在遵守美国《银行保密法》（BSA）和美国海外资产控制办公室（OFAC）制裁规定的同时，还要确保符合欧盟反洗钱指令和《通用数据保护条例》（GDPR），这使得跨境数据共享变得复杂"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "美国的反洗钱法规比欧盟的反洗钱指令更为严格，这使得这家全球性银行在欧盟更容易做到合规",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "美国的反洗钱法规比欧盟的反洗钱指令更为严格，这使得这家全球性银行在欧盟更容易做到合规"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "美国和欧盟的法规要求银行组建独立的合规团队，因此有必要为美国和欧盟的业务分别建立完全独立的系统",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "美国和欧盟的法规要求银行组建独立的合规团队，因此有必要为美国和欧盟的业务分别建立完全独立的系统"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "欧盟的制裁制度比美国海外资产控制办公室（OFAC）的更为严格，因此该银行必须优先遵守欧盟法规而非美国法律，并相应地对欧洲的员工进行培训",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "OFAC",
+        "外国资产控制办公室"
+      ],
+      "normalized_text": "欧盟的制裁制度比美国海外资产控制办公室（OFAC）的更为严格，因此该银行必须优先遵守欧盟法规而非美国法律，并相应地对欧洲的员工进行培训 OFAC 外国资产控制办公室"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "在遵守美国《银行保密法》（BSA）和美国海外资产控制办公室（OFAC）制裁规定的同时，还要确保符合欧盟反洗钱指令和《通用数据保护条例》（GDPR），这使得跨境数据共享变得复杂",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000136",
+          "matched_term": "《通用数据保护条例》",
+          "canonical_en": "General Data Protection Regulation",
+          "canonical_zh": "《通用数据保护条例》",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "General Data Protection Regulation",
+            "《通用数据保护条例》",
+            "GDPR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002018",
+            "v7u_N002042",
+            "v7u_N002043"
+          ],
+          "not_kg_edge": true,
+          "review_note": "GDPR is the widely recognized abbreviation for General Data Protection Regulation; the Chinese translation is standard and equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000118",
+          "matched_term": "《银行保密法》",
+          "canonical_en": "Bank Secrecy Act",
+          "canonical_zh": "《银行保密法》",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Bank Secrecy Act",
+            "《银行保密法》",
+            "BSA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000334",
+            "v7u_N001682",
+            "v7u_N001684"
+          ],
+          "not_kg_edge": true,
+          "review_note": "BSA is the widely recognized abbreviation for the Bank Secrecy Act; the Chinese term is the standard translation. They refer to the same legislation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "General Data Protection Regulation",
+        "《通用数据保护条例》",
+        "GDPR",
+        "Bank Secrecy Act",
+        "《银行保密法》",
+        "BSA",
+        "OFAC",
+        "外国资产控制办公室"
+      ],
+      "normalized_text": "在遵守美国《银行保密法》（BSA）和美国海外资产控制办公室（OFAC）制裁规定的同时，还要确保符合欧盟反洗钱指令和《通用数据保护条例》（GDPR），这使得跨境数据共享变得复杂 General Data Protection Regulation 《通用数据保护条例》 GDPR Bank Secrecy Act 《银行保密法》 BSA OFAC 外国资产控制办公室"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers 美国的反洗钱法规比欧盟的反洗钱指令更为严格，这使得这家全球性银行在欧盟更容易做到合规",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers 美国和欧盟的法规要求银行组建独立的合规团队，因此有必要为美国和欧盟的业务分别建立完全独立的系统",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers 欧盟的制裁制度比美国海外资产控制办公室（OFAC）的更为严格，因此该银行必须优先遵守欧盟法规而非美国法律，并相应地对欧洲的员工进行培训 OFAC 外国资产控制办公室",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家在全球多个国家（包括美国、欧盟及其他国家）开展业务的大型银行的首席合规官负责应对与反洗钱（AML）和制裁相关的美国和欧盟法规，以及该银行在各运营国所须遵守的任何当地法规。银行首要的合规关注点应该是什么？ compliance officer 合规官 compliance officers 在遵守美国《银行保密法》（BSA）和美国海外资产控制办公室（OFAC）制裁规定的同时，还要确保符合欧盟反洗钱指令和《通用数据保护条例》（GDPR），这使得跨境数据共享变得复杂 General Data Protection Regulation 《通用数据保护条例》 GDPR Bank Secrecy Act 《银行保密法》 BSA OFAC 外国资产控制办公室",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000136",
+          "matched_term": "《通用数据保护条例》",
+          "canonical_en": "General Data Protection Regulation",
+          "canonical_zh": "《通用数据保护条例》",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "General Data Protection Regulation",
+            "《通用数据保护条例》",
+            "GDPR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002018",
+            "v7u_N002042",
+            "v7u_N002043"
+          ],
+          "not_kg_edge": true,
+          "review_note": "GDPR is the widely recognized abbreviation for General Data Protection Regulation; the Chinese translation is standard and equivalent.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000118",
+          "matched_term": "《银行保密法》",
+          "canonical_en": "Bank Secrecy Act",
+          "canonical_zh": "《银行保密法》",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Bank Secrecy Act",
+            "《银行保密法》",
+            "BSA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000334",
+            "v7u_N001682",
+            "v7u_N001684"
+          ],
+          "not_kg_edge": true,
+          "review_note": "BSA is the widely recognized abbreviation for the Bank Secrecy Act; the Chinese term is the standard translation. They refer to the same legislation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

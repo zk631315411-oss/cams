@@ -1,0 +1,245 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000077",
+  "stem": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？",
+  "options": {
+    "A": "空头头寸",
+    "B": "反向翻转",
+    "C": "买卖价差",
+    "D": "洗单交易"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "typology",
+        "类型学",
+        "typologies"
+      ],
+      "normalized_text": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "空头头寸",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "空头头寸"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "反向翻转",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "反向翻转"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "买卖价差",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "买卖价差"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "洗单交易",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "洗单交易"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies 空头头寸",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies 反向翻转",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies 买卖价差",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？ typology 类型学 typologies 洗单交易",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000087",
+          "matched_term": "类型学",
+          "canonical_en": "typology",
+          "canonical_zh": "类型学",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "typologies",
+            "typology",
+            "类型学"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002334",
+            "v7u_N002148",
+            "v7u_N002219"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular/plural spelling variant and direct translation. 'typology' and 'typologies' are the same concept, and '类型学' is the Chinese equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

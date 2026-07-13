@@ -1,0 +1,161 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000231",
+  "stem": "不寻常的电汇交易可能包括:(选择两项.)",
+  "options": {
+    "A": "同一客户在不同银行开设的账户之间以不同货币进行的电汇.",
+    "B": "一笔汇入的第三方电汇,随后以客户名义购买房产.",
+    "C": "一笔汇入的电汇,随后将贷款支付给与客户有业务往来的第三方.",
+    "D": "多次电汇至与客户相关的交易对手方,相关方信息依据客户尽职调查文件."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "不寻常的电汇交易可能包括:(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "不寻常的电汇交易可能包括:(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "同一客户在不同银行开设的账户之间以不同货币进行的电汇.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "同一客户在不同银行开设的账户之间以不同货币进行的电汇."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "一笔汇入的第三方电汇,随后以客户名义购买房产.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一笔汇入的第三方电汇,随后以客户名义购买房产."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "一笔汇入的电汇,随后将贷款支付给与客户有业务往来的第三方.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一笔汇入的电汇,随后将贷款支付给与客户有业务往来的第三方."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "多次电汇至与客户相关的交易对手方,相关方信息依据客户尽职调查文件.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "customer due diligence",
+        "客户尽职调查",
+        "CDD"
+      ],
+      "normalized_text": "多次电汇至与客户相关的交易对手方,相关方信息依据客户尽职调查文件. customer due diligence 客户尽职调查 CDD"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "不寻常的电汇交易可能包括:(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "不寻常的电汇交易可能包括:(选择两项.) 同一客户在不同银行开设的账户之间以不同货币进行的电汇.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "不寻常的电汇交易可能包括:(选择两项.) 一笔汇入的第三方电汇,随后以客户名义购买房产.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "不寻常的电汇交易可能包括:(选择两项.) 一笔汇入的电汇,随后将贷款支付给与客户有业务往来的第三方.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "不寻常的电汇交易可能包括:(选择两项.) 多次电汇至与客户相关的交易对手方,相关方信息依据客户尽职调查文件. customer due diligence 客户尽职调查 CDD",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000121",
+          "matched_term": "客户尽职调查",
+          "canonical_en": "customer due diligence",
+          "canonical_zh": "客户尽职调查",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "customer due diligence",
+            "客户尽职调查",
+            "CDD"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000658",
+            "v7u_N000720"
+          ],
+          "not_kg_edge": true,
+          "review_note": "CDD stands for customer due diligence; the Chinese translation is the standard equivalent.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

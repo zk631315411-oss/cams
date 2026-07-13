@@ -1,0 +1,251 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000105",
+  "stem": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？",
+  "options": {
+    "A": "方法的一致性",
+    "B": "定期对功能进行培训",
+    "C": "团队资质",
+    "D": "独立测试"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "internal audit",
+        "内部审计",
+        "internal auditing"
+      ],
+      "normalized_text": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "方法的一致性",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "方法的一致性"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "定期对功能进行培训",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "定期对功能进行培训"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "团队资质",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "团队资质"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "独立测试",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "独立测试"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing 方法的一致性",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing 定期对功能进行培训",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing 团队资质",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一个内部审计团队正在审查其所在公司的反金融犯罪(AFC)计划.以下第三道防线的哪些属性对于确保监督的公正性和有效性最为关键？ internal audit 内部审计 internal auditing 独立测试",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000065",
+          "matched_term": "内部审计",
+          "canonical_en": "internal audit",
+          "canonical_zh": "内部审计",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "internal auditing",
+            "internal audit",
+            "内部审计"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001547",
+            "v7u_N002395",
+            "v7u_N002542",
+            "v7u_N002813"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Internal audit and internal auditing refer to the same function; they are minor word form variants. Both translate to 内部审计.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

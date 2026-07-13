@@ -1,0 +1,212 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000080",
+  "stem": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？",
+  "options": {
+    "A": "建议进一步澄清相关情况，包括出售的是哪些加密货币或代币，以及该加密货币交易所是否对其客户进行尽职调查",
+    "B": "建议停止该交易，因为加密资产总体上不受监管，其性质决定了会给银行带来不可接受的反洗钱风险",
+    "C": "向顾问确认，如果客户的KYC（了解您的客户）信息是最新的，并且在公共区块链浏览器上进行搜索未发现任何负面媒体报道，客户可以继续进行交易",
+    "D": "向顾问确认客户可以进行交易，因为客户已正确完成KYC（了解您的客户）流程"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "建议进一步澄清相关情况，包括出售的是哪些加密货币或代币，以及该加密货币交易所是否对其客户进行尽职调查",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000184",
+          "matched_term": "代币",
+          "canonical_en": "token",
+          "canonical_zh": "代币",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "token",
+            "代币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001006",
+            "v7u_N001015"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NFT is a subtype/parallel item and is excluded.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "token",
+        "代币"
+      ],
+      "normalized_text": "建议进一步澄清相关情况，包括出售的是哪些加密货币或代币，以及该加密货币交易所是否对其客户进行尽职调查 token 代币"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "建议停止该交易，因为加密资产总体上不受监管，其性质决定了会给银行带来不可接受的反洗钱风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "建议停止该交易，因为加密资产总体上不受监管，其性质决定了会给银行带来不可接受的反洗钱风险"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "向顾问确认，如果客户的KYC（了解您的客户）信息是最新的，并且在公共区块链浏览器上进行搜索未发现任何负面媒体报道，客户可以继续进行交易",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "adverse media",
+        "负面媒体",
+        "negative media coverage",
+        "negative media",
+        "负面媒体报道"
+      ],
+      "normalized_text": "向顾问确认，如果客户的KYC（了解您的客户）信息是最新的，并且在公共区块链浏览器上进行搜索未发现任何负面媒体报道，客户可以继续进行交易 adverse media 负面媒体 negative media coverage negative media 负面媒体报道"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "向顾问确认客户可以进行交易，因为客户已正确完成KYC（了解您的客户）流程",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "向顾问确认客户可以进行交易，因为客户已正确完成KYC（了解您的客户）流程"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？ 建议进一步澄清相关情况，包括出售的是哪些加密货币或代币，以及该加密货币交易所是否对其客户进行尽职调查 token 代币",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000184",
+          "matched_term": "代币",
+          "canonical_en": "token",
+          "canonical_zh": "代币",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "token",
+            "代币"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001006",
+            "v7u_N001015"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NFT is a subtype/parallel item and is excluded.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？ 建议停止该交易，因为加密资产总体上不受监管，其性质决定了会给银行带来不可接受的反洗钱风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？ 向顾问确认，如果客户的KYC（了解您的客户）信息是最新的，并且在公共区块链浏览器上进行搜索未发现任何负面媒体报道，客户可以继续进行交易 adverse media 负面媒体 negative media coverage negative media 负面媒体报道",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000016",
+          "matched_term": "负面媒体报道",
+          "canonical_en": "adverse media",
+          "canonical_zh": "负面媒体",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "negative media coverage",
+            "negative media",
+            "adverse media",
+            "负面媒体报道",
+            "负面媒体"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003105",
+            "v7u_N003190",
+            "v7u_N003191",
+            "v7u_N004754",
+            "v7u_N004776"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Adverse media and negative media/coverage are used interchangeably in AML context; Chinese variants are translations.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家银行的客户顾问联系合规团队的一名成员,寻求指导如何处理一位客户希望将出售加密资产所得的25万美元转入其在该银行的储蓄账户一事.合规团队应当提供哪些指导？ 向顾问确认客户可以进行交易，因为客户已正确完成KYC（了解您的客户）流程",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

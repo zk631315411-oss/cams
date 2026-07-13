@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000135",
+  "stem": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？",
+  "options": {
+    "A": "一位常去赌场的赌客，每次存入少量现金，却总是要求将赢来的钱换成大额支票提现",
+    "B": "一群游客用信用卡购买筹码，参与高额赌局，然后套现",
+    "C": "一名玩家使用现金和从国际账户通过电汇转入的5万美元购买筹码，但并未参与赌博，随后将筹码全部提现",
+    "D": "偶尔光顾的玩家，使用与国外账户关联的预付借记卡玩低注额的游戏"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "一位常去赌场的赌客，每次存入少量现金，却总是要求将赢来的钱换成大额支票提现",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位常去赌场的赌客，每次存入少量现金，却总是要求将赢来的钱换成大额支票提现"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "一群游客用信用卡购买筹码，参与高额赌局，然后套现",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一群游客用信用卡购买筹码，参与高额赌局，然后套现"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "一名玩家使用现金和从国际账户通过电汇转入的5万美元购买筹码，但并未参与赌博，随后将筹码全部提现",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一名玩家使用现金和从国际账户通过电汇转入的5万美元购买筹码，但并未参与赌博，随后将筹码全部提现"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "偶尔光顾的玩家，使用与国外账户关联的预付借记卡玩低注额的游戏",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "偶尔光顾的玩家，使用与国外账户关联的预付借记卡玩低注额的游戏"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？ 一位常去赌场的赌客，每次存入少量现金，却总是要求将赢来的钱换成大额支票提现",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？ 一群游客用信用卡购买筹码，参与高额赌局，然后套现",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？ 一名玩家使用现金和从国际账户通过电汇转入的5万美元购买筹码，但并未参与赌博，随后将筹码全部提现",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？ 偶尔光顾的玩家，使用与国外账户关联的预付借记卡玩低注额的游戏",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

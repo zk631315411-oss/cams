@@ -1,0 +1,297 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000151",
+  "stem": "《美国爱国者法案》第319(a)条:",
+  "options": {
+    "A": "允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况相关的记录或信息,或与之相关的记录或信息.该组织的客户或由该金融机构在美国开设、维持、管理或运营的任何账户.",
+    "B": "授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施.",
+    "C": "允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金.",
+    "D": "对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "《美国爱国者法案》第319(a)条:",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "USA PATRIOT Act",
+        "《爱国者法案》",
+        "美国《爱国者法案》"
+      ],
+      "normalized_text": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况相关的记录或信息,或与之相关的记录或信息.该组织的客户或由该金融机构在美国开设、维持、管理或运营的任何账户.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况相关的记录或信息,或与之相关的记录或信息.该组织的客户或由该金融机构在美国开设、维持、管理或运营的任何账户."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "jurisdiction",
+        "司法管辖区",
+        "jurisdictions",
+        "地域"
+      ],
+      "normalized_text": "授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施. jurisdiction 司法管辖区 jurisdictions 地域"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》 允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况相关的记录或信息,或与之相关的记录或信息.该组织的客户或由该金融机构在美国开设、维持、管理或运营的任何账户.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》 授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施. jurisdiction 司法管辖区 jurisdictions 地域",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》 允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "《美国爱国者法案》第319(a)条: USA PATRIOT Act 《爱国者法案》 美国《爱国者法案》 对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000043",
+          "matched_term": "美国《爱国者法案》",
+          "canonical_en": "USA PATRIOT Act",
+          "canonical_zh": "《爱国者法案》",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "USA PATRIOT Act",
+            "美国《爱国者法案》",
+            "《爱国者法案》"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001686",
+            "v7u_N001701",
+            "v7u_N003318"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Chinese translations of the same US Act; interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

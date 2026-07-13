@@ -1,0 +1,414 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000176",
+  "stem": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？",
+  "options": {
+    "A": "调查地址变更和最终受益人变更的情况,同时在调查完成并商定下一步措施之前,拒绝处理该保单的付款和提款指令",
+    "B": "请客户经理安排与投保人会面,以更新其地址,并以提供优质客户服务的名义提交新受益所有人的详细信息.",
+    "C": "调查地址变更和最终受益人变更的情况,同时冻结客户的保单.",
+    "D": "提交可疑交易报告,因为保险公司未获知该企业实际受益人的变更情况"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "ultimate beneficial owner",
+        "最终受益所有人",
+        "ultimate beneficial owners",
+        "UBO"
+      ],
+      "normalized_text": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "调查地址变更和最终受益人变更的情况,同时在调查完成并商定下一步措施之前,拒绝处理该保单的付款和提款指令",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "调查地址变更和最终受益人变更的情况,同时在调查完成并商定下一步措施之前,拒绝处理该保单的付款和提款指令"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "请客户经理安排与投保人会面,以更新其地址,并以提供优质客户服务的名义提交新受益所有人的详细信息.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "请客户经理安排与投保人会面,以更新其地址,并以提供优质客户服务的名义提交新受益所有人的详细信息. relationship manager 关系经理 客户经理"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "调查地址变更和最终受益人变更的情况,同时冻结客户的保单.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "调查地址变更和最终受益人变更的情况,同时冻结客户的保单."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "提交可疑交易报告,因为保险公司未获知该企业实际受益人的变更情况",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑交易报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "suspicious transaction",
+        "可疑交易",
+        "suspicious transactions"
+      ],
+      "normalized_text": "提交可疑交易报告,因为保险公司未获知该企业实际受益人的变更情况 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports suspicious transaction 可疑交易 suspicious transactions"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO 调查地址变更和最终受益人变更的情况,同时在调查完成并商定下一步措施之前,拒绝处理该保单的付款和提款指令",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO 请客户经理安排与投保人会面,以更新其地址,并以提供优质客户服务的名义提交新受益所有人的详细信息. relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO 调查地址变更和最终受益人变更的情况,同时冻结客户的保单.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？ ultimate beneficial owner 最终受益所有人 ultimate beneficial owners UBO 提交可疑交易报告,因为保险公司未获知该企业实际受益人的变更情况 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports suspicious transaction 可疑交易 suspicious transactions",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000183",
+          "matched_term": "最终受益所有人",
+          "canonical_en": "ultimate beneficial owner",
+          "canonical_zh": "最终受益所有人",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "ultimate beneficial owners",
+            "ultimate beneficial owner",
+            "最终受益所有人",
+            "UBO"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000485",
+            "v7u_N000486",
+            "v7u_N000488",
+            "v7u_N003088"
+          ],
+          "not_kg_edge": true,
+          "review_note": "UBO is the standard abbreviation; ultimate beneficial owners is the plural form and used interchangeably with UBO. Chinese term translates the full form.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑交易报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

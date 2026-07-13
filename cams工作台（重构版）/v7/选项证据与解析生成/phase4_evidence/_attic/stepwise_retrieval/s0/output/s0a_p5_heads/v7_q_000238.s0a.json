@@ -1,0 +1,179 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000238",
+  "stem": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.)",
+  "options": {
+    "A": "利用预设规则标记特定的交易模式",
+    "B": "随机标记交易以作进一步调查",
+    "C": "通过统计方法调整监测场景以提高准确性",
+    "D": "利用先进的机器学习模型检测异常值",
+    "E": "设置用于自动警报的交易阀值"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用预设规则标记特定的交易模式",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000093",
+          "matched_term": "交易模式",
+          "canonical_en": "transaction patterns",
+          "canonical_zh": "交易模式",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional patterns",
+            "transaction patterns",
+            "交易模式"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003403",
+            "v7u_N002852"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction patterns and transactional patterns are minor wording variants for the same concept; both translate to 交易模式.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "transaction patterns",
+        "交易模式",
+        "transactional patterns"
+      ],
+      "normalized_text": "利用预设规则标记特定的交易模式 transaction patterns 交易模式 transactional patterns"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "随机标记交易以作进一步调查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "随机标记交易以作进一步调查"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "通过统计方法调整监测场景以提高准确性",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过统计方法调整监测场景以提高准确性"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "利用先进的机器学习模型检测异常值",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用先进的机器学习模型检测异常值"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "设置用于自动警报的交易阀值",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "设置用于自动警报的交易阀值"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.) 利用预设规则标记特定的交易模式 transaction patterns 交易模式 transactional patterns",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000093",
+          "matched_term": "交易模式",
+          "canonical_en": "transaction patterns",
+          "canonical_zh": "交易模式",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional patterns",
+            "transaction patterns",
+            "交易模式"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003403",
+            "v7u_N002852"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction patterns and transactional patterns are minor wording variants for the same concept; both translate to 交易模式.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.) 随机标记交易以作进一步调查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.) 通过统计方法调整监测场景以提高准确性",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.) 利用先进的机器学习模型检测异常值",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "在基于规则的交易监控方法中,用于检测可疑活动的最常见技术有哪些？(选择两项.) 设置用于自动警报的交易阀值",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

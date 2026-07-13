@@ -1,0 +1,251 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000078",
+  "stem": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？",
+  "options": {
+    "A": "客户提供的信息与公开资料或业务活动不一致",
+    "B": "客户要求降低服务费用",
+    "C": "客户询问账户开立流程所需时间",
+    "D": "客户提供了完整的身份证明文件"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "客户提供的信息与公开资料或业务活动不一致",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "客户提供的信息与公开资料或业务活动不一致"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "客户要求降低服务费用",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "客户要求降低服务费用"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "客户询问账户开立流程所需时间",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "客户询问账户开立流程所需时间"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "客户提供了完整的身份证明文件",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "客户提供了完整的身份证明文件"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers 客户提供的信息与公开资料或业务活动不一致",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers 客户要求降低服务费用",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers 客户询问账户开立流程所需时间",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？ compliance officer 合规官 compliance officers 客户提供了完整的身份证明文件",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

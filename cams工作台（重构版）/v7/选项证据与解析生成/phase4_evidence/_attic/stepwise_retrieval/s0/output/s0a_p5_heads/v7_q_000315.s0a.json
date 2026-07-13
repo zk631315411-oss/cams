@@ -1,0 +1,293 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000315",
+  "stem": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.)",
+  "options": {
+    "A": "使用电汇",
+    "B": "滞留",
+    "C": "第三方的指示或参与",
+    "D": "无合理理由修改的信用证",
+    "E": "非标准结算安排"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "trade-based money laundering",
+        "贸易洗钱",
+        "贸易型洗钱"
+      ],
+      "normalized_text": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "使用电汇",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "使用电汇"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "滞留",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "滞留"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "第三方的指示或参与",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "第三方的指示或参与"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "无合理理由修改的信用证",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "无合理理由修改的信用证"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "非标准结算安排",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "非标准结算安排"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱 使用电汇",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱 滞留",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱 第三方的指示或参与",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱 无合理理由修改的信用证",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "哪些警示信号适用于基于贸易的洗钱(TBML)计划？(选择三项.) trade-based money laundering 贸易洗钱 贸易型洗钱 非标准结算安排",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000019",
+          "matched_term": "贸易洗钱",
+          "canonical_en": "trade-based money laundering",
+          "canonical_zh": "贸易洗钱",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "trade-based money laundering",
+            "贸易型洗钱",
+            "贸易洗钱"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000532",
+            "v7u_N000213",
+            "v7u_N000279",
+            "v7u_N000656"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both Chinese terms are translation variants for trade-based money laundering; 贸易型洗钱 is a slightly longer form but refers to the same concept.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

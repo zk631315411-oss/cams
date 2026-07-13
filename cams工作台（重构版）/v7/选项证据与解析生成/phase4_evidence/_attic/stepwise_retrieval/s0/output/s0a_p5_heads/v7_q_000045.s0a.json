@@ -1,0 +1,439 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000045",
+  "stem": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法:",
+  "options": {
+    "A": "规定在FI的风险评估中必须考虑哪些犯罪行为.",
+    "B": "就风险最高的客户类型和交易类型提供指导.",
+    "C": "明确规定必须实施的具体政策和程序.",
+    "D": "确定可对反洗钱违规行为处以的最高罚款金额."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法:",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "national risk assessment",
+        "国家风险评估",
+        "NRA",
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "规定在FI的风险评估中必须考虑哪些犯罪行为.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "规定在FI的风险评估中必须考虑哪些犯罪行为."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "就风险最高的客户类型和交易类型提供指导.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "就风险最高的客户类型和交易类型提供指导."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "明确规定必须实施的具体政策和程序.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "policies and procedures",
+        "政策与程序",
+        "政策和程序"
+      ],
+      "normalized_text": "明确规定必须实施的具体政策和程序. policies and procedures 政策与程序 政策和程序"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "确定可对反洗钱违规行为处以的最高罚款金额.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确定可对反洗钱违规行为处以的最高罚款金额."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 规定在FI的风险评估中必须考虑哪些犯罪行为.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 就风险最高的客户类型和交易类型提供指导.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 明确规定必须实施的具体政策和程序. policies and procedures 政策与程序 政策和程序",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法: national risk assessment 国家风险评估 NRA terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 确定可对反洗钱违规行为处以的最高罚款金额.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

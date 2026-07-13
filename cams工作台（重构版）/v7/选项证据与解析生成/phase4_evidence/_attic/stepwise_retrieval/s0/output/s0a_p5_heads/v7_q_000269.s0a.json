@@ -1,0 +1,316 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000269",
+  "stem": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.)",
+  "options": {
+    "A": "向该公司在香港的银行发出314(b)请求",
+    "B": "与收件人联系以核实身份证明文件",
+    "C": "确认受益人和发起人均非受制裁方",
+    "D": "要求提供相关证明文件,包括发票和合同,以确认付款用途",
+    "E": "在公开渠道上核查发件人和收件人的负面新闻"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "向该公司在香港的银行发出314(b)请求",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "向该公司在香港的银行发出314(b)请求"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "与收件人联系以核实身份证明文件",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与收件人联系以核实身份证明文件"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "确认受益人和发起人均非受制裁方",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确认受益人和发起人均非受制裁方"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "要求提供相关证明文件,包括发票和合同,以确认付款用途",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "要求提供相关证明文件,包括发票和合同,以确认付款用途"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "在公开渠道上核查发件人和收件人的负面新闻",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在公开渠道上核查发件人和收件人的负面新闻"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 向该公司在香港的银行发出314(b)请求",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 与收件人联系以核实身份证明文件",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 确认受益人和发起人均非受制裁方",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 要求提供相关证明文件,包括发票和合同,以确认付款用途",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终受益人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 在公开渠道上核查发件人和收件人的负面新闻",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

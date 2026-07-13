@@ -1,0 +1,257 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000051",
+  "stem": "反贿赂和反腐败法规的主要目的是什么？",
+  "options": {
+    "A": "禁止任何个人或实体向政府官员或国有企业员工支付任何有价值的东西以获取不正当的商业利益",
+    "B": "禁止政府高级官员将非法所得资金转换为合法资金",
+    "C": "为防范腐败的外国敌对势力利用非法资金干预选举",
+    "D": "为防止高级政治人物利用非法手段逃避纳税"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "反贿赂和反腐败法规的主要目的是什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "bribery",
+        "贿赂",
+        "bribe"
+      ],
+      "normalized_text": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "禁止任何个人或实体向政府官员或国有企业员工支付任何有价值的东西以获取不正当的商业利益",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "禁止任何个人或实体向政府官员或国有企业员工支付任何有价值的东西以获取不正当的商业利益"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "禁止政府高级官员将非法所得资金转换为合法资金",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "禁止政府高级官员将非法所得资金转换为合法资金"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "为防范腐败的外国敌对势力利用非法资金干预选举",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为防范腐败的外国敌对势力利用非法资金干预选举"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "为防止高级政治人物利用非法手段逃避纳税",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为防止高级政治人物利用非法手段逃避纳税"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe 禁止任何个人或实体向政府官员或国有企业员工支付任何有价值的东西以获取不正当的商业利益",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe 禁止政府高级官员将非法所得资金转换为合法资金",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe 为防范腐败的外国敌对势力利用非法资金干预选举",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "反贿赂和反腐败法规的主要目的是什么？ bribery 贿赂 bribe 为防止高级政治人物利用非法手段逃避纳税",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

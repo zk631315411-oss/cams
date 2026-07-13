@@ -1,0 +1,308 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000213",
+  "stem": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？",
+  "options": {
+    "A": "经济合作与发展组织(经合组织)",
+    "B": "埃格蒙特集团",
+    "C": "狼堡集团",
+    "D": "国际货币基金组织(IMF)"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "经济合作与发展组织(经合组织)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "经济合作与发展组织(经合组织)"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "埃格蒙特集团",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "埃格蒙特集团"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "狼堡集团",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "狼堡集团"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "国际货币基金组织(IMF)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000141",
+          "matched_term": "IMF",
+          "canonical_en": "International Monetary Fund",
+          "canonical_zh": "",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "International Monetary Fund",
+            "IMF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001488"
+          ],
+          "not_kg_edge": true,
+          "review_note": "IMF is the universally recognized abbreviation for the International Monetary Fund.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "International Monetary Fund",
+        "IMF"
+      ],
+      "normalized_text": "国际货币基金组织(IMF) International Monetary Fund IMF"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 经济合作与发展组织(经合组织)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 埃格蒙特集团",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 狼堡集团",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪个金融情报机构(FIU)的集体组织成立目的是改善成员FIU之间的信息交流和共享机制,并通过增强其成员的能力来支持它们？ Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 国际货币基金组织(IMF) International Monetary Fund IMF",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000141",
+          "matched_term": "IMF",
+          "canonical_en": "International Monetary Fund",
+          "canonical_zh": "",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "International Monetary Fund",
+            "IMF"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001488"
+          ],
+          "not_kg_edge": true,
+          "review_note": "IMF is the universally recognized abbreviation for the International Monetary Fund.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

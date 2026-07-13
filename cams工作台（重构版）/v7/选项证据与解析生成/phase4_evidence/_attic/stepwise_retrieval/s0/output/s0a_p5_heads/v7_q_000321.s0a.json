@@ -1,0 +1,407 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000321",
+  "stem": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.)",
+  "options": {
+    "A": "尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。",
+    "B": "如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。",
+    "C": "尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000070",
+          "matched_term": "合规文化",
+          "canonical_en": "culture of compliance",
+          "canonical_zh": "合规文化",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "culture of compliance",
+            "compliance culture",
+            "合规文化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002558",
+            "v7u_N002600",
+            "v7u_N002602",
+            "v7u_N002604"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'compliance culture' and 'culture of compliance' are equivalent wordings for the same concept; both translate to '合规文化'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "culture of compliance",
+        "合规文化",
+        "compliance culture",
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.) culture of compliance 合规文化 compliance culture compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000095",
+          "matched_term": "处罚",
+          "canonical_en": "penalty",
+          "canonical_zh": "处罚",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "penalties",
+            "penalty",
+            "处罚"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003580",
+            "v7u_N003509"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Penalty and penalties are singular/plural variants of the same term; both translate to 处罚 in Chinese.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "penalty",
+        "处罚",
+        "penalties"
+      ],
+      "normalized_text": "如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。 penalty 处罚 penalties"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body"
+      ],
+      "normalized_text": "尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。 regulator 监管机构 regulatory body"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.) culture of compliance 合规文化 compliance culture compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000070",
+          "matched_term": "合规文化",
+          "canonical_en": "culture of compliance",
+          "canonical_zh": "合规文化",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "culture of compliance",
+            "compliance culture",
+            "合规文化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002558",
+            "v7u_N002600",
+            "v7u_N002602",
+            "v7u_N002604"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'compliance culture' and 'culture of compliance' are equivalent wordings for the same concept; both translate to '合规文化'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.) culture of compliance 合规文化 compliance culture compliance officer 合规官 compliance officers 尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000070",
+          "matched_term": "合规文化",
+          "canonical_en": "culture of compliance",
+          "canonical_zh": "合规文化",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "culture of compliance",
+            "compliance culture",
+            "合规文化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002558",
+            "v7u_N002600",
+            "v7u_N002602",
+            "v7u_N002604"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'compliance culture' and 'culture of compliance' are equivalent wordings for the same concept; both translate to '合规文化'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.) culture of compliance 合规文化 compliance culture compliance officer 合规官 compliance officers 如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。 penalty 处罚 penalties",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000070",
+          "matched_term": "合规文化",
+          "canonical_en": "culture of compliance",
+          "canonical_zh": "合规文化",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "culture of compliance",
+            "compliance culture",
+            "合规文化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002558",
+            "v7u_N002600",
+            "v7u_N002602",
+            "v7u_N002604"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'compliance culture' and 'culture of compliance' are equivalent wordings for the same concept; both translate to '合规文化'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000095",
+          "matched_term": "处罚",
+          "canonical_en": "penalty",
+          "canonical_zh": "处罚",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "penalties",
+            "penalty",
+            "处罚"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003580",
+            "v7u_N003509"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Penalty and penalties are singular/plural variants of the same term; both translate to 处罚 in Chinese.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.) culture of compliance 合规文化 compliance culture compliance officer 合规官 compliance officers 尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。 regulator 监管机构 regulatory body",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000070",
+          "matched_term": "合规文化",
+          "canonical_en": "culture of compliance",
+          "canonical_zh": "合规文化",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "culture of compliance",
+            "compliance culture",
+            "合规文化"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002558",
+            "v7u_N002600",
+            "v7u_N002602",
+            "v7u_N002604"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'compliance culture' and 'culture of compliance' are equivalent wordings for the same concept; both translate to '合规文化'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

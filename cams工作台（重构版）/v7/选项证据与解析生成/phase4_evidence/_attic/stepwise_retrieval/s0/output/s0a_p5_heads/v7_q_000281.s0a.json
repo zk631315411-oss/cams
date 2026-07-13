@@ -1,0 +1,406 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000281",
+  "stem": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.)",
+  "options": {
+    "A": "利用空壳公司或信托来保护隐私、规划不周或保护资产.",
+    "B": "以不相关的第三方名义购买.",
+    "C": "进行全现金购房",
+    "D": "利用法人实体和中介机构来保护购买者的隐私.",
+    "E": "利用以现金或定期存款单作担保的贷款."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用空壳公司或信托来保护隐私、规划不周或保护资产.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "shell company",
+        "壳公司",
+        "shell corporation"
+      ],
+      "normalized_text": "利用空壳公司或信托来保护隐私、规划不周或保护资产. shell company 壳公司 shell corporation"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "以不相关的第三方名义购买.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以不相关的第三方名义购买."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "进行全现金购房",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "进行全现金购房"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "利用法人实体和中介机构来保护购买者的隐私.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中介",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "intermediaries",
+        "中介",
+        "中间人"
+      ],
+      "normalized_text": "利用法人实体和中介机构来保护购买者的隐私. intermediaries 中介 中间人"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "利用以现金或定期存款单作担保的贷款.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用以现金或定期存款单作担保的贷款."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 利用空壳公司或信托来保护隐私、规划不周或保护资产. shell company 壳公司 shell corporation",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 以不相关的第三方名义购买.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 进行全现金购房",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 利用法人实体和中介机构来保护购买者的隐私. intermediaries 中介 中间人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中介",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]房地产领域潜在洗钱的警示信号包括完成豪华房地产交易.(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 利用以现金或定期存款单作担保的贷款.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

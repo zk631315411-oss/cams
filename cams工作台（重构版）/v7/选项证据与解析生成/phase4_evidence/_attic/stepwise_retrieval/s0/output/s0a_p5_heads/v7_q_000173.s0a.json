@@ -1,0 +1,165 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000173",
+  "stem": "以下哪些属性会增强反洗钱计划的有效性？",
+  "options": {
+    "A": "对所有员工进行基本的反洗钱培训",
+    "B": "任命一名反洗钱专员作为董事会成员,使其成为管理层的正式成员,并赋予其更大的权力",
+    "C": "审计人员在审计结果不尽如人意的情况下,为项目提供具体的指导和支持",
+    "D": "通过反洗钱工作人员提供有效的挑战以及持续的交叉培训"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些属性会增强反洗钱计划的有效性？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些属性会增强反洗钱计划的有效性？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "对所有员工进行基本的反洗钱培训",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对所有员工进行基本的反洗钱培训"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "任命一名反洗钱专员作为董事会成员,使其成为管理层的正式成员,并赋予其更大的权力",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "任命一名反洗钱专员作为董事会成员,使其成为管理层的正式成员,并赋予其更大的权力 board of directors 董事会 board"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "审计人员在审计结果不尽如人意的情况下,为项目提供具体的指导和支持",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "审计人员在审计结果不尽如人意的情况下,为项目提供具体的指导和支持"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "通过反洗钱工作人员提供有效的挑战以及持续的交叉培训",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通过反洗钱工作人员提供有效的挑战以及持续的交叉培训"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些属性会增强反洗钱计划的有效性？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些属性会增强反洗钱计划的有效性？ 对所有员工进行基本的反洗钱培训",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些属性会增强反洗钱计划的有效性？ 任命一名反洗钱专员作为董事会成员,使其成为管理层的正式成员,并赋予其更大的权力 board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些属性会增强反洗钱计划的有效性？ 审计人员在审计结果不尽如人意的情况下,为项目提供具体的指导和支持",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些属性会增强反洗钱计划的有效性？ 通过反洗钱工作人员提供有效的挑战以及持续的交叉培训",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

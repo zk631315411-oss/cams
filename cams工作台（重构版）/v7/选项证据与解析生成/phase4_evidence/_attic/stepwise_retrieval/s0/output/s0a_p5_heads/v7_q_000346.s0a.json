@@ -1,0 +1,185 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000346",
+  "stem": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。)",
+  "options": {
+    "A": "利用区块链确保共享数据交易的可追溯性和安全性",
+    "B": "数据加密以保护敏感信息免受未经授权的访问",
+    "C": "隐私增强技术(PETs)，以实现安全且符合隐私保护要求的数据共享",
+    "D": "人工智能(AI)用于自动化合规流程，例如数据匿名化和安全共享",
+    "E": "用于高效数据处理和管理的云存储解决方案"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用区块链确保共享数据交易的可追溯性和安全性",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用区块链确保共享数据交易的可追溯性和安全性"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "数据加密以保护敏感信息免受未经授权的访问",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "数据加密以保护敏感信息免受未经授权的访问"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "隐私增强技术(PETs)，以实现安全且符合隐私保护要求的数据共享",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "隐私增强技术(PETs)，以实现安全且符合隐私保护要求的数据共享"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "人工智能(AI)用于自动化合规流程，例如数据匿名化和安全共享",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "人工智能(AI)用于自动化合规流程，例如数据匿名化和安全共享 artificial intelligence 人工智能 AI"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "用于高效数据处理和管理的云存储解决方案",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "用于高效数据处理和管理的云存储解决方案"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。) 利用区块链确保共享数据交易的可追溯性和安全性",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。) 数据加密以保护敏感信息免受未经授权的访问",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。) 隐私增强技术(PETs)，以实现安全且符合隐私保护要求的数据共享",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。) 人工智能(AI)用于自动化合规流程，例如数据匿名化和安全共享 artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "哪些技术通常被用于帮助金融机构(FIs)在安全地与私营第三方实体共享客户信息的同时，遵守隐私和数据保护法规？(选择两项。) 用于高效数据处理和管理的云存储解决方案",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000090",
+  "stem": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？",
+  "options": {
+    "A": "通知客户并征求其同意",
+    "B": "与机构的法律顾问协商，评估其有效性并确定适当的应对措施",
+    "C": "立即向大陪审团提供记录",
+    "D": "提交一份可疑活动报告（SAR），说明收到传票的情况"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "politically exposed person",
+        "政治敏感人物",
+        "PEP",
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "通知客户并征求其同意",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "通知客户并征求其同意"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "与机构的法律顾问协商，评估其有效性并确定适当的应对措施",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与机构的法律顾问协商，评估其有效性并确定适当的应对措施"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "立即向大陪审团提供记录",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "立即向大陪审团提供记录"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "提交一份可疑活动报告（SAR），说明收到传票的情况",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports"
+      ],
+      "normalized_text": "提交一份可疑活动报告（SAR），说明收到传票的情况 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers 通知客户并征求其同意",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers 与机构的法律顾问协商，评估其有效性并确定适当的应对措施",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers 立即向大陪审团提供记录",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家美国金融机构的合规官收到大陪审团传票，要求提供与涉及一名政治公众人物（PEP）的正在进行的洗钱调查相关的客户记录。合规官首先应该做什么？ politically exposed person 政治敏感人物 PEP compliance officer 合规官 compliance officers 提交一份可疑活动报告（SAR），说明收到传票的情况 suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000332",
+  "stem": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.)",
+  "options": {
+    "A": "某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。",
+    "B": "未中标者将被告知决定，并获提供授予合同的详细理由。",
+    "C": "采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。",
+    "D": "发布投标信息。"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "bribery",
+        "贿赂",
+        "bribe"
+      ],
+      "normalized_text": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "未中标者将被告知决定，并获提供授予合同的详细理由。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "未中标者将被告知决定，并获提供授予合同的详细理由。"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "发布投标信息。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "发布投标信息。"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe 某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe 未中标者将被告知决定，并获提供授予合同的详细理由。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe 采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.) bribery 贿赂 bribe 发布投标信息。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

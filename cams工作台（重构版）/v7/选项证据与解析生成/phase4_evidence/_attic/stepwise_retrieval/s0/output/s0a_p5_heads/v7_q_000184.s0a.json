@@ -1,0 +1,165 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000184",
+  "stem": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？",
+  "options": {
+    "A": "预填充的搜救报告模板",
+    "B": "集成开源工具以收集实时情报",
+    "C": "基于风险评分的自动化案件优先级排序",
+    "D": "由人工智能驱动的汇总了被标记交易的仪表板"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "预填充的搜救报告模板",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "预填充的搜救报告模板"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "集成开源工具以收集实时情报",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "集成开源工具以收集实时情报"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "基于风险评分的自动化案件优先级排序",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "基于风险评分的自动化案件优先级排序"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "由人工智能驱动的汇总了被标记交易的仪表板",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "由人工智能驱动的汇总了被标记交易的仪表板 artificial intelligence 人工智能 AI"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？ 预填充的搜救报告模板",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？ 集成开源工具以收集实时情报",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？ 基于风险评分的自动化案件优先级排序",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易.目前,调查人员花费大量时间能有效提高调查人员的工作效率？ 由人工智能驱动的汇总了被标记交易的仪表板 artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000053",
+  "stem": "在资本市场中,哪一面红旗最能表明洗钱行为？",
+  "options": {
+    "A": "一只低价股突然受到投资者追捧,股价飙升.",
+    "B": "一位交易客户持有集中于某一特定新兴市场的证券投资组合.",
+    "C": "一家公司发现电子交易基金的需求意外增加",
+    "D": "一名安保人员发现交易模式呈现出成交量和价格双双持续下降的趋势"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在资本市场中,哪一面红旗最能表明洗钱行为？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在资本市场中,哪一面红旗最能表明洗钱行为？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "一只低价股突然受到投资者追捧,股价飙升.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一只低价股突然受到投资者追捧,股价飙升."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "一位交易客户持有集中于某一特定新兴市场的证券投资组合.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一位交易客户持有集中于某一特定新兴市场的证券投资组合."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "一家公司发现电子交易基金的需求意外增加",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一家公司发现电子交易基金的需求意外增加"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "一名安保人员发现交易模式呈现出成交量和价格双双持续下降的趋势",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000093",
+          "matched_term": "交易模式",
+          "canonical_en": "transaction patterns",
+          "canonical_zh": "交易模式",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional patterns",
+            "transaction patterns",
+            "交易模式"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003403",
+            "v7u_N002852"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction patterns and transactional patterns are minor wording variants for the same concept; both translate to 交易模式.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "transaction patterns",
+        "交易模式",
+        "transactional patterns"
+      ],
+      "normalized_text": "一名安保人员发现交易模式呈现出成交量和价格双双持续下降的趋势 transaction patterns 交易模式 transactional patterns"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在资本市场中,哪一面红旗最能表明洗钱行为？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在资本市场中,哪一面红旗最能表明洗钱行为？ 一只低价股突然受到投资者追捧,股价飙升.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在资本市场中,哪一面红旗最能表明洗钱行为？ 一位交易客户持有集中于某一特定新兴市场的证券投资组合.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在资本市场中,哪一面红旗最能表明洗钱行为？ 一家公司发现电子交易基金的需求意外增加",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在资本市场中,哪一面红旗最能表明洗钱行为？ 一名安保人员发现交易模式呈现出成交量和价格双双持续下降的趋势 transaction patterns 交易模式 transactional patterns",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000093",
+          "matched_term": "交易模式",
+          "canonical_en": "transaction patterns",
+          "canonical_zh": "交易模式",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "transactional patterns",
+            "transaction patterns",
+            "交易模式"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003403",
+            "v7u_N002852"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Transaction patterns and transactional patterns are minor wording variants for the same concept; both translate to 交易模式.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

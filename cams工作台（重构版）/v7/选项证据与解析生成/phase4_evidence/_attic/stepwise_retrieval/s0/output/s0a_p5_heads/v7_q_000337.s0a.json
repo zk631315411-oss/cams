@@ -1,0 +1,346 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000337",
+  "stem": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.)",
+  "options": {
+    "A": "政治公众人物（PEPs）",
+    "B": "资本外逃风险",
+    "C": "反贿赂与反腐败风险",
+    "D": "税务欺诈"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "政治公众人物（PEPs）",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "政治公众人物（PEPs）"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "资本外逃风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "资本外逃风险"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "反贿赂与反腐败风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000033",
+          "matched_term": "反贿赂与反腐败",
+          "canonical_en": "anti-bribery and corruption",
+          "canonical_zh": "反贿赂与反腐败",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "anti-bribery and corruption",
+            "反贿赂与反腐败",
+            "反贿赂与腐败",
+            "ABC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000141",
+            "v7u_N001963",
+            "v7u_N002658"
+          ],
+          "not_kg_edge": true,
+          "review_note": "ABC is the well-established abbreviation; Chinese variants are interchangeable translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "anti-bribery and corruption",
+        "反贿赂与反腐败",
+        "反贿赂与腐败",
+        "ABC",
+        "bribery",
+        "贿赂",
+        "bribe"
+      ],
+      "normalized_text": "反贿赂与反腐败风险 anti-bribery and corruption 反贿赂与反腐败 反贿赂与腐败 ABC bribery 贿赂 bribe"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "税务欺诈",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "税务欺诈"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers 政治公众人物（PEPs）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers 资本外逃风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers 反贿赂与反腐败风险 anti-bribery and corruption 反贿赂与反腐败 反贿赂与腐败 ABC bribery 贿赂 bribe",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000033",
+          "matched_term": "反贿赂与反腐败",
+          "canonical_en": "anti-bribery and corruption",
+          "canonical_zh": "反贿赂与反腐败",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "anti-bribery and corruption",
+            "反贿赂与反腐败",
+            "反贿赂与腐败",
+            "ABC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000141",
+            "v7u_N001963",
+            "v7u_N002658"
+          ],
+          "not_kg_edge": true,
+          "review_note": "ABC is the well-established abbreviation; Chinese variants are interchangeable translations.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "合规官正在审查一份针对一家新外国机构的银行合作提案,该机构是一家跨国企业,但总部设在一个大多数企业为国有的国家.在审查中应优先考虑哪些风险？(选择两项.) compliance officer 合规官 compliance officers 税务欺诈",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

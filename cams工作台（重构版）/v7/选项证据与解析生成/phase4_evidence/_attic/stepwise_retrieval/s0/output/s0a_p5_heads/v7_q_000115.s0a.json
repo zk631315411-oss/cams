@@ -1,0 +1,159 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000115",
+  "stem": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？",
+  "options": {
+    "A": "实体注册所在国缺乏专业机构监管或未强制要求使用会计和审计标准",
+    "B": "犯罪分子假扮成寻求财务建议的个人，将资产转移至难以触及之处，以逃避未来可能承担的责任",
+    "C": "记账时提供的记录不完整，导致难以审计",
+    "D": "会计师被用作中间人，将犯罪分子介绍给金融机构"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "实体注册所在国缺乏专业机构监管或未强制要求使用会计和审计标准",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "实体注册所在国缺乏专业机构监管或未强制要求使用会计和审计标准"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "犯罪分子假扮成寻求财务建议的个人，将资产转移至难以触及之处，以逃避未来可能承担的责任",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "犯罪分子假扮成寻求财务建议的个人，将资产转移至难以触及之处，以逃避未来可能承担的责任"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "记账时提供的记录不完整，导致难以审计",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "记账时提供的记录不完整，导致难以审计"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "会计师被用作中间人，将犯罪分子介绍给金融机构",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中间人",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "intermediaries",
+        "中介",
+        "中间人"
+      ],
+      "normalized_text": "会计师被用作中间人，将犯罪分子介绍给金融机构 intermediaries 中介 中间人"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？ 实体注册所在国缺乏专业机构监管或未强制要求使用会计和审计标准",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？ 犯罪分子假扮成寻求财务建议的个人，将资产转移至难以触及之处，以逃避未来可能承担的责任",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？ 记账时提供的记录不完整，导致难以审计",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "犯罪分子可能会滥用由会计师编制的财务报表来隐藏非法资产。以下哪种情形最有可能导致犯罪分子操纵财务报表？ 会计师被用作中间人，将犯罪分子介绍给金融机构 intermediaries 中介 中间人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000053",
+          "matched_term": "中间人",
+          "canonical_en": "intermediaries",
+          "canonical_zh": "中介",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "intermediaries",
+            "中间人",
+            "中介"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004341",
+            "v7u_N000138"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'中介' and '中间人' are both standard translations for 'intermediaries' and are used interchangeably in the evidence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

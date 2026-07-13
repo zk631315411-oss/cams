@@ -1,0 +1,181 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000316",
+  "stem": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.)",
+  "options": {
+    "A": "邀请潜在客户参加入职面谈",
+    "B": "拒绝任何政治公众人物(PEP)成为客户",
+    "C": "了解资产的来源和出处",
+    "D": "对潜在客户进行负面新闻核查",
+    "E": "编制有关重点客户的金融稳定报告"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "邀请潜在客户参加入职面谈",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "邀请潜在客户参加入职面谈"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "拒绝任何政治公众人物(PEP)成为客户",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "politically exposed person",
+        "政治敏感人物",
+        "PEP"
+      ],
+      "normalized_text": "拒绝任何政治公众人物(PEP)成为客户 politically exposed person 政治敏感人物 PEP"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "了解资产的来源和出处",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "了解资产的来源和出处"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "对潜在客户进行负面新闻核查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对潜在客户进行负面新闻核查"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "编制有关重点客户的金融稳定报告",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "编制有关重点客户的金融稳定报告"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.) 邀请潜在客户参加入职面谈",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.) 拒绝任何政治公众人物(PEP)成为客户 politically exposed person 政治敏感人物 PEP",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.) 了解资产的来源和出处",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.) 对潜在客户进行负面新闻核查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "以下哪些是欧盟受监管资产管理公司的合规经理应实施的重要反洗钱控制措施？(选择两项.) 编制有关重点客户的金融稳定报告",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

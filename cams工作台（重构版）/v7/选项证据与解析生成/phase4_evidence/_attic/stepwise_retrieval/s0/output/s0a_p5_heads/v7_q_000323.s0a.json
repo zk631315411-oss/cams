@@ -1,0 +1,221 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000323",
+  "stem": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.)",
+  "options": {
+    "A": "声誉风险。",
+    "B": "客户的个人关系。",
+    "C": "账户活动的频率。",
+    "D": "该金融机构的政策和程序。",
+    "E": "相关行为本身的严重程度。",
+    "F": "与执法部门的往来信函。",
+    "G": "关闭账户的法律依据。"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "声誉风险。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "声誉风险。"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "客户的个人关系。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "客户的个人关系。"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "账户活动的频率。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "账户活动的频率。"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "该金融机构的政策和程序。",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "policies and procedures",
+        "政策与程序",
+        "政策和程序"
+      ],
+      "normalized_text": "该金融机构的政策和程序。 policies and procedures 政策与程序 政策和程序"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "相关行为本身的严重程度。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "相关行为本身的严重程度。"
+    },
+    "option_F": {
+      "field_id": "option_F",
+      "text": "与执法部门的往来信函。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与执法部门的往来信函。"
+    },
+    "option_G": {
+      "field_id": "option_G",
+      "text": "关闭账户的法律依据。",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "关闭账户的法律依据。"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 声誉风险。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 客户的个人关系。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 账户活动的频率。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 该金融机构的政策和程序。 policies and procedures 政策与程序 政策和程序",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 相关行为本身的严重程度。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_F",
+      "head_kind": "option",
+      "option": "F",
+      "parts": [
+        "stem",
+        "option_F"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 与执法部门的往来信函。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_G",
+      "head_kind": "option",
+      "option": "G",
+      "parts": [
+        "stem",
+        "option_G"
+      ],
+      "query_zh": "金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.) 关闭账户的法律依据。",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

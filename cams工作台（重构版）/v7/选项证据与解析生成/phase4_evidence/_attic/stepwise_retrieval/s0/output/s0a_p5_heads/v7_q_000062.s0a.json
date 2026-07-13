@@ -1,0 +1,251 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000062",
+  "stem": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？",
+  "options": {
+    "A": "手动审查所有被标记的关系以确保准确无误",
+    "B": "对间接关联实施风险评分算法",
+    "C": "整合外部数据库和社交媒体资料，以交叉核对被标记的实体",
+    "D": "关注客户与犯罪实体之间的直接联系"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "compliance officer",
+        "合规官",
+        "compliance officers"
+      ],
+      "normalized_text": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "手动审查所有被标记的关系以确保准确无误",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "手动审查所有被标记的关系以确保准确无误"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "对间接关联实施风险评分算法",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对间接关联实施风险评分算法"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "整合外部数据库和社交媒体资料，以交叉核对被标记的实体",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "整合外部数据库和社交媒体资料，以交叉核对被标记的实体"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "关注客户与犯罪实体之间的直接联系",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "关注客户与犯罪实体之间的直接联系"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers 手动审查所有被标记的关系以确保准确无误",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers 对间接关联实施风险评分算法",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers 整合外部数据库和社交媒体资料，以交叉核对被标记的实体",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？ compliance officer 合规官 compliance officers 关注客户与犯罪实体之间的直接联系",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000073",
+          "matched_term": "合规官",
+          "canonical_en": "compliance officer",
+          "canonical_zh": "合规官",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "compliance officers",
+            "compliance officer",
+            "合规官"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002865",
+            "v7u_N003310",
+            "v7u_N003483",
+            "v7u_N002340"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same term; both denote '合规官'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

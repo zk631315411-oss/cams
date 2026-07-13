@@ -1,0 +1,170 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000107",
+  "stem": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？",
+  "options": {
+    "A": "确定潜在可疑活动是否与客户的交易行为、业务性质和职业相符",
+    "B": "联系该国金融情报机构（FIU）的官员，就潜在可疑活动是否确属可疑活动征求建议",
+    "C": "收集并评估内部信息来源，包括从客户、交易以及交易价值和数量中获取的信息",
+    "D": "识别并审查外部信息，包括网络形象、与客户相关的实体以及相关媒体"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "确定潜在可疑活动是否与客户的交易行为、业务性质和职业相符",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "确定潜在可疑活动是否与客户的交易行为、业务性质和职业相符"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "联系该国金融情报机构（FIU）的官员，就潜在可疑活动是否确属可疑活动征求建议",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "联系该国金融情报机构（FIU）的官员，就潜在可疑活动是否确属可疑活动征求建议 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "收集并评估内部信息来源，包括从客户、交易以及交易价值和数量中获取的信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "收集并评估内部信息来源，包括从客户、交易以及交易价值和数量中获取的信息"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "识别并审查外部信息，包括网络形象、与客户相关的实体以及相关媒体",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "识别并审查外部信息，包括网络形象、与客户相关的实体以及相关媒体"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？ 确定潜在可疑活动是否与客户的交易行为、业务性质和职业相符",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？ 联系该国金融情报机构（FIU）的官员，就潜在可疑活动是否确属可疑活动征求建议 Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？ 收集并评估内部信息来源，包括从客户、交易以及交易价值和数量中获取的信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "当调查人员开始对潜在的可疑活动进行财务调查时，第一步应该采取什么行动？ 识别并审查外部信息，包括网络形象、与客户相关的实体以及相关媒体",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

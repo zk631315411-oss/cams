@@ -1,0 +1,251 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000092",
+  "stem": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？",
+  "options": {
+    "A": "现场和非现场审查、开展国际合作，并可获得一系列制裁和外联资源",
+    "B": "现场和非现场审查、开展国际和国内合作，并可使用一系列制裁和外联手段",
+    "C": "非现场审查、开展国内合作，并可使用一系列制裁和外联手段",
+    "D": "现场审查、开展国际和国内合作，但没有外联，也不能使用一系列制裁手段"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "regulator",
+        "监管机构",
+        "regulatory body"
+      ],
+      "normalized_text": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "现场和非现场审查、开展国际合作，并可获得一系列制裁和外联资源",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "现场和非现场审查、开展国际合作，并可获得一系列制裁和外联资源"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "现场和非现场审查、开展国际和国内合作，并可使用一系列制裁和外联手段",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "现场和非现场审查、开展国际和国内合作，并可使用一系列制裁和外联手段"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "非现场审查、开展国内合作，并可使用一系列制裁和外联手段",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "非现场审查、开展国内合作，并可使用一系列制裁和外联手段"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "现场审查、开展国际和国内合作，但没有外联，也不能使用一系列制裁手段",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "现场审查、开展国际和国内合作，但没有外联，也不能使用一系列制裁手段"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body 现场和非现场审查、开展国际合作，并可获得一系列制裁和外联资源",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body 现场和非现场审查、开展国际和国内合作，并可使用一系列制裁和外联手段",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body 非现场审查、开展国内合作，并可使用一系列制裁和外联手段",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪个项目最有可能被视为监管机构有效监管制度的一部分？ regulator 监管机构 regulatory body 现场审查、开展国际和国内合作，但没有外联，也不能使用一系列制裁手段",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

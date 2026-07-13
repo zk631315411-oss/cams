@@ -1,0 +1,1341 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000022",
+  "stem": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？",
+  "options": {
+    "A": "依靠各司法管辖区现有的法律框架和非正式沟通渠道",
+    "B": "聘请第三方咨询公司作为不同司法管辖区监管机构和执法机构之间的调解人",
+    "C": "将调查集中于反洗钱法律最为严格的司法管辖区进行,以简化流程并降低多司法管辖区协调的复杂性",
+    "D": "利用在国际金融犯罪调查领域具有公认专业知识的现有和新兴多边合作框架,以促进跨境合作"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "FinCEN",
+        "金融犯罪执法网络",
+        "Financial Crime Enforcement Network",
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心",
+        "jurisdiction",
+        "司法管辖区",
+        "jurisdictions",
+        "地域",
+        "suspicious transaction",
+        "可疑交易",
+        "suspicious transactions",
+        "regulator",
+        "监管机构",
+        "regulatory body",
+        "law enforcement agency",
+        "执法机构",
+        "law enforcement agencies",
+        "law enforcement",
+        "shell company",
+        "壳公司",
+        "shell corporation"
+      ],
+      "normalized_text": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "依靠各司法管辖区现有的法律框架和非正式沟通渠道",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "jurisdiction",
+        "司法管辖区",
+        "jurisdictions",
+        "地域"
+      ],
+      "normalized_text": "依靠各司法管辖区现有的法律框架和非正式沟通渠道 jurisdiction 司法管辖区 jurisdictions 地域"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "聘请第三方咨询公司作为不同司法管辖区监管机构和执法机构之间的调解人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "jurisdiction",
+        "司法管辖区",
+        "jurisdictions",
+        "地域",
+        "regulator",
+        "监管机构",
+        "regulatory body",
+        "law enforcement agency",
+        "执法机构",
+        "law enforcement agencies",
+        "law enforcement"
+      ],
+      "normalized_text": "聘请第三方咨询公司作为不同司法管辖区监管机构和执法机构之间的调解人 jurisdiction 司法管辖区 jurisdictions 地域 regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "将调查集中于反洗钱法律最为严格的司法管辖区进行,以简化流程并降低多司法管辖区协调的复杂性",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "jurisdiction",
+        "司法管辖区",
+        "jurisdictions",
+        "地域"
+      ],
+      "normalized_text": "将调查集中于反洗钱法律最为严格的司法管辖区进行,以简化流程并降低多司法管辖区协调的复杂性 jurisdiction 司法管辖区 jurisdictions 地域"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "利用在国际金融犯罪调查领域具有公认专业知识的现有和新兴多边合作框架,以促进跨境合作",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用在国际金融犯罪调查领域具有公认专业知识的现有和新兴多边合作框架,以促进跨境合作"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation 依靠各司法管辖区现有的法律框架和非正式沟通渠道 jurisdiction 司法管辖区 jurisdictions 地域",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation 聘请第三方咨询公司作为不同司法管辖区监管机构和执法机构之间的调解人 jurisdiction 司法管辖区 jurisdictions 地域 regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation 将调查集中于反洗钱法律最为严格的司法管辖区进行,以简化流程并降低多司法管辖区协调的复杂性 jurisdiction 司法管辖区 jurisdictions 地域",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一家跨国金融机构(FI)发现涉及美国、德国和新加坡空壳公司的可疑交易,这些交易似乎是一起洗钱活动的一部分.德国金融情报机构(FIU)与美国金融犯罪执法网络(FinCEN)以及新加坡金融情报机构联合展开了调查.由于各国法律框架、数据隐私法和程序要求各不相同,调查面临诸多挑战.哪种方法最能促进这些司法管辖区内的监管机构和执法机构之间的合作,以确保调查取得成功？ FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心 jurisdiction 司法管辖区 jurisdictions 地域 suspicious transaction 可疑交易 suspicious transactions regulator 监管机构 regulatory body law enforcement agency 执法机构 law enforcement agencies law enforcement shell company 壳公司 shell corporation 利用在国际金融犯罪调查领域具有公认专业知识的现有和新兴多边合作框架,以促进跨境合作",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000027",
+          "matched_term": "司法管辖区",
+          "canonical_en": "jurisdiction",
+          "canonical_zh": "司法管辖区",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "jurisdictions",
+            "jurisdiction",
+            "司法管辖区",
+            "地域"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002212",
+            "v7u_N003573",
+            "v7u_N004345",
+            "v7u_N002742",
+            "v7u_N002336"
+          ],
+          "not_kg_edge": true,
+          "review_note": "jurisdictions is the plural form of jurisdiction; 地域 and 司法管辖区 are both used as Chinese translations for the same term.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000072",
+          "matched_term": "可疑交易",
+          "canonical_en": "suspicious transaction",
+          "canonical_zh": "可疑交易",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "suspicious transactions",
+            "suspicious transaction",
+            "可疑交易"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000530",
+            "v7u_N001891",
+            "v7u_N001939",
+            "v7u_N001945",
+            "v7u_N002321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of the same English term; both refer to '可疑交易'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000075",
+          "matched_term": "监管机构",
+          "canonical_en": "regulator",
+          "canonical_zh": "监管机构",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "regulatory body",
+            "regulator",
+            "监管机构"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002207",
+            "v7u_N002221",
+            "v7u_N002237",
+            "v7u_N000970"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Both 'regulator' and 'regulatory body' refer to the same supervisory institution in the AML context, and map to '监管机构'.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000068",
+          "matched_term": "执法机构",
+          "canonical_en": "law enforcement agency",
+          "canonical_zh": "执法机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "law enforcement agencies",
+            "law enforcement agency",
+            "law enforcement",
+            "执法机构",
+            "LEA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001940",
+            "v7u_N002221",
+            "v7u_N002261",
+            "v7u_N003571",
+            "v7u_N003321"
+          ],
+          "not_kg_edge": true,
+          "review_note": "LEA is the abbreviation for law enforcement agency/agencies; 'law enforcement' is commonly used as a metonym for the agencies and maps to the same Chinese term 执法机构.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

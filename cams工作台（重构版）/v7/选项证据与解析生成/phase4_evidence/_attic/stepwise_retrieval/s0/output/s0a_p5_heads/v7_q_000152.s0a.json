@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000152",
+  "stem": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其:",
+  "options": {
+    "A": "利用机器学习根据历史数据预测名称",
+    "B": "将筛查名单上的姓名与拼写、模式或发音相似的姓名进行匹配",
+    "C": "将长度相同且字符相同的名称进行匹配",
+    "D": "仅依赖于精确的字符串匹配"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用机器学习根据历史数据预测名称",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用机器学习根据历史数据预测名称"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "将筛查名单上的姓名与拼写、模式或发音相似的姓名进行匹配",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将筛查名单上的姓名与拼写、模式或发音相似的姓名进行匹配"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "将长度相同且字符相同的名称进行匹配",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "将长度相同且字符相同的名称进行匹配"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "仅依赖于精确的字符串匹配",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "仅依赖于精确的字符串匹配"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其: 利用机器学习根据历史数据预测名称",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其: 将筛查名单上的姓名与拼写、模式或发音相似的姓名进行匹配",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其: 将长度相同且字符相同的名称进行匹配",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在姓名筛查的背景下, 模糊逻辑或模糊匹配是一种方法,其: 仅依赖于精确的字符串匹配",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

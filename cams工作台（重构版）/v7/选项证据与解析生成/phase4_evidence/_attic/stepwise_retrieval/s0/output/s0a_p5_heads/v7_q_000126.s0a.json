@@ -1,0 +1,165 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000126",
+  "stem": "反洗钱审计独立性的一个关键因素在于审计员应当:",
+  "options": {
+    "A": "从未在AML/CFT部门的以往职位上工作过.",
+    "B": "与该组织的反洗钱/打击资助恐怖主义合规人员没有任何关联.",
+    "C": "在审计开始前已由董事会审查过",
+    "D": "接受过充分的反洗钱培训,能够进行独立审查."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "反洗钱审计独立性的一个关键因素在于审计员应当:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "反洗钱审计独立性的一个关键因素在于审计员应当:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "从未在AML/CFT部门的以往职位上工作过.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "从未在AML/CFT部门的以往职位上工作过."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "与该组织的反洗钱/打击资助恐怖主义合规人员没有任何关联.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "与该组织的反洗钱/打击资助恐怖主义合规人员没有任何关联."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "在审计开始前已由董事会审查过",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "board of directors",
+        "董事会",
+        "board"
+      ],
+      "normalized_text": "在审计开始前已由董事会审查过 board of directors 董事会 board"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "接受过充分的反洗钱培训,能够进行独立审查.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "接受过充分的反洗钱培训,能够进行独立审查."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "反洗钱审计独立性的一个关键因素在于审计员应当:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "反洗钱审计独立性的一个关键因素在于审计员应当: 从未在AML/CFT部门的以往职位上工作过.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "反洗钱审计独立性的一个关键因素在于审计员应当: 与该组织的反洗钱/打击资助恐怖主义合规人员没有任何关联.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "反洗钱审计独立性的一个关键因素在于审计员应当: 在审计开始前已由董事会审查过 board of directors 董事会 board",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000069",
+          "matched_term": "董事会",
+          "canonical_en": "board of directors",
+          "canonical_zh": "董事会",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "board of directors",
+            "board",
+            "董事会"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002389",
+            "v7u_N002557",
+            "v7u_N002560",
+            "v7u_N002523",
+            "v7u_N002556"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'board' is an abbreviation for 'board of directors' in governance context. '董事会' is the Chinese translation. They are fully interchangeable in retrieval.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "反洗钱审计独立性的一个关键因素在于审计员应当: 接受过充分的反洗钱培训,能够进行独立审查.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

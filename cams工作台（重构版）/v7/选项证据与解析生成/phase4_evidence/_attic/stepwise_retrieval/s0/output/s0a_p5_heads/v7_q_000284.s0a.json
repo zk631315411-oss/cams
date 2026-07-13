@@ -1,0 +1,359 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000284",
+  "stem": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.)",
+  "options": {
+    "A": "提前数年支付保费并提前终止以获取退款",
+    "B": "拥有多份保险单的自然人",
+    "C": "高保费的高额赔付人寿保险",
+    "D": "经常更换政策并接受处罚",
+    "E": "向老年人发放的受益人款项"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "提前数年支付保费并提前终止以获取退款",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "提前数年支付保费并提前终止以获取退款"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "拥有多份保险单的自然人",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "拥有多份保险单的自然人"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "高保费的高额赔付人寿保险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "高保费的高额赔付人寿保险"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "经常更换政策并接受处罚",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000095",
+          "matched_term": "处罚",
+          "canonical_en": "penalty",
+          "canonical_zh": "处罚",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "penalties",
+            "penalty",
+            "处罚"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003580",
+            "v7u_N003509"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Penalty and penalties are singular/plural variants of the same term; both translate to 处罚 in Chinese.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "penalty",
+        "处罚",
+        "penalties"
+      ],
+      "normalized_text": "经常更换政策并接受处罚 penalty 处罚 penalties"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "向老年人发放的受益人款项",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "向老年人发放的受益人款项"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 提前数年支付保费并提前终止以获取退款",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 拥有多份保险单的自然人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 高保费的高额赔付人寿保险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 经常更换政策并接受处罚 penalty 处罚 penalties",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000095",
+          "matched_term": "处罚",
+          "canonical_en": "penalty",
+          "canonical_zh": "处罚",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "penalties",
+            "penalty",
+            "处罚"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N003580",
+            "v7u_N003509"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Penalty and penalties are singular/plural variants of the same term; both translate to 处罚 in Chinese.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]以下哪些会是人寿保险公司洗钱的警示信号？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 向老年人发放的受益人款项",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

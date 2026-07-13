@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000005",
+  "stem": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？",
+  "options": {
+    "A": "该客户正试图将非法资金转换为合法的取款.",
+    "B": "该客户试图通过减少赌博活动来避免高额费用.",
+    "C": "该客户正在测试游戏平台的支付系统以排查是否存在欺诈行为.",
+    "D": "该客户是一名高风险赌徒,经常下大注."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "该客户正试图将非法资金转换为合法的取款.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "该客户正试图将非法资金转换为合法的取款."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "该客户试图通过减少赌博活动来避免高额费用.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "该客户试图通过减少赌博活动来避免高额费用."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "该客户正在测试游戏平台的支付系统以排查是否存在欺诈行为.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "该客户正在测试游戏平台的支付系统以排查是否存在欺诈行为."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "该客户是一名高风险赌徒,经常下大注.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "该客户是一名高风险赌徒,经常下大注."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？ 该客户正试图将非法资金转换为合法的取款.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？ 该客户试图通过减少赌博活动来避免高额费用.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？ 该客户正在测试游戏平台的支付系统以排查是否存在欺诈行为.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？ 该客户是一名高风险赌徒,经常下大注.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

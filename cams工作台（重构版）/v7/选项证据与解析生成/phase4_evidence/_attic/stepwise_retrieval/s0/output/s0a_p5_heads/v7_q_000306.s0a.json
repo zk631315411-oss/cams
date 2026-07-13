@@ -1,0 +1,278 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000306",
+  "stem": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。）",
+  "options": {
+    "A": "无论身在何地的美国永久居民外国人",
+    "B": "无论位于何处，销售美国原产商品的商家",
+    "C": "无论位于何处，提供美元账户服务的非美国金融机构",
+    "D": "无论身处何地的美国公民",
+    "E": "美国注册实体及其外国分支机构"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。）",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "OFAC",
+        "外国资产控制办公室"
+      ],
+      "normalized_text": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "无论身在何地的美国永久居民外国人",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "无论身在何地的美国永久居民外国人"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "无论位于何处，销售美国原产商品的商家",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "无论位于何处，销售美国原产商品的商家"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "无论位于何处，提供美元账户服务的非美国金融机构",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "无论位于何处，提供美元账户服务的非美国金融机构"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "无论身处何地的美国公民",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "无论身处何地的美国公民"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "美国注册实体及其外国分支机构",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "美国注册实体及其外国分支机构"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室 无论身在何地的美国永久居民外国人",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室 无论位于何处，销售美国原产商品的商家",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室 无论位于何处，提供美元账户服务的非美国金融机构",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室 无论身处何地的美国公民",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。） OFAC 外国资产控制办公室 美国注册实体及其外国分支机构",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000039",
+          "matched_term": "OFAC",
+          "canonical_en": "OFAC",
+          "canonical_zh": "外国资产控制办公室",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "外国资产控制办公室",
+            "OFAC"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004310",
+            "v7u_N004320",
+            "v7u_N002273"
+          ],
+          "not_kg_edge": true,
+          "review_note": "OFAC is the abbreviation for Office of Foreign Assets Control, and the Chinese term 外国资产控制办公室 is its full-form translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

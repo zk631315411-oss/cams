@@ -1,0 +1,161 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000171",
+  "stem": "逃税是:",
+  "options": {
+    "A": "故意不缴纳应缴税款的行为.",
+    "B": "违规操作以少缴应缴税款.",
+    "C": "不是重要犯罪,因为它对社会没有影响.",
+    "D": "一个复杂的流程,其含义总是与避税相同."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "逃税是:",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "逃税是:"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "故意不缴纳应缴税款的行为.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "故意不缴纳应缴税款的行为."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "违规操作以少缴应缴税款.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "违规操作以少缴应缴税款."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "不是重要犯罪,因为它对社会没有影响.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "不是重要犯罪,因为它对社会没有影响."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "一个复杂的流程,其含义总是与避税相同.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000042",
+          "matched_term": "避税",
+          "canonical_en": "tax avoidance",
+          "canonical_zh": "避税",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "tax avoidance",
+            "税务规避",
+            "避税"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001115",
+            "v7u_N000152",
+            "v7u_N001654"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Tax avoidance is rendered as 避税 or 税务规避 in Chinese; both are synonymous in this context.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "tax avoidance",
+        "避税",
+        "税务规避"
+      ],
+      "normalized_text": "一个复杂的流程,其含义总是与避税相同. tax avoidance 避税 税务规避"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "逃税是:",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "逃税是: 故意不缴纳应缴税款的行为.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "逃税是: 违规操作以少缴应缴税款.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "逃税是: 不是重要犯罪,因为它对社会没有影响.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "逃税是: 一个复杂的流程,其含义总是与避税相同. tax avoidance 避税 税务规避",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000042",
+          "matched_term": "避税",
+          "canonical_en": "tax avoidance",
+          "canonical_zh": "避税",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "tax avoidance",
+            "税务规避",
+            "避税"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001115",
+            "v7u_N000152",
+            "v7u_N001654"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Tax avoidance is rendered as 避税 or 税务规避 in Chinese; both are synonymous in this context.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

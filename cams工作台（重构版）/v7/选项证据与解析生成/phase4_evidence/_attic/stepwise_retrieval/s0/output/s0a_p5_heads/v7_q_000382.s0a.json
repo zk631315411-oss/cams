@@ -1,0 +1,309 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000382",
+  "stem": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.)",
+  "options": {
+    "A": "增加误报警报的数量",
+    "B": "在机器训练阶段创建无偏场景",
+    "C": "识别客户行为的变化,以更准确地评估风险",
+    "D": "生成客户风险评分以预测潜在的金融犯罪活动"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "artificial intelligence",
+        "人工智能",
+        "AI"
+      ],
+      "normalized_text": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "增加误报警报的数量",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000010",
+          "matched_term": "误报",
+          "canonical_en": "false positive",
+          "canonical_zh": "误报",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "false positives",
+            "false positive",
+            "假阳性",
+            "误报"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004151",
+            "v7u_N003283",
+            "v7u_N003301",
+            "v7u_N003844",
+            "v7u_N003734"
+          ],
+          "not_kg_edge": true,
+          "review_note": "False positive and false positives are spelling variants. 假阳性 and 误报 are Chinese translations used interchangeably for the same concept, as shown in the evidence (误报（假阳性）).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "false positive",
+        "误报",
+        "false positives",
+        "假阳性"
+      ],
+      "normalized_text": "增加误报警报的数量 false positive 误报 false positives 假阳性"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "在机器训练阶段创建无偏场景",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在机器训练阶段创建无偏场景"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "识别客户行为的变化,以更准确地评估风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "识别客户行为的变化,以更准确地评估风险"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "生成客户风险评分以预测潜在的金融犯罪活动",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "生成客户风险评分以预测潜在的金融犯罪活动"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI 增加误报警报的数量 false positive 误报 false positives 假阳性",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000010",
+          "matched_term": "误报",
+          "canonical_en": "false positive",
+          "canonical_zh": "误报",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "false positives",
+            "false positive",
+            "假阳性",
+            "误报"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004151",
+            "v7u_N003283",
+            "v7u_N003301",
+            "v7u_N003844",
+            "v7u_N003734"
+          ],
+          "not_kg_edge": true,
+          "review_note": "False positive and false positives are spelling variants. 假阳性 and 误报 are Chinese translations used interchangeably for the same concept, as shown in the evidence (误报（假阳性）).",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI 在机器训练阶段创建无偏场景",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI 识别客户行为的变化,以更准确地评估风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "使用人工智能(AI)与传统基于规则的交易监控相结合或替代其进行交易监控的优势包括:(选择两项.) artificial intelligence 人工智能 AI 生成客户风险评分以预测潜在的金融犯罪活动",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000008",
+          "matched_term": "人工智能",
+          "canonical_en": "artificial intelligence",
+          "canonical_zh": "人工智能",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "artificial intelligence",
+            "人工智能",
+            "AI"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004277",
+            "v7u_N003264",
+            "v7u_N003732",
+            "v7u_N004159",
+            "v7u_N001933"
+          ],
+          "not_kg_edge": true,
+          "review_note": "AI is the abbreviation for artificial intelligence; Chinese term is the standard translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

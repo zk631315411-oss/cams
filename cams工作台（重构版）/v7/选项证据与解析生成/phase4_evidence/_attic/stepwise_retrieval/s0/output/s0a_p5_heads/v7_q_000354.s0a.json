@@ -1,0 +1,183 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000354",
+  "stem": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.)",
+  "options": {
+    "A": "为客户开设账户以处理遗产事宜",
+    "B": "设立空壳公司以实施洗钱活动,包括资金的置入或分层操作",
+    "C": "为掩盖实际客户身份而开设第三方账户",
+    "D": "开设信托账户以促进合法的房地产交易",
+    "E": "指导或协助洗钱,包括安排交易以规避监管"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "为客户开设账户以处理遗产事宜",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为客户开设账户以处理遗产事宜"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "设立空壳公司以实施洗钱活动,包括资金的置入或分层操作",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "shell company",
+        "壳公司",
+        "shell corporation"
+      ],
+      "normalized_text": "设立空壳公司以实施洗钱活动,包括资金的置入或分层操作 shell company 壳公司 shell corporation"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "为掩盖实际客户身份而开设第三方账户",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "为掩盖实际客户身份而开设第三方账户"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "开设信托账户以促进合法的房地产交易",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "开设信托账户以促进合法的房地产交易"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "指导或协助洗钱,包括安排交易以规避监管",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "指导或协助洗钱,包括安排交易以规避监管"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.) 为客户开设账户以处理遗产事宜",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.) 设立空壳公司以实施洗钱活动,包括资金的置入或分层操作 shell company 壳公司 shell corporation",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000063",
+          "matched_term": "壳公司",
+          "canonical_en": "shell company",
+          "canonical_zh": "壳公司",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "shell corporation",
+            "shell company",
+            "壳公司"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000046",
+            "v7u_N000047",
+            "v7u_N000048",
+            "v7u_N000441"
+          ],
+          "not_kg_edge": true,
+          "review_note": "'shell company' and 'shell corporation' are equivalent and interchangeable terms; both correspond to '壳公司'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.) 为掩盖实际客户身份而开设第三方账户",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.) 开设信托账户以促进合法的房地产交易",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "专业服务提供者-包括律师、会计师、投资经纪以及其他第三方-可能会滥用其职位为洗钱提供便利.这种滥用行为与哪些金融犯罪风险相关？(选择三项.) 指导或协助洗钱,包括安排交易以规避监管",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

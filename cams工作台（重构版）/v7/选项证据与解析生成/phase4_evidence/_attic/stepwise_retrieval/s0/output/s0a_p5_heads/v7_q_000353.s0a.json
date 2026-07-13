@@ -1,0 +1,181 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000353",
+  "stem": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.)",
+  "options": {
+    "A": "利用客户档案中现有的信息,对所涉及的企业进行控制权和所有权评估",
+    "B": "联系当地执法部门,请求他们协助进行分析和调查",
+    "C": "查看自动化监控系统警报描述中呈现的信息,并拒绝任何未来的交易.",
+    "D": "联系客户经理,询问反洗钱警报中所强调的活动模式背后的原因.",
+    "E": "利用社交媒体平台与相关企业取得联系,并请求提供账户活动的详细信息"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "利用客户档案中现有的信息,对所涉及的企业进行控制权和所有权评估",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用客户档案中现有的信息,对所涉及的企业进行控制权和所有权评估"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "联系当地执法部门,请求他们协助进行分析和调查",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "联系当地执法部门,请求他们协助进行分析和调查"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "查看自动化监控系统警报描述中呈现的信息,并拒绝任何未来的交易.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "查看自动化监控系统警报描述中呈现的信息,并拒绝任何未来的交易."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "联系客户经理,询问反洗钱警报中所强调的活动模式背后的原因.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "联系客户经理,询问反洗钱警报中所强调的活动模式背后的原因. relationship manager 关系经理 客户经理"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "利用社交媒体平台与相关企业取得联系,并请求提供账户活动的详细信息",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "利用社交媒体平台与相关企业取得联系,并请求提供账户活动的详细信息"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.) 利用客户档案中现有的信息,对所涉及的企业进行控制权和所有权评估",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.) 联系当地执法部门,请求他们协助进行分析和调查",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.) 查看自动化监控系统警报描述中呈现的信息,并拒绝任何未来的交易.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.) 联系客户经理,询问反洗钱警报中所强调的活动模式背后的原因. relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.) 利用社交媒体平台与相关企业取得联系,并请求提供账户活动的详细信息",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

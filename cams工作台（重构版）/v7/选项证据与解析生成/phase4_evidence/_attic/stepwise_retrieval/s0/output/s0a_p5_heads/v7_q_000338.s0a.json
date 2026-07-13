@@ -1,0 +1,227 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000338",
+  "stem": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.)",
+  "options": {
+    "A": "国家风险评估",
+    "B": "监管指导或出版物",
+    "C": "政府或国有报纸",
+    "D": "国际组织发布的指导文件",
+    "E": "其他银行制定的政策和程序"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "国家风险评估",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "national risk assessment",
+        "国家风险评估",
+        "NRA"
+      ],
+      "normalized_text": "国家风险评估 national risk assessment 国家风险评估 NRA"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "监管指导或出版物",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "监管指导或出版物"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "政府或国有报纸",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "政府或国有报纸"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "国际组织发布的指导文件",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "国际组织发布的指导文件"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "其他银行制定的政策和程序",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "policies and procedures",
+        "政策与程序",
+        "政策和程序"
+      ],
+      "normalized_text": "其他银行制定的政策和程序 policies and procedures 政策与程序 政策和程序"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.) 国家风险评估 national risk assessment 国家风险评估 NRA",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000154",
+          "matched_term": "国家风险评估",
+          "canonical_en": "national risk assessment",
+          "canonical_zh": "国家风险评估",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "national risk assessment",
+            "国家风险评估",
+            "NRA"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002183",
+            "v7u_N002184",
+            "v7u_N002186"
+          ],
+          "not_kg_edge": true,
+          "review_note": "NRA is the abbreviation for national risk assessment; 国家风险评估 is the Chinese translation. All three are mutually usable retrieval aliases.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.) 监管指导或出版物",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.) 政府或国有报纸",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.) 国际组织发布的指导文件",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "在制定和维护银行的反洗钱政策、标准和程序时,除了反洗钱法律法规外,还应该参考哪些信息来源？(选择三项.) 其他银行制定的政策和程序 policies and procedures 政策与程序 政策和程序",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000317",
+  "stem": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。)",
+  "options": {
+    "A": "声誉风险",
+    "B": "操作风险",
+    "C": "制裁风险",
+    "D": "合规风险",
+    "E": "贷款风险"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "声誉风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "声誉风险"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "操作风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000028",
+          "matched_term": "操作风险",
+          "canonical_en": "operational risk",
+          "canonical_zh": "操作风险",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "operational risk",
+            "运营风险",
+            "操作风险"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002385",
+            "v7u_N002599",
+            "v7u_N000370",
+            "v7u_N000808"
+          ],
+          "not_kg_edge": true,
+          "review_note": "The Chinese terms 操作风险 and 运营风险 are both valid translations of 'operational risk' and appear interchangeably in the material.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "operational risk",
+        "操作风险",
+        "运营风险"
+      ],
+      "normalized_text": "操作风险 operational risk 操作风险 运营风险"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "制裁风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "制裁风险"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "合规风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "合规风险"
+    },
+    "option_E": {
+      "field_id": "option_E",
+      "text": "贷款风险",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "贷款风险"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。) 声誉风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。) 操作风险 operational risk 操作风险 运营风险",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000028",
+          "matched_term": "操作风险",
+          "canonical_en": "operational risk",
+          "canonical_zh": "操作风险",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "operational risk",
+            "运营风险",
+            "操作风险"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002385",
+            "v7u_N002599",
+            "v7u_N000370",
+            "v7u_N000808"
+          ],
+          "not_kg_edge": true,
+          "review_note": "The Chinese terms 操作风险 and 运营风险 are both valid translations of 'operational risk' and appear interchangeably in the material.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。) 制裁风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。) 合规风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_E",
+      "head_kind": "option",
+      "option": "E",
+      "parts": [
+        "stem",
+        "option_E"
+      ],
+      "query_zh": "哪些风险因素与获取和为被认为从事金融犯罪活动风险较高的客户提供银行服务相关？(选择三项。) 贷款风险",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

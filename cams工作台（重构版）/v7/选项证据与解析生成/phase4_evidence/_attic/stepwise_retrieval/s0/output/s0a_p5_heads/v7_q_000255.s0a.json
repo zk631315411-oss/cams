@@ -1,0 +1,552 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000255",
+  "stem": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.)",
+  "options": {
+    "A": "定期及临时与法律团队合作,对传票对象或政府调查所涉交易进行适当调查和监控",
+    "B": "定期审查客户档案,以确保高风险客户的档案信息是最新的,符合银行内部政策和程序的要求.",
+    "C": "定期审查向金融犯罪执法网络(FinCEN)提交的可疑活动报告(SAR),以确定是否应撤回其中任何一份报告",
+    "D": "定期审查交易监测场景及其成效,以确保适当反映反洗钱的各类模式"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "terrorist financing",
+        "恐怖融资",
+        "financing of terrorism",
+        "terrorism financing",
+        "terror financing"
+      ],
+      "normalized_text": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "定期及临时与法律团队合作,对传票对象或政府调查所涉交易进行适当调查和监控",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "定期及临时与法律团队合作,对传票对象或政府调查所涉交易进行适当调查和监控"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "定期审查客户档案,以确保高风险客户的档案信息是最新的,符合银行内部政策和程序的要求.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "policies and procedures",
+        "政策与程序",
+        "政策和程序",
+        "periodic review",
+        "定期审查",
+        "regular review"
+      ],
+      "normalized_text": "定期审查客户档案,以确保高风险客户的档案信息是最新的,符合银行内部政策和程序的要求. policies and procedures 政策与程序 政策和程序 periodic review 定期审查 regular review"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "定期审查向金融犯罪执法网络(FinCEN)提交的可疑活动报告(SAR),以确定是否应撤回其中任何一份报告",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "FinCEN",
+        "金融犯罪执法网络",
+        "Financial Crime Enforcement Network",
+        "suspicious activity report",
+        "可疑活动报告",
+        "suspicious transaction reporting",
+        "suspicious transaction reports",
+        "suspicious transaction report",
+        "suspicious activity reports",
+        "periodic review",
+        "定期审查",
+        "regular review"
+      ],
+      "normalized_text": "定期审查向金融犯罪执法网络(FinCEN)提交的可疑活动报告(SAR),以确定是否应撤回其中任何一份报告 FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports periodic review 定期审查 regular review"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "定期审查交易监测场景及其成效,以确保适当反映反洗钱的各类模式",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "periodic review",
+        "定期审查",
+        "regular review"
+      ],
+      "normalized_text": "定期审查交易监测场景及其成效,以确保适当反映反洗钱的各类模式 periodic review 定期审查 regular review"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 定期及临时与法律团队合作,对传票对象或政府调查所涉交易进行适当调查和监控",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 定期审查客户档案,以确保高风险客户的档案信息是最新的,符合银行内部政策和程序的要求. policies and procedures 政策与程序 政策和程序 periodic review 定期审查 regular review",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000040",
+          "matched_term": "政策和程序",
+          "canonical_en": "policies and procedures",
+          "canonical_zh": "政策与程序",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "policies and procedures",
+            "政策与程序",
+            "政策和程序"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N002386",
+            "v7u_N002391",
+            "v7u_N004263"
+          ],
+          "not_kg_edge": true,
+          "review_note": "中文“政策与程序”和“政策和程序”仅虚词用字不同，均对应“policies and procedures”，为翻译变体。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 定期审查向金融犯罪执法网络(FinCEN)提交的可疑活动报告(SAR),以确定是否应撤回其中任何一份报告 FinCEN 金融犯罪执法网络 Financial Crime Enforcement Network suspicious activity report 可疑活动报告 suspicious transaction reporting suspicious transaction reports suspicious transaction report suspicious activity reports periodic review 定期审查 regular review",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000005",
+          "matched_term": "金融犯罪执法网络",
+          "canonical_en": "FinCEN",
+          "canonical_zh": "金融犯罪执法网络",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Crime Enforcement Network",
+            "金融犯罪执法网络",
+            "FinCEN"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000217",
+            "v7u_N001717",
+            "v7u_N001731",
+            "v7u_N000181",
+            "v7u_N002269"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FinCEN is the abbreviation for Financial Crime Enforcement Network (a slightly non-standard but clearly referencing the same US agency); Chinese translation 金融犯罪执法网络 is standard. All refer to the same regulatory body.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000001",
+          "matched_term": "可疑活动报告",
+          "canonical_en": "suspicious activity report",
+          "canonical_zh": "可疑活动报告",
+          "alias_scope": "retrieval_equivalent_report_variant",
+          "all_terms": [
+            "suspicious transaction reporting",
+            "suspicious transaction reports",
+            "suspicious transaction report",
+            "suspicious activity reports",
+            "suspicious activity report",
+            "可疑活动报告",
+            "可疑交易报告",
+            "STR",
+            "SAR"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001721",
+            "v7u_N001722",
+            "v7u_N001740",
+            "v7u_N001689",
+            "v7u_N002450"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Used only as retrieval aliases for report evidence; not a KG equivalence edge.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.) terrorist financing 恐怖融资 financing of terrorism terrorism financing terror financing 定期审查交易监测场景及其成效,以确保适当反映反洗钱的各类模式 periodic review 定期审查 regular review",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000064",
+          "matched_term": "恐怖融资",
+          "canonical_en": "terrorist financing",
+          "canonical_zh": "恐怖融资",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "financing of terrorism",
+            "terrorism financing",
+            "terrorist financing",
+            "terror financing",
+            "恐怖融资"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000682",
+            "v7u_N001244",
+            "v7u_N002642",
+            "v7u_N000262",
+            "v7u_N001892"
+          ],
+          "not_kg_edge": true,
+          "review_note": "All listed English terms are used interchangeably to refer to the financing of terrorism, and they map to the same Chinese term 恐怖融资.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000097",
+          "matched_term": "定期审查",
+          "canonical_en": "periodic review",
+          "canonical_zh": "定期审查",
+          "alias_scope": "exact_alias",
+          "all_terms": [
+            "periodic review",
+            "regular review",
+            "定期审查"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N004264",
+            "v7u_N003567"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Periodic review and regular review are equivalent wording for the same concept of conducting reviews at intervals; both translate to 定期审查.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

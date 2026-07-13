@@ -1,0 +1,288 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000343",
+  "stem": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。)",
+  "options": {
+    "A": "适用于货币工具报告的洗钱类型",
+    "B": "适用的反洗钱法律法规",
+    "C": "监管检查最佳实践",
+    "D": "适用于公司贷款的洗钱类型"
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "适用于货币工具报告的洗钱类型",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "适用于货币工具报告的洗钱类型"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "适用的反洗钱法律法规",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "适用的反洗钱法律法规"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "监管检查最佳实践",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000102",
+          "matched_term": "最佳实践",
+          "canonical_en": "best practice",
+          "canonical_zh": "最佳实践",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "best practices",
+            "best practice",
+            "最佳实践"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000404",
+            "v7u_N002334"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of 'best practice', both mapping to '最佳实践'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "best practice",
+        "最佳实践",
+        "best practices"
+      ],
+      "normalized_text": "监管检查最佳实践 best practice 最佳实践 best practices"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "适用于公司贷款的洗钱类型",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "适用于公司贷款的洗钱类型"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理 适用于货币工具报告的洗钱类型",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理 适用的反洗钱法律法规",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理 监管检查最佳实践 best practice 最佳实践 best practices",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000102",
+          "matched_term": "最佳实践",
+          "canonical_en": "best practice",
+          "canonical_zh": "最佳实践",
+          "alias_scope": "spelling_variant",
+          "all_terms": [
+            "best practices",
+            "best practice",
+            "最佳实践"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000404",
+            "v7u_N002334"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Singular and plural forms of 'best practice', both mapping to '最佳实践'.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "银行公司银行部的关系经理需要接受专门针对该部门最有可能遇到的洗钱风险而定制的反洗钱培训。哪种类型的内容最适合此次培训？(选择两项。) relationship manager 关系经理 客户经理 适用于公司贷款的洗钱类型",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "关系经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000185",
+  "stem": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？",
+  "options": {
+    "A": "一位客户经理主张推翻公司客户风险评级模型得出的某客户高风险评级的结果.",
+    "B": "员工B在行业大会上向其他公司的员工透露了其所在公司的风险管理框架的相关信息.",
+    "C": "调查人员未在公司规定的时限内完成分配给他们的自动化交易监控系统警报的处理.",
+    "D": "客户经理违反公司政策,在未记录客户护照信息以进行身份识别的情况下,仍为客户办理开户手续."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "一位客户经理主张推翻公司客户风险评级模型得出的某客户高风险评级的结果.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "一位客户经理主张推翻公司客户风险评级模型得出的某客户高风险评级的结果. relationship manager 关系经理 客户经理"
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "员工B在行业大会上向其他公司的员工透露了其所在公司的风险管理框架的相关信息.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "员工B在行业大会上向其他公司的员工透露了其所在公司的风险管理框架的相关信息."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "调查人员未在公司规定的时限内完成分配给他们的自动化交易监控系统警报的处理.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "调查人员未在公司规定的时限内完成分配给他们的自动化交易监控系统警报的处理."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "客户经理违反公司政策,在未记录客户护照信息以进行身份识别的情况下,仍为客户办理开户手续.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "relationship manager",
+        "关系经理",
+        "客户经理"
+      ],
+      "normalized_text": "客户经理违反公司政策,在未记录客户护照信息以进行身份识别的情况下,仍为客户办理开户手续. relationship manager 关系经理 客户经理"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？ 一位客户经理主张推翻公司客户风险评级模型得出的某客户高风险评级的结果. relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？ 员工B在行业大会上向其他公司的员工透露了其所在公司的风险管理框架的相关信息.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？ 调查人员未在公司规定的时限内完成分配给他们的自动化交易监控系统警报的处理.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？ 客户经理违反公司政策,在未记录客户护照信息以进行身份识别的情况下,仍为客户办理开户手续. relationship manager 关系经理 客户经理",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000041",
+          "matched_term": "客户经理",
+          "canonical_en": "relationship manager",
+          "canonical_zh": "关系经理",
+          "alias_scope": "translation_variant",
+          "all_terms": [
+            "relationship manager",
+            "客户经理",
+            "关系经理"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000579",
+            "v7u_N000580",
+            "v7u_N004702"
+          ],
+          "not_kg_edge": true,
+          "review_note": "“关系经理”和“客户经理”均为“relationship manager”的中文翻译，指同一角色。",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

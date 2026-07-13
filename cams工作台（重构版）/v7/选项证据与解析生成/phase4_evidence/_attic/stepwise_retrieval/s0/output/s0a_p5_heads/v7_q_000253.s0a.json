@@ -1,0 +1,115 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000253",
+  "stem": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)",
+  "options": {
+    "A": "该员工最初来自高风险地区.",
+    "B": "这名员工有在高风险行业工作的朋友",
+    "C": "这名员工的生活方式与其收入极不相称.",
+    "D": "这位员工对于离职前一份企业财务工作的原因一直闪烁其词."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "该员工最初来自高风险地区.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "该员工最初来自高风险地区."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "这名员工有在高风险行业工作的朋友",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "这名员工有在高风险行业工作的朋友"
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "这名员工的生活方式与其收入极不相称.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "这名员工的生活方式与其收入极不相称."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "这位员工对于离职前一份企业财务工作的原因一直闪烁其词.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "这位员工对于离职前一份企业财务工作的原因一直闪烁其词."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.) 该员工最初来自高风险地区.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.) 这名员工有在高风险行业工作的朋友",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.) 这名员工的生活方式与其收入极不相称.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.) 这位员工对于离职前一份企业财务工作的原因一直闪烁其词.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

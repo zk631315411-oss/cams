@@ -1,0 +1,294 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000395",
+  "stem": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.)",
+  "options": {
+    "A": "政治公众人物的家庭成员和密切关系人可能会参与非法活动.",
+    "B": "根据国际银行业规定,政治公众人物可获得无限制的信贷和金融豁免.",
+    "C": "政治公众人物可能会利用使馆活动来掩盖贿赂和腐败交易.",
+    "D": "但其账户不会因超出银行风险承受能力的活动而被合法关闭."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.)",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "politically exposed person",
+        "政治敏感人物",
+        "PEP"
+      ],
+      "normalized_text": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "政治公众人物的家庭成员和密切关系人可能会参与非法活动.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "政治公众人物的家庭成员和密切关系人可能会参与非法活动."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "根据国际银行业规定,政治公众人物可获得无限制的信贷和金融豁免.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "根据国际银行业规定,政治公众人物可获得无限制的信贷和金融豁免."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "政治公众人物可能会利用使馆活动来掩盖贿赂和腐败交易.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "bribery",
+        "贿赂",
+        "bribe"
+      ],
+      "normalized_text": "政治公众人物可能会利用使馆活动来掩盖贿赂和腐败交易. bribery 贿赂 bribe"
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "但其账户不会因超出银行风险承受能力的活动而被合法关闭.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "但其账户不会因超出银行风险承受能力的活动而被合法关闭."
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP 政治公众人物的家庭成员和密切关系人可能会参与非法活动.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP 根据国际银行业规定,政治公众人物可获得无限制的信贷和金融豁免.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP 政治公众人物可能会利用使馆活动来掩盖贿赂和腐败交易. bribery 贿赂 bribe",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        },
+        {
+          "alias_group_id": "p5c_alias_000067",
+          "matched_term": "贿赂",
+          "canonical_en": "bribery",
+          "canonical_zh": "贿赂",
+          "alias_scope": "retrieval_equivalent",
+          "all_terms": [
+            "bribery",
+            "bribe",
+            "贿赂"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000619",
+            "v7u_N000620",
+            "v7u_N000074",
+            "v7u_N000115",
+            "v7u_N000116"
+          ],
+          "not_kg_edge": true,
+          "review_note": "Useful for review/evidence retrieval; not strict ontology equivalence.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.) politically exposed person 政治敏感人物 PEP 但其账户不会因超出银行风险承受能力的活动而被合法关闭.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000160",
+          "matched_term": "PEP",
+          "canonical_en": "politically exposed person",
+          "canonical_zh": "政治敏感人物",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "politically exposed person",
+            "政治敏感人物",
+            "PEP"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N000457",
+            "v7u_N000458",
+            "v7u_N000459"
+          ],
+          "not_kg_edge": true,
+          "review_note": "PEP is the well‑known abbreviation for politically exposed person, with a consistent Chinese translation.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}

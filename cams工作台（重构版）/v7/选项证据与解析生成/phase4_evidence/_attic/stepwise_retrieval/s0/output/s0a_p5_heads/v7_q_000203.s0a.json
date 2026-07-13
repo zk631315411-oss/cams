@@ -1,0 +1,170 @@
+{
+  "step": "s0a_p5_term_normalization_and_head_construction",
+  "question_id": "v7_q_000203",
+  "stem": "欧盟反洗钱指令的关键目标是什么？",
+  "options": {
+    "A": "在欧盟国家加强支付地址管控以减少洗钱活动.",
+    "B": "在欧盟范围内建立一个由金融机构共同协作以防范洗钱活动的网络.",
+    "C": "在整个欧盟建立一致的监管环境以防止洗钱.",
+    "D": "允许各成员国在欧盟金融情报机构的协助下讨论该立法草案."
+  },
+  "p5_policy": {
+    "role": "term_normalization_layer",
+    "not_direct_evidence": true,
+    "not_kg_edge": true,
+    "evidence_unit_ids_use": "optional_anchor_only_in_later_steps"
+  },
+  "fields": {
+    "stem": {
+      "field_id": "stem",
+      "text": "欧盟反洗钱指令的关键目标是什么？",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "欧盟反洗钱指令的关键目标是什么？"
+    },
+    "option_A": {
+      "field_id": "option_A",
+      "text": "在欧盟国家加强支付地址管控以减少洗钱活动.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在欧盟国家加强支付地址管控以减少洗钱活动."
+    },
+    "option_B": {
+      "field_id": "option_B",
+      "text": "在欧盟范围内建立一个由金融机构共同协作以防范洗钱活动的网络.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在欧盟范围内建立一个由金融机构共同协作以防范洗钱活动的网络."
+    },
+    "option_C": {
+      "field_id": "option_C",
+      "text": "在整个欧盟建立一致的监管环境以防止洗钱.",
+      "p5_terms": [],
+      "normalized_terms": [],
+      "normalized_text": "在整个欧盟建立一致的监管环境以防止洗钱."
+    },
+    "option_D": {
+      "field_id": "option_D",
+      "text": "允许各成员国在欧盟金融情报机构的协助下讨论该立法草案.",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "normalized_terms": [
+        "Financial Intelligence Unit",
+        "金融情报机构",
+        "金融情报单位",
+        "金融情报中心"
+      ],
+      "normalized_text": "允许各成员国在欧盟金融情报机构的协助下讨论该立法草案. Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心"
+    }
+  },
+  "retrieval_heads": [
+    {
+      "head_id": "stem",
+      "head_kind": "stem",
+      "option": null,
+      "parts": [
+        "stem"
+      ],
+      "query_zh": "欧盟反洗钱指令的关键目标是什么？",
+      "p5_terms": [],
+      "note": "stem original text plus stem-level P5 normalized terms"
+    },
+    {
+      "head_id": "option_A",
+      "head_kind": "option",
+      "option": "A",
+      "parts": [
+        "stem",
+        "option_A"
+      ],
+      "query_zh": "欧盟反洗钱指令的关键目标是什么？ 在欧盟国家加强支付地址管控以减少洗钱活动.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_B",
+      "head_kind": "option",
+      "option": "B",
+      "parts": [
+        "stem",
+        "option_B"
+      ],
+      "query_zh": "欧盟反洗钱指令的关键目标是什么？ 在欧盟范围内建立一个由金融机构共同协作以防范洗钱活动的网络.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_C",
+      "head_kind": "option",
+      "option": "C",
+      "parts": [
+        "stem",
+        "option_C"
+      ],
+      "query_zh": "欧盟反洗钱指令的关键目标是什么？ 在整个欧盟建立一致的监管环境以防止洗钱.",
+      "p5_terms": [],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    },
+    {
+      "head_id": "option_D",
+      "head_kind": "option",
+      "option": "D",
+      "parts": [
+        "stem",
+        "option_D"
+      ],
+      "query_zh": "欧盟反洗钱指令的关键目标是什么？ 允许各成员国在欧盟金融情报机构的协助下讨论该立法草案. Financial Intelligence Unit 金融情报机构 金融情报单位 金融情报中心",
+      "p5_terms": [
+        {
+          "alias_group_id": "p5c_alias_000003",
+          "matched_term": "金融情报机构",
+          "canonical_en": "Financial Intelligence Unit",
+          "canonical_zh": "金融情报机构",
+          "alias_scope": "abbreviation_full_form",
+          "all_terms": [
+            "Financial Intelligence Unit",
+            "金融情报单位",
+            "金融情报机构",
+            "金融情报中心",
+            "FIU"
+          ],
+          "evidence_unit_ids": [
+            "v7u_N001956",
+            "v7u_N001561",
+            "v7u_N001743",
+            "v7u_N001748",
+            "v7u_N002432"
+          ],
+          "not_kg_edge": true,
+          "review_note": "FIU is the standard abbreviation for Financial Intelligence Unit; the Chinese variants refer to the same concept with minor translation differences.",
+          "use": "term_normalization_only"
+        }
+      ],
+      "note": "stem normalized text plus option normalized text; P5 terms remain metadata, not evidence"
+    }
+  ]
+}
