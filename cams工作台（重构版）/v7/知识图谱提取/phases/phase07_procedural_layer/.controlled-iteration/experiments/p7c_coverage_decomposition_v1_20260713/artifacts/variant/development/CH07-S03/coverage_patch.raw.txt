@@ -1,0 +1,69 @@
+{
+  "section_id": "CH07-S03",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_006",
+      "resolution": "new_card",
+      "card_id": "p7card_CH07-S03_003",
+      "reason": "构建条件触发的风险评估：知道或怀疑非法资金还贷时，违约风险变为次要风险，形成有向评估结构。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH07-S03_003",
+      "section_id": "CH07-S03",
+      "card_nature": "risk_indicator",
+      "title": "知道或怀疑非法资金还贷时违约风险变为次要风险",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估违约风险优先级",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "违约风险为次要需要管理的风险",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1_to_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "derivation": "explicit_text",
+          "condition": "银行知道或怀疑客户使用非法资金还贷"
+        },
+        {
+          "edge_id": "P1_to_X1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000554"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行知道或怀疑非法资金还贷 → 违约风险变为次要需要管理的风险（条件触发的风险优先级判断）；KG不足：基础KG可表达违约风险是风险类型，但不能表达特定条件下风险优先级转变的有向判断；选项判断：可确认在非法资金嫌疑下，违约风险降级为次要风险；LLM推理：无。",
+      "coverage_claim_ids": ["claim_006"]
+    }
+  ],
+  "card_supplements": []
+}

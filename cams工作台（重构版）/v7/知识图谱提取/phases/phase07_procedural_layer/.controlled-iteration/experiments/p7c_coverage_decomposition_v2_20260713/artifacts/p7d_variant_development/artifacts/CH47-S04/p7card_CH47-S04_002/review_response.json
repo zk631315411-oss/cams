@@ -1,0 +1,82 @@
+{
+  "section_id": "CH47-S04",
+  "card_id": "p7card_CH47-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "E_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中明确提到“创建、修改或移除检测规则和场景”，与source节点标签一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文中“基于以往可疑活动及实际事件经验”与target节点标签一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“based on previous experiences”表明process是基于该经验的，方向为process参照目标，不支持反向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文关系表达中没有must、should等限定词，不需要检查。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文明确是“基于”关系，属于REFERENCES，不是并列、顺序或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N003279"
+      ],
+      "source_quotes": [
+        "Scenario setting involves creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents."
+      ],
+      "reason": "原文明确表达了场景设置过程基于以往经验，两者之间是参照关系，且方向无误，证据充分。"
+    },
+    {
+      "edge_id": "E_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中包含“creating, modifying, or removing detection rules and scenarios”，与source节点标签一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文暗示了这些规则和场景被创建等，target节点描述被动形式，仍有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "source和target描述的是同一事实的主动和被动表述，并非process产生了独立的新结果，PRODUCES关系不成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "没有相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "没有错误地处理并列或相关关系，但属于同义改写，导致PRODUCES无效。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N003279"
+      ],
+      "source_quotes": [
+        "Scenario setting involves creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents."
+      ],
+      "reason": "target节点仅是source节点的被动语态改写，非独立事实，PRODUCES关系不能成立，应予拒绝。"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "section_id": "CH07-S03",
+  "section_title": "Money laundering risks associated with retail and commercial banking > Credit-related product risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": ["v7u_N000554"],
+      "proposition": "如果银行知道或怀疑客户使用非法资金偿还贷款，银行不应接受该资金用于还贷。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_001",
+      "reason": "条件（知道或怀疑）触发不得接受的特定动作义务，构成程序性有向关系，基础KG只能保存规则文本，无法表达内部条件与动作之间的有向结构。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": ["v7u_N000555"],
+      "proposition": "当银行退出超出风险容忍度的客户关系且存在贷款余额时，核销贷款是重大财务决策，通常需要广泛证明和批准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "情境退出触发核销动作，且动作需参照批准标准，构成条件、动作与外部约束的有向链，基础KG仅能概括事实，无法表达这一决策链条。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": ["v7u_N000556"],
+      "proposition": "如果银行未能有效管理因客户仍有贷款余额而关闭账户的挑战，会损害银行声誉并削弱监管机构和客户的信任。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为一般后果陈述，表达管理失败导致声誉损害这一普通因果关系，基础KG已能作为后果事实容纳，无明确主体处置或判断结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "execution",
+      "title": "银行不应接受可疑非法资金还贷",
+      "flow_nodes": [
+        {
+          "node_id": "E01",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "银行知道或怀疑客户使用非法资金偿还贷款",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行：不应接受资金用于还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_01",
+          "edge_type": "PRECEDES",
+          "source": "E01",
+          "target": "P01",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "derivation": "explicit_text",
+          "condition": "如果银行知道或怀疑客户使用非法资金还贷",
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, ... should not accept funds for the purposes of loan"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000554"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行知道或怀疑客户使用非法资金还贷（条件）→银行不应接受该资金用于还贷；KG不足：基础KG仅能表达该规则为风险指标，无法表达条件与不得接受动作之间的有向关联；选项判断：可判断在明知或怀疑非法资金时，应采取拒绝接受还贷的措施；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH07-S03_002",
+      "section_id": "CH07-S03",
+      "card_nature": "execution",
+      "title": "退出客户关系时核销贷款需广泛批准",
+      "flow_nodes": [
+        {
+          "node_id": "E01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "银行退出超出风险容忍度的客户关系且存在贷款余额",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行：核销贷款（重大财务决策）",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "通常需要广泛证明和批准",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_01",
+          "edge_type": "PRECEDES",
+          "source": "E01",
+          "target": "P01",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "derivation": "explicit_text",
+          "condition": "当退出客户关系且存在贷款余额时",
+          "source_quote": "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+        },
+        {
+          "edge_id": "edge_02",
+          "edge_type": "REFERENCES",
+          "source": "P01",
+          "target": "S01",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "derivation": "explicit_text",
+          "source_quote": "often requiring extensive justification and approval"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000555"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行退出超出风险容忍度的客户关系且存在贷款余额（情境）→银行核销贷款（动作）→需参照广泛证明和批准（标准）；KG不足：基础KG仅能表达关户挑战和财务决策的事实，无法表达情境触发特定动作并需满足批准要求的有向结构；选项判断：可确认退出有贷客户时，核销贷款需充分理由和批准，而非随意执行；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

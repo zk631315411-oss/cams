@@ -1,0 +1,184 @@
+{
+  "section_id": "CH02-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_004",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_003",
+      "reason": "原文强调英国反贿赂法域外管辖可能导致母公司被起诉，需要建立健全合规措施，这一义务未在现有卡片覆盖，故新建控制卡片。"
+    },
+    {
+      "claim_id": "claim_006",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原文使用'appeared'表示推测性，现有卡片未体现该限定词，需补充带限定词的边。"
+    },
+    {
+      "claim_id": "claim_007",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原文使用'suggested'表示可能性，现有卡片未体现该限定词，需补充带限定词的边。"
+    },
+    {
+      "claim_id": "claim_013",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_004",
+      "reason": "原文明确经理认识到机构需维护合规诚信并降低风险，这一义务命题未覆盖，故新建控制卡片。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH02-S04_003",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "根据英国反贿赂法域外管辖条款，公司需建立健全的合规措施",
+      "flow_nodes": [
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UK Bribery Act 2010 extraterritorial provisions (可能使母公司被起诉)",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估法律合规要求",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "建立健全的合规措施（持续义务）",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：根据英国反贿赂法域外管辖可能使母公司被起诉，公司需要建立健全的合规措施；KG不足：基础KG仅存储法律事实，未表达由此派生的程序性合规义务；选项判断：可确认法律要求导致的合规义务；LLM推理：评估动作与参考关系为推断。",
+      "coverage_claim_ids": [
+        "claim_004"
+      ]
+    },
+    {
+      "card_id": "p7card_CH02-S04_004",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "鉴于案例风险，金融机构需维护合规诚信并降低贿赂风险",
+      "flow_nodes": [
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie作为AFC经理评估案例风险与机构义务",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "机构需维护合规诚信并降低贿赂和腐败风险",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000144"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie认识到机构需维护合规诚信并降低风险；KG不足：基础KG仅标记为一般义务，未表达明确的程序性有向关系；选项判断：可确认AFC经理应采取的合规维护义务；LLM推理：无。",
+      "coverage_claim_ids": [
+        "claim_013"
+      ]
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH02-S04_001",
+      "coverage_claim_ids": [
+        "claim_006",
+        "claim_007"
+      ],
+      "reason": "补充原卡缺失的推测性限定词：为X2和X3发现添加'appeared'和'suggested'限定边。",
+      "add_flow_nodes": [],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2_appeared",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "appeared"
+        },
+        {
+          "edge_id": "E3_suggested",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X3",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "suggested"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

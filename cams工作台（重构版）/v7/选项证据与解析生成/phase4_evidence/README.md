@@ -6,27 +6,27 @@
 
 | 脚本 | 角色 | 输入 | 输出 |
 |------|------|------|------|
-| `blind_adjudication.py` | 裁判 + 取证 | 题库 + 检索索引 | `output/<run>/questions/q_*.json` |
-| `generate_evidence_explanations.py` | 解析撰写 | 盲判 JSON | `output/<run>/explanations/*.md` |
-| `export_software_explanations.py` | 题库软件导出 | 解析 JSON | `output/<run>/software_export/chapters/CHxx.md` |
-| `retrieval_validation.py` | 检索质量抽检 | 题库 + 索引 | 检索验证报告 |
-| `chapter_mapping.py` | 题目→章节映射 | 题库 + 索引 | `chapter_mapping/question_chapter_mappings.jsonl` |
-| `md_to_docx.py` | Markdown → Word | 解析 MD | docx |
+| `盲判流程/blind_adjudication.py` | 裁判 + 取证 | 题库 + 检索索引 | `output/<run>/questions/q_*.json` |
+| `解析撰写/generate_evidence_explanations.py` | 解析撰写 | 盲判 JSON | `output/<run>/explanations/*.md` |
+| `解析撰写/export_software_explanations.py` | 题库软件导出 | 解析 JSON | `output/<run>/software_export/chapters/CHxx.md` |
+| `盲判流程/retrieval_validation.py` | 检索质量抽检 | 题库 + 索引 | 检索验证报告 |
+| `题库章节映射/chapter_mapping.py` | 题目→章节映射 | 题库 + 索引 | `题库章节映射/数据/question_chapter_mappings.jsonl` |
+| `导出为docx/md_to_docx.py` | Markdown → Word | 解析 MD | docx |
 
 ## 数据流
 
 ```
 v7_questions.json + phase3_index + (可选 KG/P5)
         ↓
-blind_adjudication.py          ← 盲判：检索 + LLM 裁判 + 证据卡 + 机械校验 + 自动对齐
+盲判流程/blind_adjudication.py ← 盲判：检索 + LLM 裁判 + 证据卡 + 机械校验 + 自动对齐
         ↓
 output/<run>/questions/q_*.json
         ↓
-generate_evidence_explanations.py  ← 解析：答案锁定 + LLM 撰文 + 本地逐字校验 + 兜底
+解析撰写/generate_evidence_explanations.py ← 解析：答案锁定 + LLM 撰文 + 本地逐字校验 + 兜底
         ↓
 output/<run>/explanations/*.md
         ↓
-export_software_explanations.py   ← 导出：门禁检查 + 中英双语题库软件版
+解析撰写/export_software_explanations.py ← 导出：门禁检查 + 中英双语题库软件版
         ↓
 output/<run>/software_export/chapters/CHxx.md
 ```
@@ -46,7 +46,7 @@ output/<run>/software_export/chapters/CHxx.md
 
 ### 盲判机械对齐
 
-`blind_adjudication.py` 在 `filter_llm_citations` 之后对 LLM 输出做确定性修复：
+`盲判流程/blind_adjudication.py` 在 `filter_llm_citations` 之后对 LLM 输出做确定性修复：
 - `evidence_status=negative` 但无 negative card → 自动对齐
 - `decision_reason` 提到但未绑定的 unit_id → 自动补入 evidence_cards
 - 有 evidence_cards 但 `evidence_status=none` → 自动纠正
@@ -59,7 +59,7 @@ output/<run>/software_export/chapters/CHxx.md
 
 ### 章节映射
 
-题目到真实教材章节（CH01-CH59）的映射由 `chapter_mapping/question_chapter_mappings.jsonl` 维护，经人工确认。盲判通过 `--chapter-map` 引用，实现按章节选题。
+题目到真实教材章节（CH01-CH59）的映射由 `题库章节映射/数据/question_chapter_mappings.jsonl` 维护，经人工确认。盲判通过 `--chapter-map` 引用，实现按章节选题。
 
 ## 典型使用
 
@@ -69,21 +69,21 @@ $chapter = "CH01"
 $out = "output/demo_$chapter"
 
 # 1. 盲判（+KG 扩展）
-python scripts/blind_adjudication.py `
-  --chapter-map chapter_mapping/question_chapter_mappings.jsonl `
+python "盲判流程/blind_adjudication.py" `
+  --chapter-map "题库章节映射/数据/question_chapter_mappings.jsonl" `
   --chapter-id $chapter --enable-kg --concurrency 4 `
   --model deepseek-v4-pro --output-dir $out
 
 # 2. 解析
-python scripts/generate_evidence_explanations.py `
+python "解析撰写/generate_evidence_explanations.py" `
   --output-dir $out --concurrency 4 --model deepseek-v4-pro --write-back
 
 # 3. 导出
-python scripts/export_software_explanations.py `
+python "解析撰写/export_software_explanations.py" `
   --output-dir $out --chapter-id $chapter
 
 # 单题调试
-python scripts/blind_adjudication.py `
+python "盲判流程/blind_adjudication.py" `
   --question-id v7_q_000009 --concurrency 1 `
   --enable-kg --model deepseek-v4-pro --output-dir output/demo_test
 ```

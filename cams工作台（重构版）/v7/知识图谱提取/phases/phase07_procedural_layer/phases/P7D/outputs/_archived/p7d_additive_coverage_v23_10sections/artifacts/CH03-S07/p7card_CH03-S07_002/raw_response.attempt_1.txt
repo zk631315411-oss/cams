@@ -1,0 +1,74 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到金融机构通过交易监控系统检测并标记非法活动，支持节点2的标签。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文列举了结构化存款、快速跨境分层及与已知恐怖钱包关联的异常资金流动，与节点1标签完全一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文中的'which flagged'表明系统主动标记这些活动，方向为系统→活动，符合REFERENCES对过程参照输入的要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文无相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文没有并列、相关等关系被误判，关系合理。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000283"],
+      "source_quotes": ["which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets"],
+      "reason": "系统检测并标记这些具体活动的行为，支持系统参照这些活动作为处理对象，因此REFERENCES关系成立。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点2的标签有原文依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'flagged'表明活动被标记为可疑，与节点3标签一致。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "节点2的'标记可疑活动'与节点3的'标记为可疑活动'是同一事实的主动和被动表述，不符合PRODUCES对独立产生关系的要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文无相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "无相关错误。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000283"],
+      "source_quotes": ["which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements"],
+      "reason": "节点2与节点3为主动/被动同义改写，无法构成PRODUCES边。"
+    }
+  ]
+}

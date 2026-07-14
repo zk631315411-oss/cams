@@ -1,0 +1,235 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "proposition": "金融机构必须对SPV和PIV进行强化尽职调查，包括识别最终受益所有人并了解真实目的，并确保遵守CDD规则，这有助于减轻金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "存在process-standard的约束关系和动作分解，基础KG难以表达EDD必须参照CDD规则的具体有向约束以及EDD内部子动作。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000642",
+        "v7u_N000643",
+        "v7u_N000644",
+        "v7u_N000645"
+      ],
+      "proposition": "SPV的定义与合法用途。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和事实，无程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000646",
+        "v7u_N000647",
+        "v7u_N000648",
+        "v7u_N000649",
+        "v7u_N000650",
+        "v7u_N000651",
+        "v7u_N000652",
+        "v7u_N000653"
+      ],
+      "proposition": "SPV的金融犯罪风险、犯罪分子利用SPV的手法以及相关红旗信号。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通风险机制、犯罪手法描述和孤立风险指标，可由基础KG表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000654",
+        "v7u_N000655"
+      ],
+      "proposition": "PIV的定义与庞氏骗局、内幕交易风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义和风险说明，无局部有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000656",
+        "v7u_N000657"
+      ],
+      "proposition": "犯罪分子利用SPV和PIV进行贸易洗钱的手法。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪过程描述，基础KG可承接。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "强化尽职调查（EDD）对SPV和PIV的要求",
+      "flow_nodes": [
+        {
+          "node_id": "p7node_CH08-S05_001_input_01",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "SPVs and PIVs (特殊目的载体和集合投资工具)",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7node_CH08-S05_001_process_01",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构必须对SPV和PIV进行强化尽职调查，包括识别最终受益所有人并了解真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7node_CH08-S05_001_standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD regulations such as the Financial Crime Enforcement Network's CDD rule (客户尽职调查规则)",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7edge_CH08-S05_001_proc_ref_std",
+          "edge_type": "REFERENCES",
+          "source": "p7node_CH08-S05_001_process_01",
+          "target": "p7node_CH08-S05_001_standard_01",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+        },
+        {
+          "edge_id": "p7edge_CH08-S05_001_proc_ref_input",
+          "edge_type": "REFERENCES",
+          "source": "p7node_CH08-S05_001_process_01",
+          "target": "p7node_CH08-S05_001_input_01",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构必须执行EDD --REFERENCES--> CDD规则（标准约束动作），且EDD包含识别UBO和了解真实目的。KG不足：基础KG可能保存了EDD义务的一般事实，但未能表达EDD过程必须参照CDD规则的具体有向约束以及EDD内部子动作（识别UBO、了解目的）在程序上的从属关系。选项判断：可以帮助判断金融机构在EDD过程中是否必须识别UBO并遵守CDD规则，以及EDD适用的对象（SPV/PIV）。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_claim_audit": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "proposition": "金融机构必须对SPV和PIV进行强化尽职调查，包括识别最终受益所有人并了解真实目的，并确保遵守CDD规则，这有助于减轻金融犯罪风险。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH08-S05_001"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "must",
+      "reason": "四项硬门槛满足：制度性控制动作（金融机构须执行EDD）明确参照输入对象（SPV/PIV）和标准（CDD规则），且动作分解为识别UBO、了解目的等子任务，构成局部有向程序结构；该结构能帮助判断金融机构在EDD中必须遵守CDD规则并识别UBO，基础KG无法表达此细粒度约束与分解。命题末尾“有助于减轻风险”属普通控制效果，由KG承接，不计入P7C覆盖缺口。现有card已通过节点与REFERENCES边完整表达所有P7C要素（动作、标准约束、输入、子任务）及强制限定词，故判定为covered。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N000642",
+        "v7u_N000643",
+        "v7u_N000644",
+        "v7u_N000645"
+      ],
+      "proposition": "SPV的定义与合法用途。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "纯定义和事实描述，无任何制度性动作或判断性有向结构，硬门槛不满足，应由KG承接。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N000646",
+        "v7u_N000647",
+        "v7u_N000648",
+        "v7u_N000649",
+        "v7u_N000650",
+        "v7u_N000651",
+        "v7u_N000652",
+        "v7u_N000653"
+      ],
+      "proposition": "SPV的金融犯罪风险、犯罪分子利用SPV的手法以及相关红旗信号。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "内容均为普通风险机制、犯罪操作步骤、困难描述及孤立风险指标，不含任何需要基于输入、标准或条件触发并输出独立结论/应对/分类的程序性动作或判断，硬门槛不满足，应由KG承接。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N000654",
+        "v7u_N000655"
+      ],
+      "proposition": "PIV的定义与庞氏骗局、内幕交易风险。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "定义和风险说明，无局部有向程序结构，硬门槛不满足，应由KG承接。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N000656",
+        "v7u_N000657"
+      ],
+      "proposition": "犯罪分子利用SPV和PIV进行贸易洗钱的手法。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "犯罪过程描述，无制度性主体动作或判断，硬门槛不满足，应由KG承接。"
+    }
+  ],
+  "coverage_patch_resolutions": []
+}

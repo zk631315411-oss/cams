@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "experiment_id": "p7c_coverage_decomposition_v2_20260713",
+  "profile_id": "p7c-coverage-decomposition-v2",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\profiles\\p7c_coverage_decomposition_v2.json",
+  "profile_sha256": "d98128561e4d827a83f178480676a9c6aa954bacba66fbb54e1349277c547154",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+  "objective": "Reduce non-KG P7C proposition omissions without KG over-classification or unsupported procedural edges",
+  "hypothesis": "A hard operational-relation gate in the proposition Audit will preserve the recall benefit of decomposition while excluding ordinary KG mechanisms and control effects",
+  "changed_variable": "coverage_audit_p7_eligibility_gate_v2",
+  "test_strategy": "paired_ab",
+  "constants": {
+    "initial_extraction": "v23 raw_response.txt",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "section_concurrency": 10,
+    "coverage_patch_prompt": "v1 unchanged",
+    "coverage_runner": "v1 unchanged",
+    "semantic_evaluator": "P7D edge review v1"
+  },
+  "primary_metrics": [
+    "detect CH02 qualifier gaps, CH06 calculation-to-classification gap, CH12 qualified CDD result gap, and CH47 action-references-experience gap",
+    "convert detected gaps to P7D-accepted edges",
+    "reduce non-KG omissions without KG over-classification"
+  ],
+  "regression_gates": [
+    "zero coverage contract failures",
+    "CH03-S02 remains without P7C additions",
+    "CH05-S04 general control effects remain KG-only",
+    "existing graph content remains unchanged",
+    "no new unsupported strict sequence or deterministic causal claims",
+    "pending plus rejected review cost does not materially exceed baseline"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7C\\outputs\\ds_pro_none_additive_coverage_v23_10sections",
+  "baseline_sha256": "00be1c458c2052def80c42f39da4d88054919eec1883463071fc7b4ec9ee1ae0",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7C\\tests\\coverage_decomposition_v2",
+  "variant_sha256": "52b2e86c9433ab3e3cdfa1cae9bfaa146f97472352e2095cae6149ac41489cfa",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "CH02-S04",
+      "CH03-S02",
+      "CH03-S07",
+      "CH05-S04",
+      "CH06-S09",
+      "CH06-S10",
+      "CH07-S03",
+      "CH08-S05",
+      "CH12-S04",
+      "CH47-S04"
+    ],
+    "holdout": []
+  },
+  "status": "evaluated",
+  "runs": [
+    {
+      "arm": "baseline",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v1/run_coverage_decomposition.py",
+        "--arm",
+        "baseline",
+        "--sample-file",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\development-sample.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\artifacts\\baseline\\development",
+        "--baseline-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7C\\outputs\\ds_pro_none_additive_coverage_v23_10sections"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T04:26:16+00:00",
+      "finished_at": "2026-07-13T04:26:17+00:00",
+      "elapsed_seconds": 0.215,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\logs\\development-baseline.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\logs\\development-baseline.stderr.txt",
+      "error": null
+    },
+    {
+      "arm": "variant",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v1/run_coverage_decomposition.py",
+        "--arm",
+        "variant",
+        "--sample-file",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\development-sample.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\artifacts\\variant\\development",
+        "--baseline-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7C\\outputs\\ds_pro_none_additive_coverage_v23_10sections",
+        "--audit-prompt",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7C\\tests\\coverage_decomposition_v2/prompts/coverage_audit_v2.md",
+        "--patch-prompt",
+        "phases/P7C/tests/coverage_decomposition_v1/prompts/coverage_patch_v1.md",
+        "--model",
+        "deepseek-v4-pro",
+        "--thinking-effort",
+        "none",
+        "--concurrency",
+        "10",
+        "--max-tokens",
+        "16000",
+        "--timeout",
+        "300"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T04:26:16+00:00",
+      "finished_at": "2026-07-13T04:31:53+00:00",
+      "elapsed_seconds": 336.746,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\logs\\development-variant.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v2_20260713\\logs\\development-variant.stderr.txt",
+      "error": null
+    }
+  ],
+  "verdict": "reject",
+  "created_at": "2026-07-13T04:26:07+00:00",
+  "updated_at": "2026-07-13T04:38:06+00:00"
+}

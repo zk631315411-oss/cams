@@ -1,0 +1,97 @@
+{
+  "profile_id": "p7c-coverage-decomposition-v4-patch-evidence-contract",
+  "workspace": "../..",
+  "test_strategy": "paired_ab",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v4/run_patch_rebuild_strict.py",
+        "--arm",
+        "baseline",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--audit-source-dir",
+        "{baseline_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 120,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v4/run_patch_rebuild_strict.py",
+        "--arm",
+        "variant",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--audit-source-dir",
+        "{baseline_ref}",
+        "--initial-dir",
+        "phases/P7C/outputs/ds_pro_none_additive_coverage_v23_10sections",
+        "--patch-prompt",
+        "{variant_ref}/prompts/coverage_patch_v3.md",
+        "--model",
+        "deepseek-v4-pro",
+        "--thinking-effort",
+        "none",
+        "--concurrency",
+        "10",
+        "--max-tokens",
+        "16000",
+        "--timeout",
+        "300"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 900,
+      "required_env": ["DEEPSEEK_API_KEY"]
+    }
+  },
+  "constants": {
+    "coverage_audit": "v2 outputs frozen",
+    "initial_extraction": "v23 raw_response.txt",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "section_concurrency": 10,
+    "semantic_evaluator": "P7D edge review v1"
+  },
+  "primary_metrics": [
+    "zero structure-blocked Coverage edges",
+    "increase accepted answer-eligible Coverage repairs",
+    "retain valid institutional-process claims without inventing actors"
+  ],
+  "regression_gates": [
+    "zero patch contract failures",
+    "no unknown relation_type",
+    "every added edge evidence covers both endpoints",
+    "no changes to frozen Audit decisions",
+    "new rejected edges fewer than v3"
+  ],
+  "review_cost_metrics": [
+    "P7D accepted/pending/rejected counts for new edges",
+    "unresolved coverage claim count"
+  ],
+  "samples": {
+    "development": [
+      "CH02-S04",
+      "CH03-S02",
+      "CH03-S07",
+      "CH05-S04",
+      "CH06-S09",
+      "CH06-S10",
+      "CH07-S03",
+      "CH08-S05",
+      "CH12-S04",
+      "CH47-S04"
+    ],
+    "holdout": []
+  },
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

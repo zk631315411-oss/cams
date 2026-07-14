@@ -94,509 +94,287 @@ Acronyms are used in this Study Guide. Please refer to the Glossary to facilitat
 
 ## Table of Contents
 
-Understanding the Risks and Methods of Financial Crime....13   
-Money Laundering and Financial Crime....14   
-Introduction....14   
-Introduction: Money laundering and financial crime....14   
-Case example: Linguistix's suspicious transactions....14   
-Money laundering....16   
-What is financial crime?....16   
-Money laundering....16   
-Common techniques for money laundering....17   
-Case example: Tamayo's money mules....19   
-Types of financial crime....21   
-Predicate crimes and money laundering....21   
-Sanctions evasion....23   
-Case example: Komarov's tactics....24   
-Bribery and corruption....25   
-Case example: FullTechGlobal corruption scandal....26   
-Tax avoidance versus tax evasion....28   
-Fraud....29   
-Cyber-enabled crime....30   
-Examples of predicate crimes....32   
-Human trafficking and human smuggling....32   
-Environmental crime....33   
-Drug trafficking....34   
-Terrorism financing....36   
-Terrorism financing compared to money laundering....36   
-How terrorists move and store funds....37   
-Case example: Mr. Wolfe's scheme....38   
-Consequences of financial crime....41   
-Consequences of financial crime....41   
-Social consequences of financial crime....42   
-Institutional accountability to prevent financial crime....43   
-Individual impact of violations of AFC regulations....44   
-Financial crime risks in relation to other types of risks....46 
-
-Financial crime risks......46
-Case example: A lasting lesson......47
-Operational, legal, concentration, and reputational risks......48
-
-Money Laundering Risks in Financial Services ......50
-Introduction......50
-Introduction: Money laundering risks in financial services......50
-Student note: Sector-specific case studies......50
-Case example: A new corporate banking role......51
-Student note: Financial crime risk......52
-
-Money laundering risks associated with banking....53
-Money laundering risks associated with banking......53
-Shell and shelf companies risks......54
-Case example: Estonian bank branch......56
-Politically exposed person risks......57
-Control and ownership for AML compliance......59
-Concentration accounts......61
-
-Money laundering risks associated with retail and commercial banking....63
-Retail and commercial banking products and risks......63
-High-risk retail and commercial banking products......64
-Trade finance products and risks......66
-Credit-related product risks......67
-Card risks......68
-Credit unions and building societies risks......69
-
-Private banking and wealth management risks ......71
-Money laundering risks associated with private banking and wealth management......71
-High-risk private banking and wealth management products......72
-Trust risks......73
-Offshore financial center risks......74
-Special purpose vehicle risks......75
-
-Corporate and investment banking risks ......77
-Corporate and investment banking risks......77
-Wire transfer risks......78
-Fundraising risks......79
-Mergers and acquisitions risks......80
-High-risk corporate and investment banking products......81
-Correspondent banking risks......83
-Capital markets risks......84 
-
-Money Laundering Risks in Nonbank Financial Institutions....86
-Introduction....86
-Introduction: Money laundering risks in nonbank financial institutions....86
-Case example: CashBayou's risk management challenges....86
-Money laundering risks associated with MSBs, payment service providers, and e-commerce....89
-Payment service providers....89
-Payment service providers risks....92
-Money services business....93
-Risks associated with banking MSBs....95
-E-commerce....96
-E-commerce risks....98
-Case example: LotusMall and illegal gambling....99
-Money laundering risks associated with insurance, securities, brokerage, and custodian services....101
-Insurance products risks....101
-Case example: Investment product misuse....102
-Securities and brokerage risks....103
-Asset managers....105
-Custodial services risks....106
-Money laundering risks associated with cryptoassets and other FinTechs....108
-Cryptoassets industry ecosystem....108
-Blockchain....110
-Cryptoasset risks....111
-Stablecoin, token, and NFT risks....112
-Central bank digital currency....113
-Mixers and tumblers....114
-Money Laundering Risks in DNFBPs and Other High-Risk Sectors....116
-Introduction....116
-Introduction: Money Laundering Risks in DNFBPs and Other High-Risk Sectors....116
-Case example: DNFBP risks in the Hendricks case....116
-Money laundering risks associated with DNFBPs....119
-Risks of banking designated nonfinancial businesses and professions....119
-Gaming sector risks....120
-Real estate sector risks....121
-Accountancy and audit sector risks....123
-Legal services sector risks....125
-Trust and company service provider and company secretary sector risks....126 
-
-High-risk business sectors 128
-High-value asset risks 128
-Case example: Suspicious transactions at Goodwish Jade 129
-Import/export businesses risks 131
-Free-trade zones risks 132
-Alternative remittance systems 133
-Charity and NGO risks 134
-Military organization and goods risks 135
-Providing financial services to embassies, foreign consulates, and missions 137
-Drug-related businesses risks 138
-
-Global AFC Frameworks, Governance, and Regulations 140
-Global AFC Standards and Guidance 141
-Introduction 141
-Introduction: Global AFC standards and guidance 141
-Case example: Implementing AFC standards at FinTrust 142
-Financial Action Task Force 144
-Financial Action Task Force 144
-FATF-style regional bodies 145
-FATF 40 Recommendations 146
-FATF Recommendations 1-8 147
-FATF Recommendations 9-23 148
-FATF Recommendations 24-40 149
-FATF 11 Immediate Outcomes 150
-FATF mutual evaluation 153
-FATF high-risk and noncooperative jurisdictions 155
-Impact of FATF mutual evaluation reports on jurisdictions 156
-FATF guidance for risk assessment 158
-
-AFC guidance from leading international organizations 160
-United Nations AFC guidance 160
-Case study: The 1999 Convention and UNSC resolutions for CFT 161
-World Bank and International Monetary Fund AFC guidance 163
-Organisation for Economic Co-operation and Development AFC guidance 164
-Basel Committee on Banking Supervision AFC guidance 165
-Egmont Group AFC guidance 167
-Wolfsberg Group AFC guidance 168
-International Organization of Securities Commissions AFC guidance 169
-
-AFC guidance from other organizations 171
-G-20 Anti-Corruption Working Group AFC guidance 171
-Transparency International AFC guidance 172 
-
-Basel Institute on Governance AFC guidance....174
-Tax Justice Network AFC guidance....175
-AFC Regulations and Regimes....177
-Introduction....177
-Introduction: AFC regulations and regimes....177
-Student note: Regulatory framework elective courses....177
-Case example: Drafting policies for an AFC department based in APAC....178
-US AML/CFT regulatory landscape....180
-Bank Secrecy Act....180
-USA PATRIOT Act....181
-The Anti-Money Laundering Act of 2020....182
-Financial Crimes Enforcement Network....184
-Other US regulators....185
-Case study: US regulatory enforcement actions....186
-Office of Foreign Assets Control....187
-EU AML/CFT regulatory landscape....189
-History of AML regime in Europe....189
-EU AML package....190
-The role of AML Authority....191
-Markets in Cryptoassets Regulation....192
-Other regional AML/CFT regulatory landscapes....194
-Local AML regulations and cross-jurisdictional impact....194
-UK AML regulations....195
-Australia AML regulations....196
-Singapore AML regulations....198
-Hong Kong (China) AML regulations....199
-China AML regulations....200
-Japan AML regulations....201
-South Korea AML regulations....202
-United Arab Emirates AML regulations....203
-Other AFC regulations that impact organizations....205
-Major ABC regulations....205
-Major sanctions regimes....206
-Other sanctions regimes....207
-Other laws and regulations that impact organizations....209
-Data security and privacy....209
-Digital Operational Resilience Act....210
-EU General Data Protection Regulation....211
-The GDPR and the balance between privacy and transparency....212 
-
-Consumer protection and inclusive banking....213
-AI regulations....214
-ESG regulations....216
-
-Use of Guidance and AFC Cooperation....219
-Introduction....219
-Introduction: Use of guidance and AFC cooperation....219
-Case example: Using typology reports to enhance AML controls....220
-
-Using the reports and guidance from different authorities....222
-Using AFC reports, guidance notes, and policy papers....222
-Using reports, guidance notes, and policy papers in your AML/CFT controls....223
-Case example: Terrorist financing red flags....224
-National, sectoral, and thematic risk assessments....225
-Case study: SRA on decentralized finance....226
-
-Cooperation between authorities....228
-Roles of regulators, law enforcement, and FIUs....228
-Case study: J5-US law enforcement collaboration....229
-Cooperation between regulatory authorities....230
-Law enforcement and FIU AFC cooperation....231
-Case study: Law enforcement and FIU cooperation....232
-Partnership requirements and mutual legal assistance treaties....233
-
-Cooperation involving the private sector....235
-Public-private partnership....235
-Case study: AUSTRAC Fintel Alliance investigation....236
-Private sector collaboration....237
-Private sector information sharing....238
-
-Building an AFC Compliance Program....240
-Components of an AFC Program....241
-Introduction....241
-Introduction: Components of an AFC program....241
-Case study: Systemic BSA failures at a Canadian bank....241
-
-AFC program....243
-AFC program components....243
-Pillars of an AFC compliance program....244
-
-Three lines of defense....246
-Three lines of defense....246
-First line of defense AFC function....246
-Second line of defense AFC function....248
-Role of money laundering reporting officer....249 
-
-Role of quality control and quality assurance....249
-Financial crime functions' structure....250
-Compliance monitoring and testing....252
-Case example: Financial crime functions' structure at Global Finance, Corp....253
-Third line of defense AFC function....256
-Liaising with internal audit....258
-Functions of board of directors and management oversight....259
-Second LOD's AFC role and its interaction with the front office....261
-Second LOD's interaction with other functions....262
-Establishing a culture of compliance....264
-
-Risk Assessment....265
-Introduction....265
-Introduction: Risk assessment....265
-Case study: Failure to update an EWRA at a wealth management firm....265
-
-Types of risk assessment....267
-The importance of risk assessment in AFC....267
-Types of risk assessment within an organization....269
-The risk-based approach....270
-The risk appetite statement....271
-Preparing a risk appetite statement....272
-
-Enterprise-wide risk assessment....274
-Enterprise-wide risk assessment....274
-Determining inherent risks....275
-Control effectiveness....277
-Measuring control effectiveness....278
-Residual risks action plan....279
-Third-party tools to conduct risk assessment....280
-Reporting results of risk assessment....281
-
-The importance of continuous risk assessment....283
-Continuously assessing financial crime risk....283
-Customer risk assessment versus enterprise-wide risk assessment....285
-Product risk assessment....286
-
-Design Your AFC Program and Controls....288
-Introduction....288
-Introduction: Design your AFC program and controls....288
-Case study: Lack of governance at a Canadian bank....289
-
-Governance and oversight....291
-Need for AFC policies and procedures....291 
-
-Drafting AFC policies and procedures....291
-Maintaining effective AFC policies and procedures....293
-Governance committees and their functions....294
-Internal reporting to governance committees....296
-Regulatory reporting for AFC compliance....297
-Responding to regulator requests....299
-
-Implementation of AFC program and controls....301
-Controls across the customer lifecycle....301
-
-Onboarding AFC controls....304
-The KYC process....304
-Customer risk assessment....307
-KYC for a natural person....309
-KYC for a legal person....310
-Additional onboarding controls for high-risk scenarios....312
-Function of quality control....313
-
-Ongoing AFC controls....315
-Ongoing due diligence....315
-Payment screening....317
-Batch screening....319
-Politically exposed persons screening....320
-Adverse media checks....322
-
-Other due diligence requirements that help to mitigate risks....324
-Know your employee and vendor....324
-
-Transaction Monitoring and Investigation....325
-
-Introduction....325
-Introduction: Transaction monitoring and investigation....325
-Case example: AML control failures at a UK Bank....325
-
-Transaction monitoring....328
-Transaction monitoring controls....328
-Transaction monitoring versus payment screening....329
-Technology solutions for transaction monitoring....330
-Transaction monitoring system tuning....331
-
-Alert generation....333
-Typical scenarios that would generate an alert....333
-Procedures for alerts review....334
-Other sources of investigation....335
-
-Investigations....337
-Steps applied to an investigation....337 
-
-Information gathering....337
-How much research is reasonably enough?....338
-Communication channels and tipping off....339
-Communicating with customers....340
-Investigating someone inside the organization....341
-Analysis of information....342
-Suspicious activity escalation process....344
-Documenting your research....345
-Decision to file a SAR....346
-
-Concluding Investigations and Coordinating with Law Enforcement ....348
-Introduction....348
-Introduction: Concluding investigations and coordinating with law enforcement....348
-Case study: Failure to file report....348
-
-Concluding an investigation and suspicious activity reporting....350
-Protecting the organization during an investigation....350
-Duty to report....351
-Regulations related to suspicious activity reporting....352
-Suspicious activity report structure....353
-Case example: SAR for a family trust....354
-Maintaining an account after unusual activity....356
-Reasons and consequences for not filing a SAR....357
-Follow-up action when no SAR is filed....358
-Defensive suspicious activity reports....359
-
-Working with law enforcement agencies....361
-Communicating with law enforcement for an investigation....361
-Responding to law enforcement requests....362
-How law enforcement case investigators read a SAR....363
-
-Offboarding and de-risking....364
-Refusing or terminating a customer....364
-De-risking....365
-Financial inclusion....366
-
-Tools and Technologies to Fight Financial Crimes....368
-Technology for AFC Compliance....369
-Introduction....369
-Introduction: Technology for AFC compliance....369
-Case example: Implementing technology in AFC compliance....370
-Understanding AFC technology....372
-AFC technology overview....372 
-
-Tools and technologies for AFC compliance....374
-Global AFC innovation....376
-Technology implementation considerations....377
-
-Choosing AFC tools for an organization....381
-Adopting a risk-based approach when choosing AFC technology....381
-Using AFC technology to reduce friction in customer journeys....382
-AFC tools, choices, and considerations....383
-Artificial intelligence and machine learning....384
-Transitioning from traditional systems to AI-based tools....386
-Governance of compliance technology....387
-Regulatory requirements for technology....388
-Integrating new AFC tools with existing systems and data....389
-Prioritizing resources....390
-
-Privacy regulations and technology....392
-Impact of privacy regulations on technology use....392
-Privacy-enhancing technology....393
-
-Technology and tools used across the customer life cycle....395
-Geolocation technology....395
-Device intelligence....396
-Robotic process automation....397
-Behavioral and profile monitoring....398
-Open-source intelligence....399
-
-Technology for Customer Onboarding....401
-
-Introduction....401
-Introduction: Technology for customer onboarding....401
-Case example: Improving technology for customer onboarding....401
-
-Technology for KYC....404
-How does technology help KYC?....404
-Electronic KYC....405
-Perpetual KYC....406
-Digital onboarding technology....408
-Authentication and security technology....409
-Biometric technology....411
-Facial and voice recognition technology....412
-Liveness check technology....415
-
-Technology for screening....416
-How does technology help screening?....416
-Understanding screening system logic....417
-List management....419 
-
-Student note: Sanctions lists....420
-Fuzzy logic and partial matches....420
-Screening system tuning....421
-Whitelisting and adding to internal lists....422
-Integrating screening technology with other systems....424
-Using AI for screening....426
-
-Technology for Ongoing Monitoring and Investigations....428
-Introduction....428
-Introduction: Technology for ongoing monitoring and investigations....428
-Case example: New batch screening technology considerations....428
-
-Technology for payment and batch screening....431
-Types of ongoing screening....431
-Maintaining screening technology....432
-Technology for payment screening....433
-Screening digital assets and currencies....434
-
-Evolution of transaction monitoring....436
-Rules-based transaction monitoring....436
-New and emerging technologies for monitoring customers....437
-Case example: Evolution of transaction monitoring....439
-
-Technology for transaction monitoring....442
-Transaction monitoring and sufficient scenarios coverage....442
-Transaction monitoring scenario development....443
-Transaction monitoring scenario calibration testing....445
-Ongoing testing and tuning for rules-based systems....446
-Ongoing testing and tuning for AI tools....448
-Governance for transaction monitoring....449
-
-Technology for investigations....451
-Technology to assist investigation....451
-Network analysis solutions for transaction monitoring....453
-Technology to assist case management....455
-Technology for blockchain tracing....456
-Technology for reporting....457
-
-Data Collection and Preparation....459
-Introduction....459
-Introduction: Data collection and preparation....459
-Case example: Identify data for a new TM system....460
-
-Data as an input for solutions....462
-Understanding your data....462 
-
-Coverage and gap assessment......463
-Clean data for technology solutions......464
-
-Data collection......466
-Internal versus external data......466
-Internal static data......467
-Internal observed data......468
-Leveraging data from internal platforms......469
-Case example: AI for money laundering detection......470
-External data......472
-Integrating data from various sources......473
-
-Data preparation......475
-Data quality......475
-Data preparation......476
-Case example: Handling increased alert volume......477
-Data lineage......478
-AFC data extraction......480
-Data mining and matching......481
-Case example: Analyzing customer behaviors......482
-Data validation and testing......483
-Entity resolution......484
-Attributes of a block and sources of data......485
-Clustering......486
-
-Governance process......488
-Data governance committees......488
-Data governance administration and quality control......489
-
-lossary......491 
+# Understanding the Risks and Methods of Financial Crime (Page 13)
+
+## Money Laundering and Financial Crime (Page 14)
+
+### Introduction (Page 14)
+
+- Introduction: Money laundering and financial crime
+- Case example: Linguistix's suspicious transactions
+
+### Money laundering (Page 16)
+
+- What is financial crime?
+- Money laundering
+- Common techniques for money laundering
+- Case example: Tamayo's money mules
+
+### Types of financial crime (Page 21)
+
+- Predicate crimes and money laundering
+- Sanctions evasion
+- Bribery and corruption
+- Tax avoidance versus tax evasion, fraud, and cyber-enabled crime
+- Case examples: Komarov's tactics and FullTechGlobal corruption scandal
+
+### Examples of predicate crimes (Page 32)
+
+- Human trafficking and human smuggling
+- Environmental crime
+- Drug trafficking
+
+### Terrorism financing (Page 36)
+
+- Terrorism financing compared to money laundering
+- How terrorists move and store funds
+- Case example: Mr. Wolfe's scheme
+
+### Consequences of financial crime and related risks (Page 41)
+
+- Financial crime consequences, social consequences, and institutional accountability
+- Individual impact of violations of AFC regulations
+- Financial crime, operational, legal, concentration, and reputational risks
+- Case example: A lasting lesson
+
+## Money Laundering Risks in Financial Services (Page 50)
+
+### Introduction (Page 50)
+
+- Sector-specific case studies
+- Case example: A new corporate banking role
+- Financial crime risk
+
+### Money laundering risks associated with banking (Page 53)
+
+- Shell and shelf companies, politically exposed persons, control and ownership, and concentration accounts
+- Case example: Estonian bank branch
+
+### Money laundering risks associated with retail and commercial banking (Page 63)
+
+- Retail and commercial banking products and high-risk products
+- Trade finance, credit-related products, cards, credit unions, and building societies risks
+
+### Private banking and wealth management risks (Page 71)
+
+- High-risk products, trusts, offshore financial centers, and special purpose vehicles
+
+### Corporate and investment banking risks (Page 77)
+
+- Wire transfers, fundraising, mergers and acquisitions, high-risk products, correspondent banking, and capital markets
+
+## Money Laundering Risks in Nonbank Financial Institutions (Page 86)
+
+### Introduction (Page 86)
+
+- Case example: CashBayou's risk management challenges
+
+### Money laundering risks associated with MSBs, payment service providers, and e-commerce (Page 89)
+
+- Payment service providers and their risks
+- Money services businesses and risks associated with banking MSBs
+- E-commerce and its risks
+- Case example: LotusMall and illegal gambling
+
+### Money laundering risks associated with insurance, securities, brokerage, and custodian services (Page 101)
+
+- Insurance products, securities and brokerage, asset managers, and custodial services risks
+- Case example: Investment product misuse
+
+### Money laundering risks associated with cryptoassets and other FinTechs (Page 108)
+
+- Cryptoassets industry ecosystem and blockchain
+- Cryptoasset, stablecoin, token, NFT, and central bank digital currency risks
+- Mixers and tumblers
+
+## Money Laundering Risks in DNFBPs and Other High-Risk Sectors (Page 116)
+
+### Introduction (Page 116)
+
+- Case example: DNFBP risks in the Hendricks case
+
+### Money laundering risks associated with DNFBPs (Page 119)
+
+- Designated nonfinancial businesses and professions, gaming, real estate, accountancy and audit, and legal services risks
+- Trust and company service provider and company secretary sector risks
+
+### High-risk business sectors (Page 128)
+
+- High-value assets, import/export businesses, free-trade zones, and alternative remittance systems
+- Charities and NGOs, military organizations and goods, embassies and foreign consulates, and drug-related businesses risks
+- Case example: Suspicious transactions at Goodwish Jade
+
+# Global AFC Frameworks, Governance, and Regulations (Page 140)
+
+## Global AFC Standards and Guidance (Page 141)
+
+### Financial Action Task Force (Page 144)
+
+- FATF-style regional bodies
+- FATF 40 Recommendations, 11 Immediate Outcomes, mutual evaluation, and high-risk and noncooperative jurisdictions
+- FATF guidance for risk assessment
+
+### AFC guidance from leading international organizations (Page 160)
+
+- United Nations, World Bank and International Monetary Fund, OECD, and Basel Committee on Banking Supervision
+- Egmont Group, Wolfsberg Group, and International Organization of Securities Commissions
+- Case study: The 1999 Convention and UNSC resolutions for CFT
+
+### AFC guidance from other organizations (Page 171)
+
+- G-20 Anti-Corruption Working Group, Transparency International, Basel Institute on Governance, and Tax Justice Network
+
+## AFC Regulations and Regimes (Page 177)
+
+### US AML/CFT regulatory landscape (Page 180)
+
+- Bank Secrecy Act, USA PATRIOT Act, and the Anti-Money Laundering Act of 2020
+- Financial Crimes Enforcement Network, other US regulators, and the Office of Foreign Assets Control
+- Case study: US regulatory enforcement actions
+
+### EU and other regional AML/CFT regulatory landscapes (Page 189)
+
+- History of AML regime in Europe, the EU AML package, AML Authority, and Markets in Cryptoassets Regulation
+- AML regulations in the UK, Australia, Singapore, Hong Kong (China), China, Japan, South Korea, and the United Arab Emirates
+
+### Other AFC regulations that impact organizations (Page 205)
+
+- Major ABC regulations, sanctions regimes, data security, and privacy
+- Digital Operational Resilience Act, GDPR, consumer protection, AI, and ESG regulations
+
+# Use of Guidance and AFC Cooperation (Page 219)
+
+## Using the reports and guidance from different authorities (Page 222)
+
+### Using reports, guidance notes, and policy papers in AML/CFT controls (Page 223)
+
+- Terrorist financing red flags
+- National, sectoral, and thematic risk assessments
+- Case study: SRA on decentralized finance
+
+## Cooperation between authorities (Page 228)
+
+### Roles and cooperation of regulators, law enforcement, and FIUs
+
+- Cooperation between regulatory authorities
+- Law enforcement and FIU AFC cooperation, partnership requirements, and mutual legal assistance treaties
+- Case study: J5-US law enforcement collaboration
+
+## Cooperation involving the private sector (Page 235)
+
+### Public-private partnership and information sharing
+
+- Private sector collaboration and information sharing
+- Case study: AUSTRAC Fintel Alliance investigation
+
+# Building an AFC Compliance Program (Page 240)
+
+## Components of an AFC Program (Page 241)
+
+### AFC program and pillars of an AFC compliance program (Page 243)
+
+- Case study: Systemic BSA failures at a Canadian bank
+
+### Three lines of defense (Page 246)
+
+- First, second, and third line of defense AFC functions
+- Money laundering reporting officer, quality control and assurance, and compliance monitoring and testing
+- Internal audit, board and management oversight, and a culture of compliance
+
+## Risk Assessment (Page 265)
+
+### Types of risk assessment and the risk-based approach (Page 267)
+
+- Risk assessments within an organization, risk appetite statement, and preparing a risk appetite statement
+
+### Enterprise-wide risk assessment (Page 274)
+
+- Inherent risks, control effectiveness, residual risk action plans, and third-party tools
+- Reporting risk assessment results and continuous risk assessment
+- Customer, enterprise-wide, and product risk assessments
+
+## Design Your AFC Program and Controls (Page 288)
+
+### Governance and oversight (Page 291)
+
+- Drafting and maintaining AFC policies and procedures, governance committees, and regulatory reporting
+
+### Implementation of AFC program and controls (Page 301)
+
+- Controls across the customer lifecycle, KYC, customer risk assessment, and high-risk onboarding controls
+- Ongoing due diligence, payment and batch screening, PEP screening, and adverse media checks
+- Know your employee and vendor
+
+## Transaction Monitoring and Investigation (Page 325)
+
+### Transaction monitoring and alert review (Page 328)
+
+- Transaction monitoring controls, technology solutions, system tuning, and alert generation
+- Procedures for alert review and other sources of investigation
+
+### Investigations (Page 337)
+
+- Information gathering and analysis, communications and tipping off, and suspicious activity escalation
+- Documenting research and the decision to file a SAR
+
+## Concluding Investigations and Coordinating with Law Enforcement (Page 348)
+
+### Concluding an investigation and suspicious activity reporting (Page 350)
+
+- Duty to report, SAR regulations and structure, account maintenance, and follow-up when no SAR is filed
+
+### Working with law enforcement agencies and offboarding (Page 361)
+
+- Responding to law enforcement requests, how case investigators read a SAR, and refusing or terminating a customer
+- De-risking and financial inclusion
+
+# Tools and Technologies to Fight Financial Crimes (Page 368)
+
+## Technology for AFC Compliance (Page 369)
+
+### AFC technology, tools, and implementation (Page 372)
+
+- Global AFC innovation, technology implementation considerations, artificial intelligence, and machine learning
+- Governance of compliance technology, technology requirements, and systems and data integration
+- Privacy regulations and privacy-enhancing technology
+
+### Technology and tools used across the customer life cycle (Page 395)
+
+- Geolocation technology, device intelligence, robotic process automation, behavioral and profile monitoring, and open-source intelligence
+
+## Technology for Customer Onboarding (Page 401)
+
+### Technology for KYC (Page 404)
+
+- Electronic and perpetual KYC, digital onboarding, authentication, and security technology
+- Biometric, facial and voice recognition, and liveness check technology
+
+### Technology for screening (Page 416)
+
+- Screening system logic, list management, sanctions lists, fuzzy logic, and system tuning
+- Whitelisting, systems integration, and AI for screening
+
+## Technology for Ongoing Monitoring and Investigations (Page 428)
+
+### Technology for payment, batch screening, and transaction monitoring (Page 431)
+
+- Ongoing screening, payment screening, and screening of digital assets and currencies
+- Rules-based and emerging transaction monitoring, scenario development, and calibration testing
+- Ongoing testing, tuning, and governance for rules-based systems and AI tools
+
+### Technology for investigations (Page 451)
+
+- Technology to assist investigation, network analysis, case management, blockchain tracing, and reporting
+
+## Data Collection and Preparation (Page 459)
+
+### Data collection and preparation (Page 462)
+
+- Coverage and gap assessment, internal and external data, and data integration
+- Data quality, data lineage, AFC data extraction, and data mining and matching
+- Data validation, entity resolution, clustering, and data governance
+
+### Glossary (Page 491)
 
 ## Understanding the Risks and Methods of Financial Crime
 

@@ -1,0 +1,43 @@
+{
+  "section_id": "CH05-S04",
+  "card_id": "p7card_CH05-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "p7e_ch05s04_002_01",
+      "derivation": "llm_inference",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000377明确表述“演变的法规可能与当前业务模式和控制措施错位”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000378明确表述“合规计划必须持续更新”。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文仅分别陈述法规可能错位和合规计划必须更新，未明示两者之间的先后顺序或必然功能依赖关系，无法直接支持从source到target的PRECEDES方向。"
+        },
+        "condition_support": {
+          "status": "unsupported",
+          "reason": "原文没有提供任何条件句表明“当法规与当前业务模式和控制措施可能错位时”作为该关系的前提，该条件完全由推理添加，缺乏原文证据。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "节点标签保留了原文中的限定词“可能”和“必须”，condition也包含了“可能”，与原文一致。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中两个陈述为相邻且主题相关，但缺乏明示的因果关系或流程先后，更可能是并列相关关系，因此写作PRECEDES可能错误。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000377", "v7u_N000378"],
+      "source_quotes": [
+        "Evolving regulations might become misaligned with current business models and controls.",
+        "Compliance programs must continually be updated."
+      ],
+      "reason": "两端节点均有原文支持，但原文未明示两者之间的PRECEDES关系，也缺乏条件证据，关系属于推理且可能误判，方向不受支持，因此该边应被拒绝。"
+    }
+  ]
+}

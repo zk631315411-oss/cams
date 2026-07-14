@@ -1,0 +1,89 @@
+{
+  "section_id": "CH12-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_010",
+      "resolution": "unresolved",
+      "card_id": null,
+      "reason": "缺少执行主体：原文明示高风险客户需要仔细的风险评估（require careful risk assessment），但未指明由谁执行风险评估，根据构图规则，无法确定process节点的主体。"
+    },
+    {
+      "claim_id": "claim_012",
+      "resolution": "unresolved",
+      "card_id": null,
+      "reason": "缺少执行主体：原文描述持续监控交易活动可以帮助识别异常模式（Continuous monitoring ... can help identify ...），但未指明执行监控的主体，无法构建有主体的动作节点。"
+    },
+    {
+      "claim_id": "claim_013",
+      "resolution": "new_card",
+      "card_id": "p7card_CH12-S04_002",
+      "reason": "主体为稳健交易监控系统（Robust transaction monitoring systems），动作为基于预定义标准标记可疑交易，结果为帮助识别大额/异常交易等，限定词'can help'在节点标签中保留，所有部分直接由v7u_N000923支持。"
+    },
+    {
+      "claim_id": "claim_014",
+      "resolution": "unresolved",
+      "card_id": null,
+      "reason": "缺少执行主体：原文描述执行CDD有助于确保资金来源合法并细分客户（Conducting CDD helps ensure ...），但未指明执行CDD的主体，无法确定过程节点。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH12-S04_002",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "交易监控系统基于预定义标准标记可疑交易以帮助识别异常交易",
+      "flow_nodes": [
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "稳健的交易监控系统：基于预定义标准标记可疑交易",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预定义标准",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "可以帮助识别大额或异常交易、快速交易模式、高频交易及涉及高风险司法管辖区的交易",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "based on predefined criteria"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n3",
+          "target": "n5",
+          "evidence_unit_ids": ["v7u_N000923"],
+          "derivation": "explicit_text",
+          "source_quote": "can help identify large or unusual trades, rapid trading patterns, high-frequency transactions and transactions involving high-risk jurisdictions"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000923"],
+      "candidate_status": "candidate",
+      "review_notes": "针对claim_013新增构图。原文明确主体为稳健交易监控系统，动作基于标准标记可疑交易，产出为帮助识别的分类结果。所有节点和边直接由v7u_N000923支持，限定词已保留在exit标签中。未发现现有卡片覆盖。",
+      "coverage_claim_ids": ["claim_013"]
+    }
+  ],
+  "card_supplements": []
+}

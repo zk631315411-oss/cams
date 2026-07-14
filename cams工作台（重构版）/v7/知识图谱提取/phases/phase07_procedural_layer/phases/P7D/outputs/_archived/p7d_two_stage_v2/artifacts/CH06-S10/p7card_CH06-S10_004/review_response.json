@@ -1,0 +1,86 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_004",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_p7c_CH06S10_004_1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000490说明机构应采用风险为本的方法设定阈值，v7u_N000491进一步给出高风险客户下的具体调整，source节点“机构根据客户风险水平可能选择受益所有权阈值”有充分依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491直接指出对于特定高风险客户，受益所有权阈值可能低至10%，target label与原文一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以条件句“For certain high-risk customers...”引出结果，方向为从条件到分支结果，支持DECIDES结构。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“客户为高风险”与原文“For certain high-risk customers”直接匹配，无异义。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文使用“might be as low as”，target label保留“可能”，情态强度一致，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "此为明确的条件分支选择结构，不存在将并列或相关关系误写成DECIDES的情况。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000490",
+        "v7u_N000491"
+      ],
+      "source_quotes": [
+        "v7u_N000490: Your organization will set the appropriate threshold using a riskbased approach.",
+        "v7u_N000491: For certain high-risk customers, the beneficial ownership threshold might be as low as 10%."
+      ],
+      "reason": "原文明确给出条件与分支结果，方向、限定、条件均保留，边有效。"
+    },
+    {
+      "edge_id": "edge_p7c_CH06S10_004_2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "同edge_1，source节点由v7u_N000490和v7u_N000491支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491明确说明对于风险显著更高的客户，阈值可能低至5%，target label与原文一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以“and could go as low as 5% for customers who pose a significantly higher risk”给出另一条条件分支，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“客户风险显著更高”直接对应原文“for customers who pose a significantly higher risk”。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文“could go as low as”中的情态在target label“可能低至”中保留，未强化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "同为条件分支结构，不存在并列或相关关系误用。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000491",
+        "v7u_N000492"
+      ],
+      "source_quotes": [
+        "v7u_N000491: ...and could go as low as 5% for customers who pose a significantly higher risk.",
+        "v7u_N000492: For example, high-risk financial institutions with correspondent banking relationships in a high-risk jurisdiction might set their threshold at 5%."
+      ],
+      "reason": "原文提供了另一条分支条件与结果，示例进一步支持，边成立。"
+    }
+  ]
+}

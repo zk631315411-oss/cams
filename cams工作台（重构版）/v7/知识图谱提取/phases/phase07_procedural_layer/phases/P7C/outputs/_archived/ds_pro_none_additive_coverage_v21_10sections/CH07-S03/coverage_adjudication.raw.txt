@@ -1,0 +1,60 @@
+{
+  "section_id": "CH07-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述犯罪手法及对检测的一般性影响，没有涉及金融机构的识别、评估、决策或应对的有向动作。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述未能有效管理的后果，没有具体的主体动作或应对措施，属于一般风险陈述。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000553", "v7u_N000555"],
+      "proposition": "当银行尝试关闭超出风险容忍度且有未偿贷款余额的客户账户时，核销贷款通常需要充分理由和批准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "基础KG无法表达从触发事件到受约束动作的完整有向链，仅能记录事实片段。",
+      "origin_candidate_ids": ["cand_003"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "原文v7u_N000553明确描述尝试关闭账户导致需要核销，补充entry节点以完整表达触发条件，体现从关闭账户动作到核销流程的衔接。",
+      "origin_candidate_ids": ["cand_003"],
+      "add_flow_nodes": [
+        {
+          "node_id": "E_PATCH_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "银行尝试关闭因洗钱疑虑而超出风险容忍度的客户账户，且客户仍有贷款余额",
+          "evidence_unit_ids": ["v7u_N000553", "v7u_N000555"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E_PATCH_001",
+          "edge_type": "PRECEDES",
+          "source": "E_PATCH_001",
+          "target": "P2",
+          "evidence_unit_ids": ["v7u_N000553", "v7u_N000555"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000553"]
+    }
+  ]
+}

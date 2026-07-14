@@ -1,0 +1,86 @@
+{
+  "section_id": "CH05-S02",
+  "card_id": "p7card_CH05-S02_003",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000356明确描述汇丰银行卷入洗钱丑闻，支持source节点‘汇丰银行卷入洗钱丑闻’。"
+        },
+        "target_node_support": {
+          "status": "pending",
+          "reason": "原文未直接说明美国监管机构‘展开’洗钱调查，仅v7u_N000359提及‘调查’且上下文暗示监管行动，但未明确‘开展’动作，需进一步推理。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文关系为‘In response to the breach’(v7u_N000357)，属于因果反应关系，未明示时间先后顺序，且指导禁止将because/due to等理由关系作为PRECEDES，因此方向不成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文的因果触发关系被错误建模为PRECEDES，而非更适合的触发关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357",
+        "v7u_N000359"
+      ],
+      "source_quotes": [
+        "HSBC was involved in a money laundering scandal...",
+        "In response to the breach, US federal regulators imposed a record fine of US$1.9 billion...",
+        "One critical outcome of the investigation was the forced resignation of several senior executives..."
+      ],
+      "reason": "边e1的PRECEDES关系不成立：原文未明示监管调查的展开，且‘In response to the breach’表达的是因果反应，不属于流程先后，建议拒绝。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000359中的‘the investigation’明确指向调查动作，结合上下文监管机构身份，支持source节点‘美国监管机构对汇丰展开洗钱调查’。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000359明确指出‘One critical outcome of the investigation was the forced resignation of several senior executives, including the Global Head of Compliance’，完全支持target节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文‘One critical outcome of the investigation was...’直接表明调查导致高管辞职，调查到辞职的方向确凿。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文也不存在条件关系。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用任何限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文明确为因果关系，非并列或相关关系，适合PRODUCES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000359"
+      ],
+      "source_quotes": [
+        "One critical outcome of the investigation was the forced resignation of several senior executives, including the Global Head of Compliance..."
+      ],
+      "reason": "原文明确调查导致高管辞职，PRODUCES关系成立，建议接受。"
+    }
+  ]
+}

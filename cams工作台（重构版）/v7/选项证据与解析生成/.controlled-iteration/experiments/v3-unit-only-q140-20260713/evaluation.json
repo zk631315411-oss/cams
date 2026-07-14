@@ -1,0 +1,53 @@
+{
+  "verdict": "reject",
+  "summary": "The unit-only prompt removed the unsupported digital-asset claim, but it still conflated the contextual foreign-withdrawal fact with the decisive structuring definition and allowed unit IDs into prose.",
+  "primary_results": [
+    {
+      "metric": "unsupported blind-reason facts",
+      "baseline": "C analysis and easy-mistake text asserted a digital-asset association absent from the cited units",
+      "variant": "digital-asset assertion removed",
+      "result": "improved"
+    },
+    {
+      "metric": "decisive-signal grounding",
+      "baseline": "foreign withdrawal grouped into the structuring definition match",
+      "variant": "foreign withdrawal still grouped into the definition match",
+      "result": "failed"
+    }
+  ],
+  "regressions": [
+    "Variant option prose exposed internal v7u_* identifiers."
+  ],
+  "issues": [
+    {
+      "case_id": "v7_q_000140",
+      "classification": "improvement",
+      "baseline": "Unsupported digital-asset claim copied from blind evidence-card reason.",
+      "variant": "Claim absent after blind-generated reasons were hidden.",
+      "evidence": [
+        "artifacts/baseline/development/questions/q_v7_q_000140.json",
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    },
+    {
+      "case_id": "v7_q_000140",
+      "classification": "contract_violation",
+      "baseline": "Contextual foreign withdrawal was treated as part of the full definition match.",
+      "variant": "The same contextual-fact conflation remained.",
+      "evidence": [
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    },
+    {
+      "case_id": "v7_q_000140",
+      "classification": "regression",
+      "baseline": "No unit IDs in option prose.",
+      "variant": "C and D prose included v7u_* identifiers.",
+      "evidence": [
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Create a second isolated variant that separates decisive stem signals from contextual facts; handle internal-ID removal as deterministic normalization with regression tests."
+}

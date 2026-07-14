@@ -1,0 +1,145 @@
+{
+  "section_id": "CH12-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述行业特性为犯罪分子创造洗钱机会，属于一般风险原因说明，基础KG已能覆盖，无明确主体动作与局部有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "阐述复杂金融产品造成的风险，未涉及特定主体的识别、评估或应对动作，基础KG可保存为风险事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "离岸账户提供匿名性便利洗钱，属于孤立风险指标，基础KG充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性控制要求，缺乏具体条件、步骤或执行主体，无法构成局部有向结构，基础KG可表达此类一般义务。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述电子平台增加监控难度，无具体动作-结果链，基础KG可保存为事实。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_CH12-S04_001",
+      "reason": "原文明示交易监控系统基于预定义标准标记可疑交易以帮助识别特定异常模式，形成主体（监控系统）、依据（标准）、动作（标记）与识别结果的有向链，超出基础KG的一般措施描述，应建立局部流程。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "CDD的一般效果说明，无独立产物和明确条件，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，未形成与输入、条件或结果的局部连接。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述资产管理公司面临的复杂CDD事实，无具体动作链或判断分支，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "采用风险为本方法产生的抽象结果，缺乏具体动作输入和独立产出，基础KG可表达一般因果规则。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "local_process",
+      "title": "证券交易监控系统基于预定义标准识别可疑交易",
+      "flow_nodes": [
+        {
+          "node_id": "node_card1_1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预定义标准 (Predefined criteria)",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_card1_2",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "交易监控系统标记可疑交易 (Flag suspicious transactions)",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_card1_3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出的可疑交易模式 (Identified patterns: large/unusual trades, rapid trading, high-frequency, high-risk jurisdictions)",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_card1_1",
+          "edge_type": "REFERENCES",
+          "source": "node_card1_2",
+          "target": "node_card1_1",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text",
+          "condition": "基于预定义标准标记可疑交易"
+        },
+        {
+          "edge_id": "edge_card1_2",
+          "edge_type": "PRODUCES",
+          "source": "node_card1_2",
+          "target": "node_card1_3",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_006提升，构建交易监控系统基于标准标记并识别异常模式的局部流程。"
+    }
+  ],
+  "card_supplements": []
+}

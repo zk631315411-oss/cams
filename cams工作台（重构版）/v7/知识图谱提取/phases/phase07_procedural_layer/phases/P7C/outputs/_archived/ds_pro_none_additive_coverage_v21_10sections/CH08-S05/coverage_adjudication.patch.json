@@ -1,0 +1,86 @@
+{
+  "section_id": "CH08-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "SPV的定义和合法用途示例属于基础KG可充分表达的定义和事实，无程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "SPV金融犯罪风险、犯罪分子手法和红旗指标均为孤立事实或风险指标，基础KG可保存，无主体识别/评估/应对的有向关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PIV定义和风险陈述属于纯定义和事实，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪手法描述属于普通机制事实，无机构判断或应对结构，基础KG可保存。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "proposition": "金融机构执行强化尽职调查并识别UBO/了解目的，这有助于减轻与SPV相关的潜在金融犯罪风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "基础KG可保存规则和风险事实，但不能表达执行EDD/UBO识别后产生风险缓解效果的有向结果关系，对选项判断有用。",
+      "origin_candidate_ids": [
+        "cand_005"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "原文unit v7u_N000660明示强化尽职调查有助于减轻风险，但原卡片未表达该独立结果，需补充结果节点和边。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

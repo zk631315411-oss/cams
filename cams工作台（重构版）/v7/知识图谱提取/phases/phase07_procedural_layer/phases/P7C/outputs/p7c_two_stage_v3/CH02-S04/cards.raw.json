@@ -1,0 +1,170 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "proposition": "根据 UK Bribery Act 2010，如果子公司从事腐败活动，且母公司有英国联系，则母公司可能面临起诉。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律规则的条件-后果关系缺乏具体主体动作，不足以构成P7C过程性结构；基础KG可保存该规则为事实。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000141"
+      ],
+      "proposition": "内部控制缺陷可导致腐败活动长期未被发现。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通因果解释，无具体主体或程序性动作，基础KG可表达为一般风险因素。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "在贿赂案件中，贿赂作为上游犯罪，可导致通过复杂金融网络洗钱。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述犯罪机制，无机构判断或应对，基础KG可表达为一般洗钱方法。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "根据 UK Bribery Act 2010，公司如被发现严重腐败违规，将面临严厉罚款、国际监管审查和可能的刑事责任。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律后果陈述，无主体行动，属于基础KG范畴。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "金融机构在与全球企业客户交易时，其AFC经理应维护合规诚信并降低贿赂和腐败风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "明确的义务陈述，包含主体和必须执行的控制动作，形成规范性有向结构，基础KG无法表达该义务的动态约束关系。"
+    },
+    {
+      "candidate_id": "new_001",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000138"
+      ],
+      "proposition": "Sophie发现客户负面新闻后，开始了初步调查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "案例中AFC经理的发现-调查动作链，具有触发关系，基础KG不能表达该程序性先后顺序。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "金融机构在与全球企业交易时必须维护合规诚信并降低贿赂风险",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "金融机构（AFC经理）必须维护合规诚信并降低贿赂和腐败风险",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UK Bribery Act 2010 extraterritorial provisions",
+          "evidence_unit_ids": [
+            "v7u_N000136",
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": [
+            "v7u_N000144",
+            "v7u_N000136",
+            "v7u_N000137"
+          ],
+          "derivation": "llm_inference",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000144",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构的合规维护义务受到英国反贿赂法域外条款的约束。基础KG只能表达存在该法律和合规要求，无法表达法律条款如何约束机构的持续合规义务。选项判断：可确认机构在与全球企业交易时必须考虑反贿赂法要求。LLM推理：边E001（process REFERENCES standard）为LLM推理，因为原文未明确说明Sophie的义务直接来源于UK Bribery Act，但根据上下文是合理推断。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "发现负面新闻后开展调查",
+      "flow_nodes": [
+        {
+          "node_id": "N003",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Sophie 发现客户 FullTechGlobal 的负面新闻",
+          "evidence_unit_ids": [
+            "v7u_N000132"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie 开展初步调查",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E002",
+          "edge_type": "PRECEDES",
+          "source": "N003",
+          "target": "N004",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000138"
+          ],
+          "derivation": "llm_inference",
+          "condition": "发现负面新闻后"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000138"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：发现负面新闻触发初步调查。基础KG只能分别记录发现和调查的事实，无法表达两者之间的触发顺序。选项判断：可确认AFC经理在发现负面新闻后应进行调查。LLM推理：边E002为LLM推理，原文叙述顺序暗示了先后关系，但未明确说明'因此'。"
+    }
+  ],
+  "skip_reason": null
+}

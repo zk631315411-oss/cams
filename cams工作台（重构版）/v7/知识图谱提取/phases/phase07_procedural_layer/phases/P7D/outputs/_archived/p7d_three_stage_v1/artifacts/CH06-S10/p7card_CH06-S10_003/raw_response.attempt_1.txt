@@ -1,0 +1,118 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_003",
+  "edge_reviews": [
+    {
+      "edge_id": "e201",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000496 以“在没有自然人受益所有人的公司中”明确提供了 source 节点的依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“应识别并核实控制人或名义受益所有人”直接对应 target 节点描述的动作。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文使用条件句表述前提与后续动作的逻辑先后，交换方向会破坏必要功能依赖。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边的 condition 直接摘录自原文条件，且与 source 节点含义一致。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文动作有义务限定“should”，但 target label 未予保留，缺失了强制程度。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边反映的是条件触发的逻辑前后关系，未误用并列或主题关联。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000496"],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "两端均有依据，方向依赖条件句的逻辑推理，但 target 标签遗漏了原文的 should 限定，需修正后接受。"
+    },
+    {
+      "edge_id": "e202",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "source 节点对应原文要求的动作，有直接依据。"
+        },
+        "target_node_support": {
+          "status": "unsupported",
+          "reason": "原文仅要求执行识别动作，并未直接陈述“控制人或名义BO已被识别”这一结果状态；target 节点为推理产物，缺乏直接证据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "若动作发生，产生相应结果的方向合理，但该方向基于推理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边未设计 condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文动作用 should 表达义务，但 target label “identified” 将应当执行的动作结果强化为已实现状态，未保留限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边未涉及并列或一般主题类错误。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496",
+        "v7u_N000497"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified.",
+        "For example, for a company that is publicly listed on the stock exchange and has thousands of shareholders, a notional beneficial owner could be the president or chief executive officer, or equivalent."
+      ],
+      "reason": "target 节点缺乏直接的原文结果描述，且限定词被强化为已完成状态，关键检查均不成立，边应拒绝。"
+    },
+    {
+      "edge_id": "e203",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "source 节点动作有原文依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000497 明确给出了上市公司名义BO身份的认定指导（如总裁/CEO）。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "执行识别和核实动作时自然会参照此类指导，虽未明示但符合必要功能依赖。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边未设计 condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文指导用 could 表达可能性，target label 的“guidance”和“e.g.”保留了非强制性，未扭曲原意。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "未发现将并列或主题关联误判为参照关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000497"],
+      "source_quotes": [
+        "For example, for a company that is publicly listed on the stock exchange and has thousands of shareholders, a notional beneficial owner could be the president or chief executive officer, or equivalent."
+      ],
+      "reason": "两端均有依据，方向依赖推理，且原文未明示 process 必须参照该指导，需人工判断。"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "section_id": "CH06-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PEP宽泛定义及关联人属于定义和分类，基础KG已充分覆盖，无增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅说明识别挑战的事实，未形成具体主体动作或判断链，基础KG可保存为事实陈述。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "FATF对PEP的分类为纯定义和分类，基础KG已充分表达，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "腐败风险陈述及案例，未涉及机构的有向应对或判断，基础KG可保存为风险指标和案例。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性建议，无具体主体与动作衔接，基础KG可保存为规则。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象事实陈述，无有向动作或条件，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_005",
+      "reason": "机构考察个人影响力和分类时间构成评估动作，有明确输入（两个因素），具有有向关系，基础KG不能表达该方向。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象目的陈述，无具体动作或结构，基础KG可保存。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH06-S09_005",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "其他机构考察个人影响力和PEP分类时间",
+      "flow_nodes": [
+        {
+          "node_id": "p7n_005_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人当时的影响力（如授予合同或分配资金的能力）",
+          "evidence_unit_ids": ["v7u_N000479"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7n_005_002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人被归类为PEP的时间长短",
+          "evidence_unit_ids": ["v7u_N000480"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7n_005_003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "其他机构：考察（评估）个人影响力及PEP分类时间",
+          "evidence_unit_ids": ["v7u_N000478"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7e_005_001",
+          "edge_type": "REFERENCES",
+          "source": "p7n_005_003",
+          "target": "p7n_005_001",
+          "evidence_unit_ids": ["v7u_N000479"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "p7e_005_002",
+          "edge_type": "REFERENCES",
+          "source": "p7n_005_003",
+          "target": "p7n_005_002",
+          "evidence_unit_ids": ["v7u_N000480"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000478", "v7u_N000479", "v7u_N000480"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：其他机构考察个人影响力和分类时间 --REFERENCES--> 影响力因素 和 分类时间；KG不足：基础KG可保存机构考察因素的事实，但无法表达评估动作与输入之间的有向关系；选项判断：可判断机构做出PEP状态决定时的考虑因素；LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

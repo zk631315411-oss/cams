@@ -1,0 +1,75 @@
+{
+  "section_id": "CH07-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述提前还贷作为洗钱手段的方法，没有金融机构主体的识别、评估或应对动作，基础KG可将其作为独立风险事实保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述银行关闭账户时面临的挑战和潜在财务损失，本身没有具体应对动作或条件化关系，属于背景性事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性风险后果陈述，未与特定识别或应对动作形成有向约束关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "引入主题与一般风险陈述，不涉及特定程序或判断的有向结构。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000553", "v7u_N000555"],
+      "proposition": "当银行因洗钱担忧试图关闭客户账户且客户仍有贷款余额，退出超出风险容忍度时，核销贷款通常需要充分理由和批准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "原card仅表达了核销动作受标准约束，缺少退出客户关系作为触发情境的入口节点，基础KG不能表达该情境如何前置并触发需要核销及其约束的条件化流程。",
+      "origin_candidate_ids": ["cand_004", "cand_003"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "补充退出客户关系作为核销动作的前置入口节点，以完整表达原文中退出情境触发核销考虑并需理由批准的流程。",
+      "origin_candidate_ids": ["coverage_gap_001"],
+      "add_flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "银行退出超出风险容忍度的客户关系（可能伴有未偿贷款余额）",
+          "evidence_unit_ids": ["v7u_N000553", "v7u_N000555"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E1_to_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000553", "v7u_N000555"],
+          "derivation": "llm_inference",
+          "condition": "银行退出超出风险容忍度的客户关系"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000553"]
+    }
+  ]
+}

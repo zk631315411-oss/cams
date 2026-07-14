@@ -1,0 +1,98 @@
+{
+  "profile_id": "p7c-coverage-decomposition-v5-targeted-patch",
+  "workspace": "../..",
+  "test_strategy": "paired_ab",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v5/run_patch_rebuild_v5.py",
+        "--arm",
+        "baseline",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--audit-source-dir",
+        "{baseline_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 120,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v5/run_patch_rebuild_v5.py",
+        "--arm",
+        "variant",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--audit-source-dir",
+        "{baseline_ref}",
+        "--initial-dir",
+        "phases/P7C/outputs/ds_pro_none_additive_coverage_v23_10sections",
+        "--patch-prompt",
+        "{variant_ref}/prompts/patch_addendum_v4.md",
+        "--model",
+        "deepseek-v4-pro",
+        "--thinking-effort",
+        "none",
+        "--concurrency",
+        "10",
+        "--max-tokens",
+        "16000",
+        "--timeout",
+        "300"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 900,
+      "required_env": ["DEEPSEEK_API_KEY"]
+    }
+  },
+  "constants": {
+    "coverage_audit": "v2 outputs frozen",
+    "patch_evidence_contract": "v4 fixed",
+    "initial_extraction": "v23 raw_response.txt",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "section_concurrency": 10,
+    "semantic_evaluator": "P7D edge review v1"
+  },
+  "primary_metrics": [
+    "remove CH06 structure-blocked pending edges",
+    "preserve required qualifier for CH12 high-risk assessment",
+    "avoid CH02 source-stage mismatch"
+  ],
+  "regression_gates": [
+    "zero patch contract failures",
+    "no changes to frozen Audit decisions",
+    "no new unsupported strict sequence",
+    "new rejected edges fewer than v4",
+    "CH12 and CH47 accepted repairs retained"
+  ],
+  "review_cost_metrics": [
+    "P7D accepted/pending/rejected counts for new edges",
+    "unresolved coverage claim count"
+  ],
+  "samples": {
+    "development": [
+      "CH02-S04",
+      "CH03-S02",
+      "CH03-S07",
+      "CH05-S04",
+      "CH06-S09",
+      "CH06-S10",
+      "CH07-S03",
+      "CH08-S05",
+      "CH12-S04",
+      "CH47-S04"
+    ],
+    "holdout": []
+  },
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

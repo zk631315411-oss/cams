@@ -1,0 +1,82 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_01",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "E01“银行退出超出风险容忍度的客户关系且存在贷款余额”提取自原文“When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance...”，节点要素有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "P01“银行：核销贷款（重大财务决策）”对应原文“writing off a loan is a significant financial decision”，节点有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文使用“as”表示原因，而非时间或功能先后顺序，无法支持PRECEDES方向的source→target流程。"
+        },
+        "condition_support": {
+          "status": "unsupported",
+          "reason": "edge的condition“当退出客户关系且存在贷款余额时”与source节点内容重复，且原文中没有以此条件触发P01的陈述，原文是理由说明而非条件分支。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "P01标签无任何情态或限定词，原文对核销动作本身也没有使用限定词，此项不适用。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文将核销贷款作为退出时复杂性的原因之一，属于并列解释关系，不应被建模为PRECEDES流程边。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+      ],
+      "reason": "该边将原文的因果/解释关系错误地建模为流程先后顺序，方向缺乏支持，condition仅为source重复且无原文依据，关系类型选择不当，因此整体不支持。"
+    },
+    {
+      "edge_id": "edge_02",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "P01“银行：核销贷款（重大财务决策）”来自原文“writing off a loan is a significant financial decision”，有明确依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "S01“通常需要广泛证明和批准”来自原文“often requiring extensive justification and approval”，有明确依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文直接说明核销贷款（P01）需要广泛证明和批准（S01），即核销参照该标准，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "S01标签中的“通常”对应原文“often”，保留了限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "关系明确为参照标准，无并列或相关性误用。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+      ],
+      "reason": "原文明示核销贷款是一项重大财务决策，通常需要广泛证明和批准，REFERENCES关系及其方向、限定均得到充分支持。"
+    }
+  ]
+}

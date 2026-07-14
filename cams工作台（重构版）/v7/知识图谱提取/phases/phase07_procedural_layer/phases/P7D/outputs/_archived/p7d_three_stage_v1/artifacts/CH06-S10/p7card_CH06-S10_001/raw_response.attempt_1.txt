@@ -1,0 +1,86 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e001",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000490 明确要求机构使用风险为本方法设定适当阈值，且 v7u_N000492 提供了具体设定阈值的实例，因此“设定受益所有权阈值”这一动作有充分依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 明确指出“对于某些高风险客户……阈值可能低至10%”，并将风险分为一般高风险和显著高风险，这些内容构成了高风险客户的指示要素，作为输入有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "设置阈值的过程需要根据风险水平决定具体数值，原文“For certain high-risk customers... threshold might be as low as 10%”表明风险类别是阈值设定的依据，因此 n001 参照 n002 的方向成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边未声明 condition，且 REFERENCES 关系表达无条件的参照，原文中风险条件已体现在 target 节点标签中，无需在边上重复，故不适用。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用 qualifier，REFERENCES 关系本身不涉及情态或限定，故不适用。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边为 REFERENCES 类型，准确表达了过程对输入的参照关系，未误用表示顺序或因果的 PRECEDES、PRODUCES 等。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000491",
+        "v7u_N000490"
+      ],
+      "source_quotes": [
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk.",
+        "Your organization will set the appropriate threshold using a riskbased approach."
+      ],
+      "reason": "原文明确要求采用风险为本方法设定阈值，并给出了基于风险级别调整阈值的规则，故设定阈值过程参照高风险客户指标的关系成立，虽然需要推理，但逻辑明确，建议接受。"
+    },
+    {
+      "edge_id": "e002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "同 e001，设定阈值的动作有 v7u_N000490 和 v7u_N000492 支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 明确提供了针对高风险客户的阈值范围（10% 或 5%），v7u_N000492 给出一个 5% 阈值的应用例子，因此该标准节点有直接原文依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "设定阈值的过程需要参照可接受的阈值范围以确定具体数值，原文通过列举不同风险下的可能阈值隐含了这一参照关系，因此 n001 参照 n003 的方向成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边未声明 condition，REFERENCES 关系为无条件参照，边本身无需附加条件，故不适用。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用 qualifier，REFERENCES 关系不涉及情态限定，故不适用。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边为 REFERENCES 类型，正确表达了过程对标准的参照关系，未误用其他类型边。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000491",
+        "v7u_N000492"
+      ],
+      "source_quotes": [
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk.",
+        "For example, high-risk financial institutions with correspondent banking relationships in a high-risk jurisdiction might set their threshold at 5%."
+      ],
+      "reason": "原文提供了高风险场景下的具体阈值范围作为标准，设定阈值过程按风险为本方法必然参照该范围，关系虽需推理但符合业务逻辑，建议接受。"
+    }
+  ]
+}

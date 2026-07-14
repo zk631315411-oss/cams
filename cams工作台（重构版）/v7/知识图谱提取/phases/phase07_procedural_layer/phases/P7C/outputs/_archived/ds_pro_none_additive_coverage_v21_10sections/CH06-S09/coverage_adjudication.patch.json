@@ -1,0 +1,152 @@
+{
+  "section_id": "CH06-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义和分类知识，基础KG已充分覆盖，无增量有向关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般事实性挑战说明，基础KG可单独保存，无结构化主体动作或条件关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PEP类型分类，基础KG已覆盖，无增量关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "普通腐败案例说明，无机构应对链，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性建议，无具体主体和条件导向，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义与分类扩展，基础KG已充分覆盖。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性结论，无具体判断链或动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_005",
+      "reason": "原文明确描述了其他机构考察个人影响力和被归类时间的动作，构成有向的评估过程，超出基础KG陈述能力，应提升为P7C增量。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性声明，无程序性或判断性结构，基础KG可表达。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH06-S09_005",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "其他机构评估PEP时考察个人影响力和被归类时间",
+      "flow_nodes": [
+        {
+          "node_id": "node_001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "其他机构考察个人当前影响力和被归类时间",
+          "evidence_unit_ids": [
+            "v7u_N000478"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人当前影响力（如授予合同或分配资金的能力）",
+          "evidence_unit_ids": [
+            "v7u_N000479"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_003",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人被归类为PEP的时间",
+          "evidence_unit_ids": [
+            "v7u_N000480"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "node_001",
+          "target": "node_002",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000479"
+          ],
+          "derivation": "explicit_text",
+          "condition": null,
+          "relation_type": null
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "node_001",
+          "target": "node_003",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000480"
+          ],
+          "derivation": "explicit_text",
+          "condition": null,
+          "relation_type": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：其他机构评估PEP时考察个人影响力和被归类时间。KG不足：基础KG不能表达机构主动考察特定因素的有向评估动作，只能保存因素列表。选项判断：可帮助区分不同机构的PEP评估方法，排除“所有机构采用同一标准”等选项。LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

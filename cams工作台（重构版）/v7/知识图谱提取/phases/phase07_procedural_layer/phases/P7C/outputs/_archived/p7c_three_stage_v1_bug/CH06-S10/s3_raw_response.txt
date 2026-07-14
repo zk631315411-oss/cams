@@ -1,0 +1,233 @@
+{
+  "section_id": "CH06-S10",
+  "construction_audit": [
+    {
+      "candidate_id": "prop_006",
+      "construction_status": "graphed",
+      "card_ids": ["p7card_CH06-S10_001"],
+      "reason": "基于阈值设定动作与风险水平标准构建 REFERENCE 关系"
+    },
+    {
+      "candidate_id": "prop_007",
+      "construction_status": "graphed",
+      "card_ids": ["p7card_CH06-S10_002"],
+      "reason": "提取持股计算与门槛比较的分支判断结构，使用 P3_branch_routing 及 DECIDES 表达"
+    },
+    {
+      "candidate_id": "prop_008",
+      "construction_status": "graphed",
+      "card_ids": ["p7card_CH06-S10_003"],
+      "reason": "提取无自然人 BO 时的条件触发识别流程，使用 PRECEDES(condition) 和 PRODUCES 表达"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "Threshold Setting Based on Risk Level",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "Set beneficial ownership threshold",
+          "evidence_unit_ids": ["v7u_N000492"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "High-risk customer indicator",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Beneficial ownership threshold range (10% or 5% for high-risk)",
+          "evidence_unit_ids": ["v7u_N000491", "v7u_N000492"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000491"]
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N000491", "v7u_N000492"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000491", "v7u_N000492"],
+      "candidate_status": "candidate",
+      "review_notes": "从命题中提取阈值设定动作与标准之间的关系，动作基于 v7u_N000492 中的实例，标准来自 v7u_N000491 的范围描述。"
+    },
+    {
+      "card_id": "p7card_CH06-S10_002",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "UBO Determination Based on Shareholding Calculation",
+      "flow_nodes": [
+        {
+          "node_id": "n101",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Individual's direct and indirect shareholding data",
+          "evidence_unit_ids": ["v7u_N000493"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n102",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Assess UBO status by calculating total shareholding vs threshold",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n103",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UBO ownership threshold (e.g., 25%)",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n104",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Identified as UBO",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n105",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Identified as non-UBO",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e101",
+          "edge_type": "REFERENCES",
+          "source": "n102",
+          "target": "n101",
+          "evidence_unit_ids": ["v7u_N000493"],
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "e102",
+          "edge_type": "REFERENCES",
+          "source": "n102",
+          "target": "n103",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e103",
+          "edge_type": "DECIDES",
+          "source": "n102",
+          "target": "n104",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "condition": "Total shareholding >= threshold",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e104",
+          "edge_type": "DECIDES",
+          "source": "n102",
+          "target": "n105",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "condition": "Total shareholding < threshold",
+          "relation_type": "branch_condition_routes_path"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000493", "v7u_N000494", "v7u_N000495", "v7u_N000489"],
+      "candidate_status": "candidate",
+      "review_notes": "命题描述了UBO识别的分支判断流程，使用P3_branch_routing与DECIDES表达条件分支，标准阈值引用v7u_N000489。"
+    },
+    {
+      "card_id": "p7card_CH06-S10_003",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "Identification of Controller when No Natural UBO Exists",
+      "flow_nodes": [
+        {
+          "node_id": "n201",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "No natural beneficial owner identified",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n202",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Identify and verify controller or notional beneficial owner",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n203",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Controller or notional beneficial owner identified (e.g., president/CEO)",
+          "evidence_unit_ids": ["v7u_N000496", "v7u_N000497"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n204",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Notional BO designation guidance (e.g., president/CEO for listed company)",
+          "evidence_unit_ids": ["v7u_N000497"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e201",
+          "edge_type": "PRECEDES",
+          "source": "n201",
+          "target": "n202",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "condition": "Company has no natural beneficial owner"
+        },
+        {
+          "edge_id": "e202",
+          "edge_type": "PRODUCES",
+          "source": "n202",
+          "target": "n203",
+          "evidence_unit_ids": ["v7u_N000496", "v7u_N000497"]
+        },
+        {
+          "edge_id": "e203",
+          "edge_type": "REFERENCES",
+          "source": "n202",
+          "target": "n204",
+          "evidence_unit_ids": ["v7u_N000497"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496", "v7u_N000497"],
+      "candidate_status": "candidate",
+      "review_notes": "命题描述无自然人BO时的识别流程，构成条件触发动作并产生结果，使用PRECEDES(condition)和PRODUCES表达。"
+    }
+  ],
+  "skip_reason": null
+}

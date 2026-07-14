@@ -1,0 +1,162 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e101",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 明确要求识别间接和直接所有权以确定 UBO，表明存在“计算总持股比例并与阈值比较以评估 UBO 状态”这一处理步骤。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 提到需要识别直接和间接持股数据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 表明识别 UBO 需要以这些数据作为依据，方向是从处理过程到输入数据的参照。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，原文也未对该参照关系施加条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "参照关系本身没有情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这不是并列或相关性关系，而是明确的功能依赖。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000493"
+      ],
+      "source_quotes": [
+        "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership."
+      ],
+      "reason": "原文明确表示识别 UBO 需要收集直接和间接持股数据，处理过程参照输入数据的关系得到显式支持。"
+    },
+    {
+      "edge_id": "e102",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "同上，处理步骤存在。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 明确给出了受益所有权识别阈值（例如 25%）。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 要求按照该阈值进行识别，表明处理过程参照该标准。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，原文也未对该参照关系施加条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "参照关系本身没有情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关，而是明确的参照用途。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489"
+      ],
+      "source_quotes": [
+        "most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more."
+      ],
+      "reason": "原文明确要求根据该阈值进行受益所有人识别，标准参照关系得到显式支持。"
+    },
+    {
+      "edge_id": "e103",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 和 v7u_N000494 支持存在基于持股计算评估 UBO 的处理。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 将符合阈值条件的个人认定为 UBO。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "评估结果根据持股比例是否达到阈值决定将个人分类为 UBO，方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 规定的 25% 阈值与示例 v7u_N000494 共同支持“总持股 ≥ 阈值”的条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "条件分支本身未使用情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这是条件分支，不是并列或相关性。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000494"
+      ],
+      "source_quotes": [
+        "most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more.",
+        "Individual D ... is then considered a UBO with 82% shareholding of Company A."
+      ],
+      "reason": "虽然原文未以“如果…则…”的形式明确陈述分支条件，但阈值规则与正例结合，可逻辑推断出“总持股 ≥ 阈值 → UBO”的条件分支，属于合理推理。"
+    },
+    {
+      "edge_id": "e104",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "同上。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000495 明确将未满足阈值条件的个人归类为非 UBO。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "评估后根据持股比例低于阈值将个人分类为非 UBO，方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 的阈值规则与反例 v7u_N000495 共同支持“总持股 < 阈值”的条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "条件分支本身未使用情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这是条件分支，不是并列或相关性。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more.",
+        "Individual C ... is not a UBO."
+      ],
+      "reason": "阈值规则与反例结合，可逻辑推断出“总持股 < 阈值 → 非 UBO”的条件分支，推理可靠。"
+    }
+  ]
+}

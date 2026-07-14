@@ -1,0 +1,78 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_005",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点n1“采用基于风险的方法（强调CDD和持续监控）”直接出自原文“By adopting a risk-based approach that emphasizes strong CDD controls and continuous monitoring”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "节点n2“满足监管要求”直接出自原文“they can meet regulatory requirements”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以“By adopting..., they can...”明确方式导致可能结果，方向从n1指向n2，无反向可能。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。原文未使用if/when/unless等条件连词，仅以方式状语引出关系，不存在需保留的条件。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文包含情态动词“can meet regulatory requirements”，表示可能性；节点n2标签“满足监管要求”省略“can”，将可能性强化为确定性结论。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文明确因果手段关系，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000937"],
+      "source_quotes": [
+        "By adopting a risk-based approach that emphasizes strong CDD controls and continuous monitoring, they can meet regulatory requirements and demonstrate a genuine commitment to the sector’s integrity."
+      ],
+      "reason": "节点标签丢失了原文的情态限定“can”，导致边关系失真，该PRODUCES边不成立。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点n1“采用基于风险的方法（强调CDD和持续监控）”直接出自原文“By adopting a risk-based approach that emphasizes strong CDD controls and continuous monitoring”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "节点n3“应对与新兴资产类别相关的风险”出自原文“This commitment also addresses emerging risks associated with new asset classes...”，其中“this commitment”指代采用该方法所展现的承诺。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文路径为：采用方法→展现承诺→承诺应对风险，可推论方法间接导致风险应对，方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。原文未使用条件连词，关系表现为因果链的一部分，无需额外条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文“addresses”为一般现在时，无认知情态修饰，目标节点未增删限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文表达递进因果，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000937"],
+      "source_quotes": [
+        "By adopting a risk-based approach that emphasizes strong CDD controls and continuous monitoring, they can meet regulatory requirements and demonstrate a genuine commitment to the sector’s integrity. This commitment also addresses emerging risks associated with new asset classes, such as cryptocurrencies and novel financial instruments, which might be more susceptible to exploitation by money launderers."
+      ],
+      "reason": "方向成立但依赖“承诺”作为中间环节，非直接明示的生产关系，建议人工确认。"
+    }
+  ]
+}

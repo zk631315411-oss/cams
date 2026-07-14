@@ -1,0 +1,74 @@
+{
+  "section_id": "CH02-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_003",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原card节点X2和边E2未保留原文限定词'appeared'及条件'根据指控和进一步调查努力'。通过新增带文本限定词和条件的节点X4及边E4，source为已有调查流程P1，target为新节点X4，证据unit为v7u_N000139，准确反映原文不确定性表述。"
+    },
+    {
+      "claim_id": "claim_004",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原card节点X3和边E3未保留原文限定词'suggested'及条件'证据表明'。通过新增带文本限定词的节点X5及边E5，source为P1，target为X5，证据unit为v7u_N000140，以体现原文可能的暗示语气。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH02-S04_001",
+      "coverage_claim_ids": [
+        "claim_003",
+        "claim_004"
+      ],
+      "reason": "根据原文限定词'appeared'和'suggested'以及条件'根据指控和进一步调查努力'，原card节点X2、X3和边E2、E3缺乏相应不确定性表述和输入条件。现添加带限定词和条件的新节点，并连接到已有调查流程，以准确反映原文情态。",
+      "add_flow_nodes": [
+        {
+          "node_id": "X4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "根据指控和进一步调查努力，似乎表明子公司通过虚增咨询费、伪造发票和壳公司掩盖非法资金流",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X5",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "证据暗示FullTechGlobal向公职人员和高管提供奢华礼品和旅行安排以非法影响决策",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X4",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X5",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

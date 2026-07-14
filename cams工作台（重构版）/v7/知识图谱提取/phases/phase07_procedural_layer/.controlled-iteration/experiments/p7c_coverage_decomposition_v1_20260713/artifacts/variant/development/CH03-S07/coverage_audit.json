@@ -1,0 +1,102 @@
+{
+  "section_id": "CH03-S07",
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N000277"
+      ],
+      "proposition": "一旦资金提供者获得资金，中间人使用复杂洗钱方法掩盖来源和去向",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_001"
+      ],
+      "missing_part": null,
+      "condition": "一旦资金提供者获得资金",
+      "qualifier": null,
+      "reason": "条件触发中间人动作，形成“一旦…就…”的有向链，基础KG无法表达该条件触发关系，可帮助判断中间人介入时机。已有card完整表达了该有向命题，包括主体、方向、条件和限定词。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N000283"
+      ],
+      "proposition": "金融机构交易监控系统检测并标记特定异常交易活动（结构化存款、快速跨境分层、与已知恐怖钱包关联的异常资金流动）",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_002"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "具体输入模式驱动检测动作并产生标记结果的有向结构，基础KG无法表达该依据与标记之间的链条，可帮助确认系统标记的活动类型。已有card完整表达了检测、输入及标记的闭环。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N000284"
+      ],
+      "proposition": "区块链分析公司追踪暗网市场和高风险交易所的非法加密资产流，提供取证情报",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_003"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "分析输入（特定加密资产流）与产出（取证情报）的有向关系，基础KG不能表达该分析链，可帮助回答分析对象或产出问题。已有card通过REFERENCES和PRODUCES边完整表达了输入到产出的流程。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N000285"
+      ],
+      "proposition": "FIUs综合银行SARs和跨境金融活动，触发红旗信号",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_004"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "FIUs分析动作基于明确输入产生红旗发现的有向链，基础KG不能表达该触发关系，可帮助判断FIU的分析依据与信号类型。已有card完整表达了综合分析到触发红旗的有向过程。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N000286"
+      ],
+      "proposition": "FIUs升级案件后，执法机构开展针对性监控追踪现金走私者和哈瓦拉网络",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_005"
+      ],
+      "missing_part": null,
+      "condition": "当FIUs升级案件时",
+      "qualifier": null,
+      "reason": "升级动作引发监控动作的明确先后触发链，基础KG无法表达该顺序关系，可帮助回答案件升级后的行动主体及内容。已有card通过PRECEDES边及条件字段完整表达了升级触发监控的关系。"
+    },
+    {
+      "claim_id": "claim_006",
+      "unit_ids": [
+        "v7u_N000287"
+      ],
+      "proposition": "执法机构协调资产冻结，导致查封数字钱包和瓦解用于资助恐怖主义的公司",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH03-S07_006"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "资产冻结动作产生具体独立结果的有向因果链，基础KG不能表达该产出关系，可帮助确认资产冻结的直接后果。已有card通过PRODUCES边准确表达了冻结导致查封和瓦解的因果。"
+    }
+  ],
+  "scan_summary": "本节扫描了Wolfe恐怖融资案例从犯罪策划到执法应对的完整过程，识别出6个P7C增量命题，涉及洗钱触发条件、交易监控检测、区块链取证、FIU红旗触发、案件升级监视和资产冻结效果，所有命题均已由已有card完整覆盖，无遗漏或部分覆盖。"
+}

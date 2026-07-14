@@ -1,0 +1,313 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000356"
+      ],
+      "proposition": "在交易监控不充分和合规框架碎片化无效的条件下，金融机构可能允许大规模洗钱活动。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础 KG 可表达因果解释“监控不充分导致洗钱”，是普通案例机制，无具体主体判断或应对链。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357"
+      ],
+      "proposition": "当金融机构发生严重洗钱违规时，监管机构会处以创纪录的巨额罚款。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "构建了丑闻触发监管罚款的响应链，属于 P7C 增量局部关系。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000358"
+      ],
+      "proposition": "严重洗钱违规可能导致监管机构与银行达成延期起诉协议，并强制要求全面整改全球合规运营。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_002",
+      "reason": "丑闻触发司法部延期起诉协议和整改要求，构成外部命令响应。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000359"
+      ],
+      "proposition": "严重洗钱违规及其调查可导致高级管理人员被迫辞职，包括合规负责人。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_003",
+      "reason": "丑闻引发调查，调查导致高管辞职，形成有向判断链。实际使用了 v7u_N000356 和 v7u_N000359 构建完整链。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000360"
+      ],
+      "proposition": "若金融机构内部环境将本地业务利益和利润置于中央合规控制之上，则会导致整体合规控制薄弱。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "内部环境导致控制薄弱属于一般因果，基础 KG 可表达，无程序性关系。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000361"
+      ],
+      "proposition": "洗钱丑闻不仅触发立即的监管和财务反弹，还会造成持久的声誉损害、客户信任流失和市场地位削弱。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "丑闻导致声誉损害等后果是基础 KG 可表达的结果陈述，无程序性。"
+    },
+    {
+      "candidate_id": "prop_007",
+      "unit_ids": [
+        "v7u_N000356",
+        "v7u_N000362"
+      ],
+      "proposition": "在遭受监管处罚和整改要求后，银行会被迫重新平衡内部权力，加强中央监督与合规职能，限制地方业务部门自主权，并实施去风险化策略。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_004",
+      "reason": "监管强制要求触发银行内部纠正措施，形成支配性响应链。实际使用了 v7u_N000356-358 和 v7u_N000362。"
+    },
+    {
+      "candidate_id": "prop_008",
+      "unit_ids": [
+        "v7u_N000363"
+      ],
+      "proposition": "薄弱的金融犯罪控制会导致运营和声誉风险，可能使银行遭受严重的财务处罚、运营中断和不可挽回的声誉损害，最终削弱其在全球市场的长期生存能力。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性教训陈述一般因果关系，基础 KG 可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "汇丰洗钱丑闻触发监管机构创纪录罚款",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "汇丰银行卷入洗钱丑闻（允许贩毒集团洗钱超过8.8亿美元）",
+          "evidence_unit_ids": [
+            "v7u_N000356"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "美国联邦监管机构对汇丰处以19亿美元创纪录反洗钱罚款",
+          "evidence_unit_ids": [
+            "v7u_N000357"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000357"
+          ],
+          "derivation": "explicit_text",
+          "condition": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：汇丰洗钱丑闻 → 美国联邦监管机构处以19亿美元创纪录反洗钱罚款；KG不足：基础KG可分别保存丑闻和罚款事实，但无法表达丑闻触发罚款的响应路径；选项判断：可确认特定违规事件直接引发监管罚款的触发关系；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH05-S02_002",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "汇丰洗钱丑闻触发司法部延期起诉协议并要求整改",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "汇丰银行卷入洗钱丑闻",
+          "evidence_unit_ids": [
+            "v7u_N000356"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "美国司法部与汇丰达成五年延期起诉协议，强制要求全面整改全球合规运营",
+          "evidence_unit_ids": [
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000358"
+          ],
+          "derivation": "explicit_text",
+          "condition": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000358"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：汇丰洗钱丑闻 → 美国司法部达成延期起诉协议并强制要求全面整改；KG不足：基础KG可保存协议事实，但无法表达违规触发监管协议及整改要求的响应链条；选项判断：可确认违规导致监管机构采取协议整改的应对路径；LLM推理：无（边为 explicit）。"
+    },
+    {
+      "card_id": "p7card_CH05-S02_003",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "汇丰洗钱丑闻引发调查并导致高管辞职",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "汇丰银行卷入洗钱丑闻",
+          "evidence_unit_ids": [
+            "v7u_N000356"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "美国监管机构对汇丰展开洗钱调查",
+          "evidence_unit_ids": [
+            "v7u_N000359"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "多名高级管理人员被迫辞职，包括全球合规主管",
+          "evidence_unit_ids": [
+            "v7u_N000359"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000359"
+          ],
+          "derivation": "llm_inference",
+          "condition": null
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000359"
+          ],
+          "derivation": "explicit_text",
+          "condition": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000359"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：汇丰洗钱丑闻 → 监管机构展开调查 → 高级管理人员被迫辞职（包括合规负责人）；KG不足：基础KG可分别保存丑闻、调查结果、辞职事实，但无法表达丑闻到调查再到辞职的因果链；选项判断：可确认丑闻通过调查导致高管辞职的因果路径，用于判断选项中的因果关联；LLM推理：边 e1（丑闻→调查）为 llm_inference，因为原文未明确写明丑闻直接导致调查，但调查在丑闻后发生且针对该事件，为唯一合理连接。"
+    },
+    {
+      "card_id": "p7card_CH05-S02_004",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "监管强制要求触发汇丰内部纠正措施",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "汇丰洗钱丑闻曝光，并遭受美国联邦监管机构创纪录罚款及司法部延期起诉协议要求全面整改",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000357",
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "汇丰银行被迫执行纠正措施：重新平衡内部权力，加强中央监督与合规职能，限制地方业务部门自主权，实施战略去风险化，旨在恢复金融犯罪风险管理框架完整性并减少高风险辖区敞口",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000357",
+            "v7u_N000358",
+            "v7u_N000362"
+          ],
+          "derivation": "llm_inference",
+          "condition": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000357",
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：汇丰遭受监管罚款及延期起诉协议要求 → 汇丰被迫执行内部权力再平衡、加强中央监督、限制地方自主权、实施去风险化；KG不足：基础KG可分别保存纠正措施，但无法表达监管强制要求触发银行内部整改的触发-响应链；选项判断：可确认监管强制要求作为触发条件导致银行执行特定纠正措施；LLM推理：边 e1 为 llm_inference（连接基于叙事因果关系，未显式写明“由于监管要求”）。"
+    }
+  ],
+  "skip_reason": null
+}

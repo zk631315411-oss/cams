@@ -1,0 +1,53 @@
+{
+  "section_id": "CH06-S10",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_004",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "缺失分类结果节点和比较边：在图卡001原有识别过程基础上补充UBO认定结果的出口节点及产出关系，体现持股合计与阈值比较后的认定分类。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH06-S10_001",
+      "coverage_claim_ids": [
+        "claim_004"
+      ],
+      "reason": "原文示例（v7u_N000494, v7u_N000495）展示了直接与间接持股合计后与阈值比较，明确认定或不认定UBO的判断结构。原有图卡001已包含识别标准和输入信息，但缺少比较后分类结果输出，故新增出口节点和产生边以完成该判断过程。",
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "UBO认定结果：持股比例达到阈值者认定为UBO，未达到者不认定",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N5",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当基于风险方法识别客户UBO时，合计直接与间接持股比例并与适用阈值比较后，得出认定或不认定UBO的结果"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000494",
+        "v7u_N000495"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "verdict": "reject",
+  "summary": "The prompt removed the prior extreme-form claim but still converted a typical textbook pattern into a mandatory requirement. Prompt-only grounding is therefore insufficient.",
+  "primary_results": [
+    {
+      "metric": "unsupported taxonomy claim",
+      "baseline": "Microstructuring described as an extreme form of structuring.",
+      "variant": "Extreme-form claim removed.",
+      "result": "improved"
+    },
+    {
+      "metric": "range and modality fidelity",
+      "baseline": "Cited source says deposits are typically under US$1,000 across many accounts.",
+      "variant": "Easy-mistake prose converted the typical pattern into a requirement.",
+      "result": "failed"
+    }
+  ],
+  "regressions": [
+    "Source modality was strengthened from typical description to required condition."
+  ],
+  "issues": [
+    {
+      "case_id": "v7_q_000140",
+      "classification": "improvement",
+      "baseline": "Unsupported extreme-form relationship.",
+      "variant": "Relationship removed.",
+      "evidence": [
+        "artifacts/baseline/development/questions/q_v7_q_000140.json",
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    },
+    {
+      "case_id": "v7_q_000140",
+      "classification": "contract_violation",
+      "baseline": "Textbook wording is typically under US$1,000 and spread across many accounts.",
+      "variant": "Prose says microstructuring requires those features.",
+      "evidence": [
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Stop prompt-only iteration. Add deterministic relation/modality validation and downgrade unsupported prose to insufficient."
+}

@@ -1,0 +1,96 @@
+{
+  "section_id": "CH12-S04",
+  "section_title": "Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000921"],
+      "proposition": "当客户为高风险（如PEPs）时，需要进行仔细的风险评估。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "缺乏明确执行主体，且基础KG已作为风险指标覆盖。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000923"],
+      "proposition": "通过持续监控交易活动，可以识别异常模式或洗钱行为。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "通用控制建议，基础KG已作为‘规定措施’覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000924"],
+      "proposition": "通过执行客户尽职调查（CDD），有助于确保资金来源合法并正确细分客户。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "通用控制建议，基础KG已作为‘规定措施’覆盖。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000926"],
+      "proposition": "资产管理公司必须了解其业务中的洗钱风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，基础KG已作为规则覆盖；无额外有向结构约束具体识别或分类。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000936"],
+      "proposition": "资产管理公司的CDD流程要求了解所有交易方。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_001",
+      "reason": "代表流程对具体要求的参照关系，超出基础KG对CDD的一般性解释，有助于判断CDD范围。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000937"],
+      "proposition": "通过采取基于风险的方法（强调CDD和持续监控），资产管理公司可以满足监管要求并应对新兴风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "宽泛的因果论述，结果抽象（满足监管要求），基础KG可保存为通用规则。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "资产管理公司CDD流程要求了解所有交易方",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "资产管理公司：执行客户尽职调查（CDD）流程",
+          "evidence_unit_ids": ["v7u_N000936"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "必须了解所有交易方",
+          "evidence_unit_ids": ["v7u_N000936"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000936"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "requires knowledge of all parties involved in the transactions"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000936"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：资产管理公司的CDD流程必须参照“了解所有交易方”这一要求（standard_constrains_action）。KG不足：基础KG仅解释CDD复杂且需了解所有方，未表达流程对要求的参照关系。选项判断：可确认资产管理公司CDD范围必须涵盖所有交易方。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

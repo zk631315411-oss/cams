@@ -1,0 +1,127 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000132"],
+      "proposition": "Sophie发现负面新闻引发对域外条款的关切。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为事件事实，无具体主体动作或应对，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000134"],
+      "proposition": "关切引发对英国反贿赂法域外条款的考虑。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "心理状态，无程序性动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000135", "v7u_N000136", "v7u_N000137"],
+      "proposition": "英国反贿赂法域外管辖规定及后果。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律规则和一般后果，基础KG已作为规则保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000138"],
+      "proposition": "Sophie的初步调查揭示FullTechGlobal战略性雇佣中间人。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "调查发现案例事实，无后续应对，基础KG可保存为案例。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000139"],
+      "proposition": "进一步调查努力揭示虚增咨询费等洗钱手法。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列案例发现，仅属事实细节，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000140"],
+      "proposition": "证据显示FullTechGlobal提供奢华礼品和旅行安排以影响决策。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例中的贿赂手法描述，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000141"],
+      "proposition": "Sophie的审计审查识别出FullTechGlobal的ABC框架和内部控制失败。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "审查动作产生评估结论，形成有向程序性结构，基础KG不能表达审查与发现的产出关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000142"],
+      "proposition": "贿赂被识别为上游犯罪，导致洗钱。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "因果关系结论，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N000143"],
+      "proposition": "发现导致FullTechGlobal面临严厉处罚和监管审查。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实后果，无程序性动作，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N000144"],
+      "proposition": "Sophie认识到机构需要维护合规诚信并降低贿赂风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象义务认知，无具体动作或产出，基础KG可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "审计发现FullTechGlobal的ABC框架和内部控制失败",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie进行审查和审计，评估ABC框架和内部控制",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出FullTechGlobal的ABC框架和内部控制存在失败/缺陷及监管不足",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000141"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie的审计审查（P1_assessment） --PRODUCES--> 识别出控制缺陷和监管不足（X1_classification）；KG不足：基础KG可能将“审计发现控制缺陷”作为静态事实，但未表达审查过程与发现之间的有向产出关系；选项判断：可确认审计作为识别控制缺陷的手段；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

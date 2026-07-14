@@ -1,0 +1,159 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "proposition": "根据英国反贿赂法2010，任何与英国有关联的公司，其母公司需为子公司（无论位于何地）的腐败行为承担法律责任。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题为静态法律规则，基础KG已能充分表达母公司的法律责任这一事实及其条件，无局部程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000138",
+        "v7u_N000141"
+      ],
+      "proposition": "当AFC经理发现客户涉及贿赂腐败的负面新闻时，应评估英国反贿赂法域外管辖的可能影响，并启动调查，审查客户使用高风险中间人、ABC框架及内部控制的情况，以识别合规缺陷。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "该命题构成从事件触发、调查执行到缺陷识别的完整有向链，主体、动作和阶段结果均有原文支持，超出基础KG仅能保存孤立事实的表达能力，属于P7C增量。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000141"
+      ],
+      "proposition": "如果企业ABC框架和内部控制存在缺陷，则腐败活动可能长期未被发现。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题为一般风险因果陈述，仅说明缺陷导致腐败长期未发现，基础KG可表达此类风险指标关系，无局部程序或判断结构。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "贿赂作为上游犯罪，可能导致非法资金通过复杂的金融网络进行洗钱，以逃避监管审查。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题描述犯罪方法的一般机制，基础KG足以覆盖上游犯罪与洗钱的因果关系，不涉及特定主体应对或判断流程。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "如果发现违反英国反贿赂法2010的行为，子公司及其母公司（包括高管）可能面临严厉的财务处罚、加强的监管审查和潜在的刑事责任。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题为违法后果的规则陈述，基础KG能完整表达处罚与审查等后果，无需提取为有向结构。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "金融机构在与全球企业客户（如FullTechGlobal）的业务往来中，必须维护合规诚信并减轻贿赂与腐败风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题为一般性义务要求，基础KG已可作为规则保存，其内部无明确步骤、条件或独立结果，不构成P7C增量。"
+    },
+    {
+      "candidate_id": "prop_007",
+      "unit_ids": [
+        "v7u_N000135"
+      ],
+      "proposition": "英国反贿赂法2010是世界上最严格的反腐败法律之一。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题为事实陈述，基础KG可直接表达法律严格性这一属性，无有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "FullTechGlobal 负面新闻引发调查并识别合规缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "n_CH02-S04_E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发现客户 FullTechGlobal 面临贿赂腐败严重指控的负面新闻",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_CH02-S04_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie（AFC经理）启动调查并审查客户的高风险中间人使用、ABC框架和内部控制",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000138",
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_CH02-S04_X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出 FullTechGlobal 的 ABC 框架和内部控制缺陷",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_CH02-S04_001",
+          "edge_type": "PRECEDES",
+          "source": "n_CH02-S04_E1",
+          "target": "n_CH02-S04_P2",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133",
+            "v7u_N000134"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当发现客户涉及贿赂腐败的负面新闻时"
+        },
+        {
+          "edge_id": "e_CH02-S04_002",
+          "edge_type": "PRODUCES",
+          "source": "n_CH02-S04_P2",
+          "target": "n_CH02-S04_X1",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000138",
+        "v7u_N000141"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：AFC经理发现客户贿赂腐败负面新闻（条件）→启动调查并审查高风险中间人、ABC框架和内部控制→识别出合规缺陷；KG不足：基础KG只能表达该案例中的各个独立事实（如发现新闻、法律规则、调查发现缺陷），无法表达由发现到调查再到识别缺陷的完整有向程序链；选项判断：可用于确认AFC经理在发现负面新闻后应采取的调查步骤顺序和审查重点，以及调查最终产生缺陷识别结果的因果关系；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

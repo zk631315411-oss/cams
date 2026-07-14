@@ -5,7 +5,7 @@
   "review_ownership": {
     "p7c_evidence_strength": "Legacy node evidence field; not a final semantic approval.",
     "p7c_candidate_status": "P7C candidate declaration only; not answer eligibility.",
-    "p7c_edge_derivation": "P7C edge derivation declaration: explicit_text or llm_inference.",
+    "p7c_edge_derivation": "Legacy optional P7C edge declaration retained for compatibility; three-stage P7C omits it and P7D does not use it as a review decision.",
     "p7d_edge_review": "Final edge-level pending/accepted/rejected status is stored separately under P7D using p7d_edge_review_schema_v1.json.",
     "mutation_policy": "P7D never writes review decisions back into p7_card."
   },
@@ -63,6 +63,45 @@
     "DECIDES",
     "FEEDBACK"
   ],
+  "edge_runtime_policies": {
+    "PRECEDES": {
+      "storage_direction": "forward",
+      "render_direction": "forward",
+      "reasoning_traversal": "forward_only",
+      "causal": false,
+      "temporal": true
+    },
+    "REFERENCES": {
+      "storage_direction": "process_to_auxiliary",
+      "render_direction": "auxiliary_to_process",
+      "reasoning_traversal": "bidirectional",
+      "forward_reading": "process references auxiliary",
+      "reverse_reading": "auxiliary is used by process",
+      "causal": false,
+      "temporal": false
+    },
+    "PRODUCES": {
+      "storage_direction": "forward",
+      "render_direction": "forward",
+      "reasoning_traversal": "forward_only",
+      "causal": true,
+      "temporal": false
+    },
+    "DECIDES": {
+      "storage_direction": "forward",
+      "render_direction": "forward",
+      "reasoning_traversal": "forward_only_with_condition",
+      "causal": false,
+      "temporal": false
+    },
+    "FEEDBACK": {
+      "storage_direction": "forward",
+      "render_direction": "forward",
+      "reasoning_traversal": "forward_only",
+      "causal": false,
+      "temporal": false
+    }
+  },
   "relation_types": [
     "clue_supports_identification",
     "mechanism_explains_risk",
@@ -128,7 +167,10 @@
       "standard",
       "context",
       "record",
-      "finding"
+      "finding",
+      "aimed_to",
+      "may_lead_to",
+      "helps_achieve"
     ],
     "modality_allowed": [
       "required",
@@ -202,10 +244,10 @@
         "edge_type",
         "source",
         "target",
-        "evidence_unit_ids",
-        "derivation"
+        "evidence_unit_ids"
       ],
       "optional": [
+        "derivation",
         "condition",
         "qualifier",
         "modality",
@@ -216,8 +258,10 @@
       ],
       "constraints": [
         "edge_type must be one of PRECEDES, REFERENCES, PRODUCES, DECIDES, FEEDBACK.",
-        "derivation must be explicit_text or llm_inference for current P7C output.",
+        "If present for legacy compatibility, derivation must be explicit_text or llm_inference; three-stage P7C omits it.",
         "REFERENCES means a process node points to a non-sequential auxiliary input, clue, standard, judgement dimension, or component.",
+        "REFERENCES may be rendered auxiliary-to-process and traversed in reverse as a derived view, but the reverse reading is non-causal and non-temporal.",
+        "standard_constrains_action means a standard supplies a constraint or decision criterion for a concrete action, identification, assessment, or judgement.",
         "relation_type 若填写，必须为 relation_types 中的值，用于补充 edge_type 无法表达的语义关系。",
         "source and target must reference node_id values in the same card.",
         "DECIDES edges must include condition.",
@@ -251,7 +295,7 @@
     "Every p7_card must include the minimal required fields.",
     "Every p7_card must declare card_nature.",
     "flow_nodes and flow_edges are the formal process graph and the source of truth.",
-    "Every flow_node and flow_edge must include evidence_unit_ids and evidence_strength.",
+    "Every flow_node must include evidence_unit_ids and evidence_strength; every flow_edge must include evidence_unit_ids, while edge derivation is optional for legacy compatibility and omitted by three-stage P7C.",
     "Every evidence_unit_ids value must exist in the P6 base graph.",
     "flow_edges source and target must point to node_id values inside the same card.",
     "DECIDES edges must include condition.",
@@ -262,5 +306,3 @@
     "Derived indexes and render views are not knowledge source-of-truth objects."
   ]
 }
-
-

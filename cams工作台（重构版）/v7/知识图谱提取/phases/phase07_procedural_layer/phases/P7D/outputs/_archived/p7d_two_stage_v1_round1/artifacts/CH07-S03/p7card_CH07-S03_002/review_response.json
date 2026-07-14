@@ -1,0 +1,82 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000555明确提及“退出超出银行风险容忍度的客户关系”，且“贷款余额”暗示客户仍欠款，节点E2标签有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000555直接提到“核销贷款”（writing off a loan），节点P2标签有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文仅说明退出客户关系时贷款余额使过程复杂，因为核销贷款是重大决策，并未表达退出关系导致核销贷款的先后顺序或必要功能依赖。边将解释性因果关系误写为PRECEDES序列。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边的条件“当退出超出风险容忍度的客户关系且客户仍有贷款余额时”对应原文“When exiting customer relationships... the loan balance complicates the process”，条件有原文支持。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未对退出关系与核销贷款之间的关联使用must/may等情态限定，该边也未添加限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中退出关系和核销贷款是解释与被解释关系，而非先后顺序；边错误地将其写成PRECEDES，属于将相关/解释关系当作顺序关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision..."
+      ],
+      "reason": "退出客户关系与核销贷款之间不存在原文支持的PRECEDES顺序，原文仅解释贷款余额为何使退出过程复杂化。边将相关关系错误表达为先后顺序，方向不支持，故整体拒绝。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点P2“银行核销贷款”直接来自原文“writing off a loan”，有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "节点ST1“需要广泛的理由和批准”来自原文“requiring extensive justification and approval”，有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文明确表明核销贷款是一项重大财务决策，通常需要广泛的理由和批准，即核销贷款参照该标准/要求，REFERENCES方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "原文表述核销贷款需批准是无条件的属性，该边未添加condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文含有“often”限定，但ST1标签仅写“需要广泛的理由和批准”，遗漏了“通常/经常”这一频度限定，将可能需求绝对化，未能保留原文情态。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文直接表达核销贷款与批准要求之间的参照关系，并非并列或相关等误用。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "...writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+      ],
+      "reason": "边的关系类型和方向正确，但遗漏了原文重要的“often”限定，导致标准被绝对化，不符合审核要求。"
+    }
+  ]
+}

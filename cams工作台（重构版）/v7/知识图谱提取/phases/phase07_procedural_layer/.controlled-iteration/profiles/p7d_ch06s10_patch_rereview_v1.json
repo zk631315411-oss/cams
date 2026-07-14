@@ -1,0 +1,70 @@
+{
+  "profile_id": "p7d-ch06s10-patch-rereview-v1",
+  "workspace": "../..",
+  "test_strategy": "paired_ab",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        "phases/P7D/tests/ch06s10_patch_rereview_v1/run_controlled_arm.py",
+        "--arm",
+        "baseline",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--baseline-ref",
+        "{baseline_ref}",
+        "--variant-ref",
+        "{variant_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 120,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        "phases/P7D/tests/ch06s10_patch_rereview_v1/run_controlled_arm.py",
+        "--arm",
+        "variant",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--baseline-ref",
+        "{baseline_ref}",
+        "--variant-ref",
+        "{variant_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 900,
+      "required_env": ["DEEPSEEK_API_KEY"]
+    }
+  },
+  "constants": {
+    "section_id": "CH06-S10",
+    "p7d_prompt": "phases/P7D/prompts/edge_evidence_review_v1.md",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "semantic_evidence": "P7B section package text"
+  },
+  "primary_metrics": [
+    "card_001_structure_status",
+    "complete_edge_review_coverage",
+    "accepted_proof_path_availability"
+  ],
+  "regression_gates": [
+    "No production P7C card is modified",
+    "No artificial PRECEDES edge is added between duplicate process nodes",
+    "Every reviewed edge snapshot matches the test variant",
+    "Pending or rejected edges remain answer-ineligible"
+  ],
+  "samples": {
+    "development": ["CH06-S10"],
+    "holdout": []
+  },
+  "evidence_paths": [
+    "phases/P7B/section_packages/CH06-S10/task.json",
+    "phases/P7D/tests/ch06s10_patch_rereview_v1/run_controlled_arm.py"
+  ],
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

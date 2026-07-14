@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment_id": "p7d_ch06s10_patch_rereview_v1_20260713",
+  "profile_id": "p7d-ch06s10-patch-rereview-v1",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\profiles\\p7d_ch06s10_patch_rereview_v1.json",
+  "profile_sha256": "acadea7d660593de199d6039e4538dbe389ca6898d0598519350d2927acc648d",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+  "objective": "验证补丁后CH06-S10能否通过P7D边级审核并形成阈值与持股信息到UBO认定结果的可用证明路径",
+  "hypothesis": "将语义重复的N2与N5合并为单一assessment process，可在不补造时序边的情况下恢复entry到exit有向路径，并让P7D独立审核参照与产出关系",
+  "changed_variable": "CH06-S10 card_001中N2与N5是否合并为单一判断过程",
+  "test_strategy": "structured_semantic_review",
+  "constants": {
+    "section_id": "CH06-S10",
+    "p7d_prompt": "phases/P7D/prompts/edge_evidence_review_v1.md",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "semantic_evidence": "P7B section package text"
+  },
+  "primary_metrics": [
+    "card_001_structure_status",
+    "complete_edge_review_coverage",
+    "accepted_proof_path_availability"
+  ],
+  "regression_gates": [
+    "No production P7C card is modified",
+    "No artificial PRECEDES edge is added between duplicate process nodes",
+    "Every reviewed edge snapshot matches the test variant",
+    "Pending or rejected edges remain answer-ineligible"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7D\\outputs\\p7d_additive_coverage_v23_10sections",
+  "baseline_sha256": "736a726042982cae994c570b9094ec20c65e23cfd33189d2d85eba13a79897f7",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v5_20260713\\artifacts\\variant\\development\\CH06-S10\\cards.raw.json",
+  "variant_sha256": "2639a1a80378181901d6cb4bea03526d0c6add1f684e29817643dfb66271e929",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "CH06-S10"
+    ],
+    "holdout": []
+  },
+  "status": "prepared",
+  "runs": [],
+  "verdict": null,
+  "created_at": "2026-07-13T06:05:16+00:00",
+  "updated_at": "2026-07-13T06:05:16+00:00"
+}

@@ -1,0 +1,81 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": ["v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652"],
+      "proposition": "Red flags such as complex ownership structures involving multiple layers of companies, lack of transparency, and unclear purpose of the SPV indicate attempts to disguise illicit funds or conduct fraudulent activities using SPVs.",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "红旗列表为孤立风险指标，基础KG已能表达其含义及与风险的指示关系，未形成条件→主体动作→结果的程序性有向结构，因此交KG处理。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "proposition": "When dealing with SPVs and PIVs, financial institutions must conduct enhanced due diligence (EDD), identify ultimate beneficial owners, and understand the true purpose of these entities, which will help mitigate potential financial crime risks.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "形成特定主体（金融机构）在明确条件下（涉及SPV/PIV）必须执行具体控制动作（EDD、识别UBO与了解目的）并产生带限定强度的独立结果（有助于减轻风险）的有向结构，超出基础KG表达孤立规则的能力。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "SPV/PIV强化尽职调查要求与风险缓解",
+      "flow_nodes": [
+        {
+          "node_id": "P1_EDD",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构必须对特殊目的载体（SPV）和集合投资工具（PIV）进行强化尽职调查（EDD），识别最终受益所有人并了解其真实目的",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1_CDD",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "客户尽职调查（CDD）规则，如FinCEN CDD规则",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_risk",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "P1_EDD",
+          "target": "S1_CDD",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "P1_EDD",
+          "target": "X1_risk",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "derivation": "explicit_text",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构在对SPV和PIV进行EDD、识别UBO和了解目的→有助于减轻金融犯罪风险；KG不足：基础KG只能表达规则事实，无法表达特定主体在特定条件下的动作带限定结果的有向结构；选项判断：可确认机构应对SPV/PIV时需要做什么以及有何效果；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

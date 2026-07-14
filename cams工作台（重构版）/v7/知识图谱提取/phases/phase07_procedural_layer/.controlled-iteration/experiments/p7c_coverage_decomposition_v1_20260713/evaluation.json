@@ -1,0 +1,85 @@
+{
+  "verdict": "reject",
+  "summary": "The two-stage workflow exposed proposition-level gaps, but Audit over-classified KG content, missed two target structures, and produced two Patch contract failures. Mandatory regression gates did not pass.",
+  "primary_results": [
+    {
+      "metric": "known P7C proposition gaps detected",
+      "result": "2 of 4 target issue classes detected cleanly",
+      "details": "CH02-S04 qualifier loss was detected; CH12-S04 CDD qualifier/result was detected among excessive candidates. CH06-S10 calculation-to-classification and CH47-S04 action-references-experience were missed."
+    },
+    {
+      "metric": "coverage contract failures",
+      "result": "2 of 10 sections failed",
+      "details": "CH06-S10 violated REFERENCES endpoint constraints; CH12-S04 returned an incomplete/truncated patch after Audit generated 16 gaps."
+    },
+    {
+      "metric": "false-positive control",
+      "result": "mandatory gate failed",
+      "details": "CH03-S02 incorrectly converted investigative obstruction into a P7C card; CH05-S04 and CH12-S04 contained substantial KG-only over-classification."
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "CH03-S02",
+      "classification": "false_positive",
+      "baseline": "No card; ordinary investigative difficulty handled by KG",
+      "variant": "Added a PRODUCES card for authorities being hindered by corrupt officials",
+      "evidence": [
+        "artifacts/variant/development/CH03-S02/coverage_audit.json",
+        "artifacts/variant/development/CH03-S02/coverage_patch.json"
+      ]
+    },
+    {
+      "case_id": "CH05-S04",
+      "classification": "false_positive",
+      "baseline": "One-call Coverage remained selective",
+      "variant": "Classified five general obligations or control effects as missing P7C claims",
+      "evidence": [
+        "artifacts/variant/development/CH05-S04/coverage_audit.json"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "improvement",
+      "baseline": "Existing result edges omitted appeared/suggested qualifiers",
+      "variant": "Audit marked both edges partially covered and proposed qualified alternatives",
+      "evidence": [
+        "artifacts/variant/development/CH02-S04/coverage_audit.json",
+        "artifacts/variant/development/CH02-S04/coverage_patch.json"
+      ]
+    },
+    {
+      "case_id": "CH06-S10",
+      "classification": "omission",
+      "baseline": "Missing calculation-to-UBO classification output",
+      "variant": "Audit focused on threshold-setting instead and Patch failed the endpoint contract",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_audit.json",
+        "artifacts/variant/development/CH06-S10/run_manifest.json"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "contract_violation",
+      "baseline": "CDD result qualifier required correction",
+      "variant": "Audit found the CDD issue but also generated 15 additional gaps, leading to an invalid patch response",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_audit.json",
+        "artifacts/variant/development/CH12-S04/run_manifest.json"
+      ]
+    },
+    {
+      "case_id": "CH47-S04",
+      "classification": "omission",
+      "baseline": "Scenario-setting REFERENCES historical experience remained missing",
+      "variant": "Audit again classified the relation as KG-only",
+      "evidence": [
+        "artifacts/variant/development/CH47-S04/coverage_audit.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Create a new experiment that changes only the Audit eligibility gate: require an AML/CFT operational action or judgment linked to an input, condition, standard, or independent result; exclude general control effects and risk mechanisms; explicitly retain worked classification examples and action-based-on-input open relations."
+}

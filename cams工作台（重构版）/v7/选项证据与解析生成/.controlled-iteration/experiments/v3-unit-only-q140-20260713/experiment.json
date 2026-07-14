@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "experiment_id": "v3-unit-only-q140-20260713",
+  "profile_id": "v3-unit-only-prompt",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\profiles\\v3-unit-only-prompt.json",
+  "profile_sha256": "156dd8528afbf382bde009256c69c3b646bb3eb18a7567484cb614c37c499e83",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+  "objective": "Prevent blind-reason contamination in V3 textbook-grounded prose",
+  "hypothesis": "Hiding model-authored blind reasons while keeping locked judgements and real unit text will remove unsupported claims without breaking V3 export readiness",
+  "changed_variable": "Prompt-visible factual material",
+  "test_strategy": "paired_ab",
+  "constants": {
+    "model": "deepseek-v4-pro",
+    "question_id": "v7_q_000140"
+  },
+  "primary_metrics": [
+    "No factual claim copied solely from blind-generated reasons",
+    "No unsupported digital-asset claim",
+    "No claim that foreign withdrawal is part of the structuring definition"
+  ],
+  "regression_gates": [
+    "Answer remains D",
+    "All four options are present",
+    "English source quote is exact and valid",
+    "Software readiness remains true"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\phase4_evidence\\output\\ch01_definition_driven_v3_draft_20260713\\questions\\q_v7_q_000140.json",
+  "baseline_sha256": "541700593e526a08e4888b8deb44173fa77a7598c34dee147a61025ef5ffc8e6",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\run_v3_prompt_arm.py",
+  "variant_sha256": "edcc9f67d48dafcae22fef118ab2b8bd542c770948a7650f9d585062cfca9e7b",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "v7_q_000140"
+    ],
+    "holdout": [
+      "v7_q_000315"
+    ]
+  },
+  "status": "evaluated",
+  "runs": [
+    {
+      "arm": "baseline",
+      "phase": "development",
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "baseline",
+        "--source-question",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\phase4_evidence\\output\\ch01_definition_driven_v3_draft_20260713\\questions\\q_v7_q_000140.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\artifacts\\baseline\\development"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+      "started_at": "2026-07-13T05:43:03+00:00",
+      "finished_at": "2026-07-13T05:43:03+00:00",
+      "elapsed_seconds": 0.101,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\logs\\development-baseline.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\logs\\development-baseline.stderr.txt",
+      "error": null
+    },
+    {
+      "arm": "variant",
+      "phase": "development",
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "variant",
+        "--source-question",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\phase4_evidence\\output\\ch01_definition_driven_v3_draft_20260713\\questions\\q_v7_q_000140.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\artifacts\\variant\\development"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+      "started_at": "2026-07-13T05:43:03+00:00",
+      "finished_at": "2026-07-13T05:44:45+00:00",
+      "elapsed_seconds": 102.625,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\logs\\development-variant.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-unit-only-q140-20260713\\logs\\development-variant.stderr.txt",
+      "error": null
+    }
+  ],
+  "verdict": "reject",
+  "created_at": "2026-07-13T05:42:44+00:00",
+  "updated_at": "2026-07-13T05:46:06+00:00"
+}

@@ -1,0 +1,127 @@
+{
+  "section_id": "CH07-S03",
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N000546",
+        "v7u_N000547",
+        "v7u_N000548",
+        "v7u_N000549",
+        "v7u_N000550",
+        "v7u_N000551"
+      ],
+      "proposition": "信贷相关产品是客户服务的基础，包括各种贷款产品，但也带来洗钱风险。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "仅描述信贷产品的定义、作用和风险，无具体机构动作、条件或决策导向，基础KG可完整表达。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N000552"
+      ],
+      "proposition": "提前还贷是犯罪分子将非法资金伪装为合法资金的手段。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "仅描述洗钱方法的事实，无识别、评估或应对结构，属于基础KG可覆盖的风险指标。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N000552"
+      ],
+      "proposition": "提前还款通常不被视为不当行为，常被视为财务健康的迹象。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "通常",
+      "reason": "仅描述提前还款的一般看法，无机构动作或条件判断，基础KG可保存。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N000553"
+      ],
+      "proposition": "因洗钱担忧关闭尚有信贷余额的客户账户时，银行可能面临核销贷款和财务损失等挑战。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": "因洗钱担忧关闭尚有信贷余额的客户账户时",
+      "qualifier": "可能",
+      "reason": "仅陈述关闭账户时面临的挑战与后果，无明确判断或应对动作，背景性事实。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N000554"
+      ],
+      "proposition": "如果银行知道或怀疑客户使用非法资金还贷，则银行不应接受该资金用于还贷。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH07-S03_001"
+      ],
+      "missing_part": null,
+      "condition": "银行知道或怀疑客户使用非法资金还贷",
+      "qualifier": "不应",
+      "reason": "命题包含特定条件触发的禁止性动作，形成‘条件→动作’有向结构，超出基础KG。已有卡片完整表达了主体、方向、条件和限定词。"
+    },
+    {
+      "claim_id": "claim_006",
+      "unit_ids": [
+        "v7u_N000554"
+      ],
+      "proposition": "如果银行知道或怀疑客户使用非法资金还贷，则违约风险变为次要需要管理的风险。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "missing",
+      "matched_card_ids": [],
+      "missing_part": "缺少从‘知道或怀疑非法资金还贷’到‘违约风险变为次要风险’的节点和边，未表达风险优先级判断。",
+      "condition": "银行知道或怀疑客户使用非法资金还贷",
+      "qualifier": null,
+      "reason": "条件导向的风险优先级判断，属于P7C增量。已有卡片仅覆盖了同一条件下的禁止性动作，未提取此风险评估结论，因此完全缺失。"
+    },
+    {
+      "claim_id": "claim_007",
+      "unit_ids": [
+        "v7u_N000555"
+      ],
+      "proposition": "当退出超出风险容忍度的客户关系时，核销贷款通常需要充分理由和批准。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH07-S03_002"
+      ],
+      "missing_part": null,
+      "condition": "退出超出风险容忍度的客户关系时",
+      "qualifier": "通常",
+      "reason": "命题表达在特定退出场景下核销动作受到约束的有向关系，超出基础KG。已有卡片以节点和标准边完整表达了条件、动作和限定词。"
+    },
+    {
+      "claim_id": "claim_008",
+      "unit_ids": [
+        "v7u_N000556"
+      ],
+      "proposition": "未能有效管理关闭账户的挑战会损害银行声誉并削弱监管机构和客户的信任。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "仅陈述一般风险后果，无特定程序性或判断性有向链，基础KG可承载。"
+    }
+  ],
+  "scan_summary": "本节扫描了6个段落，提取8个命题。其中3个为P7C增量命题（2个已被现有卡片覆盖，1个缺失），5个为KG边界命题。"
+}

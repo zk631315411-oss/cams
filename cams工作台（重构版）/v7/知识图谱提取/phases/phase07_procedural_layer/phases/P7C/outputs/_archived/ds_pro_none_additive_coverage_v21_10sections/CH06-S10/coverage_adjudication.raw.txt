@@ -1,0 +1,116 @@
+{
+  "section_id": "CH06-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "背景介绍，无具体步骤、判断或应对措施"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，无程序性结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，无程序性结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概念区别解释，无动作或判断链路"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "强调重要性，未形成具体的有向关系"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "静态规则陈述，未与特定主体动作或条件形成有向约束"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯示例，不构成独立程序性结构"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "计算示例，基础KG可保存"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "计算示例，基础KG可保存"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "示例说明，无独立程序性结构"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000496"],
+      "proposition": "无自然人最终受益所有人时，机构识别并核实控制人或名义受益所有人，以了解谁控制公司决策",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "识别动作产生了解公司决策控制者的独立结果，基础KG无法表达该有向产出关系",
+      "origin_candidate_ids": ["cand_003"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "遗漏识别动作后的独立结果：了解公司决策控制者",
+      "origin_candidate_ids": ["cand_003", "coverage_gap_001"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "机构了解公司的决策控制者",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

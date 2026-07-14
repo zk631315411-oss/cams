@@ -1,0 +1,68 @@
+{
+  "section_id": "CH47-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_008",
+      "resolution": "new_card",
+      "card_id": "p7card_CH47-S04_002",
+      "reason": "场景设置动作明确参照以往可疑活动和实际事件经验作为输入，构成有向参照关系，基础KG无法表达此细粒度输入关系，需新建card表达动作及依据。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S04_002",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "基于经验的场景设置",
+      "flow_nodes": [
+        {
+          "node_id": "in_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "以往可疑活动及实际事件经验",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "创建、修改或移除检测规则和场景",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X5_001",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "检测规则和场景被创建、修改或移除",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_001",
+          "edge_type": "REFERENCES",
+          "source": "P2_001",
+          "target": "in_001",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E_002",
+          "edge_type": "PRODUCES",
+          "source": "P2_001",
+          "target": "X5_001",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "derivation": "llm_inference"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003279"],
+      "candidate_status": "candidate",
+      "review_notes": "场景设置动作基于以往经验创建、修改或移除检测规则，构成输入-动作-配置变化的执行链。基础KG不能表达此参照关系，故新建card。PRODUCES边为llm_inference，因原文未明确表述结果状态。",
+      "coverage_claim_ids": ["claim_008"]
+    }
+  ],
+  "card_supplements": []
+}

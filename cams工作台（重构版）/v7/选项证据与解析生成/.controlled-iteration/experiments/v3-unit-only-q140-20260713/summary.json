@@ -1,0 +1,21 @@
+{
+  "experiment_id": "v3-unit-only-q140-20260713",
+  "objective": "Prevent blind-reason contamination in V3 textbook-grounded prose",
+  "hypothesis": "Hiding model-authored blind reasons while keeping locked judgements and real unit text will remove unsupported claims without breaking V3 export readiness",
+  "changed_variable": "Prompt-visible factual material",
+  "execution_status": "ran",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 0
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "The unit-only prompt removed the unsupported digital-asset claim, but it still conflated the contextual foreign-withdrawal fact with the decisive structuring definition and allowed unit IDs into prose.",
+  "regressions": [
+    "Variant option prose exposed internal v7u_* identifiers."
+  ],
+  "issue_count": 3,
+  "next_action": "Create a second isolated variant that separates decisive stem signals from contextual facts; handle internal-ID removal as deterministic normalization with regression tests.",
+  "generated_at": "2026-07-13T05:46:06+00:00"
+}

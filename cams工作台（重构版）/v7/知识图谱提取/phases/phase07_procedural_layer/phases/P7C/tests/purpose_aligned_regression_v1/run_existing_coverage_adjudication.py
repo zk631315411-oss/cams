@@ -66,8 +66,22 @@ def main() -> None:
         RUNNER.write_json(result_path, {"status": "parse_failed", "call_meta": call_meta})
         raise SystemExit("Coverage adjudication response was not valid JSON.")
 
-    normalizations = RUNNER.normalize_new_adjudicated_cards(original, adjudicated)
-    contract_errors = RUNNER.validate_coverage_adjudication(original, adjudicated)
+    allowed_unit_ids = RUNNER.collect_allowed_unit_ids(task)
+    contract_errors = RUNNER.validate_coverage_adjudication(
+        original,
+        adjudicated,
+        allowed_unit_ids,
+    )
+    merged = (
+        RUNNER.merge_coverage_adjudication_patch(original, adjudicated)
+        if not contract_errors
+        else None
+    )
+    normalizations = (
+        RUNNER.normalize_new_adjudicated_cards(original, merged)
+        if merged is not None
+        else []
+    )
     contract_lines = [
         "# P7C Existing Coverage Adjudication Contract Report",
         "",
@@ -80,7 +94,7 @@ def main() -> None:
     else:
         contract_lines.append("No contract errors.")
     contract_report_path.write_text("\n".join(contract_lines) + "\n", encoding="utf-8")
-    RUNNER.write_json(candidate_path, adjudicated)
+    RUNNER.write_json(candidate_path, merged if merged is not None else adjudicated)
 
     validator_code, validator_output, validation_error_count = RUNNER.validate_cards(
         candidate_path,
@@ -132,8 +146,11 @@ previous_adjudication_json:
         if repaired is None:
             validation_attempts.append({"attempt": repair_attempt, "status": "parse_failed"})
             continue
-        normalizations.extend(RUNNER.normalize_new_adjudicated_cards(original, repaired))
-        repaired_contract_errors = RUNNER.validate_coverage_adjudication(original, repaired)
+        repaired_contract_errors = RUNNER.validate_coverage_adjudication(
+            original,
+            repaired,
+            allowed_unit_ids,
+        )
         if repaired_contract_errors:
             contract_errors = repaired_contract_errors
             validation_attempts.append(
@@ -146,7 +163,9 @@ previous_adjudication_json:
             break
         adjudicated = repaired
         contract_errors = repaired_contract_errors
-        RUNNER.write_json(candidate_path, adjudicated)
+        merged = RUNNER.merge_coverage_adjudication_patch(original, repaired)
+        normalizations.extend(RUNNER.normalize_new_adjudicated_cards(original, merged))
+        RUNNER.write_json(candidate_path, merged)
         validator_code, validator_output, validation_error_count = RUNNER.validate_cards(
             candidate_path,
             validation_report_path,
@@ -174,14 +193,16 @@ previous_adjudication_json:
         contract_lines.append("No contract errors.")
     contract_report_path.write_text("\n".join(contract_lines) + "\n", encoding="utf-8")
     original_card_count = len(original.get("cards") or [])
-    final_card_count = len(adjudicated.get("cards") or [])
+    final_payload = merged if merged is not None else original
+    final_card_count = len(final_payload.get("cards") or [])
     accepted = not contract_errors and validator_code == 0 and validation_error_count == 0
     result = {
         "status": "accepted" if accepted else "rejected",
         "section_id": original.get("section_id"),
         "original_card_count": original_card_count,
         "final_card_count": final_card_count,
-        "promoted_card_count": final_card_count - original_card_count,
+        "new_card_count": final_card_count - original_card_count,
+        "supplement_count": len(adjudicated.get("card_supplements") or []),
         "contract_errors": contract_errors,
         "validation_error_count": validation_error_count,
         "validator_output": validator_output,

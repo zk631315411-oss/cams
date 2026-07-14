@@ -1,0 +1,99 @@
+{
+  "section_id": "CH07-S03",
+  "claims": [
+    {
+      "claim_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000552"
+      ],
+      "proposition": "提前还贷是犯罪分子将非法资金伪装为合法资金的手段",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "仅描述犯罪方法，无银行等主体的操作性动作或判断，不满足P7C硬门槛1；基础KG可将其保存为风险指标。"
+    },
+    {
+      "claim_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000554"
+      ],
+      "proposition": "如果银行知道或怀疑客户使用非法资金还贷，则银行不应接受该资金用于还贷",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH07-S03_001"
+      ],
+      "missing_part": null,
+      "condition": "银行知道或怀疑客户使用非法资金还贷",
+      "qualifier": "should not (不应)",
+      "reason": "银行主体的禁止性动作（不应接受）与条件（知道或怀疑）形成明确有向触发关系，能用于判断特定情境下的应对措施，且基础KG无法表达此类条件化动作约束，满足全部硬门槛；已有卡片完整覆盖主体、方向、条件和情态。"
+    },
+    {
+      "claim_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000555"
+      ],
+      "proposition": "当退出超出风险容忍度的客户关系时，核销贷款通常需要充分理由和批准",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH07-S03_002"
+      ],
+      "missing_part": null,
+      "condition": "退出超出银行风险容忍度的客户关系",
+      "qualifier": "often (通常)",
+      "reason": "银行核销贷款的动作在特定退出条件下受‘需要充分理由和批准’的标准约束，构成条件化的有向参照结构，满足硬门槛；已有卡片通过节点和边表达了动作、标准、条件和情态，覆盖完整。"
+    },
+    {
+      "claim_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000553"
+      ],
+      "proposition": "因洗钱担忧关闭客户账户时，若客户仍有贷款余额，银行面临潜在核销和财务损失等挑战",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": "因洗钱担忧关闭账户且客户有贷款余额",
+      "qualifier": null,
+      "reason": "仅陈述银行面临的困难与后果，未表达具体的操作性动作或判断，不满足硬门槛2和3；基础KG可保存为背景事实。"
+    },
+    {
+      "claim_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000556"
+      ],
+      "proposition": "未能有效管理这些挑战会损害银行声誉并削弱监管机构和客户信任",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "can (可能)",
+      "reason": "一般性风险后果陈述，无具体的识别、评估或应对程序结构，不满足P7C硬门槛；基础KG可保存为普通因果关系。"
+    },
+    {
+      "claim_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000546",
+        "v7u_N000547",
+        "v7u_N000548",
+        "v7u_N000549",
+        "v7u_N000550",
+        "v7u_N000551"
+      ],
+      "proposition": "信贷相关产品是基本金融服务，但也带来洗钱风险",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "主题引入与一般风险陈述，无局部程序性或判断性有向结构，不满足P7C增量条件；基础KG可覆盖产品定义和风险关联。"
+    }
+  ],
+  "scan_summary": "扫描CH07-S03全部11个单元，提取6个候选命题，其中2个P7C增量命题已被现有卡片完整覆盖，4个命题由基础KG承接，无遗漏缺口。"
+}

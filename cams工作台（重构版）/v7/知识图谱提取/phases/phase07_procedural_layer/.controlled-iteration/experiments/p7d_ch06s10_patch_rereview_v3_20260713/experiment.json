@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "experiment_id": "p7d_ch06s10_patch_rereview_v3_20260713",
+  "profile_id": "p7d-ch06s10-patch-rereview-v1",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\profiles\\p7d_ch06s10_patch_rereview_v1.json",
+  "profile_sha256": "06b69d323dc1ed03dd5abbac9102ab59f363e07668da8ecc4bab6621fd07a0c6",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+  "objective": "验证补丁后CH06-S10能否通过P7D边级审核并形成阈值与持股信息到UBO认定结果的可用证明路径",
+  "hypothesis": "将语义重复的N2与N5合并为单一assessment process，可在不补造时序边的情况下恢复entry到exit有向路径，并让P7D独立审核参照与产出关系",
+  "changed_variable": "CH06-S10 card_001中N2与N5是否合并为单一判断过程",
+  "test_strategy": "paired_ab",
+  "constants": {
+    "section_id": "CH06-S10",
+    "p7d_prompt": "phases/P7D/prompts/edge_evidence_review_v1.md",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "semantic_evidence": "P7B section package text"
+  },
+  "primary_metrics": [
+    "card_001_structure_status",
+    "complete_edge_review_coverage",
+    "accepted_proof_path_availability"
+  ],
+  "regression_gates": [
+    "No production P7C card is modified",
+    "No artificial PRECEDES edge is added between duplicate process nodes",
+    "Every reviewed edge snapshot matches the test variant",
+    "Pending or rejected edges remain answer-ineligible"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7D\\outputs\\p7d_additive_coverage_v23_10sections",
+  "baseline_sha256": "736a726042982cae994c570b9094ec20c65e23cfd33189d2d85eba13a79897f7",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v5_20260713\\artifacts\\variant\\development\\CH06-S10\\cards.raw.json",
+  "variant_sha256": "2639a1a80378181901d6cb4bea03526d0c6add1f684e29817643dfb66271e929",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "CH06-S10"
+    ],
+    "holdout": []
+  },
+  "status": "evaluated",
+  "runs": [
+    {
+      "arm": "baseline",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7D/tests/ch06s10_patch_rereview_v1/run_controlled_arm.py",
+        "--arm",
+        "baseline",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\artifacts\\baseline\\development",
+        "--baseline-ref",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7D\\outputs\\p7d_additive_coverage_v23_10sections",
+        "--variant-ref",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v5_20260713\\artifacts\\variant\\development\\CH06-S10\\cards.raw.json"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T06:08:08+00:00",
+      "finished_at": "2026-07-13T06:08:08+00:00",
+      "elapsed_seconds": 0.213,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\logs\\development-baseline.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\logs\\development-baseline.stderr.txt",
+      "error": null
+    },
+    {
+      "arm": "variant",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7D/tests/ch06s10_patch_rereview_v1/run_controlled_arm.py",
+        "--arm",
+        "variant",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\artifacts\\variant\\development",
+        "--baseline-ref",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7D\\outputs\\p7d_additive_coverage_v23_10sections",
+        "--variant-ref",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7c_coverage_decomposition_v5_20260713\\artifacts\\variant\\development\\CH06-S10\\cards.raw.json"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T06:08:08+00:00",
+      "finished_at": "2026-07-13T06:09:25+00:00",
+      "elapsed_seconds": 77.193,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\logs\\development-variant.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v3_20260713\\logs\\development-variant.stderr.txt",
+      "error": null
+    }
+  ],
+  "verdict": "needs_decision",
+  "created_at": "2026-07-13T06:07:47+00:00",
+  "updated_at": "2026-07-13T06:12:55+00:00"
+}

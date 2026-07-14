@@ -1,0 +1,82 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中“金融机构通过交易监控系统检测并标记可疑活动”对应source节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确列出“结构化存款、快速跨境分层及与已知恐怖钱包关联的异常资金流动”，对应target节点。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文表示系统标记了这些活动模式，即这些模式是被检测和标记的对象，并非系统参照的输入或标准，不存在从系统到模式的参照方向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无边限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文仅陈述系统检测并标记这些模式，不存在参照或使用关系，将系统与模式的关系错误构建为REFERENCES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "系统检测并标记了这些活动模式，原文不支持系统参照这些模式；边类型和方向均缺乏证据。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中“金融机构通过交易监控系统检测并标记可疑活动”对应source节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“flagged...”明确表示标记为可疑活动，对应target节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文显示交易监控系统执行标记动作，产生“标记为可疑活动”的结果，方向明确为PRODUCES。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用情态限定词，直接陈述事实。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系，而是明确的产生结果关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "原文明示金融机构通过交易监控系统检测非法活动并标记（flagged），直接产生“标记为可疑活动”的结果。"
+    }
+  ]
+}

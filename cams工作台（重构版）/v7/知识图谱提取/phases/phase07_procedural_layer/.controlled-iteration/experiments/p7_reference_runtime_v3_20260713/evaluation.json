@@ -1,0 +1,72 @@
+{
+  "verdict": "accept",
+  "summary": "REFERENCES正本方向保持process_to_auxiliary；两套draw.io渲染均派生为auxiliary_to_process；证明运行时支持受P7D门禁约束的双向REFERENCES遍历，并阻止未满足condition、pending最终使用、rejected、未审核和snapshot已变化的边进入最终证明。",
+  "primary_results": [
+    {
+      "metric": "reference_render_direction_correct",
+      "baseline": false,
+      "variant": true,
+      "evidence": "CH06-S10在readable和review两套draw.io中均为持股阈值标准 -> 合计持股评估，标签为作为判定标准或规范依据。"
+    },
+    {
+      "metric": "reverse_reference_traversal_available",
+      "baseline": false,
+      "variant": true,
+      "evidence": "CH06-S10的accepted E3可从N4反向遍历到N2，proof step同时保留stored_source=N2、stored_target=N4和traversal_direction=reverse。"
+    },
+    {
+      "metric": "decision_and_scope_conditions_enforced",
+      "baseline": false,
+      "variant": true,
+      "evidence": "聚焦回归确认DECIDES和其他带condition的边在条件未满足时均不可遍历。"
+    }
+  ],
+  "regressions": [],
+  "issues": [
+    {
+      "case_id": "synthetic-threshold-decision",
+      "classification": "improvement",
+      "baseline": "REFERENCES按正本方向显示且不可反向推理",
+      "variant": "11项聚焦测试全部通过",
+      "evidence": [
+        "artifacts/variant/development/result.json",
+        "artifacts/variant/development/unittest.stderr.txt"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-render",
+      "classification": "improvement",
+      "baseline": "旧渲染方向为process到standard，且不识别当前E/P/X节点类别",
+      "variant": "两套真实draw.io均按standard到process显示并使用当前node_category布局",
+      "evidence": [
+        "artifacts/variant/development/p7c_v5_reference_direction_readable.drawio",
+        "artifacts/variant/development/p7c_v5_reference_direction_review.drawio"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-stale-P7D-review",
+      "classification": "improvement",
+      "baseline": "只按card_id和edge_id可能把旧E4/E5审核授予补丁后的新边",
+      "variant": "snapshot不一致的E4/E5与未审核E6在final和retrieval模式均不形成路径",
+      "evidence": [
+        "artifacts/variant/development/ch06_s10_stale_review_final_path.json",
+        "artifacts/variant/development/ch06_s10_stale_review_retrieval_path.json"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-accepted-reference",
+      "classification": "improvement",
+      "baseline": "标准或线索无法作为证明路径起点反向进入判断",
+      "variant": "未变化且P7D accepted的E3可反向遍历，且明确标记非因果、非时序",
+      "evidence": [
+        "artifacts/variant/development/ch06_s10_accepted_reference_path.json"
+      ]
+    }
+  ],
+  "holdout_result": {
+    "sample": "CH06-S10 real v5 card with older v23 P7D reviews",
+    "result": "pass",
+    "notes": "真实card验证了正确反向遍历和旧审核失效两种情况。"
+  },
+  "next_action": "对v5补丁后的CH06-S10 E4/E5/E6重新运行P7D，审核通过后再生成完整阈值到UBO认定结果的最终证明路径。"
+}

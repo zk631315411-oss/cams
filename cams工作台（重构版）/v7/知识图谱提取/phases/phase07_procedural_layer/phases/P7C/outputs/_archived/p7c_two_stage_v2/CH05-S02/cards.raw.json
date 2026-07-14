@@ -1,0 +1,251 @@
+{
+  "section_id": "CH05-S02",
+  "section_title": "Financial crime risks in relation to other types of risks > Case example: A lasting lesson",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000356"
+      ],
+      "proposition": "在交易监控和合规框架不完善的情况下，银行可能允许大规模洗钱活动发生。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述薄弱的控制导致洗钱事件的因果事实，无流程性的主体义务或判断结构，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000357"
+      ],
+      "proposition": "当发生重大反洗钱合规违规时，监管机构可能处以创纪录的罚款。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述违规导致罚款的因果事实，无内部程序性结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000358"
+      ],
+      "proposition": "在严重合规违规后，司法部可能达成延期起诉协议并要求全面整改银行的全球合规运营。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "违规后司法部介入要求整改构成外部命令触发银行应对的程序链，KG无法表达该有向关系。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000359"
+      ],
+      "proposition": "重大的反洗钱调查可能导致包括全球合规主管在内的高级管理人员被迫辞职，反映出监管对银行金融犯罪防控文化的强烈批评。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "调查导致高管辞职是后果陈述，无进一步程序性判断或动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000360"
+      ],
+      "proposition": "如果银行内部将本地业务利益和利润置于严格的集中式合规控制之上，监管机构会认为其金融犯罪防控文化存在缺陷。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_002",
+      "reason": "条件（优先利益）导向监管判断（文化缺陷）的评估逻辑，属于P7C增量。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000361"
+      ],
+      "proposition": "洗钱丑闻会引发即时的监管和财务反弹，造成持久声誉损害，削弱客户信任并降低市场地位。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "丑闻引发的声誉和市场影响是后果链，无内部可控程序，基础KG可表达。"
+    },
+    {
+      "candidate_id": "prop_007",
+      "unit_ids": [
+        "v7u_N000362"
+      ],
+      "proposition": "在重大反洗钱失败后，银行可能被迫重组组织权力结构，加强中央监督和合规职能，限制地方业务部门的自主权，并采取去风险化策略以减少对高风险司法管辖区的敞口。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S02_001",
+      "reason": "银行被迫重组的应对动作是程序性步骤，与外部命令形成链，KG无法表达方向性。"
+    },
+    {
+      "candidate_id": "prop_008",
+      "unit_ids": [
+        "v7u_N000363"
+      ],
+      "proposition": "薄弱的金融犯罪控制会导致严重的财务处罚、运营中断和不可挽回的声誉损害，最终破坏银行的长期生存能力。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "概括性警示，仅表述薄弱控制导致严重后果，无具体程序结构，基础KG可充分表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S02_001",
+      "section_id": "CH05-S02",
+      "card_nature": "execution",
+      "title": "合规失败触发监管强制整改与银行组织重组",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "HSBC发生重大反洗钱合规失败（允许贩毒集团洗钱超过8.8亿美元）",
+          "evidence_unit_ids": [
+            "v7u_N000356"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "美国司法部与HSBC达成五年延期起诉协议并要求全面整改全球合规运营",
+          "evidence_unit_ids": [
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "汇丰必须全面整改其全球合规运营（延期起诉协议强制要求）",
+          "evidence_unit_ids": [
+            "v7u_N000358"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "汇丰银行被迫重组组织权力结构：加强中央监督和合规职能、限制地方业务部门自主权、通过战略去风险化减少高风险司法管辖区敞口",
+          "evidence_unit_ids": [
+            "v7u_N000362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000356",
+            "v7u_N000358"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Due to inadequate transaction monitoring... HSBC allowed drug cartels to launder... / entered into a five-year deferred prosecution agreement"
+        },
+        {
+          "edge_id": "e002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000358"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "mandating a comprehensive overhaul of its global compliance operations"
+        },
+        {
+          "edge_id": "e003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000358",
+            "v7u_N000362"
+          ],
+          "derivation": "explicit_text",
+          "condition": "作为纠正措施（回应监管要求）",
+          "source_quote": "As a corrective measure, the bank was compelled to rebalance..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：重大反洗钱合规失败→司法部达成延期起诉协议并要求全面整改→银行被迫重组权力结构加强中央监督限制地方自主权并去风险化；KG不足：基础KG只能独立表达事件，无法表达失败触发要求、要求驱动整改的有向流程；选项判断：可确认外部强制整改的触发条件和银行的具体应对步骤；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH05-S02_002",
+      "section_id": "CH05-S02",
+      "card_nature": "assessment",
+      "title": "优先本地利益导致监管判定金融犯罪防控文化缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "n005",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "银行内部环境将本地业务利益和利润置于严格集中式合规控制之上",
+          "evidence_unit_ids": [
+            "v7u_N000360"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "监管机构判定其金融犯罪防控文化存在缺陷",
+          "evidence_unit_ids": [
+            "v7u_N000360"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "金融犯罪防控文化被评定为存在缺陷",
+          "evidence_unit_ids": [
+            "v7u_N000360"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e004",
+          "edge_type": "PRECEDES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N000360"
+          ],
+          "derivation": "explicit_text",
+          "condition": "若银行优先考虑本地利益",
+          "source_quote": "Regulators highlighted that HSBC’s internal environment had often prioritized local business interests and profit over robust, centralized compliance controls"
+        },
+        {
+          "edge_id": "e005",
+          "edge_type": "PRODUCES",
+          "source": "n006",
+          "target": "n007",
+          "evidence_unit_ids": [
+            "v7u_N000360"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "Regulators highlighted that HSBC’s internal environment had often prioritized... reflecting the regulator’s strong criticism of the bank’s AFC culture"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000360"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行将本地利益置于合规控制之上→监管判定其AFC文化存在缺陷；KG不足：基础KG只能表达监管的结论，无法表达条件到判断的评估逻辑；选项判断：可确认何种行为会导致监管对文化缺陷的认定；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

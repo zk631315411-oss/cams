@@ -1,0 +1,150 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003279"],
+      "proposition": "基于以往可疑活动和实际事件的经验，机构执行场景设置（创建、修改或移除检测规则和场景）。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S04_001",
+      "reason": "以往经验作为输入，被用于具体的场景设置动作，形成输入→处理的有向关系；基础KG只能保存定义性陈述，无法表达此有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003286"],
+      "proposition": "重大事件或趋势出现时，触发调优的专项评估。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S04_002",
+      "reason": "重大事件或趋势作为入口信号，触发专项评估动作，构成事件→评估的有向触发关系；基础KG将规则整体保存，无法表达此触发链。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003273", "v7u_N003274", "v7u_N003275", "v7u_N003276", "v7u_N003277"],
+      "proposition": "调优有多方面的重要性（有效检测、减少误报、资源高效、应对变化、确保合规）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些是调优的一般性目标或好处，属于孤立的目的陈述，不构成条件→动作→结果的有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003272"],
+      "proposition": "交易监控系统调优是调整检测规则参数和阈值的过程。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义性陈述，无程序性有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003278", "v7u_N003280", "v7u_N003284"],
+      "proposition": "调优包括场景设置、客户细分、阈值设置和频率四个关键组成部分，并定义了阈值设置和频率。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "对调优组成部分的静态分类和定义，无有向动作或条件链。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003281"],
+      "proposition": "货币交易报告（CTR）的阈值示例：任何超过10,000美元的货币交易。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通案例事实，仅用于说明阈值概念，无完整的控制或判断链。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003282", "v7u_N003283"],
+      "proposition": "调整阈值可提高灵敏度和准确性，减少误报以高效利用资源。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性因果关系和目标陈述，不构成具体的主体动作链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003285"],
+      "proposition": "调优频率可能受业务策略变化、异常、监管更新或市场变化影响。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述频率可能受因素影响，没有明确的主体动作或触发关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "场景设置基于以往经验",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "以往可疑活动和实际事件的经验",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构创建、修改或移除检测规则和场景",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "derivation": "explicit_text",
+          "source_quote": "based on previous experiences with suspicious activity and actual incidents"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003279"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：以往经验（输入）通过REFERENCES关系导向场景设置动作（过程）；KG不足：基础KG只能保存定义性陈述，不能表达经验输入驱动场景设置的有向关系；选项判断：可确认或排除关于场景设置依据的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S04_002",
+      "section_id": "CH47-S04",
+      "card_nature": "assessment",
+      "title": "重大事件触发调优专项评估",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "重大事件或趋势出现",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构进行调优的专项评估",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "condition": "when significant events or trends occur",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "derivation": "explicit_text",
+          "source_quote": "special assessments triggered by significant events or trends"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003286"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：重大事件或趋势（entry）触发调优的专项评估（process）；KG不足：基础KG只能将规则保存为整体，不能表达事件到评估的有向触发关系；选项判断：可确认或排除关于调优触发条件的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

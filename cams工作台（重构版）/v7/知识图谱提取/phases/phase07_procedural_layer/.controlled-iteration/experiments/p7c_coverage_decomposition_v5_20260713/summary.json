@@ -1,0 +1,30 @@
+{
+  "experiment_id": "p7c_coverage_decomposition_v5_20260713",
+  "objective": "Resolve the remaining graph-shape, required-qualifier, and investigation-stage Patch failures using the fixed Audit and evidence contract",
+  "hypothesis": "Targeted Patch rules for separate minimal cards, required qualifiers, and investigation-stage source matching will reduce rejected and structure-blocked edges without regressing accepted repairs",
+  "changed_variable": "targeted_patch_rules_v4_addendum",
+  "execution_status": "failed",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 1
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "The targeted Patch addendum did not pass the development gate. The strict contract correctly blocked CH02 because one edge did not cover its source node, while CH06 still ignored the separate-card instruction. The failed output was preserved and was not retried or sent to P7D.",
+  "regressions": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "contract_violation",
+      "baseline": "v4 produced two rejected semantic edges",
+      "variant": "v5 attempted a separate card but one shared-source edge lacked source evidence; the strict contract rejected the section",
+      "evidence": [
+        "artifacts/variant/development/CH02-S04/coverage_patch.json",
+        "artifacts/variant/development/CH02-S04/run_manifest.json"
+      ]
+    }
+  ],
+  "issue_count": 2,
+  "next_action": "Stop prompt-only iteration. Keep v2 Audit and v4 strict Patch contract as the best development design. Before production integration, add deterministic safe routing: a contract-failed Patch must preserve the Audit claim as unresolved and leave the original graph unchanged. Treat CH02 as a schema/product boundary decision and route CH06 classification to a dedicated minimal-card construction path rather than relying on prompt compliance.",
+  "generated_at": "2026-07-13T05:04:43+00:00"
+}

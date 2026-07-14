@@ -11,6 +11,14 @@ from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
 
+from p7_edge_runtime import (
+    node_render_kind,
+    node_role,
+    render_edge_endpoints,
+    render_edge_label,
+    section_summary_rows,
+)
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PHASE_DIR = SCRIPT_DIR.parent
@@ -29,7 +37,6 @@ TYPE_PREFIX = {
     "end": "结束",
 }
 
-MAIN_NODE_TYPES = {"start", "trigger", "action", "decision", "output", "end"}
 MAIN_EDGE_TYPES = {"PRECEDES", "DECIDES", "PRODUCES", "FEEDBACK"}
 
 
@@ -68,7 +75,7 @@ def wrap_label(text: str, width: int = 26) -> str:
 
 def node_label(node: dict[str, Any]) -> str:
     node_type = node.get("node_type", "")
-    prefix = TYPE_PREFIX.get(node_type, node_type or "节点")
+    prefix = TYPE_PREFIX.get(node_render_kind(node), node_type or "节点")
     label = wrap_label(node.get("label"), 28)
     units = ", ".join(node.get("evidence_unit_ids") or [])
     if units:
@@ -76,20 +83,15 @@ def node_label(node: dict[str, Any]) -> str:
     return f"<b>{html.escape(prefix)}：</b>{label}"
 
 
-def edge_label(edge: dict[str, Any]) -> str:
-    parts = [edge.get("edge_type") or ""]
-    if edge.get("condition"):
-        parts.append(str(edge.get("condition")))
-    if edge.get("review_status") == "needs_review":
-        parts.append("review")
-    return html.escape(" / ".join(part for part in parts if part))
+def edge_label(edge: dict[str, Any], nodes_by_id: dict[str, dict[str, Any]]) -> str:
+    return html.escape(render_edge_label(edge, nodes_by_id))
 
 
 def load_sections(run_dir: Path) -> list[dict[str, Any]]:
     summary_path = run_dir / "run_summary.json"
     summary_by_section: dict[str, dict[str, Any]] = {}
     if summary_path.exists():
-        for row in read_json(summary_path):
+        for row in section_summary_rows(read_json(summary_path)):
             summary_by_section[row.get("section_id")] = row
 
     sections: list[dict[str, Any]] = []
@@ -268,7 +270,7 @@ def overview_page(sections: list[dict[str, Any]]) -> PageBuilder:
 
 def build_main_ranks(card: dict[str, Any]) -> dict[str, int]:
     nodes = {node.get("node_id"): node for node in card.get("flow_nodes") or [] if node.get("node_id")}
-    main_ids = [node_id for node_id, node in nodes.items() if node.get("node_type") in MAIN_NODE_TYPES]
+    main_ids = [node_id for node_id, node in nodes.items() if node_role(node) != "auxiliary"]
     outgoing: dict[str, list[str]] = defaultdict(list)
     indegree: dict[str, int] = {node_id: 0 for node_id in main_ids}
     for edge in card.get("flow_edges") or []:
@@ -323,7 +325,7 @@ def branch_column(card: dict[str, Any], ranks: dict[str, int]) -> dict[str, int]
 def card_height(card: dict[str, Any]) -> int:
     ranks = build_main_ranks(card)
     main_levels = max(ranks.values(), default=0) + 1
-    aux_count = len([node for node in card.get("flow_nodes") or [] if node.get("node_type") not in MAIN_NODE_TYPES])
+    aux_count = len([node for node in card.get("flow_nodes") or [] if node_role(node) == "auxiliary"])
     return max(520, 150 + main_levels * 125 + max(0, aux_count - 1) * 32)
 
 
@@ -388,14 +390,14 @@ def draw_card(page: PageBuilder, card: dict[str, Any], card_index: int, y0: int)
     aux_gap = 105
     cell_ids: dict[str, str] = {}
 
-    aux_nodes = [node for node in card.get("flow_nodes") or [] if node.get("node_type") not in MAIN_NODE_TYPES]
+    aux_nodes = [node for node in card.get("flow_nodes") or [] if node_role(node) == "auxiliary"]
     for idx, node in enumerate(aux_nodes):
         node_id = node.get("node_id")
         if not node_id:
             continue
         x = aux_x
         y = top_y + idx * aux_gap
-        cell_ids[node_id] = page.vertex(node_label(node), x, y, 330, 74, node_style(node.get("node_type", ""), node.get("review_status")))
+        cell_ids[node_id] = page.vertex(node_label(node), x, y, 330, 74, node_style(node_render_kind(node), node.get("review_status")))
 
     rank_counts: dict[tuple[int, int], int] = defaultdict(int)
     for node_id, rank in sorted(ranks.items(), key=lambda item: (item[1], list(nodes).index(item[0]) if item[0] in nodes else 999)):
@@ -406,18 +408,20 @@ def draw_card(page: PageBuilder, card: dict[str, Any], card_index: int, y0: int)
         x = branch_x if col else main_x
         y = top_y + rank * y_gap + offset * 92
         w, h = (260, 76)
-        if node.get("node_type") == "decision":
+        render_kind = node_render_kind(node)
+        if render_kind == "decision":
             w, h = (270, 96)
-        elif node.get("node_type") in {"start", "trigger", "output", "end"}:
+        elif render_kind in {"start", "trigger", "output", "end"}:
             w, h = (290, 76)
-        cell_ids[node_id] = page.vertex(node_label(node), x, y, w, h, node_style(node.get("node_type", ""), node.get("review_status")))
+        cell_ids[node_id] = page.vertex(node_label(node), x, y, w, h, node_style(render_kind, node.get("review_status")))
 
     for edge in card.get("flow_edges") or []:
-        source = cell_ids.get(edge.get("source"))
-        target = cell_ids.get(edge.get("target"))
+        render_source, render_target = render_edge_endpoints(edge)
+        source = cell_ids.get(render_source)
+        target = cell_ids.get(render_target)
         if not source or not target:
             continue
-        page.edge(source, target, edge_label(edge), edge_style(edge))
+        page.edge(source, target, edge_label(edge, nodes), edge_style(edge))
 
     if card.get("review_notes"):
         note_y = top_y + max(ranks.values(), default=0) * y_gap + 120
@@ -450,7 +454,7 @@ def legend_page() -> PageBuilder:
         cy = y + (idx // 3) * 150
         ids.append(page.vertex(f"<b>{html.escape(label)}</b>", cx, cy, 270, 78, node_style(node_type)))
     page.edge(ids[0], ids[2], "PRECEDES", edge_style({"edge_type": "PRECEDES"}))
-    page.edge(ids[2], ids[5], "REFERENCES", edge_style({"edge_type": "REFERENCES"}))
+    page.edge(ids[5], ids[2], "作为判定标准或规范依据", edge_style({"edge_type": "REFERENCES"}))
     page.edge(ids[2], ids[6], "PRODUCES", edge_style({"edge_type": "PRODUCES"}))
     page.edge(ids[3], ids[2], "DECIDES / yes", edge_style({"edge_type": "DECIDES"}))
     page.vertex("虚线 = functional_dependency 或 needs_review，需要 P7D 复核", 110, 650, 780, 56, "rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;align=left;spacing=10;")

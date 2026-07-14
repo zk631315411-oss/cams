@@ -1,0 +1,96 @@
+{
+  "section_id": "CH08-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义与合法用途列举，无主体动作关系，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述SPV风险与结构特点，无金融机构识别、评估或应对动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子分层洗钱的犯罪方法描述，不是金融机构/监管主体的应对链，必须保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立红旗指标列表，未与特定主体的分析或决策关联，基础KG可记录。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子选择管辖区的策略描述，无机构响应，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PIV定义与风险指标，无金融机构应对动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子贸易洗钱的犯罪方法描述，不是金融机构/监管主体的应对链，必须保持kg_only。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000660"],
+      "proposition": "金融机构执行强化尽职调查（EDD）、识别最终受益所有人并了解真实目的等措施，将有助于减轻与SPV相关的潜在金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "原card仅表达了EDD行动受CDD规则约束，未表达EDD措施导致减轻风险这一独立结果。本例中，原文'This will help mitigate...'明确表明同一系列动作产生'有助于减轻风险'的控制效果，基础KG无法表达动作到结果的这种贡献性因果方向。",
+      "origin_candidate_ids": ["cand_008"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "原卡片遗漏了v7u_N000660表述的结果节点：减轻风险。该unit已在card的source_unit_ids中，但未作为图元素表达，需补充exit节点及PRODUCES边以反映完整增量命题。",
+      "origin_candidate_ids": ["cand_008"],
+      "add_flow_nodes": [
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "derivation": "explicit_text",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

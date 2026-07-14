@@ -1,0 +1,313 @@
+{
+  "section_id": "CH03-S07",
+  "section_title": "Examples of predicate crimes > Case example: Mr. Wolfe’s scheme",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000283"
+      ],
+      "proposition": "当交易监控系统标记出结构化存款、快速跨管辖分层以及与已知恐怖相关钱包关联的异常资金流动时，金融机构可检测到非法活动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_001",
+      "reason": "命题明确了条件（系统标记异常活动）触发金融机构的检测动作，构成有向的识别关系，超出基础KG仅保存孤立事实的能力。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000284"
+      ],
+      "proposition": "当非法加密资产流动通过暗网市场和高风险交易所时，区块链分析公司可提供取证情报以映射这些流动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_002",
+      "reason": "命题明确了区块链分析公司基于特定线索（非法加密资产流动路径）提供取证情报，形成有向参照关系，基础KG无法表达这种条件触发的过程结构。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000285"
+      ],
+      "proposition": "当金融情报机构综合银行可疑交易报告与跨境金融活动时，会触发国际监管网络中的红旗信号。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_003",
+      "reason": "命题包含FIU综合评估导致红旗信号的完整过程，输入-过程-结果的有向链超出基础KG的简单事实表达，属于可判分支/结论的增量结构。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000286"
+      ],
+      "proposition": "当金融情报机构升级案件后，执法机构（包括欧洲刑警组织、国际刑警组织及国家反恐特遣队）会对相关主体进行针对性监控，以追踪现金走私者和哈瓦拉网络。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_004",
+      "reason": "命题展示了FIU升级案件直接触发执法机构监控的交接链，体现了明确的决策-响应顺序，基础KG无法表达这种主体间的有向触发关系。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000287"
+      ],
+      "proposition": "执法机构进行协调资产冻结可导致数字钱包的查封及资助恐怖主义的公司的瓦解，从而中断恐怖融资的金融渠道。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_005",
+      "reason": "命题明确执法机构的冻结动作直接产生具体的查封和瓦解结果，形成控制措施-产出的有向链，基础KG仅能表达冻结事实，无法表达这种内部产出关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S07_001",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "金融机构依据交易监控系统标记检测非法活动",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "交易监控系统标记出的异常活动（结构化存款、快速跨管辖分层、与恐怖钱包关联的异常资金流动）",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构检测到非法活动",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification",
+          "source_quote": "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000283"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构基于交易监控系统标记的异常活动（输入）检测到非法活动；KG不足：基础KG可表达“金融机构检测到非法活动”这一事实，但无法表达检测动作与具体线索之间的有向参照关系；选项判断：可确认或排除关于检测触发条件的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_002",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "区块链分析公司映射非法加密资产流动以提供取证情报",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "非法加密资产流动（通过暗网市场和高风险交易所）",
+          "evidence_unit_ids": [
+            "v7u_N000284"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "区块链分析公司提供取证情报（映射非法加密资产流动）",
+          "evidence_unit_ids": [
+            "v7u_N000284"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N000284"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification",
+          "source_quote": "Blockchain analytics firms provided forensic intelligence, mapping illicit cryptoasset flows through darknet marketplaces and high-risk exchanges."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000284"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：区块链分析公司基于非法加密资产流动（线索）提供取证情报；KG不足：基础KG可表达公司提供情报的事实，但无法表达其与具体线索流向的有向参照关系；选项判断：可确认或排除关于情报来源和触发条件的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_003",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIU综合银行SAR与跨境金融活动触发红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "银行可疑交易报告（SARs）和跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIUs 综合银行SARs与跨境金融活动",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发国际监管网络中的红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "component_assembles_product"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：FIU综合银行SAR与跨境活动（输入）进行评估后，触发红旗信号（分类结论）；KG不足：基础KG可表达综合和触发红旗的事实，但无法表达内部有向过程（综合评估导致分类结论）；选项判断：可确认或排除关于红旗触发路径的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_004",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU升级案件后执法机构进行针对性监控",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "FIUs 升级案件",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构（Europol, Interpol, 国家反恐特遣队）对相关主体进行针对性监控（追踪现金走私者和哈瓦拉网络）",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "derivation": "explicit_text",
+          "condition": "As FIUs escalated the case",
+          "source_quote": "As FIUs escalated the case, law enforcement agencies... conducted targeted surveillance on Mr. Wolfe and his criminal associates... to trace cash smugglers and hawala networks."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：FIU升级案件（决策发现）触发执法机构进行针对性监控（响应动作）；KG不足：基础KG可表达两者先后发生，但无法表达明确的触发交接关系；选项判断：可确认或排除关于响应顺序和升级触发选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_005",
+      "section_id": "CH03-S07",
+      "card_nature": "control",
+      "title": "执法机构协调资产冻结导致数字钱包查封和公司瓦解",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构协调资产冻结（以中断恐怖融资金融渠道）",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "查封数字钱包并瓦解Wolfe资助恐怖主义的公司",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N000287"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "They conducted coordinated asset freezes to disrupt financial channels, resulting in the seizure of digital wallets and the dismantling of Mr. Wolfe’s companies used to finance terrorism."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000287"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：执法机构执行资产冻结（控制动作）产生具体结果（查封钱包、瓦解公司）；KG不足：基础KG可表达冻结及其后果，但无法表达动作与具体结果之间的直接产出有向关系；选项判断：可确认或排除关于冻结效果的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

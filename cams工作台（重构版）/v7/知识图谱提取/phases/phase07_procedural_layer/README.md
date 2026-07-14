@@ -125,12 +125,12 @@ edge_type
 source
 target
 evidence_unit_ids
-derivation
 ```
 
 可选字段：
 
 ```text
+derivation（仅兼容旧单阶段/两阶段P7C产物；三阶段P7C不输出）
 relation_type
 condition
 qualifier
@@ -148,6 +148,8 @@ DECIDES
 FEEDBACK
 ```
 
+`REFERENCES`的知识正本固定保存为`process -> input/standard`，读作“处理或判断参照该辅助节点”。人读图派生为`input/standard -> process`，标签使用“作为输入/线索”或“作为判定标准/规范依据”。推理层可双向遍历该边，但反向遍历只建立依据关系，不能单独证明因果、产出或时间顺序，也不得在正本中复制一条反向边。
+
 ## relation_type（业务语义关系）
 
 可选字段，承载考试推理语义。
@@ -160,7 +162,7 @@ FEEDBACK
 | R4 | conclusion_triggers_response | 结论触发应对 | 风险结论触发加强监控、升级、报告等应对 |
 | R5 | branch_condition_routes_path | 分支条件路由 | 判断条件决定进入不同分支路径 |
 | R6 | component_assembles_product | 组件装配产物 | 信息组件共同构成正式产物 |
-| R7 | standard_constrains_action | 标准约束行动 | 法律、保密等标准限定动作执行 |
+| R7 | standard_constrains_action | 标准约束行动/判断 | 标准为具体行动、识别、评估或判断提供约束或判定准则 |
 | R8 | result_handoffs_stage | 结果交接下游 | 当前结果成为下一阶段的输入 |
 | R9 | feedback_requests_completion | 反馈要求补充 | 复核问题要求补充研究或修订 |
 | R10 | cycle_requires_monitoring | 周期/持续监控 | 周期或持续义务要求复核或继续观察 |
@@ -198,4 +200,4 @@ P7D先做纯结构校验，再由独立LLM逐边审核证据。P7D不修改P7C�
 4. `DECIDES` 边必须用 `condition` 写明分支条件。
 5. `BRIDGES_TO` 不进入 `flow_edges`，只进入 `p7_bridge_edge`。
 6. 渲染文件和派生索引不能作为知识正本。
-7. P7C节点的`evidence_strength`只描述节点证据，边的`derivation`只描述提取来源；二者都不是最终审核状态。P7D另存逐边`review_status`和完整history。
+7. P7C节点的`evidence_strength`只描述节点证据；旧P7C边的`derivation`仅作兼容审计快照，三阶段P7C不输出该字段。P7D独立生成逐边`derivation`与`review_status`并保存完整history。

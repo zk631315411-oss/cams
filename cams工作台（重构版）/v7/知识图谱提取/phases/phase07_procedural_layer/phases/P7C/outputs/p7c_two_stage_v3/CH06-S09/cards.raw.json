@@ -1,0 +1,328 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000459"
+      ],
+      "proposition": "在识别政治敏感人物时，组织必须遵守当地监管要求。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_001",
+      "reason": "明确了组织在识别PEP时必须遵守当地监管要求的义务，形成监管要求→组织识别动作的有向约束关系，基础KG仅能保存整条规则，无法表达义务对动作的指向。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000460"
+      ],
+      "proposition": "基于风险偏好，组织可以选择执行比当地监管要求更高的政治敏感人物识别标准。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_002",
+      "reason": "表达了风险偏好作为条件驱动组织可选动作（执行更高标准）的有向关系，超出基础KG静态规则保存。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000467"
+      ],
+      "proposition": "在界定政治敏感人物时，组织应采用宽泛定义。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为一般规则建议，基础KG可直接保存该事实，无需提取内部有向结构。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000477"
+      ],
+      "proposition": "由于政治敏感人物即使离职后仍可能留在相同影响力圈中，一些组织遵循“一旦是政治敏感人物，永远是政治敏感人物”的方法。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_003",
+      "reason": "描述了部分组织基于个人卸任后仍可能保留影响力的原因，采用永久维持PEP分类的方法，体现了条件与分类决策之间的有向判断关系。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "proposition": "其他组织在评估个人是否继续被视为政治敏感人物时，会考察该个人当前的影响力（例如授予合同或分配资金的能力）以及被归类为政治敏感人物的时间长短。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_004",
+      "reason": "描述了其他组织通过考察两个具体标准来决定是否继续视为PEP的评估过程，标准直接约束评估动作，形成有向判断结构。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000482"
+      ],
+      "proposition": "组织必须根据其风险偏好采取必要步骤调整交易监控和了解你的客户审查，并进行升级。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_005",
+      "reason": "明确了组织必须根据风险偏好调整监控、KYC审查并升级的义务，风险偏好作为条件约束调整动作，构成有向约束关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "识别PEP时遵守当地监管要求义务",
+      "flow_nodes": [
+        {
+          "node_id": "c001_P",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织必须遵守当地监管要求识别政治敏感人物",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c001_S",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "当地监管要求",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "c001_edge_1",
+          "edge_type": "REFERENCES",
+          "source": "c001_P",
+          "target": "c001_S",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Organizations must adhere to their local regulatory requirements in identifying PEPs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000459"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织必须遵守当地监管要求 —REFERENCES(standard_constrains_action)→ 当地监管要求；KG不足：基础KG仅能保存规则整体事实，无法表达监管要求如何约束识别动作的有向关系；选项判断：可确认识别PEP时必须遵守当地监管要求的义务，排除任意识别；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_002",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "基于风险偏好执行更高PEP标准的选择",
+      "flow_nodes": [
+        {
+          "node_id": "c002_P",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织可以选择执行更高的政治敏感人物识别标准",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c002_S",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "c002_edge_1",
+          "edge_type": "REFERENCES",
+          "source": "c002_P",
+          "target": "c002_S",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "derivation": "explicit_text",
+          "condition": "基于风险偏好",
+          "source_quote": "organizations may choose to enforce higher standards based on their risk appetite."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000460"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织可以选择执行更高标准 —REFERENCES(condition:基于风险偏好)→ 风险偏好；KG不足：基础KG可能保存'可执行更高标准'的事实，但无法表达风险偏好作为条件驱动可选动作的关系；选项判断：可确认风险偏好是选择更高标准的依据，可能排除无条件强制更高标准的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_003",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "基于卸任后影响力保留的永久PEP分类方法",
+      "flow_nodes": [
+        {
+          "node_id": "c003_E",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "个人已卸任但可能保留在相同影响力圈中",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c003_P",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "一些组织将个人视为政治敏感人物（一旦是政治敏感人物，永远是政治敏感人物）",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "c003_edge_1",
+          "edge_type": "PRECEDES",
+          "source": "c003_E",
+          "target": "c003_P",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "derivation": "explicit_text",
+          "condition": "即使卸任仍可能保留影响力",
+          "source_quote": "Some organizations follow a “once a PEP, always a PEP” approach because the individual may remain in the same circles of influence, even if they have stepped down."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000477"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：个人已卸任但可能保留影响力 —PRECEDES(condition)→ 一些组织永久维持PEP分类；KG不足：基础KG可能保存方法描述，但无法表达卸任状态和可能影响力如何导致组织分类维持的因果条件判断；选项判断：可确认部分组织因可能保留影响力而即便卸任仍维持分类，排除'所有组织在卸任后立即解除分类'的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_004",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "评估是否继续视为PEP时考察影响力与分类时长",
+      "flow_nodes": [
+        {
+          "node_id": "c004_P",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "其他组织评估个人是否继续被视为政治敏感人物",
+          "evidence_unit_ids": [
+            "v7u_N000478"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c004_I1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人当前的影响力（如授予合同或分配资金的能力）",
+          "evidence_unit_ids": [
+            "v7u_N000479"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c004_I2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "被归类为政治敏感人物的时间长短",
+          "evidence_unit_ids": [
+            "v7u_N000480"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "c004_edge_1",
+          "edge_type": "REFERENCES",
+          "source": "c004_P",
+          "target": "c004_I1",
+          "evidence_unit_ids": [
+            "v7u_N000479"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Other organizations will look at: The individual’s influence at the time, such as their ability to award contracts or allocate funds"
+        },
+        {
+          "edge_id": "c004_edge_2",
+          "edge_type": "REFERENCES",
+          "source": "c004_P",
+          "target": "c004_I2",
+          "evidence_unit_ids": [
+            "v7u_N000480"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "How long the individual has been classified as a PEP"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：其他组织评估是否继续视为PEP —REFERENCES→ 个人当前的影响力、分类时间长短；KG不足：基础KG可能列出影响因素，但无法表达这些因素被用于评估动作的有向参照关系；选项判断：可确认评估是否继续视为PEP时需考察这两个因素，排除忽略它们的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S09_005",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "基于风险偏好调整交易监控与KYC审查并升级的义务",
+      "flow_nodes": [
+        {
+          "node_id": "c005_P",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织必须调整交易监控和了解你的客户审查并进行升级处理",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "c005_S",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "c005_edge_1",
+          "edge_type": "REFERENCES",
+          "source": "c005_P",
+          "target": "c005_S",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "derivation": "explicit_text",
+          "condition": "基于风险偏好",
+          "source_quote": "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000482"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织必须调整交易监控和KYC审查并升级处理 —REFERENCES(condition:基于风险偏好)→ 风险偏好；KG不足：基础KG可能保存规则，但无法表达风险偏好对调整动作的约束方向；选项判断：可确认调整和升级必须依据风险偏好，排除随意调整的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

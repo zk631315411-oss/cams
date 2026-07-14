@@ -1,0 +1,46 @@
+{
+  "section_id": "CH05-S02",
+  "card_id": "p7card_CH05-S02_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000356明确记载'HSBC was involved in a money laundering scandal'，支持'汇丰银行卷入洗钱丑闻'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000358记载'The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul...'，完全支持目标节点内容。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "虽然原文未用因果连词直接连接，但叙事顺序上丑闻发生在前（2012年），延期起诉协议达成在后，且协议是对丑闻的回应，交换方向违反必要功能依赖，因此方向成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，且原文中丑闻到协议的过渡未显示必须满足的特定条件，因此缺少condition合理。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文相关表述未使用must、should、may等限定词，边也未添加限定，故不适用。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "丑闻与协议是先后事件，并非并列来源、共同结果或教材顺序，未错误写成PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000358"
+      ],
+      "source_quotes": [
+        "In 2012, HSBC was involved in a money laundering scandal that remains one of the most significant AML compliance failures in banking history.",
+        "The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul of its global compliance operations."
+      ],
+      "reason": "源节点与目标节点均有可靠原文支持。方向虽未明确用连词表达，但基于时序和事件逻辑的必然依赖（协议是对丑闻的监管回应），推理方向正确。因缺少显式方向证据，该边需人工确认是否为合适的流程先后关系。"
+    }
+  ]
+}

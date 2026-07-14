@@ -337,8 +337,8 @@ def validate_card_structure(
         if edge_derivation is not None:
             if edge_derivation not in set(schema.get("edge_derivations", ["explicit_text", "llm_inference"])):
                 errors.append(issue("invalid_derivation", f"{owner} invalid derivation {edge_derivation}"))
-        elif edge.get("evidence_strength") not in allowed_strengths:
-            errors.append(issue("invalid_evidence_strength", f"{owner} missing derivation or invalid legacy evidence_strength {edge.get('evidence_strength')}"))
+        elif edge.get("evidence_strength") is not None and edge.get("evidence_strength") not in allowed_strengths:
+            errors.append(issue("invalid_evidence_strength", f"{owner} invalid legacy evidence_strength {edge.get('evidence_strength')}"))
         if package is not None:
             validate_evidence_ids(owner, edge.get("evidence_unit_ids"), allowed_unit_ids, errors)
 

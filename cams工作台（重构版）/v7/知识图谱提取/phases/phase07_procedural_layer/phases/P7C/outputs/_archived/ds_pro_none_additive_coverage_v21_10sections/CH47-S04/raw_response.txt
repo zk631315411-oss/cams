@@ -1,0 +1,168 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003272"],
+      "proposition": "交易监控系统调优是调整检测规则参数和阈值的过程（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG已能充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003273"],
+      "proposition": "调优确保有效检测可疑活动（效果）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "解释调优的效果/目的，无增量程序性或判断性有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003274"],
+      "proposition": "调优减少误报（效果）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "效果陈述，无增量结构，基础KG充足。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003275"],
+      "proposition": "调优确保高效资源利用（效果）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "效果陈述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003276"],
+      "proposition": "调优使组织管理金融犯罪和业务变化（功能）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "功能说明，无特定的条件-动作链，基础KG覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003277"],
+      "proposition": "调优确保监管合规（效果）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "效果陈述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003278"],
+      "proposition": "调优包含四个关键组成部分（列表）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "组成列表，基础KG能充分表达分类关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003279"],
+      "proposition": "场景设置是基于经验创建、修改或移除检测规则（定义/解释）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性解释，不包含条件化触发或特定有向判断，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N003280"],
+      "proposition": "阈值设置定义触发警报的最低活动水平（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG覆盖。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N003281"],
+      "proposition": "CTR报告阈值示例：超过10000美元的货币交易（示例）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通示例/事实，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": ["v7u_N003282"],
+      "proposition": "调整阈值可提高灵敏度和准确性（效果）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "效果说明，基础KG充足。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": ["v7u_N003283"],
+      "proposition": "减少误报是设定阈值的关键目标（目标）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "目标陈述，无增量有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "unit_ids": ["v7u_N003284"],
+      "proposition": "频率决定调优应多久进行一次（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义，基础KG覆盖。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "unit_ids": ["v7u_N003285"],
+      "proposition": "频率可能受业务策略变化、异常、监管更新或市场变化影响（影响因素）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系，无明确触发特定主体的应对动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_015",
+      "unit_ids": ["v7u_N003286"],
+      "proposition": "当发生重大事件或趋势时，应触发专项评估（条件触发动作）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S04_001",
+      "reason": "规则内部包含‘重大事件/趋势 → 实施专项评估’的局部有向判断链，超出基础KG仅将其作为整体规则保存的表达能力，可帮助判断选项中的触发条件和评估动作。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "assessment",
+      "title": "重大事件触发专项调优评估",
+      "flow_nodes": [
+        {
+          "node_id": "E1_CH47S04_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发生重大事件或趋势",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_CH47S04_001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构：实施专项调优评估",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1_PRECEDES_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1_CH47S04_001",
+          "target": "P1_CH47S04_001",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "derivation": "explicit_text",
+          "condition": "triggered by significant events or trends",
+          "source_quote": "with special assessments triggered by significant events or trends"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003286"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当发生重大事件或趋势时 → 机构实施专项调优评估；KG不足：基础KG仅将‘调优应是动态的，由重大事件触发专项评估’保存为规则文本，不能表达事件触发评估的局部有向关系；选项判断：可确认或排除‘专项评估在何种条件下被触发’、‘调优的动态性体现在触发评估’等选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

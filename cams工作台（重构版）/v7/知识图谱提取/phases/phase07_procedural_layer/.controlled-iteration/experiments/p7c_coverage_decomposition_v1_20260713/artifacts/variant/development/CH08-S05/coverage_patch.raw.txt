@@ -1,0 +1,44 @@
+{
+  "section_id": "CH08-S05",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_006",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "将v7u_N000660中EDD对风险减轻的帮助效果补充为PRODUCES边，连接已有process节点与新增exit状态，保留原文可能性限定。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH08-S05_001",
+      "coverage_claim_ids": ["claim_006"],
+      "reason": "补充EDD实施对风险减轻的非确定性正向效果，体现控制措施的有效性。",
+      "add_flow_nodes": [
+        {
+          "node_id": "p7node_CH08-S05_001_exit_01",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "潜在的金融犯罪风险得到减轻（与SPV和PIV相关）",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "p7edge_CH08-S05_001_proc_to_mitigate",
+          "edge_type": "PRODUCES",
+          "source": "p7node_CH08-S05_001_process_01",
+          "target": "p7node_CH08-S05_001_exit_01",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "derivation": "explicit_text",
+          "relation_type": "potential_mitigation",
+          "condition": "进行EDD有助于减轻风险",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000660"]
+    }
+  ]
+}

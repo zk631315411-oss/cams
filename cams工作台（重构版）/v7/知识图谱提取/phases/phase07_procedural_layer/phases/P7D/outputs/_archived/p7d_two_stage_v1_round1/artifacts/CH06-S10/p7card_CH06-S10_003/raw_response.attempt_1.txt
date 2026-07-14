@@ -1,0 +1,44 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_003",
+  "edge_reviews": [
+    {
+      "edge_id": "p7card_CH06-S10_003_E1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确描述‘In companies where there is no natural beneficial owner’，直接支持该条件状态。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文要求‘a controller or a notional beneficial owner should be identified and verified’，对应识别并核实控制人或名义受益所有人的动作。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以条件句表达‘当无自然人UBO时，应识别……’，无UBO是识别动作的逻辑前提，前后方向成立。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "edge的condition准确反映了原文的条件前提‘当不存在自然人受益所有人时’。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用‘should be identified’表示义务/建议，但target label只写‘识别并核实’，未保留情态限定，强化为无条件必然动作。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "边为明显的条件-动作关系，未误用为并列或因果。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "边整体来源明确，方向与条件均正确，但target节点遗漏了‘should’这一义务限定词，导致关系从‘应当’强化为无条件执行，不符合原文语气，故应拒绝。"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "section_id": "CH06-S10",
+  "construction_audit": [
+    {
+      "candidate_id": "prop_006",
+      "construction_status": "graphed",
+      "card_ids": ["p7card_CH06-S10_001"],
+      "reason": "条件-动作链：公司无自然人UBO时，触发识别控制人/名义UBO的监管动作"
+    },
+    {
+      "candidate_id": "prop_007",
+      "construction_status": "ungraphable",
+      "reason": "原文仅示例性说明上市公司名义UBO可以是总裁/CEO，缺少程序性关系主体与动作方向，无法形成有向边"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人UBO时识别控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "node_001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "公司没有自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "node_001",
+          "target": "node_002",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "condition": "当公司没有自然人受益所有人时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：公司无自然人UBO时，应识别并核实控制人或名义UBO。KG中已有UBO定义和识别要求，本卡片补充了无自然人UBO时的特定处理动作及条件触发关系。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,62 @@
+{
+  "section_id": "CH47-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_008",
+      "resolution": "new_card",
+      "card_id": "p7card_CH47-S04_002",
+      "reason": "场景设置动作明确参照以往可疑活动经验和实际事件作为输入依据，构成有向参照关系。新建执行卡表达创建/修改/移除规则（P2_execution）参照输入经验（input）。双方证据均来自v7u_N003279。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S04_002",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "场景设置参照经验创建、修改或移除检测规则和场景",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "基于以往可疑活动和实际事件经验创建、修改或移除检测规则和场景",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "以往可疑活动经验和实际事件",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003279"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：场景设置动作参照以往经验；选项判断：可确定场景设置时的输入依据。",
+      "coverage_claim_ids": [
+        "claim_008"
+      ]
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,67 @@
+{
+  "verdict": "needs_decision",
+  "summary": "原补丁card_001因N1->N2与N5->N6之间没有有向连接而在P7D结构门失败。将语义重复的N2与N5合并后，结构变为closed_flow且四条边全部完成独立审核；E1、E3 accepted，E2、E6因跨unit必要归纳被判为llm_inference并保持pending。因此检索路径成立，但最终答案证明路径仍为空。",
+  "primary_results": [
+    {
+      "metric": "card_001_structure_status",
+      "baseline": "fail: missing_entry_process_exit_path",
+      "variant": "pass: closed_flow"
+    },
+    {
+      "metric": "complete_edge_review_coverage",
+      "baseline": "P7D semantic review blocked",
+      "variant": "4/4 edges reviewed; accepted=2, pending=2, rejected=0"
+    },
+    {
+      "metric": "accepted_proof_path_availability",
+      "baseline": false,
+      "variant": false,
+      "details": "Input/standard to UBO result paths exist in retrieval mode but contain pending E2 or E6, so final mode correctly returns no path."
+    }
+  ],
+  "regressions": [],
+  "issues": [
+    {
+      "case_id": "CH06-S10-original-patch",
+      "classification": "contract_violation",
+      "baseline": "N1->N2 and N5->N6 are not joined by a directed process path",
+      "variant": "N2 and N5 are merged instead of adding an unsupported PRECEDES edge",
+      "evidence": [
+        "artifacts/baseline/development/result.json",
+        "artifacts/variant/development/CH06-S10/cards.merged_test_variant.json"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-E2",
+      "classification": "unresolved",
+      "baseline": "old review pending against the pre-patch node meaning",
+      "variant": "pending llm_inference; direction and all semantic checks supported",
+      "evidence": [
+        "artifacts/variant/development/p7d_summary/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-E6",
+      "classification": "unresolved",
+      "baseline": "new edge was not reviewable because structure failed",
+      "variant": "pending llm_inference; D/C examples support the result but generalization across units requires human confirmation",
+      "evidence": [
+        "artifacts/variant/development/p7d_summary/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH06-S10-proof-runtime",
+      "classification": "expected_difference",
+      "baseline": "no reviewed path",
+      "variant": "retrieval paths=1 for input and standard; final paths=0 for both",
+      "evidence": [
+        "artifacts/variant/development/proof_input_to_result_retrieval.json",
+        "artifacts/variant/development/proof_input_to_result_final.json",
+        "artifacts/variant/development/proof_standard_to_result_retrieval.json",
+        "artifacts/variant/development/proof_standard_to_result_final.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Human decision required: approve or reject promotion of the merged N2/N5 topology, then separately adjudicate pending E2 and E6. No production P7C card has been modified by this experiment."
+}

@@ -1,0 +1,59 @@
+{
+  "profile_id": "v3-unit-only-prompt",
+  "workspace": "../..",
+  "test_strategy": "paired_ab",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "baseline",
+        "--source-question",
+        "{baseline_ref}",
+        "--artifact-dir",
+        "{artifact_dir}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 60,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "variant",
+        "--source-question",
+        "{baseline_ref}",
+        "--artifact-dir",
+        "{artifact_dir}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 240,
+      "required_env": ["DEEPSEEK_API_KEY"]
+    }
+  },
+  "constants": {
+    "model": "deepseek-v4-pro",
+    "question_id": "v7_q_000140"
+  },
+  "primary_metrics": [
+    "No factual claim copied solely from blind-generated reasons",
+    "No unsupported digital-asset claim",
+    "No claim that foreign withdrawal is part of the structuring definition"
+  ],
+  "regression_gates": [
+    "Answer remains D",
+    "All four options are present",
+    "English source quote is exact and valid",
+    "Software readiness remains true"
+  ],
+  "samples": {
+    "development": ["v7_q_000140"],
+    "holdout": ["v7_q_000315"]
+  },
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

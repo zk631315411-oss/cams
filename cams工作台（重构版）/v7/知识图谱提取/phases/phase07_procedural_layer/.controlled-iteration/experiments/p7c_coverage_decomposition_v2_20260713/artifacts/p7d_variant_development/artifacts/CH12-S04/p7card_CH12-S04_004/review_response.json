@@ -1,0 +1,82 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_004",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文“Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria”明确提及交易监控系统根据预定义标准标记可疑交易，支持n1。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文直接出现“based on predefined criteria”，明确存在预定义标准，支持n2。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“flag ... based on predefined criteria”表明系统动作参照标准，方向从系统到标准，无反向可能。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "qualifier“based on”与原文完全一致，未被强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "基准参照关系不是并列或相关，原文无歧义。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria"
+      ],
+      "reason": "原文直接明示系统基于预定义标准标记交易，方向与参照关系均明确，所有检查均通过。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n1在原文有直接依据，见e1检查。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions”支持n3所描述的各种识别类型，内容有据。但标签缺少限定词。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“flag suspicious transactions ... can help identify ...”表明系统标记有助于识别，方向从系统到识别结果，逻辑合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用“can help”表达限定性控制效果，但目标节点n3标签“识别大额或异常交易……”删去了情态限定词，使PRODUCES关系趋于确定性，强化了原文的限定效果，违反了PRODUCES关系对限定词保留的要求。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "系统标记与识别属于直接帮助关系，非并列或相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions."
+      ],
+      "reason": "原文明确支持两端节点内容，但目标节点标签未保留“can help”限定词，导致PRODUCES关系被错误强化为必然产出，不符合审核规则中对限定词保留的硬性要求，故整体拒绝。"
+    }
+  ]
+}

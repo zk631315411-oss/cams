@@ -1,0 +1,198 @@
+{
+  "section_id": "CH06-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "当前单元为定义、区别和背景说明，基础KG已能充分表达，无新增有向主体动作关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_005",
+      "reason": "原文表达了基于客户风险水平选择不同受益所有权阈值的有向决策关系：对于高风险客户，阈值可能降至10%或5%。基础KG只存储了静态阈值，未表达条件选择和动作依赖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "该单元为无自然人UBO时识别控制人的具体案例，无新增条件或动作，基础KG可存储。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000496"
+      ],
+      "proposition": "当不存在自然人UBO时，机构应识别并核实控制人或名义受益所有人",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_004",
+      "reason": "首次抽取的该候选card缺失，补充完整有向关系。",
+      "origin_candidate_ids": [
+        "cand_004"
+      ]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N000490",
+        "v7u_N000491",
+        "v7u_N000492",
+        "v7u_N000489",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "proposition": "机构采用风险为本方法，根据客户风险水平确定适用的受益所有权阈值（高风险可低至10%或5%），并合计直接和间接持股比例与适用阈值比较，以识别UBO。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_005",
+      "reason": "首次抽取将阈值设定与UBO识别割裂，且未表达基于风险水平的条件选择；基础KG无法表达该决策流程。",
+      "origin_candidate_ids": [
+        "cand_002",
+        "cand_003",
+        "cand_006"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH06-S10_004",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人UBO时识别控制人",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "不存在自然人受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000496"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当不存在自然人UBO时，机构应识别控制人；基础KG存储了规则，但未表达条件与动作的有向关系；选项判断：可确认条件触发义务。"
+    },
+    {
+      "card_id": "p7card_CH06-S10_005",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "基于风险水平的受益所有权阈值应用与UBO识别",
+      "flow_nodes": [
+        {
+          "node_id": "I1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "直接持股比例",
+          "evidence_unit_ids": [
+            "v7u_N000493",
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "间接持股比例",
+          "evidence_unit_ids": [
+            "v7u_N000493",
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户风险水平",
+          "evidence_unit_ids": [
+            "v7u_N000491"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险为本的受益所有权阈值标准（25%/10%/5%）",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000490",
+            "v7u_N000491",
+            "v7u_N000492"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "合计直接和间接持股比例",
+          "evidence_unit_ids": [
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "根据风险水平判断持股比例是否达到阈值",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "分类为UBO",
+          "evidence_unit_ids": [
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "分类为非UBO",
+          "evidence_unit_ids": [
+            "v7u_N000495"
+          ],

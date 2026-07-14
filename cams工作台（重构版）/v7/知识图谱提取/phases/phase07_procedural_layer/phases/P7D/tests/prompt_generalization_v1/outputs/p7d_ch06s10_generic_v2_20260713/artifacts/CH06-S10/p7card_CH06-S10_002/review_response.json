@@ -1,0 +1,44 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求识别持有至少25%股份的实体或个人，节点E1内容与原文一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文要求将该等持有者识别为受益所有人，节点P1内容与原文一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文逻辑为达到25%阈值是识别的前提，持股比例为条件，识别为结果，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边的condition直接取自原文的25%或以上阈值条件，原文明确表达该条件。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文使用require表达强制义务，节点使用“必须”，限定词一致，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "持股达到阈值与识别受益所有人是明确的逻辑依赖关系，非并列或一般相关，PRECEDES类型适当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489"
+      ],
+      "source_quotes": [
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more. That means you need to know every entity or individual who owns at least 25% of a customer."
+      ],
+      "reason": "该边完整捕获了原文规定的持股25%阈值触发强制识别的逻辑，方向、条件、限定词均与原文一致，且无歧义。"
+    }
+  ]
+}

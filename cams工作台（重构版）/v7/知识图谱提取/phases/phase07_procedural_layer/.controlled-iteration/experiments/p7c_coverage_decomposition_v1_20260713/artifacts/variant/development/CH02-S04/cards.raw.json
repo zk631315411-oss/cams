@@ -1,0 +1,585 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000134",
+        "v7u_N000138"
+      ],
+      "proposition": "负面新闻引发对英国反贿赂法的关切，导致Sophie进行初始调查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文未明确负面新闻和调查之间的触发关系，仅为叙述顺序，无法可靠构建有向边。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "proposition": "Sophie的初始调查揭示了FullTechGlobal的腐败方法（雇佣中间人、掩盖资金流、提供贿赂）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "调查动作与发现之间存在明确有向产出关系，超出基础KG单纯事实存储，属于可帮助选项判断的程序性结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000141"
+      ],
+      "proposition": "Sophie的审计识别出FullTechGlobal的ABC框架和内部控制缺陷",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "审计动作与结论之间存在显式有向产出关系，超出基础KG风险指标陈述，属于增量判断结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000141",
+        "v7u_N000142"
+      ],
+      "proposition": "审计发现缺陷导致识别贿赂为上游犯罪",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "缺乏显式连接，仅为叙述顺序，且被动语态无明确动作主体。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "贿赂作为上游犯罪导致洗钱",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通因果解释，无程序性有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133"
+      ],
+      "proposition": "负面新闻充当风险指标触发后续行动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "未明确触发机制，仅为背景信息，基础KG已覆盖为风险指标。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "FullTechGlobal面临严厉处罚和监管审查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律后果陈述，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "Sophie认识到机构需维护诚信和降低风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为认识/一般义务陈述，无具体动作或结果。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie初始调查揭示FullTechGlobal腐败方法",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie进行初始调查",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000139",
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出FullTechGlobal在高风险司法管辖区战略雇佣中间人",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出FullTechGlobal通过虚增咨询费、伪造发票和壳公司掩盖非法资金流",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出FullTechGlobal向公职人员提供奢华礼品和旅行安排",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X3",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2_appeared",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "appeared"
+        },
+        {
+          "edge_id": "E3_suggested",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X3",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "suggested"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie的初始调查（PRODUCES）识别出FullTechGlobal的腐败方法（雇佣中间人、掩盖资金流、提供贿赂）；KG不足：基础KG仅存储为案件事实，未表达调查动作与发现之间的有向程序关系；选项判断：可确认Sophie初始调查产生的具体发现；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie审计识别FullTechGlobal内部控制缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie跟进调查并进行审查/审计",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出FullTechGlobal的ABC框架和内部控制缺陷以及监管不足",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000141"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie的审查/审计（PRODUCES）识别出FullTechGlobal内部控制缺陷；KG不足：基础KG仅标记为风险指标，未表达审计动作与发现之间的有向关系；选项判断：可确认审计产生的具体结论；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_003",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "根据英国反贿赂法域外管辖条款，公司需建立健全的合规措施",
+      "flow_nodes": [
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UK Bribery Act 2010 extraterritorial provisions (可能使母公司被起诉)",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估法律合规要求",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "建立健全的合规措施（持续义务）",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：根据英国反贿赂法域外管辖可能使母公司被起诉，公司需要建立健全的合规措施；KG不足：基础KG仅存储法律事实，未表达由此派生的程序性合规义务；选项判断：可确认法律要求导致的合规义务；LLM推理：评估动作与参考关系为推断。",
+      "coverage_claim_ids": [
+        "claim_004"
+      ]
+    },
+    {
+      "card_id": "p7card_CH02-S04_004",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "鉴于案例风险，金融机构需维护合规诚信并降低贿赂风险",
+      "flow_nodes": [
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie作为AFC经理评估案例风险与机构义务",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "机构需维护合规诚信并降低贿赂和腐败风险",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000144"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000144"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie认识到机构需维护合规诚信并降低风险；KG不足：基础KG仅标记为一般义务，未表达明确的程序性有向关系；选项判断：可确认AFC经理应采取的合规维护义务；LLM推理：无。",
+      "coverage_claim_ids": [
+        "claim_013"
+      ]
+    }
+  ],
+  "skip_reason": null,
+  "coverage_claim_audit": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N000132"
+      ],
+      "proposition": "Sophie发现有关FullTechGlobal的负面新闻。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "基础事实陈述，无程序性有向关系，仅提供背景。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N000133"
+      ],
+      "proposition": "FullTechGlobal因海外销售行为面临广泛贿赂和腐败的严重指控。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "案件背景事实，属于基础KG存储内容。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N000134"
+      ],
+      "proposition": "针对FullTechGlobal的指控引发了根据英国反贿赂法域外条款的关切。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "抽象因果关联，无具体主体动作，不属于程序性有向命题。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N000137"
+      ],
+      "proposition": "鉴于英国反贿赂法的域外管辖可能使母公司被起诉，公司需要建立健全的合规措施。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "missing",
+      "matched_card_ids": [],
+      "missing_part": "未表达该从法律要求导出的合规义务命题。",
+      "condition": "域外管辖可能使母公司被起诉",
+      "qualifier": "may face prosecution; need to（义务）",
+      "reason": "原文强调需要健全合规措施，这是一个连接法律标准与合规应对的增量命题，对选项判断有用，但现有卡片未覆盖。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N000138"
+      ],
+      "proposition": "Sophie的初步调查揭示FullTechGlobal在高风险司法管辖区战略性地雇佣中间人以获取合同。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH02-S04_001"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "调查动作与发现之间的有向关系已在卡片中用PRODUCES边完整表达，无遗漏。"
+    },
+    {
+      "claim_id": "claim_006",
+      "unit_ids": [
+        "v7u_N000139"
+      ],
+      "proposition": "根据指控和进一步的调查努力，子公司似乎通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "partially_covered",
+      "matched_card_ids": [
+        "p7card_CH02-S04_001"
+      ],
+      "missing_part": "缺失限定词'appeared'（似乎），当前卡片边为确定性PRODUCES，未体现推测性。",
+      "condition": "根据指控和进一步的调查努力",
+      "qualifier": "appeared（似乎）",
+      "reason": "命题带有推测性限定，卡片只记录了识别的结果，但未保留原文的不确定情态。"
+    },
+    {
+      "claim_id": "claim_007",
+      "unit_ids": [
+        "v7u_N000140"
+      ],
+      "proposition": "证据表明FullTechGlobal向公职人员和高级管理人员提供奢华礼品和旅行安排以非法影响决策。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "partially_covered",
+      "matched_card_ids": [
+        "p7card_CH02-S04_001"
+      ],
+      "missing_part": "缺失限定词'suggested'（表明/暗示），当前卡片边为确定性PRODUCES，未体现推测性。",
+      "condition": null,
+      "qualifier": "suggested（表明/暗示）",
+      "reason": "原文使用'suggested'表示可能性，卡片忽略该限定词，将发现作为确定结论表达。"
+    },
+    {
+      "claim_id": "claim_008",
+      "unit_ids": [
+        "v7u_N000141"
+      ],
+      "proposition": "Sophie跟进调查并审查，识别出FullTechGlobal的ABC框架和内部控制缺陷。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH02-S04_002"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "审计动作与识别结论之间的有向关系已完整表达式在卡片中。"
+    },
+    {
+      "claim_id": "claim_009",
+      "unit_ids": [
+        "v7u_N000141"
+      ],
+      "proposition": "审计发现的内部控制缺陷助长了长期未被发现的腐败活动。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "普通因果解释，属于基础KG可表达的机制关系。"
+    },
+    {
+      "claim_id": "claim_010",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "在审查过程中，贿赂被确定为上游犯罪。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "使用被动语态，无明确动作主体，无法构建可靠的有向边，仅作为事实陈述。"
+    },
+    {
+      "claim_id": "claim_011",
+      "unit_ids": [
+        "v7u_N000142"
+      ],
+      "proposition": "上游犯罪导致通过复杂金融网络洗钱。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "典型犯罪机制因果链，属于基础KG内容。"
+    },
+    {
+      "claim_id": "claim_012",
+      "unit_ids": [
+        "v7u_N000143"
+      ],
+      "proposition": "基于审计发现，FullTechGlobal及其母公司面临严厉金融处罚、国际监管审查和潜在刑事责任。",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": "审计发现证实控制缺陷",
+      "qualifier": null,
+      "reason": "纯粹的法律后果陈述，无程序性有向结构，不属于P7C增量。"
+    },
+    {
+      "claim_id": "claim_013",
+      "unit_ids": [
+        "v7u_N000144"
+      ],
+      "proposition": "鉴于案例风险，金融机构需要维护合规诚信并降低与全球企业交易中的贿赂和腐败风险。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "missing",
+      "matched_card_ids": [],
+      "missing_part": "未表达该应对义务命题（机构需采取行动维护诚信并降低风险）。",
+      "condition": null,
+      "qualifier": "needs to（义务）",
+      "reason": "原文明确表达金融犯罪防控经理认识到机构有程序性应对义务，这是一个有向的决策/应对命题，对CAMS选项判断有用，但现有卡片未包含。"
+    }
+  ],
+  "coverage_patch_resolutions": [
+    {
+      "claim_id": "claim_004",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_003",
+      "reason": "原文强调英国反贿赂法域外管辖可能导致母公司被起诉，需要建立健全合规措施，这一义务未在现有卡片覆盖，故新建控制卡片。"
+    },
+    {
+      "claim_id": "claim_006",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原文使用'appeared'表示推测性，现有卡片未体现该限定词，需补充带限定词的边。"
+    },
+    {
+      "claim_id": "claim_007",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原文使用'suggested'表示可能性，现有卡片未体现该限定词，需补充带限定词的边。"
+    },
+    {
+      "claim_id": "claim_013",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_004",
+      "reason": "原文明确经理认识到机构需维护合规诚信并降低风险，这一义务命题未覆盖，故新建控制卡片。"
+    }
+  ]
+}

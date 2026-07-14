@@ -1,0 +1,188 @@
+{
+  "section_id": "CH02-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为心理关切，未产生独立可操作的结果或动作，基础KG可保存该事实。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "考虑法律条款属于认知状态，未形成程序性输出，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "法律规则及一般后果，基础KG已作为规则保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "调查动作产生识别结论，构成有向程序性结构，基础KG不能表达主体动作与发现之间的关系，且有助于判断调查在发现贿赂手法中的作用。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "进一步调查产出新的识别结果，应与其他调查发现合并表达，以体现完整调查过程。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "证据显示奢华礼品等手法，属于调查过程产出的识别结果之一，与初步和进一步调查共同构成完整事实清单。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "识别上游犯罪是审计审查的延伸结论，应补充至同一审计卡中以体现完整分析产出。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "发现导致的监管后果为事实陈述，无明确主体执行评估动作，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "Sophie的义务认知为抽象认识，无具体程序性动作或产出，基础KG可表达。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "proposition": "Sophie的调查过程揭示了FullTechGlobal的多项贿赂和洗钱手法",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "KG不能表达调查动作与多个发现之间的有向产出关系，且将这些发现合并表达有助于理解调查的整体产出。",
+      "origin_candidate_ids": ["cand_004", "cand_005", "cand_006"]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": ["v7u_N000142"],
+      "proposition": "审计审查过程识别贿赂为上游犯罪，并导致洗钱",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原卡遗漏了审计对上游犯罪的分类，基础KG不能表达审查过程与犯罪分类的有向产出关系。",
+      "origin_candidate_ids": ["cand_008"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "investigation",
+      "title": "Sophie的调查发现FullTechGlobal的多项贿赂手法",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie进行初步和进一步调查，收集和分析FullTechGlobal的贿赂指控证据",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别FullTechGlobal在高风险管辖区战略性地雇佣中间人以获取合同",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别通过虚增咨询费、伪造发票和空壳公司系统性地掩盖非法资金流动",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别向公职人员和高级管理人员提供奢华礼品和旅行安排以非法影响决策",
+          "evidence_unit_ids": ["v7u_N000140"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N000140"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：调查过程产出对贿赂手法的多个具体识别；KG不足：基础KG可能只保存各手法事实，未表达调查动作与发现之间的有向产出；选项判断：明确调查是发现手法的必要手段，多个发现有助于全面评估风险。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原卡遗漏了审计过程中对上游犯罪的识别以及导致的洗钱结论，这些是审计分析的直接产出，增加了对犯罪性质的分类。",
+      "origin_candidate_ids": ["cand_008"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别贿赂为上游犯罪，导致非法资金通过复杂金融网络进行洗钱",
+          "evidence_unit_ids": ["v7u_N000142"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000142"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000142"]
+    }
+  ]
+}

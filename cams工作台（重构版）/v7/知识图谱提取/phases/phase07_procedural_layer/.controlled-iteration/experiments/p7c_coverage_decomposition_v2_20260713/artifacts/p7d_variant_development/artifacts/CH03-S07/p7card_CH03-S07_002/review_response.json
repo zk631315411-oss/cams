@@ -1,0 +1,82 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文中'Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged...'明确描述了金融机构交易监控系统检测并标记活动，节点2标签完全匹配。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets'直接列出了节点1中的各项异常资金流动，节点1标签与原文一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文中监控系统标记了这些异常活动（flagged...），表明过程基于这些输入进行标记，符合REFERENCES方向：处理过程引用输入。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文和边均未使用情态或限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "异常资金流动是监控系统检测并标记的参照依据，并非并列关系、共同结果或一般主题关联，不存在将并列关系误写为REFERENCES的情况。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "原文明确表明金融机构交易监控系统标记了具体的异常资金流动，REFERENCE关系有直接证据，各项检查均获支持。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "同e1，节点2标签与原文描述匹配。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'which flagged...'意味着这些活动被标记为可疑，节点3'标记为可疑活动'是对这一状态的概括，存在依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "节点2'检测并标记可疑活动'与节点3'标记为可疑活动'实为同一事实的主动动作与被动状态表述，原文未展现两个独立事实之间的产出方向，而是同义反复。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列关系，但此边本质是将同一事件的主动面和被动面用PRODUCES连接，而非正确建立独立产出。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000283"
+      ],
+      "source_quotes": [
+        "Financial institutions first detected the illicit activity through transaction monitoring systems, which flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements linked to known terror-affiliated wallets."
+      ],
+      "reason": "节点2的动作与节点3的状态是同一事件的不同表述（主动标记与被动标记），二者不构成独立事实，因此PRODUCES边缺乏有效关系支撑，应被拒绝。"
+    }
+  ]
+}

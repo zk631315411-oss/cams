@@ -1,0 +1,44 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文直接提到高风险客户如PEPs和中介。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文提到需要进行仔细的风险评估。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表达由高风险客户产生评估需求，方向合理，反向不成立。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "原文限定高风险客户需评估，隐含条件，edge condition与之匹配。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文'require'表示必须/需要，但target节点标签'进行仔细的风险评估'未保留强制性限定，属于弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "高风险客户与仔细评估非并列关系，是需求关系，未错误写成先后边。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000921"
+      ],
+      "source_quotes": [
+        "High-risk customers, such as PEPs, and intermediaries require careful risk assessment."
+      ],
+      "reason": "边基本由原文支持，但qualifier被弱化，导致整体审核不能接受，建议为rejected。"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "section_id": "CH12-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_010",
+      "resolution": "new_card",
+      "card_id": "p7card_CH12-S04_002",
+      "reason": "证据v7u_N000921明示高风险客户或中介需仔细风险评估，构建条件触发评估的流程关系。"
+    },
+    {
+      "claim_id": "claim_012",
+      "resolution": "new_card",
+      "card_id": "p7card_CH12-S04_003",
+      "reason": "证据v7u_N000923明示持续监控交易活动可以帮助识别异常模式，构建监控与识别结果的有向帮助关系。"
+    },
+    {
+      "claim_id": "claim_013",
+      "resolution": "new_card",
+      "card_id": "p7card_CH12-S04_004",
+      "reason": "证据v7u_N000923明示监控系统基于标准标记可疑交易可以帮助识别多种交易，构建标准参照与帮助识别关系。"
+    },
+    {
+      "claim_id": "claim_014",
+      "resolution": "new_card",
+      "card_id": "p7card_CH12-S04_005",
+      "reason": "证据v7u_N000924明示CDD有助于确保资金合法及根据模式细分客户，构建CDD帮助确保的关系并参照客户模式。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH12-S04_002",
+      "section_id": "CH12-S04",
+      "card_nature": "assessment",
+      "title": "高风险客户或中介需进行仔细风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "高风险客户（如PEPs）或中介",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行仔细的风险评估",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "condition": "当客户为高风险（如PEPs）或中介时",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000921"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "命题: 高风险客户条件触发仔细风险评估。证据明确，构建条件-动作关系。",
+      "coverage_claim_ids": [
+        "claim_010"
+      ]
+    },
+    {
+      "card_id": "p7card_CH12-S04_003",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "持续监控交易活动帮助识别异常模式",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "持续监控交易活动",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "可以帮助识别可能表明洗钱的异常模式或行为",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "命题: 持续监控帮助识别异常模式。证据明确，构建帮助识别关系。",
+      "coverage_claim_ids": [
+        "claim_012"
+      ]
+    },
+    {
+      "card_id": "p7card_CH12-S04_004",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "监控系统基于标准标记可疑交易帮助识别特定交易",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "稳健的交易监控系统基于预定义标准标记可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预定义标准",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "可以帮助识别大额或异常交易、快速交易模式、高频交易及涉及高风险司法管辖区的交易",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "命题: 监控系统标记可疑交易帮助识别多种交易类型。添加标准参照和帮助识别关系。",
+      "coverage_claim_ids": [
+        "claim_013"
+      ]
+    },
+    {
+      "card_id": "p7card_CH12-S04_005",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "CDD有助于确保资金合法并细分客户",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行客户尽职调查（CDD）",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于确保资金来源合法",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预期和历史交易模式",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "有助于根据预期和历史交易模式正确细分客户",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000924"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "命题: CDD帮助确保资金合法并基于模式细分客户。构建参照与帮助关系。",
+      "coverage_claim_ids": [
+        "claim_014"
+      ]
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,89 @@
+{
+  "section_id": "CH06-S10",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_004",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "source：新增process N5（合计持股比例并比较阈值），target exit N6（认定/不认定UBO），边E6 PRODUCES由v7u_N000494、v7u_N000495直接支持；N5 REFERENCES N3（阈值标准）由v7u_N000489、v7u_N000491支持；N5 REFERENCES N4（持股信息）由v7u_N000493支持。限定词：原文无限定词，节点和边均使用确定性表述。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH06-S10_001",
+      "coverage_claim_ids": [
+        "claim_004"
+      ],
+      "reason": "补充合计持股比例并与阈值比较的过程，并产生分类结果，覆盖 gap claim 中缺失的比较和分类环节。新增节点 N5（合计比较过程）和 N6（分类结果），以及 REFERENCES 和 PRODUCES 边，证据来自 v7u_N000489、v7u_N000491、v7u_N000493、v7u_N000494、v7u_N000495。",
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "合计直接和间接持股比例并比较法定阈值",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000491",
+            "v7u_N000493",
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "持股比例达到阈值者被认定为UBO，未达到者不被认定为UBO",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "REFERENCES",
+          "source": "N5",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000491"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N5",
+          "target": "N4",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "PRODUCES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000494",
+        "v7u_N000495"
+      ]
+    }
+  ]
+}

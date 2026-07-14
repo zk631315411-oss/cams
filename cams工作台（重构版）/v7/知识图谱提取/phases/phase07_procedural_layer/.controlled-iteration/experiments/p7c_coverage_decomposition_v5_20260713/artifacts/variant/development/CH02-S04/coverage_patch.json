@@ -1,0 +1,112 @@
+{
+  "section_id": "CH02-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_003",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_003",
+      "reason": "新建card以覆盖claim_003：source为Sophie的进一步调查（process节点P1），target为带有appeared限定的exit节点X1，关系为PRODUCES。证据unit v7u_N000139明确支持'进一步调查'动作和'appeared'限定，并支持'根据指控和进一步调查努力'条件，通过辅助节点A1和REFERENCES边表达。限定词'appeared'同时体现在X1标签和PRODUCES边的qualifier中。"
+    },
+    {
+      "claim_id": "claim_004",
+      "resolution": "new_card",
+      "card_id": "p7card_CH02-S04_003",
+      "reason": "新建card以覆盖claim_004：source为Sophie的进一步调查（process节点P1），target为带有suggested限定的exit节点X2，关系为PRODUCES。证据unit v7u_N000140明确支持'证据表明'（suggested）和发现内容。限定词'suggested'同时体现在X2标签和PRODUCES边的qualifier中。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH02-S04_003",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie进一步调查显示FullTechGlobal腐败迹象",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie进行进一步调查（根据指控和进一步调查努力）",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "针对FullTechGlobal的指控和进一步调查努力",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "进一步调查似乎显示FullTechGlobal通过虚增咨询费、伪造发票和壳公司掩盖非法资金流",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "证据表明FullTechGlobal向公职人员和高管提供奢华礼品和旅行安排以非法影响决策",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "appeared"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "suggested"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000139",
+        "v7u_N000140"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "新建独立card以覆盖claim_003/004的限定词缺口。严格区分调查阶段，避免将'进一步调查努力'和'证据表明'的结果挂到初始调查上。限定词'appeared'和'suggested'同时进入exit节点标签和PRODUCES边的qualifier字段。输入条件'根据指控和进一步调查努力'通过辅助节点A1和REFERENCES边表达。",
+      "coverage_claim_ids": [
+        "claim_003",
+        "claim_004"
+      ]
+    }
+  ],
+  "card_supplements": []
+}

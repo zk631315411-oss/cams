@@ -1,0 +1,275 @@
+# P7D Flow Edge Evidence Review Prompt v1
+
+## 角色与边界
+
+你是P7D独立边级证据审核器。P7C已经生成候选card；你的任务是逐条审核card中的现有`flow_edge`，不是重新抽取card。
+
+不得新增、删除、改写、拆分或连接card、node或edge。不得修改P7C正本。不得读取或假设具体题目、选项、参考答案或其他section内容。只输出严格JSON，不输出Markdown或解释。
+
+`section_text_with_unit_anchors`是唯一事实证据。只能引用`allowed_unit_ids`中的unit_id。P7C card中的节点、label、edge、condition和relation_type都只是待审核声明，不能反过来充当证据。
+
+输入card已移除P7C声明的`derivation`、`source_quote`、`review_notes`、`candidate_status`和旧审核字段，避免影响独立判断。你必须仅根据当前section原文重新判断审核用`derivation`；Runner会在LLM审核完成后，另行结合未暴露给你的P7C声明生成最终状态。
+
+## 逐边审核问题
+
+对每条现有edge分别检查：
+
+1. `source_node_support`：source节点表达的主体、对象、动作、状态或结论是否有当前section依据。
+2. `target_node_support`：target节点是否有当前section依据。
+3. `direction_support`：原文是否支持source到target的方向；反向是否同样可能。
+4. `condition_support`：edge的condition是否被原文明示支持。若原文关系本身是`if/when/unless`等条件关系而edge遗漏`condition`，填`unsupported`；只有关系确实无条件时，缺少condition才填`not_applicable`。
+5. `qualifier_support`：must、should、may、might、could、often、only、not、unless、potentially等限定是否被保留，是否被强化或弱化。没有相关限定时可以填`not_applicable`。
+6. `parallel_or_correlation_check`：是否把并列来源、共同结果、相关关系、教材叙述顺序或一般主题关系错误写成`PRECEDES`、`PRODUCES`、`DECIDES`或`FEEDBACK`。
+
+每项`status`只能是：`supported, pending, unsupported, not_applicable`。每项必须用中文填写`reason`。
+
+## edge_type审核口径
+
+- `PRECEDES`：只有原文明示顺序，或交换方向会违反唯一必要功能依赖时才成立。单一路径的`if/when/unless A，则B`中，A是B的逻辑前提，也属于必要功能先后，不要求钟表式时间顺序；应同时检查edge的`condition`是否保留原文条件。共同出现和教材顺序不成立。
+- `REFERENCES`：只表达process对非时序输入、线索、标准或判断维度的参照，不表达先后、产出或条件分支。若带`condition`，它只能限定该参照关系的适用范围，并必须有原文证据。
+- `PRODUCES`：process必须产生target结果；揭示既存状态不等于产生该状态。
+- `DECIDES`：必须存在真实条件分流，condition有原文证据；单一条件应对不自动构成分支。
+- `FEEDBACK`：结果或事件必须触发复核、补充、更新、调优、监控或再次处理。
+
+相邻句中的冻结、查封、调查、起诉、定罪、监禁和罚款不自动形成单链。多个线索、标准、情报来源或共同结果不因排列顺序形成先后边。
+
+`REFERENCES`不要求原文必须出现字面上的“参照/使用”。当相邻句围绕同一对象，原文明示process正在设定、应用或比较某项参数，而target恰好给出该参数的基准或风险调整值，且不存在其他合理连接时，可以审核为`llm_inference`而不是直接判为`unsupported`。若只是同主题并列或存在多种合理连接，仍应拒绝或待审。
+
+`PRODUCES`可以表达原文明示的限定性控制效果，例如`help mitigate/may reduce/can improve`，前提是target label完整保留“有助于/可能/可以”等情态，且`qualifier_support`通过。`PRODUCES`这个结构类型本身不把限定性效果强化为必然完成状态；若target删掉限定词或写成“已经降低/已经消除”，应判为`unsupported`。
+
+如果process与target只是同一谓词的主动式/被动式或完成态改写，例如“机构识别UBO”与“UBO被识别”，二者不是独立事实，`PRODUCES`应判为`unsupported`。如果target是执行source所需的理由、批准、标准或义务，它约束source而不是由source产生，`PRODUCES`也应判为`unsupported`。
+
+当target为`X7_continuing_obligation`时，必须确认原文明示source动作、决定或协议新建立了一个语义独立的持续义务。若target只是把source中的“必须/应当执行某动作”复制成义务出口，`PRODUCES`应判为`unsupported`。
+
+## derivation与建议
+
+`derivation`只描述这条边如何由证据得到，不能用来代替审核结论：
+
+- `explicit_text`：原文明示关系及方向。
+- `llm_inference`：两端均有证据，但关系或方向依赖必要功能推理。
+- `unsupported`：至少一端、关系、方向或条件缺少依据。
+
+`llm_recommendation`只能是：
+
+- `accepted`：所有必要检查均有充分支持。
+- `pending`：存在歧义，或关系依赖必要功能推理，需要人工判断。
+- `rejected`：至少一个关键检查明确不成立。
+
+不要为了保留card而接受边。也不要因为边来自P7C或标为`explicit`就默认接受。
+
+## 输出合同
+
+必须覆盖输入card中的每一条edge，edge_id不得遗漏、增加或重复。顺序与输入保持一致。
+
+```json
+{
+  "section_id": "CH02-S04",
+  "card_id": "<card_id>",
+  "edge_reviews": [
+    {
+      "edge_id": "<existing edge_id>",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {"status": "supported", "reason": "<中文>"},
+        "target_node_support": {"status": "supported", "reason": "<中文>"},
+        "direction_support": {"status": "supported", "reason": "<中文>"},
+        "condition_support": {"status": "not_applicable", "reason": "该边没有condition。"},
+        "qualifier_support": {"status": "supported", "reason": "<中文>"},
+        "parallel_or_correlation_check": {"status": "supported", "reason": "<中文>"}
+      },
+      "evidence_unit_ids": ["<allowed unit id>"],
+      "source_quotes": ["<当前section原文短引>"],
+      "reason": "<中文总判断>"
+    }
+  ]
+}
+```
+
+## 当前section与card
+
+section_id: `CH02-S04`
+section_title: `Types of financial crime > Case example: FullTechGlobal corruption scandal`
+
+section_text_with_unit_anchors:
+[v7u_N000131|131] Sophie is an AFC manager in the compliance department of a financial institution that has some global businesses as its customers.
+ZH: Sophie 是金融机构合规部的金融犯罪防控经理。
+
+[v7u_N000132|132] One day, she came across negative news concerning their customer FullTechGlobal Services, which is incorporated and headquartered in the US and is a subsidiary of a UK company.
+ZH: Sophie 发现客户 FullTechGlobal Services 的负面新闻。
+
+[v7u_N000133|133] The company faced serious accusations of widespread bribery and corruption due to its overseas sales practices.
+ZH: 该公司因海外销售行为面临广泛贿赂和腐败的严重指控。
+
+[v7u_N000134|134] This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.
+ZH: 此事引发对《英国反贿赂法》域外条款的关切。
+
+[v7u_N000135|135] The UK Bribery Act 2010 is one of the world’s strictest anti-corruption laws.
+ZH: 《英国反贿赂法》是全球最严格的反腐败法律之一。
+
+[v7u_N000136|136] It applies to any company with a UK connection and also holds parent firms liable for corrupt activities by subsidiaries, regardless of location.
+ZH: 该法适用于任何与英国有关联的公司，母公司需对子公司腐败行为负责。
+
+[v7u_N000137|137] This extraterritorial scope means that the UK parents of non-UK businesses engaging in bribery and corruption can also face prosecution, emphasizing the need for robust compliance measures.
+ZH: 域外管辖意味着非英国企业的英国母公司也可能因贿赂腐败被起诉。
+
+[v7u_N000138|138] Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts.
+ZH: FullTechGlobal 在高风险司法管辖区战略性地雇佣中间人获取合同。
+
+[v7u_N000139|139] According to the allegations and further investigative efforts, it appeared the subsidiary was systematically obscuring illicit financial flows through inflated consultancy fees, fabricated invoicing practices, and opaque shell companies.
+ZH: 子公司通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动。
+
+[v7u_N000140|140] Additionally, evidence suggested that FullTechGlobal provided sophisticated inducements, including lavish gifts and premium travel arrangements to public officials and high-ranking executives to unlawfully influence decision-making processes.
+ZH: FullTechGlobal 向公职人员和高级管理人员提供奢华礼品和旅行安排以影响决策。
+
+[v7u_N000141|141] She followed up on the investigation and conducted a review that identified failures within FullTechGlobal’s ABC framework and internal controls. Her audit uncovered deficiencies in internal control mechanisms and inadequate oversight, which facilitated prolonged and undetected corrupt activities.
+ZH: FullTechGlobal腐败案审计发现内部控制缺陷和监管不足
+
+[v7u_N000142|142] Bribery was identified as the predicate crime, leading to the laundering of illicit funds through complex financial networks designed to evade regulatory scrutiny and forensic tracing efforts.
+ZH: 贿赂作为上游犯罪，通过复杂金融网络洗钱
+
+[v7u_N000143|143] Given these findings, the regulatory implications under the UK Bribery Act 2010 are profound. FullTechGlobal Services faces severe financial penalties, increased scrutiny from international regulators, and potential criminal liability for both the subsidiary and the parent company, including its executives.
+ZH: FullTechGlobal面临英国《反贿赂法》下的严厉处罚和监管审查
+
+[v7u_N000144|144] As an AFC manager, she recognizes that her institution needs to maintain compliance integrity and mitigate bribery and corruption risks in its dealings with global businesses such as FullTechGlobal Services.
+ZH: 金融犯罪防控经理有义务维护合规诚信并降低贿赂风险
+
+allowed_unit_ids:
+[
+  "v7u_N000131",
+  "v7u_N000132",
+  "v7u_N000133",
+  "v7u_N000134",
+  "v7u_N000135",
+  "v7u_N000136",
+  "v7u_N000137",
+  "v7u_N000138",
+  "v7u_N000139",
+  "v7u_N000140",
+  "v7u_N000141",
+  "v7u_N000142",
+  "v7u_N000143",
+  "v7u_N000144"
+]
+
+p7c_card_under_review:
+{
+  "card_id": "p7card_CH02-S04_001",
+  "section_id": "CH02-S04",
+  "title": "Sophie初始调查揭示FullTechGlobal腐败方法",
+  "card_nature": "assessment",
+  "source_unit_ids": [
+    "v7u_N000138",
+    "v7u_N000139",
+    "v7u_N000140",
+    "v7u_N000132",
+    "v7u_N000134"
+  ],
+  "flow_nodes": [
+    {
+      "node_id": "P1",
+      "node_category": "process",
+      "node_type": "P1_assessment",
+      "label": "Sophie进行初始调查",
+      "evidence_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140"
+      ]
+    },
+    {
+      "node_id": "X1",
+      "node_category": "exit",
+      "node_type": "X1_classification",
+      "label": "识别出FullTechGlobal在高风险司法管辖区战略雇佣中间人",
+      "evidence_unit_ids": [
+        "v7u_N000138"
+      ]
+    },
+    {
+      "node_id": "X2",
+      "node_category": "exit",
+      "node_type": "X1_classification",
+      "label": "识别出FullTechGlobal通过虚增咨询费、伪造发票和壳公司掩盖非法资金流",
+      "evidence_unit_ids": [
+        "v7u_N000139"
+      ]
+    },
+    {
+      "node_id": "X3",
+      "node_category": "exit",
+      "node_type": "X1_classification",
+      "label": "识别出FullTechGlobal向公职人员提供奢华礼品和旅行安排",
+      "evidence_unit_ids": [
+        "v7u_N000140"
+      ]
+    },
+    {
+      "node_id": "AUX1",
+      "node_category": "auxiliary",
+      "node_type": "input",
+      "label": "FullTechGlobal负面新闻",
+      "evidence_unit_ids": [
+        "v7u_N000132"
+      ]
+    },
+    {
+      "node_id": "AUX2",
+      "node_category": "auxiliary",
+      "node_type": "input",
+      "label": "对英国反贿赂法域外条款的关切",
+      "evidence_unit_ids": [
+        "v7u_N000134"
+      ]
+    }
+  ],
+  "flow_edges": [
+    {
+      "edge_id": "E1",
+      "edge_type": "PRODUCES",
+      "source": "P1",
+      "target": "X1",
+      "evidence_unit_ids": [
+        "v7u_N000138"
+      ]
+    },
+    {
+      "edge_id": "E2",
+      "edge_type": "PRODUCES",
+      "source": "P1",
+      "target": "X2",
+      "evidence_unit_ids": [
+        "v7u_N000139"
+      ]
+    },
+    {
+      "edge_id": "E3",
+      "edge_type": "PRODUCES",
+      "source": "P1",
+      "target": "X3",
+      "evidence_unit_ids": [
+        "v7u_N000140"
+      ]
+    },
+    {
+      "edge_id": "ES1",
+      "edge_type": "REFERENCES",
+      "source": "P1",
+      "target": "AUX1",
+      "evidence_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000138"
+      ]
+    },
+    {
+      "edge_id": "ES2",
+      "edge_type": "REFERENCES",
+      "source": "P1",
+      "target": "AUX2",
+      "evidence_unit_ids": [
+        "v7u_N000134",
+        "v7u_N000138"
+      ]
+    }
+  ]
+}

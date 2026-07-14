@@ -52,9 +52,9 @@ review_status:
   rejected        不可用于检索扩展或最终证明
 ```
 
-P7C边的`derivation`记录提取器当时的声明；P7D也兼容旧边的`evidence_strength`并统一保存为`declared_derivation`。该字段不能直接当成审核结论。
+旧P7C边可能携带`derivation`或`evidence_strength`，P7D将其只读保存为可空的`declared_derivation`审计快照。三阶段P7C不输出该字段。`declared_derivation`不参与最终状态计算；最终`derivation`和`review_status`完全由P7D独立审核产生。
 
-第一版采用保守规则：只要P7C声明或P7D审核认为边属于`llm_inference`，该边就保持`pending`并进入人工队列。人工决定后才能变为`accepted`或`rejected`。
+P7D审核认为边属于`llm_inference`时，该边保持`pending`并进入人工队列。人工决定后才能变为`accepted`或`rejected`。旧P7C声明本身不会把P7D独立判为`explicit_text`的边压成pending。
 
 ## Card结论
 
@@ -72,6 +72,12 @@ Card结论只是汇总，不覆盖边级状态。即使card为fail，也必须�
 只有`review_status=accepted`的边可以支撑“首先、随后、必须、禁止、如果则进入”等程序断言。
 
 `pending`边可以用于离线召回和扩展检索，但必须携带`answer_eligible=false`，不得进入最终证明路径。
+
+证明路径运行时对`REFERENCES`采用特殊门禁：知识正本仍为`process -> input/standard`，可以派生`input/standard -> process`的反向邻接；反向遍历只表示“作为依据被参照”，不能单独形成因果或结果断言。从辅助节点进入process后，如需证明分类、结果或分支，路径还必须继续经过`accepted`且`answer_eligible=true`的`PRODUCES`或满足`condition`的`DECIDES`。其余边只允许沿正本方向遍历。
+
+运行时不得仅用`card_id + edge_id`复用审核结论，还必须核对P7D保存的`source_edge_snapshot`。如果边的source、target、edge_type、condition、relation_type、derivation或证据unit发生变化，即使edge_id未变，也应视为未审核边，不得进入最终或检索路径。
+
+路径中的任何边只要带`condition`，都必须由当前题目或场景显式满足后才能遍历；这包括限定input/standard适用范围的`REFERENCES.condition`和表达单一路径逻辑前提的`PRECEDES.condition`。`DECIDES`缺少condition时不可遍历。
 
 ## 输入
 

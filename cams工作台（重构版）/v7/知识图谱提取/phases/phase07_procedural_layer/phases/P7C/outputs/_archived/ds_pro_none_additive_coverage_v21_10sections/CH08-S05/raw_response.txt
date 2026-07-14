@@ -1,0 +1,87 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000642", "v7u_N000643", "v7u_N000644", "v7u_N000645"],
+      "proposition": "SPV的定义及合法用途示例",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和事实示例，基础KG可充分表达定义和一般用途，无程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000646", "v7u_N000647", "v7u_N000648", "v7u_N000649", "v7u_N000650", "v7u_N000651", "v7u_N000652", "v7u_N000653"],
+      "proposition": "SPV相关的金融犯罪风险、犯罪分子利用SPV的方法、红旗信号",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "SPV的金融犯罪风险、犯罪分子分层交易手法、红旗信号列举均属孤立风险指标或普通犯罪机制，基础KG可充分保存这些事实和指标，暂未发现主体识别/评估/应对的有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000654", "v7u_N000655"],
+      "proposition": "PIV的定义及用于庞氏骗局和内幕交易的风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和风险陈述，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000656", "v7u_N000657"],
+      "proposition": "犯罪分子利用SPV和PIV进行贸易洗钱的手法",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通犯罪手法描述，基础KG可保存为过程事实，无机构应对或判断结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "proposition": "金融机构必须对SPV和PIV进行强化尽职调查，识别最终受益所有人并了解真实目的，这有助于减轻风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "带情态的义务结构：金融机构执行EDD并识别UBO/了解目的，受CDD规则约束，形成局部程序性约束关系，基础KG虽可保存规则文本但不能表达内部有向约束和动作-标准关系，对选项判断有用。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "SPV/PIV强化尽职调查义务",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "金融机构必须对SPV和PIV进行强化尽职调查，识别最终受益所有人并了解实体真实目的",
+          "evidence_unit_ids": ["v7u_N000658", "v7u_N000659"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD规则（如FinCEN CDD规则）",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000658"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000658", "v7u_N000659", "v7u_N000660"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构必须对SPV和PIV执行EDD并识别UBO/了解目的（must），该动作受CDD规则约束；KG不足：基础KG可能将N658-N660作为孤立规则和事实保存，未表达EDD动作与CDD标准之间的约束关系；选项判断：可确认关于SPV/PIV的EDD义务及具体识别要求；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

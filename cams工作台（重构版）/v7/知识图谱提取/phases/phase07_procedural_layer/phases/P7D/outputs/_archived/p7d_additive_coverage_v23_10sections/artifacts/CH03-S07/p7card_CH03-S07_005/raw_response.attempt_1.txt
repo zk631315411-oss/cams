@@ -1,0 +1,79 @@
+{
+  "section_id": "CH03-S07",
+  "card_id": "p7card_CH03-S07_005",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到“As FIUs escalated the case”，证明FIUs升级了案件。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到“law enforcement agencies... conducted targeted surveillance on Mr. Wolfe and his criminal associates... to trace cash smugglers and hawala networks”，完全支撑执法机构进行针对性监控以追踪现金走私者和哈瓦拉网络。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文使用“As FIUs escalated the case, law enforcement agencies... conducted targeted surveillance”，明确表示以FIU升级案件为背景，执法机构随之开展监控，方向自然。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边条件“As FIUs escalated the case”直接来自原文，被原文明示支持。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "边和原文均未涉及情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文关系为明显的时间和条件连接，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000286"],
+      "source_quotes": [
+        "As FIUs escalated the case, law enforcement agencies, including Europol, Interpol, and national counterterrorism task forces, conducted targeted surveillance on Mr. Wolfe and his criminal associates. These individuals, designated as subjects of interest, were monitored to trace cash smugglers and hawala networks."
+      ],
+      "reason": "原文以As引导从句直接给出条件与结果关系，边精确反映了原文信息，方向、条件均无瑕疵。"
+    },
+    {
+      "edge_id": "e0_sup",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000285明确说明“triggering red flags within international regulatory networks”，因此source节点‘国际监管网络红旗信号已触发’有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000286明确出现“As FIUs escalated the case”，因此target节点‘FIUs升级处置案件’有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文未提供任何连接词表明触发红旗信号发生在升级案件之前或导致升级案件，两个事件仅在不同句中分别出现，无法确认方向。交换反向（先升级案件后触发红旗信号）也可能成立，不符合PRECEDES的严格要求。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无边限制定语。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "两事件可能仅为叙述顺序上的并列，原文明示的先后关系不存在，属于把并列叙述错写为PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000285", "v7u_N000286"],
+      "source_quotes": [
+        "triggering red flags within international regulatory networks",
+        "As FIUs escalated the case"
+      ],
+      "reason": "尽管两端节点均有证据支撑，但原文没有明示或暗示触发红旗信号导致FIU升级案件，两者间缺乏逻辑连接，PRECEDES方向无据，且可能是对并列内容的错误先后化。"
+    }
+  ]
+}

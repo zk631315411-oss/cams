@@ -1,0 +1,190 @@
+{
+  "section_id": "CH03-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "区块链分析公司提供情报为孤立事实，原文未体现该情报与后续FIU综合或其他机构动作的明确有向关系，基础KG可直接保存"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "中间人洗钱手段为犯罪手法描述，无机构应对结构，基础KG可完整表达"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "判刑为孤立司法结果，与本节执法行动无原文明示因果连接，基础KG可保存事实"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性评估，无法构成具体有向边，KG适用"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例背景和一般犯罪融资方法描述，未体现机构响应顺序或条件关系，KG可表达"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000283"
+      ],
+      "proposition": "金融机构交易监控系统检测到非法活动的可疑标记/警报是检测过程的结果，需要表达结果为独立exit节点",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_001",
+      "reason": "基础KG可以保存检测事实，但不能表达动作产生结果的有向关系；补充exit节点使card完整",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N000286"
+      ],
+      "proposition": "执法机构定向监控产生关于现金走私者和哈瓦拉网络的情报结果",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_003",
+      "reason": "监控过程缺少产出节点，无法表达监控活动产生情报的有向关系",
+      "origin_candidate_ids": [
+        "cand_003"
+      ]
+    },
+    {
+      "candidate_id": "coverage_gap_003",
+      "unit_ids": [
+        "v7u_N000286",
+        "v7u_N000287"
+      ],
+      "proposition": "执法机构协调资产冻结基于前期监控识别的走私者、网络和目标钱包",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_004",
+      "reason": "资产冻结动作缺少输入条件，基础KG不能表达基于特定情报实施冻结的决策依据",
+      "origin_candidate_ids": [
+        "cand_004"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH03-S07_001",
+      "reason": "金融机构检测导致可疑活动标记，此结果未在图中表现为独立exit节点，导致过程没有产出，遗漏检测结果",
+      "origin_candidate_ids": [
+        "cand_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Transaction monitoring system flagged suspicious activity (structured deposits, rapid layering, anomalous movements)",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000283"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "flagged structured deposits, rapid interjurisdictional layering, and anomalous fund movements"
+        }
+      ],
+      "add_source_unit_ids": []
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH03-S07_003",
+      "reason": "定向监控过程产生关于现金走私者和哈瓦拉网络的情报，此结果未以独立exit节点表达，导致过程缺少产出",
+      "origin_candidate_ids": [
+        "cand_003"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Intelligence on cash smugglers and hawala networks gathered",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "monitored to trace cash smugglers and hawala networks"
+        }
+      ],
+      "add_source_unit_ids": []
+    },
+    {
+      "patch_id": "coverage_supplement_003",
+      "card_id": "p7card_CH03-S07_004",
+      "reason": "资产冻结动作基于前期监控获得的目标信息，图中缺少这一输入条件",
+      "origin_candidate_ids": [
+        "cand_004"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Results of prior surveillance: identified cash smugglers, hawala networks, and target wallets",
+          "evidence_unit_ids": [
+            "v7u_N000286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N000286",
+            "v7u_N000287"
+          ],
+          "derivation": "llm_inference",
+          "condition": null
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000286"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_004",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'直接对应'执行客户尽职调查'过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'expected and historical trading patterns'直接对应'预期和历史交易模式'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文说明CDD确保客户'根据'其预期和历史交易模式进行细分，表明CDD过程参照该模式作为标准。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文无must/should/may等限定词修饰参照关系本身，无需保留。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或时序关系，原文明确为参照依据。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000924"],
+      "source_quotes": [
+        "Conducting CDD helps ensure that ... customers are correctly segmented according to their expected and historical trading patterns."
+      ],
+      "reason": "原文明示CDD过程参照“预期和历史交易模式”作为客户细分的依据，REFERENCES关系成立。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应执行CDD过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'helps ensure that the source of funds is legitimate'对应'有助于确保资金来源合法性'，target标签保留了限定词'有助于'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文为CDD helps ensure...，方向由过程指向效果，无逆向可能。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "target标签完整保留了原文的限定词'有助于'，未强化为确定结果。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关关系，原文明确为CDD产生的效果。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000924"],
+      "source_quotes": [
+        "Conducting CDD helps ensure that the source of funds is legitimate"
+      ],
+      "reason": "原文明示CDD有助于确保资金来源合法性，target保留限定词，PRODUCES关系成立。"
+    },
+    {
+      "edge_id": "e3",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应执行CDD过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'customers are correctly segmented according to their expected and historical trading patterns'对应客户正确细分，但target标签遗漏了'有助于确保'这一限定。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文为CDD helps ensure that... customers are correctly segmented...，方向由过程指向效果。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文明示CDD helps ensure（有助于确保），但target标签仅为'客户...正确细分'，丢失了限定词，强化为必然结果。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关关系，原文明确为CDD产生的效果。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000924"],
+      "source_quotes": [
+        "Conducting CDD helps ensure that ... customers are correctly segmented according to their expected and historical trading patterns."
+      ],
+      "reason": "原文虽有直接文本支持，但target标签未保留'有助于'限定，导致qualifier_support不通过，因此PRODUCES关系不成立，建议拒绝。"
+    }
+  ]
+}

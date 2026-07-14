@@ -59,7 +59,7 @@ def safe_id(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9_-]+", "_", value)
 
 
-def declared_derivation(edge: dict[str, Any]) -> str:
+def declared_derivation(edge: dict[str, Any]) -> str | None:
     if edge.get("derivation") == "explicit_text":
         return "explicit_text"
     if edge.get("derivation") == "llm_inference":
@@ -71,7 +71,7 @@ def declared_derivation(edge: dict[str, Any]) -> str:
         return "llm_inference"
     if strength == "rejected":
         return "unsupported"
-    return "llm_inference"
+    return None
 
 
 def build_llm_card_snapshot(card: dict[str, Any]) -> dict[str, Any]:
@@ -195,7 +195,6 @@ def validate_llm_review_payload(
 
 
 def determine_review_status(edge: dict[str, Any], llm_review: dict[str, Any]) -> str:
-    declared = declared_derivation(edge)
     reviewed = llm_review.get("derivation")
     recommendation = llm_review.get("llm_recommendation")
     check_statuses = {
@@ -206,8 +205,7 @@ def determine_review_status(edge: dict[str, Any], llm_review: dict[str, Any]) ->
     if reviewed == "unsupported" or recommendation == "rejected" or "unsupported" in check_statuses:
         return "rejected"
     if (
-        declared == "llm_inference"
-        or reviewed == "llm_inference"
+        reviewed == "llm_inference"
         or recommendation == "pending"
         or "pending" in check_statuses
     ):

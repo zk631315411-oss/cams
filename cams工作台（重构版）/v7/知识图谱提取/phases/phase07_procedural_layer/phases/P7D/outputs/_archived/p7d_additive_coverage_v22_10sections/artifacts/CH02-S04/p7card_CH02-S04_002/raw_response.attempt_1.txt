@@ -1,0 +1,115 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "P1->X1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000141明确说明Sophie进行了跟进审查和审计。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000141明确说明审查发现ABC框架失败、内部控制和监督不足。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文直接表述审查过程发现了这些失败，方向明确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文和边标签均未使用限定词，无需检查。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "发现是审查的结果，不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000141"],
+      "source_quotes": [
+        "She followed up on the investigation and conducted a review that identified failures within FullTechGlobal’s ABC framework and internal controls. Her audit uncovered deficiencies in internal control mechanisms and inadequate oversight"
+      ],
+      "reason": "原文明确陈述审查过程发现内部控制失败，PRODUCES关系直接成立。"
+    },
+    {
+      "edge_id": "P1->X2",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000141支持Sophie进行跟进审查。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000142明确识别贿赂为上游犯罪并导致洗钱。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文未说明Sophie的审查直接产生了对上游犯罪的识别，v7u_N000142是被动陈述，无主语关联。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无边限定词，原文也无限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中审查发现内部控制和识别上游犯罪可能是并列的发现，没有明确的产生关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000142"],
+      "source_quotes": [
+        "Bribery was identified as the predicate crime, leading to the laundering of illicit funds through complex financial networks designed to evade regulatory scrutiny and forensic tracing efforts."
+      ],
+      "reason": "X2内容虽有原文依据，但未表明是由P1的审查产生的，缺乏方向性支持，可能为并列发现。"
+    },
+    {
+      "edge_id": "N1->P1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138明确初步调查揭示使用中间人，v7u_N000139和v7u_N000140提供其他贿赂手段的证据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000141表明Sophie进行跟进审查和审计。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文先有初步调查（initial investigation），然后跟进审查（followed up），时间顺序明确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无边限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "初步调查和跟进审查是先后进行的两个步骤，不是并列或相关。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000138", "v7u_N000141"],
+      "source_quotes": [
+        "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts.",
+        "She followed up on the investigation and conducted a review..."
+      ],
+      "reason": "原文明确展示了初步调查先于跟进审查的顺序，PRECEDES关系成立。"
+    }
+  ]
+}

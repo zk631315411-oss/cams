@@ -1,5 +1,66 @@
 # P7D Edge Review v1 Results
 
+## v23：section级追加式Coverage回归（2026-07-13）
+
+产物：
+
+```text
+P7C: phases/P7C/outputs/ds_pro_none_additive_coverage_v23_10sections
+P7D: phases/P7D/outputs/p7d_additive_coverage_v23_10sections
+```
+
+```text
+sections: 10/10 ok
+P7C cards: 26
+Coverage new cards: 6
+Coverage supplemented cards: 8
+Coverage contract errors: 0
+
+P7D cards pass/fail: 17/9
+P7D edges accepted/pending/rejected: 37/6/9
+Coverage-added edges accepted/pending/rejected: 12/3/6
+```
+
+追加式Coverage可以跨候选发现新关系、向已有card追加节点和边，同时不能删除或改写首次抽取内容。KG负例`CH03-S02`保持0卡。`CH06-S09`的PEP评估因素和“卸任后仍可能保持影响力”参照边、`CH06-S10`的高风险阈值条件、`CH08-S05`的限定性风险缓解结果，以及`CH12-S04`的监控结果和CDD参与方输入均获得P7D接受。
+
+新增噪声也被P7D按边拦截：`CH03-S07`的红旗到升级串接、`CH07-S03`的账户关闭到核销先后、`CH12-S04`中丢失情态的宽泛控制效果均未进入答案边。`CH05-S04`的“法规错位—持续更新”被Coverage恢复为候选，但P7D认为两句仅相邻、方向证据不足而拒绝；对应原子规则仍由KG承接。
+
+## v20：输入精简与 Coverage 补丁合同回归（2026-07-13）
+
+产物：
+
+```text
+P7C: phases/P7C/outputs/ds_pro_none_input_contract_v20_10sections
+P7D: phases/P7D/outputs/p7d_input_contract_v20_10sections
+P7D semantic retry: phases/P7D/outputs/p7d_input_contract_v20_semantic_retry
+archive: archives/p7c_p7d_input_contract_v16_v19_20260713_100615
+```
+
+样本为 `CH02-S04`、`CH03-S02`、`CH03-S07`、`CH05-S04`、`CH06-S09`、`CH06-S10`、`CH07-S03`、`CH08-S05`、`CH12-S04`、`CH47-S04`，P7C 与 P7D 均按 10 并发运行。
+
+```text
+P7C sections: 10/10 ok
+P7C cards: 19
+P7C edges: 29
+Coverage candidates reviewed: 50
+Coverage promoted cards: 1
+Coverage contract errors: 0
+legacy card/edge fields: 0
+missing derivation: 0
+
+P7D initial cards pass/fail: 15/4
+P7D initial edges accepted/pending/rejected: 24/1/4
+
+P7D semantic retry cards pass/fail: 2/2 (4 selected cards)
+P7D semantic retry edges accepted/pending/rejected: 6/1/2
+```
+
+语义小修后，`CH08-S05` 的“EDD 有助于降低风险”保留限定词后通过，证明限定性控制效果不应因使用 `PRODUCES` 被机械拒绝。`CH06-S10 card_002` 的“监管义务—UBO 计算过程”改为 `pending/llm_inference`，符合关键推理边进入人工复核的要求。
+
+剩余问题不应通过继续放宽 P7D 解决：`CH06-S09 card_003` 把“卸任情境”错误写成采用 PEP 方法之前的 `PRECEDES`；`CH06-S10 card_001` 将阈值说明重复拆卡，两条 `REFERENCES` 缺少足够的局部方向证据，而 `card_002` 已覆盖阈值应用和 UBO 识别流程。`CH02-S04` 的负面新闻到初步调查保持 `pending`，可用于扩展检索但不得进入最终程序断言。
+
+本轮说明输入精简没有造成目标链遗漏：历史漏抽的 `CH06-S09`、`CH06-S10`、`CH07-S03`、`CH08-S05`，以及资产管理链 `CH12-S04`、动态调优链 `CH47-S04` 均已成卡；KG 负例 `CH03-S02` 仍保持 0 卡。Coverage 的无记忆 API 补丁合同稳定，P7D 能独立拦截 P7C 候选噪声。
+
 ## 结果
 
 ```text

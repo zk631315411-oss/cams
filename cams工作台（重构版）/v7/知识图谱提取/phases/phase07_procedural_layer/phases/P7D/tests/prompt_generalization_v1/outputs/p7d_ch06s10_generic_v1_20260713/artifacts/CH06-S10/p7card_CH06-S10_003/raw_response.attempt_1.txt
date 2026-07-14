@@ -1,0 +1,44 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_003",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_CH06-S10_003",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'In companies where there is no natural beneficial owner'明确支持'公司不存在自然人受益所有人'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'a controller or a notional beneficial owner should be identified and verified'支持识别核实控制人或名义受益所有人，机构作为执行主体可从上下文推断。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文用条件从句'In companies where...'引出主句动作，明确表达从条件到执行的方向，反方向不成立。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边中condition'当公司不存在自然人受益所有人时'与原文条件从句一致，有原文证据。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'should'限定行动为建议/义务，但目标节点标签'机构：识别并核实控制人或名义受益所有人'未保留该情态动词，将'or应'强化为确定执行，限定未保留。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文为明确的条件-行动关系，不涉及并列、相关或顺序误用，PRECEDES表示逻辑前提适当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "边整体有较强原文支持，但目标节点遗漏原文的'should'限定，将义务强化为确定动作，因此qualifier检查不通过，边应被拒绝。"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "section_id": "CH03-S07",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000285",
+        "v7u_N000286"
+      ],
+      "proposition": "FIUs综合分析银行SARs和跨境金融活动触发国际监管网络红旗信号后，FIUs升级处置该案件",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_005",
+      "reason": "红旗触发是FIUs升级的直接前提，这种条件-行动顺序关系超出基础KG表达范围，该链可以帮助判断FIUs升级的情境与时机",
+      "origin_candidate_ids": [
+        "cand_004",
+        "cand_005"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH03-S07_005",
+      "reason": "遗漏了红旗信号触发作为FIUs升级案件的前置事件，导致图缺少该前置条件和来源",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "node_0_sup",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "国际监管网络红旗信号已触发",
+          "evidence_unit_ids": [
+            "v7u_N000285"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e0_sup",
+          "edge_type": "PRECEDES",
+          "source": "node_0_sup",
+          "target": "node_1",
+          "evidence_unit_ids": [
+            "v7u_N000285",
+            "v7u_N000286"
+          ],
+          "derivation": "llm_inference"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000285"
+      ]
+    }
+  ]
+}

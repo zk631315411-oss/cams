@@ -1,0 +1,474 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "proposition": "在审查所有权结构时，机构必须识别客户的UBO，包括识别直接和间接持股，合计持股比例，并与适用阈值比较，以确定是否为UBO",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "形成了从触发条件、数据采集、计算到阈值判断、分类输出的完整有向判断流程，基础KG无法表达步骤间的顺序与条件依赖"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000490"
+      ],
+      "proposition": "机构应采用风险为本的方法设定受益所有权阈值",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_002",
+      "reason": "动作参照标准的约束关系，有助于判断阈值设定是否必须基于风险，基础KG仅保存规则但未体现方向"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000496"
+      ],
+      "proposition": "当公司不存在自然人受益所有人时，机构应识别并核实控制人或名义受益所有人",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "条件-动作关系明确，构成局部判断性有向结构，基础KG未表达该方向"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000489"
+      ],
+      "proposition": "大多数司法管辖区要求识别持股25%或以上的受益所有权",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "25%阈值是基础KG可保存的规则事实，无需图关系表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000491"
+      ],
+      "proposition": "高风险客户的受益所有权阈值可能低至10%或5%",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "高风险客户的低阈值陈述是一般规则，无主体动作，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000492"
+      ],
+      "proposition": "高风险代理行关系可能设定5%的阈值",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "代理行设5%阈值是案例说明，为基础KG所覆盖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N000497"
+      ],
+      "proposition": "上市公司可将总裁或CEO作为名义受益所有人",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "上市公司名义BO案例为基础KG所覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N000484"
+      ],
+      "proposition": "受益所有人(BO)的定义",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "BO定义为KG定义性内容。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N000485"
+      ],
+      "proposition": "最终受益所有人(UBO)的定义",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "UBO定义为KG定义性内容。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N000486"
+      ],
+      "proposition": "BO与UBO的区别",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "BO与UBO区别为KG分类解释。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": [
+        "v7u_N000487"
+      ],
+      "proposition": "区分对监管要求至关重要",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "区分重要性为背景关系，KG已表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": [
+        "v7u_N000483"
+      ],
+      "proposition": "控制权和所有权在AML中重要",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "控制权所有权重要性为背景陈述，KG已覆盖。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "当审查所有权结构时，机构应识别UBO，包括直接与间接持股，合计并与阈值比较",
+      "flow_nodes": [
+        {
+          "node_id": "E1_CH06-S10_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "机构审查客户的所有权结构",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_CH06-S10_001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构：识别客户的直接与间接持股并合计持股比例",
+          "evidence_unit_ids": [
+            "v7u_N000493",
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_CH06-S10_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户直接持股信息",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I2_CH06-S10_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户间接持股信息",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_CH06-S10_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "适用受益所有权阈值（通常为25%或基于风险调整）",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000490",
+            "v7u_N000491"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3_CH06-S10_001",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构：判断合计持股比例是否达到适用阈值",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1POS_CH06-S10_001",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "个人被认定为最终受益所有人（UBO）",
+          "evidence_unit_ids": [
+            "v7u_N000494"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1NEG_CH06-S10_001",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "个人不被认定为最终受益所有人（UBO）",
+          "evidence_unit_ids": [
+            "v7u_N000495"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1_CH06-S10_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_CH06-S10_001",
+          "target": "P1_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000488"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当审查所有权结构时"
+        },
+        {
+          "edge_id": "edge2_CH06-S10_001",
+          "edge_type": "REFERENCES",
+          "source": "P1_CH06-S10_001",
+          "target": "I1_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge3_CH06-S10_001",
+          "edge_type": "REFERENCES",
+          "source": "P1_CH06-S10_001",
+          "target": "I2_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000493"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge4_CH06-S10_001",
+          "edge_type": "PRECEDES",
+          "source": "P1_CH06-S10_001",
+          "target": "P3_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000494",
+            "v7u_N000495"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "edge5_CH06-S10_001",
+          "edge_type": "REFERENCES",
+          "source": "P3_CH06-S10_001",
+          "target": "STD_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000489"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "edge6_CH06-S10_001",
+          "edge_type": "DECIDES",
+          "source": "P3_CH06-S10_001",
+          "target": "X1POS_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000494"
+          ],
+          "derivation": "explicit_text",
+          "condition": "合计持股比例 >= 适用阈值",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge7_CH06-S10_001",
+          "edge_type": "DECIDES",
+          "source": "P3_CH06-S10_001",
+          "target": "X1NEG_CH06-S10_001",
+          "evidence_unit_ids": [
+            "v7u_N000495"
+          ],
+          "derivation": "explicit_text",
+          "condition": "合计持股比例 < 适用阈值",
+          "relation_type": "branch_condition_routes_path"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495",
+        "v7u_N000490",
+        "v7u_N000491"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：审查所有权结构时 → 机构识别直接与间接持股并合计 → 与阈值比较 → 分类为UBO或非UBO；KG不足：基础KG可单独保存规则和案例，但未表达此有向判断流程；选项判断：可确认或排除关于UBO识别步骤、间接持股必要性、阈值比较等的选项；LLM推理：edge4 P1->P3逻辑顺序，edge5 P3参考阈值，其余显式。"
+    },
+    {
+      "card_id": "p7card_CH06-S10_002",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "机构应使用风险为本方法设定受益所有权阈值",
+      "flow_nodes": [
+        {
+          "node_id": "P_CH06-S10_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构：设定受益所有权阈值",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_CH06-S10_002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险为本方法 (risk-based approach)",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_CH06-S10_002",
+          "edge_type": "REFERENCES",
+          "source": "P_CH06-S10_002",
+          "target": "STD_CH06-S10_002",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000490"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构设定阈值 -- 必须基于 --> 风险为本方法；KG不足：基础KG可保存该规则但未表达约束方向；选项判断：可确认或排除机构是否必须使用风险为本方法设定阈值；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH06-S10_003",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "当公司不存在自然人受益所有人时，机构应识别并核实控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "E_CH06-S10_003",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司不存在自然人受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_CH06-S10_003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构：识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_CH06-S10_003",
+          "edge_type": "PRECEDES",
+          "source": "E_CH06-S10_003",
+          "target": "P_CH06-S10_003",
+          "evidence_unit_ids": [
+            "v7u_N000496"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当公司不存在自然人受益所有人时"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000496"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：不存在自然人UBO时 -> 机构应识别并核实控制人/名义UBO；KG不足：基础KG可保存该规则但未表达条件-动作方向；选项判断：可确认或排除在无自然人UBO时机构是否需识别控制人；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "25%阈值是基础KG可保存的规则事实，无需图关系表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "高风险客户的低阈值陈述是一般规则，无主体动作，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "代理行设5%阈值是案例说明，为基础KG所覆盖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "上市公司名义BO案例为基础KG所覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "BO定义为KG定义性内容。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "UBO定义为KG定义性内容。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "BO与UBO区别为KG分类解释。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "区分重要性为背景关系，KG已表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "控制权所有权重要性为背景陈述，KG已覆盖。"
+    }
+  ]
+}

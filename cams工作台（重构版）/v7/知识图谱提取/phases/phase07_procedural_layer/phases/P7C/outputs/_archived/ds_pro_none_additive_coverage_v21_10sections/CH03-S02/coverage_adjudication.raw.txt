@@ -1,0 +1,84 @@
+{
+  "section_id": "CH03-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义、分类和一般事实陈述，基础KG已充分表达，无增量程序性结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述普通犯罪手法和案例机制，基础KG已涵盖，未形成针对特定主体的识别、评估或应对的有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_ch03s02_001",
+      "reason": "原文明示了主体（当局）、动作（调查）和方向（被阻碍），构成有向条件关系，超出基础KG的静态事实表达，可辅助判断调查过程中的障碍。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "card_ch03s02_001",
+      "section_id": "CH03-S02",
+      "card_nature": "conditional_event_response",
+      "title": "Authorities' Environmental Crime Investigation Hindered by Corrupt Officials",
+      "flow_nodes": [
+        {
+          "node_id": "node_ch03s02_001_entry",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Authorities investigate illicit activity",
+          "evidence_unit_ids": ["v7u_N000228"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_ch03s02_001_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Corrupt officials block or hide inquiry",
+          "evidence_unit_ids": ["v7u_N000228"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_ch03s02_001_exit",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Investigation hindered",
+          "evidence_unit_ids": ["v7u_N000228"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_ch03s02_001_precede",
+          "edge_type": "PRECEDES",
+          "source": "node_ch03s02_001_entry",
+          "target": "node_ch03s02_001_process",
+          "evidence_unit_ids": ["v7u_N000228"],
+          "derivation": "explicit_text",
+          "condition": "When authorities investigate illicit activity"
+        },
+        {
+          "edge_id": "edge_ch03s02_001_produce",
+          "edge_type": "PRODUCES",
+          "source": "node_ch03s02_001_process",
+          "target": "node_ch03s02_001_exit",
+          "evidence_unit_ids": ["v7u_N000228"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000228"],
+      "candidate_status": "candidate",
+      "review_notes": "Captures the explicit conditional relationship where investigation often triggers obstruction by corrupt officials, adding processual context beyond static fact."
+    }
+  ],
+  "card_supplements": []
+}

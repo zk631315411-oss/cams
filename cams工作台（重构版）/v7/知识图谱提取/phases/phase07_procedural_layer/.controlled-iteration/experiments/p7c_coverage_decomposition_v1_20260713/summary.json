@@ -1,0 +1,39 @@
+{
+  "experiment_id": "p7c_coverage_decomposition_v1_20260713",
+  "objective": "Reduce non-KG P7C proposition omissions without increasing unsupported procedural edges",
+  "hypothesis": "Separating proposition-level coverage audit from additive graph construction will detect and repair missing or partially covered P7C claims more reliably than the v23 one-call Coverage step",
+  "changed_variable": "coverage_workflow_one_call_to_two_stage_audit_then_patch",
+  "execution_status": "failed",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 1
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "The two-stage workflow exposed proposition-level gaps, but Audit over-classified KG content, missed two target structures, and produced two Patch contract failures. Mandatory regression gates did not pass.",
+  "regressions": [
+    {
+      "case_id": "CH03-S02",
+      "classification": "false_positive",
+      "baseline": "No card; ordinary investigative difficulty handled by KG",
+      "variant": "Added a PRODUCES card for authorities being hindered by corrupt officials",
+      "evidence": [
+        "artifacts/variant/development/CH03-S02/coverage_audit.json",
+        "artifacts/variant/development/CH03-S02/coverage_patch.json"
+      ]
+    },
+    {
+      "case_id": "CH05-S04",
+      "classification": "false_positive",
+      "baseline": "One-call Coverage remained selective",
+      "variant": "Classified five general obligations or control effects as missing P7C claims",
+      "evidence": [
+        "artifacts/variant/development/CH05-S04/coverage_audit.json"
+      ]
+    }
+  ],
+  "issue_count": 4,
+  "next_action": "Create a new experiment that changes only the Audit eligibility gate: require an AML/CFT operational action or judgment linked to an input, condition, standard, or independent result; exclude general control effects and risk mechanisms; explicitly retain worked classification examples and action-based-on-input open relations.",
+  "generated_at": "2026-07-13T04:23:53+00:00"
+}

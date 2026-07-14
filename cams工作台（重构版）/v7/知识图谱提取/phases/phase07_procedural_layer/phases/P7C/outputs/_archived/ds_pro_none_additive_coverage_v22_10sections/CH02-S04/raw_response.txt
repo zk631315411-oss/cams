@@ -1,0 +1,179 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000132", "v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "proposition": "Sophie发现FullTechGlobal负面新闻后，进行了初步调查，发现了贿赂手段（使用中间人、虚增费用、提供奢华礼品和旅行）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "这是一条具体的触发-应对-发现链，超出基础KG的风险指标保存，构成局部程序性结构，有助于判断调查响应和发现。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000141", "v7u_N000142"],
+      "proposition": "Sophie进行跟进审查，发现ABC框架失败、内部控制缺陷和监督不足，并识别出贿赂为上游犯罪导致洗钱",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "审查过程产生具体分类结论，形成process-to-exit的有向链，KG不能表达审查动作与具体发现间的直接产生关系，可帮助判断审计结论。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000143", "v7u_N000144"],
+      "proposition": "鉴于审查发现，Sophie认识到其机构需要维护合规诚信并降低贿赂风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达认知责任，没有具体行动或独立程序性结果，基础KG可保存这种一般防范意识。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N000134"],
+      "proposition": "FullTechGlobal的负面新闻引发对英国反贿赂法域外条款的关切",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达关切，无后续具体动作或判断，基础KG可将其作为风险关联保存。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000136", "v7u_N000137"],
+      "proposition": "英国反贿赂法2010的域外管辖规则：对关联公司适用，母公司承担子公司责任，可能被起诉",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律规则本身可由基础KG完整表达，无增量程序性结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000135"],
+      "proposition": "英国反贿赂法2010是世界上最严格的反腐败法律之一",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义性描述，基础KG可覆盖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N000133"],
+      "proposition": "FullTechGlobal面临的贿赂和腐败指控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于负面新闻的具体内容，已经在P7C card中作为发现引用，本身不形成独立有向链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N000131"],
+      "proposition": "Sophie是金融机构的AFC经理",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "角色背景介绍，无程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "Sophie的初步调查基于负面新闻发现贿赂手段",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "FullTechGlobal负面新闻报告",
+          "evidence_unit_ids": ["v7u_N000132"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie发起初步调查",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现贿赂手段：使用中间人、虚增咨询费、伪造发票、提供奢华礼品和旅行",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1->P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000132", "v7u_N000138"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "P1->X1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000132", "v7u_N000138", "v7u_N000139", "v7u_N000140"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：负面新闻 → 初步调查 → 发现贿赂手段；KG不足：基础KG可保存负面新闻作为风险指标，但不能表达该具体应对动作和调查后的发现链；选项判断：可帮助确认或排除关于调查响应步骤和初步结果的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie的跟进审查发现内部控制缺陷和识别上游犯罪",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie进行跟进审查和审计",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现FullTechGlobal的ABC框架失败、内部控制和监督不足",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别贿赂为上游犯罪，导致通过复杂金融网络洗钱",
+          "evidence_unit_ids": ["v7u_N000142"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "P1->X1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "P1->X2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": ["v7u_N000142"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000141", "v7u_N000142"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：审查 → 发现控制缺陷；审查 → 识别上游犯罪和洗钱；KG不足：基础KG可保存'内部控制缺陷'和'上游犯罪'作为事实，但无法表达审查动作与具体发现间的产生关系；选项判断：可帮助确认审计结论的具体内容；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

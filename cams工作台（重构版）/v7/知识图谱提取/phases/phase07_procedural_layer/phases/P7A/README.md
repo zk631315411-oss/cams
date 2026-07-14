@@ -180,6 +180,16 @@ DECIDES
 FEEDBACK
 ```
 
+`REFERENCES`采用“正本、渲染、推理”三种视图：
+
+```text
+正本存储：process -> input / standard
+图形渲染：input / standard -> process（作为输入、线索、判定标准或规范依据）
+推理遍历：允许双向，但反向只表示依据或参照，不表示因果、产出或时间先后
+```
+
+渲染和反向邻接均为派生视图，不得在`flow_edges`中物化第二条反向边。
+
 `source` / `target` 必须指向同一 card 内的 `node_id`。`DECIDES` 边必须用 `condition` 写明分支条件。
 
 ## relation_type（业务语义关系）
@@ -194,7 +204,7 @@ FEEDBACK
 | R4 | conclusion_triggers_response | 结论触发应对 | 风险结论触发加强监控、升级、报告等应对 |
 | R5 | branch_condition_routes_path | 分支条件路由 | 判断条件决定进入不同分支路径 |
 | R6 | component_assembles_product | 组件装配产物 | 信息组件共同构成正式产物 |
-| R7 | standard_constrains_action | 标准约束行动 | 法律、保密等标准限定动作执行 |
+| R7 | standard_constrains_action | 标准约束行动/判断 | 标准为具体行动、识别、评估或判断提供约束或判定准则 |
 | R8 | result_handoffs_stage | 结果交接下游 | 当前结果成为下一阶段的输入 |
 | R9 | feedback_requests_completion | 反馈要求补充 | 复核问题要求补充研究或修订 |
 | R10 | cycle_requires_monitoring | 周期/持续监控 | 周期或持续义务要求复核或继续观察 |

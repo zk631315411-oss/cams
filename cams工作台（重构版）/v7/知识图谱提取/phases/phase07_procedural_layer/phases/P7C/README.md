@@ -4,7 +4,7 @@
 
 P7C当前定位为候选抽取层。
 
-P7C负责生成section-local候选card及覆盖审计，允许保留一定候选噪声。Card只写`candidate_status=candidate`；节点`evidence_strength`和边`derivation`只反映提取依据，不能作为最终程序边放行依据。
+P7C负责生成section-local候选card及覆盖审计，允许保留一定候选噪声。Card只写`candidate_status=candidate`；节点`evidence_strength`只说明节点有原文依据。三阶段P7C不声明边的`derivation`，该字段由P7D独立审核并另存。
 
 正式结构校验和逐边证据审核由P7D完成。生产批处理默认`inline_structure_validation=false`；旧P7C内联校验只作为显式开启的兼容诊断，不是正式审核。
 
@@ -31,9 +31,27 @@ compact_base_kg_summary
 
 Coverage是独立无记忆API调用，接收与首次抽取相同的完整section上下文、精简KG摘要、首次抽取完整`original_json`和`review_target_candidate_ids`。它只返回`coverage_adjudication + promoted_cards`补丁，由Runner确定性合并；不能回显或改写首次正本。
 
+三阶段模式使用独立无记忆调用：
+
+```text
+S1 命题发现：完整section + compact KG主题摘要
+S2 KG边界裁决：完整section + KG覆盖摘要 + S1命题
+S3 语义构图：完整section + S1原始命题及S2裁决结果 + 完整构图合同
+```
+
+S2不构图，S3不裁决KG边界，也不声明derivation或最终审核状态。
+
 ## 输出
 
 批处理按run和section保存`outputs/<run_id>/<section_id>/cards.raw.json`；Coverage同时保存原始响应、补丁和合并后的审计产物。
+
+三阶段另外保存`s1_propositions.json`、`boundary_decisions.json`和`construction_audit.json`。最终`coverage_audit.decision`只能是：
+
+```text
+kg_only          基础KG已能充分表达
+p7c_card         已构建一张或多张候选card
+p7c_ungraphable  属于P7C增量，但S3无法形成方向可靠的候选图
+```
 
 无可执行流程时输出：
 
@@ -181,9 +199,11 @@ source / target 必须指向同一 card 内 node_id
 条件分支必须用 decision 节点 + DECIDES 边表达
 每条 DECIDES 边必须写 condition
 不得用 PRECEDES 隐藏条件分支
-并列评估维度不得画成时序链，应优先用 action --REFERENCES--> standard 表达
-functional_dependency 边必须在 review_notes 中说明是并列维度、条件依赖、结果推导或弱时序重构
+并列评估维度不得画成时序链，应优先用 process --REFERENCES--> input/standard 表达
+三阶段边不携带derivation或旧evidence_strength；边的证据类型和审核状态由P7D独立保存
 ```
+
+`REFERENCES`的正本方向固定为`process -> input/standard`。渲染器可反向显示为`input/standard -> process`，推理器可派生反向邻接，但两者都不得改写P7C正本。反向读法仅为“作为输入、线索、判定标准或规范依据”，不表示该辅助节点导致处理动作。
 
 ## relation_type（可选）
 
@@ -234,7 +254,7 @@ EWRA 识别高固有风险
 
 ## 证据
 
-P7C节点`evidence_strength`只能为`explicit`。P7C边使用独立`derivation`：
+P7C节点`evidence_strength`只能为`explicit`。三阶段P7C边不输出`derivation`；旧单阶段/两阶段产物可兼容：
 
 ```text
 explicit_text

@@ -1,0 +1,82 @@
+{
+  "section_id": "CH08-S05",
+  "card_id": "p7card_CH08-S05_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求金融机构进行强化尽职调查并识别受益所有人，节点P1的标签直接源自v7u_N000658和v7u_N000659。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到了客户尽职调查规则（CDD）和FinCEN CDD规则，节点S1的标签依据充分。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文要求金融机构在进行尽职调查时确保遵守CDD规则，即过程参照标准，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，且原文关系不依赖额外条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有限定词，原文也未使用情态限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "明确是过程参照标准，不是并列或主题相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000658"
+      ],
+      "source_quotes": [
+        "ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+      ],
+      "reason": "原文明示金融机构须遵守CDD规则，节点P1和S1均有依据，方向正确，无遗漏条件或限定词。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点P1的标签直接来源于原文对金融机构尽职调查的要求，依据充分。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确说明尽职调查有助于缓解潜在金融犯罪风险，节点X1的标签有直接证据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表达尽职调查将有助于缓解风险，属于PRODUCES关系的方向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，且原文关系不依赖额外条件。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文“will help mitigate”表示确定的有帮助作用，而节点X1标签使用“可能得到缓解”引入了不确定性，弱化了原文的限定语义。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系，而是明确的因果/作用关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000660"
+      ],
+      "source_quotes": [
+        "This will help mitigate any potential financial crime risks associated with SPVs."
+      ],
+      "reason": "节点两端均有原文支持，方向正确，但qualifier未准确保留原文的确定帮助语义，导致关键检查不成立。"
+    }
+  ]
+}

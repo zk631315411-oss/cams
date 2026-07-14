@@ -1,0 +1,244 @@
+{
+  "section_id": "CH05-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_006",
+      "resolution": "new_card",
+      "card_id": "p7card_CH05-S04_002",
+      "reason": "构建新卡：将理解关联这一评估义务建模为assessment，通过REFERENCES连接相关风险输入，保留让步条件于备注。"
+    },
+    {
+      "claim_id": "claim_010",
+      "resolution": "new_card",
+      "card_id": "p7card_CH05-S04_003",
+      "reason": "构建新卡：将合规计划持续更新的强制动作建模为constrained_action，通过PRODUCES指向状态变化，保留“必须”限定。"
+    },
+    {
+      "claim_id": "claim_013",
+      "resolution": "new_card",
+      "card_id": "p7card_CH05-S04_004",
+      "reason": "构建新卡：将充分的AFC控制产生防范效果建模为execution产生state_change，保留“可以”强度。"
+    },
+    {
+      "claim_id": "claim_014",
+      "resolution": "new_card",
+      "card_id": "p7card_CH05-S04_005",
+      "reason": "构建新卡：将AFC控制与战略多元化降低集中度风险建模为execution产生state_change，保留“可以”强度。"
+    },
+    {
+      "claim_id": "claim_015",
+      "resolution": "new_card",
+      "card_id": "p7card_CH05-S04_006",
+      "reason": "构建新卡：将借助技术的CDD管理风险敞口建模为execution产生state_change，保留“有助于”强度。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH05-S04_002",
+      "section_id": "CH05-S04",
+      "card_nature": "assessment",
+      "title": "组织理解非金融犯罪防控风险与金融犯罪风险的关联",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织必须理解运营、法律、集中度和声誉风险与金融犯罪风险的关联",
+          "evidence_unit_ids": ["v7u_N000374"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "运营、法律、集中度、声誉风险",
+          "evidence_unit_ids": ["v7u_N000374", "v7u_N000369"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N000374"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "IN1",
+          "evidence_unit_ids": ["v7u_N000374"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "IN2",
+          "evidence_unit_ids": ["v7u_N000374"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000374", "v7u_N000369"],
+      "candidate_status": "candidate",
+      "review_notes": "根据claim_006构建：原文v7u_N000374指出尽管这些风险通常由非AFC团队管理，但理解其与金融犯罪风险的关联是必不可少的。构图保留让步条件于备注中，并设置process节点为assessment，保留必不可少的限定。",
+      "coverage_claim_ids": ["claim_006"]
+    },
+    {
+      "card_id": "p7card_CH05-S04_003",
+      "section_id": "CH05-S04",
+      "card_nature": "execution",
+      "title": "合规计划必须持续更新",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织必须持续更新合规计划",
+          "evidence_unit_ids": ["v7u_N000378"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "合规计划保持更新",
+          "evidence_unit_ids": ["v7u_N000378"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000378"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000378"],
+      "candidate_status": "candidate",
+      "review_notes": "根据claim_010构建：原文v7u_N000378明确要求合规计划必须持续更新，为有向义务动作，构造产生更新状态的PRODUCES边，保留“必须”限定。",
+      "coverage_claim_ids": ["claim_010"]
+    },
+    {
+      "card_id": "p7card_CH05-S04_004",
+      "section_id": "CH05-S04",
+      "card_nature": "control",
+      "title": "充分的金融犯罪防控措施可以防范犯罪及不当关系",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "充分的金融犯罪防控措施",
+          "evidence_unit_ids": ["v7u_N000381"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "可以防范犯罪及不当关系",
+          "evidence_unit_ids": ["v7u_N000381"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000381"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000381"],
+      "candidate_status": "candidate",
+      "review_notes": "根据claim_013构建：原文v7u_N000381表明充分的AFC控制可以防范犯罪及不当关系，构造PRODUCES边并保留“可以”的限定强度。",
+      "coverage_claim_ids": ["claim_013"]
+    },
+    {
+      "card_id": "p7card_CH05-S04_005",
+      "section_id": "CH05-S04",
+      "card_nature": "control",
+      "title": "金融犯罪防控和战略多元化可以降低集中度风险",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融犯罪防控和战略多元化",
+          "evidence_unit_ids": ["v7u_N000382"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "可以降低集中度风险",
+          "evidence_unit_ids": ["v7u_N000382"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000382"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000382"],
+      "candidate_status": "candidate",
+      "review_notes": "根据claim_014构建：原文v7u_N000382表明AFC控制与战略多元化可以降低集中度风险，构造PRODUCES边并保留“可以”的限定强度。",
+      "coverage_claim_ids": ["claim_014"]
+    },
+    {
+      "card_id": "p7card_CH05-S04_006",
+      "section_id": "CH05-S04",
+      "card_nature": "control",
+      "title": "借助技术的客户尽职调查有助于管理风险敞口",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "借助技术的客户尽职调查",
+          "evidence_unit_ids": ["v7u_N000383"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于管理风险敞口",
+          "evidence_unit_ids": ["v7u_N000383"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000383"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000383"],
+      "candidate_status": "candidate",
+      "review_notes": "根据claim_015构建：原文v7u_N000383表明技术赋能的CDD有助于管理风险敞口，构造PRODUCES边并保留“有助于”的限定强度。",
+      "coverage_claim_ids": ["claim_015"]
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,44 @@
+{
+  "verdict": "reject",
+  "summary": "The decisive-signal rule fixed the contextual-fact conflation and removed prose IDs, but the variant introduced an unsupported taxonomy claim that microstructuring is an extreme form of structuring.",
+  "primary_results": [
+    {
+      "metric": "decisive-signal grounding",
+      "baseline": "Foreign withdrawal was grouped into the definition match.",
+      "variant": "Foreign withdrawal was explicitly treated as contextual and excluded from the definition match.",
+      "result": "improved"
+    },
+    {
+      "metric": "internal ID leakage",
+      "baseline": "Option prose contained v7u_* IDs.",
+      "variant": "No prose field contained v7u_* IDs.",
+      "result": "improved"
+    }
+  ],
+  "regressions": [
+    "C analysis added a taxonomy relation not stated by either cited unit."
+  ],
+  "issues": [
+    {
+      "case_id": "v7_q_000140",
+      "classification": "improvement",
+      "baseline": "Contextual foreign withdrawal was part of the apparent definition match.",
+      "variant": "Only below-threshold split deposits were used as the decisive signal.",
+      "evidence": [
+        "artifacts/baseline/development/questions/q_v7_q_000140.json",
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    },
+    {
+      "case_id": "v7_q_000140",
+      "classification": "contract_violation",
+      "baseline": "No claim that microstructuring is an extreme form of structuring.",
+      "variant": "Added the unsupported extreme-form relationship.",
+      "evidence": [
+        "artifacts/variant/development/questions/q_v7_q_000140.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Test one explicit ban on unsupported taxonomy, range, frequency and association relations."
+}

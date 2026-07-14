@@ -1,0 +1,147 @@
+{
+  "section_id": "CH12-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "背景介绍，无有向动作或判断链，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "行业脆弱性风险事实，无具体应对动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "行业特点描述，无主体动作或结果链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标，仅说明机会存在，无应对或识别结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "风险指标，无后续应对动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标，无具体应对或判断结构。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，无具体条件、动作细节或独立结果，基础KG已能表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "电子交易平台的风险指标，无后续有向动作或判断。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义/事实，无程序或判断结构。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，无进一步有向动作或结果。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "产品列表，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "主要为定义和风险指标集合，但其中v7u_N000933包含'审查利益相关者以缓释洗钱风险'的有向关系，将通过新候选独立处理。"
+    },
+    {
+      "candidate_id": "cand_015",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "风险解释，无主体应对动作。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000933"],
+      "proposition": "对房地产投资涉及的利益相关者进行全面审查，以缓释洗钱风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_005",
+      "reason": "基础KG无法表达审查动作与缓释风险结果之间的有向产生关系；审查是有向控制动作，结果有助判断选项。",
+      "origin_candidate_ids": ["cand_014"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH12-S04_005",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "审查房地产投资利益相关者缓释洗钱风险",
+      "flow_nodes": [
+        {
+          "node_id": "p_CH12-S04_005_proc_vet",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "资产管理人应对房地产投资中的利益相关者进行全面审查",
+          "evidence_unit_ids": ["v7u_N000933"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x_CH12-S04_005_exit_mitigate",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于缓释洗钱风险",
+          "evidence_unit_ids": ["v7u_N000933"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_CH12-S04_005_prod",
+          "edge_type": "PRODUCES",
+          "source": "p_CH12-S04_005_proc_vet",
+          "target": "x_CH12-S04_005_exit_mitigate",
+          "evidence_unit_ids": ["v7u_N000933"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000933"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：资产管理人审查利益相关者 → 有助于缓释洗钱风险；KG不足：基础KG可将审查和缓释风险分别保存，但无法表达审查产生风险缓释的有向关系；选项判断：可确认审查的直接目的。"
+    }
+  ],
+  "card_supplements": []
+}

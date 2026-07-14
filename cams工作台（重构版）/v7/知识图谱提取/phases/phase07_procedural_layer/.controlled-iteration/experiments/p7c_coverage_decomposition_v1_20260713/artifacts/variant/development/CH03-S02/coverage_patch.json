@@ -1,0 +1,63 @@
+{
+  "section_id": "CH03-S02",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_006",
+      "resolution": "new_card",
+      "card_id": "p7card_CH03-S02_001",
+      "reason": "创建新卡片表达当局调查环境犯罪时常受受贿官员阻碍的增量风险结构，包含调查过程和受阻状态及限定词often。"
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH03-S02_001",
+      "section_id": "CH03-S02",
+      "card_nature": "risk_indicator",
+      "title": "环境犯罪调查受腐败阻碍风险",
+      "flow_nodes": [
+        {
+          "node_id": "nd_ch03s02_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "当局调查非法环境活动",
+          "evidence_unit_ids": [
+            "v7u_N000228"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "nd_ch03s02_002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "调查受阻（受贿官员阻碍）",
+          "evidence_unit_ids": [
+            "v7u_N000228"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "ed_ch03s02_001",
+          "edge_type": "PRODUCES",
+          "source": "nd_ch03s02_001",
+          "target": "nd_ch03s02_002",
+          "evidence_unit_ids": [
+            "v7u_N000228"
+          ],
+          "derivation": "explicit_text",
+          "qualifier": "often"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000228"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "基于claim_006命题：当局调查环境犯罪时常常受到受贿官员阻碍。创建调查过程和受阻状态节点，用PRODUCES边并标定often频率，表达调查中的腐败阻碍风险。",
+      "coverage_claim_ids": [
+        "claim_006"
+      ]
+    }
+  ],
+  "card_supplements": []
+}

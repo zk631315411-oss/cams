@@ -1,0 +1,202 @@
+{
+  "section_id": "CH03-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯粹背景事实，不涉及金融机构或监管主体的识别、评估、决策或应对链，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "分类说明和特征描述，无程序性或判断性结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪手法描述（利用合法企业、加密货币隐藏资金），无机构应对，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪手法描述（网络犯罪、传统犯罪筹资），无机构应对，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "洗钱手法列表（贸易洗钱、分层、现金走私、哈瓦拉），无机构应对，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的取证情报提供，原文未明示被其他主体用于识别、评估或应对动作，缺乏有向连接，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "司法裁判结果（监禁和罚款），与前面执法动作无直接明示的产出关系，作为独立结果基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性陈述，无具体主体、动作和有向结构，基础KG可保存。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000285",
+        "v7u_N000286",
+        "v7u_N000287"
+      ],
+      "proposition": "FIU综合银行可疑交易报告和跨境金融活动触发国际监管网络红旗信号，进而升级案件，促使执法机构对Wolfe及其同伙进行针对性监控以追踪现金走私者和哈瓦拉网络，随后协调资产冻结以切断金融渠道，导致数字钱包被查封和Wolfe用于恐怖融资的公司被瓦解。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH03-S07_005",
+      "reason": "原卡片分散为多个独立环节（cand_008、cand_009、cand_010），未能表达从FIU综合分析、升级、执法监控到资产冻结及其结果的完整条件触发与先后关系链；基础KG无法表达这种跨步骤的有向条件和动作依赖，新卡连接所有必要节点以支持选项判断。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH03-S07_005",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "FIU综合信息触发红旗并升级案件后执法机构监控与资产冻结",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "银行可疑交易报告(SARs)和跨境金融活动",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU综合银行SARs与跨境金融活动",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "国际监管网络红旗信号被触发",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FIU升级案件",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构（Europol等）对Wolfe及其同伙进行针对性监控以追踪现金走私者和哈瓦拉网络",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构协调资产冻结以切断金融渠道",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n7",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "数字钱包被查封，Wolfe用于恐怖融资的公司被瓦解",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n4",
+          "evidence_unit_ids": ["v7u_N000285", "v7u_N000286"],
+          "derivation": "llm_inference",
+          "condition": "鉴于红旗信号被触发"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n4",
+          "target": "n5",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "derivation": "explicit_text",
+          "condition": "As FIUs escalated the case"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRECEDES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": ["v7u_N000286", "v7u_N000287"],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRODUCES",
+          "source": "n6",
+          "target": "n7",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000285",
+        "v7u_N000286",
+        "v7u_N000287"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：完整表达FIU综合分析产生红旗信号、升级案件、触发执法监控、资产冻结及查封瓦解的程序链。原卡片003仅涵盖升级与监控，004仅涵盖资产冻结与结果，且卡片002未连接升级动作，基础KG更不能表达跨步骤的有向条件和先后依赖。此卡补全所有必需节点和边，使用llm_inference标记红旗到升级的推导关系。"
+    }
+  ],
+  "card_supplements": []
+}

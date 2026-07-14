@@ -1,0 +1,162 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_001",
+  "edge_reviews": [
+    {
+      "edge_id": "E1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000488明确指出'审查所有权结构时'，与节点N1标签'审查客户所有权结构'一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000488、v7u_N000490、v7u_N000489、v7u_N000493共同支持识别UBO过程中涉及风险方法、阈值比较和直接间接持股。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文使用'当...时，有义务...'结构，表明审查是识别的前置条件，方向明确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000488中的条件与edge的条件一致。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边的关系未使用情态限定词，仅表达事实顺序。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "审查与识别不是并列关系，而是条件-行动关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000488"
+      ],
+      "source_quotes": [
+        "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer."
+      ],
+      "reason": "该边直接来源于原文v7u_N000488的条件陈述，审查所有权结构是识别UBO的时机和前提，因此PRECEDES关系成立。"
+    },
+    {
+      "edge_id": "E2",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "N2过程得到了原文v7u_N000488等支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489明确要求识别25%以上持股，v7u_N000491说明高风险客户阈值可能低至10%或5%，与N3标签一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "识别UBO过程必须依据持股阈值标准，因此方向为过程指向标准。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "N3标签保留了原文v7u_N000489和v7u_N000491中的限定词（通常、可）。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "标准与识别过程不是并列关系，而是参照关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000491"
+      ],
+      "source_quotes": [
+        "most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more",
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5%"
+      ],
+      "reason": "识别UBO的过程需要依据持股比例阈值，虽然原文未直接说'参照'，但这是必然功能要求，故判定为REFERENCES并接受。"
+    },
+    {
+      "edge_id": "E3",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "N2是识别过程，原文明确要求识别UBO需要直接和间接持股信息。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000493说明需要识别间接和直接持股，即'直接和间接持股信息'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文从识别UBO的需求出发要求获取持股信息，方向自然是从识别过程到所需信息。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该关系未使用情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "并非并列关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000493"
+      ],
+      "source_quotes": [
+        "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership."
+      ],
+      "reason": "该边直接来自原文v7u_N000493，识别UBO需要直接和间接持股信息，REFERENCES关系明确。"
+    },
+    {
+      "edge_id": "E6",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "N2识别过程得到原文支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文v7u_N000494和v7u_N000495分别展示了达到阈值被认定为UBO和未达到不被认定的例子，支持UBO认定结果作为识别输出。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "识别UBO的过程自然产出一个认定结果（是否UBO），方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，识别过程产生认定结果不需要额外条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该关系未使用情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "Individual D is then considered a UBO with 82% shareholding of Company A.",
+        "Individual C, who owns 10% ... is not a UBO."
+      ],
+      "reason": "识别UBO的过程最终会得出一个认定结果，原文v7u_N000494和v7u_N000495通过正反例证明显了这一点，因此PRODUCES关系成立。"
+    }
+  ]
+}

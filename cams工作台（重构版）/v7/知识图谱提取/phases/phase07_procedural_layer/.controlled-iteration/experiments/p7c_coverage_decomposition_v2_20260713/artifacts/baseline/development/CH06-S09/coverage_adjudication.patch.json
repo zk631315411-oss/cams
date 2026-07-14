@@ -1,0 +1,169 @@
+{
+  "section_id": "CH06-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_005",
+      "reason": "原文明确构建了评估动作（其他机构考察）与两个判断输入（个人影响力、分类时长）的有向关系，符合P7C增量要求，基础KG无法表达此类内部判断参照。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性陈述，无具体主体、动作或有向关系，基础KG可充分保存。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述识别挑战，未形成对特定主体动作的条件化指引或应对链，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性建议，缺失明确主体和动作指向，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的价值陈述，无有向关系，基础KG已足够。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义、分类、孤立风险指标和犯罪示例，基础KG已充分表达，无增量有向结构。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000477"
+      ],
+      "proposition": "部分机构维持PEP分类时，将个人卸任后仍可能保持影响力作为判断依据（REFERENCES）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_003",
+      "reason": "原card错误使用PRECEDES表达时间条件，遗漏了正确的REFERENCES结构来表达原因/依据，基础KG不能表达此类依据参照关系。",
+      "origin_candidate_ids": [
+        "cand_003"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH06-S09_005",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "其他机构考察个人影响力和分类时长以评估PEP状态",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "其他机构考察以下因素以决定PEP状态",
+          "evidence_unit_ids": [
+            "v7u_N000478"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人当时的影响力（如授予合同或分配资金的能力）",
+          "evidence_unit_ids": [
+            "v7u_N000479"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人被归类为PEP的时长",
+          "evidence_unit_ids": [
+            "v7u_N000480"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "IN1",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000479"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "IN2",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000480"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：其他机构将个人影响力和分类时长作为判断输入，形成有向评估关系；基础KG不能表达此类判断依据参照。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH06-S09_003",
+      "reason": "原card缺少正确的REFERENCES结构表达个人卸任后仍可能保持影响力是维持分类的依据；现追加input节点和REFERENCES边以准确建模判断依据关系。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "IN1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人卸任后仍可能保持影响力",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "IN1",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "derivation": "explicit_text",
+          "condition": "即使已卸任，仍可能保持影响力"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

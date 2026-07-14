@@ -1,0 +1,112 @@
+{
+  "section_id": "CH06-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "高风险客户阈值可低至10%或5%，为机构基于风险设定阈值提供具体标准，构成设定动作与约束条件的有向关系"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_006",
+      "reason": "上市公司名义受益所有人可为总裁或CEO，这是识别名义受益所有人动作的可能结果，补充结果节点与产出边"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为背景陈述，无具体主体动作或判断链"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG可表达"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG可表达"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "特点描述，无有向判断链"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "上下文重要性陈述，无有向程序"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "补充高风险客户具体阈值范围作为设定阈值动作的标准约束",
+      "origin_candidate_ids": ["cand_004"],
+      "add_flow_nodes": [
+        {
+          "node_id": "S2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "高风险客户受益所有权阈值可能低至10%，极高风险可低至5%",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_sup_001",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S2",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000491"]
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH06-S10_006",
+      "reason": "补充名义受益所有人的可能身份作为识别动作的结果节点",
+      "origin_candidate_ids": ["cand_008"],
+      "add_flow_nodes": [
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "名义受益所有人可以是总裁或CEO",
+          "evidence_unit_ids": ["v7u_N000497"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_sup_002",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N000497"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000497"]
+    }
+  ]
+}

@@ -111,17 +111,31 @@ def validate_coverage_audit(
             errors.append(f"{prefix}: missing reason")
         decision = candidate.get("decision")
         card_id = candidate.get("card_id")
-        if decision not in {"p7c_card", "kg_only"}:
+        card_ids_list = candidate.get("card_ids")
+        if decision not in {"p7c_card", "p7c_ungraphable", "kg_only"}:
             errors.append(f"{prefix}: invalid decision '{decision}'")
         elif decision == "p7c_card":
-            if not card_id:
-                errors.append(f"{prefix}: p7c_card decision requires card_id")
-            elif card_id not in card_ids:
-                errors.append(f"{prefix}: references unknown card_id '{card_id}'")
+            # Support both legacy card_id (string) and card_ids (array)
+            ref_ids: list[str] = []
+            if card_ids_list and isinstance(card_ids_list, list):
+                ref_ids = [str(cid) for cid in card_ids_list]
+                if len(set(ref_ids)) != len(ref_ids):
+                    errors.append(f"{prefix}: duplicate IDs in card_ids")
+            elif card_id:
+                ref_ids = [str(card_id)]
+            if not ref_ids:
+                errors.append(f"{prefix}: p7c_card decision requires card_id or card_ids")
             else:
-                referenced_card_ids.add(card_id)
-        elif card_id is not None:
-            errors.append(f"{prefix}: kg_only decision requires null card_id")
+                for cid in ref_ids:
+                    if cid not in card_ids:
+                        errors.append(f"{prefix}: references unknown card_id '{cid}'")
+                    else:
+                        referenced_card_ids.add(cid)
+        else:
+            if card_id is not None:
+                errors.append(f"{prefix}: {decision} decision requires null card_id")
+            if card_ids_list is not None and card_ids_list != []:
+                errors.append(f"{prefix}: {decision} decision requires empty card_ids")
 
     for card_id in sorted(card_ids - referenced_card_ids):
         errors.append(f"coverage_audit does not reference output card_id '{card_id}'")
@@ -378,8 +392,8 @@ def validate_card(
                 errors.append(f"{card_id}: flow_edge #{idx} evidence_unit_id {uid} missing from source_unit_ids")
         if candidate_contract:
             edge_derivation = edge.get("derivation")
-            if edge_derivation not in allowed_derivations:
-                errors.append(f"{card_id}: flow_edge #{idx} invalid or missing derivation '{edge_derivation}'")
+            if edge_derivation is not None and edge_derivation not in allowed_derivations:
+                errors.append(f"{card_id}: flow_edge #{idx} invalid derivation '{edge_derivation}'")
             if edge_derivation == "llm_inference":
                 inferred_edge_ids.append(edge_id or f"#{idx}")
         else:
@@ -691,4 +705,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

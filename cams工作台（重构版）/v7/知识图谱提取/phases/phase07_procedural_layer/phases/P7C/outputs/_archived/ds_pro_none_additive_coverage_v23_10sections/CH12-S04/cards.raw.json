@@ -1,0 +1,447 @@
+{
+  "section_id": "CH12-S04",
+  "section_title": "Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000921"
+      ],
+      "proposition": "当客户为高风险（如PEPs）时，需要进行仔细的风险评估。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_002",
+      "reason": "高风险客户（PEPs、中介）需要仔细的风险评估，构成条件触发的评估动作，基础KG无法表达此有向流程。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000923"
+      ],
+      "proposition": "通过持续监控交易活动，可以识别异常模式或洗钱行为。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_003",
+      "reason": "持续监控基于预定义标准识别异常模式，包含具体控制动作、标准引用和限定结果，超出KG一般性措施描述。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000924"
+      ],
+      "proposition": "通过执行客户尽职调查（CDD），有助于确保资金来源合法并正确细分客户。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_004",
+      "reason": "CDD有助于确保资金合法性并细分客户，包含动作与独立结果，且细分基于交易模式，形成具体业务逻辑，基础KG无法表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000926"
+      ],
+      "proposition": "资产管理公司必须了解其业务中的洗钱风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，缺乏具体输入或结果节点，KG已覆盖规则。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000936"
+      ],
+      "proposition": "资产管理公司的CDD流程要求了解所有交易方。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_001",
+      "reason": "代表流程对具体要求的参照关系，超出基础KG对CDD的一般性解释，有助于判断CDD范围。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000937"
+      ],
+      "proposition": "通过采取基于风险的方法（强调CDD和持续监控），资产管理公司可以满足监管要求并应对新兴风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_005",
+      "reason": "采用风险为本方法有明确动作，并产生满足监管要求、应对新兴风险等独立结果，属于控制效果，基础KG不能表达完整链条。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000936"
+      ],
+      "proposition": "资产管理公司的CDD流程需要了解所有交易方，包括投资基金经理、投资组合经理、另类投资基金经理等。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_001",
+      "reason": "基础KG未表达CDD流程需要参照的具体交易方信息作为输入，补充后有助于明确CDD范围。",
+      "origin_candidate_ids": [
+        "cand_005"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "资产管理公司CDD流程要求了解所有交易方",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "资产管理公司：执行客户尽职调查（CDD）流程",
+          "evidence_unit_ids": [
+            "v7u_N000936"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "必须了解所有交易方",
+          "evidence_unit_ids": [
+            "v7u_N000936"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "所有交易方信息（包括投资基金经理、投资组合经理、另类投资基金经理等）",
+          "evidence_unit_ids": [
+            "v7u_N000936"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000936"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "requires knowledge of all parties involved in the transactions"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000936"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000936"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：资产管理公司的CDD流程必须参照“了解所有交易方”这一要求（standard_constrains_action）。KG不足：基础KG仅解释CDD复杂且需了解所有方，未表达流程对要求的参照关系。选项判断：可确认资产管理公司CDD范围必须涵盖所有交易方。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_002",
+      "section_id": "CH12-S04",
+      "card_nature": "assessment",
+      "title": "高风险客户需要进行风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "客户被归类为高风险（如PEPs、中介）",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "执行仔细的风险评估",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "derivation": "explicit_text",
+          "condition": "客户为高风险（如PEPs或中介）"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000921"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "高风险客户作为异常触发风险评估流程，原文明示require，增量表达有向逻辑。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_003",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "持续监控交易活动以识别异常",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "持续监控交易活动",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预定义标准",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "有助于识别异常模式或可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "监控动作参照标准，产生带情态限定的识别结果，体现控制实践。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_004",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "执行客户尽职调查（CDD）以验证资金来源并细分客户",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行客户尽职调查（CDD）",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预期和历史交易模式",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于确保资金来源合法性",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户根据预期和历史交易模式正确细分",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000924"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "CDD参照交易模式产生资金合法性确认和客户细分两个独立结果。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_005",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "采用基于风险的方法满足监管要求并应对新兴风险",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采用基于风险的方法（强调CDD和持续监控）",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "满足监管要求",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "应对与新兴资产类别相关的风险",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000937"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "RBA作为控制手段产生监管合规和风险应对两个具体结果。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_002",
+      "reason": "高风险客户（PEPs、中介）需要仔细的风险评估，构成条件触发的评估动作，基础KG无法表达此有向流程。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_003",
+      "reason": "持续监控基于预定义标准识别异常模式，包含具体控制动作、标准引用和限定结果，超出KG一般性措施描述。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_004",
+      "reason": "CDD有助于确保资金合法性并细分客户，包含动作与独立结果，且细分基于交易模式，形成具体业务逻辑，基础KG无法表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，缺乏具体输入或结果节点，KG已覆盖规则。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH12-S04_005",
+      "reason": "采用风险为本方法有明确动作，并产生满足监管要求、应对新兴风险等独立结果，属于控制效果，基础KG不能表达完整链条。"
+    }
+  ]
+}

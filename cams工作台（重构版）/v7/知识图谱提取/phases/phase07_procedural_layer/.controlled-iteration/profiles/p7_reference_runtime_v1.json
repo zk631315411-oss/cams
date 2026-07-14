@@ -1,0 +1,61 @@
+{
+  "profile_id": "p7-reference-runtime-v1",
+  "workspace": "../..",
+  "test_strategy": "deterministic_regression",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        "phases/P7G/tests/reference_runtime_v1/run_controlled_arm.py",
+        "--arm",
+        "baseline",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--baseline-ref",
+        "{baseline_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 60,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        "phases/P7G/tests/reference_runtime_v1/run_controlled_arm.py",
+        "--arm",
+        "variant",
+        "--artifact-dir",
+        "{artifact_dir}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 120,
+      "required_env": []
+    }
+  },
+  "constants": {
+    "card_fixture": "standard/input -> assessment -> decision -> classification",
+    "p7d_statuses": ["accepted", "pending", "rejected"]
+  },
+  "primary_metrics": [
+    "reference_render_direction_correct",
+    "reverse_reference_traversal_available",
+    "decision_condition_enforced"
+  ],
+  "regression_gates": [
+    "P7C source and target remain unchanged",
+    "pending edges remain retrieval-only",
+    "rejected and unreviewed edges are not traversable",
+    "non-REFERENCES rendering remains forward"
+  ],
+  "samples": {
+    "development": ["synthetic-threshold-decision"],
+    "holdout": []
+  },
+  "evidence_paths": [
+    "phases/P7G/tests/reference_runtime_v1/test_reference_runtime.py",
+    "scripts/p7_edge_runtime.py"
+  ],
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

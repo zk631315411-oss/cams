@@ -1,0 +1,106 @@
+{
+  "section_id": "CH08-S05",
+  "section_title": "Private banking and wealth management risks > Special purpose vehicle risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000649",
+        "v7u_N000650",
+        "v7u_N000651",
+        "v7u_N000652",
+        "v7u_N000653"
+      ],
+      "proposition": "当SPV表现出复杂的多层所有权结构、缺乏透明度、目的不明确或选择监管宽松的辖区等红旗信号时，可能表明存在掩饰非法资金或进行欺诈活动的企图。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "候选命题仅列举孤立风险指标（红旗信号）及其可能与非法资金掩饰的关联，属于基础KG可充分表达的一般风险指标知识，无明确主体动作、条件判断或应对步骤，不构成P7C增量。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "proposition": "金融机构必须对SPV和PIV保持警惕，进行强化尽职调查，识别最终受益所有人并了解其真实目的，确保这些投资遵守客户尽职调查法规，以减轻潜在的金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "命题明确了金融机构（主体）承担必须（must）的强化尽职调查义务，并产生有助于减轻潜在风险的控制效果，形成从主体动作到出口的有向程序性结构，超出基础KG仅能整体保存规则的能力，属于P7C增量。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "control",
+      "title": "金融机构对SPV和PIV的强化尽职调查以减轻风险",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构必须对特殊目的载体(SPV)和集合投资工具(PIV)进行强化尽职调查(EDD)，识别最终受益所有人并了解其真实目的，并确保遵守客户尽职调查(CDD)法规",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "客户尽职调查(CDD)法规，包括美国金融犯罪执法网络(FinCEN)的CDD规则",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S1",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构必须对SPV/PIV执行EDD并识别UBO及真实目的 (process) --REFERENCES--> CDD法规 (standard); process --PRODUCES--> 有助于减轻潜在金融犯罪风险 (exit)。KG不足：基础KG能够将“金融机构必须进行EDD”作为一条规则整体保存，但无法表达其内部的有向关系（动作、标准约束、控制效果）。选项判断：可确认机构对SPV/PIV负有EDD义务，且执行EDD有助于减轻风险，排除无需EDD的说法。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

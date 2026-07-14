@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "experiment_id": "p7_reference_runtime_v1_20260713",
+  "profile_id": "p7-reference-runtime-v1",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\profiles\\p7_reference_runtime_v1.json",
+  "profile_sha256": "0cd4e1b3b6ce3920f8a9f66ad014c43f9f6ceff2c7b3c8653ad62c8252af1240",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+  "objective": "让REFERENCES保持正本方向不变，同时支持反向渲染和受P7D门禁约束的双向证明遍历",
+  "hypothesis": "集中式运行策略可以修正人读箭头并支持依据到判断的反向遍历，且不会引入因果误读、条件绕过或未审核边进入最终证明",
+  "changed_variable": "REFERENCES运行时方向与证明遍历策略",
+  "test_strategy": "deterministic_regression",
+  "constants": {
+    "card_fixture": "standard/input -> assessment -> decision -> classification",
+    "p7d_statuses": [
+      "accepted",
+      "pending",
+      "rejected"
+    ]
+  },
+  "primary_metrics": [
+    "reference_render_direction_correct",
+    "reverse_reference_traversal_available",
+    "decision_condition_enforced"
+  ],
+  "regression_gates": [
+    "P7C source and target remain unchanged",
+    "pending edges remain retrieval-only",
+    "rejected and unreviewed edges are not traversable",
+    "non-REFERENCES rendering remains forward"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7G\\tests\\reference_runtime_v1\\baseline_behavior.json",
+  "baseline_sha256": "b36364b04b2116d68ce41e846dc76062e42634a7c739d23d11676ab7464bab0b",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\scripts\\p7_edge_runtime.py",
+  "variant_sha256": "9237238c11d0ba05b68a519e74821dfdf26e1679a264d2873e641dc23bfa6b40",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "synthetic-threshold-decision"
+    ],
+    "holdout": []
+  },
+  "status": "ran",
+  "runs": [
+    {
+      "arm": "baseline",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7G/tests/reference_runtime_v1/run_controlled_arm.py",
+        "--arm",
+        "baseline",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\artifacts\\baseline\\development",
+        "--baseline-ref",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\phases\\P7G\\tests\\reference_runtime_v1\\baseline_behavior.json"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T05:45:18+00:00",
+      "finished_at": "2026-07-13T05:45:18+00:00",
+      "elapsed_seconds": 0.088,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\logs\\development-baseline.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\logs\\development-baseline.stderr.txt",
+      "error": null
+    },
+    {
+      "arm": "variant",
+      "phase": "development",
+      "argv": [
+        "python",
+        "phases/P7G/tests/reference_runtime_v1/run_controlled_arm.py",
+        "--arm",
+        "variant",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\artifacts\\variant\\development"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer",
+      "started_at": "2026-07-13T05:45:18+00:00",
+      "finished_at": "2026-07-13T05:45:18+00:00",
+      "elapsed_seconds": 0.236,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\logs\\development-variant.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7_reference_runtime_v1_20260713\\logs\\development-variant.stderr.txt",
+      "error": null
+    }
+  ],
+  "verdict": null,
+  "created_at": "2026-07-13T05:45:00+00:00",
+  "updated_at": "2026-07-13T05:45:18+00:00"
+}

@@ -18,7 +18,6 @@
         "edge_type",
         "source",
         "target",
-        "declared_derivation",
         "derivation",
         "review_status",
         "llm_recommendation",
@@ -28,14 +27,16 @@
         "reason",
         "retrieval_eligible",
         "answer_eligible",
+        "source_edge_snapshot",
         "review_history"
       ],
       "constraints": [
-        "declared_derivation records the P7C derivation claim (or legacy evidence_strength) and is never used as the final review decision.",
+        "declared_derivation optionally records a legacy P7C derivation claim for audit only; it may be null and never affects the final review decision.",
         "derivation and review_status are independent fields.",
         "Only review_status=accepted is answer eligible.",
         "review_status=pending may be retrieval eligible but is never answer eligible.",
-        "P7C-declared or P7D-reviewed llm_inference edges remain pending until a human decision is applied.",
+        "P7D-reviewed llm_inference edges remain pending until a human decision is applied.",
+        "source_edge_snapshot must preserve the reviewed P7C edge so downstream runtimes can reject stale reviews after an edge changes.",
         "The edge review does not replace or mutate the source P7C edge."
       ]
     },
@@ -89,9 +90,9 @@
     }
   },
   "decision_policy": {
-    "automatic_accept": "All semantic checks are supported, LLM recommendation is accepted, and neither declared nor reviewed derivation is llm_inference.",
+    "automatic_accept": "All semantic checks are supported, the P7D-reviewed derivation is explicit_text, and the LLM recommendation is accepted.",
     "automatic_reject": "Any node, direction, condition, qualifier, or parallel/correlation check is unsupported, or derivation is unsupported.",
-    "pending": "Evidence is ambiguous, the LLM recommendation is pending, or either declared or reviewed derivation is llm_inference.",
+    "pending": "Evidence is ambiguous, the LLM recommendation is pending, or the P7D-reviewed derivation is llm_inference.",
     "human_queue": "All pending llm_inference edges enter the human review queue.",
     "final_answer": "Only accepted edges may support procedural assertions such as first, next, must, prohibited, or conditional routing."
   }

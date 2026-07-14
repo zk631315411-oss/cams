@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "experiment_id": "v3-no-unsupported-relations-q140-20260713",
+  "profile_id": "v3-unit-only-prompt",
+  "profile_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\profiles\\v3-unit-only-prompt.json",
+  "profile_sha256": "156dd8528afbf382bde009256c69c3b646bb3eb18a7567484cb614c37c499e83",
+  "workspace": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+  "objective": "Remove unsupported concept relationships from V3 prose",
+  "hypothesis": "An explicit source-literal gate for taxonomy, range, frequency and association claims will remove the invented microstructuring relationship without weakening the answer chain",
+  "changed_variable": "Unsupported-relationship prohibition",
+  "test_strategy": "paired_ab",
+  "constants": {
+    "model": "deepseek-v4-pro",
+    "question_id": "v7_q_000140"
+  },
+  "primary_metrics": [
+    "No factual claim copied solely from blind-generated reasons",
+    "No unsupported digital-asset claim",
+    "No claim that foreign withdrawal is part of the structuring definition"
+  ],
+  "regression_gates": [
+    "Answer remains D",
+    "All four options are present",
+    "English source quote is exact and valid",
+    "Software readiness remains true"
+  ],
+  "baseline_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-decisive-signal-q140-20260713\\artifacts\\variant\\development\\questions\\q_v7_q_000140.json",
+  "baseline_sha256": "bb91c4802ad2aa8aef800a5c567e73eb663f3e7b8ce343a947b6f4b607b72327",
+  "variant_ref": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\run_v3_prompt_arm.py",
+  "variant_sha256": "941bce0aef7033dec9717ac4dbd79f6e662fb011a1b9c63ec2babac4446a2ee7",
+  "sampling_seed": 0,
+  "samples": {
+    "development": [
+      "v7_q_000140"
+    ],
+    "holdout": [
+      "v7_q_000315"
+    ]
+  },
+  "status": "evaluated",
+  "runs": [
+    {
+      "arm": "baseline",
+      "phase": "development",
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "baseline",
+        "--source-question",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-decisive-signal-q140-20260713\\artifacts\\variant\\development\\questions\\q_v7_q_000140.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\artifacts\\baseline\\development"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+      "started_at": "2026-07-13T05:51:54+00:00",
+      "finished_at": "2026-07-13T05:51:54+00:00",
+      "elapsed_seconds": 0.103,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\logs\\development-baseline.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\logs\\development-baseline.stderr.txt",
+      "error": null
+    },
+    {
+      "arm": "variant",
+      "phase": "development",
+      "argv": [
+        "python",
+        ".controlled-iteration/run_v3_prompt_arm.py",
+        "--arm",
+        "variant",
+        "--source-question",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-decisive-signal-q140-20260713\\artifacts\\variant\\development\\questions\\q_v7_q_000140.json",
+        "--artifact-dir",
+        "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\artifacts\\variant\\development"
+      ],
+      "cwd": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成",
+      "started_at": "2026-07-13T05:51:54+00:00",
+      "finished_at": "2026-07-13T05:52:48+00:00",
+      "elapsed_seconds": 53.634,
+      "returncode": 0,
+      "stdout_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\logs\\development-variant.stdout.txt",
+      "stderr_path": "D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\选项证据与解析生成\\.controlled-iteration\\experiments\\v3-no-unsupported-relations-q140-20260713\\logs\\development-variant.stderr.txt",
+      "error": null
+    }
+  ],
+  "verdict": "reject",
+  "created_at": "2026-07-13T05:51:07+00:00",
+  "updated_at": "2026-07-13T05:54:11+00:00"
+}

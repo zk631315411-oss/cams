@@ -1,0 +1,84 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1_precedes_identify",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000488 明示'When reviewing ownership structures'，直接支持'审查所有权结构'节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000488 声明'there is a regulatory obligation to identify the UBO of a customer'，明确支持'机构必须识别客户的最终受益所有人'，且'必须'保留原文义务强度。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以'When reviewing ownership structures'引出识别义务，表明审查所有权结构是识别UBO的前提，方向为source→target正确；反向无依据。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "Edge条件'当审查所有权结构时'与原文'When reviewing ownership structures'一致，条件成立。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文用'regulatory obligation'表达强制要求，target label保留'必须'，限定词未弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文是条件触发关系，非并列、相关或教材顺序，PRECEDES使用恰当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000488"
+      ],
+      "source_quotes": [
+        "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer."
+      ],
+      "reason": "原文直接明示审查所有权结构时识别UBO的先后条件关系，方向、条件、限定均准确，接受。"
+    },
+    {
+      "edge_id": "e2_references_standard",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000488 明确对UBO的识别义务，支持'机构必须识别客户的最终受益所有人'节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 规定'most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more'，明确支持25%标准节点，且保留'多数司法管辖区'限定。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "识别UBO需依据持股标准确定，原文虽未直接连接，但功能上识别义务必然参照门槛标准；标准作为辅助节点约束动作，方向process→standard合理，无反向可能。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文无明确条件限制该参照关系。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文的'most jurisdictions'限定已通过target label中的'多数司法管辖区'保留，未被强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "是标准与动作的参照关系，并非将并列来源或共同结果误设为流程边。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489"
+      ],
+      "source_quotes": [
+        "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer.",
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more."
+      ],
+      "reason": "原文分别支持两端节点，但未直接联接二者；基于识别义务与行业标准的功能必要关系，可推断为参照，方向明确，限定保留，建议接受。"
+    }
+  ]
+}

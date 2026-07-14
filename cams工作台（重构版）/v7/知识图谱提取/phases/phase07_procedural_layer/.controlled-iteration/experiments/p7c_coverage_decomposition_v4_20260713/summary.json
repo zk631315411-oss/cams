@@ -1,0 +1,30 @@
+{
+  "experiment_id": "p7c_coverage_decomposition_v4_20260713",
+  "objective": "Produce structurally valid and evidence-aligned Coverage patches from the fixed v2 Audit ledger",
+  "hypothesis": "A strict Patch evidence contract that permits named institutional processes but validates endpoint evidence and relation types will eliminate structure-blocked edges and improve answer-eligible repairs",
+  "changed_variable": "coverage_patch_evidence_contract_v3",
+  "execution_status": "ran",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 0
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "The strict Patch evidence contract materially improved semantic yield: seven of thirteen new edges were accepted, three were pending, and three were rejected. However, the UBO repair remained structure-blocked and two known qualifier/source issues remained, so mandatory gates were not yet satisfied.",
+  "regressions": [
+    {
+      "case_id": "CH06-S10",
+      "classification": "contract_violation",
+      "baseline": "The new calculation process and classification result were semantically scoped",
+      "variant": "Adding them to a card with an existing entry created no directed entry-process-exit path; P7D blocked all three edges before semantic review",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_structure_manifest.jsonl"
+      ]
+    }
+  ],
+  "issue_count": 4,
+  "next_action": "Keep Audit and the strict contract fixed. Update only Patch construction: create a separate minimal card when supplementing would break graph shape, require required/need qualifiers in node labels and edges, and never attach further-investigation findings to an initial-investigation process.",
+  "generated_at": "2026-07-13T04:58:03+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "section_id": "CH06-S09",
+  "construction_audit": [
+    {
+      "candidate_id": "prop_003",
+      "construction_status": "graphed",
+      "card_ids": ["p7card_CH06-S09_001"],
+      "reason": "命题“应使用宽泛的定义界定PEP”包含隐含的主体（机构）和动作（界定PEP），可构建为process引用standard的局部关系。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "construction_status": "ungraphable",
+      "reason": "原文仅陈述高层职位个人及其关联人更容易受到腐败影响，属于普通机制因果，无具体主体动作或关系方向，无法构建程序性有向图。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "使用宽泛定义界定PEP",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采用宽泛定义界定政治敏感人物",
+          "evidence_unit_ids": ["v7u_N000467"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "宽泛定义政治敏感人物的要求",
+          "evidence_unit_ids": ["v7u_N000467"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000467"],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Use a broad definition for defining a PEP"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000467"],
+      "candidate_status": "candidate",
+      "review_notes": "基于候选命题prop_003构建，提取原文‘Use a broad definition for defining a PEP’中的程序性要求。KG缺乏此指令性规范，故作为增量图。"
+    }
+  ],
+  "skip_reason": null
+}

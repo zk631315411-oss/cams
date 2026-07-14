@@ -1,0 +1,92 @@
+{
+  "section_id": "CH06-S10",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_004",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "补充持股合计与阈值比较过程及UBO认定/不认定结果。过程节点N5由v7u_N000494、v7u_N000495支持直接/间接持股合计与比较；结果节点N6由v7u_N000494支持认定为UBO，N7由v7u_N000495支持不被认定。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH06-S10_001",
+      "coverage_claim_ids": ["claim_004"],
+      "reason": "原文示例（v7u_N000494、v7u_N000495）明确展示了合计直接与间接持股比例并与适用阈值比较后，产生认定或不认定UBO的判断。新增过程节点N5执行该比较，并产生分类出口N6（被认定）和N7（不被认定）。",
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "合计直接和间接持股比例并与适用阈值比较",
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "持股比例达到适用阈值的个人或实体被认定为UBO",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N7",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "持股比例未达到适用阈值的个人或实体不被认定为UBO",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "derivation": "explicit_text",
+          "condition": "当识别到直接和间接持股信息时"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N5",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "REFERENCES",
+          "source": "N5",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N000493"],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_comparison"
+        },
+        {
+          "edge_id": "E7",
+          "edge_type": "PRODUCES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E8",
+          "edge_type": "PRODUCES",
+          "source": "N5",
+          "target": "N7",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000494", "v7u_N000495"]
+    }
+  ]
+}

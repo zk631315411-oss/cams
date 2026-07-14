@@ -42,7 +42,7 @@ class P7DPromptSemanticContractTests(unittest.TestCase):
         self.assertIn("section_text_with_unit_anchors`是唯一事实证据", text)
         self.assertNotIn("section_units:", text)
         self.assertIn("已移除P7C声明的`derivation`", text)
-        self.assertIn("Runner会在LLM审核完成后", text)
+        self.assertIn("独立判断每条边的`derivation`", text)
 
     def test_contextual_parameter_reference_can_be_inference(self) -> None:
         text = REVIEW_PROMPT.read_text(encoding="utf-8")
@@ -55,6 +55,12 @@ class P7DPromptSemanticContractTests(unittest.TestCase):
         self.assertIn("help mitigate/may reduce/can improve", text)
         self.assertIn("结构类型本身不把限定性效果强化", text)
         self.assertIn("有助于/可能/可以", text)
+
+    def test_combined_condition_evidence_cites_every_supporting_unit(self) -> None:
+        text = REVIEW_PROMPT.read_text(encoding="utf-8")
+        self.assertIn("覆盖该边判断依赖的全部实质证据", text)
+        self.assertIn("规则、标准与一个或多个实例联合", text)
+        self.assertIn("遗漏提供阈值或条件的unit", text)
 
 
 if __name__ == "__main__":

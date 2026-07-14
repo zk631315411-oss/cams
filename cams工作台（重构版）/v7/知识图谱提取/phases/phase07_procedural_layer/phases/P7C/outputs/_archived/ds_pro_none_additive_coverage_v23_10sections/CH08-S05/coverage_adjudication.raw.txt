@@ -1,0 +1,76 @@
+{
+  "section_id": "CH08-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和合法用途描述，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "金融犯罪风险和犯罪手法描述，以及孤立红旗指标，属于基础KG可表达的一般事实和风险，无金融机构识别/评估/应对链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PIV定义与风险说明，无有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "贸易洗钱犯罪过程描述，基础KG可承接。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000660"],
+      "proposition": "金融机构进行强化尽职调查（EDD）有助于减轻与SPV相关的金融犯罪风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "基础KG可记录两者事实，但无法表达EDD动作与减轻风险结果之间的有向关系，需要增量表达。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "遗漏原文结果节点：第660单元指出EDD有助于减轻金融犯罪风险，需要补充exit节点和相关边。",
+      "origin_candidate_ids": ["coverage_gap_001"],
+      "add_flow_nodes": [
+        {
+          "node_id": "p7node_CH08-S05_001_exit_01",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "p7edge_CH08-S05_001_proc_prod_exit",
+          "edge_type": "PRODUCES",
+          "source": "p7node_CH08-S05_001_process_01",
+          "target": "p7node_CH08-S05_001_exit_01",
+          "evidence_unit_ids": ["v7u_N000660"],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000660"]
+    }
+  ]
+}

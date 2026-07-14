@@ -1,0 +1,71 @@
+{
+  "section_id": "CH06-S10",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_003",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "原文明确要求机构基于风险方法设定阈值，现有card仅将阈值作为静态标准引用，未包含设定动作及产出的有向关系。通过新增process节点执行设定动作，并生成exit节点表示设定的阈值，再用PRODUCES和REFERENCES边连接，完整表达阈值设定行为及其在UBO识别中的前置引用关系。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH06-S10_001",
+      "coverage_claim_ids": [
+        "claim_003"
+      ],
+      "reason": "补充机构基于风险设定阈值的行为，新增设定动作节点(N5)和阈值产出节点(N6)，并用PRODUCES边连接，同时让识别UBO动作(N2)引用该阈值(N6)，体现设定阈值作为前置步骤的有向关系。",
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构采用风险为本的方法设定受益所有权阈值",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "设定的受益所有权阈值",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N5",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000490"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000489",
+            "v7u_N000491"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000490"
+      ]
+    }
+  ]
+}

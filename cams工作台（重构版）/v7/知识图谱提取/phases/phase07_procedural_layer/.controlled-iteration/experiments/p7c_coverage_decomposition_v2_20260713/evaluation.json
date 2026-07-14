@@ -1,0 +1,88 @@
+{
+  "verdict": "reject",
+  "summary": "The v2 Audit gate removed the v1 KG over-classification and detected all four target gap classes, but the unchanged Patch builder converted only one target relation into an accepted answer-eligible edge. Patch construction quality violated mandatory gates.",
+  "primary_results": [
+    {
+      "metric": "target gap detection",
+      "result": "4 of 4 issue classes detected",
+      "details": "Audit detected CH02 qualifier loss, CH06 calculation-to-classification, CH12 qualified monitoring/CDD results, and CH47 action-references-experience."
+    },
+    {
+      "metric": "KG over-classification regression",
+      "result": "gate passed at Audit stage",
+      "details": "CH03-S02 and CH05-S04 produced zero gap claims and no additions."
+    },
+    {
+      "metric": "new edge semantic review",
+      "result": "4 accepted, 1 pending, 7 rejected out of 12 new edges",
+      "details": "Only the CH47 REFERENCES target relation was fully repaired among the four original target gaps."
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "CH12-S04",
+      "classification": "false_positive",
+      "baseline": "High-risk assessment statement did not provide an explicit institution subject",
+      "variant": "Audit supplied a financial-institution subject and Patch generated a rejected PRECEDES edge",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_audit.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "patch-builder",
+      "classification": "review_cost_increase",
+      "baseline": "P7D v23 had 9 rejected edges across 52 total edges",
+      "variant": "P7D v2 had 11 rejected edges across 43 total edges; 7 of 12 newly added edges were rejected",
+      "evidence": [
+        "artifacts/p7d_variant_development/p7d_run_manifest.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "unresolved",
+      "baseline": "Tentative findings lacked appeared/suggested qualifiers",
+      "variant": "Audit correctly found both gaps, but Patch reused an initial-investigation process that did not support the new target bases; both replacement edges were rejected",
+      "evidence": [
+        "artifacts/variant/development/CH02-S04/coverage_audit.json",
+        "artifacts/variant/development/CH02-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH06-S10",
+      "classification": "unresolved",
+      "baseline": "Calculation and threshold comparison lacked UBO classification output",
+      "variant": "Audit found the gap, but Patch attached the result to a broader existing process; P7D retained the edge as pending inference rather than accepted",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "unresolved",
+      "baseline": "CDD and monitoring result qualifiers required faithful representation",
+      "variant": "Audit found the claims; one monitoring result was accepted, but three result edges were rejected because target labels omitted can-help/helps-ensure qualification",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH47-S04",
+      "classification": "improvement",
+      "baseline": "Scenario-setting REFERENCES historical experience was missing",
+      "variant": "The REFERENCES edge was accepted; an unnecessary passive restatement PRODUCES edge was rejected",
+      "evidence": [
+        "artifacts/variant/development/CH47-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Freeze the v2 Audit outputs and run a patch-only experiment. Change only the Patch prompt to require qualifier-preserving target labels, exact source-process evidence, new process nodes when existing nodes do not match, no active/passive duplicate exits, and unresolved output when the claim invents a subject."
+}

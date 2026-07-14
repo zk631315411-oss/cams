@@ -1,0 +1,184 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000483"],
+      "proposition": "控制权和所有权在反洗钱中至关重要，因其常被隐藏以掩饰犯罪活动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于一般重要性陈述和风险机制，基础KG可表达"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000484", "v7u_N000485"],
+      "proposition": "BO和UBO的定义：BO是通过持股拥有法律实体的个人/实体；UBO是最终持有重大比例股份的自然人",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义和分类，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000486", "v7u_N000487"],
+      "proposition": "BO可能不控制公司，UBO可能不直接持股但实施最终控制；该区别对监管要求至关重要",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "分类解释和重要性陈述，基础KG可覆盖"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489",
+        "v7u_N000490",
+        "v7u_N000491",
+        "v7u_N000492",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "proposition": "在审查所有权结构时，机构基于直接和间接持股，按风险阈值（通常25%，高风险10%或5%）判断UBO",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "包含条件、动作、标准和分类结论的程序性判断链，超出基础KG表达范围"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N000496"],
+      "proposition": "当公司不存在自然人BO时，应识别并核实控制人或名义BO",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_002",
+      "reason": "条件导向例外识别动作，形成有向结构，KG无法表达条件-动作关系"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N000497"],
+      "proposition": "上市公司可将总裁或CEO作为名义受益所有人",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "单纯案例示例，属于一般知识，基础KG可表达"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "基于直接间接持股及风险阈值的UBO识别判断",
+      "flow_nodes": [
+        {
+          "node_id": "input_01",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "直接和间接持股信息",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "standard_01",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "受益所有权阈值（通常25%，高风险客户可能为10%或5%）",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491", "v7u_N000492"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "process_01",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构合计直接与间接持股并按适用风险阈值判断UBO",
+          "evidence_unit_ids": ["v7u_N000488", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "exit_01",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "UBO识别结论（如确定为UBO或非UBO）",
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "process_01",
+          "target": "input_01",
+          "evidence_unit_ids": ["v7u_N000493"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "process_01",
+          "target": "standard_01",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000490", "v7u_N000491"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "process_01",
+          "target": "exit_01",
+          "relation_type": "identification_leads_to_conclusion",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000488",
+        "v7u_N000489",
+        "v7u_N000490",
+        "v7u_N000491",
+        "v7u_N000492",
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构基于直接间接持股及风险阈值判断UBO并产出分类结论；KG不足：基础KG可保存阈值事实和规则，但无法表达从信息输入、阈值约束到识别结论的程序性有向链；选项判断：可确认/排除UBO识别过程中涉及合并持股计算、风险阈值应用及最终分类的步骤；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH06-S10_002",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人受益所有人时识别控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "entry_02",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司不存在自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "process_02",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "entry_02",
+          "target": "process_02",
+          "condition": "不存在自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：不存在自然人BO时，应识别控制人/名义BO；KG不足：基础KG可保存为规则，但无法表达条件→动作的有向关系；选项判断：可确认例外情况下识别义务的触发；LLM推理：无"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,56 @@
+{
+  "section_id": "CH05-S04",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000377", "v7u_N000378"],
+      "proposition": "由于不断演变的法规可能与现有业务模式和控制措施产生错位（变化/风险），合规计划必须持续更新（应对动作）。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S04_002",
+      "reason": "基础KG可以分别记录风险和规则，但无法表达法规演变导致的错位作为合规计划必须持续更新的逻辑前提，这种条件-应对关系有助于判断在动态监管环境中合规计划的适应性要求。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH05-S04_002",
+      "section_id": "CH05-S04",
+      "card_nature": "execution",
+      "title": "应对法规演变错位而持续更新合规计划",
+      "flow_nodes": [
+        {
+          "node_id": "n1_reg_change",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "不断演变的法规可能与现有业务模式和控制措施产生错位",
+          "evidence_unit_ids": ["v7u_N000377"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_update_compliance",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "合规计划必须持续更新",
+          "evidence_unit_ids": ["v7u_N000378"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_precedes",
+          "edge_type": "PRECEDES",
+          "source": "n1_reg_change",
+          "target": "n2_update_compliance",
+          "evidence_unit_ids": ["v7u_N000377", "v7u_N000378"],
+          "derivation": "llm_inference",
+          "source_quote": "Evolving regulations might become misaligned... Compliance programs must continually be updated."
+        }
+      ],
+      "source_unit_ids": ["v7u_N000377", "v7u_N000378"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：法规演变导致的错位风险作为合规计划必须持续更新的前提。KG不足：基础KG分别保存两个事实，无法表达因果/条件-应对有向关系。LLM推理：原文无明确连接词，但逻辑依赖明确。选项判断：有助于理解合规计划的动态触发因素。"
+    }
+  ],
+  "card_supplements": []
+}

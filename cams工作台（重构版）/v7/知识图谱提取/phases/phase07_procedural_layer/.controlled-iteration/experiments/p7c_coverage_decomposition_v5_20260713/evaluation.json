@@ -1,0 +1,50 @@
+{
+  "verdict": "reject",
+  "summary": "The targeted Patch addendum did not pass the development gate. The strict contract correctly blocked CH02 because one edge did not cover its source node, while CH06 still ignored the separate-card instruction. The failed output was preserved and was not retried or sent to P7D.",
+  "primary_results": [
+    {
+      "metric": "patch contract success",
+      "result": "9 of 10 sections succeeded; CH02 failed",
+      "details": "The invalid CH02 new card was stopped before merge and P7D review."
+    },
+    {
+      "metric": "targeted instruction compliance",
+      "result": "partial",
+      "details": "CH12 preserved the required qualifier, but CH06 again supplemented the existing card instead of creating a separate minimal card."
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "contract_violation",
+      "baseline": "v4 produced two rejected semantic edges",
+      "variant": "v5 attempted a separate card but one shared-source edge lacked source evidence; the strict contract rejected the section",
+      "evidence": [
+        "artifacts/variant/development/CH02-S04/coverage_patch.json",
+        "artifacts/variant/development/CH02-S04/run_manifest.json"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "CH06-S10",
+      "classification": "unresolved",
+      "baseline": "v4 supplement was blocked by P7D graph-shape validation",
+      "variant": "v5 prompt explicitly requested a separate minimal card, but the model again returned a supplement",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_patch.json"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "expected_difference",
+      "baseline": "v4 omitted the required qualifier on the high-risk assessment edge",
+      "variant": "v5 placed require in both the process label and edge qualifier; semantic review was not run because the overall variant failed",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_patch.json"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Stop prompt-only iteration. Keep v2 Audit and v4 strict Patch contract as the best development design. Before production integration, add deterministic safe routing: a contract-failed Patch must preserve the Audit claim as unresolved and leave the original graph unchanged. Treat CH02 as a schema/product boundary decision and route CH06 classification to a dedicated minimal-card construction path rather than relying on prompt compliance."
+}

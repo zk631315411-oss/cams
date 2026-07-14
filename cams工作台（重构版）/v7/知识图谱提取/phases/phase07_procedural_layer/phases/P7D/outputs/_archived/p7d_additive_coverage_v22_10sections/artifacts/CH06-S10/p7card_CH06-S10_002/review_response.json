@@ -1,0 +1,82 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "e4",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文“In companies where there is no natural beneficial owner”与节点“公司不存在自然人受益所有人”一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“a controller or a notional beneficial owner should be identified and verified”与节点“机构应识别并核实控制人或名义受益所有人”一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文为条件-行动关系，“where there is no..., ... should be identified”构成先决条件与行动的逻辑顺序，方向不可逆。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "原文明确给出条件“不存在自然人受益所有人”（In companies where there is no natural beneficial owner）。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文“should”在target节点中以“应”保留，未改变限定强度。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "关系为条件-行动，非并列或相关关系误写为PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "边e4方向明确，条件确凿，限定保留，无平行关系错误，依据充分。"
+    },
+    {
+      "edge_id": "e6",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文“should be identified and verified”支撑节点“机构应识别并核实控制人或名义受益所有人”。"
+        },
+        "target_node_support": {
+          "status": "unsupported",
+          "reason": "原文仅提出应识别义务，未声明“已识别”这一完成状态，目标节点缺乏直接依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "目标节点无依据，无法判断方向是否成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文为应识别（should），target节点改写为已完成状态“已识别”，丢失义务限定，将可能性变为事实。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不涉及并列或相关误判问题。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "目标节点“已识别”缺乏原文支撑，且限定词丢失，PRODUCES边不成立。"
+    }
+  ]
+}

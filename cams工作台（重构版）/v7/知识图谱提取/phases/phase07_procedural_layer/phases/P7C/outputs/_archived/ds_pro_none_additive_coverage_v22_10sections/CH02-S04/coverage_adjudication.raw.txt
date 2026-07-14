@@ -1,0 +1,88 @@
+{
+  "section_id": "CH02-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达认知义务，无具体行动或独立程序性结果，基础KG可保存该一般性防范意识。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达关切，无后续基于该关切的具体动作或判断，基础KG可将其作为风险关联保存。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "法律规则本身可由基础KG完整表达，无增量程序性结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义性描述，基础KG可覆盖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "属于负面新闻具体内容，已在P7C card中作为发现的一部分引用，不形成独立有向链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "角色背景介绍，无程序性结构。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140", "v7u_N000141"],
+      "proposition": "根据初步调查发现的贿赂手段，Sophie进行了跟进审查和审计，识别出内部控制缺陷和洗钱风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "基础KG不能表达两个调查步骤间的触发和依赖关系，该关系体现审查是基于初步发现的，有助于理解步骤顺序和条件。",
+      "origin_candidate_ids": ["cand_001", "cand_002"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "补充遗漏的前置调查输入：原文'followed up on the investigation'表明跟进审查承接初步调查发现，需将初步发现作为输入节点，建立PRECEDES关系。",
+      "origin_candidate_ids": ["cand_001", "cand_002"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "初步调查发现的贿赂手段：使用中间人、虚增咨询费、伪造发票、提供奢华礼品和旅行",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "N1->P1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000138", "v7u_N000141"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000138", "v7u_N000139", "v7u_N000140"]
+    }
+  ]
+}

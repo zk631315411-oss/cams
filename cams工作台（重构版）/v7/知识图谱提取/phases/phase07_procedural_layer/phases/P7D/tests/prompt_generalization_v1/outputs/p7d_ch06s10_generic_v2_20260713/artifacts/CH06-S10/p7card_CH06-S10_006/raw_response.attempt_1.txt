@@ -1,0 +1,84 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_006",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "source节点“公司没有自然人受益所有人”直接对应原文'In companies where there is no natural beneficial owner'（v7u_N000496）。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "target节点“机构应识别并核实控制人或名义受益所有人”直接对应原文'a controller or a notional beneficial owner should be identified and verified'（v7u_N000496）。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文为条件句，无自然人受益所有人是条件，识别与核实是结果，方向从条件到结果，交换方向不合逻辑，必要功能依赖支持PRECEDES。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "edge的condition“当无自然人受益所有人时”完整保留了原文的条件表达，且原文关系本身为条件关系。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文'should be identified'的情态在target label中以“应”保留，没有强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该关系不是并列、共同出现或教材叙述顺序，而是明确的逻辑前提，符合PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496"
+      ],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "原文明示了条件与义务的先后关系，方向、条件和限定语均有充分证据，该边可行。"
+    },
+    {
+      "edge_id": "edge_sup_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "P1“机构应识别并核实控制人或名义受益所有人”在v7u_N000496有明确依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "X1“名义受益所有人可以是总裁或CEO”在v7u_N000497有明确依据，原文为'For example, ... a notional beneficial owner could be the president or chief executive officer...'。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文v7u_N000496是识别义务，v7u_N000497是举例说明名义受益所有人的可能身份，两者为解释关系，并非识别过程产生了“可以是总裁或CEO”这一分类。识别过程的结果是具体的人，而不是一个定义性的可能性。"
+        },
+        "condition_support": {
+          "status": "unsupported",
+          "reason": "原文举例针对的是上市公司等特定情形，若作为PRODUCES，需条件限定何时产生该结果；该边未设condition，遗漏了原文隐含的条件。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "target label中的“可以是”与原文'could be'情态一致，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中识别义务与举例说明是并列解释关系，并非产出关系；将举例说明当作PRODUCES结果，属于把并列内容错写成产出边。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000496",
+        "v7u_N000497"
+      ],
+      "source_quotes": [
+        "a controller or a notional beneficial owner should be identified and verified.",
+        "For example, ... a notional beneficial owner could be the president or chief executive officer, or equivalent."
+      ],
+      "reason": "原文仅将总裁/CEO作为名义受益所有人的举利，并非识别过程产出，且遗漏隐含条件，PRODUCES不成立。"
+    }
+  ]
+}

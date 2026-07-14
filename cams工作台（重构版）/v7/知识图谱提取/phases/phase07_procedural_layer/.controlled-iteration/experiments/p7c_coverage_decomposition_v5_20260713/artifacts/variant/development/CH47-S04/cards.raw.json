@@ -1,0 +1,476 @@
+{
+  "section_id": "CH47-S04",
+  "section_title": "Transaction monitoring > Transaction monitoring system tuning",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003272"
+      ],
+      "proposition": "交易监控系统调优是调整检测规则参数和阈值的过程（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可充分表达定义。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003273"
+      ],
+      "proposition": "调优确保有效检测可疑活动（重要性）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003274"
+      ],
+      "proposition": "调优减少误报（重要性）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003275"
+      ],
+      "proposition": "调优确保资源高效利用（重要性）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003276"
+      ],
+      "proposition": "调优允许组织应对金融犯罪和业务运营的变化（重要性）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般描述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003277"
+      ],
+      "proposition": "调优确保监管合规（重要性）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003278"
+      ],
+      "proposition": "调优包括场景设置、客户细分、阈值设置和频率四个关键组成部分（分类）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "组成部分列表，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N003279"
+      ],
+      "proposition": "场景设置基于以往可疑活动和实际事件经验创建、修改或移除检测规则和场景",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "方法说明，无独立结果，基础KG可保存此事实。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N003280"
+      ],
+      "proposition": "阈值设置定义了触发警报所需的最低活动水平（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义说明，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N003281"
+      ],
+      "proposition": "CTR报告阈值示例：超过10,000美元触发报告",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普通案例示例，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": [
+        "v7u_N003282"
+      ],
+      "proposition": "调整阈值可提高交易监控系统的灵敏度和准确性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般效果说明，无独立结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": [
+        "v7u_N003283"
+      ],
+      "proposition": "减少误报是设定阈值的关键目标",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "目标陈述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "unit_ids": [
+        "v7u_N003284"
+      ],
+      "proposition": "频率决定了交易监控系统应多久进行一次调优（定义）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "组成部分定义，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "unit_ids": [
+        "v7u_N003285"
+      ],
+      "proposition": "调优频率可能受业务策略变化、异常、监管更新或市场变化影响",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "影响因素列举，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_015",
+      "unit_ids": [
+        "v7u_N003286"
+      ],
+      "proposition": "重大事件或趋势应触发专项评估（动态调优）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S04_001",
+      "reason": "明确的条件触发关系：重大事件或趋势触发机构应进行的专项评估，构成局部程序性有向结构，基础KG不能充分表达触发逻辑。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "control",
+      "title": "动态调优触发专项评估",
+      "flow_nodes": [
+        {
+          "node_id": "E6_001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "重大事件或趋势发生",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P8_001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构应进行专项评估（调优）",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "E6_001",
+          "target": "P8_001",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "derivation": "explicit_text",
+          "condition": "发生重大事件或趋势时",
+          "source_quote": "special assessments triggered by significant events or trends"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：重大事件或趋势（E6_change_exception）触发机构应进行专项评估（P8_constrained_action）；KG不足：基础KG只能保存静态规则，不能表达条件触发关系；选项判断：可确认或排除动态调优的触发条件和应执行的动作；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S04_002",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "场景设置参照经验创建、修改或移除检测规则和场景",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "基于以往可疑活动和实际事件经验创建、修改或移除检测规则和场景",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "以往可疑活动经验和实际事件",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "REFERENCES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003279"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：场景设置动作参照以往经验；选项判断：可确定场景设置时的输入依据。",
+      "coverage_claim_ids": [
+        "claim_008"
+      ]
+    }
+  ],
+  "skip_reason": null,
+  "coverage_claim_audit": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N003272"
+      ],
+      "proposition": "交易监控系统调优是调整检测规则参数和阈值的过程（定义）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "定义，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N003273"
+      ],
+      "proposition": "调优确保有效检测可疑活动（重要性）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "一般控制效果，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N003274"
+      ],
+      "proposition": "调优减少误报（重要性）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "一般控制效果，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N003275"
+      ],
+      "proposition": "调优确保资源高效利用（重要性）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "一般控制效果，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N003276"
+      ],
+      "proposition": "调优允许组织应对金融犯罪和业务运营的变化（重要性）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "允许",
+      "reason": "一般能力描述，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_006",
+      "unit_ids": [
+        "v7u_N003277"
+      ],
+      "proposition": "调优确保监管合规（重要性）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "一般结果，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_007",
+      "unit_ids": [
+        "v7u_N003278"
+      ],
+      "proposition": "调优包括场景设置、客户细分、阈值设置和频率四个关键组成部分（分类）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "组成部分列表，分类信息，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_008",
+      "unit_ids": [
+        "v7u_N003279"
+      ],
+      "proposition": "基于以往可疑活动和实际事件经验创建、修改或移除检测规则和场景",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "missing",
+      "matched_card_ids": [],
+      "missing_part": "缺少card表达场景设置动作参照可疑活动经验和实际事件作为输入依据。需要创建边连接经验（输入）和动作节点。",
+      "condition": null,
+      "qualifier": null,
+      "reason": "场景设置动作（创建/修改/移除检测规则）明确参照可疑活动经验和实际事件作为输入依据，构成有向参照关系，可判断选项中场景设置的依据；基础KG不能表达此细粒度输入关系，属于P7C开放关系。"
+    },
+    {
+      "claim_id": "claim_009",
+      "unit_ids": [
+        "v7u_N003280"
+      ],
+      "proposition": "阈值设置定义了触发警报所需的最低活动水平（定义）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "定义，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_010",
+      "unit_ids": [
+        "v7u_N003281"
+      ],
+      "proposition": "CTR报告阈值示例：超过10,000美元触发报告",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "案例示例，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_011",
+      "unit_ids": [
+        "v7u_N003282"
+      ],
+      "proposition": "调整阈值可提高交易监控系统的灵敏度和准确性",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "可",
+      "reason": "普通控制效果说明，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_012",
+      "unit_ids": [
+        "v7u_N003283"
+      ],
+      "proposition": "减少误报是设定阈值的关键目标",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "目标陈述，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_013",
+      "unit_ids": [
+        "v7u_N003284"
+      ],
+      "proposition": "频率决定了交易监控系统应多久进行一次调优（定义）",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "应",
+      "reason": "组成部分定义，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_014",
+      "unit_ids": [
+        "v7u_N003285"
+      ],
+      "proposition": "调优频率可能受业务策略变化、异常、监管更新或市场变化影响",
+      "kg_boundary": "kg_only",
+      "coverage_status": "not_applicable",
+      "matched_card_ids": [],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": "可能",
+      "reason": "影响因素列举，无独立结果或判断，基础KG可表达。"
+    },
+    {
+      "claim_id": "claim_015",
+      "unit_ids": [
+        "v7u_N003286"
+      ],
+      "proposition": "重大事件或趋势应触发专项评估（动态调优）",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH47-S04_001"
+      ],
+      "missing_part": null,
+      "condition": "重大事件或趋势发生时",
+      "qualifier": "应",
+      "reason": "明确的条件触发关系：重大事件或趋势触发机构专项评估，构成局部程序性有向结构；基础KG不能表达条件触发逻辑。已有card通过节点和边表达了该命题，包括主体、方向、条件和限定词。"
+    }
+  ],
+  "coverage_patch_resolutions": [
+    {
+      "claim_id": "claim_008",
+      "resolution": "new_card",
+      "card_id": "p7card_CH47-S04_002",
+      "reason": "场景设置动作明确参照以往可疑活动经验和实际事件作为输入依据，构成有向参照关系。新建执行卡表达创建/修改/移除规则（P2_execution）参照输入经验（input）。双方证据均来自v7u_N003279。"
+    }
+  ]
+}

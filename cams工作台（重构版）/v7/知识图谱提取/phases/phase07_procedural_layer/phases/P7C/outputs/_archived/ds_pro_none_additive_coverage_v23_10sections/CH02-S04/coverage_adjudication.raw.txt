@@ -1,0 +1,163 @@
+{
+  "section_id": "CH02-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "负面新闻(v132)引发域外关切(v134),两者构成Sophie进行初始调查(v138)的语境与事由;虽无显式连接词,但按功能依赖可建立有向程序关系,超出基础KG单纯事实堆叠,有助于判断调查触发的顺序和条件。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "缺乏显式连接,仅为叙述顺序,且被动语态无明确动作主体。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "普通因果解释,无程序性有向结构,基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "未明确触发后续行动,仅为背景信息,基础KG已覆盖为风险指标。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "法律后果陈述,无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为认识/一般义务陈述,无具体动作或结果。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000138",
+        "v7u_N000141"
+      ],
+      "proposition": "Sophie基于初始调查发现跟进执行审查和审计",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "基础KG仅分别记录调查和审计动作,未表达'followed up on the investigation'所明示的先后有向关系;此关系对于判断审计步骤的来源和选项中的程序顺序至关重要。",
+      "origin_candidate_ids": [
+        "cand_001",
+        "cand_002"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "原card缺少触发调查的输入信息:负面新闻和对域外条款的关切是推动调查的事由,补全有助于完整表达调查动作的语境和条件。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "AUX1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "FullTechGlobal负面新闻",
+          "evidence_unit_ids": [
+            "v7u_N000132"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "AUX2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "对英国反贿赂法域外条款的关切",
+          "evidence_unit_ids": [
+            "v7u_N000134"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "ES1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "AUX1",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000138"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "ES2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "AUX2",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000138"
+          ],
+          "derivation": "llm_inference"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000134"
+      ]
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "原card未体现审计动作的触发条件;原文明确'followed up on the investigation',补全初始调查与后续审计的程序性先后关系。",
+      "origin_candidate_ids": [
+        "cand_001",
+        "cand_002",
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "初始调查发现腐败方法",
+          "evidence_unit_ids": [
+            "v7u_N000138",
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "EP1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000138"
+      ]
+    }
+  ]
+}

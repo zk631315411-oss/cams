@@ -1,0 +1,202 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_p7c_CH06S10_002_1",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 指出识别UBO需要同时识别直接和间接所有权，v7u_N000494 示例展示了聚合计算总持股比例，因此‘聚合直接与间接持股比例’有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 明确要求识别客户的直接与间接持股信息，作为输入。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "process 参照输入数据是自然方向，原文中识别需求指向持股信息。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文使用‘need to’表达必要性，与节点标签一致，未引入不当限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该关系是参照，不是先后或因果，没有问题。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000493",
+        "v7u_N000494"
+      ],
+      "source_quotes": [
+        "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership.",
+        "Individual D owns 10% of Company A directly. They also own 72% of Company A indirectly... Individual D is then considered a UBO with 82% shareholding"
+      ],
+      "reason": "原文要求识别间接所有权并示例计算总比例，支持process参照输入信息，但‘聚合’操作未直接提及，依赖推理。"
+    },
+    {
+      "edge_id": "edge_p7c_CH06S10_002_2",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "p1聚合有依据（见边1）。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489要求阈值识别，v7u_N000494示例中判断82%为UBO，因此判断动作存在。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "聚合是判断的前提，逻辑顺序只能由p1到p3。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "节点标签无不当限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文示例体现过程，非简单并列或相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000494"
+      ],
+      "source_quotes": [
+        "Individual D owns 10%... 72%... Individual D is then considered a UBO with 82% shareholding"
+      ],
+      "reason": "示例展示了从计算持股到被认定为UBO的过程，支持必要功能先后。"
+    },
+    {
+      "edge_id": "edge_p7c_CH06S10_002_3",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "p3判断有依据（见边2）。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489明确要求一般阈值为25%，支持s1。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断过程需要参照标准阈值，方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文‘most jurisdictions require’表达一般性，节点‘一般要求’保留得当。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "参照关系，无误用。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489"
+      ],
+      "source_quotes": [
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more."
+      ],
+      "reason": "原文明确阈值，支持判断过程参照该标准。"
+    },
+    {
+      "edge_id": "edge_p7c_CH06S10_002_4",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494示例中判断82%持股为UBO，体现了判断动作。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494明确将82%持股的个人认定为UBO。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断结果导向分类为UBO，方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "v7u_N000489要求阈值25%，v7u_N000494示例82%≥25%从而被认定为UBO，联合支持条件‘总持股比例≥适用阈值’。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文及节点均未使用情态限定词，无需检查。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "明确的条件分流，非并列或相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000494"
+      ],
+      "source_quotes": [
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more.",
+        "Individual D ... 82% ... is then considered a UBO"
+      ],
+      "reason": "阈值和示例联合支持条件分流，但无明示条件语句。"
+    },
+    {
+      "edge_id": "edge_p7c_CH06S10_002_5",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000495示例中判断18%持股不是UBO，暗示判断动作。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000495明确个人C不是UBO，支持‘非UBO’分类。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断结果导向分类为非UBO，方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "v7u_N000489要求阈值25%，v7u_N000495示例18%<25%从而非UBO，联合支持条件‘总持股比例<适用阈值’。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文及节点均未使用情态限定词，无需检查。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "明确的条件分流，非并列或相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more.",
+        "Individual C... is not a UBO."
+      ],
+      "reason": "阈值与反例联合支持‘<阈值’的分支条件。"
+    }
+  ]
+}

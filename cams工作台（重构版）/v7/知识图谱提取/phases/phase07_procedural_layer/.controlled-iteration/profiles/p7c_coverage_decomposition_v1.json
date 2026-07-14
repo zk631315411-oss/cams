@@ -1,0 +1,103 @@
+{
+  "profile_id": "p7c-coverage-decomposition-v1",
+  "workspace": "../..",
+  "test_strategy": "paired_ab",
+  "commands": {
+    "baseline": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v1/run_coverage_decomposition.py",
+        "--arm",
+        "baseline",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--baseline-dir",
+        "{baseline_ref}"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 120,
+      "required_env": []
+    },
+    "variant": {
+      "argv": [
+        "python",
+        "phases/P7C/tests/coverage_decomposition_v1/run_coverage_decomposition.py",
+        "--arm",
+        "variant",
+        "--sample-file",
+        "{sample_file}",
+        "--artifact-dir",
+        "{artifact_dir}",
+        "--baseline-dir",
+        "{baseline_ref}",
+        "--audit-prompt",
+        "{variant_ref}/prompts/coverage_audit_v1.md",
+        "--patch-prompt",
+        "{variant_ref}/prompts/coverage_patch_v1.md",
+        "--model",
+        "deepseek-v4-pro",
+        "--thinking-effort",
+        "none",
+        "--concurrency",
+        "10",
+        "--max-tokens",
+        "16000",
+        "--timeout",
+        "300"
+      ],
+      "cwd": "{workspace}",
+      "timeout_seconds": 1200,
+      "required_env": ["DEEPSEEK_API_KEY"]
+    }
+  },
+  "constants": {
+    "initial_extraction": "v23 raw_response.txt",
+    "model": "deepseek-v4-pro",
+    "thinking_effort": "none",
+    "section_concurrency": 10,
+    "evidence_boundary": "current section units only",
+    "semantic_evaluator": "P7D edge review v1"
+  },
+  "primary_metrics": [
+    "known P7C proposition gaps detected",
+    "gap claims converted to P7D-accepted edges",
+    "remaining non-KG information omissions"
+  ],
+  "regression_gates": [
+    "zero coverage contract failures",
+    "existing P7C graph content remains byte-for-byte semantically unchanged",
+    "CH03-S02 remains without P7C additions",
+    "no new unsupported strict sequence or deterministic causal claims",
+    "pending plus rejected review cost does not materially exceed baseline"
+  ],
+  "review_cost_metrics": [
+    "P7D pending edge count",
+    "P7D rejected edge count",
+    "unresolved coverage claim count"
+  ],
+  "samples": {
+    "development": [
+      "CH02-S04",
+      "CH03-S02",
+      "CH03-S07",
+      "CH05-S04",
+      "CH06-S09",
+      "CH06-S10",
+      "CH07-S03",
+      "CH08-S05",
+      "CH12-S04",
+      "CH47-S04"
+    ],
+    "holdout": []
+  },
+  "evidence_paths": [
+    "phases/P7B/section_packages",
+    "phases/P7C/outputs/ds_pro_none_additive_coverage_v23_10sections",
+    "phases/P7D/outputs/p7d_additive_coverage_v23_10sections"
+  ],
+  "promotion": {
+    "requires_human_approval": true
+  }
+}

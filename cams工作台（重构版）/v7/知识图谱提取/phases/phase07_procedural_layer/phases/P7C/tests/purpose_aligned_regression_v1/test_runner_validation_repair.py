@@ -94,6 +94,7 @@ def payload(include_node_categories: bool) -> dict:
 def coverage_promotion_payloads() -> tuple[dict, dict]:
     card_payload = payload(True)
     card = card_payload["cards"][0]
+    card["candidate_status"] = "candidate"
     original = {
         "section_id": "TEST-S01",
         "section_title": "测试",
@@ -121,7 +122,9 @@ def coverage_promotion_payloads() -> tuple[dict, dict]:
                 "reason": "基础KG不能表达内部有向关系。",
             }
         ],
-        "promoted_cards": [card],
+        "new_candidates": [],
+        "new_cards": [card],
+        "card_supplements": [],
     }
     return original, adjudication_patch
 
@@ -300,10 +303,73 @@ class RunnerValidationRepairTests(unittest.TestCase):
             final_payload = json.loads((root / "run" / "TEST-S01" / "cards.raw.json").read_text(encoding="utf-8"))
             self.assertEqual(len(final_payload["cards"]), 1)
 
+    def test_coverage_runs_even_without_kg_only_candidates(self) -> None:
+        original = payload(True)
+        adjudication_patch = {
+            "section_id": "TEST-S01",
+            "coverage_adjudication": [],
+            "new_candidates": [],
+            "new_cards": [],
+            "card_supplements": [],
+        }
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            packages_dir = root / "packages"
+            package_dir = packages_dir / "TEST-S01"
+            package_dir.mkdir(parents=True)
+            (package_dir / "task.json").write_text(
+                json.dumps(
+                    {
+                        "section_id": "TEST-S01",
+                        "section_title": "测试",
+                        "units": [{"unit_id": "u1"}],
+                        "section_text_with_unit_anchors": "[u1|1] test",
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            def fake_validate(cards_path: Path, report_path: Path, section_package_path: Path):
+                report_path.write_text("error_count: 0\n", encoding="utf-8")
+                return 0, "errors=0", 0
+
+            with (
+                patch.object(
+                    RUNNER,
+                    "call_model",
+                    side_effect=[
+                        (json.dumps(original, ensure_ascii=False), {"attempt": 0}),
+                        (json.dumps(adjudication_patch, ensure_ascii=False), {"attempt": 1}),
+                    ],
+                ) as call_model,
+                patch.object(RUNNER, "validate_cards", side_effect=fake_validate),
+            ):
+                manifest = RUNNER.run_section(
+                    section_id="TEST-S01",
+                    run_dir=root / "run",
+                    packages_dir=packages_dir,
+                    prompt_template="# extraction prompt",
+                    model="test-model",
+                    thinking_effort="none",
+                    max_tokens=1000,
+                    timeout=10,
+                    retries=0,
+                    retry_delay=0,
+                    validation_retries=0,
+                    coverage_adjudication=True,
+                    coverage_adjudication_prompt_template="# adjudication prompt",
+                )
+
+            self.assertEqual(call_model.call_count, 2)
+            self.assertEqual(manifest["coverage_adjudication_candidate_count"], 0)
+            self.assertEqual(manifest["coverage_adjudication_status"], "accepted")
+
     def test_coverage_adjudication_validation_failure_is_repaired(self) -> None:
         original, adjudication_patch = coverage_promotion_payloads()
         invalid_adjudication = copy.deepcopy(adjudication_patch)
-        invalid_adjudication["promoted_cards"][0]["flow_edges"][0]["relation_type"] = "invented_relation"
+        invalid_adjudication["new_cards"][0]["flow_edges"][0]["relation_type"] = "invented_relation"
 
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -435,33 +501,133 @@ class CoverageAdjudicationContractTests(unittest.TestCase):
         original, adjudication_patch = coverage_promotion_payloads()
         self.assertEqual(RUNNER.validate_coverage_adjudication(original, adjudication_patch), [])
 
-    def test_existing_card_cannot_be_changed(self) -> None:
+    def test_existing_card_cannot_be_rewritten(self) -> None:
         original, adjudication_patch = coverage_promotion_payloads()
         adjudication_patch["cards"] = [{"card_id": "attempted_rewrite"}]
         errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch)
         self.assertTrue(any("unsupported fields" in error for error in errors), errors)
 
-    def test_promoted_card_cannot_use_out_of_candidate_evidence(self) -> None:
-        original, adjudication_patch = coverage_promotion_payloads()
-        adjudication_patch["promoted_cards"][0]["flow_edges"][0]["evidence_unit_ids"].append("u2")
-        errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch)
-        self.assertTrue(any("uses evidence outside promoted candidate" in error for error in errors), errors)
-
-    def test_two_candidates_cannot_share_one_promoted_card_id(self) -> None:
+    def test_new_card_can_cross_candidate_boundaries_within_section(self) -> None:
         original, adjudication_patch = coverage_promotion_payloads()
         second_candidate = copy.deepcopy(original["coverage_audit"][0])
         second_candidate["candidate_id"] = "cand_kg_002"
+        second_candidate["unit_ids"] = ["u2"]
         original["coverage_audit"].append(second_candidate)
         second_row = copy.deepcopy(adjudication_patch["coverage_adjudication"][0])
         second_row["candidate_id"] = "cand_kg_002"
+        second_row["card_id"] = adjudication_patch["new_cards"][0]["card_id"]
         adjudication_patch["coverage_adjudication"].append(second_row)
-        errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch)
-        self.assertTrue(any("assigned card_id" in error for error in errors), errors)
+        adjudication_patch["new_cards"][0]["source_unit_ids"].append("u2")
+        adjudication_patch["new_cards"][0]["flow_edges"][0]["evidence_unit_ids"].append("u2")
+        errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch, {"u1", "u2"})
+        self.assertEqual(errors, [])
+
+    def test_new_card_cannot_use_out_of_section_evidence(self) -> None:
+        original, adjudication_patch = coverage_promotion_payloads()
+        adjudication_patch["new_cards"][0]["flow_edges"][0]["evidence_unit_ids"].append("u2")
+        errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch, {"u1"})
+        self.assertTrue(any("outside current section" in error for error in errors), errors)
+
+    def test_new_card_rejects_invented_card_nature(self) -> None:
+        original, adjudication_patch = coverage_promotion_payloads()
+        adjudication_patch["new_cards"][0]["card_nature"] = "local_process"
+        errors = RUNNER.validate_coverage_adjudication(original, adjudication_patch, {"u1"})
+        self.assertTrue(any("invalid card_nature" in error for error in errors), errors)
+
+    def test_additive_supplement_preserves_existing_graph(self) -> None:
+        original = payload(True)
+        before = copy.deepcopy(original)
+        supplement_node = {
+            "node_id": "s",
+            "node_category": "auxiliary",
+            "node_type": "input",
+            "label": "补充输入",
+            "evidence_unit_ids": ["u2"],
+            "evidence_strength": "explicit",
+        }
+        supplement_edge = {
+            "edge_id": "ps",
+            "edge_type": "REFERENCES",
+            "source": "p",
+            "target": "s",
+            "evidence_unit_ids": ["u2"],
+            "derivation": "explicit_text",
+        }
+        patch = {
+            "section_id": "TEST-S01",
+            "coverage_adjudication": [],
+            "new_candidates": [
+                {
+                    "candidate_id": "coverage_gap_001",
+                    "unit_ids": ["u2"],
+                    "proposition": "处理动作参照补充输入",
+                    "decision": "p7c_card",
+                    "card_id": "p7card_TEST-S01_001",
+                    "reason": "KG不能表达参照方向。",
+                    "origin_candidate_ids": ["cand_001"],
+                }
+            ],
+            "new_cards": [],
+            "card_supplements": [
+                {
+                    "patch_id": "coverage_supplement_001",
+                    "card_id": "p7card_TEST-S01_001",
+                    "reason": "原card漏掉输入参照边。",
+                    "origin_candidate_ids": ["coverage_gap_001"],
+                    "add_flow_nodes": [supplement_node],
+                    "add_flow_edges": [supplement_edge],
+                    "add_source_unit_ids": ["u2"],
+                }
+            ],
+        }
+        self.assertEqual(
+            RUNNER.validate_coverage_adjudication(original, patch, {"u1", "u2"}),
+            [],
+        )
+        merged = RUNNER.merge_coverage_adjudication_patch(original, patch)
+        self.assertEqual(original, before)
+        card = merged["cards"][0]
+        self.assertEqual([node["node_id"] for node in card["flow_nodes"]], ["e", "p", "x", "s"])
+        self.assertEqual([edge["edge_id"] for edge in card["flow_edges"]], ["ep", "px", "ps"])
+        self.assertEqual(card["source_unit_ids"], ["u1", "u2"])
+
+    def test_supplement_cannot_reuse_existing_node_id(self) -> None:
+        original = payload(True)
+        patch = {
+            "section_id": "TEST-S01",
+            "coverage_adjudication": [],
+            "new_candidates": [
+                {
+                    "candidate_id": "coverage_gap_001",
+                    "unit_ids": ["u1"],
+                    "proposition": "补充关系",
+                    "decision": "p7c_card",
+                    "card_id": "p7card_TEST-S01_001",
+                    "reason": "补充遗漏。",
+                    "origin_candidate_ids": ["cand_001"],
+                }
+            ],
+            "new_cards": [],
+            "card_supplements": [
+                {
+                    "patch_id": "coverage_supplement_001",
+                    "card_id": "p7card_TEST-S01_001",
+                    "reason": "补充遗漏。",
+                    "origin_candidate_ids": ["cand_001"],
+                    "add_flow_nodes": [copy.deepcopy(original["cards"][0]["flow_nodes"][0])],
+                    "add_flow_edges": [],
+                    "add_source_unit_ids": [],
+                }
+            ],
+        }
+        errors = RUNNER.validate_coverage_adjudication(original, patch, {"u1"})
+        self.assertTrue(any("duplicates node_id" in error for error in errors), errors)
 
     def test_new_card_derived_fields_are_normalized(self) -> None:
         original, adjudication_patch = coverage_promotion_payloads()
         merged = RUNNER.merge_coverage_adjudication_patch(original, adjudication_patch)
         new_card = merged["cards"][0]
+        new_card["candidate_status"] = "accepted"
         new_card["review_status"] = "approved"
         del new_card["flow_nodes"][0]["node_category"]
         changes = RUNNER.normalize_new_adjudicated_cards(original, merged)

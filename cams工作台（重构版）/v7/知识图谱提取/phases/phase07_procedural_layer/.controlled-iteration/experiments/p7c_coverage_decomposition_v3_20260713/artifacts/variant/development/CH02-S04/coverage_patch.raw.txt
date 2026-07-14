@@ -1,0 +1,79 @@
+{
+  "section_id": "CH02-S04",
+  "claim_resolutions": [
+    {
+      "claim_id": "claim_003",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "在已有card中新增辅助输入节点'指控和进一步调查努力'(A1)以及新出口节点X2b'子公司似乎通过虚增咨询费、伪造发票和壳公司掩盖非法资金流'，并添加边P1->A1(REFERENCES)和P1->X2b(PRODUCES)，以保留原文条件'根据指控和进一步调查努力'和限定词'appeared'，使目标节点体现不确定性。"
+    },
+    {
+      "claim_id": "claim_004",
+      "resolution": "card_supplement",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "新增出口节点X3b'证据表明FullTechGlobal向公职人员和高管提供奢华礼品和旅行安排以非法影响决策'，并添加边P1->X3b(PRODUCES)，以保留原文限定词'suggested'，将确定性发现修正为证据表明的可能性发现。"
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_patch_001",
+      "card_id": "p7card_CH02-S04_001",
+      "coverage_claim_ids": ["claim_003", "claim_004"],
+      "reason": "补充原有card中缺失的条件和限定词：① 添加辅助输入'指控和进一步调查努力'作为调查依据，新增出口节点体现'appeared'的似然性；② 修正证据表明的结论，新增出口节点保留'suggested'限定。所有新增节点和边均基于原文显式表达。",
+      "add_flow_nodes": [
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "指控和进一步调查努力",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2b",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "子公司似乎通过虚增咨询费、伪造发票和壳公司掩盖非法资金流",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X3b",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "证据表明FullTechGlobal向公职人员和高管提供奢华礼品和旅行安排以非法影响决策",
+          "evidence_unit_ids": ["v7u_N000140"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2b",
+          "evidence_unit_ids": ["v7u_N000139"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X3b",
+          "evidence_unit_ids": ["v7u_N000140"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

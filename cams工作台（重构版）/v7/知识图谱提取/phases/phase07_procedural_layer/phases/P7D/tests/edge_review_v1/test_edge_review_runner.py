@@ -148,22 +148,30 @@ class P7DEdgeReviewRunnerTests(unittest.TestCase):
         self.assertEqual(result["card_manifest"]["card_result"], "pass")
         self.assertTrue(all(row["answer_eligible"] for row in result["edge_reviews"]))
 
-    def test_declared_inference_stays_pending_even_if_llm_accepts(self) -> None:
+    def test_legacy_declared_inference_is_audit_only(self) -> None:
         candidate = card()
         candidate["flow_edges"][0]["evidence_strength"] = "functional_dependency"
         result = run_with_payload(candidate, payload())
         self.assertEqual(result["edge_reviews"][0]["declared_derivation"], "llm_inference")
         self.assertEqual(result["edge_reviews"][0]["derivation"], "explicit_text")
-        self.assertEqual(result["edge_reviews"][0]["review_status"], "pending")
-        self.assertFalse(result["edge_reviews"][0]["answer_eligible"])
-        self.assertEqual(result["card_manifest"]["card_result"], "fail")
+        self.assertEqual(result["edge_reviews"][0]["review_status"], "accepted")
+        self.assertTrue(result["edge_reviews"][0]["answer_eligible"])
 
-    def test_current_p7c_derivation_stays_pending_even_if_llm_accepts(self) -> None:
+    def test_current_p7c_derivation_is_audit_only(self) -> None:
         candidate = card()
         candidate["flow_edges"][0].pop("evidence_strength")
         candidate["flow_edges"][0]["derivation"] = "llm_inference"
         result = run_with_payload(candidate, payload())
         self.assertEqual(result["edge_reviews"][0]["declared_derivation"], "llm_inference")
+        self.assertEqual(result["edge_reviews"][0]["review_status"], "accepted")
+
+    def test_missing_p7c_derivation_is_null_and_p7d_inference_is_pending(self) -> None:
+        candidate = card()
+        for edge in candidate["flow_edges"]:
+            edge.pop("evidence_strength", None)
+            edge.pop("derivation", None)
+        result = run_with_payload(candidate, payload(first_derivation="llm_inference"))
+        self.assertIsNone(result["edge_reviews"][0]["declared_derivation"])
         self.assertEqual(result["edge_reviews"][0]["review_status"], "pending")
 
     def test_unsupported_direction_rejects_edge(self) -> None:
@@ -184,8 +192,7 @@ class P7DEdgeReviewRunnerTests(unittest.TestCase):
 
     def test_human_decision_appends_history_and_can_complete_card(self) -> None:
         candidate = card()
-        candidate["flow_edges"][0]["evidence_strength"] = "functional_dependency"
-        result = run_with_payload(candidate, payload())
+        result = run_with_payload(candidate, payload(first_derivation="llm_inference"))
         decisions = [{"section_id": "TEST-S01", "card_id": candidate["card_id"], "edge_id": "edge_1", "decision": "accepted", "decided_by": "reviewer", "reason": "人工确认方向成立。"}]
         reviews, history = HUMAN.apply_decisions(result["edge_reviews"], list(result["history"]), decisions, "human_run")
         manifests = HUMAN.rebuild_card_manifests([result["card_manifest"]], reviews, "human_run")

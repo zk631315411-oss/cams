@@ -1,0 +1,335 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": ["v7u_N000488"],
+      "proposition": "When reviewing ownership structures, there is a regulatory obligation to identify the ultimate beneficial owner (UBO) of the customer.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "命题包含条件（审查所有权结构时）触发具体动作（识别UBO），构成有向的条件-动作链，基础KG无法表达条件触发关系。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": ["v7u_N000489", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+      "proposition": "For AML purposes, to identify the UBO, one must aggregate direct and indirect ownership stakes... If the total ownership reaches or exceeds the applicable beneficial ownership threshold, the individual is considered a UBO; otherwise, not.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_002",
+      "reason": "命题包含聚合计算、阈值比较与分支分类的有向判断流程，基础KG只能存储规则和案例事实，无法表达内部步骤与分支决策。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": ["v7u_N000490"],
+      "proposition": "Organizations should adopt a risk-based approach to set the appropriate beneficial ownership identification threshold.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_003",
+      "reason": "命题中机构设定阈值的动作受风险为本方法约束，形成动作-标准的约束关系，基础KG无法表达这种有向约束。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": ["v7u_N000491", "v7u_N000492"],
+      "proposition": "For high-risk customers, the beneficial ownership threshold may be as low as 10%, and for significantly higher-risk customers, it may go as low as 5%.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_004",
+      "reason": "命题根据风险水平导向不同阈值的可能选择，构成条件分支，基础KG只能表达阈值规则，无法表达风险水平到不同阈值的判断路径。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": ["v7u_N000486"],
+      "proposition": "When assessing ownership and control, it is important to note that a beneficial owner (BO) may not have control of the company, while a UBO may not directly hold shares but can exert ultimate control.",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "命题为BO与UBO的所有权与控制权区别的分类陈述，基础KG已通过定义与分类充分表达（v7u_N000484-486），无增量有向结构。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": ["v7u_N000496", "v7u_N000497"],
+      "proposition": "When there is no natural person as UBO, a controller or a notional beneficial owner should be identified and verified in order to understand who controls the decision-making.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_005",
+      "reason": "命题包含特定条件（无自然人UBO）触发识别控制人的动作，形成有向条件-动作链，基础KG无法表达条件触发关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "审查所有权结构时识别最终受益所有人(UBO)",
+      "flow_nodes": [
+        {
+          "node_id": "node_p7c_CH06S10_001_e1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "审查所有权结构",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_001_p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构必须识别客户的最终受益所有人(UBO)",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_p7c_CH06S10_001_1",
+          "edge_type": "PRECEDES",
+          "source": "node_p7c_CH06S10_001_e1",
+          "target": "node_p7c_CH06S10_001_p1",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "derivation": "explicit_text",
+          "condition": "当审查所有权结构时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000488"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：审查所有权结构 --触发--> 机构必须识别UBO；KG不足：基础KG只能表达存在监管义务，无法表达条件触发识别的有向过程；选项判断：可确认审查所有权结构是识别UBO的触发条件，主体为机构；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH06-S10_002",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "通过聚合直接与间接持股比例并比较阈值来识别UBO",
+      "flow_nodes": [
+        {
+          "node_id": "node_p7c_CH06S10_002_i1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户的直接与间接持股信息",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_002_s1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "适用的受益所有权识别阈值（一般要求为25%）",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_002_p1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构聚合直接与间接持股比例（间接持股通过链上比例相乘计算得出）",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_002_p3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构判断总持股比例是否达到或超过适用阈值",
+          "evidence_unit_ids": ["v7u_N000489", "v7u_N000494", "v7u_N000495"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_002_x1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "分类为UBO",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_002_x2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "非UBO",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_p7c_CH06S10_002_1",
+          "edge_type": "REFERENCES",
+          "source": "node_p7c_CH06S10_002_p1",
+          "target": "node_p7c_CH06S10_002_i1",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494"],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_p7c_CH06S10_002_2",
+          "edge_type": "PRECEDES",
+          "source": "node_p7c_CH06S10_002_p1",
+          "target": "node_p7c_CH06S10_002_p3",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_p7c_CH06S10_002_3",
+          "edge_type": "REFERENCES",
+          "source": "node_p7c_CH06S10_002_p3",
+          "target": "node_p7c_CH06S10_002_s1",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_p7c_CH06S10_002_4",
+          "edge_type": "DECIDES",
+          "source": "node_p7c_CH06S10_002_p3",
+          "target": "node_p7c_CH06S10_002_x1",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "derivation": "explicit_text",
+          "condition": "总持股比例 ≥ 适用阈值",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_p7c_CH06S10_002_5",
+          "edge_type": "DECIDES",
+          "source": "node_p7c_CH06S10_002_p3",
+          "target": "node_p7c_CH06S10_002_x2",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "derivation": "explicit_text",
+          "condition": "总持股比例 < 适用阈值",
+          "relation_type": "branch_condition_routes_path"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000489", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：聚合直接与间接持股 -> 判断是否达到阈值 -> 分类为UBO或非UBO；KG不足：基础KG只能表达需要聚合和25%阈值的事实，无法表达聚合、比较、分支判断的有向过程；选项判断：可确认间接持股的计算方式，以及达到/未达阈值的分类结论；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH06-S10_003",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "采用风险为本方法设定受益所有权识别阈值",
+      "flow_nodes": [
+        {
+          "node_id": "node_p7c_CH06S10_003_p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构将采用风险为本方法设定适当的受益所有权识别阈值",
+          "evidence_unit_ids": ["v7u_N000490"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_003_s1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险为本方法",
+          "evidence_unit_ids": ["v7u_N000490"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_p7c_CH06S10_003_1",
+          "edge_type": "REFERENCES",
+          "source": "node_p7c_CH06S10_003_p1",
+          "target": "node_p7c_CH06S10_003_s1",
+          "evidence_unit_ids": ["v7u_N000490"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000490"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构设定阈值 --受约束于--> 风险为本方法；KG不足：基础KG只能表达机构应使用风险方法设定阈值的事实，无法表达方法约束动作的有向关系；选项判断：可确认设定阈值的方法论依据；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH06-S10_004",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "高风险客户下受益所有权识别阈值的可能调整",
+      "flow_nodes": [
+        {
+          "node_id": "node_p7c_CH06S10_004_p3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构根据客户风险水平可能选择受益所有权阈值",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_004_x1",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "阈值可能低至10%",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_004_x2",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "阈值可能低至5%",
+          "evidence_unit_ids": ["v7u_N000491", "v7u_N000492"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_p7c_CH06S10_004_1",
+          "edge_type": "DECIDES",
+          "source": "node_p7c_CH06S10_004_p3",
+          "target": "node_p7c_CH06S10_004_x1",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "derivation": "explicit_text",
+          "condition": "客户为高风险",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_p7c_CH06S10_004_2",
+          "edge_type": "DECIDES",
+          "source": "node_p7c_CH06S10_004_p3",
+          "target": "node_p7c_CH06S10_004_x2",
+          "evidence_unit_ids": ["v7u_N000491", "v7u_N000492"],
+          "derivation": "explicit_text",
+          "condition": "客户风险显著更高",
+          "relation_type": "branch_condition_routes_path"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000491", "v7u_N000492"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户风险水平 --导向--> 可能选择不同阈值；KG不足：基础KG只能表达高风险时阈值可能为10%或5%的规则，无法表达风险水平导向阈值选择的有向判断过程；选项判断：可确认不同风险水平对应的阈值范围；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH06-S10_005",
+      "section_id": "CH06-S10",
+      "card_nature": "execution",
+      "title": "无自然人最终受益所有人时识别并核实控制人或名义受益所有人",
+      "flow_nodes": [
+        {
+          "node_id": "node_p7c_CH06S10_005_e6",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "公司不存在自然人最终受益所有人(UBO)",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_p7c_CH06S10_005_p2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_p7c_CH06S10_005_1",
+          "edge_type": "PRECEDES",
+          "source": "node_p7c_CH06S10_005_e6",
+          "target": "node_p7c_CH06S10_005_p2",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "derivation": "explicit_text",
+          "condition": "当不存在自然人UBO时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000496", "v7u_N000497"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：不存在自然人UBO --触发--> 机构应识别并核实控制人；KG不足：基础KG只能表达无自然人时需识别控制人的规则，无法表达条件触发识别的有向过程；选项判断：可确认该情形的应对主体和动作；LLM推理：无"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,76 @@
+{
+  "verdict": "reject",
+  "summary": "Patch v2 reduced newly rejected edges from seven to three and produced three accepted edges, but a missing relation_type contract check blocked the UBO card from semantic review, CH02 still reused an unsupported source process, and three valid institutional-process claims were left unresolved.",
+  "primary_results": [
+    {
+      "metric": "new edge semantic review",
+      "result": "3 accepted, 5 pending, 3 rejected out of 11 new edges",
+      "details": "All five pending edges belonged to CH06-S10, whose card failed deterministic structure validation before semantic review."
+    },
+    {
+      "metric": "qualifier and duplicate-exit repair",
+      "result": "improved",
+      "details": "CH12 qualified result labels were accepted and CH47 no longer generated an active/passive duplicate PRODUCES edge."
+    },
+    {
+      "metric": "review cost",
+      "result": "improved but mandatory gate failed",
+      "details": "New rejected edges fell from seven to three, but five structurally blocked edges increased pending review and were not answer eligible."
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "CH06-S10",
+      "classification": "contract_violation",
+      "baseline": "Patch v1 produced one pending semantic edge",
+      "variant": "Patch v2 invented relation_type clue_supports_comparison; the entire card failed P7D structure validation and all five new edges became pending",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_structure_manifest.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "omission",
+      "baseline": "Named institutional processes such as CDD and continuous monitoring were available in the source",
+      "variant": "Patch treated absence of a separately named institution as missing subject and left three claims unresolved",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_patch.json"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "unresolved",
+      "baseline": "Qualifier gap detected by fixed Audit",
+      "variant": "Qualified target labels improved, but all three added edges reused source P1 whose evidence did not support the new relation units; P7D rejected them",
+      "evidence": [
+        "artifacts/variant/development/CH02-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "improvement",
+      "baseline": "Patch v1 strengthened qualified results",
+      "variant": "Both standard-reference and can-help identification edges were accepted",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH47-S04",
+      "classification": "improvement",
+      "baseline": "Patch v1 added one accepted REFERENCES edge plus one rejected duplicate result edge",
+      "variant": "Patch v2 emitted only the accepted open REFERENCES relation",
+      "evidence": [
+        "artifacts/variant/development/CH47-S04/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "Create a new patch evidence contract that permits explicitly named institutional processes without inventing an actor, requires every added edge evidence set to cover both endpoint evidence, validates relation_type against the schema, and defaults to omitting relation_type."
+}

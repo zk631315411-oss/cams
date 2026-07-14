@@ -1,0 +1,40 @@
+{
+  "experiment_id": "p7c_coverage_decomposition_v2_20260713",
+  "objective": "Reduce non-KG P7C proposition omissions without KG over-classification or unsupported procedural edges",
+  "hypothesis": "A hard operational-relation gate in the proposition Audit will preserve the recall benefit of decomposition while excluding ordinary KG mechanisms and control effects",
+  "changed_variable": "coverage_audit_p7_eligibility_gate_v2",
+  "execution_status": "ran",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 0
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "The v2 Audit gate removed the v1 KG over-classification and detected all four target gap classes, but the unchanged Patch builder converted only one target relation into an accepted answer-eligible edge. Patch construction quality violated mandatory gates.",
+  "regressions": [
+    {
+      "case_id": "CH12-S04",
+      "classification": "false_positive",
+      "baseline": "High-risk assessment statement did not provide an explicit institution subject",
+      "variant": "Audit supplied a financial-institution subject and Patch generated a rejected PRECEDES edge",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_audit.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    },
+    {
+      "case_id": "patch-builder",
+      "classification": "review_cost_increase",
+      "baseline": "P7D v23 had 9 rejected edges across 52 total edges",
+      "variant": "P7D v2 had 11 rejected edges across 43 total edges; 7 of 12 newly added edges were rejected",
+      "evidence": [
+        "artifacts/p7d_variant_development/p7d_run_manifest.json",
+        "artifacts/p7d_variant_development/p7d_edge_reviews.jsonl"
+      ]
+    }
+  ],
+  "issue_count": 4,
+  "next_action": "Freeze the v2 Audit outputs and run a patch-only experiment. Change only the Patch prompt to require qualifier-preserving target labels, exact source-process evidence, new process nodes when existing nodes do not match, no active/passive duplicate exits, and unresolved output when the claim invents a subject.",
+  "generated_at": "2026-07-13T04:38:06+00:00"
+}

@@ -1,0 +1,84 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_002",
+  "edge_reviews": [
+    {
+      "edge_id": "P1_to_S1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "“银行核销贷款”直接对应原文“writing off a loan”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "“通常需要充分理由和批准”直接对应原文“often requiring extensive justification and approval”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表明核销贷款这一行为需要满足理由和批准的标准，属于参照关系，方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“退出超出风险容忍度的客户关系时”与原文“When exiting customer relationships that fall outside the bank's risk tolerance”一致。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文的“often”已在target标签中保留为“通常”，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该关系是过程参照标准，不存在误写为先后或因果等关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+      ],
+      "reason": "原文明示在特定条件下核销贷款需参照批准要求，所有要素均有充分支持。"
+    },
+    {
+      "edge_id": "E1_to_P1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "退出超出风险容忍度的客户关系（可能伴有未偿贷款余额）在v7u_N000553和v7u_N000555中得到明确体现。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "“银行核销贷款”对应原文“potential need to write off the loan balance”与“writing off a loan”。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文仅说明退出客户关系时核销贷款可能是潜在困难，没有明示或暗示退出先于核销的顺序。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“银行退出超出风险容忍度的客户关系”与原文的“when exiting…”条件相符。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文用“potential need”强调可能性，边将核销表述为必然动作，强化了限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文未提供顺序依据，将情境下的潜在行动硬设为先后关系，属于误用PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000553",
+        "v7u_N000555"
+      ],
+      "source_quotes": [
+        "when attempting to close customer accounts due to money laundering concerns, while the customer still owes money on credit-related products. One of the primary difficulties is the potential need to write off the loan balance",
+        "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision"
+      ],
+      "reason": "原文缺乏先后顺序的证据，且核销仅为潜在可能性，该边不满足PRECEDES的审核标准。"
+    }
+  ]
+}

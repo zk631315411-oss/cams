@@ -1,0 +1,110 @@
+{
+  "section_id": "CH06-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯背景风险陈述，未涉及识别、评估、决策或应对的具体主体动作，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "BO与UBO的纯粹定义，属于基础KG覆盖范围"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概念区分与重要性说明，无具体程序性动作，KG可表达"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "具体示例，未构成条件导向的识别或应对动作，基础KG可存储"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N000488"],
+      "proposition": "监管要求在审查所有权结构时触发UBO识别判断流程",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "原card直接放置process，缺失流程入口条件，KG无法表达触发逻辑",
+      "origin_candidate_ids": ["cand_004"]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": ["v7u_N000496"],
+      "proposition": "识别并核实控制人或名义BO后，产出已识别的控制人或名义BO结论",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_002",
+      "reason": "原card仅有动作无结果，无法体现识别动作产出的独立结论，KG无法表达动作-结果链",
+      "origin_candidate_ids": ["cand_005"]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "添加审查所有权结构作为入口事件，使流程触发条件完整",
+      "origin_candidate_ids": ["cand_004"],
+      "add_flow_nodes": [
+        {
+          "node_id": "entry_01",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "审查所有权结构",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e5",
+          "edge_type": "PRECEDES",
+          "source": "entry_01",
+          "target": "process_01",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH06-S10_002",
+      "reason": "添加识别结果的出口节点，完整反映动作产出的独立结论",
+      "origin_candidate_ids": ["cand_005"],
+      "add_flow_nodes": [
+        {
+          "node_id": "exit_02",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "控制人或名义受益所有人已识别",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e6",
+          "edge_type": "PRODUCES",
+          "source": "process_02",
+          "target": "exit_02",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

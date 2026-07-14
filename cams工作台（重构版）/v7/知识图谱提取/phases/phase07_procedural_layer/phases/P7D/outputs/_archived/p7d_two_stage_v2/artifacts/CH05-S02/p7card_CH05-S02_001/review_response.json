@@ -1,0 +1,123 @@
+{
+  "section_id": "CH05-S02",
+  "card_id": "p7card_CH05-S02_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e001",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n001节点标签内容与v7u_N000356原文“HSBC was involved in a money laundering scandal... HSBC allowed drug cartels to launder over US$880 million”完全对应，有明确依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n002节点标签内容与v7u_N000358原文“The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul of its global compliance operations”完全对应，有明确依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文先描述合规失败事件（v7u_N000356），随后叙述司法部达成延期起诉协议（v7u_N000358），事件自然时间顺序为合规失败在前、协议在后；“in response to the breach”也表示协议是对失败的反应，反向不成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文关系未附带情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "合规失败与协议达成是时序上的前因后果，不是并列或共同结果，未误用PRECEDES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000356",
+        "v7u_N000358"
+      ],
+      "source_quotes": [
+        "HSBC was involved in a money laundering scandal that remains one of the most significant AML compliance failures in banking history.",
+        "The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul of its global compliance operations."
+      ],
+      "reason": "合规失败事件与延期起诉协议分别有明确证据，原文顺序和因果关系支持从n001到n002的PRECEDES方向；由于未直接明示时间先后而是依赖语境推理，derivation归为llm_inference，建议人工确认。"
+    },
+    {
+      "edge_id": "e002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n002节点标签与v7u_N000358中达成协议并要求整改的内容一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n003节点标签“汇丰必须全面整改其全球合规运营”在v7u_N000358中有对应表述“mandating a comprehensive overhaul...”。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "n003仅是n002中mandating义务的被动复述，并非协议产生的独立新事实或结果；同一谓词的主动/被动改写不能构成PRODUCES关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用情态限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "此项不适用，核心问题为产成关系不成立。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000358"
+      ],
+      "source_quotes": [
+        "The US Department of Justice entered into a five-year deferred prosecution agreement with HSBC, mandating a comprehensive overhaul of its global compliance operations."
+      ],
+      "reason": "target仅是source中整改义务的复述，未体现独立产出，违反PRODUCES审核规则中关于主动/被动改写不得成立产成关系的规定，整条边不支持。"
+    },
+    {
+      "edge_id": "e003",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n003节点在v7u_N000358中有直接相关表述。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n004节点标签与v7u_N000362“As a corrective measure, the bank was compelled to rebalance power dynamics...”完全对应。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文顺序为协议要求整改（v7u_N000358）在先，银行被迫重组（v7u_N000362）在后；“As a corrective measure”暗示重组是对监管要求的回应，方向从义务到执行合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "原文“As a corrective measure”明确支持条件“作为纠正措施”，括号内“回应监管要求”为对该条件的合理延伸，整体有证据。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "关系方向未使用情态限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "义务驱动纠正行动是合理的流程关联，非并列或相关性误用。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000358",
+        "v7u_N000362"
+      ],
+      "source_quotes": [
+        "As a corrective measure, the bank was compelled to rebalance power dynamics within its organization, strengthening central oversight and compliance functions while limiting the autonomy of local business units."
+      ],
+      "reason": "义务与纠正措施间的PRECEDES关系由“As a corrective measure”及相关语境支持，方向合理；但连接依赖功能推理而非明示顺序，属llm_inference，建议人工确认。"
+    }
+  ]
+}

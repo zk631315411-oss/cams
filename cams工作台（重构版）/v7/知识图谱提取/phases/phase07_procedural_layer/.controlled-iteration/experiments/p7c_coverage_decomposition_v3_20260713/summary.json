@@ -1,0 +1,39 @@
+{
+  "experiment_id": "p7c_coverage_decomposition_v3_20260713",
+  "objective": "Improve semantic validity of additive Coverage graph patches while preserving the fixed v2 Audit ledger",
+  "hypothesis": "Qualifier-aware node labels, exact source-process matching, and independent-result checks will convert more fixed Audit gaps into P7D-accepted edges with fewer rejected edges",
+  "changed_variable": "coverage_patch_builder_prompt_v2",
+  "execution_status": "ran",
+  "run_returncodes": {
+    "development": {
+      "baseline": 0,
+      "variant": 0
+    }
+  },
+  "verdict": "reject",
+  "evaluation_summary": "Patch v2 reduced newly rejected edges from seven to three and produced three accepted edges, but a missing relation_type contract check blocked the UBO card from semantic review, CH02 still reused an unsupported source process, and three valid institutional-process claims were left unresolved.",
+  "regressions": [
+    {
+      "case_id": "CH06-S10",
+      "classification": "contract_violation",
+      "baseline": "Patch v1 produced one pending semantic edge",
+      "variant": "Patch v2 invented relation_type clue_supports_comparison; the entire card failed P7D structure validation and all five new edges became pending",
+      "evidence": [
+        "artifacts/variant/development/CH06-S10/coverage_patch.json",
+        "artifacts/p7d_variant_development/p7d_structure_manifest.jsonl"
+      ]
+    },
+    {
+      "case_id": "CH12-S04",
+      "classification": "omission",
+      "baseline": "Named institutional processes such as CDD and continuous monitoring were available in the source",
+      "variant": "Patch treated absence of a separately named institution as missing subject and left three claims unresolved",
+      "evidence": [
+        "artifacts/variant/development/CH12-S04/coverage_patch.json"
+      ]
+    }
+  ],
+  "issue_count": 3,
+  "next_action": "Create a new patch evidence contract that permits explicitly named institutional processes without inventing an actor, requires every added edge evidence set to cover both endpoint evidence, validates relation_type against the schema, and defaults to omitting relation_type.",
+  "generated_at": "2026-07-13T04:46:40+00:00"
+}

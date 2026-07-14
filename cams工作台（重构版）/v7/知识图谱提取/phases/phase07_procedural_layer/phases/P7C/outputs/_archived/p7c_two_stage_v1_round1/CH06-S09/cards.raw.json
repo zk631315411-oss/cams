@@ -1,0 +1,389 @@
+{
+  "section_id": "CH06-S09",
+  "section_title": "Money Laundering Risks in Financial Services > Politically exposed person risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000459"
+      ],
+      "proposition": "When identifying PEPs, organizations must adhere to local regulatory requirements.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_001",
+      "reason": "机构识别PEP时必须遵守当地监管要求，属于标准约束动作的有向关系，基础KG无法表达参照关系"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000460"
+      ],
+      "proposition": "Based on their risk appetite, organizations may choose to enforce higher PEP standards.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_002",
+      "reason": "风险偏好作为条件导向机构选择执行更高标准，属于条件-可选动作有向关系"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000467"
+      ],
+      "proposition": "When defining a PEP, a broad definition should be used.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_003",
+      "reason": "定义PEP时应使用宽泛定义，属于建议性标准约束定义动作"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000476"
+      ],
+      "proposition": "Under a risk-based approach, PEP risk is manageable.",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述风险可控的事实，没有具体主体动作或判断结构，基础KG足以表达"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000477"
+      ],
+      "proposition": "Because the individual may remain in the same circles of influence after stepping down, some organizations follow a 'once a PEP, always a PEP' approach.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_005",
+      "reason": "个人卸任后保持影响力的原因触发部分组织维持分类的做法，属于条件-应对有向关系"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "proposition": "When assessing PEP risk, other organizations will consider the individual's influence at the time and how long they have been classified as a PEP.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_006",
+      "reason": "其他组织评估PEP风险时考量影响力和分类时长，属于评估动作参照输入的有向关系"
+    },
+    {
+      "candidate_id": "prop_007",
+      "unit_ids": [
+        "v7u_N000482"
+      ],
+      "proposition": "Based on their risk appetite, organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate.",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S09_007",
+      "reason": "机构必须基于风险偏好调整监控、审查和升级，属于标准约束多重动作的有向关系"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S09_001",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "PEP Identification Must Adhere to Local Regulatory Requirements",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000459"
+      ],
+      "review_notes": "增量命题：机构识别PEP --REFERENCES--> 当地监管要求；KG不足：基础KG只能保存规则“机构必须遵守当地监管要求”，无法表达识别动作与标准之间的有向参照关系；选项判断：可确认识别PEP时必须参照当地监管要求这一义务；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "P_001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须识别政治敏感人物",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "当地监管要求",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_001_1",
+          "edge_type": "REFERENCES",
+          "source": "P_001",
+          "target": "STD_001",
+          "evidence_unit_ids": [
+            "v7u_N000459"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Organizations must adhere to their local regulatory requirements in identifying PEPs."
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH06-S09_002",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "Organizations May Enforce Higher PEP Standards Based on Risk Appetite",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000460"
+      ],
+      "review_notes": "增量命题：机构可选择执行更高的PEP标准 --REFERENCES--> 风险偏好；KG不足：基础KG只能表达规则，无法表达风险偏好与可选动作之间的条件-动作有向关系；选项判断：可确认机构可基于风险偏好提高PEP标准；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "P_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构可选择执行更高的PEP标准",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_002_1",
+          "edge_type": "REFERENCES",
+          "source": "P_002",
+          "target": "STD_002",
+          "evidence_unit_ids": [
+            "v7u_N000460"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "organizations may choose to enforce higher standards based on their risk appetite"
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH06-S09_003",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "Use a Broad Definition When Defining PEPs",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000467"
+      ],
+      "review_notes": "增量命题：定义PEP --REFERENCES--> 宽泛定义；KG不足：基础KG只能保存规则“应使用宽泛定义”，无法表达定义动作与标准的有向关系；选项判断：可确认定义PEP时应采用宽泛定义；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "P_003",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构应使用宽泛定义界定PEP",
+          "evidence_unit_ids": [
+            "v7u_N000467"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "宽泛定义",
+          "evidence_unit_ids": [
+            "v7u_N000467"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_003_1",
+          "edge_type": "REFERENCES",
+          "source": "P_003",
+          "target": "STD_003",
+          "evidence_unit_ids": [
+            "v7u_N000467"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Use a broad definition for defining a PEP."
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH06-S09_005",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "Some Organizations Follow Once a PEP Always a PEP Approach Due to Continued Influence",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000477"
+      ],
+      "review_notes": "增量命题：个人卸任后仍可能保持影响力 --PRECEDES--> 部分组织遵循“一旦是PEP，永远是PEP”的做法；KG不足：基础KG只能表达部分组织采用该做法，无法表达触发条件；选项判断：可确认该做法的适用条件（保持影响力）；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "E_005",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "个人卸任后仍可能保持影响力",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "部分组织遵循“一旦是PEP，永远是PEP”的做法",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_005_1",
+          "edge_type": "PRECEDES",
+          "source": "E_005",
+          "target": "P_005",
+          "evidence_unit_ids": [
+            "v7u_N000477"
+          ],
+          "derivation": "explicit_text",
+          "condition": "because the individual may remain in the same circles of influence",
+          "source_quote": "Some organizations follow a “once a PEP, always a PEP” approach because the individual may remain in the same circles of influence, even if they have stepped down."
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH06-S09_006",
+      "section_id": "CH06-S09",
+      "card_nature": "assessment",
+      "title": "Other Organizations Consider Influence and Duration When Assessing PEP Risk",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000478",
+        "v7u_N000479",
+        "v7u_N000480"
+      ],
+      "review_notes": "增量命题：其他组织评估PEP风险 --REFERENCES--> 个人当时的影响力 和 被归类为PEP的时间长短；KG不足：基础KG只能列出这些因素，无法表达评估动作对这些因素的参照；选项判断：可确认评估PEP风险时的具体考量因素；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "P_006",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "其他组织评估PEP风险",
+          "evidence_unit_ids": [
+            "v7u_N000478"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN_006_1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "个人当时的影响力",
+          "evidence_unit_ids": [
+            "v7u_N000479"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN_006_2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "被归类为PEP的时间长短",
+          "evidence_unit_ids": [
+            "v7u_N000480"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_006_1",
+          "edge_type": "REFERENCES",
+          "source": "P_006",
+          "target": "IN_006_1",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000479"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification",
+          "source_quote": "Other organizations will look at: The individual’s influence at the time, such as their ability to award contracts or allocate funds"
+        },
+        {
+          "edge_id": "E_006_2",
+          "edge_type": "REFERENCES",
+          "source": "P_006",
+          "target": "IN_006_2",
+          "evidence_unit_ids": [
+            "v7u_N000478",
+            "v7u_N000480"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification",
+          "source_quote": "Other organizations will look at: ... How long the individual has been classified as a PEP"
+        }
+      ]
+    },
+    {
+      "card_id": "p7card_CH06-S09_007",
+      "section_id": "CH06-S09",
+      "card_nature": "control",
+      "title": "Organizations Must Adapt Transaction Monitoring, KYC Reviews, and Escalate Based on Risk Appetite",
+      "candidate_status": "candidate",
+      "source_unit_ids": [
+        "v7u_N000482"
+      ],
+      "review_notes": "增量命题：机构必须调整交易监控、KYC审查并升级 --REFERENCES--> 风险偏好；KG不足：基础KG只能保存规则，无法表达动作与标准的有向关系；选项判断：可确认调整措施必须基于风险偏好；LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "P_007",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须调整交易监控、KYC审查并升级处理",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_007",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_007_1",
+          "edge_type": "REFERENCES",
+          "source": "P_007",
+          "target": "STD_007",
+          "evidence_unit_ids": [
+            "v7u_N000482"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite."
+        }
+      ]
+    }
+  ],
+  "skip_reason": null
+}

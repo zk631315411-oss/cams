@@ -1,0 +1,88 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文[v7u_N000132]和[v7u_N000133]明确记载Sophie发现负面新闻和FullTechGlobal的贿赂指控。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文[v7u_N000134]明确表述'This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010'，对应'引发关切'。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文关系是因果关系（'This raised concerns'），而不是流程先后顺序。PRECEDES要求原文明示顺序或唯一必要功能依赖，此处不适合。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文关系无条件表述。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文和边中均无限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文不是并列、相关或教材顺序，而是明确的因果联系，不属于错写为PRECEDES的情况。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134"
+      ],
+      "source_quotes": [
+        "One day, she came across negative news concerning their customer FullTechGlobal Services...",
+        "The company faced serious accusations of widespread bribery and corruption...",
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010."
+      ],
+      "reason": "边e1方向为PRECEDES，但原文关系是因果关系，不是流程先后，缺乏PRECEDES所需的明示顺序或必要功能依赖，因此不支持。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文[v7u_N000134]支持n2'Raising concerns'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文[v7u_N000134]和[v7u_N000135]明确提及'UK Bribery Act 2010 extraterritorial provisions'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'This raised concerns under the extraterritorial provisions...'表明关切以此条款为依据，符合REFERENCES方向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文关系无条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文和边中均无限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文明确表达参照依据，不是并列或相关。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000134",
+        "v7u_N000135"
+      ],
+      "source_quotes": [
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.",
+        "The UK Bribery Act 2010 is one of the world’s strictest anti-corruption laws."
+      ],
+      "reason": "边e2明示关切以域外条款为依据，REFERENCE关系方向正确，各方面均有原文支持。"
+    }
+  ]
+}

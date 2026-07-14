@@ -1,0 +1,102 @@
+{
+  "section_id": "CH06-S10",
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "unit_ids": [
+        "v7u_N000488"
+      ],
+      "proposition": "当审查所有权结构时，存在监管义务要求识别客户的UBO。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_001"
+      ],
+      "missing_part": null,
+      "condition": "当审查所有权结构时",
+      "qualifier": null,
+      "reason": "已有card_001通过N1->N2的PRECEDES边明确表达了审查所有权结构触发识别UBO的动作，条件与义务方向一致。"
+    },
+    {
+      "claim_id": "claim_002",
+      "unit_ids": [
+        "v7u_N000489"
+      ],
+      "proposition": "大多数司法管辖区要求识别受益所有人时阈值设定为25%或以上，因此需要知道每个持股至少25%的实体或个人。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_001"
+      ],
+      "missing_part": null,
+      "condition": "在识别受益所有人时",
+      "qualifier": "most",
+      "reason": "card_001的N3持股阈值标准使用了‘通常25%或以上’，保留了大多数情况的限定；识别动作隐含需要知道满足条件的实体，整体覆盖。"
+    },
+    {
+      "claim_id": "claim_003",
+      "unit_ids": [
+        "v7u_N000490"
+      ],
+      "proposition": "机构应采用风险为本的方法设定适当的受益所有权阈值。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "partially_covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_001"
+      ],
+      "missing_part": "card_001仅将阈值作为标准引用（N3），未独立表达机构基于风险方法设定阈值的动作节点及边。需补充设定阈值的节点和连接关系，以体现阈值设定行为。",
+      "condition": null,
+      "qualifier": "will",
+      "reason": "基础KG可保存规则文本，但无法表达风险方法指引设定动作及设定阈值作为后续识别前提的有向关系。现有card覆盖了使用阈值识别UBO，但缺失设定阈值的独立步骤，因此部分覆盖。"
+    },
+    {
+      "claim_id": "claim_004",
+      "unit_ids": [
+        "v7u_N000491"
+      ],
+      "proposition": "对于高风险客户，受益所有权阈值可能低至10%，特别高风险的客户可能低至5%。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_001"
+      ],
+      "missing_part": null,
+      "condition": "对于高风险客户",
+      "qualifier": "might, could",
+      "reason": "card_001的N3标准明确包含了‘高风险客户可低至10%甚至5%’，保留了可能性限定，覆盖完整。"
+    },
+    {
+      "claim_id": "claim_005",
+      "unit_ids": [
+        "v7u_N000493"
+      ],
+      "proposition": "识别UBO需考虑直接和间接持股信息。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_001"
+      ],
+      "missing_part": null,
+      "condition": null,
+      "qualifier": null,
+      "reason": "card_001的N4节点‘直接和间接持股信息’及E3 REFERENCES边表达了持股信息作为识别依据，覆盖了该单元内容。"
+    },
+    {
+      "claim_id": "claim_006",
+      "unit_ids": [
+        "v7u_N000496"
+      ],
+      "proposition": "当公司中不存在自然人UBO时，应识别并核实控制人或名义受益所有人。",
+      "kg_boundary": "p7_incremental",
+      "coverage_status": "covered",
+      "matched_card_ids": [
+        "p7card_CH06-S10_002"
+      ],
+      "missing_part": null,
+      "condition": "当公司中不存在自然人UBO时",
+      "qualifier": "should",
+      "reason": "card_002完整表达了条件触发（无自然人UBO）和识别核实控制人的动作，方向、条件和限定词一致。"
+    }
+  ],
+  "scan_summary": "本节扫描了控制权与所有权定义、区别及UBO识别要求，共登记6个P7C增量命题，其中1个部分覆盖（机构设定阈值动作缺失），其余均已覆盖或为基础KG。"
+}

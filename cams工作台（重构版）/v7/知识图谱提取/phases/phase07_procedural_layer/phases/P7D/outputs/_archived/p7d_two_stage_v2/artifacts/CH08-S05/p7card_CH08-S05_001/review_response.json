@@ -1,0 +1,86 @@
+{
+  "section_id": "CH08-S05",
+  "card_id": "p7card_CH08-S05_001",
+  "edge_reviews": [
+    {
+      "edge_id": "e1",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "P1节点内容由v7u_N000658和v7u_N000659支持，要求金融机构对SPV和PIV进行EDD、识别最终受益所有人并了解目的，遵守CDD法规。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "X1节点“有助于减轻与SPV相关的潜在金融犯罪风险”直接来自v7u_N000660：“This will help mitigate any potential financial crime risks associated with SPVs.”"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000660中“This”指代前述EDD和识别UBO等动作，因此方向为动作导致风险减轻，PRODUCES方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "原文关系为因果而非显式条件分支，且P1已包含全部前提动作，无需额外condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "X1标签完整保留了原文的限定词“有助于”和“潜在”，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "P1与X1不是并列或相关性关系，而是手段与效果关系，符合PRODUCES。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "source_quotes": [
+        "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule.",
+        "Financial institutions must identify ultimate beneficial owners and understand the true purpose of these entities.",
+        "This will help mitigate any potential financial crime risks associated with SPVs."
+      ],
+      "reason": "原文明确表达了EDD与识别UBO等动作有助于减轻风险的关系，两端证据充分，方向正确，限定词已保留。"
+    },
+    {
+      "edge_id": "e2",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "P1中“确保遵守客户尽职调查(CDD)法规”由v7u_N000658支持：“It is important to ensure these investments comply with CDD regulations”."
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "S1“客户尽职调查(CDD)法规，包括美国金融犯罪执法网络(FinCEN)的CDD规则”直接出自v7u_N000658：“CDD regulations such as the Financial Crime Enforcement Network's CDD rule”."
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文明示金融机构必须确保遵守CDD法规，即动作参照标准，因此P1->S1的REFERENCES方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该参照关系无条件限制，原文未表达条件关系。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "关系中未涉及限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "P1与S1是执行动作与遵循标准的关系，不是并列或顺序关系，REFERENCES恰当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000658"
+      ],
+      "source_quotes": [
+        "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+      ],
+      "reason": "原文明示金融机构必须确保遵守CDD法规，动作参照标准，两端证据充分，方向正确。"
+    }
+  ]
+}

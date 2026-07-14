@@ -9,6 +9,14 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
+from p7_edge_runtime import (
+    node_render_kind,
+    node_role,
+    render_edge_endpoints,
+    render_edge_label,
+    section_summary_rows,
+)
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PHASE_DIR = SCRIPT_DIR.parent
@@ -64,7 +72,7 @@ def load_sections(run_dir: Path) -> list[dict[str, Any]]:
     summary_path = run_dir / "run_summary.json"
     summary_by_section: dict[str, dict[str, Any]] = {}
     if summary_path.exists():
-        for row in read_json(summary_path):
+        for row in section_summary_rows(read_json(summary_path)):
             summary_by_section[row.get("section_id")] = row
 
     sections: list[dict[str, Any]] = []
@@ -222,7 +230,7 @@ def make_legend_page() -> PageBuilder:
         x += 190
     page.edge(node_ids["trigger"], node_ids["action"], "PRECEDES", edge_style({"edge_type": "PRECEDES", "evidence_strength": "explicit"}))
     page.edge(node_ids["action"], node_ids["decision"], "DECIDES", edge_style({"edge_type": "DECIDES", "evidence_strength": "explicit"}))
-    page.edge(node_ids["action"], node_ids["standard"], "REFERENCES", edge_style({"edge_type": "REFERENCES", "evidence_strength": "explicit"}))
+    page.edge(node_ids["standard"], node_ids["action"], "作为判定标准或规范依据", edge_style({"edge_type": "REFERENCES", "evidence_strength": "explicit"}))
     page.edge(node_ids["action"], node_ids["output"], "PRODUCES", edge_style({"edge_type": "PRODUCES", "evidence_strength": "explicit"}))
     page.vertex("Dashed edge = functional_dependency / needs_review\nRed overview box = validation_failed\nYellow overview box = one or more cards need review", 60, y + 140, 700, 90, title_style("#fff2cc", "#d6b656"))
     return page
@@ -259,9 +267,8 @@ def make_review_queue_page(sections: list[dict[str, Any]]) -> PageBuilder:
 
 
 def layout_nodes(nodes: list[dict[str, Any]], x0: int, y0: int) -> dict[str, tuple[int, int]]:
-    main_types = {"start", "trigger", "action", "decision", "output", "end"}
-    main_nodes = [node for node in nodes if node.get("node_type") in main_types]
-    aux_nodes = [node for node in nodes if node.get("node_type") not in main_types]
+    main_nodes = [node for node in nodes if node_role(node) != "auxiliary"]
+    aux_nodes = [node for node in nodes if node_role(node) == "auxiliary"]
     positions: dict[str, tuple[int, int]] = {}
     for idx, node in enumerate(main_nodes):
         positions[node["node_id"]] = (x0 + (idx % 5) * 260, y0 + (idx // 5) * 140)
@@ -308,19 +315,17 @@ def make_section_page(section: dict[str, Any]) -> PageBuilder:
                 continue
             x, y = node_positions.get(node_id, (80, card_y + 150))
             label = f"{node.get('node_type')}\n{clean_label(node.get('label'), 70)}\n{', '.join(node.get('evidence_unit_ids') or [])}"
-            w, h = (190, 90) if node.get("node_type") == "decision" else (220, 85)
-            node_cell_ids[node_id] = page.vertex(label, x, y, w, h, node_style(node.get("node_type", ""), node.get("review_status")))
+            render_kind = node_render_kind(node)
+            w, h = (190, 90) if render_kind == "decision" else (220, 85)
+            node_cell_ids[node_id] = page.vertex(label, x, y, w, h, node_style(render_kind, node.get("review_status")))
+        nodes_by_id = {node.get("node_id"): node for node in nodes if node.get("node_id")}
         for edge in card.get("flow_edges") or []:
-            source = node_cell_ids.get(edge.get("source"))
-            target = node_cell_ids.get(edge.get("target"))
+            render_source, render_target = render_edge_endpoints(edge)
+            source = node_cell_ids.get(render_source)
+            target = node_cell_ids.get(render_target)
             if not source or not target:
                 continue
-            label_parts = [edge.get("edge_type", "")]
-            if edge.get("condition"):
-                label_parts.append(str(edge.get("condition")))
-            if edge.get("review_status") == "needs_review":
-                label_parts.append("review")
-            page.edge(source, target, " / ".join(label_parts), edge_style(edge))
+            page.edge(source, target, render_edge_label(edge, nodes_by_id), edge_style(edge))
     return page
 
 

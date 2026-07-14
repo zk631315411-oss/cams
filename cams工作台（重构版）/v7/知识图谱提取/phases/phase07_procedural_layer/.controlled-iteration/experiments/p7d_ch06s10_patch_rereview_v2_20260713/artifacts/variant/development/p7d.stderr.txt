@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] 文件名或扩展名太长。: 'D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v2_20260713\\artifacts\\variant\\development\\p7d_ch06s10_merged_process_rereview_v1\\artifacts\\CH06-S10\\p7card_CH06-S10_001'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\守正公司工作区\cams考试\cams工作台（重构版）\v7\知识图谱提取\phases\phase07_procedural_layer\scripts\run_p7d_edge_review_ds.py", line 574, in <module>
+    main()
+    ~~~~^^
+  File "D:\守正公司工作区\cams考试\cams工作台（重构版）\v7\知识图谱提取\phases\phase07_procedural_layer\scripts\run_p7d_edge_review_ds.py", line 532, in main
+    results.append(future.result())
+                   ~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\守正公司工作区\cams考试\cams工作台（重构版）\v7\知识图谱提取\phases\phase07_procedural_layer\scripts\run_p7d_edge_review_ds.py", line 376, in review_card
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1016, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 206] 文件名或扩展名太长。: 'D:\\守正公司工作区\\cams考试\\cams工作台（重构版）\\v7\\知识图谱提取\\phases\\phase07_procedural_layer\\.controlled-iteration\\experiments\\p7d_ch06s10_patch_rereview_v2_20260713\\artifacts\\variant\\development\\p7d_ch06s10_merged_process_rereview_v1\\artifacts\\CH06-S10\\p7card_CH06-S10_001'

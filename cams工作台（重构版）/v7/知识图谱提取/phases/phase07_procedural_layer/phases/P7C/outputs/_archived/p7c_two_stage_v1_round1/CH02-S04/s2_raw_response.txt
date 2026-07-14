@@ -1,0 +1,149 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": ["v7u_N000133", "v7u_N000134"],
+      "proposition": "当公司面临海外销售中的贿赂和腐败指控时，可能引发根据英国反贿赂法2010的域外条款的关切。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题仅为海外指控引发域外关切的一般陈述，未包含具体主体或程序性动作，基础 KG 可充分表达案例背景。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": ["v7u_N000136"],
+      "proposition": "如果一家公司具有英国关联，则英国反贿赂法2010对其适用；并且母公司需对子公司的腐败活动承担责任，无论地点。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "英国反贿赂法的适用条件与母公司责任属于法律规则本身，无特定主体执行的有向动作或判断步骤，基础 KG 可表达规则内容。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": ["v7u_N000137"],
+      "proposition": "英国反贿赂法2010的域外管辖范围意味着，非英国企业的英国母公司可能因海外贿赂行为而被起诉；这强调了企业需要实施健全的合规措施。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "域外管辖可能导致的起诉及合规需求强调属于风险评估与提示，未体现具体的应对动作或判断链，基础 KG 可表达风险后果。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": ["v7u_N000141"],
+      "proposition": "对ABC框架和内部控制的审查可能识别出缺陷；这些内部控制缺陷和监督不足有助于腐败活动长期未被发现。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_001",
+      "reason": "审查动作产生识别缺陷的明确结论，构成程序性有向结构（调查→发现），超出基础 KG 对案例事实的静态保存，可协助判断审查步骤与发现之间的因果关系。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": ["v7u_N000142"],
+      "proposition": "当贿赂作为上游犯罪时，非法资金会通过复杂的金融网络进行洗钱，旨在逃避监管审查和取证追踪。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述上游犯罪与洗钱机制的普通犯罪过程，无机构处置或判断步骤，基础 KG 可表达犯罪方法。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": ["v7u_N000143"],
+      "proposition": "如果公司被发现违反英国反贿赂法2010，将面临严厉的金融处罚、加强的监管审查和潜在的刑事责任（包括对子公司和母公司及其高管）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "违反法律后的一般性处罚后果，无具体的应对程序或条件分支，基础 KG 可表达法律后果。"
+    },
+    {
+      "candidate_id": "prop_007",
+      "unit_ids": ["v7u_N000144"],
+      "proposition": "当金融机构与全球企业客户有业务往来时，金融犯罪防控经理应当维护合规诚信并降低贿赂和腐败风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "经理维护合规诚信属于抽象义务陈述，无具体操作步骤或决策条件，基础 KG 可表达职责要求。"
+    },
+    {
+      "candidate_id": "new_001",
+      "unit_ids": ["v7u_N000138"],
+      "proposition": "Sophie 的初始调查揭示了 FullTechGlobal 在高风险司法管辖区战略性雇佣中间人获取有利合同。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH02-S04_002",
+      "reason": "初始调查动作直接产生发现结果，形成有向程序性链，基础 KG 虽可记录该事实但无法表达动作与发现之间的方向性，属于 P7C 增量。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "FullTechGlobal 审查识别内部控制缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie 对 FullTechGlobal 进行审查与审计",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出 ABC 框架与内部控制存在缺陷",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000141"],
+          "derivation": "explicit_text",
+          "source_quote": "conducted a review that identified failures within FullTechGlobal’s ABC framework and internal controls"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000141"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie 进行审查与审计 → 识别出 ABC 框架与内部控制缺陷。KG不足：基础 KG 可将该事实作为案例指标保存，但无法表达‘审查动作产生识别结论’的程序性方向，该有向结构可区分审查步骤与发现结果。选项判断：可确认审查的具体产出为缺陷识别，排除其他无关结果。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Sophie 初始调查发现雇佣中间人",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie 进行初始调查",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现 FullTechGlobal 战略性地雇佣中间人以获取合同",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N000138"],
+          "derivation": "explicit_text",
+          "source_quote": "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000138"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sophie 初始调查 → 发现公司战略性地雇佣中间人。KG不足：基础 KG 可将该事实作为案例说明，但无法表达调查动作与发现之间的程序性方向。选项判断：可确认调查的产出为识别特定行为模式。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

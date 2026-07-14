@@ -1,0 +1,110 @@
+{
+  "section_id": "CH06-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义、事实和背景知识，对BO和UBO的区别及其重要性属于基础KG能够充分表达的范畴，无程序性或判断性有向结构，无需进入P7C增量图。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "示例，用于支持cand_002中高风险阈值的降低，本身不构成独立有向命题，KG可保存该事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "间接持股计算示例，说明UBO判定方法，属于案例说明，不构成独立程序性结构，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "示例，支持cand_005的替代识别，不构成独立有向命题，KG可保存该事实。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000489",
+        "v7u_N000490",
+        "v7u_N000491"
+      ],
+      "proposition": "机构基于风险方法识别客户UBO时，根据客户风险水平适用不同持股阈值：通常适用25%或以上，高风险客户可能适用低至10%或5%的阈值。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "原card_001仅用一个混合标签描述所有阈值，未将风险条件明确为边条件，基础KG无法表达有条件参照不同阈值的有向关系，需补充。",
+      "origin_candidate_ids": [
+        "cand_002"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH06-S10_001",
+      "reason": "原图缺少基于风险条件区分适用不同阈值的表达：E2边未有条件，N3标签混合多阈值。补充两个标准节点并添加带条件的REFERENCES边，以明确高风险条件进入关系。",
+      "origin_candidate_ids": [
+        "cand_002"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "一般风险客户的受益所有权阈值：25%或以上",
+          "evidence_unit_ids": [
+            "v7u_N000489"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "高风险客户的受益所有权阈值：可能低至10%或5%",
+          "evidence_unit_ids": [
+            "v7u_N000491"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N5",
+          "evidence_unit_ids": [
+            "v7u_N000489"
+          ],
+          "derivation": "llm_inference",
+          "condition": "当客户为一般风险时",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N000491"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当客户被认定为高风险时",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

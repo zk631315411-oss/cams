@@ -1,0 +1,74 @@
+{
+  "section_id": "CH05-S04",
+  "section_title": "Financial crime risks in relation to other types of risks > Operational, legal, concentration, and reputational risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000376"],
+      "proposition": "全球组织通常以母国监管机构政策为基础标准，再根据各东道国法律进行调整（调整动作受母国和东道国标准约束）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH05-S04_001",
+      "reason": "基础KG虽能记录一般过程，但无法表达母国政策作为基础标准约束动作，以及东道国法律作为调整依据的有向关系；该结构有助于判断组织如何在不同监管环境中配置合规政策。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S04_001",
+      "section_id": "CH05-S04",
+      "card_nature": "execution",
+      "title": "全球组织基于母国和东道国法规调整合规政策",
+      "flow_nodes": [
+        {
+          "node_id": "proc_adjust",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "全球组织通常以母国监管机构政策为基础标准，并根据各东道国法律调整其合规政策",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_home",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "母国监管机构政策",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_host",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "各东道国法律",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_ref_home",
+          "edge_type": "REFERENCES",
+          "source": "proc_adjust",
+          "target": "std_home",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "makes the policies of its home regulator its base standard"
+        },
+        {
+          "edge_id": "edge_ref_host",
+          "edge_type": "REFERENCES",
+          "source": "proc_adjust",
+          "target": "std_host",
+          "evidence_unit_ids": ["v7u_N000376"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "adjust to each host country’s laws"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000376"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：全球组织调整合规政策时，参照母国监管机构政策作为基础标准，并参照各东道国法律进行调适（通常性）。KG不足：基础KG可记录一般过程，但无法表达标准对动作的有向约束关系。选项判断：有助于判断不同监管环境下合规政策配置的逻辑起点与依据。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,419 @@
+{
+  "section_id": "CH02-S04",
+  "section_title": "Types of financial crime > Case example: FullTechGlobal corruption scandal",
+  "coverage_audit": [
+    {
+      "candidate_id": "prop_001",
+      "unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134"
+      ],
+      "proposition": "Sophie came across negative news concerning FullTechGlobal Services being accused of bribery due to overseas sales practices, which raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_001"
+      ],
+      "reason": "规则“该法适用于任何与英国有关联的公司，母公司需对子公司腐败行为负责”包含明确的条件（有英国关联）导向法律适用和归责结果的有向结构，超出基础KG仅存储规则文本的能力。"
+    },
+    {
+      "candidate_id": "prop_002",
+      "unit_ids": [
+        "v7u_N000136"
+      ],
+      "proposition": "The UK Bribery Act 2010 applies to any company with a UK connection.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_002"
+      ],
+      "reason": "“域外管辖意味着非英国企业的英国母公司也可能因贿赂腐败被起诉”表达了条件（域外经营涉贿）导致主体（母公司）面临法律后果的程序性因果链，超出基础KG的表达。"
+    },
+    {
+      "candidate_id": "prop_003",
+      "unit_ids": [
+        "v7u_N000136"
+      ],
+      "proposition": "The UK Bribery Act 2010 holds parent firms liable for corrupt activities by subsidiaries, regardless of location.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_003"
+      ],
+      "reason": "审查动作（Sophie进行复核）直接导向发现内部控制缺陷的结论，构成完整的“动作-结果”有向链，基础KG无法表达此类具体操作性判断。"
+    },
+    {
+      "candidate_id": "prop_004",
+      "unit_ids": [
+        "v7u_N000137"
+      ],
+      "proposition": "The extraterritorial scope means that the UK parents of non-UK businesses engaging in bribery and corruption can also face prosecution.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_004"
+      ],
+      "reason": "“贿赂被认定为上游犯罪，导致洗钱”表达了识别行为触发特定法律分类并引发后续犯罪链条的判断路径，属于P7C增量结构。"
+    },
+    {
+      "candidate_id": "prop_005",
+      "unit_ids": [
+        "v7u_N000137"
+      ],
+      "proposition": "The extraterritorial scope emphasizes the need for robust compliance measures.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_005"
+      ],
+      "reason": "“鉴于此发现，监管影响深远”体现发现作为条件输入直接导向具体的监管后果，构成有向的判断-结果关系，基础KG无法表达。"
+    },
+    {
+      "candidate_id": "prop_006",
+      "unit_ids": [
+        "v7u_N000138"
+      ],
+      "proposition": "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts.",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH02-S04_006"
+      ],
+      "reason": "“作为AFC经理，她认识到机构需维护合规诚信”明确了主体角色与义务之间的约束关系，包含有向的动作要求，超出基础KG的纯定义表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Negative news raises concerns under UK Bribery Act",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Sophie discovers negative news about FullTechGlobal bribery accusations",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Raising concerns under extraterritorial provisions of UK Bribery Act",
+          "evidence_unit_ids": [
+            "v7u_N000134"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UK Bribery Act 2010 extraterritorial provisions",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000135"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133",
+            "v7u_N000134"
+          ]
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000135"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000135"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "基于负面新闻触发对英国反贿赂法域外条款的关切，形成事件-评估-标准参照的有向链。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "UK Bribery Act applies to companies with UK connection",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Company has a UK connection",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Application of UK Bribery Act to the company",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "condition": "company has a UK connection",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000136"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "法律适用条款的条件-结果结构：公司具备英国关联触发英国反贿赂法的适用。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_003",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "Parent firm liability for subsidiary corrupt activities",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Subsidiary engages in corrupt activities",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Holding parent firm liable for subsidiary's corrupt activities",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "condition": "subsidiary engages in corrupt activities",
+          "evidence_unit_ids": [
+            "v7u_N000136"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000136"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "英国反贿赂法规定子公司腐败活动导致母公司承担法律责任的条件-归责结构。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_004",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Extraterritorial scope leads to potential UK parent prosecution",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Non-UK business engages in bribery and corruption",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Assessing prosecution risk for UK parent under extraterritorial scope",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Extraterritorial scope of UK Bribery Act",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "UK parent company may face prosecution",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "condition": "non-UK business engages in bribery and corruption",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ]
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000137"
+          ]
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n4",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000137",
+        "v7u_N000134"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "域外管辖推理：非英国企业贿赂行为触发评估，依据域外管辖标准得出母公司可能被起诉的结论，可能性由 may_lead_to 限定。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_005",
+      "section_id": "CH02-S04",
+      "card_nature": "control",
+      "title": "Extraterritorial scope emphasizes need for robust compliance measures",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Extraterritorial scope of UK Bribery Act",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "Establishing robust compliance measures",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": [
+            "v7u_N000137"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "域外管辖标准引致对健全合规措施的需求，形成标准参照规划的有向关系。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_006",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "Investigation reveals FullTechGlobal employed intermediaries",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sophie's initial investigation into FullTechGlobal",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "FullTechGlobal strategically employed intermediaries in high-risk jurisdictions to secure contracts",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000138"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "调查动作直接产出发现结论，构成独立的动作-结果链。"
+    }
+  ],
+  "skip_reason": null
+}
