@@ -1,51 +1,68 @@
 # P7C：Section Flow Card 抽取
 
-## 状态
+## 当前定位
 
-P7C当前定位为候选抽取层。
+P7C是section-local候选流程知识抽取层。它从P7B证据包中发现并构建候选card，允许保留一定候选噪声；P7D才负责正式结构校验和逐边证据审核。
 
-P7C负责生成section-local候选card及覆盖审计，允许保留一定候选噪声。Card只写`candidate_status=candidate`；节点`evidence_strength`只说明节点有原文依据。三阶段P7C不声明边的`derivation`，该字段由P7D独立审核并另存。
+三阶段P7C card固定写`candidate_status=candidate`。节点`evidence_strength`只说明节点有原文依据；三阶段边不声明`derivation`，该字段和最终审核状态由P7D独立保存。
 
-正式结构校验和逐边证据审核由P7D完成。生产批处理默认`inline_structure_validation=false`；旧P7C内联校验只作为显式开启的兼容诊断，不是正式审核。
+## 主流程
 
-## 定位
+```text
+S1 候选卡片框架发现
+  -> S2 KG边界裁决
+  -> S3 正式语义构图
+  -> P7D 逐边证据审核
+```
 
-P7C 读取 P7B 的 section 材料包，逐 section 抽取 `p7_card`。
+P7C不读取题目、选项或参考答案，不跨section合并流程。`flow_nodes + flow_edges`是P7C候选图正本；P7D不回写P7C正本。
 
-P7C 是流程图抽取层：把教材 section 中的可执行内容抽成带 unit 证据的局部执行流程图。
+### S1：候选卡片框架发现
 
-## 输入
+S1高召回地发现可能进入P7的局部流程或判断单元，而不是摘录所有教材事实，也不是输出正式节点和边。
 
-Runner加载`../P7B/section_packages/<section_id>/task.json`，但不会把整个task、alias、instructions或旧schema说明发送给LLM。
+一个候选框架围绕一个中心处理、判断、法律适用或归责，尽量合并其触发/情境、输入/标准、条件、结果、分支或后续行动：
 
-首次抽取LLM实际接收：
+```text
+触发 / 情境 / 输入 / 标准 / 条件
+                -> 中心处理 / 判断 / 法律适用 / 归责
+                -> 结果 / 分支 / 后续行动
+```
+
+中心字段必有；原文有入口、依据或出口时应一并保留。原文仅支持“条件或标准 -> 具体处理/判断”时允许开放候选，不得补造出口。纯定义、分类、孤立阈值、普通案例事实和普通机制不是候选框架。
+
+S1模型只接收：
 
 ```text
 section_id / section_title
-完整section_text_with_unit_anchors
-allowed_unit_ids
-compact_base_kg_summary
+完整 section_text_with_unit_anchors
 ```
 
-精简KG摘要只保留CP中英文标题、去重后的covered units及KG role、与去重有关的同section关系类型；不包含内部core_point_id、anchor/key/support三套数组或关系reason。
+`allowed_unit_ids`由Runner从P7B unit集合保留并在返回后校验，不发送给S1模型。S1产物` s1_propositions.json`保留兼容字段`candidate_id, unit_ids, proposition, source_quotes, relation_cues, induction`，并增加候选框架角色、逐unit原文短引和跨unit归纳依据。
 
-Coverage是独立无记忆API调用，接收与首次抽取相同的完整section上下文、精简KG摘要、首次抽取完整`original_json`和`review_target_candidate_ids`。它只返回`coverage_adjudication + promoted_cards`补丁，由Runner确定性合并；不能回显或改写首次正本。
+### S2：KG边界裁决
 
-三阶段模式使用独立无记忆调用：
+S2读取S1候选框架、当前section原文和KG覆盖摘要，只裁决基础KG能否充分表达整张候选框架。S2不构图、不新增节点或边，也不承担P7D审核职责。S2的详细裁决合同将在S1稳定后单独维护。
+
+### S3：正式语义构图
+
+S3只读取S2保留的候选框架和当前section原文，将其构为`flow_nodes + flow_edges`。S3不重新裁决KG边界，也不输出`derivation`或最终审核状态。
+
+## 输入与产物
+
+Runner读取`../P7B/section_packages/<section_id>/task.json`，但不会将完整task、alias、instructions或内部schema说明整体发送给LLM。
+
+三阶段运行目录为`outputs/<run_id>/<section_id>/`：
 
 ```text
-S1 命题发现：完整section + compact KG主题摘要
-S2 KG边界裁决：完整section + KG覆盖摘要 + S1命题
-S3 语义构图：完整section + S1原始命题及S2裁决结果 + 完整构图合同
+s1_propositions.json      S1候选卡片框架
+boundary_decisions.json   S2 KG边界裁决
+construction_audit.json   S3构图或无法构图记录
+cards.raw.json            P7C候选card正本
+run_manifest.json         本section运行状态
 ```
 
-S2不构图，S3不裁决KG边界，也不声明derivation或最终审核状态。
-
-## 输出
-
-批处理按run和section保存`outputs/<run_id>/<section_id>/cards.raw.json`；Coverage同时保存原始响应、补丁和合并后的审计产物。
-
-三阶段另外保存`s1_propositions.json`、`boundary_decisions.json`和`construction_audit.json`。最终`coverage_audit.decision`只能是：
+最终`coverage_audit.decision`为：
 
 ```text
 kg_only          基础KG已能充分表达
@@ -53,11 +70,9 @@ p7c_card         已构建一张或多张候选card
 p7c_ungraphable  属于P7C增量，但S3无法形成方向可靠的候选图
 ```
 
-无可执行流程时输出：
+## 历史兼容模式
 
-```json
-{"section_id":"...","section_title":"...","coverage_audit":[],"cards":[],"skip_reason":"基础KG已能充分表达，或当前section不存在证据支持的增量程序性或判断性有向结构。"}
-```
+单阶段抽取、Coverage补丁和`--two-stage`仅为历史兼容模式。它们的旧Prompt和产物可读取、可归档，但不是当前三阶段主流程的行为基线。
 
 ## p7_card 最小字段
 
