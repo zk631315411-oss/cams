@@ -1359,9 +1359,9 @@ def build_prompt(
 ### 输出要求
 以 JSON 格式输出，不要包含其他内容：
 - 先选择整题的 `decision_framework.type`：
-  - `definition_taxonomy`：定义、类别或"哪些属于"题。必须先引用定义或明确分类规则，提取 `required_conditions`，再把规则逐项应用到选项。
-  - `domain_specificity`：询问某一特定领域、计划或产品的警示信号。必须先建立领域边界，再区分"通用风险/通用渠道"和"该领域特有信号"。
-  - `scenario_match`：其余场景匹配题。必须从题干事实与教材规则之间建立对应关系。
+  - `is_definition`：定义、类别或"哪些属于"题。必须先引用定义或明确分类规则，提取 `required_conditions`，再把规则逐项应用到选项。
+  - `is_domain`：询问某一特定领域、计划或产品的警示信号。必须先建立领域边界，再区分"通用风险/通用渠道"和"该领域特有信号"。
+  - `is_scenario`：其余场景匹配题。必须从题干事实与教材规则之间建立对应关系。
 - 定义/类别题不得用"教材没有列举该选项"直接证明选项错误；只有引用材料明确给出穷尽分类时，未列入才可作为分类依据。
 - 必须按选项原文判断，不得补充题干或选项没有提供的特殊事实、动机、后果或运作机制。
 - 定义应用必须区分"选项明确违反必要条件"和"题目没有提供该条件"。只有前者可以据定义判错并使用 `definition_application`；仅仅没有写出某个条件，不能证明选项错误，应标为 `insufficient`，除非教材给出了明确穷尽分类或题干事实可直接排除。
@@ -1388,7 +1388,7 @@ def build_prompt(
 {{
   "predicted_answer": ["A"],
   "decision_framework": {{
-    "type": "definition_taxonomy|domain_specificity|scenario_match",
+    "type": "is_definition|is_domain|is_scenario",
     "rule_summary": "题目采用的判断规则",
     "cited_unit_ids": ["v7u_N000001"],
     "required_conditions": ["规则成立所需条件"]
@@ -1633,9 +1633,9 @@ def validate_result(
     else:
         framework_type = framework.get("type", "")
         if framework_type not in {
-            "definition_taxonomy",
-            "domain_specificity",
-            "scenario_match",
+            "is_definition",
+            "is_domain",
+            "is_scenario",
         }:
             issues.append(f"非法 decision_framework.type={framework_type}")
         if not str(framework.get("rule_summary", "")).strip():
@@ -1643,8 +1643,8 @@ def validate_result(
         required_conditions = framework.get("required_conditions", [])
         if not isinstance(required_conditions, list):
             issues.append("decision_framework.required_conditions 必须是数组")
-        elif framework_type == "definition_taxonomy" and not required_conditions:
-            issues.append("definition_taxonomy 类型必须给出 required_conditions")
+        elif framework_type == "is_definition" and not required_conditions:
+            issues.append("is_definition 类型必须给出 required_conditions")
         cited_ids = framework.get("cited_unit_ids", [])
         if not isinstance(cited_ids, list):
             issues.append("decision_framework.cited_unit_ids 必须是数组")
@@ -1707,7 +1707,7 @@ def validate_result(
             exhaustive_taxonomy = (
                 decision_basis == "direct_taxonomy"
                 and isinstance(framework, dict)
-                and framework.get("type") == "definition_taxonomy"
+                and framework.get("type") == "is_definition"
                 and re.search(
                     r"穷尽|完整|全部|21\s*类|21\s*categories",
                     str(framework.get("rule_summary", "")),

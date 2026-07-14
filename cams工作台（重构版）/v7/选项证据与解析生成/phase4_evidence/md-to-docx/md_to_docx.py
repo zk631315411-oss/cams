@@ -245,6 +245,7 @@ def main():
         if q['id']:
             add_question_to_doc(doc, q)
 
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output_path)
     print(f'已保存：{output_path}')
 

@@ -1,12 +1,15 @@
 """
-极简测试：规则-based 知识点提取 + xlsx 导出
-CAMS v7 教材 MinerU markdown → 清洗格式 → 按 ## 节提取知识点 → 编号 → xlsx
+极简测试：英文基准知识点提取与中英双语对齐导出。
+CAMS v7 MinerU Markdown + PDF TOC → 英文切分 → 中文片段归集 → 审计型 xlsx。
 """
 from __future__ import annotations
 
 import html
 import json
 import re
+import subprocess
+import unicodedata
+from difflib import SequenceMatcher
 from pathlib import Path
 
 # ── 路径常量 ──────────────────────────────────────────────
@@ -21,6 +24,23 @@ INPUT_ZH = Path(
     "教材原文/v7/mineru提取/中文/v7_zh_mineru_merged.md"
 )
 OUTPUT_XLSX = SCRIPT_DIR / "v7_knowledge_points.xlsx"
+OUTPUT_ALIGNED_XLSX = SCRIPT_DIR / "v7_knowledge_points_aligned.xlsx"
+ALIGNMENT_MANIFEST = SCRIPT_DIR / "bilingual_alignment.json"
+INPUT_EN_PDF = INPUT_EN.parents[2] / "v7_en_split.pdf"
+INPUT_ZH_PDF = INPUT_ZH.parents[2] / "v7_zh_split.pdf"
+
+# The English extraction contains four headings that are not emitted verbatim by
+# pdftotext on the table-of-contents pages. Their Chinese PDF counterparts are
+# still explicit and provide stable anchors.
+TOC_ALIGNMENT_OVERRIDES = {
+    "Terrorism financing": ("资助恐怖主义", 36),
+    "Case example: Mr. Wolfe’s scheme": ("病例示例：Wolfe先生的方案", 38),
+    "AI regulations around the world": ("全球人工智能监管现状", 214),
+    "Case example: Financial crime functions' structure at Global Finance, Corp.": (
+        "案例分析：全球金融公司金融犯罪职能部门架构",
+        253,
+    ),
+}
 
 # ── 工具函数 ──────────────────────────────────────────────
 
@@ -778,40 +798,402 @@ def extract_kps(md_path: Path, lang: str = "en") -> list[dict]:
     return kps
 
 
+# ── 第四阶段：以英文切分为主的双语对齐 ────────────────────
+
+def normalize_alignment_title(text: str) -> str:
+    """Normalize titles for deterministic TOC and heading matching."""
+    text = unicodedata.normalize("NFKC", text).lower()
+    text = text.replace("’", "'")
+    text = text.replace("病例示例", "案例示例")
+    text = text.replace("case study", "case example")
+    text = text.replace("ai-based", "aibased")
+    text = text.replace("cross-jurisdictional", "crossjurisdictional")
+    return re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", text)
+
+
+def pdftotext(pdf_path: Path, first_page: int, last_page: int) -> str:
+    result = subprocess.run(
+        ["pdftotext", "-f", str(first_page), "-l", str(last_page), "-layout", str(pdf_path), "-"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=True,
+    )
+    return result.stdout
+
+
+def extract_pdf_toc_entries(pdf_path: Path, toc_anchor: str) -> list[dict]:
+    """Extract ordered title/page entries from the PDF table of contents."""
+    text = pdftotext(pdf_path, 5, 20)
+    start = text.find(toc_anchor)
+    if start == -1:
+        raise ValueError(f"Could not locate TOC anchor {toc_anchor!r} in {pdf_path}")
+
+    entries: list[dict] = []
+    for match in re.finditer(r"([^\.\f]{1,250}?)\.{3,}\s*(\d+)", text[start:], re.S):
+        title = re.sub(r"\s+", " ", match.group(1)).strip()
+        title = re.sub(r"^(?:Table of Contents|目录)\s+", "", title)
+        if title and len(title) < 180:
+            entries.append({"title": title, "page": int(match.group(2))})
+    return entries
+
+
+def prepare_zh_fragments() -> list[dict]:
+    """Keep every Chinese body fragment, including Key takeaways and false headings.
+
+    The fragments are only source material. They do not define output row counts.
+    """
+    global MODULE_TITLES, CHAPTER_TITLES
+    raw_text = INPUT_ZH.read_text(encoding="utf-8", errors="ignore")
+    MODULE_TITLES, CHAPTER_TITLES = parse_toc(raw_text, "zh")
+    cleaned = clean_markdown_zh(raw_text)
+    fragments: list[dict] = []
+    for sec in split_by_h3(cleaned):
+        if sec["module"].strip() == "Front Matter":
+            continue
+        if sec["title"].strip() == "术语表":
+            break
+        body = clean_body(sec["body"])
+        if not body:
+            continue
+        fragments.append(
+            {
+                "fragment_index": len(fragments) + 1,
+                "module": sec["module"].strip(),
+                "chapter": sec["chapter"].strip(),
+                "title": sec["title"].strip(),
+                "body": body,
+            }
+        )
+    return fragments
+
+
+def locate_english_toc_entries(en_kps: list[dict], toc_pairs: list[dict]) -> list[dict]:
+    """Map each canonical English section to its ordered bilingual TOC entry."""
+    located: list[dict] = []
+    cursor = 0
+    for kp in en_kps:
+        title = kp["section_title"]
+        override = TOC_ALIGNMENT_OVERRIDES.get(title)
+        if override:
+            zh_title, page = override
+            located.append({"toc_index": None, "zh_title": zh_title, "page": page})
+            continue
+
+        needle = normalize_alignment_title(title)
+        toc_index = None
+        for i in range(cursor, len(toc_pairs)):
+            if normalize_alignment_title(toc_pairs[i]["en_title"]) == needle:
+                toc_index = i
+                break
+        if toc_index is None:
+            raise ValueError(f"No ordered English TOC entry for {kp['kp_id']}: {title}")
+
+        cursor = toc_index + 1
+        pair = toc_pairs[toc_index]
+        located.append(
+            {"toc_index": toc_index, "zh_title": pair["zh_title"], "page": pair["page"]}
+        )
+    return located
+
+
+def find_chinese_anchors(
+    en_kps: list[dict], located: list[dict], fragments: list[dict]
+) -> list[dict | None]:
+    """Find ordered Chinese Markdown anchors for the canonical English rows."""
+    anchors: list[dict | None] = []
+    cursor = 0
+    for kp, toc in zip(en_kps, located):
+        needle = normalize_alignment_title(toc["zh_title"])
+        found = None
+        for i in range(cursor, len(fragments)):
+            if normalize_alignment_title(fragments[i]["title"]) == needle:
+                found = i
+                break
+
+        if found is None:
+            candidates = []
+            for i in range(cursor, min(cursor + 100, len(fragments))):
+                score = SequenceMatcher(
+                    None, needle, normalize_alignment_title(fragments[i]["title"])
+                ).ratio()
+                candidates.append((score, i))
+            if candidates:
+                score, candidate = max(candidates)
+                if score >= 0.68:
+                    found = candidate
+
+        if found is None:
+            anchors.append(None)
+            continue
+
+        fragment = fragments[found]
+        anchors.append(
+            {
+                "fragment_offset": found,
+                "match_title": fragment["title"],
+                "match_kind": "exact"
+                if normalize_alignment_title(fragment["title"]) == needle
+                else "fuzzy",
+            }
+        )
+        cursor = found + 1
+    return anchors
+
+
+def infer_direct_chapter(kp: dict) -> str:
+    """Fill the four English rows whose MinerU body lacks an explicit chapter heading."""
+    if kp["chapter"]:
+        return kp["chapter"]
+    if kp["module"] == "Global AFC Frameworks, Governance, and Regulations":
+        return "Global AFC Standards and Guidance"
+    if kp["module"] == "Use of Guidance and AFC Cooperation":
+        return "Use of Guidance and AFC Cooperation"
+    raise ValueError(f"Cannot infer chapter for {kp['kp_id']}")
+
+
+def toc_translation_for_context(
+    english_title: str, toc_pairs: list[dict], before: int | None
+) -> str:
+    needle = normalize_alignment_title(english_title)
+    limit = len(toc_pairs) if before is None else before + 1
+    matches = [
+        pair for pair in toc_pairs[:limit]
+        if normalize_alignment_title(pair["en_title"]) == needle
+    ]
+    if not matches:
+        raise ValueError(f"No Chinese TOC translation for context: {english_title}")
+    return matches[-1]["zh_title"]
+
+
+def clean_pdf_fallback(text: str, title: str) -> str:
+    """Remove repeated PDF furniture while retaining source-language wording."""
+    text = re.sub(r"反洗钱专家认证证书\s*第\s*\d+页", " ", text)
+    text = re.sub(r"7\.0版", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    normalized_title = normalize_alignment_title(title)
+    normalized_text = normalize_alignment_title(text)
+    if normalized_text.startswith(normalized_title):
+        # The title itself is metadata and should not be duplicated in the body.
+        title_pos = text.find(title)
+        if title_pos >= 0:
+            text = text[title_pos + len(title):].strip()
+    return text
+
+
+def pdf_fallback_content(
+    printed_page: int, next_printed_page: int | None, title: str
+) -> tuple[str, str]:
+    """Extract a Chinese PDF page interval for source headings absent from Markdown."""
+    # Printed study-guide page 13 is PDF page 18 in both split PDFs.
+    first_pdf_page = printed_page + 5
+    if next_printed_page and next_printed_page > printed_page:
+        last_pdf_page = next_printed_page + 4
+    else:
+        last_pdf_page = first_pdf_page
+    text = pdftotext(INPUT_ZH_PDF, first_pdf_page, last_pdf_page)
+    return clean_pdf_fallback(text, title), f"PDF pages {first_pdf_page}-{last_pdf_page}"
+
+
+def write_aligned_workbook(rows: list[dict], audit_rows: list[dict], path: Path) -> None:
+    """Write the bilingual primary table and an auditable alignment sheet."""
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "知识点"
+    audit = wb.create_sheet("对齐审计")
+    headers = [
+        "KP_ID",
+        "MODULE_EN", "MODULE_ZH",
+        "CHAPTER_EN", "CHAPTER_ZH",
+        "SECTION_TITLE_EN", "SECTION_TITLE_ZH",
+        "KP_CONTENT_EN", "KP_CONTENT_ZH",
+    ]
+    audit_headers = [
+        "KP_ID", "SECTION_TITLE_EN", "SECTION_TITLE_ZH", "ZH_SOURCE_FRAGMENTS",
+        "ZH_SOURCE_LOCATION", "CONTENT_SOURCE", "ALIGNMENT_STATUS",
+        "MANUAL_REVIEW_REQUIRED", "EN_CHAR_COUNT", "ZH_CHAR_COUNT", "ZH_EN_RATIO",
+    ]
+    fill = PatternFill(start_color="DCE6F1", end_color="DCE6F1", fill_type="solid")
+    header_font = Font(bold=True, size=11)
+    header_align = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    wrap_align = Alignment(vertical="top", wrap_text=True)
+    center_align = Alignment(horizontal="center", vertical="top", wrap_text=True)
+    side = Side(style="thin")
+    border = Border(left=side, right=side, top=side, bottom=side)
+
+    for target, target_headers in ((ws, headers), (audit, audit_headers)):
+        for col, header in enumerate(target_headers, start=1):
+            cell = target.cell(1, col, header)
+            cell.fill = fill
+            cell.font = header_font
+            cell.alignment = header_align
+            cell.border = border
+
+    for row_number, row in enumerate(rows, start=2):
+        values = [row[h] for h in headers]
+        for col, value in enumerate(values, start=1):
+            cell = ws.cell(row_number, col, value)
+            cell.alignment = center_align if col == 1 else wrap_align
+            cell.border = border
+
+    for row_number, row in enumerate(audit_rows, start=2):
+        values = [row[h] for h in audit_headers]
+        for col, value in enumerate(values, start=1):
+            cell = audit.cell(row_number, col, value)
+            cell.alignment = center_align if col in (1, 7, 8) else wrap_align
+            cell.border = border
+
+    for target in (ws, audit):
+        target.freeze_panes = "A2"
+        target.auto_filter.ref = target.dimensions
+    for col, width in {1: 14, 2: 40, 3: 40, 4: 45, 5: 45, 6: 48, 7: 48, 8: 100, 9: 100}.items():
+        ws.column_dimensions[ws.cell(1, col).column_letter].width = width
+    for col, width in {1: 14, 2: 45, 3: 45, 4: 72, 5: 26, 6: 18, 7: 20, 8: 24, 9: 15, 10: 15, 11: 14}.items():
+        audit.column_dimensions[audit.cell(1, col).column_letter].width = width
+    wb.save(path)
+
+
+def build_bilingual_alignment(en_kps: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+    """Build 308 English-anchored bilingual records and their audit manifest."""
+    en_toc = extract_pdf_toc_entries(INPUT_EN_PDF, "Table of Contents")
+    zh_toc = extract_pdf_toc_entries(INPUT_ZH_PDF, "目录")
+    if len(en_toc) != len(zh_toc):
+        raise ValueError(f"TOC count mismatch: EN={len(en_toc)} ZH={len(zh_toc)}")
+    toc_pairs = [
+        {"en_title": en_entry["title"], "zh_title": zh_entry["title"], "page": en_entry["page"]}
+        for en_entry, zh_entry in zip(en_toc, zh_toc)
+        if en_entry["page"] == zh_entry["page"]
+    ]
+    if len(toc_pairs) != len(en_toc):
+        raise ValueError("The bilingual PDF TOC page sequences are not aligned")
+
+    located = locate_english_toc_entries(en_kps, toc_pairs)
+    fragments = prepare_zh_fragments()
+    anchors = find_chinese_anchors(en_kps, located, fragments)
+    next_anchor = [None] * len(anchors)
+    upcoming = None
+    for i in range(len(anchors) - 1, -1, -1):
+        next_anchor[i] = upcoming
+        if anchors[i] is not None:
+            upcoming = anchors[i]["fragment_offset"]
+
+    rows: list[dict] = []
+    audit_rows: list[dict] = []
+    manifest: list[dict] = []
+    assigned_fragments: set[int] = set()
+    for i, (kp, toc, anchor) in enumerate(zip(en_kps, located, anchors)):
+        chapter_en = infer_direct_chapter(kp)
+        before = toc["toc_index"]
+        module_zh = toc_translation_for_context(kp["module"], toc_pairs, before)
+        chapter_zh = toc_translation_for_context(chapter_en, toc_pairs, before)
+        zh_title = toc["zh_title"]
+        next_page = located[i + 1]["page"] if i + 1 < len(located) else None
+
+        if anchor is not None:
+            start = anchor["fragment_offset"]
+            end = next_anchor[i] if next_anchor[i] is not None else len(fragments)
+            source_fragments = fragments[start:end]
+            for fragment in source_fragments:
+                assigned_fragments.add(fragment["fragment_index"])
+            zh_content = "\n\n".join(fragment["body"] for fragment in source_fragments).strip()
+            source_location = ", ".join(
+                f"#{fragment['fragment_index']}:{fragment['title']}" for fragment in source_fragments
+            )
+            content_source = "Markdown fragments"
+            status = "auto_aligned" if anchor["match_kind"] == "exact" else "needs_manual_review"
+            review = "No" if status == "auto_aligned" else "Yes"
+        else:
+            zh_content, source_location = pdf_fallback_content(toc["page"], next_page, zh_title)
+            source_fragments = []
+            content_source = "Chinese PDF fallback"
+            status = "needs_manual_review"
+            review = "Yes"
+
+        if not zh_content:
+            raise ValueError(f"Empty Chinese content for {kp['kp_id']}")
+        row = {
+            "KP_ID": kp["kp_id"],
+            "MODULE_EN": kp["module"],
+            "MODULE_ZH": module_zh,
+            "CHAPTER_EN": chapter_en,
+            "CHAPTER_ZH": chapter_zh,
+            "SECTION_TITLE_EN": kp["section_title"],
+            "SECTION_TITLE_ZH": zh_title,
+            "KP_CONTENT_EN": kp["kp_content"],
+            "KP_CONTENT_ZH": zh_content,
+        }
+        if any(value in (None, "") for value in row.values()):
+            raise ValueError(f"Blank bilingual field for {kp['kp_id']}")
+        rows.append(row)
+        ratio = round(len(zh_content) / len(kp["kp_content"]), 3)
+        if len(source_fragments) > 1 or ratio < 0.10 or ratio > 0.90:
+            status = "needs_manual_review"
+            review = "Yes"
+        audit_rows.append(
+            {
+                "KP_ID": kp["kp_id"],
+                "SECTION_TITLE_EN": kp["section_title"],
+                "SECTION_TITLE_ZH": zh_title,
+                "ZH_SOURCE_FRAGMENTS": "; ".join(fragment["title"] for fragment in source_fragments),
+                "ZH_SOURCE_LOCATION": source_location,
+                "CONTENT_SOURCE": content_source,
+                "ALIGNMENT_STATUS": status,
+                "MANUAL_REVIEW_REQUIRED": review,
+                "EN_CHAR_COUNT": len(kp["kp_content"]),
+                "ZH_CHAR_COUNT": len(zh_content),
+                "ZH_EN_RATIO": ratio,
+            }
+        )
+        manifest.append(
+            {
+                "kp_id": kp["kp_id"],
+                "module_en": kp["module"], "module_zh": module_zh,
+                "chapter_en": chapter_en, "chapter_zh": chapter_zh,
+                "section_title_en": kp["section_title"], "section_title_zh": zh_title,
+                "printed_page": toc["page"],
+                "zh_fragments": [
+                    {"index": fragment["fragment_index"], "title": fragment["title"]}
+                    for fragment in source_fragments
+                ],
+                "content_source": content_source,
+                "source_location": source_location,
+                "alignment_status": status,
+            }
+        )
+
+    if len(rows) != 308 or len({row['KP_ID'] for row in rows}) != len(rows):
+        raise ValueError("Canonical English KP_ID validation failed")
+    unassigned = [fragment["fragment_index"] for fragment in fragments if fragment["fragment_index"] not in assigned_fragments]
+    if unassigned:
+        raise ValueError(f"Unassigned Chinese source fragments: {unassigned[:20]}")
+    return rows, audit_rows, manifest
+
+
 def main() -> None:
     en_kps = extract_kps(INPUT_EN, "en")
-    zh_kps = extract_kps(INPUT_ZH, "zh")
-
     print(f"\n{'=' * 60}")
-    print(f"合并中英文知识点（按位置对齐）")
+    print("按英文切分重建中英双语知识点")
     print(f"{'=' * 60}")
-    print(f"EN: {len(en_kps)}  KPs, ZH: {len(zh_kps)}  KPs")
+    rows, audit_rows, manifest = build_bilingual_alignment(en_kps)
 
-    combined = []
-    for i, en in enumerate(en_kps):
-        if i < len(zh_kps):
-            zh = zh_kps[i]
-            combined.append({
-                **en,
-                "module_zh": zh["module"],
-                "chapter_zh": zh["chapter"],
-                "section_title_zh": zh["section_title"],
-                "kp_content_zh": zh["kp_content"],
-            })
-        else:
-            combined.append({
-                **en,
-                "module_zh": "",
-                "chapter_zh": "",
-                "section_title_zh": "",
-                "kp_content_zh": "",
-            })
+    ALIGNMENT_MANIFEST.write_text(
+        json.dumps(
+            {"version": 1, "english_kp_count": len(rows), "entries": manifest},
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    write_aligned_workbook(rows, audit_rows, OUTPUT_ALIGNED_XLSX)
 
-    matched = sum(1 for c in combined if c["kp_content_zh"])
-    print(f"英文 {len(en_kps)} 条全部带中文，其中 {matched} 条有对应中文内容")
-
-    write_xlsx_combined(combined, OUTPUT_XLSX)
-    print_summary(combined)
+    review_count = sum(row["MANUAL_REVIEW_REQUIRED"] == "Yes" for row in audit_rows)
+    print(f"已生成: {OUTPUT_ALIGNED_XLSX}")
+    print(f"已生成: {ALIGNMENT_MANIFEST}")
+    print(f"主表: {len(rows)} 条英文基准知识点；待人工复核: {review_count} 条")
 
 
 if __name__ == "__main__":

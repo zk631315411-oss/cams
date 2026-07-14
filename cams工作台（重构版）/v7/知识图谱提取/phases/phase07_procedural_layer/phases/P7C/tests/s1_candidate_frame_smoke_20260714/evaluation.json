@@ -1,0 +1,69 @@
+{
+  "verdict": "inconclusive",
+  "summary": "两条 S1 API 响应均可解析并通过 unit、短引和跨 unit 证据组校验；但逐 unit 覆盖复核确认CH02-S04漏掉两个带中心法律判断或调查发现的候选框架，另有候选框架碎片化、角色字段引用不完整和普通案例机制误收，因此尚不足以接受为稳定的 S1 提示词效果。",
+  "primary_results": [
+    {
+      "metric": "S1 contract validation",
+      "result": "2/2 sections passed"
+    },
+    {
+      "metric": "CH06-S10 required themes discovered",
+      "result": "UBO义务、阈值、风险差异、直接/间接持股、无自然人UBO替代识别均出现"
+    }
+  ],
+  "regressions": [],
+  "issues": [
+    {
+      "case_id": "CH06-S10",
+      "classification": "unresolved",
+      "baseline": "S1候选框架应围绕同一中心判断合并其直接相关的输入、阈值与分支",
+      "variant": "阈值分支、风险差异、直接/间接持股被拆为s1c_002至s1c_005",
+      "evidence": [
+        "CH06-S10/s1_propositions.json",
+        "../../P7B/section_packages/CH06-S10/section_text.md"
+      ]
+    },
+    {
+      "case_id": "CH02-S04",
+      "classification": "omission",
+      "baseline": "案例事实（美国子公司、英国母公司和海外贿赂指控）在原文中引发英国《反贿赂法》域外适用关切，应先作为法律适用候选交给S2裁决",
+      "variant": "未输出N000132、N000133、N000134组成的案例特定法律适用候选；s1c_001只保留了通用法律规则N000136和N000137",
+      "evidence": [
+        "CH02-S04/s1_propositions.json",
+        "../../P7B/section_packages/CH02-S04/section_text.md"
+      ]
+    },
+    {
+      "case_id": "CH02-S04",
+      "classification": "omission",
+      "baseline": "Sophie的初步调查揭示高风险司法辖区中间人安排，是案例中的实际调查动作到发现的候选框架，应先交给S2裁决",
+      "variant": "未输出N000138；s1c_002只覆盖后续审查和审计N000141",
+      "evidence": [
+        "CH02-S04/s1_propositions.json",
+        "../../P7B/section_packages/CH02-S04/section_text.md"
+      ]
+    },
+    {
+      "case_id": "CH02-S04",
+      "classification": "contract_violation",
+      "baseline": "候选框架角色不得带入未在unit_ids和evidence_spans中引用的事实",
+      "variant": "s1c_002将负面新闻并入trigger_or_context，但只引用N000141",
+      "evidence": [
+        "CH02-S04/s1_propositions.json",
+        "../../P7B/section_packages/CH02-S04/section_text.md"
+      ]
+    },
+    {
+      "case_id": "CH02-S04",
+      "classification": "false_positive",
+      "baseline": "普通案例机制不应仅因被动描述的identified而成为候选框架",
+      "variant": "s1c_003将贿赂作为上游犯罪导致洗钱的案例机制收为候选",
+      "evidence": [
+        "CH02-S04/s1_propositions.json",
+        "../../P7B/section_packages/CH02-S04/section_text.md"
+      ]
+    }
+  ],
+  "holdout_result": null,
+  "next_action": "先修正S1对案例特定法律适用链和调查动作到发现链的发现规则，再讨论同中心合并规则与角色字段逐项证据约束；未修改前不要把该小样本结论推广为端到端效果。"
+}

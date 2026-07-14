@@ -1,0 +1,52 @@
+{
+  "verdict": "reject",
+  "summary": "S1 Prompt 改造修复了开发集CH02-S04的案例法律适用链与调查发现链，并在CH06-S10覆盖了风险阈值例外和直接/间接持股的UBO判断框架，且开发集均通过合同校验；但最终Prompt在留出集CH07-S03漏掉独立的核销审批链，因此未达到单次S1稳定高召回的通过门槛。",
+  "primary_results": [
+    {
+      "case_id": "CH02-S04",
+      "result": "捕获案件事实到域外法律关切，以及初步调查到中间人发现；合同校验通过。"
+    },
+    {
+      "case_id": "CH06-S10",
+      "result": "捕获风险为本阈值例外，以及直接/间接持股加阈值的UBO正反判断；合同校验通过。"
+    },
+    {
+      "case_id": "CH08-S05",
+      "result": "捕获SPV/PIV强化尽调、UBO识别和风险缓解链；合同校验通过。"
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "CH07-S03",
+      "classification": "omission",
+      "baseline": "退出超出风险容忍度的客户关系且仍有贷款余额时，核销贷款作为重大财务决策通常需要充分理由和批准。",
+      "variant": "最终Prompt只输出N000554的非法资金还贷拒绝链，未输出N000555的核销审批链。",
+      "evidence": [
+        "CH07-S03/s1_propositions.json",
+        "../../P7B/section_packages/CH07-S03/section_text.md"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "CH02-S04",
+      "classification": "improvement",
+      "baseline": "上一轮遗漏案例特定法律适用链与初步调查到发现链。",
+      "variant": "最终Prompt分别输出N000132-N000134和N000138候选。",
+      "evidence": [
+        "../../s1_prompt_recall_v2_quote_and_threshold_fix_20260714/CH02-S04/s1_propositions.json"
+      ]
+    },
+    {
+      "case_id": "CH06-S10",
+      "classification": "improvement",
+      "baseline": "上一轮漏掉风险阈值例外，且将直接/间接持股从阈值判断拆开。",
+      "variant": "最终Prompt分别输出N000490-N000491的阈值例外和N000489/N000493-N000495的合并判断框架。",
+      "evidence": [
+        "../../s1_prompt_recall_v2_quote_and_threshold_fix_20260714/CH06-S10/s1_propositions.json"
+      ]
+    }
+  ],
+  "holdout_result": "rejected: CH07-S03遗漏核销审批链；CH08-S05通过。",
+  "next_action": "不再用该留出样本追加Prompt示例。若继续追求稳定高召回，应讨论独立S1查漏调用，或以新的开发/留出划分开始下一次Prompt实验。"
+}
