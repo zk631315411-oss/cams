@@ -38,7 +38,7 @@ section_id / section_title
 完整 section_text_with_unit_anchors
 ```
 
-`allowed_unit_ids`由Runner从P7B unit集合保留并在返回后校验，不发送给S1模型。S1产物` s1_propositions.json`保留兼容字段`candidate_id, unit_ids, proposition, source_quotes, relation_cues, induction`，并增加候选框架角色、逐unit原文短引和跨unit归纳依据。
+`allowed_unit_ids`由Runner从P7B unit集合保留并在返回后校验，不发送给S1模型。S1产物`s1_propositions.json`保留兼容字段`candidate_id, unit_ids, proposition, source_quotes, relation_cues, induction`，并增加候选框架角色、逐unit原文短引和跨unit归纳依据。
 
 ### S2：KG边界裁决
 
@@ -87,6 +87,7 @@ flow_nodes
 flow_edges
 source_unit_ids
 candidate_status
+review_notes
 ```
 
 `card_nature` 必填，取值：
@@ -112,7 +113,6 @@ inputs
 decision_standard
 outputs
 steps
-review_notes
 metadata
 ```
 
@@ -134,7 +134,7 @@ metadata
 
 ## flow_nodes
 
-允许节点类型（25 种语义节点，与 P7A contract / procedural_schema_v2 一致）：
+允许节点类型（27 种语义节点，与 P7A contract / procedural_schema_v2 一致）：
 
 ```text
 E1_event_signal
@@ -244,17 +244,17 @@ parallel_alternative_no_sequence  并列替代非时序
 使用规则：
 
 ```text
-relation_type 与边类型正交：同一条 PRECEDES 边可以标注 triggers 或 enables
-DECIDES 边通常搭配 classifies_into 或 informs
-FEEDBACK 边通常搭配 adjusts / monitors / revises
-relation_type 不得与边类型语义矛盾（如 PRECEDES + terminates 应改用 X6_termination 节点）
+只可使用上列 12 种枚举值；不确定时省略 relation_type
+branch_condition_routes_path 只能标注带 condition 的 DECIDES 边
+standard_constrains_action 与 standard_transmits_requirement 表示标准对行动或要求的具体作用，不得替代通用时序
+relation_type 不得与边类型语义矛盾；终止结果应使用 X6_termination 节点表达，而不是把终止含义伪装成普通时序
 ```
 
-## 012 压测结论
+## 历史记录：012 压测
 
 第 012 题压测显示：P7C 能把“已实施控制”和“控制被判断有效”拆开，形成可审查的剩余风险判断链。
 
-当前可用口径：
+当时的候选链口径：
 
 ```text
 EWRA 识别高固有风险
@@ -265,7 +265,7 @@ EWRA 识别高固有风险
 -> 若剩余风险不在容忍度内，进入 action plan
 ```
 
-这说明 P7C 已足够进入 card 间连接和场景路径阶段。
+这只是当时针对第012题的探索记录，不构成P7C已可进入card间连接、场景路径或端到端生产阶段的验收结论。
 
 ## 证据
 

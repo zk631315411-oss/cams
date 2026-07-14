@@ -42,6 +42,15 @@ def proposition() -> dict:
         "proposition": "当事件发生时，机构执行动作。",
         "source_quotes": ["当事件发生时"],
         "relation_cues": ["when"],
+        "candidate_frame": {
+            "trigger_or_context": ["事件发生"],
+            "basis_or_condition": [],
+            "focal_handling_or_judgment": "机构执行动作",
+            "outcomes_or_paths": [],
+        },
+        "evidence_spans": [{"unit_id": "u1", "quote": "当事件发生时"}],
+        "induction": None,
+        "cross_unit_basis": None,
     }
 
 

@@ -66,12 +66,39 @@ Do not generalise a branch from isolated examples or nearby facts. In that case 
 
 - Cite only IDs visible in those anchors.
 - Every cited unit must have one `evidence_spans` item with an exact, contiguous short quote from that unit. Do not use ellipses in an exact quote.
-- `source_quotes` is retained for downstream compatibility. Use the same quote strings that appear in `evidence_spans`.
+- `source_quotes` is retained for downstream compatibility. Each item must be the same exact quote string as an item in `evidence_spans`; do not provide a free-floating summary as a quote.
 - The proposition and frame fields may be concise Chinese or English descriptions, but must preserve the source meaning, actor where stated, and modality.
 
 ## Worked Examples
 
-### 1. Open condition-to-handling frame
+### 1. Complete handling-to-result chain
+
+```text
+[v7u_N000801|801] When a transaction is flagged, the institution must review it and file a report when suspicion remains.
+```
+
+```json
+{
+  "candidate_id": "s1c_001",
+  "unit_ids": ["v7u_N000801"],
+  "proposition": "当交易被标记时，机构必须审查；如仍有怀疑，则提交报告。",
+  "source_quotes": ["When a transaction is flagged, the institution must review it and file a report when suspicion remains."],
+  "relation_cues": ["when", "must"],
+  "candidate_frame": {
+    "trigger_or_context": ["交易被标记"],
+    "basis_or_condition": ["如仍有怀疑"],
+    "focal_handling_or_judgment": "机构审查交易",
+    "outcomes_or_paths": ["仍有怀疑时提交报告"]
+  },
+  "evidence_spans": [
+    {"unit_id": "v7u_N000801", "quote": "When a transaction is flagged, the institution must review it and file a report when suspicion remains."}
+  ],
+  "induction": null,
+  "cross_unit_basis": null
+}
+```
+
+### 2. Open condition-to-handling frame
 
 ```text
 [v7u_N000496|496] where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified.
@@ -82,7 +109,7 @@ Do not generalise a branch from isolated examples or nearby facts. In that case 
   "candidate_id": "s1c_001",
   "unit_ids": ["v7u_N000496"],
   "proposition": "当不存在自然人受益所有人时，应识别并核实控制人或名义受益所有人。",
-  "source_quotes": ["where there is no natural beneficial owner"],
+  "source_quotes": ["where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."],
   "relation_cues": ["where", "should"],
   "candidate_frame": {
     "trigger_or_context": ["不存在自然人受益所有人"],
@@ -91,14 +118,14 @@ Do not generalise a branch from isolated examples or nearby facts. In that case 
     "outcomes_or_paths": []
   },
   "evidence_spans": [
-    {"unit_id": "v7u_N000496", "quote": "where there is no natural beneficial owner"}
+    {"unit_id": "v7u_N000496", "quote": "where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."}
   ],
   "induction": null,
   "cross_unit_basis": null
 }
 ```
 
-### 2. Legal applicability frame without a named actor
+### 3. Legal applicability frame without a named actor
 
 ```text
 [v7u_N000136|136] It applies to any company with a UK connection.
@@ -125,7 +152,7 @@ Do not generalise a branch from isolated examples or nearby facts. In that case 
 }
 ```
 
-### 3. Cross-unit judgement branch
+### 4. Cross-unit judgement branch
 
 ```text
 [v7u_N000489|489] ... identified at a threshold of 25% or more.
@@ -162,13 +189,13 @@ This may be one candidate only when the shared threshold and the positive and ne
 }
 ```
 
-### 4. `because` is a clue, not an automatic trigger
+### 5. `because` is a clue, not an automatic trigger
 
 ```text
 because of adverse news, the institution reviews the customer relationship
 ```
 
-This can be a candidate frame if the source supports the review. Preserve `because` in `relation_cues` and the basis field. Do not claim a temporal or causal edge in S1.
+This can be a candidate frame if the source supports the review. Preserve `because` in `relation_cues` and the basis field. Do not claim a temporal or causal edge in S1. For example, use `basis_or_condition: ["because of adverse news"]`, not `trigger_or_context`, unless the source itself states a triggering sequence.
 
 ## Output Contract
 

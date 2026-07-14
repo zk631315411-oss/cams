@@ -692,6 +692,66 @@ def print_summary(kps: list[dict]) -> None:
 
 # ── 主入口 ─────────────────────────────────────────────────
 
+def clean_markdown_zh(md_text: str) -> str:
+    """中文版清洗管线。"""
+    print("=" * 60)
+    print("第一阶段：清洗 Markdown 格式 (ZH)")
+    print("=" * 60)
+
+    md_text = strip_mineru_merge_markers(md_text)
+
+    # 1. 去假 ##
+    md_text, n_false = fix_false_headings(md_text)
+    print(f"  [FIX] 去除假 ## 标题: {n_false} 处")
+
+    # 2. 补缺案例标题
+    n_case = 0
+    zh_missing_cases = [
+        ("美国司法部新闻稿披露，2019年12月", "案例示例：Tamayo 的金钱骡"),
+        ("阿列克谢·科马罗夫通过沃尔科夫工业公司", "案例：科马罗夫战术"),
+        ("丹麦最大金融机构", "案例示例：爱沙尼亚银行分行"),
+        ("类型学报告，详细说明了", "案例示例：利用类型学报告加强 AML 管控"),
+    ]
+    for signal, case_title in zh_missing_cases:
+        if f"## {case_title}" in md_text or f"### {case_title}" in md_text:
+            continue
+        idx = md_text.find(signal)
+        if idx == -1:
+            print(f"  [WARN] 未找到案例信号: {case_title}")
+            continue
+        line_start = md_text.rfind("\n", 0, idx) + 1
+        md_text = md_text[:line_start] + f"## {case_title}\n" + md_text[line_start:]
+        n_case += 1
+    print(f"  [FIX] 补缺案例标题: {n_case} 处")
+
+    # 3. 补缺章标题
+    n_ch = 0
+    zh_missing_chapters = [
+        ("金融行动特别工作组（第", "## 全球 AFC 标准与指南"),
+        ("AFC 计划的组成部分（第", "## AFC 计划的组成部分"),
+        ("风险评估的类型（第", "## 风险评估"),
+        ("数据收集与准备（第", "## 数据收集与准备"),
+    ]
+    for signal, heading in zh_missing_chapters:
+        if heading in md_text:
+            continue
+        idx = md_text.find(signal)
+        if idx == -1:
+            print(f"  [WARN] 未找到章信号: {heading}")
+            continue
+        insert_pos = idx + 1
+        md_text = md_text[:insert_pos] + heading + "\n" + md_text[insert_pos:]
+        n_ch += 1
+    print(f"  [FIX] 补缺章标题: {n_ch} 处")
+
+    # 4. 修正层级
+    md_text, n_level = fix_heading_levels(md_text)
+    print(f"  [FIX] 修正标题层级: {n_level} 处")
+    print(f"         #  = 模块({len(MODULE_TITLES)})  |  ## = 知识点({len(CHAPTER_TITLES)})  |  ### = 节")
+
+    return md_text
+
+
 def extract_kps(md_path: Path, lang: str = "en") -> list[dict]:
     """完整的知识点提取管线。"""
     global MODULE_TITLES, CHAPTER_TITLES
@@ -709,9 +769,7 @@ def extract_kps(md_path: Path, lang: str = "en") -> list[dict]:
     if lang == "en":
         cleaned = clean_markdown(raw_text)
     else:
-        cleaned = strip_mineru_merge_markers(raw_text)
-        cleaned, n_level = fix_heading_levels(cleaned)
-        print(f"  [FIX] 修正标题层级: {n_level} 处")
+        cleaned = clean_markdown_zh(raw_text)
 
     sections = split_by_h3(cleaned)
     filtered = filter_sections(sections)

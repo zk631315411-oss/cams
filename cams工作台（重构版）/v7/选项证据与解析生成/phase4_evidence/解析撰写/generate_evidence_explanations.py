@@ -1187,19 +1187,23 @@ def normalize_explanation(
         }
         quote_issues: list[str] = []
     else:
-        exam_point, exam_issues = _normalize_grounded_block(
-            parsed.get("exam_point"),
-            provided_evidence_ids,
-            unit_map,
-            "考点",
+        raw_ep = (
+            parsed.get("exam_point") if isinstance(parsed.get("exam_point"), dict) else {}
         )
-        if exam_issues:
+        raw_ep_text = str(raw_ep.get("text", "") or "").strip()
+        if len(raw_ep_text) >= 6:
+            exam_point = {
+                "text": _clean_prose(raw_ep_text),
+                "cited_unit_ids": _valid_citations(
+                    raw_ep.get("cited_unit_ids", []), provided_evidence_ids
+                )[:3],
+            }
+        else:
             fallback_exam = _fallback_exam_point(option_explanations)
             if fallback_exam and fallback_exam.get("cited_unit_ids"):
-                exam_point.update(fallback_exam)
-                normalization_warnings.extend(exam_issues)
+                exam_point = fallback_exam
             else:
-                grounding_issues.extend(exam_issues)
+                exam_point = {"text": INSUFFICIENT_TEXT, "cited_unit_ids": []}
         core_analysis, core_issues = _normalize_grounded_block(
             raw_core,
             provided_evidence_ids,

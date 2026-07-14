@@ -994,6 +994,7 @@ def validate_s1_discovery_payload(
             errors.append(f"{owner}.evidence_spans must be a non-empty list")
             evidence_spans = []
         cited_span_ids: set[str] = set()
+        normalized_span_quotes: set[str] = set()
         for span_index, span in enumerate(evidence_spans, 1):
             span_owner = f"{owner}.evidence_spans[{span_index}]"
             if not isinstance(span, dict):
@@ -1010,10 +1011,17 @@ def validate_s1_discovery_payload(
             elif unit_evidence_text and span_unit_id in unit_evidence_text:
                 if normalized(quote) not in normalized(unit_evidence_text[span_unit_id]):
                     errors.append(f"{span_owner}.quote is not found in cited unit text")
+            if isinstance(quote, str) and quote.strip():
+                normalized_span_quotes.add(normalized(quote))
             if isinstance(span_unit_id, str):
                 cited_span_ids.add(span_unit_id)
         if isinstance(unit_ids, list) and set(unit_ids) - cited_span_ids:
             errors.append(f"{owner}.evidence_spans must cover every unit_id")
+        source_quotes = proposition.get("source_quotes")
+        if isinstance(source_quotes, list):
+            for quote_index, quote in enumerate(source_quotes, 1):
+                if isinstance(quote, str) and quote.strip() and normalized(quote) not in normalized_span_quotes:
+                    errors.append(f"{owner}.source_quotes[{quote_index}] must match an evidence_spans quote")
 
         if proposition.get("induction") not in {None, "cross_unit"}:
             errors.append(f"{owner} invalid induction {proposition.get('induction')}")
