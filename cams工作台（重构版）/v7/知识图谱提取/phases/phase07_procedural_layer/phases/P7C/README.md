@@ -4,12 +4,13 @@
 
 P7C是section-local候选流程知识抽取层。它从P7B证据包中发现并构建候选card，允许保留一定候选噪声；P7D才负责正式结构校验和逐边证据审核。
 
-三阶段P7C card固定写`candidate_status=candidate`。节点`evidence_strength`只说明节点有原文依据；三阶段边不声明`derivation`，该字段和最终审核状态由P7D独立保存。
+当前主流程在构图前将候选发现拆成S1.1主发现与S1.2独立补漏。P7C card固定写`candidate_status=candidate`。节点`evidence_strength`只说明节点有原文依据；正式构图边不声明`derivation`，该字段和最终审核状态由P7D独立保存。
 
 ## 主流程
 
 ```text
-S1 候选卡片框架发现
+S1.1 候选卡片框架主发现
+  -> S1.2 独立补漏并合并候选
   -> S2 KG边界裁决
   -> S3 正式语义构图
   -> P7D 逐边证据审核
@@ -17,9 +18,9 @@ S1 候选卡片框架发现
 
 P7C不读取题目、选项或参考答案，不跨section合并流程。`flow_nodes + flow_edges`是P7C候选图正本；P7D不回写P7C正本。
 
-### S1：候选卡片框架发现
+### S1.1：候选卡片框架主发现
 
-S1高召回地发现可能进入P7的局部流程或判断单元，而不是摘录所有教材事实，也不是输出正式节点和边。
+S1.1高召回地发现可能进入P7的局部流程或判断单元，而不是摘录所有教材事实，也不是输出正式节点和边。它必须独立扫描完整section，不能依赖S1.2替代主发现。
 
 一个候选框架围绕一个中心处理、判断、法律适用或归责，尽量合并其触发/情境、输入/标准、条件、结果、分支或后续行动：
 
@@ -31,22 +32,48 @@ S1高召回地发现可能进入P7的局部流程或判断单元，而不是摘�
 
 中心字段必有；原文有入口、依据或出口时应一并保留。原文仅支持“条件或标准 -> 具体处理/判断”时允许开放候选，不得补造出口。纯定义、分类、孤立阈值、普通案例事实和普通机制不是候选框架。
 
-S1先在内部逐段扫描完整section，再按中心处理或判断组织候选；已发现一个候选不能成为跳过后续段落的理由。案例中“事实/主体关系/指控 -> 法律适用、责任或监管关切”应作为案例特定法律适用候选，不能被通用法律规则候选替代；具名主体的调查、审查、审计、筛查、分析或跟进产生发现、结论或升级时，应作为“动作/判断 -> 发现/结论”候选。单独的犯罪手法或普通案例事实仍不成候选。
+S1.1先在内部逐段扫描完整section，再按中心处理或判断组织候选；已发现一个候选不能成为跳过后续段落的理由。案例中“事实/主体关系/指控 -> 法律适用、责任或监管关切”应作为案例特定法律适用候选，不能被通用法律规则候选替代；具名主体的调查、审查、审计、筛查、分析或跟进产生发现、结论或升级时，应作为“动作/判断 -> 发现/结论”候选。单独的犯罪手法或普通案例事实仍不成候选。
 
 同一判断的输入、计算、标准和正反结果应合并，例如直接与间接持股、适用阈值与UBO认定；风险为本设定阈值和使用既有阈值认定具体UBO属于不同中心，可分别成候选。风险为本规则下针对高风险客户的10%或5%等阈值例外，是“设定或调整适用阈值”的候选，不得降为孤立阈值事实。
 
-S1模型只接收：
+S1.1模型只接收：
 
 ```text
 section_id / section_title
 完整 section_text_with_unit_anchors
 ```
 
-`allowed_unit_ids`由Runner从P7B unit集合保留并在返回后校验，不发送给S1模型。S1产物`s1_propositions.json`保留兼容字段`candidate_id, unit_ids, proposition, source_quotes, relation_cues, induction`，并增加候选框架角色、逐unit原文短引和跨unit归纳依据。
+`allowed_unit_ids`由Runner从P7B unit集合保留并在返回后校验，不发送给S1.1模型。S1.1原始产物`s11_propositions.json`保留字段`candidate_id, unit_ids, proposition, source_quotes, relation_cues, induction`，并包含候选框架角色、逐unit原文短引和跨unit归纳依据。
+
+### S1.2：独立补漏
+
+S1.2接收完整带锚点原文和S1.1完整候选列表。它重新扫描section，只增加S1.1未承接的候选，不做KG裁决、不删除或改写S1.1候选，也不构图。S1.2使用与S1.1相同的候选定义和证据合同，并额外说明与哪些S1.1候选比较以及遗漏原因。
+
+Runner在模型返回后校验section、候选ID、unit范围、原文短引、候选框架和`gap_evidence`。S1.2失败时当前section停止，不降级为S1.1-only。成功后，`s1_propositions.json`保存S1.1与S1.2合并后的候选正本，S2只读取该合并集合。
 
 ### S2：KG边界裁决
 
-S2读取S1候选框架、当前section原文和KG覆盖摘要，只裁决基础KG能否充分表达整张候选框架。S2不构图、不新增节点或边，也不承担P7D审核职责。S2的详细裁决合同将在S1稳定后单独维护。
+S2读取合并后的S1候选框架、当前section原文和section-local KG表示，只裁决基础KG能否充分表达整张候选框架。S2必须为每个S1候选输出且只输出一条`p7c_candidate`或`kg_only`决定；它不构图、不新增候选、节点或边，也不承担P7D审核职责。
+
+当前保留两套可对照的KG输入：
+
+```text
+summary_v1     旧版KG覆盖摘要，仍是生产默认
+projection_v1  从P7B task.json逐字段投影的section-local KG事实
+```
+
+`projection_v1`只包含以下字段，并保持P7B原始顺序和值：
+
+```text
+units: unit_id, type
+core_points: core_point_id, title_zh, title_en
+core_point_unit_edges: source_id, target_id, relation_type
+same_section_core_point_edges: source_id, target_id, relation_type
+```
+
+投影不携带`reason`、`source_phase`、证据摘要、alias、任务说明或schema说明。其能力合同为`base_kg_atomic_cp_v1`：KG保存unit、unit类型、CP及section内成员/CP关系，但不因此自动拥有unit内部或unit之间的条件、动作、判断和结果有向图。
+
+`projection_v1`目前只作为隔离的S2 v2 A/B变体。A/B必须读取冻结的合并产物`s1_propositions.json`，保存Prompt、原始响应、解析响应、调用元数据和逐候选对照；缺候选、未知ID、调用/解析/合同失败均使实验无效。当前样本均为开发集，尚无足够真实留出集，因此不得据此切换`summary_v1`默认值；任何晋级还需留出验证和人工批准。
 
 ### S3：正式语义构图
 
@@ -56,10 +83,12 @@ S3只读取S2保留的候选框架和当前section原文，将其构为`flow_nod
 
 Runner读取`../P7B/section_packages/<section_id>/task.json`，但不会将完整task、alias、instructions或内部schema说明整体发送给LLM。
 
-三阶段运行目录为`outputs/<run_id>/<section_id>/`：
+四阶段运行目录为`outputs/<run_id>/<section_id>/`：
 
 ```text
-s1_propositions.json      S1候选卡片框架
+s11_propositions.json     S1.1主发现原始候选
+s12_gap_propositions.json S1.2补漏候选
+s1_propositions.json      S1.1与S1.2合并候选正本
 boundary_decisions.json   S2 KG边界裁决
 construction_audit.json   S3构图或无法构图记录
 cards.raw.json            P7C候选card正本
@@ -76,7 +105,7 @@ p7c_ungraphable  属于P7C增量，但S3无法形成方向可靠的候选图
 
 ## 历史兼容模式
 
-单阶段抽取、Coverage补丁和`--two-stage`仅为历史兼容模式。它们的旧Prompt和产物可读取、可归档，但不是当前三阶段主流程的行为基线。
+单阶段抽取、Coverage补丁、`--two-stage`和不含S1.2的`--three-stage`仅为历史兼容模式。它们的旧Prompt和产物可读取、可归档，但不是当前四阶段主流程的行为基线。
 
 ## p7_card 最小字段
 
@@ -281,6 +310,53 @@ llm_inference
 ```
 
 每个 node / edge 必须绑定当前 section 的 `unit_id`。P5 alias 只能做术语规范化，不能作为证据。
+
+## 实验模式：Merged Process IR v1
+
+`--pipeline-mode merged-process-ir` 启用新的 S2/S3 合并实验流水线，将 KG 边界裁决（旧 S2）和语义构图（旧 S3）替换为：
+
+```text
+S1.1 主发现
+  -> S1.2 独立补漏
+  -> S2 LLM：联合识别局部流程边界、元素和关系，输出 Process IR
+  -> S3 脚本：确定性编译 Process IR 为 flow_nodes + flow_edges
+  -> P7D LLM：逐边证据审核
+```
+
+### 与旧流程的关键差异
+
+1. **S2 不读 KG**。输入只有 section 原文 + S1 候选，不做 KG 对比。问题从"KG 有没有"变为"原文能否构成局部流程"。
+2. **允许 KG-P7 重叠**。阈值、标准、事实即使已在 KG 中，只要是流程的构成要素，就可以进入 Process IR。
+3. **S3 确定性编译**。构图阶段不再经过 LLM，编译器负责机械映射、ID 生成、方向确定和结构校验。
+4. **一次调用替代两次**。S2 + S3 → S2 Process IR（一次 LLM）+ S3 编译器（纯代码）。
+
+### 使用方式
+
+```bash
+python scripts/run_p7c_batch_ds.py \
+  --pipeline-mode merged-process-ir \
+  --process-ir-prompt phases/P7C/prompts/process_ir_v1.md \
+  --sections CH06-S10,CH07-S03 \
+  --run-id p7c_merged_ir_v1_test
+```
+
+### 产物
+
+```text
+s11_propositions.json
+s12_gap_propositions.json
+s1_propositions.json
+s2_process_ir_prompt.md
+s2_process_ir_raw_response.txt
+process_ir.json
+compile_audit.json
+cards.raw.json
+run_manifest.json
+```
+
+### 旧 S2/S3 路径
+
+旧 `--four-stage` / `--three-stage` / `--two-stage` 路径继续保留。merged 模式仅在 `--pipeline-mode merged-process-ir` 启用时生效，不删除或覆盖旧 Prompt 和旧产物。
 
 ## P7C 不做
 

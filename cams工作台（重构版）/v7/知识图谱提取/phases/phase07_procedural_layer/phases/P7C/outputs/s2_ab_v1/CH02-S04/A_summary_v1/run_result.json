@@ -1,0 +1,67 @@
+{
+  "section_id": "CH02-S04",
+  "kg_input_version": "summary_v1",
+  "status": "ok",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "ok",
+      "call_meta": {
+        "model": "deepseek-v4-pro",
+        "base_url": "https://api.deepseek.com/v1",
+        "endpoint": "https://api.deepseek.com/v1/chat/completions",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "thinking_effort": "none",
+        "request_extra": {},
+        "http_client": "requests",
+        "elapsed_seconds": 67.495,
+        "usage": {
+          "prompt_tokens": 5092,
+          "completion_tokens": 3142,
+          "total_tokens": 8234,
+          "prompt_tokens_details": {
+            "cached_tokens": 4992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 2687
+          },
+          "prompt_cache_hit_tokens": 4992,
+          "prompt_cache_miss_tokens": 100
+        }
+      },
+      "validation_errors": []
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "candidate_id": "CH02-S04-c1",
+      "decision": "kg_only",
+      "reason": "命题陈述了Sophie发现负面新闻并引发法律关切，属于普通事实因果和概念关联，基础KG已能表达发现动作和风险关注，无超出一般关系的有向结构。"
+    },
+    {
+      "candidate_id": "CH02-S04-c2",
+      "decision": "kg_only",
+      "reason": "命题为法律规则的一般性说明，阐述域外管辖和母公司责任，属于可被基础KG整体保存和表达的规则知识，内部未涉及具体主体的程序性判断或动作。"
+    },
+    {
+      "candidate_id": "CH02-S04-c3",
+      "decision": "kg_only",
+      "reason": "命题仅罗列调查发现的具体事实（雇佣中间人、掩盖资金、提供诱导），均为孤立案例事实，基础KG可直接表达，无程序性或判断性结构。"
+    },
+    {
+      "candidate_id": "CH02-S04-c4",
+      "decision": "p7c_candidate",
+      "reason": "命题包含Sophie的跟进调查与审查动作，并产生识别内控缺陷的独立结论，动作与结论构成语义完整的程序性发现链，基础KG无法表达该有向过程，仅能保存缺陷事实本身。"
+    },
+    {
+      "candidate_id": "CH02-S04-c5",
+      "decision": "kg_only",
+      "reason": "命题描述贿赂作为上游犯罪导致洗钱的犯罪机制，属于普通因果解释，且‘认定’为被动陈述，未体现具体主体的判断或应对，基础KG足以承载。"
+    },
+    {
+      "candidate_id": "CH02-S04-c6",
+      "decision": "kg_only",
+      "reason": "命题为基于调查发现的法律后果推断（面临处罚、审查等），属于一般知识推理，无特定主体的程序性应对或后续行动，基础KG可表达。"
+    }
+  ]
+}

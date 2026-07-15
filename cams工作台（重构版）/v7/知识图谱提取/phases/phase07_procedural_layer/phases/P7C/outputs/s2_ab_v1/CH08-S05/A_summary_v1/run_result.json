@@ -1,0 +1,42 @@
+{
+  "section_id": "CH08-S05",
+  "kg_input_version": "summary_v1",
+  "status": "ok",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "ok",
+      "call_meta": {
+        "model": "deepseek-v4-pro",
+        "base_url": "https://api.deepseek.com/v1",
+        "endpoint": "https://api.deepseek.com/v1/chat/completions",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "thinking_effort": "none",
+        "request_extra": {},
+        "http_client": "requests",
+        "elapsed_seconds": 11.651,
+        "usage": {
+          "prompt_tokens": 3933,
+          "completion_tokens": 566,
+          "total_tokens": 4499,
+          "prompt_tokens_details": {
+            "cached_tokens": 3840
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 438
+          },
+          "prompt_cache_hit_tokens": 3840,
+          "prompt_cache_miss_tokens": 93
+        }
+      },
+      "validation_errors": []
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_candidate",
+      "reason": "基础KG能够将整条规则作为知识保存，但不能表达规则内部的主体（金融机构）、具体动作（进行EDD、识别UBO、了解目的）和方向（目的为减轻风险）之间的有向结构。该命题明确了金融机构必须执行的步骤和目的，属于程序性有向结构，超出基础KG的充分表达能力。"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -28,9 +29,12 @@ DEFAULT_S1_PROMPT_PATH = P7C_DIR / "prompts" / "proposition_discovery_v1.md"
 DEFAULT_S2_PROMPT_PATH = P7C_DIR / "prompts" / "kg_boundary_and_graph_v1.md"
 DEFAULT_S2_NEW_PROMPT_PATH = P7C_DIR / "prompts" / "kg_boundary_adjudication_v1.md"
 DEFAULT_S3_PROMPT_PATH = P7C_DIR / "prompts" / "semantic_graph_construction_v1.md"
+DEFAULT_S12_PROMPT_PATH = P7C_DIR / "prompts" / "proposition_gap_fill_v1.md"
 DEFAULT_COVERAGE_ADJUDICATION_PROMPT_PATH = P7C_DIR / "prompts" / "coverage_adjudication_v1.md"
+DEFAULT_PROCESS_IR_PROMPT_PATH = P7C_DIR / "prompts" / "process_ir_v1.md"
 DEFAULT_OUTPUT_DIR = P7C_DIR / "outputs"
 VALIDATOR_PATH = SCRIPT_DIR / "validate_process_cards.py"
+PROCESS_IR_COMPILER_PATH = SCRIPT_DIR / "process_ir_compiler_v1.py"
 
 API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
@@ -283,33 +287,69 @@ section_text_with_unit_anchors:
     return replace_current_section(prompt_template, section_block)
 
 
+def build_kg_projection(task: dict[str, Any]) -> dict[str, Any]:
+    """KG projection for S2 v2: section-local KG fields from P7B task.json, no processing."""
+    def project_rows(rows: object, fields: tuple[str, ...]) -> list[dict[str, Any]]:
+        if not isinstance(rows, list):
+            return []
+        return [
+            {field: row.get(field) for field in fields}
+            for row in rows
+            if isinstance(row, dict)
+        ]
+
+    return {
+        "kg_capability_profile": "base_kg_atomic_cp_v1",
+        "units": project_rows(task.get("units"), ("unit_id", "type")),
+        "core_points": project_rows(
+            task.get("core_points"),
+            ("core_point_id", "title_zh", "title_en"),
+        ),
+        "core_point_unit_edges": project_rows(
+            task.get("core_point_unit_edges"),
+            ("source_id", "target_id", "relation_type"),
+        ),
+        "same_section_core_point_edges": project_rows(
+            task.get("same_section_core_point_edges"),
+            ("source_id", "target_id", "relation_type"),
+        ),
+    }
+
+
 def build_s2_prompt(
     prompt_template: str,
     task: dict[str, Any],
     propositions: list[dict[str, Any]],
+    *,
+    kg_input_version: str = "summary_v1",
 ) -> str:
-    """S2: KG boundary + graph construction — full KG summary + S1 propositions."""
+    """S2: KG boundary — kg_input_version='summary_v1'|'projection_v1'."""
     allowed_unit_ids = collect_allowed_unit_ids(task)
-    base_kg = build_base_kg_section_summary(task)
+    if kg_input_version not in {"summary_v1", "projection_v1"}:
+        raise ValueError(f"Unsupported S2 KG input version: {kg_input_version}")
 
-    # Step 1: replace S1 propositions placeholder
-    prompt_with_props = prompt_template.replace(
-        "<S1_PROPOSITIONS_JSON>",
-        json.dumps(propositions, ensure_ascii=False, indent=2),
-    )
+    if kg_input_version == "projection_v1":
+        kg_data = build_kg_projection(task)
+        kg_block = f"""kg_projection:
 
-    # Step 2: build and insert section block
+```json
+{json.dumps(kg_data, ensure_ascii=False, indent=2)}
+```"""
+    else:
+        kg_data = build_base_kg_section_summary(task)
+        kg_block = f"""base_kg_section_summary:
+
+```json
+{json.dumps(kg_data, ensure_ascii=False, indent=2)}
+```"""
+
     section_block = f"""## 当前section
 
 section_id: `{task.get('section_id')}`
 
 section_title: `{task.get('section_title')}`
 
-base_kg_section_summary:
-
-```json
-{json.dumps(base_kg, ensure_ascii=False, indent=2)}
-```
+{kg_block}
 
 section_text_with_unit_anchors:
 
@@ -322,8 +362,48 @@ allowed_unit_ids:
 ```json
 {json.dumps(allowed_unit_ids, ensure_ascii=False, indent=2)}
 ```
+
+## S1 发现的命题
+
+```json
+{json.dumps(propositions, ensure_ascii=False, indent=2)}
+```
 """
-    return replace_current_section(prompt_with_props, section_block)
+    return replace_current_section(prompt_template, section_block)
+
+
+def build_s12_prompt(
+    prompt_template: str,
+    task: dict[str, Any],
+    s11_propositions: list[dict[str, Any]],
+) -> str:
+    """S1.2: gap fill — section text + S1.1 propositions, no KG summary, no allowed_unit_ids."""
+    section_block = f"""## 当前section
+
+section_id: `{task.get('section_id')}`
+
+section_title: `{task.get('section_title')}`
+
+section_text_with_unit_anchors:
+
+```text
+{task.get('section_text_with_unit_anchors', '')}
+```
+
+## S1.1 候选列表
+
+```json
+{json.dumps(s11_propositions, ensure_ascii=False, indent=2)}
+```
+"""
+    prompt_with_props = prompt_template.replace(
+        "S11_PROPOSITIONS_JSON",
+        json.dumps(s11_propositions, ensure_ascii=False, indent=2),
+    )
+    for marker in ("## 当前section", "## Current Section"):
+        if marker in prompt_with_props:
+            return prompt_with_props.split(marker, 1)[0].rstrip() + "\n\n" + section_block
+    return prompt_with_props.rstrip() + "\n\n" + section_block
 
 
 def build_s3_prompt(
@@ -419,6 +499,33 @@ review_target_candidate_ids:
         if marker in prompt_template:
             return prompt_template.split(marker, 1)[0].rstrip() + "\n\n" + section_block
     return prompt_template.rstrip() + "\n\n" + section_block
+
+
+def build_process_ir_prompt(
+    prompt_template: str,
+    task: dict[str, Any],
+    s1_propositions: list[dict[str, Any]],
+) -> str:
+    """S2 Process IR: section text + S1 merged candidates only. No KG, no allowed_unit_ids."""
+    section_block = f"""## 当前section
+
+section_id: `{task.get('section_id')}`
+
+section_title: `{task.get('section_title')}`
+
+section_text_with_unit_anchors:
+
+```text
+{task.get('section_text_with_unit_anchors', '')}
+```
+
+## S1 合并候选列表
+
+```json
+{json.dumps(s1_propositions, ensure_ascii=False, indent=2)}
+```
+"""
+    return replace_current_section(prompt_template, section_block)
 
 
 def kg_only_candidate_ids(payload: dict[str, Any]) -> list[str]:
@@ -1045,6 +1152,86 @@ def validate_s1_discovery_payload(
     return errors
 
 
+def validate_s12_gap_payload(
+    payload: dict[str, Any],
+    section_id: str,
+    allowed_unit_ids: set[str],
+    unit_evidence_text: dict[str, str],
+    s11_propositions: list[dict[str, Any]],
+) -> list[str]:
+    """Validate S1.2 gaps against the S1 evidence contract and merge boundary."""
+    errors: list[str] = []
+    if payload.get("section_id") != section_id:
+        errors.append("S1.2 section_id mismatch")
+
+    gap_propositions = payload.get("gap_propositions")
+    if not isinstance(gap_propositions, list):
+        return errors + ["S1.2 gap_propositions must be a list"]
+
+    errors.extend(
+        error.replace("S1 propositions", "S1.2 gap_propositions")
+        for error in validate_s1_discovery_payload(
+            {"propositions": gap_propositions},
+            allowed_unit_ids,
+            unit_evidence_text,
+        )
+    )
+
+    existing_ids = {
+        str(row.get("candidate_id") or "")
+        for row in s11_propositions
+        if isinstance(row, dict) and row.get("candidate_id")
+    }
+    existing_propositions = {
+        re.sub(r"\s+", " ", str(row.get("proposition") or "")).strip().casefold()
+        for row in s11_propositions
+        if isinstance(row, dict) and row.get("proposition")
+    }
+
+    for index, proposition in enumerate(gap_propositions, 1):
+        owner = f"S1.2 gap_propositions[{index}]"
+        if not isinstance(proposition, dict):
+            continue
+        candidate_id = str(proposition.get("candidate_id") or "")
+        if candidate_id and not candidate_id.startswith("s1c_gap_"):
+            errors.append(f"{owner}.candidate_id must start with s1c_gap_")
+        if candidate_id in existing_ids:
+            errors.append(f"{owner}.candidate_id collides with an S1.1 candidate")
+
+        normalized_proposition = re.sub(
+            r"\s+", " ", str(proposition.get("proposition") or "")
+        ).strip().casefold()
+        if normalized_proposition and normalized_proposition in existing_propositions:
+            errors.append(f"{owner} duplicates an S1.1 proposition")
+
+        gap_evidence = proposition.get("gap_evidence")
+        if not isinstance(gap_evidence, dict):
+            errors.append(f"{owner}.gap_evidence must be an object")
+            continue
+        compared_ids = gap_evidence.get("compared_with_candidate_ids")
+        if not isinstance(compared_ids, list):
+            errors.append(f"{owner}.gap_evidence.compared_with_candidate_ids must be a list")
+        else:
+            if any(not isinstance(item, str) or not item for item in compared_ids):
+                errors.append(
+                    f"{owner}.gap_evidence.compared_with_candidate_ids must contain only non-empty strings"
+                )
+            if len(compared_ids) != len(set(compared_ids)):
+                errors.append(f"{owner}.gap_evidence.compared_with_candidate_ids contains duplicates")
+            unknown_ids = set(compared_ids) - existing_ids
+            if unknown_ids:
+                errors.append(
+                    f"{owner}.gap_evidence references unknown S1.1 candidates: {sorted(unknown_ids)}"
+                )
+            if existing_ids and not compared_ids:
+                errors.append(
+                    f"{owner}.gap_evidence.compared_with_candidate_ids must identify at least one S1.1 candidate"
+                )
+        if not str(gap_evidence.get("gap_reason") or "").strip():
+            errors.append(f"{owner}.gap_evidence.gap_reason must be a non-empty string")
+    return errors
+
+
 def validate_s2_boundary_payload(
     payload: dict[str, Any],
     propositions: list[dict[str, Any]],
@@ -1474,8 +1661,14 @@ def run_section_three_stage(
     retry_delay: float,
     validation_retries: int,
     inline_structure_validation: bool = False,
+    s12_prompt_template: str | None = None,
+    s1_model: str | None = None,
+    s1_thinking_effort: str | None = None,
+    s12_model: str | None = None,
+    s12_thinking_effort: str | None = None,
+    stop_after_s12: bool = False,
 ) -> dict[str, Any]:
-    """Three-stage P7C: S1 discovery → S2 KG boundary → S3 graph construction."""
+    """Three/four-stage P7C: S1 discovery → [S1.2 gap fill] → S2 KG boundary → S3 graph construction."""
     task_path = packages_dir / section_id / "task.json"
     task = read_json(task_path)
     section_dir = run_dir / section_id
@@ -1485,7 +1678,8 @@ def run_section_three_stage(
         "section_id": section_id,
         "section_title": task.get("section_title"),
         "status": "pending",
-        "three_stage": True,
+        "three_stage": s12_prompt_template is None,
+        "four_stage": s12_prompt_template is not None,
     }
 
     allowed_unit_ids = set(collect_allowed_unit_ids(task))
@@ -1495,12 +1689,24 @@ def run_section_three_stage(
         prompt: str,
         label: str,
         contract_validator: Any | None = None,
+        stage_model: str | None = None,
+        stage_thinking_effort: str | None = None,
     ) -> tuple[dict[str, Any] | None, str, object | None]:
         raw = ""
         error: object | None = None
+        effective_model = stage_model or model
+        effective_thinking = stage_thinking_effort or thinking_effort
+        manifest_key = re.sub(r"[^a-z0-9]+", "_", label.casefold()).strip("_")
         for attempt in range(1, retries + 1):
             try:
-                raw, _call_meta = call_model(prompt, model, max_tokens, timeout, thinking_effort)
+                raw, call_meta = call_model(
+                    prompt,
+                    effective_model,
+                    max_tokens,
+                    timeout,
+                    effective_thinking,
+                )
+                manifest[f"{manifest_key}_call"] = call_meta
             except Exception as exc:
                 error = exc
                 if attempt < retries:
@@ -1522,16 +1728,18 @@ def run_section_three_stage(
                 continue
         return None, raw, error
 
-    # === Stage 1: Proposition Discovery ===
+    # === Stage 1.1: Proposition Discovery ===
     s1_prompt = build_s1_prompt(s1_template, task)
     (section_dir / "s1_prompt.md").write_text(s1_prompt, encoding="utf-8")
     s1_parsed, s1_raw, s1_err = _call_and_parse(
         s1_prompt,
-        "S1",
+        "S1.1",
         lambda payload: (
-            ([] if payload.get("section_id") == section_id else ["S1 section_id mismatch"])
+            ([] if payload.get("section_id") == section_id else ["S1.1 section_id mismatch"])
             + validate_s1_discovery_payload(payload, allowed_unit_ids, unit_evidence_text)
         ),
+        s1_model,
+        s1_thinking_effort,
     )
     (section_dir / "s1_raw_response.txt").write_text(s1_raw, encoding="utf-8")
 
@@ -1544,7 +1752,55 @@ def run_section_three_stage(
 
     propositions = s1_parsed.get("propositions") or []
     manifest["s1_proposition_count"] = len(propositions)
-    write_json(section_dir / "s1_propositions.json", s1_parsed)
+    if s12_prompt_template is None:
+        write_json(section_dir / "s1_propositions.json", s1_parsed)
+    else:
+        write_json(section_dir / "s11_propositions.json", s1_parsed)
+
+    # === Stage 1.2: Gap Fill (four-stage only) ===
+    if s12_prompt_template is not None:
+        s12_prompt = build_s12_prompt(s12_prompt_template, task, propositions)
+        (section_dir / "s12_prompt.md").write_text(s12_prompt, encoding="utf-8")
+        s12_parsed, s12_raw, s12_err = _call_and_parse(
+            s12_prompt,
+            "S1.2",
+            lambda payload: validate_s12_gap_payload(
+                payload,
+                section_id,
+                allowed_unit_ids,
+                unit_evidence_text,
+                propositions,
+            ),
+            s12_model,
+            s12_thinking_effort,
+        )
+        (section_dir / "s12_raw_response.txt").write_text(s12_raw, encoding="utf-8")
+
+        if s12_parsed is not None:
+            gap_props = s12_parsed.get("gap_propositions") or []
+            manifest["s12_gap_count"] = len(gap_props)
+            write_json(section_dir / "s12_gap_propositions.json", s12_parsed)
+            propositions = list(propositions) + list(gap_props)
+            manifest["s1_merged_count"] = len(propositions)
+            merged_payload = dict(s1_parsed)
+            merged_payload["propositions"] = propositions
+            if gap_props:
+                merged_payload["skip_reason"] = None
+            write_json(section_dir / "s1_propositions.json", merged_payload)
+        else:
+            manifest["status"] = "s12_failed"
+            manifest["s12_error"] = repr(s12_err) if s12_err else "parse_failed"
+            manifest["card_count"] = 0
+            write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+            write_json(section_dir / "run_manifest.json", manifest)
+            return manifest
+
+        if stop_after_s12:
+            manifest["status"] = "ok"
+            manifest["completed_through"] = "s12"
+            manifest["card_count"] = 0
+            write_json(section_dir / "run_manifest.json", manifest)
+            return manifest
 
     if not propositions:
         manifest["status"] = "ok"
@@ -1691,6 +1947,260 @@ def run_section_three_stage(
     manifest["status"] = "ok" if validation_error_count == 0 else "validation_errors"
     manifest["card_count"] = len(cards_list)
     manifest["validation_error_count"] = validation_error_count
+    write_json(section_dir / "run_manifest.json", manifest)
+    return manifest
+
+
+def run_section_merged_process_ir(
+    section_id: str,
+    run_dir: Path,
+    packages_dir: Path,
+    s1_template: str,
+    s12_prompt_template: str,
+    process_ir_template: str,
+    model: str,
+    thinking_effort: str,
+    max_tokens: int,
+    timeout: float,
+    retries: int,
+    retry_delay: float,
+    inline_structure_validation: bool = False,
+    s1_model: str | None = None,
+    s1_thinking_effort: str | None = None,
+    s12_model: str | None = None,
+    s12_thinking_effort: str | None = None,
+) -> dict[str, Any]:
+    """Merged Process IR: S1.1 → S1.2 → S2 Process IR (LLM) → S3 deterministic compile."""
+    task_path = packages_dir / section_id / "task.json"
+    task = read_json(task_path)
+    section_dir = run_dir / section_id
+    section_dir.mkdir(parents=True, exist_ok=True)
+
+    # Lazy-load compiler module
+    spec = importlib.util.spec_from_file_location(
+        "process_ir_compiler_v1", str(PROCESS_IR_COMPILER_PATH)
+    )
+    assert spec and spec.loader
+    compiler_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(compiler_mod)
+
+    manifest: dict[str, Any] = {
+        "section_id": section_id,
+        "section_title": task.get("section_title"),
+        "status": "pending",
+        "pipeline_mode": "merged_process_ir_v1",
+    }
+
+    allowed_unit_ids = set(collect_allowed_unit_ids(task))
+    unit_evidence_text = collect_unit_evidence_text(task)
+
+    def _call_and_parse(
+        prompt: str,
+        label: str,
+        contract_validator: Any | None = None,
+        stage_model: str | None = None,
+        stage_thinking_effort: str | None = None,
+    ) -> tuple[dict[str, Any] | None, str, object | None]:
+        raw = ""
+        error: object | None = None
+        effective_model = stage_model or model
+        effective_thinking = stage_thinking_effort or thinking_effort
+        manifest_key = re.sub(r"[^a-z0-9]+", "_", label.casefold()).strip("_")
+        for attempt in range(1, retries + 1):
+            try:
+                raw, call_meta = call_model(
+                    prompt, effective_model, max_tokens, timeout, effective_thinking
+                )
+                manifest[f"{manifest_key}_call"] = call_meta
+            except Exception as exc:
+                error = exc
+                if attempt < retries:
+                    time.sleep(retry_delay)
+                continue
+            try:
+                parsed = parse_json_object(raw)
+            except Exception:
+                if attempt < retries:
+                    time.sleep(retry_delay)
+                continue
+            if isinstance(parsed, dict):
+                contract_errors = contract_validator(parsed) if contract_validator else []
+                if not contract_errors:
+                    return parsed, raw, None
+                error = ValueError(f"{label} contract errors: {'; '.join(contract_errors)}")
+                if attempt < retries:
+                    time.sleep(retry_delay)
+                continue
+        return None, raw, error
+
+    # === Stage 1.1: Proposition Discovery ===
+    s1_prompt = build_s1_prompt(s1_template, task)
+    (section_dir / "s11_prompt.md").write_text(s1_prompt, encoding="utf-8")
+    s1_parsed, s1_raw, s1_err = _call_and_parse(
+        s1_prompt,
+        "S1.1",
+        lambda payload: (
+            ([] if payload.get("section_id") == section_id else ["S1.1 section_id mismatch"])
+            + validate_s1_discovery_payload(payload, allowed_unit_ids, unit_evidence_text)
+        ),
+        s1_model,
+        s1_thinking_effort,
+    )
+    (section_dir / "s11_raw_response.txt").write_text(s1_raw, encoding="utf-8")
+
+    if s1_parsed is None:
+        manifest["status"] = "s1_failed"
+        manifest["s1_error"] = repr(s1_err)
+        write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+        write_json(section_dir / "run_manifest.json", manifest)
+        return manifest
+
+    propositions = s1_parsed.get("propositions") or []
+    manifest["s11_proposition_count"] = len(propositions)
+    write_json(section_dir / "s11_propositions.json", s1_parsed)
+
+    # === Stage 1.2: Gap Fill ===
+    s12_prompt = build_s12_prompt(s12_prompt_template, task, propositions)
+    (section_dir / "s12_prompt.md").write_text(s12_prompt, encoding="utf-8")
+    s12_parsed, s12_raw, s12_err = _call_and_parse(
+        s12_prompt,
+        "S1.2",
+        lambda payload: validate_s12_gap_payload(
+            payload, section_id, allowed_unit_ids, unit_evidence_text, propositions
+        ),
+        s12_model,
+        s12_thinking_effort,
+    )
+    (section_dir / "s12_raw_response.txt").write_text(s12_raw, encoding="utf-8")
+
+    if s12_parsed is not None:
+        gap_props = s12_parsed.get("gap_propositions") or []
+        manifest["s12_gap_count"] = len(gap_props)
+        write_json(section_dir / "s12_gap_propositions.json", s12_parsed)
+        propositions = list(propositions) + list(gap_props)
+        merged_payload = dict(s1_parsed)
+        merged_payload["propositions"] = propositions
+        if gap_props:
+            merged_payload["skip_reason"] = None
+        write_json(section_dir / "s1_propositions.json", merged_payload)
+    else:
+        manifest["status"] = "s12_failed"
+        manifest["s12_error"] = repr(s12_err) if s12_err else "parse_failed"
+        manifest["card_count"] = 0
+        write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+        write_json(section_dir / "run_manifest.json", manifest)
+        return manifest
+
+    manifest["s1_merged_count"] = len(propositions)
+
+    if not propositions:
+        manifest["status"] = "ok"
+        manifest["card_count"] = 0
+        write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+        write_json(section_dir / "run_manifest.json", manifest)
+        return manifest
+
+    # === Stage 2: Process IR (LLM) ===
+    s2_prompt = build_process_ir_prompt(process_ir_template, task, propositions)
+    process_ir_prompt_sha256 = sha256_text(s2_prompt)
+    manifest["process_ir_prompt_sha256"] = process_ir_prompt_sha256
+    (section_dir / "s2_process_ir_prompt.md").write_text(s2_prompt, encoding="utf-8")
+
+    def _validate_ir(payload: dict[str, Any]) -> list[str]:
+        if payload.get("section_id") != section_id:
+            return [f"section_id mismatch: expected {section_id}, got {payload.get('section_id')}"]
+        return compiler_mod.validate_process_ir_payload(
+            payload,
+            section_id,
+            propositions,
+            allowed_unit_ids,
+            unit_evidence_text,
+        )
+
+    ir_parsed, ir_raw, ir_err = _call_and_parse(
+        s2_prompt,
+        "S2_Process_IR",
+        _validate_ir,
+    )
+    (section_dir / "s2_process_ir_raw_response.txt").write_text(ir_raw, encoding="utf-8")
+
+    if ir_parsed is None:
+        manifest["status"] = "process_ir_failed"
+        manifest["process_ir_error"] = repr(ir_err)
+        manifest["process_ir_validation_errors"] = (
+            [str(ir_err)] if ir_err else []
+        )
+        write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+        write_json(section_dir / "run_manifest.json", manifest)
+        return manifest
+
+    write_json(section_dir / "process_ir.json", ir_parsed)
+
+    episodes = ir_parsed.get("episodes") or []
+    candidate_audit = ir_parsed.get("candidate_audit") or []
+    manifest["process_ir_episode_count"] = len(episodes)
+    manifest["candidate_audit_count"] = len(candidate_audit)
+    manifest["excluded_nonprocedural_count"] = sum(
+        1 for a in candidate_audit if a.get("disposition") == "excluded_nonprocedural"
+    )
+    manifest["ungraphable_count"] = sum(
+        1 for a in candidate_audit if a.get("disposition") == "ungraphable"
+    )
+
+    # Track split candidates
+    candidate_episode_map: dict[str, list[str]] = {}
+    for a in candidate_audit:
+        cid = a.get("candidate_id", "")
+        eps = a.get("episode_ids") or []
+        if cid:
+            candidate_episode_map[cid] = list(eps)
+    split_candidates = [cid for cid, eps in candidate_episode_map.items() if len(eps) > 1]
+    manifest["split_candidate_count"] = len(split_candidates)
+    manifest["split_candidate_rate"] = round(len(split_candidates) / max(len(propositions), 1), 4)
+
+    # === Stage 3: Deterministic Compile ===
+    section_title = task.get("section_title") or ""
+    compile_result = compiler_mod.compile_process_ir_to_cards(ir_parsed, section_id, section_title)
+
+    compile_audit_data = compile_result["compile_audit"]
+    write_json(section_dir / "compile_audit.json", compile_audit_data)
+
+    cards_payload = compile_result["cards_payload"]
+    cards_path = section_dir / "cards.raw.json"
+    write_json(cards_path, cards_payload)
+
+    manifest["compiled_card_count"] = len(cards_payload.get("cards") or [])
+    manifest["source_process_ir_sha256"] = compile_result["source_process_ir_sha256"]
+
+    # Compile validation: any episode with errors?
+    compile_errors: list[str] = []
+    for ep_entry in compile_audit_data.get("episodes") or []:
+        if ep_entry.get("errors"):
+            compile_errors.append(f"{ep_entry.get('episode_id')}: {'; '.join(ep_entry['errors'])}")
+
+    # Merged mode always validates compiled cards before reporting success.
+    validator_code, validator_output, parsed_validation_error_count = validate_cards(
+        cards_path, section_dir / "validation_report.md", task_path
+    )
+    validation_error_count = (
+        parsed_validation_error_count
+        if parsed_validation_error_count is not None
+        else (1 if validator_code != 0 else 0)
+    )
+
+    manifest["compile_validation_errors"] = compile_errors
+    manifest["status"] = (
+        "ok" if (not compile_errors and validation_error_count == 0)
+        else "compile_failed" if compile_errors
+        else "validation_errors"
+    )
+    manifest["validation_error_count"] = validation_error_count
+    manifest["validator_returncode"] = validator_code
+    manifest["validator_output"] = validator_output
+    manifest["structure_validation_status"] = "completed"
+    manifest["structure_validation_owner"] = "P7C_required_merged_process_ir"
+    manifest["model"] = model
+    manifest["thinking_effort"] = thinking_effort
     write_json(section_dir / "run_manifest.json", manifest)
     return manifest
 
@@ -2340,6 +2850,28 @@ def main() -> None:
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--model", default="deepseek-v4-pro")
     parser.add_argument("--thinking-effort", default="none", choices=["none", "low", "medium", "high"])
+    parser.add_argument(
+        "--s1-model",
+        default="deepseek-chat",
+        help="Model for S1.1 discovery in four-stage mode.",
+    )
+    parser.add_argument(
+        "--s1-thinking-effort",
+        default="high",
+        choices=["none", "low", "medium", "high"],
+        help="Thinking effort for S1.1 discovery in four-stage mode.",
+    )
+    parser.add_argument(
+        "--s12-model",
+        default="deepseek-v4-pro",
+        help="Model for S1.2 gap filling in four-stage mode.",
+    )
+    parser.add_argument(
+        "--s12-thinking-effort",
+        default="none",
+        choices=["none", "low", "medium", "high"],
+        help="Thinking effort for S1.2 gap filling in four-stage mode.",
+    )
     parser.add_argument("--concurrency", type=int, default=20)
     parser.add_argument("--max-tokens", type=int, default=20000)
     parser.add_argument("--timeout", type=float, default=240.0)
@@ -2390,7 +2922,41 @@ def main() -> None:
         default=str(DEFAULT_S3_PROMPT_PATH),
         help="Path to S3 semantic graph construction prompt (three-stage).",
     )
+    parser.add_argument(
+        "--four-stage",
+        action="store_true",
+        default=False,
+        help="Use four-stage extraction: S1.1 → S1.2(补漏) → S2(新) → S3.",
+    )
+    parser.add_argument(
+        "--s12-prompt",
+        default=str(DEFAULT_S12_PROMPT_PATH),
+        help="Path to S1.2 gap fill prompt (four-stage).",
+    )
+    parser.add_argument(
+        "--stop-after-s12",
+        action="store_true",
+        default=False,
+        help="Stop after writing the validated merged S1.1 + S1.2 candidate artifact.",
+    )
+    parser.add_argument(
+        "--pipeline-mode",
+        default=None,
+        choices=["merged-process-ir"],
+        help="Pipeline mode: 'merged-process-ir' for the S2/S3 merged Process IR experiment.",
+    )
+    parser.add_argument(
+        "--process-ir-prompt",
+        default=str(DEFAULT_PROCESS_IR_PROMPT_PATH),
+        help="Path to Process IR prompt template (for --pipeline-mode merged-process-ir).",
+    )
     args = parser.parse_args()
+
+    if args.stop_after_s12 and not args.four_stage:
+        parser.error("--stop-after-s12 requires --four-stage")
+
+    if args.pipeline_mode == "merged-process-ir" and (args.four_stage or args.three_stage or args.two_stage):
+        print("INFO: --pipeline-mode merged-process-ir takes priority; ignoring --four-stage / --three-stage / --two-stage.")
 
     packages_dir = Path(args.packages_dir)
     sections = parse_sections(args.sections, packages_dir)
@@ -2423,7 +2989,26 @@ def main() -> None:
         "input_policy": "section_text_with_unit_anchors_plus_base_kg_summary_for_coverage_plus_allowed_unit_ids",
         "planned_at": datetime.now().isoformat(timespec="seconds"),
     }
-    if args.three_stage:
+    if args.four_stage:
+        plan["four_stage"] = True
+        plan["s1_prompt"] = path_for_json(Path(args.s1_prompt))
+        plan["s12_prompt"] = path_for_json(Path(args.s12_prompt))
+        plan["s1_model"] = args.s1_model
+        plan["s1_thinking_effort"] = args.s1_thinking_effort
+        plan["s12_model"] = args.s12_model
+        plan["s12_thinking_effort"] = args.s12_thinking_effort
+        plan["stop_after_s12"] = args.stop_after_s12
+        plan["input_policy"] = {
+            "s11": "section_metadata_plus_section_text_with_unit_anchors",
+            "s12": "section_metadata_plus_section_text_with_unit_anchors_plus_s11_candidates",
+            "post_generation_validation": "runner_internal_allowed_unit_ids_and_unit_evidence_text",
+        }
+        plan["s2_new_prompt"] = path_for_json(Path(args.s2_new_prompt))
+        plan["s3_prompt"] = path_for_json(Path(args.s3_prompt))
+        plan["coverage_adjudication"] = False
+        if args.three_stage or args.two_stage:
+            print("INFO: --four-stage takes priority; ignoring --three-stage / --two-stage.")
+    elif args.three_stage:
         plan["three_stage"] = True
         plan["s1_prompt"] = path_for_json(Path(args.s1_prompt))
         plan["s2_new_prompt"] = path_for_json(Path(args.s2_new_prompt))
@@ -2434,13 +3019,37 @@ def main() -> None:
         plan["s1_prompt"] = path_for_json(Path(args.s1_prompt))
         plan["s2_prompt"] = path_for_json(Path(args.s2_prompt))
         plan["coverage_adjudication"] = False  # S2 replaces Coverage in two-stage mode
+
+    if args.pipeline_mode == "merged-process-ir":
+        plan["pipeline_mode"] = "merged_process_ir_v1"
+        plan["s1_prompt"] = path_for_json(Path(args.s1_prompt))
+        plan["s12_prompt"] = path_for_json(Path(args.s12_prompt))
+        plan["process_ir_prompt"] = path_for_json(Path(args.process_ir_prompt))
+        plan["s1_model"] = args.s1_model
+        plan["s1_thinking_effort"] = args.s1_thinking_effort
+        plan["s12_model"] = args.s12_model
+        plan["s12_thinking_effort"] = args.s12_thinking_effort
+        plan["coverage_adjudication"] = False
+        plan["input_policy"] = "section_text_with_unit_anchors_plus_s1_candidates_only_no_kg_no_allowed_unit_ids"
+        plan["inline_structure_validation"] = True
+        plan["structure_validation_owner"] = "P7C_required_merged_process_ir"
+
     write_json(run_dir / "run_plan.json", plan)
 
     if args.dry_run:
         print(f"Dry run only. Planned {len(sections)} sections under {run_dir}")
         return
 
-    if args.three_stage:
+    if args.pipeline_mode == "merged-process-ir":
+        s1_template = Path(args.s1_prompt).read_text(encoding="utf-8-sig")
+        s12_template = Path(args.s12_prompt).read_text(encoding="utf-8-sig")
+        process_ir_template = Path(args.process_ir_prompt).read_text(encoding="utf-8-sig")
+    elif args.four_stage:
+        s1_template = Path(args.s1_prompt).read_text(encoding="utf-8-sig")
+        s12_template = Path(args.s12_prompt).read_text(encoding="utf-8-sig")
+        s2_new_template = Path(args.s2_new_prompt).read_text(encoding="utf-8-sig")
+        s3_template = Path(args.s3_prompt).read_text(encoding="utf-8-sig")
+    elif args.three_stage:
         s1_template = Path(args.s1_prompt).read_text(encoding="utf-8-sig")
         s2_new_template = Path(args.s2_new_prompt).read_text(encoding="utf-8-sig")
         s3_template = Path(args.s3_prompt).read_text(encoding="utf-8-sig")
@@ -2457,7 +3066,58 @@ def main() -> None:
 
     manifests: list[dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=max(1, args.concurrency)) as executor:
-        if args.three_stage:
+        if args.pipeline_mode == "merged-process-ir":
+            futures = {
+                executor.submit(
+                    run_section_merged_process_ir,
+                    section,
+                    run_dir,
+                    packages_dir,
+                    s1_template,
+                    s12_template,
+                    process_ir_template,
+                    args.model,
+                    args.thinking_effort,
+                    args.max_tokens,
+                    args.timeout,
+                    args.retries,
+                    args.retry_delay,
+                    args.inline_structure_validation,
+                    args.s1_model,
+                    args.s1_thinking_effort,
+                    args.s12_model,
+                    args.s12_thinking_effort,
+                ): section
+                for section in sections
+            }
+        elif args.four_stage:
+            futures = {
+                executor.submit(
+                    run_section_three_stage,
+                    section,
+                    run_dir,
+                    packages_dir,
+                    s1_template,
+                    s2_new_template,
+                    s3_template,
+                    args.model,
+                    args.thinking_effort,
+                    args.max_tokens,
+                    args.timeout,
+                    args.retries,
+                    args.retry_delay,
+                    args.validation_retries,
+                    args.inline_structure_validation,
+                    s12_template,
+                    args.s1_model,
+                    args.s1_thinking_effort,
+                    args.s12_model,
+                    args.s12_thinking_effort,
+                    args.stop_after_s12,
+                ): section
+                for section in sections
+            }
+        elif args.three_stage:
             futures = {
                 executor.submit(
                     run_section_three_stage,

@@ -1,0 +1,52 @@
+{
+  "section_id": "CH06-S10",
+  "kg_input_version": "summary_v1",
+  "status": "ok",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "ok",
+      "call_meta": {
+        "model": "deepseek-v4-pro",
+        "base_url": "https://api.deepseek.com/v1",
+        "endpoint": "https://api.deepseek.com/v1/chat/completions",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "thinking_effort": "none",
+        "request_extra": {},
+        "http_client": "requests",
+        "elapsed_seconds": 15.062,
+        "usage": {
+          "prompt_tokens": 4634,
+          "completion_tokens": 717,
+          "total_tokens": 5351,
+          "prompt_tokens_details": {
+            "cached_tokens": 4608
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 426
+          },
+          "prompt_cache_hit_tokens": 4608,
+          "prompt_cache_miss_tokens": 26
+        }
+      },
+      "validation_errors": []
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_candidate",
+      "reason": "命题包含“审查所有权结构时→识别UBO→以25%阈值为条件→综合直接间接持股→达到阈值则认定为UBO，否则不认定”的条件-判断-结论有向结构，基础KG仅能保存阈值事实和定义，无法表达该判断过程的内部条件、动作和差异化路径。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_candidate",
+      "reason": "命题包含“机构→采用风险为本方法→根据客户风险水平设定不同阈值（高风险10%，显著更高风险5%）”的条件导向差异配置结构，基础KG只能记录阈值范围的事实，不能表达风险条件与不同动作结果之间的有向关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_candidate",
+      "reason": "命题包含“公司无自然人受益所有人→应识别并核实控制人或名义受益所有人”的条件-触发-应对结构，基础KG无法表达该条件触发的具体义务及其结果，只能保存孤立事实。"
+    }
+  ]
+}

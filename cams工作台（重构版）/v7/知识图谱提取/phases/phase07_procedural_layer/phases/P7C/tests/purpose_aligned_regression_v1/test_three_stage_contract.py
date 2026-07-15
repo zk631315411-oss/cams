@@ -124,7 +124,7 @@ class ThreeStageContractTests(unittest.TestCase):
         prop = proposition()
         self.assertEqual(RUNNER.validate_s1_discovery_payload({"propositions": [prop]}, {"u1"}), [])
         missing_s2 = RUNNER.validate_s2_boundary_payload({"boundary_decisions": []}, [prop])
-        self.assertTrue(any("cover every S1 candidate" in error for error in missing_s2), missing_s2)
+        self.assertTrue(any("missing S1 candidates" in error for error in missing_s2), missing_s2)
         passed = [{"candidate": prop, "boundary_decision": {"decision": "p7c_candidate", "reason": "增量"}}]
         missing_s3 = RUNNER.validate_s3_construction_payload(
             {"construction_audit": [], "cards": []}, passed, "TEST-S01", {"u1"}

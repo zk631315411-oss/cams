@@ -899,62 +899,50 @@ def _normalize_route_scores(records: list[dict[str, Any]]) -> list[dict[str, Any
     return out
 
 
-def p5_alias_search(
-    query_zh: str,
-    query_en: str | None,
+def p5_canonical_inline(
+    query: str,
     p5_index: dict[str, Any] | None,
-    unit_lookup: dict[str, dict],
-    top_k: int = 12,
-) -> list[dict[str, Any]]:
-    """使用 P5 别名组作为外部术语到单元的召回通道。"""
-    if not p5_index or top_k <= 0:
-        return []
-    haystack = _normalize_term(f"{query_zh} {query_en or ''}")
-    matched: list[dict[str, Any]] = []
-    for group in p5_index.get("aliases", []) or []:
-        hit_terms = [
-            term for term in group.get("terms", [])
-            if term and _term_in_query(term, haystack)
-        ]
-        if not hit_terms:
-            continue
-        best_term = max(hit_terms, key=len)
-        matched.append({"group": group, "term": best_term, "score": len(best_term)})
-    matched.sort(key=lambda x: x["score"], reverse=True)
+    lang: str = "zh",
+) -> str:
+    """s0c 规范内联：在 query 中为匹配到的术语插入规范名括号注释。
 
-    rows: list[dict[str, Any]] = []
-    seen: set[str] = set()
-    for match in matched[:8]:
-        group = match["group"]
-        for uid in group.get("unit_ids", [])[:5]:
-            if uid in seen or uid not in unit_lookup:
+    例如 "FATF的40项建议" -> "FATF（金融行动特别工作组）的40项建议"
+    不直接拉 unit，不改变后续 BGE/BM25 检索流程。
+    """
+    if not p5_index or not query.strip():
+        return query
+    haystack = _normalize_term(query)
+    hits: list[tuple[int, int, str, str]] = []  # (start, end, canonical, scope)
+    for group in p5_index.get("aliases", []) or []:
+        for term in group.get("terms", []):
+            term_norm = _normalize_term(term)
+            if not term_norm or len(term_norm) < 2:
                 continue
-            unit = unit_lookup[uid]
-            seen.add(uid)
-            rows.append(
-                {
-                    "rank": len(rows) + 1,
-                    "score": round(0.45 + min(match["score"], 40) / 200.0, 6),
-                    "raw_score": match["score"],
-                    "unit_id": uid,
-                    "knowledge_zh": unit.get("knowledge_zh", ""),
-                    "knowledge_en": unit.get("knowledge_en", ""),
-                    "en_quote": unit.get("en_quote", ""),
-                    "heading_context": unit.get("heading_context", []),
-                    "type": unit.get("type", ""),
-                    "route": "p5_alias",
-                    "p5": {
-                        "alias_group_id": group.get("alias_group_id", ""),
-                        "canonical_en": group.get("canonical_en", ""),
-                        "canonical_zh": group.get("canonical_zh", ""),
-                        "matched_term": match["term"],
-                        "alias_scope": group.get("alias_scope", ""),
-                    },
-                }
-            )
-            if len(rows) >= top_k:
-                return rows
-    return rows
+            # 找 term 在 query 中的位置（忽略 "()" 内已有的注释，避免重复内联）
+            start = haystack.find(term_norm)
+            while start >= 0:
+                canonical = group.get("canonical_zh", "") or group.get("canonical_en", "")
+                if not canonical:
+                    break
+                # 不要把已有括号注释再包一层
+                prefix = haystack[max(0, start - 1):start]
+                suffix = haystack[start + len(term_norm):start + len(term_norm) + 1]
+                if prefix != "（" and suffix != "）":
+                    hits.append((start, start + len(term_norm), canonical, group.get("alias_scope", "")))
+                start = haystack.find(term_norm, start + 1)
+    if not hits:
+        return query
+    # 唯一去重：同位置只留一个最长规范名
+    hits.sort(key=lambda h: (h[0], -(h[1] - h[0])))
+    selected: list[tuple[int, int, str]] = []
+    for h in hits:
+        if not selected or h[0] > selected[-1][1]:
+            selected.append((h[0], h[1], h[2]))
+    # 从后往前插入，保持位置偏移正确
+    result = query
+    for start, end, canonical in reversed(selected):
+        result = result[:end] + f"（{canonical}）" + result[end:]
+    return result
 
 
 def expand_with_kg(
@@ -1126,6 +1114,11 @@ def search_and_merge(
     query_zh, query_en = build_queries(question)
     route_map: dict[str, list[dict]] = {}
 
+    # 0. s0c P5 规范内联：改写 query，插入规范名括号注释
+    if p5_index is not None:
+        for head in heads:
+            head["query"] = p5_canonical_inline(head["query"], p5_index, lang=head["language"])
+
     # 1. 所有中文/英文检索头批量执行 BGE，避免逐头重复编码
     if heads:
         model = get_bge_model()
@@ -1185,11 +1178,6 @@ def search_and_merge(
                 }
             )
             route_map.setdefault(row["unit_id"], []).append(row)
-
-    # 3. P5 术语/别名索引保持原有整题匹配方式，不作为 KG 边
-    p5_results = p5_alias_search(query_zh, query_en, p5_index, unit_lookup, top_k=12)
-    for r in p5_results:
-        route_map.setdefault(r["unit_id"], []).append(r)
 
     # 合并去重：用确定性 RRF 汇总各检索头，同时保留原始分数和排名
     merged: list[dict[str, Any]] = []

@@ -199,11 +199,11 @@ class S1CandidateFrameContractTests(unittest.TestCase):
 
     def test_s1_prompt_requires_case_applicability_and_investigation_discovery(self) -> None:
         prompt = S1_PROMPT_PATH.read_text(encoding="utf-8")
-        self.assertIn("Case-specific legal applicability frame", prompt)
-        self.assertIn("Case investigation-to-finding frame", prompt)
-        self.assertIn("Risk-based threshold exception frame", prompt)
-        self.assertIn("A prior candidate does not justify skipping", prompt)
-        self.assertIn("general rule does not replace that case-specific frame", prompt)
+        self.assertIn("案例特有的法律适用 frame", prompt)
+        self.assertIn("案例调查到发现 frame", prompt)
+        self.assertIn("风险为本阈值例外 frame", prompt)
+        self.assertIn("前一个候选不成为跳过后文", prompt)
+        self.assertIn("一般规则的候选不能替代", prompt)
 
     def test_validator_requires_a_role_around_the_focal_handling_or_judgment(self) -> None:
         task = load_task("CH02-S04")

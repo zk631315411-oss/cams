@@ -1,0 +1,47 @@
+{
+  "section_id": "CH07-S03",
+  "kg_input_version": "projection_v1",
+  "status": "ok",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "ok",
+      "call_meta": {
+        "model": "deepseek-v4-pro",
+        "base_url": "https://api.deepseek.com/v1",
+        "endpoint": "https://api.deepseek.com/v1/chat/completions",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "thinking_effort": "none",
+        "request_extra": {},
+        "http_client": "requests",
+        "elapsed_seconds": 10.236,
+        "usage": {
+          "prompt_tokens": 3749,
+          "completion_tokens": 530,
+          "total_tokens": 4279,
+          "prompt_tokens_details": {
+            "cached_tokens": 3712
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 336
+          },
+          "prompt_cache_hit_tokens": 3712,
+          "prompt_cache_miss_tokens": 37
+        }
+      },
+      "validation_errors": []
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_candidate",
+      "reason": "命题包含条件（银行知道或怀疑非法资金）指向具体主体（银行）的动作（不应接受还贷），构成有向的条件-动作结构，基础 KG 只能整体保存文本，无法表达内部的条件、主体和动作关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch07_s03_exit_loan_writeoff",
+      "decision": "p7c_candidate",
+      "reason": "命题包含明确的触发情境（退出风险容忍且仍有贷款余额的客户关系）以及需执行的处置（核销贷款）和审批要求，具有主体、触发和结果的有向关系，基础 KG 只能存储整段文本，无法表达这种条件→处置→审批要求的内部结构。"
+    }
+  ]
+}

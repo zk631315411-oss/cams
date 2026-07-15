@@ -1,0 +1,52 @@
+{
+  "section_id": "CH06-S10",
+  "kg_input_version": "projection_v1",
+  "status": "ok",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "ok",
+      "call_meta": {
+        "model": "deepseek-v4-pro",
+        "base_url": "https://api.deepseek.com/v1",
+        "endpoint": "https://api.deepseek.com/v1/chat/completions",
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "thinking_effort": "none",
+        "request_extra": {},
+        "http_client": "requests",
+        "elapsed_seconds": 12.079,
+        "usage": {
+          "prompt_tokens": 5387,
+          "completion_tokens": 623,
+          "total_tokens": 6010,
+          "prompt_tokens_details": {
+            "cached_tokens": 5376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 318
+          },
+          "prompt_cache_hit_tokens": 5376,
+          "prompt_cache_miss_tokens": 11
+        }
+      },
+      "validation_errors": []
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_candidate",
+      "reason": "命题明确包含‘审查所有权结构时’触发‘识别UBO’的义务，结合25%阈值及直接/间接持股计算，形成‘达到阈值认定为UBO，未达到不认定’的条件-判断-分支结构。这超出了基础KG仅能保存规则文本却无法表达条件→判断→分支有向链条的能力。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_candidate",
+      "reason": "命题表达了机构基于‘风险为本方法’和‘客户风险水平’设定差异化受益所有权阈值（默认/10%/5%）的有向决策逻辑，即风险条件导向具体阈值选择。基础KG无法表达这种风险→阈值设定的条件-动作关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_candidate",
+      "reason": "命题呈现‘无自然人受益所有人’这一条件触发‘应识别并核实控制人或名义受益所有人’的具体应对动作，构成典型的条件→动作/义务的有向结构。基础KG只能保存整条规则，无法表达条件驱动特定主体动作的方向关系。"
+    }
+  ]
+}
