@@ -371,7 +371,7 @@ def load_kg_graph(json_path: str | Path) -> dict[str, Any]:
     def unit_sort_key(uid: str) -> tuple[str, int, str]:
         meta = unit_meta.get(uid, {})
         return (
-            meta.get("chapter_id", ""),
+            meta.get("real_chapter") or meta.get("chapter_id", ""),
             int(meta.get("unit_order") or 0),
             uid,
         )
@@ -945,6 +945,14 @@ def p5_canonical_inline(
     return result
 
 
+# 语义强边：KG 图边 reason 为空时，回填中文含义供 LLM 理解
+SEMANTIC_FORCE_REASONS = {
+    "grounds": "奠基关系——定义/框架是判断前置条件，不拉即残缺",
+    "illustrates": "案例与定义互补——种子在案例则拉定义，种子在定义则拉案例",
+    "contrasts": "易混淆对照——池子里只有一边就补另一边，供 LLM 区分",
+}
+
+
 def expand_with_kg(
     direct_candidates: list[dict[str, Any]],
     kg_index: dict[str, Any] | None,
@@ -952,7 +960,7 @@ def expand_with_kg(
     query_zh: str = "",
     query_en: str | None = None,
     max_extra: int = 30,
-    seed_limit: int = 12,
+    seed_limit: int = 20,
     per_seed_limit: int = 3,
 ) -> list[dict[str, Any]]:
     """通过 KG core-point 邻域扩展检索种子单元。"""
@@ -1030,7 +1038,9 @@ def expand_with_kg(
                     "edge_id": edge.get("edge_id", ""),
                     "edge_scope": edge.get("edge_scope", ""),
                     "relation_type": edge.get("relation_type", ""),
-                    "reason": edge.get("reason", ""),
+                    "reason": edge.get("reason", "") or SEMANTIC_FORCE_REASONS.get(
+                        edge.get("relation_type", ""), ""
+                    ),
                 }
             )
         # 候选得分 = 种子得分 × 0.48 + 路由权重 × 0.32 + 文本相关度 × 0.20
@@ -1079,6 +1089,18 @@ def expand_with_kg(
                 route = _relation_route(edge.get("edge_scope", ""))
                 for uid in cp_to_units.get(other_cp_id, [])[:4]:
                     add_unit(uid, route, seed, cp_id, other_cp_id, edge=edge)
+                    if len(proposed) - seed_added_before >= per_seed_limit:
+                        break
+                if len(proposed) - seed_added_before >= per_seed_limit:
+                    break
+
+            # 第三步：同 section 内其他 core_point 下的单元（不受 KG 边限制）
+            section_id = cp_meta.get(cp_id, {}).get("section_id", "")
+            for other_cp_id in kg_index["section_to_cps"].get(section_id, [])[:5]:
+                if other_cp_id == cp_id:
+                    continue
+                for uid in cp_to_units.get(other_cp_id, [])[:3]:
+                    add_unit(uid, "kg_same_section_cp", seed, cp_id, other_cp_id)
                     if len(proposed) - seed_added_before >= per_seed_limit:
                         break
                 if len(proposed) - seed_added_before >= per_seed_limit:
@@ -1246,14 +1268,51 @@ def search_and_merge(
 # ── 构建裁判 prompt ───────────────────────────────────────────────────
 
 
+_TYPE_LABELS: dict[str, str] = {
+    "definition": "概念定义",
+    "rule": "规则/规定",
+    "case": "案例",
+    "fact": "事实陈述",
+    "process": "流程描述",
+    "risk_indicator": "风险指标",
+    "classification": "分类说明",
+    "context": "背景信息",
+}
+
+
 def format_candidates(candidates: list[dict[str, Any]]) -> str:
-    """将候选池格式化为易读文本。"""
+    """将候选池格式化为易读文本，含 CP 关系去重摘要。"""
     lines: list[str] = []
+
+    # CP 关系去重摘要
+    cp_rels: dict[tuple[str, str, str], str] = {}  # (src, tgt, rel) -> reason
+    for c in candidates:
+        kg_info = c.get("kg") or {}
+        rel = kg_info.get("relation_type", "")
+        if not rel:
+            continue
+        src = kg_info.get("source_core_point_id", "")
+        tgt = kg_info.get("target_core_point_id", "")
+        if src and tgt:
+            key = (src, tgt, rel)
+            if key not in cp_rels:
+                cp_rels[key] = kg_info.get("reason", "")
+
+    if cp_rels:
+        lines.append("[CP 边关系 — 以下 unit 按 KG 语义边召回]")
+        for (src, tgt, rel), reason in cp_rels.items():
+            reason_str = f"（{reason}）" if reason else ""
+            lines.append(f"  {src} --{rel}--> {tgt} {reason_str}")
+        lines.append("")
+
     for i, c in enumerate(candidates, start=1):
         zh = c.get("knowledge_zh", "")
         en = c.get("en_quote", "") or c.get("knowledge_en", "")
+        type_label = _TYPE_LABELS.get(str(c.get("type", "") or "").strip(), "")
         lines.append(f"[知识单元 {i}]")
         lines.append(f"  unit_id: {c['unit_id']}")
+        if type_label:
+            lines.append(f"  教材类型: {type_label}")
         if zh:
             lines.append(f"  中文: {zh}")
         if en:
@@ -1266,7 +1325,8 @@ def format_candidates(candidates: list[dict[str, Any]]) -> str:
                 f"seed={kg_info.get('source_seed_unit_id', '')}; "
                 f"target_cp={kg_info.get('target_core_point_id', '')}; "
                 f"target_cp_title={kg_info.get('target_core_point_title_zh', '')}; "
-                f"relation={kg_info.get('relation_type', '')}"
+                f"relation={kg_info.get('relation_type', '')}; "
+                f"reason={kg_info.get('reason', '')}"
             )
         lines.append("  " + "-" * 60)
     return "\n".join(lines)
@@ -1290,7 +1350,10 @@ def format_option_supplements(
             lines.append("  无")
             continue
         for row in rows:
+            type_label = _TYPE_LABELS.get(str(row.get("type", "") or "").strip(), "")
             lines.append(f"  - unit_id: {row['unit_id']}")
+            if type_label:
+                lines.append(f"    教材类型: {type_label}")
             if row.get("knowledge_zh"):
                 lines.append(f"    中文: {row['knowledge_zh']}")
             en = row.get("en_quote") or row.get("knowledge_en", "")
@@ -1312,10 +1375,17 @@ def build_prompt(
     """构建裁判 prompt，不包含参考答案。"""
     stem = question.get("stem", "")
     options = question.get("options", {})
+    stem_en = question.get("stem_en", "")
+    options_en = question.get("options_en", {})
     qtype = question.get("question_type", "single")
     qtype_label = "单选题" if qtype == "single" else "多选题"
 
     opt_lines = "\n".join(f"  {k}: {v}" for k, v in options.items())
+    opt_en_lines = "\n".join(
+        f"  {k}: {options_en.get(k, '')}" for k in options if options_en.get(k)
+    )
+    stem_en_str = f"\n英文题干: {stem_en}" if stem_en else ""
+    opt_en_str = f"\n英文选项:\n{opt_en_lines}" if opt_en_lines else ""
     candidates_text = format_candidates(candidates)
     supplements_text = format_option_supplements(
         question, supplement_pool or {}
@@ -1324,10 +1394,12 @@ def build_prompt(
     prompt = f"""你是一个 CAMS 反洗钱考试题目裁判。你需要判断每道题的每个选项是否正确。
 
 ### 题目信息
-题干: {stem}
+题干: {stem}{stem_en_str}
 选项:
-{opt_lines}
+{opt_lines}{opt_en_str}
 题型: {qtype_label}
+
+**注意**：本题来自英文考试，中文为翻译版本。当中文翻译与英文原意的强弱、边界不一致时（如英文为模糊边缘行为而中文译为明确违法），以英文为准进行判断。
 
 ### 教材证据
 以下是教材中与本题相关的知识单元（候选池），请基于这些单元判断每个选项：
@@ -1344,14 +1416,54 @@ def build_prompt(
 
 {supplements_text}
 
+### 材料类型与推理权重
+每个知识单元标注了"教材类型"，请在引用时按以下权重推理：
+
+**概念定义/规则规定（最高权重）**
+- 从中提取必要条件和边界，做演绎推理。
+- 只有定义/规则中的条件才能用于"不满足条件即排除选项"。
+- 推理链条必须是：定义条件 → 选项文本是否满足 → 结论。
+
+**核心区分/分类说明**
+- 用于判断选项属于哪个类别、区分相近概念。
+- 两个概念的核心区别必须直接从分类说明中提取，不得用案例中的伴随特征来区分。
+
+**事实陈述/常见表现（辅助，不可独立排除）**
+- 描述的是"通常怎样"，不是"必须怎样"。
+- 可与定义互相印证，但不能单独作为排除选项的唯一依据。
+
+**案例（最低权重，仅作辅助）**
+- 案例中的具体数字、地点、行为方式属于该案例的特殊情节。
+- 不得将案例中的具体特征上升为普遍定义或判断标准。
+- 案例只能用于帮助理解概念在具体场景中的表现，不能参与"不满足X条件"的演绎推理。
+
+**教材特点说明**
+本教材常将概念区分放在案例对比中，而非给出字典式定义。相近概念的划分标准可能只在案例中体现。当教材没有为某个概念提供独立的普遍定义时：
+- 可以从案例对比中提取区分信息进行辨析，但需说明"教材案例表现为……教材未给出严格、普遍的划分标准"。
+- 不得因教材未给出普遍标准就直接否定概念存在或判定 insufficient。
+- 教材的"定义"声明（如 Microstructuring resembles traditional structuring but is typically used with digital asset laundering）即使简短，也应被视为该概念最权威的直接依据。
+
+**风险指标/流程描述**
+- 用于匹配题干行为是否符合指标或流程。
+- 指出题干行为是否符合该指标即可，不要求建立因果链条。
+
+**条件性概念的表述**
+教材中某些概念本身具有条件性或场景差异（如 placement 可表现为存款、购买资产等多种形式；房地产快速转售可能兼具 layering 和 integration 特征）。对于这类概念：
+- 不得为了凸显正确答案而将某一种表现描述为唯一对应关系。
+- 应说明"该行为在什么条件下可能属于X阶段"，再结合题干指出"本题没有提供哪些条件，因此更符合Y"。
+- 严禁机械断言"购买资产一定是 placement""信托一定隐藏所有权"等绝对化判断。
+
+**语境有效性**
+引用 unit 前，检查其章节路径（heading_context）：若来自特定场景（如大使馆、外交使团、特定案例、某类机构），该 unit 的陈述只在该场景下有效，不能当作跨场景的普遍原则使用。来自 CH01 等通用章节的定义除外。
+
 ### 输出要求
-以 JSON 格式输出，不要包含其他内容：
+以 JSON 格式输出，不要包含其他内容。文本值中引用原文词汇时使用中文引号「」或单引号''，不得使用 ASCII 双引号""（会破坏 JSON 结构）：
 - 先选择整题的 `decision_framework.type`：
   - `is_definition`：定义、类别或"哪些属于"题。必须先引用定义或明确分类规则，提取 `required_conditions`，再把规则逐项应用到选项。
   - `is_domain`：询问某一特定领域、计划或产品的警示信号。必须先建立领域边界，再区分"通用风险/通用渠道"和"该领域特有信号"。
   - `is_scenario`：其余场景匹配题。必须从题干事实与教材规则之间建立对应关系。
 - 定义/类别题不得用"教材没有列举该选项"直接证明选项错误；只有引用材料明确给出穷尽分类时，未列入才可作为分类依据。
-- 必须按选项原文判断，不得补充题干或选项没有提供的特殊事实、动机、后果或运作机制。
+- 必须按选项和题干原文判断，不得补充题干或选项没有提供的特殊事实、动机、后果或运作机制。严禁"语义贪污"——题干写"低于"不得写成"略低于"，写"一个账户"不得写成"跨账户"，写"支付发票"不得写成"虚假发票"。题干没用程度副词你也不能用，题干没写的结构特征你不能补。
 - 定义应用必须区分"选项明确违反必要条件"和"题目没有提供该条件"。只有前者可以据定义判错并使用 `definition_application`；仅仅没有写出某个条件，不能证明选项错误，应标为 `insufficient`，除非教材给出了明确穷尽分类或题干事实可直接排除。
   排除选项时必须使用演绎逻辑：列出必要条件 → 指出选项文本缺少哪个条件 → 结论"不满足条件"。不得使用"通常""一般""往往"等概率措辞。
   示例——"上游犯罪的必要条件是产生非法收益（v7u_N000017）。选项X是暴力人身犯罪，题干未提供其产生非法收益的信息，不满足必要条件，因此不构成上游犯罪。"
@@ -1372,6 +1484,7 @@ def build_prompt(
   2. `direct_taxonomy` 和 `domain_contrast` 的 `evidence_cards` 不得为空；若理由同时比较通用概念和领域规则，应分别绑定相应 unit。
   3. `decision_reason` 中写出的每个 unit_id 都必须同时出现在本选项 `evidence_cards` 或整题 `decision_framework.cited_unit_ids`，不得只在 prose 中提 ID。
   4. 有 `indirect` 卡片时 `evidence_status` 不得写 `none`；只有确实没有卡片的 `stem_contrast` 才可使用 `none`。
+  5. `decision_reason` 中复述题干事实时，与题干原文逐字核对：不得添加题干没有的程度副词（略、远、刚好）、数量词（多个、跨）、性质词（虚假、伪造）。
 - `evidence_status=direct` 表示教材直接支持该选项；`indirect` 表示只能间接支持；`negative` 表示教材证据反驳该选项；`none` 表示没有可引用证据，且 evidence_cards 必须为空。
 {{
   "predicted_answer": ["A"],
@@ -1407,15 +1520,21 @@ def call_llm(
     model: str = "deepseek-v4-pro",
     max_tokens: int = 20000,
     timeout: float = 120.0,
+    reasoning_effort: str = "high",
+    enable_thinking: bool = True,
 ) -> str:
     """调用 LLM，返回响应文本。"""
     kwargs: dict[str, Any] = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0,
         "max_tokens": max_tokens,
         "timeout": timeout,
     }
+    if enable_thinking:
+        kwargs["extra_body"] = {"thinking": {"type": "enabled"}}
+        kwargs["reasoning_effort"] = reasoning_effort
+    else:
+        kwargs["temperature"] = 0
     response = client.chat.completions.create(**kwargs)
     return (response.choices[0].message.content or "").strip()
 
@@ -1883,7 +2002,7 @@ def process_question(
         # 步骤 3: LLM 调用（每个线程独立的 client）
         from openai import OpenAI
         client = OpenAI(api_key=api_key, base_url=base_url)
-        llm_output = call_llm(client, prompt, model=model)
+        llm_output = call_llm(client, prompt, model=model, reasoning_effort="high")
         result["llm_output"] = llm_output
 
         # 步骤 4: 解析 LLM 响应
@@ -2129,7 +2248,7 @@ def main() -> None:
         "--chapter-id",
         type=str,
         default="",
-        help="按真实教材章节选择全部题目，例如 CH01",
+        help="按真实教材章节选择全部题目，例如 Ch1",
     )
     parser.add_argument(
         "--enable-kg",
@@ -2244,11 +2363,15 @@ def main() -> None:
             raise RuntimeError(f"指定题号不存在: {', '.join(missing)}")
         print(f"\n[sample] 指定题号 {len(sampled)} 题")
     elif args.chapter_id:
-        chapter_id = args.chapter_id.strip().upper()
+        chapter_id = args.chapter_id.strip()
+        # 兼容旧格式 CH01 和新格式 Ch1
         sampled = [
             q for q in questions
             if any(
-                mapping.get("chapter_id") == chapter_id
+                mapping.get("chapter_id") == chapter_id.upper()
+                or mapping.get("real_chapter") == chapter_id
+                or (isinstance(mapping.get("real_chapter"), list)
+                    and chapter_id in mapping.get("real_chapter", []))
                 for mapping in q.get("_chapter_mappings", []) or []
             )
         ]
@@ -2269,7 +2392,7 @@ def main() -> None:
         )
     for q in sampled:
         mapped = ",".join(
-            row.get("chapter_id", "")
+            row.get("real_chapter") or row.get("chapter_id", "")
             for row in q.get("_chapter_mappings", []) or []
         ) or "unmapped"
         print(f"  {q['question_id']} | {mapped} | {q.get('question_type','?')}")

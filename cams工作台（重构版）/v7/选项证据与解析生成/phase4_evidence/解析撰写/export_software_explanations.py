@@ -53,6 +53,27 @@ def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]
     if explanation.get("schema_version") != master.SCHEMA_VERSION:
         _append_unique(blockers, "解析母版不是V3.1 schema")
 
+    # 内部备注泄露检查：用户端解析不得出现内部审核标记
+    _internal_markers = [
+        "需教研复核",
+        "现有教材证据不足，需教研复核",
+    ]
+    for field_name, field_value in [
+        ("考点", (explanation.get("exam_point", {}) or {}).get("text", "")),
+        ("核心解析", (explanation.get("core_analysis", {}) or {}).get("text", "")),
+    ]:
+        for marker in _internal_markers:
+            if marker in str(field_value or ""):
+                _append_unique(blockers, f"{field_name}包含内部备注'{marker}'")
+                break
+    for row in explanation.get("option_explanations", []) or []:
+        label = str(row.get("option", ""))
+        analysis = str(row.get("analysis", "") or "")
+        for marker in _internal_markers:
+            if marker in analysis:
+                _append_unique(blockers, f"选项{label}分析包含内部备注'{marker}'")
+                break
+
     # 答案一致性
     options = result.get("options", {}) or {}
     predicted = [str(x).strip().upper() for x in result.get("predicted_answer", []) or []]
@@ -62,10 +83,8 @@ def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]
     if answer != predicted:
         _append_unique(blockers, "软件版答案与盲判答案不一致")
 
-    # 选项完整性
+    # 错误项分析校验（正确项由核心解析覆盖，不在此校验）
     option_rows = explanation.get("option_explanations", []) or []
-    if [row.get("option") for row in option_rows] != list(options):
-        _append_unique(blockers, "选项解析缺失或顺序不一致")
     for row in option_rows:
         label = str(row.get("option", "")).strip().upper()
         expected = "correct" if label in answer else "incorrect"
@@ -129,13 +148,19 @@ def render_software_analysis(explanation: dict[str, Any]) -> str:
     if quote:
         lines.append(f"教材原句：\"{quote}\"\n")
     lines.append("\n")
-    lines.append("【选项分析】\n")
+    lines.append("【错误项分析】\n")
+    evidence_by_unit: dict[str, dict[str, Any]] = {}
+    for entry in explanation.get("source_evidence", []) or []:
+        uid = str(entry.get("unit_id", "") or "").strip()
+        if uid:
+            evidence_by_unit[uid] = entry
     for row in explanation.get("option_explanations", []) or []:
         judgement = "正确" if row.get("judgement") == "correct" else "错误"
-        error_tag = f"（{row['error_type']}）" if row.get("error_type") else ""
-        lines.append(f"{row.get('option', '')}项{judgement}{error_tag}：{row.get('analysis', '')}\n")
-    lines.append("\n【易错提醒】\n")
-    lines.append(f"{easy.get('text', '')}\n")
+        lines.append(f"{row.get('option', '')}项{judgement}：{row.get('analysis', '')}\n")
+    easy_text = (easy.get("text", "") or "").strip()
+    if easy_text:
+        lines.append("\n【易错提醒】\n")
+        lines.append(f"{easy_text}\n")
     return "".join(lines)
 
 
@@ -168,13 +193,18 @@ def belongs_to_chapter(
     """判断题目是否属于指定章节。优先用 JSON 内嵌映射，其次用外部映射文件。"""
     embedded = result.get("chapter_mappings", []) or []
     if embedded:
-        return any(m.get("chapter_id") == chapter_id for m in embedded)
+        return any(
+            (m.get("real_chapter") or m.get("chapter_id")) == chapter_id
+            or (isinstance(m.get("real_chapter"), list) and chapter_id in m.get("real_chapter", []))
+            for m in embedded
+        )
     if mapping_index:
         qid = str(result.get("question_id", "")).strip()
         row = mapping_index.get(qid)
         if row:
             return any(
-                m.get("chapter_id") == chapter_id
+                (m.get("real_chapter") or m.get("chapter_id")) == chapter_id
+                or (isinstance(m.get("real_chapter"), list) and chapter_id in m.get("real_chapter", []))
                 for m in (row.get("chapter_mappings", []) or [])
             )
     return False

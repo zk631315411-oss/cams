@@ -22,7 +22,11 @@ HERE = Path(__file__).resolve().parent  # phase4_evidence/解析撰写/
 PHASE4 = HERE.parent
 V7_EVIDENCE_ROOT = PHASE4.parent  # 选项证据与解析生成/
 CAMS_ROOT = PHASE4.parents[3]  # cams工作台（重构版）/
+V7_ROOT = V7_EVIDENCE_ROOT.parent  # v7/
 DEFAULT_OUTPUT_DIR = PHASE4 / "output"
+KG_GRAPH_PATH = (
+    V7_ROOT / "知识图谱提取" / "phases" / "phase06_kg_views" / "outputs" / "kg_retrieval_graph.json"
+)
 DEFAULT_QUESTIONS_PATH = (
     V7_EVIDENCE_ROOT / "phase3.5_questions" / "output" / "v7_questions.json"
 )
@@ -40,7 +44,8 @@ API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 SCHEMA_VERSION = "s6_teacher_explanation_v3_1"
 PROMPT_VERSION = "s6_teacher_prompt_v3_1"
-INSUFFICIENT_TEXT = "现有教材证据不足，需教研复核。"
+INSUFFICIENT_TEXT = "现有材料不足以判断该项。"
+INTERNAL_REVIEW_NEEDED = "需教研复核"
 SOURCE_QUOTE_MIN_LENGTH = 40
 SOURCE_QUOTE_MAX_LENGTH = 240
 OPTION_SUPPLEMENT_CONTEXT_LIMIT = 2
@@ -112,15 +117,53 @@ def call_llm(
     model: str = "deepseek-v4-pro",
     max_tokens: int = 8000,
     timeout: float = 150.0,
+    reasoning_effort: str = "high",
+    enable_thinking: bool = True,
 ) -> str:
-    response = client.chat.completions.create(
+    kwargs: dict[str, Any] = dict(
         model=model,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.4,
         max_tokens=max_tokens,
         timeout=timeout,
     )
+    if enable_thinking:
+        kwargs["extra_body"] = {"thinking": {"type": "enabled"}}
+        kwargs["reasoning_effort"] = reasoning_effort
+    else:
+        kwargs["temperature"] = 0.4
+    response = client.chat.completions.create(**kwargs)
     return (response.choices[0].message.content or "").strip()
+
+
+_UNIT_PAGE_MAP: dict[str, dict[str, Any]] | None = None
+
+
+def _get_unit_page_map() -> dict[str, dict[str, Any]]:
+    """懒加载 unit_id → 页码映射（PDF 页码 + 书内页码）。"""
+    global _UNIT_PAGE_MAP
+    if _UNIT_PAGE_MAP is not None:
+        return _UNIT_PAGE_MAP
+    if not KG_GRAPH_PATH.exists():
+        _UNIT_PAGE_MAP = {}
+        return _UNIT_PAGE_MAP
+    with open(KG_GRAPH_PATH, "r", encoding="utf-8") as f:
+        raw = json.load(f)
+    page_map: dict[str, dict[str, Any]] = {}
+    for unit in raw.get("units", []) or []:
+        uid = str(unit.get("unit_id", "") or "").strip()
+        if not uid:
+            continue
+        entry: dict[str, Any] = {}
+        pdf_page = unit.get("pdf_page")
+        printed_page = unit.get("printed_page")
+        if pdf_page is not None:
+            entry["pdf_page"] = pdf_page
+        if printed_page:
+            entry["printed_page"] = str(printed_page)
+        if entry:
+            page_map[uid] = entry
+    _UNIT_PAGE_MAP = page_map
+    return _UNIT_PAGE_MAP
 
 
 def load_question_result(path: Path) -> dict[str, Any]:
@@ -256,6 +299,7 @@ def _material_card(unit: dict[str, Any], uid: str, source_kind: str) -> dict[str
         "best_rank": unit.get("best_rank"),
         "routes": unit.get("routes", []),
         "languages": unit.get("languages", []),
+        "content_type": unit.get("type", ""),
     }
 
 
@@ -309,6 +353,22 @@ def enriched_option_material(result: dict[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
+_TYPE_CN_MAP: dict[str, str] = {
+    "definition": "概念定义",
+    "rule": "规则/规定",
+    "case": "案例",
+    "fact": "事实陈述",
+    "process": "流程描述",
+    "risk_indicator": "风险指标",
+    "classification": "分类说明",
+    "context": "背景信息",
+}
+
+
+def _type_cn_label(content_type: str) -> str:
+    return _TYPE_CN_MAP.get(str(content_type or "").strip(), content_type or "")
+
+
 def _format_prompt_card(card: dict[str, Any]) -> str:
     retrieval = ""
     if card.get("source_kind") == "supplement_candidate":
@@ -317,9 +377,14 @@ def _format_prompt_card(card: dict[str, Any]) -> str:
             f" | routes={','.join(card.get('routes', []) or [])}"
             f" | languages={','.join(card.get('languages', []) or [])}"
         )
+    type_label = _type_cn_label(card.get("content_type", ""))
+    type_str = f" | 教材类型：{type_label}" if type_label else ""
+    page_info = _get_unit_page_map().get(card["unit_id"], {})
+    printed_page = page_info.get("printed_page", "")
+    page_str = f" | 书内第{printed_page}页" if printed_page else ""
     return (
         f"- {card['unit_id']} | {card['source_kind']}"
-        f" | {card.get('support_type', '')}{retrieval}\n"
+        f" | {card.get('support_type', '')}{type_str}{page_str}{retrieval}\n"
         f"  中文要点：{compact_text(card['knowledge_zh'])}\n"
         f"  英文原文：{compact_text(card['en_quote'])}\n"
         f"  章节：{' > '.join(card['heading_context'])}"
@@ -373,90 +438,109 @@ def build_prompt(
             )
 
     chapter_text_value = "；".join(
-        f"{row.get('chapter_id', '')} {row.get('chapter_title', '')}".strip()
+        f"{row.get('real_chapter') or row.get('chapter_id', '')} {row.get('chapter_title', '')}".strip()
         for row in result.get("chapter_mappings", []) or []
     ) or "未映射"
     validation_text = "；".join(
         str(issue) for issue in result.get("validation_checks", []) or []
     ) or "无"
 
-    return f"""你是一位CAMS反洗钱讲师，正在为这道题撰写答题解析。要求简明扼要：不讲概念百科背景，不写分析套话，不用冗余结尾句。
+    return f"""你是一位CAMS反洗钱讲师。你的学生零基础、没看过教材、非金融法律专业背景、英文非母语，他们通过做题来学习。
 
-一、硬约束
-1. 固定答案是“{predicted}”。不得改判，每个选项的正误由固定答案决定。
-2. 所有事实只能来自下面提供的材料，不得猜测或引入外部知识。不得照搬heading_context中的案例名。
-3. 正文不得出现内部标记词汇（如“已裁判证据”“共享框架证据”“补充候选”“heading_context”等）和 unit_id（如v7u_Nxxxxx）。
-4. 每个选项的analysis不超过两句话。第一句给定义/规则，第二句做判断。不加引用前缀，不加冗余结尾。
-5. 做排他性判断（如”仅将X列入””不属于Y”）时需确认材料中有对应的原文。
+你的目标是：学生看完解析后，**换一道类似的题也能自己判断**。
 
-二、选项analysis写法
-每个选项的analysis不超过两句话：
-第一句：给出判断所需的概念定义或规则边界（如果材料中有），直接陈述，不加引用前缀。
-第二句：结合题干条件，指出选项与定义的对应或冲突。
-不写第三句。不解释概念的历史、分类、机制。不加”故该项不选””因此该项正确”等冗余结尾。
+---
 
-三、题干对照类选项（无教材证据）
-同样两句话：首句指出选项涉及的要素，次句说明题干提供了什么、二者差异在哪。不要把”题干没提到X”等同于”X不存在”。
+## 你的学生
 
-四、考点的写法
-用一句话概括本题对应的核心概念或能力点，不重复题干具体内容。例如：
+- 零基础，没看过教材，边做题边学
+- 非金融/法律专业出身
+- 英文非母语，需要中英对照来理解选项原意
 
-错误（复述题干，不是考点）：
-“判断时需关注存款是否被故意拆分为多笔略低于报告限额的小额交易，并最终几乎全部在境外集中取出。”
+## 你的任务
 
-正确（概念/能力点，一句话即可）：
-“区分结构化洗钱与微结构化、贸易洗钱等手法的交易特征，依据拆分金额与账户分布进行判断。”
+对这道题（固定答案为"{predicted}"，不得改判），你需要让学生：
 
-五、题目与状态
-题型：{result.get('question_type', '')}
-教材章节：{chapter_text_value}
-盲判状态：{result.get('pipeline_status', '')}
-机械校验问题：{validation_text}
+1. **知道考什么** —— exam_point：一句话，30字内。只写核心概念或能力点，不写判断结论，不引入题干没有的信息，不复述题干具体情节。示例：
+   - 好："按金额粒度及分散方式区分 structuring 与 microstructuring"
+   - 好："识别房地产场景下的 placement 阶段特征"
+   - 坏："判断时需关注存款是否被故意拆分为多笔略低于报告限额的小额交易"（复述题干）
+   - 坏："区分结构化与微结构化、贸易洗钱等手法"（题干没有提及贸易洗钱）
+
+2. **知道正确答案为什么对** —— core_analysis：一个自然段落。先给概念定义或判断规则，再结合题干关键事实，推出正确答案为什么成立。如果教材原文用的术语和选项中出现的术语不完全一致，先准确引用教材原文的术语和定义，再说明两者的关系。不要偷换主语——不要把"教材定义了X"写成"教材定义了Y"。写完自问："如果换一道题干相似但选项不同的题，学生看完还能自己判断吗？"如果不能，用一句话补上判断方法。如果核心解析本身已经说明了判断方法，不画蛇添足。
+
+3. **知道为什么正确项更优** —— option_explanations：只写真正有迷惑性的错误项。正确项不写（core_analysis已覆盖）。每个错误项的写法不是"排除它"，而是"在教材框架下，正确项比它更直接匹配"：
+   - 错误项本身可能也有一定关联（如信托确实能隐藏所有权），但它在教材中的定义位置和题干条件的匹配度不如正确项。你要解释的是**为什么匹配度不如**，而不是**绝对不可能**。
+   - 避免非黑即白的排除语气（"不属于""不可能""因此错误"）。改用比较级（"不如X直接""题干更支持X而非Y""更吻合教材对X的定义"）。
+   - 明显无关的选项（题干压根没涉及该选项所需的要素），直接指出缺失即可，不展开。
+   - 明显无关的选项不凑数
+   - 不加"故该项不选""因此该项正确"等套话结尾
+
+4. **下次不踩同样的坑** —— easy_mistake：如果有真正容易混淆的概念对，给出教材中的核心区分标准和下次判断时优先看什么。如果没有独立于一、二、三之外的增量信息，留空（"text": ""）。
+
+## 你的材料
+
+以下是你可以使用的全部信息：
+
+**题目**
 中文题干：{result.get('stem', '')}
 英文题干：{standard_question.get('stem_en', '')}
 中文选项：
 {option_lines}
 英文选项：
 {option_en_lines or '未提供'}
+
+注意：本题来自英文考试，中文选项为翻译版本。当中文翻译与英文原意有偏差时（如 bending the rules 被译为"违规操作"），以英文原意为准。
+
+**盲判框架**
 固定答案：{predicted}
-
-六、易错提醒的写法
-选一个最容易被混淆的干扰项，用自然段落说明它为什么看似合理、材料中的什么事实可以排除它。
-注意：不要把易错提醒写成“教材对选项X的相关要点是X；对选项Y的相关要点是Y”这种对比模板，也不要以“判断时应逐项核对题干条件”这类万能句收尾。
-
-七、整题定义
 框架类型：{framework.get('type', '')}
 {chr(10).join(framework_material) if framework_material else '无'}
+教材章节：{chapter_text_value}
 
-八、选项材料
+**选项材料（已标注教材类型和教材页码）**
 {chr(10).join(material_lines)}
 
-九、输出严格JSON，不要Markdown
+引用教材内容时，必须标注页码。例如："教材指出放置阶段指非法资金进入金融系统（书内第53页）。"
+
+## 写作铁律
+
+1. 不得在题干原文上添加任何程度副词、数量词、性质词。题干写"低于"就是低于，不是"略低于"也不是"远低于"。题干写"一个账户"就是一个，不是"跨账户"。题干写"支付发票"就是支付发票，不是"虚假发票"。同样，教材原文用"such as""include""for example"等举例措辞的，不得转写成"清单""界定""明确列举"等暗示穷举或硬性边界的词。原文是举例，解析就写举例。
+2. 引用教材案例时，用描述性语言（"教材在Tamayo案例中展示了..."），不用规定性语言（"微结构化通常""教材规定必须"）。案例是教材展示概念的方式，不是教材制定的规则。案例中的具体数字不能写成硬性标准。
+3. 当教材对某概念没有严格划分标准时，诚实说出，但给学生一条在当前条件下最合理的判断路径。
+4. JSON 文本中的引号用中文引号「」，不要用 ASCII 双引号""（会破坏 JSON 结构）。
+5. 易错提醒要么给出具体的区分标准，要么留空。不写"注意区分X和Y"这类空泛表达。
+6. 区分两种信息来源：教材材料中有的（可引用、可定义），和材料中没有的（只能说"题干未提及X要素"）。当材料没有提供某个选项所涉及概念的定义时，不要用自己的知识去补那个定义。
+7. 引用 unit 前检查其章节路径（材料卡片中的"章节："行）。若来自特例场景（如大使馆、外交使团、某类机构），该 unit 的陈述只在特例下有效，不能当普遍原则用。
+8. 不以非黑即白的方式排除选项。即使错误项本身有一定关联，也不用"不属于""不可能""因此错误"等绝对否定语气。改用比较级——"在教材框架下，题干条件更直接匹配X而非Y""正确项比错误项更吻合教材定义"。
+9. 区分事实和推理。教材原文（标注了页码的）是事实——确定的；你基于事实推导出的判断是推理——不确定的。推理部分用"由此可推断""在本题条件下""相比之下更可能"等表述，不要写成和教材事实一样的确定语气。归因于某个 unit 的断言词（如"所有权转移""转移资金"）必须真的出现在该 unit 的原文中，原文没有的词不能说成教材说的。同样，教材原文的涵盖范围不能缩窄——原文说"customers or sectors"，解析不能说"仅限于行业部门"。
+
+## 输出 JSON
+
 {{{{
   "answer": ["A"],
   "exam_point": {{{{
-    "text": "一句话告诉考生怎么判断，非描述考了什么概念",
-    "cited_unit_ids": ["v7u_N000001"]
+    "text": "一句话，30字内，只写考什么"
   }}}},
   "core_analysis": {{{{
-    "text": "直接陈述判断依据，不加引用前缀",
+    "text": "定义/规则 → 题干关键事实 → 为什么正确答案成立 → 下次怎么看",
     "cited_unit_ids": ["v7u_N000001"],
     "source_quote": {{{{
       "unit_id": "v7u_N000001",
-      "exact_excerpt": "可选，从该unit英文原文截取的40-240字符片段，无合适句子时可省略"
+      "exact_excerpt": "可选，40-240字符英文原文片段"
     }}}}
   }}}},
   "option_explanations": [
     {{{{
-      "option": "A",
-      “analysis”: “两句话：首句给定义或规则边界，次句结合题干做判断。不写第三句。”,
-      "error_type": "正确|概念混淆|主体或阶段错配|范围或程度偏差|题干要素不匹配|证据不足",
+      "option": "B",
+      "analysis": "仅错误项，不超过两句。不仅说不选，还说何时选",
+      "error_type": "概念混淆|主体或阶段错配|范围或程度偏差|题干要素不匹配|证据不足",
       "stem_quotes": ["题干逐字片段"],
       "option_quotes": ["选项逐字片段"]
     }}}}
   ],
   "easy_mistake": {{{{
-    "text": "自然段落：选一个最易混淆的干扰项，解释它为什么看似合理、哪些事实可以排除它。不要写成引用-对比模板。",
+    "text": "有增量信息时写，否则留空\"\"",
     "cited_unit_ids": ["v7u_N000001"]
   }}}}
 }}}}"""
@@ -615,7 +699,7 @@ def _normalize_grounded_block(
 
 
 def _core_context_issues(text: str) -> list[str]:
-    phrases = ("这种模式符合", "这一模式符合", "整体模式符合", "完全符合")
+    phrases = ("这种模式符合", "这一模式符合", "整体模式符合")
     return [f"核心解析混合决定性信号与伴随事实“{phrase}”" for phrase in phrases if phrase in text]
 
 
@@ -647,30 +731,26 @@ def _fallback_core_analysis(
 
 def _fallback_exam_point(
     option_explanations: list[dict[str, Any]],
+    framework: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
-    correct = [
-        row
+    """从错误项分析和框架信息推断考点。正确项不在 option_explanations 中（由核心解析覆盖）。"""
+    framework = framework or {}
+    fw_type = str(framework.get("type", "") or "")
+    # is_scenario with no cited_unit_ids → 纯题干题，否则为教材依据题
+    if fw_type in ("is_definition", "is_domain"):
+        return {"text": "本题需依据教材规则/定义判断各选项与题干条件的对应关系。"}
+    if fw_type == "is_scenario":
+        if framework.get("cited_unit_ids"):
+            return {"text": "本题需依据教材规则结合题干事实进行场景判断。"}
+        return {"text": "本题需依据题干明确事实对各选项进行直接判断。"}
+    # 回退：检查是否有错误项用了教材依据
+    has_textbook = any(
+        row.get("basis_type") in {"textbook_direct", "textbook_definition_application"}
         for row in option_explanations
-        if row.get("judgement") == "correct"
-        and row.get("basis_type") != "insufficient"
-    ]
-    if not correct:
-        return None
-    labels = "、".join(str(row.get("option", "")) for row in correct)
-    cited = list(
-        dict.fromkeys(
-            uid
-            for row in correct
-            for uid in row.get("cited_unit_ids", []) or []
-        )
-    )[:3]
-    return {
-        "text": (
-            f"本题需依据教材规则判断各选项与题干条件的对应关系，"
-            f"正确选项为{labels}。"
-        ),
-        "cited_unit_ids": cited,
-    }
+    )
+    if has_textbook:
+        return {"text": "本题需依据教材规则/定义判断各选项与题干条件的对应关系。"}
+    return {"text": "本题需依据题干明确事实对各选项进行直接判断。"}
 
 
 def _fallback_easy_mistake(
@@ -775,29 +855,28 @@ def _render_structured_option_analysis(
     option_quotes: list[str],
 ) -> str:
     """fallback：当 LLM 未提供有效 analysis 文本时，用模板拼装兜底。"""
-    result_text = "因此该项正确。" if expected_judgement == "correct" else "因此该项不选。"
     stem_text = _quoted_text(stem_quotes)
     option_text = _quoted_text(option_quotes)
+
+    if expected_judgement == "correct":
+        return f"符合上述定义。"
 
     if basis_type in {"textbook_direct", "textbook_definition_application"}:
         source_text = _quoted_text(
             [claim["exact_excerpt"] for claim in source_claims]
         )
         if evidence_status == "negative":
-            relation = "与上述教材要点不一致"
-        elif evidence_status == "indirect":
-            relation = "可由上述教材要点间接支持"
-        else:
-            relation = "可按上述教材要点直接对应"
+            return (
+                f"教材指出{source_text}，而{option_text or '该选项'}与此不符。"
+            )
         return (
-            f"教材原文要点为{source_text}。题干中的{stem_text or '相关条件'}与"
-            f"选项{option_text or '所述内容'}{relation}，{result_text}"
+            f"教材指出{source_text}。"
+            f"题干中{stem_text or '的条件'}与{option_text or '该选项'}不一致。"
         )
 
     if basis_type == "stem_contrast":
         return (
-            f"选项明确涉及{option_text}，而题干明确给出的是{stem_text}；"
-            f"两者的可见要素不一致，{result_text}"
+            f"{option_text or '该选项'}与题干给出的{stem_text or '事实'}不一致。"
         )
 
     return INSUFFICIENT_TEXT
@@ -845,7 +924,6 @@ def _build_source_evidence(
             if location not in bucket:
                 bucket.append(location)
 
-    add(exam_point["cited_unit_ids"], "考点")
     add(core_analysis["cited_unit_ids"], "核心解析")
     for row in option_explanations:
         add(row["cited_unit_ids"], f"选项{row['option']}")
@@ -857,6 +935,7 @@ def _build_source_evidence(
         heading = unit.get("heading_context", []) or []
         if not isinstance(heading, list):
             heading = [str(heading)] if heading else []
+        page_info = _get_unit_page_map().get(uid, {})
         rows.append(
             {
                 "unit_id": uid,
@@ -866,6 +945,9 @@ def _build_source_evidence(
                     unit.get("en_quote") or unit.get("knowledge_en", "") or ""
                 ),
                 "heading_context": [str(x) for x in heading if str(x).strip()],
+                "content_type": str(unit.get("type", "") or ""),
+                "pdf_page": page_info.get("pdf_page"),
+                "printed_page": page_info.get("printed_page", ""),
             }
         )
     return rows
@@ -944,8 +1026,6 @@ def _build_software_readiness(
         add("盲判存在被过滤的非法引用")
     if not predicted:
         add("AI答案为空")
-    if len(option_explanations) != len(options):
-        add("选项解析数量不完整")
     for row in option_explanations:
         if row.get("basis_type") == "insufficient":
             add(f"选项{row.get('option', '')}证据不足")
@@ -1014,6 +1094,8 @@ def normalize_explanation(
         source = sources.get(label, {})
         raw = raw_by_label.get(label, {})
         expected_judgement = "correct" if label in predicted else "incorrect"
+        if expected_judgement == "correct":
+            continue  # 正确项由核心解析覆盖，不生成 option_explanations 条目
         blind_db = source.get("decision_basis", "")
         evidence_status = source.get("evidence_status", "")
         basis_type = _DECISION_TO_BASIS.get(blind_db)
@@ -1100,7 +1182,7 @@ def normalize_explanation(
             )[:3]
             # 优先使用 LLM 输出的自然语言 analysis，模板拼装仅作 fallback
             raw_analysis = str(raw.get("analysis", "") or "").strip()
-            if len(raw_analysis) >= 20:
+            if len(raw_analysis) >= 6:
                 analysis = _clean_prose(raw_analysis)
             else:
                 analysis = _render_structured_option_analysis(
@@ -1113,7 +1195,13 @@ def normalize_explanation(
                 )
         else:
             basis_type = "insufficient"
-            analysis = INSUFFICIENT_TEXT
+            # 盲判证据不足时，仍优先使用 LLM 写的 analysis（LLM 可能基于材料推理）
+            raw_analysis = str(raw.get("analysis", "") or "").strip()
+            if len(raw_analysis) >= 6:
+                analysis = _clean_prose(raw_analysis)
+            else:
+                # LLM 未提供可用分析且材料不足 → 不生成占位符
+                continue
             cited = []
             source_claims = []
             option_quotes = []
@@ -1169,10 +1257,7 @@ def normalize_explanation(
         core_text = " ".join(
             str(row.get("analysis", "")).strip() for row in correct_rows
         ).strip()
-        exam_point = {
-            "text": "本题考查依据题干明确事实进行直接判断。",
-            "cited_unit_ids": [],
-        }
+        exam_point = {"text": "本题考查依据题干明确事实进行直接判断。"}
         core_analysis = {
             "text": core_text or INSUFFICIENT_TEXT,
             "cited_unit_ids": [],
@@ -1192,18 +1277,13 @@ def normalize_explanation(
         )
         raw_ep_text = str(raw_ep.get("text", "") or "").strip()
         if len(raw_ep_text) >= 6:
-            exam_point = {
-                "text": _clean_prose(raw_ep_text),
-                "cited_unit_ids": _valid_citations(
-                    raw_ep.get("cited_unit_ids", []), provided_evidence_ids
-                )[:3],
-            }
+            exam_point = {"text": _clean_prose(raw_ep_text)}
         else:
-            fallback_exam = _fallback_exam_point(option_explanations)
-            if fallback_exam and fallback_exam.get("cited_unit_ids"):
+            fallback_exam = _fallback_exam_point(option_explanations, framework)
+            if fallback_exam and len(fallback_exam.get("text", "")) >= 6:
                 exam_point = fallback_exam
             else:
-                exam_point = {"text": INSUFFICIENT_TEXT, "cited_unit_ids": []}
+                exam_point = {"text": INSUFFICIENT_TEXT}
         core_analysis, core_issues = _normalize_grounded_block(
             raw_core,
             provided_evidence_ids,
@@ -1230,7 +1310,7 @@ def normalize_explanation(
             raw_core, core_analysis, unit_map
         )
         core_analysis["source_quote"] = source_quote
-        # easy_mistake：优先使用 LLM 原文，仅当真为空时 fallback
+        # easy_mistake：优先使用 LLM 原文，LLM 输出空则表示没有真正迷惑的干扰项
         raw_easy = (
             parsed.get("easy_mistake") if isinstance(parsed.get("easy_mistake"), dict) else {}
         )
@@ -1243,12 +1323,7 @@ def normalize_explanation(
                 )[:3],
             }
         else:
-            fallback_easy = _fallback_easy_mistake(option_explanations, unit_map)
-            if fallback_easy:
-                easy_mistake = fallback_easy
-                normalization_warnings.append("easy_mistake 使用 fallback 模板")
-            else:
-                easy_mistake = {"text": INSUFFICIENT_TEXT, "cited_unit_ids": []}
+            easy_mistake = {"text": "", "cited_unit_ids": []}
     source_evidence = _build_source_evidence(
         unit_map,
         exam_point,
@@ -1266,6 +1341,20 @@ def normalize_explanation(
         grounding_issues,
         normalization_warnings,
     )
+    # 需人工复核标记
+    review_flags: list[str] = []
+    predicted_set = set(predicted)
+    final_set = set(reference.get("final_answer", []) or [])
+    if predicted_set and final_set and predicted_set != final_set:
+        review_flags.append(f"答案冲突：解析{predicted_set} vs 题库{final_set}")
+    if any(row.get("basis_type") == "insufficient" for row in option_explanations):
+        insuff_labels = [row["option"] for row in option_explanations if row.get("basis_type") == "insufficient"]
+        review_flags.append(f"部分选项证据不足：{', '.join(insuff_labels)}")
+    if result.get("validation_checks"):
+        review_flags.append("盲判校验未通过")
+    if result.get("pipeline_status") != "ok":
+        review_flags.append(f"盲判状态异常：{result.get('pipeline_status', '')}")
+
     return {
         "schema_version": SCHEMA_VERSION,
         "answer": predicted,
@@ -1277,6 +1366,7 @@ def normalize_explanation(
         "software_readiness": software_readiness,
         "normalization_issues": grounding_issues,
         "normalization_warnings": normalization_warnings,
+        "review_flags": review_flags,
         "chapter_mappings": result.get("chapter_mappings", []),
         "reference_appendix": reference,
         "generation_metadata": {
@@ -1292,22 +1382,40 @@ def chapter_text(result: dict[str, Any]) -> str:
     if not rows:
         return "未映射"
     return "；".join(
-        f"{row.get('chapter_id', '')} {row.get('chapter_title', '')}".strip()
+        f"{row.get('real_chapter') or row.get('chapter_id', '')} {row.get('chapter_title', '')}".strip()
         for row in rows
     )
 
 
-def render_markdown(result: dict[str, Any], explanation: dict[str, Any]) -> str:
+def render_markdown(
+    result: dict[str, Any],
+    explanation: dict[str, Any],
+    standard_question: dict[str, Any] | None = None,
+) -> str:
     lines: list[str] = [f"# {result.get('question_id', '')}\n\n"]
     lines.append(f"教材章节：{chapter_text(result)}\n\n")
     lines.append(f"题型：{result.get('question_type', '')}\n\n")
     lines.append(f"题干：{result.get('stem', '')}\n\n")
+    standard_question = standard_question or {}
+    stem_en = str(standard_question.get("stem_en", "") or "").strip()
+    options_en = standard_question.get("options_en", {}) or {}
+    if stem_en:
+        lines.append(f"英文题干：{stem_en}\n\n")
     lines.append("选项：\n\n")
     for label, text in (result.get("options", {}) or {}).items():
         lines.append(f"- {label}. {text}\n")
+        en_text = options_en.get(label, "")
+        if en_text:
+            lines.append(f"  English: {en_text}\n")
 
     answer = "、".join(explanation.get("answer", []) or []) or "未形成答案"
     lines.append(f"\n## 【AI答案】\n\n{answer}\n\n")
+    flags = explanation.get("review_flags", []) or []
+    if flags:
+        lines.append("> **需人工复核**\n>\n")
+        for f in flags:
+            lines.append(f"> - {f}\n")
+        lines.append("\n")
     lines.append("## 【考点】\n\n")
     exam_point = explanation.get("exam_point", {}) or {}
     lines.append((exam_point.get("text") or INSUFFICIENT_TEXT) + "\n\n")
@@ -1319,7 +1427,7 @@ def render_markdown(result: dict[str, Any], explanation: dict[str, Any]) -> str:
     if source_quote.get("exact_excerpt"):
         lines.append(f"教材原句：\"{source_quote['exact_excerpt']}\"\n\n")
 
-    lines.append("## 【选项分析】\n\n")
+    lines.append("## 【错误项分析】\n\n")
     judgement_labels = {
         "correct": "正确",
         "incorrect": "错误",
@@ -1338,14 +1446,23 @@ def render_markdown(result: dict[str, Any], explanation: dict[str, Any]) -> str:
         basis = basis_labels.get(
             str(row.get("basis_type", "")), str(row.get("basis_type", ""))
         )
+        # 当 LLM 实际写了分析时，不显示"证据不足"标签
+        is_real_analysis = row.get("analysis", "") != INSUFFICIENT_TEXT
+        if row.get("basis_type") == "insufficient" and is_real_analysis:
+            basis = ""
+        error_tag = ""
+        if row.get("error_type") and not (row.get("basis_type") == "insufficient" and is_real_analysis):
+            error_tag = f"｜{row['error_type']}"
+        basis_tag = f"（{basis}）" if basis else ""
         lines.append(
-            f"- **{row.get('option', '')} {judgement}（{basis}）"
-            f"{'｜' + row.get('error_type', '') if row.get('error_type') else ''}**：{row.get('analysis', '')}\n"
+            f"- **{row.get('option', '')} {judgement}{basis_tag}"
+            f"{error_tag}**：{row.get('analysis', '')}\n"
         )
 
     lines.append("\n## 【易错提醒】\n\n")
     easy_mistake = explanation.get("easy_mistake", {}) or {}
-    lines.append((easy_mistake.get("text") or INSUFFICIENT_TEXT) + "\n\n")
+    easy_text = (easy_mistake.get("text") or "").strip()
+    lines.append((easy_text or "（无）") + "\n\n")
 
     lines.append("## 【教材原文依据】\n\n")
     evidence_rows = explanation.get("source_evidence", []) or []
@@ -1360,6 +1477,15 @@ def render_markdown(result: dict[str, Any], explanation: dict[str, Any]) -> str:
         lines.append(f"### `{row.get('unit_id', '')}`\n\n")
         lines.append(f"- 用于：{used_by}\n")
         lines.append(f"- 章节：{heading}\n")
+        pdf_page = row.get("pdf_page")
+        printed_page = row.get("printed_page", "")
+        if pdf_page is not None or printed_page:
+            page_parts: list[str] = []
+            if pdf_page is not None:
+                page_parts.append(f"PDF第{pdf_page}页")
+            if printed_page:
+                page_parts.append(f"书内第{printed_page}页")
+            lines.append(f"- 页码：{' / '.join(page_parts)}\n")
         lines.append(f"- 中文要点：{row.get('knowledge_zh', '') or '未提供'}\n")
         lines.append(f"- 英文原文：{row.get('en_quote', '') or '未提供'}\n\n")
 
@@ -1387,6 +1513,8 @@ def process_file(
     write_back: bool,
     standard_question: dict[str, Any],
     workbook_row: dict[str, Any],
+    reasoning_effort: str = "high",
+    enable_thinking: bool = True,
 ) -> dict[str, Any]:
     result = load_question_result(path)
     qid = result.get("question_id", path.stem.removeprefix("q_"))
@@ -1394,7 +1522,7 @@ def process_file(
     from openai import OpenAI
 
     client = OpenAI(api_key=api_key, base_url=base_url)
-    raw = call_llm(client, prompt, model=model)
+    raw = call_llm(client, prompt, model=model, reasoning_effort=reasoning_effort, enable_thinking=enable_thinking)
     reference = build_reference_context(
         qid, result.get("predicted_answer", []), standard_question, workbook_row
     )
@@ -1405,7 +1533,7 @@ def process_file(
     explanations_dir = output_dir / "explanations"
     explanations_dir.mkdir(parents=True, exist_ok=True)
     md_path = explanations_dir / f"{qid}.md"
-    md_path.write_text(render_markdown(result, explanation), encoding="utf-8")
+    md_path.write_text(render_markdown(result, explanation, standard_question), encoding="utf-8")
 
     if write_back:
         result["generated_explanation"] = explanation
@@ -1482,7 +1610,7 @@ def write_index(rows: list[dict[str, Any]], output_dir: Path) -> Path:
     ]
     for row in sorted(rows, key=lambda x: x.get("question_id", "")):
         chapters = ",".join(
-            item.get("chapter_id", "")
+            item.get("real_chapter") or item.get("chapter_id", "")
             for item in row.get("chapter_mappings", []) or []
         )
         name = Path(row.get("markdown_path", "")).name if row.get("markdown_path") else ""
@@ -1505,7 +1633,7 @@ def write_chapter_drafts(
         if row.get("status") != "ok" or not row.get("markdown_path"):
             continue
         for mapping in row.get("chapter_mappings", []) or []:
-            chapter_id = mapping.get("chapter_id", "")
+            chapter_id = mapping.get("real_chapter") or mapping.get("chapter_id", "")
             if not chapter_id:
                 continue
             group = grouped.setdefault(
@@ -1546,6 +1674,8 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--concurrency", type=int, default=5)
     parser.add_argument("--model", default="deepseek-v4-pro")
+    parser.add_argument("--reasoning-effort", default="high", choices=["high", "max"])
+    parser.add_argument("--no-thinking", action="store_true", help="关闭思考模式（temperature=0.4）")
     parser.add_argument("--write-back", action="store_true")
     parser.add_argument("--questions-path", default=str(DEFAULT_QUESTIONS_PATH))
     parser.add_argument("--reference-workbook", default=str(DEFAULT_REFERENCE_WORKBOOK))
@@ -1583,6 +1713,8 @@ def main() -> None:
                 args.write_back,
                 standard[qid],
                 references[qid],
+                args.reasoning_effort,
+                not args.no_thinking,
             )
             future_map[future] = path
         for i, future in enumerate(as_completed(future_map), start=1):
