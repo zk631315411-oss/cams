@@ -3,62 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAMS 教研工作台</title>
-  <link rel="stylesheet" href="css/workbench.css?v=20260625-refactor-1">
+  <title>CAMS V7 教研工作台</title>
+  <link rel="stylesheet" href="css/workbench.css?v=v7-release-6">
 </head>
 <body>
   <div class="app-shell">
     <aside class="toc-pane" aria-label="目录">
       <div class="toc-head">
-        <strong>V6 全教材目录</strong>
+          <strong>V7 教材目录</strong>
         <button class="icon-button toc-toggle" id="tocToggleButton" type="button" aria-label="收起目录" aria-controls="tocList" aria-expanded="true" title="收起目录">‹</button>
       </div>
       <div id="tocList" class="toc-list"></div>
     </aside>
+    <div class="panel-resizer" data-resize-pane="toc" role="separator" aria-label="调整目录宽度" aria-orientation="vertical" tabindex="0" title="拖动调整宽度，双击恢复默认"></div>
 
     <section class="reader-pane" aria-label="教材阅读区">
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">C</span>
           <div>
-            <h1>CAMS 教研工作台</h1>
+            <h1>CAMS V7 教研工作台</h1>
           </div>
         </div>
 
         <div class="top-actions">
-          <div class="work-mode-switch" aria-label="工作状态">
-            <button class="work-mode-button active" type="button" data-work-mode="read">看书备课</button>
-            <button class="work-mode-button" type="button" data-work-mode="explain">新题解析</button>
-            <button class="work-mode-button" type="button" data-work-mode="qa">学生答疑</button>
+          <div class="history-controls" aria-label="历史导航">
+            <button class="icon-button" id="historyBack" type="button" aria-label="后退" title="后退" disabled>&larr;</button>
+            <button class="icon-button" id="historyForward" type="button" aria-label="前进" title="前进" disabled>&rarr;</button>
           </div>
+          <div class="work-mode-switch" aria-label="工作模式">
+            <button class="work-mode-button active" type="button" data-work-mode="read" aria-pressed="true">看书备课</button>
+            <button class="work-mode-button" type="button" data-work-mode="explain" aria-pressed="false">新题解析</button>
+            <button class="work-mode-button" type="button" data-work-mode="qa" aria-pressed="false">学生答疑</button>
+          </div>
+          <div class="language-switch" aria-label="教材语言">
+            <button class="language-button active" type="button" data-language="zh">中文</button>
+            <button class="language-button" type="button" data-language="en">English</button>
+            <button class="language-button" type="button" data-language="both">对照</button>
+          </div>
+          <span class="release-status" id="releaseStatus" hidden></span>
           <div class="search-box">
-            <input id="searchInput" type="search" autocomplete="off" placeholder="搜索教材原文、题目或答疑">
+            <input id="searchInput" type="search" autocomplete="off" placeholder="搜索 v7 教材、题目或解析">
             <div class="search-results" id="searchResults" hidden></div>
           </div>
         </div>
       </header>
 
       <main class="reader-scroll" id="reader" tabindex="-1"></main>
+      <div class="reader-vertical-resizer" data-resize-reader-height role="separator" aria-label="调整 PDF 阅读区高度" aria-orientation="horizontal" tabindex="0" title="上下拖动调整 PDF 高度，双击恢复默认"></div>
+      <div class="reader-bottom-pane" aria-label="工作区留白"></div>
     </section>
+    <div class="panel-resizer" data-resize-pane="detail" role="separator" aria-label="调整详情区域宽度" aria-orientation="vertical" tabindex="0" title="拖动调整宽度，双击恢复默认"></div>
 
     <aside class="detail-pane" id="detailPane" aria-label="教材考点详情">
       <div class="detail-content" id="detailContent">
         <div class="empty-panel">
           <div class="empty-icon" aria-hidden="true">⌁</div>
-          <h2>全教材阅读模式</h2>
-          <p>当前先展示 V6 全教材原文，考点、题目和答疑关联后续再接入。</p>
+          <h2>V7 教材证据工作台</h2>
+          <p>工作台只加载已冻结的 v7 发布包。题目证据可回到双语教材知识单元。</p>
         </div>
       </div>
-      <div class="feedback-bar" id="feedbackBar" style="display:none"></div>
     </aside>
   </div>
 
-  <script src="js/utils.js?v=20260625-refactor-1"></script>
-  <script src="js/store.js?v=20260625-refactor-1"></script>
-  <script src="js/reader.js?v=20260625-refactor-1"></script>
-  <script src="js/panel.js?v=20260625-refactor-1"></script>
-  <script src="js/feedback.js?v=20260625-refactor-1"></script>
-  <script src="js/search.js?v=20260625-refactor-1"></script>
-  <script src="js/app.js?v=20260625-refactor-1"></script>
+  <script src="js/utils.js?v=v7-release-2"></script>
+  <script src="js/store.js?v=v7-release-2"></script>
+  <script src="js/reader.js?v=v7-release-7"></script>
+  <script src="js/panel.js?v=v7-release-3"></script>
+  <script src="js/search.js?v=v7-release-2"></script>
+  <script src="js/app.js?v=v7-release-3"></script>
+  <script src="js/layout.js?v=v7-release-3"></script>
 </body>
 </html>
