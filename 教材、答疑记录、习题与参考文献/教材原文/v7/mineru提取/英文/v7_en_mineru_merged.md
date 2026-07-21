@@ -95,288 +95,447 @@ Acronyms are used in this Study Guide. Please refer to the Glossary to facilitat
 ## Table of Contents
 
 # Understanding the Risks and Methods of Financial Crime (Page 13)
-
 ## Money Laundering and Financial Crime (Page 14)
-
 ### Introduction (Page 14)
-
-- Introduction: Money laundering and financial crime
-- Case example: Linguistix's suspicious transactions
-
+#### Introduction: Money laundering and financial crime (Page 14)
+#### Case example: Linguistix’s suspicious transactions (Page 14)
 ### Money laundering (Page 16)
-
-- What is financial crime?
-- Money laundering
-- Common techniques for money laundering
-- Case example: Tamayo's money mules
-
+#### What is financial crime? (Page 16)
+#### Money laundering (Page 16)
+#### Common techniques for money laundering (Page 17)
+#### Case example: Tamayo's money mules (Page 19)
 ### Types of financial crime (Page 21)
-
-- Predicate crimes and money laundering
-- Sanctions evasion
-- Bribery and corruption
-- Tax avoidance versus tax evasion, fraud, and cyber-enabled crime
-- Case examples: Komarov's tactics and FullTechGlobal corruption scandal
-
+#### Predicate crimes and money laundering (Page 21)
+#### Sanctions evasion (Page 23)
+#### Case example: Komarov’s tactics (Page 24)
+#### Bribery and corruption (Page 25)
+#### Case example: FullTechGlobal corruption scandal (Page 26)
+#### Tax avoidance versus tax evasion (Page 28)
+#### Fraud (Page 29)
+#### Cyber-enabled crime (Page 30)
 ### Examples of predicate crimes (Page 32)
-
-- Human trafficking and human smuggling
-- Environmental crime
-- Drug trafficking
-
+#### Human trafficking and human smuggling (Page 32)
+#### Environmental crime (Page 33)
+#### Drug trafficking (Page 34)
 ### Terrorism financing (Page 36)
-
-- Terrorism financing compared to money laundering
-- How terrorists move and store funds
-- Case example: Mr. Wolfe's scheme
-
-### Consequences of financial crime and related risks (Page 41)
-
-- Financial crime consequences, social consequences, and institutional accountability
-- Individual impact of violations of AFC regulations
-- Financial crime, operational, legal, concentration, and reputational risks
-- Case example: A lasting lesson
-
+#### Terrorism financing compared to money laundering (Page 36)
+#### How terrorists move and store funds (Page 37)
+#### Case example: Mr. Wolfe’s scheme (Page 38)
+### Consequences of financial crime (Page 41)
+#### Consequences of financial crime (Page 41)
+#### Social consequences of financial crime (Page 42)
+#### Institutional accountability to prevent financial crime (Page 43)
+#### Individual impact of violations of AFC regulations (Page 44)
+### Financial crime risks in relation to other types of risks (Page 46)
+#### Financial crime risks (Page 46)
+#### Case example: A lasting lesson (Page 47)
+#### Operational, legal, concentration, and reputational risks (Page 48)
 ## Money Laundering Risks in Financial Services (Page 50)
-
 ### Introduction (Page 50)
-
-- Sector-specific case studies
-- Case example: A new corporate banking role
-- Financial crime risk
-
+#### Introduction: Money laundering risks in financial services (Page 50)
+#### Student note: Sector-specific case studies (Page 50)
+#### Case example: A new corporate banking role (Page 51)
+#### Student note: Financial crime risk (Page 52)
 ### Money laundering risks associated with banking (Page 53)
-
-- Shell and shelf companies, politically exposed persons, control and ownership, and concentration accounts
-- Case example: Estonian bank branch
-
+#### Money laundering risks associated with banking (Page 53)
+#### Shell and shelf companies risks (Page 54)
+#### Case example: Estonian bank branch (Page 56)
+#### Politically exposed person risks (Page 57)
+#### Control and ownership for AML compliance (Page 59)
+#### Concentration accounts (Page 61)
 ### Money laundering risks associated with retail and commercial banking (Page 63)
-
-- Retail and commercial banking products and high-risk products
-- Trade finance, credit-related products, cards, credit unions, and building societies risks
-
+#### Retail and commercial banking products and risks (Page 63)
+#### High-risk retail and commercial banking products (Page 64)
+#### Trade finance products and risks (Page 66)
+#### Credit-related product risks (Page 67)
+#### Card risks (Page 68)
+#### Credit unions and building societies risks (Page 69)
 ### Private banking and wealth management risks (Page 71)
-
-- High-risk products, trusts, offshore financial centers, and special purpose vehicles
-
+#### Money laundering risks associated with private banking and wealth management (Page 71)
+#### High-risk private banking and wealth management products (Page 72)
+#### Trust risks (Page 73)
+#### Offshore financial center risks (Page 74)
+#### Special purpose vehicle risks (Page 75)
 ### Corporate and investment banking risks (Page 77)
-
-- Wire transfers, fundraising, mergers and acquisitions, high-risk products, correspondent banking, and capital markets
-
+#### Corporate and investment banking risks (Page 77)
+#### Wire transfer risks (Page 78)
+#### Fundraising risks (Page 79)
+#### Mergers and acquisitions risks (Page 80)
+#### High-risk corporate and investment banking products (Page 81)
+#### Correspondent banking risks (Page 83)
+#### Capital markets risks (Page 84)
 ## Money Laundering Risks in Nonbank Financial Institutions (Page 86)
-
 ### Introduction (Page 86)
-
-- Case example: CashBayou's risk management challenges
-
+#### Introduction: Money laundering risks in nonbank financial institutions (Page 86)
+#### Case example: CashBayou's risk management challenges (Page 86)
 ### Money laundering risks associated with MSBs, payment service providers, and e-commerce (Page 89)
-
-- Payment service providers and their risks
-- Money services businesses and risks associated with banking MSBs
-- E-commerce and its risks
-- Case example: LotusMall and illegal gambling
-
+#### Payment service providers (Page 89)
+#### Payment service providers risks (Page 92)
+#### Money services business (Page 93)
+#### Risks associated with banking MSBs (Page 95)
+#### E-commerce (Page 96)
+#### E-commerce risks (Page 98)
+#### Case example: LotusMall and illegal gambling (Page 99)
 ### Money laundering risks associated with insurance, securities, brokerage, and custodian services (Page 101)
-
-- Insurance products, securities and brokerage, asset managers, and custodial services risks
-- Case example: Investment product misuse
-
+#### Insurance products risks (Page 101)
+#### Case example: Investment product misuse (Page 102)
+#### Securities and brokerage risks (Page 103)
+#### Asset managers (Page 105)
+#### Custodial services risks (Page 106)
 ### Money laundering risks associated with cryptoassets and other FinTechs (Page 108)
-
-- Cryptoassets industry ecosystem and blockchain
-- Cryptoasset, stablecoin, token, NFT, and central bank digital currency risks
-- Mixers and tumblers
-
+#### Cryptoassets industry ecosystem (Page 108)
+#### Blockchain (Page 110)
+#### Cryptoasset risks (Page 111)
+#### Stablecoin, token, and NFT risks (Page 112)
+#### Central bank digital currency (Page 113)
+#### Mixers and tumblers (Page 114)
 ## Money Laundering Risks in DNFBPs and Other High-Risk Sectors (Page 116)
-
 ### Introduction (Page 116)
-
-- Case example: DNFBP risks in the Hendricks case
-
+#### Introduction: Money Laundering Risks in DNFBPs and Other High-Risk Sectors (Page 116)
+#### Case example: DNFBP risks in the Hendricks case (Page 116)
 ### Money laundering risks associated with DNFBPs (Page 119)
-
-- Designated nonfinancial businesses and professions, gaming, real estate, accountancy and audit, and legal services risks
-- Trust and company service provider and company secretary sector risks
-
+#### Risks of banking designated nonfinancial businesses and professions (Page 119)
+#### Gaming sector risks (Page 120)
+#### Real estate sector risks (Page 121)
+#### Accountancy and audit sector risks (Page 123)
+#### Legal services sector risks (Page 125)
+#### Trust and company service provider and company secretary sector risks (Page 126)
 ### High-risk business sectors (Page 128)
-
-- High-value assets, import/export businesses, free-trade zones, and alternative remittance systems
-- Charities and NGOs, military organizations and goods, embassies and foreign consulates, and drug-related businesses risks
-- Case example: Suspicious transactions at Goodwish Jade
-
+#### High-value asset risks (Page 128)
+#### Case example: Suspicious transactions at Goodwish Jade (Page 129)
+#### Import/export businesses risks (Page 131)
+#### Free-trade zones risks (Page 132)
+#### Alternative remittance systems (Page 133)
+#### Charity and NGO risks (Page 134)
+#### Military organization and goods risks (Page 135)
+#### Providing financial services to embassies, foreign consulates, and missions (Page 137)
+#### Drug-related businesses risks (Page 138)
 # Global AFC Frameworks, Governance, and Regulations (Page 140)
-
 ## Global AFC Standards and Guidance (Page 141)
-
+### Introduction (Page 141)
+#### Introduction: Global AFC standards and guidance (Page 141)
+#### Case example: Implementing AFC standards at FinTrust (Page 142)
 ### Financial Action Task Force (Page 144)
-
-- FATF-style regional bodies
-- FATF 40 Recommendations, 11 Immediate Outcomes, mutual evaluation, and high-risk and noncooperative jurisdictions
-- FATF guidance for risk assessment
-
+#### Financial Action Task Force (Page 144)
+#### FATF-style regional bodies (Page 145)
+#### FATF 40 Recommendations (Page 146)
+#### FATF Recommendations 1-8 (Page 147)
+#### FATF Recommendations 9-23 (Page 148)
+#### FATF Recommendations 24-40 (Page 149)
+#### FATF 11 Immediate Outcomes (Page 150)
+#### FATF mutual evaluation (Page 153)
+#### FATF high-risk and noncooperative jurisdictions (Page 155)
+#### Impact of FATF mutual evaluation reports on jurisdictions (Page 156)
+#### FATF guidance for risk assessment (Page 158)
 ### AFC guidance from leading international organizations (Page 160)
-
-- United Nations, World Bank and International Monetary Fund, OECD, and Basel Committee on Banking Supervision
-- Egmont Group, Wolfsberg Group, and International Organization of Securities Commissions
-- Case study: The 1999 Convention and UNSC resolutions for CFT
-
+#### United Nations AFC guidance (Page 160)
+#### Case study: The 1999 Convention and UNSC resolutions for CFT (Page 161)
+#### World Bank and International Monetary Fund AFC guidance (Page 163)
+#### Organisation for Economic Co-operation and Development AFC guidance (Page 164)
+#### Basel Committee on Banking Supervision AFC guidance (Page 165)
+#### Egmont Group AFC guidance (Page 167)
+#### Wolfsberg Group AFC guidance (Page 168)
+#### International Organization of Securities Commissions AFC guidance (Page 169)
 ### AFC guidance from other organizations (Page 171)
-
-- G-20 Anti-Corruption Working Group, Transparency International, Basel Institute on Governance, and Tax Justice Network
-
+#### G-20 Anti-Corruption Working Group AFC guidance (Page 171)
+#### Transparency International AFC guidance (Page 172)
+#### Basel Institute on Governance AFC guidance (Page 174)
+#### Tax Justice Network AFC guidance (Page 175)
 ## AFC Regulations and Regimes (Page 177)
-
+### Introduction (Page 177)
+#### Introduction: AFC regulations and regimes (Page 177)
+#### Student note: Regulatory framework elective courses (Page 177)
+#### Case example: Drafting policies for an AFC department based in APAC (Page 178)
 ### US AML/CFT regulatory landscape (Page 180)
-
-- Bank Secrecy Act, USA PATRIOT Act, and the Anti-Money Laundering Act of 2020
-- Financial Crimes Enforcement Network, other US regulators, and the Office of Foreign Assets Control
-- Case study: US regulatory enforcement actions
-
-### EU and other regional AML/CFT regulatory landscapes (Page 189)
-
-- History of AML regime in Europe, the EU AML package, AML Authority, and Markets in Cryptoassets Regulation
-- AML regulations in the UK, Australia, Singapore, Hong Kong (China), China, Japan, South Korea, and the United Arab Emirates
-
+#### Bank Secrecy Act (Page 180)
+#### USA PATRIOT Act (Page 181)
+#### The Anti-Money Laundering Act of 2020 (Page 182)
+#### Financial Crimes Enforcement Network (Page 184)
+#### Other US regulators (Page 185)
+#### Case study: US regulatory enforcement actions (Page 186)
+#### Office of Foreign Assets Control (Page 187)
+### EU AML/CFT regulatory landscape (Page 189)
+#### History of AML regime in Europe (Page 189)
+#### EU AML package (Page 190)
+#### The role of AML Authority (Page 191)
+#### Markets in Cryptoassets Regulation (Page 192)
+### Other regional AML/CFT regulatory landscapes (Page 194)
+#### Local AML regulations and cross-jurisdictional impact (Page 194)
+#### UK AML regulations (Page 195)
+#### Australia AML regulations (Page 196)
+#### Singapore AML regulations (Page 198)
+#### Hong Kong (China) AML regulations (Page 199)
+#### China AML regulations (Page 200)
+#### Japan AML regulations (Page 201)
+#### South Korea AML regulations (Page 202)
+#### United Arab Emirates AML regulations (Page 203)
 ### Other AFC regulations that impact organizations (Page 205)
-
-- Major ABC regulations, sanctions regimes, data security, and privacy
-- Digital Operational Resilience Act, GDPR, consumer protection, AI, and ESG regulations
-
-# Use of Guidance and AFC Cooperation (Page 219)
-
-## Using the reports and guidance from different authorities (Page 222)
-
-### Using reports, guidance notes, and policy papers in AML/CFT controls (Page 223)
-
-- Terrorist financing red flags
-- National, sectoral, and thematic risk assessments
-- Case study: SRA on decentralized finance
-
-## Cooperation between authorities (Page 228)
-
-### Roles and cooperation of regulators, law enforcement, and FIUs
-
-- Cooperation between regulatory authorities
-- Law enforcement and FIU AFC cooperation, partnership requirements, and mutual legal assistance treaties
-- Case study: J5-US law enforcement collaboration
-
-## Cooperation involving the private sector (Page 235)
-
-### Public-private partnership and information sharing
-
-- Private sector collaboration and information sharing
-- Case study: AUSTRAC Fintel Alliance investigation
-
+#### Major ABC regulations (Page 205)
+#### Major sanctions regimes (Page 206)
+#### Other sanctions regimes (Page 207)
+### Other laws and regulations that impact organizations (Page 209)
+#### Data security and privacy (Page 209)
+#### Digital Operational Resilience Act (Page 210)
+#### EU General Data Protection Regulation (Page 211)
+#### The GDPR and the balance between privacy and transparency (Page 212)
+#### Consumer protection and inclusive banking (Page 213)
+#### AI regulations (Page 214)
+#### ESG regulations (Page 216)
+## Use of Guidance and AFC Cooperation (Page 219)
+### Introduction (Page 219)
+#### Introduction: Use of guidance and AFC cooperation (Page 219)
+#### Case example: Using typology reports to enhance AML controls (Page 220)
+### Using the reports and guidance from different authorities (Page 222)
+#### Using AFC reports, guidance notes, and policy papers (Page 222)
+#### Using reports, guidance notes, and policy papers in your AML/CFT controls (Page 223)
+#### Case example: Terrorist financing red flags (Page 224)
+#### National, sectoral, and thematic risk assessments (Page 225)
+#### Case study: SRA on decentralized finance (Page 226)
+### Cooperation between authorities (Page 228)
+#### Roles of regulators, law enforcement, and FIUs (Page 228)
+#### Case study: J5-US law enforcement collaboration (Page 229)
+#### Cooperation between regulatory authorities (Page 230)
+#### Law enforcement and FIU AFC cooperation (Page 231)
+#### Case study: Law enforcement and FIU cooperation (Page 232)
+#### Partnership requirements and mutual legal assistance treaties (Page 233)
+### Cooperation involving the private sector (Page 235)
+#### Public-private partnership (Page 235)
+#### Case study: AUSTRAC Fintel Alliance investigation (Page 236)
+#### Private sector collaboration (Page 237)
+#### Private sector information sharing (Page 238)
 # Building an AFC Compliance Program (Page 240)
-
 ## Components of an AFC Program (Page 241)
-
-### AFC program and pillars of an AFC compliance program (Page 243)
-
-- Case study: Systemic BSA failures at a Canadian bank
-
+### Introduction (Page 241)
+#### Introduction: Components of an AFC program (Page 241)
+#### Case study: Systemic BSA failures at a Canadian bank (Page 241)
+### AFC program (Page 243)
+#### AFC program components (Page 243)
+#### Pillars of an AFC compliance program (Page 244)
 ### Three lines of defense (Page 246)
-
-- First, second, and third line of defense AFC functions
-- Money laundering reporting officer, quality control and assurance, and compliance monitoring and testing
-- Internal audit, board and management oversight, and a culture of compliance
-
+#### Three lines of defense (Page 246)
+#### First line of defense AFC function (Page 246)
+#### Second line of defense AFC function (Page 248)
+#### Role of money laundering reporting officer (Page 249)
+#### Role of quality control and quality assurance (Page 249)
+#### Financial crime functions' structure (Page 250)
+#### Compliance monitoring and testing (Page 252)
+#### Case example: Financial crime functions' structure at Global Finance, Corp. (Page 253)
+#### Third line of defense AFC function (Page 256)
+#### Liaising with internal audit (Page 258)
+#### Functions of board of directors and management oversight (Page 259)
+#### Second LOD's AFC role and its interaction with the front office (Page 261)
+#### Second LOD's interaction with other functions (Page 262)
+#### Establishing a culture of compliance (Page 264)
 ## Risk Assessment (Page 265)
-
-### Types of risk assessment and the risk-based approach (Page 267)
-
-- Risk assessments within an organization, risk appetite statement, and preparing a risk appetite statement
-
+### Introduction (Page 265)
+#### Introduction: Risk assessment (Page 265)
+#### Case study: Failure to update an EWRA at a wealth management firm (Page 265)
+### Types of risk assessment (Page 267)
+#### The importance of risk assessment in AFC (Page 267)
+#### Types of risk assessment within an organization (Page 269)
+#### The risk-based approach (Page 270)
+#### The risk appetite statement (Page 271)
+#### Preparing a risk appetite statement (Page 272)
 ### Enterprise-wide risk assessment (Page 274)
-
-- Inherent risks, control effectiveness, residual risk action plans, and third-party tools
-- Reporting risk assessment results and continuous risk assessment
-- Customer, enterprise-wide, and product risk assessments
-
+#### Enterprise-wide risk assessment (Page 274)
+#### Determining inherent risks (Page 275)
+#### Control effectiveness (Page 277)
+#### Measuring control effectiveness (Page 278)
+#### Residual risks action plan (Page 279)
+#### Third-party tools to conduct risk assessment (Page 280)
+#### Reporting results of risk assessment (Page 281)
+### The importance of continuous risk assessment (Page 283)
+#### Continuously assessing financial crime risk (Page 283)
+#### Customer risk assessment versus enterprise-wide risk assessment (Page 285)
+#### Product risk assessment (Page 286)
 ## Design Your AFC Program and Controls (Page 288)
-
+### Introduction (Page 288)
+#### Introduction: Design your AFC program and controls (Page 288)
+#### Case study: Lack of governance at a Canadian bank (Page 289)
 ### Governance and oversight (Page 291)
-
-- Drafting and maintaining AFC policies and procedures, governance committees, and regulatory reporting
-
+#### Need for AFC policies and procedures (Page 291)
+#### Drafting AFC policies and procedures (Page 291)
+#### Maintaining effective AFC policies and procedures (Page 293)
+#### Governance committees and their functions (Page 294)
+#### Internal reporting to governance committees (Page 296)
+#### Regulatory reporting for AFC compliance (Page 297)
+#### Responding to regulator requests (Page 299)
 ### Implementation of AFC program and controls (Page 301)
-
-- Controls across the customer lifecycle, KYC, customer risk assessment, and high-risk onboarding controls
-- Ongoing due diligence, payment and batch screening, PEP screening, and adverse media checks
-- Know your employee and vendor
-
+#### Controls across the customer lifecycle (Page 301)
+### Onboarding AFC controls (Page 304)
+#### The KYC process (Page 304)
+#### Customer risk assessment (Page 307)
+#### KYC for a natural person (Page 309)
+#### KYC for a legal person (Page 310)
+#### Additional onboarding controls for high-risk scenarios (Page 312)
+#### Function of quality control (Page 313)
+### Ongoing AFC controls (Page 315)
+#### Ongoing due diligence (Page 315)
+#### Payment screening (Page 317)
+#### Batch screening (Page 319)
+#### Politically exposed persons screening (Page 320)
+#### Adverse media checks (Page 322)
+### Other due diligence requirements that help to mitigate risks (Page 324)
+#### Know your employee and vendor (Page 324)
 ## Transaction Monitoring and Investigation (Page 325)
-
-### Transaction monitoring and alert review (Page 328)
-
-- Transaction monitoring controls, technology solutions, system tuning, and alert generation
-- Procedures for alert review and other sources of investigation
-
+### Introduction (Page 325)
+#### Introduction: Transaction monitoring and investigation (Page 325)
+#### Case example: AML control failures at a UK Bank (Page 325)
+### Transaction monitoring (Page 328)
+#### Transaction monitoring controls (Page 328)
+#### Transaction monitoring versus payment screening (Page 329)
+#### Technology solutions for transaction monitoring (Page 330)
+#### Transaction monitoring system tuning (Page 331)
+### Alert generation (Page 333)
+#### Typical scenarios that would generate an alert (Page 333)
+#### Procedures for alerts review (Page 334)
+#### Other sources of investigation (Page 335)
 ### Investigations (Page 337)
-
-- Information gathering and analysis, communications and tipping off, and suspicious activity escalation
-- Documenting research and the decision to file a SAR
-
+#### Steps applied to an investigation (Page 337)
+#### Information gathering (Page 337)
+#### How much research is reasonably enough? (Page 338)
+#### Communication channels and tipping off (Page 339)
+#### Communicating with customers (Page 340)
+#### Investigating someone inside the organization (Page 341)
+#### Analysis of information (Page 342)
+#### Suspicious activity escalation process (Page 344)
+#### Documenting your research (Page 345)
+#### Decision to file a SAR (Page 346)
 ## Concluding Investigations and Coordinating with Law Enforcement (Page 348)
-
+### Introduction (Page 348)
+#### Introduction: Concluding investigations and coordinating with law enforcement (Page 348)
+#### Case study: Failure to file report (Page 348)
 ### Concluding an investigation and suspicious activity reporting (Page 350)
-
-- Duty to report, SAR regulations and structure, account maintenance, and follow-up when no SAR is filed
-
-### Working with law enforcement agencies and offboarding (Page 361)
-
-- Responding to law enforcement requests, how case investigators read a SAR, and refusing or terminating a customer
-- De-risking and financial inclusion
-
+#### Protecting the organization during an investigation (Page 350)
+#### Duty to report (Page 351)
+#### Regulations related to suspicious activity reporting (Page 352)
+#### Suspicious activity report structure (Page 353)
+#### Case example: SAR for a family trust (Page 354)
+#### Maintaining an account after unusual activity (Page 356)
+#### Reasons and consequences for not filing a SAR (Page 357)
+#### Follow-up action when no SAR is filed (Page 358)
+#### Defensive suspicious activity reports (Page 359)
+### Working with law enforcement agencies (Page 361)
+#### Communicating with law enforcement for an investigation (Page 361)
+#### Responding to law enforcement requests (Page 362)
+#### How law enforcement case investigators read a SAR (Page 363)
+### Offboarding and de-risking (Page 364)
+#### Refusing or terminating a customer (Page 364)
+#### De-risking (Page 365)
+#### Financial inclusion (Page 366)
 # Tools and Technologies to Fight Financial Crimes (Page 368)
-
 ## Technology for AFC Compliance (Page 369)
-
-### AFC technology, tools, and implementation (Page 372)
-
-- Global AFC innovation, technology implementation considerations, artificial intelligence, and machine learning
-- Governance of compliance technology, technology requirements, and systems and data integration
-- Privacy regulations and privacy-enhancing technology
-
+### Introduction (Page 369)
+#### Introduction: Technology for AFC compliance (Page 369)
+#### Case example: Implementing technology in AFC compliance (Page 370)
+### Understanding AFC technology (Page 372)
+#### AFC technology overview (Page 372)
+#### Tools and technologies for AFC compliance (Page 374)
+#### Global AFC innovation (Page 376)
+#### Technology implementation considerations (Page 377)
+### Choosing AFC tools for an organization (Page 381)
+#### Adopting a risk-based approach when choosing AFC technology (Page 381)
+#### Using AFC technology to reduce friction in customer journeys (Page 382)
+#### AFC tools, choices, and considerations (Page 383)
+#### Artificial intelligence and machine learning (Page 384)
+#### Transitioning from traditional systems to AI-based tools (Page 386)
+#### Governance of compliance technology (Page 387)
+#### Regulatory requirements for technology (Page 388)
+#### Integrating new AFC tools with existing systems and data (Page 389)
+#### Prioritizing resources (Page 390)
+### Privacy regulations and technology (Page 392)
+#### Impact of privacy regulations on technology use (Page 392)
+#### Privacy-enhancing technology (Page 393)
 ### Technology and tools used across the customer life cycle (Page 395)
-
-- Geolocation technology, device intelligence, robotic process automation, behavioral and profile monitoring, and open-source intelligence
-
+#### Geolocation technology (Page 395)
+#### Device intelligence (Page 396)
+#### Robotic process automation (Page 397)
+#### Behavioral and profile monitoring (Page 398)
+#### Open-source intelligence (Page 399)
 ## Technology for Customer Onboarding (Page 401)
-
+### Introduction (Page 401)
+#### Introduction: Technology for customer onboarding (Page 401)
+#### Case example: Improving technology for customer onboarding (Page 401)
 ### Technology for KYC (Page 404)
-
-- Electronic and perpetual KYC, digital onboarding, authentication, and security technology
-- Biometric, facial and voice recognition, and liveness check technology
-
+#### How does technology help KYC? (Page 404)
+#### Electronic KYC (Page 405)
+#### Perpetual KYC (Page 406)
+#### Digital onboarding technology (Page 408)
+#### Authentication and security technology (Page 409)
+#### Biometric technology (Page 411)
+#### Facial and voice recognition technology (Page 412)
+#### Liveness check technology (Page 415)
 ### Technology for screening (Page 416)
-
-- Screening system logic, list management, sanctions lists, fuzzy logic, and system tuning
-- Whitelisting, systems integration, and AI for screening
-
+#### How does technology help screening? (Page 416)
+#### Understanding screening system logic (Page 417)
+#### List management (Page 419)
+#### Student note: Sanctions lists (Page 420)
+#### Fuzzy logic and partial matches (Page 420)
+#### Screening system tuning (Page 421)
+#### Whitelisting and adding to internal lists (Page 422)
+#### Integrating screening technology with other systems (Page 424)
+#### Using AI for screening (Page 426)
 ## Technology for Ongoing Monitoring and Investigations (Page 428)
-
-### Technology for payment, batch screening, and transaction monitoring (Page 431)
-
-- Ongoing screening, payment screening, and screening of digital assets and currencies
-- Rules-based and emerging transaction monitoring, scenario development, and calibration testing
-- Ongoing testing, tuning, and governance for rules-based systems and AI tools
-
+### Introduction (Page 428)
+#### Introduction: Technology for ongoing monitoring and investigations (Page 428)
+#### Case example: New batch screening technology considerations (Page 428)
+### Technology for payment and batch screening (Page 431)
+#### Types of ongoing screening (Page 431)
+#### Maintaining screening technology (Page 432)
+#### Technology for payment screening (Page 433)
+#### Screening digital assets and currencies (Page 434)
+### Evolution of transaction monitoring (Page 436)
+#### Rules-based transaction monitoring (Page 436)
+#### New and emerging technologies for monitoring customers (Page 437)
+#### Case example: Evolution of transaction monitoring (Page 439)
+### Technology for transaction monitoring (Page 442)
+#### Transaction monitoring and sufficient scenarios coverage (Page 442)
+#### Transaction monitoring scenario development (Page 443)
+#### Transaction monitoring scenario calibration testing (Page 445)
+#### Ongoing testing and tuning for rules-based systems (Page 446)
+#### Ongoing testing and tuning for AI tools (Page 448)
+#### Governance for transaction monitoring (Page 449)
 ### Technology for investigations (Page 451)
-
-- Technology to assist investigation, network analysis, case management, blockchain tracing, and reporting
-
+#### Technology to assist investigation (Page 451)
+#### Network analysis solutions for transaction monitoring (Page 453)
+#### Technology to assist case management (Page 455)
+#### Technology for blockchain tracing (Page 456)
+#### Technology for reporting (Page 457)
 ## Data Collection and Preparation (Page 459)
+### Introduction (Page 459)
+#### Introduction: Data collection and preparation (Page 459)
+#### Case example: Identify data for a new TM system (Page 460)
+### Data as an input for solutions (Page 462)
+#### Understanding your data (Page 462)
+#### Coverage and gap assessment (Page 463)
+#### Clean data for technology solutions (Page 464)
+### Data collection (Page 466)
+#### Internal versus external data (Page 466)
+#### Internal static data (Page 467)
+#### Internal observed data (Page 468)
+#### Leveraging data from internal platforms (Page 469)
+#### Case example: AI for money laundering detection (Page 470)
+#### External data (Page 472)
+#### Integrating data from various sources (Page 473)
+### Data preparation (Page 475)
+#### Data quality (Page 475)
+#### Data preparation (Page 476)
+#### Case example: Handling increased alert volume (Page 477)
+#### Data lineage (Page 478)
+#### AFC data extraction (Page 480)
+#### Data mining and matching (Page 481)
+#### Case example: Analyzing customer behaviors (Page 482)
+#### Data validation and testing (Page 483)
+#### Entity resolution (Page 484)
+#### Attributes of a block and sources of data (Page 485)
+#### Clustering (Page 486)
+### Governance process (Page 488)
+#### Data governance committees (Page 488)
+#### Data governance administration and quality control (Page 489)
+## Glossary (Page 491)
 
-### Data collection and preparation (Page 462)
 
-- Coverage and gap assessment, internal and external data, and data integration
-- Data quality, data lineage, AFC data extraction, and data mining and matching
-- Data validation, entity resolution, clustering, and data governance
-
-### Glossary (Page 491)
-
-## Understanding the Risks and Methods of Financial Crime
+# Understanding the Risks and Methods of Financial Crime
 
 After completing this learning experience, you will be able to: 
 
@@ -388,21 +547,21 @@ After completing this learning experience, you will be able to:
 
 • Explain the money laundering risks associated with nonfinancial services. 
 
-# Money Laundering and Financial Crime
+## Money Laundering and Financial Crime
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/d3efdede3d9ff842a99928891cc808577150b3e821e608af31ebc9fc9eaac00f.jpg)
 
 
-## Introduction: Money laundering and financial crime
+#### Introduction: Money laundering and financial crime
 
 This module serves as an introduction to money laundering and other types of financial crime, as well as their consequences and risks. You will learn how criminals exploit financial institutions and trade networks, use emerging technologies to launder illicit funds, and obscure ownership to evade detection. By understanding these types of financial crimes, you will be more prepared to strengthen your compliance programs, enhance transaction monitoring alert management systems, and implement risk-based strategies to prevent financial crime and ensure institutional and individual accountability. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fc1842ef2534f895c5577ebf12c1834d7ee0cb97937372ed52600bc0c9967423.jpg)
 
 
-## Case example: Linguistix’s suspicious transactions
+#### Case example: Linguistix’s suspicious transactions
 
 Joyce works in the AFC department in a bank. One day, while reviewing transaction reports, she noticed something unusual: Linguistix, a translation service, had significantly increased its transaction volume over the past six months. This spike was concerning because the initial KYC process indicated much lower revenue projections. 
 
@@ -414,7 +573,7 @@ Joyce gathered more data on the transactions and customer profiles. The evidence
 
 Given the complexity of the situation, Joyce escalated the case to the financial crime compliance team. The team applied advanced analytical tools to trace the flow of funds and confirmed the links between Linguistix and the organized crime group. This analysis confirmed that the translation service was being used as a front to launder drug trafficking proceeds, effectively disguising the origins of the money. 
 
-## Key takeaways
+##### Key takeaways
 
 • Increases in revenue beyond initial KYC projections might indicate risk. 
 
@@ -424,19 +583,17 @@ Given the complexity of the situation, Joyce escalated the case to the financial
 
 • Collaboration with specialist teams helps uncover criminal activity. 
 
-## Money laundering
+### Money laundering
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/2f327fee5ba26b7b44e71e6e2bd566699eaed678ed25f49f1bfe73dd203dca99.jpg)
 
 
-## What is financial crime?
+#### What is financial crime?
 
 Financial crime encompasses a variety of illegal activities that exploit financial systems for personal or organizational gain, often undermining the integrity of economies and markets. Types of financial crime include money laundering, where illicit funds are disguised to appear legitimate; fraud, which involves deceitful practices to gain financial advantage; tax evasion, the illegal avoidance of tax obligations; sanctions evasion, where legal restrictions are circumvented; and bribery and corruption, involving unethical exchanges for favorable or preferential treatment. These crimes have serious repercussions, emphasizing the need for robust regulatory measures and compliance efforts to protect financial systems and promote transparency. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/80b38a3c93164c912b9195652c529cba68a4d6c2efe32135694ac2f2d85d9020.jpg)
 
-
-## Money laundering
 
 The definition of money laundering varies in each country where it is recognized as a crime. However, it is generally understood to be the process of concealing or disguising the existence, source, movement, destination, or illegal application of criminally derived property or funds to make them appear legitimate. Criminal activities that lead to money laundering are also referred to as predicate crimes. Examples include arms sales, narcotics trafficking, contraband smuggling, embezzlement, insider trading, bribery, and fraud schemes. Different jurisdictions decide which crimes qualify as predicate offenses for the purposes of AML prosecutions. 
 
@@ -449,7 +606,7 @@ The three stages of money laundering are not always followed in this exact way. 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ead22b86bbb24b820ac38d037e321b4c07cb0a22bfebaeb204f31639fa31105a.jpg)
 
 
-## Common techniques for money laundering
+#### Common techniques for money laundering
 
 Money laundering techniques allow criminals to obscure proceeds from illegal activities and integrate them into the financial system. These methods exploit regulatory loopholes, trade networks, financial markets, and vulnerable members of society. 
 
@@ -477,7 +634,7 @@ Criminals often launder and cash out their illicit proceeds using digital asset 
 
 <sub>o</sub> Criminals recruit individuals through job scams, social engineering, or coercion, making fund transfers more difficult to trace. 
 
-## • Trade-based money laundering (TBML):
+##### • Trade-based money laundering (TBML):
 
 <sub>o</sub> Methods include over-invoicing, under-invoicing, multiple invoicing, and phantom shipments to obscure the source of funds. 
 
@@ -489,17 +646,19 @@ Criminals manipulate trade invoices, customs declarations, and pricing mechanism
 
 <sub>o</sub> Criminals exploit stocks, bonds, hedge funds, derivatives, and private equity investments to layer illicit funds. 
 
-## • Commodity-based money laundering:
+##### • Commodity-based money laundering:
 
 <sub>o</sub> These assets are bought with illicit funds, resold, or smuggled to avoid scrutiny. 
 
 <sub>o</sub> Criminals use high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously. 
 
-## • Shell companies and front businesses:
+##### • Shell companies and front businesses:
 
 <sub>o</sub> Shell companies facilitate illicit financial flows without conducting real business activities. 
 
 <sub>o</sub> Front businesses mix illegal proceeds with legitimate revenue, making tracing difficult. For example, a restaurant that appears to be a legitimate dining establishment might actually be a front. It might inflate sales and rely on cash transactions to disguise its illicit income. 
+
+#### Case example: Tamayo's money mules
 
 According to a US Department of Justice press release, in December 2019, Yamel Guevara Tamayo of Miami, Florida, was sentenced to 63 months in prison for conspiring to commit money laundering. Tamayo acted as a money mule and recruited more than 15 additional money mules as part of an international money laundering operation related to business email compromise and other cybercrimes. 
 
@@ -515,7 +674,7 @@ Following an extensive investigation by US authorities, Tamayo pleaded guilty to
 
 sentence, the court mandated that Tamayo serve three years of supervised release and pay restitution of US$700,474.97. 
 
-## Key takeaways
+##### Key takeaways
 
 Financial institutions should: 
 
@@ -525,12 +684,12 @@ Financial institutions should:
 
 • Monitor transaction patterns to identify unusual behaviors, such as structuring and microstructuring, that might indicate money laundering. 
 
-# Types of financial crime
+### Types of financial crime
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fd443fe8307df6b87f9b84e1f958735ad11e07bb3fc14e68b25f2a5d9ce9eb38.jpg)
 
 
-## Predicate crimes and money laundering
+#### Predicate crimes and money laundering
 
 Predicate crimes are specified unlawful activities whose proceeds can give rise to prosecution for money laundering. Individuals or organizations who engage in predicate crimes often want to "clean," or launder the proceeds from these crimes so they can use them legitimately without drawing attention from law enforcement. 
 
@@ -588,6 +747,8 @@ The list of 21 FATF-designated predicate crimes includes:
 
 21. Insider trading and market manipulation: Illegal use of nonpublic information to achieve profits 
 
+#### Sanctions evasion
+
 Economic sanctions, whether asset freezes or sector-specific restrictions, impose high financial, reputational, and operational costs on individuals and entities targeted by them. For this reason, sanctions targets often attempt to evade or circumvent sanctions in order to secretly engage in a prohibited activity, such as continuing to use an asset or receive economic benefits. For example, a designated individual might evade personal sanctions and continue using his luxury yacht by obscuring its ownership. 
 
 Sanctions evasion can be internal, with the help of personnel at an organization, or external, when evaders try to bypass internal controls without assistance from the inside. Methods of sanctions evasion include payments, trade, and ownership. 
@@ -606,6 +767,8 @@ Regulated entities must have strong AML and sanctions compliance programs with r
 
 • Designations as a sanctions target 
 
+#### Case example: Komarov’s tactics
+
 Businessman Alexei Komarov amassed his fortune through Volkof Industries, a high-tech distribution company with clients worldwide. Though some of his customers were from a wide range of industries (from consumer electronics and automotive to healthcare and industrial manufacturing), most sales went to a foreign government engaged in nuclear weapons development. After UN sanctions targeted this proliferation activity, Volkof Industries faced restrictions, losing its access to global markets. 
 
 Facing financial collapse, Komarov was determined to find a way to continue trading. To evade the sanctions, he created a shell company, RedStar Solutions. He incorporated it in a jurisdiction with limited regulatory expectations toward AML and sanctions compliance and masked it as a technical support and maintenance service provider. Through RedStar, he resumed exports to the foreign government developing its nuclear weapons program, using transshipment points in permissive jurisdictions and falsified invoices that labeled export-controlled items, such as semiconductors, as “industrial machinery and spare parts.” RedStar also employed local distributors in those jurisdictions to further distance Komarov and Volkof Industries from the transactions and paid them to ensure the shipments were received without question. 
@@ -616,7 +779,7 @@ Komarov’s goal was not just to hide the profits of RedStar, but to keep Volkof
 
 The scheme unraveled when a bank’s compliance officer flagged irregular payment flows linked to RedStar. Further investigation exposed the illicit network, revealing Komarov and Volkof Industries’ role in sanctions evasion, proliferation financing, laundering criminal proceeds, and foreign bribery and corruption offences. 
 
-## Key takeaways
+##### Key takeaways
 
 • Sanctions evasion can serve as a predicate offense for money laundering, highlighting the interconnected nature of financial crimes. 
 
@@ -627,7 +790,7 @@ The scheme unraveled when a bank’s compliance officer flagged irregular paymen
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/17ce8c03e7a8ddf6139e1b802ef8d1217997b189a1280561bb352801c1dee05b.jpg)
 
 
-## Bribery and corruption
+#### Bribery and corruption
 
 Bribery is giving or receiving money or some other asset in exchange for the improper use of one’s delegated power. A bribe can be in cash but can also take other forms. These forms include gifts, entertainment, business events, hiring, padded invoices, political donations, and kickbacks. 
 
@@ -644,7 +807,7 @@ Bribery and corruption are often linked to other financial crimes, such as money
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/db477a92eacf3d15e36fcaed2d14f060d26dcc8494eeadc664e024f0fedcab34.jpg)
 
 
-## Case example: FullTechGlobal corruption scandal
+#### Case example: FullTechGlobal corruption scandal
 
 Sophie is an AFC manager in the compliance department of a financial institution that has some global businesses as its customers. One day, she came across negative news concerning their customer FullTechGlobal Services, which is incorporated and headquartered in the US and is a subsidiary of a UK company. The company faced serious accusations of widespread bribery and corruption due to its overseas sales practices. This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010. 
 
@@ -660,7 +823,7 @@ Given these findings, the regulatory implications under the UK Bribery Act 2010 
 
 As an AFC manager, she recognizes that her institution needs to maintain compliance integrity and mitigate bribery and corruption risks in its dealings with global businesses such as FullTechGlobal Services. 
 
-## Key takeaways
+##### Key takeaways
 
 • Multinationals using intermediaries in high-risk areas face increased bribery risks. 
 
@@ -720,7 +883,9 @@ There are many different types of fraud, or schemes, each of which has its own u
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/d2de1985458cd2ec9e00457cec0b0ee946592901368eecd0198a9066ffd354fe.jpg)
 
 
-## Cyber-enabled crime
+#### Cyber-enabled crime
+
+#### Financial Crimes Enforcement Network
 
 Cyber-enabled crime has been recognized as a multi-billion-dollar industry. The Financial Crimes Enforcement Network (FinCEN) defines cyber-enabled crime as “Illegal activities carried out or facilitated by electronic systems and devices, such as networks and computers.” These illegal activities include, but are not limited to, fraud, identity theft, and other crimes. Cyber-enabled criminals use technology to gain access to funds, yet they must still launder their ill-gotten gains. 
 
@@ -750,12 +915,12 @@ There is a direct relationship between cyber-enabled crime, money laundering, an
 
 Cyber-enabled crime occurs rapidly, through the internet. Proceeds of this crime, or payments, also can occur rapidly, through a multitude of accounts involving many different institutions. 
 
-# Examples of predicate crimes
+### Examples of predicate crimes
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/7d9534bd31d9f853a2a8c3bb949b441bc9e1289053e137bf99a27e81b181e7b8.jpg)
 
 
-## Human trafficking and human smuggling
+#### Human trafficking and human smuggling
 
 Human trafficking is a type of exploitation that can involve a domestic citizen or a foreign national. Human smuggling involves transportation and, unlike human trafficking, can only involve a foreign national. Since human smuggling involves crossing a border, geography plays a key role. 
 
@@ -780,7 +945,7 @@ Fees paid from smuggling and trafficking can also fuel other illicit TCO schemes
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/a03aef2bca8a4dcc20d49480566f2a85f3fd106bc00a8c89b04dcb51f01c95ab.jpg)
 
 
-## Environmental crime
+#### Environmental crime
 
 While all financial crime is troubling, environmental crimes are unique in terms of their lasting effects. The Financial Crimes Enforcement Network (FinCEN) acknowledged this fact in its advisory on environmental crimes, defining them as “...illegal activity that harms human health, and harm nature and natural resources by damaging environmental quality. This can include driving biodiversity loss, and causing the overexploitation of natural resources, and thereby increasing carbon dioxide levels in the atmosphere. 
 
@@ -801,7 +966,7 @@ Similarly, TCOs might initiate or extort legitimate-appearing fishing, logging, 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/4c3074a562a8f5ba6072e3313e4464d346e77f2a9c6bb6606b90bd20d0e2eb36.jpg)
 
 
-## Drug trafficking
+#### Drug trafficking
 
 Drug trafficking involves the illegal production, distribution, and sale of controlled substances. Commonly trafficked drugs include heroin, cocaine, cannabis, and synthetic drugs such as fentanyl and methamphetamine. The legal status of some of these drugs complicates enforcement and regulation efforts. For example, both fentanyl and cannabis have legal medicinal uses, and recreational cannabis use is permitted in certain jurisdictions, but illegal in others. 
 
@@ -816,7 +981,7 @@ Once drugs are sold and distributed, traffickers launder the consolidated cash t
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/0faac449e965d66ff037fbaaba55ccb7e9eddb8580833871ac26479a6343f878.jpg)
 
 
-## Terrorism financing compared to money laundering
+#### Terrorism financing compared to money laundering
 
 Terrorism financing and money laundering are both financial crimes that exploit the global financial system to achieve illicit objectives. However, the two phenomena diverge significantly in important ways. 
 
@@ -824,7 +989,7 @@ The goal of money laundering is to conceal the origins of illegally obtained fun
 
 The pathway of the funds is also different. Money laundering transactions are typically circular. At the end of the process, the person or entity directing the laundering activity expects to regain control of the funds. In terrorism financing, the funds have a linear pathway to support the activities of terrorists. 
 
-## Terrorism financing
+### Terrorism financing
 
 <table><tr><td></td><td>Funding type</td><td>Revenue source</td><td>Counterstrategy</td></tr><tr><td>Terrorism financing</td><td>Legitimate and illegitimate</td><td>Fronts, donations, criminal activities</td><td>Detection of funding stream</td></tr><tr><td>Money laundering</td><td>Illegitimate</td><td>Corruption, fraud, organized crime</td><td>Tracking suspicious transactions</td></tr></table>
 
@@ -841,7 +1006,7 @@ Given the contrasts between money laundering and terrorism financing, counterstr
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/307e07163d4bdd2c7123c4ca05d10dbea331e0cc3f507147b6f955000c41fd22.jpg)
 
 
-## How terrorists move and store funds
+#### How terrorists move and store funds
 
 Terrorists and terrorist organizations have many options when choosing to move and store funds between jurisdictions. The choice depends on numerous variables. These variables include the size of the transaction, how quickly the transaction needs to be performed, and the risks of detection for the organization and its financial facilitators. 
 
@@ -860,7 +1025,7 @@ Terrorist organizations may also use alternative remittance systems (ARS). ARS t
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/12c3b8a6a7f76fd0da8d8efd12054beadda8f9611a2669c0a26bfd37235a5a86.jpg)
 
 
-## Case example: Mr. Wolfe’s scheme
+#### Case example: Mr. Wolfe’s scheme
 
 Mr. Wolfe, a wealthy businessman with radical political views, decided to conduct a terrorist financing scheme to support ISIS operations in Syria, in alignment with his ideology. Unlike traditional money laundering typologies, this type of terrorist financing scheme involved various funnel points and both legitimate and illicit financial streams. Mr. Wolfe utilized his import-export firms, travel agencies, and retail businesses to generate authentic income. However, he then concealed portions of these legitimate revenues through deceptive channels, such as privacy-centered cryptocurrencies, to ultimately reach terrorist organizations without detection. 
 
@@ -880,7 +1045,7 @@ Financial institutions first detected the illicit activity through transaction m
 
 As FIUs escalated the case, law enforcement agencies, including Europol, Interpol, and national counterterrorism task forces, conducted targeted surveillance on Mr. Wolfe and his criminal associates. These individuals, designated as subjects of interest, were monitored to trace cash smugglers and hawala networks. They conducted coordinated asset freezes to disrupt financial channels, resulting in the seizure of digital wallets and the dismantling of Mr. Wolfe’s companies used to finance terrorism. Mr. Wolfe and his associates all received lengthy prison sentences and heavy fines. Intelligenceled investigations, real-time interagency collaboration, and advanced analytics all played a key role in countering this terrorist financing network. 
 
-## Key takeaways
+##### Key takeaways
 
 • Terrorist financing increasingly relies on cryptocurrency and unregulated fintech platforms. 
 
@@ -890,12 +1055,10 @@ As FIUs escalated the case, law enforcement agencies, including Europol, Interpo
 
 • Organizations should enhance transaction monitoring across both digita and cash-based systems, collaborating with technology firms, law enforcement agencies, and global regulators. 
 
-# Consequences of financial crime
+### Consequences of financial crime
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/1ec2c09f5e584b5315105b5d8b37f24a0c678fa3ebbbef0ce867945d4b2f20c4.jpg)
 
-
-## Consequences of financial crime
 
 Financial crime is a global problem that has dire consequences for nations. It weakens governments and economies. It lowers the standard of living for populations. It especially hurts developing nations and emerging economies, who can least afford the financial losses these crimes cause. The worldwide proceeds of financial crime are estimated to be up to 5% of global gross domestic product, or US$2 trillion. 
 
@@ -905,6 +1068,8 @@ The loss of income to nations due to financial crime and the need to divert fund
 
 Financial crime hurts organizations, including financial institutions, in many ways. It gives an unfair advantage to individuals and companies that engage in illegal activity. It threatens the operations and reputation of organizations that become involved in it, whether intentionally or unintentionally. It can lead to loss of market share and even bankruptcy. Legitimate, law-abiding companies are at a disadvantage when competing against companies that are fronts for illegal activity and that evade paying taxes. Financial institutions are hurt when criminals use them to conduct illicit financial activity. This activity destabilizes them and costs them money in terms of direct losses, regulatory fines, and legal and compliance costs. It also damages their reputation in the marketplace, leading to customer distrust and loss of business. 
 
+#### Social consequences of financial crime
+
 Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm. Corruption and fraud erode confidence in governments and public bodies that have been entrusted with the mandate to improve services such as infrastructure and health care. This can lead to reduced civic engagement and can discourage foreign investment. Money laundering facilitates the financing of human trafficking, drug cartels, terrorism, and arms smuggling, which foster widespread criminality and societal disruption. In regions where anti-money laundering measures are weak, these risks are magnified, often resulting in higher crime rates, capital flight, and even civil unrest. 
 
 Jurisdictions with lax AML enforcement often experience broad reputational damage that extends beyond individual companies. Such regions can find themselves subject to international sanctions and trade restrictions, which discourage economic growth and job creation. Other countries might be reluctant to engage in business with countries with high levels of financial crime, which can isolate the affected country politically as well as economically. Lasting reputational damage can severely impact their ability to operate effectively in the global market. 
@@ -913,7 +1078,7 @@ Financial crime can also disrupt businesses, leading to a loss of productivity. 
 
 Victims of financial scams, fraud, and identity theft frequently suffer severe personal setbacks. In addition to significant financial losses, victims might experience psychological distress, depression, and a profound loss of security. Elderly populations are disproportionately affected by financial scams, which can lead to financial ruin and social isolation due to a loss of money, trust, and stigmatization associated with being a victim. 
 
-## Institutional accountability to prevent financial crime
+#### Institutional accountability to prevent financial crime
 
 Financial crime undermines economic stability and has wider negative societal consequences if ignored. Imposing strict obligations through legislation and regulation on institutions with the objective of preventing illicit funds entering and flowing through the financial system is one of the ways to fight financial crime. Depending upon the entity type, how regulation is applied can differ greatly due to the distinct differences between regulated entities and obliged entities. 
 
@@ -930,7 +1095,7 @@ All institutions, irrespective of whether regulated or obliged, must invest in a
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ff1f0f6ab17fb1edbacc68f90bff84f985d5857679cfb08e5f949f120e3d9595.jpg)
 
 
-## Individual impact of violations of AFC regulations
+#### Individual impact of violations of AFC regulations
 
 Compliance professionals are not only held accountable under financial crime laws but are also subject to all applicable criminal statutes within their jurisdiction. AML professionals can face prosecution for aiding or failing to prevent financial crimes and as seen more recently, for deficiencies in their firm's compliance program of which they carry ultimate accountability. Senior leaders, such as MLROs or BSA officers, bear the greatest personal responsibility. 
 
@@ -944,12 +1109,12 @@ disqualification from holding senior roles, asset freezes, or travel restriction
 
 Noncompliance with AFC regulations poses not only institutional risks but also serious, individual legal and reputational risks. While all compliance professionals must adhere to rigorous standards and maintain accurate and appropriate documentation of their decision-making processes, the personal consequences for individuals in senior positions can be significantly more severe than those for more junior staff. 
 
-# Financial crime risks in relation to other types of risks
+### Financial crime risks in relation to other types of risks
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/227ec145c4960647270a5d3b5eb2278b6d622fe7048371d31a29a01f74f593d8.jpg)
 
 
-## Financial crime risks
+#### Financial crime risks
 
 Institutions that deal with money or assets with transferable value have greater exposure to financial crime risks when conducting business. These include, but are not limited to, banks, nonbank financial institutions, payment service providers, legal firms, and accountants. Criminals exploit these sectors to move illicit funds and obscure ownership structures to evade detection. Due to their vulnerability, these specific industries, and some others, are deemed “obliged” entities and are subject to stringent financial crime regulations. 
 
@@ -962,7 +1127,7 @@ To address these risks, obliged entities must implement proactive financial crim
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/376525ef5785c2ab53287ab338c8c43a84cf3ba22b4c996206c8998598a3ac89.jpg)
 
 
-## Case example: A lasting lesson
+#### Case example: A lasting lesson
 
 In 2012, HSBC was involved in a money laundering scandal that remains one of the most significant AML compliance failures in banking history. Due to inadequate transaction monitoring and an overall fragmented and ineffective compliance framework, HSBC allowed drug cartels to launder over US$880 million in its Mexico operations. 
 
@@ -972,7 +1137,7 @@ The operational repercussions were profound. Not only did the scandal trigger an
 
 Ultimately, the HSBC case offers a severe lesson on the operational and reputational risks associated with weak financial crime controls. It underscores the critical importance of maintaining a strong compliance culture and implementing robust AML controls. It also serves as an instructive example for financial institutions worldwide: neglect in these areas not only results in severe financial penalties and operational disruption but also irrevocably damages a bank’s reputation, ultimately undermining its long-term viability in the global market. 
 
-## Key takeaways
+##### Key takeaways
 
 • AML compliance failures expose financial institutions to regulatory and reputational risks. 
 
@@ -987,7 +1152,7 @@ Ultimately, the HSBC case offers a severe lesson on the operational and reputati
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/b2a9390ecb5f72a044d6590891d1ba040a7850a5edbc8213074e3968e6e94313.jpg)
 
 
-## Operational, legal, concentration, and reputational risks
+#### Operational, legal, concentration, and reputational risks
 
 Key risks that organizations face include: Operational, legal, concentration, and reputational. 
 
@@ -1009,25 +1174,25 @@ Concentration risk can be reduced by AFC controls and strategic diversification.
 
 Reputational risk is difficult to quantify. Trust takes a long time to earn but can be lost quickly. A single news story—even fake news—can drive away customers and investors. Many organizations deserve their reputations, good or bad, based on their chosen business practices and ethics. 
 
-# Money Laundering Risks in Financial Services
+## Money Laundering Risks in Financial Services
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/b614d2d52268fb44042478b1f4ed47c8de30451dac007337c9174ee43476d15e.jpg)
 
 
-## Introduction: Money laundering risks in financial services
+#### Introduction: Money laundering risks in financial services
 
 This module covers various money laundering risks associated with financial services. The financial services sector is integral to the global economy, facilitating the movement and management of capital across borders. Given its central role, this industry is particularly vulnerable to the risks of money laundering. Understanding these risks is necessary for maintaining compliance, protecting the integrity of the financial system, and safeguarding institutional reputations. By learning these topics, you will be equipped to identify vulnerabilities, implement effective controls, and manage and mitigate risks, ensuring your organization remains secure and trusted by customers. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/64853d58646fb58dea815bbda334a16fb8f9d6629e50794abea73c3d32caf52e.jpg)
 
 
-## Student note: Sector-specific case studies
+#### Student note: Sector-specific case studies
 
 This module will cover the key ML risks of various sectors, products, and services. For a detailed explanation and analysis of a specific sector, we encourage you to take one of our sector-specific case study courses. 
 
-## Case example: A new corporate banking role
+#### Case example: A new corporate banking role
 
 Elena is an experienced AML compliance officer in retail banking. She is starting a new role overseeing the AFC team within the corporate banking division of her financial institution. To succeed in her new role, she needs to understand the unique risks associated with this sector and implement effective controls to mitigate them. 
 
@@ -1039,7 +1204,7 @@ It is also valuable for her to understand recent high-profile money laundering p
 
 It is also considered best practice and in most jurisdictions an industry standard to invest in continuous AFC training for herself and her team. Attending industry seminars, workshops, and training sessions can help Elena stay up to date on the best practices in corporate banking compliance. 
 
-## Key takeaways
+##### Key takeaways
 
 To understand and control financial crime risks associated with banking products, you should: 
 
@@ -1054,16 +1219,14 @@ To understand and control financial crime risks associated with banking products
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ca4f2fe943648d837bed882351c45188148bb2f0540abae12b042c958b2b3f47.jpg)
 
 
-## Student note: Financial crime risk
+#### Student note: Financial crime risk
 
 Please note that “risks” in this context means financial crime risks. The risks we are focusing on include money laundering risk, terrorist financing risk, and many other types of financial crime risk. 
 
-## Money laundering risks associated with banking
+### Money laundering risks associated with banking
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f24f1c56ec8bc253bd76a023dea101d1da31b26f387e86c945e163232b91c228.jpg)
 
-
-## Money laundering risks associated with banking
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ba2cc56a031c694699c7513e705607025467bb21b6ca85dac1771f0d3f71bb17.jpg)
 
@@ -1089,7 +1252,7 @@ Several factors contribute to the banking sector's increased vulnerability to mo
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/c59207661ca63787ff7a2d250737f37dceda4e03c3534e1db57d4a301dea2edc.jpg)
 
 
-## Shell and shelf companies risks
+#### Shell and shelf companies risks
 
 A shell company or corporation is a company that, at the time of incorporation, has no significant assets or operations. A similarly named "shelf" company is a corporation that has had no activity. It has been created and put "on the shelf" so that it can be sold later to someone who prefers a previously registered corporation over a new one. Both shell and shelf companies are generally kept dormant and used later to appear legitimate while usually masking the beneficial owner. A front company is an entity that conducts some legitimate business while also shielding another company from liability or scrutiny. Financial criminals might use a front company to conceal illicit activity. For example, they might operate a car wash to launder the profits of drug trafficking. While there are legitimate uses for shell, shelf, and front companies, within the context of researching and accepting customers, they are considered high risk. 
 
@@ -1111,6 +1274,8 @@ Sometimes, the stock of these shell corporations is issued in bearer shares, whi
 
 When FATF reviewed the rules and practices that impair the effectiveness of financial crime prevention and detection systems, it found in particular that shell corporations and nominees are widely used mechanisms to launder the proceeds from crime. As a result, shell companies are considered to represent a higher risk of financial crime. 
 
+#### Case example: Estonian bank branch
+
 Danske Bank, Denmark's largest financial institution, became embroiled in a significant money laundering case centered around its Estonian branch. According to Reuters, between 2007 and 2015, approximately €200 billion of suspicious funds were funneled through the bank, primarily originating from Russia as well as Estonia, Latvia, Cyprus, and Great Britain. The scandal became known in 2018, unveiling the intricate use of shell and shelf companies to facilitate the laundering process. 
 
 One prominent example was the use of United Kingdom limited liability partnerships (LLP) and Scottish limited partnerships (SLP). These entities allowed for minimal disclosure requirements, enabling criminals to hide behind complex ownership structures. The shell companies conducted fictitious transactions and created false invoices to justify the movement of funds, making it difficult for authorities to trace the origins of the illicit money. 
@@ -1119,7 +1284,7 @@ The laundering process in the Danske Bank scandal involved multiple steps to lay
 
 The Danske Bank scandal had far-reaching consequences for the institution and the broader financial landscape. According to a press release by the US Department of Justice, Danske Bank faced significant regulatory scrutiny, leading to the resignation of several top executives. Danske Bank pleaded guilty to bank fraud conspiracy and paid substantial fines of more than US$2 billion. The scandal also reiterated the importance of robust AML controls and the need for enhanced transparency in financial transactions and adequate supervision of subsidiary businesses and operations if they are remote or overseas in higher-risk jurisdictions. 
 
-## Key takeaways
+##### Key takeaways
 
 • Intricate structures of shell and shelf companies can be used to facilitate money laundering. 
 
@@ -1134,7 +1299,7 @@ The Danske Bank scandal had far-reaching consequences for the institution and th
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/5b1272f3a3742c807e16e3a1210d4c5b298d1e4977bff2abd87e665be6992511.jpg)
 
 
-## Politically exposed person risks
+#### Politically exposed person risks
 
 A politically exposed person (PEP) is an individual in a prominent political function, their immediate family, close associates, and any businesses held or controlled by that person. One challenge in identifying PEPs is the varying guidance and recommendations in each jurisdiction. 
 
@@ -1180,6 +1345,8 @@ Other organizations will look at:
 
 The purpose of the PEP designation is important. Organizations must take the necessary steps to adapt transaction monitoring and KYC reviews and escalate based on their risk appetite. 
 
+#### Control and ownership for AML compliance
+
 Control and ownership play a vital role in AML efforts, as they can often be obscured or concealed, allowing bad actors to disguise criminal activities and facilitate financial crime. A beneficial owner (BO) is defined as an individual or entity that possesses ownership of a legal entity, either through shareholding or other means. In contrast, the ultimate beneficial owner (UBO) refers specifically to one or more natural persons who ultimately owns a substantial percentage of shareholding. It is important to note that a BO might appear to have ownership of a company but might not control the company. Conversely, a UBO might not directly hold shares but does exert ultimate control over it. This distinction is crucial when it comes to regulatory requirements surrounding ownership structures. 
 
 When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer. For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more. That means you need to know every entity or individual who owns at least 25% of a customer. Your organization will set the appropriate threshold using a riskbased approach. For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk. For example, high-risk financial institutions with correspondent banking relationships in a high-risk jurisdiction might set their threshold at 5%. 
@@ -1190,6 +1357,8 @@ When reviewing ownership structures, there is a regulatory obligation to identif
 In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership. Individual D owns 10% of Company A directly. They also own 72% of Company A indirectly, as they own 90% of shares of Company B, which owns 80% of Company A. Individual D is then considered a UBO with 82% shareholding of Company A. Individual C, who owns 10% of Company A directly and an additional 8% indirectly via their 10% ownership of Company B, is not a UBO. 
 
 In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified. This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present. For example, for a company that is publicly listed on the stock exchange and has thousands of shareholders, a notional beneficial owner could be the president or chief executive officer, or equivalent. 
+
+#### Concentration accounts
 
 A concentration account is a type of account used by financial institutions to aggregate funds from various sources into a central account. It is often referred to as a settlement, sweep, suspense, or collection account. This centralization streamlines the management of funds, enabling institutions to optimize cash flow, reduce the number of transactions, and simplify account reconciliations. 
 
@@ -1215,9 +1384,9 @@ To mitigate the risks associated with concentration accounts, financial institut
 
 • Train employees regularly on the risks associated with concentration accounts and the importance of compliance with AML regulations. 
 
-# Money laundering risks associated with retail and commercial banking
+### Money laundering risks associated with retail and commercial banking
 
-## Retail and commercial banking products and risks
+#### Retail and commercial banking products and risks
 
 Retail and commercial banking service providers offer a wide variety of products, each designed to meet the diverse needs of individual consumers and businesses. Each product type comes with its own set of risks and complexities regarding money laundering and financial crime. 
 
@@ -1244,7 +1413,7 @@ Here are a few higher risks associated with retail and commercial banking.
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/09f25b20fc339717baaed11fe535e44c1734ff4bad5a0e0e563a955fa42b2955.jpg)
 
 
-## High-risk retail and commercial banking products
+#### High-risk retail and commercial banking products
 
 As financial crime continually evolves, both retail and commercial banking sectors face significant risks related to money laundering. 
 
@@ -1284,6 +1453,8 @@ Given the complexity and global nature of trade transactions, money launderers m
 
 • Supply chain financing where complex supply chain arrangements might be used to obscure the origin and flow of illicit funds. 
 
+#### Trade finance products and risks
+
 Certain trade finance products are particularly vulnerable to exploitation by money launderers, including: 
 
 • Letters of credit which can be misused to create fictitious trade transactions to move illicit funds across borders. 
@@ -1297,7 +1468,7 @@ Understanding the features of trade finance that might be abused and recognizing
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/c80ee2554546bf7f17eed896c534c0ffdc0e22eb90ae08b32378fd6c7ace980d.jpg)
 
 
-## Credit-related product risks
+#### Credit-related product risks
 
 Credit-related products are fundamental to customer propositions in retail and commercial banking. Lending products, a subset of credit-related products, include personal loans, home ownership finance, and secured and unsecured loans. Personal loans help banks build customer relationships, while home ownership finance and secured loans can be a significant source of revenue and capital, respectively. They are essential financial services that enable individuals and businesses to achieve their goals, drive economic growth, and promote financial stability. Secured and unsecured loans are crucial for businesses, offering the necessary capital to expand operations, invest in new projects, and manage cash flow effectively. 
 
@@ -1316,7 +1487,7 @@ repayment if the source of funds derives from illegal activities or predicate of
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/3262d9239c9b0d1cdd70b77f47673577b2647aa591562b69a047a5f7b923f6e9.jpg)
 
 
-## Card risks
+#### Card risks
 
 Retail and commercial banks provide a wide range of card-related products, including but not limited to debit cards, gift cards, prepaid cards, and credit cards. Prepaid cards allow users to load funds onto the card and use it for purchases and withdrawals via common payment processing networks. Unlike debit or credit cards, prepaid cards are not linked to a bank account. The characteristic of being a bearer instrument and transferable presents a high risk for money laundering. Because prepaid cards can be purchased and reloaded anonymously, with minimal KYC being conducted, they are susceptible to exploitation by individuals seeking to move illicit funds without detection. 
 
@@ -1329,7 +1500,7 @@ Credit cards allow users to borrow funds up to a predetermined limit for purchas
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/44fc897d9b581f0d6a4014488f07394c11aef20e7ceb6af8f9b20b81719f3a83.jpg)
 
 
-## Credit unions and building societies risks
+#### Credit unions and building societies risks
 
 Credit unions and building societies are financial institutions that operate on a membership basis. Unlike banks that serve customers, credit unions and building societies have members who are both the owners and customers of the institution. This member-centric structure fosters a sense of community and mutual benefit. 
 
@@ -1349,12 +1520,12 @@ While some risks are common with retail banks, credit unions and building societ
 
 • Smaller-scale operations: Smaller institutions could lack the resources and expertise to implement comprehensive AML/CFT programs. This can result in weaker AFC controls. 
 
-# Private banking and wealth management risks
+### Private banking and wealth management risks
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/b8e2354c3fe76cf58a3ded02ddbe50e26f5030dfa11159798b7943b5d1850f84.jpg)
 
 
-## Money laundering risks associated with private banking and wealth management
+#### Money laundering risks associated with private banking and wealth management
 
 Private banking and wealth management offer high-net-worth and ultrahigh-net-worth individuals personalized and confidential banking services, such as checking/current accounts, saving accounts, investment portfolio management, estate planning, and legacy services. Fees are often based on assets under management (AUM), which is the total market value of the assets that a person, or entity, manages on behalf of a customer. Private banking often operates semi-autonomously from other parts of a bank. Some of the financial crime risks associated with private banking stem from its perceived high profitability for the organization and the culture of discretion and trust between the relationship managers and their customers. The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs. 
 
@@ -1375,7 +1546,7 @@ Here are a few higher risks associated with private banking and wealth managemen
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/402e24f239fd75c3da9ecc82642057eb0decd0020ffaa4d2574c609c379b82e4.jpg)
 
 
-## High-risk private banking and wealth management products
+#### High-risk private banking and wealth management products
 
 Commonly used in private banking and wealth management (PBWM), trust funds are financial instruments used to hold and manage assets on behalf of beneficiaries. While they offer legitimate benefits such as estate planning and tax efficiency, they are also susceptible to abuse for money laundering and other financial crimes. The complexity and opacity of trust structures make it difficult to trace the origin of funds and identify the UBO. 
 
@@ -1390,7 +1561,7 @@ In addition to the higher risk levels associated with many PBWM services, the ri
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/adfff7153372b8d6ae1643e33fbac8dbefb4c7bbe3a3f3582aa5ecb96cd50239.jpg)
 
 
-## Trust risks
+#### Trust risks
 
 Trusts are legal arrangements that separate the legal title and control of an asset. In most jurisdictions a trust is a legal person. The assets in a trust are legally owned by trustees who are natural persons. A trust cannot conduct transactions or hold property, but must do so through those trustees. 
 
@@ -1411,7 +1582,7 @@ An example would be a high-ranking member of government who is paid a bribe to a
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fa62f34bc03d31d3925afac64963579a123d51d099892a4cd9a5771749133631.jpg)
 
 
-## Offshore financial center risks
+#### Offshore financial center risks
 
 An offshore financial center (OFC) is a jurisdiction that provides sophisticated financial services to non-residents. OFCs are also known as offshore booking centers. They serve as a stable and convenient financial services hub for nonresidents. OFCs allow businesses to conduct cross-border transactions and manage funds. Customers who use OFCs benefit from favorable regulatory environments due to their geographical proximity to key markets. 
 
@@ -1448,7 +1619,7 @@ Enhanced due diligence is essential to detect any suspicious activity. Transacti
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ad6681fddc287fa6570ec2c71feda162782f9f2d6f30ec5dc987249c4083026b.jpg)
 
 
-## Special purpose vehicle risks
+#### Special purpose vehicle risks
 
 Special purpose vehicles (SPVs) are legal entities created for specific and limited purposes. SPVs can be used in mergers and acquisitions, joint ventures, real estate projects, infrastructure development, and energy projects. SPVs can also be used to manage and protect intellectual property assets including trademarks and copyrights. SPVs are often used in complex financial transactions and investments such as securities and asset-backed financing. 
 
@@ -1474,12 +1645,10 @@ Pooled investment vehicles (PIVs) are small investments pooled together from a l
 
 Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule. Financial institutions must identify ultimate beneficial owners and understand the true purpose of these entities. This will help mitigate any potential financial crime risks associated with SPVs. 
 
-# Corporate and investment banking risks
+### Corporate and investment banking risks
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fcb3d24ea47f67d8623ea02148b345bd56712341dd2568cf08a0711c8e3d7d7f.jpg)
 
-
-## Corporate and investment banking risks
 
 Corporate and investment banks engage in a wide range of activities that are susceptible to money laundering and other financial crimes. The volume and value of transactions, coupled with complex financial instruments and global operations, create numerous opportunities for illicit activities to go undetected. 
 
@@ -1504,7 +1673,7 @@ Here are a few higher risks associated with corporate and investment banking.
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/45f6577b825956e389f8e14d5d391bed2c6026af4251b1f5277fb5657b8a059c.jpg)
 
 
-## Wire transfer risks
+#### Wire transfer risks
 
 A wire transfer is an electronic transfer of funds between two parties. A wire transfer is conducted over a secure payment network such as SWIFT. Wire transfers are conducted domestically and cross-border. 
 
@@ -1545,7 +1714,7 @@ Organizations should use controls to reduce the risk associated with wire transf
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/b046118a8f244c8f3b8b1b50095e645c04f3588f7b7bbaaf85b2e5ec7b760e35.jpg)
 
 
-## Fundraising risks
+#### Fundraising risks
 
 Fundraising activities are necessary for corporate growth and development, providing companies with the required capital to expand and compete in the marketplace. However, they can also attract money launderers. 
 
@@ -1568,7 +1737,7 @@ Debt issuance, such as the issuance of notes or bonds, is another common fundrai
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/7ebaafeefdbbd86fe299059e87ed2d6de93431965067b1be8bc8ba9006b0793e.jpg)
 
 
-## Mergers and acquisitions risks
+#### Mergers and acquisitions risks
 
 Mergers and acquisitions (M&A) involve various transactions for the consolidation of companies or assets. The complexity and scale of M&A activities provide numerous opportunities for disguising the origin of illegal proceeds. 
 
@@ -1593,7 +1762,7 @@ To mitigate these risks, investment banks should implement specialized due dilig
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/388cbd3c876ed57314c2e8a354fca50539c4c0d83f95d352da4dd73e0904f28b.jpg)
 
 
-## High-risk corporate and investment banking products
+#### High-risk corporate and investment banking products
 
 Certain corporate and investment banking products and services are inherently high-risk for money laundering and other financial crimes. These include: 
 
@@ -1613,6 +1782,8 @@ Charities and NGOs, which often operate across borders and handle significant am
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/59dcde2758af254e0963d50319f190d32a06fc54ca79cc1a0c54d1937e297245.jpg)
 
+
+#### Correspondent banking risks
 
 Correspondent banking is typically when one bank acts as the agent of another bank in a foreign country. A respondent bank has customers who want banking services in a foreign country, so it contracts with a foreign correspondent bank to support its customers. By establishing multiple correspondent relationships, a local bank can undertake international financial transactions for themselves and for their customers in jurisdictions where they have no physical presence. There can also be nonforeign correspondent banking relationships, which allow local banks to make use of the services of larger banks. 
 
@@ -1634,7 +1805,7 @@ Correspondent banking is higher risk because the correspondent bank:
 
 In recent years, some financial institutions have extended their correspondent banking services to money services businesses or payment services providers. Given the nature and regulatory discrepancies across jurisdictions and various kinds of entities, this makes correspondent banking involve higher risks. 
 
-## Capital markets risks
+#### Capital markets risks
 
 Capital markets present significant risks for money laundering due to their complexity, liquidity, and the volume of transactions. The common products provided in capital markets include commodity trading, foreign currency exchange, securities, and derivatives. 
 
@@ -1658,21 +1829,21 @@ The secondary market involves the trading of existing securities between investo
 
 • Many secondary market transactions occur electronically, with limited transparency regarding the parties involved. This anonymity facilitates money laundering. 
 
-# Money Laundering Risks in Nonbank Financial Institutions
+## Money Laundering Risks in Nonbank Financial Institutions
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/340ff4992f0cdf8903bdef3b2f37121bfa2943917e8697948222b08baccc5b53.jpg)
 
 
-## Introduction: Money laundering risks in nonbank financial institutions
+#### Introduction: Money laundering risks in nonbank financial institutions
 
 This module covers the significant risks money laundering poses to nonbank financial institutions. These services are increasingly targeted by criminals seeking to disguise the origins of illicit funds. While banks are heavily regulated and monitored for AML purposes, nonbank financial institutions often face unique challenges in identifying and mitigating the risks associated with money laundering. In these lessons, you will learn about the different types of nonbank financial institutions and delve into the specific challenges that they face in combating money laundering. With this knowledge, you will be better equipped to address these challenges within your organization. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/44d90db9f575d87bc82b4bef85575a9cbab19e0a853721edb9e3e68a74474ccc.jpg)
 
 
-## Case example: CashBayou's risk management challenges
+#### Case example: CashBayou's risk management challenges
 
 CashBayou is a thriving e-commerce platform, connecting buyers and sellers across the globe. CashBayou’s platform is structured in such a way that they hold buyers’ funds temporarily and convert them into the sellers' preferred currency before transferring them to sellers. Because of this, they are required to have an MSB license. CashBayou also works closely with payment service providers, payment aggregators, card issuers, and other financial entities to ensure smooth and efficient transactions and facilitate their ecommerce ecosystem. 
 
@@ -1684,7 +1855,7 @@ Later that week, Emma's team receives a letter from their card issuer partner, C
 
 This example demonstrates how NBFIs, unlike traditional banks, need to navigate multifaceted relationships with various financial entities, each presenting unique compliance challenges. By proactively identifying and addressing AML and KYC deficiencies and fostering open communication with their partners, Emma aims to create a more secure transaction environment that protects both the platform, its partners, and its users from financial crime. 
 
-## Key takeaways
+##### Key takeaways
 
 • NBFIs encounter risks that differ from traditional banks. 
 
@@ -1699,9 +1870,9 @@ This example demonstrates how NBFIs, unlike traditional banks, need to navigate 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/9ef2f3c9f3fc1e0b5c76b47879e8c8766edf437ef580b2f57663184ec631637c.jpg)
 
 
-# Money laundering risks associated with MSBs, payment service providers, and ecommerce
+### Money laundering risks associated with MSBs, payment service providers, and e-commerce
 
-## Payment service providers
+#### Payment service providers
 
 The payment industry and associated technologies are evolving rapidly, often outpacing the development of licensing frameworks and regulatory oversight. In this dynamic environment, many organizations leverage money services business (MSB) or e-money licenses to expand their operations and carve out a distinct role within the broader payments ecosystem. 
 
@@ -1722,6 +1893,8 @@ As demand for digital solutions grows, PSPs are expected to expand product offer
 Examples of PSPs and their offerings: 
 
 <table><tr><td>PSP</td><td>Description</td><td>Products and services</td></tr><tr><td>Payment aggregators</td><td>Aggregate payments for multiple merchants without requiring direct bank relationships</td><td>Online payment processingRecurring billing</td></tr><tr><td>Card issuers</td><td>Provide credit, debit, and prepaid cards to consumers, typically branded with major card networks (e.g. Visa, MasterCard, American Express)</td><td>Credit cardsDebit cardsPrepaid cards</td></tr><tr><td>Payment processors</td><td>Handle the technical aspects of transaction processing between merchants and customers, managing authorization, settlement, and clearing</td><td>Mobile payment solutionsPoint of sale (POS) systems</td></tr><tr><td>Payment collectors</td><td>Focus on managing payments on behalf of businesses, particularly for collections and settlements</td><td>ACH paymentsBill payment servicesInvoicing solutionsRemittance processingDirect bank account transfers</td></tr><tr><td>Mobile wallet providers</td><td>Enable users to securely store payment information on their smartphones or other devices for easy access and transactions</td><td>Digital walletsPeer-to-peer payments</td></tr><tr><td>Alternative payment providers</td><td>Offer nontraditional payment methods that go beyond credit/debit cards and bank transfers</td><td>E-walletsFacilitation of cryptocurrency paymentsInstallment payment options</td></tr><tr><td>Cross-border payment providers</td><td>Facilitate international transactions, including currency exchange and international payment processing</td><td>International payment platforms</td></tr></table>
+
+#### Payment service providers risks
 
 Managing risks is essential for PSPs due to the complexity and diversity of their services, and because most transactions are conducted remotely. 
 
@@ -1752,7 +1925,7 @@ Cybersecurity and fraud risks are heightened when collaborating with various ins
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/98363f1a9fce54cb56088181d6cef9b5cfc040a9abfb5dad81b335526734e366.jpg)
 
 
-## Money services business
+#### Money services business
 
 A money service business (MSB) is a type of nonbank financial institution that provides financial services involving the transfer of money or value. An entity is an MSB if it holds funds on behalf of another person or entity. In many jurisdictions, MSBs are required to comply with local regulatory AML and CFT requirements. These requirements can include registering with local regulators and establishing an AML compliance program. 
 
@@ -1782,6 +1955,8 @@ According to FinCEN, hawala is an informal value transfer system (IVTS), which i
 
 MSBs face complex jurisdictional licensing requirements, including varying fees and compliance obligations. Each jurisdiction may impose different AML regulations, which can create operational burdens and increase regulatory scrutiny. This complexity can lead to difficulties in maintaining compliance across multiple borders. Noncompliance, intentional or accidental, might lead to severe penalties, including regulatory fines, consent orders, and even loss of business licenses. 
 
+#### Risks associated with banking MSBs
+
 MSBs often serve customers or engage in business activities less likely to be supported by traditional financial institutions. These customers include individuals lacking access to mainstream banking services. However, customers without access to traditional banking services can pose challenges when assessing money laundering and terrorist financing risks. Some of these risks include: 
 
 • Lack of financial history: Unbanked customers often lack financial records, making it difficult for MSBs to assess the legitimacy of their transactions. 
@@ -1807,7 +1982,7 @@ Establishing long-term and trusted relationships with correspondent banks can mi
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e9a435a6b9411f85088e8e8aff41983155a16d35ced81ce44bfbb74ce70b2677.jpg)
 
 
-## E-commerce
+#### E-commerce
 
 Electronic commerce (e-commerce) platforms facilitate the buying and selling of goods and services over the internet. They serve as intermediaries between sellers and buyers, providing a digital marketplace for transactions. There are various types of e-commerce platforms, each tailored to meet different business models and customer needs. 
 
@@ -1838,7 +2013,7 @@ More developed e-commerce platforms also set up their own PSPs to facilitate rec
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/30ddfbd82ddf5ea7192d5660f969c0326683fa7b72361d9a31110e6719366a1d.jpg)
 
 
-## E-commerce risks
+#### E-commerce risks
 
 Participants in e-commerce include merchants, customers, and financial institutions (FI). E-commerce businesses greatly facilitate legitimate global commerce between buyers and sellers. However, they also offer criminals a venue for conducting illegal activities and concealing the movement of illicit funds. 
 
@@ -1875,7 +2050,7 @@ Red flags for financial crime related to the use of e-commerce include the follo
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/4eb4cf6a0cb9a80c199c08b8f9bac908815d7981f1a8b46670c7f0e6aa61c1ca.jpg)
 
 
-## Case example: LotusMall and illegal gambling
+#### Case example: LotusMall and illegal gambling
 
 As e-commerce has expanded, so too have opportunities for illicit financial activity. One example is LotusMall, a Chinese e-commerce platform, LotusMall, was implicated in facilitating illegal online gambling and associated money laundering. 
 
@@ -1889,7 +2064,7 @@ Authorities eventually uncovered the operation when two individuals were arreste
 
 The fallout was severe: LotusMall reported financial losses of CNY¥3.4 billion (around US$468 million) and faced legal action against senior executives for enabling money laundering. Authorities urged e-commerce platforms to improve risk monitoring, flag high-risk patterns such as multiple seller accounts linked to a single entity, and take a more proactive stance against fraud and collusion between buyers and sellers. 
 
-## Key takeaways
+##### Key takeaways
 
 Large e-commerce platforms can be exploited by money launderers: 
 
@@ -1899,12 +2074,12 @@ Large e-commerce platforms can be exploited by money launderers:
 
 • E-commerce platforms should adopt more proactive measures for risk control and fraud detection and implement stricter monitoring. 
 
-# Money laundering risks associated with insurance, securities, brokerage, and custodian services
+### Money laundering risks associated with insurance, securities, brokerage, and custodian services
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e720b574c98c006245051212baada7f9904375d74d9bab1c7d494c54b8747cb5.jpg)
 
 
-## Insurance products risks
+#### Insurance products risks
 
 The insurance sector contributes to the financial services industry by providing essential risk management solutions and enhancing financial stability. It offers a diverse range of products, such as life, property, casualty, medical, travel, and liability insurance. In the context of money laundering, the insurance sector is primarily involved in the integration stage of the laundering process. The sector’s inherent AML risk is generally lower than that of banking due to less liquid transactions, less complex product nature, and structured payout schedules. However, industry supervisory authorities usually remind entities that certain high-risk accounts and products still require attention. Specifically, insurance products with high cash values or flexible payment options can be misused to obscure the source of funds, facilitating both money laundering and terrorist financing. 
 
@@ -1915,7 +2090,7 @@ Maritime insurance is often linked to trade-based money laundering. Criminals mi
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/be37a8416b6d72368a576173e8b5268f29781f402bce9765bc12e356a1e74816.jpg)
 
 
-## Case example: Investment product misuse
+#### Case example: Investment product misuse
 
 Peter, a recent retiree living in the Cayman Islands, received a lump-sum pension payment of US$100,000. Seeking to invest, he approached his broker, Tom, who recommended an investment-linked insurance (ILI) policy with premium financing. Tom highlighted the appeal of ILIs, which combine insurance protection with investment potential. 
 
@@ -1943,7 +2118,7 @@ Recognizing the risks, Mary reported her findings and recommended immediate acti
 
 Tom was ultimately dismissed following evidence of collusion and misrepresentation. 
 
-## Key takeaways
+##### Key takeaways
 
 • Red flags of ILI products can include ownership conflicts, unlicensed companies, and unrealistic returns, which might indicate fraud. 
 
@@ -1951,7 +2126,7 @@ Tom was ultimately dismissed following evidence of collusion and misrepresentati
 
 • Training agents and brokers to recognize money laundering risks promotes a culture of compliance and ethics. 
 
-## Securities and brokerage risks
+#### Securities and brokerage risks
 
 According to FATF, securities providers can range from those that largely interact with retail investors, such as retail stockbrokers, wealth managers, and financial advisors, to those who serve institutional markets such as clearing members, prime brokers, and global custodians. 
 
@@ -1970,6 +2145,8 @@ This sector is particularly vulnerable during the layering and integration stage
 • Additionally, the rise of electronic trading platforms emphasizes speed and high transaction volumes, making it challenging to monitor and apply mitigation controls. 
 
 Continuous monitoring of trading activities can help identify unusual patterns or behaviors that might indicate money laundering. Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions. Conducting CDD helps ensure that the source of funds is legitimate, and that customers are correctly segmented according to their expected and historical trading patterns. 
+
+#### Asset managers
 
 Asset managers or asset management companies conduct investments and handle assets on behalf of their customers. Asset managers are required to understand the money laundering risks of their business as they handle large volumes of capital across multiple jurisdictions, in diverse and evolving asset classes, often with anonymity in transactions, using complex financial products and third parties. 
 
@@ -1996,7 +2173,7 @@ By adopting a risk-based approach that emphasizes strong CDD controls and contin
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/2f329023f110522bac67fa54dd47f2204371d7deac0b520641a16c48e16faaf9.jpg)
 
 
-## Custodial services risks
+#### Custodial services risks
 
 A custodian bank is a financial institution that safeguards its customers' assets, including stocks and bonds. Custodian banks typically serve banks and other financial institutions, including securities intermediaries. They provide a range of services, including securities safekeeping, processing and execution of settlement instructions, transition management, and funds distribution. They might also provide reporting and tax compliance services. These services can be for a customer’s account and/or for its underlying clients, representing various beneficial owners. 
 
@@ -2016,12 +2193,12 @@ Financial crime risks in custodial services stem from relying on other banks to 
 
 Regulators have begun examining the custodial services sector more closely for financial crime risk. For example, in 2024, the UK’s FCA admonished custodian banks for their AML shortcomings and emphasized the need for rigorous AML controls. They cited a variety of common failings, including discrepancies between registered and actual activities, inadequate AML resources, and failure to assess customer activity risks. 
 
-# Money laundering risks associated with cryptoassets and other FinTechs
+### Money laundering risks associated with cryptoassets and other FinTechs
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/dc3d705e4d4d4e17df8b9bf00dac65912eb6e88aadb2312d50ebb11e1e449e67.jpg)
 
 
-## Cryptoassets industry ecosystem
+#### Cryptoassets industry ecosystem
 
 The cryptoassets industry ecosystem is a dynamic and interconnected network that facilitates the creation, exchange, and management of digital assets. The industry continues to evolve, and as technology advances, new participants and services emerge, broadening the scope of the ecosystem. 
 
@@ -2065,6 +2242,8 @@ Every chain of data consists of multiple data-filled blocks. The data in the blo
 
 Blockchain technology offers many benefits. Blockchains are immutable, which means they are permanent and cannot be altered. They also offer transparency, as all users can access a copy of the ledger. Blockchains are usually decentralized, meaning that no central governing authority has decision-making power over them. They are also secure because they consist of individually encrypted records. Additionally, blockchain offers faster settlements than traditional banking system transactions. 
 
+#### Cryptoasset risks
+
 Cryptoassets encompass virtual currencies, such as Bitcoin, and stablecoins, such as Tether (USDT) and USD Coin (USDC). Stablecoins are designed to minimize price volatility by pegging their value to traditional assets, such as fiat currencies. In contrast, cryptoassets, such as Bitcoin and Ethereum, experience significant price fluctuations, making them more suitable for investment and speculative purposes rather than as stable mediums of exchange. 
 
 Cryptoassets usually require third-party providers, known as VASPs, to assist in exchanging for fiat currency. Without proper controls, the conversion point between cryptoassets and fiat is particularly vulnerable to money laundering, but CDD checks and monitoring can help identify suspicious activities. 
@@ -2086,7 +2265,7 @@ Criminals might exploit cryptoassets to launder illicit funds. Examples of red f
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/0bc57c6d4459134345ed6264dc34d0d78c779979e275f145fd80dcf1744aa4c4.jpg)
 
 
-## Stablecoin, token, and NFT risks
+#### Stablecoin, token, and NFT risks
 
 The increasing popularity of stablecoins, tokens, and NFTs within the cryptoasset ecosystem presents significant risks related to money laundering and illicit financial activities. While these digital assets offer benefits, such as efficient transactions, they create new opportunities for money laundering and terrorist financing due to their pseudonymity, cross-border reach, and lack of regulatory oversight. 
 
@@ -2109,7 +2288,7 @@ In contrast to stablecoins, digital assets such as tokens and NFTs are not stabl
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/dab1a8538e04d8cea6dc1045dd7c3d65cb0cf90831f0ab49dcad41c4f81a950d.jpg)
 
 
-## Central bank digital currency
+#### Central bank digital currency
 
 A central bank digital currency (CBDC) is a digital version of a country’s fiat currency issued and regulated by its central bank. It also functions as legal tender. CBDCs combine the advantages of digital payments, such as speed and convenience, with the stability of traditional currencies. While often discussed alongside cryptocurrencies such as Bitcoin and Ethereum, CBDCs are different because cryptocurrencies operate independently of government oversight. 
 
@@ -2136,7 +2315,7 @@ Several countries are actively researching, piloting, or already implementing CB
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/14256e218c3e4e0fc08acaefc215030a0a95a0e39db2f0f7726667536c4b4bbd.jpg)
 
 
-## Mixers and tumblers
+#### Mixers and tumblers
 
 Cryptoasset mixers and tumblers are widely used to hide the source of cryptoasset funds and to make transaction tracing nearly impossible. Wasabi Wallet, also known as CoinJoin, is an example of one of the many Bitcoin mixers. It mixes the coins of multiple users together and returns the funds to the original user from another cryptocurrency address. There are many other types of mixers that work similarly by mixing coins from different entities and returning the funds from different addresses. When such mixing services are used, it is extremely difficult and sometimes impossible to trace funds. 
 
@@ -2146,21 +2325,21 @@ Criminals have widely used mixers and tumblers to launder illicitly acquired fun
 
 The use of mixer protocols does not necessarily indicate that the origina funds are illegal. Some users of such services simply believe in privacy and use these services to protect their information without doing anything illegal. However, virtual asset service providers should treat transactions linked to mixers and tumblers as high risk and take appropriate diligence measures to reduce potential risk. 
 
-# Money Laundering Risks in DNFBPs and Other High-Risk Sectors
+## Money Laundering Risks in DNFBPs and Other High-Risk Sectors
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/c5fbf9c3b9efe248c7236b75b5e77fc716ad9282a55e1e0959d4d2c31ad7e978.jpg)
 
 
-## Introduction: Money Laundering Risks in DNFBPs and Other High-Risk Sectors
+#### Introduction: Money Laundering Risks in DNFBPs and Other High-Risk Sectors
 
 This module covers various money laundering risks associated with Designated Nonfinancial Businesses and Professions (DNFBP) and other highrisk factors. While DNFBPs are not primarily financial in nature, they engage in activities that can be vulnerable to abuse by criminals for money laundering and terrorist financing. In these lessons, you will learn about the different types of DNFBPs and how they can be used as vehicles for laundering illicit funds due to their role in handling large sums of money, assets, and legal structures. This knowledge will help you establish appropriate safeguards to mitigate DNFBP risks. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/3a2b85479e0c2d58993b89f2c3c1dc8bed6f15afa3bcfe78790050a71149db2b.jpg)
 
 
-## Case example: DNFBP risks in the Hendricks case
+#### Case example: DNFBP risks in the Hendricks case
 
 Josh is a US-based lawyer and AFC professional with experience in regulated entities. He has been invited to participate in his jurisdiction’s Financial Risk Review Task Force to examine whether additional regulations are needed for DNFBPs and other high-risk sectors. The task force aims to classify the various types of DNFBPs, the customers they serve, and the associated risks to establish the regulatory needs. 
 
@@ -2178,7 +2357,7 @@ The task force noted that attorneys in the US are self-regulated by state bar as
 
 Given the complexities and risks associated with DNFBPs, the task force recommended comprehensive AML/CFT regulations to bridge existing gaps. Requiring DNFBPs to set up an AML/CFT framework and find the right balance between customer privacy and AML reporting requirements could deter the financial benefits of enabling such activities and reduce the occurrence of money laundering. This tailored regulatory approach enhances the financial system's integrity and protects it from exploitation by criminal actors. 
 
-## Key takeaways
+##### Key takeaways
 
 • DNFBP risks vary widely depending on the type of business and the clientele it serves. 
 
@@ -2186,12 +2365,12 @@ Given the complexities and risks associated with DNFBPs, the task force recommen
 
 • A comprehensive AML/CFT control framework tailored to the specific risks associated with DNFBPs can enhance the integrity of the financial system. 
 
-# Money laundering risks associated with DNFBPs
+### Money laundering risks associated with DNFBPs
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fdcdcc985829e05ebc6857851128971e2a60099feb53a0d7d281834d9b079d7c.jpg)
 
 
-## Risks of banking designated nonfinancial businesses and professions
+#### Risks of banking designated nonfinancial businesses and professions
 
 DNFBPs are entities that, while not primarily financial institutions, engage in activities that are at risk for money laundering and terrorist financing. Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system. If safeguards are absent, DNFBPs should be considered vulnerable to criminal enterprise as they can be exploited for illicit purposes through their roles in hiding the origins of illicit funds, creating legal structures, or handling high-value goods. 
 
@@ -2212,7 +2391,7 @@ Trust or company service providers: These providers create structures that obscu
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/79eda4c2e42e0913349f235065c84e348de2a3aa71d3958b25c72ad0e7f0ae4d.jpg)
 
 
-## Gaming sector risks
+#### Gaming sector risks
 
 The gaming sector includes physical and virtual casinos, internet gaming, and betting or gambling. Gaming operators offer various products and services based on their local regulations. This means that the financial crime risk associated with each gaming segment is unique. For example, both casinos and online operators are vulnerable to many forms of money laundering, such as customers converting illicit funds into chips, engaging in minimal play, and using falsified documents to open multiple accounts. 
 
@@ -2231,7 +2410,7 @@ Both physical and online gaming are susceptible to certain financial crime risks
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/7a5fa91798eb1fbedddc6eee4a72078eb23aa7974f09e6df69fcdc51ac0fe6f3.jpg)
 
 
-## Real estate sector risks
+#### Real estate sector risks
 
 The real estate sector is inherently susceptible to money laundering due to the substantial sums involved in property transactions and the tangible nature of these assets. Criminals can utilize real estate to integrate illicit funds into the legitimate economy by purchasing tangible assets, typically of significant value. The gains or profits are realized upon the sale of the asset, which, by then, is fully supported and legitimized in the paper trail of sale documentation, allowing money launderers to benefit from it. Real estate transactions often involve lawyers and other third parties, further legitimizing the movement of funds. 
 
@@ -2247,9 +2426,13 @@ Other red flags include buyers who exhibit little concern for the property's spe
 
 Real estate professionals should collaborate with other DNFBPs to identify and prevent money laundering. Lawyers and notaries can confirm the legitimacy of property ownership, ensure the validity of contracts, and examine the legality of the source of funds. They review transaction structures and the legitimacy of corporate buyers. Accountants can evaluate buyers' financial backgrounds, offering insights into the legitimacy of their wealth and compliance with local tax obligations. This collaboration enhances market integrity and transparency, supporting the mitigation of money laundering risks in the real estate sector. 
 
+#### Accountancy and audit sector risks
+
 Money laundering poses substantial risks in the accounting and auditing sectors due to professionals' access to sensitive financial information and their roles in financial management, reporting, and advising. 
 
 Accountants frequently find themselves in a position to detect suspicious activities, but they should remain vigilant to ensure they do not inadvertently facilitate illegal practices. Their involvement in handling financial records provides easy access to data, and their inability to detect suspicious activity might lead them to unwittingly create complex structures that enable illegal activities, such as structuring. If an accountant designs overly complex or opaque transactions, it might raise a red flag for money laundering. 
+
+#### Tax avoidance versus tax evasion
 
 One consequential risk for accountants is inadvertently supporting tax evasion, with subsequent transactions potentially serving as a conduit for money laundering. Tax avoidance involves legally minimizing tax liabilities, while tax evasion includes illegal actions, such as falsifying records or concealing income. If accountants become complicit in illegal tax evasion schemes, they might also inadvertently assist in money laundering, as illicit funds are often concealed through fraudulent tax practices. 
 
@@ -2267,6 +2450,8 @@ Accountants have a responsibility to detect and prevent money laundering, which 
 
 • Adhering to ethical standards set by professional bodies and regulatory authorities. 
 
+#### Legal services sector risks
+
 Money laundering is a prominent concern in the legal sector due to the influential role lawyers and notaries play in managing financial transactions, providing legal advice, and knowing their clients. Criminals often exploit the services of legal professionals to conceal illicit funds, facilitate fraudulent transactions, or structure deals in ways that obscure the origin of money. 
 
 Legal professionals provide various services, some of which are listed below. These services have corresponding money laundering risks. 
@@ -2276,7 +2461,7 @@ Legal professionals provide various services, some of which are listed below. Th
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/18d7351405c626082870573b3b843d03ae2236f2ca92235deeda5e65a6c08e48.jpg)
 
 
-## Trust and company service provider and company secretary sector risks
+#### Trust and company service provider and company secretary sector risks
 
 Trust and company service providers (TCSP) offer a range of business services, including nominee services, the establishment of shell companies, and the incorporation of onshore and offshore companies. 
 
@@ -2292,12 +2477,12 @@ Shelf companies are often sold to customers looking to bypass procedural require
 
 Offshore company formation involves establishing a company outside the customer’s home country, usually in low-tax and/or high-secrecy jurisdictions. The services include handling administrative tasks such as maintaining the company's registration, filing documents, and ensuring compliance with local regulations. However, weak AML regulations in some offshore locations allow criminals to obfuscate true ownership. The limited availability of public records and complex international transaction flows increase the money laundering risks associated with offshore companies, making TCSP an important gatekeeper. 
 
-# High-risk business sectors
+### High-risk business sectors
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f60b47c22fbe9145b054c1e1d57db458e2f5c0d68b05624ccdbe982d088c1dfa.jpg)
 
 
-## High-value asset risks
+#### High-value asset risks
 
 High-value assets are valuable items such as art, antiques, jewelry, precious metals, and expensive goods, such as jets or yachts. These assets pose financial crime risks because they are: 
 
@@ -2330,7 +2515,7 @@ To identify these red flags, it is important to apply robust due diligence measu
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/fe59e1d3c711fa4c5c7502719519d64c11c8a9f855628de281b289aa94d77e1b.jpg)
 
 
-## Case example: Suspicious transactions at Goodwish Jade
+#### Case example: Suspicious transactions at Goodwish Jade
 
 Goodwish Jade (GJ) is a retail shop specializing in jade and precious stones, located near a major casino area in Macau. As a customer of TRF Bank, GJ's operations raised additional queries during a routine review by the bank's AML officer. 
 
@@ -2344,7 +2529,7 @@ The AML officer suspected that the funds used for these purchases were potential
 
 Considering these findings, the AML officer escalated the case to the MLRO with the recommendation to file a suspicious activity report with the relevant authorities. He also recommended that TRF Bank's management review the risk assessment of Goodwish Jade as a customer, and any relevant network companies to mitigate the risks associated with potential money laundering activities. 
 
-## Key takeaways
+##### Key takeaways
 
 • Retailers of high-value items require close monitoring. 
 
@@ -2372,12 +2557,14 @@ Trade-based money laundering is a process through which criminals disguise the p
 
 The trade of dual-use goods poses unique risks of money laundering. Criminals might attempt to evade sanctions by using these goods to facilitate illicit trade and disguise transactions from authorities. The proceeds from these activities would then need to be laundered. 
 
+#### Import/export businesses risks
+
 The source of funds risk affects all businesses; however, the import/export sectors are particularly vulnerable as transactions often span multiple jurisdictions. Due to the differing applications of AML regulations globally, criminals might strategically structure their trade activities to exploit jurisdictions with weak, ineffective, or inadequate AML regulations where the source of funds is the point of entry to the financial system via import/export businesses. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/3d205ba64d9d5065a8934e50b7454b3d4087ffcf0c4d48b4f8c9a60412faa830.jpg)
 
 
-## Free-trade zones risks
+#### Free-trade zones risks
 
 A free-trade zone (FTZ) is a designated area within a country treated as outside its customs territory, allowing businesses to import, store, handle, manufacture, and distribute goods without incurring customs duties until those goods enter the domestic market. FTZs were originally set up to attract foreign direct investments and create jobs, and they are often located in developing countries. According to the think tank Global Financial Integrity, approximately 4,500 FTZs exist in more than 130 countries as of 2025. 
 
@@ -2400,7 +2587,7 @@ FTZs might enable TBML by importing consignments with counterfeit or tampered pa
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/b3c339a56d0a279508103350a4adad695603858f59b7afe7a68039ab08654ded.jpg)
 
 
-## Alternative remittance systems
+#### Alternative remittance systems
 
 An alternative remittance system (ARS) is a frequently used method for transferring value. Globally, this form of money movement has existed in several forms across numerous jurisdictions, with one recurring theme involved in its transfer process: trust. Those operating an alternative remittance system do not hold an MSB license or equivalent. 
 
@@ -2423,7 +2610,7 @@ As a result, terrorist financiers leverage hawalas, relying on the trust and ano
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e2be03286ae484a7ced152802575869b2846b802e4d0a39e0eb6a0473a1ee727.jpg)
 
 
-## Charity and NGO risks
+#### Charity and NGO risks
 
 Charities and nongovernmental organizations, or NGOs, play an indispensable role in addressing societal needs. An NGO is a nonprofit organization that is not directly linked to the governments of specific jurisdictions. Similar to charities, they provide a variety of services and humanitarian functions. Many jurisdictions will grant charities and NGOs tax-exempt status, allowing donors to deduct their contributions on their tax returns. This encourages the public to make donations to causes that serve the public good. Unfortunately, these organizations could be used to launder illicit funds or breach sanctions requirements. For this reason, charities and NGOs need to be scrutinized to ensure their ongoing legitimacy. 
 
@@ -2445,7 +2632,7 @@ Although most charities and NGOs are legitimate, terrorist organizations have us
 
 While researching charities and NGOs, be sure to search the relevant registration authorities to confirm their exempt status and their annual tax return filings. Also, consult websites that provide unbiased evaluations of charities and NGOs. It is likely that larger organizations will have a list of approved websites to conduct this research. 
 
-## Military organization and goods risks
+#### Military organization and goods risks
 
 Military organizations as parties to a transaction and military goods and services pose specific financial crime risks to organizations. 
 
@@ -2497,7 +2684,7 @@ Red flags related to military organizations and goods include:
 
 • Trade transactions involving high-risk jurisdictions or unclear final destinations 
 
-# Providing financial services to embassies, foreign consulates, and missions
+#### Providing financial services to embassies, foreign consulates, and missions
 
 Foreign embassies, foreign consulates, and missions are commonly seen in host countries. 
 
@@ -2526,7 +2713,7 @@ Additionally, embassy, foreign consulate, and mission accounts can pose a higher
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/46b5a5b05b17371557023e50ead667a6ebff057c2cbb102e009c6198c7646655.jpg)
 
 
-## Drug-related businesses risks
+#### Drug-related businesses risks
 
 Money laundering risks linked to drug-related businesses, particularly those involving substances such as cannabis and marijuana, present challenges for regulatory authorities, financial institutions, and the businesses themselves. 
 
@@ -2550,14 +2737,15 @@ After completing this learning experience, you will be able to:
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/7f6a94d7d46577657ea52f4f9630666fc543e8aeacb452606083dbee80c46630.jpg)
 
+## Global AFC Standards and Guidance
 
-## Introduction: Global AFC standards and guidance
+### Introduction: Global AFC standards and guidance
 
 This module covers key global AFC frameworks and guidelines that shape compliance standards worldwide. FATF-style regional bodies, such as MONEYVAL, help implement FATF’s 40 Recommendations, which set global AML/CFT standards. FATF’s reports and activities measure effectiveness, and its guidance helps assess risks. 
 
 You will learn about reports on high-risk jurisdictions issued by international bodies and how these reports impact financial institutions' risk management programs. International bodies such as the UN, OECD, Basel Committee on Banking Supervision, Egmont Group, and Wolfsberg Group provide further AFC standards. The G20, Transparency International, and the Tax Justice Network focus on corruption and tax justice. Applying this knowledge to your organization's compliance processes and risk assessments ensures compliance with international standards, mitigates the risk of money laundering and terrorism financing, and safeguards the global financial system. 
 
-## Case example: Implementing AFC standards at FinTrust
+#### Case example: Implementing AFC standards at FinTrust
 
 Amina is a manager at FinTrust, a financial institution in the US. She is going to deliver a training session to a new graduate trainee, Drew. 
 
@@ -2573,7 +2761,7 @@ Today, multiple international organizations, such as FATF, Basel Committee on Ba
 
 violations. Amina emphasizes that ignoring these standards can lead to severe consequences for FinTrust, including regulatory fines, reputational damage, or even loss of access to the global banking system. Regulatory bodies such as the OFAC, SEC, and OCC can impose multi-million-dollar penalties, ceaseand-desist orders, and operational restrictions. In more serious cases, senior executives and compliance officers might face criminal prosecution, asset forfeitures, and even imprisonment for willful violations. 
 
-## Key takeaways
+##### Key takeaways
 
 • Knowing the evolution of AFC regulations helps ensure compliance and protect the financial system. 
 
@@ -2589,12 +2777,12 @@ violations. Amina emphasizes that ignoring these standards can lead to severe co
 
 <sub>o</sub> Criminal prosecution and imprisonment. 
 
-# Financial Action Task Force
+### Financial Action Task Force
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/cc80e6f4debbe4daf1c6183ddc4781a21d2fa82135d5c7f7d5cd62437166922f.jpg)
 
 
-## Financial Action Task Force
+#### FATF 40 Recommendations
 
 The G-7 established the Financial Action Task Force (FATF) in 1989 as an international organization to coordinate efforts to combat money laundering. Its original membership included 15 countries and the EU, and it now includes nearly 40 countries as well as a global network of regional groups. Within a year of its founding, FATF issued its original 40 Recommendations setting forth guidance and a comprehensive action plan for fighting money laundering worldwide. 
 
@@ -2607,6 +2795,8 @@ In addition to setting standards through FATF Recommendations, FATF accomplishes
 • Monitoring methods and trends: FATF continuously monitors how criminals and terrorists raise, use, and move funds, and publishes reports to raise awareness of the latest techniques and trends. Over 200 countries and jurisdictions have committed to meeting FATF standards, including many that are not full members of the organization. 
 
 • Identifying high-risk jurisdictions: Where FATF has determined that a jurisdiction has failed to implement its standards, FATF can designate it as a jurisdiction under increased monitoring on the "grey list" or a high-risk jurisdiction on the "black list." FATF designations on the grey and black lists can have severe consequences since inclusion on these lists might lead to isolation from the global financial system. 
+
+#### FATF-style regional bodies
 
 FATF-style regional bodies (FSRB) are autonomous regional organizations that assist in implementing FATF’s standards. These bodies closely align with FATF objectives and have similar forms and functions but operate independently of FATF. FSRBs are also considered FATF associate members. In setting standards, FATF depends on input from the FSRBs. However, FATF remains the only standard-setting body. 
 
@@ -2644,6 +2834,8 @@ The 40 Recommendations and 9 Special Recommendations address a wide range of top
 
 FATF intends for their member jurisdictions to implement the Recommendations in the form of legally binding law or regulation, which they can tailor to reflect their respective circumstances and legal structures. As a result, institutions receive the Recommendations as legal and regulatory requirements established within the jurisdictions in which they operate. 
 
+#### FATF mutual evaluation
+
 To assess member jurisdictions’ compliance with the Recommendations, FATF conducts periodic mutual evaluations through formal reviews by AML/CFT authorities from other jurisdictions. The resulting mutual evaluation reports are public documents that provide an in-depth assessment of a member jurisdiction’s compliance with each Recommendation. For each Recommendation, FATF gives a rating for technical compliance and effectiveness. FATF then requires member jurisdictions to address any 
 
 deficiencies and subjects them to post-assessment monitoring to ensure they address their issues. Deficiencies can result in a member jurisdiction’s designation on the grey or black lists. These types of designations are likely to result in financial institutions flagging the member jurisdiction as high risk in their internal risk assessments. 
@@ -2651,7 +2843,7 @@ deficiencies and subjects them to post-assessment monitoring to ensure they addr
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/1e595b33a632902475eb1820e8583e5aed5edfa67eb600988b0317bd1e7e0265.jpg)
 
 
-## FATF Recommendations 1-8
+#### FATF Recommendations 1-8
 
 FATF Recommendations 1 to 8 ensure that member jurisdictions implement comprehensive legal and regulatory frameworks to combat money laundering, terrorist financing, and the proliferation of weapons of mass destruction (WMD). These recommendations fall into three groups. 
 
@@ -2664,7 +2856,7 @@ Recommendations 5 to 8 advise jurisdictions to criminalize terrorist financing i
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/55d172b0c6a926e4b3eda4fd3c4f7f1e2e24dd84aa3b5de2c2f8c22b0bee1003.jpg)
 
 
-## FATF Recommendations 9-23
+#### FATF Recommendations 9-23
 
 FATF Recommendations 9 to 23 seek to ensure the effectiveness of member jurisdictions' measures to detect and prevent illicit financial activities. 
 
@@ -2683,7 +2875,7 @@ disclosing suspicious transactions. Designated nonfinancial businesses and profe
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/faa3c03c0862e9aa4573e2aee9c4ca6e80f8d24c96b588e701292414f006bb09.jpg)
 
 
-## FATF Recommendations 24-40
+#### FATF Recommendations 24-40
 
 FATF Recommendations 24 to 40 outline key measures to strengthen transparency, institutional oversight, and global cooperation in AML/CFT efforts. 
 
@@ -2696,7 +2888,7 @@ Recommendations 36 to 40 advise jurisdictions to swiftly adopt and fully impleme
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/537c7691765cbee237061ff3eaca4bcc8201926fd57e60e754edc69ccc55da9e.jpg)
 
 
-## FATF 11 Immediate Outcomes
+#### FATF 11 Immediate Outcomes
 
 Mutual evaluation reports of member jurisdictions focus on two areas: technical compliance with the FATF Recommendations and the effectiveness of the jurisdiction's overall program. FATF measures and rates effectiveness using 11 Immediate Outcomes (IOs), with each IO receiving an effectiveness rating of low, moderate, substantial, or high. For jurisdictions that FATF rates as having low or moderate effectiveness in IOs, FATF provides key recommended actions and tracks the jurisdiction's progress in meeting the recommendations. 
 
@@ -2746,7 +2938,7 @@ The mutual evaluation process has seven stages.
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/1284e085cf1a8da029053464887b886b47e7dea3c84e0ef29c2e3110a5ca2fad.jpg)
 
 
-## FATF high-risk and noncooperative jurisdictions
+#### FATF high-risk and noncooperative jurisdictions
 
 FATF identifies high-risk and noncooperative jurisdictions through a comprehensive review process. FATF’s International Cooperation Review Group oversees this process and assesses a jurisdiction's AML/CFT measures to identify threats, vulnerabilities, and risks. 
 
@@ -2783,11 +2975,13 @@ Based on these criteria, FATF officially identifies noncooperative jurisdictions
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/2217f3c0c790dd4ca921ce2985c3cd89dc21fdb19de9ef682872f6d0d3961e7b.jpg)
 
 
-## Impact of FATF mutual evaluation reports on jurisdictions
+#### Impact of FATF mutual evaluation reports on jurisdictions
 
 After the plenary discussion and final quality review are complete, FATF publishes the mutual evaluation report. Jurisdictions that perform poorly on evaluations risk placement on FATF’s grey list or black list. A poor evaluation can lead to increased scrutiny from international banks, reputational damage, and economic consequences such as higher transaction costs and reduced foreign investment. 
 
 After jurisdictions receive the ratings on Recommendations, they should address the shortcomings FATF identified in the mutual evaluation report. FATF encourages these jurisdictions to enact new—or amend existing— regulations or laws to strengthen their AML/CFT regime. FATF also encourages financial institutions, law enforcement agencies, and regulatory bodies to enhance their compliance frameworks to meet FATF standards. These enhancements lead to greater investment in technology, training, and personnel for detecting and preventing financial crimes. Additionally, jurisdictions often strengthen national FIUs and cross-border cooperation mechanisms. 
+
+#### FATF guidance for risk assessment
 
 According to FATF’s website, all jurisdictions are subject to post-assessment monitoring. This monitoring can include regular reports of improvements for jurisdictions that are already largely compliant and actively addressing the 
 
@@ -2843,12 +3037,12 @@ Supranational risk assessments are conducted by a group of jurisdictions, while 
 
 • Develop and promote standardized methodologies or recommendations. 
 
-# AFC guidance from leading international organizations
+### AFC guidance from leading international organizations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/31bf018c017c4b6c61964ff3743e05c48a780e429e3c1af6a8ef0fdddf99bcb6.jpg)
 
 
-## United Nations AFC guidance
+#### United Nations AFC guidance
 
 The UN is a global organization consisting of many Member States. The UN’s agenda includes maintaining global peace and security, providing humanitarian assistance, upholding human rights, and maintaining international law. While the UN promotes international cooperation, it is not a world government and does not make laws. 
 
@@ -2867,7 +3061,7 @@ UNOCT provides guidance and capacity building for the implementation of the UN's
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/74333cd11e25a3fadbd7320f34ae7017b7f72047dd3abc6058cdfd18da3687b2.jpg)
 
 
-## Case study: The 1999 Convention and UNSC resolutions for CFT
+#### Case study: The 1999 Convention and UNSC resolutions for CFT
 
 On March 11, 2004, a series of coordinated bombings struck Madrid’s commuter train system, killing 193 people and injuring over 2,000. The bombers planted 10 explosive devices in backpacks across four trains during the morning rush hour, causing devastation and panic. 
 
@@ -2887,7 +3081,7 @@ The attack influenced global counterterrorism policies. It simultaneously highli
 
 • Resolution 2462 (2019) reinforces the obligation for states to prevent terrorism financing through banks, charities, and informal networks, a concept already being implemented post-9/11. 
 
-## Key takeaways
+##### Key takeaways
 
 • The international counterterrorism framework facilitates intelligencesharing, financial tracking, and legal actions that can dismantle terrorist support networks. 
 
@@ -2897,7 +3091,7 @@ The attack influenced global counterterrorism policies. It simultaneously highli
 
 • Resolutions need ongoing adaptation to keep up with the evolving nature of terrorism threats. 
 
-## World Bank and International Monetary Fund AFC guidance
+#### World Bank and International Monetary Fund AFC guidance
 
 The World Bank is an international organization that provides funding, policies, and technical assistance to developing countries. The International Monetary Fund (IMF) keeps track of the global economy while seeking to maintain the stability of the global monetary system and lend funds to member countries. The World Bank and IMF have cooperated since the early 2000s in efforts to combat money laundering and terrorist financing. They require jurisdictions that benefit from their programs to have effective AML/CFT controls. They work closely with FATF to implement FATF standards and incorporate FATF compliance in their Financial Sector Assessment Program reviews of member jurisdictions. The World Bank and IMF have Observer status with FATF. 
 
@@ -2920,7 +3114,7 @@ IMF publishes periodic reviews of its AML/CFT strategy, accompanied by extensive
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f7ff0ec5e5863347e634142e79b0dd8e4b31f5234655cef361b1f51035a34db8.jpg)
 
 
-## Organisation for Economic Co-operation and Development AFC guidance
+#### Organisation for Economic Co-operation and Development AFC guidance
 
 The Organisation for Economic Co-operation and Development (OECD) is an intergovernmental organization founded in 1961. It works closely with policymakers, stakeholders, and citizens to establish evidence-based international standards for a variety of policy issues. 
 
@@ -2955,7 +3149,7 @@ Many organizations utilize the OECD's guidance and resources as a reference to i
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e465c645b437a30b0dee7fd5853b153fab0f1fee07e5a4566ff8ea4a47e0b315.jpg)
 
 
-## Basel Committee on Banking Supervision AFC guidance
+#### Basel Committee on Banking Supervision AFC guidance
 
 The Basel Committee on Banking Supervision (BCBS) was established by the G-10 countries in 1974 as the primary global standard setter for bank regulation and as a forum for global cooperation on banking supervision. Its mandate is to enhance the global banking system through strengthening banking regulation, supervision, and practices. It does not have enforcement authority, but relies on its members’ commitment to achieve its mandate. 
 
@@ -3012,7 +3206,7 @@ These guidelines provide banks with a foundation for their AML frameworks and co
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/5a1e6b1abcd8d207aa57dc7caf27cc103cef179a98dd9b6eb67d55f189b32c1d.jpg)
 
 
-## Egmont Group AFC guidance
+#### Egmont Group AFC guidance
 
 The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes. Established in 1995, the group is made up of several organizational groups. The governing body, entitled Heads of Financial Intelligence Units, makes consensus-driven decisions. This group is supported by other entities, including the Egmont Committee, Regional Groups, Working Groups, the Egmont Secretariat, and the Center of FIU Excellence and Leadership. 
 
@@ -3039,7 +3233,7 @@ The Egmont Group regularly produces guidance and information documents, many of 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e9dbe040ff651515427768bab8048fad83d770fc11cabc2f4c15f87b0072b6db.jpg)
 
 
-## Wolfsberg Group AFC guidance
+#### Wolfsberg Group AFC guidance
 
 The Wolfsberg Group is an association of global banks that develop policies and guidance for managing financial crime risk. The group first came together in 2000 at the Château Wolfsberg in Switzerland, as part of a collaborative effort with representatives of Transparency International. The group is made up of senior financial crime compliance personnel from member banks, representing the US, the UK, Switzerland, Germany, France, the Netherlands, Italy, Spain, and Japan. 
 
@@ -3068,7 +3262,7 @@ In 2014, the Wolfsberg Group published . Since its publication, the Wolfsberg Gr
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/26211eb7efa879bf7f0f9ed9d8cbcfbf018ee2cd55e943091a8803b9f67704dc.jpg)
 
 
-## International Organization of Securities Commissions AFC guidance
+#### International Organization of Securities Commissions AFC guidance
 
 The International Organization of Securities Commissions (IOSCO) is the global standard setter for financial market regulation. It has more than 200 members from 130 jurisdictions, including governmental bodies, supernational and subnational regulators, self-regulatory organizations, and securities exchanges. 
 
@@ -3102,12 +3296,12 @@ In 2023, IOSCO issued . The report includes 18 policy recommendations designed t
 
 6. Retail access, suitability, and distribution 
 
-# AFC guidance from other organizations
+### AFC guidance from other organizations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/5f02332ff34843136b0c9c42c007f26856afd758548abfcad8ad40616f20801b.jpg)
 
 
-## G-20 Anti-Corruption Working Group AFC guidance
+#### G-20 Anti-Corruption Working Group AFC guidance
 
 The G-20 was founded in 1999 as an informal forum for finance ministers and central bank governors of the most industrialized and developing economies. The G-20’s membership includes 19 countries, plus the EU and the African Union. Its original focus was economic and financial stability-related issues, but it has since expanded to include other issues, such as anti-corruption. After the 2007 global financial crisis, G-20 participation was upgraded to include heads of state or government, and leaders now meet regularly. 
 
@@ -3148,7 +3342,7 @@ cooperation. They outline strategies for combating illicit financial activities,
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/0f8f3995eddef933990ebeebaa11caab3e225c2ab0d2685af27160af704fca2d.jpg)
 
 
-## Transparency International AFC guidance
+#### Transparency International AFC guidance
 
 Transparency International (TI) is a non-governmental organization committed to stopping corruption and promoting transparency, 
 
@@ -3180,7 +3374,7 @@ The TI Corruption Perceptions Index (CPI) is a globally recognized ranking that 
 
 TI’s Bribe Payers Index (BPI) ranks the leading exporting countries according to their propensity to bribe. TI’s annual Global Corruption Report combines the CPI and the BPI and ranks each country by its overall level of corruption. The lists help financial institutions determine the risk associated with a particular jurisdiction. 
 
-## Basel Institute on Governance AFC guidance
+#### Basel Institute on Governance AFC guidance
 
 The core mission of the Basel Institute on Governance is to contribute to global efforts to prevent and combat corruption and strengthen governance. It is an independent organization and an associated institute of the University of Basel. Its staff are mostly practitioners with years of anti-corruption prevention or law enforcement experience. 
 
@@ -3223,7 +3417,7 @@ The Index uses data sources including FATF mutual evaluation reports, US State D
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/5014b4c9fb0a978237febaedfe87387156c170d9d82d01cffab3105fa6b58d21.jpg)
 
 
-## Tax Justice Network AFC guidance
+#### Tax Justice Network AFC guidance
 
 The Tax Justice Network (TJN) is an independent, advocacy-focused organization dedicated to exposing and combating global tax avoidance, evasion, and financial secrecy. Launched in 2003 in the British Houses of Parliament, it researches tax havens, offshore finance, and illicit financial flows. TJN promotes policies for greater transparency and fairer tax systems. 
 
@@ -3237,28 +3431,28 @@ The State of Tax Justice annual report shares the amount of tax that jurisdictio
 
 An organization might incorporate TJN indices to customer risk assessments to assess the risk of a customer engaging in tax evasion or financial crime based on their country of residence or business operations. Higher rankings in these indices indicate jurisdictions with greater financial secrecy or tax haven characteristics, suggesting increased risk levels for customers associated with them. 
 
-# AFC Regulations and Regimes
+## AFC Regulations and Regimes
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/1a6144d57fc53de7cd55eddb87bc663f2333d3fdaee7942e34a48f91b297bb71.jpg)
 
 
-## Introduction: AFC regulations and regimes
+#### Introduction: AFC regulations and regimes
 
 In this module, you will be introduced to the regulatory environment that impacts the daily work of AFC professionals. In addition to learning who some of the major regulators are and what regulatory requirements they impose, you will learn how regulators assess risk, provide guidance, and cooperate with each other and with law enforcement to enforce AML/CFT laws. This material provides the context for understanding how regulatory requirements flow from international guidance to national legislation and finally to operational requirements within covered entities, impacting you as an AFC professional. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/0b63859ce67f0549344956680a661bea405e572c1f7085608abe70ea0f555cb2.jpg)
 
 
-## Student note: Regulatory framework elective courses
+#### Student note: Regulatory framework elective courses
 
 This module will cover the key global AFC rules and regulations. We will cover the various jurisdictions at a high level. For a detailed overview and analysis, please refer to our AML regulatory framework courses to learn more about the regulatory landscape of a specific jurisdiction. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/e62c6678ef2767acb7b021996fbeb16e5bb82eb68aa0a5cde76c22b6f1fc6bd4.jpg)
 
 
-# Case example: Drafting policies for an AFC department based in APAC
+#### Case example: Drafting policies for an AFC department based in APAC
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f073cd026368678655910d99b1e6cf91221b59dac0b9ea4a872638017e550393.jpg)
 
@@ -3309,7 +3503,7 @@ Hiroshi's research does not stop there. He also considers emerging compliance to
 
 Once Hiroshi has identified the relevant regulations and regulatory authorities to include in his work, he determines which business products and services these controls will affect. In his proposed policies, he states that continuously reviewing and monitoring relevant guidance, enforcement actions, and proposed policy changes from relevant sources are the keys to success. Hiroshi also mentions that his organization should incorporate the results of ongoing regulatory reviews into other AFC processes as appropriate, including the enterprise-wide risk assessment, training plan, and new business due diligence processes. 
 
-## Key takeaways
+##### Key takeaways
 
 Your organization’s policies and procedures should: 
 
@@ -3321,12 +3515,12 @@ Your organization’s policies and procedures should:
 
 • Enforce a thorough risk assessment prior to the launch of a new product, service, or technology. 
 
-# US AML/CFT regulatory landscape
+### US AML/CFT regulatory landscape
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/93cc3b72e92cce138cb4020aa4b39a6d04d1ce940955853766d3c30418d95d12.jpg)
 
 
-## Bank Secrecy Act
+#### Bank Secrecy Act
 
 The Bank Secrecy Act (BSA) is the US’s most important AML regulation. The US implemented it in 1970 in response to criminals using US banks and the financial system for money laundering and other illicit activities. 
 
@@ -3359,7 +3553,7 @@ The BSA extends to non-US banks, MSBs, and cryptocurrency firms that deal with U
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f71c536e902df3412f8fe5bf735b680130fbc235949b88e6cb47673386f2d685.jpg)
 
 
-## USA PATRIOT Act
+#### USA PATRIOT Act
 
 In 2001, the US enacted the Uniting and Strengthening America by Providing Appropriate Tools Required to Intercept and Obstruct Terrorism Act (USA PATRIOT Act). This Act introduced significant AFC regulatory obligations that have influenced global financial regulations. It strengthened AML/CFT measures, impacting financial institutions worldwide. 
 
@@ -3380,7 +3574,7 @@ Key global obligations derived from the USA PATRIOT Act include the following to
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/d8f9827efe260dc4a6c7f8827153b6648f6d6bbdb6826b3a93a7e0610d6be570.jpg)
 
 
-## The Anti-Money Laundering Act of 2020
+#### The Anti-Money Laundering Act of 2020
 
 The main focus of the Anti-Money Laundering Act of 2020 (known as the AML Act in the US) was to modernize US banking laws and regulations for AML compliance. The act also broadens the use of AML practices to further national security and intelligence goals through greater transparency and enforcement measures. This included the creation of a national Beneficial Ownership database, which will be updated with ownership information for entities required to register. Additional rules, such as which financial institutions can access the database and how that information may be used, are anticipated in the future. 
 
@@ -3438,6 +3632,8 @@ FinCEN’s key functions include:
 
 • Identifying financial crime risks and assisting with resource allocation. 
 
+#### Other US regulators
+
 US financial regulators work collectively to ensure the financial system’s stability, integrity, and efficiency. The Office of the Comptroller of the Currency (OCC), Federal Reserve System (FRS), Federal Deposit Insurance Corporation (FDIC), and Securities and Exchange Commission (SEC) create a framework that safeguards financial institutions and consumers, mitigating risks that could threaten economic stability. They enforce compliance, promote transparency, and protect investors and depositors, while ensuring trust in financial markets. 
 
 The OCC is an independent bureau within the US Department of the Treasury responsible for chartering, regulating, and supervising all national banks, federal savings associations, and US branches of foreign banks. It ensures that financial institutions operate safely and soundly, provide fair access to financial services, treat customers fairly, and comply with laws and regulations. 
@@ -3455,7 +3651,7 @@ impose civil monetary penalties, forfeiture of proceeds, limitations on future b
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/51fff98d28d3b6ce1cf7e330c0094b30828fbec89cd5ab9982dc05c90eec20d6.jpg)
 
 
-## Case study: US regulatory enforcement actions
+#### Case study: US regulatory enforcement actions
 
 Between 2023 and 2024, Wells Fargo & Company, parent company of Wells Fargo Bank, N.A., and hereafter called Wells Fargo, faced significant enforcement actions from three major US regulatory bodies: the Federal Reserve Board, the SEC, and the OCC. These enforcement actions addressed various compliance deficiencies and misconduct within the bank's operations. 
 
@@ -3465,7 +3661,7 @@ In August of 2023, the SEC charged two non-bank affiliates of Wells Fargo, Wells
 
 In September of 2024, the OCC issued an enforcement action against Wells Fargo, identifying deficiencies in the bank's financial crimes risk management and AML controls. The OCC's formal agreement highlighted issues in areas such as suspicious activity reporting, currency transaction reporting, CDD, and customer identification programs. While the OCC did not impose monetary penalties, the agreement required Wells Fargo to obtain OCC approval before expanding into new products or services in areas of moderate or high risk. 
 
-## Key takeaways
+##### Key takeaways
 
 Regulatory enforcement actions: 
 
@@ -3478,7 +3674,7 @@ Regulatory enforcement actions:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/63714595e66dc7a9520a121c8f2c1b2304841d8fe467c96d1765c769269577f5.jpg)
 
 
-## Office of Foreign Assets Control
+#### Office of Foreign Assets Control
 
 The US Department of the Treasury created the Office of Foreign Assets Control (OFAC) in 1950. It is the successor to the Office of Foreign Funds Controls. OFAC is responsible for administering and enforcing economic and trade sanctions based on US foreign policy and national security goals against foreign jurisdictions and regimes, terrorists, international narcotics traffickers, entities engaged in the proliferation of WMDs, and other threats. Its legal authority comes from a combination of US laws, executive orders, and regulations. 
 
@@ -3494,12 +3690,12 @@ Secondary sanctions: These sanctions are directed at non-US persons for transact
 
 To enforce its sanctions programs, OFAC relies on collaboration with the private sector. Failure to comply with OFAC sanctions can result in civil and criminal penalties, including multimillion-dollar fines against organizations and imprisonment of individuals. 
 
-## EU AML/CFT regulatory landscape
+### EU AML/CFT regulatory landscape
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/31fcd99cde8fa5ec5cc29157ed41cd5192588a2517be35177ddf0db22f532949.jpg)
 
 
-## History of AML regime in Europe
+#### History of AML regime in Europe
 
 The EU is a political and economic union of jurisdictions. Note that Norway, Iceland, and Liechtenstein are not part of the EU but are members of the European Economic Area (EEA). Although members of the EEA do not take part in the EU’s legislative process, they are required to comply with the EU’s AML/CFT legislation, which can be issued as a regulation or a directive. A regulation is a legal act that is immediately applicable in each member state. A directive is a legal act that sets principles and goals. National legislators must transpose, or incorporate into their legislation, EU directives by a certain deadline to make them binding. 
 
@@ -3512,7 +3708,7 @@ Until 2018, member states differed on the predicate offenses for money launderin
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/8f4880cbe0aafcd5095cc69803078eb0e24560b009b47783a27e9c4c50d8bf19.jpg)
 
 
-## EU AML package
+#### EU AML package
 
 In 2024, the EU adopted a package of AML legislation known as the “Single Rulebook.” The package consists of: 
 
@@ -3535,7 +3731,7 @@ FTR implements FATF’s recommendations on cryptoassets and prohibits anonymous 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/f1437435f1643b3130de06d2af5760b0f9f54869b75598dd545b70dc99b2660f.jpg)
 
 
-## The role of AML Authority
+#### The role of AML Authority
 
 Prior to 2021, the EU’s AML regime was made up of a series of directives that member states were expected to implement. Because the members states did not apply the rules in a coherent manner across the EU, the AML regime faced fragmentation in supervision and enforcement. 
 
@@ -3560,7 +3756,7 @@ The AML Authority is expected to commence direct supervision, with its headquart
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/ddf1fe968a7764ab23bafc2e44f6c3d3767b6a054b413e1d50ed80cb6e27a14d.jpg)
 
 
-## Markets in Cryptoassets Regulation
+#### Markets in Cryptoassets Regulation
 
 The Markets in Cryptoassets Regulation (MiCA), also known as MiCAR, has instituted the EU’s legislative framework governing the transparency, disclosure, authorization, and supervision of issuers and virtual asset service providers (VASP) since December 2024. The European Commission created MiCA to address the risks that unregulated cryptoassets pose to investors and financial markets. Key provisions focus on cryptoassets that existing financial services legislation did not previously regulate. For instance, MiCA covers the issuance and trading of cryptoassets other than electronic money tokens (EMT) and asset-referenced tokens (ART). 
 
@@ -3574,12 +3770,12 @@ When receiving a request for admission to trading, VASPs must assess the reliabi
 
 MiCA establishes rules against market abuse, thus prohibiting insider trading and market manipulation. VASPs must have controls to prevent and detect market abuse and immediately report reasonable suspicions about an order or transaction to the relevant regulatory authority. 
 
-## Other regional AML/CFT regulatory landscapes
+### Other regional AML/CFT regulatory landscapes
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/22abc2577c97454048d823a33ac296ab428e708c1b82a3f1801feb21dfb1ea36.jpg)
 
 
-## Local AML regulations and crossjurisdictional impact
+#### Local AML regulations and cross-jurisdictional impact
 
 An international financial institution often experiences complex operating environments. One of the operational challenges is the implementation of its AML program in all its locations. In this context, the interplay between a global, group-wide AML program and the local AML regulations is vital. 
 
@@ -3594,7 +3790,7 @@ achieves this balance, it should abide by its management oversight and governanc
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/d2b31d72-206e-4a45-98ea-5fe61d6a7d6f/98a64d82e9dffceefbe0e17c1379cd53be0739efff7838838531dc61b7e08d80.jpg)
 
 
-## UK AML regulations
+#### UK AML regulations
 
 The UK’s AML/CFT regulatory landscape has changed following the UK’s exit from the EU in January 2020. Because it is not part of the EU or the EEA, the UK is not obligated to continue following the EU AMLDs, most recently the 6AMLD. In the current landscape, the UK remains a member of FATF and implements legislation that meets FATF’s AML/CFT global standards. The key legislation includes: 
 
@@ -3621,7 +3817,7 @@ His Majesty's Revenue and Customs (HMRC) is a supervisory body for money launder
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5b62eba67a9fcbe0bf08a30b28131a2e0bb39ac20bfd882fcb27cfb2203f3595.jpg)
 
 
-## Australia AML regulations
+#### Australia AML regulations
 
 • Legislation includes AML/CTF Act 2006 and AML/CTF Amendment Act 2024. 
 
@@ -3655,6 +3851,8 @@ AUSTRAC is the principal regulatory authority responsible for overseeing the AML
 
 The Australian Sanctions Office (ASO) within the Department of Foreign Affairs and Trade (DFAT) administers Australia's sanctions regime, implementing and enforcing UNSC sanctions and Australian autonomous sanctions. DFAT coordinates with AUSTRAC and other regulatory bodies to ensure that entities comply with sanctions obligations. 
 
+#### Singapore AML regulations
+
 Singapore's National AML Strategy was updated in October 2024 and outlines its approach to combat money laundering risks, emphasizing a three-pillar framework of prevention, detection, and enforcement. Singapore follows a risk-based approach to AML/CFT compliance. This approach requires financial institutions and DNFBPs to implement CDD, enhanced due diligence for high-risk clients, ongoing transaction monitoring, and suspicious transaction reporting. 
 
 The key legislation governing AML/CFT in Singapore includes: 
@@ -3686,7 +3884,7 @@ In addition to the legislation, the following are also useful resources for AFC 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/b5b2c3b3a850891f8b56c2cda754856116282cfe8b92803a43646cf41020f5ff.jpg)
 
 
-## Hong Kong (China) AML regulations
+#### Hong Kong (China) AML regulations
 
 The Hong Kong Special Administrative Region of China (HKSAR) has been a member of FATF since 1991. It is also a founding member of the Asia-Pacific Group. 
 
@@ -3699,7 +3897,7 @@ In the HKSAR, several regulators oversee financial institutions and DNFBPs to en
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6d32599369c758c75a6d8cca17f7585bf8483270687db83c3b8f17178acb0f6c.jpg)
 
 
-## China AML regulations
+#### China AML regulations
 
 China revised its AML Law, which took effect on January 1, 2025. This revision reflects China’s commitment to aligning with international standards, particularly the FATF Recommendations, while addressing emerging risks in digital finance and cross-border crime. 
 
@@ -3714,7 +3912,7 @@ The People’s Bank of China is the primary supervisory body under the State Cou
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/53945355844ddd10c11ef86bd2a791e63d1cf8bf9d4f64f31e8a9f9eb7cefb4c.jpg)
 
 
-## Japan AML regulations
+#### Japan AML regulations
 
 Japan’s AML/CFT framework aligns with FATF’s Recommendations and evolving financial crime risks. The framework includes the Act on Prevention of Transfer of Criminal Proceeds, the Act on Punishment of Organized Crimes and Control of Crime Proceeds, and the Foreign Exchange and Foreign Trade Act. 
 
@@ -3737,7 +3935,7 @@ Additionally, the Japanese government established an Inter-Ministerial Council f
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/045cda85c88bd200a22e8b8c78c9f56708c2c8ef18bb3497ebff8f60ede9dffe.jpg)
 
 
-## South Korea AML regulations
+#### South Korea AML regulations
 
 South Korea’s AML framework primarily focuses on three laws. 
 
@@ -3754,7 +3952,7 @@ South Korea established the Financial Services Commission in 2008. While the Com
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/a04b9025e6adadd0c575310877ceaf77ee8fabe9bcd87acd6d9408ab39c6c82f.jpg)
 
 
-## United Arab Emirates AML regulations
+#### United Arab Emirates AML regulations
 
 The UAE aligns its regulatory approach with FATF requirements, including the FATF Recommendations, to strengthen oversight, risk-based monitoring, and enforcement mechanisms. 
 
@@ -3776,12 +3974,12 @@ The UAE’s regulators and their roles are as follows:
 
 • The Executive Office for AML/CFT coordinates AML policies, strategic planning, and international cooperation. 
 
-# Other AFC regulations that impact organizations
+### Other AFC regulations that impact organizations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/3d428cb246d572106f47a21993926a716b8a40d75d50c65522a95873beb7303d.jpg)
 
 
-## Major ABC regulations
+#### Major ABC regulations
 
 Anti-bribery and corruption (ABC) compliance is an important area of AFC compliance because corruption remains a major source of criminal proceeds and is a key predicate offense for money laundering. Most jurisdictions criminalize bribery and corruption through domestic legislation, yet only a fraction of them have enacted ABC laws and regulations. The US, UK, and France have their own legislative frameworks on ABC. All three frameworks have extraterritorial reach. 
 
@@ -3796,7 +3994,7 @@ entities, Sapin II introduced an obligation to have an anticorruption program me
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/3725fc8acb22a9c62c5efaa1c4d95dc22d04128f7225c6c18ccd6255a355aad2.jpg)
 
 
-## Major sanctions regimes
+#### Major sanctions regimes
 
 The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter. Article 25 further states that Member States are obligated to “accept and carry out the decisions of the Security Council.” After the Security Council passes a resolution, the UN establishes a sanctions committee to monitor the implementation and effectiveness of a sanctions regime. The UN also maintains the United Nations Security Council Consolidated List, which includes all persons and entities that are subject to UN sanctions. 
 
@@ -3811,7 +4009,7 @@ The UK’s Foreign, Commonwealth and Development Office is responsible for setti
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/8ccaa75649775d3b7fa41c22673795f514a66252fe87b1407082664609984963.jpg)
 
 
-## Other sanctions regimes
+#### Other sanctions regimes
 
 Along with the major sanctions regimes, organizations might need to comply with other sanctions regimes. This depends on their own geographical footprint as well as jurisdictional exposure stemming from the activities of their customers, suppliers, and other third parties. 
 
@@ -3829,12 +4027,12 @@ Regulations. The Department of Foreign Affairs and Trade maintains a consolidate
 
 In addition to UN sanctions, which are implemented through the United Nations Act and the Monetary Authority of Singapore Act, Singapore applies targeted financial sanctions against designated individuals and entities under the Terrorism (Suppression of Financing) Act. 
 
-# Other laws and regulations that impact organizations
+### Other laws and regulations that impact organizations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/0428cc38bc968e4d4a13fc3479f886b60f9dc7b82a8a061740ce96b439959d3e.jpg)
 
 
-## Data security and privacy
+#### Data security and privacy
 
 Financial institutions have a high duty to care for—and often a legal obligation to ensure the security and privacy of—customer data. Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it. In many jurisdictions, it is prohibited by law for data collected for one purpose to be used for another purpose, such as marketing. Once it has served its purpose, data must be securely destroyed. Many jurisdictions have rules and regulations about how long data should be retained. Your organization will have a policy on data categorization, how long data should be stored, and when data should be destroyed. 
 
@@ -3847,7 +4045,7 @@ The data that is collected is comprehensive and often purposeful. Care must be t
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f14f3661075058ebc4132d3cdf8868e8e2fd6a87b9c057efa86a2015e33ffcb3.jpg)
 
 
-## Digital Operational Resilience Act
+#### Digital Operational Resilience Act
 
 Digitalization has deepened interconnections and dependencies within the financial sector and with third-party service providers. In this context, information and communications technology (ICT) risk has increased as illicit actors frequently exploit ICT infrastructures to attack financial institutions. Considering the relevance of digital resilience, the EU passed the Digital Operational Resilience Act (DORA). The goal of this regulation is to strengthen the cybersecurity of EU’s financial services sector. It applies to all financial institutions as of January 2025. 
 
@@ -3870,7 +4068,7 @@ By meeting DORA’s enhanced cybersecurity and risk management requirements, fin
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c51679138db028e488a9f5044d58645a04b0c13a3b95a9c31366b08d28839036.jpg)
 
 
-## EU General Data Protection Regulation
+#### EU General Data Protection Regulation
 
 The General Data Protection Regulation (GDPR) is a law the EU has adopted to safeguard the privacy and data protection rights of individuals living in its jurisdiction. Unlike directives, the GDPR is a legislative act that applies directly and uniformly across all member states without a need for national legislation. The GDPR builds upon previous EU privacy and data protection law through its legal structure, scope, accountability requirements, and enforcement mechanisms. The EU extended the GDPR to apply to the entire EEA, which consists of the EU member states plus Norway, Iceland, and Liechtenstein, through procedures established between the EU and EEA. 
 
@@ -3893,7 +4091,7 @@ Key provisions of the GDPR include the following:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/3999cf5cbfc64617e6db652779ed84b0649eea4a1053ea55f89aa2869ef644cb.jpg)
 
 
-## The GDPR and the balance between privacy and transparency
+#### The GDPR and the balance between privacy and transparency
 
 The GDPR applies to all data processing activities. These include activities where an organization processes personal data to comply with other regulations it is subject to, such as data gathering for AML purposes. 
 
@@ -3908,7 +4106,7 @@ Note that data subject rights are not absolute. The offense of tipping off under
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/079d601b5cb5d01b702e02ddb32ba7cd8d8ada5b0ca10d6f7de73909164af2c2.jpg)
 
 
-## Consumer protection and inclusive banking
+#### Consumer protection and inclusive banking
 
 Consumer protection regulations safeguards private individuals against deceptive, unfair, or harmful practices in the marketplace. Regulations provide dispute resolution and redress mechanisms for consumers. Addressing consumer risks is key to promoting trust in the financial market and ensuring stability. 
 
@@ -3925,13 +4123,13 @@ Governments and financial authorities promote inclusive banking through policies
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/2adfa87098cc528ca1d29a9e4b239211920642d151c242acf4ad292d68885a97.jpg)
 
 
-## AI regulations
+#### AI regulations
 
 Jurisdictions have introduced AI regulations due to the rapid adoption and advancement of AI across numerous industries, along with concerns regarding the transparency, accountability, privacy, and safety of AI use. In 2021, the FATF published which notes that using new technologies could favor the customer experience. However, the publication also mentions that organizations should consider the risks and unintended consequences of digitalization when adopting and implementing tools. Additionally, in industries where AI is unregulated, regulators identify risks such as biased decisionmaking, data misuse, and violations of fundamental rights. 
 
 While AI regulations vary, jurisdictions typically emphasize transparency by requiring disclosure of how and when they use AI. They emphasize accountability by stating their governance frameworks and oversight in the AI decision-making process. This emphasis on transparency and accountability ensures the jurisdiction’s ethical AI development and usage. Additionally, some jurisdictions adopt a risk-based approach in which they categorize AI systems and models according to their potential risks. The higher the risks that jurisdictions identify, the stricter their obligations are. Lastly, while there is no universal AI framework, international bodies such as the Financial Stability Board have called for the harmonization of AI regulations. 
 
-## AI regulations around the world
+##### AI regulations around the world
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/843a85eb2717da1db4f27083eec31d1a57d57772bba0a6de3500681281a866a4.jpg)
 
@@ -3947,7 +4145,7 @@ Regarding other jurisdictions, AI approaches vary. China has AI regulations that
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6e5385a60a0fb3bbcd0a054a190fb79229f2b466b654dcf85b33e7df80fdf451.jpg)
 
 
-## ESG regulations
+#### ESG regulations
 
 “Environmental, social, and governance” (ESG) refers to a framework organizations use to steer their business practices in accordance with the objectives of sustainable development. “Environmental” refers to an organization’s impact on the planet. “Social” refers to an organization’s relationship with various stakeholders, including employees, customers, and communities within which they operate. “Governance” refers to how factors such as leadership, board composition, and transparency govern an organization. 
 
@@ -3969,20 +4167,20 @@ organizations prioritize resources, focus, and efforts on high-risk areas, such 
 
 Similarly, AML/CFT regulations require organizations to assess and manage risks particular to money laundering and terrorist financing. The adoption of a risk-based approach enables organizations to prioritize resources on high-risk clients, jurisdictions, and services, ensuring that compliance levels are proportionate to the level of risk. Both ESG and AML/CFT frameworks require ongoing due diligence, monitoring, and responsiveness to emerging risks. 
 
-# Use of Guidance and AFC Cooperation
+## Use of Guidance and AFC Cooperation
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/28d4e6180d2ae43b876576d10d72da119ffc7b1c17a43da3d33a9ab8c25b8248.jpg)
 
 
-## Introduction: Use of guidance and AFC cooperation
+#### Introduction: Use of guidance and AFC cooperation
 
 This module covers guidance and other types of documents that public authorities produce. It considers how financial institutions can incorporate this type of information into their AFC programs. This includes looking at the central role that government-produced risk assessments have in jurisdictions. Guidance from public authorities plays a key role in communicating priorities and ensuring uniform approaches to financial crime threats. The information in this module will help you understand their role as you perform your duties. 
 
 The module also covers how cooperation takes place in AFC frameworks. This includes cooperation between public authorities, such as regulators, national FIUs, and law enforcement. It examines how some jurisdictions have developed innovative forms of cooperation in public-private partnerships and how cooperation within the private sector can assist organizations in addressing financial crime. 
 
-# Case example: Using typology reports to enhance AML controls
+#### Case example: Using typology reports to enhance AML controls
 
 Law enforcement authorities in Isabella's jurisdiction have noted an increase in money laundering via cryptoassets and the banking sector. Authorities believe that criminals are recruiting individuals as money mules. 
 
@@ -3998,7 +4196,7 @@ Isabella reports this trend to senior management, then prepares and files SARs, 
 
 Isabella also presents the findings to a senior internal committee along with recommendations for better protecting the organization from this activity in the future. Her recommendations include changes to the KYC and client risk profile parameters as well as adjustments to transaction monitoring processes. 
 
-## Key takeaways
+##### Key takeaways
 
 Considering how to use reports and guidance from different authorities requires a structured approach in which you: 
 
@@ -4008,12 +4206,12 @@ Considering how to use reports and guidance from different authorities requires 
 
 • Use the acquired knowledge to better meet AML/CFT requirements. 
 
-# Using the reports and guidance from different authorities
+### Using the reports and guidance from different authorities
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/86b6599bab44c985612ea57b0b082bc8cdbb683529d776d2e218d0ea77cc9e78.jpg)
 
 
-## Using AFC reports, guidance notes, and policy papers
+#### Using AFC reports, guidance notes, and policy papers
 
 National and international authorities produce reports and documents that can be useful in managing and improving an AFC program. There are three main types of documents: AFC reports, official guidance notes, and policy papers. 
 
@@ -4024,7 +4222,7 @@ Threat and risk reports are another useful type of document. Typologies, which d
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/78d5c4f5e1ca94f1bb4f07b428ac6d5ccd9706a9ad3c8cc879b050c5d1f12647.jpg)
 
 
-# Using reports, guidance notes, and policy papers in your AML/CFT controls
+#### Using reports, guidance notes, and policy papers in your AML/CFT controls
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/8c96f742ce17b49435ee9f96bc9709abfb2cbc35b3fa0c01d8d982ac8058398a.jpg)
 
@@ -4044,7 +4242,7 @@ organization provides this product. The EWRA should reflect this, refer to the s
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/eb47c928e48d8acf9b5073dc0774fa458f8fd4c876505f5261ae6088ecdafaf9.jpg)
 
 
-## Case example: Terrorist financing red flags
+#### Case example: Terrorist financing red flags
 
 A regulator issues a report describing new information on how a major terrorist group finances itself. The report contains a list of red flags to look for. 
 
@@ -4058,7 +4256,7 @@ The MLRO consults with risk management and other stakeholders regarding any chan
 
 In addition, the MLRO commissions a retrospective review of existing clients who trade with the jurisdiction to determine previously unidentified risk and whether additional action is required. When all actions are completed, she ensures that the change is reflected in appropriate documentation within the financial institution. 
 
-## Key takeaways
+##### Key takeaways
 
 • Be proactive in reviewing red flags and indicators in reports, guidance notes, and policy papers. 
 
@@ -4069,7 +4267,7 @@ In addition, the MLRO commissions a retrospective review of existing clients who
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/1c6087572f377de26f9aa34705571a0917090df5a5174df9bbaa1958a6920112.jpg)
 
 
-## National, sectoral, and thematic risk assessments
+#### National, sectoral, and thematic risk assessments
 
 A national risk assessment (NRA) is a document that a jurisdiction produces to identify and evaluate money laundering threats and vulnerabilities, determine risk levels, and develop strategies to respond to risks. NRAs should be comprehensive documents, drawing on a wide range of data. 
 
@@ -4084,7 +4282,7 @@ FATF Recommendation 2 requires jurisdictions to implement policies that align wi
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/afdabef076a50508db5324d32367f169d6b4f2c4787ceb1d8ed8e05ec403d8d5.jpg)
 
 
-## Case study: SRA on decentralized finance
+#### Case study: SRA on decentralized finance
 
 In 2023, the US government published an illicit finance risk assessment on decentralized finance (DeFi) services. DeFi services are virtual asset protocols and services that users can access without the involvement of intermediaries, using blockchain technology. Many jurisdictions have conducted SRAs on virtual assets. As a new area of regulation, the risks can be quite specific. 
 
@@ -4100,7 +4298,7 @@ The approach is in line with FATF recommendations, which require policy and stra
 
 When published, SRAs can provide organizations with information on the government’s view of risk and how to respond. 
 
-## Key takeaways
+##### Key takeaways
 
 Sectoral risk assessments: 
 
@@ -4110,12 +4308,12 @@ Sectoral risk assessments:
 
 • Can provide organizations with information on the government’s view of risk and response plans. 
 
-# Cooperation between authorities
+### Cooperation between authorities
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/644a9dcd3f2a71e87bc97da92e089eb9606b7df2ccd48211528cc4fca84696ab.jpg)
 
 
-## Roles of regulators, law enforcement, and FIUs
+#### Roles of regulators, law enforcement, and FIUs
 
 A regulator’s role is to set detailed rules, ensure they are followed, and ensure that the preventative controls in the private sector are effective. Regulators authorize regulated businesses via licenses and registrations and then undertake risk-based supervision of these organizations to ensure compliance and identify noncompliance. Regulators have a range of tools to ensure compliance, up to and including issuing fines and enforcement actions for serious cases. 
 
@@ -4132,7 +4330,7 @@ In some cases, the same organization can be both a regulator and an FIU, and FIU
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5999e4d19f28559200e4c5ee3a4e9cbe553a6c26a467e3b5075b7563bc765232.jpg)
 
 
-## Case study: J5-US law enforcement collaboration
+#### Case study: J5-US law enforcement collaboration
 
 International cooperation among public sector authorities is key to fighting transnational financial crime. Law enforcement, regulators, and national FIUs develop strategic partnerships as well as cooperate at a case level. 
 
@@ -4150,7 +4348,7 @@ opened US bank accounts in the names of those companies to receive and launder t
 
 The judge in the case praised the work of the US agencies that investigated the case and also their partnership with the J5. Through such collaboration, a US citizen was sentenced to 10 years in prison for defrauding investors around the world of almost US$2 million and laundering the proceeds. 
 
-## Key takeaways
+##### Key takeaways
 
 International cooperation among public sector authorities is vital because: 
 
@@ -4163,7 +4361,7 @@ International cooperation among public sector authorities is vital because:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/89def514788efa979af68d5c1aa32ccffc039e29c82e48a9eadd2aeb4a570dda.jpg)
 
 
-## Cooperation between regulatory authorities
+#### Cooperation between regulatory authorities
 
 In some cases, multiple regulators supervise a single organization. This occurs when an organization offers a range of regulated products or operates across international or domestic borders. Therefore, regulators coordinate when conducting regulatory examinations and other activities. 
 
@@ -4178,7 +4376,7 @@ Regulators cooperate both within a jurisdiction and internationally. Many financ
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d7622f9692ea1fc870e888be7759b885734aedd48ed82cf83bd747b73cf068c6.jpg)
 
 
-## Law enforcement and FIU AFC cooperation
+#### Law enforcement and FIU AFC cooperation
 
 FATF requires that jurisdictions have FIUs to receive, analyze, and disseminate financial intelligence. National FIUs produce strategic analysis, which looks at trends and patterns, and operational analysis, which focuses on specific targets. 
 
@@ -4193,7 +4391,7 @@ Often, the material that FIUs disseminate to law enforcement is for intelligence
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/ca1cb1c144107311123cf0b3f7025da750b44069b63c71a41d9be2b4553904cd.jpg)
 
 
-## Case study: Law enforcement and FIU cooperation
+#### Case study: Law enforcement and FIU cooperation
 
 Cooperation between national FIUs and law enforcement results in law enforcement action. In one example, the French FIU, TRACFIN, issued an alert. Together with a complaint by the Directorate General of Public Finance, this led to a large investigation into money laundering. 
 
@@ -4207,7 +4405,7 @@ Europol estimated that the value of seized assets in the EU was approximately �
 
 In another example of cooperation between a national FIU and law enforcement, the FBI worked closely with FinCEN to analyze SARs submitted by an individual whom the FBI was investigating. The FBI suspected the individual was an illicit international arms dealer who had provided funding and technology related to WMDs, including ballistic missile technology, to Iran. Based on over 40 reports, the FBI determined that the illicit arms dealer had accessed the US financial system, laundering approximately US$8.5 million through multiple banks in New York. The investigators used the information to identify over 20 front companies and bank accounts associated with the dealer’s network. The government was able to seize US$6.5 million in assets from the bank accounts and place 17 front companies on OFAC and Commerce Department watch lists. Through its cooperation with FinCEN and financial institution FIUs, the FBI placed the leader of the network on its most wanted list, and the network was no longer able to operate. 
 
-## Key takeaways
+##### Key takeaways
 
 • Cooperation between FIUs and law enforcement results in law enforcement action. 
 
@@ -4218,7 +4416,7 @@ In another example of cooperation between a national FIU and law enforcement, th
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f7f68cdfdf0b8064bcf86d6e737745930e5f3c2647313834c90dcb3c7d369a1e.jpg)
 
 
-## Partnership requirements and mutual legal assistance treaties
+#### Partnership requirements and mutual legal assistance treaties
 
 Due to the increasingly global nature of crime, the mechanism of mutual legal assistance is a critical tool to support criminal investigations and proceedings between jurisdictions. Mutual legal assistance is a framework of conventions and agreements between jurisdictions to assist in obtaining information and evidence that cannot be shared between law enforcement agencies. Mutual legal assistance treaties (MLATs) provide a legal basis for transmitting evidence that can be used for prosecution and judicial proceedings. Requests pursuant to an MLAT are made via a mutual legal assistance request, or MLAR. This assistance is typically requested by courts or prosecutors and is therefore also referred to as judicial cooperation. MLATs may be supplemented by memoranda of understanding to streamline procedures and outline protocols for joint investigations. 
 
@@ -4236,12 +4434,12 @@ The European Investigation Order (EIO) is an EU measure that facilitates the mut
 
 As a private sector investigator, you might not be aware of mutual legal assistance requests, because their content is not disclosed outside of government departments or enforcement agencies without the authority of the requesting jurisdiction. You might receive a request for information from a law enforcement agency without fully understanding whether it relates to a local or international investigation. 
 
-# Cooperation involving the private sector
+### Cooperation involving the private sector
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/736123f1bec5be9aa696055f61687642c5de28b1ea7d3bdf92095b2849d781d0.jpg)
 
 
-## Public-private partnership
+#### Public-private partnership
 
 In recent years, organizations have realized that greater collaboration between the public and private sectors can help fight financial crime. The AML/CFT system mandates several ways that the sectors must interact, such as via the SAR system, responding to court orders, and through supervisory activity. While such interaction is important, a deeper collaboration can be even more effective. 
 
@@ -4268,7 +4466,7 @@ Taking part in a PPP is generally voluntary. While it can be extremely beneficia
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c8f1d41eda8283922568905ba78b8b853dc1273672ad13d1d30e194c354e8e86.jpg)
 
 
-## Case study: AUSTRAC Fintel Alliance investigation
+#### Case study: AUSTRAC Fintel Alliance investigation
 
 AUSTRAC, the Australian FIU and AML regulator, established the Fintel Alliance as a public-private partnership in 2017. Its goals are to increase the financial sector’s resilience to criminal exploitation and support law enforcement investigations. 
 
@@ -4282,7 +4480,7 @@ transactions linked to crime. Their analysis enabled the AFP to fully identify a
 
 The AFP filed charges and obtained restraint orders over a significant value of assets in connection with the alleged offenses. AUSTRAC took regulatory action against one digital currency exchange and six remittance businesses associated with the charged individuals. The outcome of this case highlights the combined strength of AUSTRAC’s financial intelligence expertise, regulatory authority, and strategic partnership with law enforcement. 
 
-## Key takeaways
+##### Key takeaways
 
 Public-private partnerships can be used to: 
 
@@ -4295,7 +4493,7 @@ Public-private partnerships can be used to:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/73582273127b1e6cf497e546d16f60c5b255b69627fde71e3851f55422777f5e.jpg)
 
 
-## Private sector collaboration
+#### Private sector collaboration
 
 Money launderers and terrorists actively seek to avoid detection by spreading their activities across multiple financial institutions to avoid triggering an alert in any one institution. For this reason, it is important that private sector entities collaborate with each other to spot patterns that are only evident when looking across institutions. 
 
@@ -4312,7 +4510,7 @@ Compliance officers can and should engage in informal collaboration. Sharing per
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/9e9e5d2b39df70989a5ba7d45a6a99a9fd03eb879a08eecfe9ef9194b414202b.jpg)
 
 
-## Private sector information sharing
+#### Private sector information sharing
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5513e08659e519cbde184a187994af237b6d7bfdbdc0bf39202f0836400d31c1.jpg)
 
@@ -4345,12 +4543,14 @@ After completing this learning experience, you will be able to:
 
 • Describe the procedures for concluding an investigation, filing a suspicious activity report (SAR), and communicating with law enforcement agencies (LEA) and the best practices for offboarding and de-risking. 
 
-# Introduction
+## Components of an AFC Program
+
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/aeff6530a7db090f363081b0baae91c669f54a38bb5077b5b4c6c79632392bf1.jpg)
 
 
-## Introduction: Components of an AFC program
+#### Introduction: Components of an AFC program
 
 A robust AFC program protects organizations from financial crimes, legal infractions, and reputational damage. To succeed, organizations have to identify the risks they face in doing business and manage those risks carefully. 
 
@@ -4361,7 +4561,7 @@ Studying the components of an AFC program gives learners an overview of each ele
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/fb5d7e17354819df9d5b4ac8845a8258433f77acd60a78ff6e701435346b711b.jpg)
 
 
-## Case study: Systemic BSA failures at a Canadian bank
+#### Case study: Systemic BSA failures at a Canadian bank
 
 In 2024, FinCEN assessed a US$1.3 billion penalty against the US subsidiaries of Toronto Dominion (TD) Bank for violations of the Bank Secrecy Act (BSA). TD Bank, one of the largest banks in the US, faced the largest ever fine imposed on a depository institution. The TD Bank enforcement action, Order 2024-02, uncovered significant deficiencies in the bank’s risk management framework. 
 
@@ -4375,18 +4575,18 @@ The enforcement actions mandated comprehensive improvements to its risk manageme
 
 This case demonstrates how risk management deficiencies can lead to substantial regulatory consequences and organizational impact and potential personal consequences for engaging in or failing to escalate suspicions. It also highlights the importance of the three lines of defense model in maintaining clear segregation of duties, while collaborating to identify and mitigate risks. Organizations invest in robust financial risk management programs to avoid significant penalties, reputational damage, and extensive remediation efforts. 
 
-## Key takeaways
+##### Key takeaways
 
 • Strong risk assessment, CDD processes, transaction monitoring, suspicious activity reporting, and adequate resource allocation are critical. 
 
 • Consequences of risk management deficiencies can include significant penalties, mandatory program improvements, enhanced regulatory oversight, and reputational damage. 
 
-## AFC program
+### AFC program
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f2c178c3293638c8a59393e18ddf0ed7879a304e2f39a81fb8532bd174341264.jpg)
 
 
-## AFC program components
+#### AFC program components
 
 An AFC program systematically identifies, assesses, measures, manages, monitors, and mitigates risks that could impact an organization's objectives. This program is critical in maintaining stability, compliance, and operational effectiveness. Large organizations, such as financial institutions, manage several risks, such as: 
 
@@ -4419,7 +4619,7 @@ Independent testing involves an internal audit function or a specialist third pa
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f377a5714be8b1dd9ec0bbb7c88661b70aab588dd9c74f2e243919eb7931d99a.jpg)
 
 
-## Pillars of an AFC compliance program
+#### Pillars of an AFC compliance program
 
 According to FinCEN, the five pillars of an AML program include: 
 
@@ -4445,12 +4645,10 @@ The fourth pillar is an independent audit function that tests whether internal A
 
 The fifth pillar, CDD, requires organizations to identify and verify the identity of customers. Organizations must also conduct ongoing transaction monitoring to identify and report suspicious transactions. The organization must understand the potential AML risks presented by its clients. 
 
-# Three lines of defense
+### Three lines of defense
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c4bd7fb7d4fed7a2e286e62921223d8fca29b55d700d093e05bda05c6f061173.jpg)
 
-
-## Three lines of defense
 
 The three lines of defense is a risk governance model that allocates risk management responsibilities across the enterprise. It provides clear role definitions and includes a built-in check-and-challenge process. 
 
@@ -4463,7 +4661,7 @@ The third line, internal audit, independently reviews risk management and contro
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/456faf5deae1859ebe14b16c39326631649c084d9e76ca37acd9a4592f67dc54.jpg)
 
 
-## First line of defense AFC function
+#### First line of defense AFC function
 
 The first line of defense (LOD) is critical in a financial institution’s risk management framework. It includes front-line functions that are responsible for directly managing customers and risks in their day-to-day operations. Each organization structures itself differently based on its legacy, size, and complexity. The first line is composed of the following functions, which might be named or organized differently: 
 
@@ -4494,7 +4692,7 @@ This structure ensures risk ownership begins at the point of origination, with p
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/fc6e4c737a04e50ee51a3cb50cc338c3184c9288feaa48a4a1041050f3e09aae.jpg)
 
 
-## Second line of defense AFC function
+#### Second line of defense AFC function
 
 The second LOD refers to an organization’s risk management and regulatory compliance functions. It oversees and monitors the first LOD to ensure adherence to policies, regulations, and risk management practices. The second line typically includes multiple risk and compliance functions beyond financial crime. In this unit, the second line specifically refers to the AFC second LOD, unless otherwise indicated. This role focuses on compliance with financial regulations, including AML and CFT practices, rather than broader risk management. The second line: 
 
@@ -4517,14 +4715,14 @@ Other jurisdictions have different titles and roles related to AML/CFT complianc
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/03dfac48746005bd7273f59708a1aedc225a3f292fa3aaee96afc44d58bef184.jpg)
 
 
-## Role of money laundering reporting officer
+#### Role of money laundering reporting officer
 
 An MLRO oversees an organization’s AML program, files SARs to the relevant FIU, and ensures implementation and compliance with AML strategies and policies. MLROs are accountable for AFC staff training and awareness, and can face legal consequences, including fines or imprisonment, for failures in compliance or duties. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/7c147381ad048b2733155df592468a463357a84802f122032ab6743ed7cacd49.jpg)
 
 
-## Role of quality control and quality assurance
+#### Role of quality control and quality assurance
 
 Both the first and second lines of defense typically perform quality control (QC) and quality assurance (QA). QC focuses on inspecting the quality of outputs, while QA evaluates how effective the organization's processes are, especially in compliance and risk management. 
 
@@ -4537,7 +4735,7 @@ Compliance monitoring and testing is a second line of defense responsibility tha
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/83fe3eb2eb7b2c49bb912ce852e42eecccf9f30e177c5b5cb2a899dac2221c76.jpg)
 
 
-## Financial crime functions' structure
+#### Financial crime functions' structure
 
 The second line of defense in AFC consists of various functions, each specializing in distinct compliance and risk management areas. Each function has specific structures, roles, and responsibilities. How an organization structures its second-line AFC function depends on its size, complexity, geographic reach, and legacy. The following is a list of typical AFC functions found within the second line of defense. 
 
@@ -4568,7 +4766,7 @@ Each of these functions plays a critical role in ensuring that the second line o
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/500cfcd876aed399174644b3b05f21650a8b234510729baa32181f80d3a02488.jpg)
 
 
-## Compliance monitoring and testing
+#### Compliance monitoring and testing
 
 Compliance monitoring and testing assess the effectiveness of organizational processes, particularly in terms of compliance and risk management. This function is meant to ensure that policies and procedures are properly executed and continuously improved. Its primary responsibilities include reviewing the execution of policies and procedures and identifying any gaps and improvement areas across both the first and second lines. 
 
@@ -4597,7 +4795,7 @@ QA plays a critical role in enhancing organizational integrity and efficiency. S
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/9d78d856e54fb43025132d8d5e56488a840ab453b8768f0eeafa9a4e989bbc9e.jpg)
 
 
-## Case example: Financial crime functions' structure at Global Finance, Corp.
+#### Case example: Financial crime functions' structure at Global Finance, Corp.
 
 Global Finance Corp (GFC), a regional bank with business activities overseas, appointed a consultant to guide the streamlining of its AFC function structure. The bank faced significant regulatory scrutiny and wanted to improve its ability to detect and prevent money laundering and financial crime risks. The existing structure was disorganized, with overlapping responsibilities and unclear communication channels. 
 
@@ -4645,7 +4843,7 @@ The consultant advised the MSB to implement this structured approach to enhance 
 
 Both the international bank and the MSB benefited from the consultant's expertise in restructuring their compliance frameworks. They enhanced their second line of defense capabilities by adopting a proactive approach to financial crime risk management that was aligned with regulatory expectations. This strategic improvement enabled sustainable growth and fortified their positions within the financial industry. 
 
-## Key takeaways
+##### Key takeaways
 
 • Clear roles, responsibilities, and communication improve compliance functions structures. 
 
@@ -4656,7 +4854,7 @@ Both the international bank and the MSB benefited from the consultant's expertis
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d26f453db7bc933b8304fd17748c209b4f09c77c829a4a34e4d70d8c813b24d9.jpg)
 
 
-## Third line of defense AFC function
+#### Third line of defense AFC function
 
 The third LOD in a financial institution's risk management framework is the internal audit function. This line operates independently of the first two lines. The first line handles risk ownership and operational management, while the second line focuses on advisory, policy, and compliance monitoring. The third line’s primary purpose is to objectively assess the effectiveness of the organization’s AFC risk management, governance, and control processes. 
 
@@ -4699,7 +4897,7 @@ identify weaknesses and enhance their AFC compliance programs, mitigating financ
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/52a9071cc66b7828553479135b0ce5515fefbcb76705b8f8fd86e199c10721a8.jpg)
 
 
-## Liaising with internal audit
+#### Liaising with internal audit
 
 To prepare for audits and maintain effective control programs, AFC professionals should communicate and collaborate with their internal audit team on a regular basis. Liaising with internal audit helps to: 
 
@@ -4730,7 +4928,7 @@ To maximize the organization’s resources and enhance control effectiveness, th
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/599104cbffb0767792617e0b45f1e1c4beac5dbe1906c3a947fe283fd655b0f8.jpg)
 
 
-## Functions of board of directors and management oversight
+#### Functions of board of directors and management oversight
 
 The board of directors plays a critical role in the governance and oversight of a financial institution’s AFC program. It approves the risk appetite, the scope, objectives, and responsibilities of the AFC compliance function. 
 
@@ -4753,7 +4951,7 @@ A robust governance structure is essential for an effective AFC program. Key ben
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/9ca72b658b4c6022b200b1dc723d876b9f71c2e9f0124c7b472e66e047d3fcb7.jpg)
 
 
-# Second LOD's AFC role and its interaction with the front office
+#### Second LOD's AFC role and its interaction with the front office
 
 The second line of defense (LOD) serves as an oversight function within an organization’s governance framework. Although the second line operates independently from the front office, effective collaboration with the first line is essential to foster a culture of compliance. 
 
@@ -4780,7 +4978,7 @@ While the second line provides advice, guidance, and oversight, final decisions 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/b0e97ef2fbef14083e88ab1339936efa3aa4693c8cd60e208864edea6d611273.jpg)
 
 
-## Second LOD's interaction with other functions
+#### Second LOD's interaction with other functions
 
 The second line of defense AFC team interacts with various risk management and non-risk management functions to ensure effective risk oversight and regulatory compliance. These interactions maintain the organization's integrity and align functions with risk management strategies. Key functions include: 
 
@@ -4802,7 +5000,7 @@ Data integrity and privacy: The privacy team may help the second-line AFC team i
 
 • Operational risk: Evaluates risks that organizations might encounter in dayto-day operations. Some organizations also manage fraud risk assessments as part of their operational risk management. 
 
-## Establishing a culture of compliance
+#### Establishing a culture of compliance
 
 A strong culture of compliance is critical to the development and ongoing administration of an effective AFC program. The ultimate responsibility for the compliance program belongs to the board of directors. A culture of compliance determines how seriously an institution takes its obligations regarding AFC compliance. Organizations must determine whether the organization put forth sufficient effort to mitigate compliance risks through its processes, staff, technology, training, communication, and independent testing. 
 
@@ -4814,12 +5012,14 @@ In a culture of compliance, accountable parties escalate, receive, and respond t
 
 A culture of compliance has a strong and independent testing function. It also has management that responds quickly to findings of risk with meaningful change. These traits show that an organization prioritizes compliance. 
 
-# Introduction
+## Risk Assessment
+
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/bd7213b3a2c8416e22203fdb869e043b09622c210f96cd77e6d5da89ed91ba37.jpg)
 
 
-## Introduction: Risk assessment
+#### Introduction: Risk assessment
 
 In this module, we will analyze what a risk assessment is and discuss the various types and fundamental components. We will explore inherent risk, assess the effectiveness of control measures, and determine residual risks. 
 
@@ -4828,7 +5028,7 @@ Assessing risk levels and threats improves decision-making, helps allocate resou
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5ea366aa67b34c6f1a83fee36028bb2b8545b0be6221f9b025e5fe9eec3bed95.jpg)
 
 
-## Case study: Failure to update an EWRA at a wealth management firm
+#### Case study: Failure to update an EWRA at a wealth management firm
 
 The Monetary Authority of Singapore (MAS) took enforcement action against Swiss-Asia Financial Services Pte Ltd (SAFS), imposing a S$2.5 million penalty for AML/CFT violations. The wealth and fund management firm failed to update its enterprise-wide risk assessment (EWRA), despite rapid business expansion over a three-year period. This exposed SAFS to new and increased risks of financial crime. 
 
@@ -4846,7 +5046,7 @@ The breaches had a negative impact on the firm’s business and its managers. Fo
 
 The financial crime EWRA lies at the heart of understanding financial crime risks of the organization. If the risk assessment misses key risks or is not repeated as the risk profile of the organization changes, repercussions can be felt in multiple control failures. Poor EWRA could lead to weaker due diligence controls and poor management oversight if the risks are not understood, documented, and managed. 
 
-## Key takeaways
+##### Key takeaways
 
 • To remain effective, AML/CFT frameworks must evolve alongside business growth. 
 
@@ -4854,12 +5054,12 @@ The financial crime EWRA lies at the heart of understanding financial crime risk
 
 • Regulators require all entities with AML obligations to maintain robust, riskbased AML governance. 
 
-# Types of risk assessment
+### Types of risk assessment
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f3f2683a7241808d088db64176d13614657a9f58aec136c3afb7c7eebceb6cae.jpg)
 
 
-## The importance of risk assessment in AFC
+#### The importance of risk assessment in AFC
 
 FATF Recommendation 1 states, “Countries should identify, assess, and understand the money laundering and terrorist financing risks for the country, and should take action, including designating an authority or mechanism to coordinate actions to assess risks, and apply resources, aimed at ensuring the risks are mitigated effectively.” 
 
@@ -4909,7 +5109,7 @@ For example, when entering high-risk areas, the business unit’s EWRA helps eva
 
 These risk assessments should be interrelated to foster an effective, riskbased AFC framework. 
 
-## Types of risk assessment within an organization
+#### Types of risk assessment within an organization
 
 There are different types of risk assessments within organizations. The assessments vary, depending on the individual entity type, but their aim is to identify, assess, and mitigate various risks and apply appropriate controls. The purpose of the AFC risk assessments is to help organizations ensure compliance, enhance risk management, and maintain healthy, sustainable businesses. 
 
@@ -4930,7 +5130,7 @@ In 2020, FATF revised its Recommendation 1 and its Interpretive Note, requiring 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/65f54d27b40de8859cf28e3a9a3e418d079f271ea2f482eb75a3bc54825cd9b1.jpg)
 
 
-## The risk-based approach
+#### The risk-based approach
 
 A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively. The concept of an RBA emerged when FATF published the first version of guidance for an RBA in 2007. 
 
@@ -4951,7 +5151,7 @@ Adopting a risk-based approach requires a risk management process to handle fina
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c16548015afab6702fa4e2e9cee10736b9792ce2f0a6ea6b7679f0f6c16e49d7.jpg)
 
 
-## The risk appetite statement
+#### The risk appetite statement
 
 Risk appetite is the level of financial crime risk acceptable to an organization, within the parameters of its business and strategic goals. The organization’s risk appetite statement (RAS) must be approved by the board of directors and periodically reviewed to consider any changes in the business and relevant risk factors. 
 
@@ -4972,7 +5172,7 @@ Lastly, the organization needs to conduct regular independent assessments to mak
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5185ac1dd20ceed49a36e77cc7b5f5c86aabd848b6f1165020ce99a5f243893d.jpg)
 
 
-## Preparing a risk appetite statement
+#### Preparing a risk appetite statement
 
 According to the Financial Stability Board in the US, the RAS is a formal document, developed by an organization’s senior management and approved by the board of directors. It establishes risk limits while supporting the organization’s business objectives. This prospective document defines what types of risks the organization is willing to accept, mitigate, or avoid based on its strategic targets, regulatory environment, and expectations. 
 
@@ -4998,12 +5198,10 @@ Regulatory expectations and legal obligations help determine the acceptable leve
 
 A financial institution’s RAS might include zero appetite statements. Zero appetite means the financial institution refuses to take on certain risks related to specific customer types, products, services, or sectors. For example, a financial institution might declare it will not accept customers from countries under strict EU, UN, or OFAC sanctions. By avoiding certain risks, the organization minimizes exposure to high-risk areas. 
 
-# Enterprise-wide risk assessment
+### Enterprise-wide risk assessment
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/17c6dcf2eec3b1bb6e388f515fba65fbc14e31123b37efb52e0c033a4d1daf19.jpg)
 
-
-## Enterprise-wide risk assessment
 
 EWRAs, sometimes called bank-wide risk assessments, institutional risk assessments, or financial crime risk assessments, help organizations evaluate their overall risk exposure to financial crime, including money laundering (ML), terrorist financing (TF), proliferation financing, sanctions evasion, tax evasion, bribery, corruption, and fraud. The EWRA provides a standardized way to measure and track risks, ensuring they are mitigated across all operations, products, and services. 
 
@@ -5026,7 +5224,7 @@ In global organizations, the EWRA should be conducted in a flexible, coordinated
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4aff351482880c47ad6a365be5dbb1b9cbf23299b64bc756113afdb85b8d8fb0.jpg)
 
 
-## Determining inherent risks
+#### Determining inherent risks
 
 Inherent risk is the level of financial crime risk in place before an organization applies any mitigation controls. 
 
@@ -5058,6 +5256,8 @@ A risk assessment begins by identifying inherent risks the organization may be e
 
 Control activities in financial crime prevention include preventive, detective, and corrective controls. Preventive controls involve measures to prevent financial crime from occurring and include robust due diligence, recordkeeping, and record retention. Detective controls involve measures to detect financial crime as soon as possible after it has occurred, such as identifying and reporting suspicious activity to the appropriate authorities. Corrective controls involve measures to remediate instances of financial crime after they have been detected, such as exiting a customer relationship and performing reviews to understand if any risks were missed. 
 
+#### Control effectiveness
+
 Organizations assess the effectiveness of controls in multiple ways. Initially, the teams operating the controls carry out these assessments by demonstrating adherence to key performance indicators, key risk indicators, and service level agreements. Once the controls are in operation, the teams assess their effectiveness and identify remedial actions to ensure they remain effective. 
 
 Assurance functions within the business or compliance lines monitor the effectiveness of controls by testing whether team members have properly observed and applied all policies, procedures, and controls. The internal audit team may also carry out assessments for critical controls. 
@@ -5065,7 +5265,7 @@ Assurance functions within the business or compliance lines monitor the effectiv
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/82521324e16421547f18c61135f1e4512b24d4f855d9dee00278384c51a34169.jpg)
 
 
-## Measuring control effectiveness
+#### Measuring control effectiveness
 
 The formula for calculating residual risk is: inherent risk minus control effectiveness equals residual risk (inherent risk – control effectiveness = residual risk). AML/CFT measures, policies, procedures, systems, and controls might be already in place or still under development. Organizations should evaluate these control measures to determine their effectiveness in reducing inherent risks. The effectiveness depends on proper application, functionality, and consistency throughout the organization. 
 
@@ -5098,7 +5298,7 @@ Operational effectiveness determines if the control is functioning as intended. 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4e8426a4b5eb54d794b57d84f47bd4dd5f74f88f1c5badc01e656d950a571d1c.jpg)
 
 
-## Residual risks action plan
+#### Residual risks action plan
 
 Residual risk is computed based on an understanding of the inherent risk and the effectiveness of the control mitigating that risk. Once an organization understands its residual risks, it can determine whether the risk is within its tolerance levels or if an action plan is required to mitigate those risks. For example, if a traditional financial institution realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist, the residual risk is high. The organization will need to develop a control to mitigate this risk, so the residual risk is within risk appetite. This may include a process of prohibiting transactions to certain known, unlicensed providers, or increasing the monitoring where the risk is high, even if it is within a licensing regime. 
 
@@ -5111,7 +5311,7 @@ The action plan consists of actions that the organization needs to implement acr
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/1b97e0cf6319087a86d930d042d49a7604043b7895c4343ef22b244141d5c6b9.jpg)
 
 
-## Third-party tools to conduct risk assessment
+#### Third-party tools to conduct risk assessment
 
 Organizations need to conduct a risk assessment to understand the types of risk and their potential impacts. The risk assessment process involves collating qualitative and quantitative data about risks, such as the number of wire transfers sent internationally or to high-risk jurisdictions. This data helps determine inherent risk, control strength, and the remaining residual risk. The company can then determine what steps it needs to take to mitigate risk and align to its risk appetite. 
 
@@ -5124,7 +5324,7 @@ An internal or third-party risk assessment tool might be leveraged for data coll
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/2ef8217f25474b2b49bdc714daaed85535f7fcb961af178d95559721978b49a3.jpg)
 
 
-## Reporting results of risk assessment
+#### Reporting results of risk assessment
 
 While risk assessments are critical to evaluating the health of a financial institution’s compliance programs, it is equally important to report the information to senior management and other stakeholders. They need to review the report comprehensively to understand its meaning. Their efforts include reviewing whether risk levels have remained the same, decreased, or increased. These stakeholders are also responsible for using the report to ask questions, or even to challenge an organization’s compliance programs. The results of the risk assessment, and feedback from senior management, have an impact on policies, procedures, systems, resources, staffing, and training. 
 
@@ -5142,12 +5342,12 @@ This process aids an organization’s ongoing AFC efforts because it identifies 
 
 utilize the report to determine where to attribute staffing, resources, technology, and training to further mitigate risk. 
 
-# The importance of continuous risk assessment
+### The importance of continuous risk assessment
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/7f03cd0403a753d89ba81cd620f63ca9cdb51a616ea08845915ccdce4072ee88.jpg)
 
 
-## Continuously assessing financial crime risk
+#### Continuously assessing financial crime risk
 
 Financial crime risks are dynamic and constantly evolving. Criminals will always attempt to move illicit funds through the financial sector undetected. They will use new technologies and trends, regardless of the controls that organizations establish. Criminals continuously search for loopholes to exploit and test the resilience of AFC frameworks. 
 
@@ -5177,7 +5377,7 @@ Product and channel risk assessments enable organizations to detect deviations f
 
 These risk assessments help organizations continuously assess financial crime risks and enable them to take a holistic, proactive approach to manage and reassess risks as needed. 
 
-# Customer risk assessment versus enterprise-wide risk assessment
+#### Customer risk assessment versus enterprise-wide risk assessment
 
 The CRA evaluates potential ML/TF risks associated with individual customers and business relationships. In contrast, the EWRA analyzes ML/TF risks that the organization as a whole faces. 
 
@@ -5186,6 +5386,8 @@ The CRA evaluates potential ML/TF risks associated with individual customers and
 According to FinCEN’s Assessing Customer Relationships and Conducting Customer Due Diligence, customer relationships present varying levels of financial crime risks. Organizations conduct CRAs to identify risk factors, assign risk ratings to customers, create risk profiles, and decide which level of CDD to apply. The CRA considers information collected through KYC processes, such as documents, customer business activity, and requested products. Higher-risk customers might require EDD, while lower-risk customers might qualify for simplified due diligence (SDD) in some jurisdictions. Due diligence requirements vary depending on the jurisdiction. 
 
 The EWRA identifies inherent risks, assesses controls, and determines the residual risk that the organization faces. The process helps organizations design their AML/CFT framework, guides policy and procedure development, allocates resources toward higher-risk areas, and improves decision-making. 
+
+#### Product risk assessment
 
 A product risk assessment helps organizations identify and understand the risks and threats associated with their financial products. It assesses how criminals might use these products to launder illicit funds. After identifying and assessing these risks and threats, organizations can implement measures to mitigate them. 
 
@@ -5217,18 +5419,18 @@ Because risk assessment is an ongoing process, organizations should review both 
 
 Sometimes, organizations might notice previously unidentified risks for a new or existing product. For example, a new prepaid card might show high volumes of rapid transactions from high-risk customers. This might require revisiting the product risk assessment and setting thresholds for the number of transactions, volumes, or restricting the product to certain customer sectors. 
 
-# Design Your AFC Program and Controls
+## Design Your AFC Program and Controls
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/01cf50a2ec2466364a18db8df15d7617dbdac4f14547e11bccb53adbecf017b3.jpg)
 
 
-## Introduction: Design your AFC program and controls
+#### Introduction: Design your AFC program and controls
 
 An AFC program is the cornerstone of financial crime risk management, ensuring that organizations prevent, detect, mitigate, and report illicit financial activities. Global standard setters and national regulatory bodies recommend or mandate risk-based AML programs. Key program components include CDD, EDD, ongoing monitoring, transaction reporting, risk assessments, and governance oversight. Institutions must regularly update policies to address evolving threats, regulatory changes, and emerging technologies, such as AI-driven financial crime detection. A globally aware AFC program fosters compliance, resilience, and financial integrity, safeguarding institutions against money laundering, terrorist financing, and sanctions violations. 
 
-## Case study: Lack of governance at a Canadian bank
+#### Case study: Lack of governance at a Canadian bank
 
 In December 2023, the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) imposed a CA$7.475 million fine on Royal Bank of Canada (RBC) for non-compliance with the Proceeds of Crime (Money Laundering) and Terrorist Financing Act. 
 
@@ -5244,7 +5446,7 @@ This case illustrates how weak oversight can create gaps in key financial crime 
 
 To ensure strong AML/CFT governance, boards of directors and senior leadership must actively oversee AML compliance. AML/CFT policies should be regularly reviewed and updated to reflect new regulatory requirements. Regular, independent audits and testing should be done to ensure governance structures remain effective. 
 
-## Key takeaways
+##### Key takeaways
 
 • Weak governance might lead to compliance failures and regulatory fines. 
 
@@ -5254,19 +5456,19 @@ To ensure strong AML/CFT governance, boards of directors and senior leadership m
 
 • Periodic audits ensure governance effectiveness and prevent regulatory breaches. 
 
-# Governance and oversight
+### Governance and oversight
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/84edd5818ee194235db6f3822904ffb1e5490180e62faa67c454764720fc6049.jpg)
 
 
-## Need for AFC policies and procedures
+#### Need for AFC policies and procedures
 
 Policies and procedures are essential guidelines on managing risks for an AFC compliance program. In general, policies translate legal and regulatory requirements as applicable to the organization. Procedures are the step-bystep instructions on how to implement policies. Policies and procedures generally include requirements for oversight at senior levels. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6aa13e4c3cfb8184364a37d40d82e3822aa1e6d14fd0e8f56b8f84afd882fcf9.jpg)
 
 
-## Drafting AFC policies and procedures
+#### Drafting AFC policies and procedures
 
 AFC policies and procedures form the core of an organization’s AFC compliance framework, ensuring effective risk management, adherence to regulations, and operational integrity. These policies must be clear, risk-based, and adaptable to evolving business models while aligning with global and jurisdictional AFC standards. 
 
@@ -5311,7 +5513,7 @@ By developing clear, enforceable, and adaptable AFC policies, financial institut
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/97dcc1be38db838403df67346d403dda9c95a3ddb8c7bd29bcaf33344cc82a76.jpg)
 
 
-## Maintaining effective AFC policies and procedures
+#### Maintaining effective AFC policies and procedures
 
 Regulated organizations are required to maintain written AFC policies and procedures that mitigate and manage the risks of money laundering and terrorist financing. Organizations should regularly review and update these policies and procedures, typically on an annual basis, although the nature of the risks the organization is encountering should drive the frequency. 
 
@@ -5326,7 +5528,7 @@ AFC policies and procedures should be tailored to the specific risk profile, ris
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5eab5f87da7ca2392b46746161a4318ced395886972e4410a9ba06535faea012.jpg)
 
 
-## Governance committees and their functions
+#### Governance committees and their functions
 
 Governance committees provide strategic oversight, decision-making authority, and accountability in an organization’s financial crime compliance framework. They ensure that AFC policies and procedures are aligned with regulatory requirements and risk management objectives, while supporting effective escalation, review, and enforcement processes. 
 
@@ -5360,7 +5562,7 @@ By ensuring structured, well-documented, and effective governance committees, fi
 
 During regulatory exams, the robustness of the governance structure demonstrates the strength of the AML programs. Examiners may request terms of reference and inputs via papers and meeting minutes, and present them as evidence of the effectiveness of the AFC program. 
 
-## Internal reporting to governance committees
+#### Internal reporting to governance committees
 
 Internal reporting to governance committees is a critical function of an institution’s AFC compliance framework. It ensures that senior leadership has accurate, timely, and data-driven insights to support decision-making, risk management, and regulatory compliance. Internal reports help identify financial crime risks, assess control effectiveness, and maintain regulatory accountability. 
 
@@ -5383,7 +5585,7 @@ By ensuring structured, transparent, and risk-focused internal reporting, financ
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d620af11c6fd260f12118c8e325986d68b73cc85f588af273dcb3a970297646f.jpg)
 
 
-## Regulatory reporting for AFC compliance
+#### Regulatory reporting for AFC compliance
 
 Regulatory reporting is a critical obligation for financial institutions worldwide, ensuring compliance with AFC laws, financial transparency, and risk mitigation. Each jurisdiction typically enforces unique reporting rules, filing deadlines, and disclosure requirements. Non-compliance can lead to severe financial penalties, reputational harm, and regulatory enforcement actions. 
 
@@ -5413,13 +5615,13 @@ Jurisdiction-specific examples of regulatory reports include, but are not limite
 
 <sub>o</sub> 6AMLD Reports: Focus on uniform definitions of predicate offenses and extended liability across member states. 
 
-## • United States:
+##### • United States:
 
 <sub>o</sub> FinCEN Form 8300: Reports cash payments exceeding US$10,000 received in trade or business. 
 
 <sub>o</sub> FinCEN 314(a) request: Enables information sharing between financial institutions and law enforcement. 
 
-## • United Kingdom:
+##### • United Kingdom:
 
 <sub>o</sub> REP-CRIM report: Describes criminal activities detected within the financial institution. 
 
@@ -5434,6 +5636,8 @@ Regulatory reporting requirements include, but are not limited to:
 • Confidentiality and anti-tipping off: Disclosure of SAR details is strictly prohibited to prevent interference with law enforcement investigations. 
 
 By aligning regulatory reporting processes with jurisdictional requirements, institutions strengthen financial integrity, regulatory cooperation, and financial crime prevention efforts. 
+
+#### Responding to regulator requests
 
 Responding to regulator requests is a crucial element of an organization’s AFC compliance program, underscoring the need for transparency, collaboration, and accountability. Effective engagement with regulators helps to avoid penalties, while demonstrating a culture of compliance that fosters long-term trust and credibility. It is also a key part of the cooperative effort between regulators and industry to combat money laundering, terrorism financing, and other financial crimes. 
 
@@ -5453,12 +5657,12 @@ Best practices for engaging with regulators include the following:
 
 By responding promptly to regulator requests, organizations reinforce AFC commitments, mitigate compliance risks, and maintain strong supervisory relationships that bolster financial integrity. 
 
-## Implementation of AFC program and controls
+### Implementation of AFC program and controls
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d0949ae250172b3bd0e3e312d6c5c3e471aa8ef1cbbb2ba17dcd47f7472b4205.jpg)
 
 
-## Controls across the customer lifecycle
+#### Controls across the customer lifecycle
 
 A well-structured control framework supports AFC compliance, ensuring that financial institutions effectively identify, assess, and mitigate financial crime risks at every stage of the customer lifecycle. With evolving global regulations and emerging financial crime threats, institutions must use controls to assess risk, meet their obligations, and protect financial integrity. 
 
@@ -5475,7 +5679,7 @@ The customer lifecycle consists of the following controls:
 
 • Beneficial ownership review: Investigate complex corporate structures to identify ownership and control. 
 
-## 2. Screening at onboarding:
+##### 2. Screening at onboarding:
 
 • Sanctions screening: Cross-check customer details against applicable lists, such as those from the UN, OFAC, EU, and local authorities. If a true match is confirmed, onboarding cannot proceed. 
 
@@ -5483,7 +5687,7 @@ The customer lifecycle consists of the following controls:
 
 • Adverse media checks: Flag potential reputational risks and legal controversies linked to the customer. 
 
-## 3. EDD for high-risk customers:
+##### 3. EDD for high-risk customers:
 
 • Source of wealth and funds verification: Ensure high-risk clients have legitimate financial sources. 
 
@@ -5495,13 +5699,13 @@ The customer lifecycle consists of the following controls:
 
 • Geopolitical and sanctions compliance: Flag payments linked to highrisk jurisdictions or restricted entities. 
 
-## 5. Ongoing screening:
+##### 5. Ongoing screening:
 
 • Batch screening: Performed on an ongoing basis, typically daily, to ensure that any changes to sanctions lists are checked against the organization’s list of clients. 
 
 • PEP and adverse media screening: Repeated on an ongoing basis to identify and declassify PEPs and to identify any new adverse media against existing clients. 
 
-## 6. Investigations and regulatory reporting:
+##### 6. Investigations and regulatory reporting:
 
 • Ongoing controls: Begin when concerns are raised during a KYC refresh, when alerts are triggered through transaction monitoring, or when front office staff identify suspicious behavior. 
 
@@ -5509,7 +5713,7 @@ The customer lifecycle consists of the following controls:
 
 • SAR filing: Report suspicious activities to the appropriate FIU. 
 
-## 7. Periodic review and ongoing due diligence:
+##### 7. Periodic review and ongoing due diligence:
 
 • Scheduled KYC refreshes: Conduct mandatory data updates based on risk levels and evolving regulatory expectations. 
 
@@ -5519,18 +5723,18 @@ The customer lifecycle consists of the following controls:
 
 • Dynamic risk management: Sophisticated processes, such as perpetual KYC, involve continuously monitoring data to identify changes and trigger a KYC refresh. 
 
-## 8. Customer offboarding and exit strategy:
+##### 8. Customer offboarding and exit strategy:
 
 Risk-based account closure: Based on reporting obligations, the organization might need approval to offboard customers due to suspected illicit activity or noncompliance risks. Exits based on a mismatch in risk appetite should be reviewed and decided on a caseby-case basis. 
 
 By implementing dynamic, risk-based measures and leveraging advanced technologies, financial institutions enhance AFC controls and align with international AFC obligations. 
 
-# Onboarding AFC controls
+### Onboarding AFC controls
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6af2c2fcaf0cb2ef0374cf83f35818bc57d8972e5ba4ee48bb060205303dd9fa.jpg)
 
 
-## The KYC process
+#### The KYC process
 
 With evolving global regulatory frameworks, financial institutions must implement risk-based due diligence to prevent financial crime. The KYC process is a core requirement in AFC compliance, ensuring financial institutions identify, verify, and assess customer risks before establishing or maintaining business relationships. 
 
@@ -5561,21 +5765,21 @@ The typical KYC/CDD process consists of the following steps:
 
 <sub>o</sub> PEP screening is when organizations determine whether the individual or beneficial owner is a PEP, or the relative or close associate of a PEP. 
 
-## • Risk assessment:
+##### • Risk assessment:
 
 <sub>o</sub> Customers may be assessed for risk and assigned low-, medium-, or high-risk status based on industry type, jurisdictional exposure, and transaction behaviors. More advanced approaches may provide a risk score from 1 to 100, allowing for a more nuanced application of the riskbased approach. 
 
 <sub>o</sub> Customers deemed high risk are typically examined more deeply through enhanced due diligence. Customers deemed standard risk, which includes low and medium risk, also undergo a due diligence process. 
 
-## • EDD:
+##### • EDD:
 
 <sub>o</sub> EDD involves verifying source of wealth and source of funds more deeply, examining and verifying any claims through supporting documentation. 
 
-## • Potential rejection:
+##### • Potential rejection:
 
 <sub>o</sub> If, upon conducting due diligence, the organization is not comfortable with the level of risk a client presents, it might request additional documentation. Ultimately, if additional information also does not suffice, the organization might reject the customer to protect itself. 
 
-## • Ongoing due diligence, screening, monitoring, and KYC refresh:
+##### • Ongoing due diligence, screening, monitoring, and KYC refresh:
 
 <sub>o</sub> In addition to due diligence at onboarding, organizations apply riskbased KYC refresh cycles periodically based on customer category and jurisdictional requirements. These refreshes ensure that the organization is noting any changes in the customer’s or business’s circumstances and updating the risk rating appropriately. If the refresh presents a higher degree of risk, enhanced due diligence may be triggered. 
 
@@ -5583,14 +5787,14 @@ The typical KYC/CDD process consists of the following steps:
 
 transaction the customer carries out to detect any sanctions exposure. If it detects such exposure, the organization blocks payments and escalates to establish further steps. 
 
-<sub>o</sub> Monitoring transactions for patterns of suspicion allows the organization to detect anomalous behaviors, trigger alerts, and adjust risk profiles dynamically. Traditionally, organizations have used rules-based systems. Now, they may either complement or replace such systems with AIbased systems to achieve better efficiency and effectiveness. 
+<sub>o</sub> Monitoring transactions for patterns of suspicion allows the organization to detect anomalous behaviors, trigger alerts, and adjust risk profiles dynamically. Traditionally, organizations have used rules-based systems. Now, they may either complement or replace such systems with AI-based systems to achieve better efficiency and effectiveness. 
 
 By adopting a comprehensive, risk-based KYC framework, financial institutions enhance AFC compliance, mitigate financial crime risks, and align with evolving international regulatory obligations. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/347be44f05f9f2f2bfc76587e22ed6920caf40ce1e5ec95318008b188e8eb3e3.jpg)
 
 
-## Customer risk assessment
+#### Customer risk assessment
 
 A customer risk assessment (CRA) is a compliance process that determines the financial crime risk posed by a customer. A CRA evaluates multiple risk factors to determine the appropriate level of monitoring and scrutiny required for each customer. 
 
@@ -5671,7 +5875,7 @@ By implementing a robust CRA framework, financial institutions enhance financial
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d6e4953450db9c266ca79c0b2405e4fefcd5444ff92ab9c4a5fc4b925f162984.jpg)
 
 
-## KYC for a natural person
+#### KYC for a natural person
 
 The KYC process for a natural person is a critical element of AFC compliance, ensuring that financial institutions accurately verify a customer’s identity, assess risk exposure, and monitor financial activities. The process consists of the customer identification program (CIP) and additional due diligence. As global regulations evolve, financial institutions benefit from adopting advanced identity verification methods, risk-based monitoring, and beneficial ownership transparency measures to strengthen compliance frameworks. 
 
@@ -5714,7 +5918,7 @@ By implementing dynamic, risk-based KYC controls, financial institutions enhance
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d312f77101c1758786b416ed9e397bad3ff25fafbee3a6cfc292dd97dc652799.jpg)
 
 
-## KYC for a legal person
+#### KYC for a legal person
 
 The KYC process for a legal person ensures that financial institutions verify corporations, partnerships, trusts, and other legal entities to prevent financial crime. KYC for legal persons consists of CIP, CDD, and EDD for high-risk entities. 
 
@@ -5758,7 +5962,7 @@ A holding company with opaque ownership and nominee shareholders would face grea
 
 Through the embedding and implementation of a risk-based approach to KYC processes, financial institutions can manage and mitigate financial crime risks more effectively, ensure adherence to regulations, and demonstrate strong overall AFC compliance to investors and customers. 
 
-# Additional onboarding controls for high-risk scenarios
+#### Additional onboarding controls for high-risk scenarios
 
 Regulatory frameworks such as FATF Recommendations, EU AML Directives, and FinCEN regulations require a risk-based approach to onboarding, ensuring that higher-risk customers undergo additional scrutiny before gaining full access to financial services. 
 
@@ -5793,7 +5997,7 @@ By integrating risk-based onboarding controls, financial institutions enhance co
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/0ef29280cb0f240eba755e2a0c7f01b7c6c29d51dc262f9f3c4f354d9bebd263.jpg)
 
 
-## Function of quality control
+#### Function of quality control
 
 Quality control (QC) is a critical function within an AFC compliance framework. It ensures accuracy, consistency, and regulatory adherence in KYC, CDD, and transaction monitoring outputs. By detecting errors, inconsistencies, and potential non-compliance, QC strengthens the risk-based approach required by regulators. 
 
@@ -5823,12 +6027,12 @@ To enhance QC effectiveness, financial institutions should:
 
 By implementing structured QC mechanisms, financial institutions reduce compliance risks, improve regulatory adherence, and strengthen financial crime prevention efforts. 
 
-# Ongoing AFC controls
+### Ongoing AFC controls
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d9a5ed00c0e86afd18b6920345d12bf0d878eed04e6f630c066f6a7febbe85a9.jpg)
 
 
-## Ongoing due diligence
+#### Ongoing due diligence
 
 Ongoing due diligence is a process that ensures financial institutions regularly update customer risk assessments, monitor customer transactions, and identify suspicious behavior to maintain compliance with AFC regulations. Unlike the customer due diligence undertaken at onboarding, ongoing due diligence is an evolving process that responds to risk changes, financial crime threats, and regulatory developments. Ongoing due diligence consists of several critical monitoring mechanisms, including periodic KYC reviews, trigger event reviews, real-time payment screening, batch screening, perpetual KYC, and advanced compliance technologies. 
 
@@ -5857,13 +6061,17 @@ Transaction monitoring and screening mechanisms can be used for the following:
 
 • Real-time payment screening analyzes transactions to detect sanctions violations and high-risk counterparties before the transactions are completed. 
 
-• Batch screening involves the continuous checking of customer databases against sanctions lists (such as the OFAC, UN, and EU lists), regulatory enforcement notices, and negative media sources. It is designed to detect changes that might have occurred after customers were onboarded. 
+#### Batch screening
+
+Batch screening involves the continuous checking of customer databases against sanctions lists (such as the OFAC, UN, and EU lists), regulatory enforcement notices, and negative media sources. It is designed to detect changes that might have occurred after customers were onboarded. 
 
 Advanced compliance technologies can enhance ongoing due diligence via the use of technology. For example: 
 
 • Perpetual KYC involves the use of data-driven triggers to update customer risk profiles in real time, reducing reliance on periodic refreshes. 
 
 • Automated AI risk detection uses machine learning to enhance anomaly detection, predictive compliance modeling, and real-time risk management. 
+
+#### Payment screening
 
 Payment or transaction screening is the process of verifying transactions, both incoming and outgoing, to prevent financial crime. It is a primary financial crime control for organizations that facilitate the transfer of funds for their customers, or on behalf of another entity. Organizations are required to perform payment screening to prevent sanctions breaches and the financing of terrorism. 
 
@@ -5920,7 +6128,7 @@ organization's exit policy, subject to the necessary approvals and special licen
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/2fca3ea37bc8faa0fb83d13a2cc7415f77167aa3a65671e18c8aba512cf625d9.jpg)
 
 
-## Politically exposed persons screening
+#### Politically exposed persons screening
 
 PEPs are at heightened risk of involvement in bribery and corruption schemes because of their access to public funds and legal tenders. For this reason, screening customers to identify PEPs along with relatives and close associates of PEPs, is a critical control in an anti-financial crime framework. 
 
@@ -5952,6 +6160,8 @@ Regardless of whether PEP screening is done in-house or via a vendor, the follow
 
 • Other controls: Include enhanced due diligence processes on PEPs at onboarding and throughout the customer life cycle. Consider what other controls are needed for PEPs, such as specific transaction monitoring rules. 
 
+#### Adverse media checks
+
 Adverse media checks—also known as negative news screening— identify publicly available information linking individuals or entities to financial crime risks. With the increasing de-escalation of fact-checking on social media platforms, and the rise of automated software-as-a-service screening solutions, financial institutions must take a risk-based approach to adverse media screening, ensuring accurate and credible risk assessments. 
 
 Financial institutions must conduct adverse media screening to: 
@@ -5982,12 +6192,12 @@ Social media misinformation: The decline in platform-driven factchecking increas
 
 • Evolving regulatory expectations: Some jurisdictions now mandate realtime monitoring instead of static or periodic adverse media screening checks. 
 
-# Other due diligence requirements that help to mitigate risks
+### Other due diligence requirements that help to mitigate risks
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4107bd819a8d67d5c1adc4b581353e1128eed584e8f2ec61034931355fa01de6.jpg)
 
 
-## Know your employee and vendor
+#### Know your employee and vendor
 
 Organizations need to address risks from employees who might commit financial crimes or collaborate with criminals. A robust employee due diligence program, also known as a know your employee (KYE) program, lowers those risks. A know your vendor (KYV) program helps assess the risk of third-party vendors. Vendors might offer items of value to influence the actions of your employees, which leads to bribery and corruption risks. 
 
@@ -5999,14 +6209,14 @@ Vendors might introduce fraud, data privacy, and security risks if they enter a 
 
 To detect fraudulent activity or potential conflicts of interest, it is recommended that organizations screen vendor staff names and dates of birth. If vendors provide IT services that require access to the organization's IT infrastructure, the organization should conduct a cybersecurity check to confirm compliance with its policies. 
 
-# Transaction Monitoring and Investigation
+## Transaction Monitoring and Investigation
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/e4e52c7c76409ff876615f53c0f6c5d48650e6cbdd211e5cc48e7624bf82cb60.jpg)
 
 
-## Introduction: Transaction monitoring and investigation
+#### Introduction: Transaction monitoring and investigation
 
 Transaction monitoring (TM) systems are the technological frameworks that help financial institutions detect suspicious transaction patterns. 
 
@@ -6015,7 +6225,7 @@ In this module, we will explore industry best practices and expectations for TM 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/a3c71275f048743172b4c557b360856a62d9d730a1c5d372a9548e33c9a83e80.jpg)
 
 
-## Case example: AML control failures at a UK Bank
+#### Case example: AML control failures at a UK Bank
 
 In 2021, the UK’s Financial Conduct Authority (FCA) fined National Westminster Bank (NatWest) nearly £264.8 million for significant failures in its AML controls. The fine was issued for failing to adequately monitor the activity of Fowler Oldfield, a jewelry business involved in buying and selling gold. 
 
@@ -6033,7 +6243,7 @@ Although bank staff raised and investigated several transaction monitoring alert
 
 Although NatWest was not complicit in money laundering, the court emphasized that its failures were instrumental in facilitating illicit transactions. This case marked the FCA's first criminal prosecution for AML violations and highlighted the need for robust transaction monitoring systems and adherence to risk-sensitive ongoing monitoring protocols. 
 
-## Key takeaways
+##### Key takeaways
 
 • Ensure robust risk-sensitive transaction monitoring, especially for high-risk customers. 
 
@@ -6043,12 +6253,12 @@ Although NatWest was not complicit in money laundering, the court emphasized tha
 
 • Avoid severe penalties and regulatory scrutiny through strong AML controls. 
 
-# Transaction monitoring
+### Transaction monitoring
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/e10a54d2db403898d934213c0a44860ae75184976f61ab0d4476b091796d7d13.jpg)
 
 
-## Transaction monitoring controls
+#### Transaction monitoring controls
 
 Organizations apply transaction monitoring controls to manage ongoing risks. Transaction monitoring systems generate alerts when customer activity or behavior is beyond normal parameters for the customer profile. The alerts are reviewed to assess whether unusual behavior can be explained or if it is potentially suspicious. 
 
@@ -6060,7 +6270,7 @@ A threshold is criteria for behavior. A TM system might be applied to monitor cu
 
 An organization might choose to use one monitoring system or separate systems to monitor transactions. Transactions completed by larger customers, such as corporations or financial institutions, might be monitored by the same system, but using different scenarios and thresholds. 
 
-## Transaction monitoring versus payment screening
+#### Transaction monitoring versus payment screening
 
 Organizations use transaction monitoring and payment screening to prevent and detect financial crime and ensure regulatory compliance. While these two processes are often confused, they differ in timing and scope. 
 
@@ -6085,7 +6295,7 @@ There are several types of screening, including:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4fc51d13b027aac3de118429ea8fd0d0bd696c190821ad397e5f8cb08944e12a.jpg)
 
 
-## Technology solutions for transaction monitoring
+#### Technology solutions for transaction monitoring
 
 Organizations are actively seeking and implementing solutions that generate more useful alerts that reduce wasteful efforts caused by false positives. They continuously improve their ability to manage financial crime risk by assigning resources to mitigate genuine threats to the business. For example, intelligent contextual analysis operates on a binary rule to check if a transaction exceeds a threshold and meets additional criteria. These criteria might include changes from a customer’s past behavior compared to their history and their peers, or if the customer is transacting in a higher-risk industry sector. 
 
@@ -6102,7 +6312,7 @@ Implementing AI solutions comes with its own risks. These solutions must be test
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/aa2c3055f607ee7692d28996372cb5e6f942f6c49e3fe17fda7e7f139f5184dd.jpg)
 
 
-## Transaction monitoring system tuning
+#### Transaction monitoring system tuning
 
 TM system tuning is the process of refining and adjusting parameters and thresholds of specific detection logic rules, or scenarios. Scenarios are designed to detect suspicious activities and abnormal transaction behaviors, such as money laundering, fraud, or other illicit activities. Tuning is important because it: 
 
@@ -6134,8 +6344,9 @@ To perform a tuning exercise, analysts consider and consolidate several data poi
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/7a9a0ef8d2fd244895a36e0a1e7de5d27eabe0bdeaa41dfae7bb986959daf482.jpg)
 
+### Alert generation
 
-## Typical scenarios that would generate an alert
+#### Typical scenarios that would generate an alert
 
 Transaction monitoring scenarios analyze factors such as industry size, jurisdiction, and customer activity to set alerts. Scenarios can range from basic to more complex. 
 
@@ -6160,7 +6371,7 @@ Excessive use of a particular channel compared to what is expected for that cust
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/bcaba2cb29874ef36118c1730025d439b67e1a36071ac5c22834937f1e59bdf2.jpg)
 
 
-## Procedures for alerts review
+#### Procedures for alerts review
 
 In larger organizations, the process for reviewing transaction monitoring alerts typically involves multiple levels of review and information gathering. Smaller organizations might use a one-touch system, where a single analyst handles the alert from generation through the submission of a SAR. 
 
@@ -6189,7 +6400,7 @@ Throughout this process, analysts meticulously document each step and, if requir
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/e4dd533d1c89a6b1d868a7bc47995e8479ad61e74778aa650a0cf7e27178b569.jpg)
 
 
-## Other sources of investigation
+#### Other sources of investigation
 
 AML investigations might originate from a wide range of sources beyond transaction monitoring systems. These sources include internal and external referrals, requests for information from counterparties or correspondent banks, negative news, regulatory findings and recommendations, and law enforcement requests. 
 
@@ -6217,19 +6428,19 @@ Law enforcement agencies (LEA) may use legal instruments that require financial 
 
 Given the high likelihood of materiality and sensitivity, these investigation sources must be handled with extra care. It is particularly important to avoid tipping off a potential subject of an investigation. In some cases, tipping off is a felony that can result in criminal charges against the employee. For this reason, organizations should have robust procedures for the management of investigations that minimize the risk of information leaks. 
 
-## Investigations
+### Investigations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/56e8d5fe3ff88914cce9728ac01991f63d36ec3c262fc7c0c76febe2d2302334.jpg)
 
 
-## Steps applied to an investigation
+#### Steps applied to an investigation
 
 Before escalating an investigation to confirm and report suspicion, an analyst is expected to understand the nature of the suspicion and determine whether there is a possible explanation for the transaction. Any patterns of previous transactions from the same account or customer should also be reviewed. Information gathered during onboarding, along with historical transaction data, can provide helpful context. Finally, all research should be clearly documented, indicating what information—if any—is missing. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4eb64d93939ee2224f17d4096aabd9c7b3f7b86954057a0839265af2c61a25a6.jpg)
 
 
-## Information gathering
+#### Information gathering
 
 Gathering sufficient information is important to determine an alert’s validity and/or conduct investigations. Employees responsible for reviewing and investigating alerts should use both internal and external information to make decisions. 
 
@@ -6262,7 +6473,7 @@ When documenting an alert investigation, clearly record the searches that were p
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c90b32343dda5a8fff43598143c5e6302864356aa017f04fcfd9513c1fd4f2c9.jpg)
 
 
-## How much research is reasonably enough?
+#### How much research is reasonably enough?
 
 Regulators often use the term “reasonable.” Conducting in-depth research might uncover additional red flags. In evaluating an organization’s policies, processes, and procedures, regulators usually don’t judge based on a single incident. They investigate whether the overall program is reasonably effective at identifying risk. 
 
@@ -6279,7 +6490,7 @@ In theory, no financial institution can reasonably be expected to detect all wro
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/aad1976bf13d73cdeb32b13ba7df06116dd1bdb25d17503f7e9196fe9b2d05da.jpg)
 
 
-## Communication channels and tipping off
+#### Communication channels and tipping off
 
 Analysts responsible for transaction monitoring alert reviews and AML investigations might require information that is not available through internal data or publicly available sources. This information could be related to unusual customer transactions, changes in KYC data, the customer’s business invoices or operation documentation, or other relevant data. Relationship managers or front line staff can obtain this information by contacting the customer, organizational partners, such as other financial institutions, or correspondent branches. Relationship managers and front line staff are best positioned to conduct customer outreach and communicate findings to analysts. Staff must remember to maintain confidentiality and avoid tipping off the customer. 
 
@@ -6300,7 +6511,7 @@ Before conducting outreach, the analyst should ensure that the requested informa
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/12578b421784c8d0eefedcf8eef3998047d8ae25b58ecc7a12afd7c82cbd5699.jpg)
 
 
-## Communicating with customers
+#### Communicating with customers
 
 At times it will be necessary to engage with customers to gather additional information for due diligence or investigative purposes. Customer-facing employees, such as relationship managers, typically conduct these meetings, as they might already have a relationship with the customer. 
 
@@ -6314,7 +6525,7 @@ If the staff member puts the customer at ease, but that customer is uncooperativ
 
 Finally, ensure the meeting provides enough reliable detail to verify the information through other sources. Record the details of the meeting in writing as soon as possible to ensure a complete and accurate record. 
 
-## Investigating someone inside the organization
+#### Investigating someone inside the organization
 
 Investigating someone in the organization requires consideration of a number of factors: confidentiality, protection of the organization and the employee, engagement of other stakeholders, proper recordkeeping, and preservation of evidence. The role of the investigator is to collect, collate, assess, and preserve evidence relating to the allegations and present a case to the appropriate department for formal consideration. Depending on the allegations and scope of the investigation, there might be a need to interview witnesses, such as coworkers and supervisors, and the suspected employee. All actions taken must be within the law and the organization’s policies. 
 
@@ -6331,7 +6542,7 @@ Confidentiality and proper recordkeeping are the fundamental elements of a succe
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/511c399511d835852b2223e7b0e7f3d0bbb9235e0ef08be280e6b02bf627537e.jpg)
 
 
-## Analysis of information
+#### Analysis of information
 
 Throughout the transaction monitoring alert review and AML investigation processes, analysts and investigators collect and document data from internal and external sources. However, investigators must go beyond merely gathering and recording this information. They analyze the data to transform it into actionable intelligence and insights. 
 
@@ -6356,7 +6567,7 @@ During in-depth analysis, investigators might discover that the case is more com
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/384606af6fa3b0756ed7acb15a3e0b5b6ed341dfc35f4e93b27f5c544cef66aa.jpg)
 
 
-## Suspicious activity escalation process
+#### Suspicious activity escalation process
 
 If investigators have completed the research and identified risk indicators that cannot be mitigated, they might need to escalate this customer for additional investigation. Depending on the jurisdiction and organizational policies, the end result might be filing a SAR to the FIU. Based on the organization's processes, one or more additional people might review the research before choosing whether to file a report with authorities. The internal process used to escalate findings is important—and can have legal and regulatory consequences. It is important to know the policy and process well. 
 
@@ -6369,6 +6580,8 @@ Because each jurisdiction and organization is unique, the roles of people involv
 One potential next step is to file an internal escalation report. This has many names. Some call it an unusual activity report (UAR). Some call it an internal SAR. But language is important, especially in jurisdictions where any unusual activity must be reported to authorities. So, learn the correct report name for the organization and use only that name. Don’t be casual in referring to something as "unusual" or "suspicious", especially when documenting. Some jurisdictions have timing requirements for when a financial institution should file a SAR based on when it was determined to be suspicious. 
 
 Based on the investigative results, the MLRO might file a SAR with the country’s FIU, so law enforcement can gain access to the information. 
+
+#### Documenting your research
 
 To demonstrate that an organization has undertaken appropriate research to prevent financial crime, it is important to create an audit trail. This means documenting all steps the team has taken to demonstrate compliance efforts to auditors and the supervisory authorities. Include how any inaccuracies or false matches were resolved. Some of this will be straightforward, as one source may be older and therefore less reliable than another source. Save documentation as PDFs, printed out, or collected in some other manner according to the organization’s record retention policy. Thorough documentation provides a record to support your organization’s risk-based approach. So, even if you fail to capture every relevant piece of information, the process itself is defensible. Once documented, your research should be properly and securely stored to respect privacy laws and data security. 
 
@@ -6383,7 +6596,7 @@ Be aware of data privacy laws and data security protocols. Tools, databases, and
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/33f0fa7fca5cb8140de9b43594e75a437c5154c9af5aa0db78526029cd45ef6e.jpg)
 
 
-## Decision to file a SAR
+#### Decision to file a SAR
 
 A SAR is a document that obliged parties must file with their FIU when they detect suspicious or potentially illicit activity. Filing SARs is a key part of an organization’s AFC program and a vital element in combating money laundering and terrorism financing. 
 
@@ -6399,21 +6612,21 @@ When financial institutions detect complex or interconnected suspicious activiti
 
 • Different jurisdictions: When suspicious activities span state, national, or international borders, financial institutions might need to file multiple SARs under the specific laws of each relevant jurisdiction to ensure appropriate regulatory oversight. 
 
-# Concluding Investigations and Coordinating with Law Enforcement
+## Concluding Investigations and Coordinating with Law Enforcement
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/64e1b5f9435dc02537d344d00455f7599cb9f7c1de0af0fdd34430a2c59fe780.jpg)
 
 
-## Introduction: Concluding investigations and coordinating with law enforcement
+#### Introduction: Concluding investigations and coordinating with law enforcement
 
 Concluding investigations and liaising with law enforcement are critical tasks in combating financial crime. In this module, you will learn how to finalize investigations by preparing clear, comprehensive SARs and understanding the nuances in communicating with the FIU and law enforcement agencies. Reporting suspicious activity helps maintain compliance with AFC regulations and enhances the effectiveness of a financial institution’s AFC efforts. By applying these practices, you will help ensure that your organization becomes a proactive partner in detecting, preventing, and disrupting financial crimes. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/7d10d369d433b93eae815c65f7311f379cb2489060d424062a21ac92caa825a5.jpg)
 
 
-## Case study: Failure to file report
+#### Case study: Failure to file report
 
 In March 2023, the Federal Financial Supervisory Authority of Germany (BaFin), fined Deutsche Bank AG €170,000 for failing to submit suspicious transaction reports (STR) on time. The administrative order was final and binding. 
 
@@ -6425,7 +6638,7 @@ Under FATF Recommendation 20, financial institutions (FI) must investigate and r
 
 The Wolfsberg Group’s highlights the need for closer collaboration between government agencies and financial institutions in the STR filing process. As financial crime typologies evolve, emerging technologies and new transaction methods create additional challenges, making strong cooperation more important than ever. 
 
-## Key takeaways
+##### Key takeaways
 
 • Timely investigation and reporting of suspicious transactions help combat financial crime. 
 
@@ -6435,12 +6648,12 @@ The Wolfsberg Group’s highlights the need for closer collaboration between gov
 
 • Strong cooperation between banks and authorities is essential to address emerging threats, technologies, and typologies that require vigilance. 
 
-# Concluding an investigation and suspicious activity reporting
+### Concluding an investigation and suspicious activity reporting
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/ec4a36c424f26f5cd8fb94a68d0361e571b953e481a5d397706a67c6efdb71b2.jpg)
 
 
-## Protecting the organization during an investigation
+#### Protecting the organization during an investigation
 
 Investigations by law enforcement, prosecutors, or regulatory authorities involving an organization can occur for various reasons. They can be against customers or employees of the organization or against the organization itself. They might result from fraud by its employees. More often, they occur because the organization has a weak or failing AFC program. Such failures increase the risk of money laundering, terrorist financing, and sanctions evasion. 
 
@@ -6459,7 +6672,7 @@ Larger organizations might conduct mock dawn raids, which are unannounced inspec
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/658d18baa63421cef3e19a0283b8a0649edc6af9a6f707774271a920151d35d0.jpg)
 
 
-## Duty to report
+#### Duty to report
 
 If an organization suspects that a customer is committing financial crime, it has a duty to report it to the authorities. In many countries, there is a personal liability to report financial crime, and there are legal penalties of fines and imprisonment for failing to do so. However, an organization will have clearly defined policies and procedures to ensure reporting is clear and factual and to protect the relevant employees. Around the world, organizations appoint officers to be responsible for AFC programs and to report suspicions of financial crime. The title might be chief compliance officer, anti-bribery and corruption officer, AML officer, money laundering reporting officer, principal officer, chief anti-money laundering compliance officer, or a title reflective of the jurisdiction. 
 
@@ -6469,7 +6682,7 @@ It is important that organizations implement policies and procedures to enable s
 
 must be made, the most usual action is the submission of a suspicious activity report to the relevant authority in the jurisdiction. Reporting within agreed timelines ensures that the individual and the organization effectively discharge their responsibilities. Some jurisdictions may require unusual activities to be reported, in addition to those that are deemed suspicious. 
 
-## Regulations related to suspicious activity reporting
+#### Regulations related to suspicious activity reporting
 
 The regulations for filing a suspicious activity report (SAR) or suspicious transaction report (STR) vary by institution and jurisdiction, but there are common regulations throughout that call for investigators to follow timelines and limit information access. SAR filing must be timely and effective. As soon as the alert is generated, the investigation can start. Once an activity is deemed suspicious, the reporting timeline begins, and a SAR must be filed within the timelines set by the regulator. The information included in the SAR does not need to demonstrate the occurrence of illegal activity, but it does need to demonstrate the reason for identifying the activity as suspicious. A SAR should not be shared outside the financial institution and required law enforcement agencies, as this could compromise the investigation. Even within a financial institution, SARs should be handled with care, as not everyone should have access to such information. 
 
@@ -6482,7 +6695,7 @@ complete, and factual. You should include information about the customer, servic
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/78671de4db84593dcac11c395b622ce2df925989726613ebd73b420b40383960.jpg)
 
 
-## Suspicious activity report structure
+#### Suspicious activity report structure
 
 The suspicious activity report (SAR) is the primary method of communicating suspicious activity to law enforcement. Completing the SAR requires gathering information about all parties involved, including names, birthdates, addresses, tax identification numbers or national identification numbers, and phone numbers. Include dates and documentation of the suspicious activity, reports from branch staff, video from automated teller machines, and images of relevant paper items. 
 
@@ -6511,7 +6724,7 @@ The most important component of the SAR is the narrative, which answers the who,
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/2a878b694b4979399e6983a5da3e590d822eb86afaae70e667aaadf132dc83cc.jpg)
 
 
-## Case example: SAR for a family trust
+#### Case example: SAR for a family trust
 
 The downtown branch of North Bank detects unusual activity in the Citizen Family Trust account, including large withdrawals totaling millions of US dollars over a three-week period. The purpose of these transactions is unclear and inconsistent with the customer’s typical activity. The large, rapid withdrawals combined with a high-risk source of funds, or windfall, suggest possible money laundering. The declared source of wealth and account behavior show inconsistencies. There have been no previous SAR filings at this institution for this customer. 
 
@@ -6547,7 +6760,7 @@ The MLRO adheres to legal considerations by maintaining strict confidentiality a
 
 A clear, well-structured SAR supports compliance and strengthens the financial institution's ability to prevent and detect financial crime. Law enforcement relies on clear intelligence to investigate illicit activities. 
 
-## Key takeaways
+##### Key takeaways
 
 When submitting a SAR: 
 
@@ -6562,7 +6775,7 @@ When submitting a SAR:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/59112db676bdbd2408f52cb5363d659d0b9dbcbcd862f66dc15106a5b5d37156.jpg)
 
 
-## Maintaining an account after unusual activity
+#### Maintaining an account after unusual activity
 
 After filing a suspicious activity report (SAR), financial institutions must decide whether to maintain or close the impacted account. The decision is made based on the financial institution’s risk appetite and tolerance, and in accordance with its own standards and guidelines. However, a law enforcement directive may request that an account remain open for further investigation. 
 
@@ -6577,7 +6790,7 @@ Some relationships are difficult to terminate, such as credit lines, mortgage lo
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/063615fdb1ca26a0c26901d0ba5624863ff6484137eba37fd6e721c53b87065f.jpg)
 
 
-## Reasons and consequences for not filing a SAR
+#### Reasons and consequences for not filing a SAR
 
 Financial institutions use several methods to detect unusual activity, including transaction monitoring alerts, negative media reports, and manual methods, such as information-sharing requests, warrants, and subpoenas. When they detect unusual activity, they must examine the case facts and decide whether to file a suspicious activity report (SAR). If a SAR is filed, they must then decide how to handle the customer’s accounts. Documenting the rationale for the decision to not file a SAR is just as important as documenting the decision to file a SAR. Failure to file a SAR in the presence of suspicious activity can lead to severe fines and penalties for institutions and individuals. 
 
@@ -6590,7 +6803,7 @@ Falsely filing a SAR, or knowingly providing inaccurate information in a SAR, is
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/4b65ee5684fddaa27b699c7d0212e54e8990e18a10798fab880c53c45502e9f7.jpg)
 
 
-## Follow-up action when no SAR is filed
+#### Follow-up action when no SAR is filed
 
 Reporting suspicious activity is critical for an effective AFC program. In cases where a SAR is not filed, organizations must still adhere to internal procedures to ensure compliance and mitigate risks. 
 
@@ -6607,7 +6820,7 @@ By keeping thorough and organized records, organizations demonstrate their commi
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6b4da3616fc65f844d074ea83ce043a14c7898719c3bda31ef4aba2c947519d1.jpg)
 
 
-## Defensive suspicious activity reports
+#### Defensive suspicious activity reports
 
 Suspicious activity reporting is the foundation of the AFC reporting system. The primary goal of a suspicious activity report (SAR) is to provide law enforcement with actionable intelligence about suspected money laundering, terrorist financing, and other crimes. It is critical that SARs be as accurate and effective as possible. 
 
@@ -6621,8 +6834,9 @@ Defensive SARs are a sign of weakness or deficiencies in an AFC compliance progr
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6c2563f188a0e22ed78e7c0f675ca92707f6e5cda4af62ecd30db8203a24958a.jpg)
 
+### Working with law enforcement agencies
 
-## Communicating with law enforcement for an investigation
+#### Communicating with law enforcement for an investigation
 
 Organizations often communicate with law enforcement authorities during AFC investigations. 
 
@@ -6645,7 +6859,7 @@ When communicating with law enforcement, all communication must be clear, concis
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/510a4f61427fdeb1e6375510461d25b81070fbb79e5dda35a79baf2924881c3e.jpg)
 
 
-## Responding to law enforcement requests
+#### Responding to law enforcement requests
 
 Financial institutions (FI) are routinely required to respond to requests from FIUs and law enforcement for more information on transactions and account ownership. Such requests include court subpoenas, production orders, and specific inquiries related to new or ongoing investigations. Law enforcement might request that an FI keep a particular account open and monitor it for investigative purposes. These requests demand high levels of confidentiality, urgency, and accuracy. 
 
@@ -6666,18 +6880,18 @@ organization. An integrated approach emphasizes both compliance and responsivene
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/bd2a20d98a43fa34238cbb44cceea106d26edca882826a026046805b98b32cb4.jpg)
 
 
-## How law enforcement case investigators read a SAR
+#### How law enforcement case investigators read a SAR
 
 If an AFC program were a factory, suspicious activity reports (SAR) would be its most important product and law enforcement would be its main customer. SARs can be used to initiate an investigation or enhance an ongoing investigation. Law enforcement and the intelligence community use these reports to respond to illicit activity and gather intelligence useful in preventing future occurences. SAR data contains critical details to identify suspects, networks, jurisdictions, and, most importantly, the movement of illicit funds. SARs offer an abundance of direct and indirect access to evidence of money laundering and the illicit activity that fuels it. However, SARs cannot be used as evidence. 
 
 The most important purpose of SARs is to assist law enforcement and analysts in collecting information and intelligence on potential illegal activity. The phrase “follow the money” routinely proves to be true. These reports are invaluable in initiating new cases, enhancing ongoing investigations, and developing broader financial intelligence activity monitoring. The SAR form data and narrative are critical for law enforcement and analysts to leverage in the field. Once they access the relevant database, they can effectively search names, identifiers, data, filing and subject entities, and vital narrative information. Law enforcement will look at these reports to identify what the illicit activity was, where and when it occurred, what products were used to facilitate the activity, and—most importantly—why it is considered suspicious. They can also search a SAR database to see if a suspect is mentioned in other SARs, which institution filed, and where the illicit money might have gone. Based on the pattern of activity—who, what, where, when, how, and why—law enforcement might develop or add criminal charges for the underlying activity and possible money laundering. Law enforcement may be able to follow the money and other supporting data, determine other criminals involved in the activity, and expand the investigation further. 
 
-## Offboarding and de-risking
+### Offboarding and de-risking
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/0521644b030c46e3208d9e377139e6a1860ec6976840064023f54b639937027f.jpg)
 
 
-## Refusing or terminating a customer
+#### Refusing or terminating a customer
 
 Refusing to onboard a customer can take place at different points in the customer cycle. The organization may choose to not accept a new customer because, after conducting customer due diligence, you discover the customer is outside your organization’s risk appetite. Or the customer might have raised enough red flags for financial crime. 
 
@@ -6696,7 +6910,7 @@ otherwise, you must give your customer reasonable time to make other arrangement
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/2f15c7540a1f4f335f6d1513d118ac7318b9316559b586296addad69810baa05.jpg)
 
 
-## De-risking
+#### De-risking
 
 FATF defines de-risking as the act of a financial institution terminating or restricting customer relationships, sometimes for entire client categories, because they no longer align with the organization’s risk appetite. Instead of managing risk through a risk-based approach, some organizations choose to avoid it, leading them to offboard entire segments of high-risk clients or not offer a service at all. This results in financial exclusion, or de-banking. Debanking is the broader loss of financial services due to risk appetite, commercial factors, profitability, complex regulatory constraints related to AFC compliance, sanctions, or financial regulations. Consequently, certain client categories lose access to banking services, even though they might not have been directly involved with illicit activity. 
 
@@ -6725,7 +6939,7 @@ Making broad decisions based on risk aversion, rather than conducting individual
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/9f99d04d448a06e8580d42f187ea7c1cbd0f9d003539d0d114e95064a4a05f16.jpg)
 
 
-## Financial inclusion
+#### Financial inclusion
 
 Financial inclusion ensures that individuals and businesses, particularly the disadvantaged, have access to financial services. These services enhance economic participation and meet a range of needs. Examples of financial services include banking, credit, insurance, savings and loans, payment systems, and consumer protection against fraud, which is enhanced through regulated services. 
 
@@ -6761,20 +6975,20 @@ After completing this learning experience, you will be able to:
 
 • Explain the importance of data privacy and data collection and preparation for AFC compliance technology solutions. 
 
-# Technology for AFC Compliance
+## Technology for AFC Compliance
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/df618743adf4c46dd85ea7b0c6ad6bfbd7c170fa91da99f966ee44a82730998c.jpg)
 
 
-## Introduction: Technology for AFC compliance
+#### Introduction: Technology for AFC compliance
 
 This module shows how AFC technology, a subset of regulatory technology (also known as RegTech), enhances financial institutions' ability to prevent and detect illicit activities. This technology supports key functions such as customer onboarding, sanctions screening, and suspicious activity monitoring. This module also covers the importance of ensuring AFC technology complies with privacy laws, such as the GDPR, AFC regulatory frameworks, such as the US AML Act of 2020, and global standards, such as FATF Recommendations and guidance notes. 
 
 As financial crimes grow more sophisticated and the regulatory landscape evolves, institutions should keep pace by strategically implementing innovative solutions to enhance compliance, risk management, and operational efficiency while ensuring robust governance, scalability, and security. 
 
-## Case example: Implementing technology in AFC compliance
+#### Case example: Implementing technology in AFC compliance
 
 Senior management at a US bank set a strategic goal to enhance its AFC compliance program over the next three years by investing in technology infrastructure. The bank assigns Anna, the BSA Officer, the task of reviewing existing AFC technology, identifying gaps, and preparing a proposal for integrating advanced solutions. The bank's ultimate goal is to enhance efficiency, effectiveness, accuracy, and regulatory compliance across all domains throughout the organization. 
 
@@ -6786,7 +7000,7 @@ Having identified the types of solutions that fit the bank's needs, Anna begins 
 
 This process takes considerable time and effort. However, after thorough analysis, Anna and her technology partners present a well-reasoned and documented proposal for enhanced technology, including specific solutions, timelines, and budgets to meet the organization's strategic goals. 
 
-## Key takeaways
+##### Key takeaways
 
 Enhance your AFC compliance program by conducting a comprehensive review and upgrading existing technology. 
 
@@ -6794,12 +7008,14 @@ Enhance your AFC compliance program by conducting a comprehensive review and upg
 
 • A focus on customer onboarding/KYC and transaction monitoring, along with a well-planned implementation strategy, can help reduce financial crime risk. 
 
-# Understanding AFC technology
+### Understanding AFC technology
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/329b75fa87cfe1f12a4f9c1d1a9a38443f13d4513f4dce0e6108f064abf7f7b4.jpg)
 
 
-## AFC technology overview
+#### AFC technology overview
+
+#### Tools and technologies for AFC compliance
 
 The World Economic Forum describes regulatory technology as the application of new technological solutions that assist highly regulated industry stakeholders in setting, effectuating, and meeting regulatory governance, reporting, compliance, and risk management obligations. According to FATF, the use of regulatory technology enhances compliance by enabling organizations to be more effective and efficient in managing financial crime risks. Organizations use these technologies in executing various AFC controls, including customer onboarding, sanctions and negative news screening, and suspicious activity monitoring. 
 
@@ -6841,7 +7057,7 @@ follow the risk assessment fundamentals and sound technology implementation prin
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/e8099f754622fb36307b7b61c6b8ab1219ff644272e295e8ee1f879d8686af5a.jpg)
 
 
-## Global AFC innovation
+#### Global AFC innovation
 
 Financial institutions and governments worldwide have increasingly adopted innovative approaches to combat money laundering, terrorist financing, and sanctions evasion. This evolution reflects a concerted effort to enhance the effectiveness of financial crime risk management. 
 
@@ -6868,7 +7084,7 @@ As financial crime prevention has evolved, so have criminals. Many organized cri
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/45e799bcb3cbc01e40fc86553c33b462e965ecd4c2b84f680c08a08805ef15cc.jpg)
 
 
-## Technology implementation considerations
+#### Technology implementation considerations
 
 Financial crime technology, such as machine learning and other forms of AI, enhances risk prevention and detection. However, implementing these technologies requires strategic decisions related to building versus buying, addressing vendor challenges, and retaining responsibility to ensure effectiveness and sustainability, regardless of outsourcing. 
 
@@ -6906,12 +7122,12 @@ Other options include outsourcing to vendors, such as managed service providers,
 
 Ultimately, financial institutions remain accountable for compliance and maintain ownership of AML risks. If the vendor systems fail or vendors do not perform as expected, the risk remains with the outsourcing entity. If vendors fail to meet the regulatory standards expected, the organization will be held accountable. 
 
-## Choosing AFC tools for an organization
+### Choosing AFC tools for an organization
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d6f3d33ef4719c81bce2468a33aa0d3036b8c4b6e50e6f68447cf68458df6be3.jpg)
 
 
-## Adopting a risk-based approach when choosing AFC technology
+#### Adopting a risk-based approach when choosing AFC technology
 
 A risk-based approach refers to the process of identifying the highest risks and prioritizing resources to address them. Investing in AFC tools and technologies also follows the same principle. In practice, constraints such as budgets, timelines, and other competing priorities may mean resources are limited. Applying a risk-based approach in this instance would lead to the organization choosing to overhaul the weakest or most inefficient controls. 
 
@@ -6930,7 +7146,7 @@ Failure to adequately consider risks when selecting new technology may signal to
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/b2a6d4efc1a9046217832bd1973d840088dd82cbdb59f4827714de264190a2d2.jpg)
 
 
-## Using AFC technology to reduce friction in customer journeys
+#### Using AFC technology to reduce friction in customer journeys
 
 Friction can arise when organizations excessively contact customers for information or delay processing their transactions. Unnecessary contact often occurs when a customer holds multiple relationships within an organization. For example, a company director who has personal retail accounts and acts as a guarantor for a loan may face redundant KYC requests from three different business units. Delays often stem from transaction processing or approvals for new products or additional accounts. These delays may result from operational backlogs or the need to update a customer’s risk profile before proceeding. Excessive outreach or frustrating delays increase operational costs and may lead to customer attrition. 
 
@@ -6945,7 +7161,7 @@ When selecting technology, institutions must balance effectiveness with customer
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/f34bfca7b40d3f5b6fca7451e1106ed5a4258392f8695d5a18e86022eb854a98.jpg)
 
 
-## AFC tools, choices, and considerations
+#### AFC tools, choices, and considerations
 
 Financial institutions should proactively evaluate and enhance their AFC systems. Timely upgrades mitigate emerging risks and ensure AFC compliance spending delivers optimal value. AFC professionals should balance system costs while maintaining effectiveness. 
 
@@ -6966,7 +7182,7 @@ Institutions should adopt a forward-thinking approach to AFC technology. Regular
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/b4ac0acbfa00acdc5b934234a20eb04624055df2f0500e856d39480f4bb110c9.jpg)
 
 
-## Artificial intelligence and machine learning
+#### Artificial intelligence and machine learning
 
 Key stakeholders, such as business sponsors, increasingly expect the AFC function to demonstrate how it has considered and deployed new and emerging technologies to improve system effectiveness and efficiencies. AI is transforming AFC controls by enhancing detection, automating processes, and improving efficiency. AI refers to the broader concept of machines simulating human intelligence. Machine learning is a subset of AI that enables systems to learn from data and historical performance and improve performance through pattern recognition. These technologies can serve different roles and complement each other. 
 
@@ -6982,7 +7198,7 @@ Generative AI and large language models offer broader applications such as enhan
 
 However, AI solutions are not perfect at mitigating financial crime. Hallucinations, bias in testing data, and lack of explainability in some AI models are some of the challenges that organizations will need to address to ensure a sustainable solution. 
 
-## Transitioning from traditional systems to AIbased tools
+#### Transitioning from traditional systems to AI-based tools
 
 Transitioning from a traditional rules-based AFC system to AI-driven tools, such as technology for remote onboarding, requires careful planning to maintain effectiveness and compliance. Organizations should ensure that innovation enhances risk management rather than introducing new vulnerabilities. 
 
@@ -7001,7 +7217,7 @@ By carefully planning the transition, balancing AI’s benefits with regulatory 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/acbb50e7e5dd75d4dd37420532ec4689f8920772eee8ed9c2b85327830fdd892.jpg)
 
 
-## Governance of compliance technology
+#### Governance of compliance technology
 
 Strong governance involves effective decision-making processes with clear accountabilities and priorities. AFC technology governance processes apply whether selecting, developing, and implementing new solutions or overseeing an existing system. The use of AI introduces additional governance requirements to ensure ethical use of AI, mitigation of bias, adherence to applicable AI regulations, and adequate documentation. 
 
@@ -7016,7 +7232,7 @@ Governance committees can have drawbacks. Bureaucratic processes may slow down d
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/d69465ba26fce5d36d1ecdabe43d41b6389f78d486b58e67087400e4d7491162.jpg)
 
 
-## Regulatory requirements for technology
+#### Regulatory requirements for technology
 
 Financial institutions must stay up to date with AFC regulations across multiple jurisdictions to ensure compliance and manage risks effectively. Regulators often issue guidance notes pertaining to AFC technologies, such as the bulletin from the OCC in the US (OCC 2011-12). Regulations also focus on operational resilience and emerging technologies, such as the Digital Operational Resilience Act (DORA), formerly known as Regulation 2022/554, and the EU AI Act in the EU. Similar regulations exist in China, the UK, Singapore, and other jurisdictions, along with some US states, including California, Colorado, Utah, and New York. A structured approach to ensuring ongoing compliance includes continuous regulatory monitoring, proactive engagement with regulators and other stakeholders, and the strategic use of technology. 
 
@@ -7027,7 +7243,7 @@ Collaboration through industry associations, AFC-focused forums, and regulatory 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/6bd85b1478f87e12981e2e25a867aff9f440a20623761d3fdb5655bc4782cf91.jpg)
 
 
-## Integrating new AFC tools with existing systems and data
+#### Integrating new AFC tools with existing systems and data
 
 When choosing and implementing a new AFC tool, organizations should first conduct a thorough assessment of existing systems, data quality, and integration challenges. A critical step is determining whether legacy databases and platforms are outdated and if they can be effectively migrated into the new system. Poorly structured or inconsistent data can severely impact the effectiveness of next-generation technologies such as machine learning, contextual monitoring, and other forms of AI. 
 
@@ -7046,7 +7262,7 @@ Additionally, organizations should consider the long-term sustainability of the 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/e610da665733a1e217ee1daab55f63e815d8380fbf0c0235d4fb6cf03cbdc474.jpg)
 
 
-## Prioritizing resources
+#### Prioritizing resources
 
 Selecting, implementing, and operating new AFC technology require a blend of skills that differ across the implementation and ongoing operational life cycles. Organizations need to balance recruitment and development of internal capabilities with the need for supplementary external expertise. 
 
@@ -7060,12 +7276,12 @@ Resource prioritization strategies vary between implementation and operation pha
 
 Organizations should include comprehensive knowledge management practices to retain expertise throughout the system's life cycle. It is important to document institutional expertise and establish cross-training initiatives to mitigate risks associated with staff turnover and retain corporate knowledge. 
 
-## Privacy regulations and technology
+### Privacy regulations and technology
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/a93059df533c8e241cada97fc1dbb83a92049454c4f7a5633ab6c27d608a2599.jpg)
 
 
-## Impact of privacy regulations on technology use
+#### Impact of privacy regulations on technology use
 
 Consumer privacy regulations such as the GDPR and the Gramm-Leach-Bliley Act directly prescribe how AFC technologies collect, process, and share personally identifiable information. GDPR imposes strict rules on handling the personal data of EU citizens, emphasizing principles such as data minimization, purpose limitation, storage limitation, and the right to erasure. Similarly, the Gramm-Leach-Bliley Act mandates that financial institutions safeguard consumer financial information and disclose how they share such data. 
 
@@ -7082,7 +7298,7 @@ compliance, ensuring that AFC efforts remain effective without compromising pers
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/5b866d4cdb9dbb73543a50a9831ad61daa4dc15211b2c891b6f07bd3c8e35d27.jpg)
 
 
-## Privacy-enhancing technology
+#### Privacy-enhancing technology
 
 Privacy-enhancing technologies (PETs) are innovative tools that enable data sharing and analysis while preserving individual privacy. They ensure compliance with data protection regulations such as the GDPR and the Gramm-Leach-Bliley Act. In AFC efforts, PETs allow banks and law enforcement to collaborate on sensitive financial data without exposing PII. This helps overcome jurisdiction-based data-sharing restrictions and allows organizations to share intelligence efficiently. 
 
@@ -7104,12 +7320,12 @@ FATF's guidance Stocktake on Data Pooling, Collaborative Analytics and Data expl
 
 These initiatives and guidance illustrate the growing role of PETs in enhancing global financial crime detection while respecting data protection regulations. They bridge the gap between regulatory compliance and the need for crossborder, cross-institutional data sharing. 
 
-# Technology and tools used across the customer life cycle
+### Technology and tools used across the customer life cycle
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/f4989b69-a75b-47fb-bf67-6cd4cbead3f9/c3575039e213d99d2f0bb53b0ad9f2962e32b047478b20d6bac0802146d84c43.jpg)
 
 
-## Geolocation technology
+#### Geolocation technology
 
 Geolocation technology enables financial institutions to determine a user or device’s physical location by analyzing signals such as IP address, GPS data, Wi-Fi networks, and mobile towers. With digital banking replacing in-person banking services, geolocation serves as a critical tool for uncovering suspicious behavior, identifying jurisdictional risks, and enhancing the effectiveness of CDD, transaction monitoring, and sanctions screening programs. While a user’s IP address offers initial insight into the user’s location, threat actors often use VPNs, proxy servers, or dark web browsers to mask their actual location—a behavior that can itself act as a red flag for financial crime. 
 
@@ -7130,7 +7346,7 @@ The benefits of incorporating geolocation into AFC controls are wide-ranging. Ge
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/50738881ec4b5f9893fdb93f0fb3191e214bf34bf2274ee46c5eda22690e875c.jpg)
 
 
-## Device intelligence
+#### Device intelligence
 
 Device intelligence and device fingerprinting are becoming critical tools in the fight against online financial crimes in the digital era. Device intelligence goes beyond basic identification. It includes analyzing behavioral patterns, interaction habits, and usage contexts to build a fuller picture of device activity. For example, device intelligence can recognize whether a customer is using a known, trusted device or one typically used by a money launderer. It also helps determine if a device is being used in abnormal ways—such as rapidly switching accounts, mimicking human behavior, or accessing systems from mismatched geolocations. These insights strengthen decision-making by combining device behavior with known red flags and historical transaction patterns. 
 
@@ -7143,7 +7359,7 @@ purportedly unrelated,” can be translated in an online context as “Customer 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/aa1b593affe738fba1e6d972ee90268794827c2a57065cf91e78909ad8dee7c4.jpg)
 
 
-## Robotic process automation
+#### Robotic process automation
 
 Robotic process automation (RPA) is the use of robots, or 
 
@@ -7158,7 +7374,7 @@ efficiency and scalability benefits, careless implementation can lead to serious
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/ba7e362d8ca7d83139d668d8cee8ea9c534c479a0e00056344ab741f9556ac47.jpg)
 
 
-## Behavioral and profile monitoring
+#### Behavioral and profile monitoring
 
 Instead of relying solely on static rules-based thresholds, behavioral transaction monitoring analyzes a customer’s historical transaction behavior to build dynamic profiles and detect anomalies that may signal suspicious activity. For example, if a customer typically sends small domestic transfers and suddenly initiates a large international wire to a high-risk jurisdiction, this deviation is flagged. Incorporating contextual factors—such as changes in occupation, recent travel, or market volatility—is needed to avoid misinterpreting legitimate shifts. The main advantage of this method is its ability to reduce false positives by focusing on individual profile risk, but it requires robust historical data and ongoing model calibration to be effective. 
 
@@ -7171,7 +7387,7 @@ It is especially useful for tracing funds across jurisdictions and identifying c
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/fbf59c038176de8d4e5bc1caac6c8c00f4ca896d0f71b837024c0bd27a5832d0.jpg)
 
 
-## Open-source intelligence
+#### Open-source intelligence
 
 Open-source intelligence (OSINT) is the collection and analysis of information from publicly available sources. OSINT has long been a vital tool for sectors such as law enforcement, government agencies, and financial institutions. Recently, OSINT techniques have gained popularity in the broader commercial space, particularly as companies seek to strengthen their due diligence and KYC practices. 
 
@@ -7183,21 +7399,18 @@ Beyond search engines, other techniques include: social media monitoring to eval
 
 Importantly, OSINT relies only on information that is publicly accessible. It excludes any proprietary, confidential, or internal data and focuses solely on open sources—content that anyone can access without special credentials. These sources can include social media platforms, corporate websites, government databases, press releases, and online news outlets. Since OSINT involves analyzing data already in the public domain, it allows organizations to enhance their risk assessments and investigative capabilities without violating privacy laws. When used responsibly, OSINT empowers organizations to make more-informed decisions while reinforcing transparency, accountability, and regulatory compliance. 
 
-## Introduction
-
-# Technology for Customer Onboarding
+## Technology for Customer Onboarding
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/810323ada46118406e8d6805815eb86a15dadd2ca7a95451c1f31cbca4347560.jpg)
 
-
-## Introduction: Technology for customer onboarding
+### Introduction: Technology for customer onboarding
 
 AFC specialists need to recognize and understand advancements in technology to develop and implement robust and streamlined onboarding processes. This module will help you better understand how organizations use technology in onboarding, including for identification, verification, and screening. It will also focus on the resulting tools that leverage technological advances, such as biometric, facial, and voice recognition, and authentication and security technologies. The module aims to give you an understanding of how to use technology for customer onboarding and factors to consider when adopting it. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/349e3a02dba9a3e2febeea6233197898c7dacbec99ce324475720e02b4e61492.jpg)
 
 
-## Case example: Improving technology for customer onboarding
+#### Case example: Improving technology for customer onboarding
 
 OneFrance, a fully digital challenger bank operating in France plans to expand into the rest of Europe. The bank hires Marie as a consultant to review the effectiveness and efficiency of its onboarding technology. OneFrance prides itself on using advanced technology throughout its AFC program, including the onboarding process. 
 
@@ -7215,7 +7428,7 @@ After her assessment of the bank’s onboarding processes, Marie advises the fol
 
 • Improve the screening process by tuning fuzzy logic or algorithms to identify name deviations influenced by regional spelling variations. 
 
-## Key takeaways
+##### Key takeaways
 
 • Optimize facial recognition and biometric systems to ensure accurate customer verification. 
 
@@ -7223,12 +7436,12 @@ After her assessment of the bank’s onboarding processes, Marie advises the fol
 
 • Use complex name matching logic to minimize false positives in name screening. 
 
-# Technology for KYC
+### Technology for KYC
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/4e818170f975ddff282cdea497822d8482dfbf654e24810cf9f2ffb279e17edb.jpg)
 
 
-## How does technology help KYC?
+#### How does technology help KYC?
 
 In recent years, international bodies such as FATF and various local regulators have encouraged financial institutions to incorporate more technological solutions to mitigate financial crime risks. The updated FATF 
 
@@ -7251,7 +7464,7 @@ However, using technology to improve KYC can also pose risk to an organization. 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/c44236d32a062d624199d3c74ed6a4a14495815bcf9c3ac3bca0182fb9ceddbd.jpg)
 
 
-## Electronic KYC
+#### Electronic KYC
 
 As the world evolves and adopts more technology-driven solutions, financial institutions need to adjust their ways of working, including onboarding new customers. Electronic KYC plays a key role in fulfilling that need, by allowing a digital process for verifying the identity of customers and meeting KYC requirements electronically. It replaces traditional paper-based methods with digital verification, enabling organizations to remotely confirm an individual’s identity. 
 
@@ -7270,7 +7483,7 @@ One issue with national identity databases is that they can create “honeypot�
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/dfb0f782bd1d960739a59d8eecfc300bac5810ab286db35723294f1e2abeb76c.jpg)
 
 
-## Perpetual KYC
+#### Perpetual KYC
 
 Traditional KYC within organizations involves performing KYC checks during customer onboarding and classifying customers according to risk categories (such as high, medium, or low) or risk scores. Subsequently, organizations typically update customer KYC information periodically, following a regular cycle based on the customer’s risk rating, or during event-driven reviews. However, typical periodic review cycles, such as once every three to five years, are too infrequent, allowing customer data to become outdated. 
 
@@ -7293,7 +7506,7 @@ Effective risk management
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/b5b87c6b311babd4a81e268d28a316148a88b6e99869eb24fd7695ae9e7f4ce7.jpg)
 
 
-## Digital onboarding technology
+#### Digital onboarding technology
 
 Online and mobile identity verification technologies have become essential for customer onboarding in financial institutions. They use modern technologies for collecting, verifying, and presenting data. 
 
@@ -7318,7 +7531,7 @@ Criminals continue to use AI to outwit and overcome an organization’s controls
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/3a26f61232f41f78f952a746e2050c3a6eba1d8dbf276fc9c533456cdefa9a15.jpg)
 
 
-## Authentication and security technology
+#### Authentication and security technology
 
 Various security risks arise from storing customer data collected during the KYC process, including data breaches, misuse of data by employees, and maintaining data integrity to ensure accuracy and unaltered information. Complex and varying data compliance regulations across jurisdictions also add to the risk for global organizations to ensure compliance. Security and authentication technologies address such risks. These technologies encompass a wide range of methods and tools designed to protect data and systems from unauthorized access and to verify the identities of individuals. 
 
@@ -7343,7 +7556,7 @@ Security technology includes tools such as firewalls, antivirus software, and en
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/7f43ca1ceae01395d9d86d6dc3defeef1a5c978857de47ae6f9af3573f806ee7.jpg)
 
 
-## Biometric technology
+#### Biometric technology
 
 Biometric technology identifies and verifies individuals based on their unique biological and behavioral characteristics, such as fingerprints, facial features, or voice. Organizations can extract distinguishing biometric features for biometric recognition. We frequently use biometric technology in daily life, such as when unlocking a phone using a fingerprint or accessing a banking app with live facial recognition. 
 
@@ -7353,12 +7566,14 @@ The KYC process increasingly uses biometric technology to enhance security, effi
 
 Additional benefits of biometric technology include cost savings by reducing the need for manual controls, saving time and resources. The technology also helps institutions comply with regulatory requirements by providing a robust and secure method of identity verification. 
 
+#### Liveness check technology
+
 However, biometric data is extremely sensitive and personal. If compromised, it can lead to severe privacy violations and identity theft. In countries with strict data protection laws, such as the GDPR in the EU, institutions must follow stringent guidelines on collecting, storing, and using biometric information. Implementing and maintaining biometric technology may also involve higher costs for institutions. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/20b93cc37e2180bfce9d57a0bdacc8a24e429d91a21e66af252c4d04f6bdbc8a.jpg)
 
 
-## Facial and voice recognition technology
+#### Facial and voice recognition technology
 
 Facial recognition technology is a sophisticated tool capable of identifying and verifying an individual's identity using an algorithm that processes a digital image or video frame against a database of faces. Individuals commonly use this technology to sign in to their phones or proceed through border control at airports. 
 
@@ -7402,12 +7617,12 @@ The different types of liveness check technology use different techniques to ide
 
 Liveness check technology plays a crucial role in the electronic KYC process by enhancing security, preventing fraud, and ensuring the integrity of biometric systems. The technology also assists in creating a multi-layered authentication process by ensuring that once liveness has been confirmed, the system can move forward with, for example, document verification. By integrating the technology into the KYC process, organizations can ensure compliance with regulations that require the verification of the physical presence of an individual during the onboarding process. 
 
-## Technology for screening
+### Technology for screening
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/4d21dac29380c9906e8d75ae67c82f0c842f284ee4bca9ab815e903f16dd4b27.jpg)
 
 
-## How does technology help screening?
+#### How does technology help screening?
 
 Technology has had a profound impact on financial crime prevention and detection by significantly enhancing the efficiency and accuracy of screening processes, particularly at customer onboarding. 
 
@@ -7428,7 +7643,7 @@ Natural language processing algorithms reduce the time and effort required to co
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/4fced638031f0e0ca770fb8215637587708f551a2db43430f0481f9c6ad6937b.jpg)
 
 
-## Understanding screening system logic
+#### Understanding screening system logic
 
 Screening systems for customer onboarding, including name screening and adverse media screening, can deploy several types of logical models to effectively identify individuals, mitigate risks, and ensure compliance with regulatory requirements. Rules-based models use predefined rules and criteria to screen names and other information against watchlists, sanctions lists, and other databases. For example, in the case of a VASP, a rules-based model might screen all virtual assets addresses against the OFAC list. This model is simple and easy to implement and processes data quickly due to straightforward rules. However, it lacks flexibility and may generate a high number of false positives if the requirements are too broad. 
 
@@ -7447,7 +7662,7 @@ Choosing the right model for your screening system depends on numerous factors a
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/287686057d68abf4cfc4df5b5f2cbc25b945f5d15b72327c7def5e65f77c5f78.jpg)
 
 
-## List management
+#### List management
 
 An organization should take its compliance with relevant sanctions regimes very seriously; failure to do so can result in regulatory investigations and potential fines if an organization’s controls are insufficient. Carefully considering how to plan to screen customers and transactions, which lists to use, and how to test that the list management process is working correctly ensures that the sanctions compliance program is effective. List management is also critical to ensuring that AFC screening controls are working effectively, including politically exposed person (PEP) screening, adverse media screening, and other lists used to determine controls against money laundering and sanctions risk. 
 
@@ -7468,14 +7683,14 @@ Consider the following elements when selecting a vendor and implementing list ma
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/6f9043a2ac82d49475335a7a085ea582e8ed72cc6fe036679b301ba661aa0f6e.jpg)
 
 
-## Student note: Sanctions lists
+#### Student note: Sanctions lists
 
 Please refer to AFC Global Frameworks, Governance, and Regulations for how to determine which sanctions lists to screen against. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/a9957c135c53b892b6c6ca642d779000ad752ad0b074c1ce97626b174f574327.jpg)
 
 
-## Fuzzy logic and partial matches
+#### Fuzzy logic and partial matches
 
 Fuzzy logic is a matching technique that is used to increase the effectiveness of screening processes by overcoming problems such as flawed records and databases. This technique is accomplished through algorithms that use degrees of similarity to determine the probability that two names are the same. Fuzzy logic can find matches in misspelled names, incomplete names, and names with different spellings but similar sounds or phonetics. In addition, fuzzy logic accepts different formats for date of birth and other inconsistencies. 
 
@@ -7498,7 +7713,7 @@ Based on the fuzzy logic configuration, an organization will generate partial ma
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/46fb318f2ac14b595ed3f02db082c7a0c2546ebd6663bfac11824cafd5b96875.jpg)
 
 
-## Screening system tuning
+#### Screening system tuning
 
 Regulators around the world emphasize the importance of tuning screening systems to improve their effectiveness and efficiency. Untuned systems may fail to identify issues in time, leading to significant compliance breaches. 
 
@@ -7525,7 +7740,7 @@ Financial institutions should tune the parameters within a screening system depe
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/8a762b1beaaee0d0e0cc9fe9d008f3f32204d563e87e4a55eb8b4faeb981cf4c.jpg)
 
 
-## Whitelisting and adding to internal lists
+#### Whitelisting and adding to internal lists
 
 Whitelisting and adding to internal lists are key methods to reduce false positives and continuously monitor for known risks not included on third-party lists. 
 
@@ -7545,7 +7760,7 @@ It also recommends strong governance in creating and maintaining these lists. Po
 
 Other governance measures include performing regular risk assessments or continuous monitoring to evaluate the potential risks associated with whitelisted entities and keeping a clear audit trail. Financial institutions should also ensure that their practices are aligned with relevant regulatory requirements and guidelines. 
 
-## Integrating screening technology with other systems
+#### Integrating screening technology with other systems
 
 With the evolving and dynamic landscape of financial crime and technology, organizations increasingly need to integrate their systems to address risks, enhance agility, improve security, and ensure compliance. When integrating screening systems with other systems or databases, such as transaction monitoring systems, organizations should consider several factors. 
 
@@ -7568,7 +7783,7 @@ As AFC technologies evolve, the capabilities of different systems are likely to 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/af58c05745f292ea3a86ceeb3549128a9aa40d7b88e44c38bc168a91a59a8296.jpg)
 
 
-## Using AI for screening
+#### Using AI for screening
 
 AI has transformed financial crime technology systems and tools, including screening, by enhancing accuracy, efficiency, and compliance. The FATF highlights that these technologies improve risk assessments, onboarding practices, relationships with regulators, auditability, accountability, and overall good governance while reducing costs. 
 
@@ -7580,21 +7795,21 @@ Machine learning models continuously learn and adapt to new data, improving thei
 
 These technologies enhance risk detection by integrating with other financial crime systems to provide a comprehensive view of potential risks. For example, AI tools screen names against sanctions lists and external data sources to detect name matches. This integration reduces false positives by enhancing the accuracy and effectiveness of financial crime detection. 
 
-# Technology for Ongoing Monitoring and Investigations
+## Technology for Ongoing Monitoring and Investigations
 
-## Introduction
+### Introduction
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/60ac42d990bd7701b886fb72647da9c98a813d7b4f22b0d2f1f617a8f3d08c9e.jpg)
 
 
-## Introduction: Technology for ongoing monitoring and investigations
+#### Introduction: Technology for ongoing monitoring and investigations
 
 This module covers the critical role technology plays in AFC monitoring and investigations due to the large volume of customers and transactions that organizations need to monitor. Real-time and batch payment screening help prevent sanctions evasion and detect financial crime. Over time, this technology has evolved from rules-based systems to contextual monitoring, integrating network analysis and AI to view transactions in a broader context. This module also illustrates how effective transaction monitoring requires scenario development, calibration, ongoing testing and tuning, and governance. AFC investigations require technology solutions for network analysis, case management, blockchain tracing, and reporting. 
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/f74c4d9ac3f645e31593d6d12bd5ff286e7c32a319859ec83ac485240f0c8800.jpg)
 
 
-## Case example: New batch screening technology considerations
+#### Case example: New batch screening technology considerations
 
 Marco, a compliance officer at an international financial institution, is considering new batch screening technologies from different vendors. His goal is to enhance AFC efficiency and reduce false positive alerts and manual workloads. Marco believes new technologies could streamline the organization’s resources and enhance control effectiveness. 
 
@@ -7624,7 +7839,7 @@ Marco focuses his assessment on the explainability and ease of integration of ea
 
 By carefully considering these factors, Marco will be prepared to propose a batch screening solution to the board and persuade them that investing in it will enhance compliance efficiency and improve control effectiveness. 
 
-## Key takeaways
+##### Key takeaways
 
 • Organizations should ensure their screening technology aligns with regulatory requirements and produces explainable results. 
 
@@ -7634,12 +7849,14 @@ By carefully considering these factors, Marco will be prepared to propose a batc
 
 • A screening system should provide audit trails and comprehensive documentation for regulatory scrutiny and compliance. 
 
-# Technology for payment and batch screening
+### Technology for payment and batch screening
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/6dd06aafb089f36b0fabdb962781ffe34b94661a21ab61cb3367066547034399.jpg)
 
 
-## Types of ongoing screening
+#### Types of ongoing screening
+
+#### Technology for payment screening
 
 Ongoing screening in payment systems is critical for preventing and detecting financial crimes, including money laundering, terrorist financing, and sanctions evasion. There are typically two types of screening: Real-time screening and batch screening. Each serves its own purpose. 
 
@@ -7648,6 +7865,8 @@ Real-time screening involves screening payments as they happen, which helps prev
 Batch screening is a process of screening the organization’s entire customer base against sanctions and terror lists. Organizations also screen customers against specific watch lists and PEP lists. Batch screening of existing customers is necessary because a customer may have been added to a sanctions or watch list since being onboarded. The only way an organization can know about the customer’s change in status is by batch screening. 
 
 Organizations use both real-time and batch screening because they serve different purposes. Real-time screening is necessary for payments that organizations must detect and block immediately. Batch screening identifies existing customers who have been added to sanctions or watch lists. 
+
+#### Maintaining screening technology
 
 Maintaining effective screening technology helps organizations prevent and detect financial crimes such as money laundering, terrorist financing, and sanctions evasion. The choice of technology depends on the scale of transaction volume, business type, and risk profile. 
 
@@ -7671,6 +7890,8 @@ Although sophisticated technologies enhance detection capabilities, they also in
 
 Machine learning allows the system to learn from previous results to refine the parameters, helping to strike the right balance. This helps maintain regulatory compliance while minimizing disruptions to legitimate transactions. Financial institutions can use real-time updates to adjust and tune screening filters to continuously refine their screening models. 
 
+#### Screening digital assets and currencies
+
 The transfer of value in digital assets and currencies follows a structure similar to traditional financial transactions. It involves an originator, intermediaries, and a recipient. However, a key difference is the reliability and transparency of transaction information. Traditional banking adheres to standardized KYC and AML protocols. Digital asset transactions may lack universally accepted compliance measures. 
 
 Regulatory frameworks for digital asset transactions vary across jurisdictions. This causes inconsistencies in how jurisdictions verify and monitor transaction details. This variability creates enforcement gaps, making it difficult to apply the same level of scrutiny as in fiat currency transactions. Furthermore, the decentralized and borderless nature of digital assets complicates financial institutions’ ability to enforce compliance. Criminals exploit this regulatory arbitrage by operating in jurisdictions with lax oversight. 
@@ -7683,12 +7904,12 @@ Screening in digital asset transactions focuses on identifying high-risk third p
 
 However, the pseudonymous nature of many digital asset transactions may make ownership and identity verification challenging. This complexity requires advanced analytics and blockchain forensics to improve transparency and compliance efforts. As the regulatory environment for digital assets evolves, financial institutions must continuously update their screening capabilities. Adopting new technologies and regulatory best practices will help ensure compliance while maintaining operational efficiency. 
 
-## Evolution of transaction monitoring
+### Evolution of transaction monitoring
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/d75aa44cabf71afea679ae8405c2e11e2a92bf819fb54aec74785a021c3d3748.jpg)
 
 
-## Rules-based transaction monitoring
+#### Rules-based transaction monitoring
 
 Rules-based transaction monitoring is a fundamental approach to monitoring customer transactions. Financial institutions create rules based on known risk factors or regulatory requirements. They set predefined rules or thresholds, which are static, predictable, and easy to implement and understand. 
 
@@ -7705,7 +7926,7 @@ Although rules-based monitoring is static and does not adapt unless manually upd
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/8d0e357177ff2b65cd1537649c49ab0c597fda9a5a8e8b64c05da053e9cba6d1.jpg)
 
 
-## New and emerging technologies for monitoring customers
+#### New and emerging technologies for monitoring customers
 
 Advanced technology has empowered money launderers to use increasingly sophisticated techniques. They exploit gaps in static rules-based systems by structuring transactions, using synthetic identities, and leveraging crossborder transfers. While rules-based monitoring remains a critical part of AML compliance, it is insufficient on its own. 
 
@@ -7725,7 +7946,7 @@ Network analysis, a key feature of contextual monitoring, identifies hidden rela
 
 By integrating AI-driven insights, automated anomaly detection, and real-time data processing, contextual monitoring accelerates investigations, reducing analysis time from weeks to hours. As financial crime tactics continue to evolve, financial institutions should embrace intelligence-led monitoring, ensuring that compliance efforts remain proactive. 
 
-## Case example: Evolution of transaction monitoring
+#### Case example: Evolution of transaction monitoring
 
 Thomas has recently been hired as the new MLRO of a mid-sized regional bank in the US. One of his responsibilities is to update its TM system. From experience, he knows that TM is constantly evolving as technology, financia crime typologies, and regulations change. To learn about how his bank has adapted its approach over the decades, he decides to review the bank’s archived documents. 
 
@@ -7751,7 +7972,7 @@ Understanding how TM has evolved from a reactive compliance function into a proa
 
 <table><tr><td>Threshold-based reporting</td><td>Rules-based systems</td><td>Contextual systems</td></tr><tr><td>1970s</td><td>1990s</td><td>2000s</td></tr><tr><td>Banks required to report cash transactions over US$10,000 and suspicious activity in the US</td><td>Reliance on simple rules-based logic, using {IF:THEN} statements, where humans set rules and computers executed them</td><td>Adopting tools that analyze customer behavior and context by comparing current transactions to historical patterns, peer group activities, and external datasets</td></tr><tr><td>Manual checks</td><td>Gradual shift from manual to semi-automated systems to filter transaction logs and identify anomalies</td><td>Gradual incorporation of machine learning and other forms of AI, enabling more holistic and advanced approaches, moving away from static rules</td></tr></table>
 
-## Key takeaways
+##### Key takeaways
 
 • TM has evolved from a reactive to proactive approach. 
 
@@ -7761,12 +7982,12 @@ Understanding how TM has evolved from a reactive compliance function into a proa
 
 • Modern systems leverage AI to detect anomalies, assess risks dynamically, and accelerate investigations. 
 
-## Technology for transaction monitoring
+### Technology for transaction monitoring
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/5f30877370eff63c325d660479407bb991819bc34de3a13c4cb3b39d94f583d0.jpg)
 
 
-## Transaction monitoring and sufficient scenarios coverage
+#### Transaction monitoring and sufficient scenarios coverage
 
 To detect financial crimes, financial institutions must ensure their TM systems cover a wide range of scenarios that reflect their current and potential future risk exposures. Scenarios help TM systems recognize various types of illicit activity. This requires conducting a comprehensive product risk assessment to identify vulnerabilities and tailor monitoring rules according to the risk exposure. Institutions need technical skills to convert the results of a product risk assessment into scenarios that provide appropriate coverage for the identified risks. A one-size-fits-all approach is inadequate because different institutions face varying levels of risk depending on their customers, jurisdictions, products, and delivery channels. Additionally, these factors change over time. It is necessary to regularly review and update scenarios proactively. 
 
@@ -7785,7 +8006,7 @@ Financial institutions must document their monitoring decisions and the rational
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/88b6ec401ea52727df268531a5601a5bbfef3dac8d40f6873857838d56af3ac3.jpg)
 
 
-## Transaction monitoring scenario development
+#### Transaction monitoring scenario development
 
 The first step in developing transaction monitoring scenarios is conducting a risk assessment to define the specific transaction patterns that require monitoring. Common scenario designs include frequent cross-border transactions with high-risk countries, structuring, sudden large cash deposits, and unexpected repayment of overdue credit amounts. 
 
@@ -7802,7 +8023,7 @@ To maintain efficiency, financial institutions should continuously test, calibra
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/fa74dcbf245815c48e2b0f60f33117967a0ccf8c55aa95ef8f0895b3ebaf8f10.jpg)
 
 
-# Transaction monitoring scenario calibration testing
+#### Transaction monitoring scenario calibration testing
 
 Transaction monitoring scenarios require careful calibration to effectively detect suspicious activities while minimizing false positives. Calibration, or threshold tuning, involves adjusting parameters based on empirical transaction data, risk models, and a broader risk-based approach. 
 
@@ -7829,7 +8050,7 @@ The overall volume of alerts generated is a key metric. Excessive alerts can ove
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/df47ef02dec5edf09b9bd1fa219a502900e1b74812f312e456cc5aa906b57b20.jpg)
 
 
-## Ongoing testing and tuning for rules-based systems
+#### Ongoing testing and tuning for rules-based systems
 
 Once financial institutions develop, calibrate, and deploy transaction monitoring scenarios, they should continuously test and tune them to ensure effectiveness. This process occurs periodically and due to special circumstances, such as regulatory changes, emerging financial crime trends, or shifts in customer transaction behavior. Rules-based systems are typically easier to test and tune. 
 
@@ -7840,6 +8061,8 @@ If predefined thresholds are repeatedly breached, it might indicate a change in 
 When tuning the transaction monitoring system, organizations should consider such data as transaction thresholds, frequency, and geolocation mismatches. 
 
 While there is no universal standard that dictates testing frequency, industry best practices recommend structured reviews, such as semi-annual or annual, to maintain effectiveness and regulatory alignment. Depending on the business scale of the organization, more frequent testing may be required. Testing should also occur in response to significant risk factors, such as emerging financial crime trends, regulatory changes, or shifts in transaction behavior. 
+
+#### Ongoing testing and tuning for AI tools
 
 Monitoring false positives is an ongoing process in business-as-usual operations. Fluctuations in false positive rates might be normal due to seasonal changes, shifts in customer behavior, or updates in organizational policies. However, fluctuations do not always require immediate tuning. Instead, organizations should conduct tuning in response to continuous breaches or sustained deviations from expected performance. 
 
@@ -7859,7 +8082,7 @@ The diversity and strength of the training data often dictate the success of AI 
 
 Additionally, other AI algorithms may be used to pinpoint deficiencies that can be corrected. Regulators around the world expect algorithms to be transparent. This means providing an explanation of why a specific alert was deemed suspicious when others were not. While some AI algorithms offer explainability, many black-box models exist and may present risk if used without adequate understanding of its limitations. 
 
-## Governance for transaction monitoring
+#### Governance for transaction monitoring
 
 After financial institutions conduct risk assessments, they design AML systems to mitigate the threats they have identified by implementing transaction monitoring rules and models. To ensure they select the right scenarios and apply appropriate methodologies, institutions establish governance committees, such as for model risk governance. These committees oversee rule selection, implementation, and system updates. They typically include business leaders, product managers, customer relationship teams, risk management professionals, compliance officers, and auditors in addition to model risk experts to ensure broad oversight. 
 
@@ -7873,12 +8096,12 @@ strategies, and explainability metrics to demonstrate compliance with AML regula
 
 Proper documentation ensures transparency, regulatory adherence, and defensibility in case of scrutiny from regulators, auditors, or legal authorities. A well-documented governance framework helps institutions detect, report, and adapt to evolving money laundering risks in an increasingly complex financial environment. 
 
-## Technology for investigations
+### Technology for investigations
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/a214e326c1f8912793ed349e3af6566bc906b3d18c11a5f857b2789acaa3cb5b.jpg)
 
 
-## Technology to assist investigation
+#### Technology to assist investigation
 
 The table below summarizes different categories of technology solutions: 
 
@@ -7890,7 +8113,7 @@ Deciding the level of automation in an investigation requires balancing machine-
 
 Automation streamlines investigations by prioritizing high-risk cases, but overreliance on machine-generated outputs can overlook contextual factors that only human judgment can assess. Conversely, fully manual investigations are inefficient and resource intensive. A balanced approach, using technology to automate repetitive tasks while maintaining expert oversight for final decisions, ensures accuracy, compliance, and effective risk mitigation. By combining free and subscription-based investigative tools, financial crime teams can optimize their workflows and enhance regulatory compliance efforts. 
 
-## Network analysis solutions for transaction monitoring
+#### Network analysis solutions for transaction monitoring
 
 Network analysis in AML efforts offers several significant advantages for transaction monitoring. Network analysis refers to a set of techniques that depicts relationships among actors and analyzes the recurrence of these connections. For example, imagine that every time Customer A receives a large deposit, Customer X, who is unrelated to Customer A, always receives the same amount but through multiple transactions from different accounts. Network analysis in this scenario could identify the link for further investigation. 
 
@@ -7907,6 +8130,8 @@ However, implementing network analysis in AML investigations presents challenges
 
 Integrating network analysis into AML strategies represents a significant advantage in combating financial crimes. By providing a deeper understanding of transactional relationships and patterns, it equips financial institutions with the tools necessary to prevent and detect money laundering activities more effectively. 
 
+#### Technology to assist case management
+
 Technology strengthens global AML compliance frameworks, particularly in case management. Modern AML solutions are web-based platforms that centralize customer and account data, supporting KYC requirements and risk assessments. These systems consolidate information from various sources, automate risk ratings, monitor ongoing customer activity, and allow investigators to access data more quickly. 
 
 Case management tools within these platforms streamline investigations by tracking suspicious activities, flagging high-risk transactions, and organizing case files for regulatory reporting. Integrating advanced analytics and machine learning ensures data-driven risk assessment processes, reduces false positives, and enables compliance teams to focus on genuinely suspicious cases. These tools make the management of cases more efficient by reducing the need for investigators to manually sort through data, reducing the time required to collate and assemble such data. 
@@ -7918,6 +8143,8 @@ These platforms also improve regulatory compliance by automating the process to 
 From an investigative standpoint, modern case management tools optimize decision-making by organizing risk-related insights systematically, eliminating silos and information islands. Investigators can efficiently escalate cases through defined workflows. Automating processes ensures that compliance teams allocate resources effectively. This allows them to focus on highpriority cases and reduce unnecessary manual reviews. Built-in collaboration tools facilitate communication among compliance teams, improving coordination in complex investigations. 
 
 As financial crime tactics evolve, leveraging sophisticated case management technology ensures regulatory compliance, reduces operational risks, and strengthens institutional defenses against financial crime. 
+
+#### Technology for blockchain tracing
 
 Blockchain tracing technology helps organizations and regulators in the fight against illicit financial activities. Distributed ledger technology is a 
 
@@ -7942,7 +8169,7 @@ Globally, regulatory bodies mandate compliance measures such as transaction moni
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/ee24f66e4d3ce2da44958e6e46fb604c95e5a2705329466a81a222726a9be162.jpg)
 
 
-## Technology for reporting
+#### Technology for reporting
 
 AML and sanctions compliance carry significant civil and criminal legal liabilities for organizations and individuals responsible for enforcement. Without proper records, even the most diligent compliance efforts cannot be evidenced. This principle emphasizes the importance of maintaining thorough documentation of all AFC-related processes, including transaction monitoring, investigations, and reporting. Financial institutions and their employees should ensure that every step taken to identify, investigate, and report suspicious activities is well documented to demonstrate regulatory adherence and avoid potential legal consequences. 
 
@@ -7958,12 +8185,13 @@ As regulatory expectations continue to evolve, financial institutions should lev
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/95d8cecadff67e713158c3be014e58b3f09887a7944eb3dd4352cac0bc59166f.jpg)
 
+## Data Collection and Preparation
 
-## Introduction: Data collection and preparation
+### Introduction: Data collection and preparation
 
 AFC compliance systems have become more complex and effective, increasing the demand for improved data. As this module shows, data governance, preparation, management, and quality control are essential in financial crime compliance systems. Internal and external data sources play key roles in compliance onboarding, screening, and monitoring. This module covers the techniques and tools for moving and using data within the organization. Validation and testing processes help detect anomalies and maintain data integrity, accuracy, completeness, and consistency. This module also examines the processes needed to enhance data reliability, support regulatory compliance, and optimize financial crime detection systems. 
 
-## Case example: Identify data for a new TM system
+#### Case example: Identify data for a new TM system
 
 Sarah, a financial crime analyst at a mid-sized bank, has been asked to identify data needed for a new TM system. The goal is to ensure the system effectively detects suspicious activity while balancing operational feasibility and regulatory requirements. 
 
@@ -7981,7 +8209,7 @@ formats and the system’s processing capacity. This ensures that additional dat
 
 By taking a risk-based approach to data selection, Sarah ensures that the new TM system is both effective and efficient, aligning with the bank’s compliance needs while leveraging available data intelligently. 
 
-## Key takeaways
+##### Key takeaways
 
 • Identify data for new TM systems to detect suspicious activity while balancing operational and regulatory requirements. 
 
@@ -7993,12 +8221,12 @@ By taking a risk-based approach to data selection, Sarah ensures that the new TM
 
 • Ensure the data is aligned with identified risks, meets privacy and regulatory standards, is accessible, and fits the system’s processing capacity to avoid overwhelming resources or generating excessive false positives. 
 
-# Data as an input for solutions
+### Data as an input for solutions
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/99ed5da0923f7654beca1e0b7e182ac5849d89d6033ee6faa8d6820068d35682.jpg)
 
 
-## Understanding your data
+#### Understanding your data
 
 Compliance systems require particular types of data to function properly. Data must be relevant to the compliance risk that an organization is mitigating. Each risk has an intended control, and each control must list the data it needs to operate effectively. 
 
@@ -8017,7 +8245,7 @@ Completed, or populated, data tables compare data required for control operation
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/3378e1430a4932c2fc08b1126adf842168d7ca23306ab7ca64823fcff116dc3c.jpg)
 
 
-## Coverage and gap assessment
+#### Coverage and gap assessment
 
 A coverage and gap assessment identifies data that is missed, inaccurate, or inconsistent. It also identifies incorrectly used data and the extent to which the available data covers compliance solution requirements. 
 
@@ -8036,7 +8264,7 @@ Examiners and regulators also use data coverage and gap assessments to benchmark
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/2af8f339d998e3f994484627fea7fb6e25a9578ced55c52b83aba1600b7e3520.jpg)
 
 
-## Clean data for technology solutions
+#### Clean data for technology solutions
 
 Clean data is complete, consistent, accurate, and error-free. Clean data assists with analytics and helps improve or maintain accuracy in compliance system outputs. It also increases the efficiency and effectiveness of data processing through compliance systems. The process of cleaning data is referred to as data cleansing or data cleaning. 
 
@@ -8058,9 +8286,9 @@ There are different forms of data cleansing, including discarding empty data fie
 
 There should be a balance between data that is clean and data that remains true to the source data. Data cleansing can be expensive and timeconsuming. Organizations need to discern when data is clean enough to use and not strive for 100% cleanness, which they will never be able to achieve. 
 
-## Data collection
+### Data collection
 
-## Internal versus external data
+#### Internal versus external data
 
 Data sources are internal or external. Organizations obtain internal data from customer KYC and other onboarding details. Some examples of internal data are the nature and purpose of the account, the type of products required, and the countries where the customer intends to operate. Internal data can also include attributes the organization assigns to the customer, such as a risk rating, unique identifier, account details, and account status. 
 
@@ -8123,7 +8351,7 @@ Internal data is often in a structured format, which makes it easier for the org
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/f6f7702bb528e626c87358af9d86b02f649935160cc227337cc1b3677752d21f.jpg)
 
 
-## Internal static data
+#### Internal static data
 
 Internal static data is data a customer provides or another entity attributes to a customer that remains the same after it is collected. The data the customer provides includes KYC details such as name, address, date of birth, business registration number, and unique identifications such as passport or license numbers. These details can change over time but are treated as static data because customers always have this type of data, such as a name or date of birth. Business directors, signatories, and beneficial owners of a company are also examples of static data. 
 
@@ -8148,7 +8376,7 @@ Organizations should combine data the customer provides with attributed data. Th
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/f63e6bd77fd3c1728b36004f04bd346f35b8ef35116f04854a64cb4f29ef687f.jpg)
 
 
-## Internal observed data
+#### Internal observed data
 
 Internal observed data refers to transactional or behavioral data that an organization’s internal systems generate or capture and process. It has multiple sources, including transaction records, investigations, relationship managers, and operations staff. The data can be objective or based on opinion. It can also be based on the inability of staff to contact a customer. 
 
@@ -8163,7 +8391,7 @@ Organizations compare observed data with static data. For example, a customer ha
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/e918b3bdc5b7e7b579c8895c5582486ec9fcb85fd2fdd670fcb791ce04b612cd.jpg)
 
 
-## Leveraging data from internal platforms
+#### Leveraging data from internal platforms
 
 Data comes from many different sources in the organization. Therefore, it has different labels, structures, and levels of accuracy and completeness. For example, monitoring and payment screening systems receive customer account data from one data store and attempt to match it with transactional data from payment systems. The data labels across these disparate systems likely vary, and therefore the compliance system must standardize them before use. 
 
@@ -8182,7 +8410,7 @@ Active use is interactive, such as when the compliance system compares two data 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/491aacb24a6a9d026b463840860d9f50ced2f214baafec889384bb53c2435f80.jpg)
 
 
-## Case example: AI for money laundering detection
+#### Case example: AI for money laundering detection
 
 Erik is a data scientist working at Nova Capital Bank. The bank uses a conventional transaction monitoring system that has a defined series of rules to match pre-identified risks. Erik has expressed concerns about this system to the senior leaders of his organization. He explained that, across the spectrum of all rules within the system, the system only uses a subset of available internal data for monitoring customers. 
 
@@ -8194,7 +8422,7 @@ Nova Capital Bank quickly witnesses the results of this updated technology. With
 
 A common expectation is that AI systems are deployed to yield head count efficiencies. In Erik’s case, the goal was to make the ecosystem more effective at detecting financial crime, which was achieved. 
 
-## Key takeaways
+##### Key takeaways
 
 • Detection system effectiveness increases when organizations leverage all available internal data. 
 
@@ -8205,7 +8433,7 @@ A common expectation is that AI systems are deployed to yield head count efficie
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/4c31f318529bb37ecfa8b9a093db3ecd3a28e4dc019c5478dec2f6233d931afe.jpg)
 
 
-## External data
+#### External data
 
 External data refers to information from sources outside the organization. It is important that organizations source, collate, clean, and prepare external data before using it. It is essential that organizations source, collate, clean, and prepare external data before incorporating it into their compliance systems. Third parties can also provide external data, such as lists for screening purposes, intelligence from government agencies, or identification details from registries. 
 
@@ -8222,7 +8450,7 @@ Additionally, an organization should consider whether it has a legal right to us
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/950fd9f9eaec8011564d6f638dff93320d4d49bc0010b25c552d7ade41e44300.jpg)
 
 
-## Integrating data from various sources
+#### Integrating data from various sources
 
 Organizations collect data from a variety of sources, both internal and external. They then collate the data into a data store such as a data warehouse or data lake. 
 
@@ -8237,7 +8465,7 @@ More recent technologies allow data to remain with the original source. Organiza
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/9b9ac4901aefc96d064028bc45e573246f04e24a4bc3bf5321b71f9986c382a6.jpg)
 
 
-## Data quality
+#### Data quality
 
 Effective compliance systems require high-quality data. Data loaded into compliance systems can include: 
 
@@ -8258,7 +8486,7 @@ Professionals should include these metrics in management reporting as part of on
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/dcbc068adee0a7d03c27f7634a6106d61f956933b839a10c86b8638c94373c03.jpg)
 
 
-## Data preparation
+### Data preparation
 
 Data preparation is a process that includes collecting, cleaning, transforming, and preparing data for analysis. Clean, well-structured data enhances system robustness by reducing errors, speeding up processing, and optimizing system performance. 
 
@@ -8279,7 +8507,7 @@ Accurate and consistent data makes AFC systems more robust, impactful, and effec
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/ba8fd75c7ca072a3f99e8dd38ec39f1c5607ed45e9af851bdd78a4af65202664.jpg)
 
 
-## Case example: Handling increased alert volume
+#### Case example: Handling increased alert volume
 
 Magnify Bank has expanded and grown significantly over the past several years, and its transaction monitoring system has had issues keeping up with the increasing volume and complexity of alert activity. A central issue is that data comes to the system from several sources, and this data is often incomplete or provided in different formats, making the downstream analysis unreliable and, in some cases, obsolete. Magnify Bank has initiated a project to integrate data from multiple source systems and prepare it for various enduser applications. 
 
@@ -8297,7 +8525,7 @@ The bank leverages outputs in several end-user systems to make informed decision
 
 Magnify Bank integrates the customer risk profiles with transaction data in the TM system to detect anomalies and trigger alerts. By ensuring that the data going into the TM system has been properly standardized and integrated, the transaction monitoring process is now more reliable and efficient, reducing the number of false positives and the risk of missing suspicious behavior. 
 
-## Key takeaways
+##### Key takeaways
 
 There are four key processes for data preparation: 
 
@@ -8312,7 +8540,7 @@ There are four key processes for data preparation:
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/ebc56f22c9aebc211256fec83c50f18f711c87dfa8a005adc794eb43cdf832a4.jpg)
 
 
-## Data lineage
+#### Data lineage
 
 Data lineage is the process of tracking and mapping dataflows from the source system to the end user. It provides a clear view of how organizations source data, including external sources and staging processes, where and how data transforms, and ultimately how end-user systems consume it. Data lineage can help rebuild fragmented or damaged data flows and reconstruct system outputs by recreating point-in-time data feeds. It can also assist in debugging systems by pinpointing incorrect data points such as inconsistencies, duplications, or missing information. 
 
@@ -8330,6 +8558,8 @@ distributed file systems, and cloud architectures to optimize data for ease of r
 
 ETL processes require data to first be structured according to predefined schemas. Business and IT teams have to agree on field definitions, data types, and unique data identifiers to prevent mismatches and misinterpretations and ensure consistency and uniformity across systems. 
 
+#### AFC data extraction
+
 Before extraction, validation rules check for missing values, incorrect formats, or duplicate records. If quality issues or inconsistencies are found, a separate process is applied to correct, reject, or manually review the problematic data. Automated extraction tools use API or database queries to pull data efficiently, reducing manual errors and ensuring completeness. API enables automated retrieval of data from various sources, such as databases, cloud services, or third-party applications, without manual intervention. 
 
 After extraction, data transitions to one of two destinations: the “landing zone” for raw data storage or the intermediary “staging area” for cleaning and preparation for loading. During this interim stage, data transformation prepares the data for use within the compliance system. 
@@ -8337,6 +8567,8 @@ After extraction, data transitions to one of two destinations: the “landing zo
 Depending on its intended use, the data then loads into a data warehouse, data lake, or similar technology. Data warehouses store structured data optimized for analysis and reporting, while data lakes store unstructured or semi-structured data at scale. The compliance solution then accesses the data lake, data warehouse, or similar technology through further APIs or direct feeds. 
 
 Correctly executed extract, transform, and load processes ensure that data flows correctly from source to destination while maintaining accuracy, security, and usability. 
+
+#### Data mining and matching
 
 Data mining and data matching use advanced analytical techniques to uncover hidden patterns, correlations, anomalies, and connections within large datasets. These methods use various algorithms and analytical techniques, including machine learning models and statistical analyses, to detect anomalies and recognize patterns indicative of fraudulent behavior. 
 
@@ -8348,7 +8580,7 @@ Data matching involves comparing and linking data from different sources to iden
 
 Combining data mining and data matching enhances the accuracy and effectiveness of the AFC systems. Data mining might identify a cluster of suspicious transactions from a specific geographical region or demographic group. Data matching can then be used to verify the legitimacy of the customers and addresses involved in these transactions. By cross-referencing various data sources, data matching helps confirm or rule out potential suspicious activities. Using these techniques helps maintain strong detection rates and minimizes false positives. 
 
-## Case example: Analyzing customer behaviors
+#### Case example: Analyzing customer behaviors
 
 Evertrust Bank is working to improve its ability to prevent and detect financial crimes such as money laundering. To do this, the bank uses both data matching and data mining techniques to analyze customer behaviors and identify suspicious activity. 
 
@@ -8360,7 +8592,7 @@ Using clustering algorithms, the system identifies accounts that exhibit suspici
 
 These tests demonstrate that Evertrust Bank’s prevention and detection systems are effectively identifying potential financial crimes. Through ongoing scenario testing, the bank ensures that its systems remain resilient against evolving criminal tactics. As threats grow ever more sophisticated, the bank remains proactive in enhancing its mining and matching capabilities, ensuring a dynamic and intelligent approach to fraud prevention. 
 
-## Key takeaways
+##### Key takeaways
 
 • Mining and matching are useful for improving financial crime prevention and detection. 
 
@@ -8371,7 +8603,7 @@ These tests demonstrate that Evertrust Bank’s prevention and detection systems
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/72242d15debb1bf0d9eacdeae2c3d6dc91f39443b63f0033f2e3b3efcd487137.jpg)
 
 
-## Data validation and testing
+#### Data validation and testing
 
 Data validation and testing ensure that datasets are accurate, consistent, and reliable before they are used within compliance systems. First, an automated process extracts raw data from various source systems. At this stage, inconsistencies or errors might already be present, making validation crucial. 
 
@@ -8396,7 +8628,7 @@ Reliability checking is an important outcome of the testing process. Reliability
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/628d101315c0b74ca19c9b8aade59bcf665a92eac984dbf1680cf211d51c6cff.jpg)
 
 
-## Entity resolution
+#### Entity resolution
 
 Organizations use entity resolution in compliance systems to accurately identify individuals, organizations, and other entities across different datasets. Entity resolution is the process of confirming whether multiple records are referring to the same data item. It improves financial crime detection by consolidating and linking entity-related information from various sources to create a single view of the customer. This adds greater precision and, therefore, greater certainty to the identity and expected activities of customers and related parties. 
 
@@ -8415,7 +8647,7 @@ This deeper insight into the customer’s structure enables a more accurate asse
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/6382c820e3afcc109304f8f270671473e07de57613dc001302ce2feb23f5ac93.jpg)
 
 
-## Attributes of a block and sources of data
+#### Attributes of a block and sources of data
 
 In blockchain technology, information about transactions, assets, and other actions is stored in blocks. Each block contains four key parts: data, a hash, the previous hash, and metadata. The data within a block is simply the list of transactions included in the block. A hash is the result of a complex mathematical algorithm that serves as a unique identifier for a block. Each block also contains information from the hash of the previous block. Metadata contains information such as the block number and the timestamp. 
 
@@ -8450,7 +8682,7 @@ Blockchain explorers help users find information that can be used for analysis b
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/fe6e1bb1d10b68a9bc68f20ee1ec14d4d35a831061397b08f709d31411eead7e.jpg)
 
 
-## Clustering
+#### Clustering
 
 An important topic in cryptocurrency transactions is clustering, which is a deanonymizing feature built into some cryptocurrencies such as Bitcoin. Clustering is the process of using blockchain data to group multiple addresses or wallets into a single wallet in order to better understand transaction patterns on the blockchain. For example, because more than one unique address can be used to create a transaction, it is possible that multiple addresses belong to a single entity. Blockchain analytic tools usually have builtin clustering of Bitcoin (BTC) transactions, which allows a better understanding of such activity. 
 
@@ -8466,12 +8698,12 @@ Example of clustering:
 
 In this case, it can be assumed with a high degree of certainty that address 1 and address 3 belong to the same entity because address 2 was used with both of these addresses together. In this case, addresses 1, 2, and 3 will be clustered into a wallet belonging to a single entity. 
 
-# Governance process
+### Governance process
 
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/d0cedc97a570bfbd3adf870006d43fa2d863d88171818b95670bbc4cc0470245.jpg)
 
 
-## Data governance committees
+#### Data governance committees
 
 Data is a critical asset for decision-making, risk assessment, regulatory compliance, and customer engagement. While data management includes actions taken to store, organize and maintain data, data governance provides the necessary frameworks, policies, and assurance measures to control these processes effectively. 
 
@@ -8486,7 +8718,7 @@ An executive who is accountable for process and system outcomes should chair dat
 ![image](https://cdn-mineru.openxlab.org.cn/result/2026-07-01/1795f007-1b75-4f89-9fcd-12ada953f013/eb52cb97e04286ebd049963945a1336a0f39d027f3f79ecb83b8576ac5a884a6.jpg)
 
 
-## Data governance administration and quality control
+#### Data governance administration and quality control
 
 AFC compliance technology solutions rely on data governance processes to ensure high-quality data. A well-structured data governance framework includes ongoing processes for both approval and oversight. Data is rarely permanent and will require changes such as additions, deletions, merging, separation, and other transformation activities needed for compliance system operations. 
 
@@ -8506,7 +8738,7 @@ Strong governance mechanisms generate trust in data-driven compliance solutions,
 
 ## Glossary
 
-## 1LoD
+### 1LoD
 
 First line of defense 
 
@@ -8520,105 +8752,105 @@ ACH Automated clearing house
 
 ACWG Anti-corruption working group 
 
-## AFC
+### AFC
 
 Anti-financial crime 
 
-## Affidavit
+### Affidavit
 
 A written statement given under oath before an officer of the court, notary public, or other authorized person. It is commonly used as the factual basis for an application for a search, arrest, or seizure warrant. 
 
-## AFP
+### AFP
 
 Australian Federal Police 
 
-## AI
+### AI
 
 Artificial intelligence 
 
-## Alternative remittance system (ARS)
+### Alternative remittance system (ARS)
 
 An underground banking or informal value transfer system. Often associated with the Middle East, Africa, or Asia, and commonly involving the transfer of values among countries outside of the formal banking system. The remittance entity can be an ordinary shop selling goods that has an arrangement with a correspondent business in another country. There is usually no physical movement of currency and a lack of formality with regard to verification and recordkeeping. The money transfer takes place by coded information that is passed through chits, couriers, letters, faxes, emails, text messages, or online chat systems, followed by some form of telecommunications confirmations. 
 
-## AML
+### AML
 
 Anti-money laundering 
 
-## AML/CFT
+### AML/CFT
 
 Anti-money laundering and countering the financing of terrorism 
 
-## AML/CFT/CPF
+### AML/CFT/CPF
 
 Anti-money laundering, countering the financing of terrorism, and countering proliferation financing 
 
-## AMLA
+### AMLA
 
 Anti-Money Laundering Act 
 
-## AMLD
+### AMLD
 
 Anti-Money Laundering Directive 
 
-## Anti-money laundering (AML) / Bank Secrecy Act (BSA) officer
+### Anti-money laundering (AML) / Bank Secrecy Act (BSA) officer
 
 An individual appointed within a financial institution with specific responsibilities and duties to oversee and implement the AML compliance program. 
 
 The BSA officer position is predominantly a role within US financial institutions, as the role specifically aligns with requirements of the BSA. Act (BSA). 
 
-## Anti-money laundering and countering the financing of terrorism program
+### Anti-money laundering and countering the financing of terrorism program
 
 A system designed to assist institutions in their fight against money laundering and terrorist financing. In many jurisdictions, government regulations require financial institutions, including banks, securities dealers, and money services businesses, to establish such programs. 
 
-## API
+### API
 
 Application programming interface 
 
-## API/PNR
+### API/PNR
 
 Advance passenger information and passenger name record 
 
-## Arrest warrant
+### Arrest warrant
 
 A court order directing a law enforcement officer to seize and detain a particular person and require him or her to provide an answer to a complaint or otherwise appear in court. 
 
-## ART
+### ART
 
 Asset-referenced token 
 
-## ASO
+### ASO
 
 Australian Sanctions Office 
 
-## Asset misappropriation
+### Asset misappropriation
 
 Theft or misuse of company assets. 
 
-## Asset protection
+### Asset protection
 
 A process that includes reorganizing how assets are held to make them less vulnerable should a claim be made against a person. Asset protection is also a term tax planners use for measures taken to protect assets from taxation in other jurisdictions. 
 
-## AUM
+### AUM
 
 Assets under management 
 
-## AUSTRAC
+### AUSTRAC
 
 Australian Transaction Reports and Analysis Centre 
 
-## Automated clearing house (ACH)
+### Automated clearing house (ACH)
 
 An electronic banking network that processes large volumes of both credit and debit transactions that originate in batches. ACH credit transfers include direct deposit payroll payments and payments to contractors and vendors. ACH debit transfers include consumer payments on insurance premiums, mortgage loans, and other kinds of expenses. 
 
-## Automated teller machine (ATM)
+### Automated teller machine (ATM)
 
 An electronic banking outlet that allows customers to complete basic transactions without the assistance of a bank employee. ATMs generally dispense cash, allow check and cash deposits and transfers to be made, as well as balance inquiries. For the purposes of money laundering, ATMs located in remote areas provide criminals the opportunity to evade face-to-face interactions with bank staff and may allow criminal activity to go undetected for a potentially greater period of time. 
 
-## B2B
+### B2B
 
 Business-to-business 
 
-## B2C
+### B2C
 
 Business-to-consumer 
 
@@ -8626,51 +8858,51 @@ BaaS
 
 Banking-as-a-service 
 
-## BaFin
+### BaFin
 
 Federal Financial Supervisory Authority (of Germany) 
 
-## Bank Secrecy Act (BSA)
+### Bank Secrecy Act (BSA)
 
 Formally known as the Currency and Foreign Transactions Reporting Act, a US law enacted in 1970 that requires financial institutions to assist government agencies in detecting and preventing money laundering and other financial crimes. The BSA mandates reporting and recordkeeping requirements for transactions involving cash, foreign accounts, and suspicious activities. 
 
-## Banking-as-a-service (BaaS)
+### Banking-as-a-service (BaaS)
 
 The integration of digital banking services into non-bank businesses through application programming interfaces. It allows third-party companies to offer banking products, such as accounts, payments, and loans, by leveraging the infrastructure and compliance of established financial institutions. This model enables greater innovation, flexibility, and customer-centric solutions in the financial services sector. 
 
-## Basel Committee on Banking Supervision (Basel Committee)
+### Basel Committee on Banking Supervision (Basel Committee)
 
 An international regulatory body composed of central banks and banking supervisors from various countries. Established in 1974, the committee’s primary purpose is to enhance financial stability by developing and promoting standards for banking supervision and regulation. 
 
-## Batch processing
+### Batch processing
 
 A method of executing a series of tasks or transactions collectively at one time, rather than processing each task individually in real time. This approach is commonly used in data processing, programming, and financial transactions to increase efficiency and optimize resource utilization. 
 
-## BAU
+### BAU
 
 Business-as-usual 
 
-## BCBS
+### BCBS
 
 Basel Committee on Banking Supervision 
 
-## Bearer form
+### Bearer form
 
 A type of financial instrument or document that is payable to the holder or “bearer” of the instrument rather than a specific individual or entity. This means that ownership is transferred simply by possession; whoever physically holds the document has the right to claim the associated value or benefit. 
 
-## Bearer negotiable instrument
+### Bearer negotiable instrument
 
 A financial document that represents a promise to pay the holder or bearer a specified amount of money, which can be easily transferred from one party to another through mere possession. This instrument does not require endorsement by the original holder to be transferred, allowing for straightforward transferability. 
 
-## Bearer share
+### Bearer share
 
 A type of equity (shares) security that represents ownership in a company and is issued in a form that grants ownership rights to the person or entity that physically holds the share certificate. Unlike registered shares, which are recorded in the company’s shareholder register associated with a specific owner, bearer shares do not have a registered owner, allowing for anonymous ownership and easy transferability. 
 
-## BEC
+### BEC
 
 Business email compromise 
 
-## Beneficial owner (BO)
+### Beneficial owner (BO)
 
 The term “beneficial owner” has two different definitions depending on the context: 
 
@@ -8678,7 +8910,7 @@ The term “beneficial owner” has two different definitions depending on the c
 
 • The natural people who have significant ownership of, as well as those who exercise effective control over, a legal person or arrangement. 
 
-## Beneficiary
+### Beneficiary
 
 The term “beneficiary” has two different definitions depending on the context: 
 
@@ -8686,79 +8918,79 @@ The term “beneficiary” has two different definitions depending on the contex
 
 • In the trust context, all trusts (other than charitable or statutory-permitted noncharitable trusts) must have beneficiaries, which may include the settlor. Trusts must also include a maximum time frame, known as the perpetuity period, which normally extends up to 100 years. Although trusts must always have some ultimately ascertainable beneficiary, they may have no defined existing beneficiaries. 
 
-## BIS
+### BIS
 
 Bank for International Settlements 
 
-## Black Market Peso Exchange (BMPE)
+### Black Market Peso Exchange (BMPE)
 
 A complex method of trade-based money laundering involving the use of an informal and illegal market to exchange foreign currency, particularly US dollars, for local currency (typically pesos) outside official financial systems. This method is often used by individuals and entities involved in money laundering, drug trafficking, or other illicit activities to disguise the proceeds of their crimes and convert them into legitimate currency. 
 
-## Blockchain
+### Blockchain
 
 A decentralized digital ledger technology that records transactions across multiple computers in a way that ensures security, transparency, and immutability. Each transaction is grouped into a block, which is cryptographically linked to the previous block, forming a chain. This structure prevents tampering and fraud, making blockchain suitable for various applications, including cryptocurrencies, supply chain management, and identity verification. 
 
-## BMPE
+### BMPE
 
 Black Market Peso Exchange 
 
-## BO
+### BO
 
 Beneficial owner 
 
-## BPI
+### BPI
 
 Bribe Payers Index 
 
-## BRN
+### BRN
 
 Business registration number 
 
-## Broker-dealer
+### Broker-dealer
 
 A firm or individual that buys and sells securities on behalf of clients. 
 
-## BSA
+### BSA
 
 Bank Secrecy Act 
 
-## BVI
+### BVI
 
 British Virgin Islands 
 
-## C2B
+### C2B
 
 Consumer-to-business 
 
-## C2C
+### C2C
 
 Consumer-to-consumer 
 
-## CAMLO
+### CAMLO
 
 Chief anti-money laundering officer 
 
-## CAMS
+### CAMS
 
 Certified Anti-Money Laundering Specialist 
 
-## Cardholder
+### Cardholder
 
 An individual or entity that possesses a payment card, such as a credit card, debit card, or prepaid card, and is authorized to use it for conducting financial transactions. The cardholder’s name is typically printed on the card, and the cardholder has the right to initiate purchases, access funds, or receive financing based on terms provided by the card issuer. 
 
-## Cash smuggling
+### Cash smuggling
 
 Illegal transportation of cash across borders. 
 
-## Cashier's check
+### Cashier's check
 
 A type of payment instrument that is issued and guaranteed by a bank or financial institution, drawn on the bank’s own funds rather than the personal funds of an individual. Cashier’s check fraud refers to various schemes in which criminals use counterfeit or fraudulent cashier’s checks to deceive individuals or businesses into relinquishing goods, services, or money. 
 
-## Cash-intensive business
+### Cash-intensive business
 
 An enterprise that primarily deals in cash transactions, meaning that a significant portion of its income is derived from cash sales rather than electronic payments or credit transactions. Businesses such as restaurants, takeaway delivery services, taxi firms, and car washes often have high volumes of cash flow, making them particularly susceptible to financial crimes such as money laundering and tax evasion, as it becomes easier to commingle illegally obtained funds with legitimate business income. 
 
-## CASP
+### CASP
 
 Cryptoasset service provider 
 
@@ -8766,7 +8998,7 @@ CB
 
 Custodian bank 
 
-## CBDC
+### CBDC
 
 Central bank digital currency 
 
@@ -8774,217 +9006,217 @@ CCC Comptroller of the Currency
 
 CDD Customer due diligence 
 
-## CFT
+### CFT
 
 Countering the financing of terrorism 
 
-## CIP
+### CIP
 
 Customer Identification Program 
 
 Certified Anti-Money Laundering Specialist Version 7.0 
 
-## Concentration account
+### Concentration account
 
 A type of bank account businesses use to aggregate funds from multiple subaccounts or locations into a single account. This practice helps streamline cash management and optimize liquidity but can create opportunities for illicit activities if not properly monitored. Also called an omnibus account. 
 
-## Confidentiality
+### Confidentiality
 
 The ethical and legal duty to protect private information from being disclosed to unauthorized individuals or entities. It refers to the practice of safeguarding sensitive data and ensuring it is only accessible to those who are authorized to have that information. 
 
-## Confiscation
+### Confiscation
 
 The legal process whereby authorities seize property or assets from individuals or entities, typically as a result of illegal activity or non-compliance with laws and regulations. Confiscation can occur without compensation to the owner and is often executed by government agencies as part of law enforcement efforts to combat crime, particularly in cases related to drug trafficking, money laundering, or other criminal activities. 
 
-## Corporate vehicle
+### Corporate vehicle
 
 A legal entity or structure created to facilitate business operations, manage risks, or achieve specific financial and operational objectives. This vehicle can include various forms of corporations, such as private limited companies, public limited companies whose shares are not traded on a stock exchange, trusts, limited liability partnerships, and private investment companies. Occasionally, it is difficult to identify the people who are the ultimate beneficial owners and controllers of corporate vehicles, which makes the vehicles vulnerable to money laundering. 
 
-## Correspondent banking
+### Correspondent banking
 
 An arrangement between banks to provide services on behalf of each other, particularly in international financial transactions. This enables banks to conduct business and offer services in regions where they may not have a physical presence or local licenses, facilitating the movement of capital and information across borders. Correspondent banks typically offer a range of services including foreign currency exchange, wire transfers and payment processing, clearing and settlement of international transactions, and support for trade finance-related transactions. 
 
-## COSMIC
+### COSMIC
 
 Collaborative Sharing Money Laundering/Terrorism Financing Information and Cases 
 
-## CPF
+### CPF
 
 Counter-proliferation financing 
 
-## CPI
+### CPI
 
 Corruption Perceptions Index 
 
-## CRA
+### CRA
 
 Customer risk assessment 
 
-## Credit card
+### Credit card
 
 A financial instrument issued by a bank or financial institution that allows cardholders to borrow funds to make purchases or withdraw cash up to a specified credit limit. It enables users to access credit for transactions instead of using cash or debit from a bank account. Cardholders are required to pay back the borrowed amount, usually with interest, over time. Credit cards may be used to launder money when payments of the amounts owed on the card are made with criminal money. 
 
-## Criminal proceeds
+### Criminal proceeds
 
 Any property derived from or obtained, directly or indirectly, through the commission of a crime. 
 
-## Cross-border transfer
+### Cross-border transfer
 
 The movement of funds or assets between individuals or entities located in different countries. 
 
-## Cryptocurrency
+### Cryptocurrency
 
 A digital or virtual currency that uses cryptography for security and operates on decentralized blockchain technology. Cryptocurrencies are designed to work as a medium of exchange, allowing users to transact directly without intermediaries, such as banks. Bitcoin is an example of a cryptocurrency. 
 
-## CSP
+### CSP
 
 Company service provider 
 
-## CTR
+### CTR
 
 Currency transaction report 
 
-## Currency transaction report (CTR)
+### Currency transaction report (CTR)
 
 A report documenting a physical currency transaction that exceeds a certain monetary threshold. A CTR can also be filed on multiple currency transactions that occur in one day and collectively exceed the required reporting amount. Some countries, including the US, have requirements addressing when CTRs should be filed with government authorities. 
 
-## Custodian
+### Custodian
 
 A financial institution, individual, or other entity that is responsible for the safeguarding, administration, and management of assets on behalf of clients, such as individuals, businesses, or institutional investors. Custodians play a vital role in ensuring the security of assets, as well as providing a range of related services, including recordkeeping, transaction processing, and compliance. A custodian holds assets to minimize risk of theft or loss and does not actively trade or handle the assets. 
 
-## Custody
+### Custody
 
 The act of safeguarding and administering clients’ investments or assets, or the authority to do so. 
 
-## Customer due diligence (CDD)
+### Customer due diligence (CDD)
 
 The process of verifying the identity of clients and assessing their potential risk for involvement in money laundering, terrorist financing, or other financial crimes. It is a crucial component of AML compliance and financial institution regulatory frameworks. 
 
-## Cybercrime
+### Cybercrime
 
 Criminal activities committed using computers, networks, or the internet. This can involve a wide range of illegal activities that target individuals, organizations, or governments, exploiting technology and digital platforms for malicious purposes. 
 
-## D2C
+### D2C
 
 Direct-to-consumer 
 
-## Dark web
+### Dark web
 
 A part of the internet that is not indexed by traditional search engines and is intentionally hidden from public view. It consists of a vast network of encrypted websites and online platforms that require specific software, configurations, or authorization to access. The dark web operates on overlay networks that run on the internet but are only reachable through specialized tools, most notably The Onion Routing (TOR) browser. 
 
-## DARPA
+### DARPA
 
 Defense Advanced Research Projects Agency 
 
-## DCM
+### DCM
 
 Debt capital market 
 
-## Debit card
+### Debit card
 
 A financial card that allows the cardholder to access funds directly from his or her bank account to make purchases, withdraw cash, or perform transactions. Debit cards often allow for movement of cash via cash-back transactions or withdrawals at ATMs and can also be used for internet-based transactions. 
 
-## Decentralized finance (DeFi)
+### Decentralized finance (DeFi)
 
 Financial services built on blockchain technology that operate without traditional financial intermediaries. 
 
-## DeFi
+### DeFi
 
 Decentrailized finance 
 
-## Denial-of-service (DoS) attack
+### Denial-of-service (DoS) attack
 
 An attempt to make a system or network unavailable by overwhelming it with traffic or requests, causing disruption of services. 
 
-## Designated nonfinancial businesses and professions (DNFBP)
+### Designated nonfinancial businesses and professions (DNFBP)
 
 Businesses and professions that are not classified as traditional financial institutions but are nonetheless at risk of being used in money laundering or terrorist financing activities. The term is used primarily within the context of AML and CTF regulations. 
 
-## DFAT
+### DFAT
 
 Department of Foreign Affairs and Trade 
 
-## DFS
+### DFS
 
 New York State Department of Financial Services 
 
-## Distributed ledger technology (DLT)
+### Distributed ledger technology (DLT)
 
 A digital system for recording asset transactions in multiple places at the same time, enabling secure, transparent, and tamper-proof recordkeeping. 
 
-## DLT
+### DLT
 
 Distributed ledger technology 
 
-## DNFBP
+### DNFBP
 
 Designated Non-Financial Businesses and Professions 
 
-## DOJ
+### DOJ
 
 US Department of Justice 
 
-## Domestic transfer
+### Domestic transfer
 
 An electronic funds transfer in which the originator and beneficiary institutions are located in the same jurisdiction. A domestic transfer, therefore, refers to any chain of wire transfers that takes place entirely within the borders of a single jurisdiction, even though the actual system used to send the wire transfer may be located in another jurisdiction or online. 
 
-## DORA
+### DORA
 
 Digital Operational Resilience Act 
 
-## DPA
+### DPA
 
 Deferred prosecution agreement 
 
-## DPRK
+### DPRK
 
 Democratic People's Republic of Korea 
 
-## EBITDA
+### EBITDA
 
 Earnings before interest, taxes, depreciation, and amortization 
 
-## EC
+### EC
 
 European Commission 
 
-## ECCTA
+### ECCTA
 
 Economic Crime and Corporate Transparency Act 
 
-## ECM
+### ECM
 
 Equity capital market 
 
-## EDD
+### EDD
 
 Enhanced due diligence 
 
-## EEA
+### EEA
 
 European Economic Area 
 
-## Egmont Group of Financial Intelligence Units
+### Egmont Group of Financial Intelligence Units
 
 An international organization formed by a network of financial intelligence units (FIU) from different countries. Established in 1995, the group aims to enhance cooperation and collaboration among FIUs to combat money laundering, terrorist financing, and other financial crimes. The Egmont Group meets regularly to find ways to promote the development of FIUs and to cooperate, especially in the area of information exchange, training, and sharing of expertise. 
 
-## EIO
+### EIO
 
 European Investigation Order 
 
-## Electronic funds transfer (EFT)
+### Electronic funds transfer (EFT)
 
 The movement of funds between financial institutions electronically. The two most common electronic funds transfer systems in the US are FedWire and CHIPS. 
 
-## EMT
+### EMT
 
 Electronic money token 
 
-## Enhanced due diligence (EDD)
+### Enhanced due diligence (EDD)
 
 The additional measures that financial institutions and other regulated entities undertake to assess the risks associated with certain customers or transactions that present a higher risk of money laundering, terrorist financing, or other illicit activities. EDD goes beyond standard due diligence processes and is typically applied to high-risk customers, such as politically exposed persons, clients from high-risk jurisdictions, or those involved in complex transactions. 
 
-## Environmental, social, and governance (ESG)
+### Environmental, social, and governance (ESG)
 
 A framework used to evaluate a company’s performance and risk management in three key areas: 
 
@@ -8996,31 +9228,31 @@ A framework used to evaluate a company’s performance and risk management in th
 
 ESG criteria are increasingly used by investors and stakeholders to make informed decisions regarding a company’s sustainability and ethical practices. 
 
-## ESG
+### ESG
 
 Environmental, social, and governance 
 
-## ETA
+### ETA
 
 Euskadi Ta Askatasuna 
 
-## ETL
+### ETL
 
 Extract, transform, load 
 
-## EU
+### EU
 
 European Union 
 
-## EU AMLA
+### EU AMLA
 
 EU Anti-Money Laundering Authority 
 
-## EUR
+### EUR
 
 Euro 
 
-## European Union (EU)
+### European Union (EU)
 
 A political and economic union of 27 countries located primarily in Europe. Formally established by the Maastricht Treaty, which was signed in 1991, the EU came into force in November 1993. It was established to promote cooperation and integration among its member states, fostering economic collaboration, political stability, and social progress. 
 
@@ -9028,131 +9260,131 @@ European Union Directive on Prevention of the Use of the Financial System for th
 
 An EU directive aimed at preventing the use of financial systems for money laundering and terrorist financing, primarily encapsulated in the Anti-Money Laundering Directive. The most recent iteration is the 6th Anti-Money Laundering Directive, which came into force in December 2020. 
 
-## Europol
+### Europol
 
 The law enforcement agency of the EU that assists member states in combating serious international crime and terrorism. In the area of AML efforts, Europol provides member states’ law enforcement authorities with operational and analytical support via the Europol liaison officers and its analysts, as well as state-of-the-art databases and communication channels. Also known as the European Union Agency for Law Enforcement Cooperation. 
 
-## EWRA
+### EWRA
 
 Enterprise-wide risk assessment 
 
-## Extradition
+### Extradition
 
 The surrender by one jurisdiction to another of an accused or convicted person under an agreement that specifies the terms of such exchanges. 
 
-## Extraterritorial reach
+### Extraterritorial reach
 
 The ability of a country, legal system, or regulatory authority to apply its laws, regulations, or legal jurisdiction beyond its own geographical boundaries. This concept allows a state to enforce laws that have implications for activities conducted in other countries or by individuals and entities located outside its borders. 
 
-## FATF
+### FATF
 
 Financial Action Task Force 
 
-## FBI
+### FBI
 
 Federal Bureau of Investigation 
 
-## FCA
+### FCA
 
 Financial Conduct Authority 
 
-## FCPA
+### FCPA
 
 Foreign Corrupt Practices Act 
 
-## FCRA
+### FCRA
 
 Financial crime risk assessment 
 
-## FDIC
+### FDIC
 
 Federal Deposit Insurance Corporation 
 
-## FFIEC
+### FFIEC
 
 Federal Financial Institutions Examination Council 
 
-## FI
+### FI
 
 Financial institution 
 
-## Fiat currency
+### Fiat currency
 
 A type of government-issued currency that is not backed by a physica commodity, such as gold or silver. Instead, its value derives from the trust and confidence of the people who use it and the stability of the government that issues it. An example of a fiat currency is the US dollar. 
 
-## Financial Action Task Force (FATF)
+### Financial Action Task Force (FATF)
 
 An intergovernmental organization established in 1989 to combat money laundering, terrorist financing, and other threats to the integrity of the international financial system. FATF develops and promotes policies aimed at enhancing the effectiveness of measures to prevent and combat financial crimes on a global scale. FATF develops annual typology reports showcasing current money laundering and terrorist financing trends and methods. www.fatf-gafi.org. 
 
-## Financial Action Task Force-style regional body (FSRB)
+### Financial Action Task Force-style regional body (FSRB)
 
 A regional group of countries that work together to implement the Financial Action Task Force’s (FATF) Recommendations. FSRBs have forms and functions similar to those of FATF. However, their efforts are targeted to specific regions. In conjunction with FATF, FSRBs constitute an affiliated global network to combat money laundering and terrorist financing. 
 
-## Financial intelligence unit (FIU)
+### Financial intelligence unit (FIU)
 
 A specialized national agency or body responsible for receiving, analyzing, and disseminating financial information related to suspicious activities that may indicate money laundering, terrorist financing, or other financial crimes. 
 
-## FinCEN
+### FinCEN
 
 Financial Crimes Enforcement Network 
 
-## FinCrime
+### FinCrime
 
 Financial crime 
 
-## FinTech
+### FinTech
 
 Financial technology 
 
-## FINTRAC
+### FINTRAC
 
 Financial Transactions and Reports Analysis Centre of Canada 
 
-## FIU
+### FIU
 
 Financial intelligence unit 
 
-## Forfeiture
+### Forfeiture
 
 A legal process through which the government or another regulatory body can seize assets or property that is believed to be connected to illegal activities or obtained through unlawful means. This process is often used in the context of criminal law, especially in regard to drug offenses, money laundering, and other related crimes. 
 
-## Fraud
+### Fraud
 
 The intentional act of deceiving or misleading individuals or entities for personal or financial gain. It involves misrepresentation and manipulation of information to obtain money, property, or services unlawfully. 
 
-## FRB
+### FRB
 
 Federal Reserve Board 
 
-## Freezing order
+### Freezing order
 
 The legal action taken to temporarily restrict or block access to funds or assets, preventing their transfer, withdrawal, or disposal. This measure is often implemented by law enforcement agencies, regulatory authorities, or financial institutions in response to suspected criminal activity, such as money laundering, fraud, or terrorist financing. 
 
-## Front company
+### Front company
 
 A legitimate business entity that is used to disguise or conceal illegal activities, often serving as a facade for illegal operations such as money laundering, drug trafficking, or other forms of organized crime. These companies typically conduct real business operations but are primarily established to serve as a cover for illicit activities or to provide a means to launder money generated from such activities. Front companies may subsidize products and services at levels well below market rates or even below manufacturing costs, a red flag that may indicate the company is not interested in genuine trading practices. 
 
-## FRRTF
+### FRRTF
 
 Financial Risk Review Task Force 
 
-## FRS
+### FRS
 
 Federal Reserve System 
 
-## FSAP
+### FSAP
 
 Financial Sector Assessment Program 
 
-## FSC
+### FSC
 
 Financial Services Commission 
 
-## FSMA
+### FSMA
 
 Financial Services and Markets Act 2022 
 
-## FSRB
+### FSRB
 
 FATF-style regional body 
 
@@ -9160,7 +9392,7 @@ FTF Foreign terrorist fighter
 
 FTR Funds Transfer Regulation 
 
-## FX
+### FX
 
 Foreign exchange 
 
@@ -9168,63 +9400,63 @@ G-10 Group of Ten
 
 G-20 Group of Twenty 
 
-## G-7
+### G-7
 
 Group of Seven 
 
-## Gatekeeper
+### Gatekeeper
 
 An individual or entity that plays a crucial role in facilitating or enabling access to financial systems, markets, or services. Gatekeepers are professionals such as lawyers, notaries, accountants, investment advisors, and trust and company service providers. They often hold positions of trust and authority. They are responsible for conducting due diligence, monitoring transactions, or providing advice and are deemed to have a particular role in identifying, preventing, and reporting money laundering. Some countries impose due diligence requirements on gatekeepers that are similar to those for financial institutions. 
 
-## GDPR
+### GDPR
 
 General Data Protection Regulation 
 
-## GenAI
+### GenAI
 
 Generative artificial intelligence 
 
-## GPML
+### GPML
 
 Global Programme Against Money Laundering 
 
-## Grantor
+### Grantor
 
 The party who transfers title or ownership of property or assets. In a trust, typically the person who creates or funds the trust. 
 
-## Hacking
+### Hacking
 
 Unauthorized access to computer systems or networks with the intent to steal or manipulate data, disrupt services, or gain sensitive information. 
 
-## Hawala
+### Hawala
 
 An informal value transfer system common in the Middle East, North Africa, and the Indian subcontinent. The system operates outside traditional banking systems and is an informal method of transferring money without the physical movement of cash. In its basic form, a customer contacts a hawaladar and gives him or her money to be transferred to another person. The hawaladar contacts his or her counterpart where the second person lives, and the counterpart remits appropriate funds to that person. A running tally with net sums is kept between the hawaladars. (ARS). 
 
-## HKMA
+### HKMA
 
 Hong Kong Monetary Authority 
 
-## HKSAR
+### HKSAR
 
 Hong Kong Special Administrative Region of China 
 
-## HMRC
+### HMRC
 
 His Majesty’s Revenue and Customs 
 
-## HR
+### HR
 
 Human resources 
 
-## HSBC
+### HSBC
 
 Hongkong and Shanghai Banking Corporation 
 
-## Human smuggling
+### Human smuggling
 
 The illegal movement of individuals across borders, typically involving the facilitation of their entry into a country without proper legal authorization or documentation. Human smuggling differs from human trafficking in that it focuses on the entry or transport, rather than the exploitation, of the person involved. 
 
-## Human trafficking
+### Human trafficking
 
 The exploitation of individuals through coercion, deception, or force for various purposes, including forced labor, sexual exploitation, servitude, or other illegal activities. Human trafficking is a severe human rights violation and a form of organized crime. It is considered a significant financial crime due to the profits the traffickers generate and the illicit nature of the activities involved. Also known as trafficking in persons. 
 
@@ -9240,19 +9472,19 @@ ILI Investment-linked insurance
 
 IMF International Monetary Fund 
 
-## Integration
+### Integration
 
 The third and last stage of the classic money laundering process, in which the money launderer places laundered funds back into the economy by reentering the funds into the financial system and giving them the appearance of legitimacy. 
 
-## International Monetary Fund (IMF)
+### International Monetary Fund (IMF)
 
 An organization of more than 190 member countries and a key institution in the international financial system, helping to promote economic stablity, facilitate international trade, and reduce poverty. By providing financial resources and policy guidance, the IMF supports countries in addressing economic challenges and fosters a cooperative approach to global economic governance. 
 
-## IO
+### IO
 
 Immediate outcome 
 
-## IOSCO
+### IOSCO
 
 International Organization of Securities Commissions 
 
@@ -9268,15 +9500,15 @@ J5 Joint Chiefs of Global Tax Enforcement
 
 JMLIT Joint Money Laundering Intelligence Taskforce 
 
-## JMLSG
+### JMLSG
 
 Joint Money Laundering Steering Group 
 
-## Know your customer (KYC)
+### Know your customer (KYC)
 
 A set of measures and procedures that financial institutions and certain regulated businesses undertake to verify the identity of their clients. The KYC process is essential for preventing fraud, money laundering, terrorist financing, and other financial crimes. It helps institutions establish and maintain a relationship with their clients while ensuring compliance with legal and regulatory requirements. 
 
-## Know your employee (KYE)
+### Know your employee (KYE)
 
 The measures organizations implement to verify the identity and background of their employees, particularly in sectors that are highly regulated or vulnerable to financial crimes. These sectors include banking, finance, and other industries that handle sensitive information. These measures can assist organizations in preventing and detecting financial crime. 
 
@@ -9304,61 +9536,61 @@ L/C
 
 Letter of credit 
 
-## Layering
+### Layering
 
 The second stage of the classic three-stage money laundering process, between placement and integration. Layering involves distancing illegal proceeds from their source by creating complex levels of financial transactions designed to disguise the audit trail and provide anonymity. 
 
-## LEA
+### LEA
 
 Law enforcement agency 
 
-## Letter of credit
+### Letter of credit
 
 A financial document a bank or financial institution issues on behalf of a buyer (the applicant) that guarantees payment to a seller (the beneficiary) under specified conditions. It serves as a payment assurance in international trade transactions, facilitating commerce by reducing the risk associated with nonpayment. 
 
-## LLM
+### LLM
 
 Large language model 
 
-## LLP
+### LLP
 
 Limited liability partnership 
 
-## LOD
+### LOD
 
 Line of defense 
 
-## M&A
+### M&A
 
 Mergers and acquisitions 
 
-## Malware
+### Malware
 
 Malicious software designed to infiltrate, damage, or disable computers, servers, or networks. Common types include viruses, worms, ransomware, and spyware. 
 
-## MAS
+### MAS
 
 Monetary Authority of Singapore 
 
-## MBML
+### MBML
 
 Market-based money laundering 
 
-## Memorandum of understanding (MOU)
+### Memorandum of understanding (MOU)
 
 A formal agreement between two or more parties outlining the terms and details of a mutual understanding or cooperation regarding specific actions or obligations. In the context of financial crime, MOUs are often used between regulatory agencies, law enforcement, and financial institutions to facilitate collaboration, data sharing, and coordinated efforts in combating money laundering, fraud, and other financial crimes. An MOU is often used by countries to govern their sharing of assets in international asset forfeiture cases. 
 
-## MFA
+### MFA
 
 Multi-factor authentication 
 
 MiCA Markets in Cryptoassets Regulation 
 
-## MiFID II
+### MiFID II
 
 Markets in Financial Instruments Directive II 
 
-## Miner
+### Miner
 
 An individual or entity that participates in the process of validating and recording transactions on a blockchain network, commonly found in proof-ofwork systems such as Bitcoin. Miners play a crucial role in maintaining the security and integrity of the blockchain by solving complex mathematical problems through computational processing power. 
 
@@ -9366,640 +9598,640 @@ ML Money laundering
 
 MLAT Mutual legal assistance treaties 
 
-## MLR 2017
+### MLR 2017
 
 Money Laundering, Terrorist Financing, and Transfer of Funds (Information on the Payer) Regulations 2017 
 
-## MLRO
+### MLRO
 
 Money laundering reporting officer 
 
-## Monetary instrument
+### Monetary instrument
 
 A traveler’s check, negotiable instrument—such as a personal or business check—official bank check, cashier’s check, promissory note, money order, security, or stock in bearer form. Monetary instruments are normally included, along with currency, in the AML regulations of most countries, and financial institutions must file reports and maintain records of customer activities involving them. 
 
-## Money laundering
+### Money laundering
 
 The process of concealing or disguising the existence, source, movement, destination, or illegal application of illicitly derived property or funds to make them appear legitimate. It usually involves a three-part system: placement of funds into a financial system; layering of transactions to disguise the source, ownership, and location of the funds; and integration of the funds into society in the form of holdings that appear legitimate. The definition of money laundering varies in each country where it is recognized as a crime. 
 
-## Money laundering reporting officer (MLRO)
+### Money laundering reporting officer (MLRO)
 
 A designated individual within a financial institution or regulated entity who is responsible for overseeing the organization’s compliance with AML laws and regulations. The MLRO plays a key role in preventing, detecting, and reporting suspicious activities that may involve money laundering, terrorist financing, or other financial crimes. This role is similar to Bank Secrecy Act officer in the US. 
 
-## Money laundering typology
+### Money laundering typology
 
 A method or technique used to disguise the illicit origins of illegally obtained funds. These typologies, a term used by the Financial Action Task Force, help financial institutions, law enforcement agencies, and regulatory bodies understand the various ways in which money laundering occurs, enabling them to develop more effective prevention and detection strategies. 
 
-## Money mule
+### Money mule
 
 An individual who is recruited, often unwittingly, to transfer illicitly obtained funds on behalf of others. A mule acts as an intermediary in money laundering schemes, facilitating the movement of money that has been acquired through illegal activities such as fraud, drug trafficking, or human trafficking. 
 
-## Money order
+### Money order
 
 A monetary instrument usually purchased with cash in small (generally under €500) denominations. It is commonly used by people without checking accounts to pay bills or to pay for purchases in which the vendor will not accept a personal check. Money orders may be used for laundering because they represent an instrument drawn on the issuing institution rather than on an individual’s account. 
 
-## Money services business (MSB)
+### Money services business (MSB)
 
 An individual or entity engaged in money services, including foreign exchange and money transmission. It is deemed to be a nonbank financial institution subject to AML obligations. 
 
-## Money transfer service
+### Money transfer service
 
 A financial service that accepts cash, checks, and other monetary instruments. It can store value in one location and pay a corresponding sum in cash or other form to a beneficiary in another location by means of a communication, message, transfer, or clearing network to which the money or value transfer service belongs. Transactions performed by such services can involve one or more intermediaries and a third-party final payment. A money or value transfer service may be provided by people (natural or legal) formally through the regulated financial system (such as bank accounts), informally through nonbank financial institutions and business entities, or outside of the regulated system. In some jurisdictions, informal systems are referred to as alternative remittance services or underground (or parallel) banking systems. Also known as value transfer service. remittance system (ARS). 
 
-## MONEYVAL
+### MONEYVAL
 
 Committee of Experts on the Evaluation of Anti-Money Laundering Measures and the Financing of Terrorism 
 
-## MSB
+### MSB
 
 Money services business 
 
-## MTL
+### MTL
 
 Money transmitter license 
 
-## Mutual legal assistance treaty (MLAT)
+### Mutual legal assistance treaty (MLAT)
 
 An agreement between two or more countries for the purpose of gathering and exchanging information in an effort to enforce civil or criminal laws. MLATs facilitate international cooperation in legal matters, particularly in response to requests for assistance in investigations, prosecutions, and enforcement actions related to financial crimes, drug trafficking, terrorism, and other criminal activities. 
 
-## MVTS
+### MVTS
 
 Money or value transfer service 
 
-## NBFI
+### NBFI
 
 Nonbank financial institution 
 
-## NCA
+### NCA
 
 National Competent Authority 
 
-## Nesting
+### Nesting
 
 The practice whereby a respondent bank provides downstream correspondent services to other financial institutions and processes these transactions through its own correspondent account. The correspondent bank is thus processing transactions for financial institutions on which it has not conducted due diligence. Although this is a normal part of correspondent banking, it requires the correspondent bank to conduct enhanced due diligence on its respondent’s AML program to adequately mitigate the risk of processing the customer’s transactions. 
 
-## NFT
+### NFT
 
 Non-fungible token 
 
 NGO Nongovernmental organization 
 
-## NHS
+### NHS
 
 The National Health Service 
 
-## NLP
+### NLP
 
 Natural language processing 
 
-## Nominee account
+### Nominee account
 
 A financial account that is held in the name of one person (the nominee) but is actually owned by another individual (the beneficial owner). 
 
-## Non-fungible token (NFT)
+### Non-fungible token (NFT)
 
 A unique digital asset representing ownership of specific items, such as art or collectibles, recorded on a blockchain. 
 
-## Nongovernmental organization (NGO)
+### Nongovernmental organization (NGO)
 
 A nonprofit organization that operates independently of government influence and is typically focused on addressing social, humanitarian, environmental, or advocacy issues. NGOs can operate locally, nationally, or internationally and often rely on donations, grants, and volunteer work to fund their activities. NGOs, especially those operating in high-risk jurisdictions or conflict areas, may be exploited by criminals to launder money or funnel illicit funds to support terrorist activity. 
 
-## Nonprofit organization (NPO)
+### Nonprofit organization (NPO)
 
 An entity that operates for purposes other than generating profit for its owners or shareholders. Instead, the organization reinvests any surplus revenue it generates into its mission, activities, or programs to benefit the community or pursue a specific social, educational, charitable, or environmental objective. FATF has suggested practices to help authorities protect organizations that raise or disburse funds for charitable, religious, cultural, educational, social, or fraternal purposes from being misused or exploited by financiers of terrorism. 
 
-## NPO
+### NPO
 
 Nonprofit organization 
 
-## NRA
+### NRA
 
 National risk assessment 
 
-## OCC
+### OCC
 
 Office of the Comptroller of the Currency 
 
-## OCR
+### OCR
 
 Optical character recognition 
 
-## ODD
+### ODD
 
 Ongoing due diligence 
 
-## OECD
+### OECD
 
 Organisation for Economic Co-Operation and Development 
 
-## OFAC
+### OFAC
 
 Office of Foreign Assets Control 
 
-## Offshore
+### Offshore
 
 In reference to financial activities or entities, being established outside of a person’s or organization’s home country, typically in jurisdictions that offer favorable tax laws, regulatory environments, or privacy protections. Offshore accounts and companies are often used for legitimate purposes, such as international trade or investment; however, they can also pose significant risks related to financial crime, including money laundering, tax evasion, and other illicit activities. 
 
-## Offshore banking license
+### Offshore banking license
 
 A legal authorization granted by a regulatory authority in a specific jurisdiction that allows a financial institution to operate as a bank outside its home country. 
 
-## Offshore financial center (OFC)
+### Offshore financial center (OFC)
 
 A jurisdiction that provides financial services to nonresidents, primarily through a favorable regulatory environment, including low or zero taxes, minimal regulations, and privacy protections. These centers are often used by individuals and businesses for various purposes, such as tax optimization, asset protection, investment diversification, and wealth management. OFCs can be susceptible to misuse for illicit purposes, such as money laundering, tax evasion, and hiding assets. This has led to increasing scrutiny and pressure from international organizations, such as the Financial Action Task Force, to improve transparency and regulatory standards. 
 
-## Originator
+### Originator
 
 The party that places an order with a financial institution to perform a wire transfer. 
 
-## OSINT
+### OSINT
 
 Open-source intelligence 
 
-## P2P
+### P2P
 
 Peer-to-peer 
 
-## Payable-through account (PTA)
+### Payable-through account (PTA)
 
 A transaction account a foreign financial institution opens at a depository institution through which the foreign institution’s customers engage in banking activities and transactions. This engagement may be either direct or through subaccounts. In any case, the customers have direct control over the funds in the account. These accounts pose risks to the depository institutions that hold them because it can be difficult to conduct due diligence on foreign institution customers who are ultimately using the PTA accounts. 
 
-## Payment service provider (PSP)
+### Payment service provider (PSP)
 
 A third-party company that facilitates online payment processing for businesses and consumers. PSPs offer various services including managing transactions, providing gateways for credit and debit card payments, enabling mobile payments, and supporting alternative payment methods. 
 
-## PBWM
+### PBWM
 
 Private banking and wealth management 
 
-## PCMLTFA
+### PCMLTFA
 
 Proceeds of Crime (Money Laundering) and Terrorist Financing Act 
 
-## PDF
+### PDF
 
 Portable document format 
 
-## PE
+### PE
 
 Private equity 
 
-## PEP
+### PEP
 
 Politically exposed person 
 
-## PET
+### PET
 
 Privacy-enhancing technology 
 
-## Physical presence
+### Physical presence
 
 The existence of an actual brick-and-mortar location with meaningful management of the institution physically located within a country, where it maintains business records and is subject to supervision. The mere existence of a local agent or low-level staff does not constitute a physical presence. 
 
-## PII
+### PII
 
 Personally identifiable information 
 
-## pKYC
+### pKYC
 
 Perpetual KYC 
 
-## Placement
+### Placement
 
 The first stage of the money laundering process: the physical disposal of proceeds derived from illegal activity. 
 
-## Politically exposed person (PEP)
+### Politically exposed person (PEP)
 
 According to the Finacial Action Task Force’s revised 40 Recommendations of 2012, an individual who has been entrusted with prominent public functions in a foreign country, such as a head of state, senior politician, senior government official, judicial or military official, senior executive of a state-owned corporation, or important political party official, as well as their families and close associates. Various country regulations define the term PEP, which may include domestic as well as foreign persons. 
 
-## Ponzi scheme
+### Ponzi scheme
 
 A fraudulent scheme named after Charles Ponzi, an Italian immigrant who spent 10 years in a US jail for a scheme that defrauded 40,000 people out of US$15 million. Ponzi’s name became synonymous with returns that are paid to earlier investors from the capital contributed by newer investors, rather than from profit earned by the operation of legitimate business. Ponzi schemes involve fake, nonexistent investment schemes in which investors are tricked into investing on the promise of unusually attractive returns. The operator of the scheme can keep the operation going by paying off early investors with the money from new investors until the scheme collapses under its own weight or the promoter vanishes with the remaining money. Also known as a “pyramid scheme.” 
 
-## PPP
+### PPP
 
 Public-private partnership 
 
-## PRA
+### PRA
 
 Prudential Regulatory Authority 
 
-## Predicate crime
+### Predicate crime
 
 An underlying criminal offense that generates proceeds of crime (the Financial Action Task Force defined 21 offenses) and serves as the basis for more serious charges, such as money laundering or organized crime. In essence, these crimes are the initial illegal activities that produce illicit profits, which are then disguised or placed into the financial system through laundering efforts. Most AML laws contain a broad definition or listing of such underlying crimes. Predicate crimes are sometimes defined as felonies or “all offenses in the criminal code.” 
 
-## Private investment company (PIC)
+### Private investment company (PIC)
 
 A type of corporation that is often established in an offshore jurisdiction with tight secrecy laws to protect the privacy of its owners. In some jurisdictions, an international business company or exempt company is referred to as a private investment company. Also known as a personal investment company. 
 
-## PSP
+### PSP
 
 Payment service provider 
 
-## QA
+### QA
 
 Quality assurance 
 
-## QC
+### QC
 
 Quality control 
 
-## QR
+### QR
 
 Quick-response (code) 
 
-## RACI
+### RACI
 
 Responsible, accountable, consulted, and informed 
 
-## Ransomware
+### Ransomware
 
 Malware that blocks access to a system until a ransom is paid. Cybercrime. 
 
-## RAS
+### RAS
 
 Risk appetite statement 
 
-## RBA
+### RBA
 
 Risk-based approach 
 
-## RBC
+### RBC
 
 Royal Bank of Canada 
 
-## RegTech
+### RegTech
 
 Regulatory technology 
 
-## Regulator
+### Regulator
 
 A government entity responsible for supervising and overseeing one or more categories of financial institutions. A regulator generally has authority to issue regulations, conduct examinations, impose fines and penalties, curtail activities, and, sometimes, terminate charters of institutions under its jurisdiction. Most financial regulators play a major role in preventing and detecting money laundering and other financial crimes. 
 
-## Remittance service
+### Remittance service
 
 A business that receives cash or other funds that it transfers through the banking system to another account. The account is held by an associated company in a foreign jurisdiction where the money is made available to the ultimate recipient. Also known as a giro house or “casa de cambio.” 
 
-## REP-CRIM
+### REP-CRIM
 
 Financial crime report 
 
-## Reputational risk
+### Reputational risk
 
 In the context of financial crime, the potential for an organization, such as a financial institution, to suffer damage to its reputation as a result of being involved in or perceived as being associated with illegal or unethical activities, such as money laundering, fraud, or terrorist financing. This type of risk can arise from actual events or negative perceptions within the market or among stakeholders. 
 
-## Respondent bank
+### Respondent bank
 
 A financial institution that provides services such as processing transactions and conducting wire transfers on behalf of another bank, typically referred to as the correspondent bank. 
 
-## RFI
+### RFI
 
 Request for information 
 
-## RI
+### RI
 
 Requests for Information 
 
-## Risk-based approach (RBA)
+### Risk-based approach (RBA)
 
 A strategy used to identify, assess, and prioritize risks to allocate resources and implement measures effectively in financial crime risk management. This approach emphasizes focusing on areas of higher risk, allowing organizations to address potential threats more efficiently and effectively. 
 
-## RPA
+### RPA
 
 Robotic process automation 
 
-## Safe harbor
+### Safe harbor
 
 A legal provision that provides protection from liability or legal consequences under specific circumstances. It allows individuals or organizations to avoid penalties or legal repercussions if they report their suspicions in good faith to the relevant financial investigation unit, even if they did not know precisely what the underlying criminal activity was and regardless of whether illegal activity actually occurred. 
 
-## SAFS
+### SAFS
 
 Swiss-Asia Financial Services Pte Ltd 
 
-## Sanctions
+### Sanctions
 
 Punitive measures imposed by countries or international organizations to influence or restrict the behavior of a specific country, group, or individual. These measures can take various forms. 
 
-## SAR
+### SAR
 
 Suspicious activity report 
 
-## Screening
+### Screening
 
 The process of reviewing and evaluating individuals, entities, or transactions to prevent and detect activities associated with financial crimes. Screening helps identify risks, potential fraud, or compliance issues and is essential for financial institutions and businesses to comply with regulatory requirements. 
 
-## SDD
+### SDD
 
 Simplified due diligence 
 
-## SDN
+### SDN
 
 Specially designated national 
 
-## SEC
+### SEC
 
 Securities and Exchange Commission 
 
-## Senior foreign political figure
+### Senior foreign political figure
 
 A US term for foreign politically exposed persons. person (PEP). 
 
-## Settlor
+### Settlor
 
 An individual or entity that establishes a trust by transferring assets into it and defining the terms under which the trust will operate. The settlor outlines how the trust’s assets will be managed and distributed to the beneficiaries as set out in the trust deed. Also known as a grantor, trustor, or creator. 
 
-## SFO
+### SFO
 
 UK Serious Fraud Office 
 
-## Shell bank
+### Shell bank
 
 A financial institution that has no physical presence or significant operations in the country where it is licensed or claims to operate. These banks primarily exist to facilitate transactions without genuine banking activities, often serving as vehicles for money laundering and other financial crimes. 
 
-## Shell company
+### Shell company
 
 A legal entity that exists only on paper and has no significant physical operations, assets, or active business activities. It is often created for specific purposes, such as tax benefits, privacy, financing, and ease of regulatory compliance. 
 
 Shell companies are frequently associated with illicit activities such as money laundering, tax evasion, and fraud, as they can obscure financial transactions and ownership structures. 
 
-## SLA
+### SLA
 
 Service level agreement 
 
-## SLP
+### SLP
 
 Scottish Limited Partnership 
 
-## SMPC
+### SMPC
 
 Secure multiparty computation 
 
-## Smurfing
+### Smurfing
 
 A financial crime technique used to evade detection by breaking down large amounts of illicit funds into smaller, less suspicious transactions, usually under the reporting threshold. This approach is commonly associated with money laundering, in which individuals attempt to disguise the origins of illegally obtained money by conducting multiple small transactions instead of one large transaction. Smurfing involves the use of multiple individuals, transactions, or both for making cash deposits. Individuals hired to conduct the transactions are referred to as “smurfs.” 
 
-## Social engineering
+### Social engineering
 
 A manipulation technique that exploits human psychology to gain confidential information or unauthorized access or to execute fraudulent activities. Rather than relying on technical hacking methods, social engineering focuses on tricking individuals into revealing sensitive information or performing actions that compromise security. 
 
-## Society for Worldwide Interbank Financial Telecommunication (SWIFT)
+### Society for Worldwide Interbank Financial Telecommunication (SWIFT)
 
 A global messaging network that enables secure and standardized communication among financial institutions for the purpose of processing international money transfers and other banking transactions. 
 
-## SOF
+### SOF
 
 Sources of funds 
 
-## SPV
+### SPV
 
 Special purpose vehicle 
 
-## SRA
+### SRA
 
 Sectoral risk assessment 
 
-## SSN
+### SSN
 
 Social Security Number 
 
-## StAR
+### StAR
 
 Stolen Asset Recovery 
 
-## STR
+### STR
 
 Suspicious transaction report 
 
-## Structuring
+### Structuring
 
 A financial crime technique used to break down large amounts of illicit funds into smaller, less suspicious transactions to evade detection, reporting requirements, or regulatory scrutiny. For example, cash deposits may be split into smaller amounts or used to purchase monetary instruments to stay below a currency reporting threshold. 
 
-## Subpoena
+### Subpoena
 
 A legal document issued by a court or other authorized entity that commands an individual or organization to appear and testify or produce documents, records, or evidence in a legal proceeding. It is a tool used in the judicial process to compel the participation of witnesses or the production of specific information relevant to a case. 
 
-## SupTech
+### SupTech
 
 Supervisory technology 
 
-## Suspicious activity
+### Suspicious activity
 
 Any behavior, transaction, or pattern of transactions that raises red flags or indicates possible involvement in illegal activities, such as money laundering, fraud, or terrorist financing. 
 
-## Suspicious activity report (SAR)
+### Suspicious activity report (SAR)
 
 A document that financial institutions and certain regulated businesses are required to file with government authorities, usually the financial intelligence unit of the jurisdiction, when they detect suspicious or potentially illicit activity. Such activity may indicate money laundering, fraud, terrorist financing, or other financial crimes. Some jurisdictions call it a suspicious transaction report. 
 
-## SWF
+### SWF
 
 Sovereign wealth fund 
 
-## SWIFT
+### SWIFT
 
 Society for Worldwide Interbank Financial Telecommunication 
 
-## Tax haven
+### Tax haven
 
 A country that offers special tax incentives or tax avoidance to foreign investors and depositors. Tax havens typically provide low or zero tax rates, financial secrecy, and regulatory advantages, making them attractive locations for tax avoidance and evasion schemes. 
 
-## TBML
+### TBML
 
 Trade-based money laundering 
 
-## TCSP
+### TCSP
 
 Trust or company service provider 
 
-## Terrorist financing
+### Terrorist financing
 
 The process of providing financial support to individuals or groups engaged in terrorist activities. This financing can come from both legal and illegal sources and is used to fund terrorism-related operations, such as planning, recruitment, training, and execution of terrorist acts. Financial support can be provided through various channels, including cash transactions, bank transfers, cryptocurrency, and informal value transfer systems. 
 
-## TF
+### TF
 
 Terrorism financing 
 
-## TI
+### TI
 
 Transparency Internationa 
 
-## TIN
+### TIN
 
 Tax identification number 
 
-## Tipping off
+### Tipping off
 
 The improper or illegal act of alerting or notifying an individual or entity that it is being investigated or that its activities have raised suspicion, particularly in the context of legal or regulatory matters such as money laundering or criminal investigation. 
 
-## TJN
+### TJN
 
 Tax Justice Network 
 
-## TM
+### TM
 
 Transaction monitoring 
 
-## TMS
+### TMS
 
 Transaction monitoring system 
 
-## TOR
+### TOR
 
 The Onion Routing 
 
-## Trade-based money laundering (TBML)
+### Trade-based money laundering (TBML)
 
 A method of money laundering that involves manipulation of trade transactions to disguise the origin of illicit funds. TBML typically utilizes complex trade schemes to make illegal money appear legitimate by overinvoicing, under-invoicing, phantom shipments, misrepresentation of goods, and false invoicing. 
 
 TBML is challenging to detect because it exploits legitimate trade practices and often involves multiple jurisdictions, making it a significant concern for regulatory authorities and financial institutions in efforts to combat money laundering and ensure compliance with AML regulations. 
 
-## Transaction monitoring (TM)
+### Transaction monitoring (TM)
 
 The systematic process of observing and analyzing financial transactions and activities to detect suspicious behavior, prevent illicit activities, and ensure compliance with laws and regulations. TM is a critical component of an AML program in which customer activity is reviewed for unusual or suspicious patterns, trends, or outlying transactions that do not fit a normal pattern. Transactions are often monitored using software that weighs the activity against a threshold of what is deemed normal and expected for the customer. 
 
-## Transparency International (TI)
+### Transparency International (TI)
 
 A nongovernmental organization founded in 1993 that aims to combat corruption and promote transparency, accountability, and integrity at all levels of society. TI is best known for its annual Corruption Perceptions Index (CPI), which ranks countries by perceived levels of corruption among public officials. Its Bribe Payers Index (BPI) ranks the leading exporting countries according to their propensity to bribe. TI’s annual Global Corruption Report combines the CPI and BPI and ranks each country by its overall level of corruption. The lists help financial institutions determine the risk associated with a particular jurisdiction. 
 
-## Trust
+### Trust
 
 A legal arrangement in which one party, known as the trustor (or grantor), transfers assets to another party (the trustee), who manages those assets for the benefit of a third party, known as the beneficiary. 
 
-## Trustee
+### Trustee
 
 A paid or unpaid professional, company, or individual who holds the assets in a trust fund separate from the trustee’s own assets. The trustee invests and disposes of the assets in accordance with the settlor’s trust deed, taking into consideration any letter of wishes. 
 
-## TWEA
+### TWEA
 
 Trading with the Enemy Act 
 
-## UAE
+### UAE
 
 United Arab Emirates 
 
-## UAR
+### UAR
 
 Unusual activity report 
 
-## UBO
+### UBO
 
 Ultimate beneficial owner 
 
-## Ultimate beneficial owner (UBO)
+### Ultimate beneficial owner (UBO)
 
 The individual or individuals who ultimately own or control a company or legal entity, even if their ownership is not directly recorded in public documents. UBOs are the final beneficiaries who enjoy the benefits of ownership, such as financial gains or control over the entity. 
 
 UBO identification often involves tracing ownership structures through layers of companies or entities to review the individuals who ultimately benefit from the business operations. It may not be obvious who the UBO is due to a complex structure, and, in certain situations, aggregation of indirect ownership may result in an individual being identified as the UBO. 
 
-## UN
+### UN
 
-## United Nations
+### United Nations
 
-## UN Security Council Resolution 1373 (2001)
+### UN Security Council Resolution 1373 (2001)
 
 Adopted in 2001, a resolution that aims to enhance international cooperation in combating terrorism and establish measures for preventing and suppressing terrorist activities globally. It prompted member nations to adopt or strengthen laws and regulations aimed at preventing terrorism and addressing its financing. The resolution also required member nations to “afford one another the greatest measure of assistance for criminal investigations or criminal proceedings relating to the financing or support of terrorist acts.” 
 
 The principles established in this resolution continue to influence international counterterrorism efforts and the work of various UN agencies and bodies involved in security and anti-terrorism initiatives. 
 
-## Underground banking
+### Underground banking
 
 See alternative remittance system. 
 
-## United Nations (UN)
+### United Nations (UN)
 
 An international organization founded in 1945, shortly after World War II, by 51 countries with the primary goal of promoting peace, security, and cooperation among countries. The UN addresses financial crime through various frameworks, conventions, and initiatives aimed at combating issues such as money laundering, corruption, and terrorist financing. One such initiative is the Global Program against Money Laundering, which is the key instrument of the UN Office of Drug Control and Crime Prevention. As of today, almost every nation in the world belongs to the UN. 
 
-## UNOCT
+### UNOCT
 
 United Nations Office of Counter-Terrorism 
 
-## UNODC
+### UNODC
 
 United Nations Office on Drugs and Crime 
 
-## UNSC
+### UNSC
 
 United Nations Security Council 
 
-## UNTAD
+### UNTAD
 
 United Nations Trade and Development 
 
-## Unusual activity or transaction
+### Unusual activity or transaction
 
 Any financial activity that deviates from a customer’s normal behavior or established patterns. This type of activity raises suspicions and may indicate potential illicit conduct such as money laundering, fraud, or other financial crimes. 
 
-## US
+### US
 
 United States 
 
-## USA PATRIOT Act
+### USA PATRIOT Act
 
 Enacted on October 26, 2001, a law designed to enhance the US government’s ability to combat terrorism and strengthen national security in the aftermath of the September 11 attacks. The acronym stands for “Providing Appropriate Tools Required to Intercept and Obstruct Terrorism.” 
 
 The USA PATRIOT Act significantly altered the landscape of national security and law enforcement in the US, reflecting a responsive approach to perceived threats in the wake of terrorism. 
 
-## USD
+### USD
 
 US dollar 
 
 USDC USD Coin 
 
-## USDT
+### USDT
 
 US dollar Tether 
 
-## VASP
+### VASP
 
 Virtual asset service provider 
 
-## VAT
+### VAT
 
 Value-added tax 
 
-## VC
+### VC
 
 Venture capital 
 
-## Vienna Convention
+### Vienna Convention
 
 The 1988 United Nations Convention Against Illicit Trade in Narcotic Drugs and Psychotropic Substances, commonly referred to as the “1988 Vienna Convention,” an international treaty aimed at combating the growing problem of illicit drug production and trafficking. Signing countries of the Convention commit to criminalizing drug trafficking and associated money laundering and enacting measures for the confiscation of the proceeds of drug trafficking. Article III of the Convention provides a comprehensive definition of money laundering, which has been the basis of much subsequent national legislation. 
 
-## Virtual asset service provider (VASP)
+### Virtual asset service provider (VASP)
 
 A digital platform that allows users to buy, sell, and trade cryptocurrencies. These exchanges serve as intermediaries between buyers and sellers, facilitating the exchange of digital assets for other cryptocurrencies or fiat currencies. Examples of VASPs include cryptocurrency exchanges, wallet providers, and payment processors. 
 
-## Virtual currency
+### Virtual currency
 
 A medium of exchange that operates in the digital space and can typically be either converted into a fiat, or government-issued, currency or used as a substitute for real currency. 
 
-## VPN
+### VPN
 
 Virtual private network 
 
-## Wallet provider
+### Wallet provider
 
 A service that offers digital wallets for storing, managing, and transacting with cryptocurrencies and other digital assets. These wallets allow users to securely hold their cryptocurrencies, track their balances, and perform transactions such as sending and receiving funds. 
 
-## Whistleblower
+### Whistleblower
 
 An individual who reports or exposes information or activities within an organization that the individual believes to be illegal, unethical, or inconsistent with the organization’s policies. This can include reporting wrongdoing such as fraud, corruption, violations of regulations, safety concerns, or other misconduct. In many jurisdictions, whistleblowers are given legal protection to prevent retaliation or discrimination by their employer as a result of their disclosures, and any attempts to identify them can have serious consequences for the organization and its senior management. 
 
-## Willful blindness
+### Willful blindness
 
 A legal principle that operates in money laundering cases in the US and that courts define as the “deliberate avoidance of knowledge of the facts” or “purposeful indifference.” Courts have held that willful blindness is the equivalent of actual knowledge of the illegal source of funds or of the intentions of a customer in a money laundering transaction. 
 
-## Wire transfer
+### Wire transfer
 
 An electronic transmission of funds among financial institutions on behalf of themselves or their customers. Wire transfers are financial vehicles covered by the regulatory requirements of many countries in the AML effort. 
 
-## WMD
+### WMD
 
 Weapon of mass destruction 
 
-## Wolfsberg Group
+### Wolfsberg Group
 
 An association of 13 global financial institutions established in 2000 in response to growing concerns about financial crime within the private banking sector. Since then, it has issued several guidelines on correspondent banking and terrorist financing, among others, and aims to promote effective financial crime risk management and strengthen the overall integrity of the financial system through best practices. 
 
-## World Bank
+### World Bank
 
 A vital source of financial and technical assistance to developing countries. It is not a bank in the traditional sense but is made up of five organizations owned by 189 members. The World Bank plays a crucial role in shaping the global response to money laundering by supporting countries in building effective regulatory and institutional frameworks, facilitating international cooperation, and funding necessary reforms to enhance financial integrity.
