@@ -119,6 +119,182 @@ def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]
     return blockers, list(dict.fromkeys(risk_flags))
 
 
+# ── 规则检测：五类证据错误模式 ──────────────────────────────────────────
+
+# 实体类型关键词（用于主语借代检测）
+_ENTITY_KEYWORDS: dict[str, list[str]] = {
+    "银行": ["银行", "bank", "金融机构", "financial institution", "FI"],
+    "MSB/货币服务企业": ["MSB", "货币服务", "money service", "汇款", "货币兑换", "bureau de change"],
+    "赌场": ["赌场", "casino", "gaming"],
+    "VASP/加密资产": ["VASP", "虚拟资产", "virtual asset", "加密", "crypto", "区块链", "blockchain"],
+    "PSP/支付服务": ["PSP", "支付服务", "payment service"],
+    "DNFBP": ["DNFBP", "律师", "lawyer", "会计师", "accountant", "房地产", "real estate"],
+    "私营部门/PPP": ["私营部门", "private sector", "公私合作", "PPP", "信息共享", "information sharing"],
+}
+
+# 场景阶段关键词（用于语境偷换检测）
+_STAGE_KEYWORDS: dict[str, list[str]] = {
+    "开户准入": ["开户", "准入", "onboarding", "建立关系", "establishing", "客户身份识别", "CDD", "KYC",
+                  "accepting customer", "researching and accepting"],
+    "SAR后/调查后": ["SAR", "可疑交易报告", "suspicious activity", "调查", "investigation",
+                     "维持账户", "maintaining account", "关闭账户", "terminat"],
+    "交易监控": ["交易监控", "transaction monitoring", "ongoing monitoring", "持续监控",
+                 "alert", "警报", "筛查", "screening"],
+    "通用/风险评估": ["风险评估", "risk assessment", "风险为本", "risk-based"],
+}
+
+
+def _collect_all_cited_unit_ids(result: dict[str, Any]) -> set[str]:
+    """收集解析中所有引用的 unit_id。"""
+    exp = result.get("generated_explanation", {}) or {}
+    uids: set[str] = set()
+    core = exp.get("core_analysis", {}) or {}
+    for uid in (core.get("cited_unit_ids", []) or []):
+        uids.add(str(uid))
+    for row in (exp.get("option_explanations", []) or []):
+        for uid in (row.get("cited_unit_ids", []) or []):
+            uids.add(str(uid))
+        for sc in (row.get("source_claims", []) or []):
+            uid = str(sc.get("unit_id", "") or "")
+            if uid:
+                uids.add(uid)
+    easy = exp.get("easy_mistake", {}) or {}
+    for uid in (easy.get("cited_unit_ids", []) or []):
+        uids.add(str(uid))
+    return uids
+
+
+def _check_page_validity(result: dict[str, Any]) -> list[str]:
+    """检测 AI 解析中引用的页码是否真实存在于 candidate_pool。"""
+    flags: list[str] = []
+    exp = result.get("generated_explanation", {}) or {}
+
+    # 收集解析中所有文本
+    texts: list[str] = []
+    for field in ["exam_point", "core_analysis", "easy_mistake"]:
+        t = (exp.get(field, {}) or {}).get("text", "")
+        if t:
+            texts.append(str(t))
+    for row in (exp.get("option_explanations", []) or []):
+        texts.append(str(row.get("analysis", "") or ""))
+
+    # 收集 candidate_pool 中所有有效页码
+    unit_map = master.candidate_by_unit(result)
+    valid_pages: set[int] = set()
+    for uid, unit in unit_map.items():
+        for key in ("pdf_page", "printed_page"):
+            v = unit.get(key)
+            if isinstance(v, (int, float)) and v > 0:
+                valid_pages.add(int(v))
+            elif isinstance(v, str) and v.strip().isdigit():
+                valid_pages.add(int(v.strip()))
+
+    if not valid_pages:
+        return flags
+
+    # 从解析文本提取 P\d+ 引用
+    page_refs: set[int] = set()
+    for text in texts:
+        for m in __import__("re").finditer(r"(?:P|p|书内第|PDF第)\s*(\d+)", text):
+            page_refs.add(int(m.group(1)))
+
+    # 检查不在 pool 中的页码
+    hallucinated = page_refs - valid_pages
+    for p in sorted(hallucinated):
+        flags.append(f"页码幻觉：P{p}不在candidate_pool中")
+
+    return flags
+
+
+def _check_context_fidelity(result: dict[str, Any]) -> list[str]:
+    """检测引用证据的章节上下文是否与题干场景匹配（语境偷换）。"""
+    flags: list[str] = []
+    stem = str(result.get("stem", "") or "")
+    stem_en = str(
+        (result.get("generated_explanation", {}) or {})
+        .get("core_analysis", {})
+        .get("stem_en", "")
+        or result.get("stem_en", "")
+        or ""
+    )
+    stem_full = stem + " " + stem_en
+
+    # 判断题干场景阶段
+    stem_stage = _detect_stage(stem_full)
+    if stem_stage == "通用/风险评估":
+        return flags  # 通用场景不做语境检测
+
+    # 检查每个引用单元的章节路径
+    unit_map = master.candidate_by_unit(result)
+    cited_uids = _collect_all_cited_unit_ids(result)
+
+    for uid in cited_uids:
+        unit = unit_map.get(uid, {})
+        hc = str(unit.get("heading_context", "") or "")
+        if not hc:
+            continue
+        unit_stage = _detect_stage(hc)
+        if unit_stage and unit_stage != "通用/风险评估" and unit_stage != stem_stage:
+            flags.append(
+                f"语境偷换嫌疑：{uid}章节属「{unit_stage}」场景，但题干属「{stem_stage}」场景"
+            )
+
+    return flags
+
+
+def _detect_stage(text: str) -> str:
+    """从文本检测所属场景阶段。"""
+    text_lower = text.lower()
+    for stage, keywords in _STAGE_KEYWORDS.items():
+        for kw in keywords:
+            if kw.lower() in text_lower:
+                return stage
+    return "通用/风险评估"
+
+
+def _check_subject_match(result: dict[str, Any]) -> list[str]:
+    """检测引用证据的主语实体是否与题干实体一致（主语借代）。"""
+    flags: list[str] = []
+    stem = str(result.get("stem", "") or "")
+    stem_en = str(result.get("stem_en", "") or "")
+    stem_full = stem + " " + stem_en
+
+    # 判断题干主体实体类型
+    stem_entities = _detect_entities(stem_full)
+    if not stem_entities:
+        return flags
+
+    unit_map = master.candidate_by_unit(result)
+    cited_uids = _collect_all_cited_unit_ids(result)
+
+    for uid in cited_uids:
+        unit = unit_map.get(uid, {})
+        zh = str(unit.get("knowledge_zh", "") or "")
+        en = str(unit.get("en_quote", "") or "")
+        unit_text = zh + " " + en
+        unit_entities = _detect_entities(unit_text)
+
+        # 如果证据有明确实体类型且与题干无交集，标记
+        if unit_entities and not (stem_entities & unit_entities):
+            flags.append(
+                f"主语借代嫌疑：{uid}主语为「{'/'.join(unit_entities)}」，但题干为「{'/'.join(stem_entities)}」"
+            )
+
+    return flags
+
+
+def _detect_entities(text: str) -> set[str]:
+    """从文本中检测实体类型。"""
+    text_lower = text.lower()
+    found: set[str] = set()
+    for entity, keywords in _ENTITY_KEYWORDS.items():
+        for kw in keywords:
+            if kw.lower() in text_lower:
+                found.add(entity)
+                break
+    return found
+
+
 def run_review(output_dir: Path) -> dict[str, Any]:
     """扫描所有 question JSON，输出复核清单。"""
     question_dir = output_dir / "questions"
@@ -150,6 +326,15 @@ def run_review(output_dir: Path) -> dict[str, Any]:
         for flag in risk_flags:
             if isinstance(flag, str) and flag not in _NOISE_FLAGS:
                 reasons.append(flag)
+
+        # 4. 规则检测：页码幻觉
+        reasons.extend(_check_page_validity(result))
+
+        # 5. 规则检测：语境偷换
+        reasons.extend(_check_context_fidelity(result))
+
+        # 6. 规则检测：主语借代
+        reasons.extend(_check_subject_match(result))
 
         # 去重
         seen: set[str] = set()

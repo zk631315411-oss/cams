@@ -31,6 +31,20 @@ EN_PAGE_RE = re.compile(r"\s*\(Page\s+\d+\)\s*$", re.IGNORECASE)
 ZH_PAGE_RE = re.compile(r"\s*\(第\s*\d+\s*页\)\s*$")
 UNIT_ID_RE = re.compile(r"^v7u_N\d+$")
 
+# Verified against the bilingual PDF. These replace stale values in the
+# historical semantic ledger; they are not machine translations.
+PDF_VERIFIED_TITLE_OVERRIDES = {
+    "Trust and company service provider and company secretary sector risks": "信托与公司服务提供商及公司秘书行业风险",
+    "FATF guidance for risk assessment": "FATF 风险评估指南",
+    "AFC guidance from leading international organizations": "国际主要组织的AFC指南",
+    "Tax Justice Network AFC guidance": "税务正义网络AFC指南",
+    "Major ABC regulations": "主要反贿赂和反腐败法规",
+    "Types of risk assessment": "风险评估类型",
+    "Ongoing AFC controls": "持续性AFC控制",
+    "Ongoing due diligence": "正在进行的尽职调查",
+    "Data preparation": "数据准备",
+}
+
 
 def read_text(path: Path) -> str:
     try:
@@ -146,7 +160,8 @@ def semantic_heading_anchors(
             raise StructureError("Semantic heading ledger contains an invalid English node index")
         if normalize_title(str(row.get("english") or "")) != normalize_title(en[index].title):
             raise StructureError(f"Semantic heading ledger no longer matches English node {index + 1}")
-        chinese = str(row.get("chinese") or inserted.get(str(row.get("english") or "")) or "")
+        english = str(row.get("english") or "")
+        chinese = PDF_VERIFIED_TITLE_OVERRIDES.get(english) or str(row.get("chinese") or inserted.get(english) or "")
         # The historical ledger occasionally matched an OCR fragment to a
         # same-named heading far away in the book. A current-MD anchor must be
         # a local occurrence; distant lookalikes are not evidence of pairing.

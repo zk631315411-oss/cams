@@ -157,7 +157,7 @@ def convert_md_to_docx(input_path: Path, output_path: Path) -> tuple[int, int]:
         sec.right_margin = Cm(3.17)
 
     add_styled_paragraph(doc, [(f"试卷名称:{title} (EN)", False, False)], space_after=12)
-    add_styled_paragraph(doc, [("I. Multiple Choice", False, False)], space_after=8)
+    add_styled_paragraph(doc, [("一、单项选择题", False, False)], space_after=8)
 
     blocks = content.split("\n\n---\n\n")
     first_block = blocks[0].strip()
