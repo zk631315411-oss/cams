@@ -642,6 +642,15 @@ def build_prompt(
 
 对这道题（固定答案为"{predicted}"，不得改判），你需要让学生：
 
+但**你有权拒答**。如果完成以下检查后发现材料无法支撑高质量解析，不要硬写——输出 deferral 字段说明理由。拒答条件（满足任一条即可拒答）：
+
+- **核心证据缺位**：支撑正确项的核心 unit 与选项之间存在不可弥合的 gap（如证据要求"高风险司法管辖区"但选项只说"外国"，且没有其他 unit 能桥接）
+- **主语不可调和**：所有可用证据的主语/场景与结论主语/题干场景不一致，且教材未声明等价关系
+- **时间/阶段不可调和**：所有可用证据的业务阶段与题干时间节点不一致（如只有"S​​AR后"的证据来证明"开户时"）
+- **证据整体偏弱**：正确项依赖的证据全部为 indirect/案例/推测性陈述，没有任何 direct 的教材原文
+
+拒答时，`deferral.reason` 应具体指出哪个 gap 无法弥合、尝试了哪些 unit、为什么不能用。这比硬写一份证据歪曲的解析更有价值。
+
 1. **知道考什么** —— exam_point：一句话，30字内。只写核心概念或能力点，不写判断结论，不引入题干没有的信息，不复述题干具体情节。示例：
    - 好："按金额粒度及分散方式区分 structuring 与 microstructuring"
    - 好："识别房地产场景下的 placement 阶段特征"
@@ -695,17 +704,25 @@ def build_prompt(
 4. JSON 文本中的引号用中文引号「」，不要用 ASCII 双引号""（会破坏 JSON 结构）。
 5. 易错提醒要么给出具体的区分标准，要么留空。不写"注意区分X和Y"这类空泛表达。
 6. 区分两种信息来源：教材材料中有的（可引用、可定义），和材料中没有的（只能说"题干未提及X要素"）。当材料没有提供某个选项所涉及概念的定义时，不要用自己的知识去补那个定义。
-7. 引用 unit 前检查其章节路径（材料卡片中的"章节："行）。若来自特例场景（如大使馆、外交使团、某类机构），该 unit 的陈述只在特例下有效，不能当普遍原则用。
+7. 引用 unit 前完成三项强制检查（违反将导致证据失效）：
+   a. **主语一致性**：证据的主语/对象必须与结论一致。证据讲"银行"不能证"赌场"，证据讲"PSP"不能证"MSB 客户"，证据讲"私营部门间信息共享"不能证"公私合作（PPP）"。把证据主语和结论主语都写出来，不一致且教材未声明等价关系的，不得引用。
+   b. **时间节点/业务阶段匹配**：证据章节的业务阶段必须与题干场景一致。证据来自"S​​AR 后维持账户"章节，不能证"开户时"的操作。证据来自"持续尽调（ongoing）"，不能证"首次准入（onboarding）"。确认章节路径描述的业务阶段（准入/持续监控/调查/报告后/退出），与题干时间节点对比，不匹配则不得作为直接证据。
+   c. **场景限定**：若来自特例场景（如大使馆、外交使团、某类机构、特定案例），该 unit 的陈述只在特例下有效，不能当普遍原则用。案例中的具体数字、地点、行为方式属于该案例的特殊情节，不得上升为普遍定义。
 8. 不以非黑即白的方式排除选项。即使错误项本身有一定关联，也不用"不属于""不可能""因此错误"等绝对否定语气。改用比较级——"在教材框架下，题干条件更直接匹配X而非Y""正确项比错误项更吻合教材定义"。
 9. 区分事实和推理。教材原文（标注了页码的）是事实——确定的；你基于事实推导出的判断是推理——不确定的。推理部分用"由此可推断""在本题条件下""相比之下更可能"等表述，不要写成和教材事实一样的确定语气。归因于某个 unit 的断言词（如"所有权转移""转移资金"）必须真的出现在该 unit 的原文中，原文没有的词不能说成教材说的。同样，教材原文的涵盖范围不能缩窄——原文说"customers or sectors"，解析不能说"仅限于行业部门"。
 
-10. 引用具体步骤或数据点的 unit 时，检查材料中是否存在描述该流程整体阶段框架的 unit（如一级/二级审查、三段式洗钱流程等层级结构）。若存在，一并引用：用框架 unit 建立程序先后，用步骤 unit 解释具体内容。
+10. **禁止后合理化（post-rationalization）**：不得先确定答案再随便找包含关键词的 unit 来装点门面。引用 unit 前自问："如果这个 unit 不在候选池里，我的结论会变吗？"不会变 → 你不需要这个引用，它在装饰；会变 → 它才是真正在支撑你的判断。引用的每个 unit 必须在逻辑链中扮演不可替代的角色，不能只是"恰好也有这个词"。
+11. 页码必须来自材料卡片中标注的元数据（`书内第XX页` 或 `printed_page` 字段）。不得自编页码。如果材料卡片未标注页码，不要为它编造页码。
+12. 引用具体步骤或数据点的 unit 时，检查材料中是否存在描述该流程整体阶段框架的 unit（如一级/二级审查、三段式洗钱流程等层级结构）。若存在，一并引用：用框架 unit 建立程序先后，用步骤 unit 解释具体内容。
 
-11. primary_unit_id：从 evidence_cards 中选出对本题答案判断最重要、最核心的那一个 unit_id。它应该是 core_analysis 引用的关键证据。如果有多条引用，选起决定性作用的那条。
+13. primary_unit_id：从 evidence_cards 中选出对本题答案判断最重要、最核心的那一个 unit_id。它应该是 core_analysis 引用的关键证据。如果有多条引用，选起决定性作用的那条。
+
+14. **拒答优于硬写**：如果材料无法支撑高质量解析，使用 deferral 字段拒答。拒答不是失败——它比用歪曲证据硬凑一份解析更有价值。正常解析时 deferral 字段留空（设置为 null）。
 
 ## 输出 JSON
 
 {{{{
+  "deferral": null,
   "answer": ["A"],
   "primary_unit_id": "v7u_N000001",
   "exam_point": {{{{
@@ -1602,6 +1619,20 @@ def render_markdown(
             lines.append(f"  English: {en_text}\n")
 
     answer = "、".join(explanation.get("answer", []) or []) or "未形成答案"
+    deferral = explanation.get("deferral") if isinstance(explanation.get("deferral"), dict) else None
+    if deferral and deferral.get("reason"):
+        lines.append(f"\n## 【AI答案】\n\n{answer}\n\n")
+        lines.append(f"> **解析被推迟（DEFERRED）**\n>\n")
+        reason = deferral.get("reason", "")
+        for rline in reason.split("\n"):
+            lines.append(f"> {rline}\n")
+        attempts = deferral.get("attempted_units", []) or []
+        if attempts:
+            lines.append(">\n> 已尝试但无法使用的 unit：\n")
+            for uid in attempts:
+                lines.append(f"> - {uid}\n")
+        lines.append(">\n> 该题需人工撰写解析。\n")
+        return "".join(lines)
 
     if export_mode:
         # ── 导入格式 ──
@@ -1752,6 +1783,9 @@ def process_file(
         parse_json_object(raw), result, reference, model
     )
 
+    deferral = explanation.get("deferral") if isinstance(explanation.get("deferral"), dict) else None
+    is_deferred = bool(deferral and deferral.get("reason"))
+
     explanations_dir = output_dir / "explanations"
     explanations_dir.mkdir(parents=True, exist_ok=True)
     md_path = explanations_dir / f"{qid}.md"
@@ -1774,13 +1808,14 @@ def process_file(
             json.dump(result, f, ensure_ascii=False, indent=2)
     return {
         "question_id": qid,
-        "status": "ok",
+        "status": "deferred" if is_deferred else "ok",
         "answer": explanation["answer"],
         "chapter_mappings": result.get("chapter_mappings", []),
         "reference_conflict": (
             reference["cn_en_conflict"] or reference["blind_final_conflict"]
         ),
         "markdown_path": str(md_path),
+        "deferral_reason": deferral.get("reason", "") if is_deferred else "",
     }
 
 
