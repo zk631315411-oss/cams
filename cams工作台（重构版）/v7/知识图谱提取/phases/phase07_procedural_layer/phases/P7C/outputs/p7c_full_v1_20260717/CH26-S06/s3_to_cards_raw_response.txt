@@ -1,0 +1,264 @@
+{
+  "section_id": "CH26-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH26-S06_001",
+      "section_id": "CH26-S06",
+      "card_nature": "assessment",
+      "title": "FATF建议组织在采用数字化工具时考虑风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "采用和实施数字化工具",
+          "evidence_unit_ids": ["v7u_N002086"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织应考虑数字化风险和意想不到的后果",
+          "evidence_unit_ids": ["v7u_N002086"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "当采用和实施数字化工具时",
+          "evidence_unit_ids": ["v7u_N002086"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002086"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当采用数字化工具时，组织应考虑风险；证据范围：v7u_N002086；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S06_002",
+      "section_id": "CH26-S06",
+      "card_nature": "risk_indicator",
+      "title": "监管机构在未受监管AI行业中识别风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "AI未受监管的行业",
+          "evidence_unit_ids": ["v7u_N002087"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "监管机构识别风险",
+          "evidence_unit_ids": ["v7u_N002087"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "偏见决策、数据滥用和侵犯基本权利等风险",
+          "evidence_unit_ids": ["v7u_N002087"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "在AI未受监管的行业中",
+          "evidence_unit_ids": ["v7u_N002087"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "relation_type": "identification_leads_to_conclusion",
+          "evidence_unit_ids": ["v7u_N002087"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002087"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在未受监管行业，监管机构识别AI风险并形成风险结论；证据范围：v7u_N002087；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S06_003",
+      "section_id": "CH26-S06",
+      "card_nature": "execution",
+      "title": "司法管辖区要求披露与说明以确保道德AI",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "AI的使用",
+          "evidence_unit_ids": ["v7u_N002088"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "要求披露AI使用方式、时间，并说明治理框架与监督",
+          "evidence_unit_ids": ["v7u_N002088"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保道德AI开发和使用",
+          "evidence_unit_ids": ["v7u_N002088"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "当使用AI时",
+          "evidence_unit_ids": ["v7u_N002088"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002088"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002088"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：使用AI时，法规要求披露治理信息，旨在确保道德AI；证据范围：v7u_N002088；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S06_004",
+      "section_id": "CH26-S06",
+      "card_nature": "assessment",
+      "title": "基于风险的AI系统分类与义务匹配",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "AI系统的潜在风险",
+          "evidence_unit_ids": ["v7u_N002089"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "基于风险的方法",
+          "evidence_unit_ids": ["v7u_N002089"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "根据潜在风险对AI系统进行分类",
+          "evidence_unit_ids": ["v7u_N002089"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "风险越高，义务越严格",
+          "evidence_unit_ids": ["v7u_N002089"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002089"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002089"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002089"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002089"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：依据潜在风险和风险方法对AI系统分类，导出义务严格程度结论；证据范围：v7u_N002089；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch26_s06_fatf_digitalization_risks",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S06_001"],
+      "reason": "该候选描述了当采用数字化工具时组织应考虑风险的程序性建议，构成独立流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s06_ai_unregulated_risks",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S06_002"],
+      "reason": "该候选描述了监管机构在特定情境下主动识别风险的程序性动作与结果，构成独立流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s06_transparency_accountability",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S06_003"],
+      "reason": "该候选描述了司法管辖区施加披露与说明要求以确保道德AI的完整程序链，构成独立流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s06_risk_based_approach",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S06_004"],
+      "reason": "该候选描述了基于风险对AI系统分类并映射义务严格程度的判断性流程，构成独立流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role + 表示采用工具的触发事件 → E1_event_signal",
+      "e002": "action role + 考虑风险属于评估活动 → P1_assessment"
+    },
+    "ep_002": {
+      "e001": "context role + 未受监管状态触发识别 → E3_state_threshold",
+      "e002": "action role + 识别风险是标准评估动作 → P1_assessment",
+      "e003": "outcome role + 识别出的风险形成结论 → X1_classification"
+    },
+    "ep_003": {
+      "e001": "context role + 使用AI为触发事件 → E1_event_signal",
+      "e002": "action role + 施加法规要求属于执行动作 → P2_execution",
+      "e003": "outcome role + 确保道德AI为目标状态 → X3_state_change"
+    },
+    "ep_004": {
+      "e001": "input role → input",
+      "e002": "standard role → standard",
+      "e003": "action role + 根据风险分类是评估动作 → P1_assessment",
+      "e004": "outcome role + 义务严格程度为分类结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

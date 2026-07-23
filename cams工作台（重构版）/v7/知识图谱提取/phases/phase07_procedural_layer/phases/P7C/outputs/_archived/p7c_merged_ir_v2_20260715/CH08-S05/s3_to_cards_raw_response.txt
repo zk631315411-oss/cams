@@ -1,0 +1,98 @@
+{
+  "section_id": "CH08-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "对SPV和PIV实施强化尽职调查以减轻金融犯罪风险",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对SPV和PIV进行强化尽职调查，识别最终受益所有人并了解实体真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD法规（如FinCEN的CDD规则）",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "帮助减轻与SPV相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "source_quote": "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：对SPV和PIV进行强化尽职调查，识别UBO和真实目的，遵守CDD法规，最终减轻金融犯罪风险。证据范围：v7u_N000658, v7u_N000659, v7u_N000660。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH08-S05_001"
+      ],
+      "reason": "该候选提供了金融机构对SPV和PIV进行EDD并识别UBO和真实目的以减轻风险的完整流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + 执行尽职调查的语义 → P2_execution",
+      "e002": "standard role → standard",
+      "e003": "outcome role + 减轻风险表示状态变化 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

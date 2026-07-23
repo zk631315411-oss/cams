@@ -1,0 +1,188 @@
+{
+  "section_id": "CH10-S02",
+  "card_id": "p7card_CH10-S02_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000770 明确提到 'she receives an alert about unusual transaction patterns'，即'收到异常交易警报'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000770 明确提到 'She quickly gathers her team to investigate'，即'召集团队调查'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文以'收到警报'→'召集团队'的时间顺序叙述，原文明示该先后关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition 字段，且原文关系不涉及条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用 must/should/may 等情态限定；边缘亦无附加限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "两个事件构成明确的动作序列，非并列或一般相关关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000770"],
+      "source_quotes": [
+        "she receives an alert about unusual transaction patterns. She quickly gathers her team to investigate."
+      ],
+      "reason": "收到警报然后召集团队是原文明确先后顺序，关系显式成立。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n002（召集团队调查）在 v7u_N000770 中有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n003（发现高频低额交易等）在 v7u_N000771 中有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "调查（n002）的目的是调查，随后他们发现（n003）异常模式，功能上调查导致了发现，方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition 字段，且原文未涉及条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文无 must/should/may 等情态词，边缘未添加限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "调查与发现之间是功能性结果，非并列或一般相关。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000770", "v7u_N000771"],
+      "source_quotes": [
+        "She quickly gathers her team to investigate.",
+        "They discover that a new buyer, using multiple accounts, is making high-frequency, low-value transactions with a network of sellers who are all based in the same jurisdiction."
+      ],
+      "reason": "调查直接导致发现，原文虽未使用'因此'，但连续叙述和'调查-发现'的意图强烈支持因果，推理可接受。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n003（发现交易模式）在 v7u_N000771 中有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n004（引发洗钱红旗）在 v7u_N000772 中有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文 'This raises a red flag' 表达的是因果关系，不是时间或逻辑前提的先后顺序，不符合 PRECEDES 类型。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，原文关系亦无条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用情态限定词，边缘未添加。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "将因果关系错误标注为 PRECEDES，属于将相关/因果错当顺序关系的情况。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000772"],
+      "source_quotes": [
+        "This raises a red flag for money laundering."
+      ],
+      "reason": "原文为因果引发关系，不应使用 PRECEDES，方向支持不成立。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n002（召集团队调查）在 v7u_N000770 中有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n005（意识到 KYC 不足）在 v7u_N000773 中有依据。"
+        },
+        "direction_support": {
+          "status": "pending",
+          "reason": "原文 'While investigating, Emma realizes...' 表示伴随状态，并非明确由调查产生意识，需依赖功能推理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，原文未涉及条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未使用情态限定，边缘未添加。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或一般关联，调查为意识提供背景，但无错误关联。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000773"],
+      "source_quotes": [
+        "While investigating, Emma realizes CashBayou's current KYC governance and execution are inadequate."
+      ],
+      "reason": "调查与意识到不足之间的因果关系未在原文明示，需要推理，建议人工确认。"
+    },
+    {
+      "edge_id": "edge_005",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n005（意识到 KYC 不足）在 v7u_N000773 中有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "n006（审查不足的风险）在 v7u_N000774 中有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文没有表明'意识到不足'与'审查不足造成风险'之间存在先后或逻辑顺序，前者是认知，后者是独立陈述的风险评估，不构成 PRECEDES。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，原文未涉及条件。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "target 标签忠实地保留了原文的'可能'情态，边缘未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "两个节点仅为同一话题下的相关陈述，却被错误连接为 PRECEDES，属于误将并列/主题相关当成顺序关系。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000773", "v7u_N000774"],
+      "source_quotes": [
+        "While investigating, Emma realizes CashBayou's current KYC governance and execution are inadequate.",
+        "Insufficient reviews of purchasers and storefront owners could expose the platform to financia crime, fraud risks, and potential regulatory issues, which might result in temporary service suspension."
+      ],
+      "reason": "意识到 KYC 不足与后续的风险后果陈述之间无流程先后关系，PRECEDES 不成立。"
+    }
+  ]
+}

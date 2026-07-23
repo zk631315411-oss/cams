@@ -1,0 +1,139 @@
+{
+  "section_id": "CH07-S03",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "当关闭账户且怀疑非法资金还贷时，银行应如何处理？",
+      "title": "怀疑非法资金还贷时银行不应接受还款",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "银行因洗钱担忧关闭客户账户且客户仍有贷款余额，且银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": [
+            "v7u_N000553",
+            "v7u_N000554"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "银行不应接受资金用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "modality": "prohibited"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "银行知道或怀疑客户使用非法资金还贷",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000553",
+            "v7u_N000554"
+          ],
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, ... The bank should not accept funds for the purposes of loan"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_gap_ch07_s03_writeoff_approval"
+      ],
+      "focal_question": "退出超出风险容忍度且仍有贷款余额的客户关系时，如何决定核销贷款？",
+      "title": "退出客户关系时贷款核销需充分理由和批准",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "银行退出超出风险容忍度的客户关系且客户仍有贷款余额",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "银行决定核销贷款余额并需充分理由和批准",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "核销贷款通常需要充分理由和批准",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "source_quote": "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "source_quote": "writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选独立支持一条程序性关系：当怀疑非法资金还贷时，银行不应接受还款，可独立形成流程图。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch07_s03_writeoff_approval",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选独立支持退出客户关系时贷款核销需批准的程序关系，可独立组成 episode。"
+    }
+  ],
+  "skip_reason": null
+}

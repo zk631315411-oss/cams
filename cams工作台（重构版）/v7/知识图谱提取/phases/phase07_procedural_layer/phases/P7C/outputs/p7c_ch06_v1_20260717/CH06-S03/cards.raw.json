@@ -1,0 +1,345 @@
+{
+  "section_id": "CH06-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S03_001",
+      "section_id": "CH06-S03",
+      "card_nature": "assessment",
+      "title": "风险评估与控制相称性评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行全面的企业银行产品与服务风险评估，包括识别和评估产品固有风险、评估客户行业、地域与交易活动",
+          "evidence_unit_ids": [
+            "v7u_N000397"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "银行面临的特定洗钱与恐怖融资风险",
+          "evidence_unit_ids": [
+            "v7u_N000397",
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估现有系统与控制是否与这些风险相称",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "系统与控制相称性的判断",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000397"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ],
+          "condition": null
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000398"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000397",
+        "v7u_N000398"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "ep_001: 发现S2 r002起点为outcome而非context，与trigger兼容性不符，仍构建为PRECEDES。节点类型选择基于原文语义。待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH06-S03_002",
+      "section_id": "CH06-S03",
+      "card_nature": "assessment",
+      "title": "企业银行交易对交易监控系统的需求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "企业银行交易",
+          "evidence_unit_ids": [
+            "v7u_N000401"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "企业银行交易需要强大的交易监控系统",
+          "evidence_unit_ids": [
+            "v7u_N000401"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "旨在分析交易模式并有效检测异常",
+          "evidence_unit_ids": [
+            "v7u_N000401"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000401"
+          ],
+          "condition": "企业银行交易金额高、结构复杂、常涉及第三方"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000401"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000401"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "ep_002: 节点类型选择基于语义。n003 aimed_to结果。待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH06-S03_003",
+      "section_id": "CH06-S03",
+      "card_nature": "assessment",
+      "title": "客户尽职调查在企业银行的重要性",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "企业银行交易金额高、结构复杂、常涉及第三方",
+          "evidence_unit_ids": [
+            "v7u_N000400"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "有效的客户尽职调查是反金融犯罪计划的关键组成部分，在企业银行业务中尤为重要",
+          "evidence_unit_ids": [
+            "v7u_N000399"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000399",
+            "v7u_N000400"
+          ],
+          "condition": "企业银行交易金额高、结构复杂、常涉及第三方"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000399",
+        "v7u_N000400"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "ep_003: 节点类型选择基于语义。待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH06-S03_004",
+      "section_id": "CH06-S03",
+      "card_nature": "control",
+      "title": "持续金融犯罪防控培训的最佳实践",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "投资持续AFC培训被视为最佳实践和行业标准",
+          "evidence_unit_ids": [
+            "v7u_N000404"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "为自己和团队投资持续的金融犯罪防控培训",
+          "evidence_unit_ids": [
+            "v7u_N000404"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "旨在帮助团队掌握企业银行合规最佳实践的最新状态",
+          "evidence_unit_ids": [
+            "v7u_N000404"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N000404"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000404"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000404"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "ep_004: 节点类型选择基于语义。n003 aimed_to结果。待P7D审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH06-S03_001"
+      ],
+      "reason": "候选提供风险评估的业务动作和步骤，独立支持流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH06-S03_001"
+      ],
+      "reason": "候选提供系统与控制评估及相称性判断，与s1c_001串联形成评估链。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH06-S03_002"
+      ],
+      "reason": "候选基于交易特征建立需要监控系统的判断关系，构成流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "案例为历史事实与和解结果，属于背景知识而非业务程序或判断过程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch06_s03_cdd_importance",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH06-S03_003"
+      ],
+      "reason": "候选基于交易特征论证CDD重要性，形成判断关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch06_s03_continuous_training",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH06-S03_004"
+      ],
+      "reason": "候选基于最佳实践和标准提出培训投资行动及预期效果，构成流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "风险评估本身是一种评估动作，形成风险结论，对应P1_assessment",
+      "e002": "风险评估的输出是特定的洗钱与恐怖融资风险，属于风险分类/结论，故X1_classification",
+      "e003": "评估系统与控制相称性也是评估动作，产生判断，故P1_assessment",
+      "e004": "相称性判断是决策/判断结论，虽然是decision角色但并无分支，语义上仍属评估结论，故P1_assessment"
+    },
+    "ep_002": {
+      "e001": "企业银行交易作为处理对象进入，对应E2_object_entry",
+      "e002": "判断需要强大的交易监控系统，是需求/适宜性结论，故P1_assessment",
+      "e003": "预期结果是系统能够有效检测异常，使交易监控进入新的有效状态，故X3_state_change"
+    },
+    "ep_003": {
+      "e001": "交易特征（金额高、复杂、涉及第三方）作为已观察到的状态/阈值，触发后续判断，故E3_state_threshold",
+      "e002": "强调CDD的重要性，是对其地位的判断/评估，故P1_assessment"
+    },
+    "ep_004": {
+      "e001": "直接对应标准/最佳实践，故standard",
+      "e002": "投资培训是实施行为，执行已有计划，故P2_execution",
+      "e003": "培训旨在让团队保持最新状态，是团队能力状态的更新，故X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

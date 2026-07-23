@@ -1,0 +1,93 @@
+{
+  "section_id": "CH08-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "对SPV和PIV实施强化尽职调查并识别受益所有人以减轻风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD regulations such as the Financial Crime Enforcement Network's CDD rule",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs; Financial institutions must identify ultimate beneficial owners and understand the true purpose of these entities",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "help mitigate potential financial crime risks associated with SPVs",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "qualifier": "aimed_to",
+          "source_quote": "This will help mitigate any potential financial crime risks associated with SPVs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融机构必须对SPV和PIV执行EDD并识别UBO，旨在减轻金融犯罪风险；证据范围：v7u_N000658~660；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH08-S05_001"
+      ],
+      "reason": "该候选提供了金融机构对SPV和PIV实施EDD并识别UBO的程序性要求，以及减轻风险的目的，满足正向流程定义。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role, 原文要求执行强化尽职调查和识别UBO等具体动作，符合P2_execution定义",
+      "e003": "outcome role, 减轻风险属于业务对象风险状态的改善，选X3_state_change最贴切"
+    }
+  },
+  "skip_reason": null
+}

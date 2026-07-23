@@ -1,0 +1,46 @@
+{
+  "section_id": "CH07-S03",
+  "card_id": "p7card_CH07-S03_001",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "节点 n001 综合了 v7u_N000553（银行因洗钱担忧关闭账户且客户仍有贷款余额）和 v7u_N000554（银行知道或怀疑客户使用非法资金还贷）的内容，原文都有明确依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "节点 n002 直接来自 v7u_N000554 的“The bank should not accept funds for the purposes of loan”，原文有明确表达。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "“银行知道或怀疑客户使用非法资金还贷”是“不应接受还款”的逻辑前提，构成 if-then 条件先后关系，方向符合 PRECEDES 的定义。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边的 condition 直接取自原文 v7u_N000554 的“If the bank knows or suspects...”，原文明示了这一条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有单独设置 qualifier，目标节点的 modality 和 label 已完整保留了原文的“不应”。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "边表达的是原文明确的条件与行动关系，并非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000553",
+        "v7u_N000554"
+      ],
+      "source_quotes": [
+        "因洗钱担忧关闭客户账户时，若客户仍有贷款余额，银行面临财务损失等挑战",
+        "若银行知道或怀疑客户使用非法资金还贷，不应接受该资金用于还贷"
+      ],
+      "reason": "边准确反映了 v7u_N000554 中明确的 if-then 条件关系，source 和 target 节点均有直接原文支撑，方向与条件均被原文明示，无并列或相关性错误，审核通过。"
+    }
+  ]
+}

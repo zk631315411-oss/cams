@@ -1,0 +1,234 @@
+{
+  "section_id": "CH11-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S01_001",
+      "section_id": "CH11-S01",
+      "card_nature": "control",
+      "title": "了解合作伙伴AFC控制以降低合作风险",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "PSP运营依赖银行、金融机构、卡网络、技术提供商和第三方服务商，合作风险通常更高",
+          "evidence_unit_ids": ["v7u_N000803"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "PSP必须了解合作伙伴的反金融犯罪控制",
+          "evidence_unit_ids": ["v7u_N000804"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低相关风险",
+          "evidence_unit_ids": ["v7u_N000804"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "合作风险通常更高",
+          "evidence_unit_ids": ["v7u_N000803", "v7u_N000804"]
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N000804"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000803", "v7u_N000804"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：PSP在合作风险较高的背景下，通过了解合作伙伴AFC控制来降低风险；证据范围：v7u_N000803, v7u_N000804；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH11-S01_002",
+      "section_id": "CH11-S01",
+      "card_nature": "control",
+      "title": "确保合作伙伴遵守法规和数据保护要求",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "监管合规风险是支付服务商面临的一个担忧",
+          "evidence_unit_ids": ["v7u_N000805"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "PSP必须确保合作伙伴遵守法规和数据保护要求（如欧盟支付服务指令中的强客户认证）",
+          "evidence_unit_ids": ["v7u_N000806"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "监管合规风险是支付服务商的一个担忧",
+          "evidence_unit_ids": ["v7u_N000805", "v7u_N000806"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000805", "v7u_N000806"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：面对监管合规风险担忧，PSP必须确保合作伙伴遵守法规和数据保护要求；证据范围：v7u_N000805, v7u_N000806；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH11-S01_003",
+      "section_id": "CH11-S01",
+      "card_nature": "risk_indicator",
+      "title": "依据服务中断等红旗信号判断合作伙伴合规疏漏",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "服务中断、响应时间长或客服不足",
+          "evidence_unit_ids": ["v7u_N000809"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "可能存在合作伙伴的交易监控和合规工作疏漏",
+          "evidence_unit_ids": ["v7u_N000809"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "relation_type": "clue_supports_identification",
+          "evidence_unit_ids": ["v7u_N000809"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000809"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：服务中断等红旗信号触发对合作伙伴交易监控和合规疏漏的判断；证据范围：v7u_N000809；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH11-S01_004",
+      "section_id": "CH11-S01",
+      "card_nature": "execution",
+      "title": "发生泄露时PSP负责客户沟通与损害控制",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发生泄露",
+          "evidence_unit_ids": ["v7u_N000811"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "PSP负责客户沟通与损害控制",
+          "evidence_unit_ids": ["v7u_N000811"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N000811"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000811"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：发生泄露事件触发PSP执行客户沟通和损害控制；证据范围：v7u_N000811；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "仅描述客户风险的间接性质和义务，不构成程序性或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH11-S01_001"],
+      "reason": "该候选提供了了解合作伙伴AFC控制以降低风险的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH11-S01_002"],
+      "reason": "该候选提供了确保合作伙伴遵守法规的程序性动作。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH11-S01_003"],
+      "reason": "该候选提供了从红旗信号判断合规疏漏的判断过程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH11-S01_004"],
+      "reason": "该候选提供了泄露事件触发PSP响应动作的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch11_s01_partner_noncompliance_ml",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述合作伙伴不合规可能助长洗钱的风险因果链，不包含PSP的业务判断或程序性动作。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch11_s01_partner_cyber_failure_ml",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述合作伙伴网络安全失败可能导致未授权访问并助长欺诈洗钱的风险因果链，不包含PSP的业务判断或程序性动作。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "上下文角色→入口。合作风险更高是一种状态阈值，触发处理→E3_state_threshold。",
+      "e002": "动作角色→处理。了解合作伙伴AFC控制是信息收集活动→P4_collection。",
+      "e003": "结果角色→出口。降低风险是风险状态的改变→X3_state_change。"
+    },
+    "ep_002": {
+      "e001": "上下文角色→入口。监管合规风险担忧是一种状态阈值→E3_state_threshold。",
+      "e002": "动作角色→处理。确保合作伙伴遵守法规是执行动作→P2_execution。"
+    },
+    "ep_003": {
+      "e001": "上下文角色→入口。服务中断等是明确的事件信号→E1_event_signal。",
+      "e002": "决策角色→处理。从红旗信号识别可能疏漏是评估和形成判断→P1_assessment。"
+    },
+    "ep_004": {
+      "e001": "上下文角色→入口。发生泄露是事件信号→E1_event_signal。",
+      "e002": "动作角色→处理。客户沟通与损害控制是执行动作→P2_execution。"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,71 @@
+{
+  "section_id": "CH11-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH11-S04_001",
+      "section_id": "CH11-S04",
+      "card_nature": "control",
+      "title": "电子商务犯罪资金存入触发金融机构预防与发现金融犯罪的义务",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "犯罪资金最终存入金融机构",
+          "evidence_unit_ids": [
+            "v7u_N000854"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构必须努力预防和发现金融犯罪",
+          "evidence_unit_ids": [
+            "v7u_N000855"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000854",
+            "v7u_N000855"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Ultimately, these funds will be deposited with an FI. Therefore, FIs must strive to prevent and detect financial crime through their roles as payment processors, card issuers for customers, and account openers for merchants."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000854",
+        "v7u_N000855"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：犯罪资金最终存入金融机构，触发金融机构必须努力预防和发现金融犯罪的义务。证据范围：v7u_N000854,v7u_N000855。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH11-S04_001"
+      ],
+      "reason": "候选独立支持从犯罪资金存入金融机构到金融机构必须采取预防和发现金融犯罪行动的触发关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → node_category=entry，语义为事件触发，故选择 E1_event_signal",
+      "e002": "action role → node_category=process，语义为实施预防和发现措施，故选择 P2_execution"
+    }
+  },
+  "skip_reason": null
+}

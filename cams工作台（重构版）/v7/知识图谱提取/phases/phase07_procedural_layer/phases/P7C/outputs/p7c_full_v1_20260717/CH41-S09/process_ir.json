@@ -1,0 +1,133 @@
+{
+  "section_id": "CH41-S09",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何验证客户身份？",
+      "title": "通过政府证件、生物识别和技术解决方案验证客户身份",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "验证客户身份",
+          "evidence_unit_ids": [
+            "v7u_N003000"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "政府签发的证件、生物识别认证和技术解决方案",
+          "evidence_unit_ids": [
+            "v7u_N003000"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003000"
+          ],
+          "source_quote": "Validate customer identity through governmentissued documents, biometric authentication, and technological onboarding solutions."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "如何根据客户特征评估风险并分配风险评级？",
+      "title": "基于交易行为、行业类型和司法管辖区风险暴露评估客户风险并分配风险评级",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "评估客户风险",
+          "evidence_unit_ids": [
+            "v7u_N003001"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "input",
+          "label": "交易行为、行业类型和司法管辖区风险暴露",
+          "evidence_unit_ids": [
+            "v7u_N003001"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "分配风险评级",
+          "evidence_unit_ids": [
+            "v7u_N003001"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003001"
+          ],
+          "source_quote": "Assess customer risk based on transaction behavior, industry type, and jurisdictional exposure to assign a risk rating."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003001"
+          ],
+          "source_quote": "to assign a risk rating"
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了身份验证的动作及其手段，构成可建模的业务流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选描述了风险评估的动作、输入标准和目的结果，构成可建模的业务流程。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,314 @@
+{
+  "section_id": "CH34-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH34-S05_001",
+      "section_id": "CH34-S05",
+      "card_nature": "control",
+      "title": "第二人通过四眼检查确保准确性",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "第二人进行四眼检查",
+          "evidence_unit_ids": ["v7u_N002455"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保准确性",
+          "evidence_unit_ids": ["v7u_N002455"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002455"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002455"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：第二人执行四眼检查能够确保准确性；证据范围：v7u_N002455；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S05_002",
+      "section_id": "CH34-S05",
+      "card_nature": "control",
+      "title": "QC 职能抽样检查文件以确认 KYC 文档质量",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QC 职能可能抽样检查文件",
+          "evidence_unit_ids": ["v7u_N002456"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确认 KYC 文档质量一致且可接受",
+          "evidence_unit_ids": ["v7u_N002456"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002456"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002456"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：QC 职能通过抽样检查文件能够确认 KYC 文档质量；证据范围：v7u_N002456；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S05_003",
+      "section_id": "CH34-S05",
+      "card_nature": "control",
+      "title": "质量下降时修正不良产出并提供培训",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "质量下降",
+          "evidence_unit_ids": ["v7u_N002457"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "团队应修正不良产出",
+          "evidence_unit_ids": ["v7u_N002457"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "团队为相关员工提供额外培训与支持",
+          "evidence_unit_ids": ["v7u_N002457"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "若质量下降",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002457"]
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e003",
+          "condition": "若质量下降",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002457"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002457"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：若质量下降则修正不良产出并提供培训；证据范围：v7u_N002457；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S05_004",
+      "section_id": "CH34-S05",
+      "card_nature": "assessment",
+      "title": "QA 职能检查程序与政策的一致性及实际执行情况",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QA 职能检查程序",
+          "evidence_unit_ids": ["v7u_N002458"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "程序准确反映相关政策并按预期从始至终实施",
+          "evidence_unit_ids": ["v7u_N002458"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N002458"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002458"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：QA 职能参照标准检查程序与政策的一致性和实施情况；证据范围：v7u_N002458；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S05_005",
+      "section_id": "CH34-S05",
+      "card_nature": "assessment",
+      "title": "合规监测与测试向 MLRO/BSA 官员提供保证并确认控制有效性",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "合规监测与测试",
+          "evidence_unit_ids": ["v7u_N002459"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "向 MLRO 或 BSA 官员提供保证",
+          "evidence_unit_ids": ["v7u_N002459"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "有助于确认第一和第二道防线的 AFC 合规控制按预期运行",
+          "evidence_unit_ids": ["v7u_N002459"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "提供流程设计良好且运行有效的保证",
+          "evidence_unit_ids": ["v7u_N002459"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002459"]
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N002459"]
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N002459"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002459"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：合规监测与测试提供保证、帮助确认控制有效并提供流程保证；证据范围：v7u_N002459；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch34_s05_four_eyes_check",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S05_001"],
+      "reason": "四眼检查确保准确性的控制流程已被映射为 card。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s05_qc_sample_check",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S05_002"],
+      "reason": "QC 抽样确认文档质量的控制流程已被映射为 card。"
+    },
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S05_003"],
+      "reason": "质量下降触发响应流程已被映射为 card。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s05_qa_procedure_check",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S05_004"],
+      "reason": "QA 检查程序合规性的评估流程已被映射为 card。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s05_compliance_monitoring_assurance",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S05_005"],
+      "reason": "合规监测与测试提供保证的治理流程已被映射为 card。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "role=action，四眼检查是执行确保准确性的动作，选 P2_execution",
+      "e002": "role=outcome，确保准确性导致状态变化，选 X3_state_change"
+    },
+    "ep_002": {
+      "e001": "role=action，QC 抽样检查质量属于评估活动，选 P1_assessment",
+      "e002": "role=outcome，确认质量一致且可接受是形成结论，选 X1_classification"
+    },
+    "ep_003": {
+      "e001": "role=context，质量下降是异常事件触发处理，选 E6_change_exception",
+      "e002": "role=action，修正不良产出是执行动作，选 P2_execution",
+      "e003": "role=action，提供培训与支持是执行动作，选 P2_execution"
+    },
+    "ep_004": {
+      "e001": "role=action，QA 评估程序符合性和实施情况，选 P1_assessment",
+      "e002": "role=standard，检查的标准依据，选 standard"
+    },
+    "ep_005": {
+      "e001": "role=action，合规监测与测试是持续监控活动，选 P7_monitoring",
+      "e002": "role=outcome，向官员提供保证属于报告交接，选 X4_handoff",
+      "e003": "role=outcome，确认控制运行有效是形成结论，选 X1_classification",
+      "e004": "role=outcome，提供流程保证属于信息传递，选 X4_handoff"
+    }
+  },
+  "skip_reason": null
+}

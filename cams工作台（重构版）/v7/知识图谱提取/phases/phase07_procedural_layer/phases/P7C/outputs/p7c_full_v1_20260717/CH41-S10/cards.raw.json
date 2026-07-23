@@ -1,0 +1,148 @@
+{
+  "section_id": "CH41-S10",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S10_001",
+      "section_id": "CH41-S10",
+      "card_nature": "execution",
+      "title": "根据组织程序上报可疑案件至第二道防线",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "可疑案件",
+          "evidence_unit_ids": [
+            "v7u_N003002"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "组织程序",
+          "evidence_unit_ids": [
+            "v7u_N003002"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "可能需要将案件上报至第二道防线",
+          "evidence_unit_ids": [
+            "v7u_N003002"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N003002"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Depending on the organization’s procedures, the case may need to be escalated to the second line."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "REFERENCES",
+          "source": "e003",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N003002"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Depending on the organization’s procedures, the case may need to be escalated to the second line."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003002"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据组织程序，可疑案件可能需要上报至第二道防线，明确触发与约束关系；证据范围：v7u_N003002；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S10_002",
+      "section_id": "CH41-S10",
+      "card_nature": "execution",
+      "title": "向金融情报机构提交可疑活动报告",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N003003"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "向适当的金融情报机构提交可疑活动报告",
+          "evidence_unit_ids": [
+            "v7u_N003003"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N003003"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "SAR filing: Report suspicious activities to the appropriate FIU."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003003"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：可疑活动触发向FIU提交SAR；证据范围：v7u_N003003；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S10_001"
+      ],
+      "reason": "该候选包含根据组织程序将可疑案件上报至第二道防线的条件性程序动作，独立支持一条触发关系与标准约束关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S10_002"
+      ],
+      "reason": "该候选包含向FIU提交可疑活动报告的直接程序动作，独立支持一条触发关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, 案件作为被上报对象触发处理，选择E2_object_entry",
+      "e002": "standard role -> node_type=standard",
+      "e003": "action role, 上报动作属于执行类，选择P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role, 可疑活动作为被报告对象触发SAR filing，选择E2_object_entry",
+      "e002": "action role, 提交SAR动作属于执行类，选择P2_execution"
+    }
+  },
+  "skip_reason": null
+}

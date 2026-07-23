@@ -1,0 +1,140 @@
+{
+  "section_id": "CH26-S07",
+  "cards": [
+    {
+      "card_id": "p7card_CH26-S07_001",
+      "section_id": "CH26-S07",
+      "card_nature": "execution",
+      "title": "通过风险分级与监管要求实现安全与道德使用",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "categorizing AI models and systems into varying levels of risk and imposing corresponding regulatory requirements",
+          "evidence_unit_ids": ["v7u_N002094"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "achieve safe and ethical use of technology",
+          "evidence_unit_ids": ["v7u_N002094"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002094"],
+          "qualifier": "aimed_to",
+          "source_quote": "It seeks to achieve this by categorizing AI models and systems into varying levels of risk and imposing corresponding regulatory requirements."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002094"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：欧盟AI法案通过风险分级和施加监管要求实现安全与道德使用；证据范围：v7u_N002094；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S07_002",
+      "section_id": "CH26-S07",
+      "card_nature": "execution",
+      "title": "美国签发行政令鼓励创新并撤销先前AI治理蓝图",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "the US issued Executive Order 14179",
+          "evidence_unit_ids": ["v7u_N002091"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "government agencies are directed to encourage innovation rather than regulation",
+          "evidence_unit_ids": ["v7u_N002091"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "previous AI governance blueprint is rescinded",
+          "evidence_unit_ids": ["v7u_N002091"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002091"],
+          "source_quote": "directs government agencies to encourage innovation rather than regulation"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002091"],
+          "source_quote": "rescinding a previous blueprint that set forth five principles for AI governance"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002091"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：美国发布行政令指示机构鼓励创新并撤销蓝图；证据范围：v7u_N002091；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH26-S07_001"],
+      "reason": "该候选描述了欧盟AI法案通过风险分级和施加监管要求来实现安全与道德使用的具体程序，构成独立流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选仅静态陈述欧盟AI法案的适用范围，未描述任何业务处理、判断或行动过程，属于非程序性知识。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选仅静态陈述香港伦理AI框架的适用范围（仅限银行），未描述业务判断或动态过程，属于非程序性事实。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s07_us_exec_order",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH26-S07_002"],
+      "reason": "该候选描述了美国发布行政令指示政府机构鼓励创新并撤销先前AI治理蓝图的行政行动，包含明确的动作和结果。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s07_uk_bill_codify",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选描述英国提出法案及附条件的结果，但未体现机构业务判断或流程，仅为立法动态介绍，不构成程序性内容。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + 原文核心为风险分级及施加要求，属于基于标准的评估与分类行为，故映射为 P1_assessment",
+      "e002": "outcome role + “achieve safe and ethical use”表示达到安全道德使用的状态变化，故映射为 X3_state_change"
+    },
+    "ep_002": {
+      "e001": "action role + 发布行政令为具体执行动作，故映射为 P2_execution",
+      "e002": "outcome role + 指示政府机构鼓励创新改变了政策/监管配置，故映射为 X5_config_change",
+      "e003": "outcome role + 撤销蓝图属于对治理规则的修改，故映射为 X5_config_change"
+    }
+  },
+  "skip_reason": null
+}

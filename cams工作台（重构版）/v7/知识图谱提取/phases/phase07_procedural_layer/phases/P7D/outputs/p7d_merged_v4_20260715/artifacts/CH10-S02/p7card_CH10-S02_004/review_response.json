@@ -1,0 +1,158 @@
+{
+  "section_id": "CH10-S02",
+  "card_id": "p7card_CH10-S02_004",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确要求公司调整其尽职调查程序以符合CardGuard标准，CashBayou作为使用其服务的公司，属于此列。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确提及“CardGuard’s standards for referred cardholders”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“align their due diligence procedures with CardGuard’s standards”表明调整程序以参照标准，方向为从过程到标准。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文仅陈述要求，未使用must、should等限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该关系为明确的参照关系，非并列或相关性。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000779"
+      ],
+      "source_quotes": [
+        "The letter states that companies using CardGuard’s services are required to align their due diligence procedures with CardGuard’s standards for referred cardholders."
+      ],
+      "reason": "原文明示了从调整程序到CardGuard标准的参照关系，支持该REFERENCES边。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n002“被要求调整程序”直接来自原文要求。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文的“Failure to comply”隐含了存在一个“是否满足标准”的判断点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "调整程序是遵守标准的前提，逻辑上调整动作先于对是否满足的判断；若交换方向则违反功能依赖。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该关系未涉及情态或限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关性，存在必要功能先后。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000779"
+      ],
+      "source_quotes": [
+        "The letter states that companies … are required to align their due diligence procedures … Failure to comply will result in the termination …"
+      ],
+      "reason": "原文虽未明文表述顺序，但调整程序是遵守标准的手段，因此调整先于对是否遵守的判断，逻辑上构成PRECEDES，推导为llm_inference。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n003“是否满足标准”可从原文“Failure to comply”推断。"
+        },
+        "target_node_support": {
+          "status": "unsupported",
+          "reason": "原文仅提及不遵守将导致终止，未提供“合作关系继续”的明确证据，该出口为无依据的推理。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "如果满足标准则继续合作，方向逻辑正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“满足 CardGuard 标准”可由不满足反推，且与原文标准一致。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文未对满足标准的结果附加限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关性。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000779"
+      ],
+      "source_quotes": [
+        "Failure to comply will result in the termination of CardGuard’s partnership with CashBayou."
+      ],
+      "reason": "该边表示满足标准时走向“合作关系继续”，但原文只给出了不满足时的终止结果，未提及满足时的走向，因此target节点缺乏当前section依据，边不成立。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "n003“是否满足标准”可从原文“Failure to comply”推断。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文明确“合作关系终止”是未遵守的后果。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文直接表明未遵守导致终止。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "条件“未满足 CardGuard 标准”与原文“Failure to comply”一致。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文使用“will result”直接结果，未施加其他限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关性。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000779"
+      ],
+      "source_quotes": [
+        "Failure to comply will result in the termination of CardGuard’s partnership with CashBayou."
+      ],
+      "reason": "原文明示了未满足标准将导致合作关系终止，支持该DECIDES边。"
+    }
+  ]
+}

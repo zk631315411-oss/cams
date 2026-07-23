@@ -1,0 +1,158 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应节点'进行客户尽职调查'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'expected and historical trading patterns'对应节点'预期和历史交易模式'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'customers are correctly segmented according to their expected and historical trading patterns'表明CDD过程参照该模式进行细分，方向明确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "REFERENCES边不涉及限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "是明确的参照关系，不存在并列、相关或顺序误判。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000924"
+      ],
+      "source_quotes": [
+        "Conducting CDD helps ensure that ... customers are correctly segmented according to their expected and historical trading patterns."
+      ],
+      "reason": "原文明确表达CDD按照历史模式细分客户，REFERENCES关系为explicit，审核通过。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应节点'进行客户尽职调查'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'customers'对应节点'客户'。"
+        },
+        "direction_support": {
+          "status": "pending",
+          "reason": "原文未直接说明CDD'参照'客户，但从CDD的功能推理，其需要参照客户信息；反向无意义。需人工确认。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "REFERENCES边不涉及限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000924"
+      ],
+      "source_quotes": [
+        "Conducting CDD helps ensure that ... customers are correctly segmented ..."
+      ],
+      "reason": "原文有CDD和客户，但未明确'参照'关系，经功能推理认为CDD需参照客户信息，故为llm_inference，建议人工判断。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应节点'进行客户尽职调查'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'source of funds is legitimate'对应节点'确保资金来源合法'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表明CDD有助于确保资金来源合法，方向从process到结果。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'helps ensure'（有助于确保），但边和节点均未保留该限定词，PRODUCES暗示确定性结果，与原文情态不符。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000924"
+      ],
+      "source_quotes": [
+        "Conducting CDD helps ensure that the source of funds is legitimate,"
+      ],
+      "reason": "原文关系虽明示，但限定词'helps'丢失，致使PRODUCES关系过强，证据不足以支持当前边，应予拒绝。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文'Conducting CDD'对应节点'进行客户尽职调查'。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文'customers are correctly segmented...'对应节点'客户根据预期和历史交易模式正确细分'。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表明CDD有助于实现客户正确细分，方向从process到结果。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'helps ensure'（有助于确保），但边和节点均未保留限定词，PRODUCES暗示确定性结果，与原文情态不符。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000924"
+      ],
+      "source_quotes": [
+        "Conducting CDD helps ensure that ... customers are correctly segmented according to their expected and historical trading patterns."
+      ],
+      "reason": "原文关系虽明示，但限定词'helps'丢失，致使PRODUCES关系过强，证据不足以支持当前边，应予拒绝。"
+    }
+  ]
+}

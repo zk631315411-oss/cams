@@ -18,19 +18,41 @@
     if (currentLanguage === "en") return { primary: en, secondary: zh };
     return { primary: zh, secondary: en };
   }
+  function appendTocNode(parent, node, depth) {
+    var label = chapterLabel(node);
+    var children = node.children || [];
+    var makeButton = function () {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "toc-item toc-item-depth-" + Math.min(depth, 5);
+      button.innerHTML = "<span class=\"toc-item-primary\">" + U.escapeHtml(label.primary) + "</span><span class=\"toc-item-secondary\">" + U.escapeHtml(label.secondary) + "</span><small>" + (node.unit_ids || []).length + "</small>";
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        if ((node.unit_ids || []).length) currentHandlers.selectUnit(node.unit_ids[0], true);
+      });
+      return button;
+    };
+    if (!children.length) {
+      parent.appendChild(makeButton());
+      return;
+    }
+    var group = document.createElement("details");
+    group.className = "toc-group toc-group-depth-" + Math.min(depth, 5);
+    group.open = depth < 1;
+    var summary = document.createElement("summary");
+    summary.appendChild(makeButton());
+    group.appendChild(summary);
+    var nested = document.createElement("div");
+    nested.className = "toc-children";
+    children.forEach(function (child) { appendTocNode(nested, child, depth + 1); });
+    group.appendChild(nested);
+    parent.appendChild(group);
+  }
   function renderToc() {
     var toc = U.byId("tocList");
     if (!toc || !currentState || !currentHandlers) return;
     toc.innerHTML = "";
-    currentState.chapters.forEach(function (chapter) {
-      var label = chapterLabel(chapter);
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "toc-item";
-      button.innerHTML = "<span class=\"toc-item-primary\">" + U.escapeHtml(label.primary) + "</span><span class=\"toc-item-secondary\">" + U.escapeHtml(label.secondary) + "</span><small>" + chapter.unit_ids.length + "</small>";
-      button.addEventListener("click", function () { currentHandlers.selectChapter(chapter.chapter_id); });
-      toc.appendChild(button);
-    });
+    currentState.chapters.forEach(function (chapter) { appendTocNode(toc, chapter, 0); });
   }
   function pageMarkup(page) {
     var content = currentLanguage === "both"

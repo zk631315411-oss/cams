@@ -1,0 +1,158 @@
+{
+  "section_id": "CH12-S04",
+  "card_id": "p7card_CH12-S04_001",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e003“实施持续的交易监控，并使用基于预定义标准标记可疑交易的稳健交易监控系统”直接来自单元v7u_N000923中“Continuous monitoring of trading activities”和“Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria”的描述。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e002“预定义标准”对应原文“predefined criteria”，有明确依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文明确说明系统“based on predefined criteria”，该参照关系由process指向标准，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边无相关限定词，且原文“based on”未含情态限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文直接描述系统基于标准，不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions."
+      ],
+      "reason": "原文明示了监控系统基于预定义标准进行标记的参照关系，所有检查均通过。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e001“交易活动”来自原文“trading activities”，有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e003描述的实施监控直接对应原文“Continuous monitoring of trading activities”和“Robust transaction monitoring systems”，有依据。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文只是陈述监控交易活动，并未表明交易活动作为先决事件发生于监控之前。PRECEDES要求明示先后顺序或必要功能依赖，此处仅为监控的对象，不能成立先后关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关，但方向本身有误。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Continuous monitoring of trading activities can help identify unusual patterns or behaviors that might indicate money laundering."
+      ],
+      "reason": "原文未支持交易活动到监控的先后顺序，PRECEDES方向不成立，边应拒绝。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e003与原文描述一致。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e004“识别可能表明洗钱的异常模式或行为”保留了原文中的情态“可能”，来自原文“identify unusual patterns or behaviors that might indicate money laundering”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“Continuous monitoring … can help identify”直接表达监控产生识别，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "原文使用“can help”，target label中保留了“可能表明”，情态强度一致，未强化为必然。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "明确的前后关系，非并列。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Continuous monitoring of trading activities can help identify unusual patterns or behaviors that might indicate money laundering."
+      ],
+      "reason": "原文明示监控有助于识别异常模式，且target保留“可能”情态，PRODUCES成立。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e003有依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e005内容来自原文“identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions”，有依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“Robust transaction monitoring systems … can help identify …”表达监控产生此类识别，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用“can help identify”，表明帮助识别的可能性，但e005 label写作“识别…”，未保留“可能”等限定词，将原文的可能性强化为必然完成状态。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000923"
+      ],
+      "source_quotes": [
+        "Robust transaction monitoring systems that flag suspicious transactions based on predefined criteria can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions."
+      ],
+      "reason": "原文支持监控与识别的关系，但e005丢失了情态限定，将“可能帮助识别”变成直接“识别”，语义不符，边应拒绝。"
+    }
+  ]
+}

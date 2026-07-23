@@ -1,0 +1,119 @@
+{
+  "section_id": "CH41-S09",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S09_001",
+      "section_id": "CH41-S09",
+      "card_nature": "execution",
+      "title": "通过政府证件、生物识别和技术解决方案验证客户身份",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "验证客户身份",
+          "evidence_unit_ids": ["v7u_N003000"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "政府签发的证件、生物识别认证和技术解决方案",
+          "evidence_unit_ids": ["v7u_N003000"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N003000"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003000"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：验证客户身份需通过政府签发的证件、生物识别认证和技术解决方案完成；证据范围：v7u_N003000；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S09_002",
+      "section_id": "CH41-S09",
+      "card_nature": "assessment",
+      "title": "基于交易行为、行业类型和司法管辖区风险暴露评估客户风险并分配风险评级",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估客户风险",
+          "evidence_unit_ids": ["v7u_N003001"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "交易行为、行业类型和司法管辖区风险暴露",
+          "evidence_unit_ids": ["v7u_N003001"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "分配风险评级",
+          "evidence_unit_ids": ["v7u_N003001"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N003001"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N003001"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003001"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：评估客户风险时参考交易行为、行业类型和司法管辖区风险暴露，旨在分配风险评级；证据范围：v7u_N003001；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S09_001"],
+      "reason": "候选描述身份验证动作及手段，可建模为卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S09_002"],
+      "reason": "候选描述风险评估、输入和目的结果，可建模为卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role → process; 具体动作为执行验证，属于执行类操作 → P2_execution",
+      "e002": "standard role → auxiliary; 指定标准和手段 → standard"
+    },
+    "ep_002": {
+      "e001": "action role → process; 语义为评估风险并形成结论，属于评估类操作 → P1_assessment",
+      "e002": "input role → auxiliary; 提供评估依据 → input",
+      "e003": "outcome role → exit; 分配风险评级属于形成风险结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

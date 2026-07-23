@@ -1,0 +1,162 @@
+{
+  "section_id": "CH34-S10",
+  "cards": [
+    {
+      "card_id": "p7card_CH34-S10_001",
+      "section_id": "CH34-S10",
+      "card_nature": "assessment",
+      "title": "独立审计评估控制有效性并识别缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "独立审计评估第一、二道防线控制的有效性和效率，确保组织控制符合监管要求并有效运行",
+          "evidence_unit_ids": ["v7u_N002524", "v7u_N002534"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "监管要求和行业标准",
+          "evidence_unit_ids": ["v7u_N002524", "v7u_N002534"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别并沟通缺陷",
+          "evidence_unit_ids": ["v7u_N002534"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "提供关于控制环境有效性的无偏见意见",
+          "evidence_unit_ids": ["v7u_N002538"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002524"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002534"],
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002538"],
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002524", "v7u_N002534", "v7u_N002538"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：独立审计评估一二道防线控制有效性、产出缺陷识别与无偏见意见；证据范围：v7u_N002524, v7u_N002534, v7u_N002538；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S10_002",
+      "section_id": "CH34-S10",
+      "card_nature": "execution",
+      "title": "外部审计替代内部审计执行独立审计职能",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "组织缺乏内部审计团队资源，或存在技能/资源限制",
+          "evidence_unit_ids": ["v7u_N002539"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "外部审计师可能执行独立审计职能",
+          "evidence_unit_ids": ["v7u_N002539"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "提供对AFC合规计划和风险管理有效性的客观评估，并丰富审计过程（当执行得当时）",
+          "evidence_unit_ids": ["v7u_N002540"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "组织缺乏内部审计资源或技能",
+          "evidence_unit_ids": ["v7u_N002539"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002540"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002539", "v7u_N002540"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：缺乏内部资源时由外部审计执行职能、产生客观评估；证据范围：v7u_N002539, v7u_N002540；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述独立审计职能向审计委员会/董事会报告以确保独立性的静态安排，属于职能描述而非程序性或判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S10_001"],
+      "reason": "独立审计对第一、二道防线控制进行评估、识别缺陷并提供无偏见意见，构成明确的判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S10_002"],
+      "reason": "在缺乏内部资源时由外部审计执行职能并提供客观评估，触发条件明确，构成程序性流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role, 评估控制有效性形成结论 → P1_assessment",
+      "e002": "standard role → standard",
+      "e003": "outcome role, 识别并沟通缺陷属于风险/有效性的结论 → X1_classification",
+      "e004": "outcome role, 提供控制环境有效性的意见属于结论 → X1_classification"
+    },
+    "ep_002": {
+      "e001": "context role, 资源/技能限制属于异常启动调整 → E6_change_exception",
+      "e002": "action role, 执行独立审计职能核心为评估 → P1_assessment",
+      "e003": "outcome role, 提供客观评估属于结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,406 @@
+{
+  "section_id": "CH32-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH32-S04_001",
+      "section_id": "CH32-S04",
+      "card_nature": "execution",
+      "title": "私营部门实体合作以发现跨机构模式",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "洗钱者和恐怖分子通过跨机构分散活动来规避检测",
+          "evidence_unit_ids": [
+            "v7u_N002329"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "私营部门实体相互合作",
+          "evidence_unit_ids": [
+            "v7u_N002330"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "可通过行业协会或专门反洗钱实体进行合作",
+          "evidence_unit_ids": [
+            "v7u_N002331"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现跨机构模式",
+          "evidence_unit_ids": [
+            "v7u_N002330"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002329",
+            "v7u_N002330"
+          ],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002330",
+            "v7u_N002331"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002330"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002329",
+        "v7u_N002330",
+        "v7u_N002331"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：洗钱者跨机构规避检测的行为驱动私营部门实体通过行业协会等途径合作发现跨机构模式。证据范围：v7u_N002329, v7u_N002330, v7u_N002331。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S04_002",
+      "section_id": "CH32-S04",
+      "card_nature": "execution",
+      "title": "基于立法允许的信息共享以提升SAR质量并防止客户重新开户",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "一些司法管辖区引入了允许信息共享的立法",
+          "evidence_unit_ids": [
+            "v7u_N002336"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织共享客户、活动和交易数据",
+          "evidence_unit_ids": [
+            "v7u_N002337"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "更好的可疑交易报告质量",
+          "evidence_unit_ids": [
+            "v7u_N002338"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "防止因反洗钱/反恐融资问题被退出的客户在其他机构开设账户",
+          "evidence_unit_ids": [
+            "v7u_N002338"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "司法管辖区已引入立法允许信息共享",
+          "evidence_unit_ids": [
+            "v7u_N002336",
+            "v7u_N002337"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002337",
+            "v7u_N002338"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002337",
+            "v7u_N002338"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002336",
+        "v7u_N002337",
+        "v7u_N002338"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在立法允许信息共享的条件下，组织共享客户/交易数据，可能提升SAR质量并防止被退出的客户重新开户。证据范围：v7u_N002336, v7u_N002337, v7u_N002338。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S04_003",
+      "section_id": "CH32-S04",
+      "card_nature": "execution",
+      "title": "联合开发KYC公用设施以集中资源并提高KYC准确性",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "组织联合开发或共享KYC能力",
+          "evidence_unit_ids": [
+            "v7u_N002339"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "集中资源与专业知识",
+          "evidence_unit_ids": [
+            "v7u_N002339"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "提高KYC程序准确性",
+          "evidence_unit_ids": [
+            "v7u_N002339"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": [
+            "v7u_N002339"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002339"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002339"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：组织联合开发KYC公用设施，有助于集中资源并提高KYC程序准确性。证据范围：v7u_N002339。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S04_004",
+      "section_id": "CH32-S04",
+      "card_nature": "control",
+      "title": "合规官的非正式合作：对标控制与采纳最佳实践",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "合规官可以且应当进行非正式合作，分享观点和经验",
+          "evidence_unit_ids": [
+            "v7u_N002340",
+            "v7u_N002341"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "讨论必须遵守当地数据隐私法和机构对保密信息的保护要求",
+          "evidence_unit_ids": [
+            "v7u_N002342"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "对标控制措施",
+          "evidence_unit_ids": [
+            "v7u_N002341"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别和采纳最佳实践",
+          "evidence_unit_ids": [
+            "v7u_N002341"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002340",
+            "v7u_N002342"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002341"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002341"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002340",
+        "v7u_N002341",
+        "v7u_N002342"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：合规官的非正式合作受数据隐私和保密要求约束，以对标控制并识别采纳最佳实践为目的。证据范围：v7u_N002340, v7u_N002341, v7u_N002342。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH32-S04_001"
+      ],
+      "reason": "候选描述了跨机构威胁触发私营实体合作的流程，构成程序性 episode。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "候选仅为静态事实陈述，描述一些团体合作制定指导或分享实践，未包含触发、条件或决策等程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH32-S04_002"
+      ],
+      "reason": "候选包含立法允许触发信息共享、共享数据动作及产生更好SAR和防止客户重新开户的结果，形成清晰的判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH32-S04_003"
+      ],
+      "reason": "候选描述组织联合开发能力并因此提高KYC准确性的目的导向流程，构成 episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH32-S04_004"
+      ],
+      "reason": "候选包含合规官非正式合作、受标准约束并通过分享达成对标和采纳最佳实践，为完整的流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "洗钱者跨机构分散活动是一个可定位的业务事件，触发后续处理，选 E1_event_signal",
+      "e002": "合作目的是识别跨机构模式，属于识别风险信号，选 P1_assessment",
+      "e003": "提供合作途径或载体，属于 input 角色，选 input",
+      "e004": "发现跨机构模式是形成一种识别结论，选 X1_classification"
+    },
+    "ep_002": {
+      "e001": "立法授权属于外部法律要求启动处理，选 E7_external_command",
+      "e002": "共享客户、活动、交易数据是对业务数据的执行动作，选 P2_execution",
+      "e003": "SAR 质量提升表示业务对象状态改善，选 X3_state_change",
+      "e004": "防止客户重新开户是阻止状态恢复，也属状态变化，选 X3_state_change"
+    },
+    "ep_003": {
+      "e001": "多组织联合开发平台需要协同完成任务，选 P5_coordination",
+      "e002": "资源与专业知识集中使业务条件发生变化，选 X3_state_change",
+      "e003": "KYC 程序准确性提高是程序质量状态变化，选 X3_state_change"
+    },
+    "ep_004": {
+      "e001": "合规官的非正式合作与分享属于多角色协同，选 P5_coordination",
+      "e002": "法律和保密要求是标准约束，选 standard",
+      "e003": "对标控制形成对控制有效性的评估结论，选 X1_classification",
+      "e004": "识别并采纳最佳实践是形成对最佳实践的认识，选 X1_classification"
+    }
+  },
+  "skip_reason": null
+}

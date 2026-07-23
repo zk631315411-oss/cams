@@ -1,138 +1,110 @@
-# P7E：Card Bridge Candidate 生成
+# P7E：跨 Section Card 桥接
 
 ## 定位
 
-P7E 读取已通过 P7D 汇报口径的 `p7_card`，生成 card 之间的桥接候选 `p7_bridge_edge`。
+P7E 读取 P7C 产出的 `cards.raw.json`，生成跨 section 的 card 桥接候选（`p7_bridge_edge`），并通过 LLM 审核筛选出业务逻辑上成立的桥接。
 
-P7E 不修改 card 内部的 `flow_nodes` / `flow_edges`，不合并 cluster，不生成 scenario path，也不写考生解析。
+P7E 不修改 card 内部的 `flow_nodes` / `flow_edges`，不合并 cluster，不生成 scenario path。
 
-## 目标
+## 流程
 
-P7E 只回答一个问题：
-
-```text
-哪些 card 之间可能存在可解释的业务连接？
+```
+cards.raw.json (P7C)
+       │
+       ▼
+generate_bridge_candidates.py    ── 规则生成：双层配对 + outlet/inlet 节点匹配
+       │
+       ▼
+p7e_bridge_candidates.jsonl      ── 候选清单（263 条，47 pass）
+       │
+       ▼
+run_p7e_bridge_review_ds.py      ── LLM 审核：读 card 完整内容，判 accept/reject
+       │
+       ▼
+p7e_bridge_reviews.jsonl         ── 审核结果
+p7e_accepted_bridges.jsonl       ── 仅 accepted（可直接使用）
 ```
 
-这里的连接包括：
+## 步骤 1：规则生成
 
-```text
-一个 card 的 output 可触发另一个 card 的 trigger
-一个 risk_indicator / assessment card 的 finding 可作为 execution / control card 的判断依据
-一个 control card 的输出可进入 assessment card 评估控制有效性
-同一业务流程中前后 section 的局部 card 可形成自然前后关系
+```bash
+python scripts/generate_bridge_candidates.py \
+  --cards-dir phases/P7C/outputs/<run_id> \
+  --dual-layer \
+  --packages-dir phases/P7B/section_packages \
+  --kg-graph ../phase06_kg_views/outputs/kg_retrieval_graph.json \
+  --output-dir outputs/p7e_bridge_v4
 ```
 
-## 输入
+### 双层配对策略
 
-```text
-P7C/cards.raw.json
-P7D/p7d_review_manifest.jsonl
-P6/kg_retrieval_graph.json
-```
+**Layer 1 — KG 引导**（当前命中 0，等 P4C 补数据）：通过 P6 全局图的 `same_chapter_core_point` + `cross_chapter_core_point` 边，找到存在 KG 关系的 CP 对，再反查覆盖这些 CP 的 card 对。
 
-只使用边级审核汇总后`card_result = pass`的card。旧`review_result = pass`仅作为历史兼容，不再是正式放行口径。
+**Layer 2 — 拓扑匹配**（当前主力）：所有 card 的出口 × 入口做笛卡尔积，5 种信号评分。
 
-## 输出
+### Outlet / Inlet 节点类型（27 种 node_type 体系）
 
-```text
-outputs/p7e_bridge_candidates.jsonl
-reports/p7e_bridge_candidate_report.md
-```
+出口（source_card 的 outlet）：
+`X1_classification` `X2_product` `X3_state_change` `X4_handoff` `X5_config_change` `X7_continuing_obligation`
+`P3_branch_routing`（有 >=2 DECIDES）、`P1_assessment`（有 PRODUCES 到 exit）
 
-## p7_bridge_edge
+入口（target_card 的 inlet）：
+`E1_event_signal` `E3_state_threshold` `E8_decision_finding`
+`P1_assessment` `P2_execution` `standard` `input`
 
-P7E 输出候选桥接边，不写入 `p7_card.flow_edges`。
+### 评分信号
 
+| 信号 | 权重 |
+|---|---|
+| `card_nature_logic` | +2（7 对 nature 方向映射） |
+| `label_similarity` | +1~3（节点 label Jaccard 相似度） |
+| `lexical_signal` | +1~4（STRONG_TERMS 精确命中） |
+| `shared_unit` | +3（card 级 unit 交集） |
+| `shared_node_unit` | +3（节点级 unit 交集） |
+| `cp_shared_unit` | +2（CP 间共享 unit，跨 section） |
+| `section_order` | +1~2（同章邻 section） |
+
+### 输出
+
+`p7e_bridge_candidates.jsonl`，每条候选：
 ```json
 {
-  "bridge_id": "p7bridge_...",
-  "edge_type": "BRIDGES_TO",
-  "source_card_id": "p7card_...",
-  "target_card_id": "p7card_...",
-  "source_node_id": "optional output/decision node",
-  "target_node_id": "optional trigger/start/action node",
-  "bridge_semantics": "proceeds_to | provides_basis | supports_control | may_trigger",
-  "bridge_basis": "shared_unit | lexical_signal | card_nature_logic | section_order | human_review",
-  "evidence_unit_ids": ["v7u_..."],
-  "source_node_strength": "explicit | functional_dependency | needs_review | rejected",
-  "target_node_strength": "explicit | functional_dependency | needs_review | rejected",
-  "condition": "optional condition",
-  "confidence": "candidate | strong_candidate | needs_review",
+  "bridge_id": "p7bridge_CH02-S04_001__CH02-S04_003_001",
+  "bridge_semantics": "proceeds_to",
+  "bridge_basis": {
+    "source": "topology_match",
+    "signals": ["card_nature_logic", "label_similarity", "section_order"],
+    "topology_match": { "outlet_type": "X1_classification", "inlet_type": "E1_event_signal" }
+  },
   "review_status": "needs_review",
-  "notes": "why this bridge may exist"
+  "score": 14,
+  "confidence": "candidate"
 }
 ```
 
-## 第一版策略
+## 步骤 2：LLM 审核
 
-P7E 第一版先生成候选，不做最终裁判：
-
-```text
-1. 只连接P7D边级审核后`card_result = pass`的card。
-2. 优先连接同章、相邻 section、或同一业务主题下的 card。
-3. 使用 card_nature 约束方向：risk_indicator/assessment 通常作为判断依据，execution/control 通常作为处置路径。
-4. 桥接必须保留 source_card_id / target_card_id，必要时保留 source_node_id / target_node_id。
-5. 每条候选必须标明 `bridge_semantics`，区分流程后继、判断依据、控制支持和可能触发。
-6. 每条候选必须记录 source/target 节点的 evidence_strength；如果任一端是 `functional_dependency`，候选自动降级。
-7. 不允许只靠关键词重合生成 `strong_candidate`。
-8. 所有候选默认 review_status = needs_review，由后续 review 或人工确认。
-9. P7E 先在节点层生成候选，再按 `source_card_id / target_card_id / bridge_semantics` 合并压缩；同一组只保留少量最像接口的候选，避免把一个 card 关系展开成大量内部节点组合。
-10. 接口优先级为：source 端优先 `output > decision > end`，target 端优先 `trigger > start > action > standard`。
-11. 如果 source 输出表示终止分支，例如 unsuitable / filtered out / rejected / declined，不应继续桥接到后续 execution 流程。
+```bash
+python scripts/run_p7e_bridge_review_ds.py \
+  --candidates outputs/p7e_bridge_v4/p7e_bridge_candidates.jsonl \
+  --cards-dir phases/P7C/outputs/<run_id> \
+  --run-id p7e_review_v1 \
+  --model deepseek-v4-pro \
+  --thinking-effort none \
+  --concurrency 10
 ```
 
-主输出 `p7e_bridge_candidates.jsonl` 是压缩后的候选清单。脚本可在候选中记录 `candidate_group_size` 和 `candidate_rank`，用于说明该候选来自多大的节点组合池，以及为什么被保留。
+LLM 收到 source card + target card 的完整 `flow_nodes` + `flow_edges`，以及桥接候选的出口/入口节点，判断：
 
-## bridge_semantics
+1. **业务连续性**：source 的出口是否是 target 入口的业务前提？
+2. **逻辑方向**：桥接方向是否与业务因果关系一致？
+3. **跨 section 合理性**：两个 card 是否属于同一业务领域？
 
-```text
-proceeds_to       source 的输出进入 target 的后续流程
-provides_basis    source 的风险发现/评估结论为 target 提供判断依据
-supports_control  source 的控制/治理结果支持 target 的控制评估或处置
-may_trigger       source 可能触发 target，但证据较弱，需要 review
-```
-
-## confidence
-
-```text
-strong_candidate  方向合理、接口角色匹配、存在明确业务短语重合，且不能只由关键词决定
-candidate         方向合理、接口角色匹配，有可解释但较弱的信号
-needs_review      方向可能合理，但证据弱、跨度大，或依赖 functional_dependency
-```
-
-`confidence` 不是最终审核结果。P7E 不输出 confirmed bridge。
-
-## Review 口径
-
-P7E review 保持轻量：Codex 先判断，再向人工汇报。
-
-```text
-card_result = pass  card内所有边均已审核接受，可进入后续实验
-card_result = fail  至少一条边pending/rejected或结构失败，不得作为完整已验证card进入后续
-```
-
-P7E 不需要复杂处置表。报告中只需说明：候选边是什么、为什么连、证据强弱、Codex 初判 pass/fail。
-
-## 风险控制
-
-P7E v1 是保守候选生成器，不是自动连图器：
-
-```text
-词面重合只能作为信号，不能单独证明连接成立
-output -> trigger 也可能方向错误，必须记录 notes
-assessment / risk_indicator 多数是依据关系，不一定是时间先后
-输入 card 不完整时，候选不代表全书完整图
-候选边不能污染 p7_card.flow_edges 正本
-```
+输出 `accepted` / `rejected` + 理由。
 
 ## 非目标
 
-```text
-不生成 cluster
-不生成 scenario path
-不把 bridge 写进 card.flow_edges
-不跨越P7D的`card_result`与边级`review_status`约束
-不直接用于答题裁判
-不生成 confirmed bridge
-```
+- 不生成 cluster
+- 不生成 scenario path
+- 不把 bridge 写进 card.flow_edges
+- 不直接用于答题裁判

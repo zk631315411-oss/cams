@@ -1,0 +1,295 @@
+{
+  "section_id": "CH16-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH16-S03_001",
+      "section_id": "CH16-S03",
+      "card_nature": "execution",
+      "title": "负面媒体报道或指控触发的客户审查与风险评估工具更新",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "负面媒体报道或指控",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "客户审查更新",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "在适当情况下提示风险评估工具刷新",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Negative media coverage or allegations should trigger a refresh of customer review"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "if appropriate",
+          "evidence_unit_ids": [
+            "v7u_N001161"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "if appropriate, prompt a refresh of the customer risk assessment tool"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001161"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：负面媒体报道或指控触发客户审查更新，并在适当情况下提示风险评估工具刷新。证据范围：v7u_N001161。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH16-S03_002",
+      "section_id": "CH16-S03",
+      "card_nature": "execution",
+      "title": "多元化高风险企业的强化尽职调查流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "多元化经营且涉及高价值高风险行业的企业",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "接受强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "评估其活动和风险",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "企业多元化经营且涉及高价值高风险行业",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Businesses with diversified operations, particularly in high-value and risky sectors, should be subject to enhanced due diligence"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001162"
+          ],
+          "source_quote": "to evaluate their activities and risks"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001162"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：多元化高风险企业应接受强化尽职调查，以评估其活动和风险。证据范围：v7u_N001162。注意S2将企业标记为input而非context，导致起点角色不匹配trigger矩阵；本图仍建模为触发关系。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH16-S03_003",
+      "section_id": "CH16-S03",
+      "card_nature": "execution",
+      "title": "高价值商品零售商的密切监控要求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "高价值商品零售商",
+          "evidence_unit_ids": [
+            "v7u_N001159"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "需要密切监控",
+          "evidence_unit_ids": [
+            "v7u_N001159"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "为高价值商品零售商",
+          "evidence_unit_ids": [
+            "v7u_N001159"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Retailers of high-value items require close monitoring."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001159"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：高价值商品零售商需要密切监控。证据范围：v7u_N001159。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH16-S03_004",
+      "section_id": "CH16-S03",
+      "card_nature": "risk_indicator",
+      "title": "非正常时间大额交易作为非法活动指标",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "大额现金或信用卡交易发生在正常营业时间之外",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "可能表明非法活动",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N001160"
+          ],
+          "relation_type": "clue_supports_identification",
+          "source_quote": "Large cash or credit transactions outside usual or expected hours of operation might indicate illegal activities."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001160"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：非正常营业时间的大额交易可能表明非法活动。证据范围：v7u_N001160。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH16-S03_001"
+      ],
+      "reason": "该候选描述了负面媒体报道或指控触发客户审查更新和风险评估工具刷新的完整程序，具备明确的触发-动作关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH16-S03_002"
+      ],
+      "reason": "该候选提供了多元化高风险企业应接受强化尽职调查并评估活动风险的业务流程，包含动作与目的关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch16_s03_retailer_monitoring",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH16-S03_003"
+      ],
+      "reason": "该候选虽然简短，但包含了针对高价值商品零售商需要密切监控的程序性要求，可独立表达为条件触发关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch16_s03_offhour_txn_indicator",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH16-S03_004"
+      ],
+      "reason": "该候选将交易特征与非法活动指示联系起来，构成一个判断关系，可作为风险指标独立建模。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "负面媒体报道或指控是可定位的业务事件，触发处理，选择E1_event_signal",
+      "e002": "客户审查更新是直接对业务对象实施动作，选择P2_execution",
+      "e003": "提示风险评估工具刷新同样是执行动作，选择P2_execution"
+    },
+    "ep_002": {
+      "e001": "S2标为input，实际是输入数据（企业描述），故node_type=input",
+      "e002": "接受强化尽职调查是执行调查动作，选择P2_execution",
+      "e003": "评估其活动和风险形成结论，为分类性出口，选择X1_classification"
+    },
+    "ep_003": {
+      "e001": "高价值商品零售商为一类业务对象进入处理范围，选择E2_object_entry",
+      "e002": "密切监控是持续观察行为，选择P7_monitoring"
+    },
+    "ep_004": {
+      "e001": "异常时间交易是环境变化/异常信号，启动判断调整，选择E6_change_exception",
+      "e002": "可能表明非法活动是对风险信号的识别评估，选择P1_assessment"
+    }
+  },
+  "skip_reason": null
+}

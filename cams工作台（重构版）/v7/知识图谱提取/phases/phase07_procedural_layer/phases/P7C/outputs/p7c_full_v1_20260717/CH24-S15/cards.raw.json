@@ -1,0 +1,218 @@
+{
+  "section_id": "CH24-S15",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S15_001",
+      "section_id": "CH24-S15",
+      "card_nature": "execution",
+      "title": "义务实体须遵守强化合规义务",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "义务实体受《反洗钱法》约束",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "遵守强化合规义务",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "实施强化内部控制",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "进行客户尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "报告可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ]
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ]
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ]
+        },
+        {
+          "edge_id": "r004",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e005",
+          "evidence_unit_ids": [
+            "v7u_N001920"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001920"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：义务实体须遵守强化合规义务，具体包括实施内控、CDD和报告；证据范围：v7u_N001920；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S15_002",
+      "section_id": "CH24-S15",
+      "card_nature": "execution",
+      "title": "低风险客户须采用简化客户尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "低风险客户",
+          "evidence_unit_ids": [
+            "v7u_N001921"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采用简化客户尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N001921"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "客户为低风险",
+          "evidence_unit_ids": [
+            "v7u_N001921"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001921"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：低风险客户须采用简化CDD；证据范围：v7u_N001921；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述法律适用范围（上游犯罪扩展至任何犯罪活动），为静态法律事实，不包含业务程序或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述法律的域外管辖条件，为法律自身适用范围的静态判断，不涉及实体业务流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S15_001"
+      ],
+      "reason": "该候选明确了义务实体须遵守的强化合规义务及具体动作，构成程序性义务。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S15_002"
+      ],
+      "reason": "该候选规定了低风险客户触发简化CDD的强制性动作，构成条件触发的程序。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述法律对违规行为的处罚规定，为静态法律后果，不包含实体业务流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s15_judicial_redress",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述实体因不当账户冻结可寻求司法救济，为法律规定的权利，不属于反洗钱义务实体的业务流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry, obligation entity entering scope → E2_object_entry",
+      "e002": "action role → process, compliance action → P2_execution",
+      "e003": "outcome role → exit, implementation results in new internal state → X3_state_change",
+      "e004": "outcome role → exit, conducting CDD as a state change → X3_state_change",
+      "e005": "outcome role → exit, reporting produces a record/report → X2_product"
+    },
+    "ep_002": {
+      "e001": "context role → entry, client type → E2_object_entry",
+      "e002": "action role → process, performing simplified CDD → P2_execution"
+    }
+  },
+  "skip_reason": null
+}

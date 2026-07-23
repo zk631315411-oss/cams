@@ -1,0 +1,84 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_001",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000132 和 v7u_N000133 明确描述了 Sophie 发现负面新闻，公司被指控广泛贿赂腐败，且为美国注册的英国子公司。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000134 直接陈述“此事引发对《英国反贿赂法》域外条款的关切”，与目标节点一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文用“This raised concerns”表明前文的发现（n001）直接导致了法律关切（n003），先后顺序明确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，且原文关系为直接引发，无附加条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用限定词，原文也无情态动词，关系为直接事实陈述。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文顺序明确，非并列或相关关系，而是事件引发另一个事件。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000134"
+      ],
+      "source_quotes": [
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010."
+      ],
+      "reason": "原文用“This raised concerns”明确表达前因后果的先后关系，两端有充分支撑，方向明确，无条件和限定词，审查通过。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000134 直接陈述引发法律关切。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文 v7u_N000136 和 v7u_N000137 详细解释了域外条款内容，支撑目标节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "法律关切的对象即域外条款，原文相邻句子先引出关切再解释条款，可推断为参照关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition，参照关系不受附加条件限制。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用限定词，原文也无相关情态。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "关切与条款内容直接相关，不是并列或无关信息。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000134",
+        "v7u_N000136"
+      ],
+      "source_quotes": [
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.",
+        "It applies to any company with a UK connection and also holds parent firms liable for corrupt activities by subsidiaries, regardless of location."
+      ],
+      "reason": "原文引出关切后即解释条款内容，关切对象即为该条款，构成合理的参照关系，需有限推理，但依据充分。"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "section_id": "CH24-S14",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S14_001",
+      "section_id": "CH24-S14",
+      "card_nature": "assessment",
+      "title": "不遵守CDD要求的潜在刑事后果",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "未遵守AMLO的CDD要求",
+          "evidence_unit_ids": ["v7u_N001910"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "可能构成刑事犯罪",
+          "evidence_unit_ids": ["v7u_N001910"],
+          "evidence_strength": "explicit",
+          "modality": "risky"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "监禁或罚款",
+          "evidence_unit_ids": ["v7u_N001910"],
+          "evidence_strength": "explicit",
+          "modality": "risky"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "未遵守CDD要求",
+          "evidence_unit_ids": ["v7u_N001910"],
+          "source_quote": "Failure to do so could be a criminal offense that results in imprisonment or fines."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001910"],
+          "source_quote": "could be a criminal offense that results in imprisonment or fines."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001910"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：不遵守AMLO的CDD要求可能构成刑事犯罪，并导致监禁或罚款；证据范围：v7u_N001910；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S14_002",
+      "section_id": "CH24-S14",
+      "card_nature": "execution",
+      "title": "JFIU收集、分析并移送可疑交易报告流程",
+      "flow_nodes": [
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "收集可疑交易报告",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "分析可疑交易报告",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e006",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "移送犯罪情报给执法机构",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e007",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "旨在进行进一步调查和起诉",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e004",
+          "target": "e005",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "source_quote": "collects suspicious transaction reports, analyzes them"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "e005",
+          "target": "e006",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "source_quote": "analyzes them, and refers the criminal intelligence to law enforcement agencies"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "e006",
+          "target": "e007",
+          "qualifier": "aimed_to",
+          "relation_type": "result_handoffs_stage",
+          "evidence_unit_ids": ["v7u_N001913"],
+          "source_quote": "refers the criminal intelligence to law enforcement agencies and authorities for further investigation and prosecution."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001913"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：JFIU依次收集、分析可疑交易报告并移送情报，旨在推动进一步调查起诉；证据范围：v7u_N001913；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH24-S14_001"],
+      "reason": "该候选独立呈现了一个条件性法律后果流程：AMLO强制CDD义务，不遵守可能触发刑事犯罪及处罚。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH24-S14_002"],
+      "reason": "该候选描述了JFIU处理可疑交易报告的完整操作序列，构成一个执行流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "未遵守CDD要求是一种已发生的异常状态，触发后续评估，故为E3_state_threshold",
+      "e002": "判断failure是否构成刑事犯罪是依据法律标准进行评估并形成结论，故为P1_assessment",
+      "e003": "监禁或罚款是流程得出的最终后果，表示该评估分支结束且无进一步动作，故为X6_termination"
+    },
+    "ep_002": {
+      "e004": "收集可疑报告是汇集信息以形成分析基础，故为P4_collection",
+      "e005": "分析报告是对风险/情报进行评估识别，故为P1_assessment",
+      "e006": "移送情报是对情报对象实施转移动作，使其流转至下一节点，故为P2_execution",
+      "e007": "移送旨在进行进一步调查起诉，表明情报移交至执法角色/阶段，故为X4_handoff"
+    }
+  },
+  "skip_reason": null
+}

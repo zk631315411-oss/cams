@@ -1,0 +1,371 @@
+{
+  "section_id": "CH26-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH26-S04_001",
+      "section_id": "CH26-S04",
+      "card_nature": "execution",
+      "title": "GDPR 适用产生的数据主体权利提供义务",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "组织进行数据处理活动（包括为反洗钱合规目的）",
+          "evidence_unit_ids": ["v7u_N002057"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "GDPR 适用于在欧盟设立或属于域外适用范围的个人数据使用组织",
+          "evidence_unit_ids": ["v7u_N002059"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "GDPR 适用",
+          "evidence_unit_ids": ["v7u_N002057", "v7u_N002059"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "必须同时遵守反洗钱义务和 GDPR",
+          "evidence_unit_ids": ["v7u_N002060"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "必须提供数据主体权利并履行透明度义务",
+          "evidence_unit_ids": ["v7u_N002061"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002057", "v7u_N002059"],
+          "condition": "组织使用个人数据并位于欧盟或属于域外适用范围",
+          "relation_type": "standard_transmits_requirement"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002059"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002060"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002061"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002057", "v7u_N002059", "v7u_N002060", "v7u_N002061"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据GDPR适用范围触发合规义务和权利提供义务；证据范围：v7u_N002057-N002061；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S04_002",
+      "section_id": "CH26-S04",
+      "card_nature": "assessment",
+      "title": "依据EU 2024/1624条例许可的AML数据共享与处理",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "为反洗钱合规目的",
+          "evidence_unit_ids": ["v7u_N002062"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "欧盟第2024/1624号条例第75和76条",
+          "evidence_unit_ids": ["v7u_N002062"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "允许共享或处理相关个人信息",
+          "evidence_unit_ids": ["v7u_N002062"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002062"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002062"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002062"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在反洗钱合规目的下，依据EU 2024/1624条例允许共享和处理个人信息；证据范围：v7u_N002062；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S04_003",
+      "section_id": "CH26-S04",
+      "card_nature": "execution",
+      "title": "特殊类别个人数据处理的豁免与透明度条件",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "为反洗钱合规目的处理特殊类别个人数据",
+          "evidence_unit_ids": ["v7u_N002065", "v7u_N002067"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "GDPR 规定特殊和敏感个人数据的豁免",
+          "evidence_unit_ids": ["v7u_N002065"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "AML 法规的条件：采取适当透明度措施",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应用适当的透明度措施",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "允许使用这些特殊类别个人数据",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002065"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "condition": "当处理特殊数据时",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002067"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002065", "v7u_N002067"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：处理特殊类别数据时需应用透明度措施以获得许可；证据范围：v7u_N002065、v7u_N002067；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S04_004",
+      "section_id": "CH26-S04",
+      "card_nature": "assessment",
+      "title": "数据主体权利与反洗钱泄密罪的平衡",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "数据主体权利请求（如知情权）导致需共享处理细节",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "反洗钱法中的泄密罪",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "泄密罪影响共享程度评估",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "限制向数据主体共享某些处理细节",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002068"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002068"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：数据主体权利请求触发泄密罪影响评估，导致共享细节受限；证据范围：v7u_N002068；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S04_001"],
+      "reason": "该候选提供了 GDPR 的法律适用判断和必须同时遵守 AML 与 GDPR 的义务，构成一个程序性流程的起点和结果。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选仅陈述数据处理需要合法理由的静态法律规定，不包含原文明示的处理或判断过程，属于非程序性事实。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S04_001"],
+      "reason": "该候选提供了 GDPR 要求组织提供数据主体权利并履行透明度义务的具体义务，与 s1c_001 共同构成完整的 GDPR 适用与义务履行流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S04_002"],
+      "reason": "该候选基于欧盟条例明确规定了在反洗钱合规目的下共享或处理个人信息的许可，构成一个独立的法律许可评估流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S04_003"],
+      "reason": "该候选描述了特殊类别个人数据处理的豁免以及 AML 法规要求的透明度条件，形成了一个需要执行透明度措施以获得许可的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH26-S04_004"],
+      "reason": "该候选揭示了数据主体权利的非绝对性，以及泄密罪如何限制组织共享处理细节，构成了一个在回应数据主体请求时必须进行的平衡判断流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context角色，组织实体进入GDPR适用范围，选择E2_object_entry",
+      "e002": "standard角色，固定为standard",
+      "e003": "decision角色，对GDPR是否适用的法律评估，选择P1_assessment",
+      "e004": "outcome角色，产生必须遵守的双重义务状态，选择X3_state_change",
+      "e005": "outcome角色，产生提供数据主体权利的义务状态，选择X3_state_change"
+    },
+    "ep_002": {
+      "e001": "context角色，反洗钱合规目的作为触发事件，选择E1_event_signal",
+      "e002": "standard角色，固定为standard",
+      "e003": "decision角色，依据条例评估许可性，选择P1_assessment"
+    },
+    "ep_003": {
+      "e001": "context角色，处理特殊类别数据这一事件启动流程，选择E1_event_signal",
+      "e002": "standard角色，固定为standard",
+      "e003": "standard角色，固定为standard",
+      "e004": "action角色，执行透明度措施的具体动作，选择P2_execution",
+      "e005": "outcome角色，获得使用许可的状态变化，选择X3_state_change"
+    },
+    "ep_004": {
+      "e001": "context角色，数据主体权利请求作为事件触发，选择E1_event_signal",
+      "e002": "standard角色，固定为standard",
+      "e003": "decision角色，评估泄密罪对共享程度的影响，选择P1_assessment",
+      "e004": "outcome角色，共享程度受限的状态，选择X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

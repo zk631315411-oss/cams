@@ -1,0 +1,514 @@
+{
+  "section_id": "CH24-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S02_001",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "执行客户身份验证、交易监控和风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "业务关系",
+          "evidence_unit_ids": [
+            "v7u_N001704"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "验证客户身份、监控交易和评估风险",
+          "evidence_unit_ids": [
+            "v7u_N001704"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "存在业务关系",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001704"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001704"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当存在业务关系时，金融机构必须执行CDD措施；证据范围：v7u_N001704；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_002",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "根据第311条指定洗钱风险并迫使银行停止交易",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "美国财政部将外国司法管辖区、机构或交易指定为洗钱风险",
+          "evidence_unit_ids": [
+            "v7u_N001705"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构停止与该指定方的金融交易",
+          "evidence_unit_ids": [
+            "v7u_N001705"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001705"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001705"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：财政部指定风险后，银行必须停止与其交易；证据范围：v7u_N001705；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_003",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "要求对特定代理账户和私人银行账户实施强化尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "外国金融机构持有的代理账户",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "非美国人的私人银行账户",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "实施强化尽职调查（EDD）",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "如果存在外国金融机构代理账户",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "如果存在非美国人的私人银行账户",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001706"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：存在特定类型账户时触发EDD；证据范围：v7u_N001706；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_004",
+      "section_id": "CH24-S02",
+      "card_nature": "control",
+      "title": "禁止与空壳银行建立或维持关系",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "与空壳银行的关系",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "禁止与空壳银行建立或维持关系",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "如果对方是空壳银行",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001706"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001706"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：空壳银行关系触发禁止义务；证据范围：v7u_N001706；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_005",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "扣押美国代理账户资金及资金所有者的异议权",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "外国银行在美国代理账户中持有资金",
+          "evidence_unit_ids": [
+            "v7u_N001707"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "美国政府扣押代理账户资金",
+          "evidence_unit_ids": [
+            "v7u_N001707"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "资金所有者对扣押提出异议",
+          "evidence_unit_ids": [
+            "v7u_N001707"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001707"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "relation_type": "result_handoffs_stage",
+          "evidence_unit_ids": [
+            "v7u_N001707"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001707"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：扣押资金后所有者可提出异议；证据范围：v7u_N001707；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_006",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "允许信息共享并提供安全港责任保护",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "银行之间及与执法机构、国际机构共享信息以打击金融犯罪",
+          "evidence_unit_ids": [
+            "v7u_N001708"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "提供安全港责任保护",
+          "evidence_unit_ids": [
+            "v7u_N001708"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001708"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001708"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：信息共享行动产生安全港保护；证据范围：v7u_N001708；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S02_007",
+      "section_id": "CH24-S02",
+      "card_nature": "execution",
+      "title": "要求外国银行提供记录、接受传票并指定注册代理人",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "外国银行在美国拥有代理账户",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "要求外国银行提供各种记录",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对外国银行代理账户发出传票",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "要求外国银行指定在美国的注册代理人",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n004",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N001709"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001709"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：外国银行拥有代理账户时触发记录提供、传票和注册代理人等多项义务；证据范围：v7u_N001709；待P7D审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_002"
+      ],
+      "reason": "该候选描述了财政部指定洗钱风险并迫使银行停止交易的流程，已映射至卡002。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_003"
+      ],
+      "reason": "该候选提供了第312条对外国金融机构代理账户的EDD要求，已映射至卡003。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_005"
+      ],
+      "reason": "该候选描述了扣押资金及异议的程序，已映射至卡005。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_006"
+      ],
+      "reason": "该候选描述了信息共享及安全港保护，已映射至卡006。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_007"
+      ],
+      "reason": "该候选描述了要求记录、传票和指定代理人的多重权力，已映射至卡007。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s02_cdd_kyc",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_001"
+      ],
+      "reason": "该候选提供了CDD/KYC的基本义务流程，已映射至卡001。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s02_shell_bank_prohibition",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_004"
+      ],
+      "reason": "该候选描述了禁止与空壳银行关系的流程，已映射至卡004。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s02_private_banking_edd",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S02_003"
+      ],
+      "reason": "该候选提供了第312条对私人银行账户的EDD要求，已映射至卡003。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "状态触发：业务关系属于已观察状态，触发CDD，故E3_state_threshold",
+      "e002": "验证、监控、评估属于风险评估活动，故P1_assessment"
+    },
+    "ep_002": {
+      "e001": "财政部指定为外部监管命令，故E7_external_command",
+      "e002": "停止交易为执行动作，故P2_execution"
+    },
+    "ep_003": {
+      "e001": "代理账户作为特定账户类型进入处理范围，故E2_object_entry",
+      "e002": "私人银行账户作为特定账户类型，故E2_object_entry",
+      "e003": "EDD是强化风险评估，故P1_assessment"
+    },
+    "ep_004": {
+      "e001": "与空壳银行关系为状态条件，故E3_state_threshold",
+      "e002": "禁止行为为执行动作，故P2_execution"
+    },
+    "ep_005": {
+      "e001": "持有资金的代理账户属于账户类型，故E2_object_entry",
+      "e002": "政府扣押为具体执行，故P2_execution",
+      "e003": "异议为执行动作，故P2_execution"
+    },
+    "ep_006": {
+      "e001": "多机构信息共享涉及协同，故P5_coordination",
+      "e002": "提供安全港保护改变法律状态，故X3_state_change"
+    },
+    "ep_007": {
+      "e001": "拥有代理账户属于账户状态，故E2_object_entry",
+      "e002": "要求记录为执行动作，故P2_execution",
+      "e003": "发出传票为执行动作，故P2_execution",
+      "e004": "要求指定代理人为执行动作，故P2_execution"
+    }
+  },
+  "skip_reason": null
+}

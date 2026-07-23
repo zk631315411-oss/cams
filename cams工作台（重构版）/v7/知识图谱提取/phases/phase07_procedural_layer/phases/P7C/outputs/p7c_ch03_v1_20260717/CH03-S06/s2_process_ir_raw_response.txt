@@ -1,0 +1,108 @@
+{
+  "section_id": "CH03-S06",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "如何通过加密货币交易模式识别潜在恐怖融资红旗信号？",
+      "title": "基于加密货币存款模式识别恐怖融资潜在红旗信号",
+      "card_nature": "risk_indicator",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "大量看似无关的加密货币存款，随后快速兑换成稳定币或法币，并通过虚拟资产服务提供商或在反金融犯罪控制薄弱的司法管辖区提取",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "可能为潜在恐怖融资红旗信号",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N000266"],
+          "source_quote": "A potential red flag could be numerous, seemingly unrelated deposits of cryptocurrency. Afterward, the deposits are quickly converted to stablecoins, or into fiat currency and withdrawn through a virtual asset service provider and/or in a jurisdiction with poor AFC controls."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "如何通过替代性汇款系统交易模式识别非法使用红旗信号？",
+      "title": "基于ARS交易模式识别非法使用红旗信号",
+      "card_nature": "risk_indicator",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "在一个司法管辖区重复存款后，在另一司法管辖区立即ATM取款",
+          "evidence_unit_ids": ["v7u_N000269"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "判定为替代性汇款系统非法使用的红旗信号",
+          "evidence_unit_ids": ["v7u_N000269"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000269"],
+          "source_quote": "Red flags for illegal use of ARS include repeated deposits made in one jurisdiction followed by immediate ATM withdrawals in another jurisdiction."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅为对银行的原则性建议（应全面了解客户及其交易性质），未描述具体的程序性或判断性迁移，缺乏业务判断或行动的流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选说明代理行嵌套交易可能引发恐怖融资红旗信号的机制，属于风险指示器的静态描述，未体现机构的处理或判断过程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选包含加密货币交易模式作为潜在红旗信号的判断关系，构成一个可建模的识别流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选包含替代性汇款系统交易模式作为非法使用红旗信号的判断关系，构成一个可建模的识别流程。"
+    }
+  ],
+  "skip_reason": null
+}

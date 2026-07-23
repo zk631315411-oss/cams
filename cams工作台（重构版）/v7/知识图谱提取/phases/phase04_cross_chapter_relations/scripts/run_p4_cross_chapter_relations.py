@@ -21,7 +21,13 @@ DEFAULT_PROMPT = PHASE_DIR / "prompts" / "p4b_cross_chapter_relation_v1.md"
 DEFAULT_P2A_PREFIX = "p2a_batch_first5_chapters_20260706_"
 DEFAULT_P2B_PREFIX = "p2b_first5_reviewed_20260706_"
 DEFAULT_BASE_URL = "https://api.deepseek.com/v1"
-API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
+DEFAULT_MODEL = "deepseek-v4-pro"
+API_KEY_ENV_NAMES = (
+    "P4_API_KEY",
+    "DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY",
+)
+BASE_URL_ENV_NAMES = ("P4_BASE_URL", "DEEPSEEK_BASE_URL", "DS_BASE_URL")
+MODEL_ENV_NAMES = ("P4_MODEL",)
 ALLOWED_RELATION_TYPES = {"summarizes", "illustrates", "grounds", "contrasts", "none"}
 ALLOWED_DECISIONS = {"accept", "reject"}
 
@@ -70,13 +76,30 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + ("\n" if rows else ""), encoding="utf-8")
 
 
-def get_deepseek_config() -> tuple[str, str, str]:
+def get_api_config() -> tuple[str, str, str, str]:
+    """Return (api_key, base_url, model, key_source). Reads from env vars."""
+    api_key = ""
+    key_source = ""
     for env_name in API_KEY_ENV_NAMES:
-        value = os.environ.get(env_name)
-        if value:
-            base_url = os.environ.get("DEEPSEEK_BASE_URL") or os.environ.get("DS_BASE_URL") or DEFAULT_BASE_URL
-            return value, base_url, env_name
-    raise RuntimeError("DEEPSEEK_API_KEY / DS_API_KEY / DS_KEY is not set.")
+        api_key = os.environ.get(env_name, "")
+        if api_key:
+            key_source = env_name
+            break
+    if not api_key:
+        raise RuntimeError("No API key found in env: " + ", ".join(API_KEY_ENV_NAMES))
+    base_url = DEFAULT_BASE_URL
+    for env_name in BASE_URL_ENV_NAMES:
+        url = os.environ.get(env_name, "")
+        if url:
+            base_url = url
+            break
+    model = DEFAULT_MODEL
+    for env_name in MODEL_ENV_NAMES:
+        m = os.environ.get(env_name, "")
+        if m:
+            model = m
+            break
+    return api_key, base_url, model, key_source
 
 
 def extract_json_object(raw: str) -> dict[str, Any] | None:
@@ -222,28 +245,73 @@ def collect_core_points(chapters: set[str], p2a_prefix: str, p2b_prefix: str, ma
     return cps
 
 
-def embedding_text(cp: dict[str, Any]) -> str:
+def load_unit_lookup(path: Path) -> dict[str, dict[str, str]]:
+    """从 KG JSON 加载 unit 的 knowledge_zh + en_quote/knowledge_en."""
+    data = read_json(path)
+    lookup: dict[str, dict[str, str]] = {}
+    for u in data.get("units", []) or []:
+        uid = u.get("unit_id", "")
+        if not uid:
+            continue
+        en = u.get("en_quote", "") or u.get("knowledge_en", "")
+        lookup[uid] = {"zh": u.get("knowledge_zh", ""), "en": en}
+    return lookup
+
+
+def _cp_unit_ids(cp: dict[str, Any]) -> list[str]:
+    """收集 CP 所有关联 unit_id（去重）。"""
+    seen: set[str] = set()
+    uids: list[str] = []
+    for key in ("anchor_unit_ids", "support_unit_ids", "key_unit_ids"):
+        for uid in cp.get(key, []) or []:
+            if uid and uid not in seen:
+                seen.add(uid)
+                uids.append(uid)
+    return uids
+
+
+def embedding_text(cp: dict[str, Any], unit_lookup: dict[str, dict[str, str]] | None = None) -> str:
     edge_text = "\n".join(str(edge.get("unit_text") or "") for edge in cp.get("selected_unit_edges") or [])
+    unit_text = ""
+    if unit_lookup:
+        parts: list[str] = []
+        for uid in _cp_unit_ids(cp)[:8]:
+            u = unit_lookup.get(uid, {})
+            zh = u.get("zh", "")
+            en = u.get("en", "")
+            if zh or en:
+                parts.append(f"{zh} | {en}")
+        unit_text = "\n".join(parts)
     return "\n".join(
         part for part in [
             str(cp.get("title_en") or ""),
+            str(cp.get("title_zh") or ""),
             str(cp.get("section_title") or ""),
             str(cp.get("reason") or ""),
             edge_text,
+            unit_text,
         ] if part.strip()
-    )[:2500]
+    )[:3000]
 
 
-def summarize_cp(cp: dict[str, Any]) -> dict[str, Any]:
+def cp_context(cp: dict[str, Any], unit_lookup: dict[str, dict[str, str]] | None = None) -> dict[str, Any]:
+    """构建发给 LLM 的 CP 上下文：全部 unit 内容，砍掉元数据字段。"""
+    unit_texts: list[dict[str, str]] = []
+    if unit_lookup:
+        for uid in _cp_unit_ids(cp):
+            u = unit_lookup.get(uid, {})
+            zh = u.get("zh", "")
+            en = u.get("en", "")
+            if zh or en:
+                unit_texts.append({"zh": zh, "en": en})
     return {
         "core_point_id": cp.get("core_point_id"),
         "chapter_id": cp.get("chapter_id"),
         "section_id": cp.get("section_id"),
-        "section_title": cp.get("section_title"),
-        "title_en": cp.get("title_en"),
-        "p2a_reason": cp.get("reason"),
-        "selected_unit_edges": cp.get("selected_unit_edges") or [],
-        "omitted_unit_edge_count": cp.get("omitted_unit_edge_count", 0),
+        "title_zh": cp.get("title_zh", ""),
+        "title_en": cp.get("title_en", ""),
+        "reason": cp.get("reason", ""),
+        "units": unit_texts,
     }
 
 
@@ -256,11 +324,90 @@ def load_embedding_model(model_name: str):
     return SentenceTransformer(model_name)
 
 
-def generate_vector_candidates(cps: list[dict[str, Any]], embedding_model: str, limit: int, threshold: float) -> list[dict[str, Any]]:
+CROSS_CHAPTER_SIM_THRESHOLD = 0.65
+CROSS_CHAPTER_MIN_K = 3
+CROSS_CHAPTER_MAX_K = 10
+
+
+def generate_vector_candidates(cps: list[dict[str, Any]], embedding_model: str, limit: int, threshold: float,
+                               top_per_cp: int = 0,
+                               unit_lookup: dict[str, dict[str, str]] | None = None) -> list[dict[str, Any]]:
+    """Generate cross-chapter CP pair candidates.
+
+    If top_per_cp > 0: per-CP dynamic threshold. sim>=0.65 全取，不足3补足，超10截断。
+    Otherwise: global top-limit ranking (legacy behavior).
+    """
     model = load_embedding_model(embedding_model)
-    texts = [embedding_text(cp) for cp in cps]
+    texts = [embedding_text(cp, unit_lookup) for cp in cps]
     embeddings = model.encode(texts, show_progress_bar=False, normalize_embeddings=True)
     sim_matrix = np.matmul(np.asarray(embeddings), np.asarray(embeddings).T)
+
+    if top_per_cp > 0:
+        # Per-CP dynamic threshold: sim>=0.65 全取，min=3, max=10
+        seen_pairs: set[tuple[int, int]] = set()
+        raw_candidates: list[dict[str, Any]] = []
+        n = len(cps)
+        for i in range(n):
+            cp_a = cps[i]
+            all_scored: list[tuple[float, int]] = []
+            above: list[tuple[float, int]] = []
+            for j in range(n):
+                if i == j:
+                    continue
+                if cp_a["chapter_id"] == cps[j]["chapter_id"]:
+                    continue
+                sim = float(sim_matrix[i, j])
+                all_scored.append((sim, j))
+                if sim >= CROSS_CHAPTER_SIM_THRESHOLD:
+                    above.append((sim, j))
+            all_scored.sort(key=lambda x: -x[0])
+            above.sort(key=lambda x: -x[0])
+
+            # 高于阈值全取，超 MAX_K 截断，不足 MIN_K 补足
+            if len(above) > CROSS_CHAPTER_MAX_K:
+                selected = above[:CROSS_CHAPTER_MAX_K]
+            elif len(above) < CROSS_CHAPTER_MIN_K:
+                selected = above[:]
+                for sim, j in all_scored:
+                    if len(selected) >= CROSS_CHAPTER_MIN_K:
+                        break
+                    if (sim, j) not in selected:
+                        selected.append((sim, j))
+            else:
+                selected = above[:]
+
+            for sim, j in selected:
+                cp_b = cps[j]
+                pair_key = (min(i, j), max(i, j))
+                if pair_key in seen_pairs:
+                    continue
+                seen_pairs.add(pair_key)
+                raw_candidates.append({
+                    "candidate_id": "",
+                    "cp_a_id": cp_a["core_point_id"],
+                    "cp_b_id": cp_b["core_point_id"],
+                    "cp_a_chapter_id": cp_a["chapter_id"],
+                    "cp_b_chapter_id": cp_b["chapter_id"],
+                    "cp_a_section_id": cp_a["section_id"],
+                    "cp_b_section_id": cp_b["section_id"],
+                    "cp_a_title_en": cp_a["title_en"],
+                    "cp_b_title_en": cp_b["title_en"],
+                    "retrieval": {
+                        "method": "sentence_transformer_cosine",
+                        "embedding_model": embedding_model,
+                        "similarity": round(sim, 6),
+                    },
+                    "cp_a": cp_context(cp_a, unit_lookup),
+                    "cp_b": cp_context(cp_b, unit_lookup),
+                })
+        raw_candidates.sort(key=lambda row: (-row["retrieval"]["similarity"], row["cp_a_id"], row["cp_b_id"]))
+        selected = raw_candidates[:limit] if limit > 0 else raw_candidates
+        for index, candidate in enumerate(selected, start=1):
+            candidate["candidate_id"] = f"p4vec_{index:04d}"
+            candidate["retrieval"]["global_rank"] = index
+        return selected
+
+    # Legacy: global top-K
     candidates: list[dict[str, Any]] = []
     for i, cp_a in enumerate(cps):
         for j in range(i + 1, len(cps)):
@@ -286,8 +433,8 @@ def generate_vector_candidates(cps: list[dict[str, Any]], embedding_model: str, 
                         "embedding_model": embedding_model,
                         "similarity": round(similarity, 6),
                     },
-                    "cp_a": summarize_cp(cp_a),
-                    "cp_b": summarize_cp(cp_b),
+                    "cp_a": cp_context(cp_a, unit_lookup),
+                    "cp_b": cp_context(cp_b, unit_lookup),
                 }
             )
     candidates.sort(key=lambda row: (-row["retrieval"]["similarity"], row["cp_a_id"], row["cp_b_id"]))
@@ -317,7 +464,7 @@ def build_messages(prompt_text: str, candidates: list[dict[str, Any]], batch_id:
 def call_model(args: argparse.Namespace, messages: list[dict[str, str]]) -> tuple[str, dict[str, Any]]:
     from openai import OpenAI
 
-    api_key, base_url, _ = get_deepseek_config()
+    api_key, base_url, model, _ = get_api_config()
     client = OpenAI(api_key=api_key, base_url=args.base_url or base_url, timeout=args.request_timeout)
     kwargs: dict[str, Any] = {
         "model": args.model,
@@ -512,7 +659,15 @@ def run(args: argparse.Namespace) -> None:
     run_dir = TEST_DIR / "runs" / run_slug
     prompt_text = args.prompt_file.read_text(encoding="utf-8")
     cps = collect_core_points(chapters, args.p2a_prefix, args.p2b_prefix, args.max_selected_unit_edges, args.unit_context)
-    candidates = generate_vector_candidates(cps, args.embedding_model, args.limit_candidates, args.similarity_threshold)
+    unit_lookup = load_unit_lookup(args.unit_lookup) if args.unit_lookup else None
+    _, _, env_model, _ = get_api_config()
+    if not args.model:
+        args.model = env_model
+    candidates = generate_vector_candidates(
+        cps, args.embedding_model, args.limit_candidates, args.similarity_threshold,
+        top_per_cp=getattr(args, "top_per_cp", 0),
+        unit_lookup=unit_lookup,
+    )
     write_json(TEST_DIR / "inputs" / f"{run_slug}_candidates.json", {"core_point_count": len(cps), "candidates": candidates})
     write_json(run_dir / "input_candidates.json", {"core_point_count": len(cps), "candidates": candidates})
     if args.skip_llm:
@@ -594,11 +749,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--batch-size", type=int, default=5)
     parser.add_argument("--concurrency", type=int, default=10)
     parser.add_argument("--run-slug", default=None)
-    parser.add_argument("--model", default="deepseek-v4-pro")
+    parser.add_argument("--model", default=None, help="model name (default from env or deepseek-v4-pro)")
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--max-tokens", type=int, default=20000)
     parser.add_argument("--request-timeout", type=float, default=120.0)
     parser.add_argument("--disable-thinking", action="store_true", default=True)
+    parser.add_argument("--top-per-cp", type=int, default=0, help="per-CP top-K (0=global top-N legacy)")
+    parser.add_argument("--unit-lookup", type=Path, default=None, help="KG JSON for unit zh/en content")
     parser.add_argument("--skip-llm", action="store_true")
     return parser.parse_args()
 

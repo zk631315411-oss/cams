@@ -1,0 +1,424 @@
+{
+  "section_id": "CH34-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH34-S06_001",
+      "section_id": "CH34-S06",
+      "card_nature": "execution",
+      "title": "调查职能对可疑活动的调查与报告流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Suspicious activities identified by transaction monitoring or reported by employees",
+          "evidence_unit_ids": ["v7u_N002465"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "The investigation function conducts in-depth investigations, gathers evidence, and analyzes information",
+          "evidence_unit_ids": ["v7u_N002465"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Prepares SARs plus internal and external reports",
+          "evidence_unit_ids": ["v7u_N002465"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002465"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002465"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002465"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：调查职能对已识别的可疑活动进行调查并生成SAR/报告；证据范围：v7u_N002465；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_002",
+      "section_id": "CH34-S06",
+      "card_nature": "risk_indicator",
+      "title": "数据分析职能识别风险模式与标记可疑交易的流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Identifies financial crime risk patterns and trends",
+          "evidence_unit_ids": ["v7u_N002463"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Develops analytical models to detect anomalies and flag fraudulent or suspicious transactions",
+          "evidence_unit_ids": ["v7u_N002463"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Detected anomalies and flagged fraudulent or suspicious transactions",
+          "evidence_unit_ids": ["v7u_N002463"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002463"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002463"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002463"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：数据分析职能识别模式并开发模型以检测异常/标记可疑交易；证据范围：v7u_N002463；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_003",
+      "section_id": "CH34-S06",
+      "card_nature": "assessment",
+      "title": "模型风险管理职能的监督与评估流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "The model risk management function oversees the validation and governance of AFC models, including transaction monitoring systems, and evaluates their effectiveness",
+          "evidence_unit_ids": ["v7u_N002464"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Ensure accuracy and compliance with regulatory standards",
+          "evidence_unit_ids": ["v7u_N002464"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002464"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002464"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：模型风险管理职能评估模型有效性以确保准确性与合规性；证据范围：v7u_N002464；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_004",
+      "section_id": "CH34-S06",
+      "card_nature": "control",
+      "title": "政策管理职能的政策制定与实施流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Develops, maintains, and updates AFC policies and procedures, and collaborates with other departments to implement policies, manage document control, and change management",
+          "evidence_unit_ids": ["v7u_N002466"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Ensure compliance with evolving regulations",
+          "evidence_unit_ids": ["v7u_N002466"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002466"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002466"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：政策管理职能制定/更新政策并实施以确保合规；证据范围：v7u_N002466；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_005",
+      "section_id": "CH34-S06",
+      "card_nature": "execution",
+      "title": "监管报告与联络职能的报告提交与联络流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "The regulatory reporting and liaison function files the required regulatory reports, such as SARs and CTR, and liaises with regulatory authorities",
+          "evidence_unit_ids": ["v7u_N002467"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Ensure accurate, timely submissions and act as a point of contact for regulatory audits and inquiries",
+          "evidence_unit_ids": ["v7u_N002467"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002467"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002467"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：监管报告与联络职能提交报告并联络以确保提交准确及时并作为联系点；证据范围：v7u_N002467；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_006",
+      "section_id": "CH34-S06",
+      "card_nature": "assessment",
+      "title": "合规测试职能的QA审查与纠正建议流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Conducts periodic QA of AFC controls and reviews testing to assess their effectiveness, and identifies compliance gaps",
+          "evidence_unit_ids": ["v7u_N002468"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Recommends corrective actions",
+          "evidence_unit_ids": ["v7u_N002468"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002468"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002468"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：合规测试职能进行QA、识别差距并建议纠正措施；证据范围：v7u_N002468；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_007",
+      "section_id": "CH34-S06",
+      "card_nature": "control",
+      "title": "MLRO/BSA官员的监督与合规管理流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "The MLRO/BSA officer oversees the AML program, reports suspicious activities to authorities, ensures AML regulations compliance, and coordinates with various functions",
+          "evidence_unit_ids": ["v7u_N002469"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Maintain organizational compliance",
+          "evidence_unit_ids": ["v7u_N002469"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002469"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002469"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：MLRO/BSA官员监督反洗钱计划、报告可疑活动并协调以维持合规；证据范围：v7u_N002469；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S06_008",
+      "section_id": "CH34-S06",
+      "card_nature": "control",
+      "title": "子公司管理职能的合规确保与审计评估流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Ensures subsidiaries comply with parent company policies and jurisdiction-specific regulations, and provides support, guidance, and audits",
+          "evidence_unit_ids": ["v7u_N002470"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Assess AFC programs in subsidiaries",
+          "evidence_unit_ids": ["v7u_N002470"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002470"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002470"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：子公司管理职能确保子公司合规并提供审计以评估其AFC计划；证据范围：v7u_N002470；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_001"],
+      "reason": "该候选描述调查职能对可疑活动的处理流程，对应ep_001。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_data_analytics",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_002"],
+      "reason": "该候选描述数据分析职能的识别与标记流程，对应ep_002。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_model_risk_mgmt",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_003"],
+      "reason": "该候选描述模型风险管理职能的监督评估流程，对应ep_003。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_policies_mgmt",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_004"],
+      "reason": "该候选描述政策管理职能的政策与实施流程，对应ep_004。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_reg_reporting",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_005"],
+      "reason": "该候选描述监管报告与联络职能的提交与联络流程，对应ep_005。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_compliance_testing",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_006"],
+      "reason": "该候选描述合规测试职能的QA与纠正建议流程，对应ep_006。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_mlro_bsa",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_007"],
+      "reason": "该候选描述MLRO/BSA官员的监督与合规管理流程，对应ep_007。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s06_subsidiary_mgmt",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH34-S06_008"],
+      "reason": "该候选描述子公司管理职能的合规确保与评估流程，对应ep_008。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "被识别的可疑活动是业务事件，触发调查，选E1_event_signal。",
+      "e002": "执行调查、收集证据、分析信息是一系列执行动作，选P2_execution。",
+      "e003": "生成SAR和报告，是可提交的正式产品，选X2_product。"
+    },
+    "ep_002": {
+      "e001": "识别风险模式与趋势是评估活动，选P1_assessment。",
+      "e002": "开发分析模型是构建工具的执行动作，选P2_execution。",
+      "e003": "检测异常并标记可疑交易使交易进入新状态，选X3_state_change。"
+    },
+    "ep_003": {
+      "e001": "监督验证、治理并评估有效性属于评估类活动，选P1_assessment。",
+      "e002": "确保准确性和合规性形成有效性结论，选X1_classification。"
+    },
+    "ep_004": {
+      "e001": "制定、维护、实施政策和程序是一系列执行动作，选P2_execution。",
+      "e002": "确保合规使组织进入合规状态，选X3_state_change。"
+    },
+    "ep_005": {
+      "e001": "提交报告和联络监管机构是执行动作，选P2_execution。",
+      "e002": "确保准确及时提交并作为联络点构成持续义务，选X7_continuing_obligation。"
+    },
+    "ep_006": {
+      "e001": "定期QA和识别合规差距是评估活动，选P1_assessment。",
+      "e002": "建议纠正措施是产出的产品，选X2_product。"
+    },
+    "ep_007": {
+      "e001": "监督计划、报告、确保合规和协调是综合执行动作，选P2_execution。",
+      "e002": "维持组织合规是状态保持，选X3_state_change。"
+    },
+    "ep_008": {
+      "e001": "确保合规并提供支持、指导和审计是执行动作，选P2_execution。",
+      "e002": "评估子公司AFC计划形成评估结论，选X1_classification。"
+    }
+  },
+  "skip_reason": null
+}

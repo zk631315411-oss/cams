@@ -1,0 +1,83 @@
+{
+  "section_id": "CH58-S13",
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S13_001",
+      "section_id": "CH58-S13",
+      "card_nature": "assessment",
+      "title": "应用数据挖掘与匹配检测异常和识别可疑行为模式",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "被提取、准备和加载的数据",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "数据挖掘与数据匹配应用各种算法和分析技术",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测异常和识别指示可疑行为的模式和关联",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "source_quote": "Data mining and data matching take the data that has been extracted, prepared, and loaded and apply various algorithms and analytical techniques to it."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "qualifier": "aimed_to",
+          "source_quote": "The purpose is to detect anomalies and recognize patterns and correlations indicative of suspicious behavior."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004799"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：通过数据挖掘与匹配对已准备数据应用算法，以检测异常和识别可疑行为模式；证据范围：v7u_N004799；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch58_s13_data_mining_detection",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH58-S13_001"],
+      "reason": "该候选描述了数据挖掘与匹配对准备好数据应用算法以检测异常和识别可疑模式的明确流程，支持完整的处理动作和目的关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch58_s13_afc_understanding",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "仅描述AFC团队成员应理解数据准备各步骤的要求，不构成程序性或判断性迁移，也不为其他流程提供必要元素。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e002": "action role，应用算法和分析技术检测异常和识别可疑行为模式，属于风险评估识别活动 → P1_assessment",
+      "e003": "outcome role，产出为检测异常和识别可疑行为模式，形成可疑性结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,406 @@
+{
+  "section_id": "CH41-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S03_001",
+      "section_id": "CH41-S03",
+      "card_nature": "execution",
+      "title": "制定和维护适合机构风险的AFC政策",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "制定与维护书面金融犯罪防控政策和程序",
+          "evidence_unit_ids": ["v7u_N002917"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低和管理洗钱与恐怖融资风险",
+          "evidence_unit_ids": ["v7u_N002917"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "政策的制定和批准应包括法律顾问、其他内部利益相关方及适当的外部专家参与",
+          "evidence_unit_ids": ["v7u_N002924"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "金融犯罪防控政策和程序应根据组织的具体风险状况、风险偏好和规模量身定制",
+          "evidence_unit_ids": ["v7u_N002927"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002924"],
+          "source_quote": "The development and approval of policies should include the participation of legal counsel, other internal stakeholders, and external experts where appropriate."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002927"],
+          "source_quote": "AFC policies and procedures should be tailored to the specific risk profile, risk appetite, and size of the organization."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002917"],
+          "source_quote": "Regulated organizations are required to maintain written AFC policies and procedures that mitigate and manage the risks of money laundering and terrorist financing."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002917", "v7u_N002924", "v7u_N002927"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：制定和维护AFC政策和程序以降低风险，引用专家参与和风险定制标准。证据范围：v7u_N002917, v7u_N002924, v7u_N002927。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S03_002",
+      "section_id": "CH41-S03",
+      "card_nature": "assessment",
+      "title": "定期/事件触发审查与差距分析以保持政策合规",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "审查频率应由组织面临的风险性质驱动",
+          "evidence_unit_ids": ["v7u_N002918"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "可能改变风险状况的事件，如新业务、新司法管辖区、审计或监管检查结果",
+          "evidence_unit_ids": ["v7u_N002919"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "审查和更新金融犯罪防控政策和程序",
+          "evidence_unit_ids": ["v7u_N002918", "v7u_N002919"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行差距分析以确保政策涵盖运营所在司法管辖区的相关当地法规",
+          "evidence_unit_ids": ["v7u_N002928"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "政策涵盖相关当地法规",
+          "evidence_unit_ids": ["v7u_N002928"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "可能需要区域或地方政策（前提是不与组织的全球政策冲突）",
+          "evidence_unit_ids": ["v7u_N002929"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002918"],
+          "source_quote": "the nature of the risks the organization is encountering should drive the frequency."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002919"],
+          "source_quote": "Organizations should also conduct reviews in response to events that might change their risk profile, such as a new business or jurisdiction, or the results of an audit or regulatory examination."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002928"],
+          "source_quote": "Global organizations should conduct gap analyses as part of their review and horizon scanning processes to ensure the policy covers relevant local regulations in the jurisdictions in which they operate."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002928"],
+          "source_quote": "to ensure the policy covers relevant local regulations in the jurisdictions in which they operate."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n006",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002929"],
+          "source_quote": "This may also require regional or local policies and procedures to reflect the local laws, regulations, and risks, as long as they do not conflict with the organization's global policy."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002918", "v7u_N002919", "v7u_N002928", "v7u_N002929"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于风险的审查频率标准、事件触发审查、随后进行差距分析，并产出符合当地法规的政策或区域政策。证据范围：v7u_N002918, v7u_N002919, v7u_N002928, v7u_N002929。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S03_003",
+      "section_id": "CH41-S03",
+      "card_nature": "execution",
+      "title": "动态环境下的地平线扫描驱动新政策实施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "金融犯罪防控环境高度动态",
+          "evidence_unit_ids": ["v7u_N002921"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "进行地平线扫描，关注新兴问题和监管动态",
+          "evidence_unit_ids": ["v7u_N002921", "v7u_N002923"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "及时有效地规划、资源配置和实施新政策",
+          "evidence_unit_ids": ["v7u_N002923"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002921"],
+          "source_quote": "This “horizon scanning” is particularly important because the AFC environment is highly dynamic."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N002923"],
+          "source_quote": "Proactive horizon scanning helps organizations plan, resource, and implement new policies in a timely and effective manner."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002921", "v7u_N002923"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：高度动态的AFC环境触发地平线扫描，扫描帮助组织及时规划实施新政策。证据范围：v7u_N002921, v7u_N002923。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S03_004",
+      "section_id": "CH41-S03",
+      "card_nature": "execution",
+      "title": "批准后政策与程序的持续可访问性",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "政策和程序获得批准后",
+          "evidence_unit_ids": ["v7u_N002925"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应确保政策和程序持续对所有员工开放可访问",
+          "evidence_unit_ids": ["v7u_N002925"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002925"],
+          "source_quote": "Once approved, policies and procedures should be accessible to all employees on an ongoing basis."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002925"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：政策批准后，机构确保持续可访问。证据范围：v7u_N002925。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S03_005",
+      "section_id": "CH41-S03",
+      "card_nature": "execution",
+      "title": "政策变更的批准、记录与沟通流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "批准、记录并及时向员工传达政策和程序的任何变更",
+          "evidence_unit_ids": ["v7u_N002926"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "变更已传达给员工",
+          "evidence_unit_ids": ["v7u_N002926"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002926"],
+          "source_quote": "Organizations should approve, document, and promptly communicate to their staff any changes to policies and procedures."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002926"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：政策变更的批准、记录和传达流程，结果变更已传达。证据范围：v7u_N002926。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_001"],
+      "reason": "候选描述了机构须制定政策以降低风险的程序性要求，作为核心动作。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_002"],
+      "reason": "候选提供了定期审查政策的程序，包括基于风险的频率标准。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_002"],
+      "reason": "候选补充了事件驱动的审查触发条件。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_003"],
+      "reason": "候选独立描述了地平线扫描过程及其对新政策实施的帮助，形成独立episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "support_only",
+      "card_ids": ["p7card_CH41-S03_001"],
+      "reason": "该候选自身不构成独立流程，但为政策制定与批准动作提供必要的专家参与标准。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_004"],
+      "reason": "候选构成一个独立的小流程：批准后确保政策可访问。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_005"],
+      "reason": "候选描述了一个明确的变更管理流程：批准、记录和沟通。"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "disposition": "support_only",
+      "card_ids": ["p7card_CH41-S03_001"],
+      "reason": "该候选提供了政策定制标准，不单独构成流程，作为制定维护动作的参考标准。"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_002"],
+      "reason": "候选明确了在审查中进行差距分析的步骤，并产出确保法规覆盖的结果。"
+    },
+    {
+      "candidate_id": "s1c_010",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH41-S03_002"],
+      "reason": "候选延展了差距分析的可能产出（区域政策需求），条件是避免冲突，作为审查流程的一部分。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s03_failure_to_update_risk",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "候选仅描述未持续更新政策可能带来的风险后果，不包含任何业务过程或判断。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role → process; 制定和维护政策属于执行动作 → P2_execution",
+      "e002": "outcome role → exit; 降低风险是状态改善 → X3_state_change",
+      "e003": "standard role → auxiliary → standard",
+      "e004": "standard role → auxiliary → standard"
+    },
+    "ep_002": {
+      "e001": "standard role → auxiliary → standard",
+      "e002": "context role → entry; 外部事件/异常触发 → E6_change_exception",
+      "e003": "action role → process; 审查和更新涉及评估政策有效性 → P1_assessment",
+      "e004": "action role → process; 差距分析是评估合规覆盖 → P1_assessment",
+      "e005": "outcome role → exit; 政策覆盖法规是状态达成 → X3_state_change",
+      "e006": "outcome role → exit; 区域政策是文档产物 → X2_product"
+    },
+    "ep_003": {
+      "e001": "context role → entry; 环境高度动态属于持续变化 → E6_change_exception",
+      "e002": "action role → process; 地平线扫描是持续监测活动 → P7_monitoring",
+      "e003": "outcome role → exit; 获得及时规划实施能力是状态提升 → X3_state_change"
+    },
+    "ep_004": {
+      "e001": "context role → entry; 上一阶段（批准）的输出交接 → E4_handoff",
+      "e002": "action role → process; 确保可访问是执行动作 → P2_execution"
+    },
+    "ep_005": {
+      "e001": "action role → process; 批准、记录、传达是执行动作 → P2_execution",
+      "e002": "outcome role → exit; 变更传达后员工知晓是状态变化 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

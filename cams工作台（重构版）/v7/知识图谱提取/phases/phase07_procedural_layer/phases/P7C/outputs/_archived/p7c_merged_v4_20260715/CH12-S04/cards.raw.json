@@ -1,0 +1,498 @@
+{
+  "section_id": "CH12-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S04_001",
+      "section_id": "CH12-S04",
+      "card_nature": "assessment",
+      "title": "高风险客户和中介需仔细风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "高风险客户，如政治敏感人物(PEPs)，和中介",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行仔细的风险评估",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "存在高风险客户或中介",
+          "evidence_unit_ids": [
+            "v7u_N000921"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "High-risk customers, such as PEPs, and intermediaries require careful risk assessment."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000921"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：高风险客户及中介的存在触发仔细风险评估义务；证据范围：v7u_N000921；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_002",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "基于预设标准标记可疑交易以识别异常模式",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预设标准",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "标记可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别大额或异常交易、快进快出、高频交易、涉及高风险司法管辖区的交易",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "source_quote": "flag suspicious transactions based on predefined criteria"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000923"
+          ],
+          "qualifier": "helps_achieve",
+          "source_quote": "can help identify large or unusual trades, rapid trading patterns, highfrequency transactions and transactions involving high-risk jurisdictions"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000923"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于预设标准标记可疑交易有助于识别各类异常交易；证据范围：v7u_N000923；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_003",
+      "section_id": "CH12-S04",
+      "card_nature": "execution",
+      "title": "通过CDD确保资金来源合法并细分客户",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "进行客户尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保资金来源合法",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "根据预期和历史交易模式正确细分客户",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "qualifier": "helps_achieve",
+          "source_quote": "Conducting CDD helps ensure that the source of funds is legitimate"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000924"
+          ],
+          "qualifier": "helps_achieve",
+          "source_quote": "and that customers are correctly segmented according to their expected and historical trading patterns"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000924"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：执行CDD有助于确保资金合法性并根据交易模式细分客户；证据范围：v7u_N000924；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_004",
+      "section_id": "CH12-S04",
+      "card_nature": "assessment",
+      "title": "资产管理公司因业务特性需了解洗钱风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "处理大量资本、跨司法管辖区、多种资产类别、匿名交易、复杂金融产品和第三方",
+          "evidence_unit_ids": [
+            "v7u_N000926"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "了解业务中的洗钱风险",
+          "evidence_unit_ids": [
+            "v7u_N000926"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "因资产管理公司处理大量资本、跨法域等",
+          "evidence_unit_ids": [
+            "v7u_N000926"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Asset managers are required to understand the money laundering risks of their business as they handle large volumes of capital across multiple jurisdictions..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000926"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：资产管理公司因业务复杂性和规模，须了解洗钱风险；证据范围：v7u_N000926；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_005",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "审查房地产投资相关方以降低洗钱风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "房地产投资涉及多方利益相关者（卖家、买家、租户、物业管理、代理人等）",
+          "evidence_unit_ids": [
+            "v7u_N000933"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "对所有相关方进行全面审查",
+          "evidence_unit_ids": [
+            "v7u_N000933"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低洗钱风险",
+          "evidence_unit_ids": [
+            "v7u_N000933"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "当从事房地产投资并涉及多方时",
+          "evidence_unit_ids": [
+            "v7u_N000933"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Real estate investments involves various stakeholders ... all of whom should be thoroughly vetted to mitigate money laundering risks."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000933"
+          ],
+          "qualifier": "aimed_to",
+          "source_quote": "to mitigate money laundering risks"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000933"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在房地产投资涉及多方时，需全面审查以降低洗钱风险；证据范围：v7u_N000933；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S04_006",
+      "section_id": "CH12-S04",
+      "card_nature": "control",
+      "title": "采用基于风险的方法以达致合规并应对新兴风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采用强调强客户尽职调查控制和持续监控的基于风险的方法",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "满足监管要求",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "展示对行业诚信的承诺",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "应对新兴风险，如加密货币和新型金融工具",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "qualifier": "may_lead_to",
+          "source_quote": "they can meet regulatory requirements"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "qualifier": "may_lead_to",
+          "source_quote": "demonstrate a genuine commitment to the sector’s integrity"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000937"
+          ],
+          "qualifier": "may_lead_to",
+          "source_quote": "This commitment also addresses emerging risks associated with new asset classes, such as cryptocurrencies and novel financial instruments"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000937"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：采用基于风险的方法可产生合规、承诺展示及应对新兴风险等多重效果；证据范围：v7u_N000937；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_001"
+      ],
+      "reason": "高风险客户和中介需风险评估的程序性要求已完整映射为触发-行动卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_002"
+      ],
+      "reason": "交易监控流程已映射为包含标准引用、标记动作及异常识别结果的完整卡片。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_003"
+      ],
+      "reason": "CDD的执行与双重产出已映射为卡片。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_004"
+      ],
+      "reason": "资产管理公司的义务已映射为情境触发-行动卡片。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_005"
+      ],
+      "reason": "房地产投资审查流程已映射为包含触发、审查动作和风险降低结果的卡片。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S04_006"
+      ],
+      "reason": "基于风险的方法的多重产出已映射为卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context角色描述存在高风险客户的条件状态，选用E3_state_threshold",
+      "e002": "action角色执行仔细风险评估，属于评估性动作，选用P1_assessment"
+    },
+    "ep_002": {
+      "e001": "standard角色直接映射为standard",
+      "e002": "action角色执行标记动作，通用执行类，选用P2_execution",
+      "e003": "outcome角色产出识别结果，属于分类，选用X1_classification"
+    },
+    "ep_003": {
+      "e001": "action角色进行CDD，通用执行，选用P2_execution",
+      "e002": "outcome表示资金来源合法化，属于状态变更，选用X3_state_change",
+      "e003": "outcome表示客户细分，属于分类，选用X1_classification"
+    },
+    "ep_004": {
+      "e001": "context角色描述资产管理公司的业务条件特征，选用E3_state_threshold",
+      "e002": "action角色了解风险，评估性动作，选用P1_assessment"
+    },
+    "ep_005": {
+      "e001": "context角色描述房地产投资涉及多方的条件，选用E3_state_threshold",
+      "e002": "action角色进行全面审查，属于评估/审查，选用P1_assessment",
+      "e003": "outcome风险降低，状态变更，选用X3_state_change"
+    },
+    "ep_006": {
+      "e001": "action角色采用方法，属于策略执行，选用P2_execution",
+      "e002": "满足监管要求，状态变更，选用X3_state_change",
+      "e003": "展示承诺，状态变更，选用X3_state_change",
+      "e004": "应对新兴风险，状态变更，选用X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

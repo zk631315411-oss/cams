@@ -1,0 +1,133 @@
+{
+  "section_id": "CH30-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH30-S03_001",
+      "section_id": "CH30-S03",
+      "card_nature": "assessment",
+      "title": "对照现有控制措施审查红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Review red flags",
+          "evidence_unit_ids": [
+            "v7u_N002181"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "existing controls, policies, and procedures",
+          "evidence_unit_ids": [
+            "v7u_N002181"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002181"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Review red flags against existing controls, policies, and procedures."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002181"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：对照现有控制措施审查红旗信号；证据范围：v7u_N002181；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH30-S03_002",
+      "section_id": "CH30-S03",
+      "card_nature": "execution",
+      "title": "根据报告、指引和政策文件规划并沟通变革实施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "reports, guidance notes, and policy papers",
+          "evidence_unit_ids": [
+            "v7u_N002182"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "Plan and communicate implementation of change",
+          "evidence_unit_ids": [
+            "v7u_N002182"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002182"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002182"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据报告、指引和政策文件触发规划与沟通变革实施；证据范围：v7u_N002182；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "ungraphable",
+      "decision": "p7c_ungraphable",
+      "card_ids": [],
+      "reason": "仅描述主动审查红旗信号的动作，但未提供与其他元素的连接关系，无法构成有向流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH30-S03_001"
+      ],
+      "reason": "审查红旗信号并对照现有控制措施，构成reference关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH30-S03_002"
+      ],
+      "reason": "响应报告等触发规划和沟通变革实施，构成trigger关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role, reviewing red flags against standards substantively matches P1_assessment definition (识别风险信号或异常模式，使用标准形成分类、适宜性或有效性结论).",
+      "e002": "standard role, node_type=standard per semantic."
+    },
+    "ep_002": {
+      "e001": "context role, reports/guidance/papers serve as triggering event, matches E1_event_signal (可定位的业务事件启动处理) given 'in response to' phrasing.",
+      "e002": "action role, planning and communicating implementation of change substantially matches P9_planning (将风险处置组织为责任人、期限、措施、复核和升级机制)."
+    }
+  },
+  "skip_reason": null
+}

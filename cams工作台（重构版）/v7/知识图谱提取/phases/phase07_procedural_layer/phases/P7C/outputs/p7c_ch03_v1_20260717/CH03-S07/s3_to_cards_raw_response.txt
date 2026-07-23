@@ -1,0 +1,269 @@
+{
+  "section_id": "CH03-S07",
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S07_001",
+      "section_id": "CH03-S07",
+      "card_nature": "risk_indicator",
+      "title": "金融机构检测并标记恐怖融资可疑交易",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构通过交易监控系统检测非法活动",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "标记结构化存款、快速跨域分层和异常资金流动",
+          "evidence_unit_ids": ["v7u_N000283"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000283"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000283"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融机构通过交易监控系统检测非法活动并标记可疑交易；证据范围：v7u_N000283；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_002",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "区块链分析公司提供取证情报映射非法加密资产流动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "区块链分析公司提供取证情报",
+          "evidence_unit_ids": ["v7u_N000284"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "映射出暗网市场和高风险交易所的非法加密资产流动",
+          "evidence_unit_ids": ["v7u_N000284"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000284"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000284"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：区块链分析公司提供取证情报并映射非法加密资产流动；证据范围：v7u_N000284；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_003",
+      "section_id": "CH03-S07",
+      "card_nature": "assessment",
+      "title": "FIUs综合情报触发国际监管红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "FIUs综合银行可疑交易报告与跨境金融活动",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发国际监管网络中的红旗信号",
+          "evidence_unit_ids": ["v7u_N000285"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000285"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000285"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FIUs综合银行SARs与跨境活动并触发红旗信号；证据范围：v7u_N000285；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH03-S07_004",
+      "section_id": "CH03-S07",
+      "card_nature": "execution",
+      "title": "执法机构基于案件升级实施监控与资产冻结",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "FIUs升级该案件",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "执法机构对Wolfe及其同伙进行针对性监控",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法机构协调资产冻结以切断金融渠道",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "追踪现金走私者和哈瓦拉网络",
+          "evidence_unit_ids": ["v7u_N000286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "查封数字钱包",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "瓦解Wolfe用于资助恐怖主义的公司",
+          "evidence_unit_ids": ["v7u_N000287"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000286"]
+        },
+        {
+          "edge_id": "edge_r002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N000286"]
+        },
+        {
+          "edge_id": "edge_r003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N000286"]
+        },
+        {
+          "edge_id": "edge_r004",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N000287"]
+        },
+        {
+          "edge_id": "edge_r005",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n006",
+          "evidence_unit_ids": ["v7u_N000287"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000286", "v7u_N000287"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FIUs升级案件后，执法机构实施监控与资产冻结，追踪非法网络并瓦解恐怖融资公司；证据范围：v7u_N000286, v7u_N000287；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH03-S07_001"],
+      "decision": "p7c_card",
+      "reason": "映射至金融机构检测并标记可疑交易的episode card"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH03-S07_002"],
+      "decision": "p7c_card",
+      "reason": "映射至区块链分析公司提供取证情报的episode card"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH03-S07_003"],
+      "decision": "p7c_card",
+      "reason": "映射至FIUs综合情报触发红旗信号的episode card"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH03-S07_004"],
+      "decision": "p7c_card",
+      "reason": "映射至执法机构实施监控与资产冻结的episode card"
+    },
+    {
+      "candidate_id": "s1c_gap_ch03_s07_sentencing",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "decision": "kg_only",
+      "reason": "判决结果仅为案件事实陈述，不构成流程"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "检测非法活动并标记可疑模式属于识别风险信号（P1_assessment）",
+      "e002": "标记结果为分类结论（可疑活动），故为X1_classification"
+    },
+    "ep_002": {
+      "e001": "提供取证情报并映射非法资金流属于汇集信息形成情报产品（P4_collection）",
+      "e002": "映射出的非法资金流结果形成可交付的分析对象（X2_product）"
+    },
+    "ep_003": {
+      "e001": "综合多源金融情报属于汇集信息以形成基础（P4_collection）",
+      "e002": "触发红旗信号为风险识别结论（X1_classification）"
+    },
+    "ep_004": {
+      "e001": "FIUs升级案件作为触发后续执法行动的业务事件（E1_event_signal）",
+      "e002": "针对性监控为持续观察行为，目的追踪目标（P7_monitoring）",
+      "e003": "资产冻结为直接执行动作，改变资产状态（P2_execution）",
+      "e004": "追踪到的现金走私者和哈瓦拉网络是监控取得的信息产品（X2_product）",
+      "e005": "查封数字钱包是资产状态变为被控制（X3_state_change）",
+      "e006": "瓦解公司是公司状态变为停止运营（X3_state_change）"
+    }
+  },
+  "skip_reason": null
+}

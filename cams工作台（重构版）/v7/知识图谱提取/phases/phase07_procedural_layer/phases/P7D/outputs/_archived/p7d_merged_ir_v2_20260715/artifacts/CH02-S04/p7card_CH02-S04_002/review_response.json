@@ -1,0 +1,122 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_002",
+  "edge_reviews": [
+    {
+      "edge_id": "r001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138 明示“Sophie’s initial investigation revealed that...”，直接支持“Sophie的初步调查”作为调查过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000138 明确揭示 FullTechGlobal 战略性地雇佣高风险司法管辖区中间人以获取合同，与 e002 标签一致。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文用“revealed that”表达调查导致发现，方向从调查到发现明确无误。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用限定词，原文为事实陈述，无需审核限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "调查与发现之间为直接因果关系，非并列或相关关系，PRODUCES 使用恰当。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000138"
+      ],
+      "source_quotes": [
+        "Sophie’s initial investigation revealed that FullTechGlobal had strategically employed intermediaries in high-risk jurisdictions to secure lucrative contracts."
+      ],
+      "reason": "原文明示初步调查揭示了中间人雇佣行为，边的关系、方向均有充分文本支持，可以接受。"
+    },
+    {
+      "edge_id": "r002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "unsupported",
+          "reason": "v7u_N000139 仅提及“allegations and further investigative efforts”，未归因于 Sophie 的初步调查，e001 节点不被原文支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000139 描述了子公司通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动，与 e003 标签一致。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文没有证据表明初步调查导致了该发现，方向缺乏依据。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用限定词，无需审核。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中该发现并非初步调查的直接产物，与中间人发现并列属于不同调查阶段的结论，不能通过 PRODUCES 连接。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139"
+      ],
+      "source_quotes": [
+        "According to the allegations and further investigative efforts, it appeared the subsidiary was systematically obscuring illicit financial flows through inflated consultancy fees, fabricated invoicing practices, and opaque shell companies."
+      ],
+      "reason": "初步调查 (e001) 并未直接产生掩盖行为发现，原文仅将所有指控和进一步调查努力作为依据，边的关系不成立，应拒绝。"
+    },
+    {
+      "edge_id": "r003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "unsupported",
+          "reason": "v7u_N000140 仅说“evidence suggested”，未指明该证据来自 Sophie 的初步调查，e001 节点不受原文支持。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000140 描述了提供奢华礼品和旅行安排以不当影响决策，与 e004 标签一致。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文没有显示初步调查与提供奢华礼品之间存在揭示关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边未使用限定词，无需审核。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "该发现与初步调查无直接因果，不能作为 PRODUCES 的产出。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000140"
+      ],
+      "source_quotes": [
+        "Additionally, evidence suggested that FullTechGlobal provided sophisticated inducements, including lavish gifts and premium travel arrangements to public officials and high-ranking executives to unlawfully influence decision-making processes."
+      ],
+      "reason": "初步调查 (e001) 并未直接产生奢华礼品发现，原文将证据来源归于一般性 evidence suggested，关系缺乏依据，应拒绝。"
+    }
+  ]
+}

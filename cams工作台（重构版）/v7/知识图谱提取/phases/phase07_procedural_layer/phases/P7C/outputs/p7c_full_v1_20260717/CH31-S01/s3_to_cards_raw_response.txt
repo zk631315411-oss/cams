@@ -1,0 +1,632 @@
+{
+  "section_id": "CH31-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH31-S01_001",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Risk-Based Supervision by Regulators",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Regulators authorize regulated businesses via licenses and registrations",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "undertake risk-based supervision of these organizations",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "ensure compliance",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "identify noncompliance",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "source_quote": "Regulators authorize regulated businesses via licenses and registrations and then undertake risk-based supervision of these organizations to ensure compliance and identify noncompliance."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "source_quote": "… undertake risk-based supervision … to ensure compliance …"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002208"],
+          "source_quote": "… undertake risk-based supervision … to identify noncompliance."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002208"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：监管机构授权后开展风险为本监督，旨在确保合规和识别不合规。证据范围：v7u_N002208。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_002",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Compliance Tools for Serious Cases",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "serious cases",
+          "evidence_unit_ids": ["v7u_N002209"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "use tools to ensure compliance",
+          "evidence_unit_ids": ["v7u_N002209"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "issuing fines and enforcement actions",
+          "evidence_unit_ids": ["v7u_N002209"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "case is serious",
+          "evidence_unit_ids": ["v7u_N002209"],
+          "source_quote": "Regulators have a range of tools to ensure compliance, up to and including issuing fines and enforcement actions for serious cases."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002209"],
+          "source_quote": "… up to and including issuing fines and enforcement actions for serious cases."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002209"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：严重案件触发使用合规工具，产出罚款和执法行动。证据范围：v7u_N002209。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_003",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Law Enforcement Investigations",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "undertake investigations",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "bring money launderers to justice",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "take away their assets",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "achieve other disruptive effects",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "source_quote": "Law enforcement undertakes investigations to bring money launderers to justice, take away their assets, and achieve other disruptive effects."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "source_quote": "Law enforcement undertakes investigations to bring money launderers to justice, take away their assets, and achieve other disruptive effects."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002210"],
+          "source_quote": "Law enforcement undertakes investigations to bring money launderers to justice, take away their assets, and achieve other disruptive effects."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002210"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：执法调查旨在将洗钱者绳之以法、没收资产及实现其他破坏效果。证据范围：v7u_N002210。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_004",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Cooperation with Prosecution Authorities",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "work with prosecution authorities",
+          "evidence_unit_ids": ["v7u_N002211"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "bring court proceedings",
+          "evidence_unit_ids": ["v7u_N002211"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002211"],
+          "source_quote": "Law enforcement investigators work with prosecution authorities to bring court proceedings."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002211"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：执法调查人员与检方合作，旨在提起法庭诉讼。证据范围：v7u_N002211。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_005",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "FIU Intelligence Processing",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "receive financial intelligence",
+          "evidence_unit_ids": ["v7u_N002218"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "analyze financial intelligence",
+          "evidence_unit_ids": ["v7u_N002218"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "disseminate financial intelligence",
+          "evidence_unit_ids": ["v7u_N002218"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "strategic analysis",
+          "evidence_unit_ids": ["v7u_N002219"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "operational analysis",
+          "evidence_unit_ids": ["v7u_N002220"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002218"],
+          "source_quote": "National FIUs receive, analyze, and disseminate financial intelligence."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002218"],
+          "source_quote": "National FIUs receive, analyze, and disseminate financial intelligence."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002219"],
+          "source_quote": "They produce strategic analysis that is used to understand trends, typologies, and threats."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002220"],
+          "source_quote": "They also produce operational analysis that law enforcement uses to investigate and disrupt money laundering, terrorist financing, and predicate offenses."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002218", "v7u_N002219", "v7u_N002220"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FIU接收、分析、分发金融情报，产出战略和操作分析产品。证据范围：v7u_N002218, v7u_N002219, v7u_N002220。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_006",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Domestic Information Sharing",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "information pertains to each other’s functions",
+          "evidence_unit_ids": ["v7u_N002222"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "agencies cooperate and share information",
+          "evidence_unit_ids": ["v7u_N002222"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "information pertains to functions",
+          "evidence_unit_ids": ["v7u_N002222"],
+          "source_quote": "the agencies cooperate and share information when it pertains to each other’s functions."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002222"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：信息涉及对方职能时触发机构间合作与共享。证据范围：v7u_N002222。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_007",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "International Information Sharing",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "should share information with international counterparts",
+          "evidence_unit_ids": ["v7u_N002223"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "handle crossborder money laundering and terrorist financing",
+          "evidence_unit_ids": ["v7u_N002223"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002223"],
+          "source_quote": "These agencies should also share information with their international counterparts to handle crossborder money laundering and terrorist financing."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002223"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：机构应与国际同行共享信息，旨在处理跨境洗钱和恐怖融资。证据范围：v7u_N002223。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_008",
+      "section_id": "CH31-S01",
+      "card_nature": "execution",
+      "title": "Asset Recovery Mechanism",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "use asset recovery as a mechanism",
+          "evidence_unit_ids": ["v7u_N002213"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "ensure that crime does not pay",
+          "evidence_unit_ids": ["v7u_N002213"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002213"],
+          "source_quote": "Law enforcement and prosecution authorities use asset recovery as a mechanism to ensure that crime does not pay."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002213"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：执法和检方使用资产追缴机制，旨在确保犯罪无利可图。证据范围：v7u_N002213。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S01_009",
+      "section_id": "CH31-S01",
+      "card_nature": "assessment",
+      "title": "Information Sharing Channel Selection",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "choose sharing channel based on information type",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "channel for intelligence",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "channel for evidence",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "channel for regulatory information",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "information type is intelligence",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "source_quote": "There are various channels for information sharing, depending on whether it is intelligence, evidence, or regulatory information."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "information type is evidence",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "source_quote": "There are various channels for information sharing, depending on whether it is intelligence, evidence, or regulatory information."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n004",
+          "condition": "information type is regulatory information",
+          "evidence_unit_ids": ["v7u_N002224"],
+          "source_quote": "There are various channels for information sharing, depending on whether it is intelligence, evidence, or regulatory information."
+        }
+      ],
+      "source_unit_ids": ["v7u_N002224"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据信息类型（情报、证据、监管）选择不同共享渠道。证据范围：v7u_N002224。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_001"],
+      "reason": "明确描述了监管机构授权后开展风险为本监督以确合规和发现不合规的程序流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_003"],
+      "reason": "描述了执法部门开展调查并产出将洗钱者绳之以法、没收资产等结果的开放调查流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_004"],
+      "reason": "给出了执法调查人员与检察机关合作提起刑事诉讼的过程，构成程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_005"],
+      "reason": "包含金融情报机构接收、分析、传播情报并产生战略和操作分析的连续流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_006"],
+      "reason": "定义了在信息涉及各方职能时机构合作共享信息的条件触发流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_007"],
+      "reason": "规定了机构应与国际同行共享信息以处理跨境洗钱，构成信息共享流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch31_s01_regulator_role",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述监管机构的静态角色和职责（制定规则、确保控制有效），不构成原文明示的程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch31_s01_compliance_tools",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_002"],
+      "reason": "描述了监管机构针对严重案件使用罚款和执法行动等工具确保合规的条件触发性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch31_s01_asset_recovery",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_008"],
+      "reason": "给出了执法和检察机关使用资产追缴机制以确保犯罪无利可图的流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch31_s01_info_sharing_channels",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH31-S01_009"],
+      "reason": "定义了根据信息类型（情报、证据、监管）选择不同共享渠道的决策分支流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, authorization event starts process -> E1_event_signal",
+      "e002": "action role, risk-based supervision is continuous monitoring -> P7_monitoring",
+      "e003": "outcome role, ensure compliance represents a desired state -> X3_state_change",
+      "e004": "outcome role, identify noncompliance is a detection/classification -> X1_classification"
+    },
+    "ep_002": {
+      "e001": "context role, serious case is a state condition -> E3_state_threshold",
+      "e002": "action role, using tools to ensure compliance is execution -> P2_execution",
+      "e003": "outcome role, issuing fines/enforcement actions are tangible products -> X2_product"
+    },
+    "ep_003": {
+      "e001": "action role, undertaking investigations is execution -> P2_execution",
+      "e002": "outcome role, bringing launderers to justice implies change of legal state -> X3_state_change",
+      "e003": "outcome role, taking away assets implies state change -> X3_state_change",
+      "e004": "outcome role, achieving disruptive effects implies state change -> X3_state_change"
+    },
+    "ep_004": {
+      "e001": "action role, working with prosecution authorities is coordination -> P5_coordination",
+      "e002": "outcome role, bringing court proceedings is a handoff to judicial process -> X4_handoff"
+    },
+    "ep_005": {
+      "e001": "action role, receiving intelligence is collection -> P4_collection",
+      "e002": "action role, analyzing intelligence is assessment -> P1_assessment",
+      "e003": "action role, disseminating intelligence is execution -> P2_execution",
+      "e004": "outcome role, strategic analysis is a produced document/report -> X2_product",
+      "e005": "outcome role, operational analysis is a produced document/report -> X2_product"
+    },
+    "ep_006": {
+      "e001": "context role, information pertaining to functions is a condition -> E3_state_threshold",
+      "e002": "action role, cooperating and sharing info is coordination -> P5_coordination"
+    },
+    "ep_007": {
+      "e001": "action role, sharing information with international counterparts is execution -> P2_execution",
+      "e002": "outcome role, handling crossborder ML/TF aims at state change -> X3_state_change"
+    },
+    "ep_008": {
+      "e001": "action role, using asset recovery as a mechanism is execution -> P2_execution",
+      "e002": "outcome role, ensuring crime does not pay is a desired state -> X3_state_change"
+    },
+    "ep_009": {
+      "e001": "decision role, choosing channel based on info type is branch routing -> P3_branch_routing",
+      "e002": "outcome role, channel for intelligence is a handoff to specific channel -> X4_handoff",
+      "e003": "outcome role, channel for evidence is a handoff -> X4_handoff",
+      "e004": "outcome role, channel for regulatory info is a handoff -> X4_handoff"
+    }
+  },
+  "skip_reason": null
+}

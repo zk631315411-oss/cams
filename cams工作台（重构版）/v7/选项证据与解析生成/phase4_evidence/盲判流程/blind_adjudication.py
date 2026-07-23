@@ -75,6 +75,98 @@ QUESTION_TEXT_OVERRIDES_PATH = HERE / "question_text_overrides.jsonl"
 API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
 
+# ── ±4 上下文扩展（从解析脚本移植） ─────────────────────────────────
+
+_KG_UNIT_CACHE: dict[str, dict[str, Any]] | None = None
+_SECTION_RANGE = 4
+
+
+def _load_kg_units() -> dict[str, dict[str, Any]]:
+    global _KG_UNIT_CACHE
+    if _KG_UNIT_CACHE is not None:
+        return _KG_UNIT_CACHE
+    if not KG_GRAPH_PATH.exists():
+        _KG_UNIT_CACHE = {}
+        return _KG_UNIT_CACHE
+    with open(KG_GRAPH_PATH, "r", encoding="utf-8") as f:
+        kg = json.load(f)
+    _KG_UNIT_CACHE = {}
+    for unit in kg.get("units", []) or []:
+        uid = str(unit.get("unit_id", "")).strip()
+        if uid:
+            _KG_UNIT_CACHE[uid] = unit
+    return _KG_UNIT_CACHE
+
+
+def _compact_text(value: Any, max_len: int = 520) -> str:
+    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    if len(text) <= max_len:
+        return text
+    return text[: max_len - 1].rstrip() + "…"
+
+
+def _section_context_cards(
+    unit_id: str, candidate_ids: set[str], context_range: int = _SECTION_RANGE,
+) -> list[dict[str, Any]]:
+    kg_units = _load_kg_units()
+    center = kg_units.get(unit_id)
+    if not center:
+        return []
+    section_id = center.get("section_id", "")
+    center_order = int(center.get("unit_order") or 0)
+    if not section_id or not center_order:
+        return []
+    siblings: list[dict[str, Any]] = []
+    for uid, unit in kg_units.items():
+        if unit.get("section_id") == section_id:
+            siblings.append(unit)
+    siblings.sort(key=lambda u: int(u.get("unit_order") or 0))
+    result: list[dict[str, Any]] = []
+    for unit in siblings:
+        order = int(unit.get("unit_order") or 0)
+        if abs(order - center_order) <= context_range:
+            uid = str(unit.get("unit_id", ""))
+            result.append({
+                "unit_id": uid,
+                "knowledge_zh": unit.get("knowledge_zh", ""),
+                "en_quote": unit.get("en_quote") or "",
+                "heading_context": unit.get("heading_context") or [],
+                "type": unit.get("type", ""),
+                "printed_page": unit.get("printed_page", ""),
+                "real_section": unit.get("real_section") or unit.get("section_id", ""),
+                "unit_order": order,
+                "is_candidate": uid in candidate_ids,
+                "is_center": uid == unit_id,
+            })
+    return result
+
+
+def _format_context_block(cards: list[dict[str, Any]]) -> str:
+    if not cards:
+        return ""
+    section_label = cards[0].get("real_section", "")
+    heading = " > ".join(cards[0].get("heading_context", []) or [])
+    lines = [f"【教材原文连续段落 — {section_label} ({heading})】", ""]
+    for card in cards:
+        uid = card["unit_id"]
+        zh = _compact_text(card["knowledge_zh"])
+        en = _compact_text(card["en_quote"])
+        page_str = f" | P{card['printed_page']}" if card.get("printed_page") else ""
+        if card["is_center"]:
+            marker = "★ 命中"
+        elif card["is_candidate"]:
+            marker = "  已检索"
+        else:
+            marker = "  补充上下文"
+        lines.append(f"[{uid}] {marker}{page_str}")
+        if zh:
+            lines.append(f"  中文要点：{zh}")
+        if en:
+            lines.append(f"  英文原文：{en}")
+        lines.append("")
+    lines.append("-" * 60)
+    return "\n".join(lines)
+
 
 # ── 分词器（复用 P4.0 / phase3 实现） ──────────────────────────────
 
@@ -1281,11 +1373,12 @@ _TYPE_LABELS: dict[str, str] = {
 
 
 def format_candidates(candidates: list[dict[str, Any]]) -> str:
-    """将候选池格式化为易读文本，含 CP 关系去重摘要。"""
+    """将候选池格式化为 ±4 上下文连续块，同 section 内按教材顺序展示。"""
     lines: list[str] = []
+    candidate_ids = {c["unit_id"] for c in candidates}
 
     # CP 关系去重摘要
-    cp_rels: dict[tuple[str, str, str], str] = {}  # (src, tgt, rel) -> reason
+    cp_rels: dict[tuple[str, str, str], str] = {}
     for c in candidates:
         kg_info = c.get("kg") or {}
         rel = kg_info.get("relation_type", "")
@@ -1305,30 +1398,33 @@ def format_candidates(candidates: list[dict[str, Any]]) -> str:
             lines.append(f"  {src} --{rel}--> {tgt} {reason_str}")
         lines.append("")
 
-    for i, c in enumerate(candidates, start=1):
-        zh = c.get("knowledge_zh", "")
-        en = c.get("en_quote", "") or c.get("knowledge_en", "")
-        type_label = _TYPE_LABELS.get(str(c.get("type", "") or "").strip(), "")
-        lines.append(f"[知识单元 {i}]")
-        lines.append(f"  unit_id: {c['unit_id']}")
-        if type_label:
-            lines.append(f"  教材类型: {type_label}")
-        if zh:
-            lines.append(f"  中文: {zh}")
-        if en:
-            lines.append(f"  英文: {en}")
-        kg_info = c.get("kg") or {}
-        if kg_info:
-            lines.append(
-                "  KG导航: "
-                f"route={c.get('route', '')}; "
-                f"seed={kg_info.get('source_seed_unit_id', '')}; "
-                f"target_cp={kg_info.get('target_core_point_id', '')}; "
-                f"target_cp_title={kg_info.get('target_core_point_title_zh', '')}; "
-                f"relation={kg_info.get('relation_type', '')}; "
-                f"reason={kg_info.get('reason', '')}"
-            )
-        lines.append("  " + "-" * 60)
+    # 按 ±4 上下文块展示，去重
+    shown_ctx: set[tuple[str, int]] = set()
+    candidate_units = {c["unit_id"]: c for c in candidates}
+
+    for c in candidates:
+        uid = c["unit_id"]
+        ctx_cards = _section_context_cards(uid, candidate_ids)
+        if not ctx_cards:
+            lines.append(f"[知识单元] {uid}")
+            lines.append(f"  中文: {c.get('knowledge_zh', '')}")
+            en = c.get("en_quote", "") or c.get("knowledge_en", "")
+            if en:
+                lines.append(f"  英文: {en}")
+            lines.append("  " + "-" * 60)
+            continue
+
+        section_key = ctx_cards[0].get("real_section", "")
+        center_order = next(
+            (card["unit_order"] for card in ctx_cards if card["is_center"]), 0
+        )
+        ctx_key = (section_key, center_order)
+
+        if ctx_key in shown_ctx:
+            continue
+        shown_ctx.add(ctx_key)
+        lines.append(_format_context_block(ctx_cards))
+
     return "\n".join(lines)
 
 
@@ -1703,6 +1799,12 @@ def validate_result(
         for row in rows
         if row.get("unit_id")
     )
+    # ±4 上下文扩展的 unit 也视为合法引用来源
+    kg_units = _load_kg_units()
+    if kg_units:
+        for c in candidates:
+            for card in _section_context_cards(c["unit_id"], candidate_unit_ids):
+                candidate_unit_ids.add(card["unit_id"])
     # 真实 unit_id 集合（索引中存在）
     valid_unit_ids = set(unit_lookup.keys())
 
@@ -1807,8 +1909,10 @@ def validate_result(
             ):
                 issues.append(f"选项{label}: decision_reason 泄露内部检索或生成过程")
             # 检查是否用了"教材未列举"来证明错误（穷尽分类除外）
+            # 只拦截"未列 → 因此错"的因果论证，不拦纯粹的事实描述
             absence_claim = re.search(
-                r"教材.{0,20}(?:未|没有).{0,20}(?:列|提及|单元|认定|提供)",
+                r"教材.{0,20}(?:未|没有).{0,20}(?:列|提及|单元|认定|提供)"
+                r".{0,30}(?:因此|所以|故|说明|应?排除|不属于|不正确|不是|并非)",
                 decision_reason,
             )
             exhaustive_taxonomy = (
@@ -2233,6 +2337,16 @@ def main() -> None:
         help="合并后候选池大小（默认 30）",
     )
     parser.add_argument(
+        "--all",
+        action="store_true",
+        help="处理全部题目（覆盖 manual_reviewed 默认筛选）",
+    )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="跳过 output/questions/ 下已有 JSON 的题目",
+    )
+    parser.add_argument(
         "--question-id",
         action="append",
         default=[],
@@ -2380,16 +2494,20 @@ def main() -> None:
             raise RuntimeError(f"章节 {chapter_id} 没有已确认题目")
         print(f"\n[sample] 教材章节 {chapter_id} 共 {len(sampled)} 题（不应用 --limit）")
     else:
-        manual_questions = [
-            q for q in questions
-            if "manual_reviewed" in q.get("risk_flags", [])
-        ]
-        manual_questions.sort(key=lambda x: x["question_id"])
-        sampled = manual_questions[:args.limit]
-        print(
-            f"\n[sample] manual_reviewed 共 {len(manual_questions)} 题，"
-            f"取前 {len(sampled)} 题"
-        )
+        if args.all:
+            sampled = sorted(questions, key=lambda x: x["question_id"])[:args.limit]
+            print(f"\n[sample] 全部 {len(questions)} 题，取前 {len(sampled)} 题")
+        else:
+            manual_questions = [
+                q for q in questions
+                if "manual_reviewed" in q.get("risk_flags", [])
+            ]
+            manual_questions.sort(key=lambda x: x["question_id"])
+            sampled = manual_questions[:args.limit]
+            print(
+                f"\n[sample] manual_reviewed 共 {len(manual_questions)} 题，"
+                f"取前 {len(sampled)} 题"
+            )
     for q in sampled:
         mapped = ",".join(
             row.get("real_chapter") or row.get("chapter_id", "")
@@ -2397,9 +2515,24 @@ def main() -> None:
         ) or "unmapped"
         print(f"  {q['question_id']} | {mapped} | {q.get('question_type','?')}")
 
-    # 6. 并发处理
-    print(f"\n[run] 开始并发处理（{args.concurrency} 线程）...")
+    # 6. 跳过已有
     output_dir = Path(args.output_dir)
+    if args.skip_existing:
+        questions_dir = output_dir / "questions"
+        before = len(sampled)
+        sampled = [
+            q for q in sampled
+            if not (questions_dir / f"q_{q['question_id']}.json").exists()
+        ]
+        skipped = before - len(sampled)
+        if skipped:
+            print(f"\n[skip] 跳过已存在 {skipped} 题，剩余 {len(sampled)} 题")
+    if not sampled:
+        print("全部题目已处理完毕，无需运行。")
+        return
+
+    # 7. 并发处理
+    print(f"\n[run] 开始并发处理（{args.concurrency} 线程）...")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     results: list[dict[str, Any]] = []

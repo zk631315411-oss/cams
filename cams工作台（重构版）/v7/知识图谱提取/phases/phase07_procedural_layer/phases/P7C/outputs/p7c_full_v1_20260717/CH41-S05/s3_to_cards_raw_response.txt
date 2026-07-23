@@ -1,0 +1,88 @@
+{
+  "section_id": "CH41-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S05_001",
+      "section_id": "CH41-S05",
+      "card_nature": "assessment",
+      "title": "委员会基于风险状况表达客户准入或退出意见",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "High-risk customer and transaction reports (including assessments of onboarding decisions and due diligence)",
+          "evidence_unit_ids": [
+            "v7u_N002958"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Committees might express opinions on whether to onboard or exit a particular customer",
+          "evidence_unit_ids": [
+            "v7u_N002958"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Risk profiles and other factors",
+          "evidence_unit_ids": [
+            "v7u_N002958"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002958"
+          ],
+          "condition": "In some cases, based on risk profiles and other factors"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002958"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002958"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：委员会在特定情形下基于风险状况就客户准入或退出发表意见；证据范围：仅引用v7u_N002958；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch41_s05_committee_opinion",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S05_001"
+      ],
+      "reason": "该候选描述了委员会在特定情形下基于风险状况就客户准入或退出发表意见的程序性判断过程，构成一个独立的评估型episode。",
+      "decision": "p7c_card"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry category; 高风险客户和交易报告作为意见表达的触发上下文，视为对象进入处理范围，故选E2_object_entry",
+      "e002": "action role → process category; 表达意见形成准入/退出结论，属于评估活动，故选P1_assessment",
+      "e003": "standard role → auxiliary category; 风险状况及其他因素作为约束动作的标准，故选standard"
+    }
+  },
+  "skip_reason": null
+}

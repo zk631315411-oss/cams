@@ -17,9 +17,40 @@ P2_DIR = PHASE_DIR.parent / "phase02_core_points"
 DEFAULT_REVIEW_FILE = PHASE_DIR / "outputs" / "p4_formal_all_chapters_top300_batch5x20_v1_p4b_review.jsonl"
 DEFAULT_PROMPT = PHASE_DIR / "prompts" / "p4c_relation_evidence_binding_v1.md"
 DEFAULT_BASE_URL = "https://api.deepseek.com/v1"
-API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
+DEFAULT_MODEL = "deepseek-v4-pro"
+API_KEY_ENV_NAMES = (
+    "P4_API_KEY",
+    "DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY",
+)
+BASE_URL_ENV_NAMES = ("P4_BASE_URL", "DEEPSEEK_BASE_URL", "DS_BASE_URL")
+MODEL_ENV_NAMES = ("P4_MODEL",)
 ALLOWED_STRENGTHS = {"strong", "medium", "weak"}
 FINAL_DECISIONS = {"accept", "accept_with_direction_fix"}
+
+
+def load_unit_lookup(path: Path) -> dict[str, dict[str, str]]:
+    """从 KG JSON 加载 unit 的 knowledge_zh + en_quote/knowledge_en."""
+    data = read_json(path)
+    lookup: dict[str, dict[str, str]] = {}
+    for u in data.get("units", []) or []:
+        uid = u.get("unit_id", "")
+        if not uid:
+            continue
+        en = u.get("en_quote", "") or u.get("knowledge_en", "")
+        lookup[uid] = {"zh": u.get("knowledge_zh", ""), "en": en}
+    return lookup
+
+
+def _cp_unit_ids(cp: dict[str, Any]) -> list[str]:
+    """收集 CP 所有关联 unit_id（去重）。"""
+    seen: set[str] = set()
+    uids: list[str] = []
+    for key in ("anchor_unit_ids", "support_unit_ids", "key_unit_ids"):
+        for uid in cp.get(key, []) or []:
+            if uid and uid not in seen:
+                seen.add(uid)
+                uids.append(uid)
+    return uids
 
 
 def canonical_json(data: Any) -> str:
@@ -53,13 +84,30 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text(text + ("\n" if rows else ""), encoding="utf-8")
 
 
-def get_deepseek_config() -> tuple[str, str, str]:
+def get_api_config() -> tuple[str, str, str, str]:
+    """Return (api_key, base_url, model, key_source). Reads from env vars."""
+    api_key = ""
+    key_source = ""
     for env_name in API_KEY_ENV_NAMES:
-        value = os.environ.get(env_name)
-        if value:
-            base_url = os.environ.get("DEEPSEEK_BASE_URL") or os.environ.get("DS_BASE_URL") or DEFAULT_BASE_URL
-            return value, base_url, env_name
-    raise RuntimeError("DEEPSEEK_API_KEY / DS_API_KEY / DS_KEY is not set.")
+        api_key = os.environ.get(env_name, "")
+        if api_key:
+            key_source = env_name
+            break
+    if not api_key:
+        raise RuntimeError("No API key found in env: " + ", ".join(API_KEY_ENV_NAMES))
+    base_url = DEFAULT_BASE_URL
+    for env_name in BASE_URL_ENV_NAMES:
+        url = os.environ.get(env_name, "")
+        if url:
+            base_url = url
+            break
+    model = DEFAULT_MODEL
+    for env_name in MODEL_ENV_NAMES:
+        m = os.environ.get(env_name, "")
+        if m:
+            model = m
+            break
+    return api_key, base_url, model, key_source
 
 
 def extract_json_object(raw: str) -> dict[str, Any] | None:
@@ -214,7 +262,29 @@ def load_p2b_edges(core_point_id: str) -> list[dict[str, Any]]:
     return sorted(edges, key=unit_sort_key)
 
 
-def build_binding_input(relation: dict[str, Any]) -> dict[str, Any]:
+def _cp_data_for_binding(cp_id: str, unit_lookup: dict[str, dict[str, str]] | None) -> tuple[list[str], list[dict[str, str]]]:
+    """获取 CP 的 unit_id 列表和全部 unit 中英文内容。"""
+    section_id = section_id_from_cp_id(cp_id)
+    reviewed_path = P2_DIR / "outputs" / f"p2a_reviewed_core_points.{section_id}.json"
+    if not reviewed_path.exists():
+        return [], []
+    for cp in read_json(reviewed_path).get("core_points") or []:
+        if (cp.get("draft_core_point_id") or cp.get("core_point_id")) == cp_id:
+            all_uids = _cp_unit_ids(cp)
+            units: list[dict[str, str]] = []
+            if unit_lookup:
+                for uid in all_uids:
+                    u = unit_lookup.get(uid, {})
+                    zh = u.get("zh", "")
+                    en = u.get("en", "")
+                    if zh or en:
+                        units.append({"zh": zh, "en": en})
+            return all_uids, units
+    return [], []
+
+
+def build_binding_input(relation: dict[str, Any],
+                        unit_lookup: dict[str, dict[str, str]] | None = None) -> dict[str, Any]:
     source_id = str(relation.get("source_core_point_id") or "")
     target_id = str(relation.get("target_core_point_id") or "")
     source_section = section_id_from_cp_id(source_id)
@@ -232,14 +302,16 @@ def build_binding_input(relation: dict[str, Any]) -> dict[str, Any]:
                     "title": relation.get("source_title_en") or load_cp_title(source_id),
                     "section_id": source_section,
                     "section_title": source_section_title,
-                    "p2b_unit_edges": load_p2b_edges(source_id),
+                    "unit_ids": (src_uids := _cp_data_for_binding(source_id, unit_lookup))[0],
+                    "units": src_uids[1],
                 },
                 "target_core_point": {
                     "core_point_id": target_id,
                     "title": relation.get("target_title_en") or load_cp_title(target_id),
                     "section_id": target_section,
                     "section_title": target_section_title,
-                    "p2b_unit_edges": load_p2b_edges(target_id),
+                    "unit_ids": (tgt_uids := _cp_data_for_binding(target_id, unit_lookup))[0],
+                    "units": tgt_uids[1],
                 },
             }
         ],
@@ -285,8 +357,8 @@ def validate_output(binding_input: dict[str, Any], output: dict[str, Any] | None
             issues.append({"issue": "relation_type_mismatch", "p4_relation_id": rel_id})
         if binding.get("support_strength") not in ALLOWED_STRENGTHS:
             issues.append({"issue": "invalid_support_strength", "p4_relation_id": rel_id, "support_strength": binding.get("support_strength")})
-        source_pool = {edge.get("unit_id") for edge in item["source_core_point"].get("p2b_unit_edges") or []}
-        target_pool = {edge.get("unit_id") for edge in item["target_core_point"].get("p2b_unit_edges") or []}
+        source_pool = set(item["source_core_point"].get("unit_ids") or [])
+        target_pool = set(item["target_core_point"].get("unit_ids") or [])
         for unit_id in binding.get("source_evidence_unit_ids") or []:
             if unit_id not in source_pool:
                 issues.append({"issue": "source_unit_not_in_pool", "p4_relation_id": rel_id, "unit_id": unit_id})
@@ -319,10 +391,11 @@ def call_model(client: Any, model: str, messages: list[dict[str, str]], max_toke
     return raw, usage.model_dump() if hasattr(usage, "model_dump") else {}
 
 
-def run_one(args: argparse.Namespace, client: Any, prompt_text: str, relation: dict[str, Any]) -> dict[str, Any]:
+def run_one(args: argparse.Namespace, client: Any, prompt_text: str, relation: dict[str, Any],
+            unit_lookup: dict[str, dict[str, str]] | None = None) -> dict[str, Any]:
     relation_id = str(relation.get("relation_id") or "")
     run_dir = PHASE_DIR / "runs" / args.run_slug / "relations" / relation_id
-    binding_input = build_binding_input(relation)
+    binding_input = build_binding_input(relation, unit_lookup)
     messages = build_messages(prompt_text, binding_input)
     write_json(run_dir / "input_p4c_binding.json", binding_input)
     raw, usage = call_model(client, args.model, messages, args.max_tokens, args.disable_thinking)
@@ -444,10 +517,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--relation-id", action="append", default=[])
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--concurrency", type=int, default=20)
-    parser.add_argument("--model", default="deepseek-v4-pro")
+    parser.add_argument("--model", default=None, help="model name (default from env or deepseek-v4-pro)")
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--max-tokens", type=int, default=8000)
     parser.add_argument("--disable-thinking", action="store_true", default=True)
+    parser.add_argument("--unit-lookup", type=Path, default=None, help="KG JSON for unit zh/en content")
     parser.add_argument("--materialize-only", action="store_true")
     parser.add_argument("--output-jsonl", type=Path, default=None)
     parser.add_argument("--report-md", type=Path, default=None)
@@ -478,13 +552,15 @@ def main() -> None:
         return
 
     prompt_text = args.prompt_file.resolve().read_text(encoding="utf-8")
+    unit_lookup = load_unit_lookup(args.unit_lookup) if args.unit_lookup else None
     from openai import OpenAI
 
-    api_key, base_url, key_source = get_deepseek_config()
+    api_key, base_url, model, key_source = get_api_config()
+    args.model = args.model or model  # ensure model set for downstream use
     client = OpenAI(api_key=api_key, base_url=args.base_url or base_url)
     results: list[dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=max(1, args.concurrency)) as executor:
-        future_map = {executor.submit(run_one, args, client, prompt_text, relation): relation for relation in final_relations}
+        future_map = {executor.submit(run_one, args, client, prompt_text, relation, unit_lookup): relation for relation in final_relations}
         for future in as_completed(future_map):
             result = future.result()
             results.append(result)

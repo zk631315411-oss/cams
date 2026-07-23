@@ -1,0 +1,330 @@
+{
+  "section_id": "CH24-S16",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "如何对高风险客户实施强化尽职调查？",
+      "title": "依据法律要求对高风险客户（包括PEPs）进行强化尽职调查",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "高风险客户（包括PEPs）",
+          "evidence_unit_ids": ["v7u_N001930"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "进行强化尽职调查",
+          "evidence_unit_ids": ["v7u_N001930"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "日本AML/CFT法律要求",
+          "evidence_unit_ids": ["v7u_N001930"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "客户为高风险客户",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001930"],
+          "source_quote": "the legislation requires enhanced due diligence for high-risk customers, including PEPs."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001930"],
+          "source_quote": "the legislation requires enhanced due diligence for high-risk customers, including PEPs."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_gap_ch24_s16_obligations"],
+      "focal_question": "金融机构和DNFBPs必须履行哪些基本AML/CFT义务？",
+      "title": "日本法律要求的金融机构和DNFBPs基本AML义务",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e201",
+          "role": "standard",
+          "label": "日本AML/CFT法律",
+          "evidence_unit_ids": ["v7u_N001929"],
+          "modality": null
+        },
+        {
+          "element_id": "e202",
+          "role": "action",
+          "label": "遵守客户尽职调查要求",
+          "evidence_unit_ids": ["v7u_N001929"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e203",
+          "role": "action",
+          "label": "报告可疑交易",
+          "evidence_unit_ids": ["v7u_N001929"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e204",
+          "role": "action",
+          "label": "实施基于风险的内部反洗钱计划",
+          "evidence_unit_ids": ["v7u_N001929"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r201",
+          "kind": "reference",
+          "process_element_id": "e202",
+          "auxiliary_element_id": "e201",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001929"],
+          "source_quote": "According to Japan’s AML/CFT legislation, financial institutions and DNFBPs must adhere to CDD requirements"
+        },
+        {
+          "relation_id": "r202",
+          "kind": "reference",
+          "process_element_id": "e203",
+          "auxiliary_element_id": "e201",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001929"],
+          "source_quote": "report suspicious transactions"
+        },
+        {
+          "relation_id": "r203",
+          "kind": "reference",
+          "process_element_id": "e204",
+          "auxiliary_element_id": "e201",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001929"],
+          "source_quote": "implement internal risk-based AML programs"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_gap_ch24_s16_ongoing_monitoring"],
+      "focal_question": "金融机构如何通过持续交易监控检测异常？",
+      "title": "持续监控客户交易以检测异常模式",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e301",
+          "role": "action",
+          "label": "持续监控客户交易",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e302",
+          "role": "outcome",
+          "label": "检测异常模式",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r301",
+          "kind": "produce",
+          "process_element_id": "e301",
+          "outcome_element_id": "e302",
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "source_quote": "financial institutions must conduct ongoing monitoring of customer transactions to detect unusual patterns"
+        }
+      ],
+      "split_reason": "同一候选包含持续监控与风险更新的并列独立流程，拆分为两个episode。"
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": ["s1c_gap_ch24_s16_ongoing_monitoring"],
+      "focal_question": "金融机构如何通过风险更新反映新兴威胁？",
+      "title": "定期更新风险评估以反映新兴威胁",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e401",
+          "role": "action",
+          "label": "定期更新风险评估",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e402",
+          "role": "outcome",
+          "label": "反映新兴威胁",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r401",
+          "kind": "produce",
+          "process_element_id": "e401",
+          "outcome_element_id": "e402",
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001932"],
+          "source_quote": "regularly update risk assessments to reflect emerging threats"
+        }
+      ],
+      "split_reason": "同一候选包含持续监控与风险更新的并列独立流程，拆分为两个episode。"
+    },
+    {
+      "episode_id": "ep_005",
+      "source_candidate_ids": ["s1c_gap_ch24_s16_tech_investment"],
+      "focal_question": "义务实体如何通过技术投资改进交易监控和欺诈检测？",
+      "title": "鼓励投资技术解决方案以改进监控与检测",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e501",
+          "role": "action",
+          "label": "投资人工智能和机器学习等技术解决方案",
+          "evidence_unit_ids": ["v7u_N001933"],
+          "modality": null
+        },
+        {
+          "element_id": "e502",
+          "role": "outcome",
+          "label": "改进交易监控和欺诈检测",
+          "evidence_unit_ids": ["v7u_N001933"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r501",
+          "kind": "produce",
+          "process_element_id": "e501",
+          "outcome_element_id": "e502",
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001933"],
+          "source_quote": "Obliged entities are also encouraged to invest in technological solutions such as artificial intelligence and machine learning to improve transaction monitoring and fraud detection."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_006",
+      "source_candidate_ids": ["s1c_gap_ch24_s16_inter_ministerial_council"],
+      "focal_question": "日本政府如何通过部际委员会制定和监控AML行动计划？",
+      "title": "政府设立部际委员会制定并监控国家AML行动计划",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e601",
+          "role": "action",
+          "label": "日本政府设立部际委员会",
+          "evidence_unit_ids": ["v7u_N001936"],
+          "modality": null
+        },
+        {
+          "element_id": "e602",
+          "role": "action",
+          "label": "制定国家AML/CFT/CPF行动计划",
+          "evidence_unit_ids": ["v7u_N001936"],
+          "modality": null
+        },
+        {
+          "element_id": "e603",
+          "role": "action",
+          "label": "监控行动计划进展",
+          "evidence_unit_ids": ["v7u_N001936"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r601",
+          "kind": "sequence",
+          "before_element_id": "e601",
+          "after_element_id": "e602",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001936"],
+          "source_quote": "the Japanese government established an Inter-Ministerial Council ... In April 2024, the Council formulated a National AML/CFT/CPF Action Plan"
+        },
+        {
+          "relation_id": "r602",
+          "kind": "sequence",
+          "before_element_id": "e602",
+          "after_element_id": "e603",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001936"],
+          "source_quote": "the Council formulated a National AML/CFT/CPF Action Plan and monitors progress on the Action Plan as part of its work."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选描述了法律要求对高风险客户进行EDD，构成一条程序性关系，已建模。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "合规失败可能导致处罚，属于法律后果描述，并非机构业务处理流程，不包含业务判断或行动，故排除。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_obligations",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选承接了法律强制要求金融机构和DNFBPs履行CDD、报告和实施计划等义务，构成程序性内容，已建模。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_ongoing_monitoring",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003", "ep_004"],
+      "reason": "该候选包含持续监控和风险更新两个独立义务，各自支持程序性关系，拆分为两个episode。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_tech_investment",
+      "disposition": "mapped",
+      "episode_ids": ["ep_005"],
+      "reason": "该候选承接了鼓励投资技术解决方案以改进监控的程序性建议，已建模。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_inter_ministerial_council",
+      "disposition": "mapped",
+      "episode_ids": ["ep_006"],
+      "reason": "该候选描述了政府设立委员会、制定计划并监控进展的管理过程，构成程序性流程，已建模。"
+    }
+  ],
+  "skip_reason": null
+}

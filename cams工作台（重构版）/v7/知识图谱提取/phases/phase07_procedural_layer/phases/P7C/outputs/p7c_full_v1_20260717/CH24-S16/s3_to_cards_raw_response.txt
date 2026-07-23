@@ -1,0 +1,455 @@
+{
+  "section_id": "CH24-S16",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S16_001",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "依据法律要求对高风险客户（包括PEPs）进行强化尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "高风险客户（包括PEPs）",
+          "evidence_unit_ids": [
+            "v7u_N001930"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "进行强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N001930"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "日本AML/CFT法律要求",
+          "evidence_unit_ids": [
+            "v7u_N001930"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "客户为高风险客户",
+          "evidence_unit_ids": [
+            "v7u_N001930"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "the legislation requires enhanced due diligence for high-risk customers, including PEPs."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001930"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "the legislation requires enhanced due diligence for high-risk customers, including PEPs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001930"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：法律要求对高风险客户进行EDD；证据范围：v7u_N001930；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S16_002",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "日本法律要求的金融机构和DNFBPs基本AML义务",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "日本AML/CFT法律",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "遵守客户尽职调查要求",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "报告可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施基于风险的内部反洗钱计划",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "According to Japan’s AML/CFT legislation, financial institutions and DNFBPs must adhere to CDD requirements"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "report suspicious transactions"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001929"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "implement internal risk-based AML programs"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001929"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：法律要求FIs/DNFBPs履行CDD、可疑交易报告、内部AML计划三项义务；证据范围：v7u_N001929；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S16_003",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "持续监控客户交易以检测异常模式",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "持续监控客户交易",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "检测异常模式",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "source_quote": "financial institutions must conduct ongoing monitoring of customer transactions to detect unusual patterns"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001932"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：持续监控以检测异常交易模式；证据范围：v7u_N001932；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S16_004",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "定期更新风险评估以反映新兴威胁",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "定期更新风险评估",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "反映新兴威胁",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001932"
+          ],
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "source_quote": "regularly update risk assessments to reflect emerging threats"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001932"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：定期更新风险评估以纳入新兴威胁；证据范围：v7u_N001932；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S16_005",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "鼓励投资技术解决方案以改进监控与检测",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "投资人工智能和机器学习等技术解决方案",
+          "evidence_unit_ids": [
+            "v7u_N001933"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "改进交易监控和欺诈检测",
+          "evidence_unit_ids": [
+            "v7u_N001933"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001933"
+          ],
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "source_quote": "Obliged entities are also encouraged to invest in technological solutions such as artificial intelligence and machine learning to improve transaction monitoring and fraud detection."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001933"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：鼓励投资AI/ML等技术以改善监控和欺诈检测；证据范围：v7u_N001933；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S16_006",
+      "section_id": "CH24-S16",
+      "card_nature": "execution",
+      "title": "政府设立部际委员会制定并监控国家AML行动计划",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "日本政府设立部际委员会",
+          "evidence_unit_ids": [
+            "v7u_N001936"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "制定国家AML/CFT/CPF行动计划",
+          "evidence_unit_ids": [
+            "v7u_N001936"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "监控行动计划进展",
+          "evidence_unit_ids": [
+            "v7u_N001936"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001936"
+          ],
+          "relation_type": "result_handoffs_stage",
+          "source_quote": "the Japanese government established an Inter-Ministerial Council ... In April 2024, the Council formulated a National AML/CFT/CPF Action Plan"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001936"
+          ],
+          "relation_type": "result_handoffs_stage",
+          "source_quote": "the Council formulated a National AML/CFT/CPF Action Plan and monitors progress on the Action Plan as part of its work."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001936"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：政府设立委员会→制定计划→监控进展；证据范围：v7u_N001936；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S16_001"
+      ],
+      "reason": "该候选描述了法律要求对高风险客户进行EDD，构成一条程序性关系，已建模。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "合规失败可能导致处罚，属于法律后果描述，并非机构业务处理流程，不包含业务判断或行动，故排除。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_obligations",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S16_002"
+      ],
+      "reason": "该候选承接了法律强制要求金融机构和DNFBPs履行CDD、报告和实施计划等义务，构成程序性内容，已建模。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_ongoing_monitoring",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S16_003",
+        "p7card_CH24-S16_004"
+      ],
+      "reason": "该候选包含持续监控和风险更新两个独立义务，各自支持程序性关系，拆分为两个episode。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_tech_investment",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S16_005"
+      ],
+      "reason": "该候选承接了鼓励投资技术解决方案以改进监控的程序性建议，已建模。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s16_inter_ministerial_council",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S16_006"
+      ],
+      "reason": "该候选描述了政府设立委员会、制定计划并监控进展的管理过程，构成程序性流程，已建模。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "高风险客户是进入EDD范围的一类对象 → E2_object_entry",
+      "e002": "进行强化尽职调查是执行合规要求的具体动作 → P2_execution",
+      "e003": "法律要求属于约束动作的标准 → standard"
+    },
+    "ep_002": {
+      "e201": "法律作为义务来源的标准 → standard",
+      "e202": "遵守CDD要求是执行动作 → P2_execution",
+      "e203": "报告可疑交易是执行动作 → P2_execution",
+      "e204": "实施反洗钱计划是执行动作 → P2_execution"
+    },
+    "ep_003": {
+      "e301": "持续监控客户交易是一种周期性重复观察动作 → P7_monitoring",
+      "e302": "检测异常模式是交易状态的变化（从正常到标记为异常） → X3_state_change"
+    },
+    "ep_004": {
+      "e401": "更新风险评估是重新评估风险的过程 → P1_assessment",
+      "e402": "反映新兴威胁是风险评估内容更新的结果 → X3_state_change"
+    },
+    "ep_005": {
+      "e501": "投资技术解决方案是执行资源投入动作 → P2_execution",
+      "e502": "改进监控和欺诈检测是系统能力提升的结果 → X3_state_change"
+    },
+    "ep_006": {
+      "e601": "设立委员会是政府执行的组织构建动作 → P2_execution",
+      "e602": "制定行动计划是将监管要求组织为责任人、期限和措施的规划活动 → P9_planning",
+      "e603": "监控进展是持续跟踪计划执行情况 → P7_monitoring"
+    }
+  },
+  "skip_reason": null
+}

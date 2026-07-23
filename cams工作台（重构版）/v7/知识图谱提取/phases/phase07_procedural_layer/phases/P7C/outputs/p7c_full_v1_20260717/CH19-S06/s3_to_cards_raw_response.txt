@@ -1,0 +1,289 @@
+{
+  "section_id": "CH19-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH19-S06_001",
+      "section_id": "CH19-S06",
+      "card_nature": "assessment",
+      "title": "基于不合作迹象启动审查并识别高风险及不合作司法管辖区",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Jurisdiction does not participate in an FSRB",
+          "evidence_unit_ids": ["v7u_N001414"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Jurisdiction delays or does not allow an FSRB to publish mutual evaluation results",
+          "evidence_unit_ids": ["v7u_N001415"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Jurisdiction is nominated by a FATF member or an FSRB that identifies money laundering, terrorist financing, or proliferation financing risks or threats",
+          "evidence_unit_ids": ["v7u_N001416"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Jurisdiction achieves poor mutual evaluation results: 20 or more noncompliant or partially compliant ratings for technical compliance",
+          "evidence_unit_ids": ["v7u_N001417", "v7u_N001418"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Jurisdiction achieves poor mutual evaluation results: ratings of noncompliant or partially compliant on three or more of Recommendations 3, 5, 6, 10, 11, and 20",
+          "evidence_unit_ids": ["v7u_N001417", "v7u_N001419"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Jurisdiction achieves poor mutual evaluation results: low or moderate level of effectiveness for 9 or more of the 11 IOs, with a minimum of two lows",
+          "evidence_unit_ids": ["v7u_N001417", "v7u_N001420"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Jurisdiction achieves poor mutual evaluation results: low level of effectiveness for 6 or more of the 11 IOs",
+          "evidence_unit_ids": ["v7u_N001417", "v7u_N001421"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FATF conducts a comprehensive review (ICRG assesses AML/CFT measures to identify threats, vulnerabilities, and risks)",
+          "evidence_unit_ids": ["v7u_N001412"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n009",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "FATF identifies high-risk and noncooperative jurisdictions",
+          "evidence_unit_ids": ["v7u_N001412"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001414"],
+          "condition": "Jurisdiction does not participate in an FSRB",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001415"],
+          "condition": "Jurisdiction delays or does not allow an FSRB to publish mutual evaluation results",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001416"],
+          "condition": "Jurisdiction is nominated by a FATF member or an FSRB that identifies money laundering, terrorist financing, or proliferation financing risks or threats",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001417", "v7u_N001418"],
+          "condition": "Jurisdiction has 20 or more noncompliant or partially compliant ratings for technical compliance",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRECEDES",
+          "source": "n005",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001417", "v7u_N001419"],
+          "condition": "Jurisdiction receives ratings of noncompliant or partially compliant on three or more of Recommendations 3, 5, 6, 10, 11, and 20",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRECEDES",
+          "source": "n006",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001417", "v7u_N001420"],
+          "condition": "Jurisdiction has a low or moderate level of effectiveness for 9 or more of the 11 IOs, with a minimum of two lows",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRECEDES",
+          "source": "n007",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N001413", "v7u_N001417", "v7u_N001421"],
+          "condition": "Jurisdiction has a low level of effectiveness for 6 or more of the 11 IOs",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRODUCES",
+          "source": "n008",
+          "target": "n009",
+          "evidence_unit_ids": ["v7u_N001412"],
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001412", "v7u_N001413", "v7u_N001414", "v7u_N001415", "v7u_N001416", "v7u_N001417", "v7u_N001418", "v7u_N001419", "v7u_N001420", "v7u_N001421"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：FATF基于七类不合作迹象（不参与FSRB、延迟/禁止发布互评估结果、被提名、技术合规多项不达标、特定建议多数不达标、有效性多项低/中、有效性多数低）进行综合审查，并得出高风险和不合作司法管辖区的识别结论。证据范围：涵盖触发条件和审查结果单元。待P7D逐边审核各触发条件的充分性与审查动作的明确性。"
+    },
+    {
+      "card_id": "p7card_CH19-S06_002",
+      "section_id": "CH19-S06",
+      "card_nature": "assessment",
+      "title": "基于25条标准发布灰名单与黑名单并触发EDD及反制措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "25 criteria for identifying detrimental rules and practices inconsistent with the 40 Recommendations (categorized into four areas: loopholes in financial regulations, obstacles raised by other regulatory requirements, obstacles to international cooperation, inadequate resources for preventing and detecting money laundering activities)",
+          "evidence_unit_ids": ["v7u_N001422", "v7u_N001423", "v7u_N001424", "v7u_N001425", "v7u_N001426"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "FATF classifies noncooperative jurisdictions into grey or black list based on the criteria",
+          "evidence_unit_ids": ["v7u_N001427"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues",
+          "evidence_unit_ids": ["v7u_N001428"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Black list: identifies jurisdictions with significant AML/CFT deficiencies",
+          "evidence_unit_ids": ["v7u_N001429"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FATF members apply enhanced due diligence (EDD) and potentially take countermeasures against black-listed jurisdictions",
+          "evidence_unit_ids": ["v7u_N001429"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001422", "v7u_N001427"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "jurisdiction has strategic deficiencies but is actively working with FATF",
+          "evidence_unit_ids": ["v7u_N001427", "v7u_N001428"],
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "jurisdiction has significant AML/CFT deficiencies",
+          "evidence_unit_ids": ["v7u_N001427", "v7u_N001429"],
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N001429"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001422", "v7u_N001423", "v7u_N001424", "v7u_N001425", "v7u_N001426", "v7u_N001427", "v7u_N001428", "v7u_N001429"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：FATF依据25条标准将非合作司法管辖区分入灰名单或黑名单，黑名单触发成员采取EDD及潜在反制措施。原S2关系r004（黑名单→成员行动）的kind设为trigger，但触发关系中起点为outcome节点，与兼容矩阵不符；现按原文语义调整为PRECEDES边，以维持流程先后。证据范围：涵盖标准、分类结果与后续行动单元。待P7D逐边审核分类条件的准确性与行动强度的相称性。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH19-S06_001"],
+      "reason": "描述了FATF基于多种不合作迹象启动审查并识别高风险和不合作司法管辖区的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "support_only",
+      "card_ids": ["p7card_CH19-S06_002"],
+      "reason": "提供25条标准及其分类，作为ep_002分类决策的必要标准依据。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH19-S06_002"],
+      "reason": "描述了基于标准发布灰名单和黑名单并触发成员采取EDD和反制措施的流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + conducting a comprehensive review to identify risks → P1_assessment",
+      "e002": "context role + jurisdiction not participating in FSRB is an exception triggering review → E6_change_exception",
+      "e003": "context role + jurisdiction delaying/publishing mutual evaluation results is an exception → E6_change_exception",
+      "e004": "context role + jurisdiction being nominated is an exception → E6_change_exception",
+      "e005": "context role + poor mutual evaluation results with specific compliance thresholds → E3_state_threshold",
+      "e006": "context role + poor mutual evaluation results with specific recommendation ratings → E3_state_threshold",
+      "e007": "context role + poor mutual evaluation results with effectiveness thresholds → E3_state_threshold",
+      "e008": "context role + poor mutual evaluation results with low effectiveness threshold → E3_state_threshold",
+      "e009": "outcome role + identifying high-risk and noncooperative jurisdictions as a classification → X1_classification"
+    },
+    "ep_002": {
+      "e001": "standard role → node_type=standard",
+      "e002": "decision role + classifying jurisdictions into lists based on criteria with two branches → P3_branch_routing",
+      "e003": "outcome role + grey list as a classification of strategic deficiencies → X1_classification",
+      "e004": "outcome role + black list as a classification of significant deficiencies → X1_classification",
+      "e005": "action role + applying EDD and countermeasures is an execution of measures → P2_execution"
+    }
+  },
+  "skip_reason": null
+}

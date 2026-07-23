@@ -1,0 +1,293 @@
+{
+  "section_id": "CH31-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH31-S05_001",
+      "section_id": "CH31-S05",
+      "card_nature": "execution",
+      "title": "FIU 操作分析、情报传播与执法支持",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU conducts operational analysis (which may incorporate cross-border data from other FIUs)",
+          "evidence_unit_ids": [
+            "v7u_N002252",
+            "v7u_N002259"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "Cross-border data from other FIUs",
+          "evidence_unit_ids": [
+            "v7u_N002259"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FIU disseminates intelligence packages to law enforcement based on operational analysis",
+          "evidence_unit_ids": [
+            "v7u_N002253",
+            "v7u_N002259"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "Intelligence provided to law enforcement for investigations into money laundering, terrorist financing, and predicate offenses, potentially leading to disruptions such as arrests, prosecutions, convictions, and asset recovery",
+          "evidence_unit_ids": [
+            "v7u_N002252"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Disseminated material is often for intelligence use only and usually cannot be used directly as evidence in court proceedings",
+          "evidence_unit_ids": [
+            "v7u_N002260"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002259"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002253",
+            "v7u_N002259"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002252",
+            "v7u_N002253"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002260"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002252",
+        "v7u_N002253",
+        "v7u_N002259",
+        "v7u_N002260"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FIU 如何通过操作分析向执法部门提供情报以支持调查和行动？；证据范围：v7u_N002252, v7u_N002253, v7u_N002259, v7u_N002260；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S05_002",
+      "section_id": "CH31-S05",
+      "card_nature": "execution",
+      "title": "FIU 间的情报交换标准与执行",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "FATF standards and principles set by the Egmont Group of FIUs",
+          "evidence_unit_ids": [
+            "v7u_N002258"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FIUs disseminate financial intelligence to each other, either spontaneously or on request",
+          "evidence_unit_ids": [
+            "v7u_N002258"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002258"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002258"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FIU 如何依据 FATF 和埃格蒙特标准进行相互情报传播？；证据范围：v7u_N002258；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S05_003",
+      "section_id": "CH31-S05",
+      "card_nature": "execution",
+      "title": "紧急事项的有限检查与快速传播",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Urgent issue such as terrorism finance",
+          "evidence_unit_ids": [
+            "v7u_N002256"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU conducts limited additional checks",
+          "evidence_unit_ids": [
+            "v7u_N002256"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "disseminate information as quickly as possible",
+          "evidence_unit_ids": [
+            "v7u_N002256"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "urgent issue such as terrorism finance",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N002256"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002256"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002256"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：紧急情况下 FIU 如何进行有限检查以加快情报传播？；证据范围：v7u_N002256；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选仅陈述 FATF 对司法辖区设立 FIU 的要求，未呈现具体的业务处理、判断或程序性迁移，属于静态规定，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S05_001"
+      ],
+      "reason": "该候选提供了 FIU 操作分析提供情报、基于分析传播情报包以及情报用于调查和可能产生处置的完整程序链，独立支持多条程序性与判断性关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S05_003"
+      ],
+      "reason": "该候选描述了紧急事项触发有限检查、旨在快速传播的决策与执行流程，构成独立的程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S05_002"
+      ],
+      "reason": "该候选体现了在 FATF 和埃格蒙特标准下 FIU 相互传播情报的持续性义务与行动，是清晰的标准触发的程序流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S05_001"
+      ],
+      "reason": "该候选补充了跨境数据纳入操作分析并传播给执法部门的过程，与 s1c_002 共同构成 FIU 操作分析传播的完整流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "support_only",
+      "card_ids": [
+        "p7card_CH31-S05_001"
+      ],
+      "reason": "该候选本身不构成独立流程，但为 ep_001 的传播结果提供了材料使用限制这一必要约束信息，作为 outcome 元素证据。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role; FIU conducts operational analysis, which is assessment of financial intelligence to identify patterns/risk, thus P1_assessment",
+      "e002": "input role → node_type=input",
+      "e003": "action role; disseminating intelligence packages is an execution action changing state, thus P2_execution",
+      "e004": "outcome role; intelligence provided to law enforcement for action, representing handoff to next stage, thus X4_handoff",
+      "e005": "outcome role; disseminated material is for intelligence use only and cannot be used as evidence, indicating a continuing obligation/restricted status, thus X7_continuing_obligation"
+    },
+    "ep_002": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role; disseminating financial intelligence between FIUs is an execution action, thus P2_execution"
+    },
+    "ep_003": {
+      "e001": "context role; urgent issue such as terrorism finance is an event signal triggering processing, thus E1_event_signal",
+      "e002": "action role; conducting limited additional checks is a form of assessment before dissemination, thus P1_assessment",
+      "e003": "outcome role; dissemination of information as quickly as possible represents handoff of intelligence, thus X4_handoff"
+    }
+  },
+  "skip_reason": null
+}

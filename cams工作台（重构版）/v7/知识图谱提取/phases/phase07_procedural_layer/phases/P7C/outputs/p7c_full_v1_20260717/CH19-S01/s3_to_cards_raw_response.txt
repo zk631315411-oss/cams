@@ -1,0 +1,216 @@
+{
+  "section_id": "CH19-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH19-S01_001",
+      "section_id": "CH19-S01",
+      "card_nature": "assessment",
+      "title": "FATF Mutual Evaluation and Deficiency Response Process",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FATF conducts periodic mutual evaluations and gives ratings for technical compliance and effectiveness",
+          "evidence_unit_ids": ["v7u_N001334", "v7u_N001336", "v7u_N001308"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "FATF determines whether jurisdictions have fully and effectively implemented standards and identifies deficiencies",
+          "evidence_unit_ids": ["v7u_N001308"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Mutual evaluation reports are public documents providing in-depth assessment",
+          "evidence_unit_ids": ["v7u_N001335"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FATF requires member jurisdictions to address any deficiencies",
+          "evidence_unit_ids": ["v7u_N001337", "v7u_N001308"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "FATF subjects jurisdictions to post-assessment monitoring",
+          "evidence_unit_ids": ["v7u_N001337", "v7u_N001308"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e006",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "FATF publicly reports progress on action plans",
+          "evidence_unit_ids": ["v7u_N001308"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e007",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "FATF designates jurisdiction on grey list or black list",
+          "evidence_unit_ids": ["v7u_N001310", "v7u_N001338"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "e008",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Inclusion on lists might lead to isolation from global financial system",
+          "evidence_unit_ids": ["v7u_N001310"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e009",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Financial institutions likely flag the jurisdiction as high risk in internal risk assessments",
+          "evidence_unit_ids": ["v7u_N001339"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N001335"],
+          "source_quote": "The resulting mutual evaluation reports are public documents that provide an in-depth assessment of a member jurisdiction’s compliance with each Recommendation."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N001308"],
+          "source_quote": "FATF conducts periodic formal evaluations and other assessments to determine whether jurisdictions have fully and effectively implemented its standards."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "e002",
+          "target": "e004",
+          "condition": "If FATF identifies deficiencies",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N001308"],
+          "source_quote": "If FATF identifies deficiencies, it implements and monitors action plans and publicly reports progress."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "e002",
+          "target": "e005",
+          "condition": "If FATF identifies deficiencies",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N001308", "v7u_N001337"],
+          "source_quote": "FATF then requires member jurisdictions to address any deficiencies and subjects them to post-assessment monitoring to ensure they address their issues."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "e005",
+          "target": "e006",
+          "evidence_unit_ids": ["v7u_N001308"],
+          "source_quote": "it implements and monitors action plans and publicly reports progress."
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "DECIDES",
+          "source": "e002",
+          "target": "e007",
+          "condition": "FATF has determined that a jurisdiction has failed to implement its standards",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N001310", "v7u_N001338"],
+          "source_quote": "Where FATF has determined that a jurisdiction has failed to implement its standards, FATF can designate it as a jurisdiction under increased monitoring on the \"grey list\" or a high-risk jurisdiction on the \"black list.\""
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRODUCES",
+          "source": "e007",
+          "target": "e008",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001310"],
+          "source_quote": "inclusion on these lists might lead to isolation from the global financial system."
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRODUCES",
+          "source": "e007",
+          "target": "e009",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001339"],
+          "source_quote": "These types of designations are likely to result in financial institutions flagging the member jurisdiction as high risk in their internal risk assessments."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001308", "v7u_N001310", "v7u_N001334", "v7u_N001335", "v7u_N001336", "v7u_N001337", "v7u_N001338", "v7u_N001339"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FATF 的互评估流程、缺陷响应、监控及名单指定机制；证据范围：涵盖 v7u_N001308, v7u_N001310, v7u_N001334-v7u_N001339；待 P7D 逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S01_001"],
+      "reason": "该候选描述 FATF 的正式评估及基于缺陷采取行动和监控的流程，支持 episode 中的评估、判断和响应动作。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S01_001"],
+      "reason": "该候选描述 FATF 基于未达标事实指定名单及可能后果，支持 episode 中的名单指定决策和后果元素。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S01_001"],
+      "reason": "该候选提供互评估、评级、报告、要求纠正、监控、名单指定和 FI 标记等详细步骤，构成 episode 的主要流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch19_s01_monitoring_trends",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述 FATF 持续监控资金流动趋势并发布报告的事实，缺少触发条件或业务判断，属于描述性知识内容，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch19_s01_standard_setting_fsrb",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述 FATF 在标准制定中依赖 FSRB 并保持唯一制定机构地位的事实，属于状态声明，无业务处理或判断迁移，不构成流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role -> process; 开展评估和评级，符合 P1_assessment（识别风险信号并形成结论）",
+      "e002": "decision role -> process; 判断辖区的实施有效性和缺陷，为条件分流点，选 P3_branch_routing",
+      "e003": "outcome role -> exit; 形成公开评估报告文档，选 X2_product",
+      "e004": "action role -> process; 要求辖区采取补救措施，属于执行性动作，选 P2_execution",
+      "e005": "action role -> process; 对辖区进行后续监测，持续观察，选 P7_monitoring",
+      "e006": "outcome role -> exit; 公开报告进展，属于可提交对象，选 X2_product",
+      "e007": "decision role -> process; 根据标准失败指定灰/黑名单，属于条件路由决策，选 P3_branch_routing",
+      "e008": "outcome role -> exit; 列入名单可能导致金融孤立，属于状态变化，选 X3_state_change",
+      "e009": "outcome role -> exit; 金融机构将辖区标记为高风险，形成风险分类结论，选 X1_classification"
+    }
+  },
+  "skip_reason": null
+}

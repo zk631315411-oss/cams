@@ -1,0 +1,378 @@
+{
+  "section_id": "CH34-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH34-S02_001",
+      "section_id": "CH34-S02",
+      "card_nature": "execution",
+      "title": "复杂案件和警报升级流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "复杂案件和无法排除的警报",
+          "evidence_unit_ids": [
+            "v7u_N002432"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "升级至第二道防线的金融情报单位(FIU)",
+          "evidence_unit_ids": [
+            "v7u_N002432"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "FIU 进行进一步调查",
+          "evidence_unit_ids": [
+            "v7u_N002432"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "案件或警报无法被排除",
+          "evidence_unit_ids": [
+            "v7u_N002432"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002432"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002432"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：复杂案件和警报触发升级至FIU；证据范围：v7u_N002432；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S02_002",
+      "section_id": "CH34-S02",
+      "card_nature": "execution",
+      "title": "业务发展职能上报红旗信号流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "业务发展与客户接触并创造销售机会",
+          "evidence_unit_ids": [
+            "v7u_N002422"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "需了解客户准入风险并支持尽职调查过程",
+          "evidence_unit_ids": [
+            "v7u_N002422"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "上报任何识别的红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N002422"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002422"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002422"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002422"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：业务发展接触客户触发上报红旗信号，需遵循了解风险的标准；证据范围：v7u_N002422；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S02_003",
+      "section_id": "CH34-S02",
+      "card_nature": "execution",
+      "title": "新产品开发中的金融犯罪风险评估与合规流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "创建并推出新产品",
+          "evidence_unit_ids": [
+            "v7u_N002424"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估潜在金融犯罪风险并确保符合监管要求",
+          "evidence_unit_ids": [
+            "v7u_N002424"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "新产品符合监管要求",
+          "evidence_unit_ids": [
+            "v7u_N002424"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002424"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002424"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002424"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：新产品创建触发风险评估，产出合规结论；证据范围：v7u_N002424；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S02_004",
+      "section_id": "CH34-S02",
+      "card_nature": "execution",
+      "title": "交易处理中检测并报告可疑活动流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "执行和处理交易",
+          "evidence_unit_ids": [
+            "v7u_N002426"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施操作程序",
+          "evidence_unit_ids": [
+            "v7u_N002426"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "内部检测并报告可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N002426"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002426"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002426"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002426"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：交易处理触发实施操作程序，旨在检测并报告可疑活动；证据范围：v7u_N002426；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S02_005",
+      "section_id": "CH34-S02",
+      "card_nature": "execution",
+      "title": "前台中台实施控制中的风险升级流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "前台和中台实施第二道防线设计的控制",
+          "evidence_unit_ids": [
+            "v7u_N002437"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "评估风险并升级可疑活动或控制违反",
+          "evidence_unit_ids": [
+            "v7u_N002437"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002437"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002437"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：实施控制触发风险评估与升级；证据范围：v7u_N002437；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH34-S02_001"
+      ],
+      "reason": "该候选明确描述了将无法排除的复杂案件和警报升级至第二道防线FIU的程序性迁移，构成合格流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s02_bd_escalate",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH34-S02_002"
+      ],
+      "reason": "该候选包含业务发展职能在客户接触中识别并上报红旗信号的程序性义务，构成合格流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s02_pd_risk_assess",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH34-S02_003"
+      ],
+      "reason": "该候选包含产品开发在推出新产品时评估金融犯罪风险并确保合规的程序性动作，构成合格流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s02_ops_detect_report",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH34-S02_004"
+      ],
+      "reason": "该候选包含运营职能在交易处理中实施操作程序以检测和报告可疑活动的有向关系，构成合格流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s02_fomo_escalate",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH34-S02_005"
+      ],
+      "reason": "该候选包含前台和中台在实施控制时评估风险并升级可疑活动或控制违反的程序性迁移，构成合格流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch34_s02_l1rc_review_alert",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选仅描述第一线风险控制人员的常规职责（监控、审查、执行审查），缺乏明确的流程输出或有向关系，属于静态职责描述，不构成程序性或判断性迁移。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, label为特定复杂案件和警报，属于对象进入处理范围，选E2_object_entry",
+      "e002": "action role, 升级是具体执行动作，选P2_execution",
+      "e003": "outcome role, FIU进行调查是转交下一层级，选X4_handoff"
+    },
+    "ep_002": {
+      "e001": "context role, 业务接触和创造机会是业务事件，选E1_event_signal",
+      "e002": "auxiliary/standard role，要求了解风险，选standard",
+      "e003": "action role, 上报是执行动作，选P2_execution"
+    },
+    "ep_003": {
+      "e001": "context role, 创建并推出新产品是业务事件，选E1_event_signal",
+      "e002": "action role, 评估风险是核心动作，选P1_assessment",
+      "e003": "outcome role, 符合监管要求是合规结论，选X1_classification"
+    },
+    "ep_004": {
+      "e001": "context role, 执行和处理交易是业务事件，选E1_event_signal",
+      "e002": "action role, 实施程序是执行动作，选P2_execution",
+      "e003": "outcome role, 检测并报告可疑活动产出报告，选X2_product"
+    },
+    "ep_005": {
+      "e001": "context role, 前台中台实施控制是业务事件，选E1_event_signal",
+      "e002": "action role, 包含评估风险和升级，但升级是主要执行动作，选P2_execution"
+    }
+  },
+  "skip_reason": null
+}

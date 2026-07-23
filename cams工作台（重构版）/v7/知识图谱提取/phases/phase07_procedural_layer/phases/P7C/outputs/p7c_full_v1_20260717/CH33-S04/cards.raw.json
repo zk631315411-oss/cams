@@ -1,0 +1,87 @@
+{
+  "section_id": "CH33-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH33-S04_001",
+      "section_id": "CH33-S04",
+      "card_nature": "execution",
+      "title": "董事会批准风险偏好声明",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "战略业务目标",
+          "evidence_unit_ids": [
+            "v7u_N002389"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "董事会批准风险偏好声明",
+          "evidence_unit_ids": [
+            "v7u_N002389"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "风险偏好声明被批准",
+          "evidence_unit_ids": [
+            "v7u_N002389"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002389"
+          ],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002389"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002389"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：董事会根据战略业务目标批准风险偏好声明；证据范围：v7u_N002389；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch33_s04_ras_approval",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH33-S04_001"
+      ],
+      "reason": "候选描述了董事会根据战略业务目标批准风险偏好声明的程序性动作，构成合格流程，可独立建模为执行型episode。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role → node_type=P2_execution（执行批准动作，改变声明状态）",
+      "e003": "outcome role → node_type=X3_state_change（批准后声明状态变更）"
+    }
+  },
+  "skip_reason": null
+}

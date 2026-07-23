@@ -1,0 +1,108 @@
+{
+  "section_id": "CH21-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何利用TJN指数评估客户逃税或金融犯罪风险？",
+      "title": "将TJN指数纳入客户风险评估以识别高风险",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "组织可能将TJN指数纳入客户风险评估以评估逃税和金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N001657",
+            "v7u_N001662"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "input",
+          "label": "客户居住国或业务所在国",
+          "evidence_unit_ids": [
+            "v7u_N001662"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "TJN指数排名（反映金融保密程度和避税天堂特征）",
+          "evidence_unit_ids": [
+            "v7u_N001657",
+            "v7u_N001662"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "高排名表明客户相关风险水平更高",
+          "evidence_unit_ids": [
+            "v7u_N001662"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001662"
+          ],
+          "source_quote": "to assess the risk of a customer engaging in tax evasion or financial crime based on their country of residence or business operations"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001657",
+            "v7u_N001662"
+          ],
+          "source_quote": "These indices can be part of a financial institution’s risk-based approach... An organization might incorporate TJN indices to customer risk assessments"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e004",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N001662"
+          ],
+          "source_quote": "Higher rankings in these indices indicate jurisdictions with greater financial secrecy or tax haven characteristics, suggesting increased risk levels for customers associated with them."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了将TJN指数纳入客户风险评估以评估逃税或金融犯罪风险的程序，高排名表明风险增加，构成一条判断性关系，可建模为episode。"
+    }
+  ],
+  "skip_reason": null
+}

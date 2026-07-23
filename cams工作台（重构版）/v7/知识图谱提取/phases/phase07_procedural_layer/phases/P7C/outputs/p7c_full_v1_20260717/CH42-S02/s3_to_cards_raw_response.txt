@@ -1,0 +1,204 @@
+{
+  "section_id": "CH42-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S02_001",
+      "section_id": "CH42-S02",
+      "card_nature": "assessment",
+      "title": "客户风险三级分类评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户的行业类型、地域风险和交易行为信息",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估风险并分配低、中或高风险状态",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "低、中或高风险状态",
+          "evidence_unit_ids": ["v7u_N003027"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N003027"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N003027"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003027"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于行业类型、地域风险和交易行为评估客户风险并分配低中高风险状态；证据范围：v7u_N003027；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH42-S02_002",
+      "section_id": "CH42-S02",
+      "card_nature": "execution",
+      "title": "先进风险评分方法提供1-100评分以实现精细化应用",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "先进方法提供1至100的风险评分",
+          "evidence_unit_ids": ["v7u_N003028"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "更精细的风险为本方法应用",
+          "evidence_unit_ids": ["v7u_N003028"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N003028"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003028"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：先进方法提供1-100风险评分以实现更精细的风险为本方法应用；证据范围：v7u_N003028；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH42-S02_003",
+      "section_id": "CH42-S02",
+      "card_nature": "execution",
+      "title": "基于风险等级的尽职调查触发",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户风险等级",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "根据风险等级确定尽职调查类型",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "进行强化尽职调查（EDD）",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "进行尽职调查流程",
+          "evidence_unit_ids": ["v7u_N003029"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N003029"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "风险等级为高风险",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N003029"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "风险等级为标准风险（低或中风险）",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N003029"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003029"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据客户风险等级（高风险或标准风险）分别触发强化尽职调查或标准尽职调查流程；证据范围：v7u_N003029；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH42-S02_001"],
+      "reason": "该候选描述了基于行业、地域和交易行为的风险评估和分类过程，构成独立的评估流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH42-S02_002"],
+      "reason": "该候选描述了先进方法提供1-100风险评分及支持更精细风险为本方法应用的过程，构成独立的评估流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH42-S02_003"],
+      "reason": "该候选描述了基于风险等级的尽职调查触发，包括高风险触发EDD和标准风险触发DD，构成独立的执行流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "输入角色，业务数据输入 → node_type=input",
+      "e002": "执行风险分类的评估动作 → P1_assessment",
+      "e003": "形成风险状态结论 → X1_classification"
+    },
+    "ep_002": {
+      "e001": "提供评分，非评估性执行 → P2_execution",
+      "e002": "应用方式变为更精细，状态变化 → X3_state_change"
+    },
+    "ep_003": {
+      "e001": "输入角色 → node_type=input",
+      "e002": "条件分支路由尽职调查类型 → P3_branch_routing",
+      "e003": "执行强化尽职调查 → P2_execution",
+      "e004": "执行标准尽职调查 → P2_execution"
+    }
+  },
+  "skip_reason": null
+}

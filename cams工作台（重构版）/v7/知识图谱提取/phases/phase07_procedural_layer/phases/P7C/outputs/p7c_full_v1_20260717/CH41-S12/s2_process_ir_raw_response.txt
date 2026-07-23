@@ -1,0 +1,152 @@
+{
+  "section_id": "CH41-S12",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "组织因涉嫌非法活动或不合规风险如何决定终止客户关系需要批准？",
+      "title": "基于报告义务和涉嫌风险需批准终止客户关系",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "涉嫌非法活动或不合规风险",
+          "evidence_unit_ids": ["v7u_N003008"]
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "报告义务",
+          "evidence_unit_ids": ["v7u_N003008"]
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "组织可能需要获得批准才能终止客户关系",
+          "evidence_unit_ids": ["v7u_N003008"]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "因涉嫌非法活动或不合规风险",
+          "evidence_unit_ids": ["v7u_N003008"],
+          "source_quote": "due to suspected illicit activity or noncompliance risks"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "evidence_unit_ids": ["v7u_N003008"],
+          "source_quote": "Based on reporting obligations"
+        }
+      ]
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "因风险偏好不匹配导致的客户退出应如何决定？",
+      "title": "风险偏好不匹配导致的客户退出逐案审查与决定",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "因风险偏好不匹配导致的客户退出",
+          "evidence_unit_ids": ["v7u_N003009"]
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "应逐案审查并决定",
+          "modality": "required",
+          "evidence_unit_ids": ["v7u_N003009"]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "因风险偏好不匹配",
+          "evidence_unit_ids": ["v7u_N003009"],
+          "source_quote": "Exits based on a mismatch in risk appetite should be reviewed and decided on a caseby-case basis."
+        }
+      ]
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_gap_ch41_s12_afc_enhance"],
+      "focal_question": "金融机构如何增强反金融犯罪控制并符合国际义务？",
+      "title": "通过动态措施和技术增强反金融犯罪控制并符合义务",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "实施动态风险措施并利用先进技术",
+          "evidence_unit_ids": ["v7u_N003010"]
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "增强反金融犯罪控制",
+          "evidence_unit_ids": ["v7u_N003010"]
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "符合国际反金融犯罪义务",
+          "evidence_unit_ids": ["v7u_N003010"]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "evidence_unit_ids": ["v7u_N003010"],
+          "source_quote": "enhance AFC controls"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "evidence_unit_ids": ["v7u_N003010"],
+          "source_quote": "align with international AFC obligations"
+        }
+      ]
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "提供了基于报告义务和涉嫌非法活动/不合规风险下，组织需获取批准才能终止客户关系的流程要素。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "提供了风险偏好不匹配导致的客户退出应逐案审查并决定的流程要素。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s12_afc_enhance",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "提供了通过实施动态措施和技术，增强反金融犯罪控制并符合国际义务的动作和结果关系。"
+    }
+  ],
+  "skip_reason": null
+}

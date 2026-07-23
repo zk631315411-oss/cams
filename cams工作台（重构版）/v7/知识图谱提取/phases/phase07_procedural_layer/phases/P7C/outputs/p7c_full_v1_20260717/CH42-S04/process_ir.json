@@ -1,0 +1,106 @@
+{
+  "section_id": "CH42-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "尽职调查后风险不可接受时如何决定补充文件或拒绝客户？",
+      "title": "依据尽职调查结果处理高风险客户",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "尽职调查后机构对客户风险感到不适 (upon conducting due diligence, the organization is not comfortable with the level of risk)",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "请求补充文件 (might request additional documentation)",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "decision",
+          "label": "额外信息仍不足够 (additional information also does not suffice)",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "拒绝客户以保护自身 (might reject the customer to protect itself)",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "对客户风险感到不适",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "source_quote": "If, upon conducting due diligence, the organization is not comfortable with the level of risk a client presents, it might request additional documentation."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "before_element_id": "e002",
+          "after_element_id": "e003",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "source_quote": "it might request additional documentation. Ultimately, if additional information also does not suffice, the organization might reject the customer."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e003",
+          "process_element_id": "e004",
+          "condition": "额外信息不足",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N003031"
+          ],
+          "source_quote": "Ultimately, if additional information also does not suffice, the organization might reject the customer to protect itself."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了一个由条件触发的风险处理流程：尽职调查后若不满意风险则可要求补充文件，若仍不足则可拒绝客户，符合流程定义。"
+    }
+  ],
+  "skip_reason": null
+}

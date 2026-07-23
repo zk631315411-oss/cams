@@ -1,0 +1,318 @@
+{
+  "section_id": "CH24-S09",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S09_001",
+      "section_id": "CH24-S09",
+      "card_nature": "execution",
+      "title": "直接监管高风险金融机构",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "被选定的高风险金融机构",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行现场检查",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "施加纠正措施以弥补不足",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "施加处罚",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "if appropriate or in all cases involving serious, repeated, or systematic breaches",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001826"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：选定高风险金融机构触发现场检查，检查后施加纠正措施；若符合条件则施加处罚。注意仅建模单一处罚分支，隐含的另一分支（不处罚）未显式建模；待P7D审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S09_002",
+      "section_id": "CH24-S09",
+      "card_nature": "execution",
+      "title": "监督国家主管机构确保单一规则手册一致适用",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "监督国家主管机构",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提供指导和支持",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "单一规则手册一致适用",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001827"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "两个并行动作（监督、提供指导）均旨在达成同一结果，以PRODUCES+aimed_to建模。"
+    },
+    {
+      "card_id": "p7card_CH24-S09_003",
+      "section_id": "CH24-S09",
+      "card_nature": "assessment",
+      "title": "识别并处理系统性监管失败",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "出现系统性监管失败案例",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "识别系统性失败",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采取行动",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001828"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "事件触发→识别→行动，顺序明确。"
+    },
+    {
+      "card_id": "p7card_CH24-S09_004",
+      "section_id": "CH24-S09",
+      "card_nature": "execution",
+      "title": "制定并更新欧盟反洗钱单一规则手册",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "制定并更新欧盟反洗钱单一规则手册",
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "手册包含一套统一适用于欧盟和EEA的反洗钱要求",
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001825"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "直接产出关系。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S09_001"
+      ],
+      "reason": "直接监管高风险金融机构的触发、动作和条件分支，已映射为ep_001卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S09_002"
+      ],
+      "reason": "监督国家主管机构并确保一致适用的过程，已映射为ep_002卡片。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S09_003"
+      ],
+      "reason": "识别和处理系统性监管失败的启动、判断和行动，已映射为ep_003卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s09_develop_rulebook",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S09_004"
+      ],
+      "reason": "制定并更新单一规则手册的动作和产物，已映射为ep_004卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry；选定高风险金融机构是进入监管处理范围的实体，选E2_object_entry",
+      "e002": "action role → process；现场检查旨在评估合规性、识别缺陷，选P1_assessment",
+      "e003": "action role → process；施加纠正措施是执行动作改变状态，选P2_execution",
+      "e004": "action role → process；施加处罚是执行动作，选P2_execution"
+    },
+    "ep_002": {
+      "e001": "action role → process；监督为持续观察活动，选P7_monitoring",
+      "e002": "action role → process；提供指导是执行支持动作，选P2_execution",
+      "e003": "outcome role → exit；手册一致适用是状态达成，选X3_state_change"
+    },
+    "ep_003": {
+      "e001": "context role → entry；案例出现是业务事件，选E1_event_signal",
+      "e002": "action role → process；识别失败是评估判断，选P1_assessment",
+      "e003": "action role → process；采取行动是执行应对，选P2_execution"
+    },
+    "ep_004": {
+      "e001": "action role → process；制定规则是执行生产性任务，产物为手册，选P2_execution",
+      "e002": "outcome role → exit；手册是具体产物，选X2_product"
+    }
+  },
+  "skip_reason": null
+}

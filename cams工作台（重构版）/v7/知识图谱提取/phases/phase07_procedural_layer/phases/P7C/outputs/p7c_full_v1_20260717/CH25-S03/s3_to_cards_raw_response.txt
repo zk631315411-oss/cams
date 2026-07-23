@@ -1,0 +1,88 @@
+{
+  "section_id": "CH25-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH25-S03_001",
+      "section_id": "CH25-S03",
+      "card_nature": "assessment",
+      "title": "根据地理足迹和管辖暴露确定其他制裁制度的遵守",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Organizations' geographical footprint and jurisdictional exposure stemming from activities of customers, suppliers and other third parties",
+          "evidence_unit_ids": [
+            "v7u_N001998"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Determine the need to comply with other sanctions regimes",
+          "evidence_unit_ids": [
+            "v7u_N001998"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Comply with other sanctions regimes",
+          "evidence_unit_ids": [
+            "v7u_N001998"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "Based on geographical footprint and jurisdictional exposure",
+          "evidence_unit_ids": [
+            "v7u_N001998"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N001998"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001998"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据组织的地理足迹和管辖暴露，确定需遵守的其他制裁制度；证据范围：v7u_N001998；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch25_s03_comply_other_sanctions",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH25-S03_001"
+      ],
+      "reason": "该候选描述了一个基于组织暴露条件确定遵守其他制裁制度的判断性过程，独立支持程序性关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "entry role; 基于组织暴露状态触发后续评估 → E3_state_threshold",
+      "e002": "action role; 确定需要遵守的制裁制度，属于评估活动 → P1_assessment",
+      "e003": "outcome role; 遵守其他制裁制度，是持续义务 → X7_continuing_obligation"
+    }
+  },
+  "skip_reason": null
+}

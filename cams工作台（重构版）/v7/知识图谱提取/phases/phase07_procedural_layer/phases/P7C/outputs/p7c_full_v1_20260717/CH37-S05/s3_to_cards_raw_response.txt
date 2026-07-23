@@ -1,0 +1,312 @@
+{
+  "section_id": "CH37-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S05_001",
+      "section_id": "CH37-S05",
+      "card_nature": "assessment",
+      "title": "使用风险评估工具进行数据准备与输入以确保计算准确",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "利用风险评估工具进行数据整理、加权和验证计算公式、查找数据缺口",
+          "evidence_unit_ids": ["v7u_N002805"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "正确输入固有风险和控制强度",
+          "evidence_unit_ids": ["v7u_N002803", "v7u_N002804"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "完成整体风险计算并确保剩余风险计算准确",
+          "evidence_unit_ids": ["v7u_N002805", "v7u_N002803"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002805"],
+          "qualifier": "aimed_to"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002803"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002805", "v7u_N002803", "v7u_N002804"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：工具数据整理与正确输入旨在确保计算准确；证据范围：计算前数据准备（v7u_N002805）及输入控制（v7u_N002803/2804）；边 qualifier 为 aimed_to 表示目的性关联。待 P7D 逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S05_002",
+      "section_id": "CH37-S05",
+      "card_nature": "execution",
+      "title": "基于风险指标确定缓解步骤以对齐风险偏好",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "风险相关数据",
+          "evidence_unit_ids": ["v7u_N002799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "确定固有风险、控制强度和剩余风险",
+          "evidence_unit_ids": ["v7u_N002799"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "确定缓解风险所需的步骤",
+          "evidence_unit_ids": ["v7u_N002800"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "使风险与风险偏好对齐",
+          "evidence_unit_ids": ["v7u_N002800"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002799"],
+          "qualifier": "helps_achieve"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002800"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002800"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002799", "v7u_N002800"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：风险数据触发风险评估，确定风险指标后规划缓解步骤，以对齐风险偏好；证据范围：数据帮助确定（v7u_N002799），步骤确定（v7u_N002800）；qualifier 'helps_achieve' 表示数据辅助性质。待 P7D 审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S05_003",
+      "section_id": "CH37-S05",
+      "card_nature": "execution",
+      "title": "风险评估工具必须量身定制以包含正确计算和特有风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "工具必须根据机构量身定制",
+          "evidence_unit_ids": ["v7u_N002806"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "包含正确计算",
+          "evidence_unit_ids": ["v7u_N002806"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "可纳入机构特有风险",
+          "evidence_unit_ids": ["v7u_N002806"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002806"],
+          "qualifier": "aimed_to"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002806"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002806"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：工具定制旨在产生正确计算和纳入特有风险；证据范围：v7u_N002806；qualifier 'aimed_to' 表示目的。待 P7D 审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S05_004",
+      "section_id": "CH37-S05",
+      "card_nature": "execution",
+      "title": "采用混合方法管理不同风险等级的产品或客户评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "具有不同风险等级的产品或客户",
+          "evidence_unit_ids": ["v7u_N002807"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "采用混合方法",
+          "evidence_unit_ids": ["v7u_N002807"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "自行管理高风险产品或客户评估",
+          "evidence_unit_ids": ["v7u_N002807"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "依赖第三方工具自动化低风险产品",
+          "evidence_unit_ids": ["v7u_N002807"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002807"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002807"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002807"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002807"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于风险等级的产品/客户触发混合方法，产生高低风险的不同管理结果；证据范围：v7u_N002807；由于原文未明确条件分支，但隐含分流，故n002设为P3_branch_routing但边仍用PRODUCES。待P7D审核是否需要添加DECIDES和条件。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S05_001"],
+      "reason": "该候选提供工具使用中正确输入确保计算准确的流程关系，同时附有控制评估错误影响的说明，独立支持合格的程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s05_precalc_datacollation",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S05_001"],
+      "reason": "该候选提供计算前使用工具进行数据整理、公式验证以完成整体计算的流程关系，与s1c_001共同组成同一计算过程的不同步骤，合并后连通。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s05_mitigation_steps",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S05_002"],
+      "reason": "该候选独立支持基于风险评估数据确定缓解步骤以对齐风险偏好的完整处置链，符合流程定义。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S05_003"],
+      "reason": "该候选独立支持工具量身定制以确保包含正确计算和特有风险的必需流程关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S05_004"],
+      "reason": "该候选提供公司根据风险等级采用混合方法管理不同产品/客户评估的程序性迁移，构成独立流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role → process node; data collation, weighting, validation, gap search → P4_collection (data assembly/preparation)",
+      "e002": "action role → process node; inputting inherent risk and control strength → P2_execution",
+      "e003": "outcome role → exit node; completion of overall risk calculation and ensuring accuracy → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "context role → entry node; risk-related data available as an event triggering assessment → E1_event_signal",
+      "e002": "action role → process node; determining inherent risk, control strength, residual risk → P1_assessment",
+      "e003": "action role → process node; determining mitigation steps → P9_planning",
+      "e004": "outcome role → exit node; aligning risk with risk appetite → X3_state_change"
+    },
+    "ep_003": {
+      "e001": "action role → process node; tailoring the tool to the institution → P2_execution",
+      "e002": "outcome role → exit node; tool includes correct calculations → X3_state_change",
+      "e003": "outcome role → exit node; tool can include organization-specific risks → X3_state_change"
+    },
+    "ep_004": {
+      "e001": "context role → entry node; products or clients with different risk levels entering the process → E2_object_entry",
+      "e002": "action role → process node; taking a hybrid approach implies routing based on risk → P3_branch_routing",
+      "e003": "outcome role → exit node; managing high-risk products/clients internally → X3_state_change",
+      "e004": "outcome role → exit node; relying on third-party tools for low-risk → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,296 @@
+{
+  "section_id": "CH24-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S04_001",
+      "section_id": "CH24-S04",
+      "card_nature": "execution",
+      "title": "美联储因富国银行制裁政策和程序不足处以罚款",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "美国制裁法律法规",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Wells Fargo 提供了贸易金融软件平台，外国银行使用该平台进行涉及美国制裁方的交易",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "美联储认定 Wells Fargo 的政策和程序不足以确保遵守美国制裁法，导致违规交易",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "美联储对 Wells Fargo 处以 67.8 million 罚款",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001762"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：美联储认定富国银行制裁合规不足并处以罚款；证据范围：v7u_N001762；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S04_002",
+      "section_id": "CH24-S04",
+      "card_nature": "execution",
+      "title": "SEC因富国银行附属机构多收费用指控并处罚",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "某些财务顾问同意降低咨询费但未录入计费系统，导致客户被多收费用",
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "SEC调查并发现多收费用行为",
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "SEC指控富国银行附属机构多收超过10,900个投资顾问账户费用，超额逾26.8 million",
+          "evidence_unit_ids": [
+            "v7u_N001763"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "富国银行代表附属机构同意支付35 million民事罚款以解决指控",
+          "evidence_unit_ids": [
+            "v7u_N001765"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001763",
+            "v7u_N001764"
+          ],
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N001763",
+            "v7u_N001765"
+          ],
+          "relation_type": "result_handoffs_stage"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001763",
+        "v7u_N001764",
+        "v7u_N001765"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：SEC调查发现多收费行为并指控罚款；证据范围：v7u_N001763, v7u_N001764, v7u_N001765；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S04_003",
+      "section_id": "CH24-S04",
+      "card_nature": "execution",
+      "title": "OCC因富国银行金融犯罪风险管理和反洗钱控制缺陷发出执法行动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "富国银行在可疑活动报告、货币交易报告、客户尽职调查和客户身份识别项目等方面存在缺陷",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "OCC对富国银行发出执法行动，正式协议指出具体缺陷",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "富国银行在向中高风险新业务扩展前必须获得OCC批准",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001766"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：OCC因反洗钱控制缺陷发出执法行动并施加持续义务；证据范围：v7u_N001766；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S04_001"
+      ],
+      "reason": "美联储制裁执法流程已映射为卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S04_002"
+      ],
+      "reason": "SEC多收费执法流程已映射为卡片。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH24-S04_003"
+      ],
+      "reason": "OCC反洗钱缺陷执法流程已映射为卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context角色，描述业务事件启动处理，语义符合E1_event_signal。",
+      "e002": "standard角色，固定为standard。",
+      "e003": "decision角色，美联储认定政策不足属于评估并形成结论，符合P1_assessment。",
+      "e004": "outcome角色，罚款导致法律状态变化，符合X3_state_change。"
+    },
+    "ep_002": {
+      "e001": "context角色，财务顾问未录入费用导致多收，属业务事件，选E1_event_signal。",
+      "e002": "action角色，SEC调查发现多收费，属识别风险并形成结论，选P1_assessment。",
+      "e003": "outcome角色，SEC指控形成违规分类结论，选X1_classification。",
+      "e004": "outcome角色，同意支付罚款改变法律状态，选X3_state_change。"
+    },
+    "ep_003": {
+      "e001": "context角色，存在已知缺陷触发执法，属状态阈值，选E3_state_threshold。",
+      "e002": "action角色，OCC发出执法行动属实施动作，选P2_execution。",
+      "e003": "outcome角色，业务扩展前需批准属持续受限制义务，选X7_continuing_obligation。"
+    }
+  },
+  "skip_reason": null
+}

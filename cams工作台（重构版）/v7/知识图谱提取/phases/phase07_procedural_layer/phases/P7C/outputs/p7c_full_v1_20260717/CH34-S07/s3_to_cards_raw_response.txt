@@ -1,0 +1,417 @@
+{
+  "section_id": "CH34-S07",
+  "cards": [
+    {
+      "card_id": "p7card_CH34-S07_001",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA审计与审查确保合规并识别偏差以缓释风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QA执行审计与审查",
+          "evidence_unit_ids": ["v7u_N002473"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "指南、监管要求、内部控制与风险管理策略",
+          "evidence_unit_ids": ["v7u_N002473"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出预期做法的偏差及政策程序执行中的差距或缺陷",
+          "evidence_unit_ids": ["v7u_N002473", "v7u_N002474"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "缓释标准遵循不足产生的风险",
+          "evidence_unit_ids": ["v7u_N002475"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002473"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002473", "v7u_N002474"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002475"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002473", "v7u_N002474", "v7u_N002475"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：QA通过审计识别偏差并缓释风险；证据范围：v7u_N002473-475；待P7D逐边审核。校验说明：r003起点为outcome角色，不符合produce端点兼容矩阵；依语义改为PRECEDES，表示先后因果。"
+    },
+    {
+      "card_id": "p7card_CH34-S07_002",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA通过定期评估识别趋势推动政策调整与培训",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "定期评估与审计",
+          "evidence_unit_ids": ["v7u_N002476"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QA识别出指示潜在问题的趋势",
+          "evidence_unit_ids": ["v7u_N002476"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "可能需要政策调整或增加员工培训",
+          "evidence_unit_ids": ["v7u_N002476"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002476"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002476"],
+          "qualifier": "may_lead_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002476"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：定期评估触发趋势识别，可能导致政策调整/培训；证据范围：v7u_N002476；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S07_003",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA监控积压与分析绩效数据确定流程再造需求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "应在规定时限内解决的任务或案例出现积压",
+          "evidence_unit_ids": ["v7u_N002477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QA监控积压并评估是否指示流程低效或资源限制",
+          "evidence_unit_ids": ["v7u_N002477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "对照基准分析绩效数据",
+          "evidence_unit_ids": ["v7u_N002477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "确定流程是否有效或是否需要再造以提升效率",
+          "evidence_unit_ids": ["v7u_N002477"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出需要流程再造",
+          "evidence_unit_ids": ["v7u_N002477"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002477"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002477"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002477"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002477"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002477"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：积压触发监控，经分析后决策产生流程再造需求；证据范围：v7u_N002477；待P7D逐边审核。校验说明：r003起点为action，终点为decision，不符合produce端点矩阵，改为PRECEDES；n004为decision但仅有一个outcome分支，未反映原文中“或有效”分支，原结构不足。"
+    },
+    {
+      "card_id": "p7card_CH34-S07_004",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA维护审计发现文档作为合规记录与改进资源",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "审计、评估和审查发现",
+          "evidence_unit_ids": ["v7u_N002478"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "QA维护审计、评估和审查发现的详细文档",
+          "evidence_unit_ids": ["v7u_N002478"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "文档作为合规记录和持续改进的资源",
+          "evidence_unit_ids": ["v7u_N002478"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002478"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002478"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002478"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：维护文档动作产出合规记录与改进资源；证据范围：v7u_N002478；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S07_005",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA定期报告向领导层提供决策信息",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "QA定期向领导层报告",
+          "evidence_unit_ids": ["v7u_N002479"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "报告突出趋势、合规差距和纠正措施，提供决策信息",
+          "evidence_unit_ids": ["v7u_N002479"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002479"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002479"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：报告动作产出包含趋势、差距等信息的产品；证据范围：v7u_N002479；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH34-S07_006",
+      "section_id": "CH34-S07",
+      "card_nature": "execution",
+      "title": "QA识别改进领域并指导制定员工培训计划",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "QA帮助识别需要改进的领域",
+          "evidence_unit_ids": ["v7u_N002480"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "QA指导制定有针对性的员工培训计划",
+          "evidence_unit_ids": ["v7u_N002480"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "有针对性的员工培训计划",
+          "evidence_unit_ids": ["v7u_N002480"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002480"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002480"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002480"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：识别领域后指导制定培训计划，产出培训计划；证据范围：v7u_N002480；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_001"],
+      "reason": "候选提供了QA审计确保合规、识别偏差并缓释风险的完整程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_002"],
+      "reason": "候选描述了QA通过定期评估识别趋势并可能触发政策调整或培训的程序性路径。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_003"],
+      "reason": "候选包含QA监控积压、分析绩效并确定流程再造需求的判断性过程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_004"],
+      "reason": "候选构成QA维护文档并将审计发现转化为合规记录与改进资源的动作-结果链。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_005"],
+      "reason": "候选明确了QA通过定期报告向领导层传递趋势、差距和纠正措施并提供决策信息的流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH34-S07_006"],
+      "reason": "候选呈现了QA识别改进领域并指导培训计划制定的顺序动作与产出。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "候选描述QA促进部门沟通与协作，形成协作环境，未构成具体的程序性判断或处理过程，属于一般性职能或益处描述。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "执行审计审查属评估活动 → P1_assessment",
+      "e003": "识别偏差形成结论 → X1_classification",
+      "e004": "风险缓释导致风险状态变化 → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "定期触发，属周期约束 → E5_time_cycle",
+      "e002": "识别趋势属评估 → P1_assessment",
+      "e003": "政策调整/培训属配置变更 → X5_config_change"
+    },
+    "ep_003": {
+      "e001": "积压作为状态触发 → E3_state_threshold",
+      "e004": "确定是否有效或再造为分支决策 → P3_branch_routing",
+      "e005": "识别出需要再造为结论 → X1_classification"
+    },
+    "ep_004": {
+      "e002": "维护文档使对象状态变化 → P2_execution",
+      "e003": "文档作为可提交对象 → X2_product"
+    },
+    "ep_005": {
+      "e001": "定期报告为执行动作 → P2_execution",
+      "e002": "报告内容为产品 → X2_product"
+    },
+    "ep_006": {
+      "e001": "识别改进领域属评估 → P1_assessment",
+      "e002": "指导制定计划属规划 → P9_planning",
+      "e003": "计划为产品 → X2_product"
+    }
+  },
+  "skip_reason": null
+}

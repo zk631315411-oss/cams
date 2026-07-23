@@ -1,0 +1,401 @@
+{
+  "section_id": "CH02-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S04_001",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "依据客户子公司背景和贿赂指控，根据英国反贿赂法域外条款产生法律关切",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Sophie发现客户FullTechGlobal Services的负面新闻及广泛贿赂腐败指控，该公司在美国注册但为英国子公司",
+          "evidence_unit_ids": [
+            "v7u_N000132",
+            "v7u_N000133"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "英国反贿赂法2010域外条款：适用于任何英国关联公司，母公司对子公司腐败行为负责，无论地点",
+          "evidence_unit_ids": [
+            "v7u_N000136",
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "引发对英国反贿赂法域外管辖的法律关切",
+          "evidence_unit_ids": [
+            "v7u_N000134"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000134"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000134",
+            "v7u_N000136"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000132",
+        "v7u_N000133",
+        "v7u_N000134",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：基于客户负面新闻和英国子公司事实，依据英国反贿赂法域外条款，触发法律关切评估。证据范围：v7u_N000132-v7u_N000137。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_002",
+      "section_id": "CH02-S04",
+      "card_nature": "execution",
+      "title": "Sophie对FullTechGlobal的初步调查和跟进审计发现贿赂手法及内控缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie进行初步调查",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现FullTechGlobal在高风险司法管辖区战略性地雇佣中间人以获取合同",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现通过虚增咨询费、伪造发票和不透明壳公司系统性地掩盖非法资金流动",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现向公职人员和高管提供奢华礼品和旅行安排以非法影响决策",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sophie跟进调查并审查ABC框架和内部控制",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现ABC框架失败，内部控制机制缺陷和监督不足，导致腐败持续",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000138"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000139"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000140"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000141"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000138",
+        "v7u_N000139",
+        "v7u_N000140",
+        "v7u_N000141"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：初步调查发现三种贿赂手法，跟进审计发现内控缺陷。证据范围：v7u_N000138-v7u_N000141。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH02-S04_003",
+      "section_id": "CH02-S04",
+      "card_nature": "assessment",
+      "title": "基于调查发现，依据英国反贿赂法判定FullTechGlobal面临的法律后果",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "调查发现（FullTechGlobal的贿赂行为及内控缺陷）",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "英国反贿赂法2010（适用于英国关联公司，母公司对子公司腐败行为负责）",
+          "evidence_unit_ids": [
+            "v7u_N000136",
+            "v7u_N000137"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估FullTechGlobal面临的法律后果（监管影响深远）",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "面临严厉经济处罚",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "国际监管机构审查增加",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "子公司和母公司及其高管可能承担刑事责任",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000143",
+            "v7u_N000136"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N000143"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000143",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：基于调查发现和法律标准，评估出三类法律后果。证据范围：v7u_N000136-v7u_N000137, v7u_N000143。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH02-S04_001"
+      ],
+      "reason": "发现客户负面新闻及指控，结合英国子公司事实，引发对英国反贿赂法域外条款的法律关切，构成法律适用判断流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH02-S04_001",
+        "p7card_CH02-S04_003"
+      ],
+      "reason": "提供了英国反贿赂法域外适用和母公司责任的法律标准，被用于ep_001的法律关切和ep_003的法律后果作为判定标准。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH02-S04_002"
+      ],
+      "reason": "初步调查动作产生具体贿赂手法的发现，属于调查流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH02-S04_002"
+      ],
+      "reason": "跟进审计产生内控缺陷发现，与初步调查共同构成调查发现流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述贿赂被识别为上游犯罪并导致洗钱的犯罪机制，非机构业务流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH02-S04_003"
+      ],
+      "reason": "基于调查发现，依据法律判定面临的具体法律后果，构成法律后果评估流程。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "Sophie认识到机构需要维护合规，仅表达个人认识，无具体业务处理或判断动作。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context角色，表示发现负面新闻的事件信号 -> E1_event_signal",
+      "e002": "standard角色 -> node_type=standard",
+      "e003": "decision角色但无branch关系 -> 选择P1_assessment（评估法律关切）"
+    },
+    "ep_002": {
+      "e004": "action角色，执行初步调查 -> P2_execution",
+      "e005": "outcome角色，调查发现的产物 -> X2_product",
+      "e006": "outcome角色，产物 -> X2_product",
+      "e007": "outcome角色，产物 -> X2_product",
+      "e008": "action角色，执行跟进审计 -> P2_execution",
+      "e009": "outcome角色，审计发现的产物 -> X2_product"
+    },
+    "ep_003": {
+      "e010": "input角色 -> node_type=input",
+      "e011": "standard角色 -> node_type=standard",
+      "e012": "decision角色，评估法律后果，无branch -> P1_assessment",
+      "e013": "outcome角色，法律后果分类 -> X1_classification",
+      "e014": "outcome角色，法律后果分类 -> X1_classification",
+      "e015": "outcome角色，法律后果分类 -> X1_classification"
+    }
+  },
+  "skip_reason": null
+}

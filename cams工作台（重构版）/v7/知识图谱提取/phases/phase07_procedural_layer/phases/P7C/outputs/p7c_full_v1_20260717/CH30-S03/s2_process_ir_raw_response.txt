@@ -1,0 +1,100 @@
+{
+  "section_id": "CH30-S03",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "如何对照现有控制措施审查红旗信号",
+      "title": "对照现有控制措施审查红旗信号",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "Review red flags",
+          "evidence_unit_ids": ["v7u_N002181"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "existing controls, policies, and procedures",
+          "evidence_unit_ids": ["v7u_N002181"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002181"],
+          "source_quote": "Review red flags against existing controls, policies, and procedures."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "如何根据报告、指引和政策文件规划并沟通变革实施",
+      "title": "根据报告、指引和政策文件规划并沟通变革实施",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "reports, guidance notes, and policy papers",
+          "evidence_unit_ids": ["v7u_N002182"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "Plan and communicate implementation of change",
+          "evidence_unit_ids": ["v7u_N002182"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002182"],
+          "source_quote": "Plan and communicate implementation of change in response to reports, guidance notes, and policy papers."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "ungraphable",
+      "episode_ids": [],
+      "reason": "仅描述主动审查红旗信号的动作，但未提供与其他元素的连接关系，无法构成有向流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "审查红旗信号并对照现有控制措施，构成reference关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "响应报告等触发规划和沟通变革实施，构成trigger关系。"
+    }
+  ],
+  "skip_reason": null
+}

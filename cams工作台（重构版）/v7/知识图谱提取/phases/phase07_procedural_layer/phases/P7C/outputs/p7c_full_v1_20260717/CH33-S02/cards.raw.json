@@ -1,0 +1,206 @@
+{
+  "section_id": "CH33-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH33-S02_001",
+      "section_id": "CH33-S02",
+      "card_nature": "execution",
+      "title": "监管机构就TD银行BSA/AML缺陷采取的执法行动与整改要求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "TD Bank's BSA/AML compliance deficiencies (insufficient risk assessment and CDD, inadequate transaction monitoring, deficient SAR processes, underfunded AML program, failure to detect suspicious transactions and employee misconduct)",
+          "evidence_unit_ids": [
+            "v7u_N002363",
+            "v7u_N002364",
+            "v7u_N002365",
+            "v7u_N002366"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FinCEN assessed a US$1.3 billion penalty against TD Bank's US subsidiaries",
+          "evidence_unit_ids": [
+            "v7u_N002362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FinCEN-mandated four-year independent monitorship to oversee remediation efforts",
+          "evidence_unit_ids": [
+            "v7u_N002367"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "OCC and Federal Reserve reached parallel settlements with TD Bank",
+          "evidence_unit_ids": [
+            "v7u_N002367"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "Comprehensive improvements mandated: risk management program improvements, enhanced board oversight, independent testing and validation, regular progress reporting to regulators",
+          "evidence_unit_ids": [
+            "v7u_N002368"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Accountability Review as part of remediation",
+          "evidence_unit_ids": [
+            "v7u_N002369"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Potential disciplinary actions: dismissal for current employees found responsible, or recoupment of prior compensation for former employees",
+          "evidence_unit_ids": [
+            "v7u_N002369"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002362"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002367"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002367"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N002368"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N002368"
+          ]
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N002368"
+          ]
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRECEDES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N002369"
+          ],
+          "condition": null
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRODUCES",
+          "source": "n006",
+          "target": "n007",
+          "evidence_unit_ids": [
+            "v7u_N002369"
+          ],
+          "qualifier": "may_lead_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002362",
+        "v7u_N002363",
+        "v7u_N002364",
+        "v7u_N002365",
+        "v7u_N002366",
+        "v7u_N002367",
+        "v7u_N002368",
+        "v7u_N002369"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：TD银行BSA/AML合规缺陷触发FinCEN罚款、独立监察及OCC/美联储平行和解，共同产出整改要求集，整改包含问责审查并可能导向纪律处分。证据范围：v7u_N002362-N002369。S2原r007为produce关系但端点角色不兼容（outcome→action），改为PRECEDES以符合流程顺序，待P7D审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S02_001"
+      ],
+      "reason": "该候选提供了从缺陷到执法行动再到整改要求的完整程序链，已纳入卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s02_parallel_settlements",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S02_001"
+      ],
+      "reason": "平行和解行动作为执法流程的组成部分，已纳入同一卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "n001": "compliance deficiencies作为触发执法行动的可定位事件 → E1_event_signal",
+      "n002": "FinCEN罚款是具体执行动作 → P2_execution",
+      "n003": "强制独立监察是执行措施 → P2_execution",
+      "n004": "达成和解是执行动作 → P2_execution",
+      "n005": "整改要求集为可识别产物 → X2_product",
+      "n006": "整改中的问责审查是执行步骤 → P2_execution",
+      "n007": "纪律处分是潜在员工状态变化 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

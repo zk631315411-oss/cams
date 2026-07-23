@@ -1,0 +1,201 @@
+{
+  "section_id": "CH24-S11",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "外国金融机构如何确保其美国分行遵守《银行保密法》？",
+      "title": "确保集团政策符合美国《银行保密法》最低标准",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "外国金融机构在美国设有分行",
+          "evidence_unit_ids": ["v7u_N001847"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "《银行保密法》的最低标准",
+          "evidence_unit_ids": ["v7u_N001847"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "确保其集团政策符合《银行保密法》的最低标准",
+          "evidence_unit_ids": ["v7u_N001847"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "外国金融机构在美国设有分行",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001847"],
+          "source_quote": "the Bank Secrecy Act, which is the primary AML law in the US, requires compliance from US branches of foreign financial institutions. This means foreign financial institutions must ensure that their group-wide policies meet the Bank Secrecy Act’s minimum standards."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001847"],
+          "source_quote": "meet the Bank Secrecy Act’s minimum standards"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "国际金融机构如何应对跨境监管差异？",
+      "title": "通过附加司法管辖区特定附录应对跨境监管差异",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e004",
+          "role": "context",
+          "label": "国际金融机构面临不同司法管辖区的反洗钱标准差异",
+          "evidence_unit_ids": ["v7u_N001849"],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "action",
+          "label": "附加司法管辖区特定附录至集团反洗钱政策",
+          "evidence_unit_ids": ["v7u_N001849"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r003",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e004",
+          "process_element_id": "e005",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001849"],
+          "source_quote": "To address potential differences in regulations, international financial institutions often attach jurisdiction-specific addenda to their group-wide AML policy."
+        }
+      ],
+      "split_reason": "该候选包含两个独立中心：附加附录流程和条件记录流程。附加附录产生可独立保存的附录，后续流程在不同条件下使用该结果，分别回答不同的业务问题。"
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "当当地反洗钱标准高于母国时，金融机构应如何响应？",
+      "title": "在附录中记录更高的当地反洗钱标准",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e006",
+          "role": "context",
+          "label": "某司法管辖区的反洗钱标准高于母国标准",
+          "evidence_unit_ids": ["v7u_N001850"],
+          "modality": null
+        },
+        {
+          "element_id": "e007",
+          "role": "action",
+          "label": "在附录中记录该更高的反洗钱标准",
+          "evidence_unit_ids": ["v7u_N001850"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r004",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e006",
+          "process_element_id": "e007",
+          "condition": "当地反洗钱标准高于母国标准",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001850"],
+          "source_quote": "If a jurisdiction in which a financial institution operates has a higher AML standard than its home jurisdiction, the financial institution should document this in the addendum."
+        }
+      ],
+      "split_reason": "该候选包含两个独立中心：附加附录流程和条件记录流程。附加附录产生可独立保存的附录，后续流程在不同条件下使用该结果，分别回答不同的业务问题。"
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "根据FATF建议18，金融机构应如何对海外分支适用反洗钱原则？",
+      "title": "在允许的情况下对海外分支和子公司适用FATF反洗钱原则",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e008",
+          "role": "context",
+          "label": "当地适用法律法规允许",
+          "evidence_unit_ids": ["v7u_N001854"],
+          "modality": null
+        },
+        {
+          "element_id": "e009",
+          "role": "action",
+          "label": "对海外分支和子公司适用《FATF建议》中的原则",
+          "evidence_unit_ids": ["v7u_N001854"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r005",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e008",
+          "process_element_id": "e009",
+          "condition": "当地适用法律法规允许",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001854"],
+          "source_quote": "FATF’s Recommendation 18 stipulates that where local applicable laws and regulations permit, a financial institution should apply the principles in the Recommendations to its branches and subsidiaries abroad."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选明确包含外国金融机构的美国分行须遵守BSA标准并确保集团政策合规的强制性义务，构成独立的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002", "ep_003"],
+      "reason": "该候选包含两个独立且可拆分的合规流程：一是因监管差异而附加司法管辖区附录，二是在当地标准更高时有条件地在附录中记录。前者产生可复用的附录，后者在不同条件下利用该产物。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_004"],
+      "reason": "该候选描述了在允许的条件下向海外分支适用FATF原则的条件性义务，构成独立的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述的是高级别管理原则（取得全球政策与当地附录的平衡）和遵守治理义务，未提供具体的程序性迁移、触发或业务判断，属于非流程性知识。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,340 @@
+{
+  "section_id": "CH38-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH38-S01_001",
+      "section_id": "CH38-S01",
+      "card_nature": "execution",
+      "title": "业务重大变化触发风险重新评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "业务发生重大变化（如高风险产品、新市场、司法管辖区变化）",
+          "evidence_unit_ids": [
+            "v7u_N002825"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "重新评估风险",
+          "evidence_unit_ids": [
+            "v7u_N002825"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002825"
+          ],
+          "condition": "业务发生重大变化时"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002825"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：业务重大变化触发风险重新评估；证据范围：v7u_N002825；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH38-S01_002",
+      "section_id": "CH38-S01",
+      "card_nature": "execution",
+      "title": "建立业务关系前进行客户风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "建立业务关系前",
+          "evidence_unit_ids": [
+            "v7u_N002829"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "对每位新客户进行客户风险评估（CRA）",
+          "evidence_unit_ids": [
+            "v7u_N002829"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002829"
+          ],
+          "condition": "在建立业务关系前"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002829"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：建立业务关系前对每位新客户进行CRA；证据范围：v7u_N002829；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH38-S01_003",
+      "section_id": "CH38-S01",
+      "card_nature": "execution",
+      "title": "定期或发生特定变化时审查客户风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "定期 或 客户行为/风险状况发生变化（交易模式偏离、请求新产品/服务、不愿提供信息/文件、高风险司法管辖区暴露增加、客户行业变化、组织运营方式变化）",
+          "evidence_unit_ids": [
+            "v7u_N002829",
+            "v7u_N002830",
+            "v7u_N002831",
+            "v7u_N002832",
+            "v7u_N002833",
+            "v7u_N002834",
+            "v7u_N002835"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "审查客户风险评估（CRA）",
+          "evidence_unit_ids": [
+            "v7u_N002829"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002829"
+          ],
+          "condition": "定期或发生特定变化时"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002829",
+        "v7u_N002830",
+        "v7u_N002831",
+        "v7u_N002832",
+        "v7u_N002833",
+        "v7u_N002834",
+        "v7u_N002835"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：定期或客户行为变化时审查CRA；证据范围：v7u_N002829等；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH38-S01_004",
+      "section_id": "CH38-S01",
+      "card_nature": "execution",
+      "title": "检测到客户高危计划后采取增强措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "检测到客户计划扩展销售至高风险司法管辖区",
+          "evidence_unit_ids": [
+            "v7u_N002837"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "采取增强措施（如加强第三方筛查、要求额外文件、增加交易审查）",
+          "evidence_unit_ids": [
+            "v7u_N002837"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002837"
+          ],
+          "condition": "检测到客户计划扩展销售至高风险司法管辖区"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002837"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：检测到客户高风险计划后采取增强措施；证据范围：v7u_N002837；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH38-S01_005",
+      "section_id": "CH38-S01",
+      "card_nature": "execution",
+      "title": "转向数字渠道时调整控制以应对欺诈风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "组织转向数字渠道（如疫情期间）",
+          "evidence_unit_ids": [
+            "v7u_N002840"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调整现有面对面渠道控制",
+          "evidence_unit_ids": [
+            "v7u_N002840"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "应对新兴欺诈风险（如数字身份欺诈、跨境电汇、新的文件真伪验证方式）",
+          "evidence_unit_ids": [
+            "v7u_N002840"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002840"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002840"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002840"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：转向数字渠道时调整控制以应对欺诈风险；证据范围：v7u_N002840；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH38-S01_001"
+      ],
+      "reason": "候选明确表达了业务重大变化触发风险重新评估的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH38-S01_002",
+        "p7card_CH38-S01_003"
+      ],
+      "reason": "候选包含两个独立中心：建立关系前进行CRA和定期/变化时审查CRA，拆分后分别映射为两个episode。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH38-S01_004"
+      ],
+      "reason": "候选表述了检测到特定计划后采取增强措施的条件性程序。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch38_s01_active_approach",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "原文描述主动风险管理方法的好处，无具体的业务判断或流程步骤，属于知识性陈述。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch38_s01_product_channel_assessment",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "原文描述产品和渠道风险评估的能力，无具体触发条件或业务判断，属于知识性陈述。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch38_s01_digital_channel_controls",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH38-S01_005"
+      ],
+      "reason": "候选给出了转向数字渠道时需调整控制以应对风险的明确程序步骤。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, trigger condition for reevaluation, material change to business -> E6_change_exception",
+      "e002": "action role, reevaluate risk -> P1_assessment"
+    },
+    "ep_002": {
+      "e001": "context role, before establishing business relationship -> E2_object_entry",
+      "e002": "action role, conduct CRA -> P1_assessment"
+    },
+    "ep_003": {
+      "e001": "context role, trigger condition including regular and changes -> E5_time_cycle",
+      "e002": "action role, review CRA -> P1_assessment"
+    },
+    "ep_004": {
+      "e001": "context role, detected high-risk plan -> E3_state_threshold",
+      "e002": "action role, take enhanced measures -> P2_execution"
+    },
+    "ep_005": {
+      "e001": "context role, shift to digital channels -> E6_change_exception",
+      "e002": "action role, aligning controls -> P2_execution",
+      "e003": "outcome role, addressing emerging fraud risks, control adjustments -> X5_config_change"
+    }
+  },
+  "skip_reason": null
+}

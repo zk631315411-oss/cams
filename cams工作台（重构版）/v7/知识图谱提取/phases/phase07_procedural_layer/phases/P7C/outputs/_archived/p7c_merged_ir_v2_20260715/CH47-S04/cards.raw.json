@@ -1,0 +1,242 @@
+{
+  "section_id": "CH47-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "基于经验调整检测规则和场景",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "previous experiences with suspicious activity and actual incidents",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "creating, modifying, or removing detection rules and scenarios",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "source_quote": "Scenario setting involves creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003279"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：场景设置基于以往经验创建/修改/移除检测规则；证据范围：v7u_N003279；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH47-S04_002",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "调整阈值以提高灵敏度和准确性",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Adjusting thresholds",
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "refines sensitivity and accuracy",
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "source_quote": "Adjusting thresholds refines sensitivity and accuracy."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003282"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：调整阈值可提高灵敏度和准确性；证据范围：v7u_N003282；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH47-S04_003",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "事件触发专项评估",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "significant events or trends",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "special assessments",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "source_quote": "Tuning should be dynamic, with special assessments triggered by significant events or trends."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：重大事件或趋势触发专项评估；证据范围：v7u_N003286；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH47-S04_004",
+      "section_id": "CH47-S04",
+      "card_nature": "execution",
+      "title": "频率决定调优频次",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "frequency",
+          "evidence_unit_ids": [
+            "v7u_N003284"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "determines how often tuning should occur",
+          "evidence_unit_ids": [
+            "v7u_N003284"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "evidence_unit_ids": [
+            "v7u_N003284"
+          ],
+          "source_quote": "The frequency determines how often tuning should occur."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003284"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：频率决定调优间隔；证据范围：v7u_N003284；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH47-S04_001"
+      ],
+      "reason": "已映射至ep_001，对应card p7card_CH47-S04_001"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH47-S04_002"
+      ],
+      "reason": "已映射至ep_002，对应card p7card_CH47-S04_002"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH47-S04_003"
+      ],
+      "reason": "已映射至ep_003，对应card p7card_CH47-S04_003"
+    },
+    {
+      "candidate_id": "s1c_gap_ch47_s04_frequency_determines_tuning_interval",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH47-S04_004"
+      ],
+      "reason": "已映射至ep_004，对应card p7card_CH47-S04_004"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e002": "action role, execution action → P2_execution"
+    },
+    "ep_002": {
+      "e001": "action role, execution action → P2_execution",
+      "e002": "outcome role, state change → X3_state_change"
+    },
+    "ep_003": {
+      "e001": "context role, event signal → E1_event_signal",
+      "e002": "action role, assessment action → P1_assessment"
+    },
+    "ep_004": {
+      "e001": "standard role → standard",
+      "e002": "decision role, no branch, assessment → P1_assessment"
+    }
+  },
+  "skip_reason": null
+}

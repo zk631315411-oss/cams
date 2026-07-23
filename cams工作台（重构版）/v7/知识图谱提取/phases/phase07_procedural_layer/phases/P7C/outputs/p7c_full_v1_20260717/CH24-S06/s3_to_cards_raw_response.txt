@@ -1,0 +1,88 @@
+{
+  "section_id": "CH24-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S06_001",
+      "section_id": "CH24-S06",
+      "card_nature": "execution",
+      "title": "基于OFAC制裁名单的禁止交易与资产冻结",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "个人或组织出现在OFAC定期发布的名单上",
+          "evidence_unit_ids": ["v7u_N001774"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "禁止与名单上个人或组织交易",
+          "evidence_unit_ids": ["v7u_N001774"],
+          "evidence_strength": "explicit",
+          "modality": "prohibited"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "可能要求冻结其在美管辖范围内的资产",
+          "evidence_unit_ids": ["v7u_N001774"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "出现在OFAC定期发布的名单上",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001774"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001774"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001774"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于OFAC名单触发禁止交易并可能冻结资产；证据范围：v7u_N001774；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH24-S06_001"],
+      "reason": "该候选提供了基于OFAC名单触发禁止交易并可能冻结资产的流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选仅描述不遵守制裁导致处罚的因果关系，属于静态法律后果，不构成程序性或判断性迁移。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "n001": "context角色，表示已观察到的状态（出现在名单上），触发后续处理，符合E3_state_threshold",
+      "n002": "decision角色，描述对一个业务对象实施禁止交易的具体动作，非分支路由，符合P2_execution",
+      "n003": "outcome角色，导致资产状态可能从非冻结变为冻结，符合X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,75 @@
+{
+  "section_id": "CH05-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH05-S01_001",
+      "section_id": "CH05-S01",
+      "card_nature": "execution",
+      "title": "义务实体为应对金融犯罪风险必须实施主动合规计划",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "义务实体必须实施主动的金融犯罪合规计划，包括交易监控和利用人工智能等工具",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000354"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：风险触发合规计划实施；证据范围：v7u_N000354；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "被动分类，原文明示了“被认定为义务实体”的结果，但未描述任何审查、分析或标准适用过程，也未触发后续具体动作，仅陈述静态法律义务状态，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH05-S01_001"
+      ],
+      "reason": "该候选明确包含原文明示的业务动作（实施合规计划）及其触发背景（应对风险），构成程序性迁移，可独立映射为 episode。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, trigger event denoting existent risk state → node_type=E3_state_threshold",
+      "e002": "action role, required implementation of compliance program → node_type=P2_execution"
+    }
+  },
+  "skip_reason": null
+}

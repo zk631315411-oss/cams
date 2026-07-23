@@ -1,0 +1,166 @@
+{
+  "section_id": "CH16-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH16-S06_001",
+      "section_id": "CH16-S06",
+      "card_nature": "assessment",
+      "title": "基于滥用风险审查慈善机构和非政府组织以确保持续合法性",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "these organizations could be used to launder illicit funds or breach sanctions requirements",
+          "evidence_unit_ids": ["v7u_N001213"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "charities and NGOs need to be scrutinized",
+          "evidence_unit_ids": ["v7u_N001214"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "ensure their ongoing legitimacy",
+          "evidence_unit_ids": ["v7u_N001214"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001213", "v7u_N001214"],
+          "condition": null,
+          "relation_type": "mechanism_explains_risk"
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001214"],
+          "qualifier": "aimed_to",
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001213", "v7u_N001214"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：慈善机构可能被用于洗钱或违反制裁，因此需要进行审查以确保持续合法性；证据范围：v7u_N001213-214；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH16-S06_002",
+      "section_id": "CH16-S06",
+      "card_nature": "execution",
+      "title": "研究慈善机构和非政府组织时的审查步骤",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "researching charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "search the relevant registration authorities to confirm their exempt status and their annual tax return filings",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "consult websites that provide unbiased evaluations of charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "confirm their exempt status and their annual tax return filings",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "researching charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "relation_type": null,
+          "qualifier": null
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "researching charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "relation_type": null,
+          "qualifier": null
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "qualifier": "aimed_to",
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001225"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在研究慈善机构和非政府组织时，应查询注册机构并咨询独立评估网站，以确认免税状态和年度报税合规性；证据范围：v7u_N001225；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH16-S06_001"],
+      "reason": "该候选建立了基于滥用风险的审查要求，构成触发-行动-目的的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH16-S06_002"],
+      "reason": "该候选提供了研究慈善机构时的具体审查步骤，形成条件触发的行动序列。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role；描述慈善机构可能被滥用的风险事件 → E1_event_signal",
+      "e002": "action role；对慈善机构的审查属于评估活动 → P1_assessment",
+      "e003": "outcome role；确保持续合法性是形成合规结论 → X1_classification"
+    },
+    "ep_002": {
+      "e001": "context role；研究慈善机构这一动作使实体进入调查范围 → E2_object_entry",
+      "e002": "action role；查询注册机构是信息收集行为 → P4_collection",
+      "e003": "action role；咨询评估网站是信息收集行为 → P4_collection",
+      "e004": "outcome role；确认免税状态与报税情况是形成合规结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

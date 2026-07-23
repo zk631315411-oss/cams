@@ -1,0 +1,85 @@
+{
+  "section_id": "CH06-S10",
+  "section_title": "Money Laundering Risks in Financial Services > Control and ownership for AML compliance",
+  "propositions": [
+    {
+      "candidate_id": "s1c_001",
+      "unit_ids": ["v7u_N000488", "v7u_N000489", "v7u_N000493", "v7u_N000494", "v7u_N000495"],
+      "proposition": "审查所有权结构时，监管要求识别UBO；UBO的识别需合并直接和间接持股，并以25%为默认阈值；持股达到阈值者认定为UBO，未达到者不认定为UBO。",
+      "source_quotes": [
+        "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer.",
+        "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more. That means you need to know every entity or individual who owns at least 25% of a customer.",
+        "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership.",
+        "Individual D is then considered a UBO with 82% shareholding of Company A.",
+        "Individual C, who owns 10% of Company A directly and an additional 8% indirectly via their 10% ownership of Company B, is not a UBO."
+      ],
+      "relation_cues": ["regulatory obligation", "threshold", "in addition to", "considered", "not"],
+      "candidate_frame": {
+        "trigger_or_context": ["审查客户的所有权结构"],
+        "basis_or_condition": ["监管要求识别UBO", "受益所有权识别阈值（默认25%或以上）", "需同时考虑直接和间接持股"],
+        "focal_handling_or_judgment": "合并计算直接和间接持股，与阈值比较，判断是否为UBO",
+        "outcomes_or_paths": ["达到阈值：认定为UBO（如Individual D，合计82%）", "未达到阈值：不认定为UBO（如Individual C，合计18%）"]
+      },
+      "evidence_spans": [
+        {"unit_id": "v7u_N000488", "quote": "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer."},
+        {"unit_id": "v7u_N000489", "quote": "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more. That means you need to know every entity or individual who owns at least 25% of a customer."},
+        {"unit_id": "v7u_N000493", "quote": "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership."},
+        {"unit_id": "v7u_N000494", "quote": "Individual D is then considered a UBO with 82% shareholding of Company A."},
+        {"unit_id": "v7u_N000495", "quote": "Individual C, who owns 10% of Company A directly and an additional 8% indirectly via their 10% ownership of Company B, is not a UBO."}
+      ],
+      "induction": "cross_unit",
+      "cross_unit_basis": {
+        "rule_unit_ids": ["v7u_N000489", "v7u_N000493"],
+        "positive_example_unit_ids": ["v7u_N000494"],
+        "negative_example_unit_ids": ["v7u_N000495"]
+      }
+    },
+    {
+      "candidate_id": "s1c_002",
+      "unit_ids": ["v7u_N000490", "v7u_N000491", "v7u_N000492"],
+      "proposition": "机构应采用风险为本的方法设定受益所有权阈值；对于高风险客户，阈值可能低至10%，对于风险显著更高的客户可能低至5%。",
+      "source_quotes": [
+        "Your organization will set the appropriate threshold using a riskbased approach.",
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk.",
+        "For example, high-risk financial institutions with correspondent banking relationships in a high-risk jurisdiction might set their threshold at 5%."
+      ],
+      "relation_cues": ["risk-based", "might", "could", "for example"],
+      "candidate_frame": {
+        "trigger_or_context": ["机构需要设定受益所有权阈值"],
+        "basis_or_condition": ["风险为本方法"],
+        "focal_handling_or_judgment": "使用风险为本方法设定合适的受益所有权阈值",
+        "outcomes_or_paths": ["对于高风险客户，阈值可能低至10%", "对于风险显著更高的客户，阈值可能低至5%"]
+      },
+      "evidence_spans": [
+        {"unit_id": "v7u_N000490", "quote": "Your organization will set the appropriate threshold using a riskbased approach."},
+        {"unit_id": "v7u_N000491", "quote": "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk."},
+        {"unit_id": "v7u_N000492", "quote": "For example, high-risk financial institutions with correspondent banking relationships in a high-risk jurisdiction might set their threshold at 5%."}
+      ],
+      "induction": null,
+      "cross_unit_basis": null
+    },
+    {
+      "candidate_id": "s1c_003",
+      "unit_ids": ["v7u_N000496", "v7u_N000497"],
+      "proposition": "当不存在自然人受益所有人时，应识别并核实控制人或名义受益所有人，例如上市公司可将总裁或CEO作为名义受益所有人。",
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified. This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present.",
+        "For example, for a company that is publicly listed on the stock exchange and has thousands of shareholders, a notional beneficial owner could be the president or chief executive officer, or equivalent."
+      ],
+      "relation_cues": ["where", "should", "for example", "could"],
+      "candidate_frame": {
+        "trigger_or_context": ["公司中不存在自然人受益所有人"],
+        "basis_or_condition": [],
+        "focal_handling_or_judgment": "识别并核实控制人或名义受益所有人",
+        "outcomes_or_paths": ["对于上市公司，名义受益所有人可能是总裁或CEO或同等职位"]
+      },
+      "evidence_spans": [
+        {"unit_id": "v7u_N000496", "quote": "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified. This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."},
+        {"unit_id": "v7u_N000497", "quote": "For example, for a company that is publicly listed on the stock exchange and has thousands of shareholders, a notional beneficial owner could be the president or chief executive officer, or equivalent."}
+      ],
+      "induction": null,
+      "cross_unit_basis": null
+    }
+  ],
+  "skip_reason": null
+}

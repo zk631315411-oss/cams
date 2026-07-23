@@ -1,0 +1,281 @@
+{
+  "section_id": "CH36-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH36-S03_001",
+      "section_id": "CH36-S03",
+      "card_nature": "execution",
+      "title": "确立风险偏好并设定业务边界与政策化",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织确立其风险偏好",
+          "evidence_unit_ids": ["v7u_N002674"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "基于风险偏好设定业务边界",
+          "evidence_unit_ids": ["v7u_N002675"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将风险偏好声明编入政策和程序",
+          "evidence_unit_ids": ["v7u_N002677"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002674", "v7u_N002675"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002674", "v7u_N002677"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002674", "v7u_N002675", "v7u_N002677"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：组织确立风险偏好、设定业务边界并政策化；证据范围：v7u_N002674, v7u_N002675, v7u_N002677；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S03_002",
+      "section_id": "CH36-S03",
+      "card_nature": "assessment",
+      "title": "执行客户风险评估以分类和风险评级",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行客户风险评估，对每位客户进行分类和风险评级",
+          "evidence_unit_ids": ["v7u_N002678"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户分类和风险评级结果",
+          "evidence_unit_ids": ["v7u_N002678"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002678"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002678"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：CRA对客户分类和风险评级；证据范围：v7u_N002678；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S03_003",
+      "section_id": "CH36-S03",
+      "card_nature": "execution",
+      "title": "高风险客户触发强化尽职调查与监控并确定后续行动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "客户呈现较高风险",
+          "evidence_unit_ids": ["v7u_N002682"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施强化尽职调查和加强监控",
+          "evidence_unit_ids": ["v7u_N002682"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有效分配资源",
+          "evidence_unit_ids": ["v7u_N002682"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "确定客户调查的级别和频率及更新客户档案",
+          "evidence_unit_ids": ["v7u_N002683"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "客户被分类为高风险或代表较高风险",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002682"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N002682"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n004",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002682", "v7u_N002683"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002682", "v7u_N002683"],
+      "candidate_status": "candidate",
+      "review_notes": "S2将e002标为decision但无分支出口，按动作处理为P2_execution；证据范围：v7u_N002682, v7u_N002683；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S03_004",
+      "section_id": "CH36-S03",
+      "card_nature": "execution",
+      "title": "尽职调查获取完整客户信息用于分析",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "对业务、行业、客户特征和地域进行尽职调查",
+          "evidence_unit_ids": ["v7u_N002686"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "获取充分、完整、真实的客户信息用于分析",
+          "evidence_unit_ids": ["v7u_N002686"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002686"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002686"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：尽职调查以获取完整客户信息；证据范围：v7u_N002686；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "为解释风险偏好设定业务边界的具体示例，未单独形成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S03_002"],
+      "reason": "描述了执行客户风险评估并进行分类和风险评级的明确流程，构成独立的评估程序。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "被动分类“视为低风险”仅为静态判定条件，无原文明示的调查或分析过程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "被动分类“被视为较高风险”仅为静态事实陈述，不构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S03_003"],
+      "reason": "描述了高风险客户触发强化尽职调查和监控的条件性程序，并与后续调查决策共同形成完整的风险响应链。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S03_004"],
+      "reason": "明确提出尽职调查的动作及目的，构成获取客户信息的执行流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S03_001"],
+      "reason": "提供了从确立风险偏好到设定业务边界并政策化的完整管理流程，是独立的策略执行过程。"
+    },
+    {
+      "candidate_id": "s1c_gap_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S03_003"],
+      "reason": "承接高风险客户的处置决策，进一步确定后续调查和监控的具体要求，与s1c_005共同构成完整闭环。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action角色，确立偏好属于实施动作使状态变化，符合P2_execution定义。",
+      "e002": "action角色，设定业务边界为具体执行动作，符合P2_execution定义。",
+      "e003": "action角色，将声明编入政策是实施动作，符合P2_execution定义。"
+    },
+    "ep_002": {
+      "e001": "action角色，进行客户风险评估并分类评级，典型的风险评估过程，选P1_assessment。",
+      "e002": "outcome角色，分类和风险评级结果是分类结论，选X1_classification。"
+    },
+    "ep_003": {
+      "e001": "context角色，客户呈现较高风险是状态条件触发，选E3_state_threshold。",
+      "e002": "S2标为decision但无分支，实质上是对业务对象实施EDD和监控的动作，选P2_execution。",
+      "e003": "outcome角色，有效分配资源代表状态改进，选X3_state_change。",
+      "e004": "action角色，确定调查级别和频率是制定措施和计划，选P9_planning。"
+    },
+    "ep_004": {
+      "e001": "action角色，尽职调查是汇集信息的过程，选P4_collection。",
+      "e002": "outcome角色，获取完整客户信息是形成可保存的对象，选X2_product。"
+    }
+  },
+  "skip_reason": null
+}

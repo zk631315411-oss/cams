@@ -1,0 +1,159 @@
+{
+  "section_id": "CH20-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH20-S02_001",
+      "section_id": "CH20-S02",
+      "card_nature": "execution",
+      "title": "依据1999年公约和第1373号决议追踪恐怖融资交易",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "The 1999 Convention and Resolution 1373 (2001) requires Member States to criminalize terrorist financing and to enact asset freezing measures",
+          "evidence_unit_ids": [
+            "v7u_N001485"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Spanish authorities track financial transactions and money flows linked to the bombers",
+          "evidence_unit_ids": [
+            "v7u_N001485"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001485"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "The 1999 Convention and Resolution 1373 (2001), adopted after 9/11, requires Member States to criminalize terrorist financing and to enact asset freezing measures. This enabled Spanish authorities in 2004 to track financial transactions and money flows linked to the bombers."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001485"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据1999年公约和第1373号决议的要求，西班牙当局追踪与恐怖袭击相关的金融交易和资金流动；证据范围：v7u_N001485；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S02_002",
+      "section_id": "CH20-S02",
+      "card_nature": "execution",
+      "title": "依据第1267号决议调查并冻结与基地组织和塔利班关联的资产",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Resolution 1267 (1999) establishes a sanctions regime against individuals and entities associated with al-Qaeda and the Taliban",
+          "evidence_unit_ids": [
+            "v7u_N001486"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Post-attack investigations into the attackers’ links to these organizations",
+          "evidence_unit_ids": [
+            "v7u_N001486"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "freezing of assets and disruption of support networks using various authorities",
+          "evidence_unit_ids": [
+            "v7u_N001486"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001486"
+          ],
+          "relation_type": null,
+          "source_quote": "Resolution 1267 (1999) establishes a sanctions regime against individuals and entities associated with al-Qaeda and the Taliban. Post-attack investigations into the attackers’ links to these organizations resulted in the freezing of assets and the disruption of support networks using various authorities."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001486"
+          ],
+          "relation_type": null,
+          "source_quote": "Post-attack investigations into the attackers’ links to these organizations resulted in the freezing of assets and the disruption of support networks using various authorities."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001486"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据第1267号决议建立的制裁制度，对攻击者的组织联系进行袭击后调查，导致资产冻结和支持网络的中断；证据范围：v7u_N001486；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "候选仅描述当局调查中的事实发现（法医证据指向极端分子），未包含程序性动作或决策，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH20-S02_001"
+      ],
+      "reason": "候选包含法律要求（标准）和西班牙当局追踪金融交易的动作，构成程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH20-S02_002"
+      ],
+      "reason": "候选包含调查动作和基于决议的资产冻结及网络破坏结果，构成程序性关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role + tracking financial transactions → P2_execution"
+    },
+    "ep_002": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role + investigations into links → P1_assessment",
+      "e003": "outcome role + freezing of assets → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

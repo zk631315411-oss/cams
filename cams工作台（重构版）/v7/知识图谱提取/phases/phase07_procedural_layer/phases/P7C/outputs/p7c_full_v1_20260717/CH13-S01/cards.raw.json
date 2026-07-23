@@ -1,0 +1,201 @@
+{
+  "section_id": "CH13-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH13-S01_001",
+      "section_id": "CH13-S01",
+      "card_nature": "execution",
+      "title": "监管机构监控加密资产旨在阻止非法活动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "监管机构监控加密资产的法律和合规方面",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "阻止欺诈和洗钱等非法活动",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000970"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：监管机构监控法律合规方面并旨在阻止非法活动；证据范围：v7u_N000970；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH13-S01_002",
+      "section_id": "CH13-S01",
+      "card_nature": "execution",
+      "title": "区块链挖掘后必须由网络其他节点验证",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "区块链被挖掘",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "必须由网络上的其他节点验证",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000984"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：区块链挖掘后必须由其他节点验证；证据范围：v7u_N000984；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH13-S01_003",
+      "section_id": "CH13-S01",
+      "card_nature": "control",
+      "title": "在兑换点易受洗钱背景下通过CDD和监控识别可疑活动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "加密资产与法定货币的兑换点易受洗钱影响",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "实施客户尽职调查和监控",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "帮助识别可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000995"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：兑换点易受洗钱促使执行CDD和监控，以帮助识别可疑活动；证据范围：v7u_N000995；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch13_s01_regulator_monitoring",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH13-S01_001"
+      ],
+      "reason": "该候选映射为一张卡片，建模监管机构的监控行为产出阻止非法活动"
+    },
+    {
+      "candidate_id": "s1c_gap_ch13_s01_block_verification",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH13-S01_002"
+      ],
+      "reason": "该候选映射为一张卡片，建模区块链挖掘后强制验证的事件触发"
+    },
+    {
+      "candidate_id": "s1c_gap_ch13_s01_cdd_monitoring",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH13-S01_003"
+      ],
+      "reason": "该候选映射为一张卡片，建模在风险背景下执行CDD和监控以识别可疑活动"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + sustained monitoring activity → P7_monitoring",
+      "e002": "outcome role + deterrent effect implies state change → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "context role + event 'blockchain is mined' → E1_event_signal",
+      "e002": "action role + verification action → P1_assessment"
+    },
+    "ep_003": {
+      "e001": "context role + observed vulnerability → E3_state_threshold",
+      "e002": "action role + CDD and monitoring for identification → P1_assessment",
+      "e003": "outcome role + helping identify suspicious activity → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

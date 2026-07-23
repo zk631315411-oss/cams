@@ -1,0 +1,229 @@
+{
+  "section_id": "CH42-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何基于行业类型、地域风险和交易行为将客户风险分为低、中、高三级？",
+      "title": "客户风险三级分类评估",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "input",
+          "label": "客户的行业类型、地域风险和交易行为信息",
+          "evidence_unit_ids": [
+            "v7u_N003027"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "评估风险并分配低、中或高风险状态",
+          "evidence_unit_ids": [
+            "v7u_N003027"
+          ],
+          "modality": "permitted"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "低、中或高风险状态",
+          "evidence_unit_ids": [
+            "v7u_N003027"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003027"
+          ],
+          "source_quote": "based on industry type, jurisdictional exposure, and transaction behaviors"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N003027"
+          ],
+          "source_quote": "assigned low-, medium-, or high-risk status"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "先进方法如何提供更精细的风险评分和应用？",
+      "title": "先进风险评分方法提供1-100评分以实现精细化应用",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "先进方法提供1至100的风险评分",
+          "evidence_unit_ids": [
+            "v7u_N003028"
+          ],
+          "modality": "permitted"
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "更精细的风险为本方法应用",
+          "evidence_unit_ids": [
+            "v7u_N003028"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003028"
+          ],
+          "source_quote": "allowing for a more nuanced application of the riskbased approach"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "如何根据客户风险等级触发相应的尽职调查？",
+      "title": "基于风险等级的尽职调查触发",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "input",
+          "label": "客户风险等级",
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "根据风险等级确定尽职调查类型",
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "进行强化尽职调查（EDD）",
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "action",
+          "label": "进行尽职调查流程",
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "source_quote": "Customers deemed high risk ... Customers deemed standard risk"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e003",
+          "relation_type": "conclusion_triggers_response",
+          "condition": "风险等级为高风险",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "source_quote": "Customers deemed high risk are typically examined more deeply through enhanced due diligence."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e004",
+          "relation_type": "conclusion_triggers_response",
+          "condition": "风险等级为标准风险（低或中风险）",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003029"
+          ],
+          "source_quote": "Customers deemed standard risk, which includes low and medium risk, also undergo a due diligence process."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了基于行业、地域和交易行为的风险评估和分类过程，构成独立的评估流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选描述了先进方法提供1-100风险评分及支持更精细风险为本方法应用的过程，构成独立的评估流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选描述了基于风险等级的尽职调查触发，包括高风险触发EDD和标准风险触发DD，构成独立的执行流程。"
+    }
+  ],
+  "skip_reason": null
+}

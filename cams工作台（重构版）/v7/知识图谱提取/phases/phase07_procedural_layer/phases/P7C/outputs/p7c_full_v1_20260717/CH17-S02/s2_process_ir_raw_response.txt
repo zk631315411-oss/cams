@@ -1,0 +1,76 @@
+{
+  "section_id": "CH17-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "合法制药公司必须遵守严格的进出口管制和国际限制的义务",
+      "title": "合法制药公司必须遵守进出口管制和国际限制",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "从事合法生产的制药公司",
+          "evidence_unit_ids": ["v7u_N001270"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "必须遵守严格的进出口管制和国际限制",
+          "evidence_unit_ids": ["v7u_N001270"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001270"],
+          "source_quote": "Pharmaceutical companies engaged in legitimate production also need to navigate strict import/export controls and international restrictions."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述大麻业务法律冲突给金融机构带来的合规难题，属于静态事实描述，没有具体的业务动作或判断。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述政府对毒品贸易实施制裁的行为，属于政府程序而非金融机构的业务流程，且没有触发金融机构的具体判断或动作。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选明确描述了合法制药公司必须遵守进出口管制和国际限制的义务，构成一个包含动作的程序性要求。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅描述制裁风险产生的条件，没有实际的业务处理或判断过程，属于事实性风险陈述。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述金融机构在识别可疑交易时可能面临的困难，属于状态描述而非程序性或判断性迁移。"
+    }
+  ],
+  "skip_reason": null
+}

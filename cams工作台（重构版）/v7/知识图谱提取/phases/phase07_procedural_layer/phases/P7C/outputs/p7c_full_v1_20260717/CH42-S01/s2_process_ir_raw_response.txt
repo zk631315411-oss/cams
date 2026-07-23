@@ -1,0 +1,321 @@
+{
+  "section_id": "CH42-S01",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何根据委员会评估决定特定客户是否进入完整KYC及尽职调查级别",
+      "title": "Pre-KYC委员会评估客户适宜性并决定后续KYC路径",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "特定客户类型，如PEP、高净值人士、高风险司法管辖区客户",
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "委员会 might assess 客户适宜性，决定是否进入完整KYC及所需DD级别",
+          "evidence_unit_ids": [
+            "v7u_N003013",
+            "v7u_N003015"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "委员会评估因素：司法管辖区风险、业务活动、战略契合度",
+          "evidence_unit_ids": [
+            "v7u_N003014"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "客户进入完整KYC，适用标准尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "客户进入完整KYC，适用强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e006",
+          "role": "outcome",
+          "label": "客户被过滤，不进入完整KYC",
+          "evidence_unit_ids": [
+            "v7u_N003015",
+            "v7u_N003016"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "客户属于特定高风险类型（PEP、高净值、高风险司法管辖区）",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ],
+          "source_quote": "For specific customer profiles, such as PEPs, high-net-worth individuals, and customers from high-risk jurisdictions, a pre-KYC onboarding committee might assess suitability before formal identification."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003014"
+          ],
+          "source_quote": "The committee typically includes compliance experts, risk managers, legal advisors, and business unit leaders, who collectively evaluate jurisdictional risks, business activities, and strategic fit."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e004",
+          "condition": "评估结果认为客户适宜且适用标准尽职调查",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "source_quote": "The outcome determines whether customers proceed to full KYC and what level of due diligence—standard or enhanced—is required."
+        },
+        {
+          "relation_id": "r004",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e005",
+          "condition": "评估结果认为客户适宜且适用强化尽职调查",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "source_quote": "The outcome determines whether customers proceed to full KYC and what level of due diligence—standard or enhanced—is required."
+        },
+        {
+          "relation_id": "r005",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e006",
+          "condition": "评估结果认为客户不适宜",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003015",
+            "v7u_N003016"
+          ],
+          "source_quote": "The outcome determines whether customers proceed to full KYC and what level of due diligence—standard or enhanced—is required. This step ensures efficient resource use, early risk mitigation, and regulatory alignment by filtering out unsuitable clients early in the process."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "如何在客户准入前通过筛查确定风险",
+      "title": "客户准入前筛查以确定风险",
+      "card_nature": "risk_indicator",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "客户准入前",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "制裁筛查：将客户信息与联合国、欧盟、OFAC及国家制裁名单交叉核对",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "负面媒体监控：识别与金融犯罪、腐败和欺诈活动的关联",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "action",
+          "label": "PEP筛查：确定个人或受益所有人是否为PEP或其密切关联人",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "检测高风险实体",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e006",
+          "role": "outcome",
+          "label": "识别金融犯罪、腐败和欺诈活动关联",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e007",
+          "role": "outcome",
+          "label": "确定PEP身份或关联",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "在客户准入前开展筛查",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "source_quote": "Screening is conducted prior to onboarding to determine risk:"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "在客户准入前开展筛查",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "source_quote": "Screening is conducted prior to onboarding to determine risk:"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e004",
+          "condition": "在客户准入前开展筛查",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "source_quote": "Screening is conducted prior to onboarding to determine risk:"
+        },
+        {
+          "relation_id": "r004",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e005",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "source_quote": "Sanctions screening is when customer details are cross-checked against UN, EU, OFAC, and national sanctions lists to detect high-risk entities."
+        },
+        {
+          "relation_id": "r005",
+          "kind": "produce",
+          "process_element_id": "e003",
+          "outcome_element_id": "e006",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "source_quote": "Adverse media monitoring is conducted to identify links to financial crime, corruption, and fraudulent activities."
+        },
+        {
+          "relation_id": "r006",
+          "kind": "produce",
+          "process_element_id": "e004",
+          "outcome_element_id": "e007",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "source_quote": "PEP screening is when organizations determine whether the individual or beneficial owner is a PEP, or the relative or close associate of a PEP."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了特定客户类型触发委员会评估适宜性，并决定后续KYC路径，构成完整的评估决策流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅描述身份识别与验证步骤的组成要素（收集信息、验证、了解目的、识别UBO），未包含程序性或判断性迁移关系，属于静态定义性内容。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选描述了客户准入前筛查流程，包括制裁、负面媒体和PEP筛查及其风险检测目的，构成清晰的程序性流程。"
+    }
+  ],
+  "skip_reason": null
+}

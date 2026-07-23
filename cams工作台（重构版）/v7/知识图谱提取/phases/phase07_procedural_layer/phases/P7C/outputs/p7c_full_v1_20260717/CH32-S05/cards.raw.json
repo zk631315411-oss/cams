@@ -1,0 +1,548 @@
+{
+  "section_id": "CH32-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH32-S05_001",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Utilizing Section 314b for AML/CFT Compliance",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "USA PATRIOT Act Section 314b (allows sharing and provides safe harbor)",
+          "evidence_unit_ids": [
+            "v7u_N002348",
+            "v7u_N002349"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "share customer or transactional information with other financial institutions",
+          "evidence_unit_ids": [
+            "v7u_N002348",
+            "v7u_N002350"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "identify money laundering and terrorist financing",
+          "evidence_unit_ids": [
+            "v7u_N002350"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "help decide whether to maintain an account",
+          "evidence_unit_ids": [
+            "v7u_N002350"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002348"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "314b allows financial institutions to share customer or transactional information with each other to assist with AML/CFT compliance."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002350"
+          ],
+          "qualifier": "aimed_to",
+          "source_quote": "US organizations widely use 314b to identify money laundering and terrorist financing"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002350"
+          ],
+          "qualifier": "helps_achieve",
+          "source_quote": "help decide whether to maintain an account"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002348",
+        "v7u_N002349",
+        "v7u_N002350"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：利用314b共享信息，以识别洗钱/恐怖融资并辅助账户保留决策；证据范围：v7u_N002348-v7u_N002350；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S05_002",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Information Sharing under UK ECCTA 2023",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UK Economic Crime and Corporate Transparency Act 2023 (provides legal means for sharing and exempts from civil liability and confidentiality)",
+          "evidence_unit_ids": [
+            "v7u_N002351"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "share information with other regulated organizations",
+          "evidence_unit_ids": [
+            "v7u_N002351"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "exempt from civil liability and confidentiality obligations",
+          "evidence_unit_ids": [
+            "v7u_N002351"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002351"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "the Economic Crime and Corporate Transparency Act 2023 provides the legal means for two regulated organizations to share information with each other."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002351"
+          ],
+          "source_quote": "the act exempts such disclosures from civil liability and confidentiality obligations."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002351"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：ECCTA 2023为受监管机构间共享信息提供法律依据，并豁免民事责任与保密义务；证据范围：v7u_N002351；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S05_003",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Information Sharing via COSMIC Platform",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Customer exhibits red flags indicating potential financial crime concerns and certain thresholds are met",
+          "evidence_unit_ids": [
+            "v7u_N002352"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "share information via COSMIC platform",
+          "evidence_unit_ids": [
+            "v7u_N002352"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when a customer exhibits red flags indicating potential financial crime concerns and if certain thresholds are met",
+          "evidence_unit_ids": [
+            "v7u_N002352"
+          ],
+          "source_quote": "When a customer exhibits “red flags” indicating potential financial crime concerns, financial institutions can share information if certain thresholds are met."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002352"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当客户出现红旗并满足阈值时，通过COSMIC平台共享信息；证据范围：v7u_N002352；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S05_004",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Cross-border Information Sharing under EU Article 75",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Article 75 of Regulation (EU) 2024/1624",
+          "evidence_unit_ids": [
+            "v7u_N002353",
+            "v7u_N002355"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "carry out a data protection impact assessment",
+          "evidence_unit_ids": [
+            "v7u_N002355"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "national supervisor approval",
+          "evidence_unit_ids": [
+            "v7u_N002353",
+            "v7u_N002355"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "take part in cross-border information sharing partnerships",
+          "evidence_unit_ids": [
+            "v7u_N002353"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "share information about customer identity, business relationships, transactions, and customer risk factors",
+          "evidence_unit_ids": [
+            "v7u_N002353"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002355"
+          ],
+          "source_quote": "National supervisor approval under Article 75 requires the partnership to carry out a data protection impact assessment before processing personal information."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002355"
+          ],
+          "source_quote": "National supervisor approval... requires... a data protection impact assessment before processing"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "condition": "if national supervisor approves",
+          "evidence_unit_ids": [
+            "v7u_N002353"
+          ],
+          "source_quote": "Article 75 of Regulation (EU) 2024/1624 allows organizations to take part in cross-border information sharing partnerships, if their national supervisor approves it."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N002353"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Article 75... allows organizations to take part in cross-border information sharing partnerships..."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N002353"
+          ],
+          "source_quote": "Organizations may share information about customer identity, business relationships, transactions, and customer risk factors."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002353",
+        "v7u_N002355"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据Article 75，须先完成数据保护影响评估并获得国家监管批准，方可参与跨境信息共享并分享特定信息；证据范围：v7u_N002353, v7u_N002355；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S05_005",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Preparation for Joining Information Sharing Arrangements",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Organization looks to join private-to-private sector information sharing arrangements",
+          "evidence_unit_ids": [
+            "v7u_N002354"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "should carefully consider obligations under local data protection legislation and customer confidentiality requirements",
+          "evidence_unit_ids": [
+            "v7u_N002354"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "if proceeding, assign appropriate resources and develop policies and procedures to govern the activity",
+          "evidence_unit_ids": [
+            "v7u_N002356"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002354"
+          ],
+          "source_quote": "Organizations looking to join private-to-private sector information sharing arrangements should carefully consider their obligations under local data protection legislation and customer confidentiality requirements within their organization."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002356"
+          ],
+          "source_quote": "If proceeding, organizations should assign appropriate resources and develop policies and procedures to govern the activity."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002354",
+        "v7u_N002356"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：机构预备加入共享安排时，应先考虑数据保护与保密义务，若继续则配置资源并制定政策程序；证据范围：v7u_N002354, v7u_N002356；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH32-S05_006",
+      "section_id": "CH32-S05",
+      "card_nature": "execution",
+      "title": "Offboarding Customer upon Money Laundering Suspicion",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Bank A suspects money laundering from a customer",
+          "evidence_unit_ids": [
+            "v7u_N002344"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "offboard the customer",
+          "evidence_unit_ids": [
+            "v7u_N002344"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "if Bank A suspects money laundering from a customer",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002344"
+          ],
+          "source_quote": "if Bank A suspects money laundering from a customer, it might offboard them."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002344"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：银行怀疑客户洗钱时可能选择终止账户；证据范围：v7u_N002344；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_001"
+      ],
+      "reason": "Provides legal basis and safe harbor for sharing, forming the standard for the episode's action."
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_002"
+      ],
+      "reason": "Defines the legal means for sharing and liability exemption, constituting the core process."
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_003"
+      ],
+      "reason": "Describes condition-based sharing via COSMIC platform, with clear trigger and action."
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_004"
+      ],
+      "reason": "Covers Article 75 requirements including DPIA and approval, forming a multi-step process."
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_005"
+      ],
+      "reason": "Specifies the consideration step as a preparatory action when joining sharing arrangements."
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_005"
+      ],
+      "reason": "Specifies resource assignment and policy development step, following consideration if proceeding."
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_006"
+      ],
+      "reason": "Illustrates a conditional offboarding decision based on money laundering suspicion, forming a standalone process."
+    },
+    {
+      "candidate_id": "s1c_gap_ch32_s05_314b_usage",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH32-S05_001"
+      ],
+      "reason": "Provides the actual usage of 314b to identify ML/TF and assist account decisions, completing the process."
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "Standard role → auxiliary node_type standard (law providing safe harbor and permission).",
+      "e002": "Action role → process, sharing information is an execution step (P2_execution).",
+      "e003": "Outcome of identifying ML/TF fits X1_classification (forming a risk/suspicion conclusion).",
+      "e004": "Outcome to help decide account maintenance fits X1_classification (supporting a suitability decision)."
+    },
+    "ep_002": {
+      "e001": "Standard role → auxiliary node_type standard (law providing legal means).",
+      "e002": "Action role → process, sharing info is P2_execution.",
+      "e003": "Outcome exemption from liability changes legal status → X3_state_change."
+    },
+    "ep_003": {
+      "e001": "Context role → entry; red flags and thresholds are state/threshold trigger → E3_state_threshold.",
+      "e002": "Action role → process, sharing via platform is P2_execution."
+    },
+    "ep_004": {
+      "e001": "Standard role → auxiliary node_type standard (EU regulation).",
+      "e002": "Action; DPIA is an assessment → P1_assessment.",
+      "e003": "Outcome; supervisor approval is a state change → X3_state_change.",
+      "e004": "Action; taking part in partnership is execution → P2_execution.",
+      "e005": "Action; sharing detailed info is execution → P2_execution."
+    },
+    "ep_005": {
+      "e001": "Context; intent to join is an event signal → E1_event_signal.",
+      "e002": "Action; considering legal obligations is a compliance assessment → P1_assessment.",
+      "e003": "Action; assigning resources and developing policies is planning → P9_planning."
+    },
+    "ep_006": {
+      "e001": "Context; suspicion of ML is a prior finding triggering action → E8_decision_finding.",
+      "e002": "Action; offboarding is an execution step → P2_execution."
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,216 @@
+{
+  "section_id": "CH41-S11",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S11_001",
+      "section_id": "CH41-S11",
+      "card_nature": "execution",
+      "title": "定期KYC刷新：基于风险水平和监管期望执行强制数据更新",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行强制数据更新",
+          "evidence_unit_ids": ["v7u_N003004"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "基于风险水平和不断变化的监管期望",
+          "evidence_unit_ids": ["v7u_N003004"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N003004"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003004"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于风险水平和监管期望执行强制KYC数据更新；证据范围：v7u_N003004；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S11_002",
+      "section_id": "CH41-S11",
+      "card_nature": "assessment",
+      "title": "持续风险评估：基于信息或行为变化调整客户画像和交易限额",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调整客户画像和交易限额",
+          "evidence_unit_ids": ["v7u_N003005"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "基于信息或行为变化",
+          "evidence_unit_ids": ["v7u_N003005"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N003005"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003005"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于信息或行为变化调整客户画像和交易限额；证据范围：v7u_N003005；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S11_003",
+      "section_id": "CH41-S11",
+      "card_nature": "control",
+      "title": "持续风险监控：应用持续监控和深入交易审查以降低风险敞口",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "应用持续监控和更深入的交易审查",
+          "evidence_unit_ids": ["v7u_N003006"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低风险敞口",
+          "evidence_unit_ids": ["v7u_N003006"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N003006"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003006"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：应用持续监控和深入交易审查以降低风险敞口；证据范围：v7u_N003006；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S11_004",
+      "section_id": "CH41-S11",
+      "card_nature": "control",
+      "title": "动态风险管理：持续监控数据识别变化并触发KYC更新",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "持续监控数据",
+          "evidence_unit_ids": ["v7u_N003007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "识别变化",
+          "evidence_unit_ids": ["v7u_N003007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "触发KYC更新",
+          "evidence_unit_ids": ["v7u_N003007"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N003007"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N003007"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003007"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：持续监控数据识别变化并触发KYC更新；证据范围：v7u_N003007；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S11_001"],
+      "reason": "该候选独立描述了一个基于风险水平和监管期望执行强制KYC数据更新的程序性动作。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S11_002"],
+      "reason": "该候选独立描述了一个基于信息或行为变化调整客户画像和交易限额的判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S11_003"],
+      "reason": "该候选独立描述了一个应用持续监控及深入审查以降低风险敞口的控制性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S11_004"],
+      "reason": "该候选独立描述了一个通过监控数据识别变化并触发KYC更新的动态风险管理流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + 执行强制数据更新动作 → P2_execution",
+      "e002": "standard role → standard"
+    },
+    "ep_002": {
+      "e001": "action role + 调整客户画像和交易限额是直接执行动作 → P2_execution",
+      "e002": "standard role → standard"
+    },
+    "ep_003": {
+      "e001": "action role + 持续监控和审查 → P7_monitoring",
+      "e002": "outcome role + 降低风险敞口是风险状态变化 → X3_state_change"
+    },
+    "ep_004": {
+      "e001": "action role + 持续监控数据 → P7_monitoring",
+      "e002": "outcome role + 识别变化是认知/监测状态变化 → X3_state_change",
+      "e003": "action role + 触发KYC更新是执行触发动作 → P2_execution"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,323 @@
+{
+  "section_id": "CH32-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "如何通过私营部门合作发现跨机构模式以应对洗钱威胁？",
+      "title": "私营部门实体合作以发现跨机构模式",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "洗钱者和恐怖分子通过跨机构分散活动来规避检测",
+          "evidence_unit_ids": ["v7u_N002329"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "私营部门实体相互合作",
+          "evidence_unit_ids": ["v7u_N002330"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "input",
+          "label": "可通过行业协会或专门反洗钱实体进行合作",
+          "evidence_unit_ids": ["v7u_N002331"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "发现跨机构模式",
+          "evidence_unit_ids": ["v7u_N002330"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002329", "v7u_N002330"],
+          "source_quote": "Money launderers and terrorists actively seek to avoid detection by spreading their activities across multiple financial institutions... For this reason, it is important that private sector entities collaborate with each other to spot patterns that are only evident when looking across institutions."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002330", "v7u_N002331"],
+          "source_quote": "collaborate via established industry bodies like trade associations, or through bespoke AML entities."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "outcome_element_id": "e004",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002330"],
+          "source_quote": "collaborate with each other to spot patterns that are only evident when looking across institutions."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "在立法允许的信息共享下，组织如何通过共享数据提高SAR质量并防止客户重新开户？",
+      "title": "基于立法允许的信息共享以提升SAR质量并防止客户重新开户",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "一些司法管辖区引入了允许信息共享的立法",
+          "evidence_unit_ids": ["v7u_N002336"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "组织共享客户、活动和交易数据",
+          "evidence_unit_ids": ["v7u_N002337"],
+          "modality": "permitted"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "更好的可疑交易报告质量",
+          "evidence_unit_ids": ["v7u_N002338"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "防止因反洗钱/反恐融资问题被退出的客户在其他机构开设账户",
+          "evidence_unit_ids": ["v7u_N002338"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "司法管辖区已引入立法允许信息共享",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002336", "v7u_N002337"],
+          "source_quote": "Some jurisdictions have introduced legislation that enables this type of sharing. In these jurisdictions, organizations may share data on customers, activity, and transactions."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002337", "v7u_N002338"],
+          "source_quote": "This can be highly impactful, resulting in better quality SARs"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "outcome_element_id": "e004",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002337", "v7u_N002338"],
+          "source_quote": "preventing customers who have been exited by one organization for AML/CFT concerns from opening an account at another."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "组织如何通过联合开发KYC公用设施提高KYC程序准确性？",
+      "title": "联合开发KYC公用设施以集中资源并提高KYC准确性",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "组织联合开发或共享KYC能力",
+          "evidence_unit_ids": ["v7u_N002339"],
+          "modality": "permitted"
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "集中资源与专业知识",
+          "evidence_unit_ids": ["v7u_N002339"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "提高KYC程序准确性",
+          "evidence_unit_ids": ["v7u_N002339"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N002339"],
+          "source_quote": "These joint platforms allow organizations to pool their resources and expertise"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002339"],
+          "source_quote": "improve the accuracy of their KYC procedures."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": ["s1c_005"],
+      "focal_question": "合规官如何进行非正式合作以对标控制并采纳最佳实践？",
+      "title": "合规官的非正式合作：对标控制与采纳最佳实践",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "合规官可以且应当进行非正式合作，分享观点和经验",
+          "evidence_unit_ids": ["v7u_N002340", "v7u_N002341"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "讨论必须遵守当地数据隐私法和机构对保密信息的保护要求",
+          "evidence_unit_ids": ["v7u_N002342"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "对标控制措施",
+          "evidence_unit_ids": ["v7u_N002341"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "识别和采纳最佳实践",
+          "evidence_unit_ids": ["v7u_N002341"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002340", "v7u_N002342"],
+          "source_quote": "Any such discussion should be compliant with local data privacy laws and with the organization’s own requirements regarding the protection of confidential or commercially sensitive information."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002341"],
+          "source_quote": "Sharing perspectives and experiences with peer organizations can help benchmark controls against those of comparable organizations"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e004",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002341"],
+          "source_quote": "identify and adopt best practices."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "候选描述了跨机构威胁触发私营实体合作的流程，构成程序性 episode。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "候选仅为静态事实陈述，描述一些团体合作制定指导或分享实践，未包含触发、条件或决策等程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "候选包含立法允许触发信息共享、共享数据动作及产生更好SAR和防止客户重新开户的结果，形成清晰的判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "候选描述组织联合开发能力并因此提高KYC准确性的目的导向流程，构成 episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "episode_ids": ["ep_004"],
+      "reason": "候选包含合规官非正式合作、受标准约束并通过分享达成对标和采纳最佳实践，为完整的流程。"
+    }
+  ],
+  "skip_reason": null
+}

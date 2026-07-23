@@ -1,0 +1,504 @@
+{
+  "section_id": "CH41-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S02_001",
+      "section_id": "CH41-S02",
+      "card_nature": "execution",
+      "title": "根据协议识别新政策采用时机并执行生命周期流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "新政策必须被采用时",
+          "evidence_unit_ids": [
+            "v7u_N002904"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "识别新政策采用时机并执行起草、批准和更新流程",
+          "evidence_unit_ids": [
+            "v7u_N002904"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "新政策被采用或更新",
+          "evidence_unit_ids": [
+            "v7u_N002904"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002904"
+          ],
+          "condition": "新政策必须被采用时",
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "identify when a new policy must be adopted, as well as the process for drafting, approving, and updating it."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002904"
+          ],
+          "relation_type": "component_assembles_product",
+          "source_quote": "the process for drafting, approving, and updating it."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002904"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当需要新政策时，组织应执行起草、批准和更新流程。证据范围：v7u_N002904。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S02_002",
+      "section_id": "CH41-S02",
+      "card_nature": "execution",
+      "title": "使政策符合管辖法律同时维持全球标准",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "确保管辖合规的需求",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "使政策与各国法律保持一致",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "全球AFC原则",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "可能在部分司法管辖区实施更高标准",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "To ensure jurisdictional compliance, multinational organizations must align policies with country-specific laws"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "while maintaining global AFC principles"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002910"
+          ],
+          "qualifier": "may_lead_to",
+          "relation_type": "component_assembles_product",
+          "source_quote": "This may result in implementing higher standards in some jurisdictions to maintain global consistency."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002910"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：为确保管辖合规，机构必须使政策与各国法律保持一致，同时维护全球原则，可能导致在部分辖区实施更高标准。证据范围：v7u_N002910。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S02_003",
+      "section_id": "CH41-S02",
+      "card_nature": "execution",
+      "title": "处理政策偏差的流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "出现政策偏差",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "记录、论证并提交治理机构批准偏差",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "豁免可能被给予特定时间",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "deviations from policy must be documented, justified, and approved by governance bodies"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "qualifier": "may_lead_to",
+          "relation_type": "component_assembles_product",
+          "source_quote": "Where appropriate, dispensation may be provided for a specific time."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002911"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当出现政策偏差时，必须记录、论证并提交治理机构批准，可能获得特定时间的豁免。证据范围：v7u_N002911。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S02_004",
+      "section_id": "CH41-S02",
+      "card_nature": "execution",
+      "title": "处理政策实施缺口的流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "已知政策实施缺口",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "记录并在合理期限内解决缺口",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "缺口在合理期限内被解决",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Any known gaps in implementing policies must be documented and addressed within a reasonable period."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002911"
+          ],
+          "relation_type": "component_assembles_product",
+          "source_quote": "addressed within a reasonable period."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002911"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当已知政策实施缺口时，必须记录并在合理期限内解决。证据范围：v7u_N002911。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S02_005",
+      "section_id": "CH41-S02",
+      "card_nature": "execution",
+      "title": "实施新政策的过渡期活动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "实施新政策时",
+          "evidence_unit_ids": [
+            "v7u_N002912"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "包含过渡期（如六个月）",
+          "evidence_unit_ids": [
+            "v7u_N002912"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "进行差距分析和业务风险评估",
+          "evidence_unit_ids": [
+            "v7u_N002913"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "执行系统、程序和流程更新",
+          "evidence_unit_ids": [
+            "v7u_N002914"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "实施培训和员工教育",
+          "evidence_unit_ids": [
+            "v7u_N002915"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002912"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "When implementing new policies, organizations typically include a transition period, such as six months, to allow for:"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002912",
+            "v7u_N002913"
+          ],
+          "qualifier": "aimed_to",
+          "relation_type": "component_assembles_product",
+          "source_quote": "Gap analysis and business risk assessment."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002912",
+            "v7u_N002914"
+          ],
+          "qualifier": "aimed_to",
+          "relation_type": "component_assembles_product",
+          "source_quote": "System, procedural, and process updates"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N002912",
+            "v7u_N002915"
+          ],
+          "qualifier": "aimed_to",
+          "relation_type": "component_assembles_product",
+          "source_quote": "Training and staff education."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002912",
+        "v7u_N002913",
+        "v7u_N002914",
+        "v7u_N002915"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：实施新政策时，通常包括过渡期以进行差距分析、系统更新和培训。证据范围：v7u_N002912, v7u_N002913, v7u_N002914, v7u_N002915。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S02_001"
+      ],
+      "reason": "该候选描述了根据协议识别新政策采用时机并执行起草、批准、更新流程的程序性过程，构成独立episode。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述良好政策应包含的审查安排要求，属于静态政策内容设计，未构成程序性或判断性迁移，不是流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S02_002"
+      ],
+      "reason": "描述了机构必须使政策符合管辖法律并维持全球原则的动作，构成一个完整的管辖合规调整流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S02_003",
+        "p7card_CH41-S02_004"
+      ],
+      "reason": "候选包含两个独立的程序性流程：政策偏差处理和政策实施缺口处理，各自有触发、动作和结果，因此拆为两个episode映射。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH41-S02_005"
+      ],
+      "reason": "描述了实施新政策时设定过渡期并进行准备活动的步骤，构成一个实施流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s02_comprehensive_coverage",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述政策全面覆盖的要求，属于政策内容原则，未描述具体的程序性过程，不是流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s02_risk_based_customization",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述基于风险定制政策的要求，是政策制定原则，未形成具体的程序性或判断性迁移，不是流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role + 条件触发事件 -> E1_event_signal",
+      "e002": "action role + 执行生命周期流程 -> P2_execution",
+      "e003": "outcome role + 新政策被采用或更新 -> X3_state_change"
+    },
+    "ep_002": {
+      "e001": "context role + 外部管辖合规需求 -> E7_external_command",
+      "e002": "action role + 调整政策以符合法律 -> P2_execution",
+      "e003": "standard role -> standard",
+      "e004": "outcome role + 实施更高标准 -> X5_config_change"
+    },
+    "ep_003": {
+      "e001": "context role + 出现偏差/异常 -> E6_change_exception",
+      "e002": "action role + 偏差处理动作 -> P2_execution",
+      "e003": "outcome role + 豁免给予 -> X3_state_change"
+    },
+    "ep_004": {
+      "e001": "context role + 缺口出现 -> E6_change_exception",
+      "e002": "action role + 解决缺口 -> P2_execution",
+      "e003": "outcome role + 缺口解决 -> X3_state_change"
+    },
+    "ep_005": {
+      "e001": "context role + 实施新政策事件 -> E1_event_signal",
+      "e002": "action role + 计划过渡期活动 -> P9_planning",
+      "e003": "outcome role + 具体可交付物 -> X2_product",
+      "e004": "outcome role + 具体可交付物 -> X2_product",
+      "e005": "outcome role + 具体可交付物 -> X2_product"
+    }
+  },
+  "skip_reason": null
+}

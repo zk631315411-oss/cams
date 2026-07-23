@@ -1,0 +1,153 @@
+{
+  "section_id": "CH10-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH10-S02_001",
+      "section_id": "CH10-S02",
+      "card_nature": "assessment",
+      "title": "Emma调查异常交易发现洗钱红旗并识别KYC不足",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "收到异常交易警报",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "召集团队调查",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "发现新买家使用多个账户向同一辖区卖家进行高频低额交易",
+          "evidence_unit_ids": [
+            "v7u_N000771"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "引发洗钱红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000772"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "意识到KYC治理和执行不足",
+          "evidence_unit_ids": [
+            "v7u_N000773"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000771"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000772"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000773"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000770",
+        "v7u_N000771",
+        "v7u_N000772",
+        "v7u_N000773"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：调查异常交易触发（N000770）→召集团队调查（N000770）→发现交易模式（N000771）→引发洗钱红旗（N000772）→意识到KYC不足（N000773）。证据范围：v7u_N000770-773。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅陈述CashBayou因其持有并转换客户资金而需持有MSB牌照，属于静态法规事实，不包含业务处理或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH10-S02_001"
+      ],
+      "reason": "提供调查异常交易的完整流程：从收到警报、展开调查、发现交易模式、引发洗钱红旗到识别KYC不足，元素与关系明确。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅描述审查不足可能导致的潜在风险和服务暂停，属于假设性风险陈述，不构成实际发生的业务流程或判断。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "主要描述支付服务商PaySecure的外部合规要求和沟通，CashBayou方面仅有Emma注意到请求关联的认知动作，未形成独立的程序性或判断性流程，不能支撑一个episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅陈述发卡机构CardGuard的合规标准要求和违约后果，属于外部规则与条件，未描述CashBayou的响应或判断，不构成业务流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context触发事件→E1_event_signal",
+      "e002": "调查性动作，汇集信息→P4_collection",
+      "e003": "识别异常交易模式→P1_assessment",
+      "e004": "形成风险评估结论→P1_assessment",
+      "e005": "形成对KYC不足的结论→X1_classification"
+    }
+  },
+  "skip_reason": null
+}

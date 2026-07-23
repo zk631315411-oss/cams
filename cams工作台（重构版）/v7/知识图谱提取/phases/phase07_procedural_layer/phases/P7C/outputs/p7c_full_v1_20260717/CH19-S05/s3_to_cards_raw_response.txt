@@ -1,0 +1,631 @@
+{
+  "section_id": "CH19-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH19-S05_001",
+      "section_id": "CH19-S05",
+      "card_nature": "assessment",
+      "title": "使用直接目标评定有效性评级",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "FATF expects assessors to use their judgment and experience in determining ratings",
+          "evidence_unit_ids": ["v7u_N001385"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "FATF’s IOs are a starting point to assist assessors in determining effectiveness",
+          "evidence_unit_ids": ["v7u_N001385"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "measures and rates effectiveness using 11 Immediate Outcomes",
+          "evidence_unit_ids": ["v7u_N001383", "v7u_N001385"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "each IO receiving an effectiveness rating of low, moderate, substantial, or high",
+          "evidence_unit_ids": ["v7u_N001383"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001385"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001385"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N001383"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001383", "v7u_N001385"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何根据直接目标确定有效性评级？；证据范围：v7u_N001383, v7u_N001385；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_002",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "低/中有效性评级后的建议与跟踪",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "jurisdictions that FATF rates as having low or moderate effectiveness in IOs",
+          "evidence_unit_ids": ["v7u_N001384"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "FATF provides key recommended actions",
+          "evidence_unit_ids": ["v7u_N001384"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "tracks the jurisdiction's progress in meeting the recommendations",
+          "evidence_unit_ids": ["v7u_N001384"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001384"],
+          "condition": "jurisdiction is rated as having low or moderate effectiveness in IOs",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001384"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001384"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当有效性评级为低或中时，FATF应如何应对？；证据范围：v7u_N001384；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_003",
+      "section_id": "CH19-S05",
+      "card_nature": "assessment",
+      "title": "司法管辖区合规判定的条件",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "jurisdiction can prove compliance to other FATF members",
+          "evidence_unit_ids": ["v7u_N001390"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "jurisdiction is only deemed compliant",
+          "evidence_unit_ids": ["v7u_N001390"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001390"],
+          "condition": "jurisdiction can prove compliance to other FATF members",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001390"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：司法管辖区在何种条件下被视为合规？；证据范围：v7u_N001390；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_004",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "技术审查：分析法律法规",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "assessment team analyzes the jurisdiction’s laws and regulations",
+          "evidence_unit_ids": ["v7u_N001404"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "jurisdiction’s laws and regulations",
+          "evidence_unit_ids": ["v7u_N001404"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001404"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001404"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：评估团队在技术审查阶段做什么？；证据范围：v7u_N001404；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_005",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "范围界定：识别现场访问重点领域",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "assessment team identifies areas of focus for the on-site visit",
+          "evidence_unit_ids": ["v7u_N001405"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "areas of focus for the on-site visit",
+          "evidence_unit_ids": ["v7u_N001405"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001405"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001405"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：评估团队如何确定现场访问的重点？；证据范围：v7u_N001405；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_006",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "现场访问：审查有效性并收集证据",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "On-site visit",
+          "evidence_unit_ids": ["v7u_N001406"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "assessment team travels to the jurisdiction",
+          "evidence_unit_ids": ["v7u_N001406"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "assessment team reviews the effectiveness of AML regulations",
+          "evidence_unit_ids": ["v7u_N001406"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "assessment team collects evidence demonstrating that the jurisdiction’s measures are operational and deliver the right results",
+          "evidence_unit_ids": ["v7u_N001391"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001406"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001406"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N001391"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001391", "v7u_N001406"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：评估团队在现场访问期间如何评估有效性？；证据范围：v7u_N001391, v7u_N001406；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_007",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "起草MER：完成互评估报告",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "finalize mutual evaluation report",
+          "evidence_unit_ids": ["v7u_N001407"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "mutual evaluation report",
+          "evidence_unit_ids": ["v7u_N001407"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001407"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001407"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：评估报告如何定稿？；证据范围：v7u_N001407；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_008",
+      "section_id": "CH19-S05",
+      "card_nature": "assessment",
+      "title": "全体会议讨论与投票评定评级",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "FATF plenary discussion",
+          "evidence_unit_ids": ["v7u_N001409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "findings in the report",
+          "evidence_unit_ids": ["v7u_N001409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FATF plenary discusses the findings",
+          "evidence_unit_ids": ["v7u_N001409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "votes on the ratings",
+          "evidence_unit_ids": ["v7u_N001409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "ratings",
+          "evidence_unit_ids": ["v7u_N001409"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001409"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001409"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N001409"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N001409"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001409"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FATF全体会议如何决定评级？；证据范围：v7u_N001409；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_009",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "最终质量审查：所有司法管辖区在发布前审查报告",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "before publishing",
+          "evidence_unit_ids": ["v7u_N001410"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "all jurisdictions review the report",
+          "evidence_unit_ids": ["v7u_N001410"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001410"],
+          "condition": "before publishing"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001410"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：报告发布前的审查是如何进行的？；证据范围：v7u_N001410；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S05_010",
+      "section_id": "CH19-S05",
+      "card_nature": "execution",
+      "title": "发布与后续：司法管辖区处理问题并加强措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "publication and follow-up",
+          "evidence_unit_ids": ["v7u_N001411"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "jurisdiction addresses issues",
+          "evidence_unit_ids": ["v7u_N001411"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "begins strengthening its AML measures",
+          "evidence_unit_ids": ["v7u_N001411"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001411"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001411"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001411"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：报告发布后司法管辖区应采取什么行动？；证据范围：v7u_N001411；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_002"],
+      "reason": "描述了当IOs有效性评级为低或中时，FATF提供建议和跟踪进展的动作，独立构成触发-响应流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_001"],
+      "reason": "描述了评估者以直接目标为起点、运用判断确定有效性评级的过程，为评级episode提供核心动作和标准。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_003"],
+      "reason": "描述了司法管辖区只有向其他成员证明合规才被视为合规的条件判断，构成独立的判定流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_006"],
+      "reason": "描述了现场访问期间评估团队收集证据的动作，为现场访问episode提供关键证据收集步骤。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_004"],
+      "reason": "描述了技术审查阶段评估团队分析法律法规的动作，独立构成一个审查步骤。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_005"],
+      "reason": "描述了范围界定阶段评估团队识别现场访问重点领域的动作，独立产出重点领域。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_006"],
+      "reason": "描述了现场访问阶段评估团队前往并审查有效性的动作，为现场访问episode提供核心审查动作。"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_007"],
+      "reason": "描述了起草MER阶段最终确定互评估报告的动作，独立产出报告。"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_008"],
+      "reason": "描述了全体会议讨论发现并投票评级的动作，输出评级结果。"
+    },
+    {
+      "candidate_id": "s1c_010",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_009"],
+      "reason": "描述了最终质量审查阶段所有司法管辖区在发布前审查报告的动作。"
+    },
+    {
+      "candidate_id": "s1c_011",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_010"],
+      "reason": "描述了发布与后续阶段司法管辖区处理问题和加强措施的动作。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch19_s05_fatf_rates_effectiveness",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S05_001"],
+      "reason": "描述了FATF使用11项直接目标衡量和评级有效性的程序，为评级episode提供核心动作和评级结果。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e003": "action role + measures and rates effectiveness → P1_assessment (形成有效性评级结论)",
+      "e004": "outcome role + receiving an effectiveness rating → X1_classification"
+    },
+    "ep_002": {
+      "e001": "context role + jurisdictions rated low/moderate → E3_state_threshold (已观察状态触发)",
+      "e002": "action role + provides key recommended actions → P9_planning (规划建议措施)",
+      "e003": "action role + tracks progress → P7_monitoring"
+    },
+    "ep_003": {
+      "e001": "context role + jurisdiction can prove compliance → E3_state_threshold",
+      "e002": "decision role + is only deemed compliant → P1_assessment (判定合规结论)"
+    },
+    "ep_004": {
+      "e001": "action role + analyzes laws → P1_assessment",
+      "e002": "input role → input"
+    },
+    "ep_005": {
+      "e001": "action role + identifies areas of focus → P9_planning (计划步骤)",
+      "e002": "outcome role + areas of focus → X2_product"
+    },
+    "ep_006": {
+      "e001": "context role + On-site visit → E1_event_signal",
+      "e002": "action role + travels → P2_execution",
+      "e003": "action role + reviews effectiveness → P1_assessment",
+      "e004": "action role + collects evidence → P4_collection"
+    },
+    "ep_007": {
+      "e001": "action role + finalize report → P2_execution (执行完成报告动作)",
+      "e002": "outcome role + mutual evaluation report → X2_product"
+    },
+    "ep_008": {
+      "e001": "context role + plenary discussion → E1_event_signal",
+      "e002": "input role → input",
+      "e003": "action role + discusses findings → P1_assessment",
+      "e004": "action role + votes on ratings → P1_assessment (投票形成评级)",
+      "e005": "outcome role + ratings → X1_classification"
+    },
+    "ep_009": {
+      "e001": "context role + before publishing → E5_time_cycle (时间条件触发)",
+      "e002": "action role + review the report → P1_assessment"
+    },
+    "ep_010": {
+      "e001": "context role + publication and follow-up → E1_event_signal",
+      "e002": "action role + addresses issues → P2_execution",
+      "e003": "action role + begins strengthening measures → P2_execution"
+    }
+  },
+  "skip_reason": null
+}

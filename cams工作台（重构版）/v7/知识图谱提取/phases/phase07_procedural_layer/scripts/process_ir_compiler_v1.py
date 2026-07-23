@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import hashlib
 import json
@@ -38,17 +38,19 @@ VALID_DISPOSITIONS = {"mapped", "support_only", "excluded_nonprocedural", "ungra
 VALID_RELATION_KINDS = {"trigger", "sequence", "reference", "produce", "branch", "feedback"}
 VALID_TRIGGER_MODES = {"event", "condition"}
 _EDGE_PROPERTIES = _SCHEMA.get("edge_properties") or {}
-VALID_QUALIFIERS = (
-    {"aimed_to", "may_lead_to", "helps_achieve"}
-    & set(_EDGE_PROPERTIES.get("qualifier_allowed") or [])
-)
-VALID_MODALITIES = set(_EDGE_PROPERTIES.get("modality_allowed") or [])
+_QUALIFIER_CONTRACT = {"aimed_to", "may_lead_to", "helps_achieve"}
+_schema_qualifiers = set(_EDGE_PROPERTIES.get("qualifier_allowed") or [])
+VALID_QUALIFIERS = _QUALIFIER_CONTRACT & _schema_qualifiers if _schema_qualifiers else _QUALIFIER_CONTRACT
+
+_MODALITY_CONTRACT = {"required", "permitted", "prohibited", "risky", "optional"}
+_schema_modalities = set(_EDGE_PROPERTIES.get("modality_allowed") or [])
+VALID_MODALITIES = _MODALITY_CONTRACT & _schema_modalities if _schema_modalities else _MODALITY_CONTRACT
 VALID_RELATION_TYPES = set(_SCHEMA.get("relation_types") or [])
 
 # (kind, source_role, target_role) -> extra_checks or None (None = invalid)
 RELATION_ENDPOINT_MATRIX: dict[tuple[str, str, str], list[str] | None] = {}
 for _src_roles, _tgt_roles, _kinds in [
-    ({"context"}, {"action", "decision"}, ["trigger"]),
+    ({"context", "outcome"}, {"action", "decision"}, ["trigger"]),
     ({"action", "decision", "outcome"}, {"action", "decision", "outcome"}, ["sequence"]),
     ({"action", "decision"}, {"input", "standard"}, ["reference"]),
     ({"action", "decision"}, {"outcome"}, ["produce"]),
@@ -208,13 +210,6 @@ def validate_process_ir_payload(
             else:
                 if role in {"action", "decision"}:
                     has_action_or_decision = True
-                node_type = elem.get("node_type")
-                allowed_types = ROLE_TO_NODE_TYPES.get(role, set())
-                if node_type not in allowed_types:
-                    errors.append(
-                        f"{e_owner} node_type {node_type} incompatible with role {role}; "
-                        f"allowed: {sorted(allowed_types)}"
-                    )
 
             label = elem.get("label")
             if not isinstance(label, str) or not label.strip():
@@ -274,11 +269,10 @@ def validate_process_ir_payload(
                 src_role = elements_by_id[src_el_id].get("role")
                 tgt_role = elements_by_id[tgt_el_id].get("role")
                 key = (kind, src_role, tgt_role)
+                # kind is approximate; S3 determines exact edge_type from source_quote.
+                # Off-matrix combinations are non-fatal — S3 can remap.
                 if key not in RELATION_ENDPOINT_MATRIX:
-                    errors.append(
-                        f"{r_owner} incompatible endpoints: kind={kind}, "
-                        f"source_role={src_role}, target_role={tgt_role}"
-                    )
+                    pass  # non-fatal: S3 corrects based on source_quote
 
             # Kind-specific checks
             if kind == "trigger":
@@ -292,16 +286,16 @@ def validate_process_ir_payload(
 
             if kind == "branch":
                 src_elem = elements_by_id.get(src_el_id, {})
-                if src_elem.get("node_type") != "P3_branch_routing":
-                    errors.append(f"{r_owner} branch source must have node_type=P3_branch_routing")
+                if src_elem.get("role") != "decision":
+                    errors.append(f"{r_owner} branch source must have role=decision")
                 if not isinstance(rel.get("condition"), str) or not rel["condition"].strip():
                     errors.append(f"{r_owner} branch requires non-empty condition")
                 p3_branch_counts[src_el_id] = p3_branch_counts.get(src_el_id, 0) + 1
 
             if kind == "produce":
                 src_elem = elements_by_id.get(src_el_id, {})
-                if src_elem.get("node_type") == "P3_branch_routing":
-                    errors.append(f"{r_owner} P3_branch_routing must use branch kind, not produce")
+                if src_elem.get("role") == "decision" and p3_branch_counts.get(src_el_id, 0) >= 2:
+                    errors.append(f"{r_owner} decision element with >=2 branch relations should use branch kind, not produce")
 
             if kind == "feedback":
                 if not isinstance(rel.get("condition"), str) and rel.get("condition") is not None:
@@ -327,12 +321,9 @@ def validate_process_ir_payload(
                         errors.append(f"{r_owner} evidence_unit_ids references out-of-section unit {unit_id}")
 
             source_quote = rel.get("source_quote")
-            if source_quote is not None:
-                if not isinstance(source_quote, str) or not source_quote.strip():
-                    errors.append(f"{r_owner} source_quote must be a non-empty string when present")
-                elif unit_evidence_text is None:
-                    errors.append(f"{r_owner} source_quote cannot be validated without unit evidence text")
-                else:
+            if not isinstance(source_quote, str) or not source_quote.strip():
+                errors.append(f"{r_owner} source_quote is required and must be a non-empty string")
+            elif unit_evidence_text is not None:
                     quote_norm = _normalized_text(source_quote)
                     cited_text = " ".join(
                         str(unit_evidence_text.get(str(unit_id), ""))
@@ -354,23 +345,26 @@ def validate_process_ir_payload(
                 if forbidden in rel and rel[forbidden] is not None:
                     errors.append(f"{r_owner} must not declare {forbidden}")
 
-        # Check each P3 independently; aggregate episode counts can hide one-branch P3 nodes.
-        p3_elements = [eid for eid, el in elements_by_id.items() if el.get("node_type") == "P3_branch_routing"]
-        for p3_id in p3_elements:
-            branch_count = p3_branch_counts.get(p3_id, 0)
-            if branch_count < 2:
+        # Check each decision element with branch relations independently;
+        # aggregate episode counts can hide one-branch nodes.
+        decision_elements = [eid for eid, el in elements_by_id.items() if el.get("role") == "decision"]
+        for d_id in decision_elements:
+            branch_count = p3_branch_counts.get(d_id, 0)
+            if branch_count == 1:
                 errors.append(
-                    f"{owner} P3_branch_routing element {p3_id} has only "
-                    f"{branch_count} branch relation(s), need >=2"
+                    f"{owner} decision element {d_id} has only "
+                    f"{branch_count} branch relation(s), need >=2 (or none)"
                 )
 
         # Check evidence within source_candidate_ids union
         if src_ids:
             src_unit_union = _source_candidate_unit_union(s1_index, src_ids)
+            episode_evidence_units: set[str] = set()
             for ei, elem in enumerate(elements, 1):
                 if not isinstance(elem, dict):
                     continue
                 for unit_id in (elem.get("evidence_unit_ids") or []):
+                    episode_evidence_units.add(str(unit_id))
                     if str(unit_id) not in src_unit_union:
                         errors.append(
                             f"{owner}.elements[{ei}] evidence unit {unit_id} "
@@ -380,11 +374,22 @@ def validate_process_ir_payload(
                 if not isinstance(rel, dict):
                     continue
                 for unit_id in (rel.get("evidence_unit_ids") or []):
+                    episode_evidence_units.add(str(unit_id))
                     if str(unit_id) not in src_unit_union:
                         errors.append(
                             f"{owner}.relations[{ri}] evidence unit {unit_id} "
                             f"outside source_candidate_ids unit union"
                         )
+            for src_id in (str(value) for value in src_ids):
+                candidate_units = {
+                    str(value)
+                    for value in (s1_index.get(src_id, {}).get("unit_ids") or [])
+                }
+                if candidate_units and not (candidate_units & episode_evidence_units):
+                    errors.append(
+                        f"{owner} source candidate {src_id} contributes no evidence unit "
+                        "to the episode"
+                    )
 
         # Connectivity check (ignoring direction)
         if element_ids:
@@ -501,192 +506,78 @@ def validate_process_ir_payload(
     return errors
 
 
-def compile_process_ir_to_cards(
+def generate_compile_audit(
     process_ir: dict[str, Any],
+    cards_payload: dict[str, Any],
     section_id: str,
-    section_title: str = "",
 ) -> dict[str, Any]:
-    """Deterministically compile a validated Process IR into P7C cards.
+    """Generate compile_audit from Process IR + S3 cards output.
 
-    Returns a dict with keys:
-        cards: list of p7_card objects
-        compile_audit: list of compile audit entries
-        source_process_ir_sha256: str
+    Maps IR elements to card nodes for traceability. S3 LLM is responsible
+    for node_type assignment and ID generation; this function only records
+    the mapping for downstream P7D traceability.
     """
     ir_json = json.dumps(process_ir, ensure_ascii=False, sort_keys=True)
     source_hash = hashlib.sha256(ir_json.encode("utf-8")).hexdigest()
 
     episodes = process_ir.get("episodes") or []
-    candidate_audit = process_ir.get("candidate_audit") or []
+    cards = cards_payload.get("cards") or []
 
-    cards: list[dict[str, Any]] = []
     compile_entries: list[dict[str, Any]] = []
 
-    for ep_idx, ep in enumerate(episodes, 1):
+    for ep_idx, ep in enumerate(episodes):
         if not isinstance(ep, dict):
             continue
-        episode_id = ep.get("episode_id", f"ep_{ep_idx:03d}")
-        card_id = f"p7card_{section_id}_{ep_idx:03d}"
+        episode_id = ep.get("episode_id", "")
+        card = cards[ep_idx] if ep_idx < len(cards) else {}
 
         elements = ep.get("elements") or []
-        relations = ep.get("relations") or []
-
-        # Stable element → node mapping
+        card_nodes = (card.get("flow_nodes") or []) if isinstance(card, dict) else []
         element_node_map: dict[str, str] = {}
-        sorted_elements = sorted(elements, key=lambda e: str(e.get("element_id", "")))
-        nodes: list[dict[str, Any]] = []
-        for ni, elem in enumerate(sorted_elements, 1):
-            if not isinstance(elem, dict):
+        for ir_elem in elements:
+            if not isinstance(ir_elem, dict):
                 continue
-            node_id = f"n{ni:03d}"
-            element_node_map[str(elem.get("element_id", ""))] = node_id
-            node_type = elem.get("node_type", "")
-            node_category = _infer_node_category(node_type)
-            node: dict[str, Any] = {
-                "node_id": node_id,
-                "node_category": node_category,
-                "node_type": node_type,
-                "label": elem.get("label", ""),
-                "evidence_unit_ids": list(elem.get("evidence_unit_ids") or []),
-                "evidence_strength": "explicit",
-            }
-            if elem.get("modality"):
-                node["modality"] = elem["modality"]
-            nodes.append(node)
+            eid = ir_elem.get("element_id", "")
+            elabel = ir_elem.get("label", "")
+            for node in card_nodes:
+                if isinstance(node, dict) and node.get("label") == elabel:
+                    element_node_map[str(eid)] = str(node.get("node_id", ""))
+                    break
 
-        # Stable relation → edge mapping
+        relations = ep.get("relations") or []
+        card_edges = (card.get("flow_edges") or []) if isinstance(card, dict) else []
         relation_edge_map: dict[str, str] = {}
-        sorted_relations = sorted(relations, key=lambda r: str(r.get("relation_id", "")))
-        edges: list[dict[str, Any]] = []
-        for ei, rel in enumerate(sorted_relations, 1):
-            if not isinstance(rel, dict):
+        for ir_rel in relations:
+            if not isinstance(ir_rel, dict):
                 continue
-            edge_id = f"edge_{ei:03d}"
-            relation_edge_map[str(rel.get("relation_id", ""))] = edge_id
-
-            kind = rel.get("kind", "")
-            edge_type = KIND_TO_EDGE_TYPE.get(kind, "PRECEDES")
-
-            # Resolve source/target based on kind
-            src_el_id, tgt_el_id = _resolve_endpoints(rel, kind)
-            src_node_id = element_node_map.get(src_el_id, "")
-            tgt_node_id = element_node_map.get(tgt_el_id, "")
-
-            # For REFERENCES, enforce process→auxiliary direction
-            if edge_type == "REFERENCES":
-                pass  # Already process→auxiliary by contract
-
-            edge: dict[str, Any] = {
-                "edge_id": edge_id,
-                "edge_type": edge_type,
-                "source": src_node_id,
-                "target": tgt_node_id,
-                "evidence_unit_ids": list(rel.get("evidence_unit_ids") or []),
-            }
-
-            if rel.get("condition"):
-                edge["condition"] = rel["condition"]
-            if rel.get("relation_type"):
-                edge["relation_type"] = rel["relation_type"]
-            if rel.get("qualifier"):
-                edge["qualifier"] = rel["qualifier"]
-            if rel.get("source_quote"):
-                edge["source_quote"] = rel["source_quote"]
-            edges.append(edge)
-
-        # Aggregate evidence
-        source_unit_ids_set: set[str] = set()
-        for node in nodes:
-            for uid in node.get("evidence_unit_ids") or []:
-                source_unit_ids_set.add(str(uid))
-        for edge in edges:
-            for uid in edge.get("evidence_unit_ids") or []:
-                source_unit_ids_set.add(str(uid))
-
-        source_unit_ids = sorted(source_unit_ids_set)
-
-        # Build review_notes
-        review_notes = (
-            f"局部命题：{ep.get('focal_question', '')}；"
-            f"证据范围：{len(source_unit_ids)}个unit；"
-            f"可支持判断：{ep.get('title', '')}；"
-            f"待P7D逐边审核。"
-        )
-
-        card: dict[str, Any] = {
-            "card_id": card_id,
-            "section_id": section_id,
-            "card_nature": ep.get("card_nature", "assessment"),
-            "title": ep.get("title", ""),
-            "flow_nodes": nodes,
-            "flow_edges": edges,
-            "source_unit_ids": source_unit_ids,
-            "candidate_status": "candidate",
-            "review_notes": review_notes,
-        }
-
-        cards.append(card)
+            rid = ir_rel.get("relation_id", "")
+            kind = ir_rel.get("kind", "")
+            src_el_id, tgt_el_id = _resolve_endpoints(ir_rel, kind)
+            src_node = element_node_map.get(src_el_id, "")
+            tgt_node = element_node_map.get(tgt_el_id, "")
+            for edge in card_edges:
+                if (isinstance(edge, dict)
+                        and edge.get("source") == src_node
+                        and edge.get("target") == tgt_node):
+                    relation_edge_map[str(rid)] = str(edge.get("edge_id", ""))
+                    break
 
         compile_entries.append({
             "episode_id": episode_id,
-            "card_id": card_id,
+            "card_id": card.get("card_id", "") if isinstance(card, dict) else "",
             "element_node_map": element_node_map,
             "relation_edge_map": relation_edge_map,
-            "compile_status": "compiled",
-            "errors": [],
+            "compile_status": "traced" if card else "unmatched",
+            "errors": [] if card else ["no matching card found for episode"],
         })
 
-    # Build coverage_audit from candidate_audit
-    coverage_audit: list[dict[str, Any]] = []
-    for audit in candidate_audit:
-        if not isinstance(audit, dict):
-            continue
-        disp = audit.get("disposition", "")
-        # Map disposition to legacy decision
-        if disp == "mapped":
-            decision = "p7c_card"
-        elif disp == "support_only":
-            decision = "p7c_card"
-        elif disp == "excluded_nonprocedural":
-            decision = "kg_only"
-        elif disp == "ungraphable":
-            decision = "p7c_ungraphable"
-        else:
-            decision = "kg_only"
-
-        entry: dict[str, Any] = {
-            "candidate_id": audit.get("candidate_id"),
-            "decision": decision,
-            "card_ids": [],
-            "reason": audit.get("reason", ""),
-        }
-        # Map episode_ids to card_ids
-        for epid in (audit.get("episode_ids") or []):
-            for ce in compile_entries:
-                if ce.get("episode_id") == epid:
-                    entry["card_ids"].append(ce["card_id"])
-        coverage_audit.append(entry)
-
-    compile_audit: dict[str, Any] = {
+    return {
         "section_id": section_id,
         "compiler_version": COMPILER_VERSION,
         "source_process_ir_sha256": source_hash,
         "episodes": compile_entries,
     }
 
-    cards_payload: dict[str, Any] = {
-        "section_id": section_id,
-        "section_title": section_title,
-        "coverage_audit": coverage_audit,
-        "cards": cards,
-        "skip_reason": process_ir.get("skip_reason"),
-    }
-
-    return {
-        "cards_payload": cards_payload,
-        "compile_audit": compile_audit,
-        "source_process_ir_sha256": source_hash,
-    }
 
 
 def _is_valid_id(value: str, prefix: str) -> bool:

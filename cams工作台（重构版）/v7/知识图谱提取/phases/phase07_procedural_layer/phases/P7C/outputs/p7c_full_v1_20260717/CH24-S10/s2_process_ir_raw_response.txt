@@ -1,0 +1,326 @@
+{
+  "section_id": "CH24-S10",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "监管机构如何决定是否授予ART发行许可证？",
+      "title": "依据设立地、声誉、AFC计划和风险因素决定ART许可",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "实体意图发行ART（需获得许可证）",
+          "evidence_unit_ids": ["v7u_N001838"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "监管机构决定是否授予ART许可证",
+          "evidence_unit_ids": ["v7u_N001839", "v7u_N001840", "v7u_N001841"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "实体在欧盟设立",
+          "evidence_unit_ids": ["v7u_N001839"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "standard",
+          "label": "股东和董事声誉良好且无金融犯罪定罪",
+          "evidence_unit_ids": ["v7u_N001840"],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "standard",
+          "label": "实体拥有有效的AFC计划",
+          "evidence_unit_ids": ["v7u_N001840"],
+          "modality": null
+        },
+        {
+          "element_id": "e006",
+          "role": "standard",
+          "label": "业务模式不存在严重金融犯罪风险且AFC计划无缺陷",
+          "evidence_unit_ids": ["v7u_N001841"],
+          "modality": null
+        },
+        {
+          "element_id": "e007",
+          "role": "outcome",
+          "label": "授予ART许可证",
+          "evidence_unit_ids": ["v7u_N001839"],
+          "modality": null
+        },
+        {
+          "element_id": "e008",
+          "role": "outcome",
+          "label": "应拒绝ART许可证",
+          "evidence_unit_ids": ["v7u_N001841"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001838"],
+          "source_quote": "To issue ARTs, MiCA requires the party to obtain a license."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001839"],
+          "source_quote": "the EU only grants licenses to firms established in the EU"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e004",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001840"],
+          "source_quote": "The firm should have qualified shareholders and directors that are of good repute and do not have convictions of financial crime offenses."
+        },
+        {
+          "relation_id": "r004",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e005",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001840"],
+          "source_quote": "The firm should also have an effective AFC program."
+        },
+        {
+          "relation_id": "r005",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e006",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001841"],
+          "source_quote": "If the firm’s business model exposes the firm or the sector to serious financial crime risks or demonstrates deficiencies in the AFC program, the relevant regulatory body should reject the license."
+        },
+        {
+          "relation_id": "r006",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e007",
+          "condition": "实体在欧盟设立，且业务模式无严重金融犯罪风险且AFC计划无缺陷",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001839", "v7u_N001841"],
+          "source_quote": "the EU only grants licenses to firms established in the EU; If the firm’s business model ... the relevant regulatory body should reject the license. (隐含正面情况授予)"
+        },
+        {
+          "relation_id": "r007",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e008",
+          "condition": "实体不在欧盟设立，或业务模式存在严重金融犯罪风险或AFC计划存在缺陷",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001839", "v7u_N001841"],
+          "source_quote": "the EU only grants licenses to firms established in the EU; If the firm’s business model exposes the firm or the sector to serious financial crime risks or demonstrates deficiencies in the AFC program, the relevant regulatory body should reject the license."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "VASP如何决定是否接受加密资产上市交易？",
+      "title": "评估加密资产上市请求并决定是否接受",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "收到加密资产上市交易请求",
+          "evidence_unit_ids": ["v7u_N001842"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "评估技术方案的可靠性、发行人及其开发团队声誉以及加密资产的潜在风险",
+          "evidence_unit_ids": ["v7u_N001842"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "加密资产不具有内置匿名功能，或VASP能识别代币持有人及其交易历史",
+          "evidence_unit_ids": ["v7u_N001843"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "decision",
+          "label": "决定是否接受上市交易",
+          "evidence_unit_ids": ["v7u_N001843"],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "接受加密资产上市交易",
+          "evidence_unit_ids": ["v7u_N001843"],
+          "modality": null
+        },
+        {
+          "element_id": "e006",
+          "role": "outcome",
+          "label": "应拒绝加密资产上市交易",
+          "evidence_unit_ids": ["v7u_N001843"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001842"],
+          "source_quote": "When receiving a request for admission to trading, VASPs must assess the reliability of the technical solutions, the reputation of the issuer and its development team, and the potential risks linked to the cryptoasset."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "before_element_id": "e002",
+          "after_element_id": "e004",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001842", "v7u_N001843"],
+          "source_quote": "VASPs must assess ... VASPs should reject ... (评估后做出决定)"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001843"],
+          "source_quote": "VASPs should reject admission to trading cryptoassets with inbuilt anonymization functions unless they can identify the token holders and their transaction history."
+        },
+        {
+          "relation_id": "r004",
+          "kind": "branch",
+          "decision_element_id": "e004",
+          "target_element_id": "e005",
+          "condition": "加密资产不具有内置匿名功能，或VASP能识别持有人及交易历史",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001843"],
+          "source_quote": "VASPs should reject admission to trading cryptoassets with inbuilt anonymization functions unless they can identify the token holders and their transaction history."
+        },
+        {
+          "relation_id": "r005",
+          "kind": "branch",
+          "decision_element_id": "e004",
+          "target_element_id": "e006",
+          "condition": "加密资产具有内置匿名功能且VASP无法识别持有人及交易历史",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001843"],
+          "source_quote": "VASPs should reject admission to trading cryptoassets with inbuilt anonymization functions unless they can identify the token holders and their transaction history."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_005"],
+      "focal_question": "VASP如何应对市场滥用可疑行为？",
+      "title": "VASP监测市场滥用并报告可疑订单或交易",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "对某一订单或交易产生合理怀疑",
+          "evidence_unit_ids": ["v7u_N001845"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "立即向相关监管机构报告",
+          "evidence_unit_ids": ["v7u_N001845"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001845"],
+          "source_quote": "VASPs must have controls to prevent and detect market abuse and immediately report reasonable suspicions about an order or transaction to the relevant regulatory authority."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅描述MiCA关于VASP处理加密资产的一般义务，未包含具体的业务程序或判断，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅描述MiCA限制EMT发行主体的静态规则，未提供决策或行动流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选描述ART发行许可证的授予或拒绝流程，包含许可条件、风险评估和分支判断。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选描述VASP评估加密资产上市请求并根据匿名功能等标准决定接受或拒绝的流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "该候选描述VASP在发现市场滥用可疑行为时立即向监管机构报告的流程。"
+    }
+  ],
+  "skip_reason": null
+}

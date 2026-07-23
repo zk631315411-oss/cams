@@ -1,0 +1,186 @@
+{
+  "section_id": "CH41-S12",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S12_001",
+      "section_id": "CH41-S12",
+      "card_nature": "execution",
+      "title": "基于报告义务和涉嫌风险需批准终止客户关系",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "涉嫌非法活动或不合规风险",
+          "evidence_unit_ids": ["v7u_N003008"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "报告义务",
+          "evidence_unit_ids": ["v7u_N003008"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织可能需要获得批准才能终止客户关系",
+          "evidence_unit_ids": ["v7u_N003008"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e003",
+          "condition": "因涉嫌非法活动或不合规风险",
+          "evidence_unit_ids": ["v7u_N003008"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "e003",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N003008"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003008"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于报告义务和涉嫌非法活动或不合规风险，组织需要批准才能终止客户关系；证据范围：v7u_N003008；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S12_002",
+      "section_id": "CH41-S12",
+      "card_nature": "assessment",
+      "title": "风险偏好不匹配导致的客户退出逐案审查与决定",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "因风险偏好不匹配导致的客户退出",
+          "evidence_unit_ids": ["v7u_N003009"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "应逐案审查并决定",
+          "modality": "required",
+          "evidence_unit_ids": ["v7u_N003009"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "因风险偏好不匹配",
+          "evidence_unit_ids": ["v7u_N003009"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003009"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：因风险偏好不匹配导致客户退出，应逐案审查并决定；证据范围：v7u_N003009；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S12_003",
+      "section_id": "CH41-S12",
+      "card_nature": "execution",
+      "title": "通过动态措施和技术增强反金融犯罪控制并符合义务",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施动态风险措施并利用先进技术",
+          "evidence_unit_ids": ["v7u_N003010"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "增强反金融犯罪控制",
+          "evidence_unit_ids": ["v7u_N003010"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "符合国际反金融犯罪义务",
+          "evidence_unit_ids": ["v7u_N003010"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N003010"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N003010"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003010"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：通过实施动态风险措施并利用先进技术，增强反金融犯罪控制并符合国际义务；证据范围：v7u_N003010；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S12_001"],
+      "reason": "提供了基于报告义务和涉嫌非法活动/不合规风险下，组织需获取批准才能终止客户关系的流程要素。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S12_002"],
+      "reason": "提供了风险偏好不匹配导致的客户退出应逐案审查并决定的流程要素。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s12_afc_enhance",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S12_003"],
+      "reason": "提供了通过实施动态措施和技术，增强反金融犯罪控制并符合国际义务的动作和结果关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "触发事件，涉嫌非法活动或不合规风险，属于业务事件信号 → E1_event_signal",
+      "e002": "报告义务是执行动作需参考的标准 → standard",
+      "e003": "获取批准并终止客户关系，属于执行动作 → P2_execution"
+    },
+    "ep_002": {
+      "e001": "触发事件，风险偏好不匹配导致客户退出，属于事件信号 → E1_event_signal",
+      "e002": "逐案审查决定，属于评估和判断风险适宜性 → P1_assessment"
+    },
+    "ep_003": {
+      "e001": "实施措施和利用技术，执行动作 → P2_execution",
+      "e002": "增强控制，能力提升，属于状态变化 → X3_state_change",
+      "e003": "符合义务，达成合规状态 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

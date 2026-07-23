@@ -1,0 +1,277 @@
+{
+  "section_id": "CH24-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "美联储如何因富国银行制裁合规不足处以罚款？",
+      "title": "美联储因富国银行制裁政策和程序不足处以罚款",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "Wells Fargo 提供了贸易金融软件平台，外国银行使用该平台进行涉及美国制裁方的交易",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "美国制裁法律法规",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "decision",
+          "label": "美联储认定 Wells Fargo 的政策和程序不足以确保遵守美国制裁法，导致违规交易",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "美联储对 Wells Fargo 处以 67.8 million 罚款",
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "source_quote": "In March of 2023, the Federal Reserve Board imposed a US$67.8 million fine on Wells Fargo for providing a trade finance software platform to a foreign bank. The foreign bank used the platform to conduct transactions involving parties subject to US sanctions. The Federal Reserve Board concluded that Wells Fargo had insufficient policies and procedures to ensure compliance with US sanctions laws, leading to transactions that violated these regulations."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "source_quote": "The Federal Reserve Board concluded that Wells Fargo had insufficient policies and procedures to ensure compliance with US sanctions laws."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e003",
+          "outcome_element_id": "e004",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001762"
+          ],
+          "source_quote": "The Federal Reserve Board imposed a US$67.8 million fine on Wells Fargo for providing a trade finance software platform... concluded that Wells Fargo had insufficient policies and procedures... leading to transactions that violated these regulations."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "SEC如何因富国银行附属机构多收费用而采取执法行动？",
+      "title": "SEC因富国银行附属机构多收费用指控并处罚",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "某些财务顾问同意降低咨询费但未录入计费系统，导致客户被多收费用",
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "SEC调查并发现多收费用行为",
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "SEC指控富国银行附属机构多收超过10,900个投资顾问账户费用，超额逾26.8 million",
+          "evidence_unit_ids": [
+            "v7u_N001763"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "富国银行代表附属机构同意支付35 million民事罚款以解决指控",
+          "evidence_unit_ids": [
+            "v7u_N001765"
+          ],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001764"
+          ],
+          "source_quote": "The SEC's investigation revealed that certain financial advisers had agreed to reduce advisory fees for clients, but did not enter the reductions into the billing system."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001763",
+            "v7u_N001764"
+          ],
+          "source_quote": "In August of 2023, the SEC charged two non-bank affiliates of Wells Fargo... for overcharging... The SEC's investigation revealed that certain financial advisers had agreed to reduce advisory fees for clients, but did not enter the reductions into the billing system."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "sequence",
+          "before_element_id": "e003",
+          "after_element_id": "e004",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001763",
+            "v7u_N001765"
+          ],
+          "source_quote": "In August of 2023, the SEC charged... Wells Fargo consented to pay a US$35 million civil penalty to resolve the issue on behalf of its affiliates."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "OCC如何因富国银行反洗钱控制缺陷发出执法行动？",
+      "title": "OCC因富国银行金融犯罪风险管理和反洗钱控制缺陷发出执法行动",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "富国银行在可疑活动报告、货币交易报告、客户尽职调查和客户身份识别项目等方面存在缺陷",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "OCC对富国银行发出执法行动，正式协议指出具体缺陷",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "富国银行在向中高风险新业务扩展前必须获得OCC批准",
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "source_quote": "In September of 2024, the OCC issued an enforcement action against Wells Fargo, identifying deficiencies in the bank's financial crimes risk management and AML controls. The OCC's formal agreement highlighted issues in areas such as suspicious activity reporting, currency transaction reporting, CDD, and customer identification programs."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001766"
+          ],
+          "source_quote": "While the OCC did not impose monetary penalties, the agreement required Wells Fargo to obtain OCC approval before expanding into new products or services in areas of moderate or high risk."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选独立支持程序性关系：美联储认定富国银行制裁合规不足，并处以罚款，构成有判断和行动的业务流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选独立支持程序性关系：SEC调查发现多收费行为，随后指控并导致罚款，构成完整的执法行动流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选独立支持程序性关系：OCC识别反洗钱控制缺陷，发出执法行动并要求业务扩张前审批，构成有判断和要求的业务流程。"
+    }
+  ],
+  "skip_reason": null
+}

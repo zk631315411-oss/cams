@@ -1,0 +1,324 @@
+{
+  "section_id": "CH26-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH26-S03_001",
+      "section_id": "CH26-S03",
+      "card_nature": "assessment",
+      "title": "依据设立地和业务活动判定GDPR适用范围及分支适用要求",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "确定是否属于GDPR适用范围",
+          "evidence_unit_ids": [
+            "v7u_N002046"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "在EU/EEA设立",
+          "evidence_unit_ids": [
+            "v7u_N002046"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "向EU/EEA数据主体提供商品/服务或监控其行为",
+          "evidence_unit_ids": [
+            "v7u_N002046"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "适用GDPR于所有数据主体",
+          "evidence_unit_ids": [
+            "v7u_N002047"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "适用GDPR于位于EU/EEA的数据主体",
+          "evidence_unit_ids": [
+            "v7u_N002048"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002046"
+          ],
+          "source_quote": "To fall within the scope of the GDPR, an organization must fall into one of two categories: the organization is established in the EU and EEA, or offers goods or services to, or monitors the behavior of, data subjects in the EU and EEA."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N002046"
+          ],
+          "source_quote": "To fall within the scope of the GDPR, an organization must fall into one of two categories: the organization is established in the EU and EEA, or offers goods or services to, or monitors the behavior of, data subjects in the EU and EEA."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "e001",
+          "target": "e004",
+          "condition": "组织在EU/EEA设立",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N002047"
+          ],
+          "source_quote": "If the organization is established in the EU and EEA, it must apply GDPR rights and protections to the personal data of data subjects irrespective of their location."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "e001",
+          "target": "e005",
+          "condition": "组织未在EU/EEA设立但向EU/EEA数据主体提供商品/服务或监控其行为",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N002048"
+          ],
+          "source_quote": "If the organization is not established in the EU or EEA, it is required to apply GDPR rights and protections to the personal data of data subjects located in the EU and EEA."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002046",
+        "v7u_N002047",
+        "v7u_N002048"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据组织设立地和业务活动判定GDPR适用范围，并依据不同条件分支至全域适用或区域适用；证据范围：v7u_N002046, v7u_N002047, v7u_N002048；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S03_002",
+      "section_id": "CH26-S03",
+      "card_nature": "execution",
+      "title": "依据传输目标管辖区保护充分性触发数据传输机制要求",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "向EU/EEA外保护不足的司法管辖区传输个人数据",
+          "evidence_unit_ids": [
+            "v7u_N002052"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施数据传输机制",
+          "evidence_unit_ids": [
+            "v7u_N002052"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "存在向EU/EEA外被欧委会认定保护不足的司法管辖区传输个人数据的情况",
+          "evidence_unit_ids": [
+            "v7u_N002052"
+          ],
+          "source_quote": "Data transfer mechanisms must be in place when there is a transfer of personal data outside the EU and EEA to a jurisdiction whose data protection practices have been deemed inadequate by the European Commission."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002052"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当存在向评估为保护不足的管辖区传输个人数据的情况时，触发必须实施数据传输机制的要求；证据范围：v7u_N002052；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S03_003",
+      "section_id": "CH26-S03",
+      "card_nature": "execution",
+      "title": "发生个人数据违规后通知监管机构",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "个人数据违规发生",
+          "evidence_unit_ids": [
+            "v7u_N002053"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通知相关监管机构",
+          "evidence_unit_ids": [
+            "v7u_N002053"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002053"
+          ],
+          "source_quote": "Organizations are required to notify the relevant supervisory authority of a breach without undue delay, appoint a data protection office in certain circumstances, create and maintain appropriate data protection impact assessments."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002053"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：个人数据违规事件发生后，组织必须及时通知监管机构；证据范围：v7u_N002053；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S03_004",
+      "section_id": "CH26-S03",
+      "card_nature": "execution",
+      "title": "告知数据主体处理个人数据的合法理由",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "告知数据主体合法理由",
+          "evidence_unit_ids": [
+            "v7u_N002056"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "合法理由（同意、合同义务等）",
+          "evidence_unit_ids": [
+            "v7u_N002056"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002056"
+          ],
+          "source_quote": "Organizations must inform data subjects that one or more of the following lawful reasons exist: consent, contractual obligation, legal obligation, public interest, vital interests, or legitimate interests."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002056"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：处理个人数据时，组织必须参照合法理由清单告知数据主体；证据范围：v7u_N002056；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH26-S03_001"
+      ],
+      "reason": "该候选明确支持依据设立地和业务活动判定GDPR适用范围并由条件分支至不同适用要求的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH26-S03_002"
+      ],
+      "reason": "该候选明确支持以跨境传输至保护不足管辖区为条件触发强制实施数据传输机制的流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH26-S03_003"
+      ],
+      "reason": "“通知监管机构”义务可建模为由违规事件触发的程序性流程；任命数据保护官和影响评估因缺乏明确触发条件而未建模。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "仅描述侵权类型与罚款级别的静态对应结果，不包含机构内部的业务处理或判断流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH26-S03_004"
+      ],
+      "reason": "该候选支持告知数据主体合法理由的业务动作，并引用合法理由清单作为输入，构成程序性关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "decision role + 2 branch relations → P3_branch_routing",
+      "e002": "standard role → standard",
+      "e003": "standard role → standard",
+      "e004": "action role + required modality → P2_execution",
+      "e005": "action role + required modality → P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role + condition trigger → E3_state_threshold",
+      "e002": "action role → P2_execution"
+    },
+    "ep_003": {
+      "e001": "context role + event trigger → E1_event_signal",
+      "e002": "action role → P2_execution"
+    },
+    "ep_004": {
+      "e001": "action role → P2_execution",
+      "e002": "input role → input"
+    }
+  },
+  "skip_reason": null
+}

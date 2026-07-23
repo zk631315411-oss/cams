@@ -18,8 +18,8 @@
 - 页级中英对齐文本：`../work/sources/v7_page_aligned_text.json`
 - MinerU block 页码回填：`../work/sources/v7_mineru_block_page_matches.json`
 - MinerU 质量报告：`../work/audit/v7_mineru_quality_report.md`
-- 中文 MinerU 合并版：`D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\v7_zh_mineru_merged.md`
-- 英文 MinerU 合并版：`D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\v7_en_mineru_merged.md`
+- 中文 MinerU 合并版：`D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\中文\v7_zh_mineru_merged.md`
+- 英文 MinerU 合并版：`D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\英文\v7_en_mineru_merged.md`
 
 来源准备脚本：
 

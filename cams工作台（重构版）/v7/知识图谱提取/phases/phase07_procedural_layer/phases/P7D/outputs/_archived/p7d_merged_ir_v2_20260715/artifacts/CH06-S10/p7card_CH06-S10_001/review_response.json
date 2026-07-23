@@ -1,0 +1,284 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_001",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000488 提及“审查所有权结构”（reviewing ownership structures），支持源节点“审查所有权结构”的存在。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 指明识别 UBO 需要同时考虑直接和间接持股，这必然包括合计比例，支持目标节点“合计直接和间接持股比例”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "审查所有权结构是触发识别 UBO 的背景活动，而合计持股比例是实现识别所必需的步骤；交换方向会违反必要功能依赖，因此审查→合计的方向合理。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边中的条件“审查所有权结构时”直接取自 v7u_N000488 的“When reviewing ownership structures”，原文明确支持。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边表达的是义务驱动的先后关系，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000488",
+        "v7u_N000493"
+      ],
+      "source_quotes": [
+        "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer.",
+        "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership."
+      ],
+      "reason": "审查所有权结构是触发识别行动的事件，识别需合计持股比例，两者存在功能上的先后依赖，但原文并未明示严格的时间顺序，故判断为 llm_inference，推荐人工复核。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 和后续实例支持“合计直接和间接持股比例”这一过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 指示需要识别直接和间接持股，v7u_N000494、v7u_N000495 的实例提供了具体持股数据，支持目标节点“直接和间接持股数据”。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "合计持股比例的过程必然参照具体的持股数据，逻辑上 n002→n003 的方向成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这是过程对数据的参照，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000493",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "you need to identify indirect ownership stakes in addition to direct ownership",
+        "Individual D owns 10%... also 72% indirectly",
+        "Individual C... owns 10%... additional 8% indirectly"
+      ],
+      "reason": "文本指示需识别直接和间接持股，并给出持股数据实例，说明合计过程必然依赖这些数据，但原文未直接使用“参照”一词，推理为 llm_inference。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 等支持源节点“合计直接和间接持股比例”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 明确给出 25% 或以上的阈值，支持目标节点“受益所有权识别阈值（通常为25%或以上）”。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "合计持股比例只是计算步骤，无需参照阈值；原文无任何证据表明合计过程使用了阈值，阈值是后续判断步骤的比较标准。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "并非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489"
+      ],
+      "source_quotes": [
+        "most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more"
+      ],
+      "reason": "合计持股比例与识别阈值之间不存在参照关系，阈值的作用域在判断步骤而不在计算步骤，边缺乏依据，予以拒绝。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000493 至 v7u_N000495 支持合计持股比例这一过程。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 和 v7u_N000495 的实例隐式展示了“判断合计持股比例是否达到阈值”这一步骤。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "必须先合计持股比例才能进行阈值判断，交换方向违反功能依赖，n002→n005 的方向成立。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "Individual D is then considered a UBO with 82% shareholding",
+        "Individual C... is not a UBO"
+      ],
+      "reason": "实例表明先有持股比例的合计，再有是否达到阈值的判断，顺序符合逻辑，但非原文明示，为 llm_inference。"
+    },
+    {
+      "edge_id": "edge_005",
+      "derivation": "llm_inference",
+      "llm_recommendation": "pending",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 和 v7u_N000495 的实例支持“判断合计持股比例是否达到阈值”。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000489 规定了阈值，支持目标节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断是否达到阈值必须参照阈值标准，n005→n004 的方向合理。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "不是并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000489",
+        "v7u_N000494",
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "threshold of 25% or more",
+        "Individual D ... is then considered a UBO",
+        "Individual C ... is not a UBO"
+      ],
+      "reason": "实例中的判断明显以阈值为依据，但原文未直接写明判断时引用阈值，推理为 llm_inference。"
+    },
+    {
+      "edge_id": "edge_006",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 和 v7u_N000495 支持存在判断步骤。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 明确陈述“Individual D is then considered a UBO”，支持目标节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断为真时导向“认定为 UBO”的结果，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边中的条件“合计持股比例达到阈值”由 v7u_N000494 的实例直接支持（82% 持股明显超过通常的 25% 阈值）。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这是分支决定，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000494"
+      ],
+      "source_quotes": [
+        "Individual D is then considered a UBO with 82% shareholding of Company A."
+      ],
+      "reason": "原文直接给出达到阈值后认定为 UBO 的结果，条件成立，边获明确支持。"
+    },
+    {
+      "edge_id": "edge_007",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000494 和 v7u_N000495 支持存在判断步骤。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000495 明确陈述“Individual C ... is not a UBO”，支持目标节点。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "判断为假时导向“不认定为 UBO”的结果，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边中的条件“合计持股比例未达到阈值”由 v7u_N000495 的实例直接支持（18% 持股未达到通常的 25% 阈值）。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有 qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "这是分支决定，非并列或相关关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000495"
+      ],
+      "source_quotes": [
+        "Individual C ... is not a UBO."
+      ],
+      "reason": "原文直接给出未达到阈值时不认定为 UBO 的结果，条件成立，边获明确支持。"
+    }
+  ]
+}

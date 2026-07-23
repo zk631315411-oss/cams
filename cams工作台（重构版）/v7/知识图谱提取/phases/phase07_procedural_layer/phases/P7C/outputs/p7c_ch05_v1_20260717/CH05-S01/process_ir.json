@@ -1,0 +1,68 @@
+{
+  "section_id": "CH05-S01",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "义务实体如何应对金融犯罪风险？",
+      "title": "义务实体为应对金融犯罪风险必须实施主动合规计划",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "义务实体必须实施主动的金融犯罪合规计划，包括交易监控和利用人工智能等工具",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N000354"
+          ],
+          "source_quote": "To address these risks, obliged entities must implement proactive financial crime compliance programs, including transaction monitoring and utilization of tools such as AI, enhanced due diligence, and real-time fraud detection."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "被动分类，原文明示了“被认定为义务实体”的结果，但未描述任何审查、分析或标准适用过程，也未触发后续具体动作，仅陈述静态法律义务状态，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选明确包含原文明示的业务动作（实施合规计划）及其触发背景（应对风险），构成程序性迁移，可独立映射为 episode。"
+    }
+  ],
+  "skip_reason": null
+}

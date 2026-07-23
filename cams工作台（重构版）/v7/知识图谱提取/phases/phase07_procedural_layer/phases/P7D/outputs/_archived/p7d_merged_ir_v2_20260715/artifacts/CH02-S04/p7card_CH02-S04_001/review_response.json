@@ -1,0 +1,128 @@
+{
+  "section_id": "CH02-S04",
+  "card_id": "p7card_CH02-S04_001",
+  "edge_reviews": [
+    {
+      "edge_id": "r001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000133明确记载FullTechGlobal面临严重的海外贿赂和腐败指控。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000134直接表达'This raised concerns under the extraterritorial provisions...'，即引发域外条款的适用关切。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文'指控'在先，'引发关切'在后，顺序明确且不可逆。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition，且原文因果关系无条件限定。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "原文无must/should/only等限定词，节点也未隐含限定。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关关系，为明确的因果先后。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000133",
+        "v7u_N000134"
+      ],
+      "source_quotes": [
+        "The company faced serious accusations of widespread bribery and corruption due to its overseas sales practices.",
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010."
+      ],
+      "reason": "原文'This raised concerns'直接表达指控引发关切，方向与关系均明确，边有效。"
+    },
+    {
+      "edge_id": "r002",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e003'引发关切'来自v7u_N000134。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e002域外条款内容明确记载于v7u_N000136和v7u_N000137。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000134用'under the extraterritorial provisions'表明关切是在条款下产生，即关切依据条款，方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition，关系本身无条件。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "无相关限定词。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列或相关，为明确的参照关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000134",
+        "v7u_N000136",
+        "v7u_N000137"
+      ],
+      "source_quotes": [
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.",
+        "It applies to any company with a UK connection and also holds parent firms liable for corrupt activities by subsidiaries, regardless of location.",
+        "This extraterritorial scope means that the UK parents of non-UK businesses engaging in bribery and corruption can also face prosecution..."
+      ],
+      "reason": "原文'under...'明确表达关切参照域外条款，边有效。"
+    },
+    {
+      "edge_id": "r003",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e003'引发关切'来自v7u_N000134。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "e004'母公司可能面临起诉，需要加强合规措施'来自v7u_N000137。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "v7u_N000137是对域外条款范围的解释，并非由'引发关切'动作产生的结果。两者在原文中是并列关系，无PRODUCES方向证据。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition，但问题不在于条件。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "e004 label保留了'可能'，对应原文'can'，限定恰当。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "unsupported",
+          "reason": "原文中e003与e004的内容是并列陈述域外条款引发的两个后果（关切与法律含义），而非PRODUCES关系。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000134",
+        "v7u_N000137"
+      ],
+      "source_quotes": [
+        "This raised concerns under the extraterritorial provisions of the UK Bribery Act 2010.",
+        "This extraterritorial scope means that the UK parents of non-UK businesses engaging in bribery and corruption can also face prosecution, emphasizing the need for robust compliance measures."
+      ],
+      "reason": "PRODUCES关系无依据：'引发关切'与'母公司可能面临起诉'是并列的条款后果，而非前后产生关系。边应拒绝。"
+    }
+  ]
+}

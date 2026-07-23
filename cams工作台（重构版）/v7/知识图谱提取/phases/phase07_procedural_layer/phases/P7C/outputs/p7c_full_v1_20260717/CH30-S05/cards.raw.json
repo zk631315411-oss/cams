@@ -1,0 +1,128 @@
+{
+  "section_id": "CH30-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH30-S05_001",
+      "section_id": "CH30-S05",
+      "card_nature": "execution",
+      "title": "美国财政部识别DeFi非法金融风险并发布风险评估文件",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "识别到与虚拟资产相关的非法金融风险（包括利用DeFi服务洗钱）",
+          "evidence_unit_ids": [
+            "v7u_N002201"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "2022年国家风险评估发现非法行为者滥用DeFi服务且缺乏缓解措施",
+          "evidence_unit_ids": [
+            "v7u_N002201"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "编制并发布DeFi非法金融风险评估文件",
+          "evidence_unit_ids": [
+            "v7u_N002197",
+            "v7u_N002201"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "风险评估文件概述DeFi市场结构、威胁漏洞、重大风险领域并包含缓解建议",
+          "evidence_unit_ids": [
+            "v7u_N002202"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002201"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "The US Treasury produced the document because it had identified illicit finance risks associated with virtual assets, including misuse of DeFi services for money laundering purposes."
+        },
+        {
+          "edge_id": "edge_r002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002201"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Its 2022 NRAs found that illicit actors had misused DeFi services and that many of these services did not have mitigation measures in place."
+        },
+        {
+          "edge_id": "edge_r003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N002202"
+          ],
+          "source_quote": "The document provides an overview of DeFi’s market structure and how these services work, assesses the threats and vulnerabilities of DeFi services, and discloses the most significant areas of risk. It includes recommended actions to mitigate the illicit finance risks associated with DeFi services."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002197",
+        "v7u_N002201",
+        "v7u_N002202"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：美国财政部基于风险识别和2022年NRA发现编制并发布DeFi非法金融风险评估文件；证据范围：v7u_N002197, v7u_N002201, v7u_N002202；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch30_s05_defi_risk_assessment",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH30-S05_001"
+      ],
+      "reason": "该候选提供美国财政部基于风险识别和NRA发现而编制并发布DeFi非法金融风险评估文件的完整流程，构成程序性迁移，已映射至卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch30_s05_mitigation_recommendations",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH30-S05_001"
+      ],
+      "reason": "该候选提供风险评估文件所包含的缓解建议内容，作为文件产物的组成部分，已合并至卡片覆盖。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch30_s05_fatf_alignment",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选描述美国方法符合FATF建议，是一个静态合规性陈述，未触发后续业务动作或判断，归入kg_only。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "识别到非法金融风险作为明确的业务事件触发后续响应，符合E1_event_signal。",
+      "e002": "2022年NRA发现作为已确认的调查结果触发编制文件，符合E1_event_signal。",
+      "e003": "编制并发布风险评估文件是一个汇集信息、形成正式产物的过程，符合P4_collection。",
+      "e004": "风险评估文件是可识别、可保存、可提交的正式对象，符合X2_product。"
+    }
+  },
+  "skip_reason": null
+}

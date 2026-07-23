@@ -1,0 +1,78 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_003",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "原文明确提到“公司中不存在自然人受益所有人”的情况（where there is no natural beneficial owner）。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文直接指出“应识别并核实控制人或名义受益所有人”（a controller or a notional beneficial owner should be identified and verified）。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文使用条件句“In companies where…, …should be…”明确表达条件触发动作的逻辑先后顺序。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "边的条件“公司中不存在自然人受益所有人”与原文明示的条件一致，且关系以此条件为触发前提。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "PRECEDES类型边仅表达逻辑先后，原文“should”属动作规范性情态，已通过目标节点modality标注为required，边无须重复。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文为明确的条件触发关系，非并列、相关或教材叙述顺序。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000496"],
+      "source_quotes": [
+        "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+      ],
+      "reason": "原文明示在无自然人最终受益所有人时，应当识别并核实控制人或名义受益所有人，方向正确，条件保留，审核通过。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "“识别并核实控制人或名义受益所有人”的source节点在原文中有明确依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "原文“This allows you to understand who is in control…”明确提到通过识别可以了解公司决策控制者。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文“This allows you to understand…”揭示识别动作使了解成为可能，方向符合PRODUCES。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边无condition，且原文在识别动作与了解结果之间未附加其他条件。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文“allows you to understand”表达“使能够了解”，包含能力限定（可能而非必然），但edge未设qualifier，且target label“了解公司决策的控制者”将能力强化为必然实现。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文为直接的使能/产出关系，非并列或相关。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000496"],
+      "source_quotes": [
+        "This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."
+      ],
+      "reason": "原文明确识别动作使能够了解控制者，但边遗漏了“allows”所表达的限定，将可能性强化为必然结果，不支持接受。"
+    }
+  ]
+}

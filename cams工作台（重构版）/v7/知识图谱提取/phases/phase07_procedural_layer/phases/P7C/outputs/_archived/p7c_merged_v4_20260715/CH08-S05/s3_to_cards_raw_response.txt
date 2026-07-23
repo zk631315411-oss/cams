@@ -1,0 +1,133 @@
+{
+  "section_id": "CH08-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S05_001",
+      "section_id": "CH08-S05",
+      "card_nature": "execution",
+      "title": "对SPV和PIV的强化尽职调查与受益所有人识别",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "CDD regulations such as the Financial Crime Enforcement Network's CDD rule",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对 SPV 和 PIV 进行强化尽职调查（EDD）",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "识别最终受益所有人并了解实体真实目的",
+          "evidence_unit_ids": [
+            "v7u_N000659"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "减轻与 SPV 相关的潜在金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保 SPV 和 PIV 投资符合 CDD 法规",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRECEDES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N000658",
+            "v7u_N000659"
+          ]
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e005",
+          "evidence_unit_ids": [
+            "v7u_N000658"
+          ]
+        },
+        {
+          "edge_id": "r004",
+          "edge_type": "PRODUCES",
+          "source": "e003",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000658",
+        "v7u_N000659",
+        "v7u_N000660"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融机构必须对SPV和PIV执行强化尽职调查并识别受益所有人，以减轻金融犯罪风险；证据范围：v7u_N000658-000660；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH08-S05_001"
+      ],
+      "reason": "完整映射至对SPV/PIV的EDD识别受益所有人减轻风险流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role, 执行强化尽职调查程序 → P2_execution",
+      "e003": "action role, 识别和了解为分析评估动作 → P1_assessment",
+      "e004": "outcome role, 减轻风险为风险状态变化 → X3_state_change",
+      "e005": "outcome role, 确保合规为合规状态变化 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

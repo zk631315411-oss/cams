@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-"""将校验通过的 V3.1 解析母版导出为题库软件版 Markdown。"""
+"""将 V3.1 解析母版按 Section 导出为题库软件版 Markdown。
+
+不阻断任何题目——复核检测请用 review_check.py。
+"""
 
 from __future__ import annotations
 
@@ -12,124 +15,102 @@ from typing import Any
 import generate_evidence_explanations as master
 
 
-EXPORT_SCHEMA_VERSION = "software_explanation_export_v1_1"
-HERE = Path(__file__).resolve().parent  # phase4_evidence/解析撰写/
+EXPORT_SCHEMA_VERSION = "software_explanation_export_v2_0"
+HERE = Path(__file__).resolve().parent
 PHASE4 = HERE.parent
 
 
-def _append_unique(values: list[str], message: str) -> None:
-    """去重追加消息。"""
-    if message and message not in values:
-        values.append(message)
+def _load_kg_section_index() -> dict[str, dict[str, Any]]:
+    """加载 KG，返回 {unit_id: {real_chapter, real_section, section_order}} 索引。"""
+    kg_path = master.KG_GRAPH_PATH
+    if not kg_path.exists():
+        return {}
+    with open(kg_path, "r", encoding="utf-8") as f:
+        kg: dict[str, Any] = json.load(f)
+
+    section_index: dict[str, dict[str, Any]] = {}
+    for sec in kg.get("sections", []) or []:
+        sid = str(sec.get("section_id", ""))
+        section_index[sid] = {
+            "real_chapter": sec.get("real_chapter", ""),
+            "real_section": sec.get("real_section") or sid,
+            "section_order": sec.get("section_order", 0),
+            "section_title": sec.get("section_title", ""),
+        }
+
+    unit_index: dict[str, dict[str, Any]] = {}
+    for unit in kg.get("units", []) or []:
+        uid = str(unit.get("unit_id", ""))
+        sid = str(unit.get("section_id", ""))
+        sec_info = section_index.get(sid, {})
+        unit_index[uid] = {
+            "real_chapter": unit.get("real_chapter") or sec_info.get("real_chapter", ""),
+            "real_section": unit.get("real_section") or sec_info.get("real_section", ""),
+            "section_order": sec_info.get("section_order", 0),
+        }
+    return unit_index
 
 
-def _reference_conflicts(
-    answer: list[str], reference: dict[str, Any]
-) -> list[str]:
-    """检查 AI 答案与各参考答案之间的冲突。"""
-    answer_set = set(answer)
-    conflicts: list[str] = []
-    for field, label in (
-        ("final_answer", "题库最终参考答案"),
-        ("cn_answer", "中文参考答案"),
-        ("en_answer", "英文参考答案"),
-    ):
-        values = [str(x).strip().upper() for x in reference.get(field, []) or []]
-        if values and set(values) != answer_set:
-            conflicts.append(f"AI答案与{label}冲突")
-    return conflicts
+def _build_section_code_map(kg_index: dict[str, dict[str, Any]]) -> dict[str, str]:
+    """根据 real_chapter 和 section_order，生成 section_code → 'p1-ch01-h1' 映射。
 
-
-def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]:
-    """软件导出门禁：只检查导出必需的完整性，不重复盲判/解析层的校验。
-
-    返回 (阻断原因列表, 风险标记列表)。
+    规则：Part 编号从 real_chapter 提取（Ch1-Ch4→P1, Ch5-Ch7→P2, Ch8-Ch12→P3, Ch13-Ch16→P4），
+    Chapter 编号取 real_chapter 的数字，节序号在每章内按 section_order 递增。
     """
-    blockers: list[str] = []
-    explanation = result.get("generated_explanation", {}) or {}
-    readiness = explanation.get("software_readiness", {}) or {}
-
-    # schema 版本
-    if explanation.get("schema_version") != master.SCHEMA_VERSION:
-        _append_unique(blockers, "解析母版不是V3.1 schema")
-
-    # 内部备注泄露检查：用户端解析不得出现内部审核标记
-    _internal_markers = [
-        "需教研复核",
-        "现有教材证据不足，需教研复核",
-    ]
-    for field_name, field_value in [
-        ("考点", (explanation.get("exam_point", {}) or {}).get("text", "")),
-        ("核心解析", (explanation.get("core_analysis", {}) or {}).get("text", "")),
-    ]:
-        for marker in _internal_markers:
-            if marker in str(field_value or ""):
-                _append_unique(blockers, f"{field_name}包含内部备注'{marker}'")
-                break
-    for row in explanation.get("option_explanations", []) or []:
-        label = str(row.get("option", ""))
-        analysis = str(row.get("analysis", "") or "")
-        for marker in _internal_markers:
-            if marker in analysis:
-                _append_unique(blockers, f"选项{label}分析包含内部备注'{marker}'")
-                break
-
-    # 答案一致性
-    options = result.get("options", {}) or {}
-    predicted = [str(x).strip().upper() for x in result.get("predicted_answer", []) or []]
-    answer = [str(x).strip().upper() for x in explanation.get("answer", []) or []]
-    if not answer:
-        _append_unique(blockers, "AI答案为空")
-    if answer != predicted:
-        _append_unique(blockers, "软件版答案与盲判答案不一致")
-
-    # 错误项分析校验（正确项由核心解析覆盖，不在此校验）
-    option_rows = explanation.get("option_explanations", []) or []
-    for row in option_rows:
-        label = str(row.get("option", "")).strip().upper()
-        expected = "correct" if label in answer else "incorrect"
-        if row.get("judgement") != expected:
-            _append_unique(blockers, f"选项{label}正误未按AI答案锁定")
-        if row.get("basis_type") not in {
-            "textbook_direct", "textbook_definition_application",
-            "stem_contrast", "stem_entailment", "insufficient",
-        }:
-            _append_unique(blockers, f"选项{label}basis_type非法")
-        if (row.get("basis_type") in {"textbook_direct", "textbook_definition_application"}
-                and not row.get("source_claims")):
-            _append_unique(blockers, f"选项{label}教材判断缺少source_claims")
-
-    # 核心解析：教材英文短引（可选，有则校验）
-    core = explanation.get("core_analysis", {}) or {}
-    source_quote = core.get("source_quote", {}) or {}
-    uid = str(source_quote.get("unit_id", "") or "")
-    excerpt = str(source_quote.get("exact_excerpt", "") or "")
-    if uid or excerpt:
-        cited_core = core.get("cited_unit_ids", []) or []
-        if not cited_core:
-            _append_unique(blockers, "纯题干推导的核心解析不应有教材短引")
-        elif uid not in cited_core:
-            _append_unique(blockers, "教材英文短引unit未被核心解析引用")
+    chapter_to_part: dict[str, int] = {}
+    for ch_num in range(1, 17):
+        if ch_num <= 4:
+            chapter_to_part[f"Ch{ch_num}"] = 1
+        elif ch_num <= 7:
+            chapter_to_part[f"Ch{ch_num}"] = 2
+        elif ch_num <= 12:
+            chapter_to_part[f"Ch{ch_num}"] = 3
         else:
-            unit_map = master.candidate_by_unit(result)
-            unit = unit_map.get(uid, {})
-            original = str(unit.get("en_quote") or unit.get("knowledge_en", "") or "")
-            if excerpt not in original:
-                _append_unique(blockers, "教材英文短引不是对应原文的连续子串")
-            if not master.SOURCE_QUOTE_MIN_LENGTH <= len(excerpt) <= master.SOURCE_QUOTE_MAX_LENGTH:
-                _append_unique(blockers, "教材英文短引长度不合规")
+            chapter_to_part[f"Ch{ch_num}"] = 4
 
-    # 答案冲突
-    reference = explanation.get("reference_appendix", {}) or {}
-    for conflict in _reference_conflicts(answer, reference):
-        _append_unique(blockers, conflict)
+    sections: dict[str, tuple[str, int]] = {}
+    for info in kg_index.values():
+        rs = info.get("real_section", "")
+        rc = info.get("real_chapter", "")
+        so = info.get("section_order", 0)
+        if rs and rc and so:
+            if rs not in sections or so < sections[rs][1]:
+                sections[rs] = (rc, so)
 
-    risk_flags = [
-        str(flag)
-        for flag in readiness.get("risk_flags", []) or reference.get("risk_flags", []) or []
-        if str(flag).strip()
-    ]
-    return blockers, list(dict.fromkeys(risk_flags))
+    chapter_h_counter: dict[str, int] = {}
+    section_code: dict[str, str] = {}
+    for rs, (rc, so) in sorted(sections.items(), key=lambda x: (x[1][0], x[1][1])):
+        chapter_h_counter.setdefault(rc, 0)
+        chapter_h_counter[rc] += 1
+        h_num = chapter_h_counter[rc]
+        part = chapter_to_part.get(rc, 0)
+        ch_num = rc.replace("Ch", "")
+        section_code[rs] = f"p{part}-ch{ch_num}-h{h_num}"
+
+    code_map: dict[str, str] = {}
+    for uid, info in kg_index.items():
+        rs = info.get("real_section", "")
+        if rs in section_code:
+            code_map[uid] = section_code[rs]
+
+    return code_map
+
+
+def get_section_code(
+    result: dict[str, Any],
+    kg_index: dict[str, dict[str, Any]],
+    code_map: dict[str, str],
+) -> str:
+    """从解析结果的 primary_unit_id 查出 section_code。"""
+    explanation = result.get("generated_explanation", {}) or {}
+    primary_uid = str(explanation.get("primary_unit_id", "") or "").strip()
+    if primary_uid and primary_uid in code_map:
+        return code_map[primary_uid]
+    unit_map = master.candidate_by_unit(result)
+    for uid in unit_map:
+        if uid in code_map:
+            return code_map[uid]
+    return ""
 
 
 def render_software_analysis(explanation: dict[str, Any]) -> str:
@@ -149,11 +130,6 @@ def render_software_analysis(explanation: dict[str, Any]) -> str:
         lines.append(f"教材原句：\"{quote}\"\n")
     lines.append("\n")
     lines.append("【错误项分析】\n")
-    evidence_by_unit: dict[str, dict[str, Any]] = {}
-    for entry in explanation.get("source_evidence", []) or []:
-        uid = str(entry.get("unit_id", "") or "").strip()
-        if uid:
-            evidence_by_unit[uid] = entry
     for row in explanation.get("option_explanations", []) or []:
         judgement = "正确" if row.get("judgement") == "correct" else "错误"
         lines.append(f"{row.get('option', '')}项{judgement}：{row.get('analysis', '')}\n")
@@ -181,117 +157,126 @@ def render_question_preview(
         lines.append(f"- {label}. {text}\n")
         if options_en.get(label):
             lines.append(f"  English: {options_en[label]}\n")
+
     lines.append("\n" + render_software_analysis(result["generated_explanation"]))
     return "".join(lines)
 
 
-def belongs_to_chapter(
-    result: dict[str, Any],
-    chapter_id: str,
-    mapping_index: dict[str, dict[str, Any]] | None = None,
-) -> bool:
-    """判断题目是否属于指定章节。优先用 JSON 内嵌映射，其次用外部映射文件。"""
-    embedded = result.get("chapter_mappings", []) or []
-    if embedded:
-        return any(
-            (m.get("real_chapter") or m.get("chapter_id")) == chapter_id
-            or (isinstance(m.get("real_chapter"), list) and chapter_id in m.get("real_chapter", []))
-            for m in embedded
-        )
-    if mapping_index:
-        qid = str(result.get("question_id", "")).strip()
-        row = mapping_index.get(qid)
-        if row:
-            return any(
-                (m.get("real_chapter") or m.get("chapter_id")) == chapter_id
-                or (isinstance(m.get("real_chapter"), list) and chapter_id in m.get("real_chapter", []))
-                for m in (row.get("chapter_mappings", []) or [])
-            )
-    return False
-
-
-def export_chapter(
+def export_by_section(
     output_dir: Path,
-    chapter_id: str,
     standard_questions: dict[str, dict[str, Any]],
     output_subdir: str = "software_export",
-    chapter_map: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    """按章节导出可入库的软件版解析预览与待复核清单。
+    """按 Section 导出可入库的软件版解析预览。
 
-    返回包含选中数、导出数、阻断数的汇总字典。
+    不阻断任何题目——所有有 generated_explanation 的题目都会导出。
+    有问题标注在题目预览中。
     """
     question_dir = output_dir / "questions"
     if not question_dir.exists():
         raise RuntimeError(f"questions目录不存在: {question_dir}")
 
-    selected: list[dict[str, Any]] = []
+    kg_index = _load_kg_section_index()
+    code_map = _build_section_code_map(kg_index) if kg_index else {}
+
+    # 读所有题目并按 section 分组
+    section_groups: dict[str, list[dict[str, Any]]] = {}
+    unassigned: list[dict[str, Any]] = []
+    total_selected = 0
+
     for path in sorted(question_dir.glob("q_*.json")):
         result = master.load_question_result(path)
-        if belongs_to_chapter(result, chapter_id, chapter_map):
-            selected.append(result)
+        total_selected += 1
+        section_code = get_section_code(result, kg_index, code_map)
+        if section_code:
+            section_groups.setdefault(section_code, []).append(result)
+        else:
+            unassigned.append(result)
 
     export_dir = output_dir / output_subdir
-    chapter_dir = export_dir / "chapters"
-    chapter_dir.mkdir(parents=True, exist_ok=True)
-    exported: list[dict[str, Any]] = []
-    blocked: list[dict[str, Any]] = []
+    section_dir = export_dir / "sections"
+    section_dir.mkdir(parents=True, exist_ok=True)
 
-    for result in selected:
-        qid = str(result.get("question_id", ""))
-        blockers, risk_flags = validate_for_software(result)
-        row = {
-            "question_id": qid,
-            "risk_flags": risk_flags,
-        }
-        if blockers:
-            row["blocking_reasons"] = blockers
-            blocked.append(row)
-            continue
-        row["answer"] = result["generated_explanation"]["answer"]
-        row["preview"] = render_question_preview(
-            result, standard_questions.get(qid, {})
-        )
-        exported.append(row)
+    # 导入格式 md 源目录
+    explanations_export_dir = output_dir / "explanations_export"
 
-    # 写章节预览 Markdown
-    chapter_lines = [
-        f"# {chapter_id} 题库软件版解析预览\n\n",
-        f"可导出题目数：{len(exported)}\n\n",
-    ]
-    for row in exported:
-        chapter_lines.append(row.pop("preview").rstrip() + "\n\n---\n\n")
-    chapter_path = chapter_dir / f"{chapter_id}.md"
-    chapter_path.write_text("".join(chapter_lines), encoding="utf-8")
+    exported_count = 0
+    skipped_count = 0
+    section_summaries: list[dict[str, Any]] = []
 
-    # 写待复核清单
-    review_lines = [
-        "# 题库软件版待复核清单\n\n",
-        f"章节：{chapter_id}\n\n",
-        f"待复核题目数：{len(blocked)}\n\n",
-    ]
-    for row in blocked:
-        review_lines.append(f"## {row['question_id']}\n\n")
-        for reason in row["blocking_reasons"]:
-            review_lines.append(f"- {reason}\n")
-        if row["risk_flags"]:
-            review_lines.append(f"- 风险标记：{'、'.join(row['risk_flags'])}\n")
-        review_lines.append("\n")
-    review_path = export_dir / "review_required.md"
-    review_path.write_text("".join(review_lines), encoding="utf-8")
+    for section_code, results in sorted(section_groups.items()):
+        exported: list[dict[str, Any]] = []
 
-    # 写导出结果汇总 JSON
+        for result in results:
+            qid = str(result.get("question_id", ""))
+            explanation = result.get("generated_explanation", {}) or {}
+            if not explanation.get("answer"):
+                skipped_count += 1
+                continue
+
+            # 从 explanations_export/ 读取导入格式 md
+            export_md_path = explanations_export_dir / f"{qid}.md"
+            if export_md_path.exists():
+                preview = export_md_path.read_text(encoding="utf-8").strip()
+                # 去掉 # v7_q_ 标题行（小节 md 有自己的标题）
+                preview = preview.replace(f"# {qid}\n\n", "", 1)
+            else:
+                # 回退：从 JSON 构建
+                preview = render_question_preview(
+                    result, standard_questions.get(qid, {})
+                )
+
+            preview = preview.replace("「", "“").replace("」", "”")
+            row = {
+                "question_id": qid,
+                "answer": explanation["answer"],
+                "preview": preview,
+            }
+            exported.append(row)
+
+        exported_count += len(exported)
+
+        md_lines = [
+            f"# {section_code} 题库软件版解析预览\n\n",
+            f"可导出题目数：{len(exported)}\n\n",
+        ]
+        for row in exported:
+            md_lines.append(row.pop("preview").rstrip() + "\n\n---\n\n")
+        section_path = section_dir / f"{section_code}.md"
+        section_path.write_text("".join(md_lines), encoding="utf-8")
+
+        section_summaries.append({
+            "section_code": section_code,
+            "exported_count": len(exported),
+            "markdown": str(section_path),
+        })
+
+    # 写汇总
+    print("\n" + "=" * 60)
+    print("导出汇总")
+    print("=" * 60)
+    print(f"总题数: {total_selected}")
+    print(f"已导出: {exported_count}")
+    print(f"跳过(无AI答案): {skipped_count}")
+    print(f"未归属小节: {len(unassigned)}")
+    print(f"小节数: {len(section_summaries)}")
+    if unassigned:
+        print("\n未归属小节题目:")
+        for r in unassigned:
+            print(f"  - {r.get('question_id', '?')}")
+    print("=" * 60)
+    print(f"\n复核检测请运行: python review_check.py --output-dir {output_dir}")
+    print("=" * 60)
+
     summary = {
         "schema_version": EXPORT_SCHEMA_VERSION,
-        "chapter_id": chapter_id,
-        "selected_count": len(selected),
-        "exported_count": len(exported),
-        "blocked_count": len(blocked),
-        "exported": exported,
-        "blocked": blocked,
+        "total_selected": total_selected,
+        "exported_count": exported_count,
+        "skipped_count": skipped_count,
+        "unassigned_count": len(unassigned),
+        "section_count": len(section_summaries),
+        "sections": section_summaries,
         "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-        "chapter_markdown": str(chapter_path),
-        "review_markdown": str(review_path),
     }
     summary_path = export_dir / "export_results.json"
     summary_path.write_text(
@@ -302,43 +287,28 @@ def export_chapter(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="将 V3 解析母版导出为题库软件版格式。"
+        description="将 V3 解析母版按 Section 导出为题库软件版格式（不阻断）。"
     )
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--chapter-id", required=True)
     parser.add_argument("--questions-path", default=str(master.DEFAULT_QUESTIONS_PATH))
-    parser.add_argument("--chapter-map", default="")
     parser.add_argument("--output-subdir", default="software_export")
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
     standards = master.load_standard_questions(args.questions_path)
 
-    chapter_map: dict[str, dict[str, Any]] | None = None
-    if args.chapter_map:
-        chapter_map = {}
-        with open(args.chapter_map, "r", encoding="utf-8") as f:
-            for line in f:
-                if not line.strip():
-                    continue
-                row = json.loads(line)
-                qid = str(row.get("question_id", "")).strip()
-                if qid:
-                    chapter_map[qid] = row
-
-    summary = export_chapter(
+    summary = export_by_section(
         output_dir,
-        args.chapter_id,
         standards,
         output_subdir=args.output_subdir,
-        chapter_map=chapter_map,
     )
     print(
-        f"[output] chapter={args.chapter_id} | selected={summary['selected_count']} | "
-        f"exported={summary['exported_count']} | blocked={summary['blocked_count']}"
+        f"\n[output] total={summary['total_selected']} | "
+        f"exported={summary['exported_count']} | skipped={summary['skipped_count']} | "
+        f"unassigned={summary['unassigned_count']} | sections={summary['section_count']}"
     )
-    print(f"[output] preview={summary['chapter_markdown']}")
-    print(f"[output] review={summary['review_markdown']}")
+    print(f"[output] sections={output_dir / args.output_subdir / 'sections/'}")
+    print(f"[output] summary={output_dir / args.output_subdir / 'export_results.json'}")
 
 
 if __name__ == "__main__":

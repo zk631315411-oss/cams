@@ -1,0 +1,108 @@
+{
+  "section_id": "CH58-S13",
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S13_001",
+      "section_id": "CH58-S13",
+      "card_nature": "execution",
+      "title": "对已准备数据应用算法以检测异常和识别可疑模式",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "已提取、准备和加载的数据",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应用各种算法和分析技术",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测异常",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别指示可疑行为的模式和相关性",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "source_quote": "Data mining and data matching take the data that has been extracted, prepared, and loaded and apply various algorithms and analytical techniques to it."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "qualifier": "aimed_to",
+          "source_quote": "The purpose is to detect anomalies"
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N004799"],
+          "qualifier": "aimed_to",
+          "source_quote": "recognize patterns and correlations indicative of suspicious behavior"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004799"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：对已准备数据应用算法以检测异常和识别可疑模式；证据范围：v7u_N004799；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch58_s13_data_prep_impact",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述数据准备正确进行时的益处和影响，属于静态因果描述，无具体业务判断或处理动作，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch58_s13_afc_understanding",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "强调AFC团队理解数据准备步骤的重要性，无程序性迁移或业务判断，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch58_s13_data_mining_detection",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH58-S13_001"],
+      "reason": "该候选描述数据挖掘和匹配对已准备数据应用算法，旨在检测异常和识别可疑模式，包含明确处理动作和目的，构成检测流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e002": "action role：核心动作“应用算法”属执行行为，非决策/评估/协调，故为P2_execution",
+      "e003": "outcome role：检测异常是分类识别结果，属X1_classification",
+      "e004": "outcome role：识别可疑模式是分类识别结果，属X1_classification"
+    }
+  },
+  "skip_reason": null
+}

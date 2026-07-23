@@ -1,0 +1,138 @@
+{
+  "section_id": "CH07-S03",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "当银行知道或怀疑客户使用非法资金还贷时，银行应如何处置该资金？",
+      "title": "拒绝接受涉嫌非法资金还贷",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "不应接受该资金用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "modality": "prohibited"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "如果银行知道或怀疑客户使用非法资金还贷",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, the risk of default becomes a secondary risk to manage. The bank should not accept funds for the purposes of loan"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_gap_ch07_s03_writeoff_approval"
+      ],
+      "focal_question": "退出超出风险容忍度且仍有贷款余额的客户关系时，核销贷款需要满足什么要求？",
+      "title": "核销贷款需充分理由和批准",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "退出超出银行风险容忍度且仍有贷款余额的客户关系",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "核销贷款",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "standard",
+          "label": "需充分理由和批准",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "当退出超出银行风险容忍度的客户关系且仍有贷款余额时",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "source_quote": "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "source_quote": "often requiring extensive justification and approval"
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "提供了一条条件触发程序关系：银行知道或怀疑非法资金还贷时不应接受该资金，符合流程定义。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch07_s03_writeoff_approval",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "提供了一条条件触发程序关系并约束标准：退出有贷款余额的超风险客户关系时核销贷款需充分理由和批准，符合流程定义。"
+    }
+  ],
+  "skip_reason": null
+}

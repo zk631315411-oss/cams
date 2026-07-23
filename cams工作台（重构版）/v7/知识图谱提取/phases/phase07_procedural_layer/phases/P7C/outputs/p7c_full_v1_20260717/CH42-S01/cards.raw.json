@@ -1,0 +1,330 @@
+{
+  "section_id": "CH42-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S01_001",
+      "section_id": "CH42-S01",
+      "card_nature": "assessment",
+      "title": "Pre-KYC委员会评估客户适宜性并决定后续KYC路径",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "特定客户类型，如PEP、高净值人士、高风险司法管辖区客户",
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "委员会 might assess 客户适宜性，决定是否进入完整KYC及所需DD级别",
+          "evidence_unit_ids": [
+            "v7u_N003013",
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "委员会评估因素：司法管辖区风险、业务活动、战略契合度",
+          "evidence_unit_ids": [
+            "v7u_N003014"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "客户进入完整KYC，适用标准尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "客户进入完整KYC，适用强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "客户被过滤，不进入完整KYC",
+          "evidence_unit_ids": [
+            "v7u_N003015",
+            "v7u_N003016"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "客户属于特定高风险类型（PEP、高净值、高风险司法管辖区）",
+          "evidence_unit_ids": [
+            "v7u_N003013"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N003014"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "评估结果认为客户适宜且适用标准尽职调查",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n005",
+          "condition": "评估结果认为客户适宜且适用强化尽职调查",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N003015"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n006",
+          "condition": "评估结果认为客户不适宜",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N003015",
+            "v7u_N003016"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003013",
+        "v7u_N003014",
+        "v7u_N003015",
+        "v7u_N003016"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据客户类型触发委员会评估，评估因素约束决策，决策分支为三种结果（标准DD、强化DD、过滤）。证据范围：N003013-003016。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH42-S01_002",
+      "section_id": "CH42-S01",
+      "card_nature": "risk_indicator",
+      "title": "客户准入前筛查以确定风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "客户准入前",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "制裁筛查：将客户信息与联合国、欧盟、OFAC及国家制裁名单交叉核对",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "负面媒体监控：识别与金融犯罪、腐败和欺诈活动的关联",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "PEP筛查：确定个人或受益所有人是否为PEP或其密切关联人",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测高风险实体",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别金融犯罪、腐败和欺诈活动关联",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确定PEP身份或关联",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "在客户准入前开展筛查",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "在客户准入前开展筛查",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n004",
+          "condition": "在客户准入前开展筛查",
+          "evidence_unit_ids": [
+            "v7u_N003023"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003024"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n006",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003025"
+          ]
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n007",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003026"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003023",
+        "v7u_N003024",
+        "v7u_N003025",
+        "v7u_N003026"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：准入前时间点触发三类筛查，每项筛查旨在引出各自的风险分类结果。证据范围：N003023-003026。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH42-S01_001"
+      ],
+      "reason": "该候选描述了特定客户类型触发委员会评估适宜性，并决定后续KYC路径，构成完整的评估决策流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选仅描述身份识别与验证步骤的组成要素（收集信息、验证、了解目的、识别UBO），未包含程序性或判断性迁移关系，属于静态定义性内容。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH42-S01_002"
+      ],
+      "reason": "该候选描述了客户准入前筛查流程，包括制裁、负面媒体和PEP筛查及其风险检测目的，构成清晰的程序性流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "属于特定客户类型进入处理范围 → E2_object_entry",
+      "e002": "决策节点有分支路由（进入标准/强化DD或不进入） → P3_branch_routing",
+      "e003": "标准（评估因素） → standard",
+      "e004": "客户进入下一流程（完整KYC标准DD） → X4_handoff",
+      "e005": "客户进入下一流程（完整KYC强化DD） → X4_handoff",
+      "e006": "客户被过滤，当前局部目标结束 → X6_termination"
+    },
+    "ep_002": {
+      "e001": "准入前的时间期限启动筛查处理 → E5_time_cycle",
+      "e002": "制裁筛查通过名单核对识别风险 → P1_assessment",
+      "e003": "负面媒体监控识别关联 → P1_assessment",
+      "e004": "PEP筛查确定身份 → P1_assessment",
+      "e005": "检测高风险实体形成风险结论 → X1_classification",
+      "e006": "识别金融犯罪关联形成结论 → X1_classification",
+      "e007": "确定PEP身份或关联形成结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

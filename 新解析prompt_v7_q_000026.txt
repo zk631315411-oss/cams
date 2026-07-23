@@ -1,0 +1,405 @@
+你是一位CAMS反洗钱讲师。你的学生零基础、没看过教材、非金融法律专业背景、英文非母语，他们通过做题来学习。
+
+你的目标是：学生看完解析后，**换一道类似的题也能自己判断**。
+
+---
+
+## 你的学生
+
+- 零基础，没看过教材，边做题边学
+- 非金融/法律专业出身
+- 英文非母语，需要中英对照来理解选项原意
+
+## 你的任务
+
+对这道题（固定答案为"B"，不得改判），你需要让学生：
+
+1. **知道考什么** —— exam_point：一句话，30字内。只写核心概念或能力点，不写判断结论，不引入题干没有的信息，不复述题干具体情节。示例：
+   - 好："按金额粒度及分散方式区分 structuring 与 microstructuring"
+   - 好："识别房地产场景下的 placement 阶段特征"
+   - 坏："判断时需关注存款是否被故意拆分为多笔略低于报告限额的小额交易"（复述题干）
+   - 坏："区分结构化与微结构化、贸易洗钱等手法"（题干没有提及贸易洗钱）
+
+2. **知道正确答案为什么对** —— core_analysis：一个自然段落。先给概念定义或判断规则，再结合题干关键事实，推出正确答案为什么成立。如果教材原文用的术语和选项中出现的术语不完全一致，先准确引用教材原文的术语和定义，再说明两者的关系。不要偷换主语——不要把"教材定义了X"写成"教材定义了Y"。写完自问："如果换一道题干相似但选项不同的题，学生看完还能自己判断吗？"如果不能，用一句话补上判断方法。如果核心解析本身已经说明了判断方法，不画蛇添足。
+
+3. **知道为什么正确项更优** —— option_explanations：只写真正有迷惑性的错误项。正确项不写（core_analysis已覆盖）。每个错误项的写法不是"排除它"，而是"在教材框架下，正确项比它更直接匹配"：
+   - 错误项本身可能也有一定关联（如信托确实能隐藏所有权），但它在教材中的定义位置和题干条件的匹配度不如正确项。你要解释的是**为什么匹配度不如**，而不是**绝对不可能**。
+   - 避免非黑即白的排除语气（"不属于""不可能""因此错误"）。改用比较级（"不如X直接""题干更支持X而非Y""更吻合教材对X的定义"）。
+   - 明显无关的选项（题干压根没涉及该选项所需的要素），直接指出缺失即可，不展开。
+   - 明显无关的选项不凑数
+   - 不加"故该项不选""因此该项正确"等套话结尾
+
+4. **下次不踩同样的坑** —— easy_mistake：如果有真正容易混淆的概念对，给出教材中的核心区分标准和下次判断时优先看什么。如果没有独立于一、二、三之外的增量信息，留空（"text": ""）。
+
+## 你的材料
+
+以下是你可以使用的全部信息：
+
+**题目**
+中文题干：大量汇入的电汇交易触发对某客户的警报.资金随即通过现金提取和汇出交易被迅速转走.要调查此警报/案例,应首先审查哪些信息？
+英文题干：A high volume of incoming wire transfers generates an alert about a client. The funds are immediately debited by cash withdrawals and outgoing wire transfers. Which information should be reviewed first to investigate this alert or case?
+中文选项：
+A. 开源信息
+B. 客户概况
+C. 不良媒体搜索
+D. 账户活动
+英文选项：
+A. Open source information
+B. Customer profile
+C. Adverse media search
+D. Account activity
+
+注意：本题来自英文考试，中文选项为翻译版本。当中文翻译与英文原意有偏差时（如 bending the rules 被译为"违规操作"），以英文原意为准。
+
+**盲判框架**
+固定答案：B
+框架类型：is_scenario
+- v7u_N003298 | shared_framework |  | 教材类型：流程描述 | 书内第334页
+  中文要点：分析师通过评估警报性质、交易类型、客户资料、账户历史等数据点检查警报有效性
+  英文原文：An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history.
+  章节：Transaction monitoring > Procedures for alerts review
+- v7u_N003299 | shared_framework |  | 教材类型：流程描述 | 书内第334页
+  中文要点：分析旨在确定活动是否符合预期的客户行为模式
+  英文原文：This analysis helps determine if the activity aligns with expected customer behavioral patterns.
+  章节：Transaction monitoring > Procedures for alerts review
+- v7u_N003291 | shared_framework |  | 教材类型：规则/规定 | 书内第333页
+  中文要点：客户活动偏离预期模式时更可能触发警报
+  英文原文：If a customer’s activity deviates from the expected pattern, an alert is more likely to be generated.
+  章节：Transaction monitoring > Typical scenarios that would generate an alert
+教材章节：未映射
+
+**选项材料（已标注教材类型和教材页码）**
+选项A：开源信息
+盲判标签：incorrect | 证据状态：negative | 原判断类型：direct_taxonomy
+已裁判证据：
+【教材原文连续段落 — p3-ch11-h3 ()】
+
+[v7u_N003305]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：审查了解你的客户信息和客户风险画像
+  英文原文：Reviewing KYC information and the customer risk profile.
+
+[v7u_N003306]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：收集额外记录，如客户与机构沟通记录及既往调查信息
+  英文原文：Gathering additional records, such as communication logs between the customer and institution, and any prior investigations related to the customer or account.
+
+[v7u_N003307] ★ 命中 | 教材类型：事实陈述 | 书内第334页
+  中文要点：开展开源研究，包括社交媒体、新闻、公共记录及监管机构发布的警报和指引
+  英文原文：Conducting open-source research to include social media, news articles, public records and notices, alerts, or guidance issued by law enforcement and regulatory agencies, to inform their opinion on the escalated activity.
+
+[v7u_N003308]   补充上下文 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析师基于收集的数据判定活动是否可疑并提供充分理由
+  英文原文：Analysts then determine whether the activity is suspicious, providing a robust rationale based on the data collected.
+
+[v7u_N003309]   补充上下文 | 教材类型：规则/规定 | 书内第334页
+  中文要点：高度可疑案件应升级至三级审查（复杂分析阶段）
+  英文原文：Highly suspicious cases or those that involve numerous transactions or sensitive situations should be escalated to Level 3 review, or the complex analysis stage.
+
+------------------------------------------------------------
+解析补充候选：
+【教材原文连续段落 — p3-ch11-h4 ()】
+
+[v7u_N003339]   补充上下文 | 教材类型：风险指标 | 书内第337页
+  中文要点：账户历史与活动有助于区分典型和异常行为
+  英文原文：Account history and activity: Account usage and trends that help distinguish between typical and unusual behavior.
+
+[v7u_N003340]   补充上下文 | 教材类型：分类说明 | 书内第337页
+  中文要点：外部信息提供额外背景，有助于识别红旗信号信号，来源列表引导
+  英文原文：External information is data that exists outside the organization. It provides additional context to the internal information and can help identify red flags. External information sources include:
+
+[v7u_N003341] ★ 命中 | 教材类型：事实陈述 | 书内第337页
+  中文要点：公开来源包括新闻文章、公共记录和其他在线资源。
+  英文原文：Open sources: News articles, public records, and other online resources.
+
+[v7u_N003342]   补充上下文 | 教材类型：事实陈述 | 书内第338页
+  中文要点：社交媒体资料可提供客户或相关方的额外背景信息。
+  英文原文：Social media profiles: Information from social media that might provide additional context about a customer or related parties.
+
+[v7u_N003343]   补充上下文 | 教材类型：风险指标 | 书内第338页
+  中文要点：合作伙伴和合作机构共享的信息可能揭示可疑关联或交易。
+  英文原文：Partners and collaborating institutions: Information shared by financial partners might reveal suspicious connections or transactions.
+
+------------------------------------------------------------
+【教材原文连续段落 — p4-ch13-h5 ()】
+
+[v7u_N004004] ★ 命中 | 教材类型：概念定义 | 书内第399页
+  中文要点：开源情报（OSINT）是从公开来源收集和分析信息
+  英文原文：Open-source intelligence (OSINT) is the collection and analysis of information from publicly available sources.
+
+[v7u_N004005]   补充上下文 | 教材类型：事实陈述 | 书内第399页
+  中文要点：OSINT长期以来是执法、政府机构和金融机构的重要工具
+  英文原文：OSINT has long been a vital tool for sectors such as law enforcement, government agencies, and financial institutions.
+
+[v7u_N004006]   补充上下文 | 教材类型：事实陈述 | 书内第399页
+  中文要点：OSINT技术近期在商业领域流行，用于加强尽职调查和了解你的客户实践
+  英文原文：Recently, OSINT techniques have gained popularity in the broader commercial space, particularly as companies seek to strengthen their due diligence and KYC practices.
+
+------------------------------------------------------------
+选项B：客户概况
+盲判标签：correct | 证据状态：direct | 原判断类型：direct_taxonomy
+已裁判证据：
+【教材原文连续段落 — p3-ch11-h3 ()】
+
+[v7u_N003296]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：小型机构可能采用单点接触系统，由一名分析师处理从警报生成到提交可疑活动报告的全过程
+  英文原文：Smaller organizations might use a one-touch system, where a single analyst handles the alert from generation through the submission of a SAR.
+
+[v7u_N003297]   补充上下文 | 教材类型：概念定义 | 书内第334页
+  中文要点：一级审查是交易监控系统生成警报后的初始审查阶段
+  英文原文：When multiple levels of reviews are used, Level 1 review—or the initial review stage—occurs when a TM system generates an alert.
+
+[v7u_N003298] ★ 命中 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析师通过评估警报性质、交易类型、客户资料、账户历史等数据点检查警报有效性
+  英文原文：An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history.
+
+[v7u_N003299]   补充上下文 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析旨在确定活动是否符合预期的客户行为模式
+  英文原文：This analysis helps determine if the activity aligns with expected customer behavioral patterns.
+
+[v7u_N003300]   补充上下文 | 教材类型：流程描述 | 书内第334页
+  中文要点：若活动异常或超出阈值，警报升级至二级审查进行进一步调查
+  英文原文：If the activity appears abnormal or exceeds accepted thresholds, the alert escalates to Level 2 review for further investigation.
+
+------------------------------------------------------------
+【教材原文连续段落 — p3-ch11-h3 ()】
+
+[v7u_N003297]   补充上下文 | 教材类型：概念定义 | 书内第334页
+  中文要点：一级审查是交易监控系统生成警报后的初始审查阶段
+  英文原文：When multiple levels of reviews are used, Level 1 review—or the initial review stage—occurs when a TM system generates an alert.
+
+[v7u_N003298]   已检索 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析师通过评估警报性质、交易类型、客户资料、账户历史等数据点检查警报有效性
+  英文原文：An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history.
+
+[v7u_N003299] ★ 命中 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析旨在确定活动是否符合预期的客户行为模式
+  英文原文：This analysis helps determine if the activity aligns with expected customer behavioral patterns.
+
+[v7u_N003300]   补充上下文 | 教材类型：流程描述 | 书内第334页
+  中文要点：若活动异常或超出阈值，警报升级至二级审查进行进一步调查
+  英文原文：If the activity appears abnormal or exceeds accepted thresholds, the alert escalates to Level 2 review for further investigation.
+
+[v7u_N003301]   补充上下文 | 教材类型：流程描述 | 书内第334页
+  中文要点：分析师可将警报判定为误报并记录充分理由
+  英文原文：If not, the analyst can dismiss it as a false positive, and document sufficient rationale for arriving at that conclusion.
+
+------------------------------------------------------------
+解析补充候选：
+【教材原文连续段落 — p3-ch11-h3 ()】
+
+[v7u_N003303]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：分析交易模式和频率
+  英文原文：Analyzing transaction patterns and frequency.
+
+[v7u_N003304]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：评估资金来源和去向
+  英文原文：Assessing the source and destination of funds.
+
+[v7u_N003305] ★ 命中 | 教材类型：事实陈述 | 书内第334页
+  中文要点：审查了解你的客户信息和客户风险画像
+  英文原文：Reviewing KYC information and the customer risk profile.
+
+[v7u_N003306]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：收集额外记录，如客户与机构沟通记录及既往调查信息
+  英文原文：Gathering additional records, such as communication logs between the customer and institution, and any prior investigations related to the customer or account.
+
+[v7u_N003307]   补充上下文 | 教材类型：事实陈述 | 书内第334页
+  中文要点：开展开源研究，包括社交媒体、新闻、公共记录及监管机构发布的警报和指引
+  英文原文：Conducting open-source research to include social media, news articles, public records and notices, alerts, or guidance issued by law enforcement and regulatory agencies, to inform their opinion on the escalated activity.
+
+------------------------------------------------------------
+【教材原文连续段落 — p3-ch11-h4 ()】
+
+[v7u_N003334]   补充上下文 | 教材类型：规则/规定 | 书内第337页
+  中文要点：收集充分信息对判断警报有效性和开展调查至关重要
+  英文原文：Gathering sufficient information is important to determine an alert’s validity and/or conduct investigations. Employees responsible for reviewing and investigating alerts should use both internal and external information to make decisions.
+
+[v7u_N003335]   补充上下文 | 教材类型：分类说明 | 书内第337页
+  中文要点：内部信息是机构维护并可被审查员访问的数据，关键数据点列表引导
+  英文原文：Internal information is data maintained by the organization and accessible to the reviewer. Key internal data points include:
+
+[v7u_N003336] ★ 命中 | 教材类型：事实陈述 | 书内第337页
+  中文要点：了解你的客户数据包括客户档案、风险因素和历史行为
+  英文原文：KYC data: Customer’s profile, risk factors, and historical behavior.
+
+[v7u_N003337]   补充上下文 | 教材类型：事实陈述 | 书内第337页
+  中文要点：交易数据为警报提供详细的历史交易记录背景
+  英文原文：Transaction data: Context for the alert with detailed records of past transactions.
+
+[v7u_N003338]   补充上下文 | 教材类型：事实陈述 | 书内第337页
+  中文要点：警报和调查历史提供关于同一客户或交易模式的洞察
+  英文原文：Alert and investigation history: Insights from previous alerts concerning the same customer or transaction pattern.
+
+------------------------------------------------------------
+选项C：不良媒体搜索
+盲判标签：incorrect | 证据状态：none | 原判断类型：stem_contrast
+已裁判证据：
+- 无
+解析补充候选：
+【教材原文连续段落 — p3-ch10-h5 ()】
+
+[v7u_N003188]   补充上下文 | 教材类型：规则/规定 | 书内第321页
+  中文要点：须实施正式的持续测试流程，确保系统有效运行并包含质量检查
+  英文原文：Testing: Implement a formal, ongoing testing process to ensure the system continues to operate effectively and with QA checks.
+
+[v7u_N003189]   补充上下文 | 教材类型：规则/规定 | 书内第321页
+  中文要点：对政治敏感人物须在准入及整个客户生命周期中实施强化尽职调查等控制
+  英文原文：Other controls: Include enhanced due diligence processes on PEPs at onboarding and throughout the customer life cycle. Consider what other controls are needed for PEPs, such as specific transaction monitoring rules.
+
+[v7u_N003190] ★ 命中 | 教材类型：概念定义 | 书内第322页
+  中文要点：负面媒体检查（不良新闻筛查）用于识别与金融犯罪风险相关的公开信息
+  英文原文：Adverse media checks—also known as negative news screening— identify publicly available information linking individuals or entities to financial crime risks.
+
+[v7u_N003191]   补充上下文 | 教材类型：规则/规定 | 书内第322页
+  中文要点：金融机构须对负面媒体筛查采取基于风险的方法，确保准确可信
+  英文原文：With the increasing de-escalation of fact-checking on social media platforms, and the rise of automated software-as-a-service screening solutions, financial institutions must take a risk-based approach to adverse media screening, ensuring accurate and credible risk assessments.
+
+[v7u_N003192]   补充上下文 | 教材类型：分类说明 | 书内第322页
+  中文要点：金融机构须进行负面媒体筛查，目的如下
+  英文原文：Financial institutions must conduct adverse media screening to:
+
+------------------------------------------------------------
+【教材原文连续段落 — p4-ch16-h3 ()】
+
+[v7u_N004662]   补充上下文 | 教材类型：背景信息 | 书内第467页
+  中文要点：外部数据来源之一：商业登记与最终受益所有人数据库
+  英文原文：Business registries, UBO databases
+
+[v7u_N004663]   补充上下文 | 教材类型：背景信息 | 书内第467页
+  中文要点：外部数据来源之一：受监管实体
+  英文原文：Regulated entity
+
+[v7u_N004664] ★ 命中 | 教材类型：背景信息 | 书内第467页
+  中文要点：外部数据来源之一：负面媒体数据库
+  英文原文：Adverse media databases
+
+[v7u_N004665]   补充上下文 | 教材类型：背景信息 | 书内第467页
+  中文要点：外部数据来源之一：法院裁决
+  英文原文：Court rulings
+
+[v7u_N004666]   补充上下文 | 教材类型：背景信息 | 书内第467页
+  中文要点：内部数据来源
+  英文原文：Internal sources
+
+------------------------------------------------------------
+选项D：账户活动
+盲判标签：incorrect | 证据状态：negative | 原判断类型：direct_taxonomy
+已裁判证据：
+【教材原文连续段落 — p3-ch11-h4 ()】
+
+[v7u_N003337]   补充上下文 | 教材类型：事实陈述 | 书内第337页
+  中文要点：交易数据为警报提供详细的历史交易记录背景
+  英文原文：Transaction data: Context for the alert with detailed records of past transactions.
+
+[v7u_N003338]   补充上下文 | 教材类型：事实陈述 | 书内第337页
+  中文要点：警报和调查历史提供关于同一客户或交易模式的洞察
+  英文原文：Alert and investigation history: Insights from previous alerts concerning the same customer or transaction pattern.
+
+[v7u_N003339] ★ 命中 | 教材类型：风险指标 | 书内第337页
+  中文要点：账户历史与活动有助于区分典型和异常行为
+  英文原文：Account history and activity: Account usage and trends that help distinguish between typical and unusual behavior.
+
+[v7u_N003340]   补充上下文 | 教材类型：分类说明 | 书内第337页
+  中文要点：外部信息提供额外背景，有助于识别红旗信号信号，来源列表引导
+  英文原文：External information is data that exists outside the organization. It provides additional context to the internal information and can help identify red flags. External information sources include:
+
+[v7u_N003341]   补充上下文 | 教材类型：事实陈述 | 书内第337页
+  中文要点：公开来源包括新闻文章、公共记录和其他在线资源。
+  英文原文：Open sources: News articles, public records, and other online resources.
+
+------------------------------------------------------------
+解析补充候选：
+【教材原文连续段落 — p3-ch10-h4 ()】
+
+[v7u_N003066]   补充上下文 | 教材类型：事实陈述 | 书内第309页
+  中文要点：CDD需收集就业和收入信息
+  英文原文：Employment and income information.
+
+[v7u_N003067]   补充上下文 | 教材类型：事实陈述 | 书内第309页
+  中文要点：CDD需收集资金来源和交易活动信息
+  英文原文：Source of funds and transaction activity.
+
+[v7u_N003068] ★ 命中 | 教材类型：事实陈述 | 书内第309页
+  中文要点：CDD需收集账户用途和预期活动信息
+  英文原文：Account’s purpose and expected activity.
+
+[v7u_N003069]   补充上下文 | 教材类型：规则/规定 | 书内第310页
+  中文要点：所有客户均须执行客户尽职调查，并持续监控以确保符合不断变化的金融犯罪防控法规
+  英文原文：CDD is mandatory for all customers, with ongoing monitoring to ensure compliance with evolving AFC regulations.
+
+[v7u_N003070]   补充上下文 | 教材类型：分类说明 | 书内第310页
+  中文要点：高风险客户（如政治敏感人物）通常需要强化尽职调查（EDD）
+  英文原文：EDD is typically required for high-risk customers, such as PEPs or individuals operating in high-risk jurisdictions. EDD includes, but is not limited to:
+
+------------------------------------------------------------
+【教材原文连续段落 — p3-ch8-h1 ()】
+
+[v7u_N002363]   补充上下文 | 教材类型：案例 | 书内第241页
+  中文要点：TD银行《银行保密法》/反洗钱合规项目存在风险评估、客户尽职调查、交易监控和可疑报告缺陷
+  英文原文：TD Bank failed to maintain an adequate BSA/AML compliance program, had insufficient risk assessment and CDD, inadequate transaction monitoring systems, and deficient suspicious activity reporting processes.
+
+[v7u_N002364]   补充上下文 | 教材类型：事实陈述 | 书内第242页
+  中文要点：监管机构指出TD银行反洗钱项目长期资金不足且缺乏报告可疑交易资源
+  英文原文：The authority's announcement stated that, for over a decade, the bank’s AML program was underfunded and lacked the necessary resources to report suspicious peerto-peer transactions.
+
+[v7u_N002365] ★ 命中 | 教材类型：事实陈述 | 书内第242页
+  中文要点：与人口贩卖相关的漏斗账户活动未被发现，涉及数百万美元
+  英文原文：These transactions, which were linked to human trafficking, allowed millions of dollars in funnel account activity to go undetected.
+
+[v7u_N002366]   补充上下文 | 教材类型：事实陈述 | 书内第242页
+  中文要点：TD银行未能发现员工协助高风险地区毒品洗钱并收受贿赂
+  英文原文：TD Bank also failed to detect illicit activities by its own employees, including one who facilitated narcotics money laundering in a high-risk jurisdiction in exchange for bribes.
+
+[v7u_N002367]   补充上下文 | 教材类型：事实陈述 | 书内第242页
+  中文要点：TD银行面临FinCEN四年独立监管及OCC和美联储平行和解
+  英文原文：In addition to the financial penalty, TD Bank faced a FinCEN-mandated fouryear independent monitorship to oversee its remediation efforts. The Office of the Comptroller of the Currency (OCC) and the Federal Reserve reached parallel settlements with the bank.
+
+------------------------------------------------------------
+
+引用教材内容时，必须标注页码。例如："教材指出放置阶段指非法资金进入金融系统（书内第53页）。"
+
+## 写作铁律
+
+1. 不得在题干原文上添加任何程度副词、数量词、性质词。题干写"低于"就是低于，不是"略低于"也不是"远低于"。题干写"一个账户"就是一个，不是"跨账户"。题干写"支付发票"就是支付发票，不是"虚假发票"。同样，教材原文用"such as""include""for example"等举例措辞的，不得转写成"清单""界定""明确列举"等暗示穷举或硬性边界的词。原文是举例，解析就写举例。
+2. 引用教材案例时，用描述性语言（"教材在Tamayo案例中展示了..."），不用规定性语言（"微结构化通常""教材规定必须"）。案例是教材展示概念的方式，不是教材制定的规则。案例中的具体数字不能写成硬性标准。
+3. 当教材对某概念没有严格划分标准时，诚实说出，但给学生一条在当前条件下最合理的判断路径。
+4. JSON 文本中的引号用中文引号「」，不要用 ASCII 双引号""（会破坏 JSON 结构）。
+5. 易错提醒要么给出具体的区分标准，要么留空。不写"注意区分X和Y"这类空泛表达。
+6. 区分两种信息来源：教材材料中有的（可引用、可定义），和材料中没有的（只能说"题干未提及X要素"）。当材料没有提供某个选项所涉及概念的定义时，不要用自己的知识去补那个定义。
+7. 引用 unit 前检查其章节路径（材料卡片中的"章节："行）。若来自特例场景（如大使馆、外交使团、某类机构），该 unit 的陈述只在特例下有效，不能当普遍原则用。
+8. 不以非黑即白的方式排除选项。即使错误项本身有一定关联，也不用"不属于""不可能""因此错误"等绝对否定语气。改用比较级——"在教材框架下，题干条件更直接匹配X而非Y""正确项比错误项更吻合教材定义"。
+9. 区分事实和推理。教材原文（标注了页码的）是事实——确定的；你基于事实推导出的判断是推理——不确定的。推理部分用"由此可推断""在本题条件下""相比之下更可能"等表述，不要写成和教材事实一样的确定语气。归因于某个 unit 的断言词（如"所有权转移""转移资金"）必须真的出现在该 unit 的原文中，原文没有的词不能说成教材说的。同样，教材原文的涵盖范围不能缩窄——原文说"customers or sectors"，解析不能说"仅限于行业部门"。
+
+10. 引用具体步骤或数据点的 unit 时，检查材料中是否存在描述该流程整体阶段框架的 unit（如一级/二级审查、三段式洗钱流程等层级结构）。若存在，一并引用：用框架 unit 建立程序先后，用步骤 unit 解释具体内容。
+
+11. primary_unit_id：从 evidence_cards 中选出对本题答案判断最重要、最核心的那一个 unit_id。它应该是 core_analysis 引用的关键证据。如果有多条引用，选起决定性作用的那条。
+
+## 输出 JSON
+
+{{
+  "answer": ["A"],
+  "primary_unit_id": "v7u_N000001",
+  "exam_point": {{
+    "text": "一句话，30字内，只写考什么"
+  }},
+  "core_analysis": {{
+    "text": "定义/规则 → 题干关键事实 → 为什么正确答案成立 → 下次怎么看",
+    "cited_unit_ids": ["v7u_N000001"],
+    "source_quote": {{
+      "unit_id": "v7u_N000001",
+      "exact_excerpt": "可选，40-240字符英文原文片段"
+    }}
+  }},
+  "option_explanations": [
+    {{
+      "option": "B",
+      "analysis": "仅错误项，不超过两句。不仅说不选，还说何时选",
+      "error_type": "概念混淆|主体或阶段错配|范围或程度偏差|题干要素不匹配|证据不足",
+      "stem_quotes": ["题干逐字片段"],
+      "option_quotes": ["选项逐字片段"]
+    }}
+  ],
+  "easy_mistake": {{
+    "text": "有增量信息时写，否则留空""",
+    "cited_unit_ids": ["v7u_N000001"]
+  }}
+}}

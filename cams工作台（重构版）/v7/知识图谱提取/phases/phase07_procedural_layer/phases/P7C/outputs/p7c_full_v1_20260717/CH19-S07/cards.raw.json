@@ -1,0 +1,938 @@
+{
+  "section_id": "CH19-S07",
+  "cards": [
+    {
+      "card_id": "p7card_CH19-S07_001",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "FATF在全体会议讨论和质量审查后发布互评估报告",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "全体会议讨论和最终质量审查完成",
+          "evidence_unit_ids": [
+            "v7u_N001430"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FATF发布互评估报告",
+          "evidence_unit_ids": [
+            "v7u_N001430"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001430"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001430"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：全体会议讨论和最终质量审查完成后，FATF发布互评估报告；证据范围：v7u_N001430；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_002",
+      "section_id": "CH19-S07",
+      "card_nature": "assessment",
+      "title": "评估表现不佳可能导致被列入FATF灰名单或黑名单",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "评估表现不佳",
+          "evidence_unit_ids": [
+            "v7u_N001431"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "存在被列入FATF灰名单或黑名单的风险",
+          "evidence_unit_ids": [
+            "v7u_N001431"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "risky"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "司法管辖区在评估中表现不佳",
+          "evidence_unit_ids": [
+            "v7u_N001431"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001431"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：若司法管辖区在评估中表现不佳，则存在被列入FATF灰名单或黑名单的风险；证据范围：v7u_N001431；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_003",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "收到评级后应解决FATF在互评估报告中指出的缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "收到互评估报告评级",
+          "evidence_unit_ids": [
+            "v7u_N001433"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "解决FATF在互评估报告中指出的缺陷",
+          "evidence_unit_ids": [
+            "v7u_N001433"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001433"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001433"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：司法管辖区收到互评估报告评级后，应解决FATF指出的缺陷；证据范围：v7u_N001433；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_004",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "合规增强促使加大技术和人员投资以防范金融犯罪",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "合规增强",
+          "evidence_unit_ids": [
+            "v7u_N001436"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "加大对技术、培训和人员的投资",
+          "evidence_unit_ids": [
+            "v7u_N001436"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "检测和防范金融犯罪",
+          "evidence_unit_ids": [
+            "v7u_N001436"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001436"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001436"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001436"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：合规增强引发投资，旨在检测和防范金融犯罪；证据范围：v7u_N001436；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_005",
+      "section_id": "CH19-S07",
+      "card_nature": "assessment",
+      "title": "所有司法管辖区接受评估后监测，并根据表现采取不同措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "所有司法管辖区须接受评估后监测",
+          "evidence_unit_ids": [
+            "v7u_N001438"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "司法管辖区基本合规且积极整改",
+          "evidence_unit_ids": [
+            "v7u_N001439"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "定期提交改进报告",
+          "evidence_unit_ids": [
+            "v7u_N001439"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "司法管辖区关键缺陷整改不力",
+          "evidence_unit_ids": [
+            "v7u_N001440"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FATF发布公开警告",
+          "evidence_unit_ids": [
+            "v7u_N001440"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "基本合规且积极整改",
+          "evidence_unit_ids": [
+            "v7u_N001439"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001439"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "condition": "关键缺陷整改不力",
+          "evidence_unit_ids": [
+            "v7u_N001440"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n005",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001440"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001438",
+        "v7u_N001439",
+        "v7u_N001440"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据合规整改表现，FATF采取提交改进报告或公开警告措施；证据范围：v7u_N001438-1440；待P7D逐边审核。注：S2中e003为outcome，但被trigger连接，端点不标准，已保留并映射为PRECEDES。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_006",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "阿联酋通过成功整改在2024年被FATF从灰名单移除",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "FATF在2022年将阿联酋列入灰名单",
+          "evidence_unit_ids": [
+            "v7u_N001441"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "阿联酋成功修订立法、更新指引、加强受益所有人法规等整改措施",
+          "evidence_unit_ids": [
+            "v7u_N001441",
+            "v7u_N001442",
+            "v7u_N001443",
+            "v7u_N001444",
+            "v7u_N001445",
+            "v7u_N001446",
+            "v7u_N001447",
+            "v7u_N001448",
+            "v7u_N001449"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "FATF在2024年将阿联酋从灰名单移除",
+          "evidence_unit_ids": [
+            "v7u_N001441"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001441"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001441"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001441",
+        "v7u_N001442",
+        "v7u_N001443",
+        "v7u_N001444",
+        "v7u_N001445",
+        "v7u_N001446",
+        "v7u_N001447",
+        "v7u_N001448",
+        "v7u_N001449"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：阿联酋因成功整改而从FATF灰名单移除；证据范围：v7u_N001441-1449；待P7D逐边审核。注：S2将整改触发移除关系标注为trigger，但起点为action，不符合矩阵，已调整为PRECEDES。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_007",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "受监管机构因互评估影响应实施控制框架和资源",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "互评估影响不仅限于国家层面，也影响受监管机构",
+          "evidence_unit_ids": [
+            "v7u_N001450"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "受监管机构实施控制框架和资源",
+          "evidence_unit_ids": [
+            "v7u_N001451"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "互评估影响也适用于受监管机构",
+          "evidence_unit_ids": [
+            "v7u_N001450",
+            "v7u_N001451"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001450",
+        "v7u_N001451"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：互评估影响扩展至受监管机构，要求其实施控制框架和资源；证据范围：v7u_N001450-1451；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_008",
+      "section_id": "CH19-S07",
+      "card_nature": "assessment",
+      "title": "根据自身能力、风险敞口和背景定制国家风险评估过程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "自身能力、风险敞口和背景",
+          "evidence_unit_ids": [
+            "v7u_N001456"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "定制国家风险评估过程",
+          "evidence_unit_ids": [
+            "v7u_N001456"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001456"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001456"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据自身能力、风险敞口和背景定制国家风险评估过程；证据范围：v7u_N001456；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_009",
+      "section_id": "CH19-S07",
+      "card_nature": "execution",
+      "title": "按照FATF六步最佳实践框架进行国家风险评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "环境扫描，评估经济、政治和法律因素",
+          "evidence_unit_ids": [
+            "v7u_N001458"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "分析扫描，收集和分析洗钱和恐怖融资数据",
+          "evidence_unit_ids": [
+            "v7u_N001459"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "威胁分析，识别关键洗钱和恐怖融资行为者及方法",
+          "evidence_unit_ids": [
+            "v7u_N001460"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "漏洞分析，评估金融体系弱点",
+          "evidence_unit_ids": [
+            "v7u_N001461"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "风险评估，分配风险等级并制定缓解计划",
+          "evidence_unit_ids": [
+            "v7u_N001462"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "地平线扫描，监测新兴趋势和未来威胁",
+          "evidence_unit_ids": [
+            "v7u_N001463"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "FATF建议1要求司法管辖区识别、评估和理解洗钱和恐怖融资风险",
+          "evidence_unit_ids": [
+            "v7u_N001452"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001458",
+            "v7u_N001459"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001459",
+            "v7u_N001460"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N001460",
+            "v7u_N001461"
+          ]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N001461",
+            "v7u_N001462"
+          ]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRECEDES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N001462",
+            "v7u_N001463"
+          ]
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n007",
+          "evidence_unit_ids": [
+            "v7u_N001458",
+            "v7u_N001452"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001452",
+        "v7u_N001458",
+        "v7u_N001459",
+        "v7u_N001460",
+        "v7u_N001461",
+        "v7u_N001462",
+        "v7u_N001463"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：按照FATF六步框架执行国家风险评估；证据范围：v7u_N001452, v7u_N001458-1463；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_010",
+      "section_id": "CH19-S07",
+      "card_nature": "assessment",
+      "title": "行业和专题风险评估帮助当局制定类型学以了解洗钱和恐怖融资风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "行业和专题风险评估",
+          "evidence_unit_ids": [
+            "v7u_N001464"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "制定类型学以了解行为人如何利用特定部门进行洗钱和恐怖融资",
+          "evidence_unit_ids": [
+            "v7u_N001464"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001464"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001464"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：行业和专题风险评估帮助制定类型学以了解风险；证据范围：v7u_N001464；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S07_011",
+      "section_id": "CH19-S07",
+      "card_nature": "control",
+      "title": "全企业风险评估系统识别和评估风险以强化合规和内控",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "全企业风险评估",
+          "evidence_unit_ids": [
+            "v7u_N001466"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "系统性识别和评估所有运营中的洗钱和恐怖融资风险",
+          "evidence_unit_ids": [
+            "v7u_N001466"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "强化合规、内控和监管对齐，优化风险管理",
+          "evidence_unit_ids": [
+            "v7u_N001466"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001466"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001466"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001466"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：全企业风险评估确保系统性识别风险和强化合规；证据范围：v7u_N001466；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_001"
+      ],
+      "reason": "明确描述发布报告的流程触发与行动。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_002"
+      ],
+      "reason": "表达评估不佳与列入名单风险之间的判断关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_003"
+      ],
+      "reason": "接收评级触发解决缺陷的义务，构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅陈述FATF的鼓励行为，无后续实际触发或业务流程改变。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "与s1c_004类似，仅表达FATF的鼓励，不构成程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_004"
+      ],
+      "reason": "合规增强引发投资行为，并目的于防范金融犯罪，形成有向流程。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_005"
+      ],
+      "reason": "提供监测要求与部分分支措施，与s1c_008共同构成完整监测分支。"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_005"
+      ],
+      "reason": "补充监测的另一分支（警告），与s1c_007合并为同一评估后监测流程。"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_006"
+      ],
+      "reason": "案例展示以整改成功触发灰名单移除的完整程序。"
+    },
+    {
+      "candidate_id": "s1c_010",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_007"
+      ],
+      "reason": "互评估影响推导出受监管机构应实施控制框架的程序性要求。"
+    },
+    {
+      "candidate_id": "s1c_011",
+      "disposition": "support_only",
+      "card_ids": [
+        "p7card_CH19-S07_009"
+      ],
+      "reason": "作为FATF建议1的要求，为六步国家风险评估框架提供标准支撑。"
+    },
+    {
+      "candidate_id": "s1c_012",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅描述FATF推广风险为本方法，无具体程序或判断迁移。"
+    },
+    {
+      "candidate_id": "s1c_013",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "陈述风险评估可在多层面进行的允许性规则，不属于流程。"
+    },
+    {
+      "candidate_id": "s1c_014",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_008"
+      ],
+      "reason": "明确根据辖区自身条件定制NRA的动作和依据，构成决策流程。"
+    },
+    {
+      "candidate_id": "s1c_015",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_009"
+      ],
+      "reason": "提供六步NRA框架的序列步骤，是核心执行流程。"
+    },
+    {
+      "candidate_id": "s1c_016",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_010"
+      ],
+      "reason": "行业风险评估产出类型学，具有明确的目的性产出关系。"
+    },
+    {
+      "candidate_id": "s1c_017",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH19-S07_011"
+      ],
+      "reason": "企业风险评估产生系统性风险识别和合规加强的结果。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch19_s07_poor_eval_consequences",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述评估不佳导致的外部经济后果，非机构内部程序或判断迁移。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role表示事件触发，对应E1_event_signal",
+      "e002": "发布报告是典型执行动作，对应P2_execution"
+    },
+    "ep_002": {
+      "e001": "评估表现不佳是已发生的状态，触发风险判断，对应E3_state_threshold",
+      "e002": "风险判断属于评估风险信号，对应P1_assessment"
+    },
+    "ep_003": {
+      "e001": "收到评级是前续流程产出，触发本流程，对应E4_handoff",
+      "e002": "解决缺陷是执行动作，对应P2_execution"
+    },
+    "ep_004": {
+      "e001": "合规增强是已发生的积极变化，触发后续投资，对应E3_state_threshold",
+      "e002": "投资是执行动作，对应P2_execution",
+      "e003": "检测和防范金融犯罪是期望达到的能力状态，对应X3_state_change"
+    },
+    "ep_005": {
+      "e001": "所有司法管辖区须接受评估后监测是标准要求，对应standard",
+      "e002": "基本合规且积极整改是状态条件，对应E3_state_threshold",
+      "e003": "定期提交改进报告是持续义务，对应X7_continuing_obligation",
+      "e004": "关键缺陷整改不力是状态条件，对应E3_state_threshold",
+      "e005": "发布公开警告是执行动作，对应P2_execution"
+    },
+    "ep_006": {
+      "e001": "列入灰名单是评估结论的分类，对应X1_classification",
+      "e002": "整改措施综合是执行动作集，对应P2_execution",
+      "e003": "从灰名单移除是执行动作，对应P2_execution"
+    },
+    "ep_007": {
+      "e001": "互评估影响扩展至机构是外部环境变化，触发机构响应，对应E6_change_exception",
+      "e002": "实施控制框架是执行动作，对应P2_execution"
+    },
+    "ep_008": {
+      "e001": "自身能力等因素是输入数据，对应input",
+      "e002": "定制评估过程是执行动作，对应P2_execution"
+    },
+    "ep_009": {
+      "e001": "环境扫描是评估因素，对应P1_assessment",
+      "e002": "分析扫描是收集和分析数据，对应P4_collection",
+      "e003": "威胁分析是识别关键行为者，对应P1_assessment",
+      "e004": "漏洞分析是评估弱点，对应P1_assessment",
+      "e005": "分配风险等级和制定计划，对应P9_planning",
+      "e006": "地平线扫描是持续监测，对应P7_monitoring",
+      "e007": "FATF建议1是标准，对应standard"
+    },
+    "ep_010": {
+      "e001": "行业和专题风险评估是识别和评估风险，对应P1_assessment",
+      "e002": "制定类型学是产出文档，对应X2_product"
+    },
+    "ep_011": {
+      "e001": "全企业风险评估是识别和评估风险，对应P1_assessment",
+      "e002": "系统性识别和评估风险是状态改变，对应X3_state_change",
+      "e003": "强化合规是状态改变，对应X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

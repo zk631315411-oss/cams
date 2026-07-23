@@ -1,0 +1,300 @@
+{
+  "section_id": "CH42-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S05_001",
+      "section_id": "CH42-S05",
+      "card_nature": "assessment",
+      "title": "KYC更新与风险升级触发EDD",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "实施风险为本的KYC更新周期",
+          "evidence_unit_ids": [
+            "v7u_N003032"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "客户类别和司法管辖区要求",
+          "evidence_unit_ids": [
+            "v7u_N003032"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "记录变化并适当更新风险评级",
+          "evidence_unit_ids": [
+            "v7u_N003032"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "触发强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N003033"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N003032"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N003032"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "e003",
+          "target": "e004",
+          "condition": "更新后的风险评级呈现更高风险",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N003033"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003032",
+        "v7u_N003033"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：KYC更新与风险升级触发EDD；证据范围：v7u_N003032, v7u_N003033；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH42-S05_002",
+      "section_id": "CH42-S05",
+      "card_nature": "execution",
+      "title": "交易制裁筛查与风险响应",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "筛查每笔交易以检测制裁风险",
+          "evidence_unit_ids": [
+            "v7u_N003035"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测到制裁风险",
+          "evidence_unit_ids": [
+            "v7u_N003036"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "冻结支付并上报以确定后续步骤",
+          "evidence_unit_ids": [
+            "v7u_N003036"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003035"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "e002",
+          "target": "e003",
+          "condition": "检测到制裁风险",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N003036"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003035",
+        "v7u_N003036"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：交易制裁筛查与风险响应；证据范围：v7u_N003035, v7u_N003036；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH42-S05_003",
+      "section_id": "CH42-S05",
+      "card_nature": "execution",
+      "title": "交易监控与风险动态调整",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "监控交易以发现可疑模式",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测异常行为",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "触发警报",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "动态调整风险画像",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003037"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003037"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：交易监控与风险动态调整；证据范围：v7u_N003037；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH42-S05_001"
+      ],
+      "reason": "该候选提供KYC更新、风险评级更新及条件触发EDD的完整程序关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH42-S05_002"
+      ],
+      "reason": "该候选提供交易制裁筛查、检测与冻结上报的完整程序关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH42-S05_003"
+      ],
+      "reason": "该候选提供交易监控与异常检测、警报及风险调整的程序关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch42_s05_ongoing_screening",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选仅陈述持续筛查活动，未构成有向的程序性或判断性迁移关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role, perform risk-based KYC refresh cycles → P1_assessment (assesses changes and updates risk rating)",
+      "e002": "standard role → standard",
+      "e003": "outcome role, updating risk rating → X3_state_change (business object enters a new stable state)",
+      "e004": "action role, trigger enhanced due diligence → P2_execution (executes a response action)"
+    },
+    "ep_002": {
+      "e001": "action role, screen transactions to detect sanctions exposure → P2_execution",
+      "e002": "outcome role, detection of sanctions risk → X1_classification (risk conclusion)",
+      "e003": "action role, block payments and escalate → P2_execution"
+    },
+    "ep_003": {
+      "e001": "action role, monitor transactions for suspicious patterns → P7_monitoring (continuous observation)",
+      "e002": "outcome role, detect anomalous behaviors → X1_classification",
+      "e003": "outcome role, trigger alerts → X2_product (generates an identifiable alert)",
+      "e004": "outcome role, adjust risk profiles dynamically → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

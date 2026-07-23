@@ -1,0 +1,217 @@
+{
+  "section_id": "CH02-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH02-S01_001",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "依据FATF分类承认并监控上游犯罪",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "FATF has identified 21 categories of predicate offenses",
+          "evidence_unit_ids": ["v7u_N000062"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "financial institutions must acknowledge and monitor these offenses under AML compliance programs",
+          "evidence_unit_ids": ["v7u_N000062"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N000062"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000062"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构必须根据FATF分类标准承认并监控上游犯罪。证据范围：v7u_N000062。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH02-S01_002",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "建立反洗钱和制裁合规计划以检测和预防制裁规避",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "need for detecting and preventing sanctions evasion",
+          "evidence_unit_ids": ["v7u_N000099"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "regulated entities must have strong AML and sanctions compliance programs with robust policies, procedures, and internal controls",
+          "evidence_unit_ids": ["v7u_N000099"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000099"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000099"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：鉴于制裁规避风险，受监管实体必须建立合规计划。证据范围：v7u_N000099。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH02-S01_003",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "调查异常支付流并揭露非法网络",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "compliance officer flagged irregular payment flows linked to RedStar",
+          "evidence_unit_ids": ["v7u_N000111"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "further investigation",
+          "evidence_unit_ids": ["v7u_N000111"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "exposed the illicit network, revealing Komarov and Volkof Industries' role in sanctions evasion, proliferation financing, laundering criminal proceeds, and foreign bribery and corruption offences",
+          "evidence_unit_ids": ["v7u_N000111"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000111"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N000111"],
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000111"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：合规官发现异常支付流触发进一步调查，调查结果揭露了非法网络。证据范围：v7u_N000111。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH02-S01_004",
+      "section_id": "CH02-S01",
+      "card_nature": "execution",
+      "title": "协调风险控制以适应跨境法律差异",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "variation in classification of predicate offenses across jurisdictions can complicate AML efforts",
+          "evidence_unit_ids": ["v7u_N000065"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "compliance professionals operating in cross-border contexts need to align risk controls with the laws and regulations of more than one jurisdiction",
+          "evidence_unit_ids": ["v7u_N000065"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000065"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000065"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：法律差异导致跨境AML协调需求，合规专业人士需对齐风险控制。证据范围：v7u_N000065。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH02-S01_001"],
+      "reason": "建模为参考标准动作，生成卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH02-S01_002"],
+      "reason": "建模为合规计划构建，生成卡片。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH02-S01_003"],
+      "reason": "合规官调查揭露非法网络过程建模，生成卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch02_s01_crossborder_risk_control",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH02-S01_004"],
+      "reason": "跨境风险控制协调要求建模，生成卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → standard",
+      "e002": "action涉及持续监控，符合P7_monitoring定义"
+    },
+    "ep_002": {
+      "e001": "制裁规避需求代表异常环境启动调整，选E6_change_exception",
+      "e002": "建立合规程序是实施动作，选P2_execution"
+    },
+    "ep_003": {
+      "e001": "合规官标记异常事件启动后续，选E1_event_signal",
+      "e002": "进一步调查收集信息，选P4_collection",
+      "e003": "调查结果揭露罪行形成结论，选X1_classification"
+    },
+    "ep_004": {
+      "e001": "法域差异导致复杂化是变化/异常，选E6_change_exception",
+      "e002": "协调风险控制是执行动作，选P2_execution"
+    }
+  },
+  "skip_reason": null
+}

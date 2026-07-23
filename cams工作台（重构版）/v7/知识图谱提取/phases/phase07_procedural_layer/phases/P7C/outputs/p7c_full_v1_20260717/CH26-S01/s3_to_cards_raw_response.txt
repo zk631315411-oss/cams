@@ -1,0 +1,540 @@
+{
+  "section_id": "CH26-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH26-S01_001",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "依据高度注意义务对客户数据进行安全存储与访问控制",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "客户数据",
+          "evidence_unit_ids": ["v7u_N002012"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "金融机构对客户数据安全与隐私的高度注意义务和法律责任",
+          "evidence_unit_ids": ["v7u_N002011"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "安全存储客户数据并仅限有需要且获授权的人员查看",
+          "evidence_unit_ids": ["v7u_N002012"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002012"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002011"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002011", "v7u_N002012"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：客户数据必须安全存储且仅限授权访问；证据范围：v7u_N002011-2012；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_002",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "数据完成用途后的安全销毁流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "数据已服务其目的",
+          "evidence_unit_ids": ["v7u_N002014"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "数据不得无限期保留",
+          "evidence_unit_ids": ["v7u_N002027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "安全销毁数据",
+          "evidence_unit_ids": ["v7u_N002014", "v7u_N002027"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "组织的销毁政策",
+          "evidence_unit_ids": ["v7u_N002027"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "数据完成用途",
+          "evidence_unit_ids": ["v7u_N002014"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002027"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002027"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002014", "v7u_N002027"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：数据完成用途后必须安全销毁；证据范围：v7u_N002014, v7u_N002027；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_003",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "制定数据生命周期管理政策",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "制定数据分类、存储期限和销毁政策",
+          "evidence_unit_ids": ["v7u_N002016"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "组织的数据分类、存储期限和销毁政策",
+          "evidence_unit_ids": ["v7u_N002016"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002016"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002016"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：组织应制定数据管理政策；证据范围：v7u_N002016；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_004",
+      "section_id": "CH26-S01",
+      "card_nature": "assessment",
+      "title": "个人数据跨境转移的同等保护条件判断",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "个人数据拟跨境转移",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "评估是否满足同等保护条件",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "转移受限制",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "允许转移",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "同等保护条件（确保境外保护水平与境内等同）",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "拟进行个人数据跨境转移",
+          "evidence_unit_ids": ["v7u_N002020"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "未满足同等保护条件",
+          "evidence_unit_ids": ["v7u_N002020"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "满足同等保护条件",
+          "evidence_unit_ids": ["v7u_N002020"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002020"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：跨境转移需评估同等保护条件以决定是否受限；证据范围：v7u_N002020；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_005",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "数据泄露后的跨境数据传输合规检查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "发生数据泄露",
+          "evidence_unit_ids": ["v7u_N002021"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "确保已满足同等保护条件",
+          "evidence_unit_ids": ["v7u_N002021"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "同等保护条件",
+          "evidence_unit_ids": ["v7u_N002020"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "可合法进行数据跨境转移",
+          "evidence_unit_ids": ["v7u_N002021"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "发生数据泄露",
+          "evidence_unit_ids": ["v7u_N002021"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002021", "v7u_N002020"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002021"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002021", "v7u_N002020"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：数据泄露后需确保满足同等保护条件以允许跨境转移；证据范围：v7u_N002021, v7u_N002020；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_006",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "物理数据安全保护",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "物理数据",
+          "evidence_unit_ids": ["v7u_N002023"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "确保物理数据得到妥善保护",
+          "evidence_unit_ids": ["v7u_N002023"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "不得将数据留在员工桌上过夜",
+          "evidence_unit_ids": ["v7u_N002023"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002023"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002023"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002023"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：物理数据必须妥善保护；证据范围：v7u_N002023；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH26-S01_007",
+      "section_id": "CH26-S01",
+      "card_nature": "execution",
+      "title": "电子数据存储的合规录入流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "以电子方式存储数据",
+          "evidence_unit_ids": ["v7u_N002024"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将数据录入组织批准的数据库",
+          "evidence_unit_ids": ["v7u_N002024"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "组织政策",
+          "evidence_unit_ids": ["v7u_N002024"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "以电子方式存储数据时",
+          "evidence_unit_ids": ["v7u_N002024"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002024"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002024"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：电子存储时必须录入批准数据库；证据范围：v7u_N002024；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_001"],
+      "reason": "S2 mapped, included in ep_001"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "kg_only",
+      "card_ids": [],
+      "reason": "S2 excluded_nonprocedural, no procedural flow"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_002"],
+      "reason": "S2 mapped, included in ep_002"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_003"],
+      "reason": "S2 mapped, included in ep_003"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "kg_only",
+      "card_ids": [],
+      "reason": "S2 excluded_nonprocedural, no procedural flow"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_004", "p7card_CH26-S01_005"],
+      "reason": "S2 mapped, split across ep_004 and ep_005"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_005"],
+      "reason": "S2 mapped, included in ep_005"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_006"],
+      "reason": "S2 mapped, included in ep_006"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_007"],
+      "reason": "S2 mapped, included in ep_007"
+    },
+    {
+      "candidate_id": "s1c_010",
+      "disposition": "kg_only",
+      "card_ids": [],
+      "reason": "S2 excluded_nonprocedural, no procedural flow"
+    },
+    {
+      "candidate_id": "s1c_011",
+      "disposition": "kg_only",
+      "card_ids": [],
+      "reason": "S2 excluded_nonprocedural, no procedural flow"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s01_high_duty",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH26-S01_001"],
+      "reason": "S2 support_only, provides standard constraint for ep_001"
+    },
+    {
+      "candidate_id": "s1c_gap_ch26_s01_strict_requirements",
+      "disposition": "kg_only",
+      "card_ids": [],
+      "reason": "S2 excluded_nonprocedural, no procedural flow"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, customer data as object entering security storage scope -> E2_object_entry",
+      "e002": "standard role -> auxiliary/standard",
+      "e003": "action role, mandatory execution of secure storage and access control -> P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role, data served its purpose as a state threshold -> E3_state_threshold",
+      "e002": "standard role -> auxiliary/standard",
+      "e003": "action role, execute secure destruction -> P2_execution",
+      "e004": "standard role -> auxiliary/standard"
+    },
+    "ep_003": {
+      "e001": "action role, planning of data lifecycle policies -> P9_planning",
+      "e002": "outcome role, policy as a tangible product -> X2_product"
+    },
+    "ep_004": {
+      "e001": "context role, intent to transfer personal data as an event -> E1_event_signal",
+      "e002": "decision role, assessment leading to branching paths -> P3_branch_routing",
+      "e003": "outcome role, restriction as a conclusion -> X1_classification",
+      "e004": "outcome role, permission as a conclusion -> X1_classification",
+      "e005": "standard role -> auxiliary/standard"
+    },
+    "ep_005": {
+      "e001": "context role, data breach as an event -> E1_event_signal",
+      "e002": "action role, ensuring condition compliance (assessment) -> P1_assessment",
+      "e003": "standard role -> auxiliary/standard",
+      "e004": "outcome role, legality conclusion -> X1_classification"
+    },
+    "ep_006": {
+      "e001": "context role, physical data as object entering protection scope -> E2_object_entry",
+      "e002": "action role, execute protection measures -> P2_execution",
+      "e003": "standard role -> auxiliary/standard"
+    },
+    "ep_007": {
+      "e001": "context role, electronic storage event trigger -> E1_event_signal",
+      "e002": "action role, execute data entry into approved database -> P2_execution",
+      "e003": "standard role -> auxiliary/standard"
+    }
+  },
+  "skip_reason": null
+}

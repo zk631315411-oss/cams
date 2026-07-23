@@ -1,0 +1,68 @@
+{
+  "section_id": "CH40-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH40-S01_001",
+      "section_id": "CH40-S01",
+      "card_nature": "execution",
+      "title": "定期更新政策以应对威胁与变化",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "定期更新政策",
+          "evidence_unit_ids": [
+            "v7u_N002874"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "应对不断变化的威胁、监管变化和新兴技术",
+          "evidence_unit_ids": [
+            "v7u_N002874"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002874"
+          ],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002874"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：机构必须定期更新政策以应对不断变化的威胁、监管变化和新兴技术；证据范围：v7u_N002874；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch40_s01_policy_update",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH40-S01_001"
+      ],
+      "reason": "该候选描述了机构必须定期更新政策以应对变化的程序要求，构成一个执行流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role, 定期更新政策是机构对政策文件实施的执行动作, 使政策内容发生变化, 符合P2_execution定义",
+      "e002": "outcome role, 应对威胁是更新政策后机构风险管理能力进入的新稳定状态, 符合X3_state_change定义"
+    }
+  },
+  "skip_reason": null
+}

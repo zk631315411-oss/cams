@@ -1,0 +1,143 @@
+{
+  "section_id": "CH07-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "control",
+      "title": "拒绝接受非法资金还贷",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "违约风险成为次要管理风险",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "不应接受该资金用于还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit",
+          "modality": "prohibited"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "condition": "银行知道或怀疑客户使用非法资金还贷",
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000554"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当银行知道或怀疑客户使用非法资金还贷，违约风险降为次要，银行不应接受该资金；证据范围：v7u_N000554；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH07-S03_002",
+      "section_id": "CH07-S03",
+      "card_nature": "control",
+      "title": "退出客户关系时核销贷款需充分理由和批准",
+      "flow_nodes": [
+        {
+          "node_id": "n004",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "退出超出银行风险容忍度且仍有贷款余额的客户关系",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "充分理由和批准",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "核销贷款",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n006",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "condition": "退出超出风险容忍度且仍有贷款余额的客户关系"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n006",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000555"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：退出超出风险容忍度且有贷款余额的客户关系时，核销贷款需充分理由和批准；证据范围：v7u_N000555；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH07-S03_001"],
+      "reason": "候选提供禁止接受非法资金还贷的程序性规则。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch07_s03_writeoff_approval",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH07-S03_002"],
+      "reason": "候选提供退出客户关系时核销贷款需充分理由和批准的流程要求。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context 语义为发现/判断（银行知道或怀疑），对应 E8_decision_finding",
+      "e002": "decision 角色且无分支边，语义为评估风险降级，对应 P1_assessment",
+      "e003": "action 角色且模态为 prohibited，对应 P8_constrained_action"
+    },
+    "ep_002": {
+      "e004": "context 描述超出风险容忍度是状态阈值，对应 E3_state_threshold",
+      "e005": "standard 角色直接对应 standard",
+      "e006": "action 角色且为必要核销操作，对应 P2_execution"
+    }
+  },
+  "skip_reason": null
+}

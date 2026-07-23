@@ -1,0 +1,214 @@
+{
+  "section_id": "CH47-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "重大事件或趋势如何触发调优专项评估？",
+      "title": "动态调优触发专项评估",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "significant events or trends",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "special assessments",
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003286"
+          ],
+          "source_quote": "Tuning should be dynamic, with special assessments triggered by significant events or trends."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_gap_ch47_s04_scenario_setting"
+      ],
+      "focal_question": "如何基于以往经验进行场景规则设置？",
+      "title": "基于经验的场景规则创建与修改",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "creating, modifying, or removing detection rules and scenarios",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "input",
+          "label": "previous experiences with suspicious activity and actual incidents",
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003279"
+          ],
+          "source_quote": "Scenario setting involves creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_gap_ch47_s04_threshold_adjustment"
+      ],
+      "focal_question": "调整阈值如何影响系统灵敏度与误报？",
+      "title": "阈值调整以提高灵敏度并减少误报",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "adjusting thresholds",
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "threshold setting defines the minimum level of activity required for a transaction to trigger an alert",
+          "evidence_unit_ids": [
+            "v7u_N003280"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "refines sensitivity and accuracy",
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "reducing the number of false positives to make the most efficient use of resources",
+          "evidence_unit_ids": [
+            "v7u_N003283"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003280"
+          ],
+          "source_quote": "Threshold setting defines the minimum level of activity required for a transaction to trigger an alert."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "relation_type": "component_assembles_product",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N003282"
+          ],
+          "source_quote": "Adjusting thresholds refines sensitivity and accuracy."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e004",
+          "relation_type": "component_assembles_product",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N003283"
+          ],
+          "source_quote": "Reducing the number of false positives is a key goal in setting thresholds to make the most efficient use of resources."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述了重大事件或趋势触发调优专项评估的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "静态阈值示例，未包含任何程序性或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch47_s04_scenario_setting",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选提供了基于以往经验执行场景规则创建/修改的程序性动作及其依据。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch47_s04_threshold_adjustment",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选涵盖了调整阈值的动作、参照标准以及产生的灵敏度和误报结果，形成程序流程。"
+    }
+  ],
+  "skip_reason": null
+}

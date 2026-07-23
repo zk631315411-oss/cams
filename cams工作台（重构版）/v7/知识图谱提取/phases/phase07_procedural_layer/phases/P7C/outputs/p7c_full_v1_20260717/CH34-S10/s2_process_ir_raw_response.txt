@@ -1,0 +1,185 @@
+{
+  "section_id": "CH34-S10",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "独立审计职能如何评估第一、二道防线控制的有效性并产生意见？",
+      "title": "独立审计评估控制有效性并识别缺陷",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "独立审计评估第一、二道防线控制的有效性和效率，确保组织控制符合监管要求并有效运行",
+          "evidence_unit_ids": [
+            "v7u_N002524",
+            "v7u_N002534"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "监管要求和行业标准",
+          "evidence_unit_ids": [
+            "v7u_N002524",
+            "v7u_N002534"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "识别并沟通缺陷",
+          "evidence_unit_ids": [
+            "v7u_N002534"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "提供关于控制环境有效性的无偏见意见",
+          "evidence_unit_ids": [
+            "v7u_N002538"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e001",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002524"
+          ],
+          "source_quote": "ensure the organization’s controls align with regulatory requirements and function effectively."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002534"
+          ],
+          "source_quote": "identifying and communicating deficiencies"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e004",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002538"
+          ],
+          "source_quote": "Independent auditors assess operational and compliance frameworks ... offering an unbiased opinion on the control environment’s effectiveness."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "在缺乏内部审计资源时，如何执行独立审计职能？",
+      "title": "外部审计替代内部审计执行独立审计职能",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "组织缺乏内部审计团队资源，或存在技能/资源限制",
+          "evidence_unit_ids": [
+            "v7u_N002539"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "外部审计师可能执行独立审计职能",
+          "evidence_unit_ids": [
+            "v7u_N002539"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "提供对AFC合规计划和风险管理有效性的客观评估，并丰富审计过程（当执行得当时）",
+          "evidence_unit_ids": [
+            "v7u_N002540"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "组织缺乏内部审计资源或技能",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002539"
+          ],
+          "source_quote": "In smaller organizations that lack the resources for an internal audit team, or when there are skill or resource limitations, external auditors might perform the independent audit function."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002540"
+          ],
+          "source_quote": "When well executed, this external perspective enriches the audit process and provides an unbiased assessment of the AFC compliance program and risk management effectiveness."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "描述独立审计职能向审计委员会/董事会报告以确保独立性的静态安排，属于职能描述而非程序性或判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "独立审计对第一、二道防线控制进行评估、识别缺陷并提供无偏见意见，构成明确的判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "在缺乏内部资源时由外部审计执行职能并提供客观评估，触发条件明确，构成程序性流程。"
+    }
+  ],
+  "skip_reason": null
+}

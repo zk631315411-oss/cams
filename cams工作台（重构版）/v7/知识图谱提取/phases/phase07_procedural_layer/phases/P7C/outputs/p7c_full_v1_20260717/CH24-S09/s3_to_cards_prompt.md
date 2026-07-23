@@ -1,0 +1,573 @@
+# P7C Process IR to Cards v1
+
+## 角色与唯一职责
+
+你是 P7C-S3 构图器。输入为 S2 输出的 Process IR（带 role 的元素 + 带 kind 的关系）和 section 原文；你的唯一职责是复核 S2 的结构、为每个 element 确定精确的 `node_type`，输出完整的 `flow_nodes + flow_edges`（cards.raw.json）。
+
+不得重新裁决候选边界（S2 已做），不得新增/删除/合并 episode，不得新增/删除 element 或 relation，不得输出 derivation/evidence_strength/review_status。
+
+## 输入
+
+1. section 原文（唯一事实来源）
+2. allowed_unit_ids（证据引用白名单）
+3. S2 输出的完整 Process IR（episodes、elements、relations、candidate_audit）
+
+## 任务
+
+### 步骤 1：复核 S2 结构
+
+对照原文和 Process IR，检查：
+- 每个 episode 内所有 element 是否通过 relation 连通
+- 端点角色是否与 relation kind 兼容（见第 2 节矩阵）
+- decision 节点如有 branch 出边，是否至少有两条
+- 每条 branch/condition trigger 是否有 condition
+- evidence_unit_ids 是否在白名单内
+
+发现 S2 错误时在校验说明中记录，但仍尽力完成构图。
+
+### 步骤 2：确定 node_type
+
+为每个 element 从以下类型中精确选择。**依据原文语义和上下文，**。参考 S2 的 role 和 kind，但最终以原文的语义定义为准。
+
+**节点分类（node_category）**：entry（E-）、process（P-）、exit（X-）、auxiliary（input/standard）
+
+**入口类型组（entry，对应 S2 role=context）：**
+
+| node_type | 定义 |
+|---|---|
+| E1_event_signal | 可定位的业务事件启动处理 |
+| E2_object_entry | 某类客户、交易、账户或载体进入处理范围 |
+| E3_state_threshold | 已观察状态或阈值结果要求处理 |
+| E4_handoff | 上一局部流程的输出成为本流程输入 |
+| E5_time_cycle | 固定周期或期限启动/约束处理 |
+| E6_change_exception | 环境变化、异常或信息缺口启动调整 |
+| E7_external_command | 法律、监管或执法要求启动处理 |
+| E8_decision_finding | 前一判断本身触发后续义务 |
+
+**处理类型组（process，对应 S2 role=action 或 decision）：**
+
+| node_type | 定义 |
+|---|---|
+| P1_assessment | 识别风险信号或异常模式，使用标准形成分类、适宜性或有效性结论 |
+| P2_execution | 对业务对象实施动作或应对措施，使其状态发生变化 |
+| P3_branch_routing | 根据条件选择关闭、升级、继续、拒绝或其他路径 |
+| P4_collection | 汇集信息或部件，形成调查基础或正式产物 |
+| P5_coordination | 多角色、多部门或前后台协同完成任务 |
+| P6_feedback | 根据缺陷、复核问题或结果返回修改、补充研究或重新设计 |
+| P7_monitoring | 按周期重复，或持续观察直到新事件再次触发 |
+| P8_constrained_action | 动作必须同时满足保密、禁止泄密、法律、相称性等约束 |
+| P9_planning | 将风险处置组织为责任人、期限、措施、复核和升级机制 |
+| P10_sufficiency | 判断证据是否足以支持结论并决定继续或停止研究 |
+
+**出口类型组（exit，对应 S2 role=outcome）：**
+
+| node_type | 定义 |
+|---|---|
+| X1_classification | 形成可疑性、风险、有效性或适宜性结论 |
+| X2_product | 形成可识别、可保存或可提交的对象 |
+| X3_state_change | 业务对象进入新的稳定状态 |
+| X4_handoff | 转交下一角色、层级或局部流程 |
+| X5_config_change | 规则、阈值、场景、控制或培训被修改 |
+| X6_termination | 当前局部目标结束且无进一步动作 |
+| X7_continuing_obligation | 进入持续监控、周期复核或受限制关系 |
+
+**辅助类型组（auxiliary，对应 S2 role=input 或 standard）：**
+- `input`：输入数据、材料、信息
+- `standard`：标准、阈值、规范
+
+role→node_category 是固定的（context→entry, action/decision→process, outcome→exit, input/standard→auxiliary），但 node_type 必须根据上述定义和原文语义选择最精确的一个。
+
+### 步骤 3：构建 flow_nodes + flow_edges
+
+**flow_node（每个 element 对应一个 node）：**
+- `node_id`：在 episode 内唯一
+- `node_category`：entry/process/exit/auxiliary
+- `node_type`：步骤 2 确定的值（27 种之一）
+- `label`：保留 element.label 原文
+- `evidence_unit_ids`：element 的 evidence_unit_ids
+- `evidence_strength`：固定 `explicit`
+- `modality`：element 的 modality（可选）
+
+**flow_edge（每个 relation 对应一条 edge，节点引用 node_id）：**
+
+根据 S2 relation 的 kind 和原文语义选择 edge_type。**以原文为准——kind 是建议，不是命令**：
+
+| edge_type | 定义 | S2 kind 的对应关系 |
+|---|---|---|
+| PRECEDES | 主流程先后关系；表示一个节点在流程上先于另一个节点，或存在明确/强暗示的处理顺序 | trigger、sequence 通常映射为此 |
+| REFERENCES | 非时序辅助关联；表示处理节点关联一个输入、线索、标准、判断维度或组成要素，不表示先后、产出或条件分支 | reference 通常映射为此 |
+| PRODUCES | 产出关系；表示处理节点产生一个出口节点，如判断、记录、状态变化、交接或持续义务 | produce 通常映射为此，但须确认原文确有产出语义 |
+| DECIDES | 条件分流关系；表示根据条件进入不同路径，必须填写 condition | branch 通常映射为此 |
+| FEEDBACK | 反馈回流关系；表示结果、复核问题或缺口要求补充、修正、更新或重新处理 | feedback 通常映射为此 |
+
+每条 flow_edge 必填：`edge_id, edge_type, source, target, evidence_unit_ids`。
+- `condition`：有则必填（trigger_mode=condition 或 DECIDES 必须有）
+- `relation_type`：可选，从 12 种中选择（见下方定义）
+- `qualifier`：当 PRODUCES 的原文强度不是"确定产生"时必填：`may_lead_to`（can/may/might 等非确定）、`helps_achieve`（helps/有助于）、`aimed_to`（purpose is to/旨在/以）。原文明确是 produces/results in/导致/产生时省略
+- `source_quote`：可选
+
+**12 种 relation_type 定义（可选附加在 edge 上）：**
+
+| relation_type | 定义 |
+|---|---|
+| clue_supports_identification | 异常、红旗、事实线索支持考生识别风险、可疑性或高风险模式 |
+| mechanism_explains_risk | 作案机制、结构安排或产品特征解释为什么存在洗钱/恐融风险 |
+| identification_leads_to_conclusion | 识别或评估结果导向风险分类、可疑性、充分性或适宜性结论 |
+| conclusion_triggers_response | 风险、可疑、缺陷或合规结论触发加强监控、升级、报告、补救或拒绝等要求 |
+| branch_condition_routes_path | 分支条件把流程路由到某条路径；只能用于 DECIDES 边且必须有 condition |
+| component_assembles_product | 信息字段、证据、叙述组件或记录要素共同构成正式产物 |
+| standard_constrains_action | 法律、保密、相称性、准确性、监管期限等标准限定动作如何执行 |
+| result_handoffs_stage | 当前处理结果成为下一角色、层级、系统或外部机构继续处理的输入 |
+| feedback_requests_completion | 复核问题、缺失信息或叙述不足要求补充研究、修订或重新处理 |
+| cycle_requires_monitoring | 周期、持续义务、后评估或 ongoing monitoring 关系要求复核或继续观察 |
+| standard_transmits_requirement | 国际标准、监管原则、指南或评估结果传导为辖区或机构控制要求 |
+| parallel_alternative_no_sequence | 多个 typology、标准、组件或案例点互为并列，不应强制串成时间先后边 |
+
+**不得输出**：`derivation`、边级 `evidence_strength`、`review_status`。
+
+## 2. Relation 端点兼容矩阵
+
+| kind | 起点 role | 终点 role | 额外约束 |
+|---|---|---|---|
+| `trigger` | context | action 或 decision | trigger_mode 必须为 event 或 condition |
+| `sequence` | action/decision/outcome | action/decision/outcome | 原文明示先后；context 起点应改用 trigger |
+| `reference` | action 或 decision | input 或 standard | 固定 process→auxiliary |
+| `produce` | action 或非 P3 的 decision | outcome | target 必须是独立语义结果 |
+| `branch` | decision | action 或 outcome | 至少两个互斥分支；每条 condition 必填 |
+| `feedback` | outcome 或 decision | action 或 decision | 原文支持复核、补充、更新或调优 |
+
+## 输出 Contract
+
+```json
+{
+  "section_id": "CH06-S10",
+  "cards": [
+    {
+      "card_id": "p7card_CH06-S10_001",
+      "section_id": "CH06-S10",
+      "card_nature": "assessment",
+      "title": "依据直接和间接持股及适用阈值认定UBO",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "直接持股比例",
+          "evidence_unit_ids": ["v7u_N000477"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N000477"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000477", "v7u_N000478"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：...；证据范围：...；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH06-S10_001"],
+      "reason": "..."
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e005": "decision role + 2 branch relations → P3_branch_routing"
+    }
+  },
+  "skip_reason": null
+}
+```
+
+- 一个 episode 对应一张 card
+- card_id 格式 `p7card_{section_id}_{NNN}`
+- 每个 flow_node 有 `node_id, node_category, node_type, label, evidence_unit_ids, evidence_strength`
+- 每条 flow_edge 有 `edge_id, edge_type, source, target, evidence_unit_ids`
+- 条件必填 `condition`，不输出 `derivation`
+- candidate_status 固定 `candidate`
+- review_notes 中文说明增量命题、证据范围、待 P7D 审核
+- `node_type_reasons` 记录每个 element 的 node_type 选择理由（至少记录非平凡选择）
+
+`coverage_audit` 沿用 S2 的 `candidate_audit.disposition`，映射规则：
+- `mapped/support_only` → `decision: "p7c_card"`，card_ids 至少一张
+- `excluded_nonprocedural` → `decision: "kg_only"`，card_ids 为空
+- `ungraphable` → `decision: "p7c_ungraphable"`，card_ids 为空
+
+## 当前section
+
+section_id: `CH24-S09`
+
+section_title: `US AML/CFT regulatory landscape > The role of AML Authority`
+
+section_text_with_unit_anchors:
+
+```text
+[v7u_N001822|1822] Prior to 2021, the EU’s AML regime was made up of a series of directives that member states were expected to implement. Because the members states did not apply the rules in a coherent manner across the EU, the AML regime faced fragmentation in supervision and enforcement.
+ZH: 2021年前欧盟反洗钱制度因成员国执行不一致而碎片化
+
+[v7u_N001823|1823] To mitigate these issues, the EU established a framework whose cornerstone is an EU Anti-Money Laundering Authority (AML Authority). This authority ensures the harmonized implementation of rules and coordination among AML and financial sector supervisors.
+ZH: 欧盟设立反洗钱管理局以确保规则统一实施与协调
+
+[v7u_N001824|1824] The AML Authority is mandated to:
+ZH: 反洗钱管理局的职责列表引导句
+
+[v7u_N001825|1825] Develop and update the EU’s AML Single Rulebook. This contains a set of rules that harmonize AML requirements applicable in the EU and EEA.
+ZH: 反洗钱管理局制定并更新欧盟反洗钱单一规则手册
+
+[v7u_N001826|1826] Directly supervise up to 40 high-risk financial institutions. The AML Authority ensures the selected entities comply with the Single Rulebook. The AML Authority conducts onsite inspections and imposes corrective measures for remediating deficiencies. Additionally, this authority imposes penalties if appropriate or in all cases involving serious, repeated, or systematic breaches. The AML Authority operates through joint-supervisory teams led by an AML Authority staff member and with participation from NCA personnel.
+ZH: 反洗钱管理局直接监管最多40家高风险金融机构
+
+[v7u_N001827|1827] Monitor national competent authorities to ensure consistent application of the Single Rulebook. The AML Authority provides guidance, support, and
+ZH: 反洗钱管理局监督国家主管机构确保单一规则手册一致适用
+
+[v7u_N001828|1828] The AML Authority has the authorization to identify and act in cases of systematic failures regarding supervision. Such cases could involve breaches resulting from the improper application of national law transposing EU directives.
+ZH: 反洗钱管理局有权识别并处理系统性监管失败
+
+[v7u_N001829|1829] Note that the AML Authority is not the EU FIU; rather, it plays a vital role in supporting and coordinating within the FIU's network.
+ZH: 反洗钱管理局不同于欧盟FIU，但起支持协调作用
+
+[v7u_N001830|1830] The AML Authority is expected to commence direct supervision, with its headquarters in Frankfurt, Germany.
+ZH: 反洗钱管理局总部设在德国法兰克福，将开始直接监管
+```
+
+allowed_unit_ids:
+
+```json
+[
+  "v7u_N001822",
+  "v7u_N001823",
+  "v7u_N001824",
+  "v7u_N001825",
+  "v7u_N001826",
+  "v7u_N001827",
+  "v7u_N001828",
+  "v7u_N001829",
+  "v7u_N001830"
+]
+```
+
+## S2 Process IR
+
+```json
+{
+  "section_id": "CH24-S09",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "反洗钱管理局如何直接监管高风险金融机构？",
+      "title": "直接监管高风险金融机构",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "被选定的高风险金融机构",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "进行现场检查",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "施加纠正措施以弥补不足",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "action",
+          "label": "施加处罚",
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "source_quote": "Directly supervise up to 40 high-risk financial institutions. The AML Authority ensures the selected entities comply with the Single Rulebook. The AML Authority conducts onsite inspections and imposes corrective measures for remediating deficiencies."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "trigger_mode": null,
+          "before_element_id": "e002",
+          "after_element_id": "e003",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "source_quote": "conducts onsite inspections and imposes corrective measures for remediating deficiencies"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e002",
+          "process_element_id": "e004",
+          "condition": "if appropriate or in all cases involving serious, repeated, or systematic breaches",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001826"
+          ],
+          "source_quote": "Additionally, this authority imposes penalties if appropriate or in all cases involving serious, repeated, or systematic breaches."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "反洗钱管理局如何监督国家主管机构？",
+      "title": "监督国家主管机构确保单一规则手册一致适用",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "监督国家主管机构",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "提供指导和支持",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "单一规则手册一致适用",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "source_quote": "Monitor national competent authorities to ensure consistent application of the Single Rulebook."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001827"
+          ],
+          "source_quote": "The AML Authority provides guidance, support, and ..."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "反洗钱管理局如何处理系统性监管失败？",
+      "title": "识别并处理系统性监管失败",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "出现系统性监管失败案例",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "识别系统性失败",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "采取行动",
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "source_quote": "The AML Authority has the authorization to identify and act in cases of systematic failures regarding supervision."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "trigger_mode": null,
+          "before_element_id": "e002",
+          "after_element_id": "e003",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001828"
+          ],
+          "source_quote": "identify and act in cases of systematic failures"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": [
+        "s1c_gap_ch24_s09_develop_rulebook"
+      ],
+      "focal_question": "反洗钱管理局如何制定并更新单一规则手册？",
+      "title": "制定并更新欧盟反洗钱单一规则手册",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "制定并更新欧盟反洗钱单一规则手册",
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "手册包含一套统一适用于欧盟和EEA的反洗钱要求",
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001825"
+          ],
+          "source_quote": "Develop and update the EU’s AML Single Rulebook. This contains a set of rules that harmonize AML requirements applicable in the EU and EEA."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述直接监管高风险金融机构的触发、动作和条件分支，独立支持一个程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选描述监督国家主管机构并确保一致适用的业务过程，独立支持流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选描述识别和处理系统性监管失败的启动、判断和行动，独立支持流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s09_develop_rulebook",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_004"
+      ],
+      "reason": "该候选描述制定并更新单一规则手册的动作和产物，独立支持流程。"
+    }
+  ],
+  "skip_reason": null
+}
+```

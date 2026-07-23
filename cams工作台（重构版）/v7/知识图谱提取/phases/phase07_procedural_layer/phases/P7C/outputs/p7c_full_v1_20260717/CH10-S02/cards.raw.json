@@ -1,0 +1,350 @@
+{
+  "section_id": "CH10-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH10-S02_001",
+      "section_id": "CH10-S02",
+      "card_nature": "assessment",
+      "title": "根据资金持有与转换业务判断MSB牌照要求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "CashBayou作为电商平台持有买家资金并将其转换为卖家偏好货币",
+          "evidence_unit_ids": [
+            "v7u_N000768"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "被要求持有MSB牌照",
+          "evidence_unit_ids": [
+            "v7u_N000768"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000768"
+          ],
+          "condition": "如果平台从事资金持有和货币转换业务",
+          "source_quote": "Because of this, they are required to have an MSB license."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000768"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据业务模式判定MSB牌照义务；证据范围：v7u_N000768；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH10-S02_002",
+      "section_id": "CH10-S02",
+      "card_nature": "assessment",
+      "title": "Emma调查异常交易并发现洗钱红旗和KYC不足",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "收到异常交易警报",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Emma召集团队进行调查",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区",
+          "evidence_unit_ids": [
+            "v7u_N000771"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "该交易模式引发洗钱红旗",
+          "evidence_unit_ids": [
+            "v7u_N000772"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "发现当前KYC治理和执行不足",
+          "evidence_unit_ids": [
+            "v7u_N000773"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停",
+          "evidence_unit_ids": [
+            "v7u_N000774"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000770"
+          ],
+          "source_quote": "she receives an alert about unusual transaction patterns. She quickly gathers her team to investigate."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000771"
+          ],
+          "source_quote": "They discover that a new buyer, using multiple accounts, is making high-frequency, low-value transactions with a network of sellers who are all based in the same jurisdiction."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000772"
+          ],
+          "source_quote": "This raises a red flag for money laundering."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000773"
+          ],
+          "source_quote": "While investigating, Emma realizes CashBayou's current KYC governance and execution are inadequate."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N000774"
+          ],
+          "qualifier": "may_lead_to",
+          "source_quote": "Insufficient reviews of purchasers and storefront owners could expose the platform to financia crime, fraud risks, and potential regulatory issues, which might result in temporary service suspension."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000770",
+        "v7u_N000771",
+        "v7u_N000772",
+        "v7u_N000773",
+        "v7u_N000774"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "S2的r004终点role为decision而非outcome，但语义上调查产生发现，仍用PRODUCES；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH10-S02_003",
+      "section_id": "CH10-S02",
+      "card_nature": "execution",
+      "title": "PaySecure对异常交易的信息请求与合规沟通流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "PaySecure联系Emma并请求提供更多交易信息",
+          "evidence_unit_ids": [
+            "v7u_N000775"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Emma注意到该请求涉及部分与新买家相关的异常交易",
+          "evidence_unit_ids": [
+            "v7u_N000776"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "基于交易频率，PaySecure要求与合规官通话以了解尽职调查流程",
+          "evidence_unit_ids": [
+            "v7u_N000777"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "PaySecure在会议中表达对政策的担忧并强调需要持续合作与严格监控",
+          "evidence_unit_ids": [
+            "v7u_N000778"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "需要持续合作与严格监控以降低风险",
+          "evidence_unit_ids": [
+            "v7u_N000778"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000775",
+            "v7u_N000776"
+          ],
+          "source_quote": "The company’s current primary payment service provider, PaySecure, contacts Emma and requests more information on a series of transactions. Emma notices that the request covers part of the unusual transactions related to the new buyer."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000777"
+          ],
+          "source_quote": "In addition, based on the frequency of transactions, PaySecure requests a cal with the compliance officer of CashBayou to understand their due diligence process."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000778"
+          ],
+          "source_quote": "During the meeting, PaySecure expresses their concern on CashBayou’s policies and stresses the need for ongoing collaboration and rigorous monitoring to mitigate risks."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000778"
+          ],
+          "source_quote": "stresses the need for ongoing collaboration and rigorous monitoring to mitigate risks."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000775",
+        "v7u_N000776",
+        "v7u_N000777",
+        "v7u_N000778"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "外部伙伴干预流程，包含信息请求、通话和合规要求；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH10-S02_001"
+      ],
+      "reason": "原为mapped，生成对应card。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH10-S02_002"
+      ],
+      "reason": "原为mapped，生成对应card。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "原为excluded_nonprocedural，不生成card。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch10_s02_paysecure_intervention",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH10-S02_003"
+      ],
+      "reason": "原为mapped，生成对应card。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, 描述业务对象进入处理范围 → E2_object_entry",
+      "e002": "decision role, 基于业务模式判定合规义务 → P1_assessment"
+    },
+    "ep_002": {
+      "e001": "context role, 警报事件启动处理 → E1_event_signal",
+      "e002": "action role, 召集团队执行调查动作 → P2_execution",
+      "e003": "outcome role, 发现具体交易事实，形成可识别对象 → X2_product",
+      "e004": "decision role, 基于事实模式识别洗钱风险信号 → P1_assessment",
+      "e005": "decision role, 评估KYC有效性形成不足结论 → P1_assessment",
+      "e006": "outcome role, 评估潜在风险与后果 → X1_classification"
+    },
+    "ep_003": {
+      "e001": "action role, 启动信息请求收集 → P4_collection",
+      "e002": "outcome role, 发现信息关联性 → X1_classification",
+      "e003": "action role, 要求通话协调沟通 → P5_coordination",
+      "e004": "action role, 会议表达担忧并强调合作 → P5_coordination",
+      "e005": "outcome role, 要求持续监控义务 → X7_continuing_obligation"
+    }
+  },
+  "skip_reason": null
+}

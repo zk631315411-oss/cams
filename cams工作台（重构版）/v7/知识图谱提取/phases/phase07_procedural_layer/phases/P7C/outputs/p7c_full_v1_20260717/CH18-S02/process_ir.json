@@ -1,0 +1,85 @@
+{
+  "section_id": "CH18-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "当客户来自受制裁司法管辖区申请账户时，FinTrust应如何执行强化尽职调查与风险缓释？",
+      "title": "受制裁地区客户申请时的强化尽职调查与监控流程",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "客户来自受制裁司法管辖区并申请账户",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "合规人员执行强化尽职调查、筛查政治敏感人物和增强异常交易监控",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "降低无意中协助洗钱或违反制裁的风险",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "客户来自受制裁司法管辖区申请账户",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "source_quote": "when a customer from a sanctioned jurisdiction applies for an account, compliance personnel at FinTrust must act immediately."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "source_quote": "These controls lower the risk of unknowingly facilitating money laundering or violating sanctions."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选提供了当受制裁地区客户申请时的条件触发、合规人员必须采取的强化尽职调查与监控行动，以及降低风险的结果，构成一个完整的业务流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch18_s02_ignore_standards_consequences",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述的是忽视标准可能导致的监管处罚、刑事起诉等法律后果，属于风险后果的陈述，不涉及机构内部的业务判断或程序性流程，因此不构成episode。"
+    }
+  ],
+  "skip_reason": null
+}

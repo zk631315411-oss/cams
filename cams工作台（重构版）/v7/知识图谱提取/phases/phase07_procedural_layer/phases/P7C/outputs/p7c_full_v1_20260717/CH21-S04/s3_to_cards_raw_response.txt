@@ -1,0 +1,89 @@
+{
+  "section_id": "CH21-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH21-S04_001",
+      "section_id": "CH21-S04",
+      "card_nature": "assessment",
+      "title": "将TJN指数纳入客户风险评估以识别高风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织可能将TJN指数纳入客户风险评估以评估逃税和金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N001657", "v7u_N001662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户居住国或业务所在国",
+          "evidence_unit_ids": ["v7u_N001662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "TJN指数排名（反映金融保密程度和避税天堂特征）",
+          "evidence_unit_ids": ["v7u_N001657", "v7u_N001662"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "高排名表明客户相关风险水平更高",
+          "evidence_unit_ids": ["v7u_N001662"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001662"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001657", "v7u_N001662"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001662"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001657", "v7u_N001662"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：利用TJN指数并结合客户所在国评估逃税/金融犯罪风险，高排名表明更高风险；证据范围：v7u_N001657, v7u_N001662；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH21-S04_001"],
+      "reason": "候选描述将TJN指数纳入客户风险评估以评估逃税或金融犯罪风险的程序，高排名表明风险增加，已建模为评估类卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role + 利用标准进行评估形成风险结论 → P1_assessment",
+      "e002": "input role + 客户居住国/业务国信息 → input",
+      "e003": "standard role + TJN指数排名作为评估标准 → standard",
+      "e004": "outcome role + 输出风险水平结论 → X1_classification"
+    }
+  },
+  "skip_reason": null
+}

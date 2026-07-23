@@ -1,0 +1,136 @@
+{
+  "section_id": "CH03-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH03-S06_001",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "基于加密货币存款模式识别恐怖融资潜在红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "大量看似无关的加密货币存款，随后快速兑换成稳定币或法币，并通过虚拟资产服务提供商或在反金融犯罪控制薄弱的司法管辖区提取",
+          "evidence_unit_ids": [
+            "v7u_N000266"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "可能为潜在恐怖融资红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000266"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000266"
+          ],
+          "relation_type": "clue_supports_identification"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000266"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：加密货币存款模式可表征潜在恐怖融资红旗信号；证据范围：v7u_N000266；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH03-S06_002",
+      "section_id": "CH03-S06",
+      "card_nature": "risk_indicator",
+      "title": "基于ARS交易模式识别非法使用红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "在一个司法管辖区重复存款后，在另一司法管辖区立即ATM取款",
+          "evidence_unit_ids": [
+            "v7u_N000269"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "判定为替代性汇款系统非法使用的红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000269"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000269"
+          ],
+          "relation_type": "clue_supports_identification"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000269"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：替代性汇款系统交易模式可判定为非法使用红旗信号；证据范围：v7u_N000269；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选仅为对银行的原则性建议，未描述具体的程序性或判断性迁移，缺乏业务判断或行动的流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选说明代理行嵌套交易可能引发恐怖融资红旗信号的机制，属于风险指示器的静态描述，未体现机构的处理或判断过程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH03-S06_001"
+      ],
+      "reason": "该候选包含加密货币交易模式作为潜在红旗信号的判断关系，构成一个可建模的识别流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH03-S06_002"
+      ],
+      "reason": "该候选包含替代性汇款系统交易模式作为非法使用红旗信号的判断关系，构成一个可建模的识别流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry；可观察的加密货币交易模式构成业务事件，因此选E1_event_signal",
+      "e002": "decision role → process；根据模式识别风险信号是典型的评估行为，选P1_assessment"
+    },
+    "ep_002": {
+      "e001": "context role → entry；在一个司法管辖区重复存款后在另一司法管辖区立即ATM取款是明确的业务事件，选E1_event_signal",
+      "e002": "decision role → process；将交易模式判定为非法使用的红旗信号属于评估识别，选P1_assessment"
+    }
+  },
+  "skip_reason": null
+}

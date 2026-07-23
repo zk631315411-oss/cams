@@ -1,0 +1,95 @@
+{
+  "section_id": "CH40-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH40-S02_001",
+      "section_id": "CH40-S02",
+      "card_nature": "execution",
+      "title": "FINTRAC检查发现反洗钱缺陷并对RBC处以罚款",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "FINTRAC conducts compliance examination in 2022",
+          "evidence_unit_ids": [
+            "v7u_N002877"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FINTRAC discovers AML/CFT deficiencies",
+          "evidence_unit_ids": [
+            "v7u_N002877"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "FINTRAC imposes a CA$7.475 million fine on RBC for non-compliance with the PCMLTFA",
+          "evidence_unit_ids": [
+            "v7u_N002876"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002877"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002876",
+            "v7u_N002877"
+          ],
+          "relation_type": "identification_leads_to_conclusion"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002877",
+        "v7u_N002876"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FINTRAC检查发现RBC反洗钱缺陷，进而施加罚款；证据范围：v7u_N002876、v7u_N002877；待P7D逐边审核。S2 element e003 role误标为action，已按produce关系终点修正为outcome。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH40-S02_001"
+      ],
+      "reason": "监管检查、发现缺陷及罚款构成程序性执法流程，已映射为卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "仅陈述反洗钱治理要求，无触发或判断流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "FINTRAC检查是监管事件，启动后续发现，选E1_event_signal",
+      "e002": "发现反洗钱缺陷是对风险信号的识别与评估，符合P1_assessment",
+      "e003": "施加罚款导致合规状态改变，为X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

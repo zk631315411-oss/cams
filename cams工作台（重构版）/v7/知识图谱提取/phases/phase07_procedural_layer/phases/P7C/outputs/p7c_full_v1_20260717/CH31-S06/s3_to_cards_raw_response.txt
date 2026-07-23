@@ -1,0 +1,253 @@
+{
+  "section_id": "CH31-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH31-S06_001",
+      "section_id": "CH31-S06",
+      "card_nature": "execution",
+      "title": "TRACFIN警报触发调查并促成跨境协调与资产扣押案例",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "TRACFIN发出警报，同时公共财政总局提出投诉",
+          "evidence_unit_ids": ["v7u_N002262"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "法国警方主导进行大规模洗钱调查",
+          "evidence_unit_ids": ["v7u_N002262", "v7u_N002264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "Eurojust协调国际行动",
+          "evidence_unit_ids": ["v7u_N002264"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "八国协调进行搜查与资产扣押，Europol提供支持",
+          "evidence_unit_ids": ["v7u_N002266"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "调查聚焦于一个洗钱2亿欧元且逃税300万欧元的团伙",
+          "evidence_unit_ids": ["v7u_N002263"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "扣押资产约350万欧元，包括金融资产、财产、豪车等",
+          "evidence_unit_ids": ["v7u_N002268"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002262"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002263"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "案件具有重大跨境重点",
+          "evidence_unit_ids": ["v7u_N002264"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002266"]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n006",
+          "evidence_unit_ids": ["v7u_N002268"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002262", "v7u_N002264", "v7u_N002266", "v7u_N002263", "v7u_N002268"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：TRACFIN警报与投诉触发调查，调查聚焦于洗钱团伙，因跨境重点Eurojust协调，八国执行搜查扣押，最终扣押资产。证据范围：v7u_N002262–v7u_N002268。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S06_002",
+      "section_id": "CH31-S06",
+      "card_nature": "execution",
+      "title": "FBI与FinCEN合作分析SARs并实施执法行动案例",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FBI与FinCEN合作分析SARs",
+          "evidence_unit_ids": ["v7u_N002269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "FBI确定该军火商通过多家银行洗钱约850万美元",
+          "evidence_unit_ids": ["v7u_N002271"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "调查人员利用信息识别空壳公司及银行账户",
+          "evidence_unit_ids": ["v7u_N002272"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "识别出20多家空壳公司及相关银行账户",
+          "evidence_unit_ids": ["v7u_N002272"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "扣押650万美元资产",
+          "evidence_unit_ids": ["v7u_N002273"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "17家空壳公司被列入OFAC和商务部观察名单",
+          "evidence_unit_ids": ["v7u_N002273"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "FBI将网络头目列入通缉名单，网络无法继续运作",
+          "evidence_unit_ids": ["v7u_N002274"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002271"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002272"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002272"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002273"]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n006",
+          "evidence_unit_ids": ["v7u_N002273"]
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n007",
+          "evidence_unit_ids": ["v7u_N002274"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002269", "v7u_N002271", "v7u_N002272", "v7u_N002273", "v7u_N002274"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：FBI与FinCEN分析SARs确定洗钱，进而识别空壳公司，产生扣押、列名单、通缉等多项结果。证据范围：v7u_N002269–v7u_N002274。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH31-S06_001"],
+      "reason": "该候选提供了法国案例中调查启动、协调和资产扣押的完整流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH31-S06_002"],
+      "reason": "该候选提供了FBI与FinCEN合作分析、确定洗钱、识别空壳公司、扣押资产及通缉头目的流程关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch31_s06_laundering_amount",
+      "disposition": "p7c_card",
+      "card_ids": ["p7card_CH31-S06_001"],
+      "reason": "该候选补充了调查发现的洗钱金额，作为调查过程的产出元素，支撑了调查产出环节。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role→entry; TRACFIN警报为启动调查的业务事件→E1_event_signal",
+      "e002": "action role→process; 主导大规模洗钱调查是汇集信息形成调查基础的过程→P4_collection",
+      "e003": "action role→process; Eurojust协调多国行动属于多部门协同→P5_coordination",
+      "e004": "action role→process; 进行搜查与资产扣押是执行动作改变对象状态→P2_execution",
+      "e005": "outcome role→exit; 调查聚焦于某团伙属于发现/分类结论→X1_classification",
+      "e006": "outcome role→exit; 资产被扣押进入新的稳定状态→X3_state_change"
+    },
+    "ep_002": {
+      "e001": "action role→process; 分析SARs识别洗钱属于风险评估/识别异常→P1_assessment",
+      "e002": "outcome role→exit; 确定洗钱金额属于分类/可疑结论→X1_classification",
+      "e003": "action role→process; 利用信息识别空壳公司是进一步的识别/分析→P1_assessment",
+      "e004": "outcome role→exit; 识别出的列表形成可提交的产物→X2_product",
+      "e005": "outcome role→exit; 资产被扣押状态变化→X3_state_change",
+      "e006": "outcome role→exit; 被列入观察名单使公司处于新的持久状态→X3_state_change",
+      "e007": "outcome role→exit; 网络无法运作表示局部目标终止→X6_termination"
+    }
+  },
+  "skip_reason": null
+}

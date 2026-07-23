@@ -1,0 +1,553 @@
+{
+  "section_id": "CH39-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH39-S01_001",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "依据 KYC 信息进行客户风险评估并决定 CDD 等级",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "通过 KYC 流程收集的信息（文件、客户业务活动、申请产品）",
+          "evidence_unit_ids": ["v7u_N002845"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行客户风险评估，识别风险因素并分配风险评级",
+          "evidence_unit_ids": ["v7u_N002844"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "决定适用的客户尽职调查等级",
+          "evidence_unit_ids": ["v7u_N002844"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "高风险客户可能需要强化尽职调查（EDD）",
+          "evidence_unit_ids": ["v7u_N002846"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）",
+          "evidence_unit_ids": ["v7u_N002846"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002845"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002844"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n003",
+          "target": "n004",
+          "condition": "客户被评估为高风险",
+          "evidence_unit_ids": ["v7u_N002846"],
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "n003",
+          "target": "n005",
+          "condition": "客户被评估为低风险且司法管辖区允许 SDD",
+          "evidence_unit_ids": ["v7u_N002846"],
+          "relation_type": "branch_condition_routes_path"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002845", "v7u_N002844", "v7u_N002846"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据KYC信息进行客户风险评估，根据风险等级决定CDD类型（EDD或SDD）；证据范围：v7u_N002844~v7u_N002846；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_002",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "执行全机构风险评估以确定剩余风险并指导 AML/CFT 框架",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行全机构风险评估，识别固有风险并评估控制措施",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "确定组织面临的剩余风险",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "帮助设计 AML/CFT 框架",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "指导政策和程序开发",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "向高风险领域分配资源",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "改进决策",
+          "evidence_unit_ids": ["v7u_N002848"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002848"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002848"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002848"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n005",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002848"]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n006",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002848"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002848"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：EWRA通过识别固有风险、评估控制确定剩余风险，并产出指导框架设计、政策开发、资源分配与决策改进的结果；证据范围：v7u_N002848；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_003",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "执行产品风险评估以分配风险评分并设计控制措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "每个产品的清晰记录的定义及其风险",
+          "evidence_unit_ids": ["v7u_N002854"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "合规官监督产品风险评估，识别风险、评估相关控制并分配适当的风险评分",
+          "evidence_unit_ids": ["v7u_N002865", "v7u_N002849", "v7u_N002853"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "实施措施以缓释已识别的风险与威胁",
+          "evidence_unit_ids": ["v7u_N002849"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "设计交易监控等控制措施以确保充分覆盖所有产品",
+          "evidence_unit_ids": ["v7u_N002858"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002854"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002849"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002858"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002854", "v7u_N002865", "v7u_N002849", "v7u_N002853", "v7u_N002858"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：合规官依据产品定义进行产品风险评估，产出缓释措施与控制设计；证据范围：v7u_N002849, v7u_N002853, v7u_N002854, v7u_N002858, v7u_N002865；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_004",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "产品高风险聚集提升 EWRA 评分并触发额外控制",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "许多产品被认定为高风险",
+          "evidence_unit_ids": ["v7u_N002856"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提高整体 EWRA 风险评分",
+          "evidence_unit_ids": ["v7u_N002856"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "触发额外控制或措施",
+          "evidence_unit_ids": ["v7u_N002856"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "如果许多产品被认定为高风险",
+          "evidence_unit_ids": ["v7u_N002856"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002856"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002856"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：多个产品高风险这一状态触发EWRA评分提升，进而引出额外控制措施；证据范围：v7u_N002856；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_005",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "产品风险超出 RAS 时可能停止提供产品",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "产品风险评估得分超过风险偏好声明（RAS）",
+          "evidence_unit_ids": ["v7u_N002857"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织可能停止提供该产品",
+          "evidence_unit_ids": ["v7u_N002857"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "如果产品风险评估得分超过 RAS",
+          "evidence_unit_ids": ["v7u_N002857"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002857"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：产品风险评分超过RAS时，组织可能采取停止提供的处置；证据范围：v7u_N002857；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_006",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "基于产品生命周期的持续风险评估审查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "新产品推出前",
+          "evidence_unit_ids": ["v7u_N002866"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "产品推出后需定期审查",
+          "evidence_unit_ids": ["v7u_N002866"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "产品发生重大变更时",
+          "evidence_unit_ids": ["v7u_N002866"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "应进行产品风险评估",
+          "evidence_unit_ids": ["v7u_N002866"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n004",
+          "condition": "对于新产品，在向客户提供前",
+          "evidence_unit_ids": ["v7u_N002866"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "一旦产品可用，应定期审查",
+          "evidence_unit_ids": ["v7u_N002866"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "condition": "当发生重大产品变更时",
+          "evidence_unit_ids": ["v7u_N002866"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002866"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：产品风险评估应在推出前、定期、重大变更三个时点触发；证据范围：v7u_N002866；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH39-S01_007",
+      "section_id": "CH39-S01",
+      "card_nature": "assessment",
+      "title": "发现未识别风险后重新审视产品风险评估并调整控制",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "注意到新产品或现有产品先前未识别的风险",
+          "evidence_unit_ids": ["v7u_N002868", "v7u_N002869"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "重新审视产品风险评估，并设定交易数量、金额阈值或限制产品面向特定客户群体",
+          "evidence_unit_ids": ["v7u_N002870"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "如果注意到先前未识别的风险",
+          "evidence_unit_ids": ["v7u_N002870"],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002868", "v7u_N002869", "v7u_N002870"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：发现未识别风险触发重新评估并调整阈值/限制；证据范围：v7u_N002868~v7u_N002870；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_001"],
+      "reason": "候选明确描述了组织执行CRA以识别风险、分配评级并决定CDD等级的程序，包含动作、决策和差异化结果，构成完整的判断性迁移流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_002"],
+      "reason": "候选描述了EWRA识别风险、评估控制、确定剩余风险并指导框架设计的完整程序，具有明确动作序列和产出，属于流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_003"],
+      "reason": "候选涵盖产品风险评估的输入、执行（合规官识别风险、评估控制、分配评分）以及产出（缓释措施、控制设计），支持独立流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_004"],
+      "reason": "候选提供了明确的条件触发关系：多个产品高风险导致EWRA评分提高并触发额外控制，具备程序性迁移。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_005"],
+      "reason": "候选呈现了‘如果产品风险评分超过RAS则可能停止提供’的条件判断与行动，构成独立决策流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_006"],
+      "reason": "候选规定了产品风险评估在生命周期不同阶段（推出前、定期、重大变更）的审查义务，具有多个触发条件和评估动作，属于流程。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH39-S01_007"],
+      "reason": "候选描述了发现未识别风险后触发重新审视评估并调整控制的流程，包含触发事件和具体响应动作，符合流程定义。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e002": "action，进行风险评估 → P1_assessment",
+      "e003": "decision，有2条branch边 → P3_branch_routing",
+      "e004": "outcome，高风险判断 → X1_classification",
+      "e005": "outcome，低风险判断 → X1_classification"
+    },
+    "ep_002": {
+      "e001": "action，进行风险评估 → P1_assessment",
+      "e002": "decision，非分支，形成剩余风险结论 → P1_assessment",
+      "e003": "outcome，帮助设计框架 → X2_product",
+      "e004": "outcome，指导政策 → X2_product",
+      "e005": "outcome，分配资源 → X2_product",
+      "e006": "outcome，改进决策 → X2_product"
+    },
+    "ep_003": {
+      "e001": "input → input",
+      "e002": "action，风险评估 → P1_assessment",
+      "e003": "outcome，实施缓释措施 → X2_product（modality: permitted）",
+      "e004": "outcome，设计控制 → X2_product"
+    },
+    "ep_004": {
+      "e001": "context，状态触发 → E3_state_threshold",
+      "e002": "action，提高评分 → P2_execution",
+      "e003": "outcome，触发额外控制 → X5_config_change"
+    },
+    "ep_005": {
+      "e001": "context，阈值触发 → E3_state_threshold",
+      "e002": "action，停止提供 → P2_execution"
+    },
+    "ep_006": {
+      "e001": "context，推出前 → E5_time_cycle",
+      "e002": "context，定期审查 → E5_time_cycle",
+      "e003": "context，重大变更 → E6_change_exception",
+      "e004": "action，进行评估 → P1_assessment"
+    },
+    "ep_007": {
+      "e001": "context，未识别风险 → E6_change_exception",
+      "e002": "action，重新评估并调整 → P1_assessment"
+    }
+  },
+  "skip_reason": null
+}

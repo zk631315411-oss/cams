@@ -27,8 +27,8 @@
 - 拆分页码映射：
   `D:\守正公司工作区\cams考试\cams工作台（重构版）\v7\work\sources\v7_split_page_map.json`
 - MinerU 中文/英文合并正文：
-  `D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\v7_zh_mineru_merged.md`
-  `D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\v7_en_mineru_merged.md`
+  `D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\中文\v7_zh_mineru_merged.md`
+  `D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\mineru提取\英文\v7_en_mineru_merged.md`
 - MinerU block 页码回填：
   `D:\守正公司工作区\cams考试\cams工作台（重构版）\v7\work\sources\v7_mineru_block_page_matches.json`
 - 页级中英对齐文本：
@@ -388,8 +388,8 @@ v7 工作流分为 Phase 0-8，并额外包含 Phase 3.5“题库准备与章节
 核心数据/pools/v7_full_cards_clean.json
 cams工作台（重构版）/v7/work/sources/v7_zh_split.pdf
 cams工作台（重构版）/v7/work/sources/v7_en_split.pdf
-教材原文/v7/mineru提取/v7_zh_mineru_merged.md
-教材原文/v7/mineru提取/v7_en_mineru_merged.md
+教材原文/v7/mineru提取/中文/v7_zh_mineru_merged.md
+教材原文/v7/mineru提取/英文/v7_en_mineru_merged.md
 cams工作台（重构版）/v7/work/sources/v7_mineru_block_page_matches.json
 ```
 

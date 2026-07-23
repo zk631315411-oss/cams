@@ -1,0 +1,89 @@
+{
+  "section_id": "CH24-S06",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何根据OFAC制裁名单决定禁止交易并可能冻结资产",
+      "title": "基于OFAC制裁名单的禁止交易与资产冻结",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "个人或组织出现在OFAC定期发布的名单上",
+          "evidence_unit_ids": [
+            "v7u_N001774"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "禁止与名单上个人或组织交易",
+          "evidence_unit_ids": [
+            "v7u_N001774"
+          ],
+          "modality": "prohibited"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "可能要求冻结其在美管辖范围内的资产",
+          "evidence_unit_ids": [
+            "v7u_N001774"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "出现在OFAC定期发布的名单上",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001774"
+          ],
+          "source_quote": "prohibit transactions with persons and organizations that appear on one of several lists that OFAC issues periodically"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001774"
+          ],
+          "source_quote": "may require the blocking of their assets within US jurisdiction"
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选提供了基于OFAC名单触发禁止交易并可能冻结资产的流程关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选仅描述不遵守制裁导致处罚的因果关系，属于静态法律后果，不构成程序性或判断性迁移。"
+    }
+  ],
+  "skip_reason": null
+}

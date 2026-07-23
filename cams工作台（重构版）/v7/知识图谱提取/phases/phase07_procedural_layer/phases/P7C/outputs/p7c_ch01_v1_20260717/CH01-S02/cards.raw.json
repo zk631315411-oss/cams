@@ -1,0 +1,294 @@
+{
+  "section_id": "CH01-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH01-S02_001",
+      "section_id": "CH01-S02",
+      "card_nature": "assessment",
+      "title": "从异常检测到升级确认的洗钱调查流程",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符",
+          "evidence_unit_ids": [
+            "v7u_N000004"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "Joyce联系运营团队进一步调查",
+          "evidence_unit_ids": [
+            "v7u_N000005"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "运营团队确认Linguistix收入激增，且许多交易来自高风险司法管辖区",
+          "evidence_unit_ids": [
+            "v7u_N000005"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Joyce深入分析情况",
+          "evidence_unit_ids": [
+            "v7u_N000005",
+            "v7u_N000006"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Joyce发现一笔与有组织贩毒集团似乎有关联的账户的大额转账",
+          "evidence_unit_ids": [
+            "v7u_N000006"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e006",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "怀疑贩毒可能是为潜在洗钱提供资金的上游犯罪",
+          "evidence_unit_ids": [
+            "v7u_N000006"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e007",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "Joyce收集更多关于交易和客户资料的数据",
+          "evidence_unit_ids": [
+            "v7u_N000007"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e008",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "证据表明Linguistix可能被用于洗钱",
+          "evidence_unit_ids": [
+            "v7u_N000007"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e009",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "Joyce将案件升级至金融犯罪合规团队",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e010",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "合规团队应用高级分析工具追踪资金流",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e011",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确认Linguistix被用作贩毒洗钱的前台公司，有效掩盖资金来源",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N000004",
+            "v7u_N000005"
+          ],
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "source_quote": "she noticed something unusual... To investigate further, Joyce reached out to the operations team."
+        },
+        {
+          "edge_id": "edge_r002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N000005"
+          ],
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "source_quote": "They confirmed her suspicions: Linguistix's revenue had surged, and many transactions were coming from high-risk jurisdictions."
+        },
+        {
+          "edge_id": "edge_r003",
+          "edge_type": "PRECEDES",
+          "source": "e003",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N000005"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "This raised red flags, prompting Joyce to dig deeper."
+        },
+        {
+          "edge_id": "edge_r004",
+          "edge_type": "PRODUCES",
+          "source": "e004",
+          "target": "e005",
+          "evidence_unit_ids": [
+            "v7u_N000006"
+          ],
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "source_quote": "During her analysis, Joyce discovered one transaction that raised specific concerns: a large transfer from an account that seems associated with an organized drug trafficking group."
+        },
+        {
+          "edge_id": "edge_r005",
+          "edge_type": "PRECEDES",
+          "source": "e005",
+          "target": "e006",
+          "evidence_unit_ids": [
+            "v7u_N000006"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "This finding further raised suspicions that drug trafficking could be the predicate crime funding potential money laundering, Joyce's primary concern."
+        },
+        {
+          "edge_id": "edge_r006",
+          "edge_type": "PRECEDES",
+          "source": "e006",
+          "target": "e007",
+          "evidence_unit_ids": [
+            "v7u_N000006",
+            "v7u_N000007"
+          ],
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "source_quote": "suspicions that drug trafficking could be the predicate crime... Joyce gathered more data on the transactions and customer profiles."
+        },
+        {
+          "edge_id": "edge_r007",
+          "edge_type": "PRECEDES",
+          "source": "e007",
+          "target": "e008",
+          "evidence_unit_ids": [
+            "v7u_N000007"
+          ],
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "source_quote": "The evidence suggested that Linguistix was likely being used to launder illicit funds."
+        },
+        {
+          "edge_id": "edge_r008",
+          "edge_type": "PRECEDES",
+          "source": "e008",
+          "target": "e009",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "condition": "Given the complexity of the situation",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Given the complexity of the situation, Joyce escalated the case to the financial crime compliance team."
+        },
+        {
+          "edge_id": "edge_r009",
+          "edge_type": "PRECEDES",
+          "source": "e009",
+          "target": "e010",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "condition": null,
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "source_quote": "The team applied advanced analytical tools to trace the flow of funds and confirmed the links..."
+        },
+        {
+          "edge_id": "edge_r010",
+          "edge_type": "PRODUCES",
+          "source": "e010",
+          "target": "e011",
+          "evidence_unit_ids": [
+            "v7u_N000008"
+          ],
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "source_quote": "This analysis confirmed that the translation service was being used as a front to launder drug trafficking proceeds, effectively disguising the origins of the money."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000004",
+        "v7u_N000005",
+        "v7u_N000006",
+        "v7u_N000007",
+        "v7u_N000008"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：从异常交易检测到最终确认洗钱并升级处理的完整调查流程。证据范围：v7u_N000004~008。待P7D逐边审核。 S2关系r003、r005、r008触发起点为outcome/decision，违反端点兼容矩阵，已改为PRECEDES；r007 produce终点为decision，改为PRECEDES。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH01-S02_001"
+      ],
+      "reason": "该候选涵盖完整调查流程，已映射为一张卡。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "异常发现启动处理，对应E1_event_signal",
+      "e002": "联系运营团队涉及跨部门协同，故P5_coordination",
+      "e003": "确认高风险特征，形成风险分类结论，故X1_classification",
+      "e004": "深入分析本质是风险评估，故P1_assessment",
+      "e005": "发现可疑交易属识别结论，故X1_classification",
+      "e006": "形成上游犯罪假设，为评估判断，故P1_assessment",
+      "e007": "收集交易与客户资料，故P4_collection",
+      "e008": "证据评估得出结论，属P1_assessment",
+      "e009": "升级至合规团队属跨团队协同，故P5_coordination",
+      "e010": "应用分析工具追踪属风险评估动作，故P1_assessment",
+      "e011": "最终确认洗钱前台公司，形成结论，故X1_classification"
+    }
+  },
+  "skip_reason": null
+}

@@ -5,6 +5,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
+from typing import Any
 
 TEST_FILE = Path(__file__).resolve()
 PHASE_DIR = next(
@@ -26,7 +27,6 @@ COMPILER = _load_module(
     PHASE_DIR / "scripts" / "process_ir_compiler_v1.py",
 )
 validate_process_ir_payload = COMPILER.validate_process_ir_payload
-compile_process_ir_to_cards = COMPILER.compile_process_ir_to_cards
 
 P7C_PROMPTS = PHASE_DIR / "phases" / "P7C" / "prompts"
 TEST_SECTION = "CH06-S10"
@@ -71,16 +71,20 @@ def _make_episode(episode_id="ep_001", src_ids=None, elements=None, relations=No
     }
 
 
-def _make_element(element_id="e001", role="action", node_type="P2_execution",
+def _make_element(element_id="e001", role="action", node_type=None,
                    label="测试动作", unit_ids=None, modality=None):
-    return {
+    elem: dict[str, Any] = {
         "element_id": element_id,
         "role": role,
-        "node_type": node_type,
         "label": label,
         "evidence_unit_ids": unit_ids or ["v7u_N000477"],
         "modality": modality,
     }
+    # node_type will be removed from S2 IR contract; S3 LLM fills it.
+    # Keep param for backward compat with existing tests; omit from dict when None.
+    if node_type is not None:
+        elem["node_type"] = node_type
+    return elem
 
 
 def _make_relation(relation_id="r001", kind="trigger", trigger_element_id="e001",
@@ -90,6 +94,7 @@ def _make_relation(relation_id="r001", kind="trigger", trigger_element_id="e001"
         "relation_id": relation_id,
         "kind": kind,
         "evidence_unit_ids": evidence_unit_ids or ["v7u_N000477"],
+        "source_quote": kwargs.pop("source_quote", "Source text for relation."),
     }
     if kind == "trigger":
         rel["trigger_element_id"] = trigger_element_id
@@ -158,9 +163,19 @@ class TestCandidateAuditCoverage(unittest.TestCase):
         ir = {
             "section_id": TEST_SECTION,
             "episodes": [_make_episode(
+                src_ids=["s1c_001", "s1c_002"],
                 elements=[_make_element("e001", "action", "P2_execution", "动作1"),
-                           _make_element("e002", "context", "E1_event_signal", "事件1")],
-                relations=[_make_relation("r001", "trigger", "e002", "e001")],
+                           _make_element(
+                               "e002", "context", "E1_event_signal", "事件1",
+                               unit_ids=["v7u_N000478"],
+                           )],
+                relations=[_make_relation(
+                    "r001",
+                    "trigger",
+                    "e002",
+                    "e001",
+                    evidence_unit_ids=["v7u_N000477", "v7u_N000478"],
+                )],
             )],
             "candidate_audit": [
                 {"candidate_id": "s1c_001", "disposition": "mapped", "episode_ids": ["ep_001"], "reason": "理由1"},
@@ -322,17 +337,20 @@ class TestEvidenceOutsideCandidateUnionFails(unittest.TestCase):
                         f"Expected outside-source-candidate error, got: {errors}")
 
 
-# ── Test 6: role/node_type不兼容失败 ──
+# ── Test 6: S2 element不再携带node_type —— 应通过，不因缺node_type报错 ──
+# (Previously: role/node_type不兼容失败. After refactor, S2 no longer outputs
+#  node_type; the S2 validator must accept elements without it.)
 class TestRoleNodeTypeIncompatibility(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
 
-    def test_context_role_with_input_node_type_fails(self):
+    def test_action_and_context_without_node_type_passes_s2_validation(self):
+        """S2 IR elements without node_type must pass validation."""
         ir = {
             "section_id": TEST_SECTION,
             "episodes": [_make_episode(
-                elements=[_make_element("e001", "action", "P2_execution", "act"),
-                           _make_element("e002", "context", "input", "ctx")],
+                elements=[_make_element("e001", "action", label="act"),
+                           _make_element("e002", "context", label="ctx")],
                 relations=[_make_relation("r001", "trigger", "e002", "e001")],
             )],
             "candidate_audit": [
@@ -341,28 +359,39 @@ class TestRoleNodeTypeIncompatibility(unittest.TestCase):
             "skip_reason": None,
         }
         errors = validate_process_ir_payload(ir, TEST_SECTION, self.s1, ALLOWED_UNITS)
-        self.assertTrue(any("incompatible" in e.lower() for e in errors),
-                        f"Expected role/node_type incompatibility error, got: {errors}")
+        self.assertEqual(errors, [], f"S2 should accept elements without node_type, got: {errors}")
 
-    def test_outcome_role_with_process_node_type_fails(self):
+    def test_full_roles_without_node_type_pass(self):
+        """All six roles without node_type should pass S2 validation."""
+        elements = [
+            _make_element("e001", "context", label="trigger event"),
+            _make_element("e002", "input", label="raw data"),
+            _make_element("e003", "standard", label="threshold"),
+            _make_element("e004", "action", label="process step"),
+            _make_element("e005", "decision", label="branch point"),
+            _make_element("e006", "outcome", label="result"),
+        ]
+        relations = [
+            _make_relation("r001", "trigger", "e001", "e004"),
+            _make_relation("r002", "reference", "e004", "e002"),
+            _make_relation("r003", "reference", "e004", "e003"),
+            _make_relation("r004", "sequence", "e004", "e005"),
+            _make_relation("r005", "produce", "e004", "e006"),
+        ]
         ir = {
             "section_id": TEST_SECTION,
-            "episodes": [_make_episode(
-                elements=[_make_element("e001", "action", "P2_execution", "act"),
-                           _make_element("e002", "outcome", "P2_execution", "wrong")],
-                relations=[_make_relation("r001", "produce", "e001", "e002")],
-            )],
+            "episodes": [_make_episode(elements=elements, relations=relations)],
             "candidate_audit": [
                 {"candidate_id": "s1c_001", "disposition": "mapped", "episode_ids": ["ep_001"], "reason": "r"},
             ],
             "skip_reason": None,
         }
         errors = validate_process_ir_payload(ir, TEST_SECTION, self.s1, ALLOWED_UNITS)
-        self.assertTrue(any("incompatible" in e.lower() for e in errors),
-                        f"Expected role/node_type incompatibility error, got: {errors}")
+        self.assertEqual(errors, [], f"All roles without node_type should pass S2, got: {errors}")
 
 
 # ── Test 7: reference编译为process→auxiliary REFERENCES ──
+@unittest.skip("Pending S3 LLM implementation — compiler removed")
 class TestReferenceCompilation(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
@@ -396,6 +425,7 @@ class TestReferenceCompilation(unittest.TestCase):
 
 
 # ── Test 8: 五类其他relation映射正确（含trigger保留condition） ──
+@unittest.skip("Pending S3 LLM implementation — compiler removed")
 class TestRelationKindToEdgeTypeMapping(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
@@ -578,14 +608,20 @@ class TestUBOFullEpisodesPass(unittest.TestCase):
             "episodes": [
                 _make_episode(
                     episode_id="ep_001",
-                    src_ids=["s1c_001", "s1c_002"],
+                    src_ids=["s1c_001", "s1c_002", "s1c_004"],
                     focal_question="如何依据持股比例认定UBO",
                     title="依据直接和间接持股及适用阈值认定UBO",
                     card_nature="assessment",
                     elements=[
                         _make_element("e001", "input", "input", "直接持股比例"),
-                        _make_element("e002", "input", "input", "间接持股比例"),
-                        _make_element("e003", "standard", "standard", "适用的受益所有权阈值"),
+                        _make_element(
+                            "e002", "input", "input", "间接持股比例",
+                            unit_ids=["v7u_N000489"],
+                        ),
+                        _make_element(
+                            "e003", "standard", "standard", "适用的受益所有权阈值",
+                            unit_ids=["v7u_N000479"],
+                        ),
                         _make_element("e004", "action", "P1_assessment", "合计持股并比较阈值"),
                         _make_element("e005", "decision", "P3_branch_routing", "是否达到UBO阈值"),
                         _make_element("e006", "outcome", "X1_classification", "认定为UBO"),
@@ -637,10 +673,7 @@ class TestUBOFullEpisodesPass(unittest.TestCase):
         errors = validate_process_ir_payload(ir, TEST_SECTION, self.s1, ALLOWED_UNITS)
         self.assertEqual(errors, [], f"Expected no errors for UBO episode, got: {errors}")
 
-        # Also compile
-        result = compile_process_ir_to_cards(ir, TEST_SECTION, "Risk-Based UBO Determination")
-        cards = result["cards_payload"]["cards"]
-        self.assertEqual(len(cards), 2)
+        # S2 produces 2 episodes; S3 would produce 2 cards from them
 
 
 # ── Test 12: 孤立元素或不连通episode失败 ──
@@ -681,8 +714,17 @@ class TestCandidateEpisodeConsistency(unittest.TestCase):
             "episodes": [_make_episode(
                 src_ids=["s1c_001", "s1c_002"],
                 elements=[_make_element("e001", "action", "P2_execution", "act"),
-                           _make_element("e002", "context", "E1_event_signal", "ctx")],
-                relations=[_make_relation("r001", "trigger", "e002", "e001")],
+                           _make_element(
+                               "e002", "context", "E1_event_signal", "ctx",
+                               unit_ids=["v7u_N000478"],
+                           )],
+                relations=[_make_relation(
+                    "r001",
+                    "trigger",
+                    "e002",
+                    "e001",
+                    evidence_unit_ids=["v7u_N000477", "v7u_N000478"],
+                )],
             )],
             "candidate_audit": [
                 {"candidate_id": "s1c_001", "disposition": "mapped", "episode_ids": ["ep_001"], "reason": "r1"},
@@ -769,6 +811,7 @@ class TestSplitReasonRequired(unittest.TestCase):
 
 
 # ── Test 15: 编译边不含derivation、evidence_strength、review_status ──
+@unittest.skip("Pending S3 LLM implementation — compiler removed")
 class TestCompiledEdgesNoForbiddenFields(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
@@ -795,6 +838,7 @@ class TestCompiledEdgesNoForbiddenFields(unittest.TestCase):
 
 
 # ── Test 16: 编译cards通过现有P7C/P7D结构合同 ──
+@unittest.skip("Pending S3 LLM implementation — compiler removed")
 class TestCompiledCardsStructuralContract(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
@@ -1028,6 +1072,7 @@ class TestOptionalFieldValidation(unittest.TestCase):
 
 
 # ── Test 20: compile_audit完整记录IR→card/node/edge映射和source hash ──
+@unittest.skip("Pending S3 LLM implementation — compiler removed")
 class TestCompileAuditCompleteness(unittest.TestCase):
     def setUp(self):
         self.s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
@@ -1165,6 +1210,276 @@ class TestSectionIdMismatch(unittest.TestCase):
         errors = validate_process_ir_payload(ir, TEST_SECTION, self.s1, ALLOWED_UNITS)
         self.assertTrue(any("section_id" in e.lower() for e in errors),
                         f"Expected section_id mismatch error, got: {errors}")
+
+
+class TestPreviouslyUncoveredValidatorGaps(unittest.TestCase):
+    def test_source_quote_must_be_locatable_in_cited_units(self):
+        s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
+        relation = _make_relation("r001", "trigger", "e001", "e002")
+        relation["source_quote"] = "This text is not in the cited unit."
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                elements=[
+                    _make_element("e001", "context", "E1_event_signal"),
+                    _make_element("e002", "action", "P2_execution"),
+                ],
+                relations=[relation],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped",
+                 "episode_ids": ["ep_001"], "reason": "r"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(
+            ir,
+            TEST_SECTION,
+            s1,
+            ALLOWED_UNITS,
+            {"v7u_N000477": "Actual source text."},
+        )
+        self.assertTrue(any("source_quote" in error for error in errors), errors)
+
+    def test_candidate_audit_to_episode_reverse_mapping_is_required(self):
+        s1 = _s1_candidates(
+            ("s1c_001", ["v7u_N000477"]),
+            ("s1c_002", ["v7u_N000478"]),
+        )
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                src_ids=["s1c_001"],
+                elements=[
+                    _make_element("e001", "context", "E1_event_signal"),
+                    _make_element("e002", "action", "P2_execution"),
+                ],
+                relations=[_make_relation("r001", "trigger", "e001", "e002")],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped",
+                 "episode_ids": ["ep_001"], "reason": "r1"},
+                {"candidate_id": "s1c_002", "disposition": "support_only",
+                 "episode_ids": ["ep_001"], "reason": "r2"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(ir, TEST_SECTION, s1, ALLOWED_UNITS)
+        self.assertTrue(
+            any("does not list it in source_candidate_ids" in error for error in errors),
+            errors,
+        )
+
+    def test_each_p3_requires_two_own_branches(self):
+        s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                elements=[
+                    _make_element("e001", "decision", "P3_branch_routing"),
+                    _make_element("e002", "outcome", "X1_classification"),
+                    _make_element("e003", "decision", "P3_branch_routing"),
+                    _make_element("e004", "outcome", "X1_classification"),
+                ],
+                relations=[
+                    _make_relation("r001", "branch", "e001", "e002", condition="A"),
+                    _make_relation("r002", "sequence", "e001", "e003"),
+                    _make_relation("r003", "branch", "e003", "e004", condition="B"),
+                ],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped",
+                 "episode_ids": ["ep_001"], "reason": "r"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(ir, TEST_SECTION, s1, ALLOWED_UNITS)
+        self.assertTrue(any("e001 has only 1 branch" in error for error in errors), errors)
+        self.assertTrue(any("e003 has only 1 branch" in error for error in errors), errors)
+
+    @unittest.skip("Pending S3 LLM implementation — compile removed")
+    def test_support_only_compiles_to_p7c_card_coverage(self):
+        pass
+
+    def test_source_candidate_must_contribute_episode_evidence(self):
+        s1 = _s1_candidates(
+            ("s1c_001", ["v7u_N000477"]),
+            ("s1c_002", ["v7u_N000478"]),
+        )
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                src_ids=["s1c_001", "s1c_002"],
+                elements=[
+                    _make_element("e001", "context", "E1_event_signal"),
+                    _make_element("e002", "action", "P2_execution"),
+                ],
+                relations=[_make_relation("r001", "trigger", "e001", "e002")],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped",
+                 "episode_ids": ["ep_001"], "reason": "r1"},
+                {"candidate_id": "s1c_002", "disposition": "support_only",
+                 "episode_ids": ["ep_001"], "reason": "r2"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(ir, TEST_SECTION, s1, ALLOWED_UNITS)
+        self.assertTrue(
+            any("s1c_002 contributes no evidence unit" in error for error in errors),
+            errors,
+        )
+
+    def test_schema_enums_are_loaded_by_compiler(self):
+        schema = json.loads(
+            (PHASE_DIR / "inputs" / "procedural_schema_v2.json").read_text(
+                encoding="utf-8-sig"
+            )
+        )
+        self.assertEqual(COMPILER.VALID_RELATION_TYPES, set(schema["relation_types"]))
+        self.assertEqual(
+            COMPILER.VALID_MODALITIES,
+            set(schema["edge_properties"]["modality_allowed"]),
+        )
+
+
+class TestPromptExamplesMatchContract(unittest.TestCase):
+    def test_relation_example_contains_required_evidence_and_modality_enum(self):
+        prompt = (P7C_PROMPTS / "process_ir_v1.md").read_text(encoding="utf-8")
+        self.assertIn('"evidence_unit_ids": ["v7u_N000801"]', prompt)
+        self.assertIn("required/permitted/prohibited/risky/optional", prompt)
+
+    def test_s2_prompt_does_not_require_node_type_in_element(self):
+        """S2 Prompt must not ask LLM to fill node_type — that's S3's job."""
+        prompt = (P7C_PROMPTS / "process_ir_v1.md").read_text(encoding="utf-8")
+        # The 25-type enumeration block must not appear in S2 prompt
+        self.assertNotIn("E1_event_signal, E2_object_entry", prompt)
+        self.assertNotIn("X1_classification, X2_product", prompt)
+        # role→node_type compatibility table must not appear in S2 prompt
+        self.assertNotIn("P1-P2、P4-P10", prompt)
+
+
+# ── New tests: S2/S3 split contract ──
+class TestS2ProcessIrWithoutNodeType(unittest.TestCase):
+    """S2 IR contract: elements have role (6) but never node_type (25).
+
+    These tests will FAIL until:
+    - process_ir_v1.md: remove node_type enum lists and role→node_type table
+    - process_ir_compiler_v1.py: validator stops requiring element.node_type
+    """
+
+    def test_prompt_has_no_25_node_type_enumeration(self):
+        prompt = (P7C_PROMPTS / "process_ir_v1.md").read_text(encoding="utf-8")
+        self.assertNotIn("E1_event_signal, E2_object_entry", prompt)
+
+    def test_prompt_has_no_role_to_node_type_table(self):
+        prompt = (P7C_PROMPTS / "process_ir_v1.md").read_text(encoding="utf-8")
+        self.assertNotIn("context   -> E1-E8", prompt)
+
+    def test_validator_accepts_element_without_node_type(self):
+        s1 = _s1_candidates(("s1c_001", ["v7u_N000477"]),)
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                elements=[_make_element("e001", "action", label="do something"),
+                           _make_element("e002", "context", label="trigger")],
+                relations=[_make_relation("r001", "trigger", "e002", "e001")],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped", "episode_ids": ["ep_001"], "reason": "r"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(ir, TEST_SECTION, s1, ALLOWED_UNITS)
+        self.assertEqual(errors, [], f"Element without node_type should pass S2, got: {errors}")
+
+    def test_ubo_example_without_node_types(self):
+        """UBO判断 —elements have role only, no node_type."""
+        s1 = _s1_candidates(
+            ("s1c_001", ["v7u_N000477"]),
+            ("s1c_002", ["v7u_N000478"]),
+        )
+        ir = {
+            "section_id": TEST_SECTION,
+            "episodes": [_make_episode(
+                episode_id="ep_001",
+                src_ids=["s1c_001", "s1c_002"],
+                focal_question="如何依据持股比例认定UBO",
+                title="依据直接和间接持股及适用阈值认定UBO",
+                card_nature="assessment",
+                elements=[
+                    _make_element("e001", "input", label="直接持股比例"),
+                    _make_element("e002", "input", label="间接持股比例",
+                                  unit_ids=["v7u_N000478"]),
+                    _make_element("e003", "standard", label="适用的受益所有权阈值",
+                                  unit_ids=["v7u_N000478"]),
+                    _make_element("e004", "action", label="合计持股并比较阈值"),
+                    _make_element("e005", "decision", label="是否达到UBO阈值"),
+                    _make_element("e006", "outcome", label="认定为UBO",
+                                  unit_ids=["v7u_N000477"]),
+                    _make_element("e007", "outcome", label="不认定为UBO",
+                                  unit_ids=["v7u_N000477"]),
+                ],
+                relations=[
+                    _make_relation("r001", "reference", "e004", "e001"),
+                    _make_relation("r002", "reference", "e004", "e002"),
+                    _make_relation("r003", "reference", "e004", "e003"),
+                    _make_relation("r004", "sequence", "e004", "e005"),
+                    _make_relation("r005", "branch", "e005", "e006", condition="持股比例≥阈值"),
+                    _make_relation("r006", "branch", "e005", "e007", condition="持股比例<阈值"),
+                ],
+            )],
+            "candidate_audit": [
+                {"candidate_id": "s1c_001", "disposition": "mapped", "episode_ids": ["ep_001"],
+                 "reason": "提供持股输入"},
+                {"candidate_id": "s1c_002", "disposition": "mapped", "episode_ids": ["ep_001"],
+                 "reason": "提供阈值标准"},
+            ],
+            "skip_reason": None,
+        }
+        errors = validate_process_ir_payload(ir, TEST_SECTION, s1, ALLOWED_UNITS)
+        self.assertEqual(errors, [], f"UBO with role-only elements should pass S2, got: {errors}")
+
+
+@unittest.skip("Pending S3 Prompt and S3 LLM Runner integration")
+class TestS3Contract(unittest.TestCase):
+    """S3 (LLM) takes Process IR (role+kind) and outputs cards.raw.json.
+
+    These tests verify the S3 output contract.
+    """
+
+    def test_s3_must_assign_node_type_to_every_node(self):
+        """Every flow_node in S3 output must have a node_type from the 25-type schema."""
+        pass
+
+    def test_s3_node_type_must_be_compatible_with_role(self):
+        """S3's node_type assignment must respect role→node_type compatibility."""
+        pass
+
+    def test_s3_p3_branch_routing_requires_two_plus_branches(self):
+        """If S3 assigns P3_branch_routing, the node must have >=2 branch edges."""
+        pass
+
+    def test_s3_outputs_valid_cards_raw_json(self):
+        """S3 output must pass legacy card structure validation."""
+        pass
+
+    def test_s3_no_forbidden_fields_on_edges(self):
+        """S3 edges must not contain derivation, evidence_strength, review_status."""
+        pass
+
+
+@unittest.skip("Pending S3 LLM implementation — IR→card traceability")
+class TestS3CompileAudit(unittest.TestCase):
+    """Code post-processing generates compile_audit from Process IR + S3 cards."""
+
+    def test_compile_audit_maps_ir_element_to_card_node(self):
+        pass
+
+    def test_compile_audit_records_node_type_source(self):
+        """Each element's compile_audit entry records whether node_type was
+        deterministically derived or assigned by LLM."""
+        pass
 
 
 if __name__ == "__main__":

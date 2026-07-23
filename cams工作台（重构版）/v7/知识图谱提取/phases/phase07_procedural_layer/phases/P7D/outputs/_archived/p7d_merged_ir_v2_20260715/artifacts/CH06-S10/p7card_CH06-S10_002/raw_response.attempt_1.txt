@@ -1,0 +1,154 @@
+{
+  "section_id": "CH06-S10",
+  "card_id": "p7card_CH06-S10_002",
+  "edge_reviews": [
+    {
+      "edge_id": "edge_001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000490 明确要求机构设定适当阈值（'Your organization will set the appropriate threshold'），源节点'设定受益所有权阈值'有文本依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000490 直接提到'using a riskbased approach'，目标节点'风险为本方法'有文本依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文表述'set the appropriate threshold using a riskbased approach'表明设定阈值时使用风险为本方法，符合REFERENCES边从process指向辅助参照的方向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文明确表达方法运用关系，非仅并列或主题相关。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000490"],
+      "source_quotes": [
+        "Your organization will set the appropriate threshold using a riskbased approach."
+      ],
+      "reason": "原文明示设定阈值的过程参照风险为本方法，边的关系类型、方向和两端节点均完全匹配，无歧义。"
+    },
+    {
+      "edge_id": "edge_002",
+      "derivation": "unsupported",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000490 要求设定阈值，源节点'设定受益所有权阈值'有文本依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 对不同风险客户给出了不同阈值范围，可支撑'根据客户风险水平确定适用阈值'这一流程。"
+        },
+        "direction_support": {
+          "status": "unsupported",
+          "reason": "原文未提供设定阈值（n201）与根据风险水平确定阈值（n203）之间的先后顺序。v7u_N000490仅说明采用风险为本方法设定适当阈值，v7u_N000491紧接着给出不同风险客户的阈值范围，两者属于同一决策过程中相互关联的描述，不存在明确的时间或功能先后。教材叙述顺序不构成PRECEDES关系。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "虽然未检测到并列误导，但方向不支持已使边不成立。"
+        }
+      },
+      "evidence_unit_ids": [
+        "v7u_N000490",
+        "v7u_N000491"
+      ],
+      "source_quotes": [
+        "Your organization will set the appropriate threshold using a riskbased approach.",
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk."
+      ],
+      "reason": "PRECEDES边需要原文明示先后顺序或交换方向会违反唯一必要功能依赖，此处的证据材料仅说明采用风险为本方法设定阈值的做法和不同风险水平下的阈值可能取值，不支持“先设定阈值，再根据客户风险水平确定适用阈值”这一顺序，故拒绝此边。"
+    },
+    {
+      "edge_id": "edge_003",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 对不同风险水平的客户分别给出了相应的阈值范围，可支撑'根据客户风险水平确定适用阈值'这一决策节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 明确指出'For certain high‑risk customers, the beneficial ownership threshold might be as low as 10%'，目标节点'高风险客户适用阈值10%'的核心内容有原文依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文条件表述为'对于高风险客户，阈值可能低至10%'，天然构成根据风险水平决定阈值输出的流，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "文中'For certain high‑risk customers'即对应条件'客户被分类为高风险'，有直接证据。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'might be as low as 10%'表达可能性，边中target label表述为确定性的'高风险客户适用阈值10%'，删除了情态限定，将可能的结果强化为必然结果，不符合原文语义。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列误导，为正常的条件分流。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000491"],
+      "source_quotes": [
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk."
+      ],
+      "reason": "DECIDES关系及条件分流方向均被原文明示，但target label丢失了原文的'might'情态，将可能性表述固化为确定分类，构成语义偏差，故建议拒绝。"
+    },
+    {
+      "edge_id": "edge_004",
+      "derivation": "explicit_text",
+      "llm_recommendation": "rejected",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 对不同风险水平的客户分别给出了相应的阈值范围，可支撑'根据客户风险水平确定适用阈值'这一决策节点。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000491 指出对于'customers who pose a significantly higher risk'，阈值'could go as low as 5%'，目标节点'显著更高风险客户适用阈值5%'的核心内容有原文依据。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "原文条件表述为'对于显著更高风险的客户，阈值可低至5%'，方向正确。"
+        },
+        "condition_support": {
+          "status": "supported",
+          "reason": "'customers who pose a significantly higher risk'即对应条件'客户被分类为显著更高风险'，有直接证据。"
+        },
+        "qualifier_support": {
+          "status": "unsupported",
+          "reason": "原文使用'could go as low as 5%'表达可能性，target label直接表述为'适用阈值5%'，将可能性强化为确定性，未保留原文情态。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "非并列误导，为正常的条件分流。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000491"],
+      "source_quotes": [
+        "For certain high-risk customers, the beneficial ownership threshold might be as low as 10% and could go as low as 5% for customers who pose a significantly higher risk."
+      ],
+      "reason": "DECIDES关系及条件分流方向有原文明确支持，但target label丢失'could'情态，将可能性强化为必然结果，故建议拒绝。"
+    }
+  ]
+}

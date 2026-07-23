@@ -1,0 +1,401 @@
+{
+  "section_id": "CH41-S06",
+  "cards": [
+    {
+      "card_id": "p7card_CH41-S06_001",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "根据怀疑或阈值触发提交持续报告",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Suspicion or certain thresholds are triggered",
+          "evidence_unit_ids": ["v7u_N002964"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit ongoing reports (including suspicious activity reports and current threshold reports)",
+          "evidence_unit_ids": ["v7u_N002964"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when suspicion or certain thresholds are triggered",
+          "evidence_unit_ids": ["v7u_N002964"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002964"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：怀疑或阈值触发时须提交持续报告；证据范围：v7u_N002964；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_002",
+      "section_id": "CH41-S06",
+      "card_nature": "assessment",
+      "title": "异常交易触发可疑活动报告提交",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Transaction appears unusual, lacks an economic rationale, or raises AFC concerns",
+          "evidence_unit_ids": ["v7u_N002967"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit Suspicious Activity Report (SAR)",
+          "evidence_unit_ids": ["v7u_N002967"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when a transaction appears unusual, lacks an economic rationale, or raises AFC concerns",
+          "evidence_unit_ids": ["v7u_N002967"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002967"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：交易异常等条件触发SAR提交；证据范围：v7u_N002967；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_003",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "超阈值现金交易触发CTR提交",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Cash transaction exceeds country-specific thresholds (e.g., over US$10,000 in a single day in the US)",
+          "evidence_unit_ids": ["v7u_N002968"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit Currency Transaction Report (CTR)",
+          "evidence_unit_ids": ["v7u_N002968"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when cash transaction exceeds country-specific thresholds; in US, exceeds US$10,000 in a single day",
+          "evidence_unit_ids": ["v7u_N002968"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002968"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：超阈值现金交易触发CTR提交；证据范围：v7u_N002968；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_004",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "关联受制裁方触发制裁报告提交",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Customer, transaction, or entity is linked to a sanctioned individual, organization, or country",
+          "evidence_unit_ids": ["v7u_N002969"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "UN, OFAC, EU, or national sanctions lists",
+          "evidence_unit_ids": ["v7u_N002969"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "File sanctions report",
+          "evidence_unit_ids": ["v7u_N002969"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "condition": "when a customer, transaction, or entity is linked to a sanctioned individual, organization, or country based on sanctions lists",
+          "evidence_unit_ids": ["v7u_N002969"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002969"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002969"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：关联受制裁方时须基于制裁名单提交制裁报告；证据范围：v7u_N002969；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_005",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "超阈值国际交易触发跨境转账报告以监控非法资金流动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "International transaction exceeds defined thresholds",
+          "evidence_unit_ids": ["v7u_N002970"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit cross-border transfer report",
+          "evidence_unit_ids": ["v7u_N002970"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "Monitor illicit financial flows, trade-based money laundering, and terrorist financing",
+          "evidence_unit_ids": ["v7u_N002970"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when international transaction exceeds defined thresholds",
+          "evidence_unit_ids": ["v7u_N002970"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002970"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002970"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：超阈值国际交易触发跨境转账报告提交，并旨在监控非法资金流动；证据范围：v7u_N002970；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_006",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "依监管机构规定提交定期报告",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Regulatory bodies mandate cadence, format, and deadlines for periodic reports",
+          "evidence_unit_ids": ["v7u_N002965"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit periodic reports (including annual MLRO reports and other regular reports)",
+          "evidence_unit_ids": ["v7u_N002965"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002965"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002965"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：监管机构规定频率格式等要求，据此提交定期报告；证据范围：v7u_N002965；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH41-S06_007",
+      "section_id": "CH41-S06",
+      "card_nature": "execution",
+      "title": "许多司法管辖区强制提交受益所有人报告以揭露隐藏结构",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Beneficial ownership reports are legally enforced in many jurisdictions",
+          "evidence_unit_ids": ["v7u_N002971"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Submit beneficial ownership reports",
+          "evidence_unit_ids": ["v7u_N002971"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Expose hidden ownership structures and shell company misuse",
+          "evidence_unit_ids": ["v7u_N002971"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N002971"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002971"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002971"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在被强制执行的司法管辖区须提交受益所有人报告，旨在揭露隐藏结构；证据范围：v7u_N002971；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_001"],
+      "reason": "该候选描述了当怀疑或阈值触发时，须提交持续报告的流程义务。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_002"],
+      "reason": "该候选明确了交易异常等条件触发SAR提交的程序。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_003"],
+      "reason": "该候选规定了超阈值现金交易触发CTR提交的报告义务。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_004"],
+      "reason": "该候选阐述了基于制裁名单关联触发制裁报告提交的流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_005"],
+      "reason": "该候选说明了超阈值国际交易触发跨境转账报告提交，并旨在监控非法资金流动。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s06_periodic_reports",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_006"],
+      "reason": "该候选描述了监管机构规定频率格式等要求，机构据此提交定期报告的程序。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch41_s06_bo_reports",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH41-S06_007"],
+      "reason": "该候选描述了在许多司法管辖区受益所有人报告被强制执行，以揭露隐藏结构的流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, representing state/threshold triggering → E3_state_threshold",
+      "e002": "action role, submitting report → P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role, representing observed state triggering report → E3_state_threshold",
+      "e002": "action role, submitting SAR → P2_execution"
+    },
+    "ep_003": {
+      "e001": "context role, threshold exceedance triggering report → E3_state_threshold",
+      "e002": "action role, submitting CTR → P2_execution"
+    },
+    "ep_004": {
+      "e001": "context role, link to sanctioned party triggering report → E3_state_threshold",
+      "e002": "standard role, sanctions lists → auxiliary standard",
+      "e003": "action role, filing sanctions report → P2_execution"
+    },
+    "ep_005": {
+      "e001": "context role, threshold exceedance on international transaction → E3_state_threshold",
+      "e002": "action role, submitting cross-border report → P2_execution",
+      "e003": "outcome is to monitor, indicating continuing obligation → X7_continuing_obligation"
+    },
+    "ep_006": {
+      "e001": "standard role, regulatory mandate on frequency/format → auxiliary standard",
+      "e002": "action role, submitting periodic reports → P2_execution"
+    },
+    "ep_007": {
+      "e001": "standard role, legal enforcement of BO reports → auxiliary standard",
+      "e002": "action role, submitting BO reports → P2_execution",
+      "e003": "outcome to expose hidden structures, causing state change → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

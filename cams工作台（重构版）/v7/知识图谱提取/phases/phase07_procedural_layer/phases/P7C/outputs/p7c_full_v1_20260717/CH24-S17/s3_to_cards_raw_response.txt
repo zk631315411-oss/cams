@@ -1,0 +1,236 @@
+{
+  "section_id": "CH24-S17",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S17_001",
+      "section_id": "CH24-S17",
+      "card_nature": "execution",
+      "title": "FIU接收可疑交易报告后分析并可能共享给执法机构",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "financial companies file reports of suspicious transactions",
+          "evidence_unit_ids": ["v7u_N001940"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "suspicious transaction reports",
+          "evidence_unit_ids": ["v7u_N001940", "v7u_N001949"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "FIU analyzes suspicious transaction reports",
+          "evidence_unit_ids": ["v7u_N001949"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "FIU may share relevant information with law enforcement for further action",
+          "evidence_unit_ids": ["v7u_N001940", "v7u_N001949"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "law enforcement takes further action",
+          "evidence_unit_ids": ["v7u_N001940"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001940"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001949"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N001949"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRODUCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N001940"],
+          "qualifier": "aimed_to",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001940", "v7u_N001949"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融公司提交报告，FIU分析并可能共享给执法机构；证据范围：v7u_N001940, v7u_N001949；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S17_002",
+      "section_id": "CH24-S17",
+      "card_nature": "control",
+      "title": "恐怖融资禁止法要求金融机构识别报告可疑交易并冻结资产以防止恐怖融资",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "obligations under the Terrorist Financing Prohibition Act",
+          "evidence_unit_ids": ["v7u_N001945"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "financial institutions identify and report suspicious transactions and freeze assets",
+          "evidence_unit_ids": ["v7u_N001945"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "prevent the financing of terrorism",
+          "evidence_unit_ids": ["v7u_N001945"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001945"],
+          "relation_type": "standard_transmits_requirement"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001945"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001945"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：恐怖融资禁止法要求金融机构通过识别报告和冻结资产来防止恐怖融资；证据范围：v7u_N001945；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S17_003",
+      "section_id": "CH24-S17",
+      "card_nature": "control",
+      "title": "金融监督院检查监督金融机构以确保AML合规",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Financial Supervisory Service examines and supervises financial institutions",
+          "evidence_unit_ids": ["v7u_N001950"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "ensure compliance with AML obligations",
+          "evidence_unit_ids": ["v7u_N001950"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001950"],
+          "qualifier": "aimed_to"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001950"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融监督院通过检查监督确保金融机构AML合规；证据范围：v7u_N001950；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH24-S17_001"],
+      "reason": "描述了金融公司提交可疑交易报告后，韩国金融情报院可分享信息给执法机构的过程，构成事件触发和动作。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选仅描述法律条文对犯罪行为的处罚规定，属于静态法律事实，不涉及业务处理流程或判断。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH24-S17_002"],
+      "reason": "描述了恐怖融资禁止法对金融机构施加的识别、报告和冻结资产的义务，构成程序性要求。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH24-S17_003"],
+      "reason": "描述了金融监督院检查监督金融机构以确保合规的监督过程，构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s17_fiu_analysis_sharing",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH24-S17_001"],
+      "reason": "描述了韩国金融情报院分析可疑交易报告并共享信息的常规职责，与s1c_001共同构成完整的FIU处理可疑交易报告的流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → E1_event_signal, 金融公司提交报告是触发事件",
+      "e002": "input role → input, 可疑交易报告是数据输入",
+      "e003": "action role → P1_assessment, FIU分析可疑交易报告属于风险评估",
+      "e004": "action role → P5_coordination, FIU共享信息给执法机构是多部门协同",
+      "e005": "outcome role → X4_handoff, 执法机构接手下一步行动"
+    },
+    "ep_002": {
+      "e001": "standard role → standard, 法律义务是标准",
+      "e002": "action role → P8_constrained_action, 必须在法律义务约束下执行识别报告和冻结",
+      "e003": "outcome role → X7_continuing_obligation, 防止恐怖融资是持续性义务"
+    },
+    "ep_003": {
+      "e001": "action role → P7_monitoring, 检查和监督是持续性监控活动",
+      "e002": "outcome role → X3_state_change, 确保合规是使金融机构进入合规状态"
+    }
+  },
+  "skip_reason": null
+}

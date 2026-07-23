@@ -1,0 +1,311 @@
+{
+  "section_id": "CH06-S10",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001", "s1c_002"],
+      "focal_question": "如何依据持股比例和阈值识别最终受益所有人（UBO）？",
+      "title": "依据直接和间接持股及适用阈值认定 UBO",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "审查所有权结构",
+          "evidence_unit_ids": ["v7u_N000488"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "合计直接和间接持股比例",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "input",
+          "label": "直接和间接持股数据",
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "standard",
+          "label": "受益所有权识别阈值（通常为25%或以上）",
+          "evidence_unit_ids": ["v7u_N000489"],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "decision",
+          "label": "判断合计持股比例是否达到阈值",
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "modality": null
+        },
+        {
+          "element_id": "e006",
+          "role": "outcome",
+          "label": "认定为最终受益所有人（UBO）",
+          "evidence_unit_ids": ["v7u_N000494"],
+          "modality": null
+        },
+        {
+          "element_id": "e007",
+          "role": "outcome",
+          "label": "不认定为最终受益所有人（UBO）",
+          "evidence_unit_ids": ["v7u_N000495"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "审查所有权结构时",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000488"],
+          "source_quote": "When reviewing ownership structures, there is a regulatory obligation to identify the UBO of a customer."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e003",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000493", "v7u_N000494", "v7u_N000495"],
+          "source_quote": "In order to identify the UBOs of Company A, you need to identify indirect ownership stakes in addition to direct ownership."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e004",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000489"],
+          "source_quote": "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more."
+        },
+        {
+          "relation_id": "r004",
+          "kind": "sequence",
+          "before_element_id": "e002",
+          "after_element_id": "e005",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000494", "v7u_N000495"],
+          "source_quote": "Individual D owns 10% of Company A directly. They also own 72% of Company A indirectly... Individual D is then considered a UBO with 82% shareholding of Company A."
+        },
+        {
+          "relation_id": "r005",
+          "kind": "reference",
+          "process_element_id": "e005",
+          "auxiliary_element_id": "e004",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000489"],
+          "source_quote": "For AML purposes, most jurisdictions require beneficial ownership to be identified at a threshold of 25% or more."
+        },
+        {
+          "relation_id": "r006",
+          "kind": "branch",
+          "decision_element_id": "e005",
+          "target_element_id": "e006",
+          "condition": "合计持股比例达到阈值",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000494"],
+          "source_quote": "Individual D owns 10% of Company A directly. They also own 72% of Company A indirectly... Individual D is then considered a UBO with 82% shareholding of Company A."
+        },
+        {
+          "relation_id": "r007",
+          "kind": "branch",
+          "decision_element_id": "e005",
+          "target_element_id": "e007",
+          "condition": "合计持股比例未达到阈值",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000495"],
+          "source_quote": "Individual C, who owns 10% of Company A directly and an additional 8% indirectly... is not a UBO."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "机构如何采用风险为本方法设定受益所有权阈值？",
+      "title": "采用风险为本方法设定受益所有权阈值",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e201",
+          "role": "action",
+          "label": "设定受益所有权阈值",
+          "evidence_unit_ids": ["v7u_N000490"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e202",
+          "role": "standard",
+          "label": "风险为本方法",
+          "evidence_unit_ids": ["v7u_N000490"],
+          "modality": null
+        },
+        {
+          "element_id": "e203",
+          "role": "decision",
+          "label": "根据客户风险水平确定适用阈值",
+          "evidence_unit_ids": ["v7u_N000491", "v7u_N000492"],
+          "modality": null
+        },
+        {
+          "element_id": "e204",
+          "role": "outcome",
+          "label": "高风险客户适用阈值10%",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "modality": "risky"
+        },
+        {
+          "element_id": "e205",
+          "role": "outcome",
+          "label": "显著更高风险客户适用阈值5%",
+          "evidence_unit_ids": ["v7u_N000491"],
+          "modality": "risky"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r201",
+          "kind": "reference",
+          "process_element_id": "e201",
+          "auxiliary_element_id": "e202",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000490"],
+          "source_quote": "Your organization will set the appropriate threshold using a riskbased approach."
+        },
+        {
+          "relation_id": "r202",
+          "kind": "sequence",
+          "before_element_id": "e201",
+          "after_element_id": "e203",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000490", "v7u_N000491"],
+          "source_quote": "Your organization will set the appropriate threshold using a riskbased approach. For certain high-risk customers, the beneficial ownership threshold might be as low as 10%..."
+        },
+        {
+          "relation_id": "r203",
+          "kind": "branch",
+          "decision_element_id": "e203",
+          "target_element_id": "e204",
+          "condition": "客户被分类为高风险",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000491"],
+          "source_quote": "For certain high-risk customers, the beneficial ownership threshold might be as low as 10%..."
+        },
+        {
+          "relation_id": "r204",
+          "kind": "branch",
+          "decision_element_id": "e203",
+          "target_element_id": "e205",
+          "condition": "客户被分类为显著更高风险",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000491"],
+          "source_quote": "...and could go as low as 5% for customers who pose a significantly higher risk."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "当公司中不存在自然人受益所有人时，如何识别控制人或名义受益所有人？",
+      "title": "无自然人 UBO 时识别控制人或名义受益所有人",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e301",
+          "role": "context",
+          "label": "公司中不存在自然人受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "modality": null
+        },
+        {
+          "element_id": "e302",
+          "role": "action",
+          "label": "识别并核实控制人或名义受益所有人",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e303",
+          "role": "outcome",
+          "label": "了解公司决策的控制者",
+          "evidence_unit_ids": ["v7u_N000496"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r301",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e301",
+          "process_element_id": "e302",
+          "condition": "公司中不存在自然人受益所有人",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000496"],
+          "source_quote": "In companies where there is no natural beneficial owner, a controller or a notional beneficial owner should be identified and verified."
+        },
+        {
+          "relation_id": "r302",
+          "kind": "produce",
+          "process_element_id": "e302",
+          "outcome_element_id": "e303",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000496"],
+          "source_quote": "This allows you to understand who is in control of the decision-making in the company when natural individual UBOs are not present."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选提供了审查所有权结构时识别UBO的义务，构成流程的触发和动作部分。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选提供了识别UBO的具体输入、标准、判断和结果，构成流程的核心判断部分。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选描述了机构采用风险为本方法设定受益所有权阈值的过程，构成独立的阈值设定流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "该候选描述了无自然人受益所有人时识别控制人的流程，构成独立的分支流程。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,75 @@
+{
+  "section_id": "CH40-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "FINTRAC如何因不合规行为对RBC处以罚款？",
+      "title": "FINTRAC检查发现反洗钱缺陷并对RBC处以罚款",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "FINTRAC conducts compliance examination in 2022",
+          "evidence_unit_ids": ["v7u_N002877"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "FINTRAC discovers AML/CFT deficiencies",
+          "evidence_unit_ids": ["v7u_N002877"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "FINTRAC imposes a CA$7.475 million fine on RBC for non-compliance with the PCMLTFA",
+          "evidence_unit_ids": ["v7u_N002876"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002877"],
+          "source_quote": "The regulator discovered AML/CFT deficiencies during its compliance examination in 2022."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002876", "v7u_N002877"],
+          "source_quote": "imposed a CA$7.475 million fine on Royal Bank of Canada (RBC) for non-compliance with the Proceeds of Crime (Money Laundering) and Terrorist Financing Act."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选提供的监管检查、发现缺陷及罚款构成一个程序性执法流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选提供一组反洗钱治理要求（如动态政策、持续更新等），没有形成触发或判断的流程，仅陈述规范要求。"
+    }
+  ],
+  "skip_reason": null
+}

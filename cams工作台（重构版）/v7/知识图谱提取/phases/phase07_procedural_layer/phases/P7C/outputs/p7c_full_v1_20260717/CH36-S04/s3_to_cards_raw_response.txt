@@ -1,0 +1,498 @@
+{
+  "section_id": "CH36-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH36-S04_001",
+      "section_id": "CH36-S04",
+      "card_nature": "execution",
+      "title": "制定并批准风险偏好声明",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "实施风险偏好框架",
+          "evidence_unit_ids": ["v7u_N002696"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "确定机构为实现战略目标愿意接受的风险类型",
+          "evidence_unit_ids": ["v7u_N002696"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "设定风险容忍度水平",
+          "evidence_unit_ids": ["v7u_N002696"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "制定风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002696"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e005",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "制定的风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002696"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e006",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "董事会批准风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002691"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e007",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "已批准的风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002691"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002696"]
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "PRECEDES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N002696"]
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRECEDES",
+          "source": "e003",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N002696"]
+        },
+        {
+          "edge_id": "r004",
+          "edge_type": "PRODUCES",
+          "source": "e004",
+          "target": "e005",
+          "evidence_unit_ids": ["v7u_N002696"]
+        },
+        {
+          "edge_id": "r005",
+          "edge_type": "PRECEDES",
+          "source": "e005",
+          "target": "e006",
+          "evidence_unit_ids": ["v7u_N002691"]
+        },
+        {
+          "edge_id": "r006",
+          "edge_type": "PRODUCES",
+          "source": "e006",
+          "target": "e007",
+          "evidence_unit_ids": ["v7u_N002691"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002696", "v7u_N002691"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：从实施框架到制定声明再到董事会批准的顺序流程。证据范围：v7u_N002696, v7u_N002691。原S2关系r005（reference from e006 to e005）与端点角色矩阵冲突，根据原文语义修正为PRECEDES，表示声明制定后进入批准环节。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S04_002",
+      "section_id": "CH36-S04",
+      "card_nature": "execution",
+      "title": "定期审查并调整风险偏好声明",
+      "flow_nodes": [
+        {
+          "node_id": "e010",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "随时间推移",
+          "evidence_unit_ids": ["v7u_N002699"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e011",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002691"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e012",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "定期审查风险偏好声明以考虑业务和相关风险因素的变化",
+          "evidence_unit_ids": ["v7u_N002691"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e013",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "定期重新评估风险敞口",
+          "evidence_unit_ids": ["v7u_N002699"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e014",
+          "node_category": "process",
+          "node_type": "P6_feedback",
+          "label": "调整风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002699"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e015",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "调整后的风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002699"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r010",
+          "edge_type": "PRECEDES",
+          "source": "e010",
+          "target": "e012",
+          "condition": "随时间推移",
+          "evidence_unit_ids": ["v7u_N002699", "v7u_N002691"]
+        },
+        {
+          "edge_id": "r011",
+          "edge_type": "REFERENCES",
+          "source": "e012",
+          "target": "e011",
+          "evidence_unit_ids": ["v7u_N002691"]
+        },
+        {
+          "edge_id": "r012",
+          "edge_type": "PRECEDES",
+          "source": "e012",
+          "target": "e013",
+          "evidence_unit_ids": ["v7u_N002699"]
+        },
+        {
+          "edge_id": "r013",
+          "edge_type": "PRECEDES",
+          "source": "e013",
+          "target": "e014",
+          "evidence_unit_ids": ["v7u_N002699"]
+        },
+        {
+          "edge_id": "r014",
+          "edge_type": "PRODUCES",
+          "source": "e014",
+          "target": "e015",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N002699"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002699", "v7u_N002691"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：时间周期触发审查，经重新评估后可能调整声明。证据范围：v7u_N002699, v7u_N002691。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S04_003",
+      "section_id": "CH36-S04",
+      "card_nature": "execution",
+      "title": "使用风险偏好声明审查不符合客户",
+      "flow_nodes": [
+        {
+          "node_id": "e020",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "现有客户不再符合机构的风险偏好",
+          "evidence_unit_ids": ["v7u_N002701"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e021",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险偏好声明",
+          "evidence_unit_ids": ["v7u_N002701"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e022",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "审查客户",
+          "evidence_unit_ids": ["v7u_N002701"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r020",
+          "edge_type": "PRECEDES",
+          "source": "e020",
+          "target": "e022",
+          "condition": "客户不再符合风险偏好",
+          "evidence_unit_ids": ["v7u_N002701"]
+        },
+        {
+          "edge_id": "r021",
+          "edge_type": "REFERENCES",
+          "source": "e022",
+          "target": "e021",
+          "evidence_unit_ids": ["v7u_N002701"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002701"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：客户状况异常触发，依据风险偏好声明审查。证据范围：v7u_N002701。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S04_004",
+      "section_id": "CH36-S04",
+      "card_nature": "execution",
+      "title": "应对提高风险敞口的潜在新客户",
+      "flow_nodes": [
+        {
+          "node_id": "e030",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "潜在新客户可能提高机构的风险敞口",
+          "evidence_unit_ids": ["v7u_N002700"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e031",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构选择应对措施",
+          "evidence_unit_ids": ["v7u_N002700"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        },
+        {
+          "node_id": "e032",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "拒绝该客户",
+          "evidence_unit_ids": ["v7u_N002700"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e033",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "限制该客户获得特定产品或服务",
+          "evidence_unit_ids": ["v7u_N002700"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e034",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对该客户账户施加增强的风险控制",
+          "evidence_unit_ids": ["v7u_N002700"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r030",
+          "edge_type": "PRECEDES",
+          "source": "e030",
+          "target": "e031",
+          "evidence_unit_ids": ["v7u_N002700"]
+        },
+        {
+          "edge_id": "r031",
+          "edge_type": "DECIDES",
+          "source": "e031",
+          "target": "e032",
+          "condition": "选择拒绝",
+          "evidence_unit_ids": ["v7u_N002700"]
+        },
+        {
+          "edge_id": "r032",
+          "edge_type": "DECIDES",
+          "source": "e031",
+          "target": "e033",
+          "condition": "选择限制",
+          "evidence_unit_ids": ["v7u_N002700"]
+        },
+        {
+          "edge_id": "r033",
+          "edge_type": "DECIDES",
+          "source": "e031",
+          "target": "e034",
+          "condition": "选择增强控制",
+          "evidence_unit_ids": ["v7u_N002700"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002700"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：新客户引发风险敞口提升，触发机构决策分支。证据范围：v7u_N002700。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH36-S04_005",
+      "section_id": "CH36-S04",
+      "card_nature": "execution",
+      "title": "定期独立评估风险控制有效性",
+      "flow_nodes": [
+        {
+          "node_id": "e040",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "定期",
+          "evidence_unit_ids": ["v7u_N002703"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e041",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "进行独立评估",
+          "evidence_unit_ids": ["v7u_N002703"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e042",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确保内部风险控制、风险管理和风险治理有效且运作正常",
+          "evidence_unit_ids": ["v7u_N002703"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r040",
+          "edge_type": "PRECEDES",
+          "source": "e040",
+          "target": "e041",
+          "condition": "定期",
+          "evidence_unit_ids": ["v7u_N002703"]
+        },
+        {
+          "edge_id": "r041",
+          "edge_type": "PRODUCES",
+          "source": "e041",
+          "target": "e042",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N002703"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002703"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：定期评估旨在确保持续有效性。证据范围：v7u_N002703。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_001", "p7card_CH36-S04_002"],
+      "reason": "该候选包含两个独立中心：批准声明和定期审查，分别归属于制定批准流程和定期审查调整流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述合并如何导致风险偏好变化，属于示例说明，没有业务处理或判断动作。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_001"],
+      "reason": "提供制定风险偏好声明的必要步骤。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_002"],
+      "reason": "提供定期重新评估和调整声明的流程，属于审查维护的一部分。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_004"],
+      "reason": "新客户可能提高风险敞口时，机构需做出应对决策，构成程序性分支流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_003"],
+      "reason": "使用风险偏好声明审查不再符合的客户，是一个业务处理过程。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH36-S04_005"],
+      "reason": "定期独立评估是确保控制有效性的程序。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "entry role; 实施框架为一个主动启动的事件，故为E1_event_signal",
+      "e002": "action role; 确定风险类型属于识别和评估性质，选P1_assessment",
+      "e003": "action role; 设定容忍度水平属于策略规划活动，选P9_planning",
+      "e004": "action role; 汇集信息形成正式声明，选P4_collection",
+      "e005": "outcome role; 声明文档为可保存对象，选X2_product",
+      "e006": "action role; 批准属于适宜性判断，选P1_assessment",
+      "e007": "outcome role; 已批准声明为最终产品，选X2_product"
+    },
+    "ep_002": {
+      "e010": "context role; 时间推移为周期触发，选E5_time_cycle",
+      "e011": "input role; 具体数据对象，选input",
+      "e012": "action role; 审查并考虑变化属评估活动，选P1_assessment",
+      "e013": "action role; 重新评估风险敞口属评估，选P1_assessment",
+      "e014": "action role; 调整声明为反馈修正行为，选P6_feedback",
+      "e015": "outcome role; 调整后的声明为产品，选X2_product"
+    },
+    "ep_003": {
+      "e020": "context role; 客户不再符合为异常情况，选E6_change_exception",
+      "e021": "standard role; 参考基准，选standard",
+      "e022": "action role; 审查客户为评估行为，选P1_assessment"
+    },
+    "ep_004": {
+      "e030": "context role; 潜在新客户进入处理视野，选E2_object_entry",
+      "e031": "decision role; 基于条件选择路径，选P3_branch_routing",
+      "e032": "action role; 拒绝执行动作，选P2_execution",
+      "e033": "action role; 限制执行动作，选P2_execution",
+      "e034": "action role; 施加控制执行动作，选P2_execution"
+    },
+    "ep_005": {
+      "e040": "context role; 定期为周期启动，选E5_time_cycle",
+      "e041": "action role; 独立评估为评估活动，选P1_assessment",
+      "e042": "outcome role; 确保有效为形成有效性结论，选X1_classification"
+    }
+  },
+  "skip_reason": null
+}

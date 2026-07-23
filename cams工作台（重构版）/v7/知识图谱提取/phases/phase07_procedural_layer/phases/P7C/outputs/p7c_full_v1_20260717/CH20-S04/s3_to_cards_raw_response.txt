@@ -1,0 +1,80 @@
+{
+  "section_id": "CH20-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH20-S04_001",
+      "section_id": "CH20-S04",
+      "card_nature": "assessment",
+      "title": "OECD贿赂工作组评估和建议流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "一个司法管辖区的实施和执行公约及相关文书的情况",
+          "evidence_unit_ids": ["v7u_N001512"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "OECD贿赂工作组评估并提出建议",
+          "evidence_unit_ids": ["v7u_N001512"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "发布详细报告，记录成就、挑战、执法情况及进展",
+          "evidence_unit_ids": ["v7u_N001512"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001512"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001512"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001512"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：OECD贿赂工作组依据司法管辖区实施情况评估并提出建议，进而发布包含成就、挑战、执法和进展的详细报告。证据范围：v7u_N001512。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "描述的是OECD公约作为法律文书的要求（签署国须立法将贿赂外国公职人员定罪并建立监督机制），属于静态法律义务陈述，不涉及原文明示的业务识别、调查、审查、分析、决策或控制过程，因此不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH20-S04_001"],
+      "reason": "该候选独立支持OECD贿赂工作组的评估、建议与报告发布流程，包含明确的业务动作与产出，满足流程定义。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input",
+      "e002": "action role '评估并提出建议' 属于典型评估活动，形成结论和建议，故为 P1_assessment",
+      "e003": "outcome role '发布详细报告' 产生可识别的正式产品，故为 X2_product"
+    }
+  },
+  "skip_reason": null
+}

@@ -1,0 +1,117 @@
+{
+  "section_id": "CH20-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "如何依据1999年公约和第1373号决议追踪恐怖融资交易？",
+      "title": "依据1999年公约和第1373号决议追踪恐怖融资交易",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "The 1999 Convention and Resolution 1373 (2001) requires Member States to criminalize terrorist financing and to enact asset freezing measures",
+          "evidence_unit_ids": ["v7u_N001485"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "Spanish authorities track financial transactions and money flows linked to the bombers",
+          "evidence_unit_ids": ["v7u_N001485"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001485"],
+          "source_quote": "The 1999 Convention and Resolution 1373 (2001), adopted after 9/11, requires Member States to criminalize terrorist financing and to enact asset freezing measures. This enabled Spanish authorities in 2004 to track financial transactions and money flows linked to the bombers."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "如何根据第1267号决议对与基地组织和塔利班关联的实体实施制裁？",
+      "title": "依据第1267号决议调查并冻结与基地组织和塔利班关联的资产",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "Resolution 1267 (1999) establishes a sanctions regime against individuals and entities associated with al-Qaeda and the Taliban",
+          "evidence_unit_ids": ["v7u_N001486"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "Post-attack investigations into the attackers’ links to these organizations",
+          "evidence_unit_ids": ["v7u_N001486"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "freezing of assets and disruption of support networks using various authorities",
+          "evidence_unit_ids": ["v7u_N001486"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001486"],
+          "source_quote": "Resolution 1267 (1999) establishes a sanctions regime against individuals and entities associated with al-Qaeda and the Taliban. Post-attack investigations into the attackers’ links to these organizations resulted in the freezing of assets and the disruption of support networks using various authorities."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001486"],
+          "source_quote": "Post-attack investigations into the attackers’ links to these organizations resulted in the freezing of assets and the disruption of support networks using various authorities."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "候选仅描述当局调查中的事实发现（法医证据指向极端分子），未包含程序性动作或决策，不构成流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "候选包含法律要求（标准）和西班牙当局追踪金融交易的动作，构成程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "候选包含调查动作和基于决议的资产冻结及网络破坏结果，构成程序性关系。"
+    }
+  ],
+  "skip_reason": null
+}

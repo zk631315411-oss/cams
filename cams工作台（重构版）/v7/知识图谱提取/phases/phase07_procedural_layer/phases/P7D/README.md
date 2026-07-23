@@ -1,8 +1,21 @@
-# P7D：Flow Edge证据审核
+# P7D：Flow Edge证据审核（暂时弃用）
+
+> **状态：暂时弃用（2026-07-16）**
+>
+> P7D 暂时不参与 merged-process-ir 流水线。S3 产出的 `cards.raw.json` 直接作为 P7C 最终产物。
+>
+> **弃用理由：**
+> 1. P7D 的”原文明示”审核标准与 merged 模式 S2 的语义建模能力不匹配。S2 正确识别了逻辑先后/参照/产出关系，但教材语言极少逐字标注这些关系，导致大量正确边被判 `llm_inference→pending` 或被拒。
+> 2. 旧流程中 P7D 是必要的——旧 LLM 容易把相关写成因果。merged 模式 S2 已用 role+kind+endpoint matrix 做了结构化的语义把关，P7D 变成了对同一判断的重复且更严格的二次审查。
+> 3. pending+rejected 占比约 50%，其中相当比例是 S2 建模正确但 P7D 证据标准不匹配的边。
+>
+> **恢复条件：** 重新定义 P7D 审核口径，使其接受 S2 已建模的逻辑关系，或调整为仅审核”原文明确矛盾”的边。
+
+---
 
 ## 定位
 
-P7整体目标是“离线局部流程知识 + 按题生成证明路径”。P7C生成section-local候选card，允许保留一定候选噪声；P7D对现有`flow_edges`逐边审核，决定哪些边可以进入最终程序性证明。
+P7整体目标是”离线局部流程知识 + 按题生成证明路径”。P7C生成section-local候选card，允许保留一定候选噪声；P7D对现有`flow_edges`逐边审核，决定哪些边可以进入最终程序性证明。
 
 P7D不重新抽card，不修改P7C正本，不新增或连接card，不读取题目、选项或参考答案，也不自动修复P7C产物。
 
@@ -87,6 +100,8 @@ P7B section_packages/<section_id>/task.json
 inputs/procedural_schema_v2.json
 phases/P7D/inputs/p7d_edge_review_schema_v1.json
 ```
+
+merged-process-ir 模式下，cards.raw.json 由 S3 LLM 产出（经由 Process IR → cards），P7D 不感知上游 S2/S3 的内部拆分，输入接口不变。
 
 规则结构校验在本地读取完整card、section package和schema，不产生LLM token。
 

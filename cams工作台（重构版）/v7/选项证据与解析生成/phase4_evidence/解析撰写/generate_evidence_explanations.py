@@ -381,7 +381,7 @@ def _format_prompt_card(card: dict[str, Any]) -> str:
     type_str = f" | 教材类型：{type_label}" if type_label else ""
     page_info = _get_unit_page_map().get(card["unit_id"], {})
     printed_page = page_info.get("printed_page", "")
-    page_str = f" | 书内第{printed_page}页" if printed_page else ""
+    page_str = f" | P{printed_page}" if printed_page else ""
     return (
         f"- {card['unit_id']} | {card['source_kind']}"
         f" | {card.get('support_type', '')}{type_str}{page_str}{retrieval}\n"
@@ -389,6 +389,168 @@ def _format_prompt_card(card: dict[str, Any]) -> str:
         f"  英文原文：{compact_text(card['en_quote'])}\n"
         f"  章节：{' > '.join(card['heading_context'])}"
     )
+
+
+# ── KG 教材原文连续上下文 ──────────────────────────────────────────
+
+_KG_UNIT_CACHE: dict[str, dict[str, Any]] | None = None
+
+
+def _load_kg_units() -> dict[str, dict[str, Any]]:
+    """加载 KG 所有 unit，按 unit_id 索引。缓存，只加载一次。"""
+    global _KG_UNIT_CACHE
+    if _KG_UNIT_CACHE is not None:
+        return _KG_UNIT_CACHE
+    if not KG_GRAPH_PATH.exists():
+        _KG_UNIT_CACHE = {}
+        return _KG_UNIT_CACHE
+    with open(KG_GRAPH_PATH, "r", encoding="utf-8") as f:
+        kg = json.load(f)
+    _KG_UNIT_CACHE = {}
+    for unit in kg.get("units", []) or []:
+        uid = str(unit.get("unit_id", "")).strip()
+        if uid:
+            _KG_UNIT_CACHE[uid] = unit
+    return _KG_UNIT_CACHE
+
+
+def _section_context_cards(
+    unit_id: str,
+    candidate_ids: set[str],
+    context_range: int = 4,
+) -> list[dict[str, Any]]:
+    """返回 unit_id 同 Section 内 unit_order ±context_range 的连续材料卡。
+
+    已检索到的用正常格式，未检索到的补占位（从 KG 取中文摘要 + 英文原文）。
+    """
+    kg_units = _load_kg_units()
+    center = kg_units.get(unit_id)
+    if not center:
+        return []
+    
+    section_id = center.get("section_id", "")
+    center_order = int(center.get("unit_order") or 0)
+    if not section_id or not center_order:
+        return []
+    
+    # 找出同 section 所有 unit，按 unit_order 排序
+    siblings: list[dict[str, Any]] = []
+    for uid, unit in kg_units.items():
+        if unit.get("section_id") == section_id:
+            siblings.append(unit)
+    siblings.sort(key=lambda u: int(u.get("unit_order") or 0))
+    
+    # 取 ±context_range 范围内
+    result: list[dict[str, Any]] = []
+    for unit in siblings:
+        order = int(unit.get("unit_order") or 0)
+        if abs(order - center_order) <= context_range:
+            uid = str(unit.get("unit_id", ""))
+            is_candidate = uid in candidate_ids
+            card = {
+                "unit_id": uid,
+                "knowledge_zh": unit.get("knowledge_zh", ""),
+                "en_quote": unit.get("en_quote") or "",
+                "heading_context": unit.get("heading_context") or [],
+                "type": unit.get("type", ""),
+                "printed_page": unit.get("printed_page", ""),
+                "real_section": unit.get("real_section") or unit.get("section_id", ""),
+                "unit_order": order,
+                "is_candidate": is_candidate,
+                "is_center": uid == unit_id,
+            }
+            result.append(card)
+    return result
+
+
+def _format_context_block(cards: list[dict[str, Any]]) -> str:
+    """将一组连续材料卡（含上下文）格式化为提示文本块。"""
+    if not cards:
+        return ""
+    
+    section_label = cards[0].get("real_section", "")
+    heading = " > ".join(cards[0].get("heading_context", []) or [])
+    
+    lines = [f"【教材原文连续段落 — {section_label} ({heading})】", ""]
+    for card in cards:
+        uid = card["unit_id"]
+        zh = compact_text(card["knowledge_zh"])
+        en = compact_text(card["en_quote"])
+        page_str = f" | P{card['printed_page']}" if card.get("printed_page") else ""
+        type_label = _type_cn_label(card.get("type", ""))
+        type_str = f" | 教材类型：{type_label}" if type_label else ""
+        
+        if card["is_center"]:
+            marker = "★ 命中"
+        elif card["is_candidate"]:
+            marker = "  已检索"
+        else:
+            marker = "  补充上下文"
+        
+        lines.append(f"[{uid}] {marker}{type_str}{page_str}")
+        lines.append(f"  中文要点：{zh}")
+        if en:
+            lines.append(f"  英文原文：{en}")
+        lines.append("")
+    lines.append("-" * 60)
+    return "\n".join(lines)
+
+
+def _build_context_augmented_material(
+    result: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """与 enriched_option_material 同接口，但每张 evidence card 附加 ±2 上下文。"""
+    options = result.get("options", {}) or {}
+    unit_map = candidate_by_unit(result)
+    supplements = result.get("option_supplement_pool", {}) or {}
+    by_label = {
+        str(row.get("option", "")).strip().upper(): row
+        for row in result.get("option_analysis", []) or []
+        if isinstance(row, dict)
+    }
+    
+    rows: list[dict[str, Any]] = []
+    for label, option_text in options.items():
+        label = str(label).strip().upper()
+        analysis = by_label.get(label, {})
+        cards: list[dict[str, Any]] = []
+        bound_ids: set[str] = set()
+        for evidence_card in analysis.get("evidence_cards", []) or []:
+            if not isinstance(evidence_card, dict):
+                continue
+            uid = str(evidence_card.get("unit_id", "")).strip()
+            unit = unit_map.get(uid)
+            if not unit or uid in bound_ids:
+                continue
+            bound_ids.add(uid)
+            material = _material_card(unit, uid, "adjudicated")
+            material["support_type"] = evidence_card.get("support_type", "")
+            material["context_block"] = _section_context_cards(uid, bound_ids)
+            cards.append(material)
+
+        supplement_cards: list[dict[str, Any]] = []
+        for unit in supplements.get(label, []) or []:
+            uid = str(unit.get("unit_id", "")).strip()
+            if not uid or uid in bound_ids:
+                continue
+            bound_ids.add(uid)
+            sc = _material_card(unit, uid, "supplement_candidate")
+            sc["context_block"] = _section_context_cards(uid, bound_ids)
+            supplement_cards.append(sc)
+            if len(supplement_cards) >= OPTION_SUPPLEMENT_CONTEXT_LIMIT:
+                break
+
+        judgement = analysis.get("judgement", "")
+        rows.append({
+            "option": label,
+            "option_text": option_text,
+            "judgement": judgement,
+            "evidence_status": analysis.get("evidence_status", ""),
+            "decision_basis": analysis.get("decision_basis", ""),
+            "evidence_cards": cards,
+            "supplement_cards": supplement_cards,
+        })
+    return rows
 
 
 def build_prompt(
@@ -406,23 +568,42 @@ def build_prompt(
         if options_en.get(label)
     )
 
+    # 使用上下文增强版材料卡（同 Section ±2 unit 连续展示）
+    # 去重 key = (real_section, center_unit_order)，避免同 Section 不同窗口被合并
+    shown_context_keys: set[tuple[str, int]] = set()
     material_lines: list[str] = []
-    for row in enriched_option_material(result):
+    for row in _build_context_augmented_material(result):
         material_lines.append(
             f"选项{row['option']}：{row['option_text']}\n"
             f"盲判标签：{row['judgement']} | 证据状态：{row['evidence_status']} | "
             f"原判断类型：{row['decision_basis']}"
         )
         material_lines.append("已裁判证据：")
-        material_lines.extend(
-            _format_prompt_card(card) for card in row["evidence_cards"]
-        )
+        for card in row["evidence_cards"]:
+            context_block = card.get("context_block", [])
+            if context_block:
+                section = context_block[0].get("real_section", "")
+                center_order = next((c["unit_order"] for c in context_block if c["is_center"]), 0)
+                ctx_key = (section, center_order)
+                if ctx_key not in shown_context_keys:
+                    material_lines.append(_format_context_block(context_block))
+                    shown_context_keys.add(ctx_key)
+            else:
+                material_lines.append(_format_prompt_card(card))
         if not row["evidence_cards"]:
             material_lines.append("- 无")
         material_lines.append("解析补充候选：")
-        material_lines.extend(
-            _format_prompt_card(card) for card in row["supplement_cards"]
-        )
+        for card in row["supplement_cards"]:
+            context_block = card.get("context_block", [])
+            if context_block:
+                section = context_block[0].get("real_section", "")
+                center_order = next((c["unit_order"] for c in context_block if c["is_center"]), 0)
+                ctx_key = (section, center_order)
+                if ctx_key not in shown_context_keys:
+                    material_lines.append(_format_context_block(context_block))
+                    shown_context_keys.add(ctx_key)
+            else:
+                material_lines.append(_format_prompt_card(card))
         if not row["supplement_cards"]:
             material_lines.append("- 无")
 
@@ -445,9 +626,9 @@ def build_prompt(
         str(issue) for issue in result.get("validation_checks", []) or []
     ) or "无"
 
-    return f"""你是一位CAMS反洗钱讲师。你的学生零基础、没看过教材、非金融法律专业背景、英文非母语，他们通过做题来学习。
+    return f"""你是一位CAMS反洗钱讲师。你的学生零基础、没看过教材、非金融法律专业背景、英文非母语，他们通过做题来学习，想象你坐在学生旁边，拿笔在纸上画给他看。
 
-你的目标是：学生看完解析后，**换一道类似的题也能自己判断**。
+你的目标是：简明扼要且直击重点地**讲透题目内部的逻辑关系**，让学生看完解析后，换一道类似的题也能自己判断。
 
 ---
 
@@ -467,7 +648,10 @@ def build_prompt(
    - 坏："判断时需关注存款是否被故意拆分为多笔略低于报告限额的小额交易"（复述题干）
    - 坏："区分结构化与微结构化、贸易洗钱等手法"（题干没有提及贸易洗钱）
 
-2. **知道正确答案为什么对** —— core_analysis：一个自然段落。先给概念定义或判断规则，再结合题干关键事实，推出正确答案为什么成立。如果教材原文用的术语和选项中出现的术语不完全一致，先准确引用教材原文的术语和定义，再说明两者的关系。不要偷换主语——不要把"教材定义了X"写成"教材定义了Y"。写完自问："如果换一道题干相似但选项不同的题，学生看完还能自己判断吗？"如果不能，用一句话补上判断方法。如果核心解析本身已经说明了判断方法，不画蛇添足。
+2. **知道正确答案为什么对** —— core_analysis：一个自然段落。先给概念定义或判断规则，再结合题干关键事实，推出正确答案为什么成立。如果教材原文用的术语和选项中出现的术语不完全一致，先准确引用教材原文的术语和定义，再说明两者的关系。不要偷换主语——不要把"教材定义了X"写成"教材定义了Y"。引用定义时直接给出定义内容和页码，不要加"教材明确指出""教材将……定义为"等前缀。示例：
+	   - 坏："教材明确定义逃税为使用非法手段逃避纳税义务（P28）。"
+	   - 好："逃税指使用非法手段逃避纳税义务（P28）。"
+	   写完自问："如果换一道题干相似但选项不同的题，学生看完还能自己判断吗？"如果核心解析本身已经说明了判断方法，不画蛇添足。
 
 3. **知道为什么正确项更优** —— option_explanations：只写真正有迷惑性的错误项。正确项不写（core_analysis已覆盖）。每个错误项的写法不是"排除它"，而是"在教材框架下，正确项比它更直接匹配"：
    - 错误项本身可能也有一定关联（如信托确实能隐藏所有权），但它在教材中的定义位置和题干条件的匹配度不如正确项。你要解释的是**为什么匹配度不如**，而不是**绝对不可能**。
@@ -476,7 +660,7 @@ def build_prompt(
    - 明显无关的选项不凑数
    - 不加"故该项不选""因此该项正确"等套话结尾
 
-4. **下次不踩同样的坑** —— easy_mistake：如果有真正容易混淆的概念对，给出教材中的核心区分标准和下次判断时优先看什么。如果没有独立于一、二、三之外的增量信息，留空（"text": ""）。
+4. **下次不踩同样的坑** —— easy_mistake：如果有真正容易混淆的概念对，给出教材中的核心区分标准。如果没有独立于一、二、三之外的增量信息，留空（"text": ""）。
 
 ## 你的材料
 
@@ -501,7 +685,7 @@ def build_prompt(
 **选项材料（已标注教材类型和教材页码）**
 {chr(10).join(material_lines)}
 
-引用教材内容时，必须标注页码。例如："教材指出放置阶段指非法资金进入金融系统（书内第53页）。"
+引用教材内容时，必须标注页码。例如："放置阶段指非法资金进入金融系统（P53）。"
 
 ## 写作铁律
 
@@ -515,7 +699,9 @@ def build_prompt(
 8. 不以非黑即白的方式排除选项。即使错误项本身有一定关联，也不用"不属于""不可能""因此错误"等绝对否定语气。改用比较级——"在教材框架下，题干条件更直接匹配X而非Y""正确项比错误项更吻合教材定义"。
 9. 区分事实和推理。教材原文（标注了页码的）是事实——确定的；你基于事实推导出的判断是推理——不确定的。推理部分用"由此可推断""在本题条件下""相比之下更可能"等表述，不要写成和教材事实一样的确定语气。归因于某个 unit 的断言词（如"所有权转移""转移资金"）必须真的出现在该 unit 的原文中，原文没有的词不能说成教材说的。同样，教材原文的涵盖范围不能缩窄——原文说"customers or sectors"，解析不能说"仅限于行业部门"。
 
-10. primary_unit_id：从 evidence_cards 中选出对本题答案判断最重要、最核心的那一个 unit_id。它应该是 core_analysis 引用的关键证据。如果有多条引用，选起决定性作用的那条。
+10. 引用具体步骤或数据点的 unit 时，检查材料中是否存在描述该流程整体阶段框架的 unit（如一级/二级审查、三段式洗钱流程等层级结构）。若存在，一并引用：用框架 unit 建立程序先后，用步骤 unit 解释具体内容。
+
+11. primary_unit_id：从 evidence_cards 中选出对本题答案判断最重要、最核心的那一个 unit_id。它应该是 core_analysis 引用的关键证据。如果有多条引用，选起决定性作用的那条。
 
 ## 输出 JSON
 
@@ -526,7 +712,7 @@ def build_prompt(
     "text": "一句话，30字内，只写考什么"
   }}}},
   "core_analysis": {{{{
-    "text": "定义/规则 → 题干关键事实 → 为什么正确答案成立 → 下次怎么看",
+    "text": "定义/规则 → 题干关键事实 → 为什么正确答案成立",
     "cited_unit_ids": ["v7u_N000001"],
     "source_quote": {{{{
       "unit_id": "v7u_N000001",
@@ -968,8 +1154,10 @@ def _normalize_source_quote(
     excerpt = str(raw_quote.get("exact_excerpt", "") or "").strip()
     issues: list[str] = []
 
+    if not uid and not excerpt:
+        return {}, []  # source_quote 是可选的，不提供不报错
     if not uid or not excerpt:
-        return {}, ["核心解析缺少教材英文短引"]
+        return {}, ["核心解析教材英文短引不完整（缺unit_id或缺excerpt）"]
     if uid not in core_analysis.get("cited_unit_ids", []):
         issues.append("教材英文短引unit未被核心解析引用")
     unit = unit_map.get(uid)
@@ -1361,6 +1549,7 @@ def normalize_explanation(
     return {
         "schema_version": SCHEMA_VERSION,
         "answer": predicted,
+        "primary_unit_id": str(parsed.get("primary_unit_id", "") or "").strip(),
         "exam_point": exam_point,
         "core_analysis": core_analysis,
         "option_explanations": option_explanations,
@@ -1394,6 +1583,7 @@ def render_markdown(
     result: dict[str, Any],
     explanation: dict[str, Any],
     standard_question: dict[str, Any] | None = None,
+    export_mode: bool = False,
 ) -> str:
     lines: list[str] = [f"# {result.get('question_id', '')}\n\n"]
     lines.append(f"教材章节：{chapter_text(result)}\n\n")
@@ -1412,6 +1602,33 @@ def render_markdown(
             lines.append(f"  English: {en_text}\n")
 
     answer = "、".join(explanation.get("answer", []) or []) or "未形成答案"
+
+    if export_mode:
+        # ── 导入格式 ──
+        lines.append(f"\n答案：{answer}\n\n")
+        lines.append("解析：\n\n")
+
+        exam_point = explanation.get("exam_point", {}) or {}
+        lines.append(f"考点：{exam_point.get('text') or INSUFFICIENT_TEXT}\n\n")
+
+        core_analysis = explanation.get("core_analysis", {}) or {}
+        lines.append(f"核心解析：{core_analysis.get('text') or INSUFFICIENT_TEXT}\n")
+        source_quote = core_analysis.get("source_quote", {}) or {}
+        if source_quote.get("exact_excerpt"):
+            lines.append(f"教材原句：\"{source_quote['exact_excerpt']}\"\n")
+        lines.append("\n")
+
+        for row in explanation.get("option_explanations", []) or []:
+            judgement = "正确" if row.get("judgement") == "correct" else "错误"
+            lines.append(f"{row.get('option', '')}项{judgement}：{row.get('analysis', '')}\n")
+
+        easy_mistake = explanation.get("easy_mistake", {}) or {}
+        easy_text = (easy_mistake.get("text") or "").strip()
+        if easy_text:
+            lines.append(f"\n易错提醒：{easy_text}\n")
+        return "".join(lines)
+
+    # ── 教研格式（原样）──
     lines.append(f"\n## 【AI答案】\n\n{answer}\n\n")
     flags = explanation.get("review_flags", []) or []
     if flags:
@@ -1449,7 +1666,6 @@ def render_markdown(
         basis = basis_labels.get(
             str(row.get("basis_type", "")), str(row.get("basis_type", ""))
         )
-        # 当 LLM 实际写了分析时，不显示"证据不足"标签
         is_real_analysis = row.get("analysis", "") != INSUFFICIENT_TEXT
         if row.get("basis_type") == "insufficient" and is_real_analysis:
             basis = ""
@@ -1468,6 +1684,9 @@ def render_markdown(
     lines.append((easy_text or "（无）") + "\n\n")
 
     lines.append("## 【教材原文依据】\n\n")
+    primary_uid = str(explanation.get("primary_unit_id", "") or "").strip()
+    if primary_uid:
+        lines.append(f"> 核心引用单元：`{primary_uid}`\n\n")
     evidence_rows = explanation.get("source_evidence", []) or []
     if not evidence_rows:
         if not core_analysis.get("cited_unit_ids"):
@@ -1538,6 +1757,15 @@ def process_file(
     md_path = explanations_dir / f"{qid}.md"
     md_path.write_text(render_markdown(result, explanation, standard_question), encoding="utf-8")
 
+    # 导入格式输出到 explanations_export/
+    export_dir = output_dir / "explanations_export"
+    export_dir.mkdir(parents=True, exist_ok=True)
+    export_path = export_dir / f"{qid}.md"
+    export_path.write_text(
+        render_markdown(result, explanation, standard_question, export_mode=True),
+        encoding="utf-8",
+    )
+
     if write_back:
         result["generated_explanation"] = explanation
         result["generated_explanation_prompt"] = prompt
@@ -1557,7 +1785,8 @@ def process_file(
 
 
 def select_question_files(
-    output_dir: Path, question_ids: list[str], limit: int | None
+    output_dir: Path, question_ids: list[str], limit: int | None,
+    resume: bool = False,
 ) -> list[Path]:
     questions_dir = output_dir / "questions"
     if not questions_dir.exists():
@@ -1569,6 +1798,18 @@ def select_question_files(
             raise RuntimeError("指定题号输出不存在: " + ", ".join(missing))
         return files
     files = sorted(questions_dir.glob("q_*.json"))
+    if resume:
+        import json as _json
+        remaining = []
+        for f in files:
+            try:
+                d = _json.loads(f.read_text(encoding="utf-8"))
+                if not d.get("generated_explanation"):
+                    remaining.append(f)
+            except Exception:
+                remaining.append(f)
+        print(f"[resume] 跳过 {len(files) - len(remaining)} 题已解析，剩余 {len(remaining)} 题")
+        files = remaining
     return files[:limit] if limit is not None and limit > 0 else files
 
 
@@ -1680,12 +1921,13 @@ def main() -> None:
     parser.add_argument("--reasoning-effort", default="high", choices=["high", "max"])
     parser.add_argument("--no-thinking", action="store_true", help="关闭思考模式（temperature=0.4）")
     parser.add_argument("--write-back", action="store_true")
+    parser.add_argument("--resume", action="store_true", help="跳过已有 generated_explanation 的题目")
     parser.add_argument("--questions-path", default=str(DEFAULT_QUESTIONS_PATH))
     parser.add_argument("--reference-workbook", default=str(DEFAULT_REFERENCE_WORKBOOK))
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
-    files = select_question_files(output_dir, args.question_id, args.limit or None)
+    files = select_question_files(output_dir, args.question_id, args.limit or None, resume=args.resume)
     standard = load_standard_questions(args.questions_path)
     references = load_reference_workbook(args.reference_workbook)
     selected_qids = [path.stem.removeprefix("q_") for path in files]

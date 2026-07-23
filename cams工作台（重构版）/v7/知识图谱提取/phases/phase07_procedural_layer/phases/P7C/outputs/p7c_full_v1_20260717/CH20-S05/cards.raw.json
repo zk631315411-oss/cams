@@ -1,0 +1,67 @@
+{
+  "section_id": "CH20-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH20-S05_001",
+      "section_id": "CH20-S05",
+      "card_nature": "execution",
+      "title": "基于客户保密条件的执法合作约束",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "不违反客户保密义务",
+          "evidence_unit_ids": [
+            "v7u_N001533"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "与执法部门进行充分合作",
+          "evidence_unit_ids": [
+            "v7u_N001533"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": [
+            "v7u_N001533"
+          ],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001533"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：银行与执法部门合作须受客户保密义务约束；证据范围：v7u_N001533；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch20_s05_cooperation_confidentiality",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH20-S05_001"
+      ],
+      "reason": "该候选提供了银行与执法部门合作的条件约束，构成有条件的业务行动。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "standard role → node_type=standard",
+      "e002": "action role + clear confidentiality constraint in text → P8_constrained_action"
+    }
+  },
+  "skip_reason": null
+}

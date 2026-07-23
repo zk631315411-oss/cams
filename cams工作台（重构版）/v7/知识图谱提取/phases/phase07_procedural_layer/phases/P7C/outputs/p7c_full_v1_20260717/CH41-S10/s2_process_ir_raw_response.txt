@@ -1,0 +1,113 @@
+{
+  "section_id": "CH41-S10",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "根据组织程序，是否将可疑案件上报至第二道防线？",
+      "title": "根据组织程序上报可疑案件至第二道防线",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "可疑案件",
+          "evidence_unit_ids": ["v7u_N003002"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "组织程序",
+          "evidence_unit_ids": ["v7u_N003002"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "可能需要将案件上报至第二道防线",
+          "evidence_unit_ids": ["v7u_N003002"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003002"],
+          "source_quote": "Depending on the organization’s procedures, the case may need to be escalated to the second line."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003002"],
+          "source_quote": "Depending on the organization’s procedures, the case may need to be escalated to the second line."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "如何提交可疑活动报告给金融情报机构？",
+      "title": "向金融情报机构提交可疑活动报告",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "可疑活动",
+          "evidence_unit_ids": ["v7u_N003003"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "向适当的金融情报机构提交可疑活动报告",
+          "evidence_unit_ids": ["v7u_N003003"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003003"],
+          "source_quote": "SAR filing: Report suspicious activities to the appropriate FIU."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选包含根据组织程序将可疑案件上报至第二道防线的条件性程序动作，独立支持一条触发关系与标准约束关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选包含向FIU提交可疑活动报告的直接程序动作，独立支持一条触发关系。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,299 @@
+{
+  "section_id": "CH37-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S01_001",
+      "section_id": "CH37-S01",
+      "card_nature": "assessment",
+      "title": "Enterprise-wide risk assessment conduct and reporting",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "定期、业务结构重大变化、监管环境重大变化或发现洗钱/金融犯罪趋势",
+          "evidence_unit_ids": ["v7u_N002723"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "conduct enterprise-wide risk assessment (EWRA)",
+          "evidence_unit_ids": ["v7u_N002723"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "use a broad range of public and private information sources to assess risk comprehensively",
+          "evidence_unit_ids": ["v7u_N002727"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "review all customer types, jurisdictions, products, delivery channels, transactions, and the operating environment, including staff education and training on the financial crime risk",
+          "evidence_unit_ids": ["v7u_N002728"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "review prior risk alerts as identified by alert management systems, particularly true matches, and further analyze for residual risk",
+          "evidence_unit_ids": ["v7u_N002729"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "place particular focus where: risk probability and impact greatest, risk exceeds appetite, controls ineffective, or systems/controls changed",
+          "evidence_unit_ids": [
+            "v7u_N002730",
+            "v7u_N002731",
+            "v7u_N002732",
+            "v7u_N002733",
+            "v7u_N002734"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "for global organizations, conduct EWRA in flexible, coordinated manner based on common methodology; allow subsidiaries to include local risk dynamics; parent incorporates input from all subsidiaries and branches",
+          "evidence_unit_ids": ["v7u_N002735"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "EWRA results",
+          "evidence_unit_ids": ["v7u_N002725"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n009",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "report the results to the MLRO, or equivalent, and the relevant stakeholders, such as senior managers and department heads",
+          "evidence_unit_ids": ["v7u_N002725"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "periodically or when material change in business structure/regulatory environment or financial crime trend identified",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002723"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N002727"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n004",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N002728"]
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n005",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N002729"]
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n006",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002730",
+            "v7u_N002731",
+            "v7u_N002732",
+            "v7u_N002733",
+            "v7u_N002734"
+          ]
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n007",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N002735"]
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n008",
+          "relation_type": "result_handoffs_stage",
+          "evidence_unit_ids": ["v7u_N002725"]
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRECEDES",
+          "source": "n008",
+          "target": "n009",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": ["v7u_N002725"]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002723",
+        "v7u_N002727",
+        "v7u_N002728",
+        "v7u_N002729",
+        "v7u_N002730",
+        "v7u_N002731",
+        "v7u_N002732",
+        "v7u_N002733",
+        "v7u_N002734",
+        "v7u_N002735",
+        "v7u_N002725"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何开展企业级风险评估并报告结果；证据范围：v7u_N002723 至 v7u_N002735；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S01_002",
+      "section_id": "CH37-S01",
+      "card_nature": "assessment",
+      "title": "MLRO's use of EWRA results for risk appetite evaluation",
+      "flow_nodes": [
+        {
+          "node_id": "n010",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "EWRA results",
+          "evidence_unit_ids": ["v7u_N002726"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n011",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO uses these results in the ongoing evaluation and determination of the organization’s financial crime risk appetite",
+          "evidence_unit_ids": ["v7u_N002726"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n012",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "ongoing determination of financial crime risk appetite",
+          "evidence_unit_ids": ["v7u_N002726"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_009",
+          "edge_type": "REFERENCES",
+          "source": "n011",
+          "target": "n010",
+          "evidence_unit_ids": ["v7u_N002726"]
+        },
+        {
+          "edge_id": "edge_010",
+          "edge_type": "PRODUCES",
+          "source": "n011",
+          "target": "n012",
+          "evidence_unit_ids": ["v7u_N002726"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002726"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：MLRO如何利用EWRA结果评估金融犯罪风险偏好；证据范围：v7u_N002726；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_001"],
+      "reason": "该候选明确EWRA的触发条件（定期或特定事件），直接支持ep_001中触发EWRA开展的关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_001"],
+      "reason": "该候选提供风险评估应特别关注的情形标准，自身不构成独立程序关系，但为EWRA执行过程提供必要的关注标准。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_001"],
+      "reason": "该候选提供全球组织EWRA应遵循的特定开展方式要求，自身不构成独立程序关系，但为EWRA过程提供情境化标准。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_001"],
+      "reason": "该候选明确EWRA结果的报告动作，形成EWRA结果到报告的关系，直接参与ep_001的程序序列。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_002"],
+      "reason": "该候选提供MLRO使用EWRA结果评估风险偏好的独立程序，形成完整的input-action-outcome关系，独立成ep_002。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s01_ewra_review_scope",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S01_001"],
+      "reason": "该候选明确EWRA执行中应审查的广泛信息源和具体要素（客户、产品、警报等），直接作为EWRA动作的参考标准，支持多条reference关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry node_category; 原文提及'periodically and whenever...'，主要触发为固定周期，选E5_time_cycle；也涵盖变化异常，但以定期为主。",
+      "e002": "action role → process node_category; 执行EWRA，属于识别和评估风险，选P1_assessment。",
+      "e003": "standard role → auxiliary node_category, node_type=standard。",
+      "e004": "standard role → auxiliary node_category, node_type=standard。",
+      "e005": "standard role → auxiliary node_category, node_type=standard。",
+      "e006": "standard role → auxiliary node_category, node_type=standard。",
+      "e007": "standard role → auxiliary node_category, node_type=standard。",
+      "e008": "outcome role → exit node_category; EWRA结果形成风险结论，选X1_classification。",
+      "e009": "action role → process node_category; 报告结果行为属于执行动作，选P2_execution。"
+    },
+    "ep_002": {
+      "e010": "input role → auxiliary node_category, node_type=input。",
+      "e011": "action role → process node_category; MLRO评估风险偏好，属于评估活动，选P1_assessment。",
+      "e012": "outcome role → exit node_category; ongoing determination of risk appetite 暗示持续义务，选X7_continuing_obligation。"
+    }
+  },
+  "skip_reason": null
+}

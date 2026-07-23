@@ -1,0 +1,141 @@
+{
+  "section_id": "CH16-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH16-S01_001",
+      "section_id": "CH16-S01",
+      "card_nature": "assessment",
+      "title": "了解高价值资产性质以有效评估风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "了解高价值资产的性质",
+          "evidence_unit_ids": [
+            "v7u_N001137"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "有效评估风险",
+          "evidence_unit_ids": [
+            "v7u_N001137"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001137"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001137"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：了解高价值资产性质是有效评估风险的必要前提；证据范围：v7u_N001137；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH16-S01_002",
+      "section_id": "CH16-S01",
+      "card_nature": "execution",
+      "title": "应用尽职调查措施识别洗钱红旗信号",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应用强有力的尽职调查措施（包括全面的客户背景调查和交易监控系统）",
+          "evidence_unit_ids": [
+            "v7u_N001147"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别潜在洗钱活动的红旗信号（如涉及来源不明或可疑资金的交易等）",
+          "evidence_unit_ids": [
+            "v7u_N001147",
+            "v7u_N001140",
+            "v7u_N001141",
+            "v7u_N001142",
+            "v7u_N001143",
+            "v7u_N001144",
+            "v7u_N001145",
+            "v7u_N001146"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001147"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001147",
+        "v7u_N001140",
+        "v7u_N001141",
+        "v7u_N001142",
+        "v7u_N001143",
+        "v7u_N001144",
+        "v7u_N001145",
+        "v7u_N001146"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：应用尽职调查措施旨在识别洗钱红旗信号；证据范围：v7u_N001147等；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH16-S01_001"
+      ],
+      "reason": "候选s1c_001映射为card p7card_CH16-S01_001，描述了了解资产性质以评估风险的流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH16-S01_002"
+      ],
+      "reason": "候选s1c_002映射为card p7card_CH16-S01_002，描述了应用尽调措施以识别红旗信号的流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action角色，动作‘了解...性质’属于汇集信息以形成调查基础，对应P4_collection",
+      "e002": "outcome角色，‘有效评估风险’形成风险分类或有效性结论，对应X1_classification"
+    },
+    "ep_002": {
+      "e001": "action角色，实施尽职调查措施（背景调查、监控）属于对业务对象执行应对措施，对应P2_execution",
+      "e002": "outcome角色，‘识别...红旗信号’形成可疑性结论，对应X1_classification"
+    }
+  },
+  "skip_reason": null
+}

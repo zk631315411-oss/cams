@@ -1,0 +1,102 @@
+{
+  "section_id": "CH12-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S05_001",
+      "section_id": "CH12-S05",
+      "card_nature": "assessment",
+      "title": "英国FCA批评托管银行反洗钱缺陷并指出常见失败",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "托管银行存在的反洗钱缺陷",
+          "evidence_unit_ids": [
+            "v7u_N000954"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "英国FCA批评托管银行并强调严格反洗钱控制的必要性",
+          "evidence_unit_ids": [
+            "v7u_N000954"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "FCA指出常见失败：注册与实际活动不符、反洗钱资源不足、未评估客户活动风险",
+          "evidence_unit_ids": [
+            "v7u_N000954"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_r001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N000954"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "admonished custodian banks for their AML shortcomings and emphasized the need for rigorous AML controls."
+        },
+        {
+          "edge_id": "edge_r002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000954"
+          ],
+          "relation_type": null,
+          "source_quote": "They cited a variety of common failings, including discrepancies between registered and actual activities, inadequate AML resources, and failure to assess customer activity risks."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000954"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：英国FCA因托管银行反洗钱缺陷而进行批评，并指出常见失败。证据范围：v7u_N000954。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH12-S05_001"
+      ],
+      "reason": "该候选描述了FCA因反洗钱缺陷批评托管银行、强调控制要求并指出常见失败的监管行动，构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch12_s05_kyc_needs",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述了托管服务复杂性导致需要了解客户信息，但未涉及业务处理或判断过程，属于静态需求陈述。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch12_s05_kyc_reliance_risk",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述了依赖外部KYC导致的风险链条，但未涉及程序性行动或决策，属于风险说明。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry category; observed AML shortcomings represent a state/threshold triggering regulatory action → E3_state_threshold",
+      "e002": "action role → process category; FCA admonishing and emphasizing controls is an execution action changing the state of scrutiny → P2_execution",
+      "e003": "outcome role → exit category; FCA citing a list of common failings forms a identifiable product → X2_product"
+    }
+  },
+  "skip_reason": null
+}

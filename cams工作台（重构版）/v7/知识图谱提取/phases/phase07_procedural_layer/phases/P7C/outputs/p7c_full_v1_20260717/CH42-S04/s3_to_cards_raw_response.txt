@@ -1,0 +1,96 @@
+{
+  "section_id": "CH42-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S04_001",
+      "section_id": "CH42-S04",
+      "card_nature": "control",
+      "title": "依据尽职调查结果处理高风险客户",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "尽职调查后机构对客户风险感到不适",
+          "evidence_unit_ids": ["v7u_N003031"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "请求补充文件",
+          "evidence_unit_ids": ["v7u_N003031"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P10_sufficiency",
+          "label": "额外信息仍不足够",
+          "evidence_unit_ids": ["v7u_N003031"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "拒绝客户以保护自身",
+          "evidence_unit_ids": ["v7u_N003031"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "对客户风险感到不适",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N003031"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "relation_type": "result_handoffs_stage",
+          "evidence_unit_ids": ["v7u_N003031"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "condition": "额外信息不足",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N003031"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003031"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：尽职调查后风险不可接受 (E3_state_threshold) 可能触发请求补充文件 (P4_collection)，补充后若信息仍不足 (P10_sufficiency) 则可能拒绝客户 (X6_termination)。证据范围：v7u_N003031。S2 的 r003 (trigger decision->outcome) 因角色不兼容转为 PRODUCES + may_lead_to，符合原文‘might reject’的非确定性输出语义。待 P7D 逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH42-S04_001"],
+      "reason": "该候选描述了一个由条件触发的风险处理流程，已映射为图卡。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, represents an observed risk discomfort state after due diligence → E3_state_threshold",
+      "e002": "action role, request additional documentation is primarily an information collection activity → P4_collection",
+      "e003": "decision role, judges sufficiency of additional information, leading to stop or continue → P10_sufficiency",
+      "e004": "outcome role, rejecting the customer terminates the current objective and relationship → X6_termination"
+    }
+  },
+  "skip_reason": null
+}

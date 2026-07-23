@@ -1,0 +1,827 @@
+# P7E Bridge Candidate Report
+
+P7E generates conservative bridge candidates only. It does not create confirmed bridges or modify p7_card.flow_edges.
+
+## Summary
+
+card_count: 471
+candidate_count: 107885
+review_result_pass: 9566
+review_result_fail: 98319
+
+## Confidence
+
+- strong_candidate: 231
+- candidate: 100492
+- needs_review: 7162
+
+## Bridge Semantics
+
+- proceeds_to: 81265
+- provides_basis: 10668
+- may_trigger: 8585
+- supports_control: 7367
+
+## Candidates
+
+- pass | strong_candidate | provides_basis | p7card_CH06-S10_001:n005 -> p7card_CH06-S10_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: ubo
+  - notes: assessment card output '认定为 UBO' may connect to assessment card inlet '公司中不存在自然人受益所有人'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: ubo.
+- pass | strong_candidate | provides_basis | p7card_CH06-S10_001:n006 -> p7card_CH06-S10_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: ubo
+  - notes: assessment card output '不认定为 UBO' may connect to assessment card inlet '公司中不存在自然人受益所有人'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: ubo.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to execution card inlet 'KYC'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n002 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '集中资源与专业知识' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n003 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '提高KYC程序准确性' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to execution card inlet 'KYC'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to execution card inlet '执行强制数据更新'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH24-S14_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to assessment card inlet '可能构成刑事犯罪'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n002 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '实施客户尽职调查和监控' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH24-S14_001:e002 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e001 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output 'QC 职能可能抽样检查文件' may connect to execution card inlet 'KYC'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to execution card inlet '执行强制数据更新'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S01_001:n004 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S01_001:n005 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用强化尽职调查' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH42-S05_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: edd, kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet '实施风险为本的KYC更新周期'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: edd, kyc.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: edd, kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet '触发强化尽职调查'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: edd, kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n002 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '集中资源与专业知识' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n003 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '提高KYC程序准确性' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH37-S03_002:e004 -> p7card_CH24-S16_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: peps
+  - notes: assessment card output '剩余风险可能降至中低水平' may connect to execution card inlet '进行强化尽职调查'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: peps.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n002 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '实施客户尽职调查和监控' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n003 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n006 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH28-S01_004:e004 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '提出的建议（调整KYC、客户风险参数和交易监控流程）' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to assessment card inlet '收到异常交易警报'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S01_001:n004 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S01_001:n005 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用强化尽职调查' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n002 -> p7card_CH24-S14_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '实施客户尽职调查和监控' may connect to assessment card inlet '可能构成刑事犯罪'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH24-S14_001:e002 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n004 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n005 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用强化尽职调查' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n004 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n005 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用强化尽职调查' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH35-S02_008:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '客户尽职调查（CDD）期间'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH37-S03_002:e004 -> p7card_CH06-S09_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: peps
+  - notes: assessment card output '剩余风险可能降至中低水平' may connect to execution card inlet 'identifying PEPs'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: peps.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet '收到异常交易警报'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n004 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to assessment card inlet '触发强化尽职调查'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n005 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用强化尽职调查' may connect to assessment card inlet '触发强化尽职调查'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S05_001:e003 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S05_001:e003 -> p7card_CH42-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to execution card inlet '进行强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: edd.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n003 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n006 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n005 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH04-S02_001:n004 -> p7card_CH20-S07_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: diligence
+  - notes: execution card output 'Customer due diligence conducted' may connect to execution card inlet 'Due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence.
+- pass | strong_candidate | proceeds_to | p7card_CH11-S02_003:n005 -> p7card_CH20-S07_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: diligence
+  - notes: execution card output 'Enhanced due diligence implemented' may connect to execution card inlet 'Due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_001:n009 -> p7card_CH19-S05_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF identifies high-risk and noncooperative jurisdictions' may connect to execution card inlet 'jurisdictions that FATF rates as having low or moderate effectiveness in IOs'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n003 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n006 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH28-S01_004:e004 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '提出的建议（调整KYC、客户风险参数和交易监控流程）' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e001 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output 'QC 职能可能抽样检查文件' may connect to assessment card inlet '收到异常交易警报'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH42-S05_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to assessment card inlet '实施风险为本的KYC更新周期'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to assessment card inlet '触发强化尽职调查'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n007 -> p7card_CH06-S09_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output '确定PEP身份或关联' may connect to assessment card inlet 'define a PEP'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S05_001:e001 -> p7card_CH20-S07_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '实施风险为本的KYC更新周期' may connect to execution card inlet 'KYC'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet '触发强化尽职调查'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S05_001:e003 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH41-S11_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to execution card inlet '基于风险水平和不断变化的监管期望'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH33-S02_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet 'TD Bank's BSA/AML compliance deficiencies (insufficient risk assessment and CDD, inadequate transaction monitoring, deficient SAR processes, underfunded AML program, failure to detect suspicious transactions and employee misconduct)'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n005 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH33-S02_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet 'TD Bank's BSA/AML compliance deficiencies (insufficient risk assessment and CDD, inadequate transaction monitoring, deficient SAR processes, underfunded AML program, failure to detect suspicious transactions and employee misconduct)'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n005 -> p7card_CH33-S02_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）' may connect to execution card inlet 'TD Bank's BSA/AML compliance deficiencies (insufficient risk assessment and CDD, inadequate transaction monitoring, deficient SAR processes, underfunded AML program, failure to detect suspicious transactions and employee misconduct)'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH04-S02_001:n004 -> p7card_CH20-S07_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: diligence
+  - notes: execution card output 'Customer due diligence conducted' may connect to execution card inlet 'conducting due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence.
+- pass | strong_candidate | proceeds_to | p7card_CH11-S02_003:n005 -> p7card_CH20-S07_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: diligence
+  - notes: execution card output 'Enhanced due diligence implemented' may connect to execution card inlet 'conducting due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence.
+- pass | strong_candidate | provides_basis | p7card_CH19-S01_001:e009 -> p7card_CH19-S05_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to assessment card inlet 'jurisdiction can prove compliance to other FATF members'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | provides_basis | p7card_CH19-S01_001:e009 -> p7card_CH19-S06_001:n004
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to assessment card inlet 'Jurisdiction achieves poor mutual evaluation results: 20 or more noncompliant or partially compliant ratings for technical compliance'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | provides_basis | p7card_CH19-S01_001:e009 -> p7card_CH19-S06_001:n005
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to assessment card inlet 'Jurisdiction achieves poor mutual evaluation results: ratings of noncompliant or partially compliant on three or more of Recommendations 3, 5, 6, 10, 11, and 20'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n003 -> p7card_CH19-S05_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues' may connect to execution card inlet 'jurisdictions that FATF rates as having low or moderate effectiveness in IOs'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n004 -> p7card_CH19-S05_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Black list: identifies jurisdictions with significant AML/CFT deficiencies' may connect to execution card inlet 'jurisdictions that FATF rates as having low or moderate effectiveness in IOs'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH24-S14_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet '未遵守AMLO的CDD要求'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n005 -> p7card_CH24-S14_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）' may connect to assessment card inlet '未遵守AMLO的CDD要求'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n007 -> p7card_CH06-S09_004:n001
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output '确定PEP身份或关联' may connect to assessment card inlet 'individual has been a PEP'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e003 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e003 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH19-S06_001:n009 -> p7card_CH19-S01_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF identifies high-risk and noncooperative jurisdictions' may connect to assessment card inlet 'FATF requires member jurisdictions to address any deficiencies'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH19-S06_002:n003 -> p7card_CH19-S01_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues' may connect to assessment card inlet 'FATF requires member jurisdictions to address any deficiencies'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH39-S01_001:n004 -> p7card_CH37-S03_002:e002
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to assessment card inlet '可能实施加强尽职调查（EDD）、要求提供资金来源和财富证明并加强业务关系监控'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH41-S11_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '执行强制数据更新'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH42-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '进行强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH24-S13_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet '新加坡采用的风险为本方法'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH41-S11_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to execution card inlet '基于风险水平和不断变化的监管期望'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH12-S04_003:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet '了解交易中涉及的所有相关方（包括投资基金经理、投资组合经理、另类投资基金经理等）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH24-S13_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet '新加坡采用的风险为本方法'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH10-S02_002:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet 'Emma召集团队进行调查'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n002 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '实施客户尽职调查和监控' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e001 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output 'QC 职能可能抽样检查文件' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH24-S14_001:e002 -> p7card_CH24-S13_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to execution card inlet '新加坡采用的风险为本方法'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH36-S01_007:n003 -> p7card_CH37-S04_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: execution card output 'manage risks associated with customers, jurisdictions, products, and delivery channels by applying targeted measures according to regulatory expectations' may connect to execution card inlet 'Traditional financial institution has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH02-S01_003:n003 -> p7card_CH02-S01_002:n002
+  - basis: source, signals, topology_match
+  - matched_terms: sanctions
+  - notes: execution card output 'exposed the illicit network, revealing Komarov and Volkof Industries' role in sanctions evasion, proliferation financing, laundering criminal proceeds, and foreign bribery and corruption offences' may connect to execution card inlet 'regulated entities must have strong AML and sanctions compliance programs with robust policies, procedures, and internal controls'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: sanctions.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n006 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n003 -> p7card_CH42-S05_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to assessment card inlet '触发强化尽职调查'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n006 -> p7card_CH42-S05_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to assessment card inlet '实施风险为本的KYC更新周期'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH19-S01_001:e009 -> p7card_CH19-S05_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to assessment card inlet 'jurisdiction is only deemed compliant'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e009 -> p7card_CH19-S05_004:n001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to execution card inlet 'assessment team analyzes the jurisdiction’s laws and regulations'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e009 -> p7card_CH19-S05_006:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to execution card inlet 'assessment team travels to the jurisdiction'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e009 -> p7card_CH19-S05_010:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to execution card inlet 'jurisdiction addresses issues'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_001:n009 -> p7card_CH19-S05_009:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF identifies high-risk and noncooperative jurisdictions' may connect to execution card inlet 'all jurisdictions review the report'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH19-S06_001:n009 -> p7card_CH19-S06_002:n005
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF identifies high-risk and noncooperative jurisdictions' may connect to assessment card inlet 'FATF members apply enhanced due diligence (EDD) and potentially take countermeasures against black-listed jurisdictions'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_001:n009 -> p7card_CH26-S08_007:e002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF identifies high-risk and noncooperative jurisdictions' may connect to execution card inlet 'organizations prioritize resources on high-risk clients, jurisdictions, and services'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH19-S06_002:n004 -> p7card_CH19-S01_001:e004
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Black list: identifies jurisdictions with significant AML/CFT deficiencies' may connect to assessment card inlet 'FATF requires member jurisdictions to address any deficiencies'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n003 -> p7card_CH19-S05_009:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues' may connect to execution card inlet 'all jurisdictions review the report'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n004 -> p7card_CH19-S05_009:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Black list: identifies jurisdictions with significant AML/CFT deficiencies' may connect to execution card inlet 'all jurisdictions review the report'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e001 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output 'QC 职能可能抽样检查文件' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH12-S04_003:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '执行客户尽职调查（CDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH24-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '实施强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n004 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '高风险客户可能需要强化尽职调查（EDD）' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n005 -> p7card_CH24-S13_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '低风险客户在一些司法管辖区可能适用简化尽职调查（SDD）' may connect to execution card inlet '金融机构和 DNFBPs 实施客户尽职调查、强化尽职调查、持续交易监控和可疑交易报告'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n007 -> p7card_CH06-S09_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output '确定PEP身份或关联' may connect to execution card inlet 'enforce higher PEP standards'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n007 -> p7card_CH06-S09_004:n002
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output '确定PEP身份或关联' may connect to assessment card inlet 'continue to treat the individual as a PEP'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e001 -> p7card_CH01-S02_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '实施风险为本的KYC更新周期' may connect to assessment card inlet 'Joyce在审查交易报告时发现Linguistix交易量在过去六个月内显著增加，与初始KYC预测的收入不符'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e001 -> p7card_CH10-S02_002:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '实施风险为本的KYC更新周期' may connect to assessment card inlet '收到异常交易警报'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH11-S02_003:n005 -> p7card_CH19-S03_008:n002
+  - basis: source, signals, topology_match
+  - matched_terms: diligence, enhanced
+  - notes: execution card output 'Enhanced due diligence implemented' may connect to execution card inlet 'Financial institutions should apply enhanced due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence, enhanced.
+- pass | strong_candidate | proceeds_to | p7card_CH25-S02_002:n002 -> p7card_CH25-S02_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: sanctions
+  - notes: execution card output 'allow activities prohibited by financial sanctions' may connect to execution card inlet 'FCA requires regulated firms to comply with UK financial sanctions'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order. Matched terms: sanctions.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n002 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '委员会 might assess 客户适宜性，决定是否进入完整KYC及所需DD级别' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e003 -> p7card_CH37-S03_002:e002
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '记录变化并适当更新风险评级' may connect to assessment card inlet '可能实施加强尽职调查（EDD）、要求提供资金来源和财富证明并加强业务关系监控'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: edd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n002 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '实施客户尽职调查和监控' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH24-S14_001:e002 -> p7card_CH12-S04_005:e001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to execution card inlet '采用风险为本方法，并强调强客户尽职调查和持续监控'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH24-S14_001:e002 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n004 -> p7card_CH06-S09_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output 'PEP筛查：确定个人或受益所有人是否为PEP或其密切关联人' may connect to assessment card inlet 'define a PEP'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | proceeds_to | p7card_CH42-S05_001:e001 -> p7card_CH24-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output '实施风险为本的KYC更新周期' may connect to execution card inlet '实施强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n003 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH10-S02_002:n006 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '审查不足可能使平台面临金融犯罪、欺诈和监管风险，并可能导致暂时服务暂停' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e004 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保资金来源合法' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_003:e005 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '正确细分客户' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH19-S03_007:n001
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet 'Third-party CDD meets certain criteria'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH19-S03_007:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet 'Financial institutions may rely on third-party CDD'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH13-S01_003:n003 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: control card output '帮助识别可疑活动' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e009 -> p7card_CH20-S07_006:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdiction
+  - notes: assessment card output 'Financial institutions likely flag the jurisdiction as high risk in internal risk assessments' may connect to execution card inlet 'Considering 11 specific risk indicators, including assessing the risk of correspondent relationships, considering jurisdiction, ownership structure, and regulatory compliance.'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdiction.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n003 -> p7card_CH24-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output 'Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues' may connect to execution card inlet '实施强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n004 -> p7card_CH24-S02_003:n003
+  - basis: source, signals, topology_match
+  - matched_terms: edd
+  - notes: assessment card output 'Black list: identifies jurisdictions with significant AML/CFT deficiencies' may connect to execution card inlet '实施强化尽职调查（EDD）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: edd.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n003 -> p7card_CH26-S08_007:e002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Grey list: identifies jurisdictions with strategic deficiencies in AML/CFT systems that are actively working with FATF to address these issues' may connect to execution card inlet 'organizations prioritize resources on high-risk clients, jurisdictions, and services'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S06_002:n004 -> p7card_CH26-S08_007:e002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'Black list: identifies jurisdictions with significant AML/CFT deficiencies' may connect to execution card inlet 'organizations prioritize resources on high-risk clients, jurisdictions, and services'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH33-S02_001:n005 -> p7card_CH36-S01_003:n002
+  - basis: source, signals, topology_match
+  - matched_terms: enhanced
+  - notes: execution card output 'Comprehensive improvements mandated: risk management program improvements, enhanced board oversight, independent testing and validation, regular progress reporting to regulators' may connect to execution card inlet 'Financial institutions apply enhanced measures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: enhanced.
+- pass | strong_candidate | supports_control | p7card_CH34-S05_002:e002 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '确认 KYC 文档质量一致且可接受' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH19-S03_007:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet 'Financial institutions may rely on third-party CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH35-S02_008:n003 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '确保合法处理、数据最小化及客户同意管理' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_002:n007 -> p7card_CH19-S03_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: pep
+  - notes: risk_indicator card output '确定PEP身份或关联' may connect to execution card inlet 'Financial institutions should identify PEPs'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: pep.
+- pass | strong_candidate | provides_basis | p7card_CH06-S10_003:n003 -> p7card_CH06-S10_001:n003
+  - basis: source, signals, topology_match
+  - matched_terms: ubo
+  - notes: assessment card output '对于上市公司，名义受益所有人可能是总裁或 CEO 或同等职位' may connect to assessment card inlet '受益所有权识别阈值：25% 或以上'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: ubo.
+- pass | strong_candidate | provides_basis | p7card_CH10-S02_002:n003 -> p7card_CH39-S01_001:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '发现新买家使用多个账户进行高频低额交易，所有卖家位于同一司法管辖区' may connect to assessment card inlet '通过 KYC 流程收集的信息（文件、客户业务活动、申请产品）'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e002 -> p7card_CH19-S05_009:n002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF determines whether jurisdictions have fully and effectively implemented standards and identifies deficiencies' may connect to execution card inlet 'all jurisdictions review the report'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | provides_basis | p7card_CH19-S01_001:e002 -> p7card_CH19-S06_002:n005
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF determines whether jurisdictions have fully and effectively implemented standards and identifies deficiencies' may connect to assessment card inlet 'FATF members apply enhanced due diligence (EDD) and potentially take countermeasures against black-listed jurisdictions'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH25-S02_002:n002 -> p7card_CH25-S02_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: sanctions
+  - notes: execution card output 'allow activities prohibited by financial sanctions' may connect to execution card inlet 'UN establishes a sanctions committee'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: sanctions.
+- pass | strong_candidate | proceeds_to | p7card_CH25-S02_002:n002 -> p7card_CH25-S02_005:n002
+  - basis: source, signals, topology_match
+  - matched_terms: sanctions
+  - notes: execution card output 'allow activities prohibited by financial sanctions' may connect to execution card inlet 'The EU transposes UN sanctions into EU law by means of Council Decisions and Council Regulations'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, section_order. Matched terms: sanctions.
+- pass | strong_candidate | provides_basis | p7card_CH42-S05_001:e001 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '实施风险为本的KYC更新周期' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH24-S14_001:e002 -> p7card_CH12-S04_003:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '可能构成刑事犯罪' may connect to execution card inlet '了解交易中涉及的所有相关方（包括投资基金经理、投资组合经理、另类投资基金经理等）'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, weak_nt_match. Matched terms: cdd.
+- pass | strong_candidate | provides_basis | p7card_CH42-S01_001:n004 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: assessment card output '客户进入完整KYC，适用标准尽职调查' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: provides_basis. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity, weak_nt_match. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH25-S03_001:n003 -> p7card_CH25-S02_003:n001
+  - basis: source, signals, topology_match
+  - matched_terms: sanctions
+  - notes: assessment card output 'Comply with other sanctions regimes' may connect to execution card inlet 'FCA requires regulated firms to comply with UK financial sanctions'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity, section_order, weak_nt_match. Matched terms: sanctions.
+- pass | strong_candidate | proceeds_to | p7card_CH04-S02_001:n004 -> p7card_CH19-S03_008:n002
+  - basis: source, signals, topology_match
+  - matched_terms: diligence
+  - notes: execution card output 'Customer due diligence conducted' may connect to execution card inlet 'Financial institutions should apply enhanced due diligence'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: diligence.
+- pass | strong_candidate | proceeds_to | p7card_CH05-S02_001:n002 -> p7card_CH02-S05_002:e001
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: execution card output 'Aimed to restore the integrity of its financial crime risk management framework and reduce exposure to high-risk jurisdictions through a strategic de-risking process' may connect to execution card inlet 'Enhance transaction monitoring for suspicious activities, especially regarding “consultancy fees” to individuals or intermediaries located in high-risk jurisdictions'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e002 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '满足监管要求' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH12-S04_005:e003 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: execution card output '展示对行业诚信的真正承诺' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH19-S01_001:e002 -> p7card_CH26-S08_007:e002
+  - basis: source, signals, topology_match
+  - matched_terms: jurisdictions
+  - notes: assessment card output 'FATF determines whether jurisdictions have fully and effectively implemented standards and identifies deficiencies' may connect to execution card inlet 'organizations prioritize resources on high-risk clients, jurisdictions, and services'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, chapter_proximity. Matched terms: jurisdictions.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n002 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '集中资源与专业知识' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH32-S04_003:n003 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: execution card output '提高KYC程序准确性' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH19-S03_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet 'Financial institutions should conduct CDD'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | proceeds_to | p7card_CH39-S01_001:n003 -> p7card_CH24-S08_001:e002
+  - basis: source, signals, topology_match
+  - matched_terms: cdd
+  - notes: assessment card output '决定适用的客户尽职调查等级' may connect to execution card inlet 'Implement comprehensive CDD procedures'. Semantics: proceeds_to. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: cdd.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH06-S09_006:n001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to execution card inlet 'adapt transaction monitoring and KYC reviews and escalate'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH39-S01_001:n002
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet '进行客户风险评估，识别风险因素并分配风险评级'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity, weak_nt_match. Matched terms: kyc.
+- pass | strong_candidate | supports_control | p7card_CH41-S11_004:n002 -> p7card_CH42-S05_001:e001
+  - basis: source, signals, topology_match
+  - matched_terms: kyc
+  - notes: control card output '识别变化' may connect to assessment card inlet '实施风险为本的KYC更新周期'. Semantics: supports_control. Basis: card_nature_logic, lexical_signal, label_similarity, chapter_proximity, weak_nt_match. Matched terms: kyc.
+- ... truncated 107685 additional candidates

@@ -1,0 +1,153 @@
+{
+  "section_id": "CH07-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "control",
+      "title": "拒绝接受涉嫌非法资金还贷",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "不应接受该资金用于还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "prohibited"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "如果银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": [
+            "v7u_N000554"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, the risk of default becomes a secondary risk to manage. The bank should not accept funds for the purposes of loan"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000554"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当银行知道或怀疑客户使用非法资金还贷时，应拒绝接受该资金；证据范围：v7u_N000554；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH07-S03_002",
+      "section_id": "CH07-S03",
+      "card_nature": "control",
+      "title": "核销贷款需充分理由和批准",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "退出超出银行风险容忍度且仍有贷款余额的客户关系",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "核销贷款",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "需充分理由和批准",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "DECIDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "当退出超出银行风险容忍度的客户关系且仍有贷款余额时",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "When exiting customer relationships that fall outside the bank's risk tolerance, the loan balance complicates the process, as writing off a loan is a significant financial decision, often requiring extensive justification and approval."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000555"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "often requiring extensive justification and approval"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000555"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：退出超出风险容忍度且有贷款余额的客户关系时，核销贷款需充分理由和批准；证据范围：v7u_N000555；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH07-S03_001"
+      ],
+      "reason": "提供了一条条件触发程序关系：银行知道或怀疑非法资金还贷时不应接受该资金，符合流程定义。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch07_s03_writeoff_approval",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH07-S03_002"
+      ],
+      "reason": "提供了一条条件触发程序关系并约束标准：退出有贷款余额的超风险客户关系时核销贷款需充分理由和批准，符合流程定义。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry; 银行知道或怀疑是观察到的状态触发响应，选E3_state_threshold",
+      "e002": "action role → process; 拒绝接受资金是执行动作，选P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role → entry; 退出客户关系是银行的决策，作为触发后续的条件，选E8_decision_finding",
+      "e002": "action role → process; 核销贷款是财务动作，选P2_execution",
+      "e003": "standard role → auxiliary, standard"
+    }
+  },
+  "skip_reason": null
+}

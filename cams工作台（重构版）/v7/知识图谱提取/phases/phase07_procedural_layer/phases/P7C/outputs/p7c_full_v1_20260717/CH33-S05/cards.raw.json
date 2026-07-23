@@ -1,0 +1,450 @@
+{
+  "section_id": "CH33-S05",
+  "cards": [
+    {
+      "card_id": "p7card_CH33-S05_001",
+      "section_id": "CH33-S05",
+      "card_nature": "execution",
+      "title": "进行持续交易监控以识别和报告可疑交易",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "进行持续交易监控",
+          "evidence_unit_ids": [
+            "v7u_N002415"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别并报告可疑交易",
+          "evidence_unit_ids": [
+            "v7u_N002415"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N002415"
+          ],
+          "source_quote": "to identify and report suspicious transactions"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002415"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何进行持续交易监控以识别和报告可疑交易；证据范围：v7u_N002415；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH33-S05_002",
+      "section_id": "CH33-S05",
+      "card_nature": "execution",
+      "title": "依据第五支柱要求识别和验证客户身份",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "第五大支柱：CDD要求",
+          "evidence_unit_ids": [
+            "v7u_N002414"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "识别和验证客户身份",
+          "evidence_unit_ids": [
+            "v7u_N002414"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002414"
+          ],
+          "source_quote": "The fifth pillar, CDD, requires organizations to identify and verify the identity of customers."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002414"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何依据第五支柱要求识别和验证客户身份；证据范围：v7u_N002414；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH33-S05_003",
+      "section_id": "CH33-S05",
+      "card_nature": "control",
+      "title": "指定合规官并赋予监督职责",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "第二支柱要求",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "指定合规官",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "合规官必须具备适当经验和知识",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "合规官监督和管理反洗钱过程",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "source_quote": "The second pillar requires a designated compliance officer..."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Compliance officers must have the appropriate experience and knowledge."
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N002407"
+          ],
+          "relation_type": "component_assembles_product",
+          "source_quote": "who oversees the AML process. The designated compliance officer is responsible for managing the program."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002407"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何指定合规官并确保其具备资格与职责；证据范围：v7u_N002407；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH33-S05_004",
+      "section_id": "CH33-S05",
+      "card_nature": "execution",
+      "title": "根据第三支柱要求提供定期持续AML培训",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "第三支柱要求",
+          "evidence_unit_ids": [
+            "v7u_N002408"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提供定期持续AML培训",
+          "evidence_unit_ids": [
+            "v7u_N002408"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "涵盖内部控制",
+          "evidence_unit_ids": [
+            "v7u_N002410"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "清晰说明员工角色与职责",
+          "evidence_unit_ids": [
+            "v7u_N002410"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002408"
+          ],
+          "source_quote": "The third pillar mandates regular, ongoing AML training for employees."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N002410"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Training should cover internal controls"
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N002410"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Training should clearly explain employees’ roles and responsibilities within the AML program."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002408",
+        "v7u_N002410"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何提供符合要求的持续AML培训；证据范围：v7u_N002408, v7u_N002410；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH33-S05_005",
+      "section_id": "CH33-S05",
+      "card_nature": "assessment",
+      "title": "实施独立审计测试以确认AML政策与计划的有效性",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "第四支柱要求",
+          "evidence_unit_ids": [
+            "v7u_N002411"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "执行独立审计测试",
+          "evidence_unit_ids": [
+            "v7u_N002411"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "具备足够知识和经验",
+          "evidence_unit_ids": [
+            "v7u_N002412"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确认内部AML政策是否充分有效，以及计划是否按预期运行且内部控制有效",
+          "evidence_unit_ids": [
+            "v7u_N002413"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "r001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": [
+            "v7u_N002411"
+          ],
+          "source_quote": "The fourth pillar is an independent audit function that tests whether internal AML policies are adequate and effective."
+        },
+        {
+          "edge_id": "r002",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": [
+            "v7u_N002412"
+          ],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Independent audit functions must have sufficient knowledge and experience to understand and analyze the AML program."
+        },
+        {
+          "edge_id": "r003",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e004",
+          "evidence_unit_ids": [
+            "v7u_N002413"
+          ],
+          "qualifier": "aimed_to",
+          "source_quote": "The purpose of independent testing is to confirm whether the program is operating as expected, with effective internal controls."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002411",
+        "v7u_N002412",
+        "v7u_N002413"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：如何实施独立审计以确认AML计划的有效性；证据范围：v7u_N002411, v7u_N002412, v7u_N002413；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S05_001"
+      ],
+      "reason": "该候选包含了持续交易监控及其识别报告可疑交易的目的，构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s05_pillar1",
+      "disposition": "excluded_nonprocedural",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "原文仅描述政策和控制系统应满足的静态要求（如与风险一致、书面记录、明确职责、包含上报程序），未包含业务处理动作或判断，不构成程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s05_pillar2",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S05_003"
+      ],
+      "reason": "该候选要求指定合规官并规定其资格与职责，构成指定人员并赋予监督职能的流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s05_pillar3",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S05_004"
+      ],
+      "reason": "该候选要求提供定期持续培训，并规定了培训内容，构成培训提供及内容要求的流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s05_pillar4",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S05_005"
+      ],
+      "reason": "该候选要求实施独立审计测试，并规定审计人员的资质和审计目的，构成审计执行的流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch33_s05_pillar5_customer_id",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH33-S05_002"
+      ],
+      "reason": "该候选要求识别和验证客户身份，构成身份确认的执行流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "role=action，描述持续交易监控，对应P7_monitoring",
+      "e002": "role=outcome，监控目标是识别和报告可疑交易，形成可疑分类，对应X1_classification"
+    },
+    "ep_002": {
+      "e001": "role=context，第五支柱是监管要求，触发后续动作，对应E7_external_command",
+      "e002": "role=action，识别验证客户身份是执行动作，对应P2_execution"
+    },
+    "ep_003": {
+      "e001": "role=context，第二支柱要求，E7_external_command",
+      "e002": "role=action，指定合规官是执行动作，P2_execution",
+      "e003": "role=standard，资格要求，standard",
+      "e004": "role=outcome，监督管理是持续义务，X7_continuing_obligation"
+    },
+    "ep_004": {
+      "e001": "E7_external_command",
+      "e002": "P2_execution",
+      "e003": "standard",
+      "e004": "standard"
+    },
+    "ep_005": {
+      "e001": "E7_external_command",
+      "e002": "独立审计测试是评估有效性，对应P1_assessment",
+      "e003": "standard",
+      "e004": "确认结论，有效性分类，X1_classification"
+    }
+  },
+  "skip_reason": null
+}

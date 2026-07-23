@@ -32,6 +32,7 @@ DEFAULT_S3_PROMPT_PATH = P7C_DIR / "prompts" / "semantic_graph_construction_v1.m
 DEFAULT_S12_PROMPT_PATH = P7C_DIR / "prompts" / "proposition_gap_fill_v1.md"
 DEFAULT_COVERAGE_ADJUDICATION_PROMPT_PATH = P7C_DIR / "prompts" / "coverage_adjudication_v1.md"
 DEFAULT_PROCESS_IR_PROMPT_PATH = P7C_DIR / "prompts" / "process_ir_v1.md"
+DEFAULT_S3_FROM_IR_PROMPT_PATH = P7C_DIR / "prompts" / "process_ir_to_cards_v1.md"
 DEFAULT_OUTPUT_DIR = P7C_DIR / "outputs"
 VALIDATOR_PATH = SCRIPT_DIR / "validate_process_cards.py"
 PROCESS_IR_COMPILER_PATH = SCRIPT_DIR / "process_ir_compiler_v1.py"
@@ -526,6 +527,112 @@ section_text_with_unit_anchors:
 ```
 """
     return replace_current_section(prompt_template, section_block)
+
+
+def build_s3_from_ir_prompt(
+    prompt_template: str,
+    task: dict[str, Any],
+    process_ir: dict[str, Any],
+) -> str:
+    """S3: take Process IR + section text + allowed_unit_ids, output cards.raw.json."""
+    allowed_unit_ids = collect_allowed_unit_ids(task)
+    section_block = f"""## 当前section
+
+section_id: `{task.get('section_id')}`
+
+section_title: `{task.get('section_title')}`
+
+section_text_with_unit_anchors:
+
+```text
+{task.get('section_text_with_unit_anchors', '')}
+```
+
+allowed_unit_ids:
+
+```json
+{json.dumps(allowed_unit_ids, ensure_ascii=False, indent=2)}
+```
+
+## S2 Process IR
+
+```json
+{json.dumps(process_ir, ensure_ascii=False, indent=2)}
+```
+"""
+    return replace_current_section(prompt_template, section_block)
+
+
+def validate_s3_to_cards_payload(
+    payload: dict[str, Any],
+    section_id: str,
+    allowed_unit_ids: set[str],
+    process_ir: dict[str, Any],
+) -> list[str]:
+    """Validate S3 cards output against the card structure contract."""
+    errors: list[str] = []
+    if payload.get("section_id") != section_id:
+        errors.append(f"S3 section_id mismatch: expected {section_id}, got {payload.get('section_id')}")
+
+    cards = payload.get("cards")
+    if not isinstance(cards, list):
+        return errors + ["S3 cards must be a list"]
+
+    card_ids: set[str] = set()
+    ir_episodes = process_ir.get("episodes") or []
+    ir_element_ids: set[str] = set()
+    for ep in ir_episodes:
+        if isinstance(ep, dict):
+            for elem in (ep.get("elements") or []):
+                if isinstance(elem, dict) and elem.get("element_id"):
+                    ir_element_ids.add(elem["element_id"])
+
+    for idx, card in enumerate(cards, 1):
+        owner = f"S3 cards[{idx}]"
+        if not isinstance(card, dict):
+            errors.append(f"{owner} must be an object")
+            continue
+        cid = str(card.get("card_id") or "")
+        if not cid:
+            errors.append(f"{owner} missing card_id")
+        elif cid in card_ids:
+            errors.append(f"{owner} duplicate card_id {cid}")
+        else:
+            card_ids.add(cid)
+        if card.get("section_id") != section_id:
+            errors.append(f"{owner} section_id mismatch")
+        if card.get("candidate_status") != "candidate":
+            errors.append(f"{owner} candidate_status must be candidate")
+        if card.get("card_nature") not in {"execution", "assessment", "risk_indicator", "control"}:
+            errors.append(f"{owner} invalid card_nature")
+
+        for node in card.get("flow_nodes") or []:
+            if not isinstance(node, dict):
+                continue
+            for forbidden in ("derivation", "review_status"):
+                if forbidden in node:
+                    errors.append(f"{owner} node {node.get('node_id')} must not declare {forbidden}")
+            for unit_id in (node.get("evidence_unit_ids") or []):
+                if str(unit_id) not in allowed_unit_ids:
+                    errors.append(f"{owner} node uses out-of-section evidence {unit_id}")
+
+        for edge in card.get("flow_edges") or []:
+            if not isinstance(edge, dict):
+                continue
+            for forbidden in ("derivation", "evidence_strength", "review_status"):
+                if forbidden in edge:
+                    errors.append(f"{owner} edge {edge.get('edge_id')} must not declare {forbidden}")
+            for unit_id in (edge.get("evidence_unit_ids") or []):
+                if str(unit_id) not in allowed_unit_ids:
+                    errors.append(f"{owner} edge uses out-of-section evidence {unit_id}")
+
+    # coverage_audit consistency
+    audit = payload.get("coverage_audit") or []
+    ir_audit = process_ir.get("candidate_audit") or []
+    if len(audit) != len(ir_audit):
+        errors.append(f"S3 coverage_audit count {len(audit)} != IR candidate_audit count {len(ir_audit)}")
+
+    return errors
 
 
 def kg_only_candidate_ids(payload: dict[str, Any]) -> list[str]:
@@ -2114,7 +2221,6 @@ def run_section_merged_process_ir(
             section_id,
             propositions,
             allowed_unit_ids,
-            unit_evidence_text,
         )
 
     ir_parsed, ir_raw, ir_err = _call_and_parse(
@@ -2138,6 +2244,7 @@ def run_section_merged_process_ir(
 
     episodes = ir_parsed.get("episodes") or []
     candidate_audit = ir_parsed.get("candidate_audit") or []
+    manifest["process_ir_validation_errors"] = []
     manifest["process_ir_episode_count"] = len(episodes)
     manifest["candidate_audit_count"] = len(candidate_audit)
     manifest["excluded_nonprocedural_count"] = sum(
@@ -2158,27 +2265,41 @@ def run_section_merged_process_ir(
     manifest["split_candidate_count"] = len(split_candidates)
     manifest["split_candidate_rate"] = round(len(split_candidates) / max(len(propositions), 1), 4)
 
-    # === Stage 3: Deterministic Compile ===
-    section_title = task.get("section_title") or ""
-    compile_result = compiler_mod.compile_process_ir_to_cards(ir_parsed, section_id, section_title)
+    # === Stage 3: S3 LLM (Process IR → cards.raw.json) ===
+    s3_template = DEFAULT_S3_FROM_IR_PROMPT_PATH.read_text(encoding="utf-8-sig")
 
-    compile_audit_data = compile_result["compile_audit"]
-    write_json(section_dir / "compile_audit.json", compile_audit_data)
+    s3_prompt = build_s3_from_ir_prompt(s3_template, task, ir_parsed)
+    (section_dir / "s3_to_cards_prompt.md").write_text(s3_prompt, encoding="utf-8")
 
-    cards_payload = compile_result["cards_payload"]
+    def _validate_s3(payload: dict[str, Any]) -> list[str]:
+        return validate_s3_to_cards_payload(payload, section_id, allowed_unit_ids, ir_parsed)
+
+    s3_parsed, s3_raw, s3_err = _call_and_parse(
+        s3_prompt,
+        "S3_To_Cards",
+        _validate_s3,
+    )
+    (section_dir / "s3_to_cards_raw_response.txt").write_text(s3_raw, encoding="utf-8")
+
+    if s3_parsed is None:
+        manifest["status"] = "s3_failed"
+        manifest["s3_error"] = repr(s3_err)
+        write_json(section_dir / "cards.raw.json", {"section_id": section_id, "cards": [], "coverage_audit": []})
+        write_json(section_dir / "run_manifest.json", manifest)
+        return manifest
+
+    cards_payload = s3_parsed
     cards_path = section_dir / "cards.raw.json"
     write_json(cards_path, cards_payload)
 
     manifest["compiled_card_count"] = len(cards_payload.get("cards") or [])
-    manifest["source_process_ir_sha256"] = compile_result["source_process_ir_sha256"]
+    manifest["source_process_ir_sha256"] = sha256_text(json.dumps(ir_parsed, ensure_ascii=False, sort_keys=True))
 
-    # Compile validation: any episode with errors?
-    compile_errors: list[str] = []
-    for ep_entry in compile_audit_data.get("episodes") or []:
-        if ep_entry.get("errors"):
-            compile_errors.append(f"{ep_entry.get('episode_id')}: {'; '.join(ep_entry['errors'])}")
+    # Generate compile_audit from Process IR + S3 cards
+    compile_audit_data = compiler_mod.generate_compile_audit(ir_parsed, cards_payload, section_id)
+    write_json(section_dir / "compile_audit.json", compile_audit_data)
 
-    # Merged mode always validates compiled cards before reporting success.
+    # Legacy card structure validation
     validator_code, validator_output, parsed_validation_error_count = validate_cards(
         cards_path, section_dir / "validation_report.md", task_path
     )
@@ -2188,17 +2309,9 @@ def run_section_merged_process_ir(
         else (1 if validator_code != 0 else 0)
     )
 
-    manifest["compile_validation_errors"] = compile_errors
-    manifest["status"] = (
-        "ok" if (not compile_errors and validation_error_count == 0)
-        else "compile_failed" if compile_errors
-        else "validation_errors"
-    )
+    manifest["s3_validation_errors"] = []
+    manifest["status"] = "ok" if validation_error_count == 0 else "validation_errors"
     manifest["validation_error_count"] = validation_error_count
-    manifest["validator_returncode"] = validator_code
-    manifest["validator_output"] = validator_output
-    manifest["structure_validation_status"] = "completed"
-    manifest["structure_validation_owner"] = "P7C_required_merged_process_ir"
     manifest["model"] = model
     manifest["thinking_effort"] = thinking_effort
     write_json(section_dir / "run_manifest.json", manifest)

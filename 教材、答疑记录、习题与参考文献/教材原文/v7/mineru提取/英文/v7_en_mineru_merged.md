@@ -855,7 +855,7 @@ Tax evasion is illegal and is considered a predicate offense for money launderin
 
 Information gathered at onboarding and during transaction monitoring should inform the activity the organization should expect across the customer’s account. Unusual activity such as excessive personal expense claims across a small business account might be a warning signal that a customer is evading tax. 
 
-The Common Reporting Standard (CRS), developed in response to the G-20 countries' request and approved by the OECD (Organization for Economic Cooperation and Development) Council, calls on jurisdictions to obtain information from their financial institutions and automatically exchange that information with other jurisdictions on an annual basis. It sets out the financia account information to be exchanged, the financial institutions required to report, the different types of accounts and taxpayers covered, as well as common due diligence procedures to be followed by financial institutions. Its purpose is to combat tax evasion. 
+The Common Reporting Standard (CRS), developed in response to the G-20 countries' request and approved by the OECD (Organization for Economic Cooperation and Development) Council, calls on jurisdictions to obtain information from their financial institutions and automatically exchange that information with other jurisdictions on an annual basis. It sets out the financial account information to be exchanged, the financial institutions required to report, the different types of accounts and taxpayers covered, as well as common due diligence procedures to be followed by financial institutions. Its purpose is to combat tax evasion.. 
 
 Fraud is an intentional act of criminal deception in order to obtain an unjust or illegal advantage. Typically, fraud results in financial or personal gain. Notice that fraud is intentional and uses deception to achieve the goal. Fraud can be committed by one or more individuals—from low-level employees, to management, to government officials. It can be found in every country and every type of business. Knowing the common features of fraud, as well as typical motivations and red flags, will help you combat this crime. 
 
@@ -2323,7 +2323,9 @@ There are two types of mixers: centralized and decentralized. Both types work si
 
 Criminals have widely used mixers and tumblers to launder illicitly acquired funds. Various sanctioned entities and users of dark web marketplaces use these mixing and tumbling services in their money laundering process to hide the trail between the illegal funding source and the destination. 
 
-The use of mixer protocols does not necessarily indicate that the origina funds are illegal. Some users of such services simply believe in privacy and use these services to protect their information without doing anything illegal. However, virtual asset service providers should treat transactions linked to mixers and tumblers as high risk and take appropriate diligence measures to reduce potential risk. 
+The use of mixer protocols does not necessarily indicate that the origina funds are illegal. Some users of such services simply believe in privacy and use these services to protect their information without doing anything illegal. The use of mixer protocols does not necessarily indicate that the original funds are illegal. Some users of such services simply believe in privacy and use these services to protect their information without doing anything illegal.
+
+However, virtual asset service providers should treat transactions linked to mixers and tumblers as high risk and take appropriate diligence measures to reduce potential risk. 
 
 ## Money Laundering Risks in DNFBPs and Other High-Risk Sectors
 
@@ -7532,6 +7534,8 @@ Criminals continue to use AI to outwit and overcome an organization’s controls
 
 
 #### Authentication and security technology
+
+Also, FATF has issued guidelines to help organizations determine the suitability of digital identities for CDD. In its Guidance on Digital Identity, published in March of 2020, FATF covers principles of a digital identify framework and how digital identities can be used for customer onboarding and due diligence in line with FATF's Recommendation 10.
 
 Various security risks arise from storing customer data collected during the KYC process, including data breaches, misuse of data by employees, and maintaining data integrity to ensure accuracy and unaltered information. Complex and varying data compliance regulations across jurisdictions also add to the risk for global organizations to ensure compliance. Security and authentication technologies address such risks. These technologies encompass a wide range of methods and tools designed to protect data and systems from unauthorized access and to verify the identities of individuals. 
 

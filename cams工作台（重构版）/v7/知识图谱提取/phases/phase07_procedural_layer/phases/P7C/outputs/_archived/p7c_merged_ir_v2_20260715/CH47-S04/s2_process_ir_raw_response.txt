@@ -1,0 +1,181 @@
+{
+  "section_id": "CH47-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "场景设置如何基于以往经验调整检测规则？",
+      "title": "基于经验调整检测规则和场景",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "input",
+          "label": "previous experiences with suspicious activity and actual incidents",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "creating, modifying, or removing detection rules and scenarios",
+          "evidence_unit_ids": ["v7u_N003279"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003279"],
+          "source_quote": "Scenario setting involves creating, modifying, or removing detection rules and scenarios based on previous experiences with suspicious activity and actual incidents."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "调整阈值如何影响交易监控系统的灵敏度和准确性？",
+      "title": "调整阈值以提高灵敏度和准确性",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "Adjusting thresholds",
+          "evidence_unit_ids": ["v7u_N003282"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "refines sensitivity and accuracy",
+          "evidence_unit_ids": ["v7u_N003282"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003282"],
+          "source_quote": "Adjusting thresholds refines sensitivity and accuracy."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "重大事件或趋势如何触发调优专项评估？",
+      "title": "事件触发专项评估",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "significant events or trends",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "special assessments",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003286"],
+          "source_quote": "Tuning should be dynamic, with special assessments triggered by significant events or trends."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": ["s1c_gap_ch47_s04_frequency_determines_tuning_interval"],
+      "focal_question": "调优频率如何决定调优间隔？",
+      "title": "频率决定调优频次",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "frequency",
+          "evidence_unit_ids": ["v7u_N003284"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "determines how often tuning should occur",
+          "evidence_unit_ids": ["v7u_N003284"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N003284"],
+          "source_quote": "The frequency determines how often tuning should occur."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选描述了基于以往经验创建、修改或移除检测规则和场景的程序性过程，包含输入和动作，独立构成一个episode。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选描述了调整阈值以提高灵敏度和准确性的程序性动作及其结果，独立构成一个episode。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "该候选描述了重大事件或趋势触发专项评估的触发关系，独立构成一个episode。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch47_s04_frequency_determines_tuning_interval",
+      "disposition": "mapped",
+      "episode_ids": ["ep_004"],
+      "reason": "该候选描述了调优频率决定调优间隔的决策过程，独立构成一个episode。"
+    }
+  ],
+  "skip_reason": null
+}

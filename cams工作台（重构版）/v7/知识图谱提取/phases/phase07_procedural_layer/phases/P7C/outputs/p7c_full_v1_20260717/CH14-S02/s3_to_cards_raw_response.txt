@@ -1,0 +1,115 @@
+{
+  "section_id": "CH14-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH14-S02_001",
+      "section_id": "CH14-S02",
+      "card_nature": "assessment",
+      "title": "工作组审查DNFBP风险和监管缺口并推荐全面法规",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "The Hendricks case demonstrated how money laundering cases can involve multiple DNFBPs, each presenting unique risks.",
+          "evidence_unit_ids": ["v7u_N001050"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "The task force noted that attorneys in the US are self-regulated by state bar associations, which provide recommended rules but lack mandatory reporting requirements, and similarly real estate agencies and TCSPs do not have to adhere to AML/CFT regulations or conduct audits for compliance.",
+          "evidence_unit_ids": ["v7u_N001054", "v7u_N001055"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "Given the complexities and risks, the task force recommended comprehensive AML/CFT regulations to bridge existing gaps.",
+          "evidence_unit_ids": ["v7u_N001056"],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Requiring DNFBPs to set up an AML/CFT framework and find the right balance between customer privacy and AML reporting requirements could deter the financial benefits of enabling such activities and reduce the occurrence of money laundering.",
+          "evidence_unit_ids": ["v7u_N001057"],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001054", "v7u_N001055", "v7u_N001056"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001050", "v7u_N001056"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": ["v7u_N001056", "v7u_N001057"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001050", "v7u_N001054", "v7u_N001055", "v7u_N001056", "v7u_N001057"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：工作组基于Hendricks案展示的DNFBP风险和注意到的监管缺口，推荐全面AML/CFT法规，预期达成威慑效果。证据范围覆盖案例展示、缺口发现、推荐表述与预期结果。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH14-S02_001"],
+      "reason": "提供工作组基于风险和复杂性推荐法规的程序性关系，映射至卡片。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH14-S02_001"],
+      "reason": "提供推荐法规的预期效果，作为outcome，映射至卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch14_s02_case_demo",
+      "disposition": "support_only",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH14-S02_001"],
+      "reason": "案例展示风险，作为输入元素，映射至卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch14_s02_reg_shortfalls",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH14-S02_001"],
+      "reason": "监管缺口发现，作为动作元素，映射至卡片。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "input role → node_type=input，提供案例风险展示作为评估输入。",
+      "e002": "action role → 工作组注意到监管缺口，属于识别风险信号或异常模式的评估活动，故为P1_assessment。",
+      "e003": "decision role → 在识别缺口后形成推荐法规的决策，将风险处置组织为法规措施，符合P9_planning定义。无分支路径，非P3。",
+      "e004": "outcome role → 描述法规实施后预期减少洗钱，属于业务环境状态变化的期望，故为X3_state_change。"
+    }
+  },
+  "skip_reason": null
+}

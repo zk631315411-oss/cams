@@ -1,0 +1,377 @@
+{
+  "section_id": "CH20-S07",
+  "cards": [
+    {
+      "card_id": "p7card_CH20-S07_001",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "KYC中核实客户身份并评估风险状况",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "KYC",
+          "evidence_unit_ids": ["v7u_N001570"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Banks should verify client identities and assess their risk profiles.",
+          "evidence_unit_ids": ["v7u_N001570"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001570"],
+          "source_quote": "KYC: Banks should verify client identities and assess their risk profiles."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001570"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：银行在KYC下应核实客户身份并评估风险；证据范围：v7u_N001570；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_002",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "对高风险客户加强尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Due diligence",
+          "evidence_unit_ids": ["v7u_N001571"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "high-risk customers, particularly PEPs",
+          "evidence_unit_ids": ["v7u_N001571"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Banks should apply enhanced scrutiny",
+          "evidence_unit_ids": ["v7u_N001571"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001571"],
+          "source_quote": "Due diligence: Banks should apply enhanced scrutiny for high-risk customers, particularly PEPs."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001571"],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "for high-risk customers, particularly PEPs"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001571"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：尽职调查中须对高风险客户实施加强审查；证据范围：v7u_N001571；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_003",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "调查和记录客户财富来源",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Source of wealth and funds",
+          "evidence_unit_ids": ["v7u_N001572"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "Banks should investigate and document how clients acquired their wealth.",
+          "evidence_unit_ids": ["v7u_N001572"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001572"],
+          "source_quote": "Source of wealth and funds: Banks should investigate and document how clients acquired their wealth."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001572"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：银行应调查并记录客户获取财富的方式；证据范围：v7u_N001572；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_004",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "持续监控交易以发现可疑活动",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "Ongoing monitoring",
+          "evidence_unit_ids": ["v7u_N001573"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "Banks should conduct continuous reviews of transactions.",
+          "evidence_unit_ids": ["v7u_N001573"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "detect suspicious activities",
+          "evidence_unit_ids": ["v7u_N001573"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001573"],
+          "source_quote": "Ongoing monitoring: Banks should conduct continuous reviews of transactions to detect suspicious activities."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001573"],
+          "qualifier": "aimed_to",
+          "source_quote": "to detect suspicious activities"
+        }
+      ],
+      "source_unit_ids": ["v7u_N001573"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：通过持续审查交易以发现可疑活动；证据范围：v7u_N001573；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_005",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "根据风险水平分配资源",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "level of risk posed by a customer, transaction, or jurisdiction",
+          "evidence_unit_ids": ["v7u_N001574"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "financial institutions should allocate resources",
+          "evidence_unit_ids": ["v7u_N001574"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001574"],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "financial institutions should allocate resources based on the level of risk posed by a customer, transaction, or jurisdiction."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001574"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：金融机构根据风险水平分配资源；证据范围：v7u_N001574；缺少明确入口，待P7D审核结构。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_006",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "在尽职调查中考虑11项风险指标",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "conducting due diligence",
+          "evidence_unit_ids": ["v7u_N001576"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Considering 11 specific risk indicators, including assessing the risk of correspondent relationships, considering jurisdiction, ownership structure, and regulatory compliance.",
+          "evidence_unit_ids": ["v7u_N001576"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001576"],
+          "source_quote": "Considering 11 specific risk indicators when conducting due diligence."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001576"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：尽职调查中考虑11项风险指标评估风险；证据范围：v7u_N001576；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH20-S07_007",
+      "section_id": "CH20-S07",
+      "card_nature": "execution",
+      "title": "对高风险关系适用更严格审查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "high-risk relationships, such as those involving shell banks or offshore financial centers",
+          "evidence_unit_ids": ["v7u_N001577"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Applying stricter scrutiny",
+          "evidence_unit_ids": ["v7u_N001577"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "n002",
+          "target": "n001",
+          "evidence_unit_ids": ["v7u_N001577"],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Applying stricter scrutiny to high-risk relationships, such as those involving shell banks or offshore financial centers."
+        }
+      ],
+      "source_unit_ids": ["v7u_N001577"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：对高风险关系（如空壳银行）实施更严格审查；证据范围：v7u_N001577；缺少明确入口，待P7D审核结构。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_001"],
+      "reason": "映射至KYC核实客户身份与风险评估流程卡。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_002"],
+      "reason": "映射至对高风险客户加强尽职调查流程卡。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_003"],
+      "reason": "映射至调查与记录财富来源流程卡。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_004"],
+      "reason": "映射至持续监控交易以发现可疑活动流程卡。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_005"],
+      "reason": "映射至根据风险水平分配资源流程卡。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_006"],
+      "reason": "映射至尽职调查中考虑风险指标流程卡。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH20-S07_007"],
+      "reason": "映射至对高风险关系适用更严格审查流程卡。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry; 'KYC' 作为触发业务事件，选 E1_event_signal",
+      "e002": "action role → process; 核实身份与评估风险使对象状态变化，选 P2_execution"
+    },
+    "ep_002": {
+      "e001": "context role → entry; 'Due diligence' 作为触发事件，选 E1_event_signal",
+      "e002": "standard role → auxiliary; 高风险客户为标准，固定选 standard",
+      "e003": "action role → process; 实施加强审查是操作动作，选 P2_execution"
+    },
+    "ep_003": {
+      "e001": "context role → entry; 'Source of wealth and funds' 作为涉事领域，选 E1_event_signal",
+      "e002": "action role → process; 调查并记录信息属收集与形成文档，选 P4_collection"
+    },
+    "ep_004": {
+      "e001": "context role → entry; 'Ongoing monitoring' 有周期性持续特征，选 E5_time_cycle",
+      "e002": "action role → process; 持续审查交易是监控动作，选 P7_monitoring",
+      "e003": "outcome role → exit; 发现可疑活动形成可疑性结论，选 X1_classification"
+    },
+    "ep_005": {
+      "e001": "standard role → auxiliary; 风险水平为标准，固定选 standard",
+      "e002": "action role → process; 分配资源是执行动作，选 P2_execution (缺少入口，保留原S2结构)"
+    },
+    "ep_006": {
+      "e001": "context role → entry; 'conducting due diligence' 作为触发背景，选 E1_event_signal",
+      "e002": "action role → process; 考虑风险指标是识别风险信号和评估，选 P1_assessment"
+    },
+    "ep_007": {
+      "e001": "standard role → auxiliary; 高风险关系为标准，固定选 standard",
+      "e002": "action role → process; 实施更严格审查是执行动作，选 P2_execution (缺少入口，保留原S2结构)"
+    }
+  },
+  "skip_reason": null
+}

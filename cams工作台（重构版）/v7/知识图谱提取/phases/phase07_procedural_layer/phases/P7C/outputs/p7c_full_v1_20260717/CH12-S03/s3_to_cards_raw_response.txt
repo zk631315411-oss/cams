@@ -1,0 +1,121 @@
+{
+  "section_id": "CH12-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S03_001",
+      "section_id": "CH12-S03",
+      "card_nature": "control",
+      "title": "监控所有权结构发现利益冲突并防止串通",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "监控所有权结构",
+          "evidence_unit_ids": ["v7u_N000910"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "有助于发现利益冲突",
+          "evidence_unit_ids": ["v7u_N000910"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于防止串通",
+          "evidence_unit_ids": ["v7u_N000910"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N000910"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n003",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N000910"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000910"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：监控所有权结构有助于发现利益冲突并防止串通；证据范围：v7u_N000910；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH12-S03_002",
+      "section_id": "CH12-S03",
+      "card_nature": "execution",
+      "title": "培训代理人识别洗钱风险以促进合规与道德文化",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "培训代理人和经纪人识别洗钱风险",
+          "evidence_unit_ids": ["v7u_N000911"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "促进合规与道德文化",
+          "evidence_unit_ids": ["v7u_N000911"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "helps_achieve",
+          "evidence_unit_ids": ["v7u_N000911"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N000911"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：培训代理人识别洗钱风险有助于促进合规与道德文化；证据范围：v7u_N000911；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_gap_ch12_s03_monitoring_ownership",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH12-S03_001"],
+      "reason": "该候选描述了监控所有权结构识别利益冲突和防止串通的过程，构成合格的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch12_s03_training_agents",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH12-S03_002"],
+      "reason": "该候选描述了培训代理人识别洗钱风险以促进合规文化的过程，构成合格的程序性关系。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "action role, 语义为持续监控活动 → P7_monitoring",
+      "e002": "outcome role, 发现利益冲突为风险识别结论 → X1_classification",
+      "e003": "outcome role, 防止串通为状态变化目标 → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "action role, 培训执行具体动作 → P2_execution",
+      "e002": "outcome role, 促进合规文化形成新状态 → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

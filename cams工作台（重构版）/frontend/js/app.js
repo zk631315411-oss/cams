@@ -8,7 +8,7 @@
 
   function snapshot() { return { workMode: app.workMode, view: Object.assign({}, app.currentView) }; }
   function sameSnapshot(left, right) { return left && right && left.workMode === right.workMode && left.view.type === right.view.type && left.view.id === right.view.id; }
-  function handlers() { return { showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, selectChapter: selectChapter }; }
+  function handlers() { return { showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, selectChapter: selectChapter, showMatrix: showMatrix }; }
 
   function updateNavigation() {
     document.querySelectorAll("[data-work-mode]").forEach(function (button) {
@@ -65,6 +65,25 @@
     var chapter = app.state.chapters.filter(function (item) { return item.chapter_id === chapterId; })[0];
     if (chapter && chapter.unit_ids.length) selectUnit(chapter.unit_ids[0], true);
   }
+  function showMatrix() {
+    app.currentView = { type: "matrix" };
+    // 隐藏主界面三栏，显示矩阵页面
+    document.querySelector(".app-shell").style.display = "none";
+    // 如果已有矩阵容器则显示，否则创建
+    var matrixPage = U.byId("matrixPage");
+    if (!matrixPage) {
+      window.CamsMatrix.render(app.state);
+    }
+    // 绑定返回按钮（先移除旧监听避免重复）
+    var backBtn = U.byId("matrixPage").querySelector("[data-home]");
+    var newBack = function () {
+      window.CamsMatrix.destroy();
+      document.querySelector(".app-shell").style.display = "flex";
+      renderCurrent();
+    };
+    backBtn.removeEventListener("click", newBack);
+    backBtn.addEventListener("click", newBack);
+  }
   function goBack() {
     if (!app.backStack.length) return;
     var previous = app.backStack.pop();
@@ -94,6 +113,8 @@
     document.querySelectorAll("[data-work-mode]").forEach(function (button) { button.addEventListener("click", function () { setWorkMode(button.getAttribute("data-work-mode")); }); });
     U.byId("historyBack").addEventListener("click", goBack);
     U.byId("historyForward").addEventListener("click", goForward);
+    var matrixEntry = U.byId("matrixEntry");
+    if (matrixEntry) matrixEntry.addEventListener("click", showMatrix);
   }
   function init() {
     bindChrome();
@@ -109,6 +130,6 @@
       if (pane) pane.innerHTML = "<div class=\"empty-panel\"><h2 class=\"error\">v7 教材包不可用</h2><p>" + U.escapeHtml(error.message) + "</p><button class=\"v7-retry-button\" onclick=\"location.reload()\">重新加载</button></div>";
     });
   }
-  window.CamsApp = { init: init, goBack: goBack, goForward: goForward, showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, setWorkMode: setWorkMode };
+  window.CamsApp = { init: init, goBack: goBack, goForward: goForward, showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, showMatrix: showMatrix, setWorkMode: setWorkMode };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

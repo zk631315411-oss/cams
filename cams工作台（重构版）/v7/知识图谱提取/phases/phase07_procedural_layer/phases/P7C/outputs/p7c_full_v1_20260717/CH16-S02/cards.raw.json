@@ -1,0 +1,278 @@
+{
+  "section_id": "CH16-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH16-S02_001",
+      "section_id": "CH16-S02",
+      "card_nature": "assessment",
+      "title": "案例：Goodwish Jade可疑交易审查、调查与上报",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "反洗钱官员对Goodwish Jade资金来源和交易的怀疑加剧",
+          "evidence_unit_ids": [
+            "v7u_N001155"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "审查Goodwish Jade的交易记录和KYC文件",
+          "evidence_unit_ids": [
+            "v7u_N001149",
+            "v7u_N001150"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现午夜大额现金交易超过500,000美元，与营业时间（10 a.m. - 6 p.m.）不符",
+          "evidence_unit_ids": [
+            "v7u_N001149"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现GJ由BVI离岸公司拥有，受益所有人Teh Ong，BVI为高风险管辖区",
+          "evidence_unit_ids": [
+            "v7u_N001150",
+            "v7u_N001151"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "进一步调查GJ的交易记录，确认买家身份和财务状况",
+          "evidence_unit_ids": [
+            "v7u_N001156"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现买家为Ong企业的经理，月薪约2,500美元，购买高价物品可疑",
+          "evidence_unit_ids": [
+            "v7u_N001156"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "怀疑购买资金来源于非法活动（毒品贩运和卖淫），表明通过购买高价资产洗钱",
+          "evidence_unit_ids": [
+            "v7u_N001157"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将案件上报给洗钱报告负责人（MLRO）",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n009",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "建议提交可疑活动报告",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n010",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "建议重新评估Goodwish Jade及相关网络公司的客户风险，以减轻潜在洗钱风险",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001149"
+          ],
+          "source_quote": "During the review, the AML officer discovered several cash transactions exceeding US$500,000 that occurred at midnight in recent months."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N001150"
+          ],
+          "source_quote": "Upon examining the KYC documents, the officer found that GJ is owned by an offshore company incorporated in the British Virgin Islands, a high-risk jurisdiction for tax secrecy and lax beneficial ownership registers."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N001155"
+          ],
+          "source_quote": "Upon receiving this information, the AML officer's suspicions about GJ’s source of funds and ongoing transactions intensified. Further investigation into GJ's transaction records revealed..."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n005",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001156"
+          ],
+          "source_quote": "Further investigation into GJ's transaction records revealed that the buyers of jade and precious stones during the midnight hours were managers from Ong’s businesses..."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N001156"
+          ],
+          "source_quote": "Further investigation into GJ's transaction records revealed that the buyers of jade and precious stones during the midnight hours were managers from Ong’s businesses, as confirmed by financial records and the company registry maintained by the government. These managers reportedly earn monthly salaries of around US$2,500, making their ability to purchase high-value items suspicious."
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "REFERENCES",
+          "source": "n007",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001157"
+          ],
+          "source_quote": "The pattern of cash transactions, combined with the profiles of the buyers, indicated a potential laundering of crime proceeds through the acquisition of high-value assets."
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "REFERENCES",
+          "source": "n007",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N001157"
+          ],
+          "source_quote": "The AML officer suspected that the funds used for these purchases were potentially derived from illegal activities, including drug trafficking and prostitution from Ong’s sauna parlors and nightclubs."
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "REFERENCES",
+          "source": "n007",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N001157"
+          ],
+          "source_quote": "The pattern of cash transactions, combined with the profiles of the buyers, indicated a potential laundering of crime proceeds through the acquisition of high-value assets."
+        },
+        {
+          "edge_id": "edge_009",
+          "edge_type": "PRECEDES",
+          "source": "n007",
+          "target": "n008",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Considering these findings, the AML officer escalated the case to the MLRO..."
+        },
+        {
+          "edge_id": "edge_010",
+          "edge_type": "PRODUCES",
+          "source": "n008",
+          "target": "n009",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "relation_type": "result_handoffs_stage",
+          "source_quote": "...with the recommendation to file a suspicious activity report with the relevant authorities."
+        },
+        {
+          "edge_id": "edge_011",
+          "edge_type": "PRODUCES",
+          "source": "n008",
+          "target": "n010",
+          "evidence_unit_ids": [
+            "v7u_N001158"
+          ],
+          "relation_type": "result_handoffs_stage",
+          "source_quote": "He also recommended that TRF Bank's management review the risk assessment of Goodwish Jade as a customer, and any relevant network companies to mitigate the risks associated with potential money laundering activities."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001148",
+        "v7u_N001149",
+        "v7u_N001150",
+        "v7u_N001151",
+        "v7u_N001152",
+        "v7u_N001153",
+        "v7u_N001154",
+        "v7u_N001155",
+        "v7u_N001156",
+        "v7u_N001157",
+        "v7u_N001158"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：AML官员审查交易与KYC发现异常→怀疑加剧→进一步调查确认买家身份与财务异常→综合形成洗钱嫌疑→上报MLRO并建议提交SAR与重评风险。证据范围：Goodwish Jade案例全段。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH16-S02_001"
+      ],
+      "reason": "候选判断链完整映射至card。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch16_s02_kyc_ownership",
+      "disposition": "support_only",
+      "card_ids": [
+        "p7card_CH16-S02_001"
+      ],
+      "reason": "补充的KYC所有权发现作为参考依据，已包含在card中。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role，怀疑加剧为状态阈值→E3_state_threshold",
+      "e002": "action role，审查文件属于收集信息→P4_collection",
+      "e003": "outcome role，发现异常交易模式形成分类结论→X1_classification",
+      "e004": "outcome role，发现所有权与UBO，形成风险分类→X1_classification",
+      "e005": "action role，进一步调查即收集证据→P4_collection",
+      "e006": "outcome role，发现买家可疑形成分类→X1_classification",
+      "e007": "decision role，综合判断洗钱嫌疑，属于风险评估→P1_assessment",
+      "e008": "action role，上报动作使案件状态转移→P2_execution",
+      "e009": "outcome role，建议提交报告属于产出可提交对象→X2_product",
+      "e010": "outcome role，建议重评风险属于产出→X2_product"
+    }
+  },
+  "skip_reason": null
+}

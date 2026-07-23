@@ -1,0 +1,127 @@
+{
+  "section_id": "CH10-S02",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "如何调查异常交易并评估洗钱风险和KYC不足",
+      "title": "Emma调查异常交易发现洗钱红旗并识别KYC不足",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "收到异常交易警报",
+          "evidence_unit_ids": ["v7u_N000770"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "召集团队调查",
+          "evidence_unit_ids": ["v7u_N000770"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "发现新买家使用多个账户向同一辖区卖家进行高频低额交易",
+          "evidence_unit_ids": ["v7u_N000771"],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "decision",
+          "label": "引发洗钱红旗信号",
+          "evidence_unit_ids": ["v7u_N000772"],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "意识到KYC治理和执行不足",
+          "evidence_unit_ids": ["v7u_N000773"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "clue_supports_identification",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000770"],
+          "source_quote": "On her second day on the job, she receives an alert about unusual transaction patterns. She quickly gathers her team to investigate."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "before_element_id": "e002",
+          "after_element_id": "e003",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000771"],
+          "source_quote": "They discover that a new buyer, using multiple accounts, is making high-frequency, low-value transactions with a network of sellers who are all based in the same jurisdiction."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "sequence",
+          "before_element_id": "e003",
+          "after_element_id": "e004",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000772"],
+          "source_quote": "This raises a red flag for money laundering."
+        },
+        {
+          "relation_id": "r004",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e005",
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N000773"],
+          "source_quote": "While investigating, Emma realizes CashBayou's current KYC governance and execution are inadequate."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "仅陈述CashBayou因其持有并转换客户资金而需持有MSB牌照，属于静态法规事实，不包含业务处理或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "提供调查异常交易的完整流程：从收到警报、展开调查、发现交易模式、引发洗钱红旗到识别KYC不足，元素与关系明确。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "仅描述审查不足可能导致的潜在风险和服务暂停，属于假设性风险陈述，不构成实际发生的业务流程或判断。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "主要描述支付服务商PaySecure的外部合规要求和沟通，CashBayou方面仅有Emma注意到请求关联的认知动作，未形成独立的程序性或判断性流程，不能支撑一个episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "仅陈述发卡机构CardGuard的合规标准要求和违约后果，属于外部规则与条件，未描述CashBayou的响应或判断，不构成业务流程。"
+    }
+  ],
+  "skip_reason": null
+}

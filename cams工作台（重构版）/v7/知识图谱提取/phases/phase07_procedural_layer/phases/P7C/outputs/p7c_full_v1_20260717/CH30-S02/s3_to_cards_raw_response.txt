@@ -1,0 +1,279 @@
+{
+  "section_id": "CH30-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH30-S02_001",
+      "section_id": "CH30-S02",
+      "card_nature": "execution",
+      "title": "MLRO根据监管红旗报告更新银行AML/CFT控制",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "监管机构发布关于恐怖融资新信息的报告，包含需关注的红旗列表",
+          "evidence_unit_ids": ["v7u_N002165"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "监管机构期望银行考虑其指导文件（无法律强制要求）",
+          "evidence_unit_ids": ["v7u_N002167"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "MLRO考虑如何将红旗列表纳入银行的反洗钱/反恐怖融资控制",
+          "evidence_unit_ids": ["v7u_N002166"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO审查现有控制和流程，确定受影响领域，分析控制是否适当以及需解决的差距",
+          "evidence_unit_ids": ["v7u_N002168"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "一项红旗：与特定司法管辖区有关联的进出口公司",
+          "evidence_unit_ids": ["v7u_N002169"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "银行现有EDD程序：要求所有进出口公司在开户时提供额外信息并进行年度审查，并要求向某些高风险司法管辖区进出口的客户提供额外文件",
+          "evidence_unit_ids": ["v7u_N002170", "v7u_N002172", "v7u_N002173"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "process",
+          "node_type": "P10_sufficiency",
+          "label": "发现新红旗涉及银行清单上未包含的额外司法管辖区",
+          "evidence_unit_ids": ["v7u_N002174"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "MLRO与风险管理和其他利益相关方就新红旗可能导致的风险概况或运营变化进行协商",
+          "evidence_unit_ids": ["v7u_N002175"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n009",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "MLRO通知相关业务部门需要更新程序以纳入此额外司法管辖区",
+          "evidence_unit_ids": ["v7u_N002176"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n010",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "MLRO评估可能产生的案件数量，并确保受影响团队在变更前知情且资源充足",
+          "evidence_unit_ids": ["v7u_N002177"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n011",
+          "node_category": "process",
+          "node_type": "P10_sufficiency",
+          "label": "确定当前无需额外培训",
+          "evidence_unit_ids": ["v7u_N002178"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n012",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通知培训团队未来培训应反映新信息",
+          "evidence_unit_ids": ["v7u_N002178"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n013",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "MLRO委托对与该司法管辖区有交易的现有客户进行回溯审查，以确定之前未识别的风险和是否需额外行动",
+          "evidence_unit_ids": ["v7u_N002179"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n014",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "在所有行动完成后，确保变更反映在金融机构的适当文档中",
+          "evidence_unit_ids": ["v7u_N002179"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002165", "v7u_N002166"],
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "A regulator issues a report describing new information on how a major terrorist group finances itself. The report contains a list of red flags to look for. The money laundering reporting officer (MLRO) considers how the bank can incorporate the list of red flags into its AML/CFT controls."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N002166", "v7u_N002167"],
+          "relation_type": "standard_constrains_action",
+          "source_quote": "The bank’s home regulator issued the document, and while the bank is not legally required to implement the guidance, the regulator expects that the bank will consider it."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": ["v7u_N002166", "v7u_N002168"],
+          "source_quote": "The money laundering reporting officer (MLRO) considers how the bank can incorporate the list... The MLRO conducts a review of the bank’s existing controls and processes to determine which areas are impacted."
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": ["v7u_N002168", "v7u_N002169"],
+          "source_quote": "One red flag identifies the use of import/export companies with a connection to certain jurisdictions."
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "REFERENCES",
+          "source": "n004",
+          "target": "n006",
+          "evidence_unit_ids": ["v7u_N002168", "v7u_N002170", "v7u_N002172", "v7u_N002173"],
+          "source_quote": "The bank has numerous import/export companies as clients. It has EDD procedures in place to provide extra scrutiny of such companies. The MLRO reviews the bank’s procedures to assess alignment with the red flag. She finds that the bank asks all its import/export companies for extra information at onboarding and subjects them to an annual review. The bank requires that clients importing or exporting to certain higher risk jurisdictions provide additional documentation."
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n007",
+          "evidence_unit_ids": ["v7u_N002168", "v7u_N002174"],
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "However, the new red flag refers to an additional jurisdiction that is not on the bank’s list."
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRECEDES",
+          "source": "n007",
+          "target": "n008",
+          "evidence_unit_ids": ["v7u_N002174", "v7u_N002175"],
+          "source_quote": "The MLRO consults with risk management and other stakeholders regarding any changes to the risk profile or operations that may arise from the new red flag."
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRECEDES",
+          "source": "n008",
+          "target": "n009",
+          "evidence_unit_ids": ["v7u_N002175", "v7u_N002176"],
+          "source_quote": "She then informs relevant business areas that the procedures need updating to include this additional jurisdiction."
+        },
+        {
+          "edge_id": "edge_009",
+          "edge_type": "PRECEDES",
+          "source": "n009",
+          "target": "n010",
+          "evidence_unit_ids": ["v7u_N002176", "v7u_N002177"],
+          "source_quote": "The MLRO also assesses the number of cases likely to be generated and ensures affected teams are aware and adequately resourced before making the change."
+        },
+        {
+          "edge_id": "edge_010",
+          "edge_type": "PRECEDES",
+          "source": "n010",
+          "target": "n011",
+          "evidence_unit_ids": ["v7u_N002177", "v7u_N002178"],
+          "source_quote": "She determines that no additional training is required at this time but informs the training team that future training should reflect the new information."
+        },
+        {
+          "edge_id": "edge_011",
+          "edge_type": "PRECEDES",
+          "source": "n011",
+          "target": "n012",
+          "evidence_unit_ids": ["v7u_N002178"],
+          "source_quote": "but informs the training team that future training should reflect the new information."
+        },
+        {
+          "edge_id": "edge_012",
+          "edge_type": "PRECEDES",
+          "source": "n009",
+          "target": "n013",
+          "evidence_unit_ids": ["v7u_N002176", "v7u_N002179"],
+          "source_quote": "In addition, the MLRO commissions a retrospective review of existing clients who trade with the jurisdiction to determine previously unidentified risk and whether additional action is required."
+        },
+        {
+          "edge_id": "edge_013",
+          "edge_type": "PRODUCES",
+          "source": "n013",
+          "target": "n014",
+          "evidence_unit_ids": ["v7u_N002179"]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002165",
+        "v7u_N002166",
+        "v7u_N002167",
+        "v7u_N002168",
+        "v7u_N002169",
+        "v7u_N002170",
+        "v7u_N002172",
+        "v7u_N002173",
+        "v7u_N002174",
+        "v7u_N002175",
+        "v7u_N002176",
+        "v7u_N002177",
+        "v7u_N002178",
+        "v7u_N002179"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：MLRO根据监管红旗报告更新银行AML/CFT控制的过程；证据范围：CH30-S02全部单元；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH30-S02_001"],
+      "reason": "该候选完整描述了监管报告触发、MLRO审查、差距识别及后续更新控制的程序流程，包含多个程序性和判断性关系，因此映射为一个episode并生成一张card。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry; 监管报告发布为明确业务事件，选择E1_event_signal",
+      "e002": "standard role → auxiliary; node_type=standard",
+      "e003": "action role → process; MLRO考虑如何纳入控制为规划行动，选择P9_planning",
+      "e004": "action role → process; MLRO审查差距为评估过程，选择P1_assessment",
+      "e005": "input role → auxiliary; node_type=input",
+      "e006": "input role → auxiliary; node_type=input",
+      "e007": "decision role → process; 发现未覆盖司法管辖区为充分性判断，选择P10_sufficiency",
+      "e008": "action role → process; 与多利益相关方协商为协调，选择P5_coordination",
+      "e009": "action role → process; 通知业务部门更新为执行动作，选择P2_execution",
+      "e010": "action role → process; 评估案件数量并确保资源为执行准备，选择P2_execution",
+      "e011": "decision role → process; 确定无需培训为充分性判断结论，选择P10_sufficiency",
+      "e012": "action role → process; 通知培训团队未来更新为执行，选择P2_execution",
+      "e013": "action role → process; 委托回溯审查为执行动作，选择P2_execution",
+      "e014": "outcome role → exit; 更新文档反映控制变更为配置变更，选择X5_config_change"
+    }
+  },
+  "skip_reason": null
+}

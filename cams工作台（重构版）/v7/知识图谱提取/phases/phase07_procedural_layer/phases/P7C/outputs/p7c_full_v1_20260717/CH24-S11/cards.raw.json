@@ -1,0 +1,270 @@
+{
+  "section_id": "CH24-S11",
+  "cards": [
+    {
+      "card_id": "p7card_CH24-S11_001",
+      "section_id": "CH24-S11",
+      "card_nature": "execution",
+      "title": "确保集团政策符合美国《银行保密法》最低标准",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "外国金融机构在美国设有分行",
+          "evidence_unit_ids": [
+            "v7u_N001847"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "《银行保密法》的最低标准",
+          "evidence_unit_ids": [
+            "v7u_N001847"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "确保其集团政策符合《银行保密法》的最低标准",
+          "evidence_unit_ids": [
+            "v7u_N001847"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001847"
+          ],
+          "condition": "外国金融机构在美国设有分行",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "n003",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001847"
+          ],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001847"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：外国金融机构在美国设有分行的前提下，需确保集团政策符合BSA最低标准；证据范围：v7u_N001847；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S11_002",
+      "section_id": "CH24-S11",
+      "card_nature": "execution",
+      "title": "通过附加司法管辖区特定附录应对跨境监管差异",
+      "flow_nodes": [
+        {
+          "node_id": "n004",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "国际金融机构面临不同司法管辖区的反洗钱标准差异",
+          "evidence_unit_ids": [
+            "v7u_N001849"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "附加司法管辖区特定附录至集团反洗钱政策",
+          "evidence_unit_ids": [
+            "v7u_N001849"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N001849"
+          ],
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001849"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：面对跨境反洗钱标准差异，国际金融机构通过附加司法管辖区特定的附录来应对；证据范围：v7u_N001849；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S11_003",
+      "section_id": "CH24-S11",
+      "card_nature": "execution",
+      "title": "在附录中记录更高的当地反洗钱标准",
+      "flow_nodes": [
+        {
+          "node_id": "n006",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "某司法管辖区的反洗钱标准高于母国标准",
+          "evidence_unit_ids": [
+            "v7u_N001850"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n007",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "在附录中记录该更高的反洗钱标准",
+          "evidence_unit_ids": [
+            "v7u_N001850"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n006",
+          "target": "n007",
+          "evidence_unit_ids": [
+            "v7u_N001850"
+          ],
+          "condition": "当地反洗钱标准高于母国标准",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001850"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当某司法管辖区的反洗钱标准高于母国标准时，金融机构应在附录中记录此更高标准；证据范围：v7u_N001850；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH24-S11_004",
+      "section_id": "CH24-S11",
+      "card_nature": "execution",
+      "title": "在允许的情况下对海外分支和子公司适用FATF反洗钱原则",
+      "flow_nodes": [
+        {
+          "node_id": "n008",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "当地适用法律法规允许",
+          "evidence_unit_ids": [
+            "v7u_N001854"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n009",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对海外分支和子公司适用《FATF建议》中的原则",
+          "evidence_unit_ids": [
+            "v7u_N001854"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRECEDES",
+          "source": "n008",
+          "target": "n009",
+          "evidence_unit_ids": [
+            "v7u_N001854"
+          ],
+          "condition": "当地适用法律法规允许",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001854"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在法律法规允许的条件下，金融机构应对海外分支适用FATF原则；证据范围：v7u_N001854；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S11_001"
+      ],
+      "reason": "该候选明确包含外国金融机构的美国分行须遵守BSA标准并确保集团政策合规的强制性义务，构成独立的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S11_002",
+        "p7card_CH24-S11_003"
+      ],
+      "reason": "该候选包含两个独立且可拆分的合规流程：一是因监管差异而附加司法管辖区附录，二是在当地标准更高时有条件地在附录中记录。前者产生可复用的附录，后者在不同条件下利用该产物。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH24-S11_004"
+      ],
+      "reason": "该候选描述了在允许的条件下向海外分支适用FATF原则的条件性义务，构成独立的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "该候选描述的是高级别管理原则（取得全球政策与当地附录的平衡）和遵守治理义务，未提供具体的程序性迁移、触发或业务判断，属于非流程性知识。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role; '外国金融机构在美国设有分行' 构成启动合规要求的业务情景，属于事件信号。",
+      "e002": "standard role; node_type=standard",
+      "e003": "action role; 动作是确保政策符合标准，属于执行类动作P2_execution。"
+    },
+    "ep_002": {
+      "e004": "context role; '面临不同司法管辖区的反洗钱标准差异' 属于环境异常/变化，触发应对动作。",
+      "e005": "action role; 附加附录是执行性动作，产生附录产品。"
+    },
+    "ep_003": {
+      "e006": "context role; '标准高于母国' 是一个比较阈值状态，触发记录。",
+      "e007": "action role; 记录标准是执行动作。"
+    },
+    "ep_004": {
+      "e008": "context role; '当地法律法规允许' 是阈值条件，触发适用原则。",
+      "e009": "action role; 适用原则是执行动作。"
+    }
+  },
+  "skip_reason": null
+}

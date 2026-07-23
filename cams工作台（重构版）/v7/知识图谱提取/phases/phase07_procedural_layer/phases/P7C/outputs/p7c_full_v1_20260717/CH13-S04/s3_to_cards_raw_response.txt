@@ -1,0 +1,90 @@
+{
+  "section_id": "CH13-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH13-S04_001",
+      "section_id": "CH13-S04",
+      "card_nature": "execution",
+      "title": "虚拟资产服务提供商应将与混合器相关的交易视为高风险并采取尽职措施",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "交易与混合器或翻滚器相关",
+          "evidence_unit_ids": [
+            "v7u_N001040"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "虚拟资产服务提供商将相关交易视为高风险并采取适当尽职调查措施",
+          "evidence_unit_ids": [
+            "v7u_N001040"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低潜在风险",
+          "evidence_unit_ids": [
+            "v7u_N001040"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "交易与混合器或翻滚器相关",
+          "evidence_unit_ids": [
+            "v7u_N001040"
+          ]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001040"
+          ]
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001040"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：根据交易与混合器/翻滚器关联的条件，虚拟资产服务提供商应将交易视为高风险并采取适当尽职调查措施，旨在降低潜在风险；证据范围：v7u_N001040；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH13-S04_001"
+      ],
+      "reason": "该候选描述了基于交易关联混合器的条件，将交易视为高风险并采取尽职措施的流程，属于程序性迁移。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, 交易与混合器相关表示异常情况触发处理，符合E6_change_exception定义",
+      "e002": "action role, 主要动作为将交易视为高风险并采取尽职措施，属于执行动作，符合P2_execution定义",
+      "e003": "outcome role, 降低潜在风险是业务对象状态变化，符合X3_state_change定义"
+    }
+  },
+  "skip_reason": null
+}

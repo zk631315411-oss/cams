@@ -1,0 +1,273 @@
+{
+  "section_id": "CH31-S08",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "当两国间没有MLAT时，如何请求司法协助？",
+      "title": "通过正式国际请求书提出司法协助请求",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "没有MLAT的情况",
+          "evidence_unit_ids": ["v7u_N002284"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "通过正式国际请求书提出协助请求",
+          "evidence_unit_ids": ["v7u_N002284"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "请求由特定政府部门集中管理",
+          "evidence_unit_ids": ["v7u_N002284"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "没有MLAT",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002284"],
+          "source_quote": "In cases where no MLAT is in place, requests are made by a formal international letter of request, also known as commissions rogatoires in civil law jurisdictions and letters rogatory elsewhere."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "result_handoffs_stage",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002284"],
+          "source_quote": "These requests are managed centrally by specific government departments."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "在什么情况下司法协助请求会被拒绝？",
+      "title": "基于政治、安全或双重犯罪原则拒绝司法协助",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "政治或安全原因",
+          "evidence_unit_ids": ["v7u_N002286"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "请求涉及的行为在两国不具有同等可罚性（双重犯罪原则）",
+          "evidence_unit_ids": ["v7u_N002286"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "decision",
+          "label": "被请求国可拒绝提供司法协助",
+          "evidence_unit_ids": ["v7u_N002286"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e001",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002286"],
+          "source_quote": "Legal assistance can be denied by either jurisdiction due to political or security reasons"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002286"],
+          "source_quote": "or if the offense is not equally punishable in each jurisdiction"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "MLAT的措辞如何影响请求所涉犯罪是否被认可？",
+      "title": "MLAT措辞导致特定犯罪不被认可并致使请求无效",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "MLAT的措辞（是否涵盖特定犯罪）",
+          "evidence_unit_ids": ["v7u_N002287"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "被请求国可能不认可请求国所指的特定犯罪",
+          "evidence_unit_ids": ["v7u_N002287"],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "协助请求无效（如对加勒比避税港）",
+          "evidence_unit_ids": ["v7u_N002288"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002287"],
+          "source_quote": "Depending on how the MLAT has been written, certain jurisdictions might not recognize specific crimes from the requesting state."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002288"],
+          "source_quote": "For example, agreements between the US and the Caribbean do not cover US tax evasion, so they are ineffective when applied to Caribbean jurisdictions, which are often tax havens."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "在EIO框架下，执行当局有什么义务？",
+      "title": "EIO基于相互承认原则要求执行当局执行请求",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "standard",
+          "label": "相互承认原则（EIO基于相互承认）",
+          "evidence_unit_ids": ["v7u_N002290"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "执行当局必须承认并执行其他司法管辖区的请求",
+          "evidence_unit_ids": ["v7u_N002290"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "reference",
+          "process_element_id": "e002",
+          "auxiliary_element_id": "e001",
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002290"],
+          "source_quote": "The EIO is based on mutual recognition; that is, the executing authority must, in principle, recognize and ensure execution of the request of the other jurisdiction."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_005",
+      "source_candidate_ids": ["s1c_005"],
+      "focal_question": "英国脱欧对EIO的适用有什么影响？",
+      "title": "英国脱欧后不再接受EIO",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "英国于2020年1月31日脱离欧盟",
+          "evidence_unit_ids": ["v7u_N002291"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "英国不能再接受EIO",
+          "evidence_unit_ids": ["v7u_N002291"],
+          "modality": "prohibited"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N002291"],
+          "source_quote": "Since the UK’s withdrawal from the EU on January 31, 2020, it can no longer accept EIOs."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选描述无MLAT时通过国际请求书提出请求并被集中管理的程序性关系，独立支持一个episode。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选提供政治、安全、双重犯罪等拒绝协助的判断标准，独立支持一个程序性判断episode。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_003"],
+      "reason": "该候选说明MLAT措辞可能导致犯罪不被认可并致使请求无效的判断链，独立支持一个episode。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_004"],
+      "reason": "该候选描述EIO下基于相互承认原则必须执行请求的义务，独立支持一个episode。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "episode_ids": ["ep_005"],
+      "reason": "该候选陈述英国脱欧导致不再接受EIO的因果链，独立支持一个episode。"
+    }
+  ],
+  "skip_reason": null
+}

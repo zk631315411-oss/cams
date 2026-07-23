@@ -1,0 +1,304 @@
+{
+  "section_id": "CH12-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH12-S02_001",
+      "section_id": "CH12-S02",
+      "card_nature": "assessment",
+      "title": "调查并应对投资连结保险相关洗钱风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Mary的分析已将Tom的交易标记为异常",
+          "evidence_unit_ids": [
+            "v7u_N000899"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Peter的投诉确认了Mary的担忧",
+          "evidence_unit_ids": [
+            "v7u_N000899"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "触发深入调查",
+          "evidence_unit_ids": [
+            "v7u_N000899"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "调查发现红旗信号：Tom的兄弟拥有为Tom客户提供保费贷款的金融公司；Tom与妻子拥有一家看似无牌的离岸投资公司管理保单资金；承诺15%回报与市场常态不符",
+          "evidence_unit_ids": [
+            "v7u_N000900",
+            "v7u_N000901",
+            "v7u_N000902"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n005",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Mary识别风险、报告发现并建议立即采取行动",
+          "evidence_unit_ids": [
+            "v7u_N000903"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n006",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "对涉及投资连结保险的经纪人和关联实体实施强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N000904"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n007",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "监控所有权结构以发现利益冲突并防止串通",
+          "evidence_unit_ids": [
+            "v7u_N000905"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "要求员工和代理人申报外部商业利益，包括密切关联方利益",
+          "evidence_unit_ids": [
+            "v7u_N000906"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n009",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "向经纪人提供针对性反洗钱培训，强调红旗信号和合规义务",
+          "evidence_unit_ids": [
+            "v7u_N000907"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n010",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Tom因串通和虚假陈述证据被解雇",
+          "evidence_unit_ids": [
+            "v7u_N000908"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000899"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Mary’s analytics had already flagged Tom’s transactions as unusual."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N000899"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Peter’s complaint confirmed her concerns and triggered a deeper investigation."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "evidence_unit_ids": [
+            "v7u_N000899",
+            "v7u_N000900",
+            "v7u_N000901",
+            "v7u_N000902"
+          ],
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "source_quote": "a deeper investigation. Several red flags emerged:"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "PRECEDES",
+          "source": "n004",
+          "target": "n005",
+          "evidence_unit_ids": [
+            "v7u_N000903"
+          ],
+          "condition": null,
+          "relation_type": "identification_leads_to_conclusion",
+          "qualifier": null,
+          "source_quote": "Recognizing the risks, Mary reported her findings and recommended immediate actions:"
+        },
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n006",
+          "evidence_unit_ids": [
+            "v7u_N000904"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Apply enhanced due diligence to brokers and affiliated entities involved in ILIs."
+        },
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n007",
+          "evidence_unit_ids": [
+            "v7u_N000905"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Monitor ownership structures to detect conflicts of interest and prevent collusion."
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n008",
+          "evidence_unit_ids": [
+            "v7u_N000906"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Require employees and agents to declare external business interests, including those of close associates."
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n009",
+          "evidence_unit_ids": [
+            "v7u_N000907"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Provide targeted AML training to brokers, emphasizing red flags and compliance obligations."
+        },
+        {
+          "edge_id": "edge_009",
+          "edge_type": "PRODUCES",
+          "source": "n005",
+          "target": "n010",
+          "evidence_unit_ids": [
+            "v7u_N000908"
+          ],
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "qualifier": null,
+          "source_quote": "Tom was ultimately dismissed following evidence of collusion and misrepresentation."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000899",
+        "v7u_N000900",
+        "v7u_N000901",
+        "v7u_N000902",
+        "v7u_N000903",
+        "v7u_N000904",
+        "v7u_N000905",
+        "v7u_N000906",
+        "v7u_N000907",
+        "v7u_N000908"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于异常标记和投诉触发调查，发现利益冲突、无牌经营、回报异常等红旗信号，Mary识别风险并建议实施强化尽调、监控所有权、利益申报、反洗钱培训，最终解雇涉事经纪人。证据范围：v7u_N000899-v7u_N000908。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S02_001"
+      ],
+      "reason": "提供触发调查的异常交易和投诉确认，驱动调查启动。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S02_001"
+      ],
+      "reason": "提供基于风险识别报告发现并建议行动，输出具体措施。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S02_001"
+      ],
+      "reason": "提供调查结果的最终处置：Tom被解雇。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch12_s02_red_flag_details",
+      "disposition": "support_only",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH12-S02_001"
+      ],
+      "reason": "提供具体红旗信号，作为调查结果的必要输入。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, system-flagged anomaly indicating threshold → E3_state_threshold",
+      "e002": "context role, customer complaint as event → E1_event_signal",
+      "e003": "action role, triggering investigation is an execution action → P2_execution",
+      "e004": "outcome role, investigation findings constitute risk identification conclusion → X1_classification",
+      "e005": "action role, recognizing risks and reporting findings is assessment → P1_assessment",
+      "e006": "outcome role, recommended measure as a documented product → X2_product",
+      "e007": "X2_product",
+      "e008": "X2_product",
+      "e009": "X2_product",
+      "e010": "outcome role, dismissal changes employee status → X3_state_change"
+    }
+  },
+  "skip_reason": null
+}

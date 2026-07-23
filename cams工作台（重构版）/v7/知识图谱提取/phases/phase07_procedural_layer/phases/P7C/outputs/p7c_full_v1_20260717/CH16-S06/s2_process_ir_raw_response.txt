@@ -1,0 +1,149 @@
+{
+  "section_id": "CH16-S06",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_001"],
+      "focal_question": "为何及如何审查慈善机构和非政府组织以确保合法性",
+      "title": "基于滥用风险审查慈善机构和非政府组织以确保持续合法性",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "these organizations could be used to launder illicit funds or breach sanctions requirements",
+          "evidence_unit_ids": ["v7u_N001213"],
+          "modality": "risky"
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "charities and NGOs need to be scrutinized",
+          "evidence_unit_ids": ["v7u_N001214"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "ensure their ongoing legitimacy",
+          "evidence_unit_ids": ["v7u_N001214"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001213", "v7u_N001214"],
+          "source_quote": "Unfortunately, these organizations could be used to launder illicit funds or breach sanctions requirements. For this reason, charities and NGOs need to be scrutinized to ensure their ongoing legitimacy."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "qualifier": "aimed_to",
+          "relation_type": null,
+          "evidence_unit_ids": ["v7u_N001214"],
+          "source_quote": "need to be scrutinized to ensure their ongoing legitimacy."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_002"],
+      "focal_question": "研究慈善机构和非政府组织时应采取哪些步骤",
+      "title": "研究慈善机构和非政府组织时的审查步骤",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "researching charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "search the relevant registration authorities to confirm their exempt status and their annual tax return filings",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "consult websites that provide unbiased evaluations of charities and NGOs",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "confirm their exempt status and their annual tax return filings",
+          "evidence_unit_ids": ["v7u_N001225"],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "researching charities and NGOs",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001225"],
+          "source_quote": "While researching charities and NGOs, be sure to search the relevant registration authorities to confirm their exempt status and their annual tax return filings."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "researching charities and NGOs",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": ["v7u_N001225"],
+          "source_quote": "While researching charities and NGOs, ... Also, consult websites that provide unbiased evaluations of charities and NGOs."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e004",
+          "qualifier": "aimed_to",
+          "relation_type": null,
+          "evidence_unit_ids": ["v7u_N001225"],
+          "source_quote": "be sure to search the relevant registration authorities to confirm their exempt status and their annual tax return filings."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选建立了基于滥用风险的审查要求，构成触发-行动-目的的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选提供了研究慈善机构时的具体审查步骤，形成条件触发的行动序列。"
+    }
+  ],
+  "skip_reason": null
+}

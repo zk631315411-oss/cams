@@ -1,0 +1,419 @@
+{
+  "section_id": "CH25-S01",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_004"
+      ],
+      "focal_question": "某项支付是否符合便利费豁免条件？",
+      "title": "判断支付是否符合便利费豁免条件",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "向外国政府官员支付款项",
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "支付仅为加快例行公务行动且即使不支付也会发生",
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "decision",
+          "label": "判断是否满足便利费豁免条件",
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "该支付被豁免，不构成FCPA贿赂",
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "if the payment is made solely to expedite a routine official action that would occur even without the payment",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "source_quote": "the FCPA’s bribery provisions generally exempt facilitation payments if they are made solely to expedite a routine official action that would occur even without the payment."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "reference",
+          "trigger_mode": null,
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "source_quote": "the FCPA’s bribery provisions generally exempt facilitation payments if they are made solely to expedite a routine official action that would occur even without the payment."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e003",
+          "outcome_element_id": "e004",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N001970"
+          ],
+          "source_quote": "the FCPA’s bribery provisions generally exempt facilitation payments if they are made solely to expedite a routine official action that would occur even without the payment."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_005",
+        "s1c_006"
+      ],
+      "focal_question": "商业实体是否应对关联人行贿承担严格责任？",
+      "title": "依据保障措施判定严格责任",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "商业实体通过关联人实施贿赂",
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "standard",
+          "label": "充分的防贿赂保障措施（包括相称程序、高层承诺、风险评估、尽职调查、培训沟通、监测审查）",
+          "evidence_unit_ids": [
+            "v7u_N001973",
+            "v7u_N001974"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "decision",
+          "label": "判定是否承担严格责任",
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "承担严格责任",
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "免除严格责任",
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": "unless the entity can demonstrate sufficient anti-bribery safeguards",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "source_quote": "It also introduced strict liability for commercial entities that engage in bribery through associated persons, unless the entity can demonstrate it has sufficient anti-bribery safeguards."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "branch",
+          "trigger_mode": null,
+          "decision_element_id": "e003",
+          "target_element_id": "e004",
+          "condition": "实体未能证明有充分防贿赂保障措施",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "source_quote": "unless the entity can demonstrate it has sufficient anti-bribery safeguards"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "branch",
+          "trigger_mode": null,
+          "decision_element_id": "e003",
+          "target_element_id": "e005",
+          "condition": "实体证明有充分防贿赂保障措施",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001973"
+          ],
+          "source_quote": "unless the entity can demonstrate it has sufficient anti-bribery safeguards"
+        },
+        {
+          "relation_id": "r004",
+          "kind": "reference",
+          "trigger_mode": null,
+          "process_element_id": "e003",
+          "auxiliary_element_id": "e002",
+          "condition": null,
+          "relation_type": "standard_constrains_action",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001974"
+          ],
+          "source_quote": "these safeguards must include proportionate procedures, senior management commitment, risk assessment, due diligence, communication that includes training, and monitoring and review."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_007"
+      ],
+      "focal_question": "大型公司和公共实体如何履行Sapin II反腐败计划义务？",
+      "title": "执行反腐败计划义务",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "大型公司或公共实体",
+          "evidence_unit_ids": [
+            "v7u_N001976"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "制定符合特定标准的反腐败计划",
+          "evidence_unit_ids": [
+            "v7u_N001976"
+          ],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "拥有反腐败计划",
+          "evidence_unit_ids": [
+            "v7u_N001976"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001976"
+          ],
+          "source_quote": "For large companies and public entities, Sapin II introduced an obligation to have an anticorruption program meeting specific criteria."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "trigger_mode": null,
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N001976"
+          ],
+          "source_quote": "Sapin II introduced an obligation to have an anticorruption program meeting specific criteria."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_004",
+      "source_candidate_ids": [
+        "s1c_008"
+      ],
+      "focal_question": "法国反腐败局如何处理腐败调查发现？",
+      "title": "法国反腐败局的执行行动",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "腐败调查发现",
+          "evidence_unit_ids": [
+            "v7u_N001978"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "实施行政处罚",
+          "evidence_unit_ids": [
+            "v7u_N001978"
+          ],
+          "modality": "permitted"
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "移送国家金融检察官办公室",
+          "evidence_unit_ids": [
+            "v7u_N001978"
+          ],
+          "modality": "permitted"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001978"
+          ],
+          "source_quote": "This agency can impose administrative penalties and refer findings to the National Financial Prosecutor’s Office."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N001978"
+          ],
+          "source_quote": "This agency can impose administrative penalties and refer findings to the National Financial Prosecutor’s Office."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "FCPA 禁止支付规定是静态法律条款，无过程性判断或业务处理"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "FCPA 域外适用描述是法律适用范围，无具体判断触发过程"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "FEPTA 将收受贿赂定为犯罪是罪名设立，不涉及业务过程"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选描述便利费豁免的条件判断，构成评估过程"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选描述严格责任的认定，包含证明保障措施的条件判断"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "disposition": "support_only",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选提供保障措施的要素，作为严格责任认定的评估标准"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选规定Sapin II下大型主体制定反腐计划的业务义务"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_004"
+      ],
+      "reason": "该候选描述法国反腐败局基于发现采取处罚和移送的程序"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "Sapin II 创建 DPA 机制属于机制存在描述，非具体案例处理过程"
+    }
+  ],
+  "skip_reason": null
+}

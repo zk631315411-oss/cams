@@ -1,0 +1,389 @@
+{
+  "section_id": "CH37-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S03_001",
+      "section_id": "CH37-S03",
+      "card_nature": "execution",
+      "title": "应用控制措施降低固有风险",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织识别固有风险",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "必须应用控制措施",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "将固有风险降至可接受的剩余风险水平",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N002773"],
+          "relation_type": "result_handoffs_stage"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002773"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：识别固有风险后应用控制措施将其降至可接受剩余风险；证据范围：v7u_N002773；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S03_002",
+      "section_id": "CH37-S03",
+      "card_nature": "assessment",
+      "title": "高固有风险 PEPs 情况下实施控制并判断有效性以降低剩余风险",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "招揽政治敏感人物（PEPs）的固有风险高",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "可能实施加强尽职调查（EDD）、要求提供资金来源和财富证明并加强业务关系监控",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "判断这些控制措施是否有效",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "剩余风险可能降至中低水平",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "condition": "固有风险高",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "e002",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "relation_type": "identification_leads_to_conclusion"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "e003",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N002775"],
+          "condition": "控制措施被判断为有效",
+          "qualifier": "may_lead_to",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002775"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：高固有风险PEPs通过强化控制及有效性判断降低剩余风险；证据范围：v7u_N002775；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S03_003",
+      "section_id": "CH37-S03",
+      "card_nature": "assessment",
+      "title": "评估控制措施的设计有效性和运营有效性",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "应评估控制措施在降低固有风险方面的有效性",
+          "evidence_unit_ids": ["v7u_N002771"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "应同时评估控制措施的设计有效性和运营有效性",
+          "evidence_unit_ids": ["v7u_N002776"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确定控制措施在降低固有风险方面的有效性",
+          "evidence_unit_ids": ["v7u_N002771"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "要成功衡量运营有效性，控制需运行足够时间（例如月度控制至少需要三至六个月的数据）",
+          "evidence_unit_ids": ["v7u_N002785", "v7u_N002786"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N002771"],
+          "qualifier": "aimed_to"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002776"],
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "REFERENCES",
+          "source": "e001",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N002785", "v7u_N002786"],
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002771", "v7u_N002776", "v7u_N002785", "v7u_N002786"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：从设计与运营两维度评估控制有效性；证据范围：v7u_N002771, v7u_N002776, v7u_N002785, v7u_N002786；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S03_004",
+      "section_id": "CH37-S03",
+      "card_nature": "execution",
+      "title": "设计缺陷时重新设计控制",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "控制流程设计存在缺陷或漏洞",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P6_feedback",
+          "label": "必须重新设计控制",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002779"],
+          "condition": "设计存在缺陷或漏洞",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002779"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：设计缺陷触发重新设计控制；证据范围：v7u_N002779；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S03_005",
+      "section_id": "CH37-S03",
+      "card_nature": "execution",
+      "title": "运营失效时的根因分析和纠正措施",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "运营失效（如KYC文件缺少制裁筛查结果）",
+          "evidence_unit_ids": ["v7u_N002783"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P6_feedback",
+          "label": "必须分析并纠正错误的根本原因",
+          "evidence_unit_ids": ["v7u_N002783"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P6_feedback",
+          "label": "可能需要重新设计质量控制（QC）流程",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "e004",
+          "node_category": "process",
+          "node_type": "P6_feedback",
+          "label": "如果识别出人为错误，可能需要提供额外培训",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "evidence_unit_ids": ["v7u_N002783"],
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e003",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "condition": "由于遗漏的筛查结果未被发现",
+          "relation_type": "conclusion_triggers_response"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e004",
+          "evidence_unit_ids": ["v7u_N002784"],
+          "condition": "如果识别出人为错误",
+          "relation_type": "conclusion_triggers_response"
+        }
+      ],
+      "source_unit_ids": ["v7u_N002783", "v7u_N002784"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：运营失效触发根因分析及可选纠正措施；证据范围：v7u_N002783, v7u_N002784；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_001"],
+      "reason": "该候选独立支持识别固有风险后应用控制措施降低剩余风险的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_002"],
+      "reason": "该候选提供高固有风险 PEPs 情况下实施强化控制并判断有效性以降低剩余风险的示例，构成完整的判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_004"],
+      "reason": "该候选独立支持控制设计缺陷触发重新设计控制的程序性流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_005"],
+      "reason": "该候选独立支持运营失效触发的根因分析和纠正措施流程，包含多个可能的分支动作。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s03_evaluate_control_effectiveness",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_003"],
+      "reason": "该候选提供评估控制措施（包括设计有效性和运营有效性）的独立评估流程，构成评估性 episode。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s03_operational_effectiveness_duration",
+      "disposition": "support_only",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH37-S03_003"],
+      "reason": "自身不构成独立程序性流程，但为评估运营有效性提供必要的条件标准（控制需运行足够时间），作为 ep_003 的 standard 元素。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context entry triggered by the event of identifying inherent risks → E1_event_signal",
+      "e002": "action to apply control measures (execution) → P2_execution",
+      "e003": "outcome changes risk level to acceptable residual → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "context describes a state where PEP inherent risk is high → E3_state_threshold",
+      "e002": "action to implement EDD etc. (execution) → P2_execution",
+      "e003": "decision node judges control effectiveness, implicitly routes path → P3_branch_routing",
+      "e004": "outcome changes residual risk level → X3_state_change"
+    },
+    "ep_003": {
+      "e001": "action evaluates effectiveness (assessment) → P1_assessment",
+      "e002": "standard constrains evaluation approach → auxiliary standard",
+      "e003": "outcome determines effectiveness conclusion → X1_classification",
+      "e004": "standard constrains operational effectiveness measurement → auxiliary standard"
+    },
+    "ep_004": {
+      "e001": "context describes design gaps/flaws (exception) → E6_change_exception",
+      "e002": "action to redesign control (feedback loop) → P6_feedback"
+    },
+    "ep_005": {
+      "e001": "context describes operational failure (exception) → E6_change_exception",
+      "e002": "action to analyze and correct root cause (feedback) → P6_feedback",
+      "e003": "optional action to redesign QC (feedback) → P6_feedback",
+      "e004": "optional action training (feedback) → P6_feedback"
+    }
+  },
+  "skip_reason": null
+}

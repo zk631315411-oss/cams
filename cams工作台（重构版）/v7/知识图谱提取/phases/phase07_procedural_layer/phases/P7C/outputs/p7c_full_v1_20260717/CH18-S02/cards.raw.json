@@ -1,0 +1,97 @@
+{
+  "section_id": "CH18-S02",
+  "cards": [
+    {
+      "card_id": "p7card_CH18-S02_001",
+      "section_id": "CH18-S02",
+      "card_nature": "execution",
+      "title": "受制裁地区客户申请时的强化尽职调查与监控流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "客户来自受制裁司法管辖区并申请账户",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "合规人员执行强化尽职调查、筛查政治敏感人物和增强异常交易监控",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "降低无意中协助洗钱或违反制裁的风险",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "evidence_strength": "explicit",
+          "modality": null
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "source_quote": "when a customer from a sanctioned jurisdiction applies for an account, compliance personnel at FinTrust must act immediately."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N001283"
+          ],
+          "source_quote": "These controls lower the risk of unknowingly facilitating money laundering or violating sanctions."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N001283"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当受制裁地区客户申请账户时，FinTrust合规人员必须执行强化尽职调查、政治敏感人物筛查和异常交易监控，以此降低无意中协助洗钱或违反制裁的风险。证据范围：v7u_N001283；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_card",
+      "card_ids": [
+        "p7card_CH18-S02_001"
+      ],
+      "reason": "候选提供完整的条件触发、强化尽职调查动作与风险降低结果，已映射为流程卡片。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch18_s02_ignore_standards_consequences",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "该候选描述的是忽视标准的法律与监管后果，不包含可构图的业务判断或流程，仅作为背景知识保留。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "客户来自特定辖区申请账户，属于某类客户进入处理范围，选择E2_object_entry。",
+      "e002": "合规人员执行一系列具体的风险缓释动作，直接变更业务对象状态，选择P2_execution。",
+      "e003": "风险水平被降低，表明业务对象进入新的稳定状态，选择X3_state_change。"
+    }
+  },
+  "skip_reason": null
+}

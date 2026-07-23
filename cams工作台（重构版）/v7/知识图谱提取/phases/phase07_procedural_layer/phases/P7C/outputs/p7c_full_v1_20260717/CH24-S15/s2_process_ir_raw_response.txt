@@ -1,0 +1,162 @@
+{
+  "section_id": "CH24-S15",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": ["s1c_003"],
+      "focal_question": "义务实体在《反洗钱法》下须遵守哪些强化合规义务？",
+      "title": "义务实体须遵守强化合规义务",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "义务实体受《反洗钱法》约束",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "遵守强化合规义务",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "实施强化内部控制",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "进行客户尽职调查",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "modality": "required"
+        },
+        {
+          "element_id": "e005",
+          "role": "outcome",
+          "label": "报告可疑交易",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "relation_type": "standard_transmits_requirement",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "source_quote": "Under the AML Law, obliged entities must abide by enhanced compliance obligations"
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "source_quote": "implementing enhanced internal controls"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e004",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "source_quote": "conducting CDD"
+        },
+        {
+          "relation_id": "r004",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e005",
+          "evidence_unit_ids": ["v7u_N001920"],
+          "source_quote": "reporting suspicious transactions"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": ["s1c_004"],
+      "focal_question": "低风险客户应适用何种客户尽职调查措施？",
+      "title": "低风险客户须采用简化客户尽职调查",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "低风险客户",
+          "evidence_unit_ids": ["v7u_N001921"],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "采用简化客户尽职调查",
+          "evidence_unit_ids": ["v7u_N001921"],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "客户为低风险",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": ["v7u_N001921"],
+          "source_quote": "mandates simplified CDD for low-risk clients"
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述法律适用范围（上游犯罪扩展至任何犯罪活动），为静态法律事实，不包含业务程序或判断性迁移。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述法律的域外管辖条件，为法律自身适用范围的静态判断，不涉及实体业务流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": ["ep_001"],
+      "reason": "该候选明确了义务实体须遵守的强化合规义务及具体动作，构成程序性义务。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "episode_ids": ["ep_002"],
+      "reason": "该候选规定了低风险客户触发简化CDD的强制性动作，构成条件触发的程序。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述法律对违规行为的处罚规定，为静态法律后果，不包含实体业务流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch24_s15_judicial_redress",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "该候选描述实体因不当账户冻结可寻求司法救济，为法律规定的权利，不属于反洗钱义务实体的业务流程。"
+    }
+  ],
+  "skip_reason": null
+}

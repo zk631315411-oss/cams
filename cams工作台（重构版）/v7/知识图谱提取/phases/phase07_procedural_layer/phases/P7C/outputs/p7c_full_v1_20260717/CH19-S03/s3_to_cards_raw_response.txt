@@ -1,0 +1,552 @@
+{
+  "section_id": "CH19-S03",
+  "cards": [
+    {
+      "card_id": "p7card_CH19-S03_001",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "触发客户尽职调查的情形",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Initiating business relationships, processing occasional transactions above a set threshold, suspecting money laundering or terrorist financing, or questioning the accuracy of previously obtained customer identification data",
+          "evidence_unit_ids": ["v7u_N001355"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should conduct CDD",
+          "evidence_unit_ids": ["v7u_N001355"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when any of the triggering events occur",
+          "evidence_unit_ids": ["v7u_N001355"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001355"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：触发客户尽职调查的四种情形以及金融机构必须执行CDD；证据范围：v7u_N001355；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_002",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "保留交易记录和CDD信息以确保响应合规",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should retain transaction records and CDD information for at least five years",
+          "evidence_unit_ids": ["v7u_N001356"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "To ensure timely compliance with requests from relevant authorities",
+          "evidence_unit_ids": ["v7u_N001356"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001356"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001356"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：保留交易记录和CDD信息至少五年以确保及时响应权力机构要求；证据范围：v7u_N001356；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_003",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "PEP识别、批准和验证流程",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Financial institutions should identify PEPs",
+          "evidence_unit_ids": ["v7u_N001358"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should obtain senior management approval to establish a business relationship with a PEP",
+          "evidence_unit_ids": ["v7u_N001358"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Financial institutions should verify PEPs' sources of wealth and funds",
+          "evidence_unit_ids": ["v7u_N001358"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001358"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N001358"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001358"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：PEP识别、高级管理层批准、财富和资金来源验证的先后顺序；证据范围：v7u_N001358；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_004",
+      "section_id": "CH19-S03",
+      "card_nature": "assessment",
+      "title": "评估代理行AML/CFT控制",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Before initiating a correspondent relationship",
+          "evidence_unit_ids": ["v7u_N001359"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Financial institutions should assess respondent institutions’ AML/CFT controls",
+          "evidence_unit_ids": ["v7u_N001359"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "before initiating a correspondent relationship",
+          "evidence_unit_ids": ["v7u_N001359"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001359"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：在建立代理行关系之前评估对方反洗钱/反恐怖融资控制措施；证据范围：v7u_N001359；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_005",
+      "section_id": "CH19-S03",
+      "card_nature": "assessment",
+      "title": "评估新技术风险",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "New technologies",
+          "evidence_unit_ids": ["v7u_N001361"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Financial institutions should assess risks from new technologies",
+          "evidence_unit_ids": ["v7u_N001361"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001361"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001361"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：新技术的出现要求金融机构评估其带来的风险；证据范围：v7u_N001361；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_006",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "确保电汇数据准确",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Wire transfers",
+          "evidence_unit_ids": ["v7u_N001361"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should ensure accurate originator and beneficiary data in wire transfers",
+          "evidence_unit_ids": ["v7u_N001361"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001361"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001361"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：处理电汇时须确保发端人和受益人数据准确；证据范围：v7u_N001361；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_007",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "依赖第三方CDD的条件",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "Third-party CDD meets certain criteria",
+          "evidence_unit_ids": ["v7u_N001362"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions may rely on third-party CDD",
+          "evidence_unit_ids": ["v7u_N001362"],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "if it meets certain criteria",
+          "evidence_unit_ids": ["v7u_N001362"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001362"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当第三方CDD满足特定标准时，金融机构可依赖其进行客户尽职调查；证据范围：v7u_N001362；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_008",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "对高风险辖区强化尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "Business relationships and transactions with persons and institutions from jurisdictions FATF identifies as higher risk",
+          "evidence_unit_ids": ["v7u_N001363"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should apply enhanced due diligence",
+          "evidence_unit_ids": ["v7u_N001363"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "when dealing with persons and institutions from higher-risk jurisdictions",
+          "evidence_unit_ids": ["v7u_N001363"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001363"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：与高风险辖区个人和机构建立业务关系或交易时须强化尽职调查；证据范围：v7u_N001363；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_009",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "报告可疑交易给金融情报机构",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Suspicious transactions identified",
+          "evidence_unit_ids": ["v7u_N001364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial institutions should report suspicious transactions to the relevant Financial Intelligence Unit (FIU)",
+          "evidence_unit_ids": ["v7u_N001364"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": ["v7u_N001364"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001364"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：识别可疑交易后须向金融情报机构报告；证据范围：v7u_N001364；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH19-S03_010",
+      "section_id": "CH19-S03",
+      "card_nature": "execution",
+      "title": "DNFBP的AML/CFT合规要求",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "DNFBP should implement internal controls",
+          "evidence_unit_ids": ["v7u_N001366"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "DNFBP should report suspicious transactions",
+          "evidence_unit_ids": ["v7u_N001366"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "DNFBP should be subject to regulatory and supervisory measures",
+          "evidence_unit_ids": ["v7u_N001366"],
+          "evidence_strength": "explicit",
+          "modality": "optional"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "To ensure compliance with AML/CFT requirements",
+          "evidence_unit_ids": ["v7u_N001366"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "n001",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001366"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "n002",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001366"]
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": ["v7u_N001366"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N001366"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：DNFBP须实施内控、报告可疑交易并接受监管，以确保AML/CFT合规；证据范围：v7u_N001366；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "decision": "p7c_ungraphable",
+      "card_ids": [],
+      "reason": "原文建议保密法不得阻碍FATF建议实施，但未提供具体程序步骤或判断过程，无法构建连通流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_001"],
+      "reason": "候选提供了明确的触发条件和动作，构成了CDD触发流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_002"],
+      "reason": "保留记录的动作并有确保合规的目的，构成流程。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_003"],
+      "reason": "针对PEP的一系列措施构成清晰的流程。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_004"],
+      "reason": "建立代理行关系前的评估动作构成流程。"
+    },
+    {
+      "candidate_id": "s1c_006",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "对货币或价值转移服务提供商的许可和监控要求是静态义务，没有描述具体业务程序或判断。"
+    },
+    {
+      "candidate_id": "s1c_007",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_005", "p7card_CH19-S03_006"],
+      "reason": "候选包含两个独立义务：评估新技术风险和确保电汇数据准确，分别构成独立流程，因此拆分。"
+    },
+    {
+      "candidate_id": "s1c_008",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_007"],
+      "reason": "条件性允许依赖第三方CDD构成判断流程。"
+    },
+    {
+      "candidate_id": "s1c_009",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_008"],
+      "reason": "候选中的强化尽职调查部分构成流程，其余为静态义务被排除。"
+    },
+    {
+      "candidate_id": "s1c_010",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_009"],
+      "reason": "报告可疑交易的义务构成流程。"
+    },
+    {
+      "candidate_id": "s1c_011",
+      "decision": "kg_only",
+      "card_ids": [],
+      "reason": "法律保护免于责任和禁止披露的要求属于法律层面的保护规定，不是机构执行的业务流程。"
+    },
+    {
+      "candidate_id": "s1c_012",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH19-S03_010"],
+      "reason": "针对DNFBP的AML合规措施构成流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, multiple triggering events → E1_event_signal",
+      "e002": "action role, conduct CDD → P2_execution"
+    },
+    "ep_002": {
+      "e001": "action role, retain records → P2_execution",
+      "e002": "outcome role, enable compliance → X7_continuing_obligation"
+    },
+    "ep_003": {
+      "e001": "action role, identify PEPs (risk signal identification) → P1_assessment",
+      "e002": "action role, obtain management approval → P2_execution",
+      "e003": "action role, verify sources of wealth/funds (assessment) → P1_assessment"
+    },
+    "ep_004": {
+      "e001": "context role, before correspondent relationship → E1_event_signal",
+      "e002": "action role, assess controls → P1_assessment"
+    },
+    "ep_005": {
+      "e001": "context role, new technologies as change → E6_change_exception",
+      "e002": "action role, assess risks → P1_assessment"
+    },
+    "ep_006": {
+      "e001": "context role, wire transfers as business event → E1_event_signal",
+      "e002": "action role, ensure data accuracy → P2_execution"
+    },
+    "ep_007": {
+      "e001": "context role, third-party CDD meets criteria → E3_state_threshold",
+      "e002": "action role, rely on third-party CDD → P2_execution"
+    },
+    "ep_008": {
+      "e001": "context role, higher-risk jurisdiction clients → E2_object_entry",
+      "e002": "action role, apply enhanced due diligence → P2_execution"
+    },
+    "ep_009": {
+      "e001": "context role, suspicious transactions identified as event → E1_event_signal",
+      "e002": "action role, report to FIU → P2_execution"
+    },
+    "ep_010": {
+      "e001": "action role, implement internal controls → P2_execution",
+      "e002": "action role, report suspicious transactions → P2_execution",
+      "e003": "action role, subject to regulatory measures → P2_execution",
+      "e004": "outcome role, ensure compliance → X7_continuing_obligation"
+    }
+  },
+  "skip_reason": null
+}

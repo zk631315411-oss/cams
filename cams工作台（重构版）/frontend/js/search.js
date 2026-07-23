@@ -12,7 +12,7 @@
       if (!query) { box.hidden = true; box.innerHTML = ""; return; }
       var results = [];
       state.units.some(function (unit) {
-        var haystack = normalize([unit.unit_id, unit.chapter, unit.knowledge_zh, unit.knowledge_en, unit.zh_display_text, unit.en_quote].join(" "));
+        var haystack = normalize([unit.unit_id, unit.chapter, unit.heading_context, unit.heading_context_zh, unit.knowledge_zh, unit.knowledge_en, unit.zh_display_text, unit.zh_context_full, unit.en_quote].join(" "));
         if (haystack.indexOf(query) >= 0) results.push({ type: "unit", id: unit.unit_id, label: unit.zh_display_text || unit.knowledge_zh || unit.en_quote });
         return results.length >= 8;
       });

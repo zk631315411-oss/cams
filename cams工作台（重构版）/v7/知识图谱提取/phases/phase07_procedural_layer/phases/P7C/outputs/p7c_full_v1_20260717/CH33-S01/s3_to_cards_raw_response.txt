@@ -1,0 +1,76 @@
+{
+  "section_id": "CH33-S01",
+  "cards": [
+    {
+      "card_id": "p7card_CH33-S01_001",
+      "section_id": "CH33-S01",
+      "card_nature": "execution",
+      "title": "识别并管理业务风险以确保合规和成功",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "为了成功",
+          "evidence_unit_ids": ["v7u_N002359"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "识别业务中的风险",
+          "evidence_unit_ids": ["v7u_N002359"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "谨慎管理这些风险",
+          "evidence_unit_ids": ["v7u_N002359"],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "为了成功",
+          "evidence_unit_ids": ["v7u_N002359"]
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": ["v7u_N002359"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N002359"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：识别并管理业务风险以确保成功；证据范围：[v7u_N002359]；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "decision": "p7c_card",
+      "card_ids": ["p7card_CH33-S01_001"],
+      "reason": "该候选包含原文明示的必须动作，构成程序性流程，可独立支撑episode。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role → entry类别；语义“为了成功”表示一种目标或决策结论，作为触发后续动作的条件，最接近 E8_decision_finding（前一判断本身触发后续义务）",
+      "e002": "action role → process类别；识别业务风险属于风险评估范畴，选 P1_assessment（识别风险信号或异常模式）",
+      "e003": "action role → process类别；谨慎管理风险是对业务对象实施应对措施，选 P2_execution（使状态发生变化）"
+    }
+  },
+  "skip_reason": null
+}

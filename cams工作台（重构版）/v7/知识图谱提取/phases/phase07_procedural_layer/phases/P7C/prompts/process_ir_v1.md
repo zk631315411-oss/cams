@@ -143,6 +143,7 @@ CH06-S10 示例：
 
 - `episode_id` 在 section 内唯一，格式 `ep_NNN`（从 001 开始）。
 - `source_candidate_ids` 至少一个，只能引用当前 S1 合并候选。
+- 每个 `source_candidate_id` 至少要有一个 unit 被当前 episode 的 element 或 relation 实际引用；不得只为解释合并而挂名。
 - `focal_question` 只能表达一个中心问题。它是边界确定后的摘要，不是拆合判据。
 - `card_nature` 限定为 `execution/assessment/risk_indicator/control`。
 - 至少包含一个 `action` 或 `decision` 元素，以及至少一条关系。
@@ -155,41 +156,31 @@ CH06-S10 示例：
 {
   "element_id": "e001",
   "role": "standard",
-  "node_type": "standard",
   "label": "适用的受益所有权阈值",
   "evidence_unit_ids": ["v7u_N000489"],
   "modality": null
 }
 ```
 
-`role` 只允许 `context / input / standard / action / decision / outcome`。
-
-`role/node_type` 兼容关系：
+`role` 只允许 `context / input / standard / action / decision / outcome`，各角色含义：
 
 ```text
-context   -> E1-E8
-input     -> input
-standard  -> standard
-action    -> P1-P2、P4-P10
-decision  -> P1_assessment、P3_branch_routing、P10_sufficiency
-outcome   -> X1-X7
+context   情境、触发事件、状态、发现——流程的起点
+input     输入数据、材料、信息——被处理动作参照
+standard  标准、阈值、规范——约束处理动作或判断
+action    具体业务处理、执行、收集、协调、监控等动作
+decision  判断、分支路由、充分性判定——产出决策
+outcome   分类、产物、状态变化、交接、配置、终止、持续义务——流程的终点或中间结果
 ```
-
-当前 schema 中的可用 node_type（你必须从中选择，不得使用不存在于以下列表的值）：
-
-- E1_event_signal, E2_object_entry, E3_state_threshold, E4_handoff, E5_time_cycle, E6_change_exception, E7_external_command, E8_decision_finding
-- P1_assessment, P2_execution, P3_branch_routing, P4_collection, P5_coordination, P6_feedback, P7_monitoring, P8_constrained_action, P9_planning, P10_sufficiency
-- X1_classification, X2_product, X3_state_change, X4_handoff, X5_config_change, X6_termination, X7_continuing_obligation
-- input, standard
 
 约束：
 
 - `element_id` 在 episode 内唯一，格式 `eNNN`（从 001 开始）。
-- `label` 保留原文主体、动作、否定和情态，不写通用占位语。
+- `label` 保留原文主体、动作、否定和情态，不写通用占位语。**不得添加原文没有的完成标记**：原文使用"旨在/the purpose is to/以/to mitigate"等目的或意图表述时，outcome label 必须保持目的语态（如"检测异常"），不得加"到/出了/已/已经"等完成标记（如"检测到异常"）。只有原文明示已产生的结果（produces/results in/导致/产生）时才可用结果语态。
 - `evidence_unit_ids` 非空且只能引用当前 section。
 - element 证据必须来自其 `source_candidate_ids` 覆盖 unit 的并集；不得发现 S1 未承接的新证据链。
 - `modality` 只允许 `required/permitted/prohibited/risky/optional` 或 `null`。映射规则：`must/shall/required`→`required`，`may/permitted`→`permitted`，`must not/prohibited`→`prohibited`；`should/might/could`等无法无损映射时填 `null`，并在 label 中保留原词。
-- `node_type` 必须从上述列表中选择，role 和 node_type 必须满足兼容关系表。
+- **不得输出 `node_type`**——精确 schema 类型由后续 S3 阶段确定。当前阶段只负责语义角色。
 
 ### 9.3 relation
 
@@ -197,10 +188,10 @@ outcome   -> X1-X7
 
 | kind | 端点字段 | 关键约束 |
 |---|---|---|
-| `trigger` | `trigger_element_id → process_element_id` | 必填 `trigger_mode`（`event` 或 `condition`）；条件触发必须保留 condition |
+| `trigger` | `trigger_element_id → process_element_id` | 情境或上一阶段的发现/结果触发后续动作或判断；必填 `trigger_mode`（`event` 或 `condition`）；条件触发必须保留 condition |
 | `sequence` | `before_element_id → after_element_id` | — |
 | `reference` | `process_element_id → auxiliary_element_id` | reference 方向固定为 process→auxiliary |
-| `produce` | `process_element_id → outcome_element_id` | 同义出口不得建 relation |
+| `produce` | `process_element_id → outcome_element_id` | target 必须是独立语义结果；同义出口不得建 relation。原文为"旨在/有助于/可能"等非确定表述时不要求精确——kind 是语义近似，S3 会对照 source_quote 确定精确 edge_type |
 | `branch` | `decision_element_id → target_element_id` | P3 至少两个互斥 branch，每条有 condition |
 | `feedback` | `result_element_id → process_element_id` | — |
 
@@ -217,7 +208,7 @@ trigger_mode=condition  原文使用 if/when/unless 等条件门禁；condition 
 
 | kind | 起点 role | 终点 role | 额外约束 |
 |---|---|---|---|
-| `trigger` | context | action 或 decision | trigger_mode 按上文校验 |
+| `trigger` | context 或 outcome | action 或 decision | 上一阶段的发现/结果触发后续动作或判断；trigger_mode 按上文校验 |
 | `sequence` | action/decision/outcome | action/decision/outcome | 必须是原文明示先后、交接或必要功能先后；context 起点改用 trigger |
 | `reference` | action 或 decision | input 或 standard | 终点 role 必须为 input 或 standard |
 | `produce` | action 或非 P3 的 decision | outcome | target 必须是独立语义结果；P3 到分支不得伪装为 produce |
@@ -248,7 +239,7 @@ trigger_mode=condition  原文使用 if/when/unless 等条件门禁；condition 
 - `evidence_unit_ids` 非空，只能引用当前 section，且必须来自 episode 的 `source_candidate_ids` 所覆盖 unit 并集。
 - `relation_type` 必须从以下列表中选择，证据不足时省略：`clue_supports_identification`, `mechanism_explains_risk`, `identification_leads_to_conclusion`, `conclusion_triggers_response`, `branch_condition_routes_path`, `component_assembles_product`, `standard_constrains_action`, `result_handoffs_stage`, `feedback_requests_completion`, `cycle_requires_monitoring`, `standard_transmits_requirement`, `parallel_alternative_no_sequence`。
 - `qualifier` 只允许 `aimed_to/may_lead_to/helps_achieve`；不适用时省略或为 null。
-- `source_quote` 如存在，必须能在该 relation 的 `evidence_unit_ids` 对应原文中定位。
+- `source_quote` **必填**。每条 relation 必须附带原文明文引文（优先英文原文原文，保留情态动词——can/may/might/helps/purpose is to/produces/results in 等），S3 据此确定精确的 edge_type 和 qualifier。kind 是语义近似，不需要完全精确。
 - relation 不使用 `modality`；情态由关联 element 的 label 和 modality 保存。
 - 不得输出 `derivation/evidence_strength/review_status/answer_eligible/modality`。
 

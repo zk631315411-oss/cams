@@ -1,0 +1,79 @@
+{
+  "section_id": "CH08-S05",
+  "card_id": "p7card_CH08-S05_001",
+  "edge_reviews": [
+    {
+      "edge_id": "r001",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000658明确要求金融机构对SPV和PIV进行强化尽职调查，v7u_N000659要求识别最终受益所有人并了解实体真实目的，e001节点综合了这两个要求，有直接原文依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000658中明确提及'CDD regulations such as the Financial Crime Enforcement Network's CDD rule'，e002的'CDD法规（如FinCEN的CDD规则）'与之对应，有原文支持。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000658表明进行强化尽职调查时必须确保遵守CDD法规，即process参照standard，REFERENCES方向正确。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，且原文关系为无条件参照。"
+        },
+        "qualifier_support": {
+          "status": "not_applicable",
+          "reason": "该边没有qualifier。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "该边正确表达了process对standard的参照，没有误用为顺序、产出或分支等类型。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000658"],
+      "source_quotes": [
+        "Financial institutions must be vigilant in conducting enhanced due diligence (EDD) on SPVs and PIVs. It is important to ensure these investments comply with CDD regulations such as the Financial Crime Enforcement Network's CDD rule."
+      ],
+      "reason": "原文明确要求强化尽职调查须遵守CDD法规，REFERENCES关系及方向均为显式表达，所有检查项均获支持。"
+    },
+    {
+      "edge_id": "r002",
+      "derivation": "explicit_text",
+      "llm_recommendation": "accepted",
+      "checks": {
+        "source_node_support": {
+          "status": "supported",
+          "reason": "e001节点内容源自v7u_N000658和v7u_N000659的明确要求，有原文依据。"
+        },
+        "target_node_support": {
+          "status": "supported",
+          "reason": "v7u_N000660的'help mitigate any potential financial crime risks associated with SPVs'与e003'帮助减轻与SPV相关的潜在金融犯罪风险'完全对应，有直接原文支持。"
+        },
+        "direction_support": {
+          "status": "supported",
+          "reason": "v7u_N000660中的'This will help mitigate...'，其中'This'指代v7u_N000659的识别受益所有人等动作，明确表达了process到减轻风险的方向。"
+        },
+        "condition_support": {
+          "status": "not_applicable",
+          "reason": "该边没有condition，原文关系为直接效果，无条件。"
+        },
+        "qualifier_support": {
+          "status": "supported",
+          "reason": "边的qualifier为may_lead_to，且target节点保留了'帮助'，共同保留了原文'help mitigate'的限定性，未强化或弱化。"
+        },
+        "parallel_or_correlation_check": {
+          "status": "supported",
+          "reason": "原文为明确的效果关系，PRODUCES类型适用，非顺序或并列。"
+        }
+      },
+      "evidence_unit_ids": ["v7u_N000659", "v7u_N000660"],
+      "source_quotes": [
+        "Financial institutions must identify ultimate beneficial owners and understand the true purpose of these entities.",
+        "This will help mitigate any potential financial crime risks associated with SPVs."
+      ],
+      "reason": "原文通过'This'明确指代，建立了process与减轻风险之间的效果关系，且保留了情态，所有必要检查均获支持。"
+    }
+  ]
+}

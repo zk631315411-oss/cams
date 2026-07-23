@@ -1,0 +1,60 @@
+{
+  "section_id": "CH47-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S04_001",
+      "section_id": "CH47-S04",
+      "card_nature": "assessment",
+      "title": "重大事件或趋势触发专项评估",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "重大事件或趋势",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "专项评估",
+          "evidence_unit_ids": ["v7u_N003286"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "significant events or trends occur",
+          "relation_type": "conclusion_triggers_response",
+          "source_quote": "Tuning should be dynamic, with special assessments triggered by significant events or trends.",
+          "evidence_unit_ids": ["v7u_N003286"]
+        }
+      ],
+      "source_unit_ids": ["v7u_N003286"],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：重大事件或趋势触发专项评估；证据范围：仅v7u_N003286；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": ["p7card_CH47-S04_001"],
+      "decision": "p7c_card",
+      "reason": "该候选描述了重大事件或趋势触发专项评估的程序性关系，构成有效流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context role, label‘重大事件或趋势’表示外部事件触发，适用E1_event_signal",
+      "e002": "action role, label‘专项评估’表示评估过程，适用P1_assessment"
+    }
+  },
+  "skip_reason": null
+}

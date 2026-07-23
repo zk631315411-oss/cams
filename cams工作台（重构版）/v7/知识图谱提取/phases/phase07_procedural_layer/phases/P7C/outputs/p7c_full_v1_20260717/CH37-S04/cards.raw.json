@@ -1,0 +1,311 @@
+{
+  "section_id": "CH37-S04",
+  "cards": [
+    {
+      "card_id": "p7card_CH37-S04_001",
+      "section_id": "CH37-S04",
+      "card_nature": "assessment",
+      "title": "依据残余风险判断是否需要行动计划",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "组织了解其剩余风险",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "Determine whether the risk is within its tolerance levels or if an action plan is required",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "Risk is within tolerance levels, no action plan required",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "Action plan required to mitigate risks",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "Once an organization understands its residual risks, it can determine whether the risk is within its tolerance levels or if an action plan is required to mitigate those risks."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n003",
+          "condition": "risk is within tolerance levels",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "determine whether the risk is within its tolerance levels"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "n002",
+          "target": "n004",
+          "condition": "action plan is required to mitigate risks",
+          "relation_type": "branch_condition_routes_path",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "or if an action plan is required to mitigate those risks"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002788"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：依据残余风险判断是否需要行动计划；证据范围：v7u_N002788；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S04_002",
+      "section_id": "CH37-S04",
+      "card_nature": "assessment",
+      "title": "制定残余风险行动计划的前期分析步骤",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Understand where inherent risk originates and how mitigation measures control the risk",
+          "evidence_unit_ids": [
+            "v7u_N002790"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Should identify which risks existing AFC controls cannot mitigate",
+          "evidence_unit_ids": [
+            "v7u_N002791"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Should evaluate whether other control measures (such as reducing transaction limits or limiting products) would minimize risks",
+          "evidence_unit_ids": [
+            "v7u_N002792"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "evidence_unit_ids": [
+            "v7u_N002790",
+            "v7u_N002791"
+          ],
+          "source_quote": "To develop a residual risks action plan, the organization must understand where the inherent risk originates and how mitigation measures can control the risk. The organization should identify which risks existing AFC controls cannot mitigate."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002791",
+            "v7u_N002792"
+          ],
+          "source_quote": "It should then evaluate whether other control measures, such as reducing transaction limits or limiting the number of products offered, would minimize the risks."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002790",
+        "v7u_N002791",
+        "v7u_N002792"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：制定残余风险行动计划需进行理解风险来源、识别未缓解风险、评估替代措施等分析步骤；证据范围：v7u_N002790, v7u_N002791, v7u_N002792；待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH37-S04_003",
+      "section_id": "CH37-S04",
+      "card_nature": "execution",
+      "title": "高风险转账场景下残余风险判断与控制开发",
+      "flow_nodes": [
+        {
+          "node_id": "n001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "Traditional financial institution has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Residual risk is high",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Need to develop a control to mitigate this risk",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        },
+        {
+          "node_id": "n004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "May include prohibiting transactions to certain known, unlicensed providers, or increasing monitoring where risk is high",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "permitted"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "n001",
+          "target": "n002",
+          "condition": "realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "if a traditional financial institution realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist, the residual risk is high."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "n002",
+          "target": "n003",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "the residual risk is high. The organization will need to develop a control to mitigate this risk, so the residual risk is within risk appetite."
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "n003",
+          "target": "n004",
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "This may include a process of prohibiting transactions to certain known, unlicensed providers, or increasing the monitoring where the risk is high, even if it is within a licensing regime."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002789"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：特定高风险场景下，若传统金融机构发现向高风险地区加密服务商转账且无额外控制，则剩余风险高，需开发控制以降低风险，可能包括禁止交易或加强监控；证据范围：v7u_N002789；待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH37-S04_001"
+      ],
+      "reason": "独立支持判断是否需要行动计划的流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH37-S04_003"
+      ],
+      "reason": "独立支持具体高风险场景下的判断与响应流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH37-S04_002"
+      ],
+      "reason": "独立支持制定行动计划的前期分析步骤序列。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s04_response_strategy",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述行动计划在风险升级时应包含的应对策略，属于计划内容要求，不构成程序性或判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s04_plan_content",
+      "disposition": "excluded_nonprocedural",
+      "card_ids": [],
+      "reason": "描述全面的行动计划应包含的各项内容要素（责任人、日期、审查流程、治理论坛等），属于计划模板说明，不构成程序性或判断性流程。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context角色，表示已了解剩余风险的状态，触发后续判断，匹配E3_state_threshold",
+      "e002": "decision角色，根据容忍度判断是否需要行动计划，两个分支，匹配P3_branch_routing",
+      "e003": "outcome，风险在容忍度内，无进一步动作，当前目标结束，匹配X6_termination",
+      "e004": "outcome，得出需要行动计划的结论，匹配X1_classification"
+    },
+    "ep_002": {
+      "e001": "action角色，理解风险来源和控制效果，属于评估分析，匹配P1_assessment",
+      "e002": "action角色，识别未被缓解的风险，属于评估分析，匹配P1_assessment",
+      "e003": "action角色，评估替代控制措施效果，属于评估分析，匹配P1_assessment"
+    },
+    "ep_003": {
+      "e001": "context角色，描述一个具体的风险事件情境（发现大量转账且无控制），启动处理，匹配E1_event_signal",
+      "e002": "虽然S2标注为decision，但语义是得出高剩余风险的评估结论，无后续分支，匹配P1_assessment而非P3_branch_routing",
+      "e003": "action角色，需要开发控制以缓解风险，属于执行动作，匹配P2_execution",
+      "e004": "outcome角色，列出可能的具体控制措施，形成可实施的方案，匹配X2_product"
+    }
+  },
+  "skip_reason": null
+}

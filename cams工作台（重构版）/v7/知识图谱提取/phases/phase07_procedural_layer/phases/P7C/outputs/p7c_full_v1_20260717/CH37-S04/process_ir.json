@@ -1,0 +1,291 @@
+{
+  "section_id": "CH37-S04",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_001"
+      ],
+      "focal_question": "如何基于残余风险判断是否需要制定行动计划？",
+      "title": "依据残余风险判断是否需要行动计划",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "组织了解其剩余风险",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "Determine whether the risk is within its tolerance levels or if an action plan is required",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "Risk is within tolerance levels, no action plan required",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "Action plan required to mitigate risks",
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "Once an organization understands its residual risks, it can determine whether the risk is within its tolerance levels or if an action plan is required to mitigate those risks."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e003",
+          "condition": "risk is within tolerance levels",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "determine whether the risk is within its tolerance levels"
+        },
+        {
+          "relation_id": "r003",
+          "kind": "branch",
+          "decision_element_id": "e002",
+          "target_element_id": "e004",
+          "condition": "action plan is required to mitigate risks",
+          "relation_type": "branch_condition_routes_path",
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002788"
+          ],
+          "source_quote": "or if an action plan is required to mitigate those risks"
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_003"
+      ],
+      "focal_question": "制定残余风险行动计划需要执行哪些分析步骤？",
+      "title": "制定残余风险行动计划的前期分析步骤",
+      "card_nature": "assessment",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "Understand where inherent risk originates and how mitigation measures control the risk",
+          "evidence_unit_ids": [
+            "v7u_N002790"
+          ],
+          "modality": "required"
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "Should identify which risks existing AFC controls cannot mitigate",
+          "evidence_unit_ids": [
+            "v7u_N002791"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "Should evaluate whether other control measures (such as reducing transaction limits or limiting products) would minimize risks",
+          "evidence_unit_ids": [
+            "v7u_N002792"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "sequence",
+          "before_element_id": "e001",
+          "after_element_id": "e002",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002790",
+            "v7u_N002791"
+          ],
+          "source_quote": "To develop a residual risks action plan, the organization must understand where the inherent risk originates and how mitigation measures can control the risk. The organization should identify which risks existing AFC controls cannot mitigate."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "sequence",
+          "before_element_id": "e002",
+          "after_element_id": "e003",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002791",
+            "v7u_N002792"
+          ],
+          "source_quote": "It should then evaluate whether other control measures, such as reducing transaction limits or limiting the number of products offered, would minimize the risks."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_002"
+      ],
+      "focal_question": "特定高风险场景下如何判断残余风险并制定控制措施？",
+      "title": "高风险转账场景下残余风险判断与控制开发",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "Traditional financial institution has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "decision",
+          "label": "Residual risk is high",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "action",
+          "label": "Need to develop a control to mitigate this risk",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "modality": "required"
+        },
+        {
+          "element_id": "e004",
+          "role": "outcome",
+          "label": "May include prohibiting transactions to certain known, unlicensed providers, or increasing monitoring where risk is high",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "modality": "permitted"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "condition",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": "realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist",
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "if a traditional financial institution realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist, the residual risk is high."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e002",
+          "process_element_id": "e003",
+          "condition": null,
+          "relation_type": null,
+          "qualifier": null,
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "the residual risk is high. The organization will need to develop a control to mitigate this risk, so the residual risk is within risk appetite."
+        },
+        {
+          "relation_id": "r003",
+          "kind": "produce",
+          "process_element_id": "e003",
+          "outcome_element_id": "e004",
+          "relation_type": null,
+          "qualifier": "may_lead_to",
+          "evidence_unit_ids": [
+            "v7u_N002789"
+          ],
+          "source_quote": "This may include a process of prohibiting transactions to certain known, unlicensed providers, or increasing the monitoring where the risk is high, even if it is within a licensing regime."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "独立支持判断是否需要行动计划的流程。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "独立支持具体高风险场景下的判断与响应流程。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "独立支持制定行动计划的前期分析步骤序列。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s04_response_strategy",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "描述行动计划在风险升级时应包含的应对策略，属于计划内容要求，不构成程序性或判断性流程。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch37_s04_plan_content",
+      "disposition": "excluded_nonprocedural",
+      "episode_ids": [],
+      "reason": "描述全面的行动计划应包含的各项内容要素（责任人、日期、审查流程、治理论坛等），属于计划模板说明，不构成程序性或判断性流程。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,185 @@
+{
+  "section_id": "CH13-S01",
+  "episodes": [
+    {
+      "episode_id": "ep_001",
+      "source_candidate_ids": [
+        "s1c_gap_ch13_s01_regulator_monitoring"
+      ],
+      "focal_question": "监管机构如何监控加密资产以阻止非法活动？",
+      "title": "监管机构监控加密资产旨在阻止非法活动",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "action",
+          "label": "监管机构监控加密资产的法律和合规方面",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "outcome",
+          "label": "阻止欺诈和洗钱等非法活动",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "produce",
+          "process_element_id": "e001",
+          "outcome_element_id": "e002",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N000970"
+          ],
+          "source_quote": "Regulators monitor the legal and compliance aspects of cryptoassets to deter illegal activities, such as fraud and money laundering."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_002",
+      "source_candidate_ids": [
+        "s1c_gap_ch13_s01_block_verification"
+      ],
+      "focal_question": "区块链被挖掘后必须如何操作？",
+      "title": "区块链挖掘后必须由网络其他节点验证",
+      "card_nature": "execution",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "区块链被挖掘",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "必须由网络上的其他节点验证",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ],
+          "modality": "required"
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N000984"
+          ],
+          "source_quote": "Once a blockchain is mined, it also must be verified by other nodes on the network."
+        }
+      ],
+      "split_reason": null
+    },
+    {
+      "episode_id": "ep_003",
+      "source_candidate_ids": [
+        "s1c_gap_ch13_s01_cdd_monitoring"
+      ],
+      "focal_question": "如何在加密资产兑换点识别可疑活动？",
+      "title": "在兑换点易受洗钱背景下通过CDD和监控识别可疑活动",
+      "card_nature": "control",
+      "elements": [
+        {
+          "element_id": "e001",
+          "role": "context",
+          "label": "加密资产与法定货币的兑换点易受洗钱影响",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e002",
+          "role": "action",
+          "label": "实施客户尽职调查和监控",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "modality": null
+        },
+        {
+          "element_id": "e003",
+          "role": "outcome",
+          "label": "帮助识别可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "modality": null
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "r001",
+          "kind": "trigger",
+          "trigger_mode": "event",
+          "trigger_element_id": "e001",
+          "process_element_id": "e002",
+          "condition": null,
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "source_quote": "Without proper controls, the conversion point between cryptoassets and fiat is particularly vulnerable to money laundering, but CDD checks and monitoring can help identify suspicious activities."
+        },
+        {
+          "relation_id": "r002",
+          "kind": "produce",
+          "process_element_id": "e002",
+          "outcome_element_id": "e003",
+          "qualifier": "aimed_to",
+          "evidence_unit_ids": [
+            "v7u_N000995"
+          ],
+          "source_quote": "CDD checks and monitoring can help identify suspicious activities."
+        }
+      ],
+      "split_reason": null
+    }
+  ],
+  "candidate_audit": [
+    {
+      "candidate_id": "s1c_gap_ch13_s01_regulator_monitoring",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_001"
+      ],
+      "reason": "该候选独立支持一个程序性关系：监管机构的监控行动旨在阻止非法活动，可完整建模为独立 episode。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch13_s01_block_verification",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_002"
+      ],
+      "reason": "该候选提供了区块链挖掘后触发强制验证的条件-动作关系，构成完整的程序性单元。"
+    },
+    {
+      "candidate_id": "s1c_gap_ch13_s01_cdd_monitoring",
+      "disposition": "mapped",
+      "episode_ids": [
+        "ep_003"
+      ],
+      "reason": "该候选描述了在兑换点易受洗钱背景下，采取CDD和监控以帮助识别可疑活动的程序性关系，可独立建模。"
+    }
+  ],
+  "skip_reason": null
+}

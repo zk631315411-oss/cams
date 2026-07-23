@@ -1,0 +1,369 @@
+{
+  "section_id": "CH31-S08",
+  "cards": [
+    {
+      "card_id": "p7card_CH31-S08_001",
+      "section_id": "CH31-S08",
+      "card_nature": "execution",
+      "title": "通过正式国际请求书提出司法协助请求",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "没有MLAT的情况",
+          "evidence_unit_ids": [
+            "v7u_N002284"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "通过正式国际请求书提出协助请求",
+          "evidence_unit_ids": [
+            "v7u_N002284"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "请求由特定政府部门集中管理",
+          "evidence_unit_ids": [
+            "v7u_N002284"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "condition": "没有MLAT",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N002284"
+          ],
+          "source_quote": "In cases where no MLAT is in place, requests are made by a formal international letter of request, also known as commissions rogatoires in civil law jurisdictions and letters rogatory elsewhere."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "relation_type": "result_handoffs_stage",
+          "evidence_unit_ids": [
+            "v7u_N002284"
+          ],
+          "source_quote": "These requests are managed centrally by specific government departments."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002284"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：当没有MLAT时，通过正式国际请求书请求协助，请求被政府部门集中管理。证据范围：v7u_N002284。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S08_002",
+      "section_id": "CH31-S08",
+      "card_nature": "assessment",
+      "title": "基于政治、安全或双重犯罪原则拒绝司法协助",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "政治或安全原因",
+          "evidence_unit_ids": [
+            "v7u_N002286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "请求涉及的行为在两国不具有同等可罚性（双重犯罪原则）",
+          "evidence_unit_ids": [
+            "v7u_N002286"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "被请求国可拒绝提供司法协助",
+          "evidence_unit_ids": [
+            "v7u_N002286"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e003",
+          "target": "e001",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002286"
+          ],
+          "source_quote": "Legal assistance can be denied by either jurisdiction due to political or security reasons"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "e003",
+          "target": "e002",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002286"
+          ],
+          "source_quote": "or if the offense is not equally punishable in each jurisdiction"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002286"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：可因政治、安全或双重犯罪原则拒绝司法协助。证据范围：v7u_N002286。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S08_003",
+      "section_id": "CH31-S08",
+      "card_nature": "assessment",
+      "title": "MLAT措辞导致特定犯罪不被认可并致使请求无效",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "MLAT的措辞（是否涵盖特定犯罪）",
+          "evidence_unit_ids": [
+            "v7u_N002287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "被请求国可能不认可请求国所指的特定犯罪",
+          "evidence_unit_ids": [
+            "v7u_N002287"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e003",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "协助请求无效（如对加勒比避税港）",
+          "evidence_unit_ids": [
+            "v7u_N002288"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002287"
+          ],
+          "source_quote": "Depending on how the MLAT has been written, certain jurisdictions might not recognize specific crimes from the requesting state."
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRODUCES",
+          "source": "e002",
+          "target": "e003",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N002288"
+          ],
+          "source_quote": "For example, agreements between the US and the Caribbean do not cover US tax evasion, so they are ineffective when applied to Caribbean jurisdictions, which are often tax havens."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002287",
+        "v7u_N002288"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：MLAT措辞可致不认犯罪使请求无效。证据范围：v7u_N002287, v7u_N002288。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S08_004",
+      "section_id": "CH31-S08",
+      "card_nature": "execution",
+      "title": "EIO基于相互承认原则要求执行当局执行请求",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "相互承认原则（EIO基于相互承认）",
+          "evidence_unit_ids": [
+            "v7u_N002290"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "执行当局必须承认并执行其他司法管辖区的请求",
+          "evidence_unit_ids": [
+            "v7u_N002290"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "required"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "e002",
+          "target": "e001",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N002290"
+          ],
+          "source_quote": "The EIO is based on mutual recognition; that is, the executing authority must, in principle, recognize and ensure execution of the request of the other jurisdiction."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002290"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：基于相互承认原则，执行当局必须执行请求。证据范围：v7u_N002290。待P7D逐边审核。"
+    },
+    {
+      "card_id": "p7card_CH31-S08_005",
+      "section_id": "CH31-S08",
+      "card_nature": "execution",
+      "title": "英国脱欧后不再接受EIO",
+      "flow_nodes": [
+        {
+          "node_id": "e001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "英国于2020年1月31日脱离欧盟",
+          "evidence_unit_ids": [
+            "v7u_N002291"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "e002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "英国不能再接受EIO",
+          "evidence_unit_ids": [
+            "v7u_N002291"
+          ],
+          "evidence_strength": "explicit",
+          "modality": "prohibited"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "e001",
+          "target": "e002",
+          "relation_type": "conclusion_triggers_response",
+          "evidence_unit_ids": [
+            "v7u_N002291"
+          ],
+          "source_quote": "Since the UK’s withdrawal from the EU on January 31, 2020, it can no longer accept EIOs."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N002291"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "局部命题：脱欧事件导致英国不再接受EIO。证据范围：v7u_N002291。待P7D逐边审核。"
+    }
+  ],
+  "coverage_audit": [
+    {
+      "candidate_id": "s1c_001",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S08_001"
+      ],
+      "reason": "该候选描述无MLAT时通过国际请求书提出请求并被集中管理的程序性关系。"
+    },
+    {
+      "candidate_id": "s1c_002",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S08_002"
+      ],
+      "reason": "该候选提供政治、安全、双重犯罪等拒绝协助的判断标准，支持一个程序性判断episode。"
+    },
+    {
+      "candidate_id": "s1c_003",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S08_003"
+      ],
+      "reason": "该候选说明MLAT措辞可能导致犯罪不被认可并致使请求无效的判断链。"
+    },
+    {
+      "candidate_id": "s1c_004",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S08_004"
+      ],
+      "reason": "该候选描述EIO下基于相互承认原则必须执行请求的义务。"
+    },
+    {
+      "candidate_id": "s1c_005",
+      "disposition": "mapped",
+      "card_ids": [
+        "p7card_CH31-S08_005"
+      ],
+      "reason": "该候选陈述英国脱欧导致不再接受EIO的因果链。"
+    }
+  ],
+  "node_type_reasons": {
+    "ep_001": {
+      "e001": "context表示'没有MLAT'的条件状态，触发后续动作 → E3_state_threshold",
+      "e002": "action为通过正式国际请求书提出请求，具体执行动作 → P2_execution",
+      "e003": "outcome为请求集中管理，业务对象进入新的稳定状态 → X3_state_change"
+    },
+    "ep_002": {
+      "e001": "standard提供拒绝协助的评判依据 → standard",
+      "e002": "standard提供双重犯罪原则作为评判依据 → standard",
+      "e003": "decision基于标准判断是否拒绝，形成拒绝与否的结论 → P1_assessment"
+    },
+    "ep_003": {
+      "e001": "standard为MLAT措辞作为判断依据 → standard",
+      "e002": "decision基于措辞判断犯罪是否被认可，属评估性判断 → P1_assessment",
+      "e003": "outcome导致协助请求无效，状态变为无效 → X3_state_change"
+    },
+    "ep_004": {
+      "e001": "standard为相互承认原则，约束后续行为 → standard",
+      "e002": "action包含'必须'的法律约束，符合受限动作定义 → P8_constrained_action"
+    },
+    "ep_005": {
+      "e001": "context为英国脱欧这一具体事件，启动处理 → E1_event_signal",
+      "e002": "decision/prohibition为受外部事件约束的禁止性动作 → P8_constrained_action"
+    }
+  }
+}
