@@ -4579,3 +4579,773 @@ mark {
 .matrix-entry:hover {
   background: var(--accent-hover);
 }
+
+/* ═══════════════════════════════════════════
+   题目审核模式 (v7-review-*)
+   ═══════════════════════════════════════════ */
+
+/* 审核区容器 */
+.v7-review {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 顶部工具栏 */
+.review-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  font-size: 13px;
+}
+
+.review-stats {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.review-matrix-link {
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: text-decoration 0.15s ease;
+}
+
+.review-matrix-link:hover {
+  text-decoration: underline;
+}
+
+/* 筛选栏 */
+.review-filter {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.review-filter input[type="search"] {
+  flex: 1;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  padding: 0 12px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 13px;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-filter input[type="search"]:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+}
+
+.review-filter select {
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+}
+
+.review-filter select:focus {
+  border-color: var(--accent);
+}
+
+.review-export-btn {
+  display: inline-flex;
+  height: 32px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--accent);
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.review-export-btn:hover {
+  background: var(--accent-soft);
+  box-shadow: var(--shadow);
+}
+
+/* 队列列表 */
+.review-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+/* 列表项 */
+.review-item {
+  display: grid;
+  width: 100%;
+  cursor: pointer;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 12px 16px;
+  text-align: left;
+  color: var(--text);
+  transition: background 0.12s ease;
+}
+
+.review-item:last-child {
+  border-bottom: 0;
+}
+
+.review-item:hover {
+  background: var(--accent-soft);
+}
+
+.review-item-id {
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.review-item-stem {
+  overflow: hidden;
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-item-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.review-item-status.status-unconfirmed {
+  background: var(--surface-soft);
+  color: var(--text-muted);
+}
+
+.review-item-status.status-draft {
+  background: var(--amber-soft);
+  color: #9a5418;
+}
+
+.review-item-status.status-confirmed {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.review-item-ok {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 单题编辑视图容器 */
+.review-detail {
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.review-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px 0;
+}
+
+.review-detail-head .review-item-id {
+  font-size: 15px;
+}
+
+.review-machine-ok {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.review-machine-fail {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.review-stem {
+  margin: 12px 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.review-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 16px;
+}
+
+/* 只读区 */
+.review-section-readonly {
+  padding-bottom: 4px;
+}
+
+/* 编辑区 */
+.review-section-editable {
+  background: var(--surface);
+  padding: 0 16px 16px;
+}
+
+.review-section-title {
+  margin: 16px 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.review-divider {
+  height: 8px;
+  margin: 8px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 字段容器 */
+.review-field {
+  margin-bottom: 14px;
+}
+
+.review-field-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.review-field-value {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Markdown 编辑区 */
+.review-editor {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.65;
+  font-family: "SF Mono", "Menlo", monospace;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-editor:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+}
+
+/* 答案选项组 */
+.review-answer-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.review-answer-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.review-answer-option:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.review-answer-option input {
+  accent-color: var(--accent);
+}
+
+/* 证据标签 */
+.review-evidence-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.review-evidence-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.review-evidence-tag:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.review-evidence-option {
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.review-evidence-option-select {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  margin: 0 2px;
+}
+
+.review-evidence-tag:hover .review-evidence-option-select {
+  color: #fff;
+}
+
+.review-evidence-del {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.review-evidence-tag:hover .review-evidence-del {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+/* 证据操作按钮 */
+.review-evidence-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.review-evidence-btn {
+  display: inline-flex;
+  height: 30px;
+  cursor: pointer;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-soft);
+  padding: 0 12px;
+  font-size: 12px;
+  transition: all 0.15s ease;
+}
+
+.review-evidence-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.review-evidence-search {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.review-evidence-search input {
+  width: 160px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 12px;
+  color: var(--text);
+  transition: border-color 0.15s ease;
+}
+
+.review-evidence-search input:focus {
+  border-color: var(--accent);
+}
+
+/* 操作栏 */
+.review-actions {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.review-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.review-nav-btn {
+  display: inline-flex;
+  height: 32px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-soft);
+  padding: 0 14px;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.review-nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.review-nav-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.review-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-action-btn {
+  display: inline-flex;
+  height: 34px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-soft);
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.review-action-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.review-action-btn.primary-action {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.review-action-btn.primary-action:hover {
+  background: var(--accent-hover);
+}
+
+/* 保存状态指示 */
+.review-save-status {
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.review-save-status.saved {
+  color: var(--green);
+}
+
+.review-save-status.saving {
+  color: var(--text-muted);
+}
+
+.review-save-status.failed {
+  color: var(--danger);
+}
+
+/* 导出按钮组 */
+.review-export-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+/* Markdown 渲染区 */
+.review-markdown {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* 临时教材对照窗 */
+.review-temp-pane {
+  margin: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow-hover);
+  overflow: hidden;
+}
+
+.temp-pane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.temp-pane-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.temp-pane-close {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 16px;
+  transition: all 0.15s ease;
+}
+
+.temp-pane-close:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.temp-pane-body {
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.temp-pane-body p {
+  margin: 0 0 6px;
+}
+
+.temp-pane-body img {
+  display: block;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+.temp-pane-open {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+
+.temp-pane-open:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 确认弹窗遮罩 */
+.review-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* 确认弹窗 */
+.review-modal {
+  width: min(420px, calc(100vw - 48px));
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow-hover);
+  padding: 24px;
+}
+
+.review-modal h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.review-modal-changes {
+  margin-bottom: 16px;
+}
+
+.review-modal-changes p {
+  margin: 6px 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--surface-soft);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.review-modal-warning {
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  background: var(--amber-soft);
+  color: #9a5418;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.review-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.review-modal-cancel,
+.review-modal-confirm {
+  display: inline-flex;
+  height: 36px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.review-modal-cancel {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text-soft);
+}
+
+.review-modal-cancel:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-soft);
+}
+
+.review-modal-confirm {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+}
+
+.review-modal-confirm:hover {
+  background: var(--accent-hover);
+}
+
+/* 审核空状态 */
+.review-list .empty-panel {
+  padding: 32px;
+}

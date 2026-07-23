@@ -51,7 +51,17 @@
     renderCurrent();
   }
   function showHome() { navigate("read", { type: "home" }); }
-  function setWorkMode(mode) { navigate(mode || "read", { type: "home" }); }
+  function setWorkMode(mode) {
+    /* 切出 review 模式时清理 review.js */
+    if (app.workMode === "review" && mode !== "review") {
+      hideReview();
+    }
+    /* 切入 review 模式时由 review.js 渲染 */
+    navigate(mode || "read", { type: "home" });
+    if ((mode || "read") === "review") {
+      showReview();
+    }
+  }
   function selectUnit(unitId, locate) {
     var unit = Store.getUnit(app.state, unitId);
     if (!unit) return;
@@ -64,6 +74,16 @@
   function selectChapter(chapterId) {
     var chapter = app.state.chapters.filter(function (item) { return item.chapter_id === chapterId; })[0];
     if (chapter && chapter.unit_ids.length) selectUnit(chapter.unit_ids[0], true);
+  }
+  function showReview() {
+    app.workMode = "review";
+    updateNavigation();
+    if (window.CamsReview) {
+      window.CamsReview.render(app.state, handlers());
+    }
+  }
+  function hideReview() {
+    if (window.CamsReview) window.CamsReview.destroy();
   }
   function showMatrix() {
     app.currentView = { type: "matrix" };
@@ -130,6 +150,6 @@
       if (pane) pane.innerHTML = "<div class=\"empty-panel\"><h2 class=\"error\">v7 教材包不可用</h2><p>" + U.escapeHtml(error.message) + "</p><button class=\"v7-retry-button\" onclick=\"location.reload()\">重新加载</button></div>";
     });
   }
-  window.CamsApp = { init: init, goBack: goBack, goForward: goForward, showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, showMatrix: showMatrix, setWorkMode: setWorkMode };
+  window.CamsApp = { init: init, goBack: goBack, goForward: goForward, showHome: showHome, selectUnit: selectUnit, selectQuestion: selectQuestion, showMatrix: showMatrix, showReview: showReview, setWorkMode: setWorkMode };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
