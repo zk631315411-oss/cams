@@ -366,6 +366,37 @@ body.is-resizing-vertical * {
   font-size: 13px;
 }
 
+.pdf-reader-resizer {
+  position: relative;
+  z-index: 18;
+  height: 14px;
+  flex: 0 0 14px;
+  cursor: row-resize;
+  touch-action: none;
+  outline: none;
+  background: linear-gradient(to bottom, transparent 0, transparent 42%, var(--line) 42%, var(--line) 58%, transparent 58%, transparent 100%);
+}
+
+.pdf-reader-resizer::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(99, 115, 129, 0.18);
+  content: "";
+  transform: translate(-50%, -50%);
+  transition: background 0.15s ease, width 0.15s ease;
+}
+
+.pdf-reader-resizer:hover::before,
+.pdf-reader-resizer:focus-visible::before,
+body.is-resizing-vertical .pdf-reader-resizer::before {
+  width: 112px;
+  background: rgba(0, 113, 227, 0.24);
+}
+
 .pdf-control {
   width: 30px;
   height: 28px;
@@ -404,7 +435,8 @@ body.is-resizing-vertical * {
 .pdf-zoom-label { width: 42px; color: var(--text-soft); font-size: 12px; text-align: center; }
 
 .pdf-scroll {
-  height: calc(100% - 38px);
+  flex: 1;
+  min-height: 0;
   overflow: auto;
   background: #e9eaec;
   padding: 20px;
@@ -1281,6 +1313,8 @@ body.is-resizing-vertical * {
 }
 
 .reader-scroll.pdf-reader {
+  display: flex;
+  flex-direction: column;
   padding: 0;
   overflow: hidden;
 }
@@ -5056,21 +5090,23 @@ mark {
   position: sticky;
   bottom: 0;
   display: grid;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 10px;
+  padding: 12px 16px 14px;
   border-top: 1px solid var(--line);
   background: rgba(255,255,255,0.96);
   backdrop-filter: saturate(180%) blur(20px);
 }
 
 .review-nav-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
 .review-nav-btn {
   display: inline-flex;
   height: 32px;
+  width: 100%;
   cursor: pointer;
   align-items: center;
   gap: 6px;
@@ -5095,14 +5131,16 @@ mark {
 }
 
 .review-action-buttons {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 8px;
+  align-items: stretch;
 }
 
 .review-action-btn {
   display: inline-flex;
   height: 34px;
+  width: 100%;
   cursor: pointer;
   align-items: center;
   gap: 6px;
@@ -5153,8 +5191,18 @@ mark {
 
 /* 导出按钮组 */
 .review-export-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
   gap: 6px;
+}
+
+.review-export-buttons .review-export-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.review-action-buttons .review-action-btn {
+  justify-content: center;
 }
 
 /* Markdown 渲染区 */

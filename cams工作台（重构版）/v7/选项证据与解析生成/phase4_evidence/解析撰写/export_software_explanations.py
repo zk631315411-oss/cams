@@ -12,7 +12,11 @@ import time
 from pathlib import Path
 from typing import Any
 
-import generate_evidence_explanations as master
+from 解析撰写.s1_explanation_data import (
+    DEFAULT_QUESTIONS_PATH, KG_GRAPH_PATH, SOURCE_QUOTE_MAX_LENGTH,
+    SOURCE_QUOTE_MIN_LENGTH, load_question_result, load_standard_questions,
+)
+from 解析撰写.s2_explanation_material import candidate_by_unit
 
 
 EXPORT_SCHEMA_VERSION = "software_explanation_export_v2_0"
@@ -22,7 +26,7 @@ PHASE4 = HERE.parent
 
 def _load_kg_section_index() -> dict[str, dict[str, Any]]:
     """加载 KG，返回 {unit_id: {real_chapter, real_section, section_order}} 索引。"""
-    kg_path = master.KG_GRAPH_PATH
+    kg_path = KG_GRAPH_PATH
     if not kg_path.exists():
         return {}
     with open(kg_path, "r", encoding="utf-8") as f:
@@ -106,7 +110,7 @@ def get_section_code(
     primary_uid = str(explanation.get("primary_unit_id", "") or "").strip()
     if primary_uid and primary_uid in code_map:
         return code_map[primary_uid]
-    unit_map = master.candidate_by_unit(result)
+    unit_map = candidate_by_unit(result)
     for uid in unit_map:
         if uid in code_map:
             return code_map[uid]
@@ -185,7 +189,7 @@ def export_by_section(
     total_selected = 0
 
     for path in sorted(question_dir.glob("q_*.json")):
-        result = master.load_question_result(path)
+        result = load_question_result(path)
         total_selected += 1
         section_code = get_section_code(result, kg_index, code_map)
         if section_code:
@@ -290,12 +294,12 @@ def main() -> None:
         description="将 V3 解析母版按 Section 导出为题库软件版格式（不阻断）。"
     )
     parser.add_argument("--output-dir", required=True)
-    parser.add_argument("--questions-path", default=str(master.DEFAULT_QUESTIONS_PATH))
+    parser.add_argument("--questions-path", default=str(DEFAULT_QUESTIONS_PATH))
     parser.add_argument("--output-subdir", default="software_export")
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
-    standards = master.load_standard_questions(args.questions_path)
+    standards = load_standard_questions(args.questions_path)
 
     summary = export_by_section(
         output_dir,

@@ -69,165 +69,11 @@ P5_ALIAS_INDEX_PATH = (
     / "outputs"
     / "p5c_alias_index.json"
 )
-# P7E flow cards + bridges
-P7C_CARDS_DIR = (
-    PROJECT_ROOT / "知识图谱提取" / "phases" / "phase07_procedural_layer"
-    / "phases" / "P7C" / "outputs"
-)
-P7E_BRIDGES_PATH = (
-    PROJECT_ROOT / "知识图谱提取" / "phases" / "phase07_procedural_layer"
-    / "phases" / "P7E" / "outputs" / "p7e_review_v9_merged" / "p7e_accepted_bridges.jsonl"
-)
-OUTPUT_DIR = PHASE4 / "output" / "test_flow"
+OUTPUT_DIR = PHASE4 / "output"
 QUESTION_TEXT_OVERRIDES_PATH = HERE / "question_text_overrides.jsonl"
 
 API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"
-
-
-# ── P7E 流程卡片与桥接 ─────────────────────────────────────────────
-
-_FLOW_CARDS: dict[str, Any] = {}
-_FLOW_BRIDGES: list[dict[str, Any]] = []
-_FLOW_CARD_IDS: list[str] = []
-_FLOW_CARD_VECS = None  # np.ndarray
-_FLOW_LOADED = False
-
-
-def _flow_load() -> list[str]:
-    global _FLOW_CARDS, _FLOW_BRIDGES, _FLOW_CARD_IDS, _FLOW_LOADED
-    if _FLOW_LOADED:
-        return []
-    if P7C_CARDS_DIR.exists():
-        for cf in sorted(P7C_CARDS_DIR.rglob("cards.raw.json")):
-            if "_archived" in str(cf):
-                continue
-            try:
-                payload = json.loads(cf.read_text(encoding="utf-8-sig"))
-                for card in payload.get("cards") or []:
-                    cid = card.get("card_id")
-                    if cid:
-                        _FLOW_CARDS[cid] = card
-            except Exception:
-                pass
-    if P7E_BRIDGES_PATH.exists():
-        with open(P7E_BRIDGES_PATH, "r", encoding="utf-8-sig") as f:
-            for line in f:
-                if line.strip():
-                    _FLOW_BRIDGES.append(json.loads(line))
-    _FLOW_CARD_IDS = []
-    _card_texts = []
-    for cid, card in sorted(_FLOW_CARDS.items()):
-        title = card.get("title") or ""
-        nodes = " ".join(n.get("label", "") for n in (card.get("flow_nodes") or []))
-        _FLOW_CARD_IDS.append(cid)
-        _card_texts.append(title + " " + nodes)
-    _FLOW_LOADED = True
-    return _card_texts
-
-
-def _flow_build_embs(card_texts: list[str]) -> None:
-    global _FLOW_CARD_VECS
-    if _FLOW_CARD_VECS is not None or not card_texts:
-        return
-    model = get_bge_model()
-    _FLOW_CARD_VECS = model.encode(card_texts, normalize_embeddings=True, show_progress_bar=False)
-    print(f"[flow] 卡片 BGE 向量构建完成 | cards={len(card_texts)} dim={_FLOW_CARD_VECS.shape[1]}")
-
-
-def _flow_context(question: dict[str, Any], max_cards: int = 6, max_nbr: int = 4) -> str:
-    if _FLOW_CARD_VECS is None or len(_FLOW_CARD_IDS) == 0:
-        return ""
-    from sklearn.metrics.pairwise import cosine_similarity
-
-    stem = (question.get("stem") or "") + " " + (question.get("stem_en") or "")
-    options = question.get("options", {}) or {}
-    options_en = question.get("options_en", {}) or {}
-
-    model = get_bge_model()
-    queries = [stem.strip()]
-    for label in sorted(options.keys()):
-        opt_text = str(options.get(label, "")) + " " + str(options_en.get(label, ""))
-        queries.append(opt_text.strip())
-    q_vecs = model.encode(queries, normalize_embeddings=True)
-
-    card_scores: dict[str, float] = {}
-    for qv in q_vecs:
-        sims = cosine_similarity(qv.reshape(1, -1), _FLOW_CARD_VECS)[0]
-        for idx in np.argsort(sims)[::-1][:3]:
-            sim = float(sims[idx])
-            if sim < 0.4:
-                continue
-            cid = _FLOW_CARD_IDS[idx]
-            if sim > card_scores.get(cid, -1.0):
-                card_scores[cid] = sim
-
-    scored = []
-    for cid, sim in sorted(card_scores.items(), key=lambda x: x[1], reverse=True):
-        card = _FLOW_CARDS.get(cid)
-        if card:
-            scored.append((sim, cid, card))
-        if len(scored) >= max_cards:
-            break
-    if not scored:
-        return ""
-
-    matched_ids = {cid for _, cid, _ in scored}
-    outgoing: dict[str, list[str]] = {}
-    incoming: dict[str, list[str]] = {}
-    for b in _FLOW_BRIDGES:
-        outgoing.setdefault(b["source_card_id"], []).append(b["target_card_id"])
-        incoming.setdefault(b["target_card_id"], []).append(b["source_card_id"])
-
-    nbr_ids = set()
-    for _, cid, _ in scored:
-        for nid in outgoing.get(cid, []) + incoming.get(cid, []):
-            if nid not in matched_ids:
-                nbr_ids.add(nid)
-
-    stem_sims = cosine_similarity(q_vecs[0:1], _FLOW_CARD_VECS)[0]
-    nbr_scored = []
-    for nid in nbr_ids:
-        if nid in _FLOW_CARD_IDS:
-            idx = _FLOW_CARD_IDS.index(nid)
-            nbr_scored.append((float(stem_sims[idx]), nid))
-    nbr_scored.sort(key=lambda x: x[0], reverse=True)
-    nbr_kept = {nid for sim_val, nid in nbr_scored[:max_nbr] if sim_val > 0.3}
-
-    all_ids = matched_ids | nbr_kept
-    bridge_edges = [b for b in _FLOW_BRIDGES if b["source_card_id"] in all_ids and b["target_card_id"] in all_ids]
-
-    lines = ["### 业务流程上下文"]
-    lines.append("以下流程卡片由各选项独立语义匹配后合并，展示了教材中与本题相关的业务逻辑链路。")
-    lines.append("这些流程不直接作为选项判断的证据，但可帮助理解概念间的因果关系和流程位置。")
-    lines.append("")
-
-    for sim, cid, card in scored:
-        sec = card.get("section_id", "?")
-        title = card.get("title", "?") or "?"
-        lines.append(f"**[{sec}] {title}** (相似度 {sim:.2f})")
-        for n in (card.get("flow_nodes") or []):
-            nt = n.get("node_type", "?")
-            label = (n.get("label") or "?")[:150]
-            lines.append(f"  [{nt}] {label}")
-        out = [b for b in bridge_edges if b["source_card_id"] == cid]
-        for b in out:
-            tgt_card = _FLOW_CARDS.get(b["target_card_id"], {})
-            tgt_node = next((n for n in (tgt_card.get("flow_nodes") or []) if n["node_id"] == b["target_node_id"]), {})
-            lines.append(f"  -> [{b['bridge_semantics']}] [{tgt_card.get('section_id','?')}] {tgt_node.get('label','?')[:100]}")
-        lines.append("")
-
-    if nbr_kept:
-        lines.append("**桥接邻居:**")
-        for nid in nbr_kept:
-            card = _FLOW_CARDS.get(nid, {})
-            lines.append(f"  [{card.get('section_id','?')}] {card.get('title','?')[:100]}")
-        lines.append("")
-
-    lines.append("")
-    lines.append("**重要提示：以上流程板块仅展示业务逻辑关系，不直接作为选项判断的证据。**")
-    return "\n".join(lines)
-
 
 # ── ±4 上下文扩展（从解析脚本移植） ─────────────────────────────────
 
@@ -865,6 +711,8 @@ def aggregate_option_supplements(
                     "en_quote": unit.get("en_quote", ""),
                     "heading_context": unit.get("heading_context", []),
                     "type": unit.get("type", ""),
+                    "printed_page": unit.get("printed_page", ""),
+                    "pdf_page": unit.get("pdf_page", ""),
                     "supplement_only": True,
                     "fusion_score": round(fusion_score, 8),
                     "routes": routes,
@@ -1083,6 +931,8 @@ def bm25_search(
                 "en_quote": unit.get("en_quote", ""),
                 "heading_context": unit.get("heading_context", []),
                 "type": unit.get("type", ""),
+                "printed_page": unit.get("printed_page", ""),
+                "pdf_page": unit.get("pdf_page", ""),
             }
         )
     return rows
@@ -1108,6 +958,8 @@ def _candidate_from_unit(
         "type": unit.get("type", ""),
         "route": route,
         "score": round(score, 6),
+        "printed_page": unit.get("printed_page", ""),
+        "pdf_page": unit.get("pdf_page", ""),
         "kg": kg_info,
     }
 
@@ -1410,6 +1262,8 @@ def search_and_merge(
                         "en_quote": unit.get("en_quote", ""),
                         "heading_context": unit.get("heading_context", []),
                         "type": unit.get("type", ""),
+                        "printed_page": unit.get("printed_page", ""),
+                        "pdf_page": unit.get("pdf_page", ""),
                     }
                 )
             for row in _normalize_route_scores(rows):
@@ -1481,6 +1335,7 @@ def search_and_merge(
                 "route": best["route"],
                 "score": best["score"],
                 "raw_score": best.get("raw_score", best.get("score", 0.0)),
+                "printed_page": best.get("printed_page"),
                 "fusion_score": round(fusion_score, 8),
                 "retrieval_hits": retrieval_hits,
             }
@@ -1621,7 +1476,6 @@ def build_prompt(
     question: dict[str, Any],
     candidates: list[dict[str, Any]],
     supplement_pool: dict[str, list[dict[str, Any]]] | None = None,
-    flow_context: str = "",
 ) -> str:
     """构建裁判 prompt，不包含参考答案。"""
     stem = question.get("stem", "")
@@ -1652,7 +1506,6 @@ def build_prompt(
 
 **注意**：本题来自英文考试，中文为翻译版本。当中文翻译与英文原意的强弱、边界不一致时（如英文为模糊边缘行为而中文译为明确违法），以英文为准进行判断。
 
-{flow_context}
 ### 教材证据
 以下是教材中与本题相关的知识单元（候选池），请基于这些单元判断每个选项：
 其中 `KG导航` 只表示该单元与检索命中的单元在教材知识图谱中同属或相邻；它不是答案依据。最终判断必须回到知识单元的中英文原文。
@@ -2255,8 +2108,7 @@ def process_question(
         }
 
         # 步骤 2: 构建 prompt
-        flow_context = _flow_context(question) if _FLOW_CARD_VECS is not None else ""
-        prompt = build_prompt(question, candidates, supplement_pool, flow_context)
+        prompt = build_prompt(question, candidates, supplement_pool)
 
         # 步骤 3: LLM 调用（每个线程独立的 client）
         from openai import OpenAI
@@ -2326,14 +2178,6 @@ def process_question(
         result["option_analysis"] = parsed.get("option_analysis", [])
         result["predicted_answer"] = parsed.get("predicted_answer", [])
         result["decision_framework"] = parsed.get("decision_framework")
-
-        # 步骤 5: 机械校验（仅检查，不修复）
-        validation_issues = validate_result(
-            result, candidates, unit_lookup, supplement_pool
-        )
-        result["validation_checks"] = validation_issues
-        if validation_issues:
-            result["pipeline_status"] = "validation_failed"
 
     except Exception as exc:
         result["pipeline_status"] = "llm_parse_failed"
@@ -2547,8 +2391,6 @@ def main() -> None:
         default=str(P5_ALIAS_INDEX_PATH),
         help="P5C alias index 路径",
     )
-    parser.add_argument("--no-flow", action="store_true", help="禁用流程卡片上下文")
-    parser.add_argument("--dry-run-flow", action="store_true", help="仅打印流程上下文，不调用LLM")
     parser.add_argument(
         "--output-dir",
         type=str,
@@ -2615,13 +2457,7 @@ def main() -> None:
     print()
     get_bge_model()
 
-    # 3.5 流程卡片嵌入
-    card_texts = _flow_load()
-    print(f"[flow] 流程卡片加载完成 | cards={len(_FLOW_CARDS)} bridges={len(_FLOW_BRIDGES)}")
-    if card_texts:
-        _flow_build_embs(card_texts)
-
-    # 3.6 可选加载 KG 导航索引与 P5 术语索引
+    # 3.5 可选加载 KG 导航索引与 P5 术语索引
     kg_index = load_kg_graph(args.kg_graph_path) if args.enable_kg else None
     p5_index = load_p5_alias_index(args.p5_alias_path) if args.enable_p5 else None
 
@@ -2657,8 +2493,7 @@ def main() -> None:
             raise RuntimeError(f"章节 {chapter_id} 没有已确认题目")
         print(f"\n[sample] 教材章节 {chapter_id} 共 {len(sampled)} 题（不应用 --limit）")
     else:
-        # --all or explicit --limit > default: take from full pool
-        if args.all or args.limit != 10:
+        if args.all:
             sampled = sorted(questions, key=lambda x: x["question_id"])[:args.limit]
             print(f"\n[sample] 全部 {len(questions)} 题，取前 {len(sampled)} 题")
         else:

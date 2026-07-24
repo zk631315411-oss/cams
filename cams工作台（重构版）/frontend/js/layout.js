@@ -7,6 +7,7 @@
   var defaults = { toc: 250, detail: 420, bottom: 144 };
   var activePane = null;
   var activeReaderResize = null;
+  var readerHandlesBound = false;
 
   function isDesktop() { return window.innerWidth > 1000; }
   function getWidth(name) {
@@ -68,13 +69,22 @@
     if (!isDesktop()) return;
     var next = Math.round(Math.max(minBottomHeight, Math.min(maxBottomHeight(), value)));
     document.documentElement.style.setProperty("--reader-bottom-height", next + "px");
-    var handle = document.querySelector("[data-resize-reader-height]");
-    if (handle) {
+    document.querySelectorAll("[data-resize-reader-height]").forEach(function (handle) {
       handle.setAttribute("aria-valuemin", minBottomHeight);
       handle.setAttribute("aria-valuemax", maxBottomHeight());
       handle.setAttribute("aria-valuenow", next);
-    }
+    });
     if (persist) saveLayout({ bottom: next });
+  }
+  function bindReaderHandle(handle) {
+    if (!handle || handle.dataset.readerResizeBound === "1") return;
+    handle.dataset.readerResizeBound = "1";
+    handle.addEventListener("pointerdown", beginReaderResize);
+    handle.addEventListener("pointermove", moveReaderResize);
+    handle.addEventListener("pointerup", endReaderResize);
+    handle.addEventListener("pointercancel", endReaderResize);
+    handle.addEventListener("keydown", nudgeReader);
+    handle.addEventListener("dblclick", resetReader);
   }
   function beginResize(event) {
     if (!isDesktop()) return;
@@ -150,19 +160,18 @@
       handle.addEventListener("keydown", nudge);
       handle.addEventListener("dblclick", resetPane);
     });
-    var readerHandle = document.querySelector("[data-resize-reader-height]");
-    if (readerHandle) {
-      readerHandle.addEventListener("pointerdown", beginReaderResize);
-      readerHandle.addEventListener("pointermove", moveReaderResize);
-      readerHandle.addEventListener("pointerup", endReaderResize);
-      readerHandle.addEventListener("pointercancel", endReaderResize);
-      readerHandle.addEventListener("keydown", nudgeReader);
-      readerHandle.addEventListener("dblclick", resetReader);
-    }
+    bindReaderHandles();
     window.addEventListener("resize", function () {
       applyLayout({ toc: getWidth("toc"), detail: getWidth("detail") }, false);
       applyReaderHeight(getBottomHeight(), false);
     });
   }
+  function bindReaderHandles() {
+    document.querySelectorAll("[data-resize-reader-height]").forEach(bindReaderHandle);
+    readerHandlesBound = true;
+  }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+  window.CamsLayout = {
+    refreshReaderHandles: bindReaderHandles
+  };
 })();

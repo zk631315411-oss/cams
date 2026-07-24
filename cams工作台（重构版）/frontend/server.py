@@ -28,6 +28,10 @@ REVIEW_DRAFTS_DIR = REVIEW_POOL_DIR / "drafts"
 REVIEW_PUBLISHED_DIR = REVIEW_POOL_DIR / "published"
 REVIEW_INDEX_PATH = REVIEW_POOL_DIR / "index.json"
 
+_review_source_questions: list[dict] = []
+_review_source_questions_by_id: dict[str, dict] = {}
+_textbook_unit_ids: set[str] = set()
+
 # 审核源缓存
 _review_source_questions: list[dict] = []       # 源题库（前 395 题）
 _review_source_release_id: str = ""
@@ -84,7 +88,7 @@ def _load_textbook_units() -> None:
 def _compute_question_hash(question: dict) -> str:
     """对题目 stem_zh + options 计算 SHA256"""
     raw = json.dumps(
-        {"stem_zh": question.get("stem_zh", ""), "options": question.get("options", {})},
+        {"stem": question.get("stem_zh", question.get("stem", question.get("stem_en", ""))), "options": question.get("options", {})},
         ensure_ascii=False, sort_keys=True
     )
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
@@ -97,13 +101,60 @@ def _compute_textbook_units_hash() -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
+def _normalize_question_type(raw_type: str) -> str:
+    value = str(raw_type or "").strip().lower()
+    if value in {"single", "single_choice", "single-choice"}:
+        return "single_choice"
+    if value in {"multi", "multiple", "multiple_choice", "multiple-choice"}:
+        return "multiple_choice"
+    if value in {"true_false", "true-false", "tf"}:
+        return "true_false"
+    return value or "unknown"
+
+
+def _load_question_json(source_path: Path, question_id: str) -> dict:
+    q_path = source_path / "questions" / f"q_{question_id}.json"
+    try:
+        return json.loads(q_path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def _extract_generated_explanation(item: dict) -> str:
+    explanation = item.get("generated_explanation")
+    if isinstance(explanation, dict):
+        core_analysis = explanation.get("core_analysis")
+        if isinstance(core_analysis, dict):
+            text = core_analysis.get("text", "")
+            if text:
+                return text
+        exam_point = explanation.get("exam_point")
+        if isinstance(exam_point, dict):
+            text = exam_point.get("text", "")
+            if text:
+                return text
+    return item.get("generated_explanation_raw_output", "") or item.get("explanation", "")
+
+
+def _extract_source_evidence(item: dict) -> list[dict]:
+    evidence = item.get("source_evidence")
+    if isinstance(evidence, list):
+        return evidence
+    explanation = item.get("generated_explanation")
+    if isinstance(explanation, dict):
+        nested = explanation.get("source_evidence")
+        if isinstance(nested, list):
+            return nested
+    return []
+
+
 # ═══════════════════════════════════════════════════════════════
 # 审核源加载
 # ═══════════════════════════════════════════════════════════════
 
 def load_review_source() -> None:
     """从 review-active.json 指向的审核源加载数据"""
-    global _review_source_questions, _review_source_release_id
+    global _review_source_questions, _review_source_questions_by_id, _review_source_release_id
     global _review_source_release_path, _review_source_loaded
 
     with _review_source_lock:
@@ -116,12 +167,12 @@ def load_review_source() -> None:
                 print("[review] 未找到 review-active.json，跳过审核源加载")
                 return
 
-            active = json.loads(active_path.read_text(encoding="utf-8"))
+            active = json.loads(active_path.read_text(encoding="utf-8-sig"))
             _review_source_release_id = active.get("release_id", "unknown")
             _review_source_release_path = active.get("release_path", "")
 
-            # 从项目根目录解析 release_path
-            source_path = (ROOT / _review_source_release_path).resolve()
+            # 从教材发布目录解析 release_path
+            source_path = (TEXTBOOK_ROOT / _review_source_release_path).resolve()
             if not source_path.exists():
                 print(f"[review] 审核源路径不存在: {source_path}")
                 return
@@ -133,30 +184,53 @@ def load_review_source() -> None:
 
             # 从 questions.json 加载题目数据
             questions_path = source_path / "questions.json"
-            all_questions = json.loads(questions_path.read_text(encoding="utf-8"))
+            all_questions = {"items": []}
             questions_items = all_questions.get("items", [])
 
             # 按 manifest 中的顺序构建题目列表
             qid_to_item = {q.get("question_id", ""): q for q in questions_items}
             _review_source_questions = []
             for qid in question_ids:
-                item = qid_to_item.get(qid, {})
-                _review_source_questions.append({
+                item = _load_question_json(source_path, qid)
+                stem_zh = item.get("stem_zh", item.get("stem", ""))
+                stem_en = item.get("stem_en", "")
+                question_type = _normalize_question_type(item.get("question_type", item.get("type", "")))
+                answer_reference = item.get("answer_reference")
+                if not answer_reference:
+                    answer_reference = item.get("answer", [])
+                generated_explanation = item.get("generated_explanation", {})
+                if not answer_reference and isinstance(generated_explanation, dict):
+                    answer_reference = generated_explanation.get("answer", [])
+                reference_appendix = item.get("reference_appendix", {})
+                if not answer_reference and isinstance(reference_appendix, dict):
+                    answer_reference = reference_appendix.get("final_answer", [])
+                predicted_answer = item.get("predicted_answer", answer_reference)
+                software_readiness = item.get("software_readiness", {})
+                risk_flags = item.get("risk_flags", item.get("review_flags", []))
+                if not risk_flags and isinstance(software_readiness, dict):
+                    risk_flags = software_readiness.get("risk_flags", [])
+
+                normalized = {
                     "question_id": qid,
-                    "stem_zh": item.get("stem_zh", ""),
-                    "stem_en": item.get("stem_en", ""),
+                    "stem_zh": stem_zh,
+                    "stem_en": stem_en,
                     "options": item.get("options", {}),
-                    "answer_reference": item.get("answer_reference", []),
-                    "question_type": item.get("question_type", "unknown"),
-                    "risk_flags": item.get("risk_flags", []),
-                    "publication_status": item.get("publication_status", ""),
-                })
+                    "answer_reference": answer_reference if isinstance(answer_reference, list) else _parse_answer(str(answer_reference)),
+                    "predicted_answer": predicted_answer if isinstance(predicted_answer, list) else _parse_answer(str(predicted_answer)),
+                    "question_type": question_type,
+                    "type": question_type,
+                    "explanation": _extract_generated_explanation(item),
+                    "generated_explanation": item.get("generated_explanation", {}),
+                    "source_evidence": _extract_source_evidence(item),
+                    "risk_flags": risk_flags if isinstance(risk_flags, list) else [],
+                    "publication_status": "published",
+                    "machine_ok": bool(software_readiness.get("ready", item.get("pipeline_status") == "ok")) if isinstance(software_readiness, dict) else item.get("pipeline_status") == "ok",
+                    "pipeline_status": item.get("pipeline_status", ""),
+                }
+                _review_source_questions.append(normalized)
+                _review_source_questions_by_id[qid] = normalized
 
             # 从 evidence.json 加载证据数据
-            evidence_path = source_path / "evidence.json"
-            all_evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
-            evidence_items = all_evidence.get("items", [])
-
             total = len(_review_source_questions)
             _review_source_loaded = True
             print(f"[review] 审核源加载完成: {total} 题 (release: {_review_source_release_id})")
@@ -182,15 +256,18 @@ def _infer_question_type(answer_str: str) -> str:
 
 def get_question(question_id: str) -> dict | None:
     """按 question_id 查找源题目"""
-    for q in _review_source_questions:
-        if q["question_id"] == question_id:
-            return q
-    return None
+    if not _review_source_loaded:
+        load_review_source()
+    return _review_source_questions_by_id.get(question_id)
 
 
 def get_evidence(question_id: str) -> list[dict]:
     """获取题目的机器证据（暂为空列表，等待 refresh-machine 填充）"""
-    return []
+    question = get_question(question_id)
+    if not question:
+        return []
+    evidence = question.get("source_evidence", [])
+    return evidence if isinstance(evidence, list) else []
 
 
 def get_manifest_question() -> list[dict]:
@@ -214,7 +291,10 @@ def _read_index() -> dict:
     if not REVIEW_INDEX_PATH.exists():
         return _init_index()
     try:
-        return json.loads(REVIEW_INDEX_PATH.read_text(encoding="utf-8"))
+        index = json.loads(REVIEW_INDEX_PATH.read_text(encoding="utf-8"))
+        if not index.get("entries"):
+            return _init_index()
+        return index
     except (OSError, json.JSONDecodeError):
         return _init_index()
 
@@ -598,7 +678,7 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                     "stem_en": q.get("stem_en", ""),
                     "formal_status": formal_status,
                     "has_draft": has_draft,
-                    "machine_ok": True,  # 暂时标记为 True
+                    "machine_ok": bool(q.get("machine_ok", True)),
                 })
 
             self._send_json(result)
@@ -640,16 +720,20 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                     "stem_en": question.get("stem_en", ""),
                     "options": question.get("options", {}),
                     "answer_reference": question.get("answer_reference", []),
-                    "type": question.get("type", "single_choice"),
+                    "predicted_answer": question.get("predicted_answer", []),
+                    "question_type": question.get("question_type", "unknown"),
+                    "type": question.get("type", "unknown"),
                     "explanation": question.get("explanation", ""),
-                    "risk_flags": [],
+                    "generated_explanation": question.get("generated_explanation", {}),
+                    "risk_flags": question.get("risk_flags", []),
+                    "publication_status": question.get("publication_status", "published"),
                 },
                 "machine_judgement": {
-                    "predicted_answer": question.get("answer_reference", []),
+                    "predicted_answer": question.get("predicted_answer", question.get("answer_reference", [])),
                     "explanation": question.get("explanation", ""),
                     "evidence": machine_evidence,
                 },
-                "machine_ok": True,
+                "machine_ok": bool(question.get("machine_ok", True)),
                 "formal_status": entry["status"] if entry else "unconfirmed",
                 "draft": draft,
                 "published": published,
@@ -668,7 +752,7 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
             else:
                 data["formal_answer"] = question.get("answer_reference", [])
                 data["formal_explanation"] = question.get("explanation", "")
-                data["formal_evidence"] = []
+                data["formal_evidence"] = question.get("source_evidence", [])
 
             self._send_json(data)
         except Exception as exc:

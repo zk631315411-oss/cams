@@ -8,25 +8,24 @@
 
 from __future__ import annotations
 
-import argparse, json, random, re, sys, time
+import argparse
+import json
+import random
+import re
+import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
 PHASE4 = HERE.parent
-_PARENT = str(PHASE4)
-if _PARENT not in sys.path:
-    sys.path.insert(0, _PARENT)
+_SRC = PHASE4 / "解析撰写"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
 
-from 解析撰写.s1_explanation_data import (
-    load_question_result, get_llm_config, DEFAULT_QUESTIONS_PATH,
-    SOURCE_QUOTE_MIN_LENGTH, SOURCE_QUOTE_MAX_LENGTH, KG_GRAPH_PATH,
-)
-from 解析撰写.s2_explanation_material import candidate_by_unit
-from 解析撰写.export_software_explanations import _load_kg_section_index, _build_section_code_map
-from 公共函数.llm_utils import call_llm, parse_llm_output
-from 公共函数.index import collect_cited_unit_ids
+import generate_evidence_explanations as master
+from export_software_explanations import _load_kg_section_index, _build_section_code_map
 
 QUALITY_REVIEW_SCHEMA = "quality_review_v1_0"
 
@@ -56,16 +55,9 @@ AI答案：{ai_answer}
 
 {evidence_text}
 
-## 题库参考答案
-
-题库最终答案：{ref_final}
-中文参考答案：{ref_cn}
-英文参考答案：{ref_en}
-参考解析：{ref_analysis}
-
 ## 复核任务
 
-请按以下五类错误模式，逐项检查AI解析：
+请按以下五类错误模式，逐项检查AI解析的**证据质量**。注意：本题不检查AI答案是否正确、是否与题库一致——答案正确性由机械校验负责。
 
 **判断原则：以证据的 knowledge_zh 和 en_quote 实际内容为第一依据。heading_context（章节路径）只是组织标签，可能与内容不完全一致——当标签和内容矛盾时，信内容，不信标签。**
 
@@ -98,7 +90,6 @@ AI答案：{ai_answer}
     "page_hallucination": {{"found": false, "detail": ""}},
     "tone_amplification": {{"found": false, "detail": ""}}
   }},
-  "answer_judgment": "{{ai_correct|reference_correct|both_defensible|both_problematic|n/a}}",
   "verdict": "{{pass|minor_issue|needs_fix}}",
   "recommendation": "",
   "summary": ""
@@ -106,11 +97,11 @@ AI答案：{ai_answer}
 ```
 
 注意：
-- answer_judgment：仅当AI答案与题库答案冲突时给出参考意见；无冲突时填"n/a"。注意：answer_judgment 不影响 verdict —— 即使判了 ai_correct，只要存在五类错误或答案冲突，verdict 就不能是 pass
+- 只检查证据质量，不检查答案是否正确。AI答案与题库参考答案冲突不在此复核范围内。
 - verdict 判定规则：
-  - pass：五类错误均未发现，且AI答案与题库一致（或题库无答案）
-  - minor_issue：存在轻微问题但不影响正确性
-  - needs_fix：存在实质错误，或AI答案与题库冲突（无论 answer_judgment 如何判断，冲突本身就是 needs_fix）
+  - pass：五类错误均未发现
+  - needs_fix：context_theft、post_rationalization、page_hallucination 三者任一 found=true，或 tone_amplification / subject_substitution 问题严重到影响解析可信度
+  - minor_issue：仅 tone_amplification 或 subject_substitution 轻微问题时使用。含义是"有小瑕疵但解析整体可信任"
 - 每个error的detail：如found=true，必须写清具体证据（必须从AI解析原文中逐字引用，不得用自己的话转述）
 - summary：一句话总结复核结论"""
 
@@ -164,7 +155,7 @@ def _build_review_prompt(
     # 加载 KG 页码
     kg_page_map: dict[str, dict[str, Any]] = {}
     try:
-        kg_path = KG_GRAPH_PATH
+        kg_path = master.KG_GRAPH_PATH
         if kg_path.exists():
             with open(kg_path, "r", encoding="utf-8") as f:
                 kg = json.load(f)
@@ -210,19 +201,11 @@ def _build_review_prompt(
         "（AI解析中的任何页码引用必须在此列表中，否则为页码幻觉）"
     )
 
-    # ── 题库参考答案 ──
-    ref = exp.get("reference_appendix", {}) or {}
-    ref_final = "、".join(ref.get("final_answer", []) or [])
-    ref_cn = "、".join(ref.get("cn_answer", []) or [])
-    ref_en = "、".join(ref.get("en_answer", []) or [])
-    ref_analysis = str(ref.get("cn_explanation", "") or ref.get("en_explanation", "") or "")
-
     return _REVIEW_PROMPT.format(
         stem_cn=stem_cn, stem_en=stem_en, options_text=options_text,
         ai_answer=ai_answer, exam_point=exam_point, core_analysis=core_analysis,
         option_analyses=option_analyses, easy_mistake=easy_mistake,
         evidence_text=evidence_text,
-        ref_final=ref_final, ref_cn=ref_cn, ref_en=ref_en, ref_analysis=ref_analysis,
     )
 
 
@@ -262,7 +245,7 @@ def _parse_review_response(raw: str) -> dict[str, Any]:
         except json.JSONDecodeError:
             pass
     return {
-        "errors": {}, "answer_judgment": "n/a", "verdict": "parse_failed",
+        "errors": {}, "verdict": "parse_failed",
         "recommendation": "", "summary": f"无法解析LLM响应。原始输出：{raw[:500]}",
     }
 
@@ -283,7 +266,7 @@ def _select_review_targets(
     passed: list[str] = []
 
     for path in sorted(question_dir.glob("q_*.json")):
-        result = load_question_result(path)
+        result = master.load_question_result(path)
         qid = str(result.get("question_id", ""))
         exp = result.get("generated_explanation", {}) or {}
         ref = exp.get("reference_appendix", {}) or {}
@@ -303,7 +286,7 @@ def _select_review_targets(
         primary_uid = str(exp.get("primary_unit_id", "") or "").strip()
         chapter = code_map.get(primary_uid, "unknown")
         if chapter == "unknown":
-            unit_map = candidate_by_unit(result)
+            unit_map = master.candidate_by_unit(result)
             for uid in unit_map:
                 if uid in code_map:
                     chapter = code_map[uid]
@@ -355,8 +338,8 @@ def process_question(
     from openai import OpenAI
 
     path = output_dir / "questions" / f"q_{qid}.json"
-    result = load_question_result(path)
-    unit_map = candidate_by_unit(result)
+    result = master.load_question_result(path)
+    unit_map = master.candidate_by_unit(result)
     std_q = standard_questions.get(qid)
 
     prompt = _build_review_prompt(result, unit_map, std_q)
@@ -365,7 +348,7 @@ def process_question(
     raw = ""
     for attempt in range(3):
         try:
-            raw = call_llm(
+            raw = master.call_llm(
                 client, prompt, model=model, max_tokens=6000,
                 reasoning_effort="high", enable_thinking=True,
             )
@@ -456,7 +439,7 @@ def main() -> None:
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
-    api_key, base_url, _ = get_llm_config()
+    api_key, base_url, _ = master.get_llm_config()
     standard_questions = _load_standard_questions()
 
     targets = _select_review_targets(output_dir, args.sample_per_chapter)
