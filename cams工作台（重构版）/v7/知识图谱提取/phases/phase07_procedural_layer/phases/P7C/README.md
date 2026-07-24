@@ -2,14 +2,14 @@
 
 ## 定位
 
-P7C 是 section-local 候选流程知识抽取层。它从 P7B 证据包中发现并构建候选 card，允许保留一定候选噪声；P7D 负责正式结构校验和逐边证据审核。
+P7C 是 section-local 候选流程知识抽取层。它从 P7B 证据包中发现并构建候选 card，允许保留一定候选噪声。P7C 产出的 `cards.raw.json` 直接作为最终产物供 P7G 按题遍历证明路径，不再经过 P7D（P7D 已于 2026-07-16 弃用）。
 
-P7C card 固定 `candidate_status=candidate`。节点 `evidence_strength` 固定 `explicit`。正式构图边不声明 `derivation`，该字段和最终审核状态由 P7D 独立保存。
+P7C card 固定 `candidate_status=candidate`。节点 `evidence_strength` 固定 `explicit`。
 
 ## 主流程（merged-process-ir）
 
 ```
-S1.1 (LLM) 候选发现 → S1.2 (LLM) 补漏 → S2 (LLM) Process IR 简易图 → S3 (LLM) 复核+填node_type → cards.raw.json → P7D 证据审核
+S1.1 (LLM) 候选发现 → S1.2 (LLM) 补漏 → S2 (LLM) Process IR 简易图 → S3 (LLM) 复核+填node_type → cards.raw.json
 ```
 
 四个阶段的分工：

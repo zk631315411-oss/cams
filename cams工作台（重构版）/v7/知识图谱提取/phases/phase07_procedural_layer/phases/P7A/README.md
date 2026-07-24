@@ -5,9 +5,9 @@
 P7A 只冻结 P7 的最小流程图数据结构，让后续阶段能够稳定执行：
 
 ```text
-P7C 抽图
-P7D 校验
-P7H 渲染
+P7C 抽图（正本产出）
+P7G 按题遍历证明路径
+P7E 跨 card 桥接
 ```
 
 P7A 不负责定义 cluster、scenario path、解析写作策略或渲染实现细节。
@@ -249,7 +249,7 @@ needs_review
 rejected
 ```
 
-`review_status`由P7D用于逐边审核；P7C新产物不写入最终审核状态。旧产物和`p7_bridge_edge`兼容集合为：
+`review_status` 由 P7G 用于逐边门禁校验（P7D 已弃用）；P7C 新产物不写入最终审核状态。旧产物和 `p7_bridge_edge` 兼容集合为：
 
 ```text
 needs_review
