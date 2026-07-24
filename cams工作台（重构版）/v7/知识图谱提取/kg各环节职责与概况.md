@@ -182,7 +182,7 @@ phases/archive/legacy_after_p6_20260706/phase10_assembly_review/
 
 ## Phase 7：流程型/操作型知识图谱 overlay
 
-状态：已建立阶段骨架，尚未进入全书抽取。
+状态：P7A-P7E 已完成阶段构建，P7C 已进入全书分批抽取（batch runs 正在进行），P7G 证明路径运行时已建立。
 
 职责：在 P6 教材复习型 KG 母版之上，构建流程型/操作型 overlay，用于表达教材中有证据支持的业务动作、输入、输出、条件、分叉、反馈和桥接关系。
 
@@ -204,10 +204,10 @@ micro-textbook previews：面向解析系统的微缩教材文本
 ```text
 P7A：生成 chapter reading tasks，不删上下文
 P7B：双路独立顺序阅读，输出 chapter_flow_overview 和 process_cards
-P7C：流程节点归一化、边级对齐、双路差异比较
+P7C：流程节点归一化、边级对齐、双路差异比较（全书分批抽取）
 P7D：冲突裁决、桥接边审核、证据校验
 P7E：组装局部闭环流程子图
-P7F：输出 kg_procedural_overlay.json 和微缩教材视图
+P7G：按题生成证明路径（card内最小路径运行时；跨card路径待P7E桥接完成后支持）
 ```
 
 边界：
@@ -259,6 +259,7 @@ P0 输入门禁
   -> P5 术语、别名、缩写检索辅助索引
   -> P6 KG 总装、阅读视图、验收报告
   -> P7 流程型/操作型 KG overlay
+    P7A -> P7B -> P7C -> P7D -> P7E -> P7G
 ```
 
 辅助模块：
