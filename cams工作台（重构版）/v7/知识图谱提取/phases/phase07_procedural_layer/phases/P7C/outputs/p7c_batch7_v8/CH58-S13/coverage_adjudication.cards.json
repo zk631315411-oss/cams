@@ -1,0 +1,183 @@
+{
+  "section_id": "CH58-S13",
+  "section_title": "Data as an input for solutions > Data preparation",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004786",
+        "v7u_N004790",
+        "v7u_N004793",
+        "v7u_N004798",
+        "v7u_N004799"
+      ],
+      "proposition": "数据准备过程包括从提取到挖掘的顺序步骤，最终检测异常。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据准备步骤顺序已由基础KG充分表达，不构成超出KG的局部程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004789"
+      ],
+      "proposition": "AFC团队成员应理解数据准备的每个步骤。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立行为要求，无关联输入、标准或结果，KG可保存为一般规则。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004788"
+      ],
+      "proposition": "如果数据准备正确执行，将确保数据质量并支持合规性。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般好处和影响陈述，无特定主体动作或判断链，KG可表达因果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004792"
+      ],
+      "proposition": "数据越全面，识别可疑模式的机会越大。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象相关性，无具体执行动作或产出，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004796",
+        "v7u_N004797"
+      ],
+      "proposition": "数据转换将数据转换成适合分析的格式并创建特征。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据转换子步骤和特征创建属定义与列表，KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004799"
+      ],
+      "proposition": "数据挖掘应用算法技术于准备好的数据以检测异常。",
+      "decision": "p7c_card",
+      "card_id": "new_card_001",
+      "reason": "数据挖掘明确以准备好的数据为输入，应用算法产生检测异常和识别模式的有向产出，超出KG定义描述，需增量表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "new_card_001",
+      "section_id": "CH58-S13",
+      "card_nature": "execution",
+      "title": "数据挖掘与匹配检测异常和模式",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "准备好的数据",
+          "evidence_unit_ids": [
+            "v7u_N004799"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "数据挖掘和数据匹配（应用各种算法和分析技术）",
+          "evidence_unit_ids": [
+            "v7u_N004799"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测异常和识别可疑行为模式",
+          "evidence_unit_ids": [
+            "v7u_N004799"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": [
+            "v7u_N004799"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N004799"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004799"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "P7C增量：数据挖掘与匹配作为执行过程，接收准备好的数据，产出异常检测和模式识别。该有向连接超出基础KG所能表达。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据准备步骤顺序已由基础KG充分表达，不构成超出KG的局部程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立行为要求，无关联输入、标准或结果，KG可保存为一般规则。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般好处和影响陈述，无特定主体动作或判断链，KG可表达因果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象相关性，无具体执行动作或产出，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据转换子步骤和特征创建属定义与列表，KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "new_card_001",
+      "reason": "数据挖掘明确以准备好的数据为输入，应用算法产生检测异常和识别模式的有向产出，超出KG定义描述，需增量表达。"
+    }
+  ]
+}

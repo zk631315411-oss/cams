@@ -1,0 +1,131 @@
+{
+  "section_id": "CH56-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "背景职责陈述，无明确条件或标准约束动作的有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般演变事实，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例描述动作，无独立结果或后续判断，基础KG可表达查阅行为。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "历史发现事实，基础KG已作为案例说明覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立发现，无后续行动或判断，基础KG可表达该事实。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "问答交互引出历史描述，无独立程序性结果；员工解释内容已被基础KG作为过程描述覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术演变过程描述，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "现代AI交易监控功能描述，大部分为基础KG覆盖；其中‘微调警报参数’等细微有向关系已由新候选coverage_gap_001单独捕捉。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例认知结论，无后续具体动作，基础KG可表达。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004410"
+      ],
+      "proposition": "AI工具通过学习现有阈值的表现来微调警报参数。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S04_002",
+      "reason": "基础KG仅能表述‘AI工具微调警报参数’这一事实，无法表达‘基于现有阈值表现’这一学习来源驱动的有向增强关系，属于P7C增量。",
+      "origin_candidate_ids": [
+        "cand_009"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH56-S04_002",
+      "section_id": "CH56-S04",
+      "card_nature": "execution",
+      "title": "AI工具基于现有阈值表现微调警报参数",
+      "flow_nodes": [
+        {
+          "node_id": "n1_input",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "现有阈值的表现",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "AI工具微调警报参数",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2_process",
+          "target": "n1_input",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004410"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：AI工具微调警报参数的动作以现有阈值表现为学习参照；KG不足：基础KG无法表达‘基于表现学习’这一有向增强关系；选项判断：可为后续监督或系统评估提供关于AI自我调整能力的依据；LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

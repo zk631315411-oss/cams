@@ -1,0 +1,67 @@
+{
+  "section_id": "CH49-S10",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003610"
+      ],
+      "proposition": "在组织缺乏足够时间或对业务模式完整理解的条件下，组织应考虑业务风险偏好和客户关系。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S10_001",
+      "reason": "基础KG可保存该规则整体，但无法表达其内部的条件-动作有向结构；此结构有助于判断在特定情况下应采取的最佳实践行动。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S10_001",
+      "section_id": "CH49-S10",
+      "card_nature": "assessment",
+      "title": "条件性考虑风险偏好以替代防御性SAR",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "组织缺乏足够时间或对业务模式完整理解以适当监控和研究客户活动",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织应考虑其业务风险偏好和与客户的关系",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003610"
+          ],
+          "derivation": "explicit_text",
+          "condition": "如果组织缺乏足够时间或完整理解",
+          "source_quote": "If an organization lacks sufficient time or a complete understanding of the business model necessary to properly monitor and research a customer activity, as a best practice, the organization should consider its business risk appetite and the relationship with the customer."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003610"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织缺乏足够时间/理解（条件）→ 组织应考虑风险偏好和客户关系；KG不足：基础KG只能将整个规则作为一般事实保存，无法表达条件触发的有向程序关系；选项判断：可确认在此条件下应采取考虑风险偏好而非直接提交防御性SAR的措施；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": []
+}

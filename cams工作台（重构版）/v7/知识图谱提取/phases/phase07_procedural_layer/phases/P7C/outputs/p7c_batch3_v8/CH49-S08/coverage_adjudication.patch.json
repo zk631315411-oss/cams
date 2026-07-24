@@ -1,0 +1,87 @@
+{
+  "section_id": "CH49-S08",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立后果陈述，无程序性有向结构，基础KG已能表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "记录重要性是孤立义务陈述，但记录动作已通过补充card_001的coverage_gap表达；命题本身不是有向过程。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "检测方法列举，属于基础KG事实列表，无有向关系。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003583"
+      ],
+      "proposition": "在做出提交或不提交SAR的决策后，金融机构应详细记录分析发现和决策理由。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S08_001",
+      "reason": "基础KG不能表达决策后必须记录发现和理由的有向过程，该关系对于理解流程完整性有用。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S08_001",
+      "reason": "原文明确要求记录决策发现和理由，但原始card未包含，补充记录步骤。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "P3_document",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "记录案件分析发现及决策理由（包括提交或不提交的理由）",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_X1_P3",
+          "edge_type": "PRECEDES",
+          "source": "X1_file",
+          "target": "P3_document",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_X2_P3",
+          "edge_type": "PRECEDES",
+          "source": "X2_not_file",
+          "target": "P3_document",
+          "evidence_unit_ids": [
+            "v7u_N003583"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

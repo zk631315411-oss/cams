@@ -1,0 +1,125 @@
+{
+  "section_id": "CH49-S01",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯背景事实与风险说明，无主体动作或有向判断结构，基础KG已能充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性预防措施，基础KG可保存为规则；缺乏具体条件或独立结果，不属于P7C有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S01_003",
+      "reason": "明确的条件（收到执法请求）触发主体动作（快速完整回应），构成条件-动作有向链，基础KG无法表达此方向性。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S01_002",
+      "reason": "作为重大调查中聘请外部法律顾问的参考因素，通过补充引入已有卡表达决策依据，原事实本身不独立成卡。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般治理要求，无具体条件触发或后续有向链，基础KG已作为措施覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "预防性流程要求，“有助于避免混乱”属于一般效果而非独立结果，无明确条件触发，基础KG可表达为规则。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "可选测试活动，缺乏明确条件、职责或结果出口，基础KG可保存为事实。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH49-S01_003",
+      "section_id": "CH49-S01",
+      "card_nature": "execution",
+      "title": "回应执法请求",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "收到执法请求",
+          "evidence_unit_ids": ["v7u_N003469"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织必须快速并完整回应",
+          "evidence_unit_ids": ["v7u_N003469"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003469"],
+          "derivation": "explicit_text",
+          "condition": "当收到执法请求时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003469"],
+      "candidate_status": "candidate",
+      "review_notes": "增量关系：收到执法请求 --PRECEDES--> 组织快速完整回应（条件）；KG不足：基础KG保存一般回应义务，无法表达事件触发的条件-动作方向性。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S01_002",
+      "reason": "补充聘请外部法律顾问所需参照的特权保护因素，原卡未表达此决策依据。",
+      "origin_candidate_ids": ["cand_006"],
+      "add_flow_nodes": [
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "外部法律顾问的调查受律师-客户特权保护",
+          "evidence_unit_ids": ["v7u_N003471"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N003470", "v7u_N003471"],
+          "derivation": "llm_inference",
+          "condition": null
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N003471"]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "section_id": "CH56-S01",
+  "section_title": "Technology for payment and batch screening > Types of ongoing screening",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004311"],
+      "proposition": "在客户准入时，机构应对客户进行实时制裁/恐怖名单筛查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S01_001",
+      "reason": "原文明示特定时机（准入）触发策略性动作（实时筛查），基础KG可保存规则但无法表达内部的时机-动作有向关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004312"],
+      "proposition": "如果被识别为PEP，机构可能需要进行额外尽职调查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S01_002",
+      "reason": "原文明示分类结论如何触发后续动作，构成判断-应对有向链，超出基础KG表达能力。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004316"],
+      "proposition": "对于需要立即阻止的支付，机构需使用实时筛查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅描述实时筛查的功能和必要性，未形成特定主体在具体情境下的条件-动作有向结构，基础KG可充分表达为功能事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004359"],
+      "proposition": "数字资产监管环境演变促使金融机构必须持续更新筛查能力",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S01_003",
+      "reason": "原文明示外部环境变化如何触发机构特定更新义务，形成触发-应对有向链，超出KG表达能力。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH56-S01_001",
+      "section_id": "CH56-S01",
+      "card_nature": "execution",
+      "title": "在客户准入时执行实时筛查",
+      "flow_nodes": [
+        {
+          "node_id": "E1_onboarding",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "客户准入事件",
+          "evidence_unit_ids": ["v7u_N004311"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_realtime_screening",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构对客户进行实时制裁/恐怖名单筛查",
+          "evidence_unit_ids": ["v7u_N004311"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_onboarding",
+          "target": "P1_realtime_screening",
+          "evidence_unit_ids": ["v7u_N004311"],
+          "derivation": "explicit_text",
+          "condition": "当机构办理客户准入手续时",
+          "source_quote": "When an organization onboards a customer, as part of its KYC checks it should screen the customer in real time against sanctions or terror lists."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004311"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户准入事件 --PRECEDES（条件：准入时）--> 实时筛查动作；KG不足：基础KG可表达'实时筛查用于客户准入'的一般事实，但无法表达准入事件触发筛查动作的时间条件和方向关系；选项判断：可确认客户准入时是否必须执行实时筛查；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S01_002",
+      "section_id": "CH56-S01",
+      "card_nature": "execution",
+      "title": "客户被识别为PEP后可能进行额外尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "E1_pep_identified",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "客户被识别为政治敏感人物（PEP）",
+          "evidence_unit_ids": ["v7u_N004312"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_edd",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构：进行额外尽职调查（EDD）",
+          "evidence_unit_ids": ["v7u_N004312"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_pep_identified",
+          "target": "P1_edd",
+          "evidence_unit_ids": ["v7u_N004312"],
+          "derivation": "explicit_text",
+          "condition": "如果客户被识别为PEP",
+          "source_quote": "If the customer is identified as a PEP, the organization may need to conduct additional due diligence."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004312"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：PEP识别结论 --PRECEDES（条件：若识别为PEP）--> 额外尽调义务；KG不足：基础KG可保存'PEP需加强尽调'的一般规则，但无法表达分类结论如何触发后续动作的有向判断链；选项判断：可确认识别为PEP后是否需要进行额外尽调；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S01_003",
+      "section_id": "CH56-S01",
+      "card_nature": "execution",
+      "title": "监管环境演变推动金融机构更新筛查能力",
+      "flow_nodes": [
+        {
+          "node_id": "E1_regulatory_evolve",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "数字资产监管环境演变",
+          "evidence_unit_ids": ["v7u_N004359"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_update_capabilities",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构：持续更新筛查能力",
+          "evidence_unit_ids": ["v7u_N004359"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_regulatory_evolve",
+          "target": "P1_update_capabilities",
+          "evidence_unit_ids": ["v7u_N004359"],
+          "derivation": "explicit_text",
+          "condition": "随着监管环境演变",
+          "source_quote": "As the regulatory environment for digital assets evolves, financial institutions must continuously update their screening capabilities."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004359"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：监管环境演变 --PRECEDES（条件：监管环境演变）--> 机构必须更新筛查能力；KG不足：基础KG可表达监管演变需更新技术的一般关系，但无法表达环境变化触发机构特定更新义务的方向和强制性；选项判断：可确认在监管演变时金融机构是否有更新筛查能力的义务；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,161 @@
+{
+  "section_id": "CH54-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH54-S03_005",
+      "reason": "基础KG仅能表达pKYC基于变化更新的事实，无法表达该过程的因果方向性，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅趋势陈述，无增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "传统流程，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "风险陈述，无具体主体动作。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "分类对比，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅补充监控范围，无明确独立结果或过程方向。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实描述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "列表举例，无增量结构。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "引言性陈述，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_015",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "标题片段，无增量结构。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004069"
+      ],
+      "proposition": "机构持续监控数据点，识别出触发器，可能触发KYC审查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S03_001",
+      "reason": "基础KG无法表达监控动作产生‘可能触发审查’这一条件性结果的有向关系。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH54-S03_001",
+      "reason": "现有card遗漏了触发器识别后可能触发KYC审查的结果。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "X002",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "触发器可能引起KYC审查 (Triggers might warrant a KYC review)",
+          "evidence_unit_ids": [
+            "v7u_N004069"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E002",
+          "edge_type": "PRODUCES",
+          "source": "P001",
+          "target": "X002",
+          "evidence_unit_ids": [
+            "v7u_N004069"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH54-S03_005",
+      "reason": "遗漏了基于客户行为和情况变化进行近实时更新的输入与过程。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "I001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户行为和情况变化 (Changes in customers' behaviors and circumstances)",
+          "evidence_unit_ids": [
+            "v7u_N004067"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E003",
+          "edge_type": "REFERENCES",
+          "source": "P001",
+          "target": "I001",
+          "evidence_unit_ids": [
+            "v7u_N004067"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N004067"
+      ]
+    }
+  ]
+}

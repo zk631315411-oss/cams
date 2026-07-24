@@ -1,0 +1,95 @@
+{
+  "section_id": "CH52-S04",
+  "section_title": "Technology and tools used across the customer life cycle > Behavioral and profile monitoring",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004000"],
+      "proposition": "网络分析通过识别中心节点、共享受益人或账户重叠，可以揭示隐藏关系和交易分层策略",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S04_001",
+      "reason": "该单元明确表达了识别动作与揭示结果之间的直接产出关系，形成了超出基础KG概念描述的程序性有向链。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003989"],
+      "proposition": "示例中，如果客户从典型小额国内转账突然变为大额国际电汇至高风险地区，该偏差被标记",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为特定案例说明，未形成一般规则，且标记动作缺少明确主体和条件依赖，基础KG可表达行为监控标记异常的一般功能。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003990"],
+      "proposition": "行为监控需要纳入职业变化、旅行、市场波动等背景因素，以避免误判合法交易",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于行为监控的规范性要求，可被基础KG作为规则事实保存，未形成特定条件下的具体主体动作和程序性方向。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003991"],
+      "proposition": "行为监控方法需要稳健的历史数据和持续模型校准才能有效",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为方法有效性的必要条件说明，不构成有向判断或程序性结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004002"],
+      "proposition": "网络分析通常需要专业工具和专业知识，因此比其他AFC技术更资源密集",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于网络分析的特征与资源属性描述，不构成具体流程或应对链。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003997"],
+      "proposition": "机器学习系统的黑箱属性可能导致合规团队难以向监管机构解释决策",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为技术挑战和潜在负面影响的描述，不构成明确的主体应对或判断结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH52-S04_001",
+      "section_id": "CH52-S04",
+      "card_nature": "execution",
+      "title": "网络分析识别关键节点以揭示隐藏关系和交易分层策略",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "网络分析：识别中心节点、共享受益人或账户重叠",
+          "evidence_unit_ids": ["v7u_N004000"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "揭示隐藏关系和交易分层策略",
+          "evidence_unit_ids": ["v7u_N004000"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N004000"],
+          "derivation": "explicit_text",
+          "source_quote": "Identifying central nodes, shared beneficiaries, or account overlaps can uncover hidden relationships and transaction layering strategies."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004000"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：网络分析识别中心节点等 -> 揭示隐藏关系和交易分层策略；KG不足：基础KG只能表达“网络分析可揭示隐藏关系”的事实，无法表达识别动作与揭示结果之间的有向产出关系；选项判断：可确认网络分析通过关键节点识别产出具体情报，排除仅将其视为一般数据分析工具的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,111 @@
+{
+  "section_id": "CH54-S08",
+  "section_title": "Technology for KYC > How does technology help screening?",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004171"],
+      "proposition": "当客户风险状况发生变化时，技术系统向组织发出警报。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S08_001",
+      "reason": "原文明示条件“any changes”触发“alerts organizations”，构成有向条件-行动链，基础KG无法充分表达此条件触发关系。选项有助于判断警报的触发条件。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004172"],
+      "proposition": "当出现新的负面信息时，自动化系统提供实时警报。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅描述持续监控媒体来源并提供实时警报，未明确条件触发关系（“about new adverse information”为陈述对象而非条件）。基础KG已可表达此过程。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004173"],
+      "proposition": "当客户被加入制裁名单或PEP状态变化时，技术提供实时更新。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S08_002",
+      "reason": "原文明示“if”条件触发提供实时更新，构成有向条件-行动链，基础KG无法充分表达此条件触发关系。选项有助于判断更新触发的条件。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S08_001",
+      "section_id": "CH54-S08",
+      "card_nature": "execution",
+      "title": "Customer Risk Profile Change Triggers Alert",
+      "flow_nodes": [
+        {
+          "node_id": "flow_node_001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "客户风险状况发生变化 (Customer risk profile changes)",
+          "evidence_unit_ids": ["v7u_N004171"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "flow_node_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "自动化系统：向组织发出警报 (Automated system alerts organizations)",
+          "evidence_unit_ids": ["v7u_N004171"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "flow_node_001",
+          "target": "flow_node_002",
+          "evidence_unit_ids": ["v7u_N004171"],
+          "derivation": "explicit_text",
+          "condition": "客户风险状况发生变化 (any changes in customer risk profile)",
+          "relation_type": null
+        }
+      ],
+      "source_unit_ids": ["v7u_N004171"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户风险状况发生变化 --触发--> 自动化系统向组织发出警报；KG不足：基础KG只能表达“持续监控和警报”的一般事实，无法表达条件触发的有向关系；选项判断：可确认或排除关于警报触发条件的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S08_002",
+      "section_id": "CH54-S08",
+      "card_nature": "execution",
+      "title": "Sanctions/PEP Status Change Triggers Real-Time Update",
+      "flow_nodes": [
+        {
+          "node_id": "flow_node_001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "客户被加入制裁名单或PEP状态变化 (Customer added to sanctions list or PEP status changes)",
+          "evidence_unit_ids": ["v7u_N004173"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "flow_node_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "技术系统：提供实时更新 (Technology provides real-time updates)",
+          "evidence_unit_ids": ["v7u_N004173"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "flow_node_001",
+          "target": "flow_node_002",
+          "evidence_unit_ids": ["v7u_N004173"],
+          "derivation": "explicit_text",
+          "condition": "客户被加入制裁名单或PEP状态变化 (if added to sanctions list or PEP status changed)",
+          "relation_type": null
+        }
+      ],
+      "source_unit_ids": ["v7u_N004173"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户制裁/PEP状态变化 --触发--> 技术提供实时更新；KG不足：基础KG可表达实时更新功能，但无法表达条件触发的有向关系；选项判断：可确认触发更新的具体条件；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

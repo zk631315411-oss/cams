@@ -1,0 +1,193 @@
+{
+  "section_id": "CH57-S04",
+  "section_title": "Transaction monitoring scenario calibration testing > Technology to assist investigation",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004512"],
+      "proposition": "表格概述技术解决方案类别",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯分类和概括，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004513"],
+      "proposition": "公开观察名单提供基本合规检查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "工具功能说明，无明确主体动作和方向。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004514"],
+      "proposition": "付费方案集成筛查到案件管理工作流并提供实时风险评分和持续监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "产品特性描述，无主体执行动作。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004515", "v7u_N004517"],
+      "proposition": "自动监控工具标记高风险活动后，人工分析师必须审查和验证警报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S04_001",
+      "reason": "存在标记事件触发人工审查义务的明确有向程序链。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004516"],
+      "proposition": "免费工具可支持调查但付费方案提供可扩展性等优势",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "比较陈述，无过程性序列。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004518"],
+      "proposition": "自动化优先处理高风险案件但可能忽略上下文因素",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅指出潜在风险，未形成应对或判断结构。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004519"],
+      "proposition": "完全人工调查效率低下",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "弱点陈述，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004520"],
+      "proposition": "采用平衡方法自动化重复任务并保留专家监督确保准确性、合规和风险缓解",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S04_002",
+      "reason": "方法到结果的明确有向产出关系。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N004521"],
+      "proposition": "结合免费和付费工具优化工作流程并增强合规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S04_003",
+      "reason": "动作到状态改善的有向关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH57-S04_001",
+      "section_id": "CH57-S04",
+      "card_nature": "assessment",
+      "title": "自动系统标记异常活动后人工审查义务",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "AI-driven monitoring tools flag high-risk activities / automated transaction monitoring systems flag unusual activity (AI驱动监控工具标记高风险/异常活动)",
+          "evidence_unit_ids": ["v7u_N004515", "v7u_N004517"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Human analysts must review and validate alerts (人工分析师必须审查并验证警报)",
+          "evidence_unit_ids": ["v7u_N004517"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004515", "v7u_N004517"],
+          "derivation": "explicit_text",
+          "source_quote": "\"flagging high-risk activities for further review\" (v7u_N004515); \"automated transaction monitoring systems flag unusual activity, but human analysts must review and validate alerts\" (v7u_N004517)"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004515", "v7u_N004517"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：自动系统标记高风险/异常活动 --> 人工分析师必须审查验证警报（条件：当系统标记时）；KG不足：基础KG只能表达自动系统标记和人工审查作为独立事实，无法表达标记事件触发审查义务的有向程序关系；选项判断：可确认在自动标记后存在必须人工审查的步骤，防止自动驳回；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH57-S04_002",
+      "section_id": "CH57-S04",
+      "card_nature": "control",
+      "title": "实施平衡的自动化与人工监督以保障调查质量",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Institution adopts balanced approach, using technology to automate repetitive tasks while maintaining expert oversight for final decisions (机构采用平衡方法，自动化重复任务并保留专家监督最终决策)",
+          "evidence_unit_ids": ["v7u_N004520"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Accuracy, compliance, and effective risk mitigation are ensured (准确性、合规性和有效风险缓解得以确保)",
+          "evidence_unit_ids": ["v7u_N004520"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004520"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004520"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构实施平衡自动化与人工监督的方法 --> 产生准确性、合规性及风险缓解的确保状态；KG不足：基础KG只知平衡方法重要，未表达从方法到保障状态的有向产出；选项判断：可确认实施该行为会导致所列保障效果；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH57-S04_003",
+      "section_id": "CH57-S04",
+      "card_nature": "execution",
+      "title": "结合免费与订阅工具以优化金融犯罪调查工作流程",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Financial crime teams combine free and subscription-based investigative tools (金融犯罪团队结合免费和订阅调查工具)",
+          "evidence_unit_ids": ["v7u_N004521"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Workflows are optimized and regulatory compliance efforts are enhanced (工作流程优化，合规努力增强)",
+          "evidence_unit_ids": ["v7u_N004521"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004521"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004521"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融犯罪团队结合工具 --> 导致工作流程优化和合规努力增强；KG不足：基础KG只能保存结合工具的好处，不能具体表示结合动作与产出状态之间的有向关系；选项判断：可确认结合行为能带来工作流程和合规方面的改善；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

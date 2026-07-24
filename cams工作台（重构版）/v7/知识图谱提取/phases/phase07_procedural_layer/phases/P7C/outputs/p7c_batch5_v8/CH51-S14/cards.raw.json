@@ -1,0 +1,159 @@
+{
+  "section_id": "CH51-S14",
+  "section_title": "Understanding AFC technology > Privacy-enhancing technology",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003944"
+      ],
+      "proposition": "在客户行为可疑的条件下，COSMIC参与机构可以共享客户信息。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S14_001",
+      "reason": "条件触发共享授权，构成完整判断性有向链，超出基础KG的规则陈述能力。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003944"
+      ],
+      "proposition": "法律要求COSMIC参与机构必须制定与客户隐私相关的政策和保障措施。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S14_002",
+      "reason": "外部要求约束特定主体执行具体动作，形成局部程序性义务链，基础KG无法表达此有向约束关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003936"
+      ],
+      "proposition": "隐私增强技术确保符合GDPR和GLBA等数据保护法规。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "命题为抽象技术功能陈述，未指定具体主体动作、触发条件或决策流程，仅属一般知识关系，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003937"
+      ],
+      "proposition": "隐私增强技术使银行与执法机构能协作分析敏感金融数据而不暴露PII，克服数据共享限制。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "命题描述PET使能银行和执法机构协作分析，虽出现主体但为能力授予陈述，缺乏具体触发事件、评估或独立结果，基础KG可承载此一般功能说明。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH51-S14_001",
+      "section_id": "CH51-S14",
+      "card_nature": "execution",
+      "title": "COSMIC框架下基于可疑行为的客户信息共享授权",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "客户行为可疑",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "参与机构可共享客户信息",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "condition": "客户的行为或资料可疑",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "if the customer’s profile or behavior is suspicious"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003944"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户行为可疑（E1）--条件前提--> 参与机构可共享客户信息（P2）；KG不足：基础KG可记录‘COSMIC允许共享’，但无法表达条件触发动作的有向链条；选项判断：可确认共享授权的条件性；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH51-S14_002",
+      "section_id": "CH51-S14",
+      "card_nature": "control",
+      "title": "法律要求COSMIC参与机构制定客户隐私政策和保障措施",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "法律要求（FSMA修订案设立COSMIC并要求制定隐私政策）",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "参与机构必须制定与客户隐私相关的政策和保障措施",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "relation_type": "standard_constrains_action",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N003944"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "the Act requires that all participating organizations have policies and safeguards particularly related to customer privacy"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003944"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：参与机构必须制定隐私政策（P8）--参照约束--> 法律要求（standard）；KG不足：基础KG可存储‘法律要求隐私政策’，但无法表达特定主体必须执行这一义务的有向约束关系；选项判断：可确认参与机构负有制定隐私政策的强制义务；LLM推理：无"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "命题为抽象技术功能陈述，未指定具体主体动作、触发条件或决策流程，仅属一般知识关系，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "命题描述PET使能银行和执法机构协作分析，虽出现主体但为能力授予陈述，缺乏具体触发事件、评估或独立结果，基础KG可承载此一般功能说明。"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "section_id": "CH07-S03",
+  "section_title": "Money laundering risks associated with retail and commercial banking > Credit-related product risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000554"],
+      "proposition": "如果银行知道或怀疑客户使用非法资金还贷，则银行不应接受该资金用于还贷",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_001",
+      "reason": "原文明示了特定条件（知道或怀疑非法资金）下银行的义务性动作（不应接受资金），形成了条件→应对的有向结构，超出基础KG能够表达的一般风险指标或事实描述。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000555"],
+      "proposition": "当退出超出风险容忍度的客户关系且有未偿贷款余额时，核销贷款通常需要充分的理由和批准",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "原文明示了特定背景下，特定动作（核销贷款）需要理由和批准的程序性约束，形成动作→标准的参照关系，超出基础KG孤立的风险指示。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000552"],
+      "proposition": "提前还贷是犯罪分子伪装非法资金的手段，且提前还款通常不被视为可疑",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将其作为洗钱方法的风险指标覆盖，无明确主体动作及判断的有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH07-S03_001",
+      "section_id": "CH07-S03",
+      "card_nature": "control",
+      "title": "银行在怀疑非法资金时拒绝接受还贷",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "银行知道或怀疑客户使用非法资金还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行不应接受资金用于还贷",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1->P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000554"],
+          "derivation": "explicit_text",
+          "condition": "如果银行知道或怀疑客户使用非法资金还贷",
+          "source_quote": "If the bank knows or suspects the customer is using illicit funds to repay the loan, ... The bank should not accept funds for the purposes of loan"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000554"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行知道或怀疑客户使用非法资金还贷 → 银行不应接受资金用于还贷（条件：知道或怀疑非法资金）；KG不足：基础KG只能表达该句为风险指标或一般事实，无法表达条件触发义务性动作的有向关系；选项判断：可确认在何种条件下银行应拒绝接受还贷，排除无条件接受的情况；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH07-S03_002",
+      "section_id": "CH07-S03",
+      "card_nature": "execution",
+      "title": "核销贷款需满足理由和批准要求",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行核销贷款余额",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "需要充分的理由和批准 (justification and approval)",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "P1->S1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S1",
+          "evidence_unit_ids": ["v7u_N000555"],
+          "derivation": "explicit_text",
+          "condition": "当退出超出风险容忍度的客户关系且存在未偿贷款余额时",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "writing off a loan is a significant financial decision, often requiring extensive justification and approval"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000555"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在退出超出风险容忍度的客户关系且有贷款余额时，核销贷款动作需要充分的理由和批准（动作→标准约束）；KG不足：基础KG只能指出风险指示，无法表达流程约束的有向关系；选项判断：可确认核销贷款需满足的要求，排除随意核销的情况；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,102 @@
+{
+  "section_id": "CH53-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯背景介绍，无程序性有向结构，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "均为过程步骤描述，无触发、分支或独立结果，基础KG可表达为一般程序事实。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH53-S02_003",
+      "reason": "Marie评估电子KYC流程时发现面部识别系统不完善的具体原因（缺乏活体检测、未集成），该发现是评估产出的独立结论，原card003未包含此发现，作为补充。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH53-S02_003",
+      "reason": "Marie进一步调查后发现姓名筛查系统使用部分匹配逻辑且不允许姓名偏差，导致误报，该发现是评估产出的独立结论，原card003未包含此发现，作为补充。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH53-S02_003",
+      "reason": "原card003遗漏了Marie评估产出的两项具体发现：①面部识别系统不完善（缺乏活体检测、未与证件处理系统集成）；②姓名筛查系统的部分匹配逻辑导致误报。补充对应exit节点和边，以完整表达评估结论。",
+      "origin_candidate_ids": [
+        "cand_006",
+        "cand_007"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N009",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现面部识别系统不完善，缺乏活体检测且未与证件处理系统集成",
+          "evidence_unit_ids": [
+            "v7u_N004026",
+            "v7u_N004027"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N010",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现姓名筛查系统使用部分匹配逻辑且不允许姓名偏差，导致误报（如Henri与Henrik匹配）",
+          "evidence_unit_ids": [
+            "v7u_N004031",
+            "v7u_N004032"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E006",
+          "edge_type": "PRODUCES",
+          "source": "N005",
+          "target": "N009",
+          "evidence_unit_ids": [
+            "v7u_N004021",
+            "v7u_N004026",
+            "v7u_N004027"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E007",
+          "edge_type": "PRODUCES",
+          "source": "N005",
+          "target": "N010",
+          "evidence_unit_ids": [
+            "v7u_N004021",
+            "v7u_N004031",
+            "v7u_N004032"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N004026",
+        "v7u_N004027",
+        "v7u_N004031",
+        "v7u_N004032"
+      ]
+    }
+  ]
+}

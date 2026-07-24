@@ -1,0 +1,107 @@
+{
+  "section_id": "CH47-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_006",
+      "reason": "原文明确表达监管发现和建议有助于识别额外风险并启动审查，具有明确的主体动作（识别风险、启动审查），构成有向的程序性关系，超出KG的静态分类能力。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_004",
+      "reason": "避免通风报信是处理调查来源时必须遵守的关键具体约束，应作为处理动作的标准补充，原card未体现。通过card_supplement增加此标准。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S07_006",
+      "section_id": "CH47-S07",
+      "card_nature": "assessment",
+      "title": "监管发现和建议帮助识别额外风险并启动审查",
+      "flow_nodes": [
+        {
+          "node_id": "E_3320_regulatory_findings",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "监管发现和建议",
+          "evidence_unit_ids": [
+            "v7u_N003320"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_3320_identify_initiate",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "有助于识别额外风险并启动审查",
+          "evidence_unit_ids": [
+            "v7u_N003320"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3320_1",
+          "edge_type": "PRECEDES",
+          "source": "E_3320_regulatory_findings",
+          "target": "P_3320_identify_initiate",
+          "evidence_unit_ids": [
+            "v7u_N003320"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当存在监管发现和建议时",
+          "source_quote": "Regulatory findings and recommendations can help identify additional risks and initiate reviews."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003320"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：监管发现和建议（entry）促使机构识别额外风险并启动审查（process）。基础KG只能表达监管发现是调查来源之一，无法表达其触发具体审查动作的程序关系。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH47-S07_004",
+      "reason": "原card遗漏了处理调查来源时必须遵守的关键具体标准：特别重要的是避免向潜在调查对象通风报信（v7u_N003327）。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "S_3327_avoid_tipping_off",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "必须避免向潜在调查对象通风报信",
+          "evidence_unit_ids": [
+            "v7u_N003327"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e_3327_1",
+          "edge_type": "REFERENCES",
+          "source": "P_3326_handle_with_care",
+          "target": "S_3327_avoid_tipping_off",
+          "evidence_unit_ids": [
+            "v7u_N003327"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当处理调查来源时"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003327"
+      ]
+    }
+  ]
+}

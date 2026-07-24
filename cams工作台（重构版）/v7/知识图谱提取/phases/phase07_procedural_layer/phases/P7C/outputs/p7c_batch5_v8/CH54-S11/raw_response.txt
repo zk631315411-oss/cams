@@ -1,0 +1,136 @@
+{
+  "section_id": "CH54-S11",
+  "section_title": "Technology for KYC > Fuzzy logic and partial matches",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004234",
+        "v7u_N004222"
+      ],
+      "proposition": "组织基于模糊逻辑配置生成部分匹配，随后应调查部分匹配（需要人工介入）以确定是真实匹配还是误报。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S11_001",
+      "reason": "基础KG仅能表达部分匹配需要调查作为一个事实，但无法表达生成-调查-分类的完整决策链及互斥出口，该有向结构对理解KYC筛查流程中的判断分支至关重要。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S11_001",
+      "section_id": "CH54-S11",
+      "card_nature": "assessment",
+      "title": "基于模糊逻辑的部分匹配调查与分类",
+      "source_unit_ids": [
+        "v7u_N004234",
+        "v7u_N004222"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织基于模糊逻辑配置生成部分匹配→组织应调查部分匹配（需要人工介入）→〔经调查确定为真实匹配〕→分类为真实匹配；〔经调查确定为误报〕→分类为误报。KG不足：基础KG只能表达“部分匹配需要调查”这一事实，无法表达生成动作、调查判断与互斥分类出口之间的有向决策结构。选项判断：可用于确认或排除关于部分匹配筛查流程及结果分类的选项。LLM推理：无。",
+      "flow_nodes": [
+        {
+          "node_id": "node_std_config",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "模糊逻辑配置",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_proc_generate",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织基于模糊逻辑配置生成部分匹配",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_proc_investigate",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "组织应调查部分匹配（需要人工介入），以确定是真实匹配还是误报",
+          "evidence_unit_ids": [
+            "v7u_N004234",
+            "v7u_N004222"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_exit_true_match",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "真实匹配",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_exit_false_positive",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "误报",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_ref_config",
+          "edge_type": "REFERENCES",
+          "source": "node_proc_generate",
+          "target": "node_std_config",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Based on the fuzzy logic configuration"
+        },
+        {
+          "edge_id": "edge_precedes_generate_investigate",
+          "edge_type": "PRECEDES",
+          "source": "node_proc_generate",
+          "target": "node_proc_investigate",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "These partial matches should then be investigated"
+        },
+        {
+          "edge_id": "edge_decides_true",
+          "edge_type": "DECIDES",
+          "source": "node_proc_investigate",
+          "target": "node_exit_true_match",
+          "condition": "经调查确定为真实匹配",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "branch_condition_routes_path",
+          "source_quote": "to determine whether they are true matches"
+        },
+        {
+          "edge_id": "edge_decides_false",
+          "edge_type": "DECIDES",
+          "source": "node_proc_investigate",
+          "target": "node_exit_false_positive",
+          "condition": "经调查确定为误报",
+          "evidence_unit_ids": [
+            "v7u_N004234"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "branch_condition_routes_path",
+          "source_quote": "or false positives"
+        }
+      ]
+    }
+  ],
+  "skip_reason": null
+}

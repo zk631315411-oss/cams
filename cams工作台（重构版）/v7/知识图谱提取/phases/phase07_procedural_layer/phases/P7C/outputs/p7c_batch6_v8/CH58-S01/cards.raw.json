@@ -1,0 +1,235 @@
+{
+  "section_id": "CH58-S01",
+  "section_title": "Data as an input for solutions > Understanding your data",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004617"
+      ],
+      "proposition": "当数据流入合规系统，它根据数据字典填充表，从而确保准确映射",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S01_001",
+      "reason": "该命题明确了事件触发、动作、标准和结果的局部有向结构，超出基础KG的静态描述。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004604"
+      ],
+      "proposition": "控制必须列出其有效运行所需的数据",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "规范性要求：控制列出所需数据；该信息可作为辅助输入用于后续比较，但本身不构成独立有向过程。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004605"
+      ],
+      "proposition": "数据需求根据控制的具体情况和是否使用AI而定制",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "解释数据需求的决定因素，属一般事实，无具体触发或独立结果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004607"
+      ],
+      "proposition": "整理和分类数据到数据分类法有助于提供识别所需数据的一致框架",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象帮助关系，无明确主体动作和可建模的有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004616"
+      ],
+      "proposition": "由于数据格式、特征各异，数据集成是重要步骤",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "步骤重要性陈述，未连接具体流程，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004619"
+      ],
+      "proposition": "已填充的数据表比较控制所需数据与可用数据",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S01_001",
+      "reason": "已填充的数据表比较控制所需数据与可用数据，有明确主语和动作，可构成开放式过程，是填充表下游的必要步骤。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S01_001",
+      "section_id": "CH58-S01",
+      "card_nature": "execution",
+      "title": "数据流入触发填充表以确保准确映射",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "数据流入合规系统",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "数据填充表",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "A1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "数据字典（由系统技术人员和业务伙伴创建）",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "系统准确一致地将多源数据映射到正确字段",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "A2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "控制所需数据",
+          "evidence_unit_ids": [
+            "v7u_N004604"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "比较控制所需数据与可用数据",
+          "evidence_unit_ids": [
+            "v7u_N004619"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "A1",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "edge3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N004617"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge4",
+          "edge_type": "PRECEDES",
+          "source": "X1",
+          "target": "P2",
+          "evidence_unit_ids": [
+            "v7u_N004619"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge5",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "A2",
+          "evidence_unit_ids": [
+            "v7u_N004604",
+            "v7u_N004619"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004617",
+        "v7u_N004604",
+        "v7u_N004619"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：数据流入 -> 填充表 -> 准确映射（条件：根据数据字典）；KG不足：基础KG只能表达数据字典确保映射，无法表达数据流入触发填充表这一有向过程；选项判断：可确认或排除关于数据集成步骤、数据字典作用及触发条件的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "规范性要求：控制列出所需数据；该信息可作为辅助输入用于后续比较，但本身不构成独立有向过程。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "解释数据需求的决定因素，属一般事实，无具体触发或独立结果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象帮助关系，无明确主体动作和可建模的有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "步骤重要性陈述，未连接具体流程，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S01_001",
+      "reason": "已填充的数据表比较控制所需数据与可用数据，有明确主语和动作，可构成开放式过程，是填充表下游的必要步骤。"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "section_id": "CH47-S08",
+  "section_title": "Transaction monitoring > Steps applied to an investigation",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003330"
+      ],
+      "proposition": "在升级调查前，分析师必须理解可疑性质并判断是否有合理解释，然后执行升级调查以确认和报告可疑。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S08_001",
+      "reason": "明确了分析师执行理解判断与升级之间的条件性先后关系，超出基础KG的步骤列表。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003331",
+        "v7u_N003330"
+      ],
+      "proposition": "分析师理解判断时参照同一账户或客户的过往交易模式作为输入。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S08_001",
+      "reason": "将特定数据源关联到具体判断动作，形成有向的线索支持关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003332",
+        "v7u_N003330"
+      ],
+      "proposition": "分析师理解判断时参照开户信息及历史交易数据作为背景输入。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S08_001",
+      "reason": "将背景信息明确关联到判断动作，表达出判断的输入依赖。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003333",
+        "v7u_N003330"
+      ],
+      "proposition": "所有研究最后应记录并注明缺失信息，分析师的理解判断作为研究的一部分先于记录。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S08_001",
+      "reason": "明确了记录步骤的顺序位置，且与核心分析动作形成先后关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S08_001",
+      "section_id": "CH47-S08",
+      "card_nature": "assessment",
+      "title": "交易监控调查步骤：分析师在升级前理解判断，利用输入信息，并记录研究",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "分析师理解可疑性质并判断是否有合理解释",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "升级调查以确认和报告可疑",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "同一账户或客户的过往交易模式",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "开户时收集的信息和历史交易数据",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "记录所有研究并注明缺失信息",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003330"
+          ],
+          "derivation": "explicit_text",
+          "condition": "before escalating an investigation"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N003331"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "REFERENCES",
+          "source": "N1",
+          "target": "N4",
+          "evidence_unit_ids": [
+            "v7u_N003332"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E4",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N5",
+          "evidence_unit_ids": [
+            "v7u_N003333"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003330",
+        "v7u_N003331",
+        "v7u_N003332",
+        "v7u_N003333"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：（1）分析师在升级调查前必须理解可疑性质并判断合理解释（N1），然后才能升级调查（N2）；（2）分析师理解判断时参照同一账户或客户的过往交易模式（N3）和开户信息及历史交易数据（N4）；（3）所有研究最后应记录并注明缺失信息（N5），且N1在N5之前。KG不足：基础KG仅描述调查步骤列表，无法表达步骤间的条件顺序（升级前置）和输入参照关系。选项判断：可确认升级前必须进行理解判断及记录为最后步骤，可排除颠倒顺序或忽略输入。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": []
+}

@@ -1,0 +1,225 @@
+{
+  "section_id": "CH47-S16",
+  "section_title": "Transaction monitoring > Decision to file a SAR",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003438"],
+      "proposition": "义务主体检测到可疑活动时，必须向FIU提交SAR",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_001",
+      "reason": "条件触发义务动作，形成明确有向链，基础KG仅保存定义无法表达条件-义务关系"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003445"],
+      "proposition": "初始警报后30天内必须提交SAR（FinCEN要求）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_002",
+      "reason": "时间事件触发具体时限动作，基础KG保存事实但无法表达时间-动作有向关系"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003446"],
+      "proposition": "初始检测未识别嫌疑人且需进一步调查时，可额外延长30天提交SAR",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_003",
+      "reason": "例外条件导向不同时限，构成条件分支，基础KG仅保存例外事实无法表达分支导向"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003447"],
+      "proposition": "高风险活动可能需立即提交SAR",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_004",
+      "reason": "风险状态导向加速动作，形成特例路径，基础KG无法表达状态-动作导向"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003439"],
+      "proposition": "提交SAR是AFC关键部分，对打击洗钱/恐怖融资很重要",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯事实陈述，无有向结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003440"],
+      "proposition": "MLRO通常负责最终决定是否提交SAR",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "静态职责描述，缺乏条件或触发事件，难以构成有向链"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003441", "v7u_N003442", "v7u_N003443"],
+      "proposition": "在SAR审查中，MLRO可能提出问题，可能导致进一步调查，应建立反馈和补充调查的时间表",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "整体描述审查流程，但各单元之间的有向关系（如提问触发调查）证据不明确，基础KG可整体描述该流程"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003444"],
+      "proposition": "各司法管辖区对提交报告有规则和截止日期",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般规则陈述，具体有向结构已在后续单元提取"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S16_001",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "Obliged Parties Must File SAR When Detecting Suspicious Activity",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "义务主体检测到可疑或潜在非法活动",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "义务主体必须向FIU提交SAR",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003438"],
+          "derivation": "explicit_text",
+          "condition": "when obliged parties detect suspicious or potentially illicit activity"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003438"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：义务主体检测到可疑活动 → 必须向FIU提交SAR；KG不足：基础KG可保存SAR定义为事实，但无法表达条件触发义务动作的有向关系；选项判断：可确认触发提交SAR的条件；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S16_002",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "Filing SAR Within 30 Days of Initial Alert (FinCEN Requirement)",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "初始警报 (initial alert)",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "在30个日历日内提交SAR",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003445"],
+          "derivation": "explicit_text",
+          "condition": "per FinCEN requirement, within 30 calendar days of the initial alert"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003445"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：初始警报 → 必须在30个日历日内提交SAR；KG不足：KG可保存此规则作为事实，但无法表达时间触发和动作义务的有向关系；选项判断：可确认默认提交截止日期；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S16_003",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "Extension of SAR Filing Deadline When Suspect Not Identified and Further Investigation Required",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "初始检测未识别嫌疑人且需进一步调查",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提交SAR，可额外延长30个日历日（即总共最多60个日历日）",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003446"],
+          "derivation": "explicit_text",
+          "condition": "if the initial detection does not identify a suspect and further investigation is required"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003446"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：初始检测未识别嫌疑人且需进一步调查 → 可额外30天提交SAR；KG不足：KG可能将例外规则作为事实，但无法表达该条件如何导向不同时限的有向结构；选项判断：可确认何种情形可延长提交期限；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S16_004",
+      "section_id": "CH47-S16",
+      "card_nature": "execution",
+      "title": "Expedited SAR Filing for High-Risk Activities",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "高风险活动",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "加速提交SAR（立即报告）",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003447"],
+          "derivation": "explicit_text",
+          "condition": "for high-risk activities, expedited filing requirements might apply, necessitating immediate reporting"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003447"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：高风险活动 → 可能需立即提交SAR；KG不足：KG可保存高风险加速规则为事实，但无法表达风险状态导向加速动作的有向关系；选项判断：可确认高风险时报告时限的例外；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

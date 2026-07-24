@@ -1,0 +1,162 @@
+{
+  "section_id": "CH57-S08",
+  "section_title": "Transaction monitoring scenario calibration testing > Case example: Identify data for a new TM system",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004592",
+        "v7u_N004595"
+      ],
+      "proposition": "Sarah基于年度风险评估识别交易监控系统需控制的风险，然后映射现有场景以检查覆盖并了解额外场景需求，最后将必要的数据点添加到核心数据中。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S08_001",
+      "reason": "内部存在明确的主体动作（识别风险、映射场景、添加数据）及其对特定输入（年度风险评估、现有场景）的依赖关系，形成了有向操作链，基础KG只能将其作为过程描述保存，无法表达这些内部顺序和条件。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004596"
+      ],
+      "proposition": "Sarah识别补充数据源（如负面媒体、PEP、SAR）并考虑行为指标，以优化警报和提高调查效率。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为静态的数据源清单和执行一个简单识别动作，无进一步的有向判断或条件依赖，基础KG可以直接存储该事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004597",
+        "v7u_N004598"
+      ],
+      "proposition": "数据选择应避免清单式方法，并与已识别风险和可用数据对齐。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于一般性指导原则，无程序性链条，KG可保存为规则。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004599",
+        "v7u_N004600",
+        "v7u_N004601"
+      ],
+      "proposition": "Sarah评估数据集是否符合一致性、可靠性、隐私法规、风险对齐和兼容性要求，以确保增强检测而不超载。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "评估动作仅为列举多项检查标准，既无分支结论也无独立出口，属于基础事实描述，KG可充分表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH57-S08_001",
+      "section_id": "CH57-S08",
+      "card_nature": "execution",
+      "title": "风险识别、映射与数据添加流程",
+      "flow_nodes": [
+        {
+          "node_id": "input1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "年度风险评估",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "现有TM系统场景",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sarah识别交易监控系统需控制的风险",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Sarah将现有TM系统场景与风险进行映射，以检查覆盖和了解额外场景需求",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Sarah将必要的风险相关数据点添加到核心交易数据和客户风险画像数据中",
+          "evidence_unit_ids": [
+            "v7u_N004595"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_ref1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "input1",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification"
+        },
+        {
+          "edge_id": "e_seq1",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P2",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_seq2",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P3",
+          "evidence_unit_ids": [
+            "v7u_N004592",
+            "v7u_N004595"
+          ],
+          "derivation": "explicit_text",
+          "condition": "在必要时（基于风险识别存在必要数据点）"
+        },
+        {
+          "edge_id": "e_ref2",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "input2",
+          "evidence_unit_ids": [
+            "v7u_N004592"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004592",
+        "v7u_N004595"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Sarah通过年度风险评估识别需控制的风险，并基于此映射现有TM场景（输入1→P1→P2，P2参照输入2）和添加必要数据点（P1→P3，有条件）；KG不足：基础KG仅将本段作为一般过程描述，无法表达内部顺序和对特定输入的有向依赖；选项判断：可确认识别风险、映射场景与添加数据之间的动作顺序和输入关联；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

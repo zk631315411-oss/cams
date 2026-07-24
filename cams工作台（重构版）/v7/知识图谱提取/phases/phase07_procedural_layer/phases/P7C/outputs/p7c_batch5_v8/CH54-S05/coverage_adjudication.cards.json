@@ -1,0 +1,136 @@
+{
+  "section_id": "CH54-S05",
+  "section_title": "Technology for KYC > Authentication and security technology",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004113"
+      ],
+      "proposition": "部分机构在客户访问平台功能前要求提交身份证照片和录制视频",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S05_001",
+      "reason": "原文存在条件触发的具体执行动作，且基础KG只能作为孤立案例保存，无法表达访问需求→机构要求的有向程序链"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004102"
+      ],
+      "proposition": "安全与认证技术帮助机构合规、防欺诈、保护数据并提升效率",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯好处陈述，无特定主体的增量有向链；基础KG可保存技术益处事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004114"
+      ],
+      "proposition": "机构在开户过程中使用认证技术验证客户",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般过程描述，无明确触发条件或独立结果；基础KG已将其保存为过程事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004115"
+      ],
+      "proposition": "认证技术通过多因素认证和活体检测防止身份盗窃等欺诈",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "机制解释，以技术为主语，无组织主体的具体动作与有向链；基础KG可保存为防范措施。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004116"
+      ],
+      "proposition": "行为分析技术检测未授权访问并防止账户接管",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "机制解释，以技术为主语，无组织主体的具体动作与有向链；基础KG可保存为行为分析解释。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S05_001",
+      "section_id": "CH54-S05",
+      "card_nature": "control",
+      "title": "部分机构的客户访问前提条件（提交身份证照片和视频）",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "客户试图访问平台全部功能（在访问之前）",
+          "evidence_unit_ids": [
+            "v7u_N004113"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "部分机构要求客户提交身份证照片和录制视频",
+          "evidence_unit_ids": [
+            "v7u_N004113"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1->P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N004113"
+          ],
+          "derivation": "explicit_text",
+          "condition": "在客户可以访问所有平台功能之前",
+          "source_quote": "before they can access all the platform's functionalities"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004113"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户试图访问平台功能 --(在访问前)--> 部分机构要求提交身份证照片和视频；KG不足：基础KG只能保存该示例的事实，无法表达访问需求触发了机构认证要求的有向程序链；选项判断：可确认部分机构在客户访问前要求多因素认证的步骤；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯好处陈述，无特定主体的增量有向链；基础KG可保存技术益处事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般过程描述，无明确触发条件或独立结果；基础KG已将其保存为过程事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "机制解释，以技术为主语，无组织主体的具体动作与有向链；基础KG可保存为防范措施。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "机制解释，以技术为主语，无组织主体的具体动作与有向链；基础KG可保存为行为分析解释。"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "section_id": "CH47-S11",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "已有card p7card_CH47-S11_001已从条件检查开始更完整地表达了客户沟通触发和执行流程，cand_001的关系为简化版本且被覆盖，无需重复。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "沟通保密要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "客户沟通的各项工作要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "原有card遗漏了客户沟通执行过程中应参考的标准要求（保密、清晰、专业、避免通风报信、法规遵从、记录）以及沟通动作的直接产出结果（信息传达给分析师），现补充标准节点与exit节点及相关边。",
+      "origin_candidate_ids": ["cand_002", "cand_004"],
+      "add_flow_nodes": [
+        {
+          "node_id": "STD1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "沟通要求（保密、清晰、专业、避免通风报信、法规遵从、记录）",
+          "evidence_unit_ids": [
+            "v7u_N003363",
+            "v7u_N003365",
+            "v7u_N003366",
+            "v7u_N003367",
+            "v7u_N003368",
+            "v7u_N003369",
+            "v7u_N003370"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "信息传达给分析师",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_3",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "STD1",
+          "evidence_unit_ids": [
+            "v7u_N003364",
+            "v7u_N003365",
+            "v7u_N003366",
+            "v7u_N003367",
+            "v7u_N003368",
+            "v7u_N003369",
+            "v7u_N003370"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_4",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003363",
+        "v7u_N003365",
+        "v7u_N003366",
+        "v7u_N003367",
+        "v7u_N003368",
+        "v7u_N003369",
+        "v7u_N003370"
+      ]
+    }
+  ]
+}

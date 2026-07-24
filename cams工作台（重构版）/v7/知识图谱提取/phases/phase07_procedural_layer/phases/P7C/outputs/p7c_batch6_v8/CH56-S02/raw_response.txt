@@ -1,0 +1,238 @@
+{
+  "section_id": "CH56-S02",
+  "section_title": "Technology for payment and batch screening > Rules-based transaction monitoring",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004364"],
+      "proposition": "交易金额超过金融机构设定的阈值（如1万美元）时触发警报、强制报告和加强审查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S02_001",
+      "reason": "案例中包含明确的条件-动作链，且结果包含强制报告和加强审查等具体元素，形成基础KG未充分表达的有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004365", "v7u_N004366"],
+      "proposition": "犯罪分子通过结构化交易规避阈值控制，且多数司法管辖区将其视为金融犯罪",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为标准犯罪手法与法律定义，属于基础KG可充分表达的事实与规则。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004368"],
+      "proposition": "客户分群允许金融机构设定反映各群预期活动的交易监控阈值",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "表达分群与阈值设定之间的一般能力关系，为基础KG可记录的概念关联。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004371"],
+      "proposition": "组织在识别客户分群后，对每个群体应用适当的交易监控规则，以识别偏离预期行为的客户",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S02_002",
+      "reason": "明确了顺序性步骤（识别分群→应用规则）和主体执行动作，构成基础KG无法完整表达的局部程序性结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004373", "v7u_N004374"],
+      "proposition": "客户行为偏离分群预期可能引发红旗信号，若持续且无合理解释则可能表示非法活动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为案例中的风险指标与推断链，缺乏明确的机构应对动作，属于基础KG可涵盖的风险知识。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004375", "v7u_N004376", "v7u_N004377"],
+      "proposition": "基于规则的系统生成警报后，银行使用AI模型评估警报并分配风险评级，该评级辅助调查员优先排序警报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S02_003",
+      "reason": "串联了从警报触发、AI评估、风险评级产出到调查员优先级决策的完整有向流程，具有明确的步骤与角色。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004379"],
+      "proposition": "许多组织补充基于风险的监控或AI增强以提高检测准确性和效率",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为一般性实践描述，无具体触发条件、判断分支或程序性步骤。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004362"],
+      "proposition": "金融机构根据已知风险因素或监管要求创建规则并设定静态阈值",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于基于规则监控的基本定义与特征，基础KG已能完整覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N004370"],
+      "proposition": "适当的分群确保组织对不同客户群体进行适当的交易监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为规范性因果陈述，未给出具体操作步骤或主体动作，基础KG可记录。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N004378"],
+      "proposition": "基于规则的监控虽静态且需手动更新，但仍是反洗钱合规的基础工具",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实性总结，无增量程序性或判断性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH56-S02_001",
+      "section_id": "CH56-S02",
+      "card_nature": "execution",
+      "title": "阈值超限触发警报与加强审查（案例）",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "交易金额超过金融机构设定的阈值（例如10,000美元）",
+          "evidence_unit_ids": ["v7u_N004364"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构触发警报、要求提交报告并加强对该交易的审查",
+          "evidence_unit_ids": ["v7u_N004364"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004364"],
+          "derivation": "explicit_text",
+          "source_quote": "Conducting a transaction above the threshold results in alerts, required reporting, and increased scrutiny of the transaction."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004364"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：交易金额超过阈值 → 金融机构触发警报、强制报告并加强审查；条件：交易超限。KG不足：基础KG可记录阈值触发警报的一般规则，但无法表达该案例中的具体结果链（强制报告、加强审查）及其有向关系。选项判断：可确认超限交易不仅引发警报，还导致强制报告与加强审查，帮助排除仅涉及警报的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S02_002",
+      "section_id": "CH56-S02",
+      "card_nature": "execution",
+      "title": "识别客户分群后应用规则以识别偏离行为",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "组织已识别客户分群",
+          "evidence_unit_ids": ["v7u_N004371"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织对每个客户段应用适当的交易监控规则，以识别偏离预期行为的客户",
+          "evidence_unit_ids": ["v7u_N004371"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004371"],
+          "derivation": "explicit_text",
+          "condition": "一旦组织识别了客户分群",
+          "source_quote": "Once organizations have identified customer segments, they apply appropriate rules to each segment."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004371"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织识别客户分群 → 组织对每个客户段应用适当的交易监控规则；条件：一旦识别分群。KG不足：基础KG能表达分群后应用规则的一般实践，但无法表达该步骤的顺序性和主体主动行为（识别分群后应用）的有向过程。选项判断：可确认应用规则的前提是分群已被识别，有助于辨别监控实施步骤。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S02_003",
+      "section_id": "CH56-S02",
+      "card_nature": "execution",
+      "title": "AI风险评估评级辅助警报优先级排序",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "基于规则的交易监控系统生成警报",
+          "evidence_unit_ids": ["v7u_N004375"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行使用AI模型处理警报，整合客户信息、历史行为和风险参数评估严重程度并分配风险评级",
+          "evidence_unit_ids": ["v7u_N004375", "v7u_N004376", "v7u_N004377"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "风险评级（例如高风险/低风险）",
+          "evidence_unit_ids": ["v7u_N004377"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "AML调查员基于风险评级优先处理或降级处理警报",
+          "evidence_unit_ids": ["v7u_N004377"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004375"],
+          "derivation": "explicit_text",
+          "source_quote": "When a rules-based system generates an alert... banks may process these alerts through additional analytical tools, including AI models."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N004377"],
+          "derivation": "explicit_text",
+          "source_quote": "By assigning a risk rating, such models help AML investigators prioritize or deprioritize alerts."
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "n4",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N004377"],
+          "derivation": "explicit_text",
+          "source_quote": "By assigning a risk rating, such models help AML investigators prioritize or deprioritize alerts."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004375", "v7u_N004376", "v7u_N004377"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：规则系统生成警报 → 银行使用AI模型处理并分配风险评级 → 风险评级帮助调查员优先排序；条件：警报生成后。KG不足：基础KG可涵盖AI用于评估和优先级的一般概念，但无法表达从警报生成、AI评估到调查员使用评级的完整有向流程。选项判断：可确认AI模型的作用是评估严重性和分配风险评级，并辅助调查员优先排序，帮助辨析不同技术环节。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

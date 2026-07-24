@@ -1,0 +1,306 @@
+{
+  "section_id": "CH58-S17",
+  "section_title": "Data as an input for solutions > Case example: Analyzing customer behaviors",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004865"
+      ],
+      "proposition": "客户John Doe尝试开户提交信息 -> 系统数据匹配 -> 标记申请审查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S17_001",
+      "reason": "基础KG只能表达银行使用数据匹配的笼统事实，无法表达触发-匹配-标记的有向流程。该有向结构可帮助确认数据匹配触发的具体步骤与结果，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004868",
+        "v7u_N004869"
+      ],
+      "proposition": "系统将客户活动与洗钱模式比较 -> 判定为可疑活动",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S17_002",
+      "reason": "基础KG可能说明数据挖掘用于识别可疑，但无法表达比较-判定的有向顺序。该链明确了从标准模式对比到分类结论的局部判断结构，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004870"
+      ],
+      "proposition": "系统使用聚类算法分析活动和KYC -> 归入高风险群组",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S17_003",
+      "reason": "基础KG可能记载聚类算法用于风险分类，但无法表达从具体输入（活动+KYC）到分类结果的有向过程。该链明确了聚类分析的输入与输出，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004864"
+      ],
+      "proposition": "Evertrust银行使用数据匹配和数据挖掘分析客户行为以识别可疑活动（总体概述）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为概括性描述，无具体步骤、条件或独立结果，基础KG已能充分表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004866"
+      ],
+      "proposition": "银行测试现有客户John Doe的场景（背景设定）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅提供测试场景背景，不构成独立有向判断或执行动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004867"
+      ],
+      "proposition": "银行使用机器学习算法和异常检测等数据挖掘技术探索数据以识别模式（技术描述）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅介绍技术工具的使用，缺乏具体主体在特定条件下的判断或应对步骤。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004871"
+      ],
+      "proposition": "银行通过持续场景测试确保系统韧性并主动增强能力（总结与持续改进）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象总结与持续改进描述，无具体触发条件或独立可确认的结果出口。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S17_001",
+      "section_id": "CH58-S17",
+      "card_nature": "execution",
+      "title": "Evertrust Bank开户数据匹配与标记流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "客户John Doe尝试使用驾照号码和其他个人信息开设新账户",
+          "evidence_unit_ids": [
+            "v7u_N004865"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Evertrust Bank系统执行数据匹配过程，核对客户数据与内部观察名单及外部数据库（如政府制裁名单和已知犯罪数据库）",
+          "evidence_unit_ids": [
+            "v7u_N004865"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "申请被系统标记以供进一步审查",
+          "evidence_unit_ids": [
+            "v7u_N004865"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N004865"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N004865"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004865"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户开户信息提交 -> 系统数据匹配 -> 标记审查。基础KG可能描述银行使用数据匹配，但无法表达这一具体的有向顺序：输入触发匹配，匹配产生标记。可帮助确认数据匹配流程的步骤和结果。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S17_002",
+      "section_id": "CH58-S17",
+      "card_nature": "assessment",
+      "title": "Evertrust Bank数据挖掘模式比较与可疑活动判定",
+      "flow_nodes": [
+        {
+          "node_id": "S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "数据挖掘过程识别出的洗钱/恐怖融资模式（如向多个外国账户进行重复高额转账）",
+          "evidence_unit_ids": [
+            "v7u_N004868"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Evertrust Bank系统将客户John Doe的活动与洗钱/恐怖融资模式进行比较",
+          "evidence_unit_ids": [
+            "v7u_N004868"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "John Doe的活动被判定为类似可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N004869"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S1",
+          "evidence_unit_ids": [
+            "v7u_N004868"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N004869"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004868",
+        "v7u_N004869"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：系统将活动与模式比较 -> 判定为可疑。基础KG可能说明数据挖掘用于识别可疑，但无法表达比较和判定的有向步骤。可帮助确认从比较到判定的过程。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S17_003",
+      "section_id": "CH58-S17",
+      "card_nature": "assessment",
+      "title": "Evertrust Bank聚类分析归类高风险客户",
+      "flow_nodes": [
+        {
+          "node_id": "I1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户John Doe的整体活动与KYC信息",
+          "evidence_unit_ids": [
+            "v7u_N004870"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Evertrust Bank系统使用聚类算法识别可疑活动模式，并基于整体活动与KYC信息将John Doe归入较高风险客户群组",
+          "evidence_unit_ids": [
+            "v7u_N004870"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "John Doe的账户被归类为高风险客户",
+          "evidence_unit_ids": [
+            "v7u_N004870"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "I1",
+          "evidence_unit_ids": [
+            "v7u_N004870"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N004870"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004870"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：输入整体活动与KYC -> 聚类分析 -> 归类为高风险。基础KG可能说明聚类用于风险分类，但无法表达输入到分类的有向过程。可帮助确认聚类分析的输出和依赖的输入。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为概括性描述，无具体步骤、条件或独立结果，基础KG已能充分表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅提供测试场景背景，不构成独立有向判断或执行动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅介绍技术工具的使用，缺乏具体主体在特定条件下的判断或应对步骤。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象总结与持续改进描述，无具体触发条件或独立可确认的结果出口。"
+    }
+  ]
+}

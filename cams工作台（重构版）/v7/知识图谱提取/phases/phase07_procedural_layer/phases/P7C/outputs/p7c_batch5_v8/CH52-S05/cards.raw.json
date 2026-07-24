@@ -1,0 +1,176 @@
+{
+  "section_id": "CH52-S05",
+  "section_title": "Technology and tools used across the customer life cycle > Open-source intelligence",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004004"
+      ],
+      "proposition": "OSINT是从公开来源收集和分析信息",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004005"
+      ],
+      "proposition": "OSINT长期以来是执法、政府机构和金融机构的重要工具",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004006"
+      ],
+      "proposition": "OSINT技术近期用于加强尽职调查和KYC实践",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般应用说明，无具体主体动作或判断"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004007"
+      ],
+      "proposition": "组织利用OSINT评估声誉风险、检测红旗并构建客户画像",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "功能描述，无独立结果或条件分支，基础KG已表达"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004008"
+      ],
+      "proposition": "存在多种OSINT工具和技术",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯分类，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004009"
+      ],
+      "proposition": "搜索引擎是最常用OSINT工具，可发现各类公开数据",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实描述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004010"
+      ],
+      "proposition": "其他OSINT技术包括社交媒体监控、新闻扫描和网络爬取",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "技术列表，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004011"
+      ],
+      "proposition": "在OSINT来源可能不可靠的条件下，分析师应当确认信息来源的可靠性",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S05_001",
+      "reason": "明确了特定主体（分析师）的条件化义务动作，构成程序性有向关系，基础KG无法表达主体职责和条件触发"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004012"
+      ],
+      "proposition": "OSINT仅依赖公开可访问的信息",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义重申，基础KG已表达"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N004013"
+      ],
+      "proposition": "OSINT来源包括社交媒体、公司网站、政府数据库等",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "来源列表，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": [
+        "v7u_N004014"
+      ],
+      "proposition": "OSINT允许组织不违反隐私法地增强风险评估和调查能力",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果陈述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": [
+        "v7u_N004015"
+      ],
+      "proposition": "负责任使用OSINT有助于更明智决策并加强透明度、问责和合规",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般好处陈述，无明确主体动作或独立结果"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH52-S05_001",
+      "section_id": "CH52-S05",
+      "card_nature": "control",
+      "title": "分析师确认OSINT信息来源可靠性",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "OSINT来源可能不可靠",
+          "evidence_unit_ids": [
+            "v7u_N004011"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "分析师应当确认信息来源的可靠性",
+          "evidence_unit_ids": [
+            "v7u_N004011"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N004011"
+          ],
+          "derivation": "explicit_text",
+          "condition": "OSINT来源可能不可靠",
+          "source_quote": "OSINT draws information from sources that may be unreliable, so analysts should confirm the source of information..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004011"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在OSINT来源可能不可靠的条件下（E1），分析师应当确认信息来源的可靠性（P1）；KG不足：基础KG只能将来源不可靠表述为风险指标，无法表达条件触发的主体义务动作；选项判断：可确认分析师在OSINT使用中的验证职责；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

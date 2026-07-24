@@ -1,0 +1,223 @@
+{
+  "section_id": "CH58-S08",
+  "section_title": "Data as an input for solutions > Case example: AI for money laundering detection",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004729"],
+      "proposition": "Erik基于测试和AI指导说服组织采用AI，产生组织采用AI的结果",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S08_001",
+      "reason": "说服动作的参照关系和产出方向是KG未表达的增量"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004734", "v7u_N004735", "v7u_N004736"],
+      "proposition": "系统标记异常客户后，通过深入分析识别关联，发现升级，最终银行确认洗钱",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S08_002",
+      "reason": "从标记到结论的步骤链是KG未表达的程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004730", "v7u_N004731"],
+      "proposition": "新系统通过收集数据、构建视图提供风险评分",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "技术流程描述，无特定业务判断主体，且KG可充分表达系统功能"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004732"],
+      "proposition": "系统自学习导致效率和效果提升",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果机制，KG可表达"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004726", "v7u_N004727", "v7u_N004728"],
+      "proposition": "传统系统数据使用不足可能导致犯罪隐匿",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标和后果，无应对链"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004737", "v7u_N004738"],
+      "proposition": "常见AI期望与Erik目标对比",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般叙述，无程序性结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004723", "v7u_N004724"],
+      "proposition": "Erik身份和银行使用传统系统背景",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯背景事实"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004733"],
+      "proposition": "Nova Capital Bank迅速看到技术更新的结果",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "过渡总结句，无独立有向结构"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S08_001",
+      "section_id": "CH58-S08",
+      "card_nature": "execution",
+      "title": "Erik说服组织采用AI技术以提升检测能力",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Erik说服组织采用AI技术",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "几个月的测试",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "ST1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "AI委员会的指导",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "组织采用AI技术",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "IN1",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "derivation": "explicit_text",
+          "relation_type": null
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "ST1",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N004729"],
+          "derivation": "explicit_text",
+          "relation_type": null
+        }
+      ],
+      "source_unit_ids": ["v7u_N004725", "v7u_N004729"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Erik说服组织采用AI，该过程参照测试结果和AI指导，产生组织采用AI的结果。基础KG可能只保存“说服采用”这一事实，但无法表达说服动作的参照关系和产出方向。选项判断：可帮助确认AI采用的具体推动因素和过程。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S08_002",
+      "section_id": "CH58-S08",
+      "card_nature": "assessment",
+      "title": "AI系统从标记客户到确认洗钱的检测链",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "系统标记行为偏离正常模式的客户（表明潜在金融犯罪）",
+          "evidence_unit_ids": ["v7u_N004734"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "系统分析大量数据，识别出该客户与之前标记实体的关联",
+          "evidence_unit_ids": ["v7u_N004735"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "发现升级（升级处置）",
+          "evidence_unit_ids": ["v7u_N004736"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "银行最终确认该客户洗钱",
+          "evidence_unit_ids": ["v7u_N004736"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N004734", "v7u_N004735"],
+          "derivation": "llm_inference",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "Within weeks, the system flags a customer... The system analyzes large volumes of data, recognizing a relationship..."
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P2",
+          "evidence_unit_ids": ["v7u_N004736"],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "This discovery escalates"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "P2",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N004736"],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "and the bank ultimately concludes that the customer is laundering money"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004734", "v7u_N004735", "v7u_N004736"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：系统标记客户 → 系统分析识别关联 → 发现升级 → 银行确认洗钱。基础KG可能只保存案例结果，无法表达内部有向步骤和主体转换。选项判断：可帮助确认AI检测过程中的具体步骤和因果关系。LLM推理：边e1为llm_inference，原文未明确顺序，但标记客户后系统进一步分析该客户，功能上标记先于深入分析。"
+    }
+  ],
+  "skip_reason": null
+}

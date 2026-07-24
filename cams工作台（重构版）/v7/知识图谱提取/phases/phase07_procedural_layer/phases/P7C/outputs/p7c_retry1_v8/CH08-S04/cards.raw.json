@@ -1,0 +1,364 @@
+{
+  "section_id": "CH08-S04",
+  "section_title": "Private banking and wealth management risks > Offshore financial center risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000622",
+        "v7u_N000623",
+        "v7u_N000624",
+        "v7u_N000625"
+      ],
+      "proposition": "离岸金融中心的定义与特征",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "离岸金融中心的定义与特征为基础知识，基础KG可充分表达，无超出KG的有向流程或条件关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N000626"
+      ],
+      "proposition": "离岸金融中心存在被用于非法目的的风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "OFC被用于非法目的的风险陈述为孤立风险说明，基础KG可覆盖，无主体动作或应对。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N000627",
+        "v7u_N000628",
+        "v7u_N000629",
+        "v7u_N000630",
+        "v7u_N000631",
+        "v7u_N000632",
+        "v7u_N000633",
+        "v7u_N000634"
+      ],
+      "proposition": "离岸金融中心相关的红旗信号列表",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "红旗信号列表为孤立风险指标集合，基础KG可分别存储为risk_indicator，不构成P7C有向关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N000635"
+      ],
+      "proposition": "判断红旗信号：若无明确商业目的或合理解释，则通常为非法活动迹象，否则可能合法。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_001",
+      "reason": "包含条件导向的分类判断，超出基础KG对孤立红旗信号的表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N000636",
+        "v7u_N000637",
+        "v7u_N000638"
+      ],
+      "proposition": "复杂所有权掩盖UBO、透明性缺失等风险解释",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "风险解释（如复杂所有权掩盖UBO）为基础因果说明，基础KG可覆盖，无特定主体执行识别或应对。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N000639"
+      ],
+      "proposition": "异常交易频率可能指示非法活动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "异常交易频率指示非法活动为孤立风险指标，基础KG已覆盖，无流程性动作。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N000640"
+      ],
+      "proposition": "犯罪分子利用round tripping手法",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子利用round tripping为案例与手法说明，基础KG可存储，无超越一般机制的应对动作。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N000641"
+      ],
+      "proposition": "机构应实施强化尽职调查和交易监控以检测可疑活动",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_002",
+      "reason": "机构执行强化尽职调查和交易监控以检测可疑活动/发现滥用，构成主体动作→目的结果的有向关系，超出基础KG对孤立措施的简单陈述。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000627",
+        "v7u_N000628",
+        "v7u_N000629",
+        "v7u_N000630",
+        "v7u_N000631",
+        "v7u_N000632",
+        "v7u_N000633",
+        "v7u_N000634"
+      ],
+      "proposition": "机构判断红旗信号是否具备明确商业目的时，以OFC相关红旗信号作为判断输入",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_001",
+      "reason": "已有卡片遗漏了判断过程所基于的红旗信号输入，导致图表达不完整；基础KG仅孤立存储红旗指标，无法表达其作为判断输入的参照关系。",
+      "origin_candidate_ids": [
+        "cand_003",
+        "cand_004"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S04_001",
+      "section_id": "CH08-S04",
+      "card_nature": "assessment",
+      "title": "OFC红旗信号的合理性判断与非法迹象分类",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "明确的商业目的或合理解释",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构判断红旗信号是否具备明确的商业目的或合理解释",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "可能为合法的商业实践",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "通常为非法活动迹象",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "OFC相关红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000627",
+            "v7u_N000628",
+            "v7u_N000629",
+            "v7u_N000630",
+            "v7u_N000631",
+            "v7u_N000632",
+            "v7u_N000633",
+            "v7u_N000634"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "DECIDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "derivation": "explicit_text",
+          "condition": "具备明确的商业目的或合理解释",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "DECIDES",
+          "source": "n2",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N000635"
+          ],
+          "derivation": "explicit_text",
+          "condition": "不具备明确的商业目的或合理解释",
+          "relation_type": "branch_condition_routes_path"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000627",
+            "v7u_N000635"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000635",
+        "v7u_N000627",
+        "v7u_N000628",
+        "v7u_N000629",
+        "v7u_N000630",
+        "v7u_N000631",
+        "v7u_N000632",
+        "v7u_N000633",
+        "v7u_N000634"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构判断红旗是否具备明确商业目的或合理解释，若具备则可能为合法商业实践，若不具备则通常为非法活动迹象；KG不足：基础KG只能表达孤立红旗信号，无法表达基于条件解释的分类判断逻辑；选项判断：可确认或排除有关红旗信号判断路径的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH08-S04_002",
+      "section_id": "CH08-S04",
+      "card_nature": "execution",
+      "title": "OFC风险应对：强化尽职调查与交易监控",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应执行强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "交易监控可以帮助发现潜在滥用",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测/发现可疑活动或滥用",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000641"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构应执行强化尽职调查以检测可疑活动，交易监控有助于发现潜在滥用；KG不足：基础KG仅陈述这些措施的必要性或益处，无法表达有向的动作-结果关系；选项判断：可帮助判断有关OFC风险应对顺序或措施的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "离岸金融中心的定义与特征为基础知识，基础KG可充分表达，无超出KG的有向流程或条件关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "OFC被用于非法目的的风险陈述为孤立风险说明，基础KG可覆盖，无主体动作或应对。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "红旗信号列表为孤立风险指标集合，基础KG可分别存储为risk_indicator，不构成P7C有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "风险解释（如复杂所有权掩盖UBO）为基础因果说明，基础KG可覆盖，无特定主体执行识别或应对。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "异常交易频率指示非法活动为孤立风险指标，基础KG已覆盖，无流程性动作。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子利用round tripping为案例与手法说明，基础KG可存储，无超越一般机制的应对动作。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_002",
+      "reason": "机构执行强化尽职调查和交易监控以检测可疑活动/发现滥用，构成主体动作→目的结果的有向关系，超出基础KG对孤立措施的简单陈述。"
+    }
+  ]
+}

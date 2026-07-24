@@ -1,0 +1,113 @@
+{
+  "section_id": "CH51-S11",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯因果机制陈述，无特定主体基于此进行的识别、评估、决策或应对动作，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "为灵活架构的示例性最佳实践，缺乏明确的触发条件与主体应对关系，基础KG可保存为一般建议。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S11_004",
+      "reason": "原文明确给出条件（IT驱动架构决策无AFC输入）与必要的应对动作（确保AFC、IT、业务部门紧密协作），形成有向的P7C增量关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S11_005",
+      "reason": "原文存在'organizations should consider the long-term sustainability'这一明确的评估动作与方向，构成以长期可持续性为目标的过程关系。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S11_004",
+      "section_id": "CH51-S11",
+      "card_nature": "execution",
+      "title": "IT架构决策所需的AFC协作要求",
+      "flow_nodes": [
+        {
+          "node_id": "E1_CH51S11_004",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织进行IT驱动架构决策而没有AFC输入",
+          "evidence_unit_ids": ["v7u_N003910"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P5_CH51S11_004",
+          "node_category": "process",
+          "node_type": "P5_coordination",
+          "label": "应确保AFC、IT和业务部门紧密协作，使系统对齐监管和运营要求",
+          "evidence_unit_ids": ["v7u_N003910"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_CH51S11_004",
+          "edge_type": "PRECEDES",
+          "source": "E1_CH51S11_004",
+          "target": "P5_CH51S11_004",
+          "evidence_unit_ids": ["v7u_N003910"],
+          "derivation": "explicit_text",
+          "source_quote": "A significant compliance risk arises when organizations make IT-driven architecture decisions without AFC input. ... Close collaboration between AFC, IT, and business units is essential to ensure systems align with both regulatory and operational requirements."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003910"],
+      "candidate_status": "candidate",
+      "review_notes": "从kg_only提升：条件明确、应对动作具体且方向性强，基础KG无法表达该条件-应对逻辑。"
+    },
+    {
+      "card_id": "p7card_CH51-S11_005",
+      "section_id": "CH51-S11",
+      "card_nature": "assessment",
+      "title": "AFC工具长期可持续性的评估义务",
+      "flow_nodes": [
+        {
+          "node_id": "E1_CH51S11_005",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织选择和实施AFC工具（附加考量）",
+          "evidence_unit_ids": ["v7u_N003911"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_CH51S11_005",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构应考虑长期可持续性，确保工具建立在支持不断演变的合规环境的适应性框架上",
+          "evidence_unit_ids": ["v7u_N003911"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_CH51S11_005",
+          "edge_type": "PRECEDES",
+          "source": "E1_CH51S11_005",
+          "target": "P1_CH51S11_005",
+          "evidence_unit_ids": ["v7u_N003911"],
+          "derivation": "explicit_text",
+          "source_quote": "Additionally, organizations should consider the long-term sustainability of the AFC tool, ensuring it is built on adaptable frameworks..."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003911"],
+      "candidate_status": "candidate",
+      "review_notes": "从kg_only提升：should consider构成明确的评估动作，与适应性框架保障形成方向性关系。"
+    }
+  ],
+  "card_supplements": []
+}

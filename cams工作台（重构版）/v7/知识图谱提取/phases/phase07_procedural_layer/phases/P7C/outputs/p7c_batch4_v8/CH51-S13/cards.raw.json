@@ -1,0 +1,268 @@
+{
+  "section_id": "CH51-S13",
+  "section_title": "Understanding AFC technology > Impact of privacy regulations on technology use",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003929"
+      ],
+      "proposition": "金融机构必须基于GDPR和GLBA确保数据存储安全、透明且合规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_001",
+      "reason": "基础KG仅存规则，未表达金融机构执行确保存储合规动作与标准参照的有向关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003931"
+      ],
+      "proposition": "参与实时情报共享平台的组织必须实施控制以防止未授权访问或滥用。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_002",
+      "reason": "基础KG保存了措施要求，但未表达参与平台作为条件触发实施控制的有向关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003932"
+      ],
+      "proposition": "提供AFC技术的第三方供应商必须遵守隐私法律并进行尽职调查、签订合同保障。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_003",
+      "reason": "基础KG保存了规则，但未表达供应商身份限定与具体尽责动作的局部链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003933",
+        "v7u_N003934"
+      ],
+      "proposition": "面对隐私合规挑战，银行可采用PET以实现安全分析与合规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_004",
+      "reason": "命题表达银行面对挑战采用PET的应对动作与效果的有向关系，基础KG仅概括性预备关系，P7C需补充主体条件与结果。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH51-S13_001",
+      "section_id": "CH51-S13",
+      "card_nature": "execution",
+      "title": "金融机构必须确保数据存储安全、透明且合规",
+      "flow_nodes": [
+        {
+          "node_id": "p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构必须确保数据存储安全、透明且合规",
+          "evidence_unit_ids": [
+            "v7u_N003929"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "s1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "GDPR and GLBA",
+          "evidence_unit_ids": [
+            "v7u_N003929"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "p1",
+          "target": "s1",
+          "evidence_unit_ids": [
+            "v7u_N003929"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Under GDPR and the Gramm-Leach-Bliley Act, data controllers... must ensure that data storage... is secure, transparent, and compliant."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003929"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构确保数据存储合规 --REFERENCES--> GDP/GLBA标准；KG不足：基础KG只能保存规则本身，而无法表达确保动作与法规标准之间的必要参照关系；选项判断：可用于确认数据存储的具体合规义务来源；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S13_002",
+      "section_id": "CH51-S13",
+      "card_nature": "control",
+      "title": "参与实时情报共享平台的组织必须实施控制",
+      "flow_nodes": [
+        {
+          "node_id": "e1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织参与实时情报共享平台",
+          "evidence_unit_ids": [
+            "v7u_N003931"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织实施控制以防止未授权访问或滥用",
+          "evidence_unit_ids": [
+            "v7u_N003931"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "e1",
+          "target": "p2",
+          "condition": "当组织参与此类平台时",
+          "evidence_unit_ids": [
+            "v7u_N003931"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Organizations participating in collaborative initiatives such as real-time intelligence-sharing platforms must implement controls to prevent unauthorized access or misuse of shared data."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003931"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织参与平台 --PRECEDES--> 实施控制（条件：参与）；KG不足：基础KG仅保存了措施义务，未表达参与平台作为触发条件与实施控制的先后关系；选项判断：可用于判断参与情报共享所需的条件性控制义务；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S13_003",
+      "section_id": "CH51-S13",
+      "card_nature": "execution",
+      "title": "提供AFC技术的第三方供应商必须遵守隐私法律并进行尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "p3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提供AFC技术的第三方供应商必须进行尽职调查、签订合同保障并遵守隐私法律",
+          "evidence_unit_ids": [
+            "v7u_N003932"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "s3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "隐私法律 (GDPR, GLBA等)",
+          "evidence_unit_ids": [
+            "v7u_N003932"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "p3",
+          "target": "s3",
+          "evidence_unit_ids": [
+            "v7u_N003932"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Third-party vendors providing AFC technology must comply with privacy laws, requiring thorough due diligence, contractual safeguards, and clear service-level agreements..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003932"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：第三方供应商尽职调查 --REFERENCES--> 隐私法律标准；KG不足：基础KG仅存规则，未表达供应商身份限定与具体尽责动作的局部有向关系；选项判断：可用于确认第三方供应商的合规要求；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S13_004",
+      "section_id": "CH51-S13",
+      "card_nature": "control",
+      "title": "银行可采用隐私增强技术(PET)以应对隐私合规挑战",
+      "flow_nodes": [
+        {
+          "node_id": "e1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "隐私合规挑战",
+          "evidence_unit_ids": [
+            "v7u_N003933"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行采用隐私增强技术(PET)",
+          "evidence_unit_ids": [
+            "v7u_N003933"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "实现安全的数据分析与共享并保护隐私和合规",
+          "evidence_unit_ids": [
+            "v7u_N003934"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "e1",
+          "target": "p1",
+          "condition": "当面对隐私合规挑战时",
+          "evidence_unit_ids": [
+            "v7u_N003933"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "p1",
+          "target": "x1",
+          "evidence_unit_ids": [
+            "v7u_N003933",
+            "v7u_N003934"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003933",
+        "v7u_N003934"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：面对挑战，银行采用PET以产生安全分析与合规状态；基础KG仅总结性关系，未表达条件-应对-结果的有向链；选项判断：可用于确认隐私合规挑战下技术应对的流程与效果。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_004",
+      "reason": "命题表达银行面对挑战采用PET的应对动作与效果的有向关系，基础KG仅概括性预备关系，P7C需补充主体条件与结果。"
+    }
+  ]
+}

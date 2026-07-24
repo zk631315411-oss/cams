@@ -1,0 +1,78 @@
+{
+  "section_id": "CH09-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH09-S05_001",
+      "reason": "原命题非简单静态规则，而是银行根据委托行风险水平提供差异化服务的条件应对；低风险与高风险分支互斥，构成可执行的有向决策链，基础KG无法表达主体动作及条件分支，故提升并补充至已有信息收集卡。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH09-S05_001",
+      "reason": "补充原缺失的差异化服务决策及结果，基于相邻单元的低/高风险服务规定构成下游分支，证据支持互斥条件。",
+      "origin_candidate_ids": ["cand_002"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "根据委托行风险水平提供差异化服务",
+          "evidence_unit_ids": ["v7u_N000740", "v7u_N000741"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "提供广泛服务（现金管理、国际资金转账、支票清算等）",
+          "evidence_unit_ids": ["v7u_N000740"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "仅提供非信贷现金管理服务",
+          "evidence_unit_ids": ["v7u_N000741"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N000739"],
+          "derivation": "llm_inference",
+          "condition": null
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "DECIDES",
+          "source": "N3",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N000740"],
+          "derivation": "explicit_text",
+          "condition": "委托行为低风险"
+        },
+        {
+          "edge_id": "E4",
+          "edge_type": "DECIDES",
+          "source": "N3",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N000741"],
+          "derivation": "explicit_text",
+          "condition": "委托行为高风险"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N000740", "v7u_N000741"]
+    }
+  ]
+}

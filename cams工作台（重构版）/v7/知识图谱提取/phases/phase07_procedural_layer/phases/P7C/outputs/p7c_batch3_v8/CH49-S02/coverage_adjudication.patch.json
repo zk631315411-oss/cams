@@ -1,0 +1,117 @@
+{
+  "section_id": "CH49-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的法律风险知识，不构成局部程序性有向关系；基础KG已保存风险事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象措施要求，无具体条件、主体动作分支或独立结果，基础KG可保存为建议措施。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般事实与列表，不包含条件、判断或程序性有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "法律定义与解释，不构成局部程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "单独的政策措施要求无局部有向关系；但其中的员工报告动作含义已纳入新增关系覆盖，见new_candidates。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "培训要求，无局部程序性有向增量，基础KG可保存为培训措施。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般原则，无具体程序性有向结构，基础KG可保存为最佳实践。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "补充规则事实，不构成局部流程链；未明示连接至具体的评估或报告动作。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003483",
+        "v7u_N003485"
+      ],
+      "proposition": "员工向合规官报告可疑情况，然后合规官负责评估该信息并决定应采取的行动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S02_002",
+      "reason": "首次抽取未连接员工报告与合规官评估，基础KG无法表达该有向程序链。",
+      "origin_candidate_ids": [
+        "cand_006",
+        "cand_008"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S02_002",
+      "reason": "原card2缺少评估所依据的信息来源，补充员工报告触发评估的流程。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "suppl_n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "员工向合规官报告可疑情况",
+          "evidence_unit_ids": [
+            "v7u_N003483"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "suppl_e1",
+          "edge_type": "PRECEDES",
+          "source": "suppl_n1",
+          "target": "n1",
+          "evidence_unit_ids": [
+            "v7u_N003483",
+            "v7u_N003485"
+          ],
+          "derivation": "llm_inference"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003483"
+      ]
+    }
+  ]
+}

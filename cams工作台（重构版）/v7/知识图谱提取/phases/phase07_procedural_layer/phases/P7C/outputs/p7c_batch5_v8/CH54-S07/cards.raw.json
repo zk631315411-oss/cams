@@ -1,0 +1,121 @@
+{
+  "section_id": "CH54-S07",
+  "section_title": "Technology for KYC > Facial and voice recognition technology",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004167"
+      ],
+      "proposition": "一旦活体被确认，系统可以进行文档验证等后续认证步骤",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S07_001",
+      "reason": "明确了条件顺序，构成有向关系，基础KG未表达该前提顺序。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004168"
+      ],
+      "proposition": "组织通过将活体检测技术整合到KYC流程中，以确保遵守要求验证个人物理在场的法规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S07_002",
+      "reason": "表达了组织动作与法规要求之间的合规传导关系，超出基础KG的一般描述。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S07_001",
+      "section_id": "CH54-S07",
+      "card_nature": "execution",
+      "title": "Liveness Confirmation Triggers Document Verification",
+      "flow_nodes": [
+        {
+          "node_id": "p7n_CH54-S07_001_E1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "活体已确认",
+          "evidence_unit_ids": [
+            "v7u_N004167"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7n_CH54-S07_001_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "系统进行文档验证",
+          "evidence_unit_ids": [
+            "v7u_N004167"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7e_CH54-S07_001_1",
+          "edge_type": "PRECEDES",
+          "source": "p7n_CH54-S07_001_E1",
+          "target": "p7n_CH54-S07_001_P1",
+          "condition": "once liveness has been confirmed",
+          "evidence_unit_ids": [
+            "v7u_N004167"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004167"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：一旦活体确认，系统可进行文档验证（条件触发）；KG不足：基础KG将活体检测和文档验证作为eKYC组成部分，但未明确条件顺序；选项判断：可确认在eKYC中活体确认是文档验证的前置条件；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S07_002",
+      "section_id": "CH54-S07",
+      "card_nature": "execution",
+      "title": "Integrating Liveness Check to Comply with Physical Presence Requirement",
+      "flow_nodes": [
+        {
+          "node_id": "p7n_CH54-S07_002_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织将活体检测技术整合到KYC流程中",
+          "evidence_unit_ids": [
+            "v7u_N004168"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7n_CH54-S07_002_S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "法规要求验证开户过程中个人物理在场",
+          "evidence_unit_ids": [
+            "v7u_N004168"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7e_CH54-S07_002_1",
+          "edge_type": "REFERENCES",
+          "source": "p7n_CH54-S07_002_P1",
+          "target": "p7n_CH54-S07_002_S1",
+          "relation_type": "standard_transmits_requirement",
+          "evidence_unit_ids": [
+            "v7u_N004168"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004168"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织整合活体检测技术以确保遵守要求验证物理在场的法规（标准传导）；KG不足：基础KG分别描述活体检测作用和法规要求，未表达“通过整合来遵守”的传导关系；选项判断：可确认机构整合活体检测的合规动机是满足物理在场验证要求；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

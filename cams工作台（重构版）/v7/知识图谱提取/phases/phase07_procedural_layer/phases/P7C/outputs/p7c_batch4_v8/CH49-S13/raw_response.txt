@@ -1,0 +1,56 @@
+{
+  "section_id": "CH49-S13",
+  "section_title": "Concluding an investigation and suspicious activity reporting > How law enforcement case investigators read a SAR",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003658"],
+      "proposition": "基于活动模式（谁、什么、地点、时间、方式、原因），执法部门可能提出或增加对上游犯罪及可能洗钱的刑事指控",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S13_001",
+      "reason": "该命题明确了输入（活动模式）、主体（执法部门）、动作（提出或增加指控）及独立结果（指控被提出），构成完整的有向判断结构。基础KG可能只能保存为事实性陈述，但无法表达输入到动作的条件导向关系。此结构可帮助判断选项如“执法部门是否会根据SAR信息增加指控”。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S13_001",
+      "section_id": "CH49-S13",
+      "card_nature": "execution",
+      "title": "执法部门基于活动模式提出或增加指控",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH49-S13_001_input1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "活动模式（谁、什么、地点、时间、方式、原因）",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH49-S13_001_proc1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法部门可能提出或增加对上游犯罪及可能洗钱的刑事指控",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH49-S13_001_edge1",
+          "edge_type": "REFERENCES",
+          "source": "p7card_CH49-S13_001_proc1",
+          "target": "p7card_CH49-S13_001_input1",
+          "evidence_unit_ids": ["v7u_N003658"],
+          "derivation": "explicit_text",
+          "condition": "基于活动模式",
+          "source_quote": "Based on the pattern of activity—who, what, where, when, how, and why—law enforcement might develop or add criminal charges for the underlying activity and possible money laundering."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003658"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：活动模式（input）作为执法部门提出刑事指控的依据（REFERENCES条件）。基础KG不足：基础KG只能表达“执法部门基于活动模式可能提出指控”的整体事实，无法表达内部有向关系：输入（活动模式）如何被用于动作（提出指控）。选项判断：可确认或排除“执法部门是否会根据SAR中的信息增加指控”等选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

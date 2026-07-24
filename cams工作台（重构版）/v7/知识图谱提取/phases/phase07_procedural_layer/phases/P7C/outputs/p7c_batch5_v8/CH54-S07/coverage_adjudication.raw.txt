@@ -1,0 +1,97 @@
+{
+  "section_id": "CH54-S07",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004153"
+      ],
+      "proposition": "机构在生物识别认证过程中使用活体检测技术来验证生物样本来自活人，并防止欺骗。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S07_003",
+      "reason": "首次抽取遗漏了机构使用活体检测技术的明确动作。基础KG将活体检测技术作为定义和分类，未表达机构在认证过程中主动使用该技术进行验证的流程关系。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH54-S07_003",
+      "section_id": "CH54-S07",
+      "card_nature": "assessment",
+      "title": "机构使用活体检测技术进行活体验证",
+      "flow_nodes": [
+        {
+          "node_id": "p7n_CH54-S07_003_P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构使用活体检测技术进行活体验证",
+          "evidence_unit_ids": [
+            "v7u_N004153"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7n_CH54-S07_003_X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "生物样本活体已被验证",
+          "evidence_unit_ids": [
+            "v7u_N004153"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7e_CH54-S07_003_1",
+          "edge_type": "PRODUCES",
+          "source": "p7n_CH54-S07_003_P1",
+          "target": "p7n_CH54-S07_003_X1",
+          "evidence_unit_ids": [
+            "v7u_N004153"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004153"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构使用活体检测技术进行活体验证，产生活体已验证的状态。KG不足：基础KG将活体检测作为技术定义，未表达机构在流程中使用该技术的动作和结果。选项判断：可确认活体检测是生物识别认证中的一个步骤。LLM推理：无。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH54-S07_002",
+      "reason": "原card缺少整合活体检测技术后产生的独立结果'确保合规'，原文明确说明'organizations can ensure compliance'。",
+      "origin_candidate_ids": [],
+      "add_flow_nodes": [
+        {
+          "node_id": "p7n_CH54-S07_002_X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保遵守法规（验证物理在场）",
+          "evidence_unit_ids": [
+            "v7u_N004168"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "p7e_CH54-S07_002_2",
+          "edge_type": "PRODUCES",
+          "source": "p7n_CH54-S07_002_P1",
+          "target": "p7n_CH54-S07_002_X1",
+          "evidence_unit_ids": [
+            "v7u_N004168"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

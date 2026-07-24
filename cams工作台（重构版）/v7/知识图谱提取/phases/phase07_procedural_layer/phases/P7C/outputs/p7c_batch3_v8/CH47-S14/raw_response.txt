@@ -1,0 +1,113 @@
+{
+  "section_id": "CH47-S14",
+  "section_title": "Transaction monitoring > Analysis of information",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003397"],
+      "proposition": "调查员必须分析数据以转化为可操作情报",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述且无复杂条件或分支，基础KG已能表达该规则。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003398"],
+      "proposition": "分析员通过审查交易历史等验证可疑点并决定是否进一步行动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性解释，审查-验证-决策链属于常见分析步骤，基础KG可覆盖作为整体知识。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003400", "v7u_N003401"],
+      "proposition": "调查员识别映射关系并使用网络分析可视化以识别行为模式",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析的使用和好处说明，无明确条件或应对，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003402", "v7u_N003403", "v7u_N003404", "v7u_N003405", "v7u_N003406"],
+      "proposition": "分析现金流时考虑交易模式、资金来源、分层和外部信息以评估合法性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列的考量因素列表，无连贯的有向程序链，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003408"],
+      "proposition": "深入分析中可能发现新信息重塑调查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述可能性和潜在影响，未给出具体应对步骤，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003408", "v7u_N003409"],
+      "proposition": "在深入分析中发现新信息时，分析员应及时咨询合规团队以推进并建立明确路径",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S14_001",
+      "reason": "明确的条件-应对链：发现新网络触发咨询义务，并产生建立路径的结果，具有程序性方向，超出基础KG的一般措施陈述。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S14_001",
+      "section_id": "CH47-S14",
+      "card_nature": "execution",
+      "title": "发现新网络或模式时的咨询要求",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "深入分析中发现新信息揭示先前未知网络或模式",
+          "evidence_unit_ids": ["v7u_N003408"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "分析员应及时咨询金融犯罪合规团队",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "建立满足监管时限的明确路径",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1_to_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N003408", "v7u_N003409"],
+          "derivation": "explicit_text",
+          "condition": "在深入分析中作出此发现时",
+          "source_quote": "During in-depth analysis, investigators might discover... In such cases, analysts should promptly consult..."
+        },
+        {
+          "edge_id": "P1_to_X1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N003409"],
+          "derivation": "explicit_text",
+          "source_quote": "Early engagement ensures... establishes a clear path to meet regulatory timelines."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003408", "v7u_N003409"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：发现新信息（揭示先前未知网络） --触发--> 分析员咨询合规团队 --产生--> 建立明确路径以满足监管时限；KG不足：基础KG将v7u_N003409作为规定的措施整体保存，未能表达从发现到咨询到建立路径的有向链；选项判断：可确认发现新网络时应咨询合规团队的流程；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

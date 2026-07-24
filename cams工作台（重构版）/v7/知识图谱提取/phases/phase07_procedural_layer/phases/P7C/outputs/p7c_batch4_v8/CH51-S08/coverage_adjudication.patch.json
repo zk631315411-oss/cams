@@ -1,0 +1,175 @@
+{
+  "section_id": "CH51-S08",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性原则陈述，未表达具体有向关系和独立结果，基础KG足以表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S08_012",
+      "reason": "风险评估动作直接产出识别差距和定义目标等独立结果，超出基础KG表达范围。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S08_012",
+      "reason": "风险评估动作有向地帮助优先安排时间和资金投入，形成独立结果，基础KG未表达此因果关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅强调重要性，无具体主体动作和方向，无法构成P7C关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S08_003",
+      "reason": "试点动作直接产生聚焦于最大价值改进的输出，原文明确表达因果关系，需补充进已有card。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性提醒，无具体执行动作或结果。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述利益相关方期望，未构成机构的具体有向动作。"
+    },
+    {
+      "candidate_id": "cand_017",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "AI局限性事实陈述，无判断或程序性动作。"
+    },
+    {
+      "candidate_id": "cand_020",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性陈述涵盖多个抽象目标，无独立有向结构。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S08_012",
+      "section_id": "CH51-S08",
+      "card_nature": "assessment",
+      "title": "进行全面风险评估以识别差距、定义目标并帮助优先安排投资",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织进行全面的风险评估",
+          "evidence_unit_ids": [
+            "v7u_N003854",
+            "v7u_N003857"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "识别现有系统差距、定义AI整合目标并评估监管期望",
+          "evidence_unit_ids": [
+            "v7u_N003854"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于优先安排时间和资金投入",
+          "evidence_unit_ids": [
+            "v7u_N003857"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003854"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N003857"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003854",
+        "v7u_N003857"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "合并cand_002和cand_005，表达风险评估的两个直接输出：识别差距/定义目标与优先级安排。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH51-S08_003",
+      "reason": "原card遗漏试点动作产生的聚焦改进输出，v7u_N003860明确表达该因果关系。",
+      "origin_candidate_ids": [
+        "cand_008"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N7",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于聚焦于在风险或成本管理方面提供最大价值的改进",
+          "evidence_unit_ids": [
+            "v7u_N003860"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N6",
+          "target": "N7",
+          "evidence_unit_ids": [
+            "v7u_N003860"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003860"
+      ]
+    }
+  ]
+}

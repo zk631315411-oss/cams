@@ -1,0 +1,118 @@
+{
+  "section_id": "CH43-S01",
+  "section_title": "Additional onboarding controls for high-risk scenarios",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003099"],
+      "proposition": "监管框架要求金融机构对高风险客户执行额外准入审查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH43-S01_001",
+      "reason": "基础KG保存了规则但未表达标准约束动作的有向关系"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003106"],
+      "proposition": "根据高风险标签和EDD完成状态，金融机构分别应用临时或永久限制",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH43-S01_002",
+      "reason": "基础KG列举了措施但未表达条件化的分支应用结构"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH43-S01_001",
+      "section_id": "CH43-S01",
+      "card_nature": "control",
+      "title": "监管框架要求的高风险客户额外审查",
+      "flow_nodes": [
+        {
+          "node_id": "std_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "监管框架（FATF建议、欧盟反洗钱指令、FinCEN法规）",
+          "evidence_unit_ids": ["v7u_N003099"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "proc_001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "金融机构必须确保高风险客户接受额外审查",
+          "evidence_unit_ids": ["v7u_N003099"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "REFERENCES",
+          "source": "proc_001",
+          "target": "std_001",
+          "evidence_unit_ids": ["v7u_N003099"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003099"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：监管框架（标准） --约束--> 金融机构必须对高风险客户执行额外审查；KG不足：基础KG只能保存监管规则的事实，无法表达标准向具体主体动作传导的有向要求；选项判断：可确认或排除监管要求是否强制执行额外审查的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH43-S01_002",
+      "section_id": "CH43-S01",
+      "card_nature": "control",
+      "title": "高风险客户的临时与永久限制措施应用",
+      "flow_nodes": [
+        {
+          "node_id": "ent_001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "客户被标记为高风险",
+          "evidence_unit_ids": ["v7u_N003106"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "proc_temp",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构可能应用临时限制（直至EDD完成）",
+          "evidence_unit_ids": ["v7u_N003106"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "proc_perm",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构将应用永久限制（对已标记高风险客户）",
+          "evidence_unit_ids": ["v7u_N003106"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e002_temp",
+          "edge_type": "PRECEDES",
+          "source": "ent_001",
+          "target": "proc_temp",
+          "evidence_unit_ids": ["v7u_N003106"],
+          "derivation": "explicit_text",
+          "condition": "EDD未完成（Temporary controls might be applied until EDD is completed）"
+        },
+        {
+          "edge_id": "e002_perm",
+          "edge_type": "PRECEDES",
+          "source": "ent_001",
+          "target": "proc_perm",
+          "evidence_unit_ids": ["v7u_N003106"],
+          "derivation": "explicit_text",
+          "condition": "客户已被标记为高风险（Permanent controls would be applied continuously for customers that have been labeled high-risk）"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003106"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：高风险客户状态 --根据EDD完成状态--> 金融机构应用临时限制（EDD未完成）或永久限制（已标记高风险）；KG不足：基础KG列举了限制措施但未表达根据客户状态与条件选择不同限制类型的有向逻辑；选项判断：可确认或排除临时限制适用条件（如EDD完成前）以及永久限制针对高风险客户的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

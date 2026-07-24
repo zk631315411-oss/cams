@@ -1,0 +1,113 @@
+{
+  "section_id": "CH54-S13",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般治理义务，无特定条件或标准约束的有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "义务陈述，要求流程存在，无具体动作或条件，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定期审查动作无额外条件或独立结果，基础KG可表达为审查义务。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "两项独立义务，无有向关系，基础KG可表达为控制要求。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险场景，无机构应对或判断结构，基础KG可保存为风险指标。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_004",
+      "reason": "机构基于误报分析创建白名单，分析作为创建动作的依据，形成有向约束关系，基础KG无法表达分析对创建的方向性；原误判为无触发判断。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "构成说明，非主动添加流程，基础KG可保存事实。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义、事实和列举，无局部有向判断结构，基础KG可充分表达。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH54-S13_004",
+      "section_id": "CH54-S13",
+      "card_nature": "control",
+      "title": "基于误报分析创建白名单",
+      "flow_nodes": [
+        {
+          "node_id": "P1_CH54S13_004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构创建白名单 (基于分析)",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_CH54S13_004",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "对误报警报的分析",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1_CH54S13_004",
+          "edge_type": "REFERENCES",
+          "source": "P1_CH54S13_004",
+          "target": "I1_CH54S13_004",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "create this list based on the analysis of false positive alerts"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004255"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构基于误报分析创建白名单。KG不足：基础KG只能表达为“白名单基于分析创建”，无法表达分析对创建动作的有向约束。选项判断：可确认分析作为创建的依据。LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,274 @@
+{
+  "section_id": "CH47-S07",
+  "section_title": "Transaction monitoring > Other sources of investigation",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003318"],
+      "proposition": "金融机构收到美国PATRIOT Act 314a/b信息共享请求时，可能触发额外内部调查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_001",
+      "reason": "存在明确的事件触发过程的有向结构：接收请求（entry）→触发调查（process），超出基础KG对案例的简单说明。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003319"],
+      "proposition": "负面新闻筛查程序识别出信息，该信息促使审查并生成调查线索。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_002",
+      "reason": "识别信息（entry）→触发审查（process）且生成线索（exit）构成程序性链条，超出基础KG的静态事实。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003320"],
+      "proposition": "监管发现和建议有助于识别额外风险并启动审查。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达帮助关系，无明确主体动作或独立结果，基础KG已能保存该类一般知识关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003325"],
+      "proposition": "执法机构直接询问促使金融机构调查可能涉及犯罪的活动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_003",
+      "reason": "外部事件（直接询问）触发主体（金融机构）调查动作，构成有向程序结构，超出孤立事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003326"],
+      "proposition": "鉴于重要性和敏感性，调查来源必须谨慎处理。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_004",
+      "reason": "明确了处理动作与处理对象（调查来源）的方向关系，形成process→input的增量有向关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003327"],
+      "proposition": "必须避免向潜在调查对象通风报信。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "虽然带情态义务，但缺少具体动作对象或进一步有向结构，基础KG已能作为规则保存。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003329"],
+      "proposition": "机构应制定稳健的调查管理程序，以最小化信息泄露风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S07_005",
+      "reason": "制定程序（process）以降低风险（standard）构成约束关系，超出基础KG的整句保存。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S07_001",
+      "section_id": "CH47-S07",
+      "card_nature": "execution",
+      "title": "接收美国PATRIOT Act 314a/b信息共享请求触发额外内部调查",
+      "flow_nodes": [
+        {
+          "node_id": "E_3318_request_received",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "金融机构收到依据美国PATRIOT Act 314a/b的信息共享请求",
+          "evidence_unit_ids": ["v7u_N003318"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_3318_internal_investigation",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构进行额外内部调查",
+          "evidence_unit_ids": ["v7u_N003318"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3318_1",
+          "edge_type": "PRECEDES",
+          "source": "E_3318_request_received",
+          "target": "P_3318_internal_investigation",
+          "evidence_unit_ids": ["v7u_N003318"],
+          "derivation": "explicit_text",
+          "condition": "当收到此类请求时",
+          "source_quote": "Receiving such a request can trigger an additional internal investigation."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003318"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构收到314a/b请求（entry）-> 触发额外内部调查（process）。基础KG只能表达该案例存在，但无法表达接收请求到调查实施的触发关系及方向。选项判断：可确认特定外部请求可触发内部调查程序。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S07_002",
+      "section_id": "CH47-S07",
+      "card_nature": "assessment",
+      "title": "负面新闻筛查识别信息触发审查并生成调查线索",
+      "flow_nodes": [
+        {
+          "node_id": "E_3319_info_identified",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "负面新闻筛查程序识别出信息",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_3319_review",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构进行审查",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X_3319_leads",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "生成调查线索",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3319_1",
+          "edge_type": "PRECEDES",
+          "source": "E_3319_info_identified",
+          "target": "P_3319_review",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "derivation": "explicit_text",
+          "condition": "当识别出信息时",
+          "source_quote": "identify information that prompts reviews"
+        },
+        {
+          "edge_id": "e_3319_2",
+          "edge_type": "PRODUCES",
+          "source": "E_3319_info_identified",
+          "target": "X_3319_leads",
+          "evidence_unit_ids": ["v7u_N003319"],
+          "derivation": "explicit_text",
+          "source_quote": "identify information that ... generates investigative leads"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003319"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：负面新闻筛查程序识别出信息（entry）-> 触发审查（process）并生成调查线索（exit）。基础KG可能只保存“负面新闻筛查能识别信息”的静态事实，无法表达识别信息后触发审查并产生线索的程序性链条。选项判断：可确认负面新闻筛查在识别信息后如何促成审查和线索生成。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S07_003",
+      "section_id": "CH47-S07",
+      "card_nature": "execution",
+      "title": "执法机构直接询问促使金融机构调查",
+      "flow_nodes": [
+        {
+          "node_id": "E_3325_direct_inquiry",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "执法机构直接询问",
+          "evidence_unit_ids": ["v7u_N003325"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_3325_investigate",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构调查可能涉及犯罪的活动",
+          "evidence_unit_ids": ["v7u_N003325"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3325_1",
+          "edge_type": "PRECEDES",
+          "source": "E_3325_direct_inquiry",
+          "target": "P_3325_investigate",
+          "evidence_unit_ids": ["v7u_N003325"],
+          "derivation": "explicit_text",
+          "condition": "当执法机构进行直接询问时",
+          "source_quote": "Direct inquiries from law enforcement can prompt a financial institution to investigate activities possibly linked to criminal activities."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003325"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：执法机构直接询问（entry）-> 促使金融机构调查（process）。基础KG可能只保存“直接询问可作为调查来源”的孤立事实，无法表达从询问到调查行动的触发关系。选项判断：可确认执法直接询问能直接触发金融机构的调查行动。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S07_004",
+      "section_id": "CH47-S07",
+      "card_nature": "control",
+      "title": "调查来源必须谨慎处理",
+      "flow_nodes": [
+        {
+          "node_id": "P_3326_handle_with_care",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构必须谨慎处理调查来源",
+          "evidence_unit_ids": ["v7u_N003326"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "IN_3326_sources",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "反洗钱调查来源（内部转介、外部转介、RFI、负面新闻、监管发现、执法请求等）",
+          "evidence_unit_ids": ["v7u_N003314"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3326_1",
+          "edge_type": "REFERENCES",
+          "source": "P_3326_handle_with_care",
+          "target": "IN_3326_sources",
+          "evidence_unit_ids": ["v7u_N003326"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003314", "v7u_N003326"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构必须谨慎处理（process）各种调查来源（input）。基础KG可能只能表达“调查来源必须小心处理”的规则，而不能表达处理动作与处理对象之间的方向关系。选项判断：可确认对于这些调查来源，机构负有小心处理的义务。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S07_005",
+      "section_id": "CH47-S07",
+      "card_nature": "control",
+      "title": "应制定稳健的调查管理程序以最小化信息泄露风险",
+      "flow_nodes": [
+        {
+          "node_id": "P_3329_establish_procedures",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应制定稳健的调查管理程序",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S_3329_minimize_leak",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "最小化信息泄露风险",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_3329_1",
+          "edge_type": "REFERENCES",
+          "source": "P_3329_establish_procedures",
+          "target": "S_3329_minimize_leak",
+          "evidence_unit_ids": ["v7u_N003329"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003329"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构应制定调查管理程序（process），其目的是最小化信息泄露风险（standard）。基础KG可能只能整体保存该规则，而无法表达制定程序与风险目标之间的约束关系。选项判断：可确认机构需建立调查程序并以降低泄密风险为目标。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,98 @@
+{
+  "section_id": "CH57-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "表格分类，无程序性有向关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "工具功能说明，无明确业务动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "产品特性描述，无主体执行动作。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "比较陈述，未形成条件-动作-结果链。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "原命题为自动化优劣势陈述，不构成有向程序关系；但其中包含的‘自动化优先处理高风险案件简化调查’已作为新候选单独成卡。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "弱点陈述，无应对措施。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N004518"],
+      "proposition": "自动化系统优先处理高风险案件导致调查流程简化",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S04_004",
+      "reason": "KG能表达自动化优点和单独事实，但无法表达优先处理行为导致调查简化的有向程序关系。",
+      "origin_candidate_ids": ["cand_006"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH57-S04_004",
+      "section_id": "CH57-S04",
+      "card_nature": "execution",
+      "title": "自动化优先处理高风险案件以简化调查流程",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Automated systems prioritize high-risk cases (自动化系统优先处理高风险案件)",
+          "evidence_unit_ids": ["v7u_N004518"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Investigations are streamlined (调查流程简化)",
+          "evidence_unit_ids": ["v7u_N004518"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N004518"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004518"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：自动化系统优先处理高风险案件导致调查流程简化。KG不足：KG只能分别存储自动化的优点和简化效果，无法表达优先处理行为与简化结果之间的有向产出关系。选项判断：可确认优先处理高风险案件是简化调查的直接手段；LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

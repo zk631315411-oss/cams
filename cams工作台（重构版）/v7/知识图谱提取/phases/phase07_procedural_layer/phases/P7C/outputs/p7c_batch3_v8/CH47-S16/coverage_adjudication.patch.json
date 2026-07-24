@@ -1,0 +1,153 @@
+{
+  "section_id": "CH47-S16",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯事实陈述，无有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_005",
+      "reason": "MLRO最终决定是内部审查流程的关键环节，与审查、调查等步骤结合形成有向决策链，单独静态职责无法体现流程关系，提升为新建card中的决策节点。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S16_005",
+      "reason": "原判定为整体描述，但各单元间存在功能依赖和隐含顺序（审查引发提问/调查、进而要求时间表），组合后可形成有向内部流程，通过新建card完整表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般规则陈述，具体有向结构（如期限规则）已在单独card中表达，本候选不再重复提取。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S16_005",
+      "section_id": "CH47-S16",
+      "card_nature": "assessment",
+      "title": "MLRO主导的SAR审查、决策与时间表制定流程",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "检测到可疑或潜在非法活动",
+          "evidence_unit_ids": [
+            "v7u_N003438"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO审查SAR并可能向调查员提问，确保叙述连贯有力",
+          "evidence_unit_ids": [
+            "v7u_N003442"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "进行进一步调查以获得额外信息（如需要）",
+          "evidence_unit_ids": [
+            "v7u_N003441"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "应创建允许反馈和补充调查的内部调查和审查时间表",
+          "evidence_unit_ids": [
+            "v7u_N003443"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO做出最终决定是否提交SAR",
+          "evidence_unit_ids": [
+            "v7u_N003440"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N003438",
+            "v7u_N003442"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N003441",
+            "v7u_N003442"
+          ],
+          "derivation": "llm_inference",
+          "condition": "当审查发现需要进一步调查以获得更多信息时"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "n3",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N003441",
+            "v7u_N003440"
+          ],
+          "derivation": "llm_inference",
+          "condition": "完成进一步调查后"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "n2",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N003443",
+            "v7u_N003442"
+          ],
+          "derivation": "llm_inference",
+          "condition": "为支持审查中的反馈和补充调查需求"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003438",
+        "v7u_N003440",
+        "v7u_N003441",
+        "v7u_N003442",
+        "v7u_N003443"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：检测可疑活动→MLRO审查提问→可能需要进一步调查→最终决定提交SAR，同时应制定内部时间表。基础KG无法表达此有向流程及管理性应对。部分边因缺少明示连接词标记为llm_inference。"
+    }
+  ],
+  "card_supplements": []
+}

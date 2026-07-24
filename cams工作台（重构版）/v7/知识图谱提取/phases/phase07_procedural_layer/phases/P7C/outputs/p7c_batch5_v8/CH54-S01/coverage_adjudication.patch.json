@@ -1,0 +1,206 @@
+{
+  "section_id": "CH54-S01",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为一般性鼓励陈述，无具体程序或判断链"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性技术采用事实，无特定条件或判断导向"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术目的陈述，无具体主体动作或判断关系"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术效果的一般性说明"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术能力的一般性说明，未构成特定判断链"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术效果的一般性说明"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术效果的一般性说明"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性益处陈述，无具体有向关系"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "举例说明，仅为事实列出"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH54-S01_003",
+      "reason": "政府信息整合作为输入，加速身份验证并提升开户效率，形成有向流程关系，超出基础KG表达能力"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性控制措施陈述，无具体有向执行链"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标，无后续应对或判断结构"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004035"
+      ],
+      "proposition": "当组织未实施风险缓解措施时，机构判定非面对面业务关系为高风险，应明确产生高风险分类结果",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S01_001",
+      "reason": "原卡片将结果隐含在process标签中，缺少独立的分类exit节点，补充以完整表达条件导向的风险分类结果",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH54-S01_003",
+      "section_id": "CH54-S01",
+      "card_nature": "execution",
+      "title": "政府信息整合加速身份验证提升开户效率",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "政府信息与金融机构流程整合",
+          "evidence_unit_ids": [
+            "v7u_N004044"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "进行身份验证（加快周转）",
+          "evidence_unit_ids": [
+            "v7u_N004044"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "开户效率提升",
+          "evidence_unit_ids": [
+            "v7u_N004044"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N004044"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N004044"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004044"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：政府信息整合(输入) → 身份验证加速(过程) → 开户效率提升(结果)；KG不足：基础KG只能描述整合能加速验证，无法表达有向流程关系；选项判断：可判断关于整合影响的选项；LLM推理：无。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH54-S01_001",
+      "reason": "原卡片缺少高风险分类结果节点，补充exit与PRODUCES边，完善条件到结果的有向表达",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "非面对面业务关系高风险",
+          "evidence_unit_ids": [
+            "v7u_N004035"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N004035"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

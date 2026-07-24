@@ -1,0 +1,118 @@
+{
+  "section_id": "CH47-S01",
+  "section_title": "Transaction monitoring > Transaction monitoring controls",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003233"],
+      "proposition": "当客户活动超出正常参数时，交易监控系统生成警报。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S01_001",
+      "reason": "基础KG可表达警报生成的一般概念，但未表达条件（活动超出正常参数）触发动作的有向关系，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003234"],
+      "proposition": "机构审查警报并评估异常行为是否可解释或可疑，得出两种分类结论。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S01_002",
+      "reason": "基础KG可表达审查过程，但未表达评估产生的两种互斥分类结论（可解释/可疑），属于P7C增量。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S01_001",
+      "section_id": "CH47-S01",
+      "card_nature": "execution",
+      "title": "客户活动异常触发警报生成",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "客户活动超出正常参数",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "交易监控系统生成警报",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N003233"],
+          "derivation": "explicit_text",
+          "condition": "当客户活动超出正常参数时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003233"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户活动超出正常参数 → 交易监控系统生成警报；KG不足：基础KG只能表达“交易监控系统生成警报”这一事实，无法表达条件触发关系；选项判断：可确认警报生成的条件；无LLM推理。"
+    },
+    {
+      "card_id": "p7card_CH47-S01_002",
+      "section_id": "CH47-S01",
+      "card_nature": "assessment",
+      "title": "审查异常行为并评估可解释或可疑",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "机构审查警报并评估异常行为是否可解释或可疑",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "异常行为可解释",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "异常行为潜在可疑",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "DECIDES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "derivation": "explicit_text",
+          "condition": "如果评估为可解释"
+        },
+        {
+          "edge_id": "edge_2",
+          "edge_type": "DECIDES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": ["v7u_N003234"],
+          "derivation": "explicit_text",
+          "condition": "如果评估为潜在可疑"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003234"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：审查评估 → 可解释/可疑；KG不足：基础KG只能表达“审查警报”这一过程，无法表达评估产生的两种互斥分类结论；选项判断：可确认审查后可能出现的两种结果；无LLM推理。"
+    }
+  ],
+  "skip_reason": null
+}

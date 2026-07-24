@@ -1,0 +1,216 @@
+{
+  "section_id": "CH52-S03",
+  "section_title": "Technology and tools used across the customer life cycle > Robotic process automation",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003973"],
+      "proposition": "RPA机器人在KYC流程中可执行开源情报搜索、提取证件数据、自动填充系统及评定风险等级等一系列重复性任务。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯功能列表，无明确顺序、条件或判定性有向结构，基础KG已作为案例说明充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003974"],
+      "proposition": "RPA在筛查和交易监控中支持初始警报分类、按规则路由调查并整合ML抑制误报。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列功能描述，未形成明确前后依赖或判定链条，基础KG已作为解释性事实覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003975"],
+      "proposition": "存在被抑制的警报时，机构需要按正式计划定期重新审查这些警报。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S03_001",
+      "reason": "明确的状态（存在被抑制警报）触发特定主体动作（定期审查），形成条件→动作的有向关系，基础KG虽能保存规则但未表达该过程结构，可帮助判定抑制警报的后续处置义务。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003976"],
+      "proposition": "仪表盘或报告展示被抑制警报的类别和数量，以确保可审计性和持续控制。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "独立控制措施陈述，无明确触发条件或判定链条，仅表达抽象控制目标，基础KG已能充分覆盖。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003978", "v7u_N003980"],
+      "proposition": "生成式AI辅助调查员生成SAR叙述，然后由人工审核并行使最终判断决定是否提交。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S03_002",
+      "reason": "AI生成与人工审核形成必要前后步骤，构成技术辅助下的控制链条，基础KG仅分别保存事实，未表达有向顺序和判定权归属，可确认AI不能独立提交SAR的选项。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003981"],
+      "proposition": "在应用任何自动化或AI之前，组织应投资于流程再造。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S03_003",
+      "reason": "明确的时间条件（应用自动化前）导向强制前置动作（流程再造），构成条件→义务的有向结构，基础KG虽可保存规则但未体现其作为必要前置步骤的顺序关系，可支持判断自动化实施的前提。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003982"],
+      "proposition": "存在漏洞或高度依赖人工干预的流程不适合应用RPA。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "静态判断标准，未触发具体动作或形成有向链条，基础KG已能充分保存该规则。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003983"],
+      "proposition": "在高度监管的AML环境中，金融机构应极度谨慎地部署RPA。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性谨慎义务，缺乏具体条件、判定或后续动作，基础KG已能覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N003984"],
+      "proposition": "RPA实施不当可能导致严重的法律和声誉后果。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险指标，无事件触发或应对链条，基础KG已作为风险指标表达。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N003985"],
+      "proposition": "即使使用RPA或AI，AML失败的责任仍由金融机构承担。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "责任归属的一般规则，无程序性或判断性有向结构，基础KG已能充分表达。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": ["v7u_N003986"],
+      "proposition": "监管机构要求组织对其反洗钱项目保持全面的监督和控制。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性监管要求，未涉及具体条件或动作链条，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": ["v7u_N003987"],
+      "proposition": "仅应对经过充分测试且运营成熟的流程实施自动化。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "实践原则，作为独立规则无触发、顺序或判定出口，基础KG已能保存。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH52-S03_001",
+      "section_id": "CH52-S03",
+      "card_nature": "control",
+      "title": "Periodic Review of Hibernated Alerts",
+      "flow_nodes": [
+        {
+          "node_id": "E3_hibernation_state",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "存在被抑制的警报（hibernated alerts）",
+          "evidence_unit_ids": ["v7u_N003975"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P7_revisit",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "机构可能（may need）需要按正式计划定期重新审查被抑制的警报",
+          "evidence_unit_ids": ["v7u_N003975"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e001",
+          "edge_type": "PRECEDES",
+          "source": "E3_hibernation_state",
+          "target": "P7_revisit",
+          "evidence_unit_ids": ["v7u_N003975"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003975"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：存在被抑制的警报 —> 机构可能需要定期重新审查；KG不足：基础KG只能保存“被抑制警报需定期审查”的规则，无法表达状态触发动作的有向过程；选项判断：可确认抑制警报后存在后续审查义务，排除“抑制后无需进一步动作”的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH52-S03_002",
+      "section_id": "CH52-S03",
+      "card_nature": "execution",
+      "title": "AI-Assisted SAR Drafting with Human Review",
+      "flow_nodes": [
+        {
+          "node_id": "P2_ai_narrative",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员使用生成式AI参考历史SAR模式生成SAR叙述",
+          "evidence_unit_ids": ["v7u_N003978"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_human_review",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "多数组织保留人工审核，审核SAR并行使最终判断决定是否提交报告",
+          "evidence_unit_ids": ["v7u_N003980"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e002",
+          "edge_type": "PRECEDES",
+          "source": "P2_ai_narrative",
+          "target": "P2_human_review",
+          "evidence_unit_ids": ["v7u_N003978", "v7u_N003980"],
+          "derivation": "llm_inference"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003978", "v7u_N003980"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：AI辅助生成SAR叙述 —> 人工审核并最终判断提交；KG不足：基础KG可分别保存“AI辅助生成”和“需要人工审核”的事实，但无法表达生成后审核的必要先后顺序和最终判断权归属；选项判断：可确认AI不能独立提交SAR，人工始终保留最终决定权，排除全自动提交的选项；LLM推理：PRECEDES边为llm_inference，因原文未直接陈述顺序，但功能上先生成后审核是唯一合理逻辑。"
+    },
+    {
+      "card_id": "p7card_CH52-S03_003",
+      "section_id": "CH52-S03",
+      "card_nature": "control",
+      "title": "Process Reengineering Before Automation",
+      "flow_nodes": [
+        {
+          "node_id": "E1_plan_automation",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织计划应用自动化或AI",
+          "evidence_unit_ids": ["v7u_N003981"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P8_reengineering",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织应投资于流程再造（精简工作流、消除冗余、验证控制）",
+          "evidence_unit_ids": ["v7u_N003981"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e003",
+          "edge_type": "PRECEDES",
+          "source": "E1_plan_automation",
+          "target": "P8_reengineering",
+          "evidence_unit_ids": ["v7u_N003981"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003981"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织计划应用自动化 —> 应投资流程再造；KG不足：基础KG能保存“自动化前应流程再造”的规则，但无法表达其作为必要前置步骤的有向顺序；选项判断：可确认实施自动化前必须进行流程优化，排除跳过此步骤直接自动化的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

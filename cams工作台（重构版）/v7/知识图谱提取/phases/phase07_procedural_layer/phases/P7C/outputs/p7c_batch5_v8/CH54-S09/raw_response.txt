@@ -1,0 +1,126 @@
+{
+  "section_id": "CH54-S09",
+  "section_title": "Technology for KYC > Understanding screening system logic",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004186"],
+      "proposition": "如果规则模型的要求过于宽泛，则可能产生大量假阳性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可将此风险指标作为一般因果保存，没有特定主体的识别/评估/决策/应对动作，不构成P7C增量结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004188"],
+      "proposition": "模糊逻辑匹配通过减少因名称细微差异而遗漏匹配的风险来提高检测能力",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于机制说明，基础KG可充分表达该因果关系，没有具体条件分支或主体应对动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004190"],
+      "proposition": "宽泛的匹配标准可能产生假阳性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可将此风险指标作为孤立风险事实保存，不涉及特定主体的判断或处置。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004192"],
+      "proposition": "金融机构开发机器学习模型分析历史筛查结果以减少误报",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例说明模型用途，无明显顺序步骤或独立结果；基础KG可以整体表达该应用事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004199"],
+      "proposition": "网络分析模型通过揭示隐藏网络来增强对复杂洗钱方案的检测",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于机制说明，基础KG可表达该因果关系，没有具体程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004200"],
+      "proposition": "网络分析模型通过关联不同标识符提高筛查准确性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "机制说明，基础KG可表达，无特定主体动作或条件分支。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004203"],
+      "proposition": "金融机构先使用基于规则的模型进行初筛，然后使用机器学习模型减少初筛识别出的误报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S09_001",
+      "reason": "明确了先后顺序（初筛→误报消减）和针对性处理关系（ML模型直接处理初筛假阳性），超出基础KG概括性描述“混合模型”的能力，构成局部程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004206"],
+      "proposition": "选择正确的筛查模型取决于名称复杂度、搜索性质等因素",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "依赖关系陈述，没有原文明示的具体主体动作或判断步骤；基础KG可将其作为一般选择因素事实保存。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S09_001",
+      "section_id": "CH54-S09",
+      "card_nature": "execution",
+      "title": "混合筛查模型中规则初筛与机器学习误报消减的顺序关系",
+      "flow_nodes": [
+        {
+          "node_id": "P1_initial_screening",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构使用基于规则的模型进行初筛",
+          "evidence_unit_ids": ["v7u_N004203"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_false_positive_reduction",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构使用机器学习模型减少初筛误报",
+          "evidence_unit_ids": ["v7u_N004203"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_false_positives",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "初筛识别出的假阳性",
+          "evidence_unit_ids": ["v7u_N004203"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_FP_PR",
+          "edge_type": "PRECEDES",
+          "source": "P1_initial_screening",
+          "target": "P2_false_positive_reduction",
+          "evidence_unit_ids": ["v7u_N004203"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_PR_REF",
+          "edge_type": "REFERENCES",
+          "source": "P2_false_positive_reduction",
+          "target": "I1_false_positives",
+          "evidence_unit_ids": ["v7u_N004203"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004203"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构先使用规则模型初筛，然后使用ML模型减少初筛产生的假阳性（P1 --PRECEDES--> P2，P2 --REFERENCES--> I1假阳性）；KG不足：基础KG只能概括“混合模型结合多种模型”，无法表达局部先后顺序和针对性处理关系；选项判断：可确认或排除关于混合模型工作流程的选项，例如先规则后ML的顺序；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

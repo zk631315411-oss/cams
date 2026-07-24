@@ -1,0 +1,134 @@
+{
+  "section_id": "CH58-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "系统需求决定数据表结构的规则属于一般性规则和示例，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "合规系统只消费相关数据及AI系统需更全面数据表，属于事实说明与对比，无程序性有向结构，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据使用分为被动和主动是分类定义，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S07_004",
+      "reason": "原文明确描述了合规系统比较数据字段后的互斥结果分支（检测异常或应用额外字段），具有明确有向关系和独立出口，超出基础KG表达能力。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH58-S07_004",
+      "section_id": "CH58-S07",
+      "card_nature": "assessment",
+      "title": "主动使用中比较数据字段并分支处置",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "合规系统比较两个数据字段以识别交易活动偏离预期模式",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "基于比较结果的分支决策",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测到异常需要进一步调查",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应用额外的主动数据字段",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "DECIDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "DECIDES",
+          "source": "N2",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N004722"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004722"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：合规系统主动使用数据时比较数据字段，根据比较结果分支为检测异常或应用额外数据字段；KG不足：基础KG只能描述比较动作或异常检测，无法表达决策分支和互斥出口；选项判断：可确认主动使用的业务分支逻辑；LLM推理：无。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH58-S07_003",
+      "reason": "原文v7u_N004720明确提到数据在staging tables处理完成后填充到最终数据表，但现有card未表达此后续动作，遗漏了顺序关系。",
+      "origin_candidate_ids": [],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将处理后的数据填充到最终数据表",
+          "evidence_unit_ids": ["v7u_N004720"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N004720"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

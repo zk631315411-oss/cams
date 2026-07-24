@@ -1,0 +1,257 @@
+{
+  "section_id": "CH58-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S04_002",
+      "reason": "特定客户数据帮助组织完成适当尽调，构成有向的输入-过程关系，超出基础KG的数据分类说明。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S04_003",
+      "reason": "筛查所有客户的动作需要引用制裁、恐怖分子、PEP名单等外部数据，形成有向关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S04_004",
+      "reason": "合规系统管理金融犯罪风险的过程需要结合内外部数据和网络分析，构成业务过程与输入的关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "为cand_004一般过程的示例说明，无独立的结构性增量，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S04_003",
+      "reason": "筛查系统需要结合静态KYC与外部数据，与cand_003共同构成筛查过程的输入要求，合并为同一card。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH58-S04_002",
+      "section_id": "CH58-S04",
+      "card_nature": "execution",
+      "title": "使用特定外部数据完成适当尽调",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "特定客户数据（负面媒体、法院裁决、商业登记等）",
+          "evidence_unit_ids": [
+            "v7u_N004671"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织完成适当尽调",
+          "evidence_unit_ids": [
+            "v7u_N004671"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N004671"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004671"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量表达特定外部数据用于尽调的有向关系；KG不足：基础KG仅分类，未表达过程引用具体数据的业务链接。"
+    },
+    {
+      "card_id": "p7card_CH58-S04_003",
+      "section_id": "CH58-S04",
+      "card_nature": "execution",
+      "title": "筛查系统结合静态KYC与外部名单数据筛查所有客户",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "静态客户KYC详情",
+          "evidence_unit_ids": [
+            "v7u_N004675"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "外部名单数据（制裁、恐怖分子、PEP名单等）",
+          "evidence_unit_ids": [
+            "v7u_N004672",
+            "v7u_N004675"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "筛查系统筛查所有客户",
+          "evidence_unit_ids": [
+            "v7u_N004672",
+            "v7u_N004675"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N3",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N004675"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "N3",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004672",
+            "v7u_N004675"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004672",
+        "v7u_N004675"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "结合cand_003和cand_006形成统一的筛查过程图；KG不足：基础KG仅列出数据类别，未表达业务过程需要引用这些数据的有向关系。"
+    },
+    {
+      "card_id": "p7card_CH58-S04_004",
+      "section_id": "CH58-S04",
+      "card_nature": "execution",
+      "title": "合规系统结合内外部数据及网络分析管理金融犯罪风险",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "内部和外部数据",
+          "evidence_unit_ids": [
+            "v7u_N004673"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "网络分析",
+          "evidence_unit_ids": [
+            "v7u_N004673"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "合规系统管理金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N004673"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N3",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N004673"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "REFERENCES",
+          "source": "N3",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004673"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004673"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量表达系统管理风险时依赖内外部数据和网络分析的有向关系；KG不足：基础KG仅概括为风险管理办法，未体现过程引用具体输入的局部链接。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH58-S04_001",
+      "reason": "原card缺少最终产出结果节点；精炼动作产生可用格式的数据应作为独立exit表达，以完整表达有向关系。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "精炼后的可用格式数据",
+          "evidence_unit_ids": [
+            "v7u_N004679"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N004679"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

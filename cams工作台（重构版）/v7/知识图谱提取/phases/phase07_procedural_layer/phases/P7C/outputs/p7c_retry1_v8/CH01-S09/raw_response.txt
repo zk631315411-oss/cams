@@ -1,0 +1,55 @@
+{
+  "section_id": "CH01-S09",
+  "section_title": "Money Laundering and Financial Crime > • Shell companies and front businesses:",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000057"],
+      "proposition": "银行基于欺诈怀疑，冻结并收回部分资金",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH01-S09_001",
+      "reason": "基础KG只能表达案例后果，无法表达怀疑到冻结的方向性触发关系，且该关系对判断银行应对措施有帮助。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH01-S09_001",
+      "section_id": "CH01-S09",
+      "card_nature": "control",
+      "title": "Bank intervention to freeze and reclaim funds on suspicion of fraud",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Suspicion of fraud",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Banks freeze and reclaim funds",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000057"],
+          "derivation": "explicit_text",
+          "condition": "suspicion of fraud"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000057"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Suspicion of fraud --触发--> Banks freeze and reclaim funds；KG不足：基础KG只能表达案例中银行介入的事实，无法表达怀疑到冻结的方向性有向结构；选项判断：可确认银行在怀疑欺诈时会采取冻结和收回资金措施；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

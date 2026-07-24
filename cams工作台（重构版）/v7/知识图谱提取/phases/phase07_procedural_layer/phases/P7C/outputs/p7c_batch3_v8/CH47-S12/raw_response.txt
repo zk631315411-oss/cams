@@ -1,0 +1,88 @@
+{
+  "section_id": "CH47-S12",
+  "section_title": "Transaction monitoring > Communicating with customers",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003371"],
+      "proposition": "必要时机构与客户接触收集额外信息，通常由客户经理进行",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达一般程序性事实，无额外有向结构"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003372", "v7u_N003373"],
+      "proposition": "某些司法管辖区要求提前通知客户；即使未要求，也建议通知并说明数据用途以降低疑虑",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达这些规则，“即使未要求也建议”为无条件的建议，未构成条件分支结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003374", "v7u_N003375", "v7u_N003376", "v7u_N003377", "v7u_N003378", "v7u_N003379"],
+      "proposition": "工作人员应通过对话式沟通、允许自由发言、使用模板等技巧让客户放松，并保持警觉以跟进异常回应",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列建议和规则，基础KG可表达，无有向判断或处置链"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003380"],
+      "proposition": "在工作人员已让客户放松的条件下，客户不合作可能引起怀疑",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S12_001",
+      "reason": "基础KG仅表达不合作是可疑指标，未表达放松前提作为条件的判断链条，此处构成条件触发怀疑的增量有向结构"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003381"],
+      "proposition": "工作人员应确保会议细节可验证并及时记录会议内容",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达记录要求，无额外有向结构"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S12_001",
+      "section_id": "CH47-S12",
+      "card_nature": "risk_indicator",
+      "title": "放松环境下客户不合作引起怀疑",
+      "flow_nodes": [
+        {
+          "node_id": "E380_1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "客户在工作人员使其放松后仍不合作",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P380_1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "工作人员可能产生怀疑",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e380_1",
+          "edge_type": "PRECEDES",
+          "source": "E380_1",
+          "target": "P380_1",
+          "evidence_unit_ids": ["v7u_N003380"],
+          "derivation": "explicit_text",
+          "condition": "If the staff member puts the customer at ease, but that customer is uncooperative",
+          "source_quote": "If the staff member puts the customer at ease, but that customer is uncooperative, this might raise suspicions."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003380"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户在放松环境下不合作 --可能引起--> 怀疑（条件：工作人员已让其放松）；KG不足：基础KG只能表达不合作是可疑指标，无法表达放松作为前提条件的判断链条；选项判断：可确认在放松环境下不合作更应引起怀疑，排除无条件怀疑；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

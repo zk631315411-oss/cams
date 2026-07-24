@@ -1,0 +1,182 @@
+{
+  "section_id": "CH49-S02",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Duty to report",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003475"],
+      "proposition": "如果组织怀疑客户实施金融犯罪，则有义务向当局报告。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S02_001",
+      "reason": "规则内部的条件触发义务有向结构，基础KG仅作为整体规则保存，未表达条件→动作的局部关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003476", "v7u_N003480"],
+      "proposition": "个人不报告金融犯罪可能面临罚款和监禁等法律处罚。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的法律风险/后果知识，无后续机构流程或判断，基础KG足以承当。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003477"],
+      "proposition": "组织应制定清晰的政策和程序，以确保报告清晰、基于事实并保护相关员工。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象措施要求，无具体条件或独立结果；基础KG可保存为建议措施。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003478", "v7u_N003479"],
+      "proposition": "全球组织任命官员负责AFC项目并报告金融犯罪，官衔示例。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般事实与列表，不包含条件、判断或程序性有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003481", "v7u_N003482"],
+      "proposition": "故意视而不见可被起诉，并被视为等同于实际知情。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "法律定义与解释，不构成局部程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003483"],
+      "proposition": "组织应制定政策和程序，使员工能够向合规官报告可疑情况。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "措施要求，无后续动作分支或独立结果，基础KG可保存为措施。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003484"],
+      "proposition": "员工必须接受报告程序培训，以满足报告义务。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "培训要求，无局部程序性有向增量。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003485", "v7u_N003486", "v7u_N003487"],
+      "proposition": "合规官负责评估信息并决定行动；若认为活动或解释充分，升级流程可能停止；若事实表明需要外部报告，通常提交可疑活动报告。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S02_002",
+      "reason": "包含评估、条件分支和应对动作的内部流程链，基础KG虽覆盖流程但未提取具体条件分支结构。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N003488"],
+      "proposition": "在规定时限内报告，可确保个人和机构有效履行职责。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般原则，无具体程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N003489"],
+      "proposition": "某些司法管辖区可能要求报告异常活动（超出可疑活动）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "补充规则事实，不构成局部流程链。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S02_001",
+      "section_id": "CH49-S02",
+      "card_nature": "execution",
+      "title": "基于怀疑的报告义务触发",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "组织怀疑客户实施金融犯罪",
+          "evidence_unit_ids": ["v7u_N003475"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "组织必须向当局报告",
+          "evidence_unit_ids": ["v7u_N003475"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003475"],
+          "derivation": "explicit_text",
+          "condition": "组织怀疑客户实施金融犯罪"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003475"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织怀疑客户实施金融犯罪（条件）→ 组织必须向当局报告（义务）；KG不足：基础KG可能仅将本句作为整体规则保存，无法表达「条件触发报告义务」的有向链；选项判断：可帮助确认或排除触发报告义务的前提条件；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH49-S02_002",
+      "section_id": "CH49-S02",
+      "card_nature": "assessment",
+      "title": "合规官评估信息与行动决定分支",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "合规官评估信息并决定应采取的行动",
+          "evidence_unit_ids": ["v7u_N003485"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "升级流程可能停止",
+          "evidence_unit_ids": ["v7u_N003486"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织通常提交可疑活动报告至相关当局",
+          "evidence_unit_ids": ["v7u_N003487"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "DECIDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003486"],
+          "derivation": "explicit_text",
+          "condition": "合规官认为活动或解释充分"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "DECIDES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N003487"],
+          "derivation": "explicit_text",
+          "condition": "事实表明必须进行外部报告"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003485", "v7u_N003486", "v7u_N003487"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：合规官评估信息并决定行动后，若认为充分则可能停止升级，若需外部报告则通常提交SAR；KG不足：基础KG仅保存流程步骤，未表达具体的条件分支与动作间的有向决定关系；选项判断：可确认或排除评估后的两种可能处置路径（停止升级 / 提交SAR）；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

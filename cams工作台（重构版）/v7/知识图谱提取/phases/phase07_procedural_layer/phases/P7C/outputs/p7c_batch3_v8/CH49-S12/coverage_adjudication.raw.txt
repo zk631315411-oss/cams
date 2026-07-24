@@ -1,0 +1,118 @@
+{
+  "section_id": "CH49-S12",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述一般性义务，无具体执行条件、判断步骤或独立结果，基础KG已可充分表达该规则。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "属于对执法请求类型的举例说明，未描述金融机构内部用以响应此要求的程序性动作或判断链，基础KG已可承载。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003640"
+      ],
+      "proposition": "当金融机构拥有交付不同情报方面的团队时，这些团队应协调活动以维护保密性和合规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_002",
+      "reason": "KG无法表达条件-动作的有向关系，仅能存储孤立事实。",
+      "origin_candidate_ids": []
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N003643"
+      ],
+      "proposition": "在处理复杂执法请求时，指定官员尤其需要与法律团队等部门建立有效关系。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_003",
+      "reason": "KG无法表达条件与强化动作之间的有向关系。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S12_002",
+      "reason": "原card仅包含协调动作与标准的关系，遗漏了协调动作的触发条件——金融机构拥有不同交付团队。补充该条件使图完整。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "E2",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "金融机构拥有交付不同情报方面的团队（如情报分析或SAR）",
+          "evidence_unit_ids": [
+            "v7u_N003640"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_supp_001",
+          "edge_type": "PRECEDES",
+          "source": "E2",
+          "target": "P2",
+          "condition": "当机构内部存在此类团队时",
+          "evidence_unit_ids": [
+            "v7u_N003640"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003640"
+      ]
+    },
+    {
+      "patch_id": "coverage_supplement_002",
+      "card_id": "p7card_CH49-S12_003",
+      "reason": "原card仅包含建立关系动作与标准的关系，遗漏了强化该动作的条件——处理复杂执法请求。补充该条件使图完整。",
+      "origin_candidate_ids": [
+        "coverage_gap_002"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "E2",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "需处理复杂执法请求（可能需要多部门协调）",
+          "evidence_unit_ids": [
+            "v7u_N003643"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_supp_002",
+          "edge_type": "PRECEDES",
+          "source": "E2",
+          "target": "P3",
+          "condition": "在处理复杂请求时，建立关系尤为重要",
+          "evidence_unit_ids": [
+            "v7u_N003643"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003643"
+      ]
+    }
+  ]
+}

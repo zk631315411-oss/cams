@@ -1,0 +1,163 @@
+{
+  "section_id": "CH54-S04",
+  "section_title": "Technology for KYC > Digital onboarding technology",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004083",
+        "v7u_N004084",
+        "v7u_N004085",
+        "v7u_N004086",
+        "v7u_N004087",
+        "v7u_N004088"
+      ],
+      "proposition": "数字身份技术带来多种优势（改进风险管理、更快数据处理、提高效率、增强审计性、降低成本、多功能数据处理）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些是技术的效果或功能，属于一般事实或因果陈述，基础KG已能充分表达作为技术优势，无具体主体条件判断或程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004089"
+      ],
+      "proposition": "在入职过程中，组织通过客户上传文件进行快速准确的文档认证",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述常规文档认证步骤，无判断分支或触发反应的结构，基础KG可作为过程描述存储。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004090"
+      ],
+      "proposition": "AI工具通过与可信数据库交叉验证自动核实文档真实性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述AI工具的自动化验证能力，无特定条件导向的应对或判断链，基础KG可表达为事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004091"
+      ],
+      "proposition": "机器学习算法实时评估新客户的风险画像",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述ML算法的评估功能，未涉及具体条件分支或决策后果，基础KG可表达为事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004092"
+      ],
+      "proposition": "金融机构使用生物识别技术（如面部识别、语音识别、活体检测）验证客户",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述使用生物识别进行客户验证的方法，无有向判断或应对结构，基础KG可表达为实践事实。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004093"
+      ],
+      "proposition": "AI聊天机器人通过即时回答和引导改善客户入职体验",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "描述聊天机器人功能，无程序性或判断性结构，基础KG可存储。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004094"
+      ],
+      "proposition": "必要时提供人工实时聊天或视频通话支持",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "可选支持功能，无特定条件导向的主体动作或判断链，基础KG可存储。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004095"
+      ],
+      "proposition": "多种入职技术协同工作显著提升入职流程",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "总结性陈述，无具体有向结构，基础KG可表达为一般事实。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004096",
+        "v7u_N004097"
+      ],
+      "proposition": "犯罪分子使用AI绕过控制导致肉眼验证不可靠，组织因此部署额外检查以可靠验证文件",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S04_001",
+      "reason": "明确的事件触发应对链：AI威胁 -> 部署额外检查，构成有向的应对结构，超出基础KG的孤立事实存储。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N004098"
+      ],
+      "proposition": "FATF发布数字身份指引，帮助组织确定数字身份用于CDD的适合性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述指引发布及其目的，未描述组织实际依据指引进行判断的动作，无具体有向结构，基础KG可存储指引内容。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S04_001",
+      "section_id": "CH54-S04",
+      "card_nature": "control",
+      "title": "AI威胁触发组织部署额外文件验证检查",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "犯罪分子利用AI（深度伪造和合成身份）绕过控制，肉眼难以验证身份文件",
+          "evidence_unit_ids": [
+            "v7u_N004096"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织部署额外检查以可靠验证和认证文件",
+          "evidence_unit_ids": [
+            "v7u_N004097"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004096",
+            "v7u_N004097"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Organizations have therefore deployed additional checks to reliably verify and authenticate documents."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004096",
+        "v7u_N004097"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：犯罪分子利用AI绕过控制（事件）→ 组织部署额外检查（应对）；KG不足：基础KG可分别存储AI威胁与额外检查措施，但无法表达事件触发的有向应对链；选项判断：可确认或排除关于应对措施触发原因的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

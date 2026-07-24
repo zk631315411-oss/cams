@@ -1,0 +1,93 @@
+{
+  "section_id": "CH58-S21",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "候选仅为区块结构定义与组成关系，基础KG已充分表达，不满足P7C增量条件。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "候选为区块链浏览器提供的信息列表及用途描述，属于事实列举和一般功能说明，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_CH58S21_001",
+      "reason": "候选中包含用户通过比较不同浏览器数据以确定其可靠性的有向关系，具备主体（用户）、动作（比较数据）和独立结果（确定可靠性），超出基础KG表达能力，故提升成卡；其余建议（研究浏览器）因缺少独立结果保持kg_only。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N004929", "v7u_N004931"],
+      "proposition": "用户通过比较不同区块链浏览器的数据来确定浏览器的可靠性。",
+      "decision": "p7c_card",
+      "card_id": "card_CH58S21_001",
+      "reason": "基础KG无法表达该有向评估关系：输入（不同浏览器数据差异）→处理（比较）→输出（可靠性确定）。",
+      "origin_candidate_ids": ["cand_003"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "card_CH58S21_001",
+      "section_id": "CH58-S21",
+      "card_nature": "assessment",
+      "title": "通过比较数据确定区块链浏览器可靠性",
+      "flow_nodes": [
+        {
+          "node_id": "node_1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "不同浏览器显示相同交易的不同信息",
+          "evidence_unit_ids": ["v7u_N004929"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "比较不同浏览器数据以确定可靠性",
+          "evidence_unit_ids": ["v7u_N004931"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确定浏览器可靠性",
+          "evidence_unit_ids": ["v7u_N004931"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "REFERENCES",
+          "source": "node_2",
+          "target": "node_1",
+          "evidence_unit_ids": ["v7u_N004929", "v7u_N004931"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_2",
+          "edge_type": "PRODUCES",
+          "source": "node_2",
+          "target": "node_3",
+          "evidence_unit_ids": ["v7u_N004931"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004929", "v7u_N004931"],
+      "candidate_status": "candidate",
+      "review_notes": "基于原cand_003部分内容提升，保留情态'helpful'，将比较数据确定可靠性的有向关系成卡。"
+    }
+  ],
+  "card_supplements": []
+}

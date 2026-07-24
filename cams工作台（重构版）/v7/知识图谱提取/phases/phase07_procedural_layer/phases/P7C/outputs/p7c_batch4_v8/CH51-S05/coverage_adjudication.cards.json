@@ -1,0 +1,183 @@
+{
+  "section_id": "CH51-S05",
+  "section_title": "Understanding AFC technology > Using AFC technology to reduce friction in customer journeys",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003809",
+        "v7u_N003810",
+        "v7u_N003811",
+        "v7u_N003812",
+        "v7u_N003813",
+        "v7u_N003814"
+      ],
+      "proposition": "客户摩擦源于过度联系和延迟，可导致运营成本增加和客户流失",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元为定义、解释和后果描述，基础KG已充分表达，无增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003815",
+        "v7u_N003816",
+        "v7u_N003817",
+        "v7u_N003818",
+        "v7u_N003819"
+      ],
+      "proposition": "AFC技术可通过自动化、触发式更新、持续KYC、数据整合和减少误报等方式减少客户摩擦",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元描述AFC技术的能力和过程，属于一般知识，基础KG可承载，无超出KG的条件-动作关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003820"
+      ],
+      "proposition": "在选择技术时，机构必须平衡有效性与客户体验",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S05_001",
+      "reason": "规则内部包含条件（选择技术时）和带情态的动作（必须平衡），形成有向判断结构，基础KG无法表达此条件-动作关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003822"
+      ],
+      "proposition": "机构的安全与便利权衡应与风险偏好一致，并确保控制措施与风险相称",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S05_002",
+      "reason": "规则内部明确了风险偏好作为标准约束权衡和控制措施的有向关系，属于增量判断结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003821"
+      ],
+      "proposition": "稳健系统提升合规但过度侵入导致负面客户体验",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为系统特性对比陈述，无明确主体动作或判断方向，基础KG能保存。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH51-S05_001",
+      "section_id": "CH51-S05",
+      "card_nature": "assessment",
+      "title": "技术选择时必须平衡有效性与客户体验",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "机构进行技术选择",
+          "evidence_unit_ids": [
+            "v7u_N003820"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构必须平衡有效性与客户体验",
+          "evidence_unit_ids": [
+            "v7u_N003820"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003820"
+          ],
+          "derivation": "explicit_text",
+          "condition": "在选择技术时（when selecting technology）"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003820"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构选择技术 → 机构必须平衡有效性与客户体验；条件：在选择技术时。KG不足：基础KG只能将此整句作为规则保存，无法表达“选择技术”作为触发条件与平衡动作之间的有向关系。选项判断：可确认机构在技术选择时需执行平衡有效性与客户体验的步骤。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S05_002",
+      "section_id": "CH51-S05",
+      "card_nature": "assessment",
+      "title": "权衡安全与便利时应与风险偏好一致并确保控制相称",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "机构的风险偏好",
+          "evidence_unit_ids": [
+            "v7u_N003822"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构应当确保安全与便利的权衡与风险偏好一致，控制措施与风险水平相称",
+          "evidence_unit_ids": [
+            "v7u_N003822"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N003822"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003822"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构的安全与便利权衡应当与风险偏好对齐，并确保控制相称 → 参照 机构风险偏好。KG不足：基础KG只能将此整句作为规则保存，无法表达风险偏好作为标准约束权衡和控制措施的有向结构。选项判断：可确认机构在权衡安全与便利时须依据风险偏好，并保持控制措施相称。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元为定义、解释和后果描述，基础KG已充分表达，无增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元描述AFC技术的能力和过程，属于一般知识，基础KG可承载，无超出KG的条件-动作关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为系统特性对比陈述，无明确主体动作或判断方向，基础KG能保存。"
+    }
+  ]
+}

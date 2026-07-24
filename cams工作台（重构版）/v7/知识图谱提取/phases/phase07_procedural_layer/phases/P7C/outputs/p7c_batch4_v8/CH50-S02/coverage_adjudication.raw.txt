@@ -1,0 +1,337 @@
+{
+  "section_id": "CH50-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅背景事实，无明确判断性有向结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "现状评估为描述性动作，无增量有向关系"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_004",
+      "reason": "决策动作产生独立分类结果，方向性超出基础KG"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "市场评估为过程描述，无明确输出"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "具体技术需求陈述，无判断或条件触发"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "具体技术需求陈述，无判断或条件触发"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_005",
+      "reason": "前提条件触发动作链，有向性超出KG"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_006",
+      "reason": "评估动作有向参照多个标准，超出KG"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据管理考量为过程描述，无独立结果"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "准备质量控制指南为义务陈述，无增量有向关系"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_007",
+      "reason": "动作产生独立产品（提案），方向性超出KG"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003716"],
+      "proposition": "审查后Anna决定优先升级客户准入/KYC和交易监控",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_004",
+      "reason": "决策动作产生独立分类结果，方向性超出基础KG",
+      "origin_candidate_ids": ["cand_006"]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": ["v7u_N003720"],
+      "proposition": "已识别适合的解决方案类型后，Anna与技术部门合作开始选择实施工具",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_005",
+      "reason": "前提条件触发动作，有向性超出KG",
+      "origin_candidate_ids": ["cand_010"]
+    },
+    {
+      "candidate_id": "coverage_gap_003",
+      "unit_ids": ["v7u_N003721"],
+      "proposition": "评估自建或采购方案时，参照供应商风险、系统集成、总拥有成本与投资回报等标准",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_006",
+      "reason": "评估动作有向参照多个标准，超出KG",
+      "origin_candidate_ids": ["cand_011"]
+    },
+    {
+      "candidate_id": "coverage_gap_004",
+      "unit_ids": ["v7u_N003724"],
+      "proposition": "经过分析，Anna与技术伙伴提出技术升级提案（包含方案、时间表、预算）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH50-S02_007",
+      "reason": "动作产生独立产品（提案），方向性超出KG",
+      "origin_candidate_ids": ["cand_014"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH50-S02_004",
+      "section_id": "CH50-S02",
+      "card_nature": "assessment",
+      "title": "审查后决定优先升级领域",
+      "flow_nodes": [
+        {
+          "node_id": "N10",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Anna决定优先升级技术领域",
+          "evidence_unit_ids": ["v7u_N003716"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N11",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "优先升级客户准入/KYC和交易监控",
+          "evidence_unit_ids": ["v7u_N003716"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E10",
+          "edge_type": "PRODUCES",
+          "source": "N10",
+          "target": "N11",
+          "evidence_unit_ids": ["v7u_N003716"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003716"],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_006：决策动作产生优先升级的分类结果，KG无法表达方向性。"
+    },
+    {
+      "card_id": "p7card_CH50-S02_005",
+      "section_id": "CH50-S02",
+      "card_nature": "execution",
+      "title": "识别方案类型后选择实施工具",
+      "flow_nodes": [
+        {
+          "node_id": "N12",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "已识别的适合银行需求的解决方案类型",
+          "evidence_unit_ids": ["v7u_N003720"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N13",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Anna与技术服务部门合作选择实施工具",
+          "evidence_unit_ids": ["v7u_N003720"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E11",
+          "edge_type": "PRECEDES",
+          "source": "N12",
+          "target": "N13",
+          "evidence_unit_ids": ["v7u_N003720"],
+          "derivation": "explicit_text",
+          "condition": "Having identified the types of solutions that fit the bank's needs"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003720"],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_010：前提条件触发动作链。"
+    },
+    {
+      "card_id": "p7card_CH50-S02_006",
+      "section_id": "CH50-S02",
+      "card_nature": "assessment",
+      "title": "评估自建或采购方案",
+      "flow_nodes": [
+        {
+          "node_id": "N14",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "评估自建或采购方案",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N15",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "供应商风险",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N16",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "与遗留系统及数据集成",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N17",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "总拥有成本",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N18",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "投资回报",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E12",
+          "edge_type": "REFERENCES",
+          "source": "N14",
+          "target": "N15",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E13",
+          "edge_type": "REFERENCES",
+          "source": "N14",
+          "target": "N16",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E14",
+          "edge_type": "REFERENCES",
+          "source": "N14",
+          "target": "N17",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E15",
+          "edge_type": "REFERENCES",
+          "source": "N14",
+          "target": "N18",
+          "evidence_unit_ids": ["v7u_N003721"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003721"],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_011：评估动作参照多个考虑因素，方向性超出KG。"
+    },
+    {
+      "card_id": "p7card_CH50-S02_007",
+      "section_id": "CH50-S02",
+      "card_nature": "execution",
+      "title": "分析后提出技术升级提案",
+      "flow_nodes": [
+        {
+          "node_id": "N19",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "技术分析与评估完成",
+          "evidence_unit_ids": ["v7u_N003724"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N20",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "提出技术升级提案",
+          "evidence_unit_ids": ["v7u_N003724"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N21",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "技术升级提案（含具体方案、时间表、预算）",
+          "evidence_unit_ids": ["v7u_N003724"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E16",
+          "edge_type": "PRECEDES",
+          "source": "N19",
+          "target": "N20",
+          "evidence_unit_ids": ["v7u_N003724"],
+          "derivation": "explicit_text",
+          "condition": "after thorough analysis"
+        },
+        {
+          "edge_id": "E17",
+          "edge_type": "PRODUCES",
+          "source": "N20",
+          "target": "N21",
+          "evidence_unit_ids": ["v7u_N003724"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003724"],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_014：分析后提出提案，动作产生独立产品，KG无法表达方向性。"
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,71 @@
+{
+  "section_id": "CH49-S14",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般背景陈述，无具体条件-动作有向结构，仅说明可能发生，不构成程序性关系，基础KG可存储。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "示例性说明，其告知与记录的核心逻辑已被cand_003和cand_005覆盖，无独立程序性结构，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "对告知内容的补充说明，非独立有向动作，本身可由KG存储；但作为cand_003的辅助信息已在card_supplement中引用。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实评论，描述哪类客户最容易退出，无主体特定动作，基础KG可存储。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "评论性说明，仅强调难度，无有向动作或决策导向，基础KG可存储。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S14_003",
+      "reason": "原card未包含告知内容的明确指导，补充v7u_N003668（建议以“超出风险偏好”作为简单解释），有助于完整表达风险偏好原因下的告知方式，符合原文明示，且不修改已有结构。",
+      "origin_candidate_ids": ["cand_011"],
+      "add_flow_nodes": [
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "简单解释：“超出风险偏好”（v7u_N003668）",
+          "evidence_unit_ids": ["v7u_N003668"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N003668"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N003668"]
+    }
+  ]
+}

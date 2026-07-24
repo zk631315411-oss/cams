@@ -1,0 +1,253 @@
+{
+  "section_id": "CH47-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_001",
+      "reason": "智能上下文分析基于二元规则检查交易，存在条件分支和警报生成结果，构成决策过程，超出基础KG的一般描述。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析技术功能与优势描述，无后续决策或应对行动，仍属于基础KG范围。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "AI技术改进监控的一般背景说明，无具体的流程或结果节点，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_002",
+      "reason": "AFC专业人员主动监控技术发展产生能力提升结果，形成有向的主体-动作-结果关系，超出一般规则。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_003",
+      "reason": "实施AI后要求测试和满足标准，形成条件化流程，最终支持风险管理，超出基础KG的规则罗列。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "card_001",
+      "section_id": "CH47-S03",
+      "card_nature": "assessment",
+      "title": "智能上下文分析检查交易生成警报",
+      "flow_nodes": [
+        {
+          "node_id": "node_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "交易数据",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_002",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "阈值和额外标准",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_003",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "智能上下文分析检查交易是否超过阈值并满足额外标准",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_004",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "生成有用警报",
+          "evidence_unit_ids": ["v7u_N003256", "v7u_N003257"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_005",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "正常交易（不触发警报）",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "REFERENCES",
+          "source": "node_003",
+          "target": "node_001",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "node_003",
+          "target": "node_002",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "node_003",
+          "target": "node_004",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "derivation": "explicit_text",
+          "condition": "满足阈值和额外标准"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "node_003",
+          "target": "node_005",
+          "evidence_unit_ids": ["v7u_N003257"],
+          "derivation": "explicit_text",
+          "condition": "不满足阈值或额外标准"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003256", "v7u_N003257"],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_001提升，基于智能上下文分析的二元规则检查过程，存在条件分支和独立警报结果，超出基础KG覆盖。"
+    },
+    {
+      "card_id": "card_002",
+      "section_id": "CH47-S03",
+      "card_nature": "execution",
+      "title": "AFC专业人员监控技术发展以增强检测能力",
+      "flow_nodes": [
+        {
+          "node_id": "node_006",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "AFC专业人员主动监控技术发展并保持了解",
+          "evidence_unit_ids": ["v7u_N003266", "v7u_N003267"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_007",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "提升的金融犯罪检测与适应能力（采用有效方案、增强检测、适应风险）",
+          "evidence_unit_ids": ["v7u_N003267"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_005",
+          "edge_type": "PRODUCES",
+          "source": "node_006",
+          "target": "node_007",
+          "evidence_unit_ids": ["v7u_N003267"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003266", "v7u_N003267"],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_004提升，AFC专业人员的主动监控行动产生能力提升结果，具有明确的主体-动作-方向，超出基础KG的一般规则。"
+    },
+    {
+      "card_id": "card_003",
+      "section_id": "CH47-S03",
+      "card_nature": "control",
+      "title": "实施AI解决方案后的测试与验证流程",
+      "flow_nodes": [
+        {
+          "node_id": "node_008",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "AI解决方案实施",
+          "evidence_unit_ids": ["v7u_N003268"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_009",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "多样化数据集",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_010",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "可解释性、透明性、相关性要求",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_011",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "测试AI解决方案并确保满足可解释性等标准",
+          "evidence_unit_ids": ["v7u_N003269", "v7u_N003270"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_012",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "支持有效金融犯罪风险管理",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_006",
+          "edge_type": "PRECEDES",
+          "source": "node_008",
+          "target": "node_011",
+          "evidence_unit_ids": ["v7u_N003268", "v7u_N003269"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_007",
+          "edge_type": "REFERENCES",
+          "source": "node_011",
+          "target": "node_009",
+          "evidence_unit_ids": ["v7u_N003269"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_008",
+          "edge_type": "REFERENCES",
+          "source": "node_011",
+          "target": "node_010",
+          "evidence_unit_ids": ["v7u_N003270"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_009",
+          "edge_type": "PRODUCES",
+          "source": "node_011",
+          "target": "node_012",
+          "evidence_unit_ids": ["v7u_N003271"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003268", "v7u_N003269", "v7u_N003270", "v7u_N003271"],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_005提升，实施AI后存在测试和验证的强制性步骤，最终支持有效风险管理，形成有向流程，超出基础KG的规则罗列。"
+    }
+  ],
+  "card_supplements": []
+}

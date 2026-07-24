@@ -1,0 +1,62 @@
+{
+  "section_id": "CH09-S05",
+  "section_title": "Corporate and investment banking risks > High-risk corporate and investment banking products",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000739"],
+      "proposition": "在建立代理行关系前，银行应了解委托行的所有者及其监管性质",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH09-S05_001",
+      "reason": "原文明示了特定时机下的义务动作及关照对象，构成程序性有向结构；基础KG无法表达动作与信息之间的参照关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000740", "v7u_N000741"],
+      "proposition": "银行根据委托行风险水平提供差异化服务：低风险提供广泛服务，高风险仅提供非信贷现金管理",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为风险等级与服务项目的静态对应规则，无明确主体判断或动作触发链，基础KG已可充分表达这类分类知识。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH09-S05_001",
+      "section_id": "CH09-S05",
+      "card_nature": "execution",
+      "title": "建立代理行关系前了解委托行所有者和监管性质",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "委托行的所有者及监管性质",
+          "evidence_unit_ids": ["v7u_N000739"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行在建立代理行关系前应了解委托行的所有者及其监管性质",
+          "evidence_unit_ids": ["v7u_N000739"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": ["v7u_N000739"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000739"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：银行应了解[input:委托行的所有者及监管性质]（条件：在建立代理行关系前）；KG不足：基础KG可能保存整个规则，但未能表达应了解动作与具体信息内容之间的有向参照关系；选项判断：可确认银行在建立代理行关系前有义务了解委托行的所有者和监管性质；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,216 @@
+{
+  "section_id": "CH43-S01",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003106",
+        "v7u_N003108",
+        "v7u_N003109",
+        "v7u_N003110",
+        "v7u_N003111",
+        "v7u_N003112"
+      ],
+      "proposition": "金融机构在应用临时或永久限制时，须参照具体限制措施（包括额外资金验证、交易和产品限制、高层批准、延长审查监控、定期审计会议），且临时限制可能导致账户功能受限。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH43-S01_002",
+      "reason": "基础KG列举了限制措施但未表达它们在控制动作中的参照关系（有向），也未表达临时控制可能产生账户受限这一状态变化。",
+      "origin_candidate_ids": [
+        "cand_002"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH43-S01_002",
+      "reason": "原card未显示金融机构应用限制时参照的具体限制措施，且临时限制可能导致的账户功能受限状态缺失。补充measures为standard并由process引用，增加临时限制的结果exit。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "std_sow",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "额外资金来源和财富验证（要求提供详细文件）",
+          "evidence_unit_ids": [
+            "v7u_N003108"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_tpr",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "交易和产品限制（限制高风险产品、服务和交易量）",
+          "evidence_unit_ids": [
+            "v7u_N003109"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_sma",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "高级管理层批准（合规委员会或董事会批准）",
+          "evidence_unit_ids": [
+            "v7u_N003110"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_erm",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "延长审查和监控期（更长合规审查时间和加强交易监控）",
+          "evidence_unit_ids": [
+            "v7u_N003111"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_rac",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "定期审计和合规会议（监督客户内部控制及合规有效性）",
+          "evidence_unit_ids": [
+            "v7u_N003112"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "exit_limit",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "账户功能受限（limited account functionality）",
+          "evidence_unit_ids": [
+            "v7u_N003106"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e003_temp_sow",
+          "edge_type": "REFERENCES",
+          "source": "proc_temp",
+          "target": "std_sow",
+          "evidence_unit_ids": [
+            "v7u_N003108"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_temp_tpr",
+          "edge_type": "REFERENCES",
+          "source": "proc_temp",
+          "target": "std_tpr",
+          "evidence_unit_ids": [
+            "v7u_N003109"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_temp_sma",
+          "edge_type": "REFERENCES",
+          "source": "proc_temp",
+          "target": "std_sma",
+          "evidence_unit_ids": [
+            "v7u_N003110"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_temp_erm",
+          "edge_type": "REFERENCES",
+          "source": "proc_temp",
+          "target": "std_erm",
+          "evidence_unit_ids": [
+            "v7u_N003111"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_temp_rac",
+          "edge_type": "REFERENCES",
+          "source": "proc_temp",
+          "target": "std_rac",
+          "evidence_unit_ids": [
+            "v7u_N003112"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e004_exit_limit",
+          "edge_type": "PRODUCES",
+          "source": "proc_temp",
+          "target": "exit_limit",
+          "evidence_unit_ids": [
+            "v7u_N003106"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_perm_sow",
+          "edge_type": "REFERENCES",
+          "source": "proc_perm",
+          "target": "std_sow",
+          "evidence_unit_ids": [
+            "v7u_N003108"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_perm_tpr",
+          "edge_type": "REFERENCES",
+          "source": "proc_perm",
+          "target": "std_tpr",
+          "evidence_unit_ids": [
+            "v7u_N003109"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_perm_sma",
+          "edge_type": "REFERENCES",
+          "source": "proc_perm",
+          "target": "std_sma",
+          "evidence_unit_ids": [
+            "v7u_N003110"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_perm_erm",
+          "edge_type": "REFERENCES",
+          "source": "proc_perm",
+          "target": "std_erm",
+          "evidence_unit_ids": [
+            "v7u_N003111"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e003_perm_rac",
+          "edge_type": "REFERENCES",
+          "source": "proc_perm",
+          "target": "std_rac",
+          "evidence_unit_ids": [
+            "v7u_N003112"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003108",
+        "v7u_N003109",
+        "v7u_N003110",
+        "v7u_N003111",
+        "v7u_N003112"
+      ]
+    }
+  ]
+}

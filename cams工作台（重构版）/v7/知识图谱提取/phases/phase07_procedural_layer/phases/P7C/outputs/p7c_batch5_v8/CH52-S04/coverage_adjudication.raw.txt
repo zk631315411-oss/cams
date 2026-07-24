@@ -1,0 +1,92 @@
+{
+  "section_id": "CH52-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "该单元仅为示例，未形成一般规则；行为交易监控标记偏差的功能已在v7u_N003988中描述，基础KG可表达一般标记行为，无需P7C表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "属于行为交易监控方法的规范性要求，不构成具体主体在明确输入下的动作链；基础KG可保存该规则事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "为方法有效性的条件说明，不构成有向的程序性关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述网络分析的资源特征，不构成具体流程或应对。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述ML黑箱造成的潜在困难，未给出特定主体的明确应对动作。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003993"],
+      "proposition": "机器学习算法检测细微、非明显模式，并能标记传统规则可能遗漏的新兴类型",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH52-S04_002",
+      "reason": "基础KG只能分别表达ML能检测模式和ML能标记新兴类型，无法表达检测→标记的有向产出关系，且该关系有助于判断ML不仅发现异常，还能将其标记为特定的新兴犯罪手法。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH52-S04_002",
+      "section_id": "CH52-S04",
+      "card_nature": "assessment",
+      "title": "机器学习检测细微模式以标记新兴类型",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "检测细微、非明显模式",
+          "evidence_unit_ids": ["v7u_N003993"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "标记新兴类型",
+          "evidence_unit_ids": ["v7u_N003993"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N003993"],
+          "derivation": "explicit_text",
+          "source_quote": "Machine learning algorithms detect subtle, nonobvious patterns and can flag emerging typologies that traditional rules might miss."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003993"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：检测细微模式 -> 标记新兴类型；KG不足：基础KG只能表达ML标记新兴类型的能力，无法表达检测作为前置步骤产生标记结果的有向关系；选项判断：可确认ML通过特定输入处理产出可操作标记，排除将其视为纯发现工具的选项；LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

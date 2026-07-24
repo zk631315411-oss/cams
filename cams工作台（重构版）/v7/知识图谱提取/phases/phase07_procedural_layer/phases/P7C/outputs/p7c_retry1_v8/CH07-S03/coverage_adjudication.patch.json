@@ -1,0 +1,68 @@
+{
+  "section_id": "CH07-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "提前还贷作为洗钱手段属于孤立风险指标，无特定主体动作或条件触发关系，基础KG已覆盖该风险指示"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000553",
+        "v7u_N000555"
+      ],
+      "proposition": "当银行试图关闭有未偿贷款余额的客户账户时，银行需要核销贷款余额",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "表达因果关系：关闭账户导致核销需要，基础KG只能分别存储事实，不能表达有向的条件-结果关系",
+      "origin_candidate_ids": [
+        "cand_002"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH07-S03_002",
+      "reason": "补充核销贷款流程的触发源头：关闭账户尝试导致核销需要，原card仅表达了核销的内部约束，缺失与上游事件的关联",
+      "origin_candidate_ids": [
+        "cand_002"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "银行试图关闭客户账户（客户仍有贷款余额）",
+          "evidence_unit_ids": [
+            "v7u_N000553"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E1->P1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N000553"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当银行试图关闭客户账户且客户有未偿贷款余额时",
+          "source_quote": "Banks often face significant challenges when attempting to close customer accounts due to money laundering concerns, while the customer still owes money on credit-related products. One of the primary difficulties is the potential need to write off the loan balance"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000553"
+      ]
+    }
+  ]
+}

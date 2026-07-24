@@ -1,0 +1,62 @@
+{
+  "section_id": "CH42-S06",
+  "section_title": "Onboarding AFC controls > Customer risk assessment",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003040"],
+      "proposition": "CRA评估多个风险因素以确定每客户所需的适当监控和审查水平",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该命题描述了CRA过程的定义，评估与确定之间未明示独立结果，关系是内在的目的-手段，基础KG可充分表达该定义。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003053"],
+      "proposition": "金融机构实施稳健的CRA框架，从而增强金融犯罪检测、监管合规和风险管理策略",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S06_001",
+      "reason": "实施动作与增强效果构成明确的有向因果链，且为基础KG无法表达的动作-结果动态关系，符合P7C增量。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S06_001",
+      "section_id": "CH42-S06",
+      "card_nature": "control",
+      "title": "实施客户风险评估框架产生控制效果",
+      "flow_nodes": [
+        {
+          "node_id": "node_1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构实施稳健的CRA框架",
+          "evidence_unit_ids": ["v7u_N003053"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "增强的金融犯罪检测、监管合规和风险管理策略",
+          "evidence_unit_ids": ["v7u_N003053"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRODUCES",
+          "source": "node_1",
+          "target": "node_2",
+          "evidence_unit_ids": ["v7u_N003053"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003053"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构实施稳健的CRA框架 --产生--> 增强的金融犯罪检测、监管合规和风险管理策略；KG不足：基础KG只能表达“稳健的CRA框架增强检测等”作为整体事实，无法表达实施动作与结果之间的动态有向关系；选项判断：可确认或排除关于CRA实施效果的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

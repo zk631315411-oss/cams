@@ -1,0 +1,267 @@
+{
+  "section_id": "CH58-S16",
+  "section_title": "Data as an input for solutions > Data lineage",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004830"],
+      "proposition": "当报告中出现错误数据时，血缘追溯帮助识别原始来源和转换步骤，实现快速解决并降低数据损坏风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S16_001",
+      "reason": "条件触发识别动作并产生明确结果，构成超出基础KG可表达的完整局部有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004832", "v7u_N004834"],
+      "proposition": "当完整数据血缘不可行时，完成部分数据血缘以最大化流程收益。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S16_002",
+      "reason": "条件导向具体应对动作，形成程序性选择关系，基础KG仅保存事实陈述。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004840"],
+      "proposition": "业务和IT团队必须就字段定义、数据类型和唯一数据标识符达成一致，以确保跨系统一致性和统一性。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S16_003",
+      "reason": "明确主体、强制义务及约束目的，构成有向责任关系，超出基础KG对规则的静态记录。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004842"],
+      "proposition": "如果发现数据质量问题或不一致，应用单独流程来纠正、拒绝或人工复核问题数据。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S16_004",
+      "reason": "条件触发特定处置流程，体现程序性分支，基础KG无法表达条件→动作的有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004860", "v7u_N004861", "v7u_N004862"],
+      "proposition": "在AFC系统中，先由数据挖掘识别可疑交易集群，然后由数据匹配验证客户和地址合法性并帮助确认或排除可疑活动。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S16_005",
+      "reason": "多步骤协同及明确先后顺序形成工作流有向结构，基础KG只能分别描述各技术功能，无法表达该联用顺序。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004855"],
+      "proposition": "AFC专业人员分析数据挖掘揭示的模式，识别偏离典型活动的行为。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达该一般能力与概念性关联，不构成超出KG的独特程序性或判断性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S16_001",
+      "section_id": "CH58-S16",
+      "card_nature": "execution",
+      "title": "错误数据出现时的血缘追溯与解决",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH58-S16_001_E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Incorrect data appears in reports (报告中出现错误数据)",
+          "evidence_unit_ids": ["v7u_N004830"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_001_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Lineage tracing helps identify the original source and transformation steps (血缘追溯帮助识别原始来源和转换步骤)",
+          "evidence_unit_ids": ["v7u_N004830"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_001_X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Quick resolution and reduced risk of data corruption (实现快速解决并降低数据损坏风险)",
+          "evidence_unit_ids": ["v7u_N004830"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH58-S16_001_edge1",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH58-S16_001_E1",
+          "target": "p7card_CH58-S16_001_P1",
+          "evidence_unit_ids": ["v7u_N004830"],
+          "derivation": "explicit_text",
+          "condition": "If incorrect data appears in reports (如果报告中出现错误数据)",
+          "source_quote": "If incorrect data appears in reports, lineage tracing helps identify the original source and transformation steps, allowing for quick resolution and reducing the risk of data corruption."
+        },
+        {
+          "edge_id": "p7card_CH58-S16_001_edge2",
+          "edge_type": "PRODUCES",
+          "source": "p7card_CH58-S16_001_P1",
+          "target": "p7card_CH58-S16_001_X1",
+          "evidence_unit_ids": ["v7u_N004830"],
+          "derivation": "explicit_text",
+          "source_quote": "allowing for quick resolution and reducing the risk of data corruption"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004830"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当报告中出现错误数据时，血缘追溯过程识别原始来源和转换步骤，从而产生快速解决和降低数据损坏风险的结果。KG不足：基础KG可能保存“数据血缘可帮助调试”的一般陈述，但没有具体表达条件触发及结果发生的完整有向结构。选项判断：可确认或排除关于数据血缘在错误报告出现时的具体应用步骤和效果的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S16_002",
+      "section_id": "CH58-S16",
+      "card_nature": "execution",
+      "title": "完整血缘不可行时的部分血缘执行",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH58-S16_002_E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Full data lineage is not possible (完整数据血缘不可行)",
+          "evidence_unit_ids": ["v7u_N004832", "v7u_N004834"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_002_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Complete partial data lineage to maximize process benefit (完成部分数据血缘以最大化流程收益)",
+          "evidence_unit_ids": ["v7u_N004834"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH58-S16_002_edge1",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH58-S16_002_E1",
+          "target": "p7card_CH58-S16_002_P1",
+          "evidence_unit_ids": ["v7u_N004834"],
+          "derivation": "explicit_text",
+          "condition": "when full data lineage is not possible",
+          "source_quote": "However, full data lineage is not always possible. [...] In these instances, it is still possible—and beneficial—to complete partial data lineage to maximize process benefit."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004832", "v7u_N004834"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当完整数据血缘不可行时，完成部分数据血缘以最大化流程收益。KG不足：基础KG可能保存完整血缘并非总是可能和部分血缘有益的事实，但没有表达条件到动作的有向关系。选项判断：可确认当无法实现完整血缘时，组织应采取部分血缘来最大化收益。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S16_003",
+      "section_id": "CH58-S16",
+      "card_nature": "control",
+      "title": "业务与IT团队就数据定义达成一致",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH58-S16_003_P1",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "Business and IT teams must agree on field definitions, data types, and unique data identifiers (业务和IT团队必须就字段定义、数据类型和唯一数据标识符达成一致)",
+          "evidence_unit_ids": ["v7u_N004840"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_003_S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "Ensure consistency and uniformity across systems (确保跨系统的一致性和统一性)",
+          "evidence_unit_ids": ["v7u_N004840"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH58-S16_003_edge1",
+          "edge_type": "REFERENCES",
+          "source": "p7card_CH58-S16_003_P1",
+          "target": "p7card_CH58-S16_003_S1",
+          "evidence_unit_ids": ["v7u_N004840"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004840"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：业务和IT团队必须就字段定义等达成一致，以确保跨系统的一致性和统一性。KG不足：基础KG可能只保存业务和IT团队需要达成一致的事实，但没有表达该动作的目的/标准作为约束的有向关系。选项判断：可确认达成一致的责任主体和目的。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S16_004",
+      "section_id": "CH58-S16",
+      "card_nature": "control",
+      "title": "数据质量问题的处置流程",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH58-S16_004_E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "Quality issues or inconsistencies are found (发现数据质量问题或不一致)",
+          "evidence_unit_ids": ["v7u_N004842"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_004_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "A separate process is applied to correct, reject, or manually review the problematic data (应用单独流程来纠正、拒绝或人工复核问题数据)",
+          "evidence_unit_ids": ["v7u_N004842"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH58-S16_004_edge1",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH58-S16_004_E1",
+          "target": "p7card_CH58-S16_004_P1",
+          "evidence_unit_ids": ["v7u_N004842"],
+          "derivation": "explicit_text",
+          "condition": "If quality issues or inconsistencies are found",
+          "source_quote": "If quality issues or inconsistencies are found, a separate process is applied to correct, reject, or manually review the problematic data."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004842"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当发现数据质量问题或不一致时，应用单独流程来纠正、拒绝或人工复核问题数据。KG不足：基础KG可能保存该规则的事实陈述，但没有表达条件触发特定处置流程的有向结构。选项判断：可确认在数据质量检查发现问题后应采取的步骤。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S16_005",
+      "section_id": "CH58-S16",
+      "card_nature": "assessment",
+      "title": "数据挖掘与数据匹配的联用流程",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH58-S16_005_P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Data mining identifies a cluster of suspicious transactions from a specific geographical region or demographic group (数据挖掘识别来自特定地理区域或人口群体的可疑交易集群)",
+          "evidence_unit_ids": ["v7u_N004860"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH58-S16_005_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Data matching verifies the legitimacy of customers and addresses, and helps confirm or rule out potential suspicious activities by cross-referencing various data sources (数据匹配通过交叉引用各种数据源验证客户和地址的合法性，帮助确认或排除潜在可疑活动)",
+          "evidence_unit_ids": ["v7u_N004861", "v7u_N004862"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH58-S16_005_edge1",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH58-S16_005_P1",
+          "target": "p7card_CH58-S16_005_P2",
+          "evidence_unit_ids": ["v7u_N004860", "v7u_N004861"],
+          "derivation": "explicit_text",
+          "source_quote": "Data mining might identify a cluster of suspicious transactions... Data matching can then be used to verify the legitimacy of the customers and addresses involved in these transactions."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004860", "v7u_N004861", "v7u_N004862"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：数据挖掘先识别可疑交易集群，然后数据匹配用于验证和确认/排除涉及的可疑活动。KG不足：基础KG只能分别说明数据挖掘和数据匹配的功能，无法表达二者之间的先后应用顺序和协同工作流。选项判断：可确认在AFC系统中数据挖掘和匹配的典型使用顺序和配合方式。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

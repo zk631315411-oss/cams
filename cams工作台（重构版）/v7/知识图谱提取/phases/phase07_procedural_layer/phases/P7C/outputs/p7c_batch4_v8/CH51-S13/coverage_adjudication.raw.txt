@@ -1,0 +1,70 @@
+{
+  "section_id": "CH51-S13",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S13_004",
+      "reason": "命题表达银行面对挑战采用PET的应对动作与效果的有向关系，基础KG仅概括性预备关系，P7C需补充主体条件与结果。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S13_004",
+      "section_id": "CH51-S13",
+      "card_nature": "control",
+      "title": "银行可采用隐私增强技术(PET)以应对隐私合规挑战",
+      "flow_nodes": [
+        {
+          "node_id": "e1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "隐私合规挑战",
+          "evidence_unit_ids": ["v7u_N003933"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行采用隐私增强技术(PET)",
+          "evidence_unit_ids": ["v7u_N003933"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "实现安全的数据分析与共享并保护隐私和合规",
+          "evidence_unit_ids": ["v7u_N003934"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "e1",
+          "target": "p1",
+          "condition": "当面对隐私合规挑战时",
+          "evidence_unit_ids": ["v7u_N003933"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "p1",
+          "target": "x1",
+          "evidence_unit_ids": ["v7u_N003933", "v7u_N003934"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003933", "v7u_N003934"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：面对挑战，银行采用PET以产生安全分析与合规状态；基础KG仅总结性关系，未表达条件-应对-结果的有向链；选项判断：可用于确认隐私合规挑战下技术应对的流程与效果。"
+    }
+  ],
+  "card_supplements": []
+}

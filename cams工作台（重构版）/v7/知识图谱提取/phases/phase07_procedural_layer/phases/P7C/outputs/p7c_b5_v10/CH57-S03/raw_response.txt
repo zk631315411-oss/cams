@@ -1,0 +1,201 @@
+{
+  "section_id": "CH57-S03",
+  "section_title": "Transaction monitoring scenario calibration testing > Governance for transaction monitoring",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004499"],
+      "proposition": "风险评估完成后，机构设计AML系统并实施交易监控规则",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该流程作为一般性定义和事实覆盖，无超出条件、判断或独立结果的局部有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004500"],
+      "proposition": "机构建立治理委员会以确保正确选择场景和方法",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将治理委员会的目的作为定义或解释保存，未形成程序性或判断性有向增量。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004501"],
+      "proposition": "治理委员会监督规则选择、实施和系统更新",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该监督职责作为事实覆盖，无进一步的分支、触发或独立结果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004503"],
+      "proposition": "治理委员会定期评估规则与趋势一致性，并审查批准场景开发、调优和关闭",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已解释委员会的常规职能，这些并列动作未形成原文明示的有向链或出口。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004505"],
+      "proposition": "AI委员会确保AI模型保持可解释、无偏见并符合伦理AI原则",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S03_001",
+      "reason": "原文明确了主体（AI委员会）、约束性动作（确保）和参照标准（伦理AI原则），形成基础KG未表达的有向约束关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004507"],
+      "proposition": "AML治理委员会与AI监督机构协作确保交易监控适应新威胁且合规",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已体现主题间的协作关系，且未提供有向输出或具体参照标准，无法构成增量结构。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004509"],
+      "proposition": "金融机构须保留详细记录以提供监管审计追踪",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S03_002",
+      "reason": "原文明确强制义务主体、动作和目的标准，形成基础KG未表达的有向约束关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004510"],
+      "proposition": "AI驱动模型需额外文档记录以证明合规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S03_003",
+      "reason": "原文提出隐含义务主体（机构）、动作和合规证明目的，构成基础KG未覆盖的有向关系。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N004511"],
+      "proposition": "适当文档记录确保透明度、监管遵守和可辩护性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将文档益处作为解释性知识保存，且结果抽象无独立状态变化，不构成局部程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH57-S03_001",
+      "section_id": "CH57-S03",
+      "card_nature": "control",
+      "title": "AI委员会监督确保AI模型符合伦理原则",
+      "flow_nodes": [
+        {
+          "node_id": "P_001",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "AI委员会确保AI模型保持可解释、无偏见并符合伦理AI原则",
+          "evidence_unit_ids": ["v7u_N004505"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "ST_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "伦理AI原则要求",
+          "evidence_unit_ids": ["v7u_N004505"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_001",
+          "edge_type": "REFERENCES",
+          "source": "P_001",
+          "target": "ST_001",
+          "evidence_unit_ids": ["v7u_N004505"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "aligned with ethical AI principles"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004505"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：AI委员会确保AI模型可解释性等 --REFERENCES--> 伦理AI原则；KG不足：基础KG将“AI委员会监督”作为一项措施保存，但无法表达其按照伦理原则约束模型的有向关系；选项判断：可确认AI委员会需确保AI模型符合伦理原则，排除仅侧重准确性的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH57-S03_002",
+      "section_id": "CH57-S03",
+      "card_nature": "control",
+      "title": "金融机构须保留详细记录以提供监管审计追踪",
+      "flow_nodes": [
+        {
+          "node_id": "P_002",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "金融机构须保留详细记录（包括规则开发、场景调优、模型验证和系统更新）",
+          "evidence_unit_ids": ["v7u_N004509"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "ST_002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "向监管机构提供审计追踪的要求",
+          "evidence_unit_ids": ["v7u_N004509"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_002",
+          "edge_type": "REFERENCES",
+          "source": "P_002",
+          "target": "ST_002",
+          "evidence_unit_ids": ["v7u_N004509"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "to provide an audit trail for regulators"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004509"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构须保留记录 --REFERENCES--> 审计追踪要求；KG不足：基础KG仅保存了“必须保留记录”的规则，未表达该义务与审计目的之间的约束关系；选项判断：可确认保留记录的目的是便于监管审计，排除仅为内部参考的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH57-S03_003",
+      "section_id": "CH57-S03",
+      "card_nature": "control",
+      "title": "AI驱动模型需额外文档记录以证明合规",
+      "flow_nodes": [
+        {
+          "node_id": "P_003",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构应为AI驱动模型提供额外文档记录（涵盖训练数据、特征选择、偏差缓解和可解释性指标）",
+          "evidence_unit_ids": ["v7u_N004510"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "ST_003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "AML法规合规证明要求",
+          "evidence_unit_ids": ["v7u_N004510"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E_003",
+          "edge_type": "REFERENCES",
+          "source": "P_003",
+          "target": "ST_003",
+          "evidence_unit_ids": ["v7u_N004510"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "to demonstrate compliance with AML regulations"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004510"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构提供AI模型额外文档 --REFERENCES--> AML合规证明要求；KG不足：基础KG保存了额外文档的要求，未表达其与证明合规的有向目的关系；选项判断：可确认额外文档记录旨在证明合规，而非仅用作内部参考；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

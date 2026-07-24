@@ -1,0 +1,113 @@
+{
+  "section_id": "CH55-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅背景动机陈述，未形成明确的有向程序性结构，基础KG已可作为案例上下文保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH55-S02_002",
+      "reason": "Marco执行评估动作以识别当前系统差距，并明确得出模糊逻辑局限、语言处理不一致、大量误报等三个发现，构成评估产生发现的有向关系，超出基础KG仅能保存孤立事实的能力，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "供应商演示及准备问题为过渡性事实叙述，未形成有向程序性结构，基础KG已作为上下文覆盖。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "问题清单即为选择批量筛查技术的关键考虑因素，基础KG已将其作为规则覆盖，不存在需增量提取的有向动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "准备提议和说服为计划性结果陈述，未在当前section形成实际的程序性判断增量结构，基础KG可覆盖。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH55-S02_002",
+      "section_id": "CH55-S02",
+      "card_nature": "assessment",
+      "title": "Marco评估当前筛查系统差距",
+      "flow_nodes": [
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Marco评估当前筛查系统差距",
+          "evidence_unit_ids": ["v7u_N004291"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "当前系统模糊逻辑匹配局限",
+          "evidence_unit_ids": ["v7u_N004292"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "当前系统无法一致处理不同语言",
+          "evidence_unit_ids": ["v7u_N004293"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "当前系统产生大量误报（姓名含“Muhammad”）",
+          "evidence_unit_ids": ["v7u_N004294"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N004291", "v7u_N004292"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X2",
+          "evidence_unit_ids": ["v7u_N004291", "v7u_N004293"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X3",
+          "evidence_unit_ids": ["v7u_N004291", "v7u_N004294"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004291", "v7u_N004292", "v7u_N004293", "v7u_N004294"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Marco评估当前筛查系统，识别出模糊逻辑局限、语言处理不一致、大量误报等差距（PRODUCES关系）。KG不足：基础KG可分别保存“Marco评估”及各个缺陷事实，但无法表达评估动作产生这些发现的有向关系。选项判断：可确认识别选项关于“Marco评估当前系统发现了哪些问题”。LLM推理：无。"
+    }
+  ],
+  "card_supplements": []
+}

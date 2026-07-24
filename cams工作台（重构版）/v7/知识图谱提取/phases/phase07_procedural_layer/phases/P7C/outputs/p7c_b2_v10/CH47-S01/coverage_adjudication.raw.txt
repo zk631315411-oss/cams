@@ -1,0 +1,72 @@
+{
+  "section_id": "CH47-S01",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003235"],
+      "proposition": "当需要时，员工手动触发警报。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S01_003",
+      "reason": "基础KG可表达“员工可以手动触发警报”的事实，但无法表达条件（当需要时）触发动作的有向关系，属于P7C增量。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S01_003",
+      "section_id": "CH47-S01",
+      "card_nature": "execution",
+      "title": "员工手动触发警报",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "需要手动触发警报",
+          "evidence_unit_ids": ["v7u_N003235"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "员工手动触发警报",
+          "evidence_unit_ids": ["v7u_N003235"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "手动警报",
+          "evidence_unit_ids": ["v7u_N003235"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N003235"],
+          "derivation": "explicit_text",
+          "condition": "当需要时"
+        },
+        {
+          "edge_id": "edge_2",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N003235"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003235"],
+      "candidate_status": "candidate",
+      "review_notes": "遗漏关系：当需要时，员工手动触发警报并产生手动警报。KG仅能表达员工可手动触发警报，无法表达条件触发与有向产出。无LLM推理。"
+    }
+  ],
+  "card_supplements": []
+}

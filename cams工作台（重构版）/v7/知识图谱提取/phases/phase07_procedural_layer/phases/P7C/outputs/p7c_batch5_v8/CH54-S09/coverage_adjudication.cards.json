@@ -1,0 +1,323 @@
+{
+  "section_id": "CH54-S09",
+  "section_title": "Technology for KYC > Understanding screening system logic",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004186"
+      ],
+      "proposition": "如果规则模型的要求过于宽泛，则可能产生大量假阳性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述规则模型宽泛要求可能产生假阳性，未涉及主体应对动作，属于一般风险指标，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004188"
+      ],
+      "proposition": "模糊逻辑匹配通过减少因名称细微差异而遗漏匹配的风险来提高检测能力",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "说明模糊逻辑匹配提高检测的机制，无具体主体或条件分支，KG可表达因果关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004190"
+      ],
+      "proposition": "宽泛的匹配标准可能产生假阳性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "宽泛匹配标准可能产生假阳性，为孤立风险指标，无主体判断或应对，KG可存储。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004192"
+      ],
+      "proposition": "金融机构开发机器学习模型分析历史筛查结果以减少误报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S09_002",
+      "reason": "原文明示金融机构开发ML模型分析历史数据提高检测减少假阳性，构成有主体、有向程序关系，KG无法表达此局部顺序与输入输出。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004199"
+      ],
+      "proposition": "网络分析模型通过揭示隐藏网络来增强对复杂洗钱方案的检测",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析模型增强复杂洗钱方案检测，为机制说明，无特定主体动作，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004200"
+      ],
+      "proposition": "网络分析模型通过关联不同标识符提高筛查准确性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析模型关联标识符提高准确性，为机制说明，无程序性有向结构，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004203"
+      ],
+      "proposition": "金融机构先使用基于规则的模型进行初筛，然后使用机器学习模型减少初筛识别出的误报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S09_001",
+      "reason": "明确了先后顺序（初筛→误报消减）和针对性处理关系（ML模型直接处理初筛假阳性），超出基础KG概括性描述“混合模型”的能力，构成局部程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004206"
+      ],
+      "proposition": "选择正确的筛查模型取决于名称复杂度、搜索性质等因素",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "选择模型依赖因素，为关系陈述，无原文明示的主体动作或判断步骤，KG可保存。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004203"
+      ],
+      "proposition": "机器学习模型减少初筛误报后，产生改善的筛查结果（假阳性减少）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S09_001",
+      "reason": "已有card遗漏了动作产生的独立状态变化，KG无法表达此有向产出关系，需补充exit节点和边。",
+      "origin_candidate_ids": [
+        "cand_007"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S09_001",
+      "section_id": "CH54-S09",
+      "card_nature": "execution",
+      "title": "混合筛查模型中规则初筛与机器学习误报消减的顺序关系",
+      "flow_nodes": [
+        {
+          "node_id": "P1_initial_screening",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构使用基于规则的模型进行初筛",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_false_positive_reduction",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构使用机器学习模型减少初筛误报",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_false_positives",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "初筛识别出的假阳性",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_reduced_fp_results",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "误报减少的筛查结果",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_FP_PR",
+          "edge_type": "PRECEDES",
+          "source": "P1_initial_screening",
+          "target": "P2_false_positive_reduction",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_PR_REF",
+          "edge_type": "REFERENCES",
+          "source": "P2_false_positive_reduction",
+          "target": "I1_false_positives",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_P2_produces_X1",
+          "edge_type": "PRODUCES",
+          "source": "P2_false_positive_reduction",
+          "target": "X1_reduced_fp_results",
+          "evidence_unit_ids": [
+            "v7u_N004203"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004203"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构先使用规则模型初筛，然后使用ML模型减少初筛产生的假阳性（P1 --PRECEDES--> P2，P2 --REFERENCES--> I1假阳性）；KG不足：基础KG只能概括“混合模型结合多种模型”，无法表达局部先后顺序和针对性处理关系；选项判断：可确认或排除关于混合模型工作流程的选项，例如先规则后ML的顺序；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S09_002",
+      "section_id": "CH54-S09",
+      "card_nature": "execution",
+      "title": "金融机构开发机器学习模型分析历史筛查结果以减少误报",
+      "flow_nodes": [
+        {
+          "node_id": "P1_develop_ML",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构开发机器学习模型",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_analyze_past",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机器学习模型分析历史筛查结果以提高检测并减少假阳性",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_past_results",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "历史筛查结果",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_improved_detection",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "改善的检测，假阳性减少",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_develop_to_analyze",
+          "edge_type": "PRECEDES",
+          "source": "P1_develop_ML",
+          "target": "P2_analyze_past",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_analyze_ref",
+          "edge_type": "REFERENCES",
+          "source": "P2_analyze_past",
+          "target": "I1_past_results",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_analyze_produces",
+          "edge_type": "PRODUCES",
+          "source": "P2_analyze_past",
+          "target": "X1_improved_detection",
+          "evidence_unit_ids": [
+            "v7u_N004192"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004192"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构开发ML模型，模型分析历史筛查结果以提高检测并减少假阳性（P1 PRECEDES P2, P2 REFERENCES I1, P2 PRODUCES X1）。KG不足：基础KG只能表达机构使用ML模型的事实，无法表达局部顺序和输入输出关系。选项判断：可确认或排除关于ML模型工作流程的选项，例如模型分析历史数据并产生改进。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述规则模型宽泛要求可能产生假阳性，未涉及主体应对动作，属于一般风险指标，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "说明模糊逻辑匹配提高检测的机制，无具体主体或条件分支，KG可表达因果关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "宽泛匹配标准可能产生假阳性，为孤立风险指标，无主体判断或应对，KG可存储。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH54-S09_002",
+      "reason": "原文明示金融机构开发ML模型分析历史数据提高检测减少假阳性，构成有主体、有向程序关系，KG无法表达此局部顺序与输入输出。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析模型增强复杂洗钱方案检测，为机制说明，无特定主体动作，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "网络分析模型关联标识符提高准确性，为机制说明，无程序性有向结构，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "选择模型依赖因素，为关系陈述，无原文明示的主体动作或判断步骤，KG可保存。"
+    }
+  ]
+}

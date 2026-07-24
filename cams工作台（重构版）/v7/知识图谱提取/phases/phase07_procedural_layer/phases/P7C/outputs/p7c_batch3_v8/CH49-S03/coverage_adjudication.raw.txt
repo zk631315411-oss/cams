@@ -1,0 +1,139 @@
+{
+  "section_id": "CH49-S03",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概述性事实，无有向结构"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，未形成有条件动作链"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S03_004",
+      "reason": "内容要求已作为标准纳入card_004，补正判断"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "禁止规则，无明确触发条件或有向动作链"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "内部处理要求，无明确触发条件或有向动作链"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概述性事实"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概述差异性"
+    },
+    {
+      "candidate_id": "cand_018",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "禁止规则，无明确有向动作链"
+    },
+    {
+      "candidate_id": "cand_019",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义和后果说明，无有向结构"
+    },
+    {
+      "candidate_id": "cand_020",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "后果说明，无有向动作链"
+    },
+    {
+      "candidate_id": "cand_021",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般建议，无有向结构"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003498"],
+      "proposition": "调查人员提交SAR时应避免向客户或未授权方披露SAR信息（避免泄密）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S03_004",
+      "reason": "避免泄密是提交SAR动作的独立约束，KG无法表达动作与禁止性标准的连接",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S03_004",
+      "reason": "遗漏了提交SAR动作应遵守的避免泄密约束，补充标准节点和引用边",
+      "origin_candidate_ids": ["coverage_gap_001"],
+      "add_flow_nodes": [
+        {
+          "node_id": "CH49-S03_004_AUX3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "避免向客户或未授权方披露SAR（避免泄密）",
+          "evidence_unit_ids": ["v7u_N003498"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "CH49-S03_004_edge4",
+          "edge_type": "REFERENCES",
+          "source": "CH49-S03_004_P1",
+          "target": "CH49-S03_004_AUX3",
+          "evidence_unit_ids": ["v7u_N003498"],
+          "derivation": "explicit_text",
+          "condition": null,
+          "relation_type": null
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

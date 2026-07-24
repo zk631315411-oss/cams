@@ -1,0 +1,327 @@
+{
+  "section_id": "CH49-S12",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003629"
+      ],
+      "proposition": "金融机构必须回应执法机构的交易与账户信息请求。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述一般性义务，无具体执行条件、判断步骤或独立结果，基础KG已可充分表达该规则。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003631"
+      ],
+      "proposition": "执法机构可能要求金融机构保持账户开放并监控以协助调查。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于对执法请求类型的举例说明，未描述金融机构内部用以响应此要求的程序性动作或判断链，基础KG已可承载。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003636",
+        "v7u_N003637",
+        "v7u_N003638",
+        "v7u_N003639"
+      ],
+      "proposition": "收到执法请求后，金融机构（由指定官员）应进行初步评估，以理解请求的合法性、紧迫性和相关性，并确保响应相称、合理。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_001",
+      "reason": "包含明确的触发条件（收到请求）、主体（指定官员）、动作（初步评估）以及与动作直接相关的两个标准（理解维度与响应约束），形成有向判断链，基础KG仅可存储整体描述，难以表达内部条件-动作-标准间的指向关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003641"
+      ],
+      "proposition": "具备不同交付团队时，团队应战略和战术上协调活动，以维护信息保密性和完整性并确保披露合规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_002",
+      "reason": "明确了主体（团队）、带情态的动作（应协调）以及关联的动作目的/标准（保密性、完整性、合规），构成合格的有向关系，基础KG可能仅作为一般规定存储，未刻画动作与标准间的指向。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003642"
+      ],
+      "proposition": "指定官员必须与法律团队、记录保存等部门建立有效关系，以确保透明度和问责制并缩短响应时间。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_003",
+      "reason": "包含特定主体（指定官员）、强制性动作（必须建立关系）以及关联的目的/效果（透明度、问责、缩短响应时间），形成程序性有向结构，基础KG难以单独表达动作与目的之间的指向。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003640"
+      ],
+      "proposition": "当金融机构拥有交付不同情报方面的团队时，这些团队应协调活动以维护保密性和合规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_002",
+      "reason": "KG无法表达条件-动作的有向关系，仅能存储孤立事实。",
+      "origin_candidate_ids": []
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N003643"
+      ],
+      "proposition": "在处理复杂执法请求时，指定官员尤其需要与法律团队等部门建立有效关系。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S12_003",
+      "reason": "KG无法表达条件与强化动作之间的有向关系。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S12_001",
+      "section_id": "CH49-S12",
+      "card_nature": "assessment",
+      "title": "执法请求初步评估流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "金融机构收到执法请求",
+          "evidence_unit_ids": [
+            "v7u_N003636"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构（指定官员）应进行初步评估",
+          "evidence_unit_ids": [
+            "v7u_N003636",
+            "v7u_N003637"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "理解请求的合法性、紧迫性和相关性",
+          "evidence_unit_ids": [
+            "v7u_N003638"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S2",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "确保响应相称、合理，符合法律义务和运营能力",
+          "evidence_unit_ids": [
+            "v7u_N003639"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "condition": "收到执法请求后",
+          "evidence_unit_ids": [
+            "v7u_N003636"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S1",
+          "evidence_unit_ids": [
+            "v7u_N003638"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "S2",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N003639"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003636",
+        "v7u_N003637",
+        "v7u_N003638",
+        "v7u_N003639"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：收到执法请求 (E1) --[PRECEDES]--> 金融机构应进行初步评估 (P1)，评估过程中参照两个标准：理解合法性、紧迫性、相关性 (S1) 以及确保响应相称合理 (S2)。KG不足：基础KG可将“收到请求后进行初步评估”作为整体描述保存，但无法表达从触发事件到执行动作的条件-动作链，以及动作与评估标准之间的指向关系。选项判断：可帮助确认或排除关于评估启动条件、执行主体、评估依据等顺序和职责的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH49-S12_002",
+      "section_id": "CH49-S12",
+      "card_nature": "control",
+      "title": "团队协调义务",
+      "flow_nodes": [
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "团队应战略和战术上协调活动",
+          "evidence_unit_ids": [
+            "v7u_N003641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S3",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "维护信息保密性和完整性，确保披露合规",
+          "evidence_unit_ids": [
+            "v7u_N003641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "E2",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "金融机构拥有交付不同情报方面的团队（如情报分析或SAR）",
+          "evidence_unit_ids": [
+            "v7u_N003640"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_004",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "S3",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N003641"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_supp_001",
+          "edge_type": "PRECEDES",
+          "source": "E2",
+          "target": "P2",
+          "condition": "当机构内部存在此类团队时",
+          "evidence_unit_ids": [
+            "v7u_N003640"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003641",
+        "v7u_N003640"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：团队 (P2) --[REFERENCES]--> 维护保密性、完整性和合规 (S3)，表达协调活动必须遵循的标准。KG不足：基础KG可能仅记录“团队应协调活动以维护保密性”的规则，但缺少从动作到标准的有向连接。选项判断：可确认关于协调活动所应达到的控制目标的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH49-S12_003",
+      "section_id": "CH49-S12",
+      "card_nature": "execution",
+      "title": "指定官员关系建立义务",
+      "flow_nodes": [
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "指定官员必须与法律团队、记录保存等部门建立有效关系",
+          "evidence_unit_ids": [
+            "v7u_N003642"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S4",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "确保透明度和问责制，缩短响应时间",
+          "evidence_unit_ids": [
+            "v7u_N003642"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "E2",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "需处理复杂执法请求（可能需要多部门协调）",
+          "evidence_unit_ids": [
+            "v7u_N003643"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_005",
+          "edge_type": "REFERENCES",
+          "source": "P3",
+          "target": "S4",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N003642"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_supp_002",
+          "edge_type": "PRECEDES",
+          "source": "E2",
+          "target": "P3",
+          "condition": "在处理复杂请求时，建立关系尤为重要",
+          "evidence_unit_ids": [
+            "v7u_N003643"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003642",
+        "v7u_N003643"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：指定官员 (P3) --[REFERENCES]--> 确保透明度、问责制和缩短响应时间 (S4)，表达建立关系所要实现的目的/标准。KG不足：基础KG可能仅将“指定官员必须建立有效关系”作为一般义务存储，未刻画出动作与目的之间的指向。选项判断：可帮助确定关系建立义务所对应的预期效果。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述一般性义务，无具体执行条件、判断步骤或独立结果，基础KG已可充分表达该规则。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "属于对执法请求类型的举例说明，未描述金融机构内部用以响应此要求的程序性动作或判断链，基础KG已可承载。"
+    }
+  ]
+}

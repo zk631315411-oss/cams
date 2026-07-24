@@ -1,0 +1,96 @@
+{
+  "section_id": "CH49-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概括性上下文，无具体新增的可提取有向结构，且后续具体动作已被其他候选覆盖。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S07_001",
+      "reason": "某些业务关系难以终止这一事实可作为决策时需考虑的情景因素，与决策程序形成有向参照关系，超出基础KG的静态事实存储。补充入card_001的决策过程作为输入。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S07_001",
+      "reason": "司法管辖区的法律限制是决策是否终止关系时必须考量的约束条件，构成决策的输入参照，属于增量有向关系。补充入card_001。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S07_001",
+      "reason": "许多情况下只能维持账户这一现实约束为决策提供了输入依据，决定时需考虑此约束，形成有向关系。补充入card_001。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S07_001",
+      "reason": "决策过程中遗漏了应考虑的业务关系难以终止、法律限制和现实约束等输入因素，这些因素在原文中作为维持账户的理由，应作为决策的参照依据。",
+      "origin_candidate_ids": ["cand_012", "cand_013", "cand_014"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N5",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "某些业务关系难以终止（如信贷额度、抵押贷款等）",
+          "evidence_unit_ids": ["v7u_N003572"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N6",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "某些司法管辖区规定未获客户同意不得终止客户关系或产品",
+          "evidence_unit_ids": ["v7u_N003573"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N7",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "许多情况下金融机构只能维持账户并维护借贷关系",
+          "evidence_unit_ids": ["v7u_N003574"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N003572"],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N6",
+          "evidence_unit_ids": ["v7u_N003573"],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "E6",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N7",
+          "evidence_unit_ids": ["v7u_N003574"],
+          "derivation": "llm_inference"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N003572", "v7u_N003573", "v7u_N003574"]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "section_id": "CH58-S01",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "规范性要求：控制列出所需数据；该信息可作为辅助输入用于后续比较，但本身不构成独立有向过程。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "解释数据需求的决定因素，属一般事实，无具体触发或独立结果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象帮助关系，无明确主体动作和可建模的有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "步骤重要性陈述，未连接具体流程，无有向关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S01_001",
+      "reason": "已填充的数据表比较控制所需数据与可用数据，有明确主语和动作，可构成开放式过程，是填充表下游的必要步骤。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH58-S01_001",
+      "reason": "填充表后存在比较动作遗漏，且比较所需数据输入来自控制要求。补充比较过程及所需数据输入。",
+      "origin_candidate_ids": ["cand_006"],
+      "add_flow_nodes": [
+        {
+          "node_id": "A2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "控制所需数据",
+          "evidence_unit_ids": ["v7u_N004604"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "比较控制所需数据与可用数据",
+          "evidence_unit_ids": ["v7u_N004619"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge4",
+          "edge_type": "PRECEDES",
+          "source": "X1",
+          "target": "P2",
+          "evidence_unit_ids": ["v7u_N004619"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge5",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "A2",
+          "evidence_unit_ids": ["v7u_N004604", "v7u_N004619"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N004604", "v7u_N004619"]
+    }
+  ]
+}

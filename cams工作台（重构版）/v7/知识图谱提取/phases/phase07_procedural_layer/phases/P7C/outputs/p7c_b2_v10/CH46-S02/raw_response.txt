@@ -1,0 +1,112 @@
+{
+  "section_id": "CH46-S02",
+  "section_title": "Transaction Monitoring and Investigation > Case example: AML control failures at a UK Bank",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003222", "v7u_N003223"],
+      "proposition": "客户实际大量现金存款行为与银行预期不符，应触发风险敏感监控调整，但银行未调整",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅描述客户行为变化，未明确说明该变化应触发何种程序性动作，基础KG已可保存该事实背景"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003225"],
+      "proposition": "系统误标现金为支票 → 导致现金监控规则不适用，交易未被有效监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该因果链属于基础KG已覆盖的风险指标解释，KG可充分表达此控制弱点机制"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003226"],
+      "proposition": "缺乏针对高风险客户的支票监控规则 → 大量现金交易未被监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "与cand_002同理，为基础KG可表达的风险指标解释，无额外程序性判断结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003227"],
+      "proposition": "警报过多（状态/条件） → 银行主动关闭监控警报（具体决策与执行动作）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_001",
+      "reason": "存在明确的条件触发主体动作的有向链，且为基础KG无法充分表达的局部决策结构，可辅助判断关于监控警报处置的选项"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003228"],
+      "proposition": "员工提出并调查监测警报并上报AML调查团队 → 调查未促使行为改变",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事件序列简单，无明确条件或判断分支，基础KG可保存该事实及其直接后果"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003229"],
+      "proposition": "团队分散与信息未共享 → 导致调查碎片化",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "为解释性因果关系，基础KG可充分描述"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003230"],
+      "proposition": "独立评估 → 发现多项控制弱点",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于一般性发现陈述，基础KG可保存"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003231"],
+      "proposition": "法院认定银行失职助长洗钱，并作出首例刑事起诉",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例法律后果，基础KG已可完整表达"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH46-S02_001",
+      "section_id": "CH46-S02",
+      "card_nature": "execution",
+      "title": "银行因警报过多而关闭监控警报",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "警报过多 (too many alerts were being generated)",
+          "evidence_unit_ids": ["v7u_N003227"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行关闭监控警报 (bank turned off monitoring alerts)",
+          "evidence_unit_ids": ["v7u_N003227"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N003227"],
+          "derivation": "explicit_text",
+          "condition": "因为警报过多 (because too many alerts were being generated)",
+          "source_quote": "At times, the bank turned off monitoring alerts because too many alerts were being generated."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003227"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：警报过多（状态）--触发--> 银行执行关闭警报动作；KG不足：基础KG只能将“银行因警报过多关闭警报”作为整体事实保存，无法表达条件阈值触发主体决策的有向结构；选项判断：可确认或排除关于监控警报关闭原因及决策主体的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

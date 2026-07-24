@@ -1,0 +1,292 @@
+{
+  "section_id": "CH58-S20",
+  "section_title": "Data as an input for solutions > Entity resolution",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004902",
+        "v7u_N004903"
+      ],
+      "proposition": "一旦实体被连接，基于风险的评分模型评估匹配，系统根据风险评分将高风险匹配升级给专家，将低风险匹配休眠。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S20_001",
+      "reason": "基础KG只能描述流程，但此分支结构包含了基于条件的不同处置路径，具有明确的有向判断链，可以辅助判断相关选项。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004904"
+      ],
+      "proposition": "当新数据变得可用时，实体解析系统持续更新和细化实体档案。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S20_002",
+      "reason": "基础KG可能仅陈述系统会更新，但未明确“新数据可用”作为触发条件的定向关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004906"
+      ],
+      "proposition": "在案例中，通过链接内部和外部数据，发现隐藏的所有权关系。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S20_003",
+      "reason": "基础KG保存案例本身，但未表达“链接数据导致发现”的有向推导关系。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004895",
+        "v7u_N004896"
+      ],
+      "proposition": "实体解析工具汇集数据后，自动化流程清洗和标准化数据。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已描述实体解析流程包括数据汇集和清洗步骤，顺序关系属于流程描述范畴，无超出KG的增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004898",
+        "v7u_N004899"
+      ],
+      "proposition": "标准化技术将数据转换为可比格式，然后匹配算法连接数据。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "KG已覆盖标准化和匹配的流程步骤，顺序关系为基础流程的一部分。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004893"
+      ],
+      "proposition": "实体解析创建客户单一视图从而提升金融犯罪检测。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "KG已能表达实体解析的好处，该因果属于一般知识关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004894"
+      ],
+      "proposition": "实体解析为身份和活动带来更高精确度和确定性。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "KG已表达此结果，无新增有向结构。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004907"
+      ],
+      "proposition": "改进实体解析可减少交易监控和制裁筛查的误报。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "KG已将改进实体解析的后果作为事实保存，该因果关系无特定程序性结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S20_001",
+      "section_id": "CH58-S20",
+      "card_nature": "assessment",
+      "title": "实体解析中基于风险评分的分支处置",
+      "flow_nodes": [
+        {
+          "node_id": "E3_entities_linked",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "实体被连接 (Entities are linked)",
+          "evidence_unit_ids": [
+            "v7u_N004902"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_risk_scoring",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "基于风险的评分模型评估潜在匹配 (Risk-based scoring models assess potential matches)",
+          "evidence_unit_ids": [
+            "v7u_N004902"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3_risk_branch",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "系统根据风险评分决定处置路径 (System determines action based on risk score)",
+          "evidence_unit_ids": [
+            "v7u_N004903"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X4_escalation",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "高风险匹配升级至数据专家人工审查 (High-risk matches escalated to data specialists for manual review)",
+          "evidence_unit_ids": [
+            "v7u_N004903"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X6_hibernation",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "低风险案例自动清除或休眠 (Low-risk cases automatically cleared or hibernated)",
+          "evidence_unit_ids": [
+            "v7u_N004903"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E3_entities_linked",
+          "target": "P1_risk_scoring",
+          "evidence_unit_ids": [
+            "v7u_N004902"
+          ],
+          "derivation": "explicit_text",
+          "condition": "once entities are linked"
+        },
+        {
+          "edge_id": "edge_002",
+          "edge_type": "PRECEDES",
+          "source": "P1_risk_scoring",
+          "target": "P3_risk_branch",
+          "evidence_unit_ids": [
+            "v7u_N004902",
+            "v7u_N004903"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "edge_003",
+          "edge_type": "DECIDES",
+          "source": "P3_risk_branch",
+          "target": "X4_escalation",
+          "evidence_unit_ids": [
+            "v7u_N004903"
+          ],
+          "derivation": "explicit_text",
+          "condition": "high-risk"
+        },
+        {
+          "edge_id": "edge_004",
+          "edge_type": "DECIDES",
+          "source": "P3_risk_branch",
+          "target": "X6_hibernation",
+          "evidence_unit_ids": [
+            "v7u_N004903"
+          ],
+          "derivation": "explicit_text",
+          "condition": "low-risk"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004902",
+        "v7u_N004903"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：一旦实体被连接，基于风险的评分模型评估匹配，系统根据风险评分将高风险匹配升级给专家，低风险匹配休眠。KG不足：基础KG能描述实体解析流程包含评估和处置，但无法表达基于风险的决策分支及其互斥路径。选项判断：可帮助确认或排除关于实体解析风险评估后不同风险等级处理方式的选项。LLM推理：edge_002 (从评估到决策分支) 为必要功能推理，因为原文未明示‘系统决定’的独立步骤，但它隐含在不同行动中。"
+    },
+    {
+      "card_id": "p7card_CH58-S20_002",
+      "section_id": "CH58-S20",
+      "card_nature": "execution",
+      "title": "新数据触发实体档案持续更新",
+      "flow_nodes": [
+        {
+          "node_id": "E6_new_data",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "新数据变得可用 (As new data becomes available)",
+          "evidence_unit_ids": [
+            "v7u_N004904"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_update_profiles",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实体解析系统持续更新和细化实体档案 (Entity resolution systems continuously update and refine entity profiles)",
+          "evidence_unit_ids": [
+            "v7u_N004904"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "E6_new_data",
+          "target": "P2_update_profiles",
+          "evidence_unit_ids": [
+            "v7u_N004904"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004904"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当新数据变得可用时，实体解析系统持续更新和细化实体档案。KG不足：基础KG可能仅陈述系统会更新，但未明确“新数据可用”作为触发条件的定向关系。选项判断：可帮助确认实体解析系统更新的触发条件。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S20_003",
+      "section_id": "CH58-S20",
+      "card_nature": "assessment",
+      "title": "案例：链接数据揭示隐藏所有权关系",
+      "flow_nodes": [
+        {
+          "node_id": "P2_link_data",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "准确链接可用的内部和外部数据 (Accurately linking available internal and external data)",
+          "evidence_unit_ids": [
+            "v7u_N004906"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_discovery",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现两家表面独立的企业由同一公司控股 (Discover two businesses appear to operate independently are ultimately owned by a company that holds a majority stake in each)",
+          "evidence_unit_ids": [
+            "v7u_N004906"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRODUCES",
+          "source": "P2_link_data",
+          "target": "X1_discovery",
+          "evidence_unit_ids": [
+            "v7u_N004906"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004906"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在案例中，通过链接内部和外部数据，发现隐藏的所有权关系。KG不足：基础KG保存案例本身，但未表达“链接数据导致发现”的有向推导关系。选项判断：可帮助确认实体解析在揭示受益所有权方面的应用。LLM推理：无。注意：此为具体案例，不推广为一般规则。"
+    }
+  ],
+  "skip_reason": null
+}

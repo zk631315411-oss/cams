@@ -1,0 +1,402 @@
+{
+  "section_id": "CH42-S08",
+  "section_title": "Onboarding AFC controls > KYC for a legal person",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003090"
+      ],
+      "proposition": "CDD的强度根据实体风险、管辖区要求和监管期望而变化",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "CDD的强度变化缺乏明确主体动作，属于规则性依赖关系，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003091"
+      ],
+      "proposition": "高风险法人需要执行强化尽职调查（EDD）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_003",
+      "reason": "高风险法人需执行EDD构成明确的条件-动作有向命题，超出KG的事实存储，可形成触发关系卡。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003094"
+      ],
+      "proposition": "所有客户都需要进行受益所有人和董事的PEP和制裁筛查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "普遍义务性筛查孤立无上下文联结，基础KG可存储该要求，不构成复杂有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003096"
+      ],
+      "proposition": "所有权不透明的控股公司面临比本地透明公司更严格的审查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_001",
+      "reason": "案例中所有权不透明性直接导向更严格审查的局部判断逻辑，超出基础KG的举例存储。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003098"
+      ],
+      "proposition": "金融机构实施风险为本方法（RBA）可以更有效地管理金融犯罪风险、确保合规并展示强大合规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_002",
+      "reason": "实施RBA到产生效果的有向动作-结果链，超出基础KG的一般性解释。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003078",
+        "v7u_N003079",
+        "v7u_N003080",
+        "v7u_N003081",
+        "v7u_N003082",
+        "v7u_N003083",
+        "v7u_N003084"
+      ],
+      "proposition": "客户身份识别程序(CIP)通过收集和核实信息来确立法律实体身份，并有助于确保只有合法实体获得金融服务，从而减少金融犯罪风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_004",
+      "reason": "KG能存储CIP定义和组件，但无法表达执行CIP确立身份和导致合法准入、减少风险的有向动作-结果链。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S08_001",
+      "section_id": "CH42-S08",
+      "card_nature": "risk_indicator",
+      "title": "不透明所有权与审查强度关联",
+      "flow_nodes": [
+        {
+          "node_id": "n1_E6",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "法人所有权结构不透明（如控股公司具有不透明所有权和名义股东）",
+          "evidence_unit_ids": [
+            "v7u_N003096"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构对该法人实施更严格的审查",
+          "evidence_unit_ids": [
+            "v7u_N003096"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRECEDES",
+          "edge_type": "PRECEDES",
+          "source": "n1_E6",
+          "target": "n2_P2",
+          "evidence_unit_ids": [
+            "v7u_N003096"
+          ],
+          "derivation": "explicit_text",
+          "condition": "所有权不透明"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003096"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：法人所有权结构不透明 → 金融机构实施更严格的审查。KG不足：基础KG可能将此案例作为普通举例存储，无法表达所有权不透明性直接导向审查增强的判断逻辑。选项判断：可确认或排除关于所有权透明度与审查强度关系的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH42-S08_002",
+      "section_id": "CH42-S08",
+      "card_nature": "control",
+      "title": "实施风险为本方法（RBA）的效果",
+      "flow_nodes": [
+        {
+          "node_id": "n1_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构将风险为本方法（RBA）嵌入和实施到KYC流程中",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "更有效地管理金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保遵守法规",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4_X2",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "向投资者和客户展示强大的AFC合规",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n2_X3",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        },
+        {
+          "edge_id": "e2_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n3_X3",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        },
+        {
+          "edge_id": "e3_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n4_X2",
+          "evidence_unit_ids": [
+            "v7u_N003098"
+          ],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003098"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构实施RBA → 可能更有效地管理风险、确保合规、展示强大合规。KG不足：基础KG可能将RBA的好处作为一般解释，无法表达实施动作与这些具体结果之间的有向推导链。选项判断：可确认或排除关于RBA实施效果的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH42-S08_003",
+      "section_id": "CH42-S08",
+      "card_nature": "execution",
+      "title": "高风险法人触发强化尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "n1_E6",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "法人呈现更高金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N003091"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行强化尽职调查（EDD）",
+          "evidence_unit_ids": [
+            "v7u_N003091"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRECEDES",
+          "edge_type": "PRECEDES",
+          "source": "n1_E6",
+          "target": "n2_P2",
+          "evidence_unit_ids": [
+            "v7u_N003091"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003091"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：法人高风险 → 执行EDD。KG不足：基础KG可存储该规则为简单事实，但无法表达条件触发动作的有向决策链。选项判断：可确认或排除关于高风险法人需EDD的选项。"
+    },
+    {
+      "card_id": "p7card_CH42-S08_004",
+      "section_id": "CH42-S08",
+      "card_nature": "execution",
+      "title": "客户身份识别程序（CIP）的执行与效果",
+      "flow_nodes": [
+        {
+          "node_id": "n1_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行客户身份识别程序（CIP）",
+          "evidence_unit_ids": [
+            "v7u_N003078",
+            "v7u_N003084"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "确立法律实体身份",
+          "evidence_unit_ids": [
+            "v7u_N003078"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于确保只有合法实体获得金融服务",
+          "evidence_unit_ids": [
+            "v7u_N003084"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "减少金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N003084"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5_input",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "法人身份信息（注册名称、法律实体类型、商业注册号、注册管辖区、税务识别号、主要营业地点、经认证的公司章程/营业执照/信托契约）",
+          "evidence_unit_ids": [
+            "v7u_N003078",
+            "v7u_N003079",
+            "v7u_N003080",
+            "v7u_N003081",
+            "v7u_N003082",
+            "v7u_N003083"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n2_X1",
+          "evidence_unit_ids": [
+            "v7u_N003078"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n3_X3",
+          "evidence_unit_ids": [
+            "v7u_N003084"
+          ],
+          "derivation": "explicit_text",
+          "condition": "可能（help ensure）"
+        },
+        {
+          "edge_id": "e3_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n4_X3",
+          "evidence_unit_ids": [
+            "v7u_N003084"
+          ],
+          "derivation": "explicit_text",
+          "condition": "可能（thereby reducing）"
+        },
+        {
+          "edge_id": "e4_REFERENCES",
+          "edge_type": "REFERENCES",
+          "source": "n1_P2",
+          "target": "n5_input",
+          "evidence_unit_ids": [
+            "v7u_N003078",
+            "v7u_N003079",
+            "v7u_N003080",
+            "v7u_N003081",
+            "v7u_N003082",
+            "v7u_N003083"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003078",
+        "v7u_N003079",
+        "v7u_N003080",
+        "v7u_N003081",
+        "v7u_N003082",
+        "v7u_N003083",
+        "v7u_N003084"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：执行CIP确立身份，并有助于确保合法准入，减少风险。KG不足：KG能存储CIP定义和组件，但无法表达执行动作与确立身份、后续效果之间的有向推导。选项判断：可确认或排除关于CIP作用及流程的选项。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "CDD的强度变化缺乏明确主体动作，属于规则性依赖关系，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_003",
+      "reason": "高风险法人需执行EDD构成明确的条件-动作有向命题，超出KG的事实存储，可形成触发关系卡。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "普遍义务性筛查孤立无上下文联结，基础KG可存储该要求，不构成复杂有向结构。"
+    }
+  ]
+}

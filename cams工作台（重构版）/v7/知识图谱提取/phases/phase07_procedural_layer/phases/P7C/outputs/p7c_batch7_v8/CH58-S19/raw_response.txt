@@ -1,0 +1,137 @@
+{
+  "section_id": "CH58-S19",
+  "section_title": "Data as an input for solutions > Data validation and testing",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004879"],
+      "proposition": "数据清洗完成后，开始验证过程",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S19_001",
+      "reason": "条件导向启动的局部程序性结构，超出KG表达能力"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004880"],
+      "proposition": "验证必须包括完整性和准确性测试",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可保存验证包含完整性测试和准确性测试的事实，无内部有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004881"],
+      "proposition": "验证违规触发警报/异常，需人工复核或自动修正",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S19_002",
+      "reason": "条件导向应对链：违规->触发警报->需要复核，属于程序性判断结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004888"],
+      "proposition": "测试过程产生可靠性检查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将可靠性检查标记为测试过程的结果，属一般事实关系"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S19_001",
+      "section_id": "CH58-S19",
+      "card_nature": "execution",
+      "title": "数据清洗完成后触发验证过程",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "数据清洗完成",
+          "evidence_unit_ids": ["v7u_N004879"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "开始数据验证过程",
+          "evidence_unit_ids": ["v7u_N004879"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "condition": "数据清洗完成",
+          "evidence_unit_ids": ["v7u_N004879"],
+          "derivation": "explicit_text",
+          "source_quote": "Once data is clean, the validation process begins."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004879"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：数据清洗完成，开始数据验证过程（条件：数据清洗完成）。KG不足：基础KG只能将“数据清洗后开始验证”作为整体事实或规则保存，无法表达清洗完成状态到验证开始动作的条件导向有向结构。选项判断：可确认验证过程在数据清洗之后开始，排除验证先于清洗的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S19_002",
+      "section_id": "CH58-S19",
+      "card_nature": "execution",
+      "title": "验证违规触发警报及要求人工复核",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "验证过程中出现违规",
+          "evidence_unit_ids": ["v7u_N004881"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "触发警报/异常",
+          "evidence_unit_ids": ["v7u_N004881"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "需要人工复核或自动修正",
+          "evidence_unit_ids": ["v7u_N004881"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "condition": "验证过程中出现违规",
+          "evidence_unit_ids": ["v7u_N004881"],
+          "derivation": "explicit_text",
+          "source_quote": "Violations of this process trigger alerts or exceptions..."
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "condition": "警报/异常被触发",
+          "evidence_unit_ids": ["v7u_N004881"],
+          "derivation": "explicit_text",
+          "source_quote": "...requiring manual review or automated corrections."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004881"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：验证过程中出现违规，触发警报/异常；警报/异常被触发后，需要人工复核或自动修正。KG不足：基础KG只能将“违规触发警报，需要复核”作为规则整体保存，无法表达违规->触发警报->需要复核的因果链和条件顺序。选项判断：可确认违规后的处理流程顺序：先触发警报/异常，再要求人工复核或自动修正，帮助排除直接修复的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

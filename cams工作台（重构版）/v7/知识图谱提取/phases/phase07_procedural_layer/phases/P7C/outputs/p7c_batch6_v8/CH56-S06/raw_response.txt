@@ -1,0 +1,250 @@
+{
+  "section_id": "CH56-S06",
+  "section_title": "Technology for payment and batch screening > Transaction monitoring scenario development",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004429"],
+      "proposition": "开发交易监控场景的第一步是进行风险评估以定义需监控的交易模式",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "风险评估作为场景开发的第一步，其目的是定义监控模式，属于一般过程描述，基础KG已将风险评估作为process覆盖，定义模式是其应有之义，无法提取超出KG的有向结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004430"],
+      "proposition": "常见交易监控场景设计包括频繁跨境交易、拆分交易等",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "列举常见监控场景类型，属于基础事实，KG可保存。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004431"],
+      "proposition": "与客户画像不符的交易、不明资金转移或休眠账户活动可能表明金融犯罪",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "列出可能表明金融犯罪的交易特征，属于孤立风险指标，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004432"],
+      "proposition": "根据风险状况，金融机构应评估交易监控场景以确定最相关者",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S06_001",
+      "reason": "明确了主体（金融机构）、义务情态（should）、动作（评估场景）以及约束标准（风险状况），构成标准约束评估动作的有向关系，基础KG无法表达这种约束关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004433"],
+      "proposition": "金融机构进行客户细分，可在场景开发前或后，按业务类型、交易行为、地理敞口和风险水平分类",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "客户细分的时间和分类标准属于一般过程知识，KG已将其作为与阈值设定的准备关系覆盖，无增量有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004434"],
+      "proposition": "高现金业务常有频繁现金存款，而受薪专业人士现金收款则异常",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "具体案例说明客户行为异常，属于普通案例，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004435"],
+      "proposition": "机构为每个客户细分设定最优阈值以微调监控系统并平衡准确性与效率",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "设定阈值与客户细分的关系已在KG中体现（客户细分 prepares 阈值设定），且该单元主体描述一般过程，未超出KG表达能力。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004436"],
+      "proposition": "阈值过于敏感导致误报过多，过于宽松则漏报",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "说明阈值敏感性对误报和漏报的影响，属于一般因果知识，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N004437"],
+      "proposition": "金融机构使用历史交易数据、同行比较和严重性因素来优化监控规则",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S06_002",
+      "reason": "明确了特定输入（历史数据、同行比较、严重性因素）如何支持优化动作，构成输入-流程的有向关系，基础KG无法表达这种具体输入与动作的关联。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": ["v7u_N004438"],
+      "proposition": "严重性因素是根据交易规模、频率、客户风险画像和监管影响评估可疑交易重要性的标准",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义严重性因素的构成标准，属于定义，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": ["v7u_N004439"],
+      "proposition": "严重性因素帮助对警报进行优先级排序以便调查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S06_003",
+      "reason": "明确了标准（严重性因素）如何约束优先级排序动作，构成标准-流程的有向关系，基础KG无法表达该约束。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": ["v7u_N004440"],
+      "proposition": "风险评级模型通过基于交易行为等分配风险评分来增强场景有效性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "说明风险评分模型的功能和输入，属于一般机制解释，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "unit_ids": ["v7u_N004441"],
+      "proposition": "离岸电汇和加密货币交易需要比国内支付更严格的阈值",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "具体产品或服务对阈值严格性的要求示例，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_014",
+      "unit_ids": ["v7u_N004442"],
+      "proposition": "金融机构应持续测试、校准和进行影响分析以确保场景有效性",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "明确持续动作义务，但未构成有向关系（无标准或输入引用，无独立结果），无法形成边，因此不属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_015",
+      "unit_ids": ["v7u_N004443"],
+      "proposition": "并非所有TM系统能力相同，有些规则结构僵化或与外部风险情报集成有限",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "陈述TM系统能力差异，属于事实，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_016",
+      "unit_ids": ["v7u_N004444"],
+      "proposition": "机构可利用机器学习、行为分析等使监控框架适应新兴威胁",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "说明克服局限性的技术手段，但未构成有向关系（输入到动作的边不明显），KG可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH56-S06_001",
+      "section_id": "CH56-S06",
+      "card_nature": "assessment",
+      "title": "金融机构应基于风险状况评估交易监控场景",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH56-S06_001_P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构应评估交易监控场景以确定最相关者",
+          "evidence_unit_ids": ["v7u_N004432"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH56-S06_001_STD1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "机构的风险状况",
+          "evidence_unit_ids": ["v7u_N004432"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH56-S06_001_e1",
+          "edge_type": "REFERENCES",
+          "source": "p7card_CH56-S06_001_P1",
+          "target": "p7card_CH56-S06_001_STD1",
+          "evidence_unit_ids": ["v7u_N004432"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004432"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构应评估交易监控场景（process） --REFERENCES--> 机构的风险状况（standard）；KG不足：基础KG只能表达机构应进行风险评估的一般规则，无法表达该评估动作必须依据风险状况这一标准约束关系；选项判断：可帮助确认或排除关于评估依据的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S06_002",
+      "section_id": "CH56-S06",
+      "card_nature": "execution",
+      "title": "金融机构使用历史数据等优化监控规则",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH56-S06_002_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构优化监控规则",
+          "evidence_unit_ids": ["v7u_N004437"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH56-S06_002_IN1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "历史交易数据、同行比较和严重性因素",
+          "evidence_unit_ids": ["v7u_N004437"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH56-S06_002_e1",
+          "edge_type": "REFERENCES",
+          "source": "p7card_CH56-S06_002_P1",
+          "target": "p7card_CH56-S06_002_IN1",
+          "evidence_unit_ids": ["v7u_N004437"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004437"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构优化监控规则（process） --REFERENCES--> 历史交易数据、同行比较和严重性因素（input）；KG不足：基础KG只表达优化规则是一般措施，无法表达这些具体输入如何支持优化动作；选项判断：可帮助确认优化规则所依据的数据类型；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S06_003",
+      "section_id": "CH56-S06",
+      "card_nature": "execution",
+      "title": "严重性因素帮助对警报进行优先级排序",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH56-S06_003_P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "对警报进行优先级排序以便调查",
+          "evidence_unit_ids": ["v7u_N004439"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH56-S06_003_STD1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "严重性因素",
+          "evidence_unit_ids": ["v7u_N004439"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH56-S06_003_e1",
+          "edge_type": "REFERENCES",
+          "source": "p7card_CH56-S06_003_P1",
+          "target": "p7card_CH56-S06_003_STD1",
+          "evidence_unit_ids": ["v7u_N004439"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004439"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：对警报进行优先级排序（process） --REFERENCES--> 严重性因素（standard）；KG不足：基础KG只定义严重性因素并说明其用于评估交易重要性，未表达其直接约束警报优先级排序动作；选项判断：可帮助确认优先级排序的依据；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

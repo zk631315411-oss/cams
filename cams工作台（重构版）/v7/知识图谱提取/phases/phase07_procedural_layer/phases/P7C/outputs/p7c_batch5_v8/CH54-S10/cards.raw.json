@@ -1,0 +1,300 @@
+{
+  "section_id": "CH54-S10",
+  "section_title": "Technology for KYC > List management",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004207"
+      ],
+      "proposition": "机构若不严肃对待制裁合规，控制不足则可能面临监管调查和罚款。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般后果陈述，无特定主体基于该条件实施评估或应对，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004208"
+      ],
+      "proposition": "机构应规划筛查对象、选用名单并测试名单管理流程以确保有效性。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列义务动作，无具体条件或输入导向，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004209"
+      ],
+      "proposition": "名单管理对金融犯罪防控筛查控制至关重要，包括PEP和负面媒体等。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述名单管理重要性，无有向过程，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004210"
+      ],
+      "proposition": "多数机构选择第三方供应商提供制裁、PEP等名单。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "常见做法事实，无有向过程，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004211"
+      ],
+      "proposition": "选择供应商和实施控制时需考虑要素列表。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "引入句，无独立命题，基础KG可承载。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004212"
+      ],
+      "proposition": "机构基于地理位置、币种、业务模式等因素决定使用哪些名单。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S10_001",
+      "reason": "基于多种因素的决策过程，形成条件-动作有向结构，基础KG无法表达因素到决策的方向性关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004213"
+      ],
+      "proposition": "机构根据法规和风险决定对客户、受益所有人和交易筛选哪些名单。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S10_002",
+      "reason": "基于法规和风险的决策过程，有向判断结构，基础KG仅能保存整体规则，无法表达法规/风险引导决策的关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004214"
+      ],
+      "proposition": "制裁名单通常来自政府和国际组织，应注意更新频率；PEP名单由供应商编制且可能含错误。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "名单质量信息，虽含应考虑更新频率，但未形成明确评估过程与独立结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004215"
+      ],
+      "proposition": "由于制裁目标列入即生效，机构应选择能快速更新名单的供应商。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S10_003",
+      "reason": "明确的条件-行动推理链：制裁列入即生效触发供应商选择要求，基础KG无法表达此因果推理的方向性。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N004216"
+      ],
+      "proposition": "机构应建立名单审查和技术保证流程，确保正确集成并产生警报。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "义务描述建立审查和保证流程，其目的为验证，未构成有向独立结果，基础KG可表达该义务及目的。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S10_001",
+      "section_id": "CH54-S10",
+      "card_nature": "assessment",
+      "title": "名单选择基于多种因素",
+      "flow_nodes": [
+        {
+          "node_id": "n_input_001",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "地理位置、交易币种、业务模式、客户所在地及活动等因素",
+          "evidence_unit_ids": [
+            "v7u_N004212"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_proc_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构确定使用哪些制裁和金融犯罪名单",
+          "evidence_unit_ids": [
+            "v7u_N004212"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_ref_001",
+          "edge_type": "REFERENCES",
+          "source": "n_proc_001",
+          "target": "n_input_001",
+          "evidence_unit_ids": [
+            "v7u_N004212"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Which lists to use: This will be based on a number of factors, including geographic location, the currencies involved in transactions, the business model, where your customers are based, and the activities they undertake."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004212"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构基于多种因素（地理位置等）--决定-->使用哪些名单；KG不足：基础KG只能保存“选择名单基于因素”的规则整体，无法表达因素作为输入导向决策的有向过程；选项判断：可确认或排除关于名单选择依据的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S10_002",
+      "section_id": "CH54-S10",
+      "card_nature": "assessment",
+      "title": "根据法规和风险决定筛查范围",
+      "flow_nodes": [
+        {
+          "node_id": "n_std_001",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "法规和风险",
+          "evidence_unit_ids": [
+            "v7u_N004213"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_proc_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构根据法规和风险决定对客户、受益所有人和交易进行哪些名单筛查",
+          "evidence_unit_ids": [
+            "v7u_N004213"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_ref_002",
+          "edge_type": "REFERENCES",
+          "source": "n_proc_002",
+          "target": "n_std_001",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": [
+            "v7u_N004213"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "What to screen: Consider which lists customers, beneficial owners, and transactions should be screened against based on regulation and risk."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004213"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构根据法规和风险--决定-->筛查范围；KG不足：基础KG只能保存“应根据法规和风险决定”的整体规则，无法表达法规/风险作为标准约束判断的方向性；选项判断：可确认或排除关于筛查范围决策依据的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S10_003",
+      "section_id": "CH54-S10",
+      "card_nature": "execution",
+      "title": "制裁生效触发快速更新供应商选择",
+      "flow_nodes": [
+        {
+          "node_id": "n_entry_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "制裁目标被列入名单并立即生效",
+          "evidence_unit_ids": [
+            "v7u_N004215"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n_proc_003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构选择能快速（实时）更新名单的供应商",
+          "evidence_unit_ids": [
+            "v7u_N004215"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_prec_001",
+          "edge_type": "PRECEDES",
+          "source": "n_entry_001",
+          "target": "n_proc_003",
+          "condition": "制裁目标一经列入立即生效",
+          "evidence_unit_ids": [
+            "v7u_N004215"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "A target is subject to sanctions immediately upon being listed. Therefore, select a provider that implements list updates from government sources quickly, ideally in real time."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004215"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：制裁目标列入并立即生效（条件）--触发-->机构选择快速更新供应商；KG不足：基础KG只能表达“应选择快速更新供应商”的义务，无法表达“制裁列入即生效”作为触发条件的推理链；选项判断：可确认或排除关于名单更新要求触发原因的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般后果陈述，无特定主体基于该条件实施评估或应对，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "并列义务动作，无具体条件或输入导向，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述名单管理重要性，无有向过程，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "常见做法事实，无有向过程，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "引入句，无独立命题，基础KG可承载。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "名单质量信息，虽含应考虑更新频率，但未形成明确评估过程与独立结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "义务描述建立审查和保证流程，其目的为验证，未构成有向独立结果，基础KG可表达该义务及目的。"
+    }
+  ]
+}

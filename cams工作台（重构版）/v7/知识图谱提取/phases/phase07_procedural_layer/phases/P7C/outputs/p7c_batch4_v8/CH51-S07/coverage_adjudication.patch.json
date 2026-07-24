@@ -1,0 +1,170 @@
+{
+  "section_id": "CH51-S07",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般背景期望，无具体的程序性有向动作流程。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术趋势描述，未出现具体主体动作或条件关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性内容，基础KG可直接表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性技术关系陈述，无程序性增量。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述机器学习系统能力及效果，无机构主体的具体动作。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "部署选项描述，无独立条件或结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "RPA功能与风险说明，无主体应对动作，不当建图。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S07_002",
+      "reason": "与cand_010共同构成有向流程：AI支持历史分析作为输入，使审查过程能验证系统输出，属于P7C增量。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S07_002",
+      "reason": "组织使用NLP自动化SAR叙述，然后人类审查确认结果，存在顺序和功能依赖，属于增量。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "潜在应用描述，无具体程序性步骤。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "挑战列举，无具体应对流程。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003849",
+        "v7u_N003850"
+      ],
+      "proposition": "组织使用NLP自动生成SAR叙述，人类审查确认结果；同时AI支持历史分析和非结构化数据评估，辅助审查过程验证系统输出。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S07_002",
+      "reason": "基础KG可分别记录各事实，但无法表达自动化叙述到人类审查的顺序流程，以及历史分析如何作为审查的参考输入。",
+      "origin_candidate_ids": [
+        "cand_009",
+        "cand_010"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S07_002",
+      "section_id": "CH51-S07",
+      "card_nature": "execution",
+      "title": "NLP自动化SAR叙述生成与人工审查及历史分析支持",
+      "flow_nodes": [
+        {
+          "node_id": "n10",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织使用自然语言处理(NLP)自动生成可疑活动报告(SAR)叙述",
+          "evidence_unit_ids": [
+            "v7u_N003850"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n20",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "人类审查并确认SAR结果",
+          "evidence_unit_ids": [
+            "v7u_N003850"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n30",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "历史分析和非结构化数据的评估",
+          "evidence_unit_ids": [
+            "v7u_N003849",
+            "v7u_N003850"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e10",
+          "edge_type": "PRECEDES",
+          "source": "n10",
+          "target": "n20",
+          "evidence_unit_ids": [
+            "v7u_N003850"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e20",
+          "edge_type": "REFERENCES",
+          "source": "n20",
+          "target": "n30",
+          "evidence_unit_ids": [
+            "v7u_N003849",
+            "v7u_N003850"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003849",
+        "v7u_N003850"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：组织使用NLP自动生成SAR叙述，之后人类审查并确认结果，同时参考历史分析以验证系统输出。基础KG可记录各技术功能但无法表达有向顺序和功能依赖。"
+    }
+  ],
+  "card_supplements": []
+}

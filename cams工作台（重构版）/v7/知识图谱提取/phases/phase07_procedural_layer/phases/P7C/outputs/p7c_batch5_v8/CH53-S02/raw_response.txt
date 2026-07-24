@@ -1,0 +1,213 @@
+{
+  "section_id": "CH53-S02",
+  "section_title": "Technology for Customer Onboarding > Case example: Improving technology for customer onboarding",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004028", "v7u_N004029"],
+      "proposition": "系统无法可靠匹配自拍照与证件照片导致分析师手动检查未验证客户",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH53-S02_001",
+      "reason": "基础KG仅能列出缺陷与后果事实，无法表达前者导致后者的有向因果关系，该程序性链路超出基础KG表达范围。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004030"],
+      "proposition": "姓名筛查产生误报导致分析师必须处理误报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH53-S02_002",
+      "reason": "基础KG可将误报列为风险指标，但未表达分析师必须处理的应对义务，该有向应对链条为P7C增量。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004021", "v7u_N004025", "v7u_N004028", "v7u_N004030", "v7u_N004033"],
+      "proposition": "Marie评估电子KYC流程发现面部识别缺陷、姓名筛查误报和漏报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH53-S02_003",
+      "reason": "基础KG可分别列出各缺陷事实，但无法表达它们是由具体评估动作产出的结论，该评估-产出结构为增量。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004020"],
+      "proposition": "案例背景：OneFrance银行雇佣Marie审查入职技术",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯背景介绍，无程序性有向结构，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004022", "v7u_N004023", "v7u_N004024"],
+      "proposition": "OneFrance入职流程包括客户自拍提交、地理位置记录和制裁名单筛查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "均为过程步骤描述，无触发、分支或独立结果，基础KG可表达为一般程序事实。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004026", "v7u_N004027"],
+      "proposition": "面部识别系统不完善的原因：缺乏活体检测，未与证件处理系统集成",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原因解释，无有向应对结构，基础KG可表达为事实与关联。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004031", "v7u_N004032"],
+      "proposition": "系统使用部分匹配逻辑且不允许姓名偏差，导致'Henri'与'Henrik'匹配产生误报",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "误报机制解释，无独立应对动作，基础KG可表达为风险指标与原因。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH53-S02_001",
+      "section_id": "CH53-S02",
+      "card_nature": "execution",
+      "title": "系统无法可靠匹配导致分析师手动检查未验证客户",
+      "flow_nodes": [
+        {
+          "node_id": "N001",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "OneFrance系统无法可靠匹配客户自拍照与证件照片",
+          "evidence_unit_ids": ["v7u_N004028"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "OneFrance分析师手动检查未验证客户",
+          "evidence_unit_ids": ["v7u_N004029"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E001",
+          "edge_type": "PRECEDES",
+          "source": "N001",
+          "target": "N002",
+          "evidence_unit_ids": ["v7u_N004028", "v7u_N004029"],
+          "derivation": "explicit_text",
+          "source_quote": "The system cannot reliably match selfies ... This leads to a team of analysts manually checking unverified customers..."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004028", "v7u_N004029"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：系统无法可靠匹配自拍照与证件照片 --PRECEDES--> 分析师手动检查未验证客户；KG不足：基础KG可能列出这些事实，但未表达前者导致后者的有向因果关系；选项判断：可帮助确认手动检查是由系统匹配失败触发的应对措施；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH53-S02_002",
+      "section_id": "CH53-S02",
+      "card_nature": "execution",
+      "title": "姓名筛查误报导致分析师必须处理误报",
+      "flow_nodes": [
+        {
+          "node_id": "N003",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "姓名筛查产生误报（常见法国名字与制裁名单匹配）",
+          "evidence_unit_ids": ["v7u_N004030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "分析师必须处理误报",
+          "evidence_unit_ids": ["v7u_N004030"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E002",
+          "edge_type": "PRECEDES",
+          "source": "N003",
+          "target": "N004",
+          "evidence_unit_ids": ["v7u_N004030"],
+          "derivation": "explicit_text",
+          "source_quote": "one specific common French name keeps matching ... generating false positives that analysts must address"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004030"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：姓名筛查误报 --PRECEDES--> 分析师必须处理误报；KG不足：基础KG可能将误报作为风险指标，但未表达分析师必须处理的应对义务；选项判断：可确认分析师是处理误报的主体，且处理是必须的；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH53-S02_003",
+      "section_id": "CH53-S02",
+      "card_nature": "assessment",
+      "title": "Marie评估OneFrance电子KYC流程发现多项缺陷",
+      "flow_nodes": [
+        {
+          "node_id": "N005",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "Marie评估OneFrance的电子KYC流程",
+          "evidence_unit_ids": ["v7u_N004021"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N006",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现面部识别仅验证80%客户且系统无法可靠匹配自拍照与证件照片",
+          "evidence_unit_ids": ["v7u_N004025", "v7u_N004028"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N007",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现姓名筛查中常见法国名字持续产生误报且分析师必须处理",
+          "evidence_unit_ids": ["v7u_N004030"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N008",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现系统在姓名略有差异时遗漏与观察名单的匹配",
+          "evidence_unit_ids": ["v7u_N004033"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E003",
+          "edge_type": "PRODUCES",
+          "source": "N005",
+          "target": "N006",
+          "evidence_unit_ids": ["v7u_N004021", "v7u_N004025", "v7u_N004028"],
+          "derivation": "explicit_text",
+          "source_quote": "She assesses ... notices various deficiencies ... currently the system only verifies 80% ... The system cannot reliably match..."
+        },
+        {
+          "edge_id": "E004",
+          "edge_type": "PRODUCES",
+          "source": "N005",
+          "target": "N007",
+          "evidence_unit_ids": ["v7u_N004021", "v7u_N004030"],
+          "derivation": "explicit_text",
+          "source_quote": "Marie also identifies that ... generating false positives..."
+        },
+        {
+          "edge_id": "E005",
+          "edge_type": "PRODUCES",
+          "source": "N005",
+          "target": "N008",
+          "evidence_unit_ids": ["v7u_N004021", "v7u_N004033"],
+          "derivation": "explicit_text",
+          "source_quote": "Similarly, the system seems to be missing matches..."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004021", "v7u_N004025", "v7u_N004028", "v7u_N004030", "v7u_N004033"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Marie评估电子KYC流程 --PRODUCES--> 发现三项具体缺陷；KG不足：基础KG可以分别列出这些缺陷事实，但无法表达它们是Marie评估产出的结论，也无法体现评估过程产生发现的局部有向关系；选项判断：可确认顾问审查的结果，以及识别出的具体问题；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

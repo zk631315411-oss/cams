@@ -1,0 +1,238 @@
+{
+  "section_id": "CH57-S01",
+  "section_title": "Transaction monitoring scenario calibration testing",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004446"
+      ],
+      "proposition": "校准从客户细分和设定最优阈值开始，然后进行上线前测试作为影响分析",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S01_003",
+      "reason": "步骤间存在明确先后顺序（begins with... Then...），构成局部程序性有向结构，基础KG未充分表达该顺序依赖"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004447"
+      ],
+      "proposition": "机构不应依赖默认设置，而应根据具体情况进行校准调优",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达一般规范性建议，无更细条件、分支或独立结果，基础KG已将其作为规则保存"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004450"
+      ],
+      "proposition": "在餐厅案例中，因为存款匹配业务画像，银行校准监控场景以避免不必要的警报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S01_001",
+      "reason": "案例中存在明确的条件-应对有向链，基础KG仅视为校准举例，未表达该条件触发的程序性关系"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004452"
+      ],
+      "proposition": "多次略低于报告限额的现金存款可能构成拆分交易",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于风险指标定义与案例说明，无机构应对或后续有向动作，基础KG已覆盖"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004453"
+      ],
+      "proposition": "有效校准包括设置频率检查、监控总交易量、分析行为模式等组成",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为校准的组成部分列举，无有向关系，基础KG已作为过程描述"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004455"
+      ],
+      "proposition": "临界测试检查阈值附近交易以确保边界情况触发警报",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达动作与目的，无独立结果产出，基础KG已描述测试方法"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004456"
+      ],
+      "proposition": "阈值以上测试评估真正可疑交易是否持续触发警报以捕获高风险活动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅表达动作与目的，无独立结果产出，基础KG已描述测试方法"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004457"
+      ],
+      "proposition": "阈值以下测试识别潜在漏洞，如拆分交易",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH57-S01_002",
+      "reason": "测试动作明确产出独立发现（潜在漏洞），形成有向过程-结果结构，基础KG未表达该产出关系"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004462"
+      ],
+      "proposition": "通过持续优化监控参数，机构可在风险敏感性与效率间取得平衡并强化反洗钱框架",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性持续改进陈述，无具体条件或分支，基础KG已将其作为规则保存"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH57-S01_001",
+      "section_id": "CH57-S01",
+      "card_nature": "execution",
+      "title": "餐厅案例中基于业务画像匹配的监控校准",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "餐厅的加密货币兑换法币存款与业务画像匹配",
+          "evidence_unit_ids": [
+            "v7u_N004450"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行校准监控场景以避免不必要的警报",
+          "evidence_unit_ids": [
+            "v7u_N004450"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004450"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Since these deposits match the business’s profile, the bank calibrates its monitoring scenario to avoid unnecessary alerts."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004450"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：存款匹配业务画像 → 银行调整监控避免误报；KG不足：基础KG仅将本例作为校准举例，未表达条件触发的有向应对；选项判断：可确认业务匹配条件下机构的主动监控调整；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH57-S01_002",
+      "section_id": "CH57-S01",
+      "card_nature": "assessment",
+      "title": "阈值以下测试识别潜在漏洞",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构执行阈值以下测试",
+          "evidence_unit_ids": [
+            "v7u_N004457"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别出的潜在漏洞（如拆分交易）",
+          "evidence_unit_ids": [
+            "v7u_N004457"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004457"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "identification_leads_to_conclusion",
+          "source_quote": "Below-threshold testing identifies potential gaps, such as structuring..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004457"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：阈值以下测试的执行 → 产生潜在漏洞识别；KG不足：基础KG仅描述测试方法，未表达测试与漏洞发现的产出关系；选项判断：可区分不同测试方法的预期结果，确认阈值以下测试的产出是漏洞识别；LLM推理：无"
+    },
+    {
+      "card_id": "p7card_CH57-S01_003",
+      "section_id": "CH57-S01",
+      "card_nature": "execution",
+      "title": "交易监控场景校准的步骤顺序",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构进行客户群细分并设定最优阈值",
+          "evidence_unit_ids": [
+            "v7u_N004446"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构进行上线前测试作为影响分析",
+          "evidence_unit_ids": [
+            "v7u_N004446"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N004446"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Calibration begins with segmenting... and establishing... Then, conduct pre-launch testing..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004446"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：先细分并设定阈值 → 再进行上线前测试；KG不足：基础KG将校准作为整体过程描述，未表达内部步骤的先后依赖；选项判断：可确认校准流程的正确步骤顺序；LLM推理：无"
+    }
+  ],
+  "skip_reason": null
+}

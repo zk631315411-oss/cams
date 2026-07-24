@@ -1,0 +1,179 @@
+{
+  "section_id": "CH58-S07",
+  "section_title": "Data as an input for solutions > Leveraging data from internal platforms",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004711", "v7u_N004713"],
+      "proposition": "不同系统的数据标签各异促使合规系统必须在数据使用前标准化数据标签",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S07_001",
+      "reason": "基础KG只能表达标准化动作本身，无法表达由数据标签差异驱动的因果关系"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004714"],
+      "proposition": "合规系统必须根据通用数据字典的定义将内部数据组装成表格",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S07_002",
+      "reason": "基础KG只能表达数据组装操作，无法表达必须遵循数据字典的约束关系"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004715", "v7u_N004716"],
+      "proposition": "系统需求决定数据表结构",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于一般性规则和示例，基础KG已能充分表达"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004717"],
+      "proposition": "合规系统只消费相关数据避免过载，AI系统需更全面的数据表",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "事实对比与说明，无程序性或判断性有向结构"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004718", "v7u_N004719", "v7u_N004720"],
+      "proposition": "由于旧系统数据不兼容和跨辖区复杂性，合规系统执行数据准备步骤以应对",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S07_003",
+      "reason": "基础KG可能只描述了数据准备步骤本身，无法表达这些步骤是为了应对前述挑战而执行的因果关系"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004721"],
+      "proposition": "数据使用分为被动使用和主动使用",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "分类定义，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004722"],
+      "proposition": "主动使用中合规系统比较数据字段以检测异常或应用更多字段",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "功能描述，缺乏互斥条件或独立出口，基础KG可承接"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S07_001",
+      "section_id": "CH58-S07",
+      "card_nature": "execution",
+      "title": "数据标签各异促使标准化",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "不同系统的数据标签各异",
+          "evidence_unit_ids": ["v7u_N004711"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "合规系统必须在使用前标准化数据标签",
+          "evidence_unit_ids": ["v7u_N004713"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N004711", "v7u_N004713"],
+          "derivation": "explicit_text",
+          "condition": "数据标签在不同系统中各异，因此合规系统必须在使用前标准化它们"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004711", "v7u_N004713"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：不同系统的数据标签各异 → 合规系统必须在使用前标准化数据标签；KG不足：基础KG只能表达标准化动作，无法表达由数据标签差异驱动的因果关系；选项判断：可确认标准化原因和时机；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S07_002",
+      "section_id": "CH58-S07",
+      "card_nature": "execution",
+      "title": "合规系统根据通用数据字典组装数据表",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "通用数据字典的定义",
+          "evidence_unit_ids": ["v7u_N004714"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "合规系统必须将内部数据组装成表格",
+          "evidence_unit_ids": ["v7u_N004714"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": ["v7u_N004714"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004714"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：合规系统组装数据表格的动作必须遵照通用数据字典的定义；KG不足：基础KG只能表达数据组装操作，无法表达必须遵循数据字典的约束关系；选项判断：可确认数据组装的依据和标准；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S07_003",
+      "section_id": "CH58-S07",
+      "card_nature": "execution",
+      "title": "应对数据挑战的数据准备步骤",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "旧系统数据可能不兼容且跨辖区、语言界限使处理复杂",
+          "evidence_unit_ids": ["v7u_N004718", "v7u_N004719"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "合规系统对数据进行组装、清洗、丰富和标准化",
+          "evidence_unit_ids": ["v7u_N004720"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N004718", "v7u_N004719", "v7u_N004720"],
+          "derivation": "explicit_text",
+          "condition": "为了应对这些挑战 (To address this)"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004718", "v7u_N004719", "v7u_N004720"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：数据不兼容和跨辖区复杂性等挑战 → 合规系统执行一系列数据准备步骤以应对；KG不足：基础KG可能只描述了数据准备步骤本身，无法表达这些步骤是为了应对前述挑战而执行的因果关系；选项判断：可确认执行数据准备的原因和目的；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

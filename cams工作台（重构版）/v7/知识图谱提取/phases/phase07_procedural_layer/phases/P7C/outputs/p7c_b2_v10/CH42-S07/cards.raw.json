@@ -1,0 +1,119 @@
+{
+  "section_id": "CH42-S07",
+  "section_title": "Onboarding AFC controls > KYC for a natural person",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003070"
+      ],
+      "proposition": "当客户属于高风险（如PEP或高风险辖区）时，金融机构通常对其实施EDD。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S07_001",
+      "reason": "高风险条件触发金融机构执行EDD的有向动作关系，基础KG无法表达此条件-动作链。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003069"
+      ],
+      "proposition": "金融机构必须对所有客户执行CDD并持续监控。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该规则为基础性义务陈述，无具体条件分支或独立结果节点，基础KG已涵盖此通用规则，无需新增P7C关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003063"
+      ],
+      "proposition": "客户身份识别要求因司法管辖区而异。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为事实陈述，无明确主体动作或判断方向，基础KG足以表达此事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003057"
+      ],
+      "proposition": "CIP第一步要求金融机构收集和验证客户身份。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "CIP过程定义与步骤已由基础KG涵盖，无新增有向关系，无需提升为P7C卡片。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S07_001",
+      "section_id": "CH42-S07",
+      "card_nature": "control",
+      "title": "EDD Triggering for High-Risk Customers",
+      "flow_nodes": [
+        {
+          "node_id": "n1_entry",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "客户被识别为高风险（如PEP或高风险辖区运营）",
+          "evidence_unit_ids": [
+            "v7u_N003070"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构通常对高风险客户实施EDD",
+          "evidence_unit_ids": [
+            "v7u_N003070"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1_entry",
+          "target": "n2_process",
+          "evidence_unit_ids": [
+            "v7u_N003070"
+          ],
+          "derivation": "explicit_text",
+          "condition": "客户属于高风险（如PEP或高风险辖区运营）",
+          "relation_type": null
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003070"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户被识别为高风险 → 金融机构通常实施EDD（条件：客户属于高风险如PEP或高风险辖区）；KG不足：基础KG只能表达EDD适用于高风险客户的事实，无法表达条件触发金融机构执行EDD的有向动作关系；选项判断：可确认或排除关于EDD适用范围的选项，高风险触发EDD而非普遍适用；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "该规则为基础性义务陈述，无具体条件分支或独立结果节点，基础KG已涵盖此通用规则，无需新增P7C关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为事实陈述，无明确主体动作或判断方向，基础KG足以表达此事实。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "CIP过程定义与步骤已由基础KG涵盖，无新增有向关系，无需提升为P7C卡片。"
+    }
+  ]
+}

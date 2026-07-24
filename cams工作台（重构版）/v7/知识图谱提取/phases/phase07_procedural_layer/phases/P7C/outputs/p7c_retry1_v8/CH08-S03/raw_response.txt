@@ -1,0 +1,70 @@
+{
+  "section_id": "CH08-S03",
+  "section_title": "Private banking and wealth management risks > Trust risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000613"],
+      "proposition": "在研究信托时，机构需要识别委托人、受托人、受益人及任何控制个人。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S03_001",
+      "reason": "基础KG仅能表达需要了解这些信息，但无法表达机构执行识别动作的有向程序结构，该结构能帮助确认尽职调查步骤。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N000617"],
+      "proposition": "当委托人与受托人身份关联时，受托人可能仅遵循委托人指示，提示委托人可能仍保持控制。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为风险解释，未形成明确的机构判断或应对步骤，属于一般风险指标，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N000605"],
+      "proposition": "信托必须通过受托人进行交易和持有财产。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "是信托的法律属性描述，不构成机构操作层面的程序性有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH08-S03_001",
+      "section_id": "CH08-S03",
+      "card_nature": "execution",
+      "title": "信托研究时的当事人识别要求",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构在研究信托时必须识别委托人、受托人、受益人及任何控制个人",
+          "evidence_unit_ids": ["v7u_N000613"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "所需识别的当事人：委托人、受托人、受益人、控制个人",
+          "evidence_unit_ids": ["v7u_N000613"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N000613"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000613"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构在研究信托时 --REFERENCES--> 所需识别的当事人；KG不足：基础KG仅能表达信托研究需要了解这些当事人作为事实，无法表达机构在执行研究动作时必须识别这些具体角色的有向程序要求；选项判断：可确认关于机构信托尽职调查步骤的选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

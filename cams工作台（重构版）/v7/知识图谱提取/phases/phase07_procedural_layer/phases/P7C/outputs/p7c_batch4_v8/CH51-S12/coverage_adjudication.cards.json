@@ -1,0 +1,213 @@
+{
+  "section_id": "CH51-S12",
+  "section_title": "Understanding AFC technology > Prioritizing resources",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003914"
+      ],
+      "proposition": "当构建AI驱动解决方案时，领域专家必须提供广泛数据集用于训练和调优系统",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S12_001",
+      "reason": "条件-动作有向结构，基础KG无法表达过程性关系"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003916"
+      ],
+      "proposition": "当聘请外部供应商配置和部署技术解决方案时，应提供详细的部署前培训以提升内部团队能力",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S12_002",
+      "reason": "条件触发的义务链，基础KG只能保存规则但不表达有向触发"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003921"
+      ],
+      "proposition": "组织应根据资源可用性准备修改实施和运营策略",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S12_003",
+      "reason": "条件导向的主体准备动作，属于条件-动作有向结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003922"
+      ],
+      "proposition": "合规专业人员需要评估优先级并分配资源以实现有效性和效率目标",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "虽有明确主体和动作，但缺少触发条件和独立结果节点，难以构成有入口和出口的过程图；基础KG可表达该规则，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003923"
+      ],
+      "proposition": "组织应纳入全面的知识管理实践以在系统生命周期内保留专业知识",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "建议性措施，缺少具体触发条件和独立结果，基础KG可表达为一般性知识管理要求，保持kg_only。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH51-S12_001",
+      "section_id": "CH51-S12",
+      "card_nature": "execution",
+      "title": "AI解决方案构建阶段领域专家提供训练数据集",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "构建AI驱动解决方案 (When building AI-driven solutions)",
+          "evidence_unit_ids": [
+            "v7u_N003914"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "领域专家必须提供广泛数据集用于训练和调优系统 (Domain experts must provide extensive datasets to train and tune the systems)",
+          "evidence_unit_ids": [
+            "v7u_N003914"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003914"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当构建AI驱动解决方案时 (When building AI-driven solutions)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003914"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：构建AI驱动解决方案 (E1) --PRECEDES[条件：当构建AI驱动解决方案时]--> 领域专家必须提供广泛数据集用于训练和调优系统 (P1)；KG不足：基础KG只能将整个句子保存为规则或事实，无法表达条件到具体主体动作的有向过程；选项判断：有助于确认在AI构建阶段必须由领域专家提供训练数据，或排除不需要专家数据输入的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S12_002",
+      "section_id": "CH51-S12",
+      "card_nature": "execution",
+      "title": "聘请外部供应商时提供部署前培训",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "聘请外部供应商配置和部署技术解决方案 (When engaging external vendors to configure and deploy technology solutions)",
+          "evidence_unit_ids": [
+            "v7u_N003916"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应提供详细的部署前培训以提升内部团队能力 (Should provide detailed pre-deployment training programs to upskill internal teams)",
+          "evidence_unit_ids": [
+            "v7u_N003916"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003916"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当聘请外部供应商配置和部署技术解决方案时 (When engaging external vendors to configure and deploy technology solutions)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003916"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：聘请外部供应商配置和部署技术解决方案 (E1) --PRECEDES[条件：当聘请外部供应商时]--> 应提供详细的部署前培训以提升内部团队能力 (P1)；KG不足：基础KG只能记录培训的必要性，不能表达由特定条件（聘请外部供应商）触发的有向义务关系；选项判断：可确认当使用外部供应商时，必须提供部署前培训，或排除不需要培训的情形；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S12_003",
+      "section_id": "CH51-S12",
+      "card_nature": "execution",
+      "title": "根据资源可用性调整实施和运营策略",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "基于资源可用性 (Based on resource availability)",
+          "evidence_unit_ids": [
+            "v7u_N003921"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织应准备修改实施和运营策略 (Organizations should be prepared to modify implementation and operating strategies)",
+          "evidence_unit_ids": [
+            "v7u_N003921"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003921"
+          ],
+          "derivation": "explicit_text",
+          "condition": "基于资源可用性 (Based on resource availability)"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003921"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：基于资源可用性 (E1) --PRECEDES[条件：基于资源可用性]--> 组织应准备修改实施和运营策略 (P1)；KG不足：基础KG可能保存‘策略应根据资源调整’的规则，但无法表达条件导向主体准备动作的有向关系；选项判断：可确认资源可用性是调整策略的触发依据，或排除其他触发因素；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "虽有明确主体和动作，但缺少触发条件和独立结果节点，难以构成有入口和出口的过程图；基础KG可表达该规则，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "建议性措施，缺少具体触发条件和独立结果，基础KG可表达为一般性知识管理要求，保持kg_only。"
+    }
+  ]
+}

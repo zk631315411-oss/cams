@@ -1,0 +1,151 @@
+{
+  "section_id": "CH52-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实陈述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般应用说明，无具体主体动作或判断"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH52-S05_002",
+      "reason": "组织利用公开信息进行评估等构成基于输入的带情态评估动作，基础KG无法表达有向的工具-目的关系"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯分类，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "事实描述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术列表，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义重申，基础KG已表达"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "来源列表，基础KG可充分表达"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果陈述，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般好处陈述，无具体主体动作或独立结果"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH52-S05_002",
+      "section_id": "CH52-S05",
+      "card_nature": "assessment",
+      "title": "组织利用OSINT评估风险与检测",
+      "flow_nodes": [
+        {
+          "node_id": "input_osi",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "公开信息",
+          "evidence_unit_ids": ["v7u_N004007"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "process_assess",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "组织评估声誉风险、检测红旗并构建客户画像",
+          "evidence_unit_ids": ["v7u_N004007"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_ref",
+          "edge_type": "REFERENCES",
+          "source": "process_assess",
+          "target": "input_osi",
+          "evidence_unit_ids": ["v7u_N004007"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004007"],
+      "candidate_status": "candidate",
+      "review_notes": "利用公开信息进行评估是带情态的动作，首次漏判为kg_only；基础KG仅能表达定义和静态事实，无法表达基于输入的评估应用。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH52-S05_001",
+      "reason": "独立结果“能够依赖信息”未在图中表达，补充为exit节点和PRODUCES边。",
+      "origin_candidate_ids": ["cand_008"],
+      "add_flow_nodes": [
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "信息被确认可靠，可以依赖",
+          "evidence_unit_ids": ["v7u_N004011"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_produces",
+          "edge_type": "PRODUCES",
+          "source": "P1",
+          "target": "X1",
+          "evidence_unit_ids": ["v7u_N004011"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

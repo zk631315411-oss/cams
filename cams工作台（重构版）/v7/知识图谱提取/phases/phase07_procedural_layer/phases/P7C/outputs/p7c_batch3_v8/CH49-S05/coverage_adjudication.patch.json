@@ -1,0 +1,96 @@
+{
+  "section_id": "CH49-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将SAR所需信息分类为事实并描述该过程，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该动作作为SAR提交过程事实保存，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅有局部时间关系但无独立出口，且基础KG可作为最佳实践规则保存，无判断或程序性增量"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将其作为规定措施表达，无需重复有向结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该规则作为事实保存，无超出条件或判断的增量有向结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为可能性说明，无具体主体、动作或独立结果的完整有向结构"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003546"
+      ],
+      "proposition": "客户临近退休年龄是MLRO分析并怀疑洗钱的一个输入因素",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S05_001",
+      "reason": "基础KG未表达该因素作为分析输入的有向参照关系，原card遗漏该input",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S05_001",
+      "reason": "补充遗漏的分析输入：客户临近退休年龄",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "input6",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户临近退休年龄",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e7",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input6",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

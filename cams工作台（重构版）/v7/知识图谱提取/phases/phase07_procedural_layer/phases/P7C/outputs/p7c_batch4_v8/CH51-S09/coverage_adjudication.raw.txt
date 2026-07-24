@@ -1,0 +1,190 @@
+{
+  "section_id": "CH51-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象治理要求列举，未形成明确主体动作和独立有向结果，基础KG可保存为规则。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S09_004",
+      "reason": "有明确主体（业务赞助方等）与评估动作，方向指向评估对象，形成有向参照关系，基础KG无法表达该评估义务的定向关联。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象效果陈述，无具体程序节点和直接产出的独立结果，基础KG可保存为因果关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S09_001",
+      "reason": "评估报告应作为委员会决策的输入之一，补充原有card遗漏的参照关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S09_005",
+      "reason": "有明确行动（实施质疑流程）与独立效果（缓解决策风险），形成动作-结果有向链，基础KG无法表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S09_006",
+      "reason": "定期独立审查是具体动作，并产出缓解挑战的效果，形成有向关系。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S09_004",
+      "section_id": "CH51-S09",
+      "card_nature": "assessment",
+      "title": "利益相关方评估合适的技术",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "适合部署和运营的技术",
+          "evidence_unit_ids": ["v7u_N003877"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "业务赞助方等利益相关方应评估合适的技术",
+          "evidence_unit_ids": ["v7u_N003877"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n1",
+          "evidence_unit_ids": ["v7u_N003877"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003877"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：利益相关方应评估合适的技术，形成对技术对象的参照评估义务；KG不足：基础KG可单独表达应评估，但无法表达该评估动作与评估对象的定向参照关系；选项判断：可确认评估义务的对象是技术，有助于识别技术评估流程中的职责。"
+    },
+    {
+      "card_id": "p7card_CH51-S09_005",
+      "section_id": "CH51-S09",
+      "card_nature": "control",
+      "title": "实施质疑与挑战流程以缓解决策风险",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "实施强有力的质疑与挑战流程",
+          "evidence_unit_ids": ["v7u_N003887"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "缓解决策风险",
+          "evidence_unit_ids": ["v7u_N003887"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003887"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003887"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：实施质疑流程有助于缓解决策风险，构成动作-结果有向链；KG不足：基础KG可分别表达流程和效果，但无法表达由该动作直接产出风险缓解状态的有向关系。"
+    },
+    {
+      "card_id": "p7card_CH51-S09_006",
+      "section_id": "CH51-S09",
+      "card_nature": "control",
+      "title": "定期独立审查治理流程和结果以缓解挑战",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应定期独立审查治理流程和结果",
+          "evidence_unit_ids": ["v7u_N003890"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "缓解弊端与挑战",
+          "evidence_unit_ids": ["v7u_N003890"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": ["v7u_N003890"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003890"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：定期独立审查治理流程和结果以缓解挑战，形成动作-目的关系（可用结果状态表达）；KG不足：基础KG可分别表达审查义务和其目的，但无法表达该审查动作直接导向缓解状态的有向关系。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH51-S09_001",
+      "reason": "原card遗漏了评估报告作为委员会评估信息的输入，补充评估报告节点及参照边。",
+      "origin_candidate_ids": ["cand_006"],
+      "add_flow_nodes": [
+        {
+          "node_id": "n3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "评估报告（平衡潜在收益与相关风险）",
+          "evidence_unit_ids": ["v7u_N003882"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": ["v7u_N003884"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N003882"]
+    }
+  ]
+}

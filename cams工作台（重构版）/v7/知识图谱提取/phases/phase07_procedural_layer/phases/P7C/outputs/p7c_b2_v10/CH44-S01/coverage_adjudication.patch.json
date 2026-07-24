@@ -1,0 +1,93 @@
+{
+  "section_id": "CH44-S01",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "命题仅陈述消息类型与筛查配置间的一般因果联系，无特定主体动作或业务决策，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述AI驱动筛查方案的一般技术效果，无程序性有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "阐述持续批量筛查技术对传统定期更新的替代趋势，无具体主体动作或条件分支，基础KG可覆盖。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "监管对持续筛查的一般性要求陈述，可作为规则事实由基础KG保存。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH44-S01_003",
+      "reason": "原card将暂挂、调查、阻止压缩为一个进程，遗漏原文中“if necessary, blocked”的条件分支：调查后根据结果决定是否阻止。现追加决策节点和阻止出口，以表达该有向条件链。",
+      "origin_candidate_ids": [
+        "cand_003"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "根据调查结果判断是否必要阻止",
+          "evidence_unit_ids": [
+            "v7u_N003151"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "exit",
+          "node_type": "X6_termination",
+          "label": "阻止交易",
+          "evidence_unit_ids": [
+            "v7u_N003151"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N003151"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "DECIDES",
+          "source": "N3",
+          "target": "N4",
+          "evidence_unit_ids": [
+            "v7u_N003151"
+          ],
+          "derivation": "explicit_text",
+          "condition": "调查后认为必要时"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003151"
+      ]
+    }
+  ]
+}

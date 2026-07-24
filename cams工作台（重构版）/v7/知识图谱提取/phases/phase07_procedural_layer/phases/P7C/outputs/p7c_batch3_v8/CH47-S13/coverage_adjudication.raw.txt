@@ -1,0 +1,144 @@
+{
+  "section_id": "CH47-S13",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_006",
+      "reason": "指控→指导制定调查计划构成有向动作链，且产生独立结果（调查计划），基础KG仅能分别保存指控和计划事实，无法表达流程导向与产出关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述制定访谈计划对结构化访谈的帮助作用，未形成明确的条件-动作或独立结果结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "保密与记录作为成功调查要素属于操作性事实陈述，基础KG已充分表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "因素列表，无定向关系或独立动作输出，基础KG可充分保存。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性说明证人陈述作为调查基础，未形成有条件触发或有向动作结构，基础KG可表达。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH47-S13_006",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "依据指控制定调查计划",
+      "flow_nodes": [
+        {
+          "node_id": "I1_allegations",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "存在的指控",
+          "evidence_unit_ids": [
+            "v7u_N003386"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P9_planning",
+          "node_category": "process",
+          "node_type": "P9_planning",
+          "label": "制定调查计划（明确目标、证据要求、范围、限制和潜在信息来源）",
+          "evidence_unit_ids": [
+            "v7u_N003386"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2_investigation_plan",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "调查计划（包含目标、证据需求等）",
+          "evidence_unit_ids": [
+            "v7u_N003386"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_006",
+          "edge_type": "REFERENCES",
+          "source": "P9_planning",
+          "target": "I1_allegations",
+          "evidence_unit_ids": [
+            "v7u_N003386"
+          ],
+          "derivation": "explicit_text",
+          "condition": "Allegations will guide the steps"
+        },
+        {
+          "edge_id": "e2_006",
+          "edge_type": "PRODUCES",
+          "source": "P9_planning",
+          "target": "X2_investigation_plan",
+          "evidence_unit_ids": [
+            "v7u_N003386"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003386"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：指控作为输入 → 指导制定调查计划 → 产出调查计划；KG不足：基础KG能分别记录指控和计划制定，但无法表达指控对计划制定的定向输入关系和计划产出关系；LLM推理：无。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH47-S13_004",
+      "reason": "证据处理流程中缺失独立的结果输出节点：根据原文v7u_N003383，调查员应提交案件给适当部门正式审议，该结果在原card中仅隐含在process标签内，未作为exit与边表达。",
+      "origin_candidate_ids": [
+        "cand_004"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "X1_case_submission",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "将案件提交给适当部门进行正式审议",
+          "evidence_unit_ids": [
+            "v7u_N003383"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e5_004",
+          "edge_type": "PRODUCES",
+          "source": "P2_evidence_handling",
+          "target": "X1_case_submission",
+          "evidence_unit_ids": [
+            "v7u_N003383"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "section_id": "CH54-S06",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "card_CH54S06_001",
+      "reason": "原文明示客户访问账户或执行交易时触发机构使用生物特征进行验证，构成事件驱动过程，基础KG无法表达条件触发方向。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "遵守严格准则为一般规则，缺乏具体步骤，基础KG可表达。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "card_CH54S06_001",
+      "section_id": "CH54-S06",
+      "card_nature": "execution",
+      "title": "客户访问账户或执行交易时使用生物特征进行客户验证",
+      "flow_nodes": [
+        {
+          "node_id": "node_001",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "客户访问账户或执行交易",
+          "evidence_unit_ids": [
+            "v7u_N004130"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "node_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "使用生物特征技术进行客户验证",
+          "evidence_unit_ids": [
+            "v7u_N004130"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_001",
+          "edge_type": "PRECEDES",
+          "source": "node_001",
+          "target": "node_002",
+          "condition": "当客户访问账户或执行交易时",
+          "evidence_unit_ids": [
+            "v7u_N004130"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004130"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "提取自cand_001，表达事件驱动验证过程。"
+    }
+  ],
+  "card_supplements": []
+}

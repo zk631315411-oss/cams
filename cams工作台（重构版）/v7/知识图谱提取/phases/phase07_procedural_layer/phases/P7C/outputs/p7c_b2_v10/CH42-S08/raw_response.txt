@@ -1,0 +1,159 @@
+{
+  "section_id": "CH42-S08",
+  "section_title": "Onboarding AFC controls > KYC for a legal person",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003090"],
+      "proposition": "CDD的强度根据实体风险、管辖区要求和监管期望而变化",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能表达该规则依赖关系，且未明确具体动作或结果，无法构成有向程序结构。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003091"],
+      "proposition": "高风险法人需要执行强化尽职调查（EDD）",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已能将该规则作为简单事实存储，其内部条件-动作关系不足以形成超出KG的增量结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003094"],
+      "proposition": "所有客户都需要进行受益所有人和董事的PEP和制裁筛查",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG可将该义务作为全局要求保存；孤立过程缺乏辅助节点难以构图，且不构成复杂有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003096"],
+      "proposition": "所有权不透明的控股公司面临比本地透明公司更严格的审查",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_001",
+      "reason": "案例中所有权不透明性直接导向更严格审查的局部判断逻辑，超出基础KG的举例存储。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003098"],
+      "proposition": "金融机构实施风险为本方法（RBA）可以更有效地管理金融犯罪风险、确保合规并展示强大合规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH42-S08_002",
+      "reason": "实施RBA到产生效果的有向动作-结果链，超出基础KG的一般性解释。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH42-S08_001",
+      "section_id": "CH42-S08",
+      "card_nature": "risk_indicator",
+      "title": "不透明所有权与审查强度关联",
+      "flow_nodes": [
+        {
+          "node_id": "n1_E6",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "法人所有权结构不透明（如控股公司具有不透明所有权和名义股东）",
+          "evidence_unit_ids": ["v7u_N003096"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构对该法人实施更严格的审查",
+          "evidence_unit_ids": ["v7u_N003096"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRECEDES",
+          "edge_type": "PRECEDES",
+          "source": "n1_E6",
+          "target": "n2_P2",
+          "evidence_unit_ids": ["v7u_N003096"],
+          "derivation": "explicit_text",
+          "condition": "所有权不透明"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003096"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：法人所有权结构不透明 → 金融机构实施更严格的审查。KG不足：基础KG可能将此案例作为普通举例存储，无法表达所有权不透明性直接导向审查增强的判断逻辑。选项判断：可确认或排除关于所有权透明度与审查强度关系的选项。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH42-S08_002",
+      "section_id": "CH42-S08",
+      "card_nature": "control",
+      "title": "实施风险为本方法（RBA）的效果",
+      "flow_nodes": [
+        {
+          "node_id": "n1_P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构将风险为本方法（RBA）嵌入和实施到KYC流程中",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "更有效地管理金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3_X3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "确保遵守法规",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n4_X2",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "向投资者和客户展示强大的AFC合规",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n2_X3",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        },
+        {
+          "edge_id": "e2_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n3_X3",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        },
+        {
+          "edge_id": "e3_PRODUCES",
+          "edge_type": "PRODUCES",
+          "source": "n1_P2",
+          "target": "n4_X2",
+          "evidence_unit_ids": ["v7u_N003098"],
+          "derivation": "explicit_text",
+          "condition": "可能（can）"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003098"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构实施RBA → 可能更有效地管理风险、确保合规、展示强大合规。KG不足：基础KG可能将RBA的好处作为一般解释，无法表达实施动作与这些具体结果之间的有向推导链。选项判断：可确认或排除关于RBA实施效果的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

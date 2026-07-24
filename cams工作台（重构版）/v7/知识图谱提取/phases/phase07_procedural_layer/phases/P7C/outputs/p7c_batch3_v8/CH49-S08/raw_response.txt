@@ -1,0 +1,316 @@
+{
+  "section_id": "CH49-S08",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003577", "v7u_N003583", "v7u_N003581"],
+      "proposition": "检测到异常活动后，金融机构应分析案件事实并与监管指南比较，依据是否显示可疑及是否满足指南，分支决定提交或不提交SAR。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S08_001",
+      "reason": "基础KG只能将整个流程作为规则保存，无法表达内部分支判断逻辑（条件不同的两条路径），该有向结构对选项判断有用。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003582"],
+      "proposition": "金融机构收到传票或法律令状后，进行客户审查，若支持信息不足，则决定不提交SAR。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S08_002",
+      "reason": "基础KG只能表达'法律令状不自动导致SAR'的静态事实，未表达触发审查及审查后信息不足导致不提交判断的有向过程。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003586"],
+      "proposition": "GWFS未报告网络犯罪攻击中的可疑活动必要信息，导致被罚款150万美元并被要求实施补救措施。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S08_003",
+      "reason": "案例中的补救要求超出了基础KG一般性违规罚款后果的表达，形成了'违规→罚款+补救义务'的有向增量结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003578"],
+      "proposition": "提交SAR后，金融机构必须决定如何处理客户账户。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S08_004",
+      "reason": "基础KG可能将整句作为规则保存，未明确表达'提交SAR'事件触发'决定账户处理'动作的有向顺序。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003580", "v7u_N003584", "v7u_N003585"],
+      "proposition": "未提交或虚假提交SAR可能导致机构和个人罚款、刑事处罚等严重后果。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "这些单元仅陈述孤立后果或定义，基础KG已能充分表达，无程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003579"],
+      "proposition": "记录不提交SAR的理由与记录提交同等重要。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "记录要求是孤立义务陈述，基础KG已能表达该规则，无特定有向结构。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003576"],
+      "proposition": "检测异常活动的方法包括交易监控警报、负面媒体报道以及手动方式（如信息共享请求、搜查令和传票）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "列举检测方法，属于基础KG可表达的事实列表，无有向关系。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S08_001",
+      "section_id": "CH49-S08",
+      "card_nature": "assessment",
+      "title": "基于风险的可疑活动报告决策流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1_detection",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "检测到异常活动",
+          "evidence_unit_ids": ["v7u_N003577"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_analysis",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构分析案件事实并与监管指南比较",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_decision",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "金融机构判断是否显示可疑活动以及是否满足监管指南以决定提交或不提交SAR",
+          "evidence_unit_ids": ["v7u_N003583", "v7u_N003581"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_file",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "决定提交可疑活动报告(SAR)",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2_not_file",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "决定不提交可疑活动报告(SAR)",
+          "evidence_unit_ids": ["v7u_N003583", "v7u_N003581"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD_guidelines",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "监管指南",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_E1_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1_detection",
+          "target": "P1_analysis",
+          "evidence_unit_ids": ["v7u_N003577", "v7u_N003583"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_P1_P2",
+          "edge_type": "PRECEDES",
+          "source": "P1_analysis",
+          "target": "P2_decision",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_P1_STD",
+          "edge_type": "REFERENCES",
+          "source": "P1_analysis",
+          "target": "STD_guidelines",
+          "relation_type": "standard_constrains_action",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_P2_X1",
+          "edge_type": "DECIDES",
+          "source": "P2_decision",
+          "target": "X1_file",
+          "condition": "分析显示可疑活动且满足监管指南",
+          "evidence_unit_ids": ["v7u_N003583"],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "edge_P2_X2",
+          "edge_type": "DECIDES",
+          "source": "P2_decision",
+          "target": "X2_not_file",
+          "condition": "分析未显示可疑活动或不满足监管指南（例如证据不足）",
+          "evidence_unit_ids": ["v7u_N003583", "v7u_N003581"],
+          "derivation": "llm_inference"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003577", "v7u_N003583", "v7u_N003581"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：检测到异常活动后，金融机构分析事实并与监管指南比较，根据是否显示可疑及是否满足指南，分支决定提交或不提交SAR；KG不足：基础KG只能将流程作为整体规则保存，无法表达内部分支判断逻辑（两条互斥路径）；选项判断：可确认或排除关于决策分支条件（如显示可疑但未满足指南时是否提交）等选项；LLM推理：边edge_P2_X1和edge_P2_X2，原文未直接给出if-then，但通过“determines if it meets... decision to file or not file”联合v7u_N003581证据不足不提交，推断出两条互斥分支，标记为llm_inference。"
+    },
+    {
+      "card_id": "p7card_CH49-S08_002",
+      "section_id": "CH49-S08",
+      "card_nature": "execution",
+      "title": "法律令状触发客户审查与不提交SAR",
+      "flow_nodes": [
+        {
+          "node_id": "E1_legal_order",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "收到传票或其他法律令状",
+          "evidence_unit_ids": ["v7u_N003582"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_review",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构进行客户审查并评估支持信息",
+          "evidence_unit_ids": ["v7u_N003582"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_not_file",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "决定不提交可疑活动报告(SAR)",
+          "evidence_unit_ids": ["v7u_N003582"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_E1_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1_legal_order",
+          "target": "P1_review",
+          "evidence_unit_ids": ["v7u_N003582"],
+          "derivation": "explicit_text",
+          "source_quote": "A request for information typically triggers a customer review"
+        },
+        {
+          "edge_id": "edge_P1_X1",
+          "edge_type": "PRODUCES",
+          "source": "P1_review",
+          "target": "X1_not_file",
+          "condition": "支持信息不足",
+          "evidence_unit_ids": ["v7u_N003582"],
+          "derivation": "explicit_text",
+          "source_quote": "does not automatically result in a SAR, because there might not be enough supporting information"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003582"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：收到法律令状触发客户审查，审查后若信息不足则决定不提交SAR；KG不足：基础KG只能表达'法律令状不自动导致SAR'这一事实，无法表达触发审查动作以及审查后信息不足导致不提交判断的有向结构；选项判断：可确认或排除关于法律令状是否必然触发SAR、信息不足是否是不提交的直接原因等选项；LLM推理：无，边均为explicit_text。"
+    },
+    {
+      "card_id": "p7card_CH49-S08_003",
+      "section_id": "CH49-S08",
+      "card_nature": "risk_indicator",
+      "title": "GWFS违规未报告案例的处罚与补救要求",
+      "flow_nodes": [
+        {
+          "node_id": "E1_violation",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "GWFS未报告网络犯罪攻击中的可疑活动必要信息",
+          "evidence_unit_ids": ["v7u_N003586"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1_fine",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "被处以150万美元罚款",
+          "evidence_unit_ids": ["v7u_N003586"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X2_remediation",
+          "node_category": "exit",
+          "node_type": "X7_continuing_obligation",
+          "label": "被要求实施补救措施",
+          "evidence_unit_ids": ["v7u_N003586"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_E1_X1",
+          "edge_type": "PRODUCES",
+          "source": "E1_violation",
+          "target": "X1_fine",
+          "evidence_unit_ids": ["v7u_N003586"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_E1_X2",
+          "edge_type": "PRODUCES",
+          "source": "E1_violation",
+          "target": "X2_remediation",
+          "evidence_unit_ids": ["v7u_N003586"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003586"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：GWFS违规未报告导致罚款和补救义务；KG不足：基础KG只表达一般性违规罚款后果，未包含具体补救要求的有向结构；选项判断：可确认或排除关于补救措施是否为违规的必然要求等选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH49-S08_004",
+      "section_id": "CH49-S08",
+      "card_nature": "execution",
+      "title": "提交SAR后决定账户处理",
+      "flow_nodes": [
+        {
+          "node_id": "E1_SAR_filed",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "提交了可疑活动报告(SAR)",
+          "evidence_unit_ids": ["v7u_N003578"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_decide",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构决定如何处理客户账户",
+          "evidence_unit_ids": ["v7u_N003578"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_E1_P1",
+          "edge_type": "PRECEDES",
+          "source": "E1_SAR_filed",
+          "target": "P1_decide",
+          "evidence_unit_ids": ["v7u_N003578"],
+          "derivation": "explicit_text",
+          "source_quote": "If a SAR is filed, they must then decide how to handle the customer’s accounts."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003578"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：提交SAR事件触发决定账户处理；KG不足：基础KG可能只表达'提交SAR后需决定账户处理'的规则，但未表达事件触发的有向顺序；选项判断：可确认或排除关于提交SAR后是否必须立即决定账户处理等选项；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,419 @@
+{
+  "section_id": "CH47-S13",
+  "section_title": "Transaction monitoring > Investigating someone inside the organization",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003384"
+      ],
+      "proposition": "在指控和调查范围的条件下，调查可能需要访谈证人。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_001",
+      "reason": "条件触发行动，形成有向结构，基础KG无法表达该触发关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003387"
+      ],
+      "proposition": "为保护组织和员工，负责人可能需要联系HR部门。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_002",
+      "reason": "目的导向动作，形成条件与行动的定向关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003388"
+      ],
+      "proposition": "若需获取电子证据，调查员需要IT支持。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_003",
+      "reason": "条件触发支持需求，形成有向的条件-动作链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003383",
+        "v7u_N003385"
+      ],
+      "proposition": "调查员执行证据处理时，必须遵守法律和组织政策。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_004",
+      "reason": "行动受标准约束的定向关系，基础KG仅能分别保存双方，无法表达约束关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003384",
+        "v7u_N003390",
+        "v7u_N003391",
+        "v7u_N003392",
+        "v7u_N003394"
+      ],
+      "proposition": "员工访谈须遵守法律政策，可能需第三方在场，以敏感方式进行，避免诱导。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S13_005",
+      "reason": "多个约束共同指向同一行动，形成有向约束结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003386"
+      ],
+      "proposition": "指控指导调查步骤并制定调查计划。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性指导关系，无明确的条件-动作或结果结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003393"
+      ],
+      "proposition": "制定访谈计划有助于结构化访谈。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅描述益处，未形成有向判断或独立结果，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N003395"
+      ],
+      "proposition": "保密和妥善记录是成功调查的基本要素。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将其作为事实/规则保存。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N003382"
+      ],
+      "proposition": "内部调查需考虑保密、保护、记录和证据保全等因素。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "因素列表，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N003389"
+      ],
+      "proposition": "证人陈述通常是调查的基础。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性说明，未形成有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S13_001",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "基于指控和范围的证人访谈考量",
+      "flow_nodes": [
+        {
+          "node_id": "E1_cond_allegations",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "存在特定指控和调查范围",
+          "evidence_unit_ids": [
+            "v7u_N003384"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_interview_witness",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员可能需要访谈证人（同事、主管及被怀疑员工）",
+          "evidence_unit_ids": [
+            "v7u_N003384"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_cond_allegations",
+          "target": "P2_interview_witness",
+          "evidence_unit_ids": [
+            "v7u_N003384"
+          ],
+          "derivation": "explicit_text",
+          "condition": "Depending on the allegations and scope of the investigation, there might be a need to",
+          "source_quote": "Depending on the allegations and scope of the investigation, there might be a need to interview witnesses..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003384"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：指控和调查范围的条件 → 可能需要进行证人访谈；KG不足：基础KG只能表达可能需要访谈证人这一事实，无法表达条件触发关系；选项判断：可确认在何种情况下需考虑访谈证人；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S13_002",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "保护目的下联系HR部门",
+      "flow_nodes": [
+        {
+          "node_id": "E1_protect_need",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "需保护组织和员工",
+          "evidence_unit_ids": [
+            "v7u_N003387"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_engage_HR",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查负责人可能需要联系人力资源部门",
+          "evidence_unit_ids": [
+            "v7u_N003387"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_002",
+          "edge_type": "PRECEDES",
+          "source": "E1_protect_need",
+          "target": "P2_engage_HR",
+          "evidence_unit_ids": [
+            "v7u_N003387"
+          ],
+          "derivation": "explicit_text",
+          "condition": "To protect the organization and the employee, might need to",
+          "source_quote": "To protect the organization and the employee, the person in charge of the investigation might need to engage the HR department..."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003387"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：需保护组织和员工的条件 → 负责人可能需联系HR；不足：基础KG可表达需联系HR，但无法表达条件与动作的定向关系；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S13_003",
+      "section_id": "CH47-S13",
+      "card_nature": "execution",
+      "title": "获取电子证据需IT支持",
+      "flow_nodes": [
+        {
+          "node_id": "E1_need_secure_data",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "需要获取电子邮件、录音或系统访问日志",
+          "evidence_unit_ids": [
+            "v7u_N003388"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_IT_support",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员需要IT部门支持",
+          "evidence_unit_ids": [
+            "v7u_N003388"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_003",
+          "edge_type": "PRECEDES",
+          "source": "E1_need_secure_data",
+          "target": "P2_IT_support",
+          "evidence_unit_ids": [
+            "v7u_N003388"
+          ],
+          "derivation": "explicit_text",
+          "condition": "If there is a need to secure emails, voice recordings, or systems access logs",
+          "source_quote": "If there is a need to secure emails, voice recordings, or systems access logs, the investigator will need the support of the IT department."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003388"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：需要获取电子证据 → 调查员需要IT支持；KG不足：基础KG能记录这个事实，但不能表达条件触发关系；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S13_004",
+      "section_id": "CH47-S13",
+      "card_nature": "control",
+      "title": "调查证据处理行动的法律与政策约束",
+      "flow_nodes": [
+        {
+          "node_id": "P2_evidence_handling",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员收集、整理、评估、保全证据并提交案件",
+          "evidence_unit_ids": [
+            "v7u_N003383"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1_law_policy",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "法律和组织政策",
+          "evidence_unit_ids": [
+            "v7u_N003385"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_004",
+          "edge_type": "REFERENCES",
+          "source": "P2_evidence_handling",
+          "target": "S1_law_policy",
+          "evidence_unit_ids": [
+            "v7u_N003383",
+            "v7u_N003385"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": "All actions taken must be within the law and the organization's policies."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003383",
+        "v7u_N003385"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：证据处理行动 → 必须遵守法律和组织政策；KG不足：基础KG分别保存了调查员职责和法律要求，但不能表达它们之间的约束关系；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S13_005",
+      "section_id": "CH47-S13",
+      "card_nature": "control",
+      "title": "员工访谈的合规与行为约束",
+      "flow_nodes": [
+        {
+          "node_id": "P2_employee_interview",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员进行员工访谈（可能包括证人、同事、主管等）",
+          "evidence_unit_ids": [
+            "v7u_N003384",
+            "v7u_N003394"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1_law_policy",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "法律和组织政策",
+          "evidence_unit_ids": [
+            "v7u_N003391"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S2_third_party",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "独立第三方或人力资源代表在场",
+          "evidence_unit_ids": [
+            "v7u_N003392"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S3_sensitive_manner",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "以敏感方式进行, 调查员不评判",
+          "evidence_unit_ids": [
+            "v7u_N003394"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S4_no_lead",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "避免诱导证人",
+          "evidence_unit_ids": [
+            "v7u_N003390"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_005",
+          "edge_type": "REFERENCES",
+          "source": "P2_employee_interview",
+          "target": "S1_law_policy",
+          "evidence_unit_ids": [
+            "v7u_N003391"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": "All employee interviews must be conducted within the law and the organization's policies."
+        },
+        {
+          "edge_id": "e2_005",
+          "edge_type": "REFERENCES",
+          "source": "P2_employee_interview",
+          "target": "S2_third_party",
+          "evidence_unit_ids": [
+            "v7u_N003392"
+          ],
+          "derivation": "explicit_text",
+          "condition": "There might be a requirement to have an independent third party or an HR representative present."
+        },
+        {
+          "edge_id": "e3_005",
+          "edge_type": "REFERENCES",
+          "source": "P2_employee_interview",
+          "target": "S3_sensitive_manner",
+          "evidence_unit_ids": [
+            "v7u_N003394"
+          ],
+          "derivation": "explicit_text",
+          "condition": "Interviews should be conducted in a sensitive manner; the investigator is not there to judge."
+        },
+        {
+          "edge_id": "e4_005",
+          "edge_type": "REFERENCES",
+          "source": "P2_employee_interview",
+          "target": "S4_no_lead",
+          "evidence_unit_ids": [
+            "v7u_N003390"
+          ],
+          "derivation": "explicit_text",
+          "condition": "Care must be taken not to lead the witness."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003384",
+        "v7u_N003390",
+        "v7u_N003391",
+        "v7u_N003392",
+        "v7u_N003394"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：进行员工访谈 → 需遵守法律政策、可能需要第三方在场、应以敏感方式进行、需避免诱导证人；KG不足：基础KG能分别记录这些规则，但不能表达它们共同约束同一行动的有向结构；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

@@ -1,0 +1,168 @@
+{
+  "section_id": "CH51-S01",
+  "section_title": "Understanding AFC technology > AFC technology overview",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N003744", "v7u_N003745"],
+      "proposition": "客户风险评估与评级过程产生风险评级，基于该评级结果可能触发强化尽职调查(EDD)。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S01_001",
+      "reason": "形成'评估→评级→条件性触发EDD'的有向判断链，超出基础KG对独立风险评级和EDD步骤的单纯列表或规则陈述。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N003739"],
+      "proposition": "在整合技术到AFC合规时，组织应使其系统符合运营和客户所在管辖区的法规。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S01_002",
+      "reason": "明确的条件-义务链：'当整合技术时'触发'必须对齐法规'的主体动作，基础KG无法表达该情境下的有向义务关系。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N003732", "v7u_N003733"],
+      "proposition": "高级筛查工具利用AI交叉引用数据，使机构能够快速识别和响应潜在风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "属于技术功能描述，无具体判断、分支或程序性顺序，基础KG可充分表达工具能力与效果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N003734"],
+      "proposition": "情境监控考虑交易上下文，从而减少误报并提高检测准确性。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系，无特定主体判断或后续应对链，基础KG可保存该方法的效果机制。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N003761"],
+      "proposition": "未经适当风险评估仓促实施新技术可能削弱机构内控体系。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险警示，没有触发特定应对或判断链条，属于基础KG可表达的普通风险指标。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N003737"],
+      "proposition": "组织应加强理解、保持数据质量并谨慎实施解决方案以最小化风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "复合义务列表，无明确条件-动作链，基础KG可直接保存该原则。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N003738"],
+      "proposition": "采用符合国际标准的先进技术可强化AFC框架并确保有效预防犯罪。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象因果陈述，无具体程序性步骤或判断，基础KG可保存其结论。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N003763"],
+      "proposition": "机构需要遵循风险评估基本原则和稳健技术实施原则才能从创新技术中获益。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性规则，无情境触发或后续动作链，基础KG可直接表达该要求。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH51-S01_001",
+      "section_id": "CH51-S01",
+      "card_nature": "execution",
+      "title": "基于客户风险评估触发强化尽职调查",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构执行客户风险评估并给予风险评级",
+          "evidence_unit_ids": ["v7u_N003744"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构可能需要进行强化尽职调查(EDD)",
+          "evidence_unit_ids": ["v7u_N003745"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N003745"],
+          "derivation": "explicit_text",
+          "condition": "基于风险评级结果 (Based on the result of the risk rating)",
+          "source_quote": "Based on the result of the risk rating, the organization may need to conduct enhanced due diligence (EDD)."
+        }
+      ],
+      "source_unit_ids": ["v7u_N003744", "v7u_N003745"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：客户风险评估与评级过程先于并触发EDD决策（基于评级结果条件）。基础KG可能只能表达“EDD依据风险评级”的事实，但无法表达评估→评级→EDD的有向顺序和条件关系。选项判断：可确认在客户准入流程中，风险评估后可能进行EDD的顺序关系。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH51-S01_002",
+      "section_id": "CH51-S01",
+      "card_nature": "execution",
+      "title": "技术整合时的法规对齐义务",
+      "flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "组织将技术整合到AFC合规中",
+          "evidence_unit_ids": ["v7u_N003739"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N4",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织应使其系统符合运营和客户所在管辖区的法规",
+          "evidence_unit_ids": ["v7u_N003739"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N5",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "运营和客户所在管辖区的法规",
+          "evidence_unit_ids": ["v7u_N003739"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRECEDES",
+          "source": "N3",
+          "target": "N4",
+          "evidence_unit_ids": ["v7u_N003739"],
+          "derivation": "explicit_text",
+          "condition": "当整合技术时 (When integrating technology into AFC compliance)",
+          "source_quote": "When integrating technology into AFC compliance, organizations should align their systems with regulations in the jurisdictions in which they operate and have customers."
+        },
+        {
+          "edge_id": "E3",
+          "edge_type": "REFERENCES",
+          "source": "N4",
+          "target": "N5",
+          "evidence_unit_ids": ["v7u_N003739"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003739"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：技术整合情境下，组织必须执行法规对齐操作。基础KG可能保存“技术应遵守法规”的规则，但无法表达“当整合技术时”这一特定触发条件和有向动作链。选项判断：可确认在采用新技术时，机构有义务确保系统符合当地法规的步骤。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

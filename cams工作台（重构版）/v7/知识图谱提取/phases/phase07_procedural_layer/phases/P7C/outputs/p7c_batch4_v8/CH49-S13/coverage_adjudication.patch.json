@@ -1,0 +1,127 @@
+{
+  "section_id": "CH49-S13",
+  "coverage_adjudication": [],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003655",
+        "v7u_N003656",
+        "v7u_N003657"
+      ],
+      "proposition": "执法部门访问相关数据库后，搜索名称、标识符、数据和叙述信息，检查嫌疑人提及情况，并查看SAR报告识别非法活动要素。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S13_002",
+      "reason": "该命题表达了特定主体（执法部门）在特定条件下（访问数据库）进行信息搜索和识别的有向过程，包含条件触发和动作指向，基础KG无法表达条件-动作的结构化关系。",
+      "origin_candidate_ids": []
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N003659"
+      ],
+      "proposition": "执法部门可能能够追踪资金和其他支持数据，确定其他涉案犯罪分子并扩大调查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S13_003",
+      "reason": "该命题表达了执法部门基于前序信息采取进一步调查行动的有向过程，动作链明确，基础KG难以表达动作的相继性和目的。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH49-S13_002",
+      "section_id": "CH49-S13",
+      "card_nature": "assessment",
+      "title": "执法部门访问相关数据库并搜索和分析SAR信息",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH49-S13_002_entry1",
+          "node_category": "entry",
+          "node_type": "E2_object_entry",
+          "label": "执法部门访问相关数据库",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH49-S13_002_proc1",
+          "node_category": "process",
+          "node_type": "P4_collection",
+          "label": "执法部门搜索SAR数据库获取名称、标识符、数据和叙述信息，并检查嫌疑人提及、提交机构和资金流向",
+          "evidence_unit_ids": [
+            "v7u_N003655",
+            "v7u_N003657"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p7card_CH49-S13_002_proc2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "执法部门查看SAR报告识别非法活动的内容、地点、时间、所用产品及被视为可疑的原因",
+          "evidence_unit_ids": [
+            "v7u_N003656"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "p7card_CH49-S13_002_edge1",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH49-S13_002_entry1",
+          "target": "p7card_CH49-S13_002_proc1",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "derivation": "explicit_text",
+          "condition": "访问相关数据库后"
+        },
+        {
+          "edge_id": "p7card_CH49-S13_002_edge2",
+          "edge_type": "PRECEDES",
+          "source": "p7card_CH49-S13_002_entry1",
+          "target": "p7card_CH49-S13_002_proc2",
+          "evidence_unit_ids": [
+            "v7u_N003655"
+          ],
+          "derivation": "llm_inference",
+          "condition": "访问数据库后"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003655",
+        "v7u_N003656",
+        "v7u_N003657"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量覆盖执法部门使用SAR数据库进行信息搜索和识别的条件化流程。基础KG无法区分访问、搜索、识别的条件依赖和动作指向，可能仅保存为独立事实。"
+    },
+    {
+      "card_id": "p7card_CH49-S13_003",
+      "section_id": "CH49-S13",
+      "card_nature": "execution",
+      "title": "执法部门追踪资金和数据以确定其他罪犯并扩大调查",
+      "flow_nodes": [
+        {
+          "node_id": "p7card_CH49-S13_003_proc1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执法部门可能追踪资金和其他支持数据，确定其他涉案犯罪分子并扩大调查",
+          "evidence_unit_ids": [
+            "v7u_N003659"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [],
+      "source_unit_ids": [
+        "v7u_N003659"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量覆盖执法部门在SAR分析后可能采取的进一步调查行动。动作链明确，基础KG难以表达动作的继起与目的导向。"
+    }
+  ],
+  "card_supplements": []
+}

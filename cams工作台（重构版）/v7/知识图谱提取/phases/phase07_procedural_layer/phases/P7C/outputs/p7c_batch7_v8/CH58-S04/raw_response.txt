@@ -1,0 +1,96 @@
+{
+  "section_id": "CH58-S04",
+  "section_title": "Data as an input for solutions > Internal versus external data",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004679"],
+      "proposition": "当数据为非结构化时，组织需进行额外处理以精炼为可用格式",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S04_001",
+      "reason": "形成条件触发应对的有向链，超出基础KG的一般事实陈述，可用于判断数据可用性依赖处理步骤。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004671"],
+      "proposition": "特定客户数据（如负面媒体、法院裁决等）帮助组织完成适当尽调",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为数据用途辅助说明，基础KG已表达外部数据用于尽调，无明确判断或应对结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004672"],
+      "proposition": "制裁、恐怖分子、PEP名单等外部数据用于筛查所有客户",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据用途说明，基础KG已覆盖分类和用途，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004673"],
+      "proposition": "合规系统结合内外部数据并利用网络分析管理金融犯罪风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般机制说明，基础KG已表达为风险管理方法，无局部程序链。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004674"],
+      "proposition": "系统结合KYC、交易和代理行数据识别潜在风险",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "示例说明，基础KG已表达数据结合用途，无独立程序性结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004675"],
+      "proposition": "筛查系统需要结合静态KYC与外部名单数据",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "示例说明，基础KG已覆盖，无增量有向结构。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S04_001",
+      "section_id": "CH58-S04",
+      "card_nature": "execution",
+      "title": "非结构化数据需要额外处理以转换为可用格式",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "数据为非结构化格式",
+          "evidence_unit_ids": ["v7u_N004679"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织需进行额外处理以精炼为可用格式",
+          "evidence_unit_ids": ["v7u_N004679"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N004679"],
+          "derivation": "explicit_text",
+          "condition": "当数据为非结构化时",
+          "source_quote": "Unstructured data ... This requires additional work to refine it into a usable format."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004679"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当数据为非结构化时 --触发--> 组织需进行额外处理以转换为可用格式；KG不足：基础KG仅表述为非结构化数据需要额外处理，未明确主体和条件触发的程序性方向；选项判断：可确认非结构化数据不能直接用于合规系统，需先经过精炼处理；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

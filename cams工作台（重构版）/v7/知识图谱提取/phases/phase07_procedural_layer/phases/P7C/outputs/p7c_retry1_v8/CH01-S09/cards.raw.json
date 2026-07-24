@@ -1,0 +1,125 @@
+{
+  "section_id": "CH01-S09",
+  "section_title": "Money Laundering and Financial Crime > • Shell companies and front businesses:",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N000057"
+      ],
+      "proposition": "银行基于欺诈怀疑，冻结并收回部分资金",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH01-S09_001",
+      "reason": "基础KG只能表达案例后果，无法表达怀疑到冻结的方向性触发关系，且该关系对判断银行应对措施有帮助。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000054",
+        "v7u_N000056"
+      ],
+      "proposition": "Tamayo指示钱骡跨银行和司法管辖区转移资金，导致产生多层交易以阻碍金融调查人员追踪",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH01-S09_002",
+      "reason": "基础KG只能孤立地表达“Tamayo指示钱骡转移资金”和“多层交易阻碍追踪”，无法表达指示到阻碍的方向性因果关系，该关系有助于理解犯罪手法中的主动反调查行为。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH01-S09_001",
+      "section_id": "CH01-S09",
+      "card_nature": "control",
+      "title": "Bank intervention to freeze and reclaim funds on suspicion of fraud",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "Suspicion of fraud",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Banks freeze and reclaim funds",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000057"
+          ],
+          "derivation": "explicit_text",
+          "condition": "suspicion of fraud"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000057"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Suspicion of fraud --触发--> Banks freeze and reclaim funds；KG不足：基础KG只能表达案例中银行介入的事实，无法表达怀疑到冻结的方向性有向结构；选项判断：可确认银行在怀疑欺诈时会采取冻结和收回资金措施；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH01-S09_002",
+      "section_id": "CH01-S09",
+      "card_nature": "execution",
+      "title": "Tamayo directs money mules to transfer funds, creating multiple transaction layers to obstruct tracing",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "Tamayo directs money mules to transfer funds across banks and jurisdictions",
+          "evidence_unit_ids": [
+            "v7u_N000054",
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "Multiple layers of transactions obstruct tracing efforts by financial investigators",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N000056"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000054",
+        "v7u_N000056"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：Tamayo指示钱骡跨银行转移资金（process）—产生—> 多层交易阻碍金融调查人员追踪（exit）。基础KG可记录指示动作和阻碍效果，但无法表达因果方向，本卡补充该有向关系。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": []
+}

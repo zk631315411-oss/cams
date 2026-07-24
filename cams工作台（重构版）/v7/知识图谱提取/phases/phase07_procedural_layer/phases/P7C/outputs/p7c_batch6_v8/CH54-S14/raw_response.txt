@@ -1,0 +1,119 @@
+{
+  "section_id": "CH54-S14",
+  "section_title": "Technology for KYC > Integrating screening technology with other systems",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004269"],
+      "proposition": "将筛查系统与其他系统集成时，组织应考虑多个因素",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅是引入性说明，未形成具体条件-动作链或主体判断结构，基础KG可保存为一般背景知识。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004270"],
+      "proposition": "开户时按需逐个筛查灵活，批量筛查可提高效率",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "两种筛查方式的比较，无具体决策分支或条件触发动作，基础KG可保存为事实比较。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004271"],
+      "proposition": "筛查系统应与其他系统兼容",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，未明确约束特定主体的具体动作或判断，基础KG可保存为规则。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004272"],
+      "proposition": "全面评估系统接触点并理解工作流有助于成功实施",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果关系说明，无具体程序或判断链，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004273"],
+      "proposition": "当使用软件供应商而非内部构建时，组织应选择提供可靠支持和定期更新的供应商",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S14_001",
+      "reason": "明确的条件-动作链：条件状态触发特定主体需执行的选择动作，带有情态should，构成增量有向结构，基础KG只能整体保存规则但无法表达内部有向依赖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004273"],
+      "proposition": "实施控制进行持续维护和故障排除对于确保系统效率至关重要",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务建议，未与具体条件、主体或判断链关联，基础KG可保存为一般性控制要求。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004274"],
+      "proposition": "集成期间组织应关注数据安全与隐私，确保遵守GDPR等法规，实施强加密并限制访问",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "并列的义务集合，无明确的条件触发、互斥分支或独立结果链条，各部分可被基础KG独立保存。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": ["v7u_N004275"],
+      "proposition": "组织应确保最终集成系统符合所有金融犯罪监管要求",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "纯义务陈述，无增量的有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": ["v7u_N004276"],
+      "proposition": "AFC技术演进导致功能融合，云方案提供更多集成可能",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "技术趋势和一般示例，无程序性或判断性结构，基础KG可承接。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S14_001",
+      "section_id": "CH54-S14",
+      "card_nature": "execution",
+      "title": "使用供应商时的供应商选择义务",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "组织决定使用软件供应商而非内部构建系统",
+          "evidence_unit_ids": ["v7u_N004273"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "组织应选择提供可靠支持和定期更新的供应商",
+          "evidence_unit_ids": ["v7u_N004273"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N004273"],
+          "derivation": "explicit_text",
+          "condition": "当组织使用软件供应商而非内部构建系统时"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004273"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当组织使用软件供应商时，应选择提供可靠支持和定期更新的供应商。KG不足：基础KG可整体保存该规则，但无法表达“使用供应商”这一条件作为逻辑前提触发具体选择动作的有向结构。选项判断：可确认在特定条件下对供应商选择的要求。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

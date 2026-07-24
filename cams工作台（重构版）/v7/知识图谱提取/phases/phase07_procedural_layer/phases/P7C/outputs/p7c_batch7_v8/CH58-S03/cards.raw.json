@@ -1,0 +1,374 @@
+{
+  "section_id": "CH58-S03",
+  "section_title": "Data as an input for solutions > Clean data for technology solutions",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004632",
+        "v7u_N004633"
+      ],
+      "proposition": "干净数据是完整、一致、准确且无错误的，有助于分析并提高合规系统输出的准确性与效率。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "干净数据的定义与重要性，为一般事实和概念关系，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004634",
+        "v7u_N004635",
+        "v7u_N004636",
+        "v7u_N004637",
+        "v7u_N004638",
+        "v7u_N004639",
+        "v7u_N004640"
+      ],
+      "proposition": "数据清洗流程包括删除重复、标准化数据、验证准确性、管理异常值、识别并修复损坏数据集等步骤。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗步骤列表，为一般流程描述，无特定情境下的识别、评估或应对。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004641",
+        "v7u_N004643"
+      ],
+      "proposition": "数据专业人员使用特定软件，通过原位清洗、批量脚本或专业防火墙等方式清洗数据。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗方法与执行角色描述，为一般事实和方法列举，无超出KG的有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004642"
+      ],
+      "proposition": "数据清洗发生在实施新技术解决方案或升级现有方案之前。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅说明清洗与实施的时序规则，无特定主体执行的条件-应对关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004644"
+      ],
+      "proposition": "数据清洗过程必须是持续进行的。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "持续进行的义务性规则，无具体触发或独立程序，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004645"
+      ],
+      "proposition": "组织应根据治理协议报告指标，并在必要时采取纠正措施。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象治理义务，无具体条件分支或程序性出口，属于一般规则。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004646",
+        "v7u_N004647",
+        "v7u_N004649",
+        "v7u_N004650",
+        "v7u_N004651"
+      ],
+      "proposition": "数据清洗的不同形式包括丢弃空字段、缺失记录等，并伴有具体修正案例（如移除缺失出生日期的KYC记录、自动添加区号、标准化地址等）。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "清洗形式分类与部分案例说明（如不良做法示例）仍属KG范围；其中v7u_N004647、v7u_N004650、v7u_N004651包含系统在特定条件下执行的应对动作，已提取为独立P7C关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004652"
+      ],
+      "proposition": "数据清洗应在洁净度与源数据真实性之间取得平衡，无需追求100%洁净。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗平衡的一般实践原则，无主体动作和方向约束。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004647"
+      ],
+      "proposition": "如果KYC记录缺少出生日期，系统可能将其从筛查数据集中移除并返回源系统修正。",
+      "decision": "p7c_card",
+      "card_id": "card_gap_001",
+      "reason": "KG无法表达基于特定数据缺失条件触发系统执行移除并返回修正的有向业务应对，涉及主体、条件和独立状态变化。",
+      "origin_candidate_ids": [
+        "cand_007"
+      ]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N004650"
+      ],
+      "proposition": "系统可能根据地址位置自动验证或添加客户电话号码的国际区号。",
+      "decision": "p7c_card",
+      "card_id": "card_gap_002",
+      "reason": "KG可保存动作事实，但无法表达“地址位置”作为输入参照与系统自动修正动作之间的有向依存关系。",
+      "origin_candidate_ids": [
+        "cand_007"
+      ]
+    },
+    {
+      "candidate_id": "coverage_gap_003",
+      "unit_ids": [
+        "v7u_N004651"
+      ],
+      "proposition": "系统标准化地址，将缩写（如St、Rd）改为全称。",
+      "decision": "p7c_card",
+      "card_id": "card_gap_003",
+      "reason": "系统执行标准化动作超出一般流程描述，需保留主体动作与独立修正结果的有向关系。",
+      "origin_candidate_ids": [
+        "cand_007"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "card_gap_001",
+      "section_id": "CH58-S03",
+      "card_nature": "control",
+      "title": "缺失出生日期时系统自动移除并返回修正",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "KYC记录缺少出生日期",
+          "evidence_unit_ids": [
+            "v7u_N004647"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "系统从筛查数据集移除并返回源系统修正",
+          "evidence_unit_ids": [
+            "v7u_N004647"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "记录从筛查数据集移除并返回修正",
+          "evidence_unit_ids": [
+            "v7u_N004647"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N004647"
+          ],
+          "derivation": "explicit_text",
+          "condition": "如果缺少出生日期"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N004647"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004647"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_007中提取的系统条件-应对关系。"
+    },
+    {
+      "card_id": "card_gap_002",
+      "section_id": "CH58-S03",
+      "card_nature": "control",
+      "title": "系统根据地址自动修正电话号码区号",
+      "flow_nodes": [
+        {
+          "node_id": "n4",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "地址位置",
+          "evidence_unit_ids": [
+            "v7u_N004650"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n5",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "系统自动验证或添加客户电话号码的国际区号",
+          "evidence_unit_ids": [
+            "v7u_N004650"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n6",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "电话号码经验证或添加区号",
+          "evidence_unit_ids": [
+            "v7u_N004650"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "n5",
+          "target": "n4",
+          "evidence_unit_ids": [
+            "v7u_N004650"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "n5",
+          "target": "n6",
+          "evidence_unit_ids": [
+            "v7u_N004650"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004650"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_007中提取的系统基于输入参照的自动修正关系。"
+    },
+    {
+      "card_id": "card_gap_003",
+      "section_id": "CH58-S03",
+      "card_nature": "control",
+      "title": "系统标准化地址缩写",
+      "flow_nodes": [
+        {
+          "node_id": "n7",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "系统标准化地址（将St改为Street、Rd改为Road等）",
+          "evidence_unit_ids": [
+            "v7u_N004651"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n8",
+          "node_category": "exit",
+          "node_type": "X5_config_change",
+          "label": "地址被标准化",
+          "evidence_unit_ids": [
+            "v7u_N004651"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e5",
+          "edge_type": "PRODUCES",
+          "source": "n7",
+          "target": "n8",
+          "evidence_unit_ids": [
+            "v7u_N004651"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004651"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "从cand_007中提取的系统独立修正动作关系。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "干净数据的定义与重要性，为一般事实和概念关系，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗步骤列表，为一般流程描述，无特定情境下的识别、评估或应对。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗方法与执行角色描述，为一般事实和方法列举，无超出KG的有向结构。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅说明清洗与实施的时序规则，无特定主体执行的条件-应对关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "持续进行的义务性规则，无具体触发或独立程序，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象治理义务，无具体条件分支或程序性出口，属于一般规则。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "清洗形式分类与部分案例说明（如不良做法示例）仍属KG范围；其中v7u_N004647、v7u_N004650、v7u_N004651包含系统在特定条件下执行的应对动作，已提取为独立P7C关系。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "数据清洗平衡的一般实践原则，无主体动作和方向约束。"
+    }
+  ]
+}

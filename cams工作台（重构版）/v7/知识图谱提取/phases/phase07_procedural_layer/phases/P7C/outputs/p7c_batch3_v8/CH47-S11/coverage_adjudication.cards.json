@@ -1,0 +1,207 @@
+{
+  "section_id": "CH47-S11",
+  "section_title": "Transaction monitoring > Communication channels and tipping off",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003361",
+        "v7u_N003362"
+      ],
+      "proposition": "分析师需要额外信息时，客户经理联系客户等获取信息并反馈给分析师。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "已有card p7card_CH47-S11_001已从条件检查开始更完整地表达了客户沟通触发和执行流程，cand_001的关系为简化版本且被覆盖，无需重复。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003363"
+      ],
+      "proposition": "员工必须保持保密，避免向客户通风报信。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "沟通保密要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003364",
+        "v7u_N003362"
+      ],
+      "proposition": "在所需信息关键且不可得的条件下，分析师应规划沟通方式，然后客户经理执行客户沟通并反馈。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "条件触发分析师计划到客户经理执行的职责链和条件判断，超出基础KG的静态规则描述。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003365",
+        "v7u_N003366",
+        "v7u_N003367",
+        "v7u_N003368",
+        "v7u_N003369",
+        "v7u_N003370"
+      ],
+      "proposition": "客户沟通中应遵守保密、清晰、专业、合规、记录等要求。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "客户沟通的各项工作要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S11_001",
+      "section_id": "CH47-S11",
+      "card_nature": "execution",
+      "title": "客户沟通的条件触发与执行流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "所需信息关键且无法从内部或外部获取",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "分析师考虑并规划沟通方式",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "客户经理联系客户、合作机构或代理行获取信息并传达给分析师",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "STD1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "沟通要求（保密、清晰、专业、避免通风报信、法规遵从、记录）",
+          "evidence_unit_ids": [
+            "v7u_N003363",
+            "v7u_N003365",
+            "v7u_N003366",
+            "v7u_N003367",
+            "v7u_N003368",
+            "v7u_N003369",
+            "v7u_N003370"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X4_handoff",
+          "label": "信息传达给分析师",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003364"
+          ],
+          "derivation": "explicit_text",
+          "condition": "If both conditions are met (information critical and not available internally or externally), before conducting outreach",
+          "source_quote": "If both conditions are met, analysts should consider the best outreach methods and plan accordingly."
+        },
+        {
+          "edge_id": "edge_2",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P2",
+          "evidence_unit_ids": [
+            "v7u_N003364",
+            "v7u_N003362"
+          ],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "edge_3",
+          "edge_type": "REFERENCES",
+          "source": "P2",
+          "target": "STD1",
+          "evidence_unit_ids": [
+            "v7u_N003364",
+            "v7u_N003365",
+            "v7u_N003366",
+            "v7u_N003367",
+            "v7u_N003368",
+            "v7u_N003369",
+            "v7u_N003370"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_4",
+          "edge_type": "PRODUCES",
+          "source": "P2",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N003362"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003364",
+        "v7u_N003362",
+        "v7u_N003363",
+        "v7u_N003365",
+        "v7u_N003366",
+        "v7u_N003367",
+        "v7u_N003368",
+        "v7u_N003369",
+        "v7u_N003370"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在所需信息关键且不可得的条件下，分析师应规划沟通方式，然后由客户经理执行客户沟通并反馈给分析师（条件：信息关键且不可得；PRECEDES链）。KG不足：基础KG仅单独列出“通过客户沟通获取信息”和“客户沟通的沟通要求”，未表达条件触发分析师计划再到客户经理执行的职责序列和条件判断。选项判断：可确认沟通前需要满足的条件、分析师与客户经理的职责分工及流程顺序。LLM推理：edge_2为llm_inference，因为原文未明确说明分析师计划后立即由客户经理执行，但分析师的计划是为后续沟通做准备，且客户经理是执行沟通的主体，因此该顺序为必要功能推断。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "已有card p7card_CH47-S11_001已从条件检查开始更完整地表达了客户沟通触发和执行流程，cand_001的关系为简化版本且被覆盖，无需重复。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "沟通保密要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH47-S11_001",
+      "reason": "客户沟通的各项工作要求应作为现有客户沟通执行流程的标准约束，通过补充标准节点和REFERENCES边进行表达。"
+    }
+  ]
+}

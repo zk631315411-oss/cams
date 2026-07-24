@@ -1,0 +1,96 @@
+{
+  "section_id": "CH48-S02",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，无额外条件或有向结构，且与已入卡的FATF建议20规则重复，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例事实与因果后果整体可由基础KG覆盖，延迟与罚款、后果之间无新增主体应对或判断路径增量。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般因果说明，无具体程序性步骤或判别结构，未形成可独立判断选项的有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概括性陈述，无主体指向的有向结构，基础KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "保护性法律条款，无程序有向关系或决策依赖。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性合作建议，无触发、条件或步骤等有向结构可构成增量。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003459"
+      ],
+      "proposition": "金融机构在有合理理由怀疑时，必须调查并报告可疑交易，该报告动作产生一份可疑交易报告（STR）。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH48-S02_001",
+      "reason": "首次抽取遗漏了报告动作的独立结果（exit），基础KG无法表达动作产生报告的有向关系。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH48-S02_001",
+      "reason": "补充遗漏的exit节点和PRODUCES边，体现报告动作产生独立结果。",
+      "origin_candidate_ids": [
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "node_004",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "可疑交易报告（STR）",
+          "evidence_unit_ids": [
+            "v7u_N003459"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "edge_003",
+          "edge_type": "PRODUCES",
+          "source": "node_002",
+          "target": "node_004",
+          "evidence_unit_ids": [
+            "v7u_N003459"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

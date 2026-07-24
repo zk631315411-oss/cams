@@ -1,0 +1,165 @@
+{
+  "section_id": "CH47-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "ch47_s09_card_001",
+      "reason": "该命题明确了审查决策所需的前置信息输入义务，已作为输入节点纳入审查与决策卡。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "ch47_s09_card_001",
+      "reason": "该命题即审查决策过程本身，已作为核心流程节点纳入审查与决策卡。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "ch47_s09_card_001",
+      "reason": "该命题规定了文档记录动作及其与决策的关联，已作为下游执行节点纳入同一审查与决策卡。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003346", "v7u_N003347"],
+      "proposition": "分析员审查内外部信息源后，做出驳回或升级警报的互斥决策。",
+      "decision": "p7c_card",
+      "card_id": "ch47_s09_card_001",
+      "reason": "基础KG无法表达审查动作产生互斥决策结果的有向分支关系。",
+      "origin_candidate_ids": ["cand_002"]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": ["v7u_N003347", "v7u_N003348"],
+      "proposition": "记录警报调查文档以支持决策并建立审计线索，且记录动作紧随审查之后。",
+      "decision": "p7c_card",
+      "card_id": "ch47_s09_card_001",
+      "reason": "基础KG无法表达记录动作与审查的先后顺序及产出的文档用途。",
+      "origin_candidate_ids": ["cand_003"]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "ch47_s09_card_001",
+      "section_id": "CH47-S09",
+      "card_nature": "assessment",
+      "title": "警报调查中的信息审查与决策",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "内外部信息源",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003335", "v7u_N003340"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p1",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "分析师审查内外部信息源并做决策",
+          "evidence_unit_ids": ["v7u_N003346", "v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "驳回警报",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "升级警报",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "p2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "记录警报调查文档",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "x3",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "警报调查记录文档",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "p1",
+          "target": "n1",
+          "evidence_unit_ids": ["v7u_N003334", "v7u_N003346"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "DECIDES",
+          "source": "p1",
+          "target": "x1",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "DECIDES",
+          "source": "p1",
+          "target": "x2",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRECEDES",
+          "source": "p1",
+          "target": "p2",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "derivation": "llm_inference"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "REFERENCES",
+          "source": "p2",
+          "target": "n1",
+          "evidence_unit_ids": ["v7u_N003347"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRODUCES",
+          "source": "p2",
+          "target": "x3",
+          "evidence_unit_ids": ["v7u_N003347", "v7u_N003348"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003334",
+        "v7u_N003335",
+        "v7u_N003340",
+        "v7u_N003346",
+        "v7u_N003347",
+        "v7u_N003348"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "基于首次抽取候选及全量重扫描，将分散的信息收集义务、审查决策动作、互斥决策分支和文档记录动作整合为一张有向流程图。内外部信息源作为统一输入节点，审查决策产生驳回/升级两个互斥分类出口，后续记录动作引用相同信息源并产出文档。"
+    }
+  ],
+  "card_supplements": []
+}

@@ -1,0 +1,80 @@
+{
+  "section_id": "CH49-S09",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_000",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为背景陈述，无程序性或判断性有向结构。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S09_005",
+      "reason": "调查后更新客户档案构成从审查到更新动作的有向关系，基础KG无法表达。通过card_supplement补充到CRA审查流程中。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立义务陈述，缺乏明确的触发条件或结果导向，无法形成P7C所需的有向结构。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性结果好处陈述，属于基础KG能覆盖的因果关系或属性，无程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯事实声明，不构成有向关系。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH49-S09_005",
+      "reason": "cand_006遗漏的更新客户档案动作，补充到已有的CRA审查card中。基于llm_inference，审查后需执行。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将所有调查相关文件更新至客户档案",
+          "evidence_unit_ids": [
+            "v7u_N003595"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P3",
+          "evidence_unit_ids": [
+            "v7u_N003595"
+          ],
+          "derivation": "llm_inference",
+          "condition": "重新执行CRA并考虑缓释措施后"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N003595"
+      ]
+    }
+  ]
+}

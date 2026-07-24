@@ -1,0 +1,75 @@
+{
+  "section_id": "CH54-S15",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "原候选覆盖的广泛技术功能及优势陈述，可由基础KG充分表达，无具体主体决策或条件分支。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004282"
+      ],
+      "proposition": "AI技术帮助识别高风险警报，机构据此优先处理并将警报分配给具备所需技能的分析师。",
+      "decision": "p7c_card",
+      "card_id": "CH54-S15_p7c_001",
+      "reason": "基础KG可分别存储“AI识别高风险警报”和“机构可优先处理”的事实，但无法表达识别结果驱动优先处理的局部有向关系。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "CH54-S15_p7c_001",
+      "section_id": "CH54-S15",
+      "card_nature": "execution",
+      "title": "机构对AI识别的高风险警报进行优先处理与分配",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "AI识别的高风险警报",
+          "evidence_unit_ids": [
+            "v7u_N004282"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "优先处理并分配高风险警报（至具备相应技能的分析师）",
+          "evidence_unit_ids": [
+            "v7u_N004282"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "n1",
+          "target": "n2",
+          "evidence_unit_ids": [
+            "v7u_N004282"
+          ],
+          "derivation": "llm_inference"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004282"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "基于原文，AI识别高风险警报，机构据此优先处理和分配，构成有向流程。"
+    }
+  ],
+  "card_supplements": []
+}

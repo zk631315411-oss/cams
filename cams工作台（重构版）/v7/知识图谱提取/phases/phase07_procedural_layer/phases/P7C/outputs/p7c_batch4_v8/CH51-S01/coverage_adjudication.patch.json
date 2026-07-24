@@ -1,0 +1,169 @@
+{
+  "section_id": "CH51-S01",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述高级筛查工具的技术能力，使机构能快速识别和响应风险，但未呈现有向的决策、应对或分支结构，基础KG可充分表达其功能效果。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "情境监控减少误报和提高准确性属于因果关系与优化效果，无特定主体的判断或后续应对链，基础KG可保存该方法效果。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险警示，无触发特定应对或判断序列；后续单元虽提及遵循原则，但未形成直接有向连接，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "多项复合义务列表，缺少明确的条件-动作链，基础KG可直接表达该原则。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "抽象因果陈述，无具体程序性步骤或判断，基础KG可保存其结论。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性规则，无情境触发或后续动作链，基础KG可直接表达该要求。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003755"
+      ],
+      "proposition": "金融机构分析客户、账户和交易的大数据集，以识别异常、新兴金融犯罪趋势和情境风险因素。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S01_003",
+      "reason": "分析到识别的有向关系超出KG对独立事实的保存能力，方向性和主体动作难以由KG充分表达。",
+      "origin_candidate_ids": []
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": [
+        "v7u_N003744"
+      ],
+      "proposition": "客户风险评估过程产生明确的风险评级结果，该结果应作为独立节点（exit）存在。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S01_001",
+      "reason": "原有card将风险评级隐藏于process标签，未以exit节点表达该独立结果，违反图完整性要求。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S01_003",
+      "section_id": "CH51-S01",
+      "card_nature": "assessment",
+      "title": "金融机构分析大数据识别异常和风险因素",
+      "flow_nodes": [
+        {
+          "node_id": "N7",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "金融机构分析客户、账户和交易的大数据集",
+          "evidence_unit_ids": [
+            "v7u_N003755"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N8",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "识别异常、新兴金融犯罪趋势和情境风险因素",
+          "evidence_unit_ids": [
+            "v7u_N003755"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E6",
+          "edge_type": "PRODUCES",
+          "source": "N7",
+          "target": "N8",
+          "evidence_unit_ids": [
+            "v7u_N003755"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "Financial institutions analyze large datasets of customers, accounts, and transactions to identify anomalies, emerging financial crime trends, and contextual risk factors."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003755"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：分析数据产生识别结果的有向关系。基础KG可分别保存分析动作和识别目标，但无法表达分析→识别的方向性。该流程有助于理解机构如何从数据中获取风险洞察。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH51-S01_001",
+      "reason": "补充缺失的风险评级exit节点及相应边，使图表达完整：风险评估产生评级，评级再触发EDD。",
+      "origin_candidate_ids": [
+        "coverage_gap_002"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "N6",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户风险评级",
+          "evidence_unit_ids": [
+            "v7u_N003744"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E4",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N6",
+          "evidence_unit_ids": [
+            "v7u_N003744"
+          ],
+          "derivation": "explicit_text",
+          "source_quote": "completing a customer risk assessment and rating"
+        },
+        {
+          "edge_id": "E5",
+          "edge_type": "PRECEDES",
+          "source": "N6",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003745"
+          ],
+          "derivation": "explicit_text",
+          "condition": "基于风险评级结果",
+          "source_quote": "Based on the result of the risk rating, the organization may need to conduct enhanced due diligence (EDD)."
+        }
+      ],
+      "add_source_unit_ids": []
+    }
+  ]
+}

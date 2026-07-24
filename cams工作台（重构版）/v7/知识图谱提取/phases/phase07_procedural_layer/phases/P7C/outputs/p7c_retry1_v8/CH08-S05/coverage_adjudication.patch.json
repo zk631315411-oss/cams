@@ -1,0 +1,120 @@
+{
+  "section_id": "CH08-S05",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "纯定义和合法用途事实，基础KG已可承接，无超出KG的有向P7C关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅说明风险存在和结构原因，属于一般风险说明与机制解释，KG可保存，未涉及特定主体的识别、评估或应对动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "普通犯罪分层洗钱手法，属于案例性机制描述，无金融机构特定应对动作，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立红旗指标列表，未指示金融机构如何使用这些信号进行识别或评估，KG可保存孤立事实。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪手法（选择监管宽松辖区）及其后果说明，无金融机构主体应对动作，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "PIV定义与滥用风险说明，纯定义和风险指示，无有向的识别/评估/应对关系，KG可承接。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "普通贸易洗钱犯罪手法描述，未涉及金融机构的识别、监测或应对动作，KG可承接。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000660"
+      ],
+      "proposition": "执行EDD和识别最终受益所有人有助于减轻与SPV相关的金融犯罪风险",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "基础KG只能孤立保存“This will help mitigate…”这一效果陈述，无法表达前面两个具体动作（EDD和识别UBO）与该减轻效果之间的有向产出关系；独立结果超出KG的关联表达能力。",
+      "origin_candidate_ids": [
+        "cand_008"
+      ]
+    }
+  ],
+  "new_cards": [],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH08-S05_001",
+      "reason": "原文v7u_N000660明确说明前文的EDD和识别UBO动作“有助于减轻与SPV相关的金融犯罪风险”，但已有card未包含该结果节点及相关产出边，需补充退出节点和两条PRODUCES边以完整表达该独立减轻效果。",
+      "origin_candidate_ids": [
+        "cand_008",
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "X_mitigate",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于减轻与SPV相关的金融犯罪风险",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e3",
+          "edge_type": "PRODUCES",
+          "source": "P_EDD",
+          "target": "X_mitigate",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "derivation": "explicit_text",
+          "condition": null
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "PRODUCES",
+          "source": "P_identify",
+          "target": "X_mitigate",
+          "evidence_unit_ids": [
+            "v7u_N000660"
+          ],
+          "derivation": "explicit_text",
+          "condition": null
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000660"
+      ]
+    }
+  ]
+}

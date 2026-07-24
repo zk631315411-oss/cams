@@ -1,0 +1,234 @@
+{
+  "section_id": "CH49-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述SAR的定义，无程序性有向关系，基础KG已覆盖"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述填写SAR的信息收集要求，无明确条件或判断分支，基础KG足以表达为规则解释"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "列举SAR表格要求的字段，属于定义和分类，无有向程序性结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "概述SAR叙述的结构组成，无程序性有向关系，KG可覆盖"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "强调合规的重要性，属于后果陈述，无特定主体动作及方向"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述SAR表格对报告类型的初始要求，无独立主体动作，KG可覆盖为表格说明"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S04_004",
+      "reason": "机构提供内部控制编号是明确的有向动作，产生可分离的编号产物，超出KG一般事实表达"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "表格要求提供人口统计信息，属于分类事实，无有向流程"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH49-S04_005",
+      "reason": "机构有义务在SAR中提供关键信息，构成有向执行关系，超出KG的一般规则表达"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "描述叙述的重要性，无程序性有向结构"
+    },
+    {
+      "candidate_id": "cand_014",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "说明引言句的目的，无独立有向动作"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003526"
+      ],
+      "proposition": "填写SAR的人员应注明与执法机构的任何接触",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S04_006",
+      "reason": "条件导向动作：若存在执法接触，则需在SAR中注明，构成有向判断链",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH49-S04_004",
+      "section_id": "CH49-S04",
+      "card_nature": "execution",
+      "title": "机构在SAR中提供内部控制编号",
+      "flow_nodes": [
+        {
+          "node_id": "n007",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构通常提供内部控制编号",
+          "evidence_unit_ids": [
+            "v7u_N003522"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n008",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "内部控制编号（便于执法参考、文件查找及提交持续活动SAR）",
+          "evidence_unit_ids": [
+            "v7u_N003522"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e004",
+          "edge_type": "PRODUCES",
+          "source": "n007",
+          "target": "n008",
+          "evidence_unit_ids": [
+            "v7u_N003522"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003522"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH49-S04_005",
+      "section_id": "CH49-S04",
+      "card_nature": "execution",
+      "title": "机构在SAR中提供关键信息",
+      "flow_nodes": [
+        {
+          "node_id": "n009",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应提供主要监管机构、活动地点和主要调查员联系信息",
+          "evidence_unit_ids": [
+            "v7u_N003525"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n010",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "SAR要求提供的信息：主要监管机构、活动地点（分行/总部/ATM/多地）、主要调查员姓名及联系方式",
+          "evidence_unit_ids": [
+            "v7u_N003525"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e005",
+          "edge_type": "REFERENCES",
+          "source": "n009",
+          "target": "n010",
+          "evidence_unit_ids": [
+            "v7u_N003525"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003525"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": ""
+    },
+    {
+      "card_id": "p7card_CH49-S04_006",
+      "section_id": "CH49-S04",
+      "card_nature": "execution",
+      "title": "存在执法接触时在SAR中注明",
+      "flow_nodes": [
+        {
+          "node_id": "n011",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "存在与执法机构的接触",
+          "evidence_unit_ids": [
+            "v7u_N003526"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n012",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "填写SAR的人员在表格中注明该接触",
+          "evidence_unit_ids": [
+            "v7u_N003526"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e006",
+          "edge_type": "PRECEDES",
+          "source": "n011",
+          "target": "n012",
+          "condition": "如果存在任何接触",
+          "evidence_unit_ids": [
+            "v7u_N003526"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003526"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": ""
+    }
+  ],
+  "card_supplements": []
+}

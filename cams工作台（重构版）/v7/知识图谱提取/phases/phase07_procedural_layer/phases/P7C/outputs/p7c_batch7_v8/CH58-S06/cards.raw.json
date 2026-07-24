@@ -1,0 +1,419 @@
+{
+  "section_id": "CH58-S06",
+  "section_title": "Data as an input for solutions > Internal observed data",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004701"
+      ],
+      "proposition": "机构应将观察到的数据转换为数据元素以纳入合规系统",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_001",
+      "reason": "规则明确了主体（机构）、动作（转换数据）和目标（纳入合规系统），构成有向义务关系，超出基础KG的简单规则保存。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004702"
+      ],
+      "proposition": "当调查员发现交易模式异常时，调查员标记并临时提高风险评级，触发关系经理复核",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_002",
+      "reason": "案例中包含条件事件-响应动作-后续触发程序链，构成局部程序性有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004704"
+      ],
+      "proposition": "当调查未发现金融犯罪证据时，机构可调低客户风险评级，并应定期重新评估调整后的评级",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_003",
+      "reason": "案例中包含条件导向的动作和后续监控义务，形成有向判断与调整链。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004708"
+      ],
+      "proposition": "机构将观察数据与静态数据进行比较",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_004",
+      "reason": "明确了主体和具体比较动作，并关联两种数据类型，属于可帮选项判断的局部有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004707"
+      ],
+      "proposition": "机构在使用观察数据时应谨慎，因其主观且有时效性",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_005",
+      "reason": "命题明确了主体（机构）、动作（应谨慎使用）和因果方向（由于数据主观有时效性），构成有向条件义务关系，高于基础KG的简单建议保存，可助选项判断合规义务及原因。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004709",
+        "v7u_N004710"
+      ],
+      "proposition": "通过比较发现静态数据与观察数据不一致时，客户风险评级可能需要调整",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_004",
+      "reason": "比较观察与静态数据之后，发现不一致可能导致风险评级调整这一有向结果关系，补充至已有比较card，形成完整条件流程，帮助判断选项中的后续动作。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH58-S06_001",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "将观察数据转换为数据元素纳入合规系统",
+      "flow_nodes": [
+        {
+          "node_id": "P_001_convert",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构应将观察到的数据转换为数据元素以纳入合规系统",
+          "evidence_unit_ids": [
+            "v7u_N004701"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input_001_observed_data",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "观察到的数据",
+          "evidence_unit_ids": [
+            "v7u_N004701"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_001_01",
+          "edge_type": "REFERENCES",
+          "source": "P_001_convert",
+          "target": "input_001_observed_data",
+          "evidence_unit_ids": [
+            "v7u_N004701"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004701"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构 --应执行--> 将观察数据转换为数据元素以纳入合规系统（条件：无）；KG不足：基础KG只能保存该规则文本，无法表达转换动作与纳入系统的有向关系；选项判断：可确认机构有转换义务及目的，排除相反选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S06_002",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "调查发现异常交易模式触发风险评级调整与复核",
+      "flow_nodes": [
+        {
+          "node_id": "E_002_discovery",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "调查员发现客户交易模式异常（偏离预期行为）",
+          "evidence_unit_ids": [
+            "v7u_N004702"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_002_flag",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "调查员标记并临时提高客户风险评级",
+          "evidence_unit_ids": [
+            "v7u_N004702"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_002_review",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "关系经理复核",
+          "evidence_unit_ids": [
+            "v7u_N004702"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_002_01",
+          "edge_type": "PRECEDES",
+          "source": "E_002_discovery",
+          "target": "P_002_flag",
+          "condition": "发现交易模式异常",
+          "evidence_unit_ids": [
+            "v7u_N004702"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_002_02",
+          "edge_type": "PRECEDES",
+          "source": "P_002_flag",
+          "target": "P_002_review",
+          "evidence_unit_ids": [
+            "v7u_N004702"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004702"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：调查员发现交易异常（事件）--PRECEDES--> 调查员标记并临时提高风险评级（处理） --PRECEDES--> 关系经理复核（后续行动）；KG不足：基础KG只能把该案例作为事实整体，无法表达内部条件-动作-触发程序；选项判断：可确认异常发现导致标记和提级，并进一步触发复核的顺序和职责；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S06_003",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "调查无发现时调低风险评级并定期重新评估",
+      "flow_nodes": [
+        {
+          "node_id": "E_003_no_findings",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "调查未发现金融犯罪证据或嫌疑",
+          "evidence_unit_ids": [
+            "v7u_N004704"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_003_adjust",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构可能调低客户风险评级",
+          "evidence_unit_ids": [
+            "v7u_N004704"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_003_reassess",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "机构应定期重新评估调整后的风险评级以确保其适当",
+          "evidence_unit_ids": [
+            "v7u_N004704"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_003_01",
+          "edge_type": "PRECEDES",
+          "source": "E_003_no_findings",
+          "target": "P_003_adjust",
+          "condition": "调查未发现犯罪证据",
+          "evidence_unit_ids": [
+            "v7u_N004704"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_003_02",
+          "edge_type": "PRECEDES",
+          "source": "P_003_adjust",
+          "target": "P_003_reassess",
+          "evidence_unit_ids": [
+            "v7u_N004704"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004704"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：调查未发现犯罪（事件/条件）--PRECEDES--> 机构调低风险评级（处理）--PRECEDES--> 机构定期重新评估调整后评级（监控）；KG不足：基础KG可表述调整规则，但无法表达条件触发、动作和后续定期监控义务的有向时序；选项判断：可确认无嫌疑调查导致风险评级降低，且后续有持续重新评估要求；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S06_004",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "机构比较观察数据与静态数据",
+      "flow_nodes": [
+        {
+          "node_id": "P_004_compare",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构比较观察数据与静态数据",
+          "evidence_unit_ids": [
+            "v7u_N004708"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input_004_observed",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "观察数据",
+          "evidence_unit_ids": [
+            "v7u_N004708"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input_004_static",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "静态数据",
+          "evidence_unit_ids": [
+            "v7u_N004708"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X_004_adjustment_needed",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户风险评级可能需要调整 (might require adjustment)",
+          "evidence_unit_ids": [
+            "v7u_N004710"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_004_01",
+          "edge_type": "REFERENCES",
+          "source": "P_004_compare",
+          "target": "input_004_observed",
+          "evidence_unit_ids": [
+            "v7u_N004708"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_004_02",
+          "edge_type": "REFERENCES",
+          "source": "P_004_compare",
+          "target": "input_004_static",
+          "evidence_unit_ids": [
+            "v7u_N004708"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_004_03",
+          "edge_type": "PRODUCES",
+          "source": "P_004_compare",
+          "target": "X_004_adjustment_needed",
+          "condition": "发现静态数据与观察数据不一致时",
+          "evidence_unit_ids": [
+            "v7u_N004709",
+            "v7u_N004710"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004708",
+        "v7u_N004709",
+        "v7u_N004710"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构 --执行比较--> 观察数据（参照）与静态数据（参照）；KG不足：基础KG可能保存比较规则，但无法表达比较动作主动关联这两种数据源的方向性；选项判断：可确认机构主动进行这种比较，而非自动发生；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH58-S06_005",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "谨慎使用观察数据于合规系统",
+      "flow_nodes": [
+        {
+          "node_id": "P_005_be_careful",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构应谨慎使用观察数据 (should be careful when using observed data)",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input_005_observed",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "观察数据",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_005_characteristics",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "观察数据的主观性和时效性 (subjective and time-based nature)",
+          "evidence_unit_ids": [
+            "v7u_N004706",
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_005_01",
+          "edge_type": "REFERENCES",
+          "source": "P_005_be_careful",
+          "target": "input_005_observed",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_005_02",
+          "edge_type": "REFERENCES",
+          "source": "P_005_be_careful",
+          "target": "std_005_characteristics",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004706",
+        "v7u_N004707"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_005：由于观察数据的主观和时效性，机构应谨慎使用，构成有向义务约束，基础KG仅能保存建议，无法表达因果指向；帮助判断合规选项中的谨慎义务根源。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_005",
+      "reason": "命题明确了主体（机构）、动作（应谨慎使用）和因果方向（由于数据主观有时效性），构成有向条件义务关系，高于基础KG的简单建议保存，可助选项判断合规义务及原因。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_004",
+      "reason": "比较观察与静态数据之后，发现不一致可能导致风险评级调整这一有向结果关系，补充至已有比较card，形成完整条件流程，帮助判断选项中的后续动作。"
+    }
+  ]
+}

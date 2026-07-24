@@ -1,0 +1,284 @@
+{
+  "section_id": "CH56-S04",
+  "section_title": "Technology for payment and batch screening > Case example: Evolution of transaction monitoring",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004396"
+      ],
+      "proposition": "Thomas作为MLRO负责更新交易监控系统。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "背景职责陈述，无明确条件或标准约束动作的有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004397"
+      ],
+      "proposition": "交易监控随着技术、犯罪类型和法规变化而不断演进。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般演变事实，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004398"
+      ],
+      "proposition": "Thomas查阅银行存档文件以了解交易监控方法的演变。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例描述动作，无独立结果或后续判断，基础KG可表达查阅行为。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004399"
+      ],
+      "proposition": "Thomas发现银行过去依赖简单阈值报告。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "历史发现事实，基础KG已作为案例说明覆盖。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004400"
+      ],
+      "proposition": "BSA要求银行识别并报告大额现金交易和可疑活动，构成标准约束银行义务的有向关系。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S04_001",
+      "reason": "基础KG已表达规则事实，但未表达BSA作为标准直接约束银行动作的process-standard有向结构，属于增量程序性关系。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004401"
+      ],
+      "proposition": "在档案中发现1990年代基于规则系统的参考资料。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立发现，无后续行动或判断，基础KG可表达该事实。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004402",
+        "v7u_N004403"
+      ],
+      "proposition": "Thomas询问长期员工，员工解释银行从手动转向半自动基于规则系统的演变。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "问答交互引出历史描述，无独立程序性结果；员工解释内容已被基础KG作为过程描述覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004404"
+      ],
+      "proposition": "银行从静态规则转向机器学习驱动的分析，采用工具分析客户行为。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "技术演变过程描述，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004405",
+        "v7u_N004406",
+        "v7u_N004407",
+        "v7u_N004408",
+        "v7u_N004409",
+        "v7u_N004410"
+      ],
+      "proposition": "Thomas探索AI工具，AI工具能够收集数据并执行检测异常、实施战略威胁分析、做出情报决策、识别早期迹象和微调警报参数等功能。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "现代AI交易监控功能描述，大部分为基础KG覆盖；其中‘微调警报参数’等细微有向关系已由新候选coverage_gap_001单独捕捉。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N004411"
+      ],
+      "proposition": "Thomas认识到持续更新系统的重要性，AI将高效检测、预防和减轻金融犯罪。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例认知结论，无后续具体动作，基础KG可表达。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N004410"
+      ],
+      "proposition": "AI工具通过学习现有阈值的表现来微调警报参数。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH56-S04_002",
+      "reason": "基础KG仅能表述‘AI工具微调警报参数’这一事实，无法表达‘基于现有阈值表现’这一学习来源驱动的有向增强关系，属于P7C增量。",
+      "origin_candidate_ids": [
+        "cand_009"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH56-S04_001",
+      "section_id": "CH56-S04",
+      "card_nature": "execution",
+      "title": "BSA义务：银行必须识别并报告大额交易和可疑活动",
+      "flow_nodes": [
+        {
+          "node_id": "n1_standard",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "1970年银行保密法 (BSA)",
+          "evidence_unit_ids": [
+            "v7u_N004400"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行必须识别并报告大额现金交易和可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N004400"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2_process",
+          "target": "n1_standard",
+          "evidence_unit_ids": [
+            "v7u_N004400"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004400"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：BSA作为标准约束银行必须识别并报告大额现金交易和可疑活动的动作；KG不足：基础KG只能表达规则事实，无法表达标准约束动作的有向过程关系；选项判断：可确认银行在BSA下负有识别和报告义务，明确主体和动作关系；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH56-S04_002",
+      "section_id": "CH56-S04",
+      "card_nature": "execution",
+      "title": "AI工具基于现有阈值表现微调警报参数",
+      "flow_nodes": [
+        {
+          "node_id": "n1_input",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "现有阈值的表现",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2_process",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "AI工具微调警报参数",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "n2_process",
+          "target": "n1_input",
+          "evidence_unit_ids": [
+            "v7u_N004410"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004410"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：AI工具微调警报参数的动作以现有阈值表现为学习参照；KG不足：基础KG无法表达‘基于表现学习’这一有向增强关系；选项判断：可为后续监督或系统评估提供关于AI自我调整能力的依据；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "背景职责陈述，无明确条件或标准约束动作的有向结构，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般演变事实，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例描述动作，无独立结果或后续判断，基础KG可表达查阅行为。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "历史发现事实，基础KG已作为案例说明覆盖。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立发现，无后续行动或判断，基础KG可表达该事实。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "问答交互引出历史描述，无独立程序性结果；员工解释内容已被基础KG作为过程描述覆盖。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "技术演变过程描述，基础KG已覆盖。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "现代AI交易监控功能描述，大部分为基础KG覆盖；其中‘微调警报参数’等细微有向关系已由新候选coverage_gap_001单独捕捉。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例认知结论，无后续具体动作，基础KG可表达。"
+    }
+  ]
+}

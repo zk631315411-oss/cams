@@ -1,0 +1,386 @@
+{
+  "section_id": "CH47-S02",
+  "section_title": "Transaction monitoring versus payment screening",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003246"
+      ],
+      "proposition": "大额交易、频繁转账或涉及高风险司法管辖区的交易可能触发警报以进一步调查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S02_001",
+      "reason": "该关系表达了交易监控中具体线索如何导致警报的过程，超出了基础KG的孤立事实陈述，有助于理解监控触发逻辑。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003247"
+      ],
+      "proposition": "如果异常或可疑活动被检测并确认为潜在洗钱，则必须提交可疑活动报告（SAR）。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S02_002",
+      "reason": "条件-义务规则表达了从检测确认到提交SAR的程序性步骤，基础KG虽可保存规则本身，但无法表达条件导向动作的有向结构。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003253"
+      ],
+      "proposition": "在支付筛查中，如果检测到与制裁名单的匹配，交易被停止并保持直到调查完成。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S02_003",
+      "reason": "条件-动作链表达了支付筛查的拦截流程，包括停止交易和等待调查，是程序性结构，基础KG无法表达该流程。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003243"
+      ],
+      "proposition": "组织使用交易监控和支付筛查来防止和检测金融犯罪并确保合规，二者在时间和范围上不同。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性介绍和对比，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003244"
+      ],
+      "proposition": "交易监控是开户后持续观察客户交易以识别异常或非法活动及其风险。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003245"
+      ],
+      "proposition": "交易监控有助于发现可能表明洗钱、逃税或其他金融犯罪的复杂模式。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "功能描述，无具体程序性关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003248"
+      ],
+      "proposition": "制裁、PEP和负面媒体筛查在开户前和持续进行，交易监控仅在开户后开始。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "时间顺序陈述，无明确触发条件与动作链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N003249"
+      ],
+      "proposition": "交易监控在交易发生期间或之后检测异常或可疑活动。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N003250"
+      ],
+      "proposition": "支付筛查在交易完成前识别高风险个人和实体，包括客户和交易对手。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N003251"
+      ],
+      "proposition": "存在几种筛查类型。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "罗列性陈述，无程序性关系。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": [
+        "v7u_N003252"
+      ],
+      "proposition": "姓名筛查识别可能有较高风险的个体，并比对观察名单，在开户前及持续进行。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性描述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "unit_ids": [
+        "v7u_N003254"
+      ],
+      "proposition": "负面媒体筛查审查负面新闻。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "unit_ids": [
+        "v7u_N003255"
+      ],
+      "proposition": "PEP筛查审查客户姓名、付款详情、负面媒体及与PEP的关联。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003246"
+      ],
+      "proposition": "交易特征引用导致警报触发，警报是独立输出，需补充为exit节点。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S02_001",
+      "reason": "原card遗漏了触发警报这一独立结果，补充exit节点和PRODUCES边。",
+      "origin_candidate_ids": [
+        "cand_001"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S02_001",
+      "section_id": "CH47-S02",
+      "card_nature": "risk_indicator",
+      "title": "交易监控警报触发条件",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "大额交易、频繁转账或涉及高风险司法管辖区的交易",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "机构：可能触发警报以进一步调查",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "警报（以进一步调查）",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "REFERENCES",
+          "source": "N2",
+          "target": "N1",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "clue_supports_identification",
+          "condition": null,
+          "source_quote": "large transactions, frequent transfers, or transactions involving high-risk jurisdictions might trigger alerts for further investigation."
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": [
+            "v7u_N003246"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003246"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：大额交易等特征 --REFERENCES--> 触发警报进行进一步调查；KG不足：基础KG只能保存这些特征作为孤立事实，无法表达它们作为线索如何触发警报的过程；选项判断：可确认交易监控中哪些交易特征会引发警报；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S02_002",
+      "section_id": "CH47-S02",
+      "card_nature": "execution",
+      "title": "交易监控中提交SAR的条件",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "异常或可疑活动被检测并确认为潜在洗钱",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构：必须提交可疑活动报告（SAR）",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003247"
+          ],
+          "derivation": "explicit_text",
+          "condition": "If unusual or suspicious activity is detected and confirmed as potential money laundering",
+          "source_quote": "If unusual or suspicious activity is detected and confirmed as potential money laundering, a SAR must be submitted."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003247"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：检测确认洗钱嫌疑 --PRECEDES--> 提交SAR；KG不足：基础KG可表达“必须提交SAR”的义务，但无法表达条件触发关系；选项判断：可确认在何种条件下触发SAR提交义务；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S02_003",
+      "section_id": "CH47-S02",
+      "card_nature": "execution",
+      "title": "支付筛查匹配制裁名单的处理",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "支付筛查中检测到与制裁名单的匹配",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构：停止交易并保持以待调查",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003253"
+          ],
+          "derivation": "explicit_text",
+          "condition": "If a match is detected",
+          "source_quote": "If a match is detected, it is stopped and held until investigations are complete."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003253"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：检测匹配制裁名单 --PRECEDES--> 停止交易并等待调查；KG不足：基础KG只能保存支付筛查的定义，无法表达拦截流程；选项判断：可确认筛查到匹配后的标准处理程序；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般性介绍和对比，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "功能描述，无具体程序性关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "时间顺序陈述，无明确触发条件与动作链。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "罗列性陈述，无程序性关系。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性描述，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_012",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    },
+    {
+      "candidate_id": "cand_013",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义性陈述。"
+    }
+  ]
+}

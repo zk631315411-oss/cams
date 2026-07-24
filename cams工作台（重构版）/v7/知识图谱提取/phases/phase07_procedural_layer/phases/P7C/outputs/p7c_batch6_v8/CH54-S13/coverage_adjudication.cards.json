@@ -1,0 +1,396 @@
+{
+  "section_id": "CH54-S13",
+  "section_title": "Technology for KYC > Whitelisting and adding to internal lists",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N004254"
+      ],
+      "proposition": "机构确定客户触发的警报为误报后，将其列入白名单，以避免重复审查。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_001",
+      "reason": "案例中机构基于误报判断执行白名单化，构成判断-应对有向链，基础KG只能表达为整体事实，无法表达方向性。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N004261"
+      ],
+      "proposition": "金融机构实施白名单/内部列表时，应采用风险为本方法并确保符合风险偏好。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_002",
+      "reason": "实施动作受到两个明确标准的约束，形成有向约束关系，基础KG只能保存整体规则，不能突出标准对动作的约束方向。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N004262"
+      ],
+      "proposition": "金融机构在创建和维护名单时应实施强有力的治理。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "一般治理义务，无特定条件或标准约束的有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N004263"
+      ],
+      "proposition": "政策和程序应包含添加和移除名单条目的流程。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "义务陈述，要求流程存在，无具体动作或条件，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N004264"
+      ],
+      "proposition": "金融机构应定期审查名单以确保准确。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定期审查动作无额外条件或独立结果，基础KG可表达为审查义务。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N004265"
+      ],
+      "proposition": "应建立审批流程并限制名单修改权限。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "两项独立义务，无有向关系，基础KG可表达为控制要求。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N004267"
+      ],
+      "proposition": "金融机构应确保其做法符合相关监管要求和指引。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_003",
+      "reason": "监管要求作为外部标准约束机构做法，形成有向约束关系，基础KG只能保存整体规则，不能突出标准对做法的约束方向。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N004260"
+      ],
+      "proposition": "白名单可能导致受制裁实体通过白名单中介间接获取金融服务。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险场景，无机构应对或判断结构，基础KG可保存为风险指标。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "unit_ids": [
+        "v7u_N004255"
+      ],
+      "proposition": "金融机构基于误报分析创建白名单。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_004",
+      "reason": "机构基于误报分析创建白名单，分析作为创建动作的依据，形成有向约束关系，基础KG无法表达分析对创建的方向性；原误判为无触发判断。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "unit_ids": [
+        "v7u_N004258"
+      ],
+      "proposition": "内部列表可能包含因欺诈终止的客户名称。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "构成说明，非主动添加流程，基础KG可保存事实。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "unit_ids": [
+        "v7u_N004252",
+        "v7u_N004253",
+        "v7u_N004256",
+        "v7u_N004257",
+        "v7u_N004259",
+        "v7u_N004266"
+      ],
+      "proposition": "白名单和内部列表的各种定义、优点和治理措施列举。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "定义、事实和列举，无局部有向判断结构，基础KG可充分表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S13_001",
+      "section_id": "CH54-S13",
+      "card_nature": "control",
+      "title": "误报触发白名单化",
+      "flow_nodes": [
+        {
+          "node_id": "E1_CH54S13_001",
+          "node_category": "entry",
+          "node_type": "E8_decision_finding",
+          "label": "机构确定客户触发的警报为误报",
+          "evidence_unit_ids": [
+            "v7u_N004254"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_CH54S13_001",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构将客户列入白名单 (may)",
+          "evidence_unit_ids": [
+            "v7u_N004254"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1_CH54S13_001",
+          "edge_type": "PRECEDES",
+          "source": "E1_CH54S13_001",
+          "target": "P1_CH54S13_001",
+          "evidence_unit_ids": [
+            "v7u_N004254"
+          ],
+          "derivation": "explicit_text",
+          "condition": null,
+          "source_quote": "might whitelist a customer whose name has repeatedly triggered alerts that the organization determines to be false positives"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004254"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构确定客户触发的警报为误报后，将其列入白名单。KG不足：基础KG只能表达为“机构可以使用白名单处理误报”，无法表达具体的判断-应对链。选项判断：可确认机构在发现误报后采取白名单化这一具体应对措施。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S13_002",
+      "section_id": "CH54-S13",
+      "card_nature": "control",
+      "title": "风险为本方法约束名单实施",
+      "flow_nodes": [
+        {
+          "node_id": "P2_CH54S13_002",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构实施白名单/内部列表 (should, risk-based)",
+          "evidence_unit_ids": [
+            "v7u_N004261"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S1_CH54S13_002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "风险为本方法 (risk-based approach)",
+          "evidence_unit_ids": [
+            "v7u_N004261"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S2_CH54S13_002",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "机构的风险偏好 (risk appetite)",
+          "evidence_unit_ids": [
+            "v7u_N004261"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge2_CH54S13_002",
+          "edge_type": "REFERENCES",
+          "source": "P2_CH54S13_002",
+          "target": "S1_CH54S13_002",
+          "evidence_unit_ids": [
+            "v7u_N004261"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "apply a risk-based approach when implementing these lists"
+        },
+        {
+          "edge_id": "edge3_CH54S13_002",
+          "edge_type": "REFERENCES",
+          "source": "P2_CH54S13_002",
+          "target": "S2_CH54S13_002",
+          "evidence_unit_ids": [
+            "v7u_N004261"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "ensure that they fall within their risk appetite"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004261"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构实施名单时应参照风险为本方法和风险偏好。KG不足：基础KG只能表达为“应采用风险为本方法并确保在风险偏好内”的规则，无法表达标准对实施动作的约束方向。选项判断：可确认实施名单时必须考虑风险偏好和风险方法。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S13_003",
+      "section_id": "CH54-S13",
+      "card_nature": "control",
+      "title": "监管要求约束实践合规",
+      "flow_nodes": [
+        {
+          "node_id": "P3_CH54S13_003",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构应确保做法符合监管要求和指引 (should)",
+          "evidence_unit_ids": [
+            "v7u_N004267"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "S3_CH54S13_003",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "相关监管要求和指引 (relevant regulatory requirements and guidelines)",
+          "evidence_unit_ids": [
+            "v7u_N004267"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge4_CH54S13_003",
+          "edge_type": "REFERENCES",
+          "source": "P3_CH54S13_003",
+          "target": "S3_CH54S13_003",
+          "evidence_unit_ids": [
+            "v7u_N004267"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "condition": null,
+          "source_quote": "ensure that their practices are aligned with relevant regulatory requirements and guidelines"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004267"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构的做法应符合监管要求。KG不足：基础KG只能表达为“应符合监管要求”的义务，无法表达监管要求对做法的约束方向。选项判断：可确认监管要求在实践中的约束作用。LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH54-S13_004",
+      "section_id": "CH54-S13",
+      "card_nature": "control",
+      "title": "基于误报分析创建白名单",
+      "flow_nodes": [
+        {
+          "node_id": "P1_CH54S13_004",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "金融机构创建白名单 (基于分析)",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1_CH54S13_004",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "对误报警报的分析",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1_CH54S13_004",
+          "edge_type": "REFERENCES",
+          "source": "P1_CH54S13_004",
+          "target": "I1_CH54S13_004",
+          "evidence_unit_ids": [
+            "v7u_N004255"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": null,
+          "condition": null,
+          "source_quote": "create this list based on the analysis of false positive alerts"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004255"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构基于误报分析创建白名单。KG不足：基础KG只能表达为“白名单基于分析创建”，无法表达分析对创建动作的有向约束。选项判断：可确认分析作为创建的依据。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "一般治理义务，无特定条件或标准约束的有向结构，基础KG可保存。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "义务陈述，要求流程存在，无具体动作或条件，基础KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定期审查动作无额外条件或独立结果，基础KG可表达为审查义务。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "两项独立义务，无有向关系，基础KG可表达为控制要求。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立风险场景，无机构应对或判断结构，基础KG可保存为风险指标。"
+    },
+    {
+      "candidate_id": "cand_009",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH54-S13_004",
+      "reason": "机构基于误报分析创建白名单，分析作为创建动作的依据，形成有向约束关系，基础KG无法表达分析对创建的方向性；原误判为无触发判断。"
+    },
+    {
+      "candidate_id": "cand_010",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "构成说明，非主动添加流程，基础KG可保存事实。"
+    },
+    {
+      "candidate_id": "cand_011",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "定义、事实和列举，无局部有向判断结构，基础KG可充分表达。"
+    }
+  ]
+}

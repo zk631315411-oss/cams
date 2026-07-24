@@ -126,27 +126,38 @@ def load_review_source() -> None:
                 print(f"[review] 审核源路径不存在: {source_path}")
                 return
 
-            all_questions = json.loads(source_path.read_text(encoding="utf-8"))
-            questions_list = all_questions.get("questions", [])
+            # 从 manifest.json 读取真实的 question_id 列表
+            manifest_path = source_path / "manifest.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            question_ids = [q["question_id"] for q in manifest.get("questions", [])]
 
-            # 取前 395 题，转换为 v7_q 格式
-            total = min(active.get("total_count", 395), len(questions_list))
+            # 从 questions.json 加载题目数据
+            questions_path = source_path / "questions.json"
+            all_questions = json.loads(questions_path.read_text(encoding="utf-8"))
+            questions_items = all_questions.get("items", [])
+
+            # 按 manifest 中的顺序构建题目列表
+            qid_to_item = {q.get("question_id", ""): q for q in questions_items}
             _review_source_questions = []
-            for i in range(total):
-                src = questions_list[i]
-                qid = f"v7_q_{i + 1:06d}"  # v7_q_000001, v7_q_000002, ...
+            for qid in question_ids:
+                item = qid_to_item.get(qid, {})
                 _review_source_questions.append({
                     "question_id": qid,
-                    "source_index": i,
-                    "source_id": src.get("id", ""),
-                    "stem_zh": src.get("stem", ""),
-                    "stem_en": src.get("stem_en", ""),
-                    "options": src.get("options", {}),
-                    "answer_reference": _parse_answer(src.get("answer", "")),
-                    "explanation": src.get("explanation", ""),
-                    "type": _infer_question_type(src.get("answer", "")),
+                    "stem_zh": item.get("stem_zh", ""),
+                    "stem_en": item.get("stem_en", ""),
+                    "options": item.get("options", {}),
+                    "answer_reference": item.get("answer_reference", []),
+                    "question_type": item.get("question_type", "unknown"),
+                    "risk_flags": item.get("risk_flags", []),
+                    "publication_status": item.get("publication_status", ""),
                 })
 
+            # 从 evidence.json 加载证据数据
+            evidence_path = source_path / "evidence.json"
+            all_evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+            evidence_items = all_evidence.get("items", [])
+
+            total = len(_review_source_questions)
             _review_source_loaded = True
             print(f"[review] 审核源加载完成: {total} 题 (release: {_review_source_release_id})")
 

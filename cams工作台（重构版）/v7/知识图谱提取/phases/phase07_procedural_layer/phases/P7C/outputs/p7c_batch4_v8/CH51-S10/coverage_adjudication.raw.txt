@@ -1,0 +1,147 @@
+{
+  "section_id": "CH51-S10",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "保持更新法规以确保合规和风险管理为高层次义务陈述，未形成具体有向程序，基础KG可保存规则内容。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "结构化方法为组成列表，未形成动作-独立结果有向关系，基础KG可保存方法构成。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "两个并列义务无原文支撑的先后或条件关系，基础KG可分别保存。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "系列原则陈述，无具体有向动作-结果，基础KG可保存原则集合。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH51-S10_004",
+      "reason": "咨询监管产生了解期望和展示可解释性，构成动作-独立结果有向关系，超出KG并列存储。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": ["v7u_N003899"],
+      "proposition": "通过咨询并参与当地监管机构，以了解其期望并展示组织的理解和可解释性",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S10_004",
+      "reason": "KG无法表达咨询动作导向两个语义独立的结果（了解期望、展示可解释性）。",
+      "origin_candidate_ids": ["cand_006"]
+    },
+    {
+      "candidate_id": "coverage_gap_002",
+      "unit_ids": ["v7u_N003900"],
+      "proposition": "保持了解新兴趋势和最佳实践有助于机构落实新法规",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH51-S10_002",
+      "reason": "现有卡片遗漏了‘保持了解’带来的后续效益（帮助落实新法规），基础KG无法表达此有向增强关系。",
+      "origin_candidate_ids": []
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH51-S10_004",
+      "section_id": "CH51-S10",
+      "card_nature": "execution",
+      "title": "通过咨询当地监管机构了解期望并展示可解释性",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "咨询并参与当地监管机构",
+          "evidence_unit_ids": ["v7u_N003899"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "了解监管机构的期望",
+          "evidence_unit_ids": ["v7u_N003899"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X2_product",
+          "label": "展示组织对技术的理解和可解释性",
+          "evidence_unit_ids": ["v7u_N003899"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": ["v7u_N003899"],
+          "derivation": "explicit_text",
+          "source_quote": "consult and engage with local regulators to understand their expectations"
+        },
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N003899"],
+          "derivation": "explicit_text",
+          "source_quote": "demonstrate an organization’s understanding and explainability of the technology"
+        }
+      ],
+      "source_unit_ids": ["v7u_N003899"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：咨询并参与当地监管（process）产生两个独立结果：了解期望（exit1）和展示可解释性（exit2）。KG不足：基础KG可存储咨询实践和目的，但无法表达动作-结果的有向连接。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH51-S10_002",
+      "reason": "补充遗漏的连续结果：‘保持了解’有助于‘落实新法规’，形成有向的促进作用，需追加节点和边。",
+      "origin_candidate_ids": ["coverage_gap_002"],
+      "add_flow_nodes": [
+        {
+          "node_id": "N3",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "有助于机构落实新法规",
+          "evidence_unit_ids": ["v7u_N003900"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "E2",
+          "edge_type": "PRODUCES",
+          "source": "N2",
+          "target": "N3",
+          "evidence_unit_ids": ["v7u_N003900"],
+          "derivation": "explicit_text",
+          "source_quote": "This helps institutions operationalize new regulations."
+        }
+      ],
+      "add_source_unit_ids": ["v7u_N003900"]
+    }
+  ]
+}

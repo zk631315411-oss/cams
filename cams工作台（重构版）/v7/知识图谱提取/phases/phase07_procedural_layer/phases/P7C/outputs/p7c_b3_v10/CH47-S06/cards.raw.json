@@ -1,0 +1,532 @@
+{
+  "section_id": "CH47-S06",
+  "section_title": "Transaction monitoring > Procedures for alerts review",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003295"
+      ],
+      "proposition": "大型机构采用多级审查流程",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述大型机构使用多级审查的背景事实，无具体触发或行动链，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003296"
+      ],
+      "proposition": "小型机构中，警报生成后，一名分析师处理全流程直至提交SAR",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S06_001",
+      "reason": "明确有向触发关系：警报生成触发分析师处理，超出KG的静态事实描述。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003297",
+        "v7u_N003298",
+        "v7u_N003299",
+        "v7u_N003300",
+        "v7u_N003301"
+      ],
+      "proposition": "一级审查中，警报生成后分析师评估并依据是否异常决定升级或误报",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S06_002",
+      "reason": "条件分支决策链，KG无法表达判断-分支逻辑。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003302",
+        "v7u_N003303",
+        "v7u_N003304",
+        "v7u_N003305",
+        "v7u_N003306",
+        "v7u_N003307",
+        "v7u_N003308",
+        "v7u_N003309",
+        "v7u_N003310"
+      ],
+      "proposition": "二级审查详细分析后判定可疑，高度可疑案件升级三级审查并由高级分析师评估",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S06_003",
+      "reason": "分析→判定→条件升级→评估的链式结构，KG无法表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003311"
+      ],
+      "proposition": "在整个审查过程中，分析师记录每一步，必要时提交SAR",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "记录每一步是贯穿过程的一般性义务，无明确独立触发或出口；提交SAR部分已有card_004体现触发监控，但记录义务本身不构成P7C增量。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003312"
+      ],
+      "proposition": "提交SAR后，需进行持续监控",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH47-S06_004",
+      "reason": "提交动作触发监控义务的有向关系。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003313"
+      ],
+      "proposition": "分析师常建议加强客户监控或限制账户作为预防措施",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的控制建议，无明确前置条件或触发关系，KG可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH47-S06_001",
+      "section_id": "CH47-S06",
+      "card_nature": "execution",
+      "title": "小型机构单点警报处理流程",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "警报生成",
+          "evidence_unit_ids": [
+            "v7u_N003296"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "一名分析师处理从警报生成到提交SAR的全过程",
+          "evidence_unit_ids": [
+            "v7u_N003296"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003296"
+          ],
+          "derivation": "explicit_text",
+          "condition": "适用于小型机构且采用单点接触系统时"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003296"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：警报生成 -> 分析师处理全流程；KG不足：基础KG可表达小型机构采用单点系统的事实，但无法表达警报生成后触发分析师处理的有向关系；选项判断：可确认小型单点系统中一名分析师负责全流程；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S06_002",
+      "section_id": "CH47-S06",
+      "card_nature": "assessment",
+      "title": "一级审查警报评估与处理分支",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "警报生成",
+          "evidence_unit_ids": [
+            "v7u_N003297"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "分析师评估警报有效性",
+          "evidence_unit_ids": [
+            "v7u_N003298"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "警报性质、交易类型、客户资料、账户历史、既往警报历史",
+          "evidence_unit_ids": [
+            "v7u_N003298"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "standard1",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "预期客户行为模式",
+          "evidence_unit_ids": [
+            "v7u_N003299"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "分析师判断活动是否异常或超出阈值",
+          "evidence_unit_ids": [
+            "v7u_N003299",
+            "v7u_N003300",
+            "v7u_N003301"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_upgrade",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "升级至二级审查",
+          "evidence_unit_ids": [
+            "v7u_N003300"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_dismiss",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "认定为误报并记录充分理由",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003297"
+          ],
+          "derivation": "explicit_text",
+          "condition": "当机构使用多级审查时"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "input1",
+          "evidence_unit_ids": [
+            "v7u_N003298"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P3",
+          "evidence_unit_ids": [
+            "v7u_N003299",
+            "v7u_N003300",
+            "v7u_N003301"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "REFERENCES",
+          "source": "P3",
+          "target": "standard1",
+          "evidence_unit_ids": [
+            "v7u_N003299"
+          ],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "DECIDES",
+          "source": "P3",
+          "target": "P2_upgrade",
+          "evidence_unit_ids": [
+            "v7u_N003300"
+          ],
+          "derivation": "explicit_text",
+          "condition": "活动异常或超出阈值"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "DECIDES",
+          "source": "P3",
+          "target": "P2_dismiss",
+          "evidence_unit_ids": [
+            "v7u_N003301"
+          ],
+          "derivation": "explicit_text",
+          "condition": "活动正常（未异常且未超出阈值）"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003297",
+        "v7u_N003298",
+        "v7u_N003299",
+        "v7u_N003300",
+        "v7u_N003301"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：警报生成后，分析师评估警报有效性并依据是否异常决定升级至二级审查或认定为误报记录理由；KG不足：基础KG可描述一级审查的一般做法，但无法表达基于异常的决策分支逻辑；选项判断：可确认警报处理的条件分支及相应处置；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S06_003",
+      "section_id": "CH47-S06",
+      "card_nature": "assessment",
+      "title": "二级审查分析与可疑判定及三级审查升级",
+      "flow_nodes": [
+        {
+          "node_id": "E4",
+          "node_category": "entry",
+          "node_type": "E4_handoff",
+          "label": "警报升级至二级审查",
+          "evidence_unit_ids": [
+            "v7u_N003300",
+            "v7u_N003302"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "二级审查：分析师进行详细分析",
+          "evidence_unit_ids": [
+            "v7u_N003302"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "分析数据与信息：交易模式、资金源去向、KYC、沟通记录、开源研究等",
+          "evidence_unit_ids": [
+            "v7u_N003303",
+            "v7u_N003304",
+            "v7u_N003305",
+            "v7u_N003306",
+            "v7u_N003307"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P3",
+          "node_category": "process",
+          "node_type": "P3_branch_routing",
+          "label": "分析师判定活动是否可疑",
+          "evidence_unit_ids": [
+            "v7u_N003308"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "X1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "活动被判定为可疑",
+          "evidence_unit_ids": [
+            "v7u_N003308"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P2_upgrade",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "将高度可疑案件升级至三级审查",
+          "evidence_unit_ids": [
+            "v7u_N003309"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P_level3",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "三级审查：高级分析师/合规官进行全面评估（包括跨部门协作、复杂风险评估、交易网络分析）",
+          "evidence_unit_ids": [
+            "v7u_N003310"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E4",
+          "target": "P1",
+          "evidence_unit_ids": [
+            "v7u_N003302"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "input1",
+          "evidence_unit_ids": [
+            "v7u_N003303",
+            "v7u_N003304",
+            "v7u_N003305",
+            "v7u_N003306",
+            "v7u_N003307"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "PRECEDES",
+          "source": "P1",
+          "target": "P3",
+          "evidence_unit_ids": [
+            "v7u_N003302",
+            "v7u_N003308"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "DECIDES",
+          "source": "P3",
+          "target": "X1",
+          "evidence_unit_ids": [
+            "v7u_N003308"
+          ],
+          "derivation": "explicit_text",
+          "condition": "活动被判定为可疑"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "PRECEDES",
+          "source": "X1",
+          "target": "P2_upgrade",
+          "evidence_unit_ids": [
+            "v7u_N003309"
+          ],
+          "derivation": "explicit_text",
+          "condition": "案件高度可疑或涉及大量交易或敏感情况"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRECEDES",
+          "source": "P2_upgrade",
+          "target": "P_level3",
+          "evidence_unit_ids": [
+            "v7u_N003309",
+            "v7u_N003310"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003300",
+        "v7u_N003302",
+        "v7u_N003303",
+        "v7u_N003304",
+        "v7u_N003305",
+        "v7u_N003306",
+        "v7u_N003307",
+        "v7u_N003308",
+        "v7u_N003309",
+        "v7u_N003310"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：二级审查通过详细分析支撑可疑判定；对于高度可疑案件，升级至三级审查并由高级分析师评估；KG不足：基础KG可描述二级和三级审查的内容，但无法表达分析→判断→条件升级的决策链；选项判断：可确认升级条件及三级审查执行主体；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH47-S06_004",
+      "section_id": "CH47-S06",
+      "card_nature": "control",
+      "title": "提交SAR后持续监控",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "提交可疑活动报告(SAR)",
+          "evidence_unit_ids": [
+            "v7u_N003311",
+            "v7u_N003312"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P7",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "持续监控以缓解进一步风险并识别其他犯罪活动",
+          "evidence_unit_ids": [
+            "v7u_N003312"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P7",
+          "evidence_unit_ids": [
+            "v7u_N003312"
+          ],
+          "derivation": "explicit_text",
+          "condition": "提交SAR后"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003312",
+        "v7u_N003311"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：提交SAR后需进行持续监控；KG不足：基础KG可表达持续监控的重要性，但无法表达提交动作触发监控义务的有向关系；选项判断：可确认提交SAR后的后续义务；LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅陈述大型机构使用多级审查的背景事实，无具体触发或行动链，KG可表达。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "记录每一步是贯穿过程的一般性义务，无明确独立触发或出口；提交SAR部分已有card_004体现触发监控，但记录义务本身不构成P7C增量。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "孤立的控制建议，无明确前置条件或触发关系，KG可表达。"
+    }
+  ]
+}

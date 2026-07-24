@@ -1,0 +1,103 @@
+{
+  "section_id": "CH09-S03",
+  "section_title": "Corporate and investment banking risks > Fundraising risks",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N000709", "v7u_N000710", "v7u_N000711", "v7u_N000712"],
+      "proposition": "当公司被投资者要求发行债务时，公司必须考虑金融犯罪风险，具体包括透明度不足、大额交易及跨境交易等风险。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH09-S03_001",
+      "reason": "原文明确规定了条件（投资者要求发行债务）→主体（公司）→动作（必须考虑金融犯罪风险）的有向关系，并明示需参照的具体风险因素。基础KG仅将各风险因素保存为孤立事实，无法表达此条件触发的程序性义务及动作与风险间的参照结构，属于P7C增量。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH09-S03_001",
+      "section_id": "CH09-S03",
+      "card_nature": "assessment",
+      "title": "债务发行请求触发公司必须考虑金融犯罪风险",
+      "flow_nodes": [
+        {
+          "node_id": "E1",
+          "node_category": "entry",
+          "node_type": "E7_external_command",
+          "label": "投资者要求发行债务",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "公司必须考虑金融犯罪风险",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "透明度不足：债务工具结构复杂，难以识别资金UBO",
+          "evidence_unit_ids": ["v7u_N000710"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "大额交易：涉及大额资金，可快速清洗大量非法资金",
+          "evidence_unit_ids": ["v7u_N000711"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "I3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "跨境交易：常涉及国际投资者，增加复杂性和监管套利风险",
+          "evidence_unit_ids": ["v7u_N000712"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "edge_01",
+          "edge_type": "PRECEDES",
+          "source": "E1",
+          "target": "P1",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "derivation": "explicit_text",
+          "condition": "when a firm is requested to issue debt by an investor or a representative of an investor"
+        },
+        {
+          "edge_id": "edge_02",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "I1",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_03",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "I2",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "edge_04",
+          "edge_type": "REFERENCES",
+          "source": "P1",
+          "target": "I3",
+          "evidence_unit_ids": ["v7u_N000709"],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": ["v7u_N000709", "v7u_N000710", "v7u_N000711", "v7u_N000712"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：当公司被投资者要求发行债务时 → 公司必须考虑金融犯罪风险，并参照透明度不足、大额交易、跨境交易等具体风险因素。KG不足：基础KG仅能保存各风险指标为孤立事实，无法表达‘条件触发 → 主体动作’这一程序性关系，也无法表达动作与风险指标的参照结构。选项判断：可确认公司在特定条件下负有考虑上述金融犯罪风险的义务，可能用于排除‘无条件考虑’或‘不考虑特定风险’的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null
+}

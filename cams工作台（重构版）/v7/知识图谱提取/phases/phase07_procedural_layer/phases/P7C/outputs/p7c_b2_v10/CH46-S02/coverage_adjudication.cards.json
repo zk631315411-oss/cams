@@ -1,0 +1,278 @@
+{
+  "section_id": "CH46-S02",
+  "section_title": "Transaction Monitoring and Investigation > Case example: AML control failures at a UK Bank",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003222",
+        "v7u_N003223"
+      ],
+      "proposition": "客户实际大量现金存款行为与银行预期不符，应触发风险敏感监控调整，但银行未调整",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅描述客户行为变化与监控失败的总评，未明确触发机制，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003225"
+      ],
+      "proposition": "系统误标现金为支票 → 导致现金监控规则不适用，交易未被有效监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "该因果链为基础KG可表达的系统风险指标，无主体决策动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003226"
+      ],
+      "proposition": "缺乏针对高风险客户的支票监控规则 → 大量现金交易未被监控",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "类似cand_002，为控制弱点解释，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003227"
+      ],
+      "proposition": "警报过多（状态/条件） → 银行主动关闭监控警报（具体决策与执行动作）",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_001",
+      "reason": "存在明确的条件触发主体动作的有向链，且为基础KG无法充分表达的局部决策结构，可辅助判断关于监控警报处置的选项"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003228"
+      ],
+      "proposition": "员工提出并调查监测警报并上报AML调查团队 → 调查未促使行为改变",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_002",
+      "reason": "存在明确的员工调查上报过程及未促使改变的独立结果，构成有向的评估-结论关系，有助于选项判断调查效果。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003229"
+      ],
+      "proposition": "团队分散与信息未共享 → 导致调查碎片化",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "原因-结果的解释性陈述，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003230"
+      ],
+      "proposition": "独立评估 → 发现多项控制弱点",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_003",
+      "reason": "独立评估作为过程并识别出控制弱点，构成识别动作与发现结果的有向关系，KG无法区分过程与结果。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "unit_ids": [
+        "v7u_N003231"
+      ],
+      "proposition": "法院认定银行失职助长洗钱，并作出首例刑事起诉",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "案例法律后果，基础KG已可表达。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH46-S02_001",
+      "section_id": "CH46-S02",
+      "card_nature": "execution",
+      "title": "银行因警报过多而关闭监控警报",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "警报过多 (too many alerts were being generated)",
+          "evidence_unit_ids": [
+            "v7u_N003227"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "银行关闭监控警报 (bank turned off monitoring alerts)",
+          "evidence_unit_ids": [
+            "v7u_N003227"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRECEDES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003227"
+          ],
+          "derivation": "explicit_text",
+          "condition": "因为警报过多 (because too many alerts were being generated)",
+          "source_quote": "At times, the bank turned off monitoring alerts because too many alerts were being generated."
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003227"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：警报过多（状态）--触发--> 银行执行关闭警报动作；KG不足：基础KG只能将“银行因警报过多关闭警报”作为整体事实保存，无法表达条件阈值触发主体决策的有向结构；选项判断：可确认或排除关于监控警报关闭原因及决策主体的选项；LLM推理：无。"
+    },
+    {
+      "card_id": "p7card_CH46-S02_002",
+      "section_id": "CH46-S02",
+      "card_nature": "assessment",
+      "title": "员工调查交易监控警报并上报但未促使客户行为改变",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "员工提出并调查交易监控警报审查并上报AML调查团队 (bank staff raised and investigated transaction monitoring alert reviews to the AML investigations team)",
+          "evidence_unit_ids": [
+            "v7u_N003228"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X3_state_change",
+          "label": "未促使Fowler Oldfield改变行为与业务模式 (none of the investigations prompted changes in Fowler Oldfield’s behavior and business model)",
+          "evidence_unit_ids": [
+            "v7u_N003228"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003228"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003228"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：员工进行调查上报（过程）但调查未能促使客户行为改变（独立结果），构成有向的评估-结论关系。此关系超出基础KG能表达的简单事实序列，体现了调查行动与预期效果之间的依存。可用于判断调查行动的局限性。"
+    },
+    {
+      "card_id": "p7card_CH46-S02_003",
+      "section_id": "CH46-S02",
+      "card_nature": "assessment",
+      "title": "独立评估发现多项控制弱点",
+      "flow_nodes": [
+        {
+          "node_id": "N1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "独立评估 (Independent assessments)",
+          "evidence_unit_ids": [
+            "v7u_N003230"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "N2",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "发现控制弱点：客户风险评级与风险评估问题、一线缺乏专业知识、高风险客户差异化监控不足等 (identified concerns: issues with customer risk ratings and risk assessments, lack of SME in first line, insufficient differential monitoring for high-risk customers)",
+          "evidence_unit_ids": [
+            "v7u_N003230"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "E1",
+          "edge_type": "PRODUCES",
+          "source": "N1",
+          "target": "N2",
+          "evidence_unit_ids": [
+            "v7u_N003230"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003230"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：独立评估执行后产出发现结果，构成识别动作与发现之间的有向关系。此关系超出基础KG，可帮助判断评估的功能。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "原文仅描述客户行为变化与监控失败的总评，未明确触发机制，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "该因果链为基础KG可表达的系统风险指标，无主体决策动作。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "类似cand_002，为控制弱点解释，保持kg_only。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_002",
+      "reason": "存在明确的员工调查上报过程及未促使改变的独立结果，构成有向的评估-结论关系，有助于选项判断调查效果。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "原因-结果的解释性陈述，基础KG可充分表达。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH46-S02_003",
+      "reason": "独立评估作为过程并识别出控制弱点，构成识别动作与发现结果的有向关系，KG无法区分过程与结果。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "案例法律后果，基础KG已可表达。"
+    }
+  ]
+}

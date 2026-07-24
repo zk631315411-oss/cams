@@ -1,0 +1,198 @@
+{
+  "section_id": "CH08-S04",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_001",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "离岸金融中心的定义与特征为基础知识，基础KG可充分表达，无超出KG的有向流程或条件关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "OFC被用于非法目的的风险陈述为孤立风险说明，基础KG可覆盖，无主体动作或应对。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "红旗信号列表为孤立风险指标集合，基础KG可分别存储为risk_indicator，不构成P7C有向关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "风险解释（如复杂所有权掩盖UBO）为基础因果说明，基础KG可覆盖，无特定主体执行识别或应对。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "异常交易频率指示非法活动为孤立风险指标，基础KG已覆盖，无流程性动作。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "犯罪分子利用round tripping为案例与手法说明，基础KG可存储，无超越一般机制的应对动作。"
+    },
+    {
+      "candidate_id": "cand_008",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_002",
+      "reason": "机构执行强化尽职调查和交易监控以检测可疑活动/发现滥用，构成主体动作→目的结果的有向关系，超出基础KG对孤立措施的简单陈述。"
+    }
+  ],
+  "new_candidates": [
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N000627",
+        "v7u_N000628",
+        "v7u_N000629",
+        "v7u_N000630",
+        "v7u_N000631",
+        "v7u_N000632",
+        "v7u_N000633",
+        "v7u_N000634"
+      ],
+      "proposition": "机构判断红旗信号是否具备明确商业目的时，以OFC相关红旗信号作为判断输入",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH08-S04_001",
+      "reason": "已有卡片遗漏了判断过程所基于的红旗信号输入，导致图表达不完整；基础KG仅孤立存储红旗指标，无法表达其作为判断输入的参照关系。",
+      "origin_candidate_ids": [
+        "cand_003",
+        "cand_004"
+      ]
+    }
+  ],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH08-S04_002",
+      "section_id": "CH08-S04",
+      "card_nature": "execution",
+      "title": "OFC风险应对：强化尽职调查与交易监控",
+      "flow_nodes": [
+        {
+          "node_id": "n1",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "应执行强化尽职调查",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n2",
+          "node_category": "process",
+          "node_type": "P7_monitoring",
+          "label": "交易监控可以帮助发现潜在滥用",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "n3",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "检测/发现可疑活动或滥用",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "PRODUCES",
+          "source": "n1",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "PRODUCES",
+          "source": "n2",
+          "target": "n3",
+          "evidence_unit_ids": [
+            "v7u_N000641"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N000641"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构应执行强化尽职调查以检测可疑活动，交易监控有助于发现潜在滥用；KG不足：基础KG仅陈述这些措施的必要性或益处，无法表达有向的动作-结果关系；选项判断：可帮助判断有关OFC风险应对顺序或措施的选项；LLM推理：无。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH08-S04_001",
+      "reason": "已有卡片遗漏了判断过程所需输入——OFC相关红旗信号，导致图表达不完整，补充input节点及REFERENCES边。",
+      "origin_candidate_ids": [
+        "cand_003",
+        "cand_004",
+        "coverage_gap_001"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "n5",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "OFC相关红旗信号",
+          "evidence_unit_ids": [
+            "v7u_N000627",
+            "v7u_N000628",
+            "v7u_N000629",
+            "v7u_N000630",
+            "v7u_N000631",
+            "v7u_N000632",
+            "v7u_N000633",
+            "v7u_N000634"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e4",
+          "edge_type": "REFERENCES",
+          "source": "n2",
+          "target": "n5",
+          "evidence_unit_ids": [
+            "v7u_N000627",
+            "v7u_N000635"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N000627",
+        "v7u_N000628",
+        "v7u_N000629",
+        "v7u_N000630",
+        "v7u_N000631",
+        "v7u_N000632",
+        "v7u_N000633",
+        "v7u_N000634"
+      ]
+    }
+  ]
+}

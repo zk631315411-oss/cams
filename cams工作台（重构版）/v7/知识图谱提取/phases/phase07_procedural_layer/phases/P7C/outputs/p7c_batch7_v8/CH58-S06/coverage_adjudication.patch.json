@@ -1,0 +1,129 @@
+{
+  "section_id": "CH58-S06",
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_005",
+      "reason": "命题明确了主体（机构）、动作（应谨慎使用）和因果方向（由于数据主观有时效性），构成有向条件义务关系，高于基础KG的简单建议保存，可助选项判断合规义务及原因。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "p7c_card",
+      "card_id": "p7card_CH58-S06_004",
+      "reason": "比较观察与静态数据之后，发现不一致可能导致风险评级调整这一有向结果关系，补充至已有比较card，形成完整条件流程，帮助判断选项中的后续动作。"
+    }
+  ],
+  "new_candidates": [],
+  "new_cards": [
+    {
+      "card_id": "p7card_CH58-S06_005",
+      "section_id": "CH58-S06",
+      "card_nature": "execution",
+      "title": "谨慎使用观察数据于合规系统",
+      "flow_nodes": [
+        {
+          "node_id": "P_005_be_careful",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "机构应谨慎使用观察数据 (should be careful when using observed data)",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input_005_observed",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "观察数据",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "std_005_characteristics",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "观察数据的主观性和时效性 (subjective and time-based nature)",
+          "evidence_unit_ids": [
+            "v7u_N004706",
+            "v7u_N004707"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e_005_01",
+          "edge_type": "REFERENCES",
+          "source": "P_005_be_careful",
+          "target": "input_005_observed",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e_005_02",
+          "edge_type": "REFERENCES",
+          "source": "P_005_be_careful",
+          "target": "std_005_characteristics",
+          "evidence_unit_ids": [
+            "v7u_N004707"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N004706",
+        "v7u_N004707"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "提升cand_005：由于观察数据的主观和时效性，机构应谨慎使用，构成有向义务约束，基础KG仅能保存建议，无法表达因果指向；帮助判断合规选项中的谨慎义务根源。"
+    }
+  ],
+  "card_supplements": [
+    {
+      "patch_id": "coverage_supplement_001",
+      "card_id": "p7card_CH58-S06_004",
+      "reason": "card_004仅表达了比较动作，未包含比较结果，遗漏了发现不一致时客户风险评级可能需要调整的有向后续关系，补充分支出口。",
+      "origin_candidate_ids": [
+        "cand_006"
+      ],
+      "add_flow_nodes": [
+        {
+          "node_id": "X_004_adjustment_needed",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "客户风险评级可能需要调整 (might require adjustment)",
+          "evidence_unit_ids": [
+            "v7u_N004710"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "add_flow_edges": [
+        {
+          "edge_id": "e_004_03",
+          "edge_type": "PRODUCES",
+          "source": "P_004_compare",
+          "target": "X_004_adjustment_needed",
+          "condition": "发现静态数据与观察数据不一致时",
+          "evidence_unit_ids": [
+            "v7u_N004709",
+            "v7u_N004710"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "add_source_unit_ids": [
+        "v7u_N004709",
+        "v7u_N004710"
+      ]
+    }
+  ]
+}

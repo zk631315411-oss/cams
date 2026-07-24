@@ -1,0 +1,311 @@
+{
+  "section_id": "CH54-S12",
+  "section_title": "Technology for KYC > Screening system tuning",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": ["v7u_N004238"],
+      "proposition": "实施后三个月，机构应进行首次调优；此后至少每年或每半年再调优。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S12_001",
+      "reason": "调优频率形成明确的时间触发和周期性有向结构，基础KG无法表达该时间顺序关系。"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": ["v7u_N004242"],
+      "proposition": "机构不应根据团队规模限制预警数量。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "禁止性义务陈述无明确的触发条件或独立结果，基础KG可将其保存为一般规则，无需有向边。"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": ["v7u_N004244"],
+      "proposition": "AFC专业人员应确保定期检查机制并进行手动调优。",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "义务陈述缺乏可建模的有向边，基础KG可直接承接。"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": ["v7u_N004245", "v7u_N004246", "v7u_N004247", "v7u_N004248"],
+      "proposition": "高误报、预警过多或无预警等指标触发手动调优。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S12_002",
+      "reason": "条件（指标）明确触发特定应对动作（手动调优），构成有向判断链，基础KG无法表达该触发关系。"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": ["v7u_N004249"],
+      "proposition": "金融机构应根据系统类型和逻辑调优筛查系统参数。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S12_003",
+      "reason": "调优动作受系统类型和逻辑这一条件约束，形成开放式的过程-标准参照关系，基础KG无法单独表达。"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": ["v7u_N004250"],
+      "proposition": "针对负面媒体筛查系统，机构应调优关键词和短语以过滤无关信息。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S12_004",
+      "reason": "特定系统场景下，语境条件导向具体调优动作，构成有向局部结构。"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": ["v7u_N004251"],
+      "proposition": "机构应谨慎选择来源以确保使用可信可靠来源。",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH54-S12_005",
+      "reason": "选择来源的动作参照可信可靠标准，形成开放式约束关系，基础KG无法表达该参照。"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH54-S12_001",
+      "section_id": "CH54-S12",
+      "card_nature": "execution",
+      "title": "调优频率建议的有向结构",
+      "flow_nodes": [
+        {
+          "node_id": "E1_initial_trigger",
+          "node_category": "entry",
+          "node_type": "E1_event_signal",
+          "label": "系统实施后三个月（首次调优触发）",
+          "evidence_unit_ids": ["v7u_N004238"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_tuning_action",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构进行调优",
+          "evidence_unit_ids": ["v7u_N004238"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "E2_cycle_trigger",
+          "node_category": "entry",
+          "node_type": "E5_time_cycle",
+          "label": "调优周期（至少每年或每半年）",
+          "evidence_unit_ids": ["v7u_N004238"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_initial_to_tuning",
+          "edge_type": "PRECEDES",
+          "source": "E1_initial_trigger",
+          "target": "P1_tuning_action",
+          "evidence_unit_ids": ["v7u_N004238"],
+          "derivation": "explicit_text",
+          "condition": "系统实施后三个月",
+          "source_quote": "good practice recommends tuning a system three months after implementation"
+        },
+        {
+          "edge_id": "e2_cycle_to_tuning",
+          "edge_type": "PRECEDES",
+          "source": "E2_cycle_trigger",
+          "target": "P1_tuning_action",
+          "evidence_unit_ids": ["v7u_N004238"],
+          "derivation": "explicit_text",
+          "condition": "首次调优后，至少每年一次或每半年一次，取决于复杂性",
+          "source_quote": "then at least once a year or every six months, depending on its complexity"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004238"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：实施后三个月（时间事件）触发机构进行调优；周期性（每年/每半年）再触发调优。KG不足：基础KG可将频率建议保存为规则，但无法表达时间触发和周期性触发关系。选项判断：可确认首次调优时间和后续频率要求。"
+    },
+    {
+      "card_id": "p7card_CH54-S12_002",
+      "section_id": "CH54-S12",
+      "card_nature": "execution",
+      "title": "指标触发手动调优的有向结构",
+      "flow_nodes": [
+        {
+          "node_id": "E1_false_positive",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "筛查系统产生异常高的误报预警比例",
+          "evidence_unit_ids": ["v7u_N004246"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "E2_high_alerts",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "系统生成的预警数量超出预期",
+          "evidence_unit_ids": ["v7u_N004247"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "E3_no_alerts",
+          "node_category": "entry",
+          "node_type": "E3_state_threshold",
+          "label": "筛查系统未生成任何预警",
+          "evidence_unit_ids": ["v7u_N004248"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_manual_tuning",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "执行手动调优",
+          "evidence_unit_ids": ["v7u_N004245"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_fp_to_tuning",
+          "edge_type": "PRECEDES",
+          "source": "E1_false_positive",
+          "target": "P1_manual_tuning",
+          "evidence_unit_ids": ["v7u_N004245", "v7u_N004246"],
+          "derivation": "explicit_text",
+          "condition": null
+        },
+        {
+          "edge_id": "e2_ha_to_tuning",
+          "edge_type": "PRECEDES",
+          "source": "E2_high_alerts",
+          "target": "P1_manual_tuning",
+          "evidence_unit_ids": ["v7u_N004245", "v7u_N004247"],
+          "derivation": "explicit_text",
+          "condition": null
+        },
+        {
+          "edge_id": "e3_na_to_tuning",
+          "edge_type": "PRECEDES",
+          "source": "E3_no_alerts",
+          "target": "P1_manual_tuning",
+          "evidence_unit_ids": ["v7u_N004245", "v7u_N004248"],
+          "derivation": "explicit_text",
+          "condition": null
+        }
+      ],
+      "source_unit_ids": ["v7u_N004245", "v7u_N004246", "v7u_N004247", "v7u_N004248"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：高误报、过多预警或无预警等条件分别触发手动调优行动。KG不足：基础KG可将这些指标列为单独红旗，但无法表达它们直接触发手动调优的有向关系。选项判断：可识别触发手动调优的具体场景。"
+    },
+    {
+      "card_id": "p7card_CH54-S12_003",
+      "section_id": "CH54-S12",
+      "card_nature": "execution",
+      "title": "根据系统类型调优筛查参数的有向结构",
+      "flow_nodes": [
+        {
+          "node_id": "S1_system_type",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "筛查系统类型及其逻辑",
+          "evidence_unit_ids": ["v7u_N004249"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_tune_params",
+          "node_category": "process",
+          "node_type": "P8_constrained_action",
+          "label": "金融机构调优筛查系统参数",
+          "evidence_unit_ids": ["v7u_N004249"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_tune_ref_system",
+          "edge_type": "REFERENCES",
+          "source": "P1_tune_params",
+          "target": "S1_system_type",
+          "evidence_unit_ids": ["v7u_N004249"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Financial institutions should tune the parameters ... depending on the type of system and the logic it implements."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004249"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：金融机构调优参数的动作必须依据系统类型和逻辑这一约束条件。KG不足：基础KG可将该规则整体保存，但无法表达动作与约束条件之间的参照关系。选项判断：可确认调优需考虑系统类型和逻辑的条件。"
+    },
+    {
+      "card_id": "p7card_CH54-S12_004",
+      "section_id": "CH54-S12",
+      "card_nature": "execution",
+      "title": "针对负面媒体系统的关键词调优有向结构",
+      "flow_nodes": [
+        {
+          "node_id": "E1_adverse_media_system",
+          "node_category": "entry",
+          "node_type": "E6_change_exception",
+          "label": "针对负面媒体筛查系统（使用场景）",
+          "evidence_unit_ids": ["v7u_N004250"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_tune_keywords",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构调优关键词和短语以过滤无关信息",
+          "evidence_unit_ids": ["v7u_N004250"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_adverse_to_tune",
+          "edge_type": "PRECEDES",
+          "source": "E1_adverse_media_system",
+          "target": "P1_tune_keywords",
+          "evidence_unit_ids": ["v7u_N004250"],
+          "derivation": "explicit_text",
+          "condition": "当针对负面媒体筛查系统时",
+          "source_quote": "For an adverse media screening system, tune parameters such as keywords and phrases"
+        }
+      ],
+      "source_unit_ids": ["v7u_N004250"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：在特定系统（负面媒体筛查系统）的语境下，机构执行调优关键词和短语的动作。KG不足：基础KG可将该例示作为知识，但无法表达语境条件到动作的有向关系。选项判断：可确认针对该系统的具体调优动作。"
+    },
+    {
+      "card_id": "p7card_CH54-S12_005",
+      "section_id": "CH54-S12",
+      "card_nature": "execution",
+      "title": "谨慎选择来源以确保可信可靠的有向结构",
+      "flow_nodes": [
+        {
+          "node_id": "S1_reliable_sources",
+          "node_category": "auxiliary",
+          "node_type": "standard",
+          "label": "可信可靠的来源",
+          "evidence_unit_ids": ["v7u_N004251"],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "P1_select_sources",
+          "node_category": "process",
+          "node_type": "P2_execution",
+          "label": "机构谨慎选择来源",
+          "evidence_unit_ids": ["v7u_N004251"],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1_select_ref_reliable",
+          "edge_type": "REFERENCES",
+          "source": "P1_select_sources",
+          "target": "S1_reliable_sources",
+          "evidence_unit_ids": ["v7u_N004251"],
+          "derivation": "explicit_text",
+          "relation_type": "standard_constrains_action",
+          "source_quote": "Organizations should also carefully select their sources to ensure the system uses only credible and reliable sources."
+        }
+      ],
+      "source_unit_ids": ["v7u_N004251"],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：机构选择来源的动作需参照可信可靠来源的标准。KG不足：基础KG可将该义务作为规则，但无法表达动作与标准的参照关系。选项判断：可确认选择来源时应确保可信可靠的要求。"
+    }
+  ],
+  "skip_reason": null
+}

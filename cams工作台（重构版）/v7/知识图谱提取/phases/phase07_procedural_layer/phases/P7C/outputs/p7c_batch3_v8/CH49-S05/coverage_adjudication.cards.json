@@ -1,0 +1,310 @@
+{
+  "section_id": "CH49-S05",
+  "section_title": "Concluding an investigation and suspicious activity reporting > Case example: SAR for a family trust",
+  "coverage_audit": [
+    {
+      "candidate_id": "cand_001",
+      "unit_ids": [
+        "v7u_N003529",
+        "v7u_N003530",
+        "v7u_N003531",
+        "v7u_N003538",
+        "v7u_N003540",
+        "v7u_N003546"
+      ],
+      "proposition": "基于异常大额取款、高风险资金来源、账户行为不一致以及声明目标，MLRO进行分析并怀疑可能洗钱",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S05_001",
+      "reason": "基础KG虽可保存分析结论，但无法表达'MLRO依据具体线索进行分析并产出分类结论'的局部有向判断链，属于P7C增量"
+    },
+    {
+      "candidate_id": "cand_002",
+      "unit_ids": [
+        "v7u_N003533"
+      ],
+      "proposition": "MLRO收集客户信息以纳入初始SAR",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将SAR所需信息分类为事实并描述该过程，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "unit_ids": [
+        "v7u_N003547"
+      ],
+      "proposition": "MLRO附上相关文件以支持SAR提交",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该动作作为SAR提交过程事实保存，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "unit_ids": [
+        "v7u_N003551"
+      ],
+      "proposition": "在提交SAR给审查委员会前，MLRO确保叙述使用清晰标题和要点",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅有局部时间关系但无独立出口，且基础KG可作为最佳实践规则保存，无判断或程序性增量"
+    },
+    {
+      "candidate_id": "cand_005",
+      "unit_ids": [
+        "v7u_N003552"
+      ],
+      "proposition": "MLRO遵守保密要求，不向账户持有人通风报信",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将其作为规定措施表达，无需重复有向结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "unit_ids": [
+        "v7u_N003553"
+      ],
+      "proposition": "SAR应在30天内通过FinCEN门户提交",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该规则作为事实保存，无超出条件或判断的增量有向结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "unit_ids": [
+        "v7u_N003550"
+      ],
+      "proposition": "影响陈述可能促使执法部门采取行动",
+      "decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为可能性说明，无具体主体、动作或独立结果的完整有向结构"
+    },
+    {
+      "candidate_id": "coverage_gap_001",
+      "unit_ids": [
+        "v7u_N003546"
+      ],
+      "proposition": "客户临近退休年龄是MLRO分析并怀疑洗钱的一个输入因素",
+      "decision": "p7c_card",
+      "card_id": "p7card_CH49-S05_001",
+      "reason": "基础KG未表达该因素作为分析输入的有向参照关系，原card遗漏该input",
+      "origin_candidate_ids": []
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "p7card_CH49-S05_001",
+      "section_id": "CH49-S05",
+      "card_nature": "assessment",
+      "title": "MLRO分析线索并怀疑洗钱",
+      "flow_nodes": [
+        {
+          "node_id": "input1",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "异常大额取款活动（三周内数百万美元，目的不明且与典型活动不一致）",
+          "evidence_unit_ids": [
+            "v7u_N003529"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input2",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "大额快速取款",
+          "evidence_unit_ids": [
+            "v7u_N003530"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input3",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "高风险资金来源（意外之财、彩票、赌博）",
+          "evidence_unit_ids": [
+            "v7u_N003530",
+            "v7u_N003538"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input4",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "申报财富与账户行为不一致",
+          "evidence_unit_ids": [
+            "v7u_N003531"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input5",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "账户声明目标为积累财富",
+          "evidence_unit_ids": [
+            "v7u_N003540"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "process1",
+          "node_category": "process",
+          "node_type": "P1_assessment",
+          "label": "MLRO分析可疑活动",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "exit1",
+          "node_category": "exit",
+          "node_type": "X1_classification",
+          "label": "怀疑可能涉及洗钱",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "evidence_strength": "explicit"
+        },
+        {
+          "node_id": "input6",
+          "node_category": "auxiliary",
+          "node_type": "input",
+          "label": "客户临近退休年龄",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "evidence_strength": "explicit"
+        }
+      ],
+      "flow_edges": [
+        {
+          "edge_id": "e1",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input1",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e2",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input2",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e3",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input3",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e4",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input4",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e5",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input5",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e6",
+          "edge_type": "PRODUCES",
+          "source": "process1",
+          "target": "exit1",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        },
+        {
+          "edge_id": "e7",
+          "edge_type": "REFERENCES",
+          "source": "process1",
+          "target": "input6",
+          "evidence_unit_ids": [
+            "v7u_N003546"
+          ],
+          "derivation": "explicit_text"
+        }
+      ],
+      "source_unit_ids": [
+        "v7u_N003529",
+        "v7u_N003530",
+        "v7u_N003531",
+        "v7u_N003538",
+        "v7u_N003540",
+        "v7u_N003546"
+      ],
+      "candidate_status": "candidate",
+      "review_notes": "增量命题：MLRO依据异常取款、高风险来源、不一致行为和声明目标等线索进行分析 → 产出怀疑洗钱的分类结论。KG不足：基础KG只能将分析结论作为案例事实保存，无法表达线索输入到分析动作再到结论产出的有向判断链。选项判断：可确认或排除关于MLRO分析依据和结论的选项。LLM推理：无。"
+    }
+  ],
+  "skip_reason": null,
+  "coverage_adjudication": [
+    {
+      "candidate_id": "cand_002",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将SAR所需信息分类为事实并描述该过程，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_003",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该动作作为SAR提交过程事实保存，无增量有向结构"
+    },
+    {
+      "candidate_id": "cand_004",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅有局部时间关系但无独立出口，且基础KG可作为最佳实践规则保存，无判断或程序性增量"
+    },
+    {
+      "candidate_id": "cand_005",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将其作为规定措施表达，无需重复有向结构"
+    },
+    {
+      "candidate_id": "cand_006",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "基础KG已将该规则作为事实保存，无超出条件或判断的增量有向结构"
+    },
+    {
+      "candidate_id": "cand_007",
+      "original_decision": "kg_only",
+      "final_decision": "kg_only",
+      "card_id": null,
+      "reason": "仅为可能性说明，无具体主体、动作或独立结果的完整有向结构"
+    }
+  ]
+}
