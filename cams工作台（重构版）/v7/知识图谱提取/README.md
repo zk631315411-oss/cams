@@ -34,8 +34,6 @@ v7 KG = 以章节为主线的教材复习思维导图
 
 - 全流程阶段说明：[kg各环节职责与概况.md](kg各环节职责与概况.md)
 - 项目结构契约：[项目结构契约.md](项目结构契约.md)
-- 当前全书 KG 状态与产物：[status.md](status.md)
-- 规则治理草稿：[RULE_BOOK_DRAFT.md](RULE_BOOK_DRAFT.md)
 - 历史长文档归档：[README.full-before-split-2026-07-04.md](archive/README.full-before-split-2026-07-04.md)
 
 ## 当前状态
@@ -53,7 +51,7 @@ P6 KG 总装与三视图输出
 P7 流程型/操作型 KG overlay（新建，待抽取）
 ```
 
-当前 P6 母版产物覆盖全书 59 章、339 个 section、983 个 core point、4973 个 unit、7308 条 edge。P5 术语索引独立保留为选项证据生成的检索辅助索引，不作为 KG 主图节点或边。
+当前 P6 母版产物覆盖全书 59 章、983 个 core point、4973 个 unit、8632 条 edge。P5 术语索引独立保留为选项证据生成的检索辅助索引，不作为 KG 主图节点或边。
 
 旧 phase07/08/09/10 已归档到 `phases/archive/legacy_after_p6_20260706/`，不再作为当前执行入口。当前 `phase07_procedural_layer` 是新的流程型 overlay 阶段。
 
@@ -99,5 +97,5 @@ phases/phase06_kg_views/previews/kg_reading_vault/
 
 - 入口 README 只放稳定定义、当前状态和导航。
 - 阶段流程只改 [kg各环节职责与概况.md](kg各环节职责与概况.md)。
-- 当前状态和重要验收结果记录在 [status.md](status.md)。
+- 阶段流程和验收结果记录在 [kg各环节职责与概况.md](kg各环节职责与概况.md)。
 - 旧讨论不删，放归档；但不再作为当前执行口径。
