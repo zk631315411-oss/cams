@@ -3,6 +3,26 @@
 
 V3 正文仅使用盲判证据。参考答案和原始参考解析单独加载并确定性地追加；
 它们绝不进入生成 prompt，也绝不替代 ``predicted_answer``。
+
+用法示例：
+    # 单题生成（仅输出 MD，不写 JSON）
+    python generate_evidence_explanations.py --output-dir ../output --question-id v7_q_000072
+
+    # 单题生成 + 写回 JSON（推荐，确保 JSON 和 MD 同步）
+    python generate_evidence_explanations.py --output-dir ../output --question-id v7_q_000072 --write-back
+
+    # 批量生成 100 题 + 写回 JSON
+    python generate_evidence_explanations.py --output-dir ../output --limit 100 --concurrency 20 --write-back
+
+    # 断点续跑（跳过已有 generated_explanation 的题）
+    python generate_evidence_explanations.py --output-dir ../output --limit 100 --concurrency 20 --write-back --resume
+
+    # 全量重跑
+    python generate_evidence_explanations.py --output-dir ../output --concurrency 20 --write-back
+
+注意：不加 --write-back 时，解析结果只写入 explanations/*.md，不更新 question JSON。
+      后续质量复核（quality_review.py）和机械检查（review_check.py）都依赖 question JSON，
+      因此批量跑必须加 --write-back。
 """
 
 from __future__ import annotations
@@ -1782,11 +1802,22 @@ def process_file(
 
     client = OpenAI(api_key=api_key, base_url=base_url)
     raw = call_llm(client, prompt, model=model, reasoning_effort=reasoning_effort, enable_thinking=enable_thinking)
+    parsed = parse_json_object(raw)
+    if parsed is None:
+        return {
+            "question_id": qid,
+            "status": "parse_failed",
+            "answer": [],
+            "chapter_mappings": result.get("chapter_mappings", []),
+            "reference_conflict": False,
+            "markdown_path": "",
+            "deferral_reason": "LLM输出无法解析为JSON，请重跑",
+        }
     reference = build_reference_context(
         qid, result.get("predicted_answer", []), standard_question, workbook_row
     )
     explanation = normalize_explanation(
-        parse_json_object(raw), result, reference, model
+        parsed, result, reference, model
     )
 
     deferral = explanation.get("deferral") if isinstance(explanation.get("deferral"), dict) else None

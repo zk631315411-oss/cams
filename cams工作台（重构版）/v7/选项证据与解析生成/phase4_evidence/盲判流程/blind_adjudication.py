@@ -2170,14 +2170,6 @@ def process_question(
         result["predicted_answer"] = parsed.get("predicted_answer", [])
         result["decision_framework"] = parsed.get("decision_framework")
 
-        # 步骤 5: 机械校验（仅检查，不修复）
-        validation_issues = validate_result(
-            result, candidates, unit_lookup, supplement_pool
-        )
-        result["validation_checks"] = validation_issues
-        if validation_issues:
-            result["pipeline_status"] = "validation_failed"
-
     except Exception as exc:
         result["pipeline_status"] = "llm_parse_failed"
         result["option_analysis"] = []

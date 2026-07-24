@@ -78,7 +78,7 @@ P7E_BRIDGES_PATH = (
     PROJECT_ROOT / "知识图谱提取" / "phases" / "phase07_procedural_layer"
     / "phases" / "P7E" / "outputs" / "p7e_review_v9_merged" / "p7e_accepted_bridges.jsonl"
 )
-OUTPUT_DIR = PHASE4 / "output"
+OUTPUT_DIR = PHASE4 / "output" / "test_flow"
 QUESTION_TEXT_OVERRIDES_PATH = HERE / "question_text_overrides.jsonl"
 
 API_KEY_ENV_NAMES = ("DEEPSEEK_API_KEY", "DS_API_KEY", "DS_KEY")
@@ -224,7 +224,8 @@ def _flow_context(question: dict[str, Any], max_cards: int = 6, max_nbr: int = 4
             lines.append(f"  [{card.get('section_id','?')}] {card.get('title','?')[:100]}")
         lines.append("")
 
-    lines.append("注意：流程上下文展示业务逻辑关系，选项判断须回到知识单元原文。")
+    lines.append("")
+    lines.append("**重要提示：以上流程板块仅展示业务逻辑关系，不直接作为选项判断的证据。**")
     return "\n".join(lines)
 
 
@@ -2656,7 +2657,8 @@ def main() -> None:
             raise RuntimeError(f"章节 {chapter_id} 没有已确认题目")
         print(f"\n[sample] 教材章节 {chapter_id} 共 {len(sampled)} 题（不应用 --limit）")
     else:
-        if args.all:
+        # --all or explicit --limit > default: take from full pool
+        if args.all or args.limit != 10:
             sampled = sorted(questions, key=lambda x: x["question_id"])[:args.limit]
             print(f"\n[sample] 全部 {len(questions)} 题，取前 {len(sampled)} 题")
         else:

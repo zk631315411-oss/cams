@@ -90,25 +90,28 @@ AI答案：{ai_answer}
 严格按照以下JSON格式输出（不要输出任何其他内容）：
 
 ```json
-{{{{
-  "errors": {{{{
-    "context_theft": {{{{"found": false, "detail": ""}}}},
-    "subject_substitution": {{{{"found": false, "detail": ""}}}},
-    "post_rationalization": {{{{"found": false, "detail": ""}}}},
-    "page_hallucination": {{{{"found": false, "detail": ""}}}},
-    "tone_amplification": {{{{"found": false, "detail": ""}}}}
-  }}}},
-  "answer_judgment": "{{{{ai_correct|reference_correct|both_defensible|both_problematic|n/a}}}}",
-  "verdict": "{{{{pass|minor_issue|needs_fix}}}}",
+{{
+  "errors": {{
+    "context_theft": {{"found": false, "detail": ""}},
+    "subject_substitution": {{"found": false, "detail": ""}},
+    "post_rationalization": {{"found": false, "detail": ""}},
+    "page_hallucination": {{"found": false, "detail": ""}},
+    "tone_amplification": {{"found": false, "detail": ""}}
+  }},
+  "answer_judgment": "{{ai_correct|reference_correct|both_defensible|both_problematic|n/a}}",
+  "verdict": "{{pass|minor_issue|needs_fix}}",
   "recommendation": "",
   "summary": ""
-}}}}
+}}
 ```
 
 注意：
-- answer_judgment：仅当AI答案与题库答案冲突时判断"谁更有道理"；无冲突时填"n/a"
-- verdict：无明显错误=pass；有轻微措辞问题=minor_issue；存在实质错误=needs_fix
-- 每个error的detail：如found=true，必须写清具体证据（引用哪句原文、哪段AI解析、为什么错）
+- answer_judgment：仅当AI答案与题库答案冲突时给出参考意见；无冲突时填"n/a"。注意：answer_judgment 不影响 verdict —— 即使判了 ai_correct，只要存在五类错误或答案冲突，verdict 就不能是 pass
+- verdict 判定规则：
+  - pass：五类错误均未发现，且AI答案与题库一致（或题库无答案）
+  - minor_issue：存在轻微问题但不影响正确性
+  - needs_fix：存在实质错误，或AI答案与题库冲突（无论 answer_judgment 如何判断，冲突本身就是 needs_fix）
+- 每个error的detail：如found=true，必须写清具体证据（必须从AI解析原文中逐字引用，不得用自己的话转述）
 - summary：一句话总结复核结论"""
 
 
@@ -215,7 +218,7 @@ def _build_review_prompt(
     ref_final = "、".join(ref.get("final_answer", []) or [])
     ref_cn = "、".join(ref.get("cn_answer", []) or [])
     ref_en = "、".join(ref.get("en_answer", []) or [])
-    ref_analysis = str(ref.get("cn_analysis", "") or ref.get("en_analysis", "") or "")
+    ref_analysis = str(ref.get("cn_explanation", "") or ref.get("en_explanation", "") or "")
 
     return _REVIEW_PROMPT.format(
         stem_cn=stem_cn, stem_en=stem_en, options_text=options_text,
@@ -366,7 +369,7 @@ def process_question(
     for attempt in range(3):
         try:
             raw = master.call_llm(
-                client, prompt, model=model, max_tokens=3000,
+                client, prompt, model=model, max_tokens=6000,
                 reasoning_effort="high", enable_thinking=True,
             )
             if raw and raw.strip():
