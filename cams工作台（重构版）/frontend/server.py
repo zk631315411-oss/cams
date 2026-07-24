@@ -82,9 +82,9 @@ def _load_textbook_units() -> None:
 
 
 def _compute_question_hash(question: dict) -> str:
-    """对题目 stem + options 计算 SHA256"""
+    """对题目 stem_zh + options 计算 SHA256"""
     raw = json.dumps(
-        {"stem": question.get("stem", ""), "options": question.get("options", {})},
+        {"stem_zh": question.get("stem_zh", ""), "options": question.get("options", {})},
         ensure_ascii=False, sort_keys=True
     )
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
