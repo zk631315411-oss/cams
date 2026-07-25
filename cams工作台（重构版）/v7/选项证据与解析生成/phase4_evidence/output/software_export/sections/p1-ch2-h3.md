@@ -1,18 +1,18 @@
 # p1-ch2-h3 题库软件版解析预览
 
-可导出题目数：3
+可导出题目数：5
 
 教材章节：未映射
 
 题型：single
 
-题干：一家保险公司的长期客户对其保单进行了变更,需要支付一笔额外的款项.这笔款项数额较大,但根据所收集的客户尽职调查信息,该客户有能力支付.付款是通过另一个司法管辖区的一家公司进行的,而这家公司以反洗钱控制薄弱而闻名.存在哪种可疑活动的迹象？
+题干：一家保险公司的长期客户对其保单进行了变更，需要支付一笔额外的款项。这笔款项数额较大，但根据所收集的客户尽职调查信息，该客户有能力支付。付款是通过一家位于另一司法管辖区的公司进行的，而该司法管辖区以反洗钱控制薄弱而闻名。存在哪种可疑活动的迹象？
 
 英文题干：A long-term client of an insurance company makes changes to a policy that require payment of an additional lump sum. The amount payable is high, though within the client's means based on the KYC information collected. The payment is made via a company in another jurisdiction that is known to have lax AML controls. Which indicator of suspicious activity is present?
 
 选项：
 
-- A. 一位长期客户希望对已生效的某项政策进行修改
+- A. 一位长期客户希望对已生效的某份保单进行修改
   English: A long-term client wants a change to a policy that is already in force
 - B. 该款项是通过一家似乎由被保险客户拥有和控制的公司支付的.
   English: The payment was made via a company that appears to be owned and controlled by the client being insured
@@ -63,7 +63,7 @@ D
   English: Are located in geographies that are not accountable to U.S. laws
 - C. 包括信托、投资基金和保险公司
   English: Include trusts, investment funds, and insurance companies
-- D. 对设立这些商业实体的组织披露和记录保存要求有限
+- D. 设立这些商业实体时，组织披露和记录保存要求相对宽松
   English: Have limited organizational disclosure and recordkeeping requirements for establishing these business entities
 
 ## 【AI答案】
@@ -81,7 +81,7 @@ D
 
 ## 【核心解析】
 
-离岸金融中心（OFC）指为非居民提供复杂金融服务的司法管辖区（P74）。洗钱分子利用 OFC 的核心原因在于，这些司法管辖区通常存在透明度不足的问题。“离岸司法管辖区通常报告与透明度要求较宽松”（P75），原文为“less stringent reporting and transparency requirements”。这里的“报告与透明度要求”在实务中直接体现在两个层面：一是实体设立时的组织信息披露（谁在背后控制这家公司），二是后续运营中的记录保存义务（能否追溯资金流向）。教材进一步指出，“缺乏透明度导致难以获取公司与交易的完整信息”（P75）。题干问 OFC 实体为什么带来“独特风险”，正是因为在宽松的披露和记录保存要求下，执法机构与金融机构无法穿透识别真正的受益所有人，也无法追踪资金流转路径，这正是洗钱活动的核心便利条件。选项 D 所描述的“有限的组织披露和记录保存要求”，是教材“less stringent reporting and transparency requirements”在实体设立场景下的直接对应表述，教材原文的 reporting 涵盖披露义务，transparency 涵盖记录保存与信息可获取性，两者完全匹配。
+离岸金融中心（OFC）指为非居民提供复杂金融服务的司法管辖区（P74）。教材指出，离岸司法管辖区通常具有相对宽松的报告和透明度要求（P75），缺乏透明度会使公司与交易信息更难获取。题干问 OFC 实体为什么带来“独特风险”，在给定选项中，D所说的设立环节披露和记录保存要求相对有限，最能概括这种制度环境带来的信息不透明风险。这里的“相对有限”是风险特征概括，并不表示所有OFC都完全没有披露或记录保存义务。
 
 教材原句："Offshore jurisdictions typically have less stringent reporting and transparency requirements."
 
@@ -101,7 +101,7 @@ D
 
 题型：single
 
-题干：以下哪个选项是可能表明存在潜在内幕活动、需要进一步调查的指标？
+题干：以下哪个选项是可能表明存在潜在的内部人员不当行为、需要进一步调查的指标？
 
 英文题干：Which of the options below is an indicator of potential insider activity that may warrant escalation for further investigation?
 
@@ -122,23 +122,111 @@ A
 
 ## 【考点】
 
-识别内部人员因利益冲突而漠视风险评级的内幕活动指标
+识别关系经理不当影响客户风险评级的潜在内部人员信号
 
 ## 【核心解析】
 
-关系经理可能因维护客户关系而忽视警示信号（P71），且薪酬结构带来的利益冲突会导致其不从反金融犯罪角度认定高风险（P71）。这两点构成了内部人员不当干预风险控制的典型指标。题干中客户经理主张推翻模型给出的高风险评级，正是利用职权漠视风险信号、试图维护客户关系的行为，与教材描述的内部人利益冲突直接吻合，因此可作为潜在内幕活动的指标。
+关系经理为了维持客户关系，可能忽视客户活动中的警示信号；私人银行的业务指标和薪酬安排也可能形成利益冲突，使关系经理低估客户风险（P71）。A中，客户经理主张推翻模型给出的高风险评级，直接涉及对客户风险判断结果的干预，可能表明业务人员正在对风险控制施加不当影响，因此需要进一步调查其override理由及是否存在潜在利益冲突。题干只要求识别“潜在指标”，并不表示该客户经理已经篡改评级或掩盖风险。在四个选项中，A与教材所述的关系经理忽视风险信号的场景最接近，因此答案为A。
 
 教材原句："The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs."
 
 ## 【错误项分析】
 
-- **B 错误（题干对照）｜题干要素不匹配**：分享风险管理框架信息可能涉及保密纪律，但题干聚焦“内幕活动”（insider activity），教材将内部人风险的核心定位在利用职权掩盖风险信号或谋取私利，而非常规的信息披露。相比之下，A更直接地体现了内部人因利益驱动篡改风险判断的教材场景。
-- **C 错误（题干对照）｜证据不足**：未按时处理警报属于内控或绩效问题，教材未将其列为内幕活动指标。相比之下，A描述的是主动推翻风险评级的行为，更吻合教材中内部人因利益冲突忽视警示信号的特征。
-- **D 错误（题干对照）｜主体或阶段错配**：未记录护照信息开户违反了客户身份识别程序，属于合规或疏忽问题，教材未指向其作为内幕活动指标。题干更支持A这种内部人刻意干预风险判定、掩盖客户真实风险的行为。
+- **B 错误（题干对照）｜题干要素不匹配**：在行业会议上分享风险管理框架可能涉及信息管理要求，但题干没有说明相关信息属于机密、分享行为未经授权，或其目的是帮助他人规避控制。A直接涉及对已经形成的高风险判断施加影响，与潜在内部人员干预的匹配度更高。
+- **C 错误（题干对照）｜匹配程度较低**：未按公司时限处理警报首先反映处理时效、工作量或绩效问题；题干没有显示调查人员故意压案、帮助客户规避监控或干预风险判断。相比之下，A描述的是主动推动改变高风险评级结果，更值得从潜在利益冲突角度升级调查。
+- **D 错误（题干对照）｜匹配程度较低**：在缺少护照身份信息时仍然开户属于严重的客户尽职调查政策违规，也应接受合规调查，不能简单视为疏忽。但题干没有进一步说明该行为涉及客户勾结、利益关联或掩盖风险。A则直接表现为客户经理试图影响已经形成的高风险判断，与题目所问的潜在内部人员干预信号更直接匹配。
 
 ## 【易错提醒】
 
-（无）
+“潜在指标”不等于已经证实的内部违规。客户经理对高风险评级提出异议并不自动证明其存在不当行为；判断重点是该行为是否反映了对警示信号的忽视，或是否受到潜在利益冲突影响，因此需要进一步核实其理由而不是直接定性。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些潜在可疑活动的指标通常与高风险业务部门和结构(如空壳公司)相关？(选择三项。)
+
+英文题干：Which of the following indicators of potentially suspicious activity are commonly associated with high-risk business sectors and structures such as shell companies? (Select Three.)
+
+选项：
+
+- A. 已知所涉商品或服务（如能确定）与该公司的业务画像或金融活动性质不符
+  English: Knowing the goods or services, if identified, do not match the profile of the company or the nature of the financial activity
+- B. 所有支付金额均低于报告门槛，但累计起来数额较大，同时仍符合标准商业惯例
+  English: All payments are in smaller amounts below reporting thresholds but are high when aggregated, while still being consistent with standard business practices
+- C. 一家公司经常与长期合作的业务伙伴在中等风险的司法管辖区进行大额交易，并提供完整的文件和审计追踪记录
+  English: A company regularly conducts large-volume transactions in a medium-risk jurisdiction with longstanding business partners and provides complete documentation and audit trail records
+- D. 无法通过搜索或直接询问获取足够信息来识别资金转账的发起人或受益人
+  English: Insufficient information is available through searches or direct inquiries to identify the originator or beneficiary of funds transfers
+- E. 支付款项未注明用途，未提及商品或服务，或者仅提及合同或发票编号
+  English: Payments have no stated purpose, do not reference goods or services, or only reference a contract or invoice number
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+
+识别交易与业务画像或商业目的的不一致性
+
+## 【核心解析】
+
+教材指出，红旗信号需要有明确的商业目的或合理解释，否则通常指向非法活动（P75）。高风险业务部门和空壳公司的核心特征是缺乏透明度和商业合理性。基于此：选项A“所涉商品或服务与公司情况不符”直接指向交易与客户业务画像不一致（P443），属于高风险结构的典型信号。选项D“无法获取信息识别资金转账发起人或受益人”体现了隐瞒信息的行为——未提供充分的受益人信息即为可疑电汇指标（P79），这正是空壳公司隐藏真实受益所有人的手段。选项E“支付款项未注明用途”因缺乏明确的商业目的而成为高风险指标，付款本应携带完整的支付信息（P317），信息缺失则难以判断其合法性。由此可推断，A、D、E三项均指向“透明度不足”和“商业合理性缺失”这一核心，与高风险业务部门及空壳公司的特征高度吻合。
+
+教材原句："While some of these red flags can be legitimate business practices, there should be a clear business purpose or reasonable explanation. Otherwise, they are often a sign of illicit activity."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜概念混淆**：“所有支付金额均低于报告门槛但累计数额较大”描述的是结构化交易（structuring）特征，即将大额资金拆分为小额以规避报告门槛（P17）。题干问的是与“空壳公司”等高风险结构直接相关的指标，结构化是一种洗钱技术手段，其核心在于规避触发报告阈值，而非利用业务结构本身的隐蔽性。相比之下，高风险业务结构缺乏透明度和商业目的才是更直接的匹配项。
+- **C 错误（题干对照）｜题干要素不匹配**：该选项描述的“经常与长期合作的业务伙伴在中等风险的司法管辖区进行大额交易，并提供完整的文件和审计追踪记录”属于正常的商业行为，具备透明度和合理的商业背景。题干所问的高风险结构（如空壳公司）往往缺乏透明度，而本选项提供了完整文件，属于低风险指标，与题干要求的要素明显不匹配。
+
+## 【易错提醒】
+
+学生容易将“结构化交易（structuring）”与“高风险业务结构（high-risk business structure）”混淆。前者的重点在于交易金额与报告门槛的关系（将大额拆分为多笔低于门槛的交易），后者的重点在于利用公司或结构的隐蔽性来掩盖真实商业目的或受益所有人。题干明确指向后者，即利用结构本身的高风险特征。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：滥用信托和资产管理服务会带来哪些洗钱风险？(选择三项.)
+
+英文题干：Which money laundering risks are posed by the misuse of trust and asset management services? (Select three.)
+
+选项：
+
+- A. 允许采用第三方资金托管和保管安排
+  English: Allowing for third-party custody and safekeeping of funds
+- B. 为交易增加一层匿名性
+  English: Adding a layer of anonymity to transactions
+- C. 隐瞒真实的法律和受益所有人
+  English: Concealing true legal and beneficial owners
+- D. 隐瞒资金来源
+  English: Concealing sources of funds
+- E. 设立房地产交易的托管账户
+  English: Establishing escrow accounts for real estate transactions
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+识别信托和资产管理服务被滥用时的所有权、托管和资金追踪风险。
+
+## 【核心解析】
+A第三方托管和保管安排可能使实际控制链条分散，增加机构识别资金实际控制人的难度；C法定所有权与受益所有权分离，可能隐藏真实法律和受益所有人；D复杂结构、跨境安排或多层资产管理可能使资金来源和流向难以追踪（P72、P74、P105–106）（FATF建议22、25）。因此答案为A、C、D。
+
+B“增加一层匿名性”是上述机制可能产生的结果性概括，并非完全错误；但在单选组合中，A、C、D分别提供了更具体、可核验的机制。E房地产托管账户是特定交易场景，账户本身不当然构成洗钱风险。
+
+## 【错误项分析】
+- **B**：属于由托管、所有权分离等机制造成的结果性概括；本题优先选择更具体的风险机制。
+- **E**：合法房地产交易中的托管账户具有正常商业用途，需有异常事实才能构成红旗。
+
+## 【易错提醒】
+遇到“选择三项”时，优先选择教材直接描述的风险机制；不要把机制和其结果重复计入。
 
 ---
 

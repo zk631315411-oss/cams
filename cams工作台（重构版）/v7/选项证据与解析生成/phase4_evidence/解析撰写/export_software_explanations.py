@@ -232,8 +232,8 @@ def export_by_section(
                     if idx != -1:
                         preview = preview[:idx].rstrip()
                 # 从 md 提取答案用于判断是否可导出
-                answer_match = re.search(r'## 【AI答案】\s*\n+([A-D,\s]+?)(?:\n|$)', preview)
-                answer_from_md = [a.strip() for a in (answer_match.group(1).replace("、", ",").split(",") if answer_match else []) if a.strip()]
+                answer_match = re.search(r'## 【AI答案】\s*\n+([A-H,、，\s]+?)(?:\n|$)', preview)
+                answer_from_md = [a.strip() for a in (re.split(r'[,、，]+', answer_match.group(1)) if answer_match else []) if a.strip()]
                 if answer_from_md:
                     explanation["answer"] = answer_from_md  # 回填，供后续渲染使用
             else:

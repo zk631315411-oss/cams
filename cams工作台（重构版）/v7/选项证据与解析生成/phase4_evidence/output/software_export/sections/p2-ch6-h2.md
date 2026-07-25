@@ -1,12 +1,12 @@
 # p2-ch6-h2 题库软件版解析预览
 
-可导出题目数：10
+可导出题目数：13
 
 教材章节：未映射
 
 题型：single
 
-题干：美国《爱国者法案》的哪一部分允许美国政府扣押存放在外国银行在美国的代理账户中的资金，从而产生域外影响？
+题干：美国《爱国者法案》的哪一部分允许美国政府扣押存放在外国银行在美国的代理行账户中的资金，从而产生域外影响？
 
 英文题干：Which section of the USA PATRIOT Act permits the U.S. government to seize funds deposited in a U.S. correspondent account of a foreign bank, creating extraterritorial impact?
 
@@ -14,11 +14,11 @@
 
 - A. 第314(a)条
   English: Section 314(a)
-- B. 第314(b)条款
+- B. 第314(b)条
   English: Section 314(b)
-- C. 第319(b)条款
+- C. 第319(b)条
   English: Section 319(b)
-- D. 第319(a)节
+- D. 第319(a)条
   English: Section 319(a)
 
 ## 【AI答案】
@@ -55,19 +55,19 @@ D
 
 题型：single
 
-题干：一家总部位于法国的石油勘探公司与伊朗的炼油厂有业务往来,而伊朗是受到美国海外资产控制办公室(OFAC)全面制裁的国家.应针对这家法国公司实施何种类型的美国海外资产控制办公室(OFAC)制裁？
+题干：一家总部位于法国的石油勘探公司与伊朗的炼油厂有业务往来,而伊朗受到美国财政部海外资产控制办公室(OFAC)的全面制裁.应针对这家法国公司实施何种类型的OFAC制裁？
 
 英文题干：An oil exploration company based in France does business with oil refineries in Iran, which is subject to comprehensive Office of Foreign Assets Control (OFAC) sanctions. What type of OFAC sanctions should be imposed against the French company?
 
 选项：
 
-- A. 基于列表的
+- A. 名单制裁
   English: List-based
-- B. 次级的
+- B. 次级制裁
   English: Secondary
-- C. 以国家为基础的
+- C. 国家或司法管辖区制裁
   English: Country-based
-- D. 部门的
+- D. 行业制裁
   English: Sectoral
 
 ## 【AI答案】
@@ -80,19 +80,19 @@ B
 
 ## 【核心解析】
 
-次级制裁针对非美国人士与受制裁对手方进行的交易（P187），教材特别指出“如与伊朗和俄罗斯SDN的交易”。题干中的法国公司是一家非美国实体（总部在法国），它与伊朗炼油厂开展业务——伊朗正是受到OFAC全面制裁的司法管辖区。法国公司作为非美国人士，与受制裁的伊朗对手方交易，恰好落入次级制裁的定义范围。次级制裁的机制就是让美国以外的第三方也面临后果：要么停止与制裁目标做生意，要么自己面临被制裁的风险。
+教材将次级制裁定义为：针对非美国人士因其与受到特定OFAC制裁的对手方开展特定交易或其他往来而实施的制裁，典型情形包括与伊朗或俄罗斯SDN的交易（P187）。本题中的法国公司属于非美国主体，且与受到全面制裁的伊朗境内炼油厂开展业务。题目询问的是该法国第三方可能承受的制裁类型，而不是伊朗本身适用的制裁项目。因此，在给定选项中，B“次级制裁”最符合对非美国第三方施加制裁压力的机制。需要注意，现实中是否实际触发次级制裁，还应结合具体交易对手是否受制裁、交易性质、所属行业及相关制裁计划判断；题干主要考查制裁类型的区分。
 
 教材原句："Secondary sanctions: These sanctions are directed at non-US persons for transactions and other specific dealings with counterparties subject to certain OFAC sanctions, such as those with Iranian and Russian SDNs."
 
 ## 【错误项分析】
 
-- **A 错误（教材直接依据）｜题干要素不匹配**：基于名单的制裁针对列入SDN名单等特定名单的实体或个人（P187）。题干没有提及法国公司或伊朗炼油厂出现在任何OFAC名单上，制裁的触发条件是伊朗被全面制裁这一国家属性，而非某个具体名单。题干场景更直接指向次级制裁，而非名单制裁。
-- **C 错误（教材直接依据）｜主体或阶段错配**：基于管辖权的制裁针对整个司法管辖区并禁止几乎所有类型交易，如对伊朗的制裁（P187）。题干的追问对象是“应对这家法国公司实施何种类型的制裁”——法国公司是制裁的承受方，而非制裁的目标辖区。基于管辖权的制裁施加于伊朗这个国家本身，而不是施加在一个与伊朗做生意的法国公司身上。对非美国第三方的追责更吻合次级制裁的定义。
-- **D 错误（教材直接依据）｜范围或程度偏差**：行业制裁针对经济整体部门，如能源、金融或国防（P188）。法国公司从事石油勘探，伊朗炼油厂属于能源行业，但制裁的理由不是行业属性，而是交易对手方伊朗本身受到全面制裁。题干没有信息表明OFAC对能源行业本身施加了额外限制，行业匹配不如交易主体身份匹配直接。
+- **A 错误（教材直接依据）｜题干要素不匹配**：基于名单的制裁针对被列入SDN名单等制裁名单的特定个人或实体（P187）。题干没有说明法国公司已被列入任何OFAC名单，因此A不能直接回答题目所问的制裁类型。
+- **C 错误（教材直接依据）｜主体或阶段错配**：基于管辖权的制裁直接针对伊朗等整个司法管辖区，并禁止几乎所有类型的交易（P187）。题目询问的是与伊朗开展业务的法国公司可能受到何种制裁，而不是伊朗本身适用何种制裁，因此C不如B匹配。
+- **D 错误（教材直接依据）｜范围或程度偏差**：行业制裁针对能源、金融或国防等整个经济部门，而非特定个人或实体（P188）。题干虽然涉及石油行业，但没有表明法国公司是因其所属行业整体而受到制裁；题干的核心条件是其作为非美国主体与受制裁地区的对手方开展业务。
 
 ## 【易错提醒】
 
-基于管辖权的制裁（C）和次级制裁（B）容易混淆：前者制裁的是“国家本身”，禁止所有人与其交易；后者制裁的是“与那个国家做生意的非美国第三方”。题干问的是对法国公司施加什么制裁，法国公司是第三方，正确答案是次级制裁而非国家制裁。
+判断制裁类型时，应先识别制裁直接针对的对象：针对整个国家或司法管辖区的是基于管辖权的制裁；针对名单中特定个人或实体的是基于名单的制裁；针对整个经济部门的是行业制裁；针对与受制裁对手方开展特定交易的非美国第三方，则可能属于次级制裁（P187-P188）。本题询问的是法国公司可能承受的制裁类型，因此B最符合题意。但这不意味着非美国主体与伊朗发生任何交易都会自动触发次级制裁，实际适用仍取决于具体制裁规则和交易事实。
 
 ---
 
@@ -155,11 +155,11 @@ OFAC（制裁执行）与美国财政部311条指定权（指定洗钱关切司�
 
 - A. 保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。
   English: Protect the rights of the citizens of the target state against their own government and improve financial stability in the region
-- B. 表明除非该国家或非国家目标服从政府的要求，否则很可能会动用军事力量。
+- B. 表明除非该国家或非国家目标遵从实施制裁政府的利益诉求，否则很可能会动用军事力量。
   English: Indicate that the use of military force is likely unless the state or non-state target complies with the government's interests
 - C. 鼓励非政府组织增加向目标对象提供人道主义和慈善援助。
   English: Encourage non-governmental organizations to increase the provision of humanitarian and charitable aid to the target
-- D. 改变威胁该国政府利益或违反国际规范的国家或非国家目标的行为。
+- D. 改变威胁实施制裁政府利益或违反国际规范的国家或非国家目标的行为。
   English: Alter the behavior of the state or non-state target that threatens the interests of that government or violates international norms
 
 ## 【AI答案】
@@ -183,6 +183,71 @@ D
 ## 【易错提醒】
 
 制裁与军事威胁易被混为一谈，但教材将联合国制裁置于宪章第七章第41条(非武力措施)，军事行动属于第42条。制裁通过经济施压改变行为，军事威胁则通过武力威慑迫使服从，二者手段不同、逻辑不同。
+
+---
+
+教材章节：未映射（教材覆盖缺口——教材描述了没收机制但未标注条款编号）
+
+题型：single
+
+题干：美国《爱国者法案》涉及资金没收并允许具有域外效力的条款是？
+
+英文题干：Which section of the USA PATRIOT Act involves the forfeiture of funds and permits extraterritorial reach?
+
+选项：
+
+- A. 第319(b)节
+  English: Section 319(b)
+- B. 第311节
+  English: Section 311
+- C. 第314(a)节
+  English: Section 314(a)
+- D. 第319(a)节
+  English: Section 319(a)
+
+## 【AI答案】
+
+D
+
+> **本题为教材覆盖缺口，经教研手动撰写解析**
+>
+> 教材P182描述了代理账户没收机制但未标319(a)条款号；中英文参考答案存在冲突（中文=D, 英文=A）
+
+## 【考点】
+
+Patriot Act 核心条款的功能区分——特别是 319(a) 与 319(b) 在没收对象和域外效力上的本质区别
+
+## 【核心解析】
+
+美国《爱国者法案》第 319(a) 条规定了"从美国代理账户中没收资金"（Forfeiture from US correspondent account）。当美国政府追查的资金已存入某外国银行时，该条款允许美国政府从该外国银行在美国开立的代理账户中查封同等数额的资金，无需直接触及位于境外的那笔原始资金。这正是"域外效力"（extraterritorial reach）的含义——执法权力通过代理账户这一连接点，实质性地延伸到了外国银行持有的资金。
+
+教材P182描述："允许美国政府扣押外国银行在美国代理账户中的资金，资金所有者可提出异议。"该描述即对应 319(a) 的没收机制。
+
+Patriot Act 各项条款职能分工：
+
+- **Section 311**：授权财政部将外国司法管辖区或机构指定为"主要洗钱关注对象"（P181），核心是"指定与阻断"，不涉及没收。
+- **Section 312/313**：312 要求对代理账户和私人银行账户实施 EDD，313 禁止为外国壳银行开设代理账户（P181），核心是"调查义务"和"禁止关系建立"，不涉及没收。
+- **Section 314**：允许银行之间、银行与执法机构之间共享信息以打击金融犯罪，并为共享方提供安全港责任保护（P182）。核心是"信息共享"，不涉及没收。
+- **Section 319(a)**：允许没收外国银行在美代理账户中的资金（P182），具有域外效力。**本题正确答案。**
+- **Section 319(b)**：银行记录调取条款——要求美国金融机构在 120 小时内向联邦银行监管机构提供 AML 合规相关信息，并授权财政部/司法部向在美国持有代理账户的外国银行发出传票调取记录。该条款不涉及资金没收。教材未直接涉及此条款，以下定义来自 Patriot Act 法案原文补充。
+
+## 【错误项分析】
+
+- **A 错误（功能不匹配）**：319(b) 是银行记录调取条款（120 小时规则、对外国银行发传票），核心功能是记录生产和合规信息获取，与题干要求的"资金没收""域外效力"均无关。英文参考答案误选此项系将 319(b) 的记录调取权力与 319(a) 的没收权力混淆。
+- **B 错误（功能不匹配）**：311 节授权财政部指定"主要洗钱关注对象"并采取特别措施，与资金没收和域外效力无关。
+- **C 错误（功能不匹配）**：314 节是银行与执法机构之间的信息共享机制（P182），核心是"信息共享"，与没收和域外效力无关。
+
+## 【易错提醒】
+
+319(a) 与 319(b) 的核心区别：
+
+| | 319(a) | 319(b) |
+|---|---|---|
+| 核心功能 | 没收外国银行在美代理账户中的资金（forfeiture） | 调取银行记录——120小时记录生产+对外国银行发传票（records production） |
+| 域外效力 | 有——通过代理账户间接触及境外资金 | 有——可向在美国持有代理账户的外国银行发出传票，要求提供境外记录 |
+| 与题干的匹配 | 直接对应"资金没收"——可查封等额资金 | 不对应"资金没收"——核心是记录调取和合规信息获取 |
+
+**关键区分**：319(a) 是"没收资金"，319(b) 是"调取记录"。题干两个关键词"资金没收（forfeiture of funds）"和"域外效力（extraterritorial reach）"中，前者直接锁定 319(a)——只有 319(a) 涉及没收。319(b) 的"域外"体现在可传票调取境外银行记录，而非没收资金。
 
 ---
 
@@ -284,18 +349,18 @@ C
 
 题干：以下哪个陈述最准确地描述了谁必须遵守美国海外资产控制办公室（OFAC）的制裁措施？
 
-英文题干：Which of the following statements most accurately describes who must comply with the sanctions measures of the Office of Foreign Assets Control (OFAC)?
+英文题干：Which statement is the most accurate describing who must comply with Office of Foreign Assets Control (OFAC) sanctions?
 
 选项：
 
-- A. 位于美国境内的美国公民和永久居民、在美国注册成立的实体（包括其外国分支机构），以及身处美国境内的个人，包括双重国籍者
-  English: US citizens and permanent residents located in the United States, entities formed in the United States (including their foreign branches), and individuals physically present in the United States, including those with dual nationality
-- B. 美国公民和永久居民（无论身处何地）、在美国注册成立的实体（不包括其外国分支机构），以及位于美国境内的所有个人和实体
-  English: United States citizens and permanent residents regardless of where they are located, entities formed in the United States (excluding their foreign branches), and all individuals and entities within the United States
-- C. 与美国开展业务的所有外国国民
-  English: All foreign nationals doing business with the United States
-- D. 美国公民和永久居民（无论身处何地）、在美国注册成立的实体（包括其外国分支机构），以及位于美国境内的所有个人和实体，包括双重国籍者
-  English: US citizens and permanent residents wherever they are located, entities formed in the United States (including their foreign branches), and all individuals and entities within the United States, including those with dual nationality
+- A. 所有身处美国境内的美国公民和永久居民、所有在美国注册成立的实体及其外国分支机构，以及所有在美国境内的个人
+  English: All U.S. citizens and permanent residents while located in the United States, all U.S.-incorporated entities and their foreign branches, and all individuals within the United States
+- B. 所有美国公民和永久居民，无论身处何地；所有在美国注册成立的实体，但不包括其外国分支机构；以及所有在美国境内的个人和实体
+  English: All U.S. citizens and permanent residents regardless of where they are located, all U.S.-incorporated entities excluding their foreign branches, and all individuals and entities within the United States
+- C. 所有美国公民（双重国籍者除外）、美国永久居民、所有在美国注册成立的实体，以及所有在美国境内的个人
+  English: All U.S. citizens except those with dual nationality, U.S. permanent residents, all U.S.-incorporated entities, and all individuals within the United States
+- D. 所有美国公民和永久居民，无论身处何地；所有在美国注册成立的实体及其外国分支机构；以及所有在美国境内的个人和实体
+  English: All U.S. citizens and permanent residents regardless of where they are located, all U.S.-incorporated entities and their foreign branches, and all individuals and entities within the United States
 
 ## 【AI答案】
 
@@ -309,34 +374,25 @@ OFAC 制裁的受管辖主体：美国公民与永久居民、美国实体及其
 
 ## 【核心解析】
 
-根据 OFAC FAQ 11，**所有美国主体（U.S. persons）原则上必须遵守 OFAC 制裁**（*外部依据，非教材原文*），包括三类：
+OFAC制裁的一般适用范围可概括为三类美国主体：
 
 1. **美国公民和永久居民（绿卡持有人）**——无论身处何处
 2. **美国境内的所有个人和实体**——无论国籍
 3. **依据美国法律设立的实体及其外国分支机构**
 
-FAQ 11 同时指出两类例外情形：①特定制裁项目（如伊朗、朝鲜）下，美国主体拥有或控制的外国子公司也须遵守；②非美国主体不得导致、协助或规避美国主体违规，某些再出口活动即使无美国主体参与也可能受管辖。因此 D 项描述的是**一般规则**，并非 OFAC 管辖范围的绝对穷尽——但作为单选题，"最准确"的标准正是对一般规则的完整覆盖。
+具体制裁项目可能另有延伸适用规则，因此以上是一般规则的概括。D项完整列出美国公民和永久居民、美国实体及其外国分支机构，以及美国境内的个人和实体，在给定选项中最准确。
 
-逐项排除：A 将公民/永久居民的义务限定于"在美国境内"（遗漏境外者）；B 排除外国分支机构；C 将主体错置为"与美国开展业务的外国国民"，遗漏了美国公民、永久居民和美国实体，且"开展业务"并非 OFAC 的统一管辖标准。D 完整对应三类主体，为唯一正确答案。
+逐项排除：A 将公民和永久居民的义务限定于身处美国境内时，遗漏了身处境外的美国主体；B 排除美国实体的外国分支机构；C 排除具有双重国籍的美国公民，同时遗漏外国分支机构以及位于美国境内的实体。D对三类主体的覆盖最完整。
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜范围或程度偏差**：将美国公民和永久居民的义务限定于"仅在美国境内"，实质缩减了其全球性义务（*外部法律依据*）。OFAC 的"美国人士"定义涵盖"any United States citizen... wherever located"，选项 A 遗漏了身处境外的美国人士。
-- **B 错误（题干对照）｜范围或程度偏差**：明确排除"外国分支机构"（excluding their foreign branches），但联邦法规定义中的实体包括"foreign branches"（*外部法律依据*）。外国分支机构作为美国实体的延伸，同样受初级制裁管辖。
-- **C 错误（题干对照）｜管辖主体错置**：将遵守主体限定为"与美国开展业务的外国国民"，存在三重错误：①管辖主体应是"美国主体"而非"外国国民"；②"开展业务"不是 OFAC 的统一管辖标准；③完全遗漏了美国公民、永久居民和美国实体。FAQ 11 的一般规则以美国主体为对象，C 项的主体类别根本错误。
+- **A 错误（题干对照）｜范围或程度偏差**：将美国公民和永久居民的义务限定于“仅在美国境内”，遗漏了身处境外的美国主体。
+- **B 错误（题干对照）｜范围或程度偏差**：明确排除“外国分支机构”，导致美国实体的受管辖范围不完整。
+- **C 错误（题干对照）｜范围不完整**：双重国籍并不使美国公民脱离 OFAC 对美国主体的一般管辖，C 却明确排除双重国籍者；同时，C 未涵盖美国实体的外国分支机构，也未完整涵盖美国境内的所有实体，因此范围不完整。
 
 ## 【易错提醒】
 
-本题选项间差异极其细微——A 缩减地理范围（"仅在美国境内"）、B 排除外国分支机构、C 将主体限定为"外国国民"且以"开展业务"为标准。判断时逐项用排除法：①公民义务是全球性还是地域性？②外国分支机构是否受管辖？③管辖主体是"美国主体"还是"外国国民"？④"开展业务"是不是 OFAC 管辖标准？四个问题全部回答正确，方能锁定 D 为唯一完整的选项。
-
-## 【证据来源】
-
-| 来源 | 类型 | 内容 |
-|---|---|---|
-| OFAC FAQ 11 | **外部依据** | "All U.S. persons must comply with OFAC sanctions"，涵盖美国公民/永久居民（无论身处何处）、美国境内所有人与实体、美国实体及其外国分支机构 |
-| `v7u_N001777`（P187） | **教材原文** | 次级制裁以 non-US persons 为对象，从反面呈现 OFAC 的 US/non-US 管辖划分框架 |
-
-**备注：** 教材 P187 未列出 U.S. person 的完整定义。OFAC FAQ 11 提供了适用于一般规则的标准表述（各制裁项目的具体定义见 31 CFR Chapter V 对应条例，如 §560.314、§598.318 等）。检索管线因此题证据不足而拒答，本解析为人工撰写。
+本题选项间差异极其细微：A 缩减美国公民和永久居民义务的地理范围；B 排除外国分支机构；C 错误排除双重国籍的美国公民，并遗漏外国分支机构和美国境内的实体。判断时应逐项核对三个问题：美国公民和永久居民的义务是否具有全球性、美国实体的外国分支机构是否包括在内、美国境内是否同时涵盖个人和实体。D对三项均作出完整表述。
 
 ---
 
@@ -350,13 +406,13 @@ FAQ 11 同时指出两类例外情形：①特定制裁项目（如伊朗、朝�
 
 选项：
 
-- A. 允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况相关的记录或信息,或与之相关的记录或信息.该组织的客户或由该金融机构在美国开设、维持、管理或运营的任何账户.
+- A. 允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况、其客户，或其在美国开设、维持、管理或运营的任何账户有关的记录或信息
   English: Allows the appropriate federal banking agency to require a financial organization to produce, within 120 hours, records or information related to the organization's AML compliance, a customer of the organization, or any account opened, maintained, administered, or managed in the U.S. by the financial organization.
 - B. 授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施.
   English: Provides the U.S. Department of the Treasury with the authority to apply graduated, proportionate measures against a foreign jurisdiction, foreign financial organization, type of international transaction, or type of account.
 - C. 允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金.
   English: Permits the U.S. government to seize funds from a correspondent account maintained in the U.S. by a foreign bank in the same amount as funds deposited with that foreign bank.
-- D. 对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行
+- D. 对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行尽职调查
   English: Requires due diligence for foreign correspondent accounts, including nearly all account relationships an organization has with foreign financial institutions, and for private banking services provided to non-U.S. persons.
 
 ## 【AI答案】
@@ -365,23 +421,23 @@ C
 
 ## 【考点】
 
-识别《美国爱国者法案》各具体条款（如311、312、319(a)等）的核心功能
+识别《美国爱国者法案》第311条、第312条、第319(a)条和第319(b)条的核心功能
 
 ## 【核心解析】
 
-《美国爱国者法案》第319(a)条规定了美国政府对存放在外国银行的资金进行追缴的权力，即允许美国政府从外国银行在美开设并维持的代理账户中扣押与外国银行所存资金等额的款项（P182）。题干直接询问第319(a)条的内容，而选项C完整对应了这一扣押授权，因此正确。
+教材将相关制度概括为“从美国代理账户中没收”（Forfeiture from US correspondent account）：美国政府可以从外国银行在美国开立并维持的代理账户中扣押资金（P182）。美国政府GovInfo公布的《美国爱国者法案》第319(a)条进一步规定，存入外国银行的资金可被视为存入其在美国的银行间账户，该账户中不超过相应外国存款价值的资金可以被扣押，且政府无须证明被扣押资金可直接追溯至原存款。因此，C项概括了第319(a)条的核心机制，是最佳答案。需要注意，法条原文是“up to the value”（不超过相应价值），选项中的“相同数额”属于概括性表述，并非法条逐字措辞。
 
 教材原句："Forfeiture from US correspondent account: This Act permits the US government to seize funds from a correspondent account in the US that a foreign bank has opened and maintained."
 
 ## 【错误项分析】
 
-- **A 错误（教材直接依据）｜主体或阶段错配**：选项A描述的“联邦银行机构要求提供反洗钱合规记录及客户信息”的权力，在教材中对应爱国者法案关于外国银行代理账户记录提供及传票授权的部分（P182），但其功能与题干要求的319(a)条扣押资金的规定并不匹配，匹配度低于选项C。
-- **B 错误（教材直接依据）｜概念混淆**：选项B所述财政部对外国司法管辖区、金融机构等采取逐步递增且成比例的措施，更接近第311条的授权（P181），而题干询问的第319(a)条直接授予政府扣押代理账户资金的权力，因此B与题干条款的匹配度不如C直接。
-- **D 错误（教材直接依据）｜概念混淆**：选项D要求对外国代理账户及非美国人的私人银行业务进行尽职调查，这正是第312条关于强化尽职调查的规定（P181）。第319(a)条处理的是资金扣押，两个条款功能不同，题干条件更直接支持C而非D。
+- **A 错误（教材与法条对照）｜条款错配**：教材P181-P182另列外国金融机构的记录保存、记录提供及代理账户记录调取制度，说明记录索取与代理账户资金扣押是不同功能。GovInfo公布的《美国爱国者法案》第319(b)条明确规定“120-hour rule”，内容涉及金融机构反洗钱合规、客户以及在美国开立、维持、管理的账户资料。因此，A描述的是第319(b)条，不对应题干所问的第319(a)条。
+- **B 错误（教材直接依据）｜条款错配**：选项B描述的是第311条的特别措施授权。教材明确指出，第311条允许美国财政部针对被认定为主要洗钱关注对象的外国司法管辖区、金融机构或交易采取相应措施（P181），不属于第319(a)条。
+- **D 错误（教材直接依据）｜条款错配**：选项D描述的是第312条规定的外国代理账户和非美国人士私人银行账户强化尽职调查要求（P181）。第312条解决的是尽职调查问题，第319(a)条解决的是代理账户资金没收问题，因此D错误。
 
 ## 【易错提醒】
 
-爱国者法案各条款分工明确：311条授权财政部指定并应对洗钱关注管辖区；312条要求对外国代理账户实施强化尽职调查；313条禁止与空壳银行往来；319(a)条专门授权扣押外国银行在美代理账户中的资金；314条便利信息共享。抓住“扣押资金→319(a)”“尽职调查→312”“财政部指定风险→311”的对应关系，可快速区分。
+注意区分四项制度：第311条针对主要洗钱关注对象采取措施；第312条要求外国代理账户及非美国人士私人银行账户实施强化尽职调查；第319(a)条涉及从外国银行在美账户中扣押资金；第319(b)条规定相关记录提供及120小时规则。还要注意法条的准确措辞：第319(a)条使用“interbank account”，并规定可扣押“up to the value of the funds deposited”的资金，宜理解为不超过相应外国存款价值，而不是把“相同数额”当作法条逐字原文。
 
 ---
 
@@ -414,17 +470,17 @@ B
 
 ## 【核心解析】
 
-“美国反洗钱/打击资助恐怖主义立法的基石”指在该领域地位最高、最根本的法规。《银行保密法》是美国最重要的反洗钱法规（P180），于1970年实施，为美国银行和金融机构引入了记录保存和报告义务（P180）。题干描述的“要求金融机构建立反洗钱计划、客户身份识别和尽职调查程序、记录并报告交易”正是《银行保密法》的核心要求——其要求义务实体基于五大支柱制定有效的反洗钱计划（P180）。此外，FinCEN依据《银行保密法》运作（P184），这也与题干“向FinCEN记录和报告”的要求直接吻合。因此，《银行保密法》完全匹配题干中“基石”地位和所列举的所有合规义务。
+教材将《银行保密法》直接称为美国“最重要的反洗钱法规”（P180），并说明该法为美国银行和金融机构引入了重要的记录保存和报告义务（P180）。在合规计划方面，《银行保密法》要求义务实体制定、实施并维护基于五大支柱的有效反洗钱计划（P180-P181），其中包括采用风险为本方法开展持续客户尽职调查（P181）。2001年《爱国者法案》又把《银行保密法》的范围扩展至反恐怖融资义务（P180）。因此，题干所列“美国基石性法规、反洗钱计划、客户尽职调查、记录和报告”形成的组合与B项《银行保密法》逐项对应。
 
 ## 【错误项分析】
 
 - **A 错误（教材直接依据）｜范围或程度偏差**：《爱国者法案》在教材中被定位为对《银行保密法》的扩展——2001年美国通过该法案将《银行保密法》范围扩展至反恐怖融资义务（P180），且FinCEN依据经《爱国者法案》修订的《银行保密法》运作（P184）。题干问的是“基石”而非后续修订，教材明确将“最重要”的地位赋予《银行保密法》而非其修正案，故正确项匹配度更高。
-- **C 错误（教材直接依据）｜范围或程度偏差**：《反洗钱法》（2020年）主要聚焦于“现代化”美国银行反洗钱合规法规（P182），如创建受益所有人数据库、扩展加密货币监管等，其作用是更新和补充既有框架而非奠定基石。题干描述的记录报告、客户识别等基础义务在BSA中早已确立，相比之下MLCA不处于“基石”位置。
+- **C 错误（教材直接依据）｜题干要素不匹配**：C项英文是 `Money Laundering Control Act (MLCA)`，并非2020年《反洗钱法案》（AML Act of 2020），两者不能混用。就本题比较而言，教材直接把“美国最重要的反洗钱法规”、记录报告义务和有效反洗钱计划都归于BSA（P180-P181）；C项没有同时匹配这些题干要素。
 - **D 错误（题干对照）｜主体或阶段错配**：MiCA是欧盟的加密资产立法框架，适用于欧盟而非美国（P192），与题干“美国反洗钱/打击资助恐怖主义立法”的管辖范围直接矛盾，缺失题干最基本的国别要素。
 
 ## 【易错提醒】
 
-容易混淆《银行保密法》与《爱国者法案》的层级关系。《银行保密法》是“基石”，是反洗钱义务的原始来源；《爱国者法案》是在此基石上新增了反恐怖融资义务和信息共享条款的后续修订（P180）。考题问到某个制度要求的“原始出处”时，优先考虑BSA；问到9/11之后新增的恐怖融资相关要求时，才考虑《爱国者法案》。
+区分BSA与《爱国者法案》时，应看题干是在问基础框架还是后续扩展：教材把BSA称为美国最重要的反洗钱法规，并说明《爱国者法案》把BSA扩展至反恐怖融资义务（P180）。本题同时强调基础性地位和BSA项下的计划、尽调、记录及报告义务，故选B。
 
 ---
 
@@ -467,6 +523,91 @@ OFAC的核心定义是“负责管理和执行基于美国外交政策和国家�
 ## 【易错提醒】
 
 制裁不仅针对“人”——管辖权制裁针对“整个国家”（全面性），名单制裁针对“特定个人或实体”（选择性），行业制裁针对“整个经济部门”。看到“只能针对”这类绝对词时，要警惕被忽略的管辖范围。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱和反恐怖融资合规标准]根据OFAC对“美国人”和特定非美国人交易的管辖规则,以下哪两项表述准确？(选择两项.)
+
+英文题干：Under OFAC rules governing U.S. persons and specified transactions by non-U.S. persons, which two statements are accurate? (Select Two.)
+
+选项：
+
+- A. 在美国设有分支机构的外国法人的总部无需遵守美国海外资产控制办公室(OFAC)的规定.
+  English: The head office of a foreign legal entity that has a branch in the U.S. does not need to comply with OFAC rules.
+- B. 前往美国短期度假的外国个人有义务遵守美国海外资产控制办公室(OFAC)的规定.
+  English: A foreign individual visiting the U.S. for a short vacation is obligated to follow OFAC rules.
+- C. 美国公民无论身处世界何地,都必须遵守美国海外资产控制办公室(OFAC)的规定.
+  English: U.S. nationals must comply with OFAC rules, regardless of where they are located in the world.
+- D. 任何外国公司只要与任何受制裁国家进行交易,就必然受到OFAC处罚.
+  English: Any foreign corporation is automatically penalized merely for conducting any transaction with any sanctioned country.
+- E. 一家在美国注册成立但在外国正式注册的公司同样受OFAC管辖
+  English: A company incorporated in the U.S. but formally registered in a foreign country is also subject to OFAC jurisdiction.
+
+## 【AI答案】
+
+C、E
+
+## 【考点】
+
+OFAC一级制裁与次级制裁的管辖范围区分
+
+## 【核心解析】
+
+OFAC规则首先约束美国人（US persons）：美国公民、永久居民以及按美国法律设立的实体及其海外分支机构，无论身处何地都必须遵守（P187；OFAC官方定义）。因此 C 正确。E 所说的“在美国注册成立”决定了实体属于美国法律设立的公司，后来是否在外国登记并不改变其美国主体身份，仍受 OFAC 规则约束。D 的“任何外国公司”“任何受制裁国家”“也将受到处罚”则把次级制裁的适用对象和触发条件说得过宽；次级制裁只针对特定制裁项目下与特定受制裁对手方进行的特定交易，并非所有外国公司交易当然受罚。
+
+教材原句："Secondary sanctions: These sanctions are directed at non-US persons for transactions and other specific dealings with counterparties subject to certain OFAC sanctions, such as those with Iranian and Russian SDNs."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜概念混淆**：一级制裁适用于所有“美国人”，包括美国公司在海外的分支机构。若外国法人在美国设有分支机构，该分支机构本身即受OFAC管辖，其总部虽未必直接是美国人，但在实务中与受制裁国的交易可能触发次级制裁。题干声称“无需遵守”与教材框架不符。
+- **B 错误**：短期到美国度假的外国个人并不会仅因地理停留自动成为美国人；题干也没有给出其与受制裁对手方交易的次级制裁触发事实。
+- **D 错误**：次级制裁并非对“任何外国公司”及“任何受制裁国家”的交易自动处罚，而是取决于具体制裁项目、交易对象和行为类型。D省略这些限定条件，不能作为准确的普遍规则。
+- **A 错误**：外国法人在美国设有分支机构时，该美国分支本身属于美国管辖范围；总部是否属于美国人还要看其设立地和具体交易。A用“总部无需遵守”作绝对结论，忽略了美国分支和特定交易可能产生的合规义务。
+
+## 【易错提醒】
+
+一级制裁绑定美国人身份；二级制裁则针对特定制裁项目下的非美国人交易。不要把“在美国出现”自动等同于美国人，也不要把次级制裁概括成所有外国公司与所有受制裁国家交易都会被罚。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。）
+
+英文题干：Which persons must always comply with all Office of Foreign Assets Control (OFAC) regulations? (Select Three.)
+
+选项：
+
+- A. 无论身在何地的美国永久居民（外国人）
+  English: Permanent U.S. resident aliens regardless of location
+- B. 无论位于何处，销售美国原产商品的商家
+  English: Merchants that offer U.S.-origin goods for sale regardless of location
+- C. 无论位于何处，提供美元账户服务的非美国金融机构
+  English: Non-U.S. financial institutions that offer accounts in USD regardless of location
+- D. 无论身处何地的美国公民
+  English: U.S. citizens regardless of location
+- E. 美国注册实体及其外国分支机构
+  English: U.S.-incorporated entities and their foreign branches
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+识别 OFAC 所称“美国人士”（U.S. persons）的管辖范围。
+## 【核心解析】
+OFAC 初级制裁直接约束美国人士，包括美国公民、美国永久居民、美国注册实体及其外国分支机构；这些主体原则上不因身处境外而脱离 OFAC 的全面合规义务。A、D、E分别对应永久居民、公民以及美国注册实体及其外国分支机构。B只描述销售美国原产商品，C只描述提供美元账户服务，均不能仅凭该事实取得美国人士身份；非美国人士可能在特定交易中触发次级制裁，但不等于始终遵守全部 OFAC 规定（P187）（OFAC“U.S. persons”适用规则）。
+## 【错误项分析】
+- **B**：商品的美国原产地可能带来交易层面的制裁限制，但不等于商家本身属于美国人士。
+- **C**：使用美元或提供美元账户可能形成清算、交易或次级制裁风险，但不等于非美国金融机构承担美国人士的全面义务。
+## 【易错提醒】
+区分“美国人士的身份管辖”与“非美国人士因特定交易受到的次级制裁或美元清算影响”。
 
 ---
 

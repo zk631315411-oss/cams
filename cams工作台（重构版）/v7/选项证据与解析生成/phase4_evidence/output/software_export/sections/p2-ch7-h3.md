@@ -1,6 +1,6 @@
 # p2-ch7-h3 题库软件版解析预览
 
-可导出题目数：13
+可导出题目数：16
 
 教材章节：未映射
 
@@ -14,20 +14,16 @@
 
 - A. 金融行动特别工作组(FATF)、欧洲委员会打击洗钱组织(MONEYVAL)及其他作为金融情报机构联络点的区域机构
   English: FATF, MONEYVAL, and other regional bodies acting as a contact point for FIUs
-- B. 狼堡集团作为金融情报机构的沟通平台
+- B. 沃尔夫斯堡集团作为金融情报机构的沟通平台
   English: The Wolfsberg Group serving as a communication platform for FIUs
 - C. 反洗钱金融情报机构之间为建立结构化信息共享而签订的谅解备忘录(MOU)
   English: Memoranda of Understanding (MOUs) between FIUs establishing structured information sharing
-- D. 互助法律援助条约(MLATS),允许金融情报机构请求逮捕和获取证据
+- D. 相互法律协助条约（MLATs），允许金融情报机构请求逮捕和获取证据
   English: Mutual Legal Assistance Treaties (MLATs) allowing FIUs to request arrests and evidence
 
 ## 【AI答案】
 
 C
-
-> **需人工复核**
->
-> - 盲判校验未通过
 
 ## 【考点】
 
@@ -35,7 +31,9 @@ C
 
 ## 【核心解析】
 
-谅解备忘录（MOU）是一种补充司法协助条约（MLAT）的正式工具，用于简化程序并为联合调查确立协议（P233）。FIU之间的跨境合作通常建立在双边或多边MOU基础上，以形成结构化的情报共享框架。题干询问FIU在跨境洗钱调查中正式的信息共享与合作方式，C选项描述的正是FIU通过签订MOU建立结构化信息共享，这直接对应教材中MOU作为正式合作补充机制的角色。相比之下，其他选项或是制定标准的行业组织，或是服务于司法当局的法律条约，在主体和功能上与题干要求的“FIU之间的正式合作方式”匹配度不如C。
+题干问的是FIU在跨境洗钱调查中用于正式信息共享与合作的方法。选项C中的谅解备忘录（MOU）本质上是合作各方为明确程序、职责和信息共享安排而使用的正式协议工具。教材在讨论跨境合作时指出，司法协助条约（MLAT）可以由MOU补充，以简化程序并为联合调查确立协议（P233）。这说明MOU在金融犯罪跨境协作中具有正式、结构化、程序化的功能，能够支撑题干所说的FIU之间信息共享与合作。
+
+同时，教材将埃格蒙特集团描述为各国FIU的国际网络，促进成员之间合作与情报共享（P167），说明FIU跨境信息共享是反洗钱合作的重要场景。但本题选项中并没有“埃格蒙特集团”这一答案，A项所列FATF、MONEYVAL更偏向标准制定和评估机构；B项狼堡集团主体是银行；D项MLAT则主要服务司法程序和证据传递。相比之下，C项以MOU建立结构化信息共享，最符合题干所问的正式合作方式。
 
 教材原句："MLATs may be supplemented by memoranda of understanding to streamline procedures and outline protocols for joint investigations."
 
@@ -47,7 +45,7 @@ C
 
 ## 【易错提醒】
 
-MLAT是为法院／检察官设计的司法协助条约（P233），用于传递起诉证据，不用于FIU自身的信息交换。而MOU是由合作各方（包括FIU）签订的简化程序协议，直接支持结构化信息共享。
+注意区分三类概念：FATF、MONEYVAL主要是标准制定或评估体系；Egmont Group才是FIU合作网络，但本题选项没有直接给出；MLAT偏司法协助和证据传递，通常由法院或检察官请求。题干问FIU之间正式、结构化的信息共享方式，MOU比这些选项更贴合。
 
 ---
 
@@ -63,11 +61,11 @@ MLAT是为法院／检察官设计的司法协助条约（P233），用于传递
 
 - A. 司法互助条约
   English: Mutual legal assistance treaty
-- B. 意向书
+- B. 谅解备忘录
   English: Memorandum of understanding
 - C. 紧急信息请求
   English: Request for urgent information
-- D. 协议备忘录
+- D. 谅解声明
   English: Declaration of understanding
 
 ## 【AI答案】
@@ -100,7 +98,7 @@ MLAT（司法协助条约）与MOU（谅解备忘录）易混淆。教材给出�
 
 题型：single
 
-题干：A国的反腐败机构一直在调查可能的贿赂和贪污所得向B国转移的情况,目前正准备将此案提交当地法院审理.哪种获取起诉该案所需证据的方法最为有效？
+题干：A国的反腐败机构一直在调查可能的贿赂和腐败所得向B国转移的情况,目前正准备将此案提交当地法院审理.哪种获取起诉该案所需证据的方法最为有效？
 
 英文题干：Country A's anti-corruption authority has been investigating the movement of potential proceeds of bribery and corruption to Country B and is now preparing to take the case to a local court. Which method of obtaining the required evidence to prosecute the case would be most effective?
 
@@ -194,7 +192,7 @@ B
 
 题型：single
 
-题干：该国金融情报机构(FIU)收到一份可疑活动报告(SAR),其中涉及大量可疑资金转移,不仅在其本国境内,还涉及外国.为确定是否需将此事移交本国检察机关处理,还需从外国获取更多信息.在该情景中,以下哪个陈述是正确的？
+题干：该国金融情报机构(FIU)收到一份可疑活动报告(SAR),其中涉及大量可疑资金转移,不仅在其本国境内,还涉及外国.为确定是否需要在本国移送起诉,还需从外国获取更多信息.在该情景中,以下哪个陈述是正确的？
 
 英文题干：The Financial Intelligence Unit (FIU) in a country has received a suspicious activity report (SAR) which involves significant suspicious fund transfers, not only within its jurisdiction but also in a foreign country. Further information is required from the foreign country to determine whether the matter needs to be referred for prosecution locally. Which of the following statements is true in this scenario?
 
@@ -206,7 +204,7 @@ B
   English: Sovereignty of nations means that information cannot be accessed from foreign countries
 - C. 任何与洗钱有关的信息,均可随时从任何组织接收,不受司法管辖区的限制.
   English: Any information related to money laundering can be received at any time from any organization, regardless of jurisdiction
-- D. 埃格蒙特集团的成员国之间可以相互请求信息协助.
+- D. 埃格蒙特集团成员金融情报机构之间可以相互请求信息协助.
   English: Egmont Group members can request information assistance from each other
 
 ## 【AI答案】
@@ -219,7 +217,7 @@ D
 
 ## 【核心解析】
 
-埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间合作与情报共享以打击洗钱等金融犯罪（P167）。根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报（P231）。题干中，FIU收到涉及本辖区及外国的可疑资金转移报告，需要从外国获取更多信息以决定是否移交起诉——这正是埃格蒙特集团成员间信息协助机制的典型应用场景。因此，埃格蒙特集团成员国之间可以相互请求信息协助，直接匹配题干所需。
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间合作与情报共享以打击洗钱等金融犯罪（P167）。根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报（P231）。题干中，FIU收到涉及本辖区及外国的可疑资金转移报告，需要从外国获取更多信息以决定是否移交起诉——这正是埃格蒙特集团成员间信息协助机制的典型应用场景。因此，埃格蒙特集团成员金融情报机构之间可以相互请求信息协助，直接匹配题干所需。
 
 教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
 
@@ -450,11 +448,9 @@ C
 
 教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
 
-教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
-
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）｜概念混淆**：选项A"不期望在信息将如何使用方面获得互惠"混淆了两个层面：埃格蒙特原则要求信息交换以互惠为基础——FIU之间应双向开放情报共享，而非单方面索取；但提供方FIU对共享信息的具体使用方式保留事先同意权，这不等同于"不期望互惠"。教材描述的FIU信息传播是相互的（P231 "to each other"），而非单向的"不期待回报"。
+- **A 错误（教材定义应用）｜概念混淆**：选项A"不期望在信息将如何使用方面获得互惠"混淆了两个层面：埃格蒙特原则要求信息交换以互惠为基础——FIU之间应双向开放情报共享，而非单方面索取；但提供方FIU对共享信息的具体使用方式保留事先同意权，这不等同于"不期望互惠"。教材描述的FIU信息传播是相互的（P231）（ "to each other"），而非单向的"不期待回报"。
 - **B 错误（教材直接依据）｜范围或程度偏差**：埃格蒙特集团原则未将信息交换限定于对方FIU的地位与执法相关。P167明确埃格蒙特集团的成员是各国FIU，无论其在国内属于行政型、执法型还是司法型，均可参与信息交换与合作，不以执法地位为前置条件。
 - **D 错误（教材定义应用）｜概念混淆**：对信息交换"设定数量限制"与埃格蒙特原则的基本精神相悖。P231要求FIU"spontaneously or on request"传播情报，意在鼓励尽可能广泛的情报共享，而非人为设限。
 
@@ -493,19 +489,110 @@ D
 
 ## 【核心解析】
 
-公私部门当局之间的国际合作是打击跨国金融犯罪的关键。执法人员、监管机构和国家金融情报机构(FIU)不仅建立战略伙伴关系，还在个案层面开展合作(P229)。各种机构模型下，各方都必须协同工作并在涉及彼此职能时共享信息(P229)。因此，题干所描述的三方通过正式协议共享情报、协调行动以简化跨境洗钱调查，正是教材框架下合作程度最准确的概括。
+公共部门当局之间的国际合作是打击跨国金融犯罪的关键。执法部门、监管机构和国家金融情报机构(FIU)会建立战略伙伴关系，也会在个案层面合作（P229）；相关机构还应与国际同行共享信息，以处理跨境洗钱和恐怖融资（P229）。国际合作使当局能够共同工作、共享情报并制定联合方法（P230），FIU还可把跨境洗钱数据纳入操作分析并传递给执法部门采取行动（P231）。因此，D对“共享情报并协调行动”的描述与教材最一致。D中的“正式协议”可理解为结构化合作的一种形式；教材原文并未说所有合作都必须经同一种正式协议，结论依据是D的整体描述明显优于三个否认或限缩跨境合作的选项。
 
 教材原句："International cooperation among public sector authorities is key to fighting transnational financial crime. Law enforcement, regulators, and national FIUs develop strategic partnerships as well as cooperate at a case level."
 
 ## 【错误项分析】
 
-- **A 错误（教材直接依据）｜范围或程度偏差**：教材表明监管机构不仅在境内合作，也在国际层面合作并主动共享信息(P230-231)，而A将其描述为“主要独立开展工作”且仅应国际请求才共享信息，与教材中主动、持续的协调合作框架相比，匹配度明显更低。
+- **A 错误（教材直接依据）｜范围或程度偏差**：相关机构应与国际同行共享信息以处理跨境洗钱（P229），监管机构也在境内和国际层面合作（P231）。A将监管机构描述为“主要独立”且只在收到国际执法请求时共享，范围明显过窄。
 - **B 错误（教材直接依据）｜范围或程度偏差**：FATF建议明确要求当局通过信息交换和联合调查促进国际合作(P149)，打击洗钱本身就需要国内与国际合作及信息共享(P233)。B将监管机构和执法部门限缩为“无法开展国际合作”，与教材多处强调的国际协作框架直接矛盾。
 - **C 错误（教材直接依据）｜范围或程度偏差**：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报(P231)，并可将其纳入操作分析后传播给执法部门采取行动，这意味着FIU与执法机构的合作本身就涵盖跨境维度。C将其合作限定为“仅在国内调查期间”不符合教材描述的跨境情报共享机制。
 
 ## 【易错提醒】
 
-（无）
+跨境合作不等于把案件全部交给国际组织。监管机构负责跨境监管协调，FIU之间交换情报并开展操作分析，执法部门据此采取行动（P229-231）；各主体仍在自身权限内协作。
+
+---
+
+教材章节：未映射
+
+题型：single
+
+题干：一家信贷机构收到了一份初步调查报告,报告指出其在反洗钱义务方面存在重大违规行为,并表示该机构可能面临银行牌照被吊销的风险.这份报告可能是哪个机构发布的？
+
+英文题干：A credit institution has been served with a preliminary findings report highlighting major deviations from AML obligations and stating that it faces the possible withdrawal of its banking license. Which authority could have issued the report?
+
+选项：
+
+- A. 反洗钱监管机构
+  English: AML supervisory authority
+- B. 银行业自律组织
+  English: A banking sector self-regulatory body
+- C. 执法机关
+  English: Law enforcement authority
+- D. 金融行动特别工作组(FATF)
+  English: Financial Action Task Force (FATF)
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别AML监管机构对金融机构的检查监督与处罚权力
+
+## 【核心解析】
+
+监管机构通过牌照和注册授权受监管实体，并开展风险为本的监督，以确保合规和识别违规；对于严重案件，监管机构可采取罚款及执法行动（P228）。FATF建议也要求监管者具备监督合规、开展检查和实施制裁所需的权力、资源与独立性（P149）。题干中的信贷机构因严重偏离反洗钱义务而收到初步调查报告，并可能面临银行牌照被吊销，正好同时涉及合规检查、违规认定和牌照后果。教材另将丧失经营牌照列为机构严重违规可能产生的后果之一（P43）。因此，在四个选项中，能够对金融机构开展反洗钱合规监督并采取监管执法措施的反洗钱监管机构与题干最直接匹配，答案为A。
+
+教材原句："Regulators authorize regulated businesses via licenses and registrations and then undertake risk-based supervision of these organizations to ensure compliance and identify noncompliance."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜范围或程度偏差**：银行业自律组织可能参与行业自律或最佳实践推广，但题干涉及信贷机构的反洗钱合规检查以及银行牌照后果。教材将牌照授权、合规监督和严重案件的执法行动归于监管机构（P228）；题干也未说明相关监管权已被委托给某个自律组织。因此，反洗钱监管机构比银行业自律组织更直接匹配。
+- **C 错误（题干对照）｜主体或阶段错配**：执法机关的核心职责是开展调查以将洗钱者绳之以法并没收其资产（P228），并与检察机关合作提起刑事诉讼。其工作重点在于犯罪调查和司法程序，而非对金融机构进行日常的反洗钱合规监督和直接发出可能导致吊销执照的监管性初步调查报告，相比之下，监管机构在此场景中的职责更直接匹配。
+- **D 错误（教材直接依据）｜范围或程度偏差**：FATF是一个制定国际标准的政府间组织（P144），它通过评估各辖区的执行情况，并将不合规辖区列入灰名单或黑名单来施加压力。FATF并不直接监督具体的金融机构，也不会向某一家信贷机构发布关于其反洗钱违规并要求吊销执照的报告。这种直接针对单个机构的监管行为，是主权国家内反洗钱监管机构的职权范围。
+
+## 【易错提醒】
+
+区分监管机构与执法机关的核心职能：监管机构（Regulator）负责牌照授权、合规监督，并可对严重案件采取罚款和执法行动；执法机关（Law Enforcement）主要负责犯罪调查、资产追缴和配合刑事诉讼。
+
+---
+
+教材章节：未映射
+
+题型：single
+
+题干：两个国家之间用于规范跨境信息共享的法律文书被称为:
+
+英文题干：A legal instrument executed between two nations that governs cross-border information sharing is known as a:
+
+选项：
+
+- A. 协议备忘录.
+  English: Memorandum of Agreement
+- B. 谅解声明.
+  English: Declaration of Understanding
+- C. 谅解备忘录.
+  English: Memorandum of Understanding
+- D. 司法互助条约.
+  English: Mutual Legal Assistance Treaty
+- E. 紧急信息请求.
+  English: Request for Urgent Information
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别跨境司法协助的法律文书MLAT
+
+## 【核心解析】
+
+教材P233指出，司法协助是支持司法管辖区之间刑事调查和诉讼的关键工具，也是司法管辖区之间为取得执法机构无法直接共享的信息和证据而建立的公约及协议框架。教材进一步明确，司法互助条约（MLAT）为传递可用于起诉和司法程序的证据提供法律依据。题干所述“两个国家之间”“规范跨境信息共享”“法律文书”与上述定义直接对应；选项D的英文正是“Mutual Legal Assistance Treaty”，因此答案为D。
+
+## 【错误项分析】
+
+- **A 错误（教材定义对照）｜题干要素不匹配**：教材在本题场景中明确命名并定义的是MLAT，即为跨司法管辖区传递司法证据提供法律依据的条约。A所称“协议备忘录”没有对应教材定义，对题干条件的匹配度不如D直接。
+- **B 错误（教材定义对照）｜题干要素不匹配**：教材将跨司法管辖区取得信息和证据的框架具体落到司法协助，并进一步说明MLAT提供传递证据的法律依据。B所称“谅解声明”不是教材在这一框架下给出的文书名称，因此不如D符合题干。
+- **C 错误（教材直接依据）｜概念混淆**：教材说明，谅解备忘录可以补充MLAT，用于简化程序和规定联合调查协议。这表明MOU与跨境合作有关，但在教材框架中属于MLAT的补充安排；相比之下，提供跨境传递司法证据法律依据的是MLAT，故D更准确。
+- **E 错误（教材定义对照）｜主体或阶段错配**：教材区分了MLAT与依据MLAT提出的司法协助请求（MLAR）。前者是提供法律依据的条约，后者是依条约提出的具体请求。E描述的是请求，而题干询问两个国家之间订立的法律文书，层级不匹配。
+
+## 【易错提醒】
+
+区分条约、补充安排和具体请求：MLAT为跨境传递司法证据提供法律依据；MOU可以补充MLAT以简化程序；MLAR则是依据MLAT提出的司法协助请求。本题问的是两国之间的法律文书，应选MLAT，而不是补充安排或个案请求。
 
 ---
 
@@ -603,6 +690,50 @@ A、D
 ## 【易错提醒】
 
 FIU的核心定位是“信息枢纽”而非“执法者”或“监管者”。教材原文：FIU接收、分析和传播金融情报（P228）；对金融机构的检查监督由监管机构（如金融监督院）执行（P203）。判断口诀——FIU管信息，监管管检查，执法管抓人。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融情报机构(FIU)通过以下方式帮助维护金融诚信:(选择两项.)
+
+英文题干：Financial Intelligence Units (FIUs) help to protect financial integrity by: (Select two.)
+
+选项：
+
+- A. 接收并分析可疑活动报告(SAR),以侦测金融犯罪
+  English: Receiving and analyzing Suspicious Activity Reports (SARs) to detect financial crime
+- B. 传播有关洗钱及相关上游犯罪新趋势的信息
+  English: Disseminating information on emerging trends related to money laundering and associated predicate offenses
+- C. 协助金融机构设计降低剩余洗钱风险的产品和服务
+  English: Assisting financial institutions with designing products and services that lower residual money laundering risk
+- D. 确保金融机构维持与其风险状况相适应的适当反洗钱计划
+  English: Ensuring financial institutions maintain appropriate AML programs commensurate with their risk profiles
+
+## 【AI答案】
+
+A、B
+
+## 【考点】
+
+FIU 的法定核心职能：接收、分析、传播金融情报
+
+## 【核心解析】
+
+金融情报机构（FIU）的核心法定职责是接收、分析和传播金融情报。教材原文指出“国家金融情报机构接收、分析和传播金融情报”（P228），且“各辖区应设立金融情报机构以分析可疑交易报告并支持执法调查”（P149）。选项A描述了FIU接收并分析可疑活动报告（SAR）以侦测金融犯罪，这对应了“接收和分析”职能，SAR正是FIU分析工作的主要输入材料。选项B描述了传播有关洗钱及上游犯罪新趋势的信息，这对应了“传播”职能——FIU通过战略分析“理解趋势、类型和威胁”（P228），并将这些情报分享给相关方。两项共同构成了FIU维护金融诚信的完整路径：从收集可疑报告到分析，再到将情报传播出去，使执法部门和金融机构能够采取行动。
+
+教材原句："National FIUs receive, analyze, and disseminate financial intelligence."
+
+## 【错误项分析】
+
+- **C 错误（教材定义应用）｜主体或阶段错配**：协助金融机构设计产品和服务以降低剩余风险，属于机构自身风险管理的范畴。教材将产品风险评估（P286）定位为组织内部识别和缓释产品洗钱风险的手段，由机构的反洗钱合规团队负责，而非FIU的法定职能。FIU的角色更直接对应“接收、分析、传播情报”，而非介入机构的产品设计环节。
+- **D 错误（教材定义应用）｜主体或阶段错配**：确保金融机构维持适当的反洗钱计划是监管机构的职责，而非FIU。教材指出“金融机构应实施反洗钱/反恐怖融资计划”（P148），这是金融机构自身的义务，并接受监管机构的监督——监管机构应“具备充分的权力、资源和独立性以监督合规”（P149）。FIU的职责是情报的接收、分析和传播，并不直接负责监督金融机构的反洗钱计划是否与其风险状况相适应。
+
+## 【易错提醒】
+
+FIU的职责容易与监管机构和金融机构自身的反洗钱职责混淆。FIU是情报枢纽——接收SAR、分析情报、传播情报（P228）。监管机构负责监督金融机构的合规状况（P149）。金融机构自身负责设计产品、实施反洗钱计划（P148、P286）。三者角色不同：FIU做情报，监管做监督，机构做执行。
 
 ---
 

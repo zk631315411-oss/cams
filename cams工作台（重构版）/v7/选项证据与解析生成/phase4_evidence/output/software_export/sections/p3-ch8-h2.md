@@ -6,6 +6,51 @@
 
 题型：single
 
+题干：在准备可疑活动报告(SAR)时，哪些内容应提供给董事会或指定的专业委员会？
+
+英文题干：Which should be provided to the board of directors or designated specialized committee when preparing suspicious activity reports (SARs)?
+
+选项：
+
+- A. 报告期内提交的可疑活动报告(SAR)的统计数据
+  English: Statistical data regarding SARs filed during the reported period
+- B. 报告期内提交的所有可疑活动报告（SAR）的全部详细信息
+  English: All possible details of SARs filed during the reported period
+- C. 报告期内提交的所有可疑活动报告（SAR）副本
+  English: Copies of all SARs filed during the reported period
+- D. 报告期内所有被提交可疑活动报告(SAR)的客户姓名
+  English: Names of all customers subject to SARs filed during the reported period
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+董事会监督所需SAR信息的恰当粒度
+
+## 【核心解析】
+
+董事会在金融机构反金融犯罪（AFC）项目中的核心角色是治理与监督（P259）。它负责批准风险偏好、AFC合规职能的范围与目标，并确保项目有效性和缺陷的及时解决（P259-P260）。为履行这一战略监督职责，董事会需要的是能反映SAR申报整体趋势和风险状况的汇总信息，而非可能干扰战略判断的个案细节。选项A提供的“报告期内提交的SAR的统计数据”正是这种高层级的概括性信息。相比之下，过于庞杂的详细信息、报告副本或客户姓名，不仅不必要，还可能增加信息泄露风险，与董事会宏观监督的定位不匹配。
+
+教材原句："The board of directors plays a critical role in the governance and oversight of a financial institution’s AFC program. It approves the risk appetite, the scope, objectives, and responsibilities of the AFC compliance function."
+
+## 【错误项分析】
+
+- **B 错误（教材定义应用）｜范围或程度偏差**：选项B要求提供所有SAR的“所有可能的详细信息”。教材规定，董事会的职责是战略层面的监督（P259），而非审查个案细节。过度详细的报告信息与董事会宏观治理的职能定位不匹配，更适合由管理层的反洗钱合规部门直接处理。
+- **C 错误（教材定义应用）｜范围或程度偏差**：选项C要求提供“所有SAR的副本”。这同样涉及过度的个案层面信息。教材指出SAR不应在金融机构与执法部门之外共享以免影响调查（P352）。为所有董事提供完整的SAR副本，增加了信息扩散的风险，在必要性上不如仅提供统计数据A项。
+- **D 错误（教材定义应用）｜范围或程度偏差**：选项D要求提供被提交SAR的“客户姓名”。这一信息过于具体，属于个案调查细节。对于董事会履行对AFC项目整体有效性的监督职责（P259）而言，客户层面的姓名信息不如统计性数据A项更直接、更相关。
+
+## 【易错提醒】
+
+区分董事会的“治理监督”职责与管理层的“运营执行”职责。董事会需要概括性数据（如统计数据）以把控方向与风险，而详细的交易报告或客户信息属于运营层面，由管理层和合规部门负责。
+
+---
+
+教材章节：未映射
+
+题型：single
+
 题干：在金融机构内部推动企业范围内的合规文化的一个关键方面在于:
 
 英文题干：One key aspect of promoting an enterprise-wide compliance culture within a financial institution is that:
@@ -14,7 +59,7 @@
 
 - A. 相关信息应在整个组织内共享.
   English: Relevant information should be shared throughout the organization
-- B. 创收业务部门应优先于合规部门.
+- B. 创收业务部门应优先于合规要求.
   English: Revenue-generating business sectors should have precedence over compliance
 - C. 第一道防线应独立制定自身的政策.
   English: The first line of defense should establish its own policies independently
@@ -74,19 +119,21 @@ B
 
 ## 【核心解析】
 
-在公司治理框架下，董事会对金融机构的金融犯罪防控承担最终责任（P264），其核心职责体现在“批准”与“建立监督机制”两个层面。教材明确指出，董事会应批准风险偏好、合规职能的范围与目标（P259），并“设立专门的反洗钱或风险管理委员会以监督实施和审查政策”（P259）。题干考查董事会角色，选项B与此完全吻合——“设立合规职能”对应建立监督机制的义务，“批准有关识别、评估、监测、报告和提供建议的政策”则对应董事会的审批权。这两个动作共同构成了董事会对反洗钱计划的战略性监督，而非日常运营管理。
+根据教材，董事会在金融机构金融犯罪防控计划中承担治理和监督职责。董事会应批准风险偏好，以及金融犯罪防控合规职能的范围、目标和责任（P259）；同时，董事会必须批准金融犯罪防控计划，并对合规计划承担最终责任（P259、P264）。这表明董事会不能只是被动听取汇报，而应主动建立合规治理框架并行使政策审批权。
 
-教材原句："The board should establish a dedicated AML or risk management committee with knowledgeable members to monitor implementation, review policies, and ensure adequate resources for compliance."
+四个选项中，B最符合这一治理定位：董事会应确保机构具有有效的合规职能，并批准用于识别、评估、监测和报告合规风险的政策。教材没有逐字复现B的全部措辞，但B是唯一同时体现董事会主动监督、合规职能建设和政策审批责任的选项。董事会设立专门的反洗钱或风险管理委员会，是其落实监督责任的一种治理安排（P259），但专门委员会与合规职能并非同一组织结构，不能将二者直接等同。
+
+教材原句："The board of directors plays a critical role in the governance and oversight of a financial institution’s AFC program. It approves the risk appetite, the scope, objectives, and responsibilities of the AFC compliance function."
 
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）｜范围或程度偏差**：教材定位的董事会角色包含“批准政策”这一关键动作（P259），“不应参与制定”与董事会必须批准金融犯罪防控计划的义务相矛盾。题干场景下，董事会正是通过审批政策来行使监督权，而非被排斥在政策制定之外。
-- **C 错误（教材定义应用）｜概念混淆**：教材要求独立审计职能“直接向审计委员会或董事会报告”（P256），且董事会应设立专门委员会来监督合规工作（P259），可见合规职能与董事会之间存在明确的汇报和接触路径。“不应与董事会接触”与这一治理架构设计不符。
-- **D 错误（教材定义应用）｜范围或程度偏差**：教材强调董事会“对计划的有效性承担最终责任”并需接收“计划状态的定期报告”（P260），表明董事会并非仅在必要时才获知信息。选项将董事会的角色弱化为被动知情者，而教材框架下，董事会是主动的战略监督者，需定期审查而不是等待例外通报。
+- **A 错误（教材直接依据）｜职责范围不完整**：董事会确实负责监督合规风险管理，但A进一步排除了董事会在合规政策建立和审批中的作用。教材明确要求董事会批准合规职能的范围、目标和责任，并批准金融犯罪防控计划（P259）。董事会不一定负责具体起草政策，但不能被排除在政策审批和治理之外。
+- **C 错误（教材直接依据）｜绝对化表述错误**：合规职能应具备足够的权威、地位、独立性和资源，但“不应与董事会接触”不成立。董事会需要批准合规职能的范围、目标和责任（P259），并对合规计划承担最终责任（P264）；高级管理层还须确保定期向董事会提交计划状态报告（P260）。这些职责要求董事会与合规职能之间存在适当的汇报和沟通渠道。
+- **D 错误（教材直接依据）｜弱化董事会监督责任**：教材要求向董事会定期提交计划状态、风险评估和重大事件报告（P260），而不是仅在必要时通报。董事会还负责评估新兴风险、控制有效性并确保及时整改缺陷（P260），因此不能被降格为偶尔获知情况的被动角色。
 
 ## 【易错提醒】
 
-董事会与高级管理层的职责容易混淆。教材明确区分：董事会负责批准政策、设立委员会并承担最终责任（P259-P260），而高级管理层负责政策的日常实施和监督执行（P260）。简言之，董事会“定方向、批框架”，高管层“抓落实、管运营”——题干考查的是前者中的审批与建章立制职能。
+董事会负责定方向、批框架、实施监督并承担最终责任（P259-P260、P264）；高级管理层和业务负责人负责日常实施（P260）。董事会不必亲自起草或执行每项政策，但必须批准合规治理安排、获得定期报告并监督计划有效性。
 
 ---
 
@@ -256,19 +303,19 @@ D
 
 ## 【核心解析】
 
-在巴塞尔委员会的三道防线模型中，第三道防线即独立审计职能，其核心定位是对反洗钱控制环境提供客观评价（P257）。独立性是实现此目标的前提——如果审计职能受制于被审计的业务条线，其结论可能被其他优先级影响。教材将确保独立性的机制明确为报告路径：“独立审计职能直接向审计委员会或董事会报告以确保独立性”（P256）。题干问的是审计职能“应当”怎么做，选项D“向董事会审计委员会报告以保持独立性”直接对应这一报告路径设计，属于维持独立性的结构性保障。
+第三道防线独立于第一、二道防线运作（P256），负责交叉检查前两道防线的风险管理和控制是否有效（P256-257）。为了使审计结论不受业务优先事项影响，独立审计职能应直接向审计委员会或董事会报告（P256）。题干问巴塞尔委员会所强调的第三道防线要求，选项D“向董事会审计委员会报告以保持独立性”与这一报告路径直接对应。
 
 教材原句："In a robust AML program, the independent audit function reports directly to the audit committee or board of directors. This ensures that the findings are independent and not influenced by any other priorities."
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜范围或程度偏差**：教材指出行业最佳实践是“建议半年度或年度”（P447）的结构化审查，但同时也明确“不存在统一标准规定测试频率”，且频率应基于机构规模和风险因素动态调整。题干问的是巴塞尔委员会对第三道防线“应当”做什么的核心要求，与其锚定某个固定频率，不如直接锁定独立性这一结构特征更吻合教材对审计职能的定义。
-- **B 错误（题干对照）｜概念混淆**：审计职能的职责恰恰包括“提供关于控制环境有效性的客观意见”（P257），这涉及识别并沟通缺陷。教材在监管互动最佳实践中也提到需“制定纠正行动计划、报告进展”（P299），表明对发现问题与补救措施的评估属于审计职能的关注范畴。题干直接指向审计的核心职责描述，D选项的独立性保障比B选项的“不发表意见”更优先匹配。
-- **C 错误（题干对照）｜主体或阶段错配**：“负责反洗钱计划日常活动”是反洗钱官的职责（P180），属于第二道防线或管理层执行层面。第三道防线的独立性恰恰要求其不参与日常控制运作，否则无法对控制环境进行客观评估。教材将第三道防线定位为对第一、二道防线有效性的“交叉检查”（P256），这与C选项的“参与日常运作”在职能定位上不匹配。
+- **A 错误（教材定义应用）｜范围或程度偏差**：选项A把审计频率固定为“不得低于每12个月一次”，并把目的限定为保持年度报告一致性；本题所引三道防线材料并未把固定周期或年度报告一致性列为第三道防线的定义性要求。相比之下，D项直接复现了教材关于独立审计报告路径的规定（P256）。
+- **B 错误（教材直接依据）｜概念混淆**：独立性是指第三道防线独立于前两道防线运作（P256），不是不发表专业意见。独立审计需要识别并沟通控制缺陷（P257），并对控制环境有效性提供客观意见（P257）；因此，把“不对补救措施或行动计划的充分性发表意见”说成保持独立的方式，与审计职能的客观评价定位不符。
+- **C 错误（教材直接依据）｜主体或阶段错配**：日常执行和一线运营管理属于第一道防线（P256），第三道防线则独立交叉检查前两道防线的有效性（P256）。若审计人员参与反洗钱计划的日常运作，就会审查自己参与实施的控制，不符合其独立评价角色。
 
 ## 【易错提醒】
 
-独立性不等于不发表意见。第三道防线的独立性指组织汇报关系独立（向审计委员会或董事会直接报告，不受管理层干预），其输出恰恰是有明确意见的——既评估控制有效性，也对发现问题的严重程度给出判断。选项B把“独立”曲解为“不对补救措施充分性发表意见”，是对独立性概念的混淆。
+独立性与“不发表意见”不是一回事：独立性解决的是审计与被审计业务之间的组织关系，直接向审计委员会或董事会报告是结构性保障；审计输出仍应识别、沟通缺陷并对控制有效性给出客观意见（P256-257）。
 
 ---
 
@@ -307,13 +354,13 @@ A
 
 ## 【错误项分析】
 
-- **B 错误（教材定义应用）｜范围或程度偏差**：“对客户的持续筛查”在第一道防线实践中也被视为最佳实践（P249），但教材将其定义为交易监控和支付筛查等持续性的风险管控活动，更吻合第二道防线“管理和监控活动”的职责范围（P246）。题干只问第一道防线的核心职责，而“收集客户信息”是客户尽职调查（CDD）的直接组成部分，匹配度更直接。
-- **C 错误（教材直接依据）｜主体或阶段错配**：“可疑活动及制裁情况报告”在教材中被明确划归为第二道防线的职责——洗钱报告官（MLRO）等第二道防线角色负责向金融情报机构报告可疑活动（P248）。这与第一道防线的客户尽职调查职能分属不同的防线，匹配度不如选项A。
-- **D 错误（教材直接依据）｜主体或阶段错配**：“评估合规控制措施的有效性”是第二道防线的核心职能之一——第二道防线执行合规监测与测试，监控第一道防线所运行控制措施的有效性（P246、P250）。虽然第一道防线也执行质量控制（QC），但其重点是检查自身产出质量，而非评估控制措施有效性的保证职能，匹配度不如选项A。
+- **B 错误（教材定义应用）｜范围或程度偏差**：教材确实把筛查列为第一道防线运营团队可自动化的任务之一（P249），因此不能把所有筛查动作绝对归给第二道防线。但B强调的是“持续筛查”，没有像A一样直接对应教材对第一道防线“执行CDD”的明确职责；A所述收集客户信息是CDD/KYC的基础步骤，匹配度更高。
+- **C 错误（教材直接依据）｜主体或阶段错配**：教材直接支持的是，第二道防线角色承担向金融情报机构报告可疑活动的职责（P248）；所引材料并未把所有形式的制裁报告绝对归入第二道防线。即便只看选项中已获教材支持的“可疑活动报告”，它也属于合规报告职责，而不是第一道防线执行CDD、收集客户信息的核心动作，因此C不如A匹配。
+- **D 错误（教材直接依据）｜职责层级错配**：控制有效性评估不宜绝对归给单一防线。第二道防线通过合规监测与测试监督控制是否按预期运行（P246、P250）；第三道防线则独立审查前两道防线的风险管理和控制有效性（P246）。无论是二线监督测试还是三线独立保证，都不同于第一道防线直接执行CDD，因此D不如A匹配题干。
 
 ## 【易错提醒】
 
-第一道防线“执行”客户尽职调查（含收集信息），与第二道防线“管理和监控”活动、“报告”可疑活动容易混淆。关键区分：一线员工是操作执行者，第二道防线是监督与报告者（P246）。筛查动作本身（选项B）一线可做，但“持续筛查”作为系统性监控职能，教材将其与交易监控一并归入第二道防线的管理范围。
+三道防线的边界应按职能区分：第一道防线执行政策、程序和CDD；第二道防线制定政策并开展监督、监测与测试；第三道防线独立、客观地评估前两道防线及控制体系的有效性（P246）。具体筛查动作可能由一线运营执行，不能仅凭“筛查”二字机械归入第二道防线。
 
 ---
 
@@ -366,7 +413,7 @@ B
 
 题型：single
 
-题干：以下哪些法律或法规可能会影响反洗钱/打击资助恐怖主义(AML/CFT)计划的应用,并要求金融机构("机构")平衡多项合规要求？
+题干：以下哪项法律或法规可能会影响反洗钱/打击资助恐怖主义(AML/CFT)计划的应用,并要求金融机构（FI）平衡多项合规要求？
 
 英文题干：Which of the following laws or regulations can impact the application of AML/CFT programs and require financial institutions (FIs) to balance multiple compliance requirements?
 
@@ -378,8 +425,8 @@ B
   English: AML/CFT laws are the primary focus for FIs, and other regulations like data privacy and consumer protection may only indirectly influence their compliance obligations
 - C. 环境、社会和治理(ESG)框架能够影响金融机构的风险管理策略,但通常被认为与核心的反洗钱/打击恐怖主义融资合规要求是分开的.
   English: Environmental, social, and governance (ESG) frameworks can influence an FI's risk management strategies but are generally considered separate from core AML/CFT compliance requirements
-- D. 数据隐私法可能会限制客户信息的共享
-  English: Data privacy laws may restrict the sharing of customer information
+- D. 数据隐私法可能会限制客户信息的共享,而金融普惠举措则要求金融机构避免过度去风险化,以免将弱势群体排除在外.
+  English: Data privacy laws may restrict the sharing of customer information, while financial inclusion initiatives require FIs to avoid excessive de-risking that could exclude vulnerable populations
 
 ## 【AI答案】
 
@@ -387,109 +434,65 @@ D
 
 ## 【考点】
 
-数据隐私法与反洗钱合规的冲突与平衡
+数据隐私、金融普惠与反洗钱合规的平衡
 
 ## 【核心解析】
 
-题干问的是哪些法律/法规会“影响”反洗钱计划的应用，并“要求金融机构平衡多项合规要求”。这里的核心概念是法规之间发生交互（impact）并产生需要平衡（balance）的张力。教材在P263明确指出，当组织在处理客户身份数据以符合反洗钱/反恐怖融资要求的同时，还需遵守欧盟《通用数据保护条例》（GDPR），必须平衡两者。选项D“数据隐私法可能会限制客户信息的共享”直接体现了这一张力——反洗钱要求共享和审查客户信息，而数据隐私法限制这种共享，机构因此必须在二者之间寻找平衡。这正是题干所描述的“impact”和“require to balance”的典型场景。
+题干要求识别会影响AML/CFT计划应用并要求金融机构平衡多项合规要求的法律或监管因素。D包含两组具体的平衡关系：第一，教材P263明确指出，组织为AML/CFT合规处理客户身份数据并同时遵守GDPR时，必须平衡两项要求；教材P209还说明，数据隐私法可能限制个人数据的跨境传输。第二，教材P214指出，金融普惠关注弱势和边缘化群体，并对抗金融机构为规避风险而终止或限制客户关系的去风险化；FATF也通过防止CDD标准被过度适用来促进金融普惠。因此，D同时体现了数据使用与隐私保护、AFC风险控制与避免金融排斥之间的平衡，最完整地对应题干。
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜范围或程度偏差**：教材在P213-214确实定义了消费者保护法规，并指出反洗钱合规可间接增强消费者保护。但教材描述的是二者目标一致、“间接增强”的关系，而非题干要求的“要求平衡多项合规要求”的张力关系。换言之，消费者保护法与反洗钱的匹配度是不如数据隐私法那种“一边要查、一边要保护”的直接冲突来得典型。
-- **B 错误（教材直接依据）｜范围或程度偏差**：选项B称其他法规可能只是“间接影响”反洗钱合规义务，与题干“平衡多项合规要求”的主动平衡含义存在程度偏差。教材P263明确案例表明数据隐私不是间接影响，而是需要“must balance”的直接互动。B选项淡化了这种张力，不如D直接揭示冲突与平衡。
-- **C 错误（教材直接依据）｜概念混淆**：教材P217明确指出ESG与反洗钱/反恐怖融资法规正在趋于融合（converging），而非“通常被认为是分开的”。材料中的证据与C选项的断言直接矛盾，因此C的描述不准确。题干问的是切实影响应用并需要平衡的法规，教材在多处将数据隐私列为与反洗钱直接互动的法规，匹配度更高。
+- **A 错误（题干对照）｜题干要素不匹配**：教材P214说明AFC合规可以间接增强消费者保护，能够证明二者确有联系，但教材材料没有进一步说明“处理客户投诉或纠纷”构成必须平衡多项合规要求的典型情形。A只笼统描述可能产生交集；相比之下，D明确给出了隐私限制和防止过度去风险化两项需要协调的要求，更完整地匹配题干。
+- **B 错误（教材直接依据）｜范围或程度偏差**：B将数据隐私等其他法规概括为可能“只是间接影响”。但教材P263明确指出，在为AML/CFT合规处理客户身份数据并遵守GDPR时，组织必须平衡两项要求。可见数据隐私可能直接影响合规实施，B低估了这种影响。
+- **C 错误（教材直接依据）｜概念混淆**：C称ESG框架通常与核心AML/CFT要求分开，而教材P217明确指出，随着全球监管框架演进，ESG与AML/CFT法规正在趋于融合。教材表述与C的概括不一致；相比之下，D对多重合规要求的平衡描述更直接。
 
 ## 【易错提醒】
 
-区分“间接影响”与“需要平衡”：有些法规（如消费者保护法）与反洗钱目标一致或间接相关，教材用“indirectly increase”描述；而有些法规（如数据隐私法）与反洗钱直接冲突，教材用“must balance both requirements”描述。题干关键词是“balance multiple compliance requirements”，要找的是后者，不是前者。
+不能把“与AFC存在联系”直接等同于“要求平衡多项合规要求”。本题应检查选项是否说明具体的协调对象：D一方面涉及AML/CFT数据处理与隐私限制，另一方面涉及AFC风险控制与金融普惠对过度去风险化的约束，因而比只描述一般性交集的选项更符合题干。
 
 ---
 
-教材章节：未映射
+教材章节：反洗钱和反恐怖融资合规标准
 
-题型：single
+题型：multiple
 
-题干：一家全球性金融机构正在对其尽职调查流程进行全面审查，以加强其抵御金融犯罪的能力。近期事件凸显了与员工不当行为相关的漏洞，包括未经授权的交易和共享敏感客户信息。此外，该金融机构还面临第三方供应商未能达到合规标准的问题，导致监管审查增加。以下哪项措施最能有效满足银行对员工、供应商和第三方的尽职调查需求，以降低内部威胁并确保遵守反洗钱法规？
+题干：[反洗钱和反恐怖融资合规标准]在没有制裁监管制度的国家,如何提高相关意识？(选择两项.)
 
-英文题干：A global financial institution is conducting a comprehensive review of its due diligence processes to strengthen its defenses against financial crime. Recent incidents have highlighted vulnerabilities related to employee misconduct, including unauthorized transactions and sharing of sensitive customer information. Additionally, the FI has faced issues with third-party vendors who failed to meet compliance standards, leading to increased regulatory scrutiny. Which of the following measures would be most effective in addressing the bank's due diligence needs for employees, vendors, and third parties to mitigate insider threats and ensure compliance with AML regulations?
-
-选项：
-
-- A. 依靠供应商和员工定期提交的自我报告合规证明来确认其是否遵守反洗钱标准
-  English: Relying on self-reported compliance certifications from vendors and employees to confirm adherence to AML standards on a periodic basis
-- B. 建立针对员工、供应商和第三方的监控计划，包括定期风险评估、访问控制以及对其遵守反洗钱政策情况的定期审查
-  English: Establishing a surveillance program for employees, vendors, and third parties, including periodic risk assessments, access controls, and regular reviews of their compliance with AML policies
-- C. 在员工和供应商入职或合作开始前实施背景调查，以识别任何潜在风险因素
-  English: Implementing background checks for employees and vendors prior to onboarding or the start of engagement to identify any red flags
-- D. 限制在高风险司法管辖区的供应商和第三方数量，以降低合规风险
-  English: Limiting the number of vendors and third parties in high-risk jurisdictions in order to reduce exposure to compliance risks
-
-## 【AI答案】
-
-B
-
-## 【考点】
-
-区分入职时点检查与涵盖全生命周期的持续监控计划
-
-## 【核心解析】
-
-教材指出，机构应在入职时及关系存续期间实施健全的尽职调查和监控计划（P324），供应商管理部门需确保第三方遵守金融犯罪防控政策且不带来额外风险（P263）。题干要求同时应对“员工不当行为”和“第三方未能达到合规标准”的问题，且目的明确为“降低内部威胁”。单纯在入职时做背景调查（选项C）只能识别进入前的风险，无法解决已入职员工或已合作供应商在关系期间产生的新风险，而“监控计划”包含“定期风险评估”和“政策遵守的定期审查”，正是一种覆盖全生命周期的持续性控制手段，能同时回应员工和第三方的持续合规监控需求，因此最直接匹配题干。
-
-教材原句："To mitigate or control those risks, organizations should have robust due diligence and monitoring programs at onboarding and throughout the lifetime of the relationship."
-
-## 【错误项分析】
-
-- **A 错误（题干对照）｜题干要素不匹配**：“自我报告合规证明”完全依赖员工和供应商自身的诚信，属于被动依赖单方声明的做法。教材强调需要主动的尽职调查和监控，本题材料中也未出现任何支持“自我报告”作为主导措施的证据，相比之下题干更直接支持由机构主动执行的持续监控计划。
-- **C 错误（教材直接依据）｜范围或程度偏差**：教材要求“入职时”做背景调查（P324），这也确是一项重要控制。但题干不仅要解决“入职”时的风险，更要解决已发生的员工不当行为和已存续供应商的合规失败问题。背景调查是时点性控制，不如“定期审查”和“持续监控”构成的持续监控计划更能回应题干中“降低内部威胁”和“全面审查尽职调查流程”的全面性要求。
-- **D 错误（题干对照）｜范围或程度偏差**：教材确实将“对高风险司法管辖区的敞口增加”视为风险因素（P283），但将其作为触发客户风险评估（CRA）审查的情形之一。题干的关键诉求是对员工、供应商和第三方的尽职调查，选项D仅是供应商和第三方的数量管控，范围上未覆盖员工，方法上也无法直接回应员工不当行为问题。
-
-## 【易错提醒】
-
-背景调查（C）和持续监控（B）的核心区分在于控制的时间维度。教材规定背景调查是入职时的必要措施（P324），而持续监控计划要求在整个关系存续期间进行定期审查（P324）。题干中“未经授权的交易”“共享敏感客户信息”是关系存续期间发生的行为，仅凭入职时的背景调查无法覆盖此类持续风险。
-
----
-
-教材章节：未映射
-
-题型：single
-
-题干：在建立反金融犯罪(AFC)合规计划治理结构时,以下哪一项是需要考虑的重要因素？
-
-英文题干：Which of the following is an important factor to consider when setting up an anti-financial crime (AFC) compliance program governance structure?
+英文题干：How can awareness be raised within countries that do not have sanctions regulatory regimes? (Select Two.)
 
 选项：
 
-- A. 确保该结构由外部审计员或顾问进行审查
-  English: Ensuring the structure is reviewed by an outside auditor or consultant
-- B. 建立与机构规模和复杂程度相适应的内部控制体系
-  English: Establishing a system of internal controls commensurate with the institution's size and complexity
-- C. 指定一个合格的董事会来监督日常合规情况
-  English: Designating a qualified board of directors to monitor day-to-day compliance
-- D. 明确AFC风险升级和问题处理中的角色与职责
-  English: Establishing clear roles and responsibilities for AFC risk escalations and issues
+- A. 限制那些拥有健全的反洗钱/打击资助恐怖主义和制裁监管制度的国家与那些没有此类制度的国家之间的贸易往来.
+  English: Restrict trade between countries that have robust AML/CFT and sanctions regulatory regimes and those that do not.
+- B. 在这些国家举办反金融犯罪(AFC)和制裁相关的研讨会、网络研讨会及培训.
+  English: Conduct AFC (Anti-Financial Crime) and sanctions-related seminars, webinars, and training within these countries.
+- C. 对这些国家实施强制措施和处以罚款.
+  English: Enforcement and pecuniary fines against these countries.
+- D. 政府间的双边对话与合作.
+  English: Bilateral conversations and cooperation between governments.
 
 ## 【AI答案】
 
-D
+B、D
 
 ## 【考点】
 
-治理结构中明确角色与职责是核心要素
+制裁意识提升路径：教育培训与国家合作
 
 ## 【核心解析】
 
-建立反金融犯罪（AFC）合规计划的治理结构，核心在于解决“谁在什么环节承担什么责任”的问题。RACI矩阵（负责、问责、咨询、知情）正是用于明确风险所有权中角色与职责的工具，它定义了第一道防线与第二道防线之间的关系，规定了谁负责管理风险、谁应在风险相关决策中被咨询或被知会（P262）。题干问的是建立治理结构时的重要因素，选项D“明确风险升级和问题处理中的角色与职责”直接对应RACI矩阵的核心用途——给风险升级和问题处理的链条分配明确的角色与责任。稳健的治理结构是有效AFC计划的基础（P260），而角色与职责的清晰划分正是这个基础的支柱。
+题干的目标是“提高意识”，因此应优先寻找教育、培训、信息传播和合作，而不是事后处罚或经济施压。教材在“培训与意识”部分明确要求开展AML/CFT培训，使人员理解相关法规职责（P255）；教材还指出，FATF通过发布报告提高各辖区对最新犯罪和恐怖融资手法的认识（P144）。虽然这些原文并未逐字列出“制裁网络研讨会”，但B项所描述的研讨会、网络研讨会和培训属于同一类意识建设措施，因而是对教材培训与意识原则在制裁场景中的应用。
+
+对于D项，教材指出各国需要开展国家合作与协调，并建立基于风险评估的AML/CFT政策（P147）；同时，国际机构合作有助于加强AML/CFT框架（P145）。这些原文没有直接使用“政府间双边对话”一词，但支持通过国家间对话、协调和合作弥补制度不足。因此，B、D比贸易限制或罚款更直接匹配“提高意识”这一题干目标。
 
 ## 【错误项分析】
 
-- **A 错误（教材直接依据）｜范围或程度偏差**：外部审计员或顾问审查属于第三道防线的独立审计职能。教材提到在缺乏内部审计资源时可由外部审计师执行该职能（P257），但这属于治理结构中“监督验证”环节的备选方案，而非建立治理结构时首要考虑的结构性要素。题干问的是治理结构的核心组件，角色与职责的明确比谁来执行审计更基础。
-- **B 错误（题干对照）｜概念混淆**：内部控制体系是《银行保密法》要求有效反洗钱计划的五大支柱之一（P180），偏重于制度设计与合规执行层面。题干聚焦的是“治理结构”的建立，治理结构解决的是权力分配、报告路径和决策权限问题，而内部控制体系是治理结构之下的执行工具。相比明确角色职责，内部控制体系与治理结构的关系不如D直接。
-- **C 错误（教材直接依据）｜主体或阶段错配**：董事会负责战略方向和对AFC计划有效性承担最终责任（P260），但“监督日常合规情况”是高级管理层的职责——高级管理人员通过风险管理委员会监控合规情况（P260）。选项将董事会的职责跨度过度延伸到日常操作层面，与教材对董事会与高级管理层互补角色的划分不一致。相比之下，选项D的角色职责划分适用于治理结构的所有层级。
+- **A 不如B、D匹配题干目标**：教材说明经济制裁或行业限制会给目标个人和实体施加财务、声誉和运营成本（P23），这体现的是经济施压或制裁后果，不是培训和合作式的意识提升。A并非完全没有制裁关联，但与题干所问的“提高意识”不如B、D直接匹配。
+- **C 属于执法处罚而非意识建设**：教材将罚款和执法行动列为监管机构确保合规的工具（P228），并将增加制裁描述为惩罚AML/CFT失败（P157）。这些措施面向不合规后的执法反应；题干问的是在制度缺失国家建立认知和能力，因而C的功能和适用主体都不如B、D吻合。
 
 ## 【易错提醒】
 
-治理结构中董事会与高级管理层的分工：董事会负责战略方向、批准风险偏好并承担最终责任（P259-P260），高级管理层负责实施监督和日常合规监控（P260）。选项C将“日常监督”归给董事会，恰恰混淆了这组分工。
+“提高意识”对应培训、信息传播和合作；“罚款、执法行动、贸易限制”对应施压或事后惩罚。判断时先区分措施的功能，再检查其是否直接服务于题干目标。
 
 ---
 
@@ -497,47 +500,41 @@ D
 
 题型：multiple
 
-题干：哪些辅助部门或运营领域能够在支持大型组织的反洗钱和经济制裁合规计划方面发挥关键作用？(选择三项。)
+题干：以下哪两项被视为高级管理层参与金融犯罪合规计划的最佳实践？(选择两项.)
 
-英文题干：Which ancillary departments or operational areas can play an essential role in supporting a larger organization's anti-money laundering and economic sanctions compliance program? (Choose three.)
+英文题干：Which of the following are considered best practices regarding senior management involvement in a financial crime compliance program? (Choose two.)
 
 选项：
 
-- A. 会计学
-  English: Accounting.
-- B. 模型风险管理
-  English: Model risk management.
-- C. 技术解决方案与IT安全
-  English: Technology solutions and IT security.
-- D. 市场营销
-  English: Marketing.
-- E. 欺诈风险管理
-  English: Fraud risk management.
+- A. 自上而下定基调
+  English: Setting the tone from the top
+- B. 必须参加所有监管检查
+  English: Mandatory participation in all regulatory inspections
+- C. 强制参加并审查所有金融犯罪培训课程
+  English: Mandatory attendance at and review of all financial crime training courses
+- D. 为向高级管理层升级问题设定明确的标准
+  English: Setting clear criteria for escalations to senior management
 
 ## 【AI答案】
 
-B、C、E
-
-> **需人工复核**
->
-> - 答案冲突：解析{'C', 'B', 'E'} vs 题库{'C', 'A', 'E'}
+A、D
 
 ## 【考点】
 
-识别大型组织第二道防线中直接支持AFC合规的职能部门
+区分高级管理层战略引领角色与具体运作责任
 
 ## 【核心解析】
 
-大型组织的反洗钱（AML）和经济制裁合规计划依赖多个专门职能部门协同运作。教材在列举第二道防线中典型金融犯罪防控（AFC）职能时，将“模型风险管理”列为其一：该职能负责金融犯罪防控模型的验证与治理，包括交易监控系统，确保其准确性和合规性（P251）。同时，“欺诈风险”虽属操作风险范畴，但教材指出许多组织将其纳入操作风险管理，且监管机构日益要求查看欺诈风险评估结果，可与AML风险评估集中执行（P269, P263）。此外，“技术解决方案与IT安全”在支持AFC监控与调查中不可或缺——教材专设模块说明技术在处理海量客户和交易监控中的关键作用（P428），并列举技术解决方案涵盖交易监控、网络分析、案例管理、区块链追踪和报告等（P428, P451）。这三个职能在教材中都直接且明确地定位于支持AFC合规计划，与题干要求的“辅助部门或运营领域”完全吻合。
+题干问的是高级管理层参与合规计划的“最佳实践”。材料所描述的最佳实践集中在管理层如何“引领”和“把控框架”，而非陷入每一项具体操作。这引出了两个关键概念：其一，领导层通过自身言行确立合规优先于商业利益的文化，教材将其定义为“高层基调”（P264），对应选项A“自上而下定基调”。这种做法直接影响整个组织的合规文化，正是高级管理层不可替代的战略角色。其二，教材明确要求反洗钱政策应包含“向高级管理层和董事会上报问题的程序”（P244），这意味着管理层需要为“什么级别的问题值得自己关注”设定清晰门槛，而非亲自审核每一件事，对应选项D“为向高级管理层升级问题设定明确的标准”。两个正确项共同勾勒出高级管理层的核心职责：定方向、设规则，而不是做具体执行。
 
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）｜主体或阶段错配**：“会计学”对应的会计师在洗钱风险场景中主要作为DNFBP（指定非金融行业和职业）出现——教材指出会计师因接触敏感财务信息而面临洗钱风险（P123），并有责任发现可疑活动（P123）。但这些讨论的定位是会计师作为外部服务提供者可能被利用于洗钱，而非作为大型组织内部辅助AFC合规计划的职能部门。教材在列举第二道防线AFC职能时未包含会计部门（P250-251），题干更匹配内部合规支持职能而非外部专业服务。
-- **D 错误（题干对照）｜题干要素不匹配**：“市场营销”部门与AML/经济制裁合规之间不直接相关。教材唯一涉及市场营销的内容是在数据隐私语境下——指出许多司法管辖区禁止为收集目的之外（如营销）使用客户数据（P209）。这种限制反而表明市场营销与AML合规之间存在法律层面的距离，而非支持关系。教材讨论AFC职能结构和合规支持部门时均未包含市场营销（P250-254, P263），题干要素不匹配。
+- **B 错误（题干对照）｜主体或阶段错配**：选项B要求高级管理层“必须参加所有监管检查”。材料在讨论与监管机构互动时，建议的做法是指定一名合规负责人作为“联络人”来集中处理监管沟通（P299），这更指向专业岗位而非要求所有高管亲身到场。高级管理层的参与是战略层面的监督与支持，而非替代合规职能部门执行每一次具体的检查接待，相比之下题干更支持A和D所代表的引领和框架制定角色。
+- **C 错误（题干对照）｜范围或程度偏差**：选项C要求高级管理层“强制参加并审查所有金融犯罪培训课程”。材料在阐述培训要求时，将其作为员工层面的“第三大支柱”，即“对员工进行定期、持续的反洗钱培训”（P245），并未要求高管亲自参加或审查每一门课程。高管在培训方面的作用更体现为A项所描述的文化倡导和资源保障，而非逐课审查的运作细节，因此选项D所刻画的建立上报标准更吻合高级管理层的监督职能。
 
 ## 【易错提醒】
 
-（无）
+题干选项C把培训责任完全加给高级管理层，但材料在讲第三支柱时，培训的义务主语是“员工”而非特定层级的管理者。对于高层，教材强调的是他们通过“高层基调”来展现对培训的支持，而不是亲自去审查每门课程。看到有关管理层的题目时，先判断它要求的是“亲自操作某件事”还是“确保某件事发生”，前者通常属于业务部门的执行责任。
 
 ---
 

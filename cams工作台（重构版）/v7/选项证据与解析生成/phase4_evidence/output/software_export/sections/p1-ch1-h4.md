@@ -1,6 +1,6 @@
 # p1-ch1-h4 题库软件版解析预览
 
-可导出题目数：5
+可导出题目数：8
 
 教材章节：未映射
 
@@ -188,44 +188,167 @@ D
 
 题型：single
 
-题干：除了对个人造成的身心伤害之外,以下哪些问题与不受监管的网络赌博和游戏所带来的巨大成本有关？
+题干：以下哪一项是公共部门机构在打击洗钱活动中的首要目标？
 
-英文题干：Beyond the physical and mental harm caused to individuals, which of the following problems can be linked to significant costs from unregulated online gambling and gaming?
+英文题干：Which of the following is a primary objective of public sector groups in the fight against money laundering?
 
 选项：
 
-- A. 经济与社会
-  English: Economic and societal
-- B. 政治与监管
-  English: Political and regulatory
-- C. 治理与合规
-  English: Governance and compliance
-- D. 部门和管辖权方面
-  English: Sectoral and jurisdictional
+- A. 就如何通过反洗钱工作提高盈利能力向私人金融机构提供建议
+  English: Advising private financial institutions on how to enhance their profitability through AML efforts
+- B. 建立并执行法律框架,以发现、预防和惩处洗钱及相关金融犯罪
+  English: Establishing and enforcing legal frameworks to detect, prevent, and punish money laundering and related financial crimes
+- C. 为私营企业和非政府组织(NGO)提供资金,用于开发先进的合规技术
+  English: Providing funding to private and non-governmental organizations (NGOs) for the development of advanced compliance technologies
+- D. 在私营企业和非政府组织(NGO)之间充当中间人,以简化反洗钱合规计划
+  English: Acting as intermediaries between private sector firms and non-governmental organizations (NGOs) to streamline AML compliance programs
 
 ## 【AI答案】
 
-A
+B
 
 ## 【考点】
 
-识别金融犯罪的社会与经济后果维度
+监管机构、FIU与执法部门在公共反洗钱体系中的分工
 
 ## 【核心解析】
 
-金融犯罪具有深远的社会和经济后果，包括破坏制度稳定、侵蚀公众信任，并造成长期经济损害（P42）。题干问的是不受监管网络赌博和游戏带来的“巨大成本”，这里的“成本”指向的是对整个社会结构和经济体系造成的宏观损害而非机构内部的管理负担。教材明确指出金融犯罪会“破坏经济稳定并带来更广泛的负面社会后果”（P43），这与选项A“经济与社会”形成了直接匹配。网络赌博作为金融犯罪的一种形式，其资金流动可能涉及洗钱，进而导致资本外逃、犯罪率上升乃至社会动荡（P42），这些都是典型的经济与社会维度的后果。
+公共部门反洗钱体系由监管机构、金融情报机构（FIU）和执法部门共同发挥作用。教材指出，监管机构负责制定详细规则、确保规则得到执行，并保证私营部门的预防性控制有效；监管监督还用于确保合规和发现违规（P228）。国家FIU负责接收、分析和传播金融情报，并形成行动分析供执法部门调查和阻断洗钱等犯罪；监管机构可以采取罚款和执法行动，执法部门则负责调查案件、将洗钱者绳之以法并没收资产（P228）。因此，公共部门通过立法监管、金融情报分析和执法追责，共同实现对洗钱及相关金融犯罪的发现、预防和惩处，选项B是对这套强制性职能最完整的概括。
 
-教材原句："Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm."
+教材原句："A regulator’s role is to set detailed rules, ensure they are followed, and ensure that the preventative controls in the private sector are effective."
 
 ## 【错误项分析】
 
-- **B 错误（题干对照）｜概念混淆**：“政治与监管”在教材中更常出现在风险评估（P158）或巴塞尔指数评估（P175）的语境下，描述的是影响金融犯罪风险的环境因素，而非金融犯罪本身所产生的成本后果。题干问的是网络赌博“带来的”成本，是从犯罪向外散发的后果，而非前提条件。
-- **C 错误（题干对照）｜概念混淆**：“治理与合规”在教材中指向的是机构内部为防控金融犯罪而建立的机制，如治理委员会和合规项目（P295、P339）。这些是应对金融犯罪的手段，而非不受监管的网络赌博本身对外部世界造成的成本。题干强调的是赌博对社会整体的冲击，而非金融机构内部的合规负担。
-- **D 错误（题干对照）｜主体或阶段错配**：“部门和管辖权方面”在教材中出现在描述组织架构管理的语境，例如“区域、司法管辖区及子公司管理”（P254），或指出不同组织的角色因管辖权而异（P344）。这些是组织内部的分工方式，与网络赌博给社会和经济带来的宏观成本不属于同一层面的问题。
+- **A 错误（题干对照）｜目标错配**：教材将公共部门职责定位为制定并执行规则、监督合规、分析金融情报和开展执法行动，其目的在于阻止非法资金、发现违规并追究犯罪责任，而不是提高私营金融机构的盈利能力。A将公共利益和金融体系完整性目标替换成了商业盈利目标。
+- **C 错误（教材直接依据）｜主体或层级错配**：教材提到技术投资时，原文主语是义务实体，即相关机构被鼓励投资人工智能和机器学习等技术，以改进交易监控和欺诈检测（P201）。公共部门可能在特定项目中提供支持，但“为私营企业和NGO开发合规技术提供资金”不是教材所述公共部门的首要法定职能，与B所概括的监管、情报和执法职责相比匹配度明显更低。
+- **D 错误（教材直接依据）｜机制与目标错配**：教材承认公私合作伙伴关系是公共部门与私营部门开展协作的载体，其最常见形式是公私部门之间的信息共享（P235）。这与公共部门在私营企业和NGO之间充当中间人、以简化合规计划的表述不同；公私合作是一种辅助协作机制，不是公共部门打击洗钱的首要强制性目标。
 
 ## 【易错提醒】
 
-（无）
+要区分公共部门的首要强制性职能与实现这些职能的辅助方式。立法监管、合规监督、金融情报分析和执法追责构成公共反洗钱体系的核心职责；技术投入主要由义务实体实施，公私合作则主要承担协作和信息共享功能。题目问“首要目标”时，应优先选择能够概括公共部门监管权、情报职能和执法权的选项，而不是盈利建议、技术资助或中介协调等辅助活动。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪两项准确描述了洗钱（ML）的经济、声誉和社会后果以及违反反金融犯罪（AFC）法规的风险和后果？（选择两项。）
+
+英文题干：Which of the following accurately describes the economic, reputational and social consequences of money laundering (ML) and the risks and consequences of violating AFC regulations? (Choose two.)
+
+选项：
+
+- A. 洗钱破坏了金融系统的完整性和稳定性，使其容易受到非法活动的侵害。这会削弱投资者的信心，阻碍经济增长。
+  English: ML undermines the integrity and stability of financial systems and makes them vulnerable to illegal activity. This can erode investor confidence and hinder economic growth.
+- B. 当金融机构（FI）被发现助长洗钱活动或违反反洗钱法规时，这可能会导致客户对该机构失去信心并流失客户。有趣的是，这种情况可能会使该金融机构免受任何法律后果。
+  English: When a financial institution (FI) is found to be promoting ML or violating AFC regulations, this can lead to a loss of confidence in the institution and a loss of customers. Interestingly, this scenario might sidestep any legal consequences for the FI.
+- C. 当洗钱资金流入合法经济体系时，它们可能会被用于非法目的，比如资助恐怖活动或有组织犯罪。这会扭曲资源配置，破坏发展。
+  English: When laundered funds flow into legitimate economies, they can be used for illegal purposes, such as funding terrorist activities or organized crime. This distorts resource allocation and undermines development.
+- D. 被认为反洗钱措施不足的司法管辖区可能会被认定为不合作或高风险地区，可能面临进入国际市场的限制，不过其他国家对其实施经济制裁的可能性不大。
+  English: Jurisdictions perceived as having insufficient ML measures might be identified as uncooperative or high-risk, potentially facing restricted access to international markets, though economic sanctions by other countries are an unlikely outcome.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+判断洗钱的社会经济后果，并识别包含错误后半句的复合选项
+
+## 【核心解析】
+
+选项A描述洗钱对金融体系和经济的影响。教材指出，金融犯罪会破坏制度、侵蚀公众信任并造成长期经济损害（P42）；金融犯罪盛行还会使国家表现出不稳定和较高投资风险，从而阻碍外国投资（P41）。因此，A所述金融体系稳定性、投资者信心及经济增长之间的逻辑与教材一致。选项C描述洗钱对社会和经济造成的进一步危害。教材明确指出，洗钱会为人口贩运、贩毒集团、恐怖主义和武器走私提供便利，进而加剧犯罪和社会破坏（P42）。结合教材关于金融犯罪造成长期社会和经济损害的说明，可以推断C所述非法资金助长严重犯罪、破坏社会经济发展的总体方向成立。题目要求选出整体表述准确的两项，并不要求正确选项必须分别对应洗钱后果和AFC违规后果，故应选择A、C。
+
+教材原句："Money laundering facilitates the financing of human trafficking, drug cartels, terrorism, and arms smuggling, which foster widespread criminality and societal disruption."
+
+## 【错误项分析】
+
+- **B 错误（复合陈述后半句错误）｜概念混淆**：金融机构因助长洗钱或违反AFC法规而失去客户信任，与教材所述声誉风险方向一致。但“免受任何法律后果”与教材直接冲突：薄弱的反洗钱控制可能导致严厉处罚和业务重组（P48）；在美国监管框架下，监管机构还可处以民事罚款、没收收益、限制业务或提起刑事指控（P185）。因此，B虽然前半句合理，但整体不能成立。
+- **D 错误（复合陈述后半句错误）｜风险方向相反**：反洗钱措施不足的司法管辖区可能遭受声誉损害、国际银行加强审查及市场准入限制。但教材明确指出，此类地区可能受到国际制裁和贸易限制（P42），与D所称经济制裁“可能性不大”方向相反，因此D整体不能成立。
+
+## 【易错提醒】
+
+复合选项必须整体成立。B和D的前半句均有合理成分，但后半句分别否认法律后果和经济制裁，与教材明确陈述冲突，因此不能选择。判断此类选项时，应逐句核对，而不能只因其中一部分正确就选择整项。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]不遵守相关反洗钱法律法规可能导致:(选择两项.)
+
+英文题干：Non-compliance with relevant anti-money laundering laws and regulations can result in: (Select Two.)
+
+选项：
+
+- A. 声誉风险增加.
+  English: Increased reputation risk.
+- B. 列入联合国综合制裁名单.
+  English: Inclusion on the UN Consolidated List.
+- C. 民事和刑事处罚
+  English: Civil and criminal penalties.
+- D. 从公开申报状态中除名.
+  English: Delisting of public filing status.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+不合规直接引发的后果类型识别
+
+## 【核心解析】
+
+不遵守反洗钱义务会带来法律和声誉两类直接后果。教材指出，未履行相关义务可能导致巨额罚款、运营限制和重大声誉损害（P43），对应A的声誉风险增加；教材还说明，AML与制裁合规会给负责执行的组织和个人带来重大的民事和刑事法律责任（P457），对应C的民事和刑事处罚。故应选择A、C。
+
+教材原句："Failure to comply with these obligations can result in severe consequences, including heavy fines, operational restrictions, and substantial reputational damage."
+
+## 【错误项分析】
+
+- **B 错误（制裁列名与AML处罚混淆）｜概念混淆**：联合国安理会综合清单收录的是受到联合国制裁的个人和实体（P206），并非机构只要违反一般AML法规就会自动列名。题干更直接对应A、C所述常见不合规后果。
+- **D 错误（缺少AML因果连接）｜题干要素不匹配**：教材列举的不合规后果包括罚款、运营限制、民刑事责任和声誉损害，没有把“从公开申报状态中除名”作为一般AML不合规后果。
+
+## 【易错提醒】
+
+联合国制裁清单用于记录受制裁对象；AML民事或刑事处罚则是对违规主体的法律追责。题目问一般AML不合规后果时，应优先识别罚款、法律责任和声誉损害，而不是把违规机构自动等同于联合国制裁对象。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：银行反洗钱/打击资助恐怖主义合规计划的设计缺陷可能会导致受监管实体的哪些层级承担个人责任?(选择两项.)
+
+英文题干：A deficiency in the design of a bank's AML/CFT compliance program could result in placing individual accountability on which levels of the regulated entity? (Select Two.)
+
+选项：
+
+- A. 合规部门
+  English: The compliance department
+- B. 董事会
+  English: Board of directors
+- C. 产品监督委员会
+  English: Product oversight committee
+- D. 高级管理层
+  English: Senior management
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+区分董事会与高级管理层的个人问责层级。
+## 【核心解析】
+董事会对 AML 计划有效性承担最终问责，并必须确保缺陷及时处理；高级管理层对计划失败负责，落实整改并向董事会报告（P260）。因此，设计缺陷引发的个人责任主要落在董事会B和高级管理层D。合规部门负责执行、建议和监控，但不是题干所指的最终治理问责层级。
+## 【错误项分析】
+- **A**：合规部门可以承担执行责任或专业责任，但教材把最终治理和管理责任放在董事会与高级管理层。
+- **C**：产品监督委员会不是教材定义的 AML 计划最终问责主体。
+## 【易错提醒】
+董事会负责最终监督，高级管理层负责落实和整改；合规部门负责专业执行，三者职责不能混为一谈。
 
 ---
 

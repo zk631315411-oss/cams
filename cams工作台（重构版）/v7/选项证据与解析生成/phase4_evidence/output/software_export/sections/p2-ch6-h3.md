@@ -1,6 +1,6 @@
 # p2-ch6-h3 题库软件版解析预览
 
-可导出题目数：5
+可导出题目数：8
 
 教材章节：未映射
 
@@ -141,48 +141,46 @@ A
 
 题型：single
 
-题干：某银行首席合规官（CCO）批准向一家位于民主制度薄弱国家的公司提供贸易融资服务。该国是欧盟的主要原油供应国，而欧盟经常出台针对该国的经济制裁措施。因此，该首席合规官会定期查看有关欧盟即将出台的定向经济制裁法规的新闻。以下哪条新闻最令人担忧？
+题干：某银行首席合规官（CCO）批准向一家在民主制度薄弱国家设立的公司提供贸易融资服务。欧盟是该国所产原油的主要进口伙伴。该首席合规官会定期关注欧盟即将出台的定向经济制裁法规的相关新闻。以下哪条新闻最令人担忧？
 
 英文题干：The chief compliance officer (CCO) at a bank approved offering trade finance services to a company established in a country with a weak democratic system. The CCO routinely reviews news on upcoming targeted economic sanction regulations in the EU, a major import partner for the country's production of crude oil. Which of the following pieces of news would be of greatest concern?
 
 选项：
 
-- A. 欧盟委员会和欧盟外交与安全政策高级代表联合提出一项关于禁止进口精炼石油产品的提案
+- A. 欧盟委员会与欧盟外交与安全政策高级代表联合提出一项禁止进口成品油的提案
   English: The European Commission and the High Representative issue a joint proposal for an import ban on refined oil products
-- B. 欧盟委员会和欧盟外交与安全政策高级代表联合提出一项关于禁止进口石油开采设备的提案
+- B. 欧盟委员会与欧盟外交与安全政策高级代表联合提出一项禁止进口石油开采设备的提案
   English: The European Commission and the High Representative issue a joint proposal for an import ban on oil extraction equipment
 - C. 欧盟理事会通过了针对电子设备的新出口管制制度
   English: The Council of the European Union adopts a new export control regime for electronic equipment
-- D. 欧盟理事会针对来自不尊重人权国家的商品采取新的进口限制制度
+- D. 欧盟理事会通过一项新的进口限制制度，限制来自不尊重人权国家的商品
   English: The Council of the European Union adopts a new import restriction regime for goods coming from countries that do not respect human rights
 
 ## 【AI答案】
 
-B
-
-> **需人工复核**
->
-> - 答案冲突：解析{'B'} vs 题库{'A'}
+A
 
 ## 【考点】
 
-定向制裁通过切断关键行业上游供应实现对目标国的精准打击
+辨别进口禁令的贸易方向及其与客户主营贸易的直接关联
 
 ## 【核心解析】
 
-定向经济制裁旨在限制特定商品、服务或技术流入被制裁国，以削弱其支柱产业而非全面禁运。题干中该公司所在国是欧盟的主要原油供应国，原油出口是其经济命脉。选项B的“禁止进口石油开采设备”直接切断了该国维持原油开采能力所需的上游设备供应，从根源上瘫痪其原油产能。这种限制措施精准打击了该国最依赖欧盟的产业环节，比禁止进口成品（原油本身欧盟是进口方）或泛泛的人权条款更直接吻合题干所描述的“定向经济制裁”特征。P206指出欧盟对外行动署负责准备新制裁措施，定向制裁正是其常用工具。
+教材说明，欧盟对外行动署负责准备新的制裁措施，相关措施须由欧盟理事会批准（P206）。因此，CCO在措施正式通过前关注有关制裁提案的新闻具有现实意义。判断哪项新闻最令人担忧，关键是辨别限制措施的贸易方向，并比较其与客户石油贸易的关联程度。
+
+题干说明欧盟是该国所产原油的主要进口伙伴。选项A所称“禁止进口成品油”，是从欧盟角度限制相关石油产品进入欧盟市场，因而会直接影响外部供应国向欧盟销售石油产品以及相关贸易融资。选项B同样使用“禁止进口”，其含义是限制石油开采设备进入欧盟，并不是禁止欧盟向题干国家出口开采设备；因此不能据此推断该国的设备供应会被切断或原油产能会被削弱。四个选项中，A与题干所述石油出口关系最直接，最可能影响银行已经批准的贸易融资业务。
 
 教材原句："The European External Action Service has responsibility for preparing new sanctions measures and the Council of the EU must approve them."
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜范围或程度偏差**：禁止进口精炼石油产品针对的是欧盟从该国“买入”的成品油。题干明确该国是原油出口国，精炼产品禁令对原油出口影响间接，不如禁止开采设备那样直击该国维持原油产量的能力。
-- **C 错误（教材直接依据）｜题干要素不匹配**：题干场景围绕石油贸易，电子设备出口管制与该国作为原油出口国的核心业务没有直接关联，不属于针对该国支柱产业的定向措施。
-- **D 错误（教材直接依据）｜范围或程度偏差**：“不尊重人权”属于全面性制裁的触发条件，范围宽泛。题干强调CCO关注的是“定向经济制裁”新闻，针对石油开采设备的禁令比基于人权理由的普遍进口限制更匹配“定向”特征。
+- **B 错误（题干对照）｜主体或阶段错配**：B是欧盟对石油开采设备实施进口禁令，即限制设备进入欧盟。它不是欧盟对外出口设备的禁令，题干也没有说明该国向欧盟出口石油开采设备，因此B不能推出该国的上游设备供应会被切断。
+- **C 错误（题干对照）｜题干要素不匹配**：C涉及电子设备出口管制，既没有明确针对题干国家，也没有直接涉及该客户所在国对欧盟的石油出口或银行提供的石油贸易融资，关联程度低于A。
+- **D 错误（题干对照）｜范围或程度偏差**：D建立的是针对不尊重人权国家商品的一般进口限制制度，但选项没有说明题干国家已被纳入，也没有明确该制度覆盖石油产品。A则直接指向欧盟进口石油产品的限制，与题干业务联系更具体。
 
 ## 【易错提醒】
 
-定向制裁与经济禁运的区别：定向制裁限制特定商品或技术（如开采设备），意在精准打击目标国关键产业；全面进口限制（如基于人权对所有商品设限）属于更广泛的贸易禁令。题干“定向”一词提示应选择范围最聚焦的选项。
+判断进口或出口限制时，应以发布措施的司法管辖区为视角：“欧盟进口禁令”限制商品进入欧盟，“欧盟出口禁令”才限制商品从欧盟流向外部国家。不能把欧盟的设备进口禁令解释为向目标国断供设备。本题还需比较产品关联：A直接涉及石油产品进口，因而最贴近题干中的石油贸易融资。
 
 ---
 
@@ -228,6 +226,142 @@ A
 ## 【易错提醒】
 
 （无）
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱和反恐怖融资合规标准]联合国安理会(UNSC)有权对国家和恐怖组织实施制裁制度.关于联合国安理会实施的制裁,以下哪两项陈述是正确的？(选择两项.)
+
+英文题干：The United Nations Security Council (UNSC) is empowered to impose sanctions regimes against countries and terrorist organizations. Which statements are true regarding sanctions imposed by the UNSC? (Select Two.)
+
+选项：
+
+- A. 如果当地法律法规将此类行为规定为犯罪,试图规避或逃避联合国安理会实施的制裁可能构成犯罪行为.
+  English: Attempts to circumvent or evade sanctions imposed by the UNSC can constitute a criminal offense if designated under local laws and regulations.
+- B. 联合国可以实施武器禁运,但不能禁止向特定国家直接或间接出口其他货物.
+  English: The UN can impose arms embargoes but cannot prohibit direct or indirect exports of other goods to specific countries.
+- C. 联合国会员国应当执行并落实联合国安理会实施的制裁措施.
+  English: Member countries of the United Nations are expected to implement and enforce sanctions imposed by the UNSC.
+- D. 直接违反联合国安理会实施的制裁在所有成员国均构成犯罪行为
+  English: Direct violations of sanctions imposed by the UNSC constitute a criminal offense in all member countries.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+理解联合国安理会制裁的执行机制与法律效力边界
+
+## 【核心解析】
+
+联合国会员国的核心义务来自《联合国宪章》第二十五条，该条规定会员国有义务“接受并执行安理会的决定”（P206）。这是安理会制裁具有约束力的法律基础——制裁不是建议，而是每个会员国必须落实的强制性义务。因此选项C“联合国会员国应执行并落实联合国安理会实施的制裁措施”直接对应这一义务，属于对安理会制裁执行机制的正确陈述。与此同时，制裁规避行为在实际中频繁发生，教材指出制裁规避可作为洗钱的上游犯罪（P25），这意味着各国可以通过国内立法将规避制裁的行为定为刑事犯罪。选项A“试图规避或逃避制裁，如果根据当地法律法规被定性，可能构成犯罪行为”与之吻合——它并未宣称规避行为在所有国家自动构成犯罪，而是加上了“根据当地法律法规被定性”这一前提，这与教材对制裁规避可被各国国内法纳入刑事框架的表述一致，且措辞本身不超越教材的事实陈述范围。
+
+教材原句："Article 25 further states that Member States are obligated to “accept and carry out the decisions of the Security Council.”"
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜范围或程度偏差**：联合国安理会制裁手段可涵盖武器禁运，但教材并未将制裁能力限定在此范围。教材提到军事和两用商品“常受禁运和出口管制”（P135），表明出口管制同样是制裁工具箱的一部分，这与选项B“不能禁止其他货物出口”的说法直接冲突。题干条件下，选项C对会员国义务的陈述有《宪章》原文支撑，匹配度更优。
+- **D 错误（教材直接依据）｜范围或程度偏差**：教材明确指出联合国“不是世界政府，不制定法律”（P160），因此违反安理会制裁本身不等于在所有成员国自动构成国内法意义上的犯罪行为。是否构成犯罪取决于各成员国是否通过国内立法将其入罪，例如欧盟直到2024年才通过修订指令将违反限制性措施定为刑事犯罪（P189）。选项D缺少“根据当地法律”这一关键前提，相比选项A带前提条件的表述，选项D的绝对化措辞与教材对联合国法律地位的界定更不吻合。
+
+## 【易错提醒】
+
+安理会制裁决议是国际法义务，对各会员国有约束力，但需要各国通过国内立法转化为国内法才能产生刑事法律效果。因此“会员国必须执行”是对的，“违反即犯罪”则取决于各国是否将其入罪。区分这二者是理解联合国制裁法律效力的关键。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：联合国制定制裁制度的主要目标包括:(选择三项.)
+
+英文题干：The primary objectives of the United Nations in developing sanctions regimes include: (Select Three.)
+
+选项：
+
+- A. 强迫发展中国家采用自由民主或实质民主.
+  English: To force developing nations to adopt liberal or substantive democracies
+- B. 支持各国政府和政权和平解决冲突.
+  English: To support governments and regimes in the peaceful resolution of conflict
+- C. 对那些在金融犯罪管控方面存在薄弱环节的政府进行惩罚.
+  English: To punish governments for having weak financial crime controls
+- D. 遏制各国境内非民主和违宪的权力变更.
+  English: To deter non-democratic and unconstitutional changes within countries
+- E. 以支持对人权的保护
+  English: To support the protection of human rights
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+联合国制裁的根本目标与核心议程
+
+## 【核心解析】
+
+教材指出，联合国依据《联合国宪章》第七章第41条使用制裁，以促进国际和平与安全（P206）。同时，联合国的议程明确包括维护全球和平与安全、提供人道主义援助、维护人权以及维持国际法（P160）。由此可推断，联合国制裁制度的核心目标与这些议程一脉相承，即致力于和平解决冲突、遏制违反国际法与破坏宪政秩序的国内变革，以及保护人权。本题中，选项B直接对应和平解决冲突，选项D对应维护国际法下遏制非民主和非宪法的变革，选项E对应保护人权，三项均指向联合国制裁制度的根本出发点。
+
+教材原句："The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜题干要素不匹配**：教材未将“强迫他国采用特定政治制度”列为联合国制裁的目标。制裁旨在应对和平与安全的威胁，而非输出民主模式，题干要素缺失相应的议程支撑。
+- **C 错误（题干对照）｜范围或程度偏差**：联合国制裁关注的是对国际和平与安全的威胁或对人权的侵犯，而非单纯惩罚某国金融犯罪管控薄弱。管控薄弱可能构成风险，但教材所述目标更直接匹配和平、安全与人权保护，而非惩罚性的管控评价。
+
+## 【易错提醒】
+
+（无）
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：联合国制定制裁制度的主要目标包括:(选择三项.)
+
+英文题干：The primary objectives of the United Nations in developing sanctions regimes include: (Choose Three.)
+
+选项：
+
+- A. 强迫发展中国家采用自由民主或实质民主.
+  English: To force developing nations to adopt liberal or substantive democracies
+- B. 支持各国政府和政权和平解决冲突.
+  English: To support governments and regimes in the peaceful resolution of conflict
+- C. 对那些在金融犯罪管控方面存在薄弱环节的政府进行惩罚.
+  English: To punish governments for having weak financial crime controls
+- D. 遏制各国境内非民主和违宪的权力变更.
+  English: To deter non-democratic and non-constitutional changes within countries
+- E. 以支持对人权的保护
+  English: To support the protection of human rights
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+联合国制裁制度的根本目的与联合国核心议程
+
+## 【核心解析】
+
+联合国制裁的法律依据是《联合国宪章》第七章第41条，核心目标是“促进国际和平与安全”（P206）。在此框架下，制裁作为一种非武力强制措施，直接服务于和平解决冲突（B）、遏制破坏稳定的非宪法变革（D）这两个安全维度的目标。同时，教材明确指出联合国的核心议程包括“维护人权”（P160），这构成了制裁制度在安全目标之外的另一个支柱，即保护人权（E）。综上，B、D、E三项分别从和平解决冲突、维护宪制稳定、保护人权三个维度，精确对应了联合国制裁制度的核心目标框架。
+
+教材原句："The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜题干要素不匹配**：题干问的是联合国制裁制度的“主要目标”，配套证据明确指向“促进国际和平与安全”和“维护人权”，并未将推广某种特定政体（如自由民主制）列为制裁目标。题干条件更直接匹配B、D、E，而非A。
+- **C 错误（题干对照）｜题干要素不匹配**：教材指出联合国制裁着眼于国际和平、安全与人权保护，而非作为惩罚金融监管薄弱国家的手段。尽管金融犯罪管控薄弱可能导致相关后果，但“惩罚政府”这一动机在教材对联合国制裁目标的定义中并无支撑，匹配度不如B、D、E。
+
+## 【易错提醒】
+
+制裁的目标是维护和平与安全、保护人权，而不是推广特定政体或惩罚监管不力的政府。区分关键在于：前者是制裁本身的制度目的，后者可能是制裁引发的间接效果或被其他机制覆盖的领域。
 
 ---
 

@@ -1,6 +1,6 @@
 # p2-ch7-h4 题库软件版解析预览
 
-可导出题目数：11
+可导出题目数：15
 
 教材章节：未映射
 
@@ -108,38 +108,36 @@ D
   English: Allows Financial Intelligence Units (FIUs) to enact sanctions against perpetrators of financial crime
 - B. 促进金融透明度，维护金融体系的完整性
   English: Promotes financial transparency and protects the integrity of financial systems
-- C. 在金融机构之间共享前需经金融情报机构（FIU）批准
+- C. 金融机构之间共享数据前，须经金融情报机构（FIU）批准
   English: Needs to be approved by the Financial Intelligence Unit (FIU) before sharing between financial institutions
 - D. 借助数据分析帮助金融机构更有效地打击犯罪
   English: Helps financial institutions to be more effective in fighting crime with data analysis
 
 ## 【AI答案】
 
-D
-
-> **需人工复核**
->
-> - 答案冲突：解析{'D'} vs 题库{'B'}
+B
 
 ## 【考点】
 
-信息共享在反洗钱中的核心作用——提升预防与检测效能
+数据共享通过提高透明度和机构协作维护金融体系完整性
 
 ## 【核心解析】
 
-教材指出，信息共享的核心价值在于提升洗钱和恐怖融资的“预防与检测能力”：当A银行因怀疑客户洗钱而将其拒之门外后，该客户可能轻易转向B银行继续洗钱，而信息共享机制能阻止这种漂移，从而“leading to better prevention and detection of money laundering”（P239）。这一逻辑的落脚点是金融机构借助共享的情报和数据，更有效地识别和打击犯罪活动，而非单纯追求抽象的“透明度”或由FIU来“批准”或“制裁”。题干中D项“借助数据分析帮助金融机构更有效地打击犯罪”与这一“通过信息提升打击效能”的因果链条完全吻合。此外，教材在DORA背景下也强调信息共享使机构能够“effectively contain impacts of financial crimes”（P211），进一步强化了数据共享直接服务于金融机构打击犯罪这一结论。
+教材指出，信息共享能够防止可疑客户从一家金融机构转向另一家继续洗钱，从而改善洗钱和恐怖融资的预防与检测（P239）。欧盟第75条允许符合条件的机构参加跨境信息共享伙伴关系，并共享客户身份、业务关系、交易和客户风险因素等信息（P239），说明信息共享是跨机构识别和缓释风险的重要机制。
+
+从国际标准的制度目标看，FATF建议24至40旨在加强透明度、机构监督和全球合作（P149）；教材也将保护金融体系和促进透明度列为强化监管与合规工作的目标（P16）。由此可见，信息共享通过减少机构间的信息缺口、提升透明度和协作能力，服务于金融体系完整性的维护。选项B最准确地概括了这一国际标准层面的作用。选项D加入了“数据分析”这一额外机制，而教材关于信息共享的相关表述并未将数据分析作为其必要特征，因此D不如B准确。
 
 教材原句："Information sharing prevents this and other typologies, leading to better prevention and detection of money laundering and terrorist financing."
 
 ## 【错误项分析】
 
-- **A 错误（教材直接依据）｜主体或阶段错配**：教材明确FIU的职责是“分析可疑交易报告并支持执法调查”（P149），实施制裁的权力归属于监管机构（supervisors）而非FIU。题干问的是数据共享的直接目的，而“FIU实施制裁”在主体职能上偏离了教材对FIU的角色定位。
-- **B 错误（题干对照）｜范围或程度偏差**：“维护金融体系完整性”在教材中是反洗钱合规的整体目标（P50），而非信息共享特有的直接效果。在教材信息共享相关章节中，其论述始终围绕“预防和检测犯罪”“增强反洗钱计划”（P239）展开，并未将信息共享的直接收益描述为“促进金融透明度”。题干更直接匹配D项所体现的打击犯罪效能，而非B项这种更宏观、更间接的体系目标。
-- **C 错误（教材直接依据）｜证据不足**：教材在提及美国《爱国者法案》第314条时，允许金融机构相互共享信息以协助反洗钱合规（P182），并未将FIU批准设为前置条件。信息共享的实质是机构间基于情报分析更有效地打击犯罪，而非必须经过FIU批准这一程序要件。
+- **A 错误（教材直接依据）｜主体或阶段错配**：FATF建议要求各司法管辖区设立FIU，以分析可疑交易报告并支持执法调查（P149）。教材没有将对金融犯罪行为人实施制裁列为FIU的职能，因此A混淆了情报分析与制裁执法职责。
+- **C 错误（教材直接依据）｜范围或程度偏差**：欧盟第75条规定，特定跨境信息共享伙伴关系可能需要国家监管机构批准（P239），批准主体是国家监管机构，而不是FIU；该规定也不等于所有金融机构间共享都必须事先获得FIU批准。因此C将主体和适用范围都作了错误扩大。
+- **D 错误（题干对照）｜概念混淆**：数据共享可以为识别和分析犯罪风险提供更多信息，但“数据共享”与“数据分析”不是同一概念。教材强调的是共享减少信息缺口并改善预防与检测（P239），没有将“借助数据分析”表述为欧盟和FATF重视数据共享的共同制度理由。
 
 ## 【易错提醒】
 
-FIU与监管机构（supervisor）职能不同：FIU负责接收和分析可疑交易报告、支持执法调查（P149），而实施制裁的权力属于具备监管职权的supervisors。不要将“分析情报”与“实施制裁”混为一谈。
+判断此类题目时，应区分“共享的机制”与“共享的制度目标”：数据共享的机制是让不同机构获得原本缺失的信息；其国际标准层面的目标是加强透明度、监督和合作，进而保护金融体系完整性。数据分析可以利用共享信息，但不能与数据共享本身画等号。
 
 ---
 
@@ -382,19 +380,19 @@ B
   English: The Dutch bank should limit any information sharing to what is necessary, reasonable, and proportionate, in line with applicable laws and regulations
 - B. 该荷兰银行有保护客户隐私和银行保密信息的义务.
   English: The Dutch bank's legal obligations to protect customer privacy and bank secrecy prohibit it from sharing any such information
-- C. 荷兰银行应要求意大利银行出具生产指令,并在获得其法律部门批准后,再分享所请求的信息.
+- C. 荷兰银行应要求意大利银行出具文件调取令,并在获得其法律部门批准后,再分享所请求的信息.
   English: The Dutch bank should require a production order from the Italian bank and receive approval from its legal department before sharing the requested information
-- D. 打击金融犯罪的需求超过了欧盟的数据保护和隐私法规的要求
+- D. 打击金融犯罪的需求优先于欧盟的数据保护和隐私法规的要求
   English: The need to combat financial crime overrides the requirements of EU data protection and privacy regulations
 
 ## 【AI答案】
 
 A
 
-> **需人工复核**
+> **源答案冲突已复核**
 >
-> - 答案冲突：解析{'A'} vs 题库{'B'}
-> - 部分选项证据不足：D
+> - 英文原题明确标记A；结构化中文答案B与中文参考解析的结论A冲突
+> - 本解析按原题英文答案、中文解析内容和教材证据采用A
 
 ## 【考点】
 
@@ -402,63 +400,19 @@ A
 
 ## 【核心解析】
 
-欧盟《2024/1624号法规》第75条为金融机构之间的跨境信息共享建立了法律框架，允许经国家监管机构批准后共享客户身份、交易记录等信息（P239）。题干中两家银行同在欧盟管辖下，请求涉及一系列交易及相关客户资料，正是该法规覆盖的场景。在启动共享前，最重要的不是“能不能共享”，而是“如何合规共享”——即确保共享范围仅限于必要、合理且适度的程度，以同时满足反洗钱合作义务和数据保护法规（如GDPR）的要求。选项A直接体现了这一平衡原则：在享有共享权限的同时，以“必要、合理、适度”为边界锁定量与范围。
+教材要求，机构参加私营部门间信息共享安排前，应认真考虑当地数据保护法和客户保密义务（P239）；在为反洗钱目的处理客户身份数据时，还必须同时平衡GDPR要求（P263）。GDPR强调数据最小化和目的限制（P392）。题干问荷兰银行在共享交易及客户资料前最重要的考虑因素，A要求把共享限制在必要、合理、适度的范围，并遵守适用法律，直接落实上述边界。B和D都把一项义务绝对化，C则把银行间共享误设为必须取得对方文件调取令。因此答案为A。
 
-教材原句："In the EU, Article 75 of Regulation (EU) 2024/1624 allows organizations to take part in cross-border information sharing partnerships, if their national supervisor approves it."
+教材原句："Organizations looking to join private-to-private sector information sharing arrangements should carefully consider their obligations under local data protection legislation and customer confidentiality requirements within their organization."
 
 ## 【错误项分析】
 
-- **B 错误（教材直接依据）｜范围或程度偏差**：客户隐私和银行保密义务确实存在，但教材同时指出，在英国和美国等司法管辖区，立法已为信息共享提供了安全港保护，豁免相关的保密义务与民事责任（P239）。在题干所处的欧盟跨境共享场景中，第75条已提供合法基础，因此该义务不再是绝对禁止的理由，更关键的问题在于如何有限度地共享，而非一概不共享。
-- **C 错误（题干对照）｜主体或阶段错配**：生产令（production order）是执法机构通过法院命令等法律工具要求机构提供文件的机制（P336），与题干描述的“银行对银行”自愿性信息共享渠道分属不同路径。题干场景落在私营部门间信息共享（P239）框架下，双方只需在获得监管批准后按约定共享，不需要对方出具执法性质的生产令。
+- **B 错误（教材直接依据）｜范围或程度偏差**：客户隐私和银行保密义务必须考虑，但并非在所有情况下都绝对禁止共享。教材说明，欧盟第75条允许经国家监管机构批准的跨境信息共享伙伴关系共享客户身份、业务关系和交易等信息（P239），因此B的“禁止任何此类信息”过度绝对；是否共享仍取决于合法基础及数据保护要求。
+- **C 错误（题干对照）｜主体或阶段错配**：题干是银行间信息共享，教材要求先审查适用的数据保护法、客户保密义务及相应合法基础（P239）。C把“意大利银行出具文件调取令”设为必备条件，既不是题干给出的法律前提，也不是教材所述私营部门共享安排的通用要求。
 - **D 错误**：打击金融犯罪的需求与数据保护法规并非一方绝对优先，教材明确要求机构在按反洗钱规定处理客户身份数据时，必须同时平衡GDPR的合规要求（P263）。选项D的“override”意味着数据保护要求被单方面压制，而教材框架下二者是共同遵守、相互协调的关系，不如A中“适度的共享”更能体现这种平衡。
 
 ## 【易错提醒】
 
 保密义务不等于绝对禁止信息共享。在存在法定豁免或监管批准的共享安排（如第75条）下，保密义务转变为要求在共享过程中遵循必要、合理、适度的数据最小化原则，而非彻底阻断信息流动。
-
----
-
-教材章节：未映射
-
-题型：multiple
-
-题干：一家国际银行的总部设在西班牙马德里，在美国纽约市设有办事处。马德里办事处正在调查一笔来自纽约办事处客户的交易，并询问纽约办事处能否提供有关该个人的更多相关信息。经过进一步调查，纽约办事处发现他们在前一年已就该个人提交了一份可疑活动报告（SAR）。在分享所请求的信息之前，需要考虑哪些因素？（选择两项。）
-
-英文题干：An international bank is headquartered in Madrid, Spain, with an office in New York City (NYC), US. The Madrid office is investigating a transaction originating from a customer of the NYC office and inquires whether the NYC office can share any relevant further information on the individual. Upon further research, the NYC office finds that they have filed a suspicious activity report (SAR) on the individual in the previous year. Which factors need to be considered before sharing the requested information? (Select two.)
-
-选项：
-
-- A. 外国银行在跨境分享任何信息时，必须始终向其本国的反金融犯罪机构申请批准。
-  English: The foreign bank must always request approval by its national anti-financial crime authority to share any information cross-border.
-- B. 该银行应将此情况报告给金融犯罪执法网络（FinCEN），并在收到正式指导后才能分享相关信息。
-  English: The bank should report this to the Financial Crimes Enforcement Network (FinCEN) and receive formal guidance before sharing the information.
-- C. 银行应考虑司法管辖区的隐私要求以及自身的政策和程序，以确定要分享哪些信息。
-  English: The bank should consider jurisdictional privacy requirements and its own policies and procedures to determine what information to share.
-- D. 该信息仅应在确有必要知晓的情况下进行分享。
-  English: The information should only be shared on a need-to-know basis.
-
-## 【AI答案】
-
-C、D
-
-## 【考点】
-
-跨境共享SAR信息时的隐私合规与知悉范围控制
-
-## 【核心解析】
-
-在金融机构内部跨境共享可疑交易报告（SAR）相关信息时，有两个核心约束同时起作用。第一，任何此类讨论都必须遵守当地数据隐私法以及组织自身关于保护机密信息的要求（P238）；组织在考虑加入私营部门信息共享安排前，也应审慎评估当地数据保护法规和客户保密义务（P239）。题干中马德里与纽约分属于两个司法管辖区，两地隐私法规可能存在差异，因此必须先考虑管辖区的隐私要求和银行自身的政策程序，这直接对应选项C。第二，客户数据必须安全存储，仅在与他人有“需要知晓”（need to know）且具备相应许可和权限时方可共享（P209）。题干中马德里办事处在调查一笔交易，其信息需求是否构成“确有必要的知悉”是必须判断的前提，这直接对应选项D。两者共同构成跨境内部共享SAR前不可绕开的合规考量。
-
-教材原句："Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it."
-
-## 【错误项分析】
-
-- **A 错误（题干对照）｜范围或程度偏差**：教材明确指出《反洗钱法》允许金融机构内部跨境共享SAR信息（P183），并非“必须始终申请本国机构批准”。题干的内部信息共享场景更直接匹配“允许”而非“强制预先审批”的框架。
-- **B 错误（题干对照）｜主体或阶段错配**：FinCEN的职能是发布法规、支持执法调查及与外国FIU协调打击跨境金融犯罪（P184），并非作为金融机构内部跨境信息共享的“前置审批机关”。题干问的是共享前应考虑的因素，更匹配隐私合规和知悉范围控制，而非向外报送并等待指导。
-
-## 【易错提醒】
-
-跨境共享SAR信息是否须向监管申请审批？教材规定《反洗钱法》允许金融机构内部跨境共享（P183），这与“必须申请本国机构批准”是两回事。允许内部共享不代表豁免所有约束——还需同时满足数据隐私合规和“need-to-know”要求。
 
 ---
 
@@ -503,6 +457,221 @@ PPP设立目的：区分运营信息共享与战略信息共享的主体和对�
 ## 【易错提醒】
 
 “运营信息（operational information）”和“战略信息（strategic information）”的功能不同。教材中 FIU 的“战略分析”用于理解趋势、类型学和威胁（P228），而“操作分析”供执法部门调查具体洗钱案件。“战略信息”偏宏观、政策层面——如共同确定优先事项和制定政策（P235）；“运营信息”偏执行层面——如联合分析团队和培训等具体协作活动（P235）。下次遇到类似选项，先看主语是谁、交换的是什么类型的信息，再与 PPP 在教材中的功能定义对照。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪两项陈述描述了公私合作伙伴关系(PPP)的优势？(选择两项.)
+
+英文题干：Which of the following statements describe the strengths associated with public-private partnerships (PPPs)? (Choose two.)
+
+选项：
+
+- A. 公共组织能够更好地了解私营部门所经历的情况,并为政策制定和法律的制定提供信息.
+  English: Public organizations can better understand what the private sector experiences and inform policy and the enactment of laws.
+- B. 数据保护与隐私政策为制定信息共享协议提供了机会,以防止未经授权访问信息.
+  English: Data-protection privacy policies provide an opportunity to develop information-sharing protocols to prevent unauthorized access to information.
+- C. 数据保护隐私政策因基于政府旧有立法的限制而阻碍了PPP模式的演进
+  English: Data-protection privacy policies prohibit the evolution of PPPs due to restrictions based on legacy government legislation.
+- D. 小企业主可以选择第三方供应商或金融机构来保障其个人数据的安全,这些数据在公私合作伙伴关系中可以轻松共享.
+  English: Small business owners can choose third-party suppliers or financial institutions to safeguard their private data, which can be easily shared in public-private partnerships.
+
+## 【AI答案】
+
+A、B
+
+## 【考点】
+
+识别公私合作伙伴关系（PPP）的核心优势
+
+## 【核心解析】
+
+本题需要区分教材直接表述与基于教材原则的选项应用。教材指出，在某些司法管辖区，公共和私营部门通过PPP共同确定优先事项并塑造政策和战略（P235）。这支持A所体现的政策协作优势；但“公共组织更好地了解私营部门经历并据此制定法律”是对该原则的合理延伸，并非教材逐字表述。
+
+教材还指出，司法管辖区可以通过建立明确的信息共享法律框架解决隐私和监管问题，并且PPP可以建立清晰、安全的沟通渠道以确保各方参与（P236）。这两条依据共同支持B：隐私和数据保护要求可以促成规范化的信息共享协议；“防止未经授权访问”是对安全共享要求的具体化，而不是教材原文的逐字复现。因此应选择A、B。
+
+教材原句："In some jurisdictions, the public and private sectors come together to agree on common priorities and even to shape policy and strategy."
+
+## 【错误项分析】
+
+- **C 错误（题干对照）｜范围或程度偏差**：教材确实将“不明确或限制性的法律或法律解释”列为可能阻碍PPP成功的因素之一（P235），但教材并未将其定性为数据保护隐私政策必然导致的结果。相反，教材指出司法管辖区可以“通过建立明确的信息共享法律框架来解决隐私和监管问题”（P236）。选项C将隐私政策描述为“阻碍PPP模式的演进”，属于绝对化的负面结论，不如A和B更直接吻合教材对PPP优势的正面阐述。
+- **D 错误（题干对照）｜题干要素不匹配**：选项把小企业主选择第三方供应商与PPP中的数据共享直接联系起来，但教材强调信息共享需要明确的法律框架和清晰、安全的沟通渠道（P236），并未支持个人数据可以在PPP中“轻松共享”。此外，教材讨论的PPP优势是公私部门之间的协作机制，而不是小企业主个人选择数据保管方。
+
+## 【易错提醒】
+
+判断PPP选项时，要区分三层含义：教材直接列出的职能、根据教材原则作出的合理应用，以及选项自行加入的绝对化结论。限制性法律可能构成障碍，但明确的信息共享法律框架和安全沟通渠道是解决方案；因此C把可治理的障碍说成隐私政策必然禁止PPP演进，D把受约束的信息共享说成“轻松共享”，都不成立。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：据埃格蒙特集团称,公私合作伙伴关系(PPP)能为金融情报机构(FIU)带来哪些好处？(选择三项.)
+
+英文题干：According to the Egmont Group, which benefits do public-private partnerships (PPPs) provide to Financial Intelligence Units (FIUs)? (Select Three.)
+
+选项：
+
+- A. 帮助克服数据保护和信息共享方面的限制
+  English: Helping overcome data protection and information sharing limitations
+- B. 提高报告质量并增加信息输入
+  English: Enhancing the quality of reporting and additional informational input
+- C. 帮助减轻执法部门的财务成本负担
+  English: Helping to alleviate the financial cost burden on law enforcement
+- D. 协助设计通用方法并确定期望的交付成果
+  English: Helping to design common approaches and identify desired deliverables
+- E. 提供灵活性、敏捷性以及适应洗钱/恐怖融资威胁环境的调整机会
+  English: Offering flexibility, agility, and opportunities to adjust to the ML/TF threat environment
+
+## 【AI答案】
+
+A、B、E
+
+## 【考点】
+公私合作伙伴关系对 FIU 的信息和治理价值。
+## 【核心解析】
+PPP的核心是公私部门双向信息共享（P235）。其对 FIU 的直接价值包括：建立法律和隐私框架以克服信息共享限制A（P236）；提高报告质量并增加情报输入B（P238）；在威胁环境变化时提高灵活性、敏捷性和调整能力E。D所称“设计通用方法并确定交付成果”在部分合作项目中可能出现，但不是本题教材对 FIU 受益的主要表述。
+## 【错误项分析】
+- **C**：减轻执法部门财务成本不是教材列出的 FIU 直接收益。
+- **D**：共同确定优先事项和政策可以是 PPP 的一般功能，但本题的选项组合更直接考查 A、B、E 三项对数据限制、报告输入和适应威胁的作用。
+## 【易错提醒】
+先确认受益主体是 FIU，再区分 PPP 的信息、法律和适应性收益与执法部门成本收益。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：公私合作(PPP)在反金融犯罪工作中的主要优势包括:(选择两项.)
+
+英文题干：The key strengths of public-private partnerships (PPPs) in anti-financial crime efforts include: (Select Two.)
+
+选项：
+
+- A. 提高识别和缓解金融犯罪风险的行动速度
+  English: Improving the speed of action in identifying and mitigating financial crime risks.
+- B. 增强政府与金融机构之间的信息共享能力
+  English: Enhancing information-sharing capabilities between governments and financial institutions.
+- C. 为金融机构在共享信息时免于承担责任提供法律框架
+  English: Providing a legal framework for financial institutions to avoid liability when sharing information.
+- D. 消除组织自行开展尽职调查的需要
+  English: Eliminating the need for organizations to conduct their own due diligence.
+
+## 【AI答案】
+
+A、B
+
+> **需人工复核**
+>
+> - 部分选项证据不足：C, D
+
+## 【考点】
+
+公私合作伙伴关系在反金融犯罪中的核心优势
+
+## 【核心解析】
+
+教材指出，公私合作伙伴关系（PPP）最常见的形式是公共部门与私营部门之间的信息共享（P235）。此外，PPP 的用途包括“提供情报和分析，从而打击金融犯罪”（P237）。题干问 PPP 的“主要优势”，选项 A 的“提高识别和缓解金融犯罪风险的行动速度”与“提供情报和分析以打击金融犯罪”直接吻合；选项 B 的“增强政府与金融机构之间的信息共享能力”则与“最常见的形式是信息共享”完全对应。因此，A 和 B 共同构成 PPP 的核心优势。
+
+教材原句："PPPs most commonly exist as a means of sharing information, both public-to-private and private-to-public, though the type of collaboration can vary."
+
+## 【错误项分析】
+
+- **C 错误**：选项 C 提出为信息共享提供免责法律框架。教材在《银行保密法》第 314 条中提及金融机构共享信息时可获得“安全港”责任保护（P182），但该保护是法律对特定信息共享的配套设计，并非 PPP 本身的主要优势。题干更直接匹配的是 PPP 作为信息共享途径的功能，而非其背后的法律责任豁免框架。
+- **D 错误**：选项 D 声称 PPP 可消除机构自行开展尽职调查的需要。教材明确规定，机构仍必须对业务、客户特征等开展尽职调查（P271），尽职调查义务并未因公私合作而消失。因此，该选项与教材事实不符，更不可能成为 PPP 的优势。
+
+## 【易错提醒】
+
+容易将信息共享优势与法律免责条款混淆。教材在描述 PPP 时强调其作为信息共享的“常见手段”（P235），单独的安全港条款（P182）旨在保护共享行为，但不属于 PPP 本身的典型优势。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：涉及执法部门、金融情报机构和私营部门之间信息共享的公私合作伙伴关系(PPP)旨在:(选择两项.)
+
+英文题干：Public-private partnerships (PPPs) that involve the sharing of information between law enforcement authorities, Financial Intelligence Units (FIUs), and the private sector are established to: (Choose two.)
+
+选项：
+
+- A. 建立关键信息的共同数据库,并与金融行动特别工作组(FATF)共享可疑活动的分析结果
+  English: Create a common database of key information and share analysis of suspicious activities with FATF
+- B. 在金融情报机构与义务机构之间交换战略信息
+  English: Exchange strategic information between FIUs and obliged entities
+- C. 金融机构之间交换战略信息
+  English: Exchange strategic information between financial institutions
+- D. 在公共机构与义务机构之间交换运营信息
+  English: Exchange operational information between public authorities and obliged entities
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+识别公私合作伙伴关系(PPP)的核心功能是公私部门间的信息共享
+
+## 【核心解析】
+
+公私合作伙伴关系(PPP)最常见的存在形式是信息共享，方向包括“公对私”和“私对公”(P235)。题干描述的场景涉及执法部门、金融情报机构和私营部门之间的信息共享，这正好落在PPP的核心定义之内。选项B“金融情报机构(FIU，属公共部门)与义务机构(属私营部门)之间交换战略信息”对应“公对私”的信息共享方向；选项D“公共机构与义务机构之间交换运营信息”同样对应“公对私”方向，区别在于信息类型从战略变为运营。两个正确项共同覆盖了PPP在战术/战略层面和运营层面的信息交换功能。
+
+教材原句："PPPs most commonly exist as a means of sharing information, both public-to-private and private-to-public, though the type of collaboration can vary."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜题干要素不匹配**：题干仅涉及执法部门、金融情报机构和私营部门之间的信息共享，未出现FATF作为参与方。PPP信息共享的教材定义聚焦于公私部门之间(P235)，选项A引入与FATF共享的要素超出了题干给定的主体范围，匹配度不如B、D直接落在公私部门双向共享框架内。
+- **C 错误（题干对照）｜主体或阶段错配**：金融机构之间交换信息属于私营部门内部协作(P211提到金融机构间可共享威胁情报)，而非公私合作伙伴关系(PPP)框架下的公私跨界共享。题干明确限定了“公私合作伙伴关系”这一载体，其教材定义的核心是公私部门间的共享(P235)，选项C仅涉及私营部门内部，不如B、D更吻合题干对PPP的界定。
+
+## 【易错提醒】
+
+教材在P235明确了PPP信息共享是“公私”跨界共享，而P211提到金融机构间共享是私营部门内部的网络安全协作，二者主体不同。题干出现“公私合作伙伴关系(PPP)”字样时，优先匹配公私跨界共享的选项，而非私营部门内部共享。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：公私合作(PPP)如何促进打击金融犯罪方面的协作？(选择两项.)
+
+英文题干：How can public-private partnerships (PPPs) foster collaboration in the fight against financial crime? (Choose two.)
+
+选项：
+
+- A. 培育合规文化
+  English: Developing a culture of compliance
+- B. 通过向金融机构征求反馈意见来改善公共部门的治理
+  English: Improving governance in the public sector by requesting feedback from financial institutions
+- C. 减少所有金融机构的交易监测误报
+  English: Reducing transaction monitoring false positives for all financial institutions
+- D. 通过共享信息提高可用于分析的数据的质量和数量
+  English: Improving the quality and quantity of data available for analysis by sharing information
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+识别公私合作促进反金融犯罪协作的直接机制。
+
+## 【核心解析】
+B通过向金融机构征求反馈改进公共部门治理，体现公共部门与私营金融机构共同识别问题、调整政策和改善执行，是公私合作的直接协作方式；D通过共享信息提高数据的质量和数量，直接对应PPP在金融犯罪治理中的核心价值（P235–237）（FATF私营部门信息共享指引）。因此答案为B、D。
+
+A“培育合规文化”可能是公私合作的长期结果，但本身没有说明跨机构共同工作；C“减少所有金融机构的误报”过于绝对，也不是PPP的通用目标。
+
+## 【错误项分析】
+- **A**：可以是协作带来的效果，但不是题干所问的具体跨部门协作动作。
+- **C**：“所有金融机构”过于绝对，且误报率下降需要具体模型和数据条件，不能作为PPP的一般功能。
+
+## 【易错提醒】
+判断PPP选项时，先看是否存在公共部门与私营部门之间的共同反馈、信息共享或联合行动。
 
 ---
 

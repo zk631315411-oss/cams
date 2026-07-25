@@ -1,66 +1,101 @@
 # p1-ch1-h7 题库软件版解析预览
 
-可导出题目数：1
+可导出题目数：2
 
 教材章节：未映射
 
-题型：single
+题型：multiple
 
-题干：一位金融机构(FI)的客户投诉称,他们收到了多封看似来自该金融机构的电子邮件,催促他们点击链接或打开汇款附件进行确认.客户打开附件后,后来才发现自己银行账户中的资金在他们不知情的情况下被有计划地转走了.此情景中描述的是哪种类型的网络犯罪？
+题干：一家银行的反洗钱分析师正在调查由交易监控警报触发的案件.哪些情况可能会使分析师怀疑某个案例涉及恐怖主义融资？(选择两项.)
 
-英文题干：A customer of a financial institution (FI) complained that they had received multiple emails appearing to originate from the FI, urging them to click a link or open a remittance attachment for confirmation. After opening the attachment, the customer later realized that funds had been systematically transferred out of their bank account without their knowledge. Which type of cybercrime is described in this scenario?
+英文题干：An AML analyst at a bank is investigating cases triggered by transaction monitoring alerts. Which circumstances might cause the analyst to suspect a case involves terrorist financing? (Select Two.)
 
 选项：
 
-- A. 语音钓鱼（vishing）
-  English: Vishing
-- B. 域名欺骗（pharming）
-  English: Pharming
-- C. 短信钓鱼（SMiShing）
-  English: SMiShing
-- D. 鱼叉式网络钓鱼
-  English: Spear phishing
+- A. 涉及无互联网存在的非营利组织的交易。
+  English: Transactions involving non-profit organizations with no internet presence.
+- B. 发送给有详细项目说明的众筹活动的小额捐款。
+  English: Small-dollar payments sent to crowdfunding initiatives with detailed descriptions of the project being financed.
+- C. 涉及低于报告门槛的结构性货币存款的交易，以逃避纳税。
+  English: Transactions involving structured currency deposits below the reporting threshold to avoid paying taxes.
+- D. 向无过往记录的高风险司法管辖区汇出的小额款项。
+  English: Small-dollar payments sent to higher-risk jurisdictions with no prior history.
+- E. 涉及国内非营利组织向来自高风险国家的难民提供慈善援助的交易。
+  English: Transactions involving domestic non-profit organizations providing charitable assistance to refugees from high-risk countries.
 
 ## 【AI答案】
 
-D
+A、D
 
-> **本题为教材覆盖缺口，经教研手动撰写解析**
+> **需人工复核**
 >
-> 教材P30网络犯罪章节未对phishing的四种亚型（vishing/pharming/SMiShing/spear phishing）分别定义，但描述了本题对应的行为模式。
+> - 盲判校验未通过
 
 ## 【考点】
 
-从题干攻击媒介（电子邮件）和攻击手法（冒充+欺诈链接+紧迫感）识别对应网络犯罪类型
+区分恐怖融资与一般洗钱的资金来源和交易特征
 
 ## 【核心解析】
 
-教材将网络犯罪的基础归结为一个词：信任（P30）。网络犯罪分子必须取得目标的信任才能成功——为此采用的手段包括冒充（impersonation）和钓鱼欺诈（phishing and spoofing）。教材进一步描述这类欺骗手法的运作方式：犯罪分子需要"说服目标点击欺诈链接""制造一种紧迫感和来源可靠性的组合"（P30）。
+恐怖融资的资金来源与洗钱不同——它可以来自合法渠道，包括“同情恐怖组织事业的个人或实体的慈善捐款”（P36），也可以来自非法渠道如绑架、毒品贩运（P36）。这意味着判断恐怖融资嫌疑时，核心不是资金来源是否合法，而是资金去向是否可能流向恐怖组织。选项A中，非营利组织缺乏公开网络信息，透明度相对较低；结合教材对慈善机构可能被利用于掩盖非法活动的提示（P36、P82），在给定选项中更符合需要进一步核查的情形，但该特征单独并不能证明恐怖融资。选项D中，向高风险司法管辖区汇款，直接符合教材所述可能触发进一步调查的情形（P329）；“无过往记录”进一步增加了核查必要性。两者在给定选项中更符合恐怖融资风险线索。
 
-将题干拆解对应：收到多封"看似来自该金融机构"的邮件 → 冒充（impersonation），伪造来源可靠性；"催促点击链接或打开附件" → 说服目标点击欺诈链接（fraudulent link），制造紧迫感。教材描述的行为模式与题干场景逐条吻合。
-
-进一步锁定具体类型：题干明确攻击媒介为**电子邮件**（而非电话、短信或DNS劫持），冒充的是**特定**金融机构（针对该机构客户，而非群发），附带恶意附件导致资金被转走。这四要素——电子邮件、定向冒充、欺诈链接/附件、紧迫感——恰好对应鱼叉式网络钓鱼（Spear Phishing）的核心定义。
-
-**教材覆盖说明**：教材P30仅笼统提及"phishing and spoofing"为冒充手段，未将phishing进一步拆分为以下四种亚型。四种类型的定义来自网络安全通用知识补充：
-
-- Spear Phishing（鱼叉式钓鱼）：以电子邮件为媒介，冒充特定可信实体，向定向目标发送定制化欺诈邮件，诱导点击恶意链接或附件。
-- Vishing（语音钓鱼）：以电话或VoIP为媒介，冒充机构客服或权威人士来电，口头诱骗受害者透露敏感信息或执行转账。
-- SMiShing（短信钓鱼）：以SMS短信为媒介，发送伪装成银行、快递或政府机构的短信，含恶意链接诱导点击。
-- Pharming（域名欺骗）：以DNS/网络层为媒介，通过DNS缓存投毒或hosts篡改，将用户输入的合法网址静默重定向至假冒网站，用户全程无感知。
-
-本题通过题干的"电子邮件"媒介和"主动发送欺诈邮件+诱导打开附件"的攻击路径，排除A（电话）、B（DNS静默重定向）、C（短信），锁定D。
-
-教材原句："The foundation of all cyber-enabled crime is trust... to convince the target to click on a fraudulent link, cybercriminals must create a combination of urgency and source reliability."
+教材原句："Legitimate sources may include revenue from business fronts and charitable donations from individuals or entities sympathetic to a terrorist organization's cause."
 
 ## 【错误项分析】
 
-- **A 错误（媒介不匹配）**：Vishing 的攻击媒介为电话或 VoIP 语音通话。题干明确攻击媒介为"电子邮件"，媒介层面直接排除。
-- **B 错误（攻击路径不匹配）**：Pharming 通过 DNS 缓存投毒或 hosts 篡改，将用户静默重定向至假冒网站——用户全程不会"收到邮件并打开附件"。攻击路径与题干不符。
-- **C 错误（媒介不匹配）**：SMiShing 的攻击媒介为 SMS 短信。题干攻击媒介为电子邮件，渠道不匹配。
+- **B 错误（教材直接依据）｜范围或程度偏差**：有详细项目说明的众筹活动透明度相对较高，教材将众筹风险主要指向监管不足和匿名性（P80、P105）；因此在给定选项中，B不如A、D直接提示需要进一步核查，但透明说明本身也不能完全排除风险。
+- **C 错误（题干对照）｜概念混淆**：“以逃避纳税”明确了这一结构化行为的目的是逃税，而非资助恐怖活动。教材在Tamayo案例中展示了金额略低于1万美元的结构化存款服务于洗钱（P19），但结构化本身与恐怖融资之间并无直接定义关联。题干条件更匹配洗钱场景而非恐怖融资。
+- **E 错误（教材直接依据）｜范围或程度偏差**：国内非营利组织向难民提供慈善援助属于合法人道主义活动，教材强调应采取风险为本措施保护合法活动不受影响（P147），并承认NPO“提供多种服务和人道主义职能”（P134）。选项A的无互联网存在才构成红旗信号，E的公开慈善活动反而说明该组织具备可验证的正当性。
 
 ## 【易错提醒】
 
-四种网络钓鱼亚型的区分维度是**攻击媒介**——题干"电子邮件"一词直接排除 A（电话）和 C（短信），"收到欺诈邮件"的主动诱导路径排除 B（DNS 静默重定向）。锁定媒介后，再判断是否"定向冒充特定机构"即可确认 spear phishing。
+恐怖融资与洗钱的核心区分不在资金来源是否合法，而在资金去向是否支持恐怖活动。恐怖融资可使用合法慈善捐款（P36），洗钱仅涉及犯罪所得的非法资金（P37）。因此看到非营利组织时，应重点判断其透明度、运营特征和资金去向地；任何单一红旗都需要结合其他事实核实，而不能仅凭“慈善”二字排除或定性。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：与加密货币和可兑换虚拟货币相关的常见风险包括：(选择三项。)
+
+英文题干：Common risks associated with cryptocurrency and convertible virtual currencies include: (Choose Three.)
+
+选项：
+
+- A. 其他用户的资金被盗
+  English: Funds being stolen from other users
+- B. 通过分层交易来隐藏源自非法活动的资金来源
+  English: Layering transactions to hide the origin of funds derived from illicit activity
+- C. 匿名性掩盖非法资金来源并使交易难以追踪
+  English: Anonymity obscuring the source of illicit funds and making transactions difficult to trace
+- D. 转换为实体货币存在困难
+  English: Difficulty converting into physical currency
+- E. 为其他非法活动和商品的支付提供便利
+  English: Facilitating payments for other illicit activities and goods
+
+## 【AI答案】
+
+B、C、E
+
+## 【考点】
+
+识别加密货币的三大核心洗钱风险：分层、匿名、非法支付
+
+## 【核心解析】
+
+加密货币相关的洗钱风险，教材从三个维度进行了阐述。第一，分层工具：犯罪分子利用加密货币、不受监管的金融科技平台和点对点支付网络对非法资金进行分层，以复杂化资金追溯（P39）。选项B“通过分层交易来隐藏源自非法活动的资金来源”正对应了教材中“layered funds through cryptocurrencies”这一核心功能。第二，匿名性：尽管区块链技术本身具有透明度，但追踪所有权极其困难，隐私币更是利用非公开区块链实现匿名转账，进一步增加了交易归属的难度（P111）。选项C准确描述了这种利用匿名性掩盖非法资金来源并阻碍追踪的风险。第三，非法支付手段：稳定币、代币等加密资产因其假名性、跨境能力和监管缺失，为洗钱和恐怖融资创造了新机会（P112）。选项E所指的“为其他非法活动和商品的支付提供便利”正是这种风险的直接体现。三项共同构成加密货币洗钱风险的完整画面。
+
+教材原句："Layered funds through unregulated fintech platforms, cryptocurrencies, and peer-to-peer payment networks, using digital wallets to complicate traceability."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜范围或程度偏差**：选项A“其他用户的资金被盗”属于加密货币生态系统中的操作安全风险（如交易所被黑、私钥泄露），而题干所问的“与加密货币和可兑换虚拟货币相关的常见风险”在教材洗钱语境下，更侧重于资金清洗与非法转移的系统性漏洞，而非针对个别用户资产的外部盗窃行为。
+- **D 错误（教材直接依据）｜概念混淆**：选项D“转换为实体货币存在困难”与教材描述不符。教材明确指出加密货币ATM等接入和基础设施提供商允许用户在物理位置将加密货币兑换为法定货币（P109），且法币抵押稳定币更可1：1便捷转换回法币（P112）。可见，兑换为实体货币的渠道存在且日益便利，题干条件更直接匹配B、C、E所指的洗钱便利性，而非兑换困难。
+
+## 【易错提醒】
+
+注意区分“加密货币生态系统的外部安全风险”和“洗钱与非法金融风险”。黑客攻击、用户资金被盗属于前者，教材在反洗钱章节重点关注的是后者——即加密货币因其匿名性、跨境能力和监管缺失，如何被用作清洗非法资金和进行非法交易的工具（P111-112）。
 
 ---
 

@@ -1,6 +1,6 @@
 # p1-ch1-h2 题库软件版解析预览
 
-可导出题目数：4
+可导出题目数：8
 
 教材章节：未映射
 
@@ -12,7 +12,7 @@
 
 选项：
 
-- A. 利用税收法律的漏洞或对税法的非预期来尽量减少应缴税款的行为
+- A. 利用税法漏洞或对税法作非预期解释,以尽量减少纳税义务的做法
   English: The practice of minimizing tax liability by exploiting loopholes or unintended interpretations of tax law
 - B. 作为分项扣除或标准扣除而减少应纳税所得额的规定
   English: A provision that reduces taxable income as an itemized or standard deduction
@@ -51,48 +51,61 @@ D
 
 题型：single
 
-题干：基于沃尔夫斯堡集团阐述的反洗钱原则，私人银行和代理银行在监测恐怖主义融资方面有哪些共同之处？
+题干：一位金融机构(FI)的客户投诉称,他们收到了多封看似来自该金融机构的电子邮件,催促他们点击链接或打开汇款附件进行确认.客户打开附件后,后来才发现自己银行账户中的资金在他们不知情的情况下被有计划地转走了.此情景中描述的是哪种类型的网络犯罪？
 
-英文题干：Based on the AML principles outlined by the Wolfsberg Group, what do private and correspondent banks have in common when monitoring for terrorist financing?
+英文题干：A customer of a financial institution (FI) complained that they had received multiple emails appearing to originate from the FI, urging them to click a link or open a remittance attachment for confirmation. After opening the attachment, the customer later realized that funds had been systematically transferred out of their bank account without their knowledge. Which type of cybercrime is described in this scenario?
 
 选项：
 
-- A. 预付卡的现金提取增加了该卡被用于洗钱目的的可能性
-  English: Cash access from a prepaid card increases the potential that the card will be used for money laundering purposes
-- B. 交易监控会审查尽职调查信息与账户关闭之间的关系
-  English: Transaction monitoring examines the relationship between due diligence information and account closings
-- C. 在对客户进行适当的身份识别和验证之后，将对其账户和交易活动进行监控
-  English: Account and transactional activity are monitored after the proper identification and verification of customers
-- D. 只有在银行已确认客户及受益所有人的身份后，才会接受编号账户或替代名称账户
-  English: Numbered or alternative-name accounts will only be accepted if the bank has established the identity of the customer and beneficial owner
+- A. 语音钓鱼（vishing）
+  English: Vishing
+- B. 域名欺骗（pharming）
+  English: Pharming
+- C. 短信钓鱼（SMiShing）
+  English: SMiShing
+- D. 鱼叉式网络钓鱼
+  English: Spear phishing
 
 ## 【AI答案】
 
-C
+D
 
-> **需人工复核**
+> **本题为教材覆盖缺口，经教研手动撰写解析**
 >
-> - 答案冲突：解析{'C'} vs 题库{'B'}
+> 教材P30网络犯罪章节未对phishing的四种亚型（vishing/pharming/SMiShing/spear phishing）分别定义，但描述了本题对应的行为模式。
 
 ## 【考点】
 
-理解客户身份识别是交易监控的前提这一核心流程
+从题干攻击媒介（电子邮件）和攻击手法（冒充+欺诈链接+紧迫感）识别对应网络犯罪类型
 
 ## 【核心解析】
 
-题干问的是沃尔夫斯堡集团反洗钱原则下私人银行与代理银行的共同点。教材明确指出，开户时和交易监控中收集的信息，应让机构了解客户账户上应发生的预期活动（P28）。同时，交易监控是在客户准入之后才开始的（P329）。正确选项C的表述“在对客户进行适当的身份识别和验证之后，将对其账户和交易活动进行监控”与这一核心流程完全吻合：私人银行和代理银行业务都需要遵循这一逻辑——先通过身份识别与验证（KYC/CDD）了解客户是谁，再进入对账户活动的持续监控阶段，这是所有银行通用的防范恐怖融资的基础操作路径。
+教材将网络犯罪的基础归结为一个词：信任（P30）。网络犯罪分子必须取得目标的信任才能成功——为此采用的手段包括冒充（impersonation）和钓鱼欺诈（phishing and spoofing）。教材进一步描述这类欺骗手法的运作方式：犯罪分子需要"说服目标点击欺诈链接""制造一种紧迫感和来源可靠性的组合"（P30）。
 
-教材原句："Information gathered at onboarding and during transaction monitoring should inform the activity the organization should expect across the customer’s account."
+将题干拆解对应：收到多封"看似来自该金融机构"的邮件 → 冒充（impersonation），伪造来源可靠性；"催促点击链接或打开附件" → 说服目标点击欺诈链接（fraudulent link），制造紧迫感。教材描述的行为模式与题干场景逐条吻合。
+
+进一步区分具体类型：题干明确攻击媒介为**电子邮件**（而非电话、短信或DNS劫持），并针对某金融机构的客户实施冒充，附带恶意附件导致资金被转走。在给定选项中，这种“定向冒充特定机构并诱导点击附件”的组合最符合鱼叉式网络钓鱼（Spear Phishing）。
+
+**术语辨析**：
+
+- Spear Phishing（鱼叉式钓鱼）：以电子邮件为媒介，冒充特定可信实体，向定向目标发送定制化欺诈邮件，诱导点击恶意链接或附件。
+- Vishing（语音钓鱼）：以电话或VoIP为媒介，冒充机构客服或权威人士来电，口头诱骗受害者透露敏感信息或执行转账。
+- SMiShing（短信钓鱼）：以SMS短信为媒介，发送伪装成银行、快递或政府机构的短信，含恶意链接诱导点击。
+- Pharming（域名欺骗）：以DNS/网络层为媒介，通过DNS缓存投毒或hosts篡改，将用户输入的合法网址静默重定向至假冒网站，用户全程无感知。
+
+本题通过题干的"电子邮件"媒介和"主动发送欺诈邮件+诱导打开附件"的攻击路径，排除A（电话）、B（DNS静默重定向）、C（短信），因此D在给定选项中最符合。
+
+教材原句："The foundation of all cyber-enabled crime is trust... to convince the target to click on a fraudulent link, cybercriminals must create a combination of urgency and source reliability."
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜题干要素不匹配**：题干讨论的是沃尔夫斯堡原则下私人银行与代理银行的共同点，而预付卡的风险（P68）主要出现在零售银行场景。题干没有涉及预付卡这一产品，选项A与题干场景的匹配度较低。
-- **B 错误（题干对照）｜概念混淆**：教材指出“尽职调查和交易监控系统对于识别潜在洗钱活动至关重要”（P128），但将监控的目的描述为“审查尽职调查信息与账户关闭之间的关系”并不符合教材对交易监控的定义。教材将交易监控的职能定位为检测可疑交易活动（P254），并强调监控应帮助机构了解账户的“预期活动”（P28），而非仅聚焦于与账户关闭的关系。相比之下，选项C更直接地还原了身份识别后进入持续监控这一通用流程。
-- **D 错误（题干对照）｜范围或程度偏差**：题干问的是私人银行与代理银行的“共同之处”。编号账户或替代名称账户主要关联私人银行业务，代理银行通常不涉及此类账户。同时，FATF的要求是针对所有金融机构核实受益所有人身份（P339），并非专门针对编号账户的接受条件。选项D并非两者共有的业务实践，不如选项C那样具有普遍适用性。
+- **A 错误（媒介不匹配）**：Vishing 的攻击媒介为电话或 VoIP 语音通话。题干明确攻击媒介为"电子邮件"，媒介层面直接排除。
+- **B 错误（攻击路径不匹配）**：Pharming 通过 DNS 缓存投毒或 hosts 篡改，将用户静默重定向至假冒网站——用户全程不会"收到邮件并打开附件"。攻击路径与题干不符。
+- **C 错误（媒介不匹配）**：SMiShing 的攻击媒介为 SMS 短信。题干攻击媒介为电子邮件，渠道不匹配。
 
 ## 【易错提醒】
 
-CDD（客户尽职调查）与交易监控是前后衔接的两个步骤。CDD侧重开户时识别客户身份和风险；交易监控侧重开户后追踪账户活动是否与客户身份和预期行为相符。题干在问共同点，最容易混淆的是将某一特性的具体表现当成通用规则。
+四种网络钓鱼亚型的区分维度是**攻击媒介**——题干"电子邮件"一词直接排除 A（电话）和 C（短信），"收到欺诈邮件"的主动诱导路径排除 B（DNS 静默重定向）。锁定媒介后，再判断是否"定向冒充特定机构"即可确认 spear phishing。
 
 ---
 
@@ -151,7 +164,7 @@ A
 
 选项：
 
-- A. 向位于税收优惠地区的外国公司支付公司秘书服务费
+- A. 向位于税收优惠地区的外国公司支付公司秘书常年顾问费
   English: The payment of company secretarial retainer fees to a foreign company in a tax-efficient jurisdiction
 - B. 海外虚拟办公室服务的支付
   English: The payment of virtual office services overseas
@@ -170,23 +183,187 @@ D
 
 ## 【考点】
 
-识别高风险地区无关联方咨询费的可疑交易指标
+识别咨询费与司法管辖区风险的组合红旗
 
 ## 【核心解析】
 
-教材要求加强交易监控，尤其关注向高风险司法管辖区的个人或中介支付的“咨询费”（P27）。同时，交易行为风险指标包括偏离预期模式、异常大额跨境交易或复杂支付结构（P307）。题干客户从事机械进出口业务，其预期交易应围绕货物采购、运输、货款等。选项D为向外国司法管辖区无关联公司及服务提供商支付咨询费，与客户核心业务无直接经济关联，且涉及无关联方和跨境支付，偏离了正常进出口交易的预期模式，符合教材要求的上报指标，因此需要进一步上报给合规官。
+教材要求加强交易监控，尤其关注向**高风险司法管辖区**的个人或中介支付的“咨询费”（P27）；教材案例还展示了通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动的情形（P26）。同时，交易行为风险指标包括偏离预期模式、异常大额跨境交易或复杂支付结构（P307）。D涉及向外国司法管辖区的无关联公司及服务提供商支付咨询费，在给定选项中与教材所说的“咨询费风险”最接近，因此选择D。但必须保留一个条件边界：教材原文说的是“高风险司法管辖区”，题干只写“外国司法管辖区”，二者不能直接等同；D是相对匹配项，而不是教材对该选项的无条件证明。
 
 教材原句："Enhance transaction monitoring for suspicious activities, especially regarding “consultancy fees” to individuals or intermediaries located in high-risk jurisdictions."
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜范围或程度偏差**：向税收优惠地区的外国公司支付公司秘书服务费，可能涉及激进避税，但教材的激进避税示例是要求子公司支付知识产权使用费（P28），与公司秘书服务费性质不同，且该情景不如“向无关联方支付咨询费”那样被教材明确要求加强监控。
-- **B 错误（题干对照）｜题干要素不匹配**：海外虚拟办公室服务支付属于常见的商业服务，教材未将其列为可疑交易指标。题干未提供该支付偏离预期模式或与异常活动关联的进一步线索，因而与D相比，其作为上报指标的直接性和匹配度较弱。
-- **C 错误（题干对照）｜概念混淆**：母公司向子公司提供用于支付机械设备运输费用的公司间贷款，具有明确的业务经济理由，且双方存在关联关系。教材将“无关联第三方之间的贷款协议”缺乏合法经济理由视为高价值资产洗钱的红旗（P128），而C项恰好相反，属于正常经营融资，因此不需要进一步上报。
+- **A不选（范围或程度偏差）｜并非事实错误**：教材指出，犯罪分子可能选择监管宽松或税收优惠的司法管辖区来隐藏活动、减少税负（P76），离岸公司也通常设立在低税或高保密司法管辖区（P127）。但公司秘书本身承担记录、年报和公司治理职责（P126），题干没有给出虚假服务、异常金额、空壳结构或隐藏受益所有权等附加事实，因此A的交易风险不能仅由“税收优惠地区”和“公司秘书服务费”直接确定。
+- **B不选（证据不足）**：题干只说支付海外虚拟办公室服务费，没有提供该服务与客户业务不符、金额异常或交易结构复杂等事实。教材要求根据实际交易行为和客户预期模式识别偏离（P307），现有信息不足以使B比D更直接。
+- **C不选（范围或程度偏差）｜并非事实错误**：教材把缺乏合法经济联系或商业理由的无关联第三方贷款视为风险（P128）。本项是母公司向子公司提供、且用于支付机械运输费用的关联方融资，题干给出了业务用途，不能直接套用该红旗。
 
 ## 【易错提醒】
 
-教材要求特别关注流向高风险管辖区的“咨询费”，而非所有类型的服务费或关联方往来款。咨询费因其易被用于掩盖贿赂，且与机械进出口商的正常经营模式偏离，才构成需要上报的红旗。
+判断咨询费风险时，要同时核对司法管辖区风险等级、服务真实性、金额合理性、交易目的和受益所有权。“外国司法管辖区”不自动等于“高风险司法管辖区”；本题选择D，是因为它在现有选项中最接近教材关于高风险地区咨询费的风险提示。
+
+---
+
+教材章节：第四章 开展和回应调查（补充依据：第45章 其他有助于降低风险的尽调要求）
+
+题型：multiple
+
+题干：[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)
+
+英文题干：An employee in a corporation's finance department hears news of an internal investigation into potential fraud within the company, quits her job, and disappears. If she had been observed before her resignation, which characteristics of the employee would have been considered red flags? (Select Two.)
+
+选项：
+
+- A. 该员工最初来自高风险司法管辖区.
+  English: The employee was originally from a high-risk jurisdiction.
+- B. 这名员工有在高风险行业工作的朋友
+  English: The employee had friends in high-risk industries.
+- C. 这名员工的生活方式与其收入极不相称.
+  English: The employee had a lavish lifestyle for her income.
+- D. 这位员工对于离职前一份企业财务工作的原因一直闪烁其词.
+  English: The employee was constantly evasive about the reasons for leaving her previous corporate finance job.
+
+## 【AI答案】
+
+C、D
+
+## 【考点】
+
+识别内部欺诈调查中员工个人行为的危险信号
+
+## 【核心解析】
+
+欺诈可能由员工实施，内部调查也可能源于员工欺诈（P324、P350）。在员工尽职调查（KYE）框架下，所有新员工都应接受背景调查，具体可能包括联系前雇主和信用检查，并应在任职期间持续检查其合规情况（P324）。因此，员工对上一份企业财务工作的离职原因持续闪烁其词，会使其任职经历难以核实；D项属于将员工背景调查原则应用到题干后的合理红旗。对于C项，信用检查说明员工财务状况属于KYE观察范围；欺诈三角还指出，赌博或其他债务等财务问题可能形成实施欺诈的压力（P29）。Goodwish Jade案例进一步显示，月薪约2500美元的企业经理却购买高价值珠宝，其消费能力被认为可疑（P130）。综合这些教材内容，生活方式明显超出收入可作为员工异常财务状况的风险线索。需要注意，教材P29-P30的通用欺诈红旗清单并未逐字列出“奢侈生活方式”或“回避离职原因”，所以C、D仍是基于教材原则和案例的应用推断，而不是教材直接列举的员工红旗。
+
+## 【错误项分析】
+
+- **A 不如C、D匹配**：教材将高风险司法管辖区作为客户或交易对手的风险维度（P122），并非员工出生地或来源地本身的内部欺诈红旗。题干关注员工的诚信和可核查行为，因此A与题干主体不如C、D直接匹配。
+- **B 不如C、D匹配**：教材中的行业风险用于评估客户本人从事的现金密集型或其他高风险业务（P312），而B说的是员工朋友所在行业。朋友的行业既不能证明员工本人参与高风险业务，也不能直接反映其诚信风险，证据链条明显更长。
+
+## 【易错提醒】
+
+本题容易混淆的是把客户风险评估中的地理或行业指标直接套用到员工筛查。判断员工内部欺诈风险时，应先确认教材是否提供员工尽调或背景调查依据，再看选项是否反映可核查的诚信或异常财富问题；不能仅因员工来自某地、或其朋友从事某行业，就推断其存在内部欺诈风险。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]哪些犯罪活动可能构成金融犯罪或洗钱活动的上游犯罪？(选择三项.)
+
+英文题干：Which criminal activities could possibly serve as a predicate offense to financial crimes or money laundering activity? (Select Three.)
+
+选项：
+
+- A. 袭击
+  English: Assault
+- B. 纵火罪
+  English: Arson
+- C. 贿赂或腐败
+  English: Bribery or corruption
+- D. 诈骗
+  English: Fraud
+- E. 有组织犯罪或敲诈勒索罪
+  English: Organized crime or racketeering
+
+## 【AI答案】
+
+C、D、E
+
+## 【考点】
+
+判断上游犯罪的范畴：需产生可用于洗钱的非法收益
+
+## 【核心解析】
+
+上游犯罪指其收益可导致洗钱起诉的特定非法活动（P21）。题干问哪些犯罪活动“可能构成”上游犯罪，核心判断标准是该犯罪是否产生非法资金或收益。教材在FATF指定的21类上游犯罪清单中明确列出：参与有组织犯罪集团和敲诈勒索（P21）、腐败和贿赂（P22）、欺诈（P22）。贿赂或腐败通过权力滥用获取财务利益（P25），欺诈是为获取不正当利益而进行的故意欺骗（P29），有组织犯罪或敲诈勒索涉及系统性金融犯罪（P21）——三者均直接产生非法收益，因此必然属于上游犯罪。
+
+教材原句："Predicate crimes are specified unlawful activities whose proceeds can give rise to prosecution for money laundering."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜题干要素不匹配**：袭击（Assault）通常不直接产生财务收益或非法资金。上游犯罪的核心特征是产生可用于洗钱的“proceeds”（收益），而袭击本身不以获取经济利益为必然结果，匹配度不如C、D、E直接涉及非法资金产生的犯罪类型。
+- **B 错误（教材定义应用）｜题干要素不匹配**：纵火罪（Arson）一般不直接产生非法资金收益。虽然教材将“谋杀和严重身体伤害”列入上游犯罪清单，但附有“driven by financial gain”的限定（P22），纵火未被列入。除非纵火系为获取保险金等财务目的（此时更接近欺诈），否则匹配度不及C、D、E。
+
+## 【易错提醒】
+
+不是所有刑事犯罪都能成为上游犯罪。上游犯罪的必备要素是产生“proceeds”（非法收益）。纯粹的暴力犯罪（如袭击）因不必然产生非法资金，不在FATF清单中；纵火未单独列入清单，但若以财务利益为目的（如骗保），可能归入欺诈范畴。教材在“Murder and grievous bodily injury”条目下特别标注了“motivated by financial gain”（P22），说明暴力犯罪是否能成为上游犯罪取决于是否具备财务动机——这是真题中特别容易挖坑的区分点。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.)
+
+英文题干：A bank is preparing for a regulatory exam after a previous regulatory exam identified weaknesses in the bank's AML program. Since the last exam, the bank has improved the written AML program, hired an experienced AML compliance officer, and taken actions to demonstrate a strong culture of compliance. The bank is now focused on clearing its transaction monitoring case backlog and completing enhancements to its sanctions screening program. Which of the following are correct? (Select Two.)
+
+选项：
+
+- A. 尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。
+  English: The bank is likely to face secondary sanctions from global financial institutions despite addressing many of the previous concerns.
+- B. 如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。
+  English: The bank may face civil or criminal penalties if it cannot demonstrate sustained improvement in addressing previous issues.
+- C. 尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。
+  English: Despite addressing many of the previous issues, the bank may still face the risk of an order from regulators requiring it to remediate its AML program.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+识别监管审查后银行面临的处罚与整改指令风险，并区分次级制裁的适用前提。
+## 【核心解析】
+银行虽已改进书面计划、聘请合规官并展示合规文化，但交易监控积压和制裁筛查改进尚未完成，说明整改成效尚未充分证明。教材指出，反洗钱或制裁合规失败可能导致民事或刑事处罚（P23），因此B符合题干所述的持续改进风险。教材案例还表明，监管机构可以要求金融机构接受独立监督、全面改进风险管理并定期报告整改进展（P242），因此即使银行已经采取措施，仍可能面临整改指令，C更直接对应这一风险。
+## 【错误项分析】
+- **A**：次级制裁通常需要与受制裁对象发生相关交易等具体制裁违法事实。题干只描述银行反洗钱计划整改尚未完成，没有提供此类交易事实，不能由一般整改不足直接推出次级制裁风险。
+## 【易错提醒】
+“已经开始整改”不等于“已证明持续有效”。本题现列选项中，B对应处罚风险，C对应监管整改指令风险；不要把反洗钱计划缺陷直接等同于次级制裁。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.)
+
+英文题干：The supply of goods and services can be vulnerable to corruption within a company, particularly the solicitation and receipt of bribes and kickbacks, because: (Choose Two.)
+
+选项：
+
+- A. 某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。
+  English: Certain contractors may receive preferential treatment, allowing them opportunities to inflate margins during the tender process.
+- B. 未中标者将被告知决定，并获提供授予合同的详细理由。
+  English: Unsuccessful bidders are informed of decisions and provided detailed justifications for awarding the contracts.
+- C. 采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。
+  English: Procurement and contracting processes involve the management of the tender process, which may lack sufficient oversight.
+- D. 发布投标信息。
+  English: Publishing tender information.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+识别腐败机会：缺乏监督和内控如何为回扣贿赂创造条件
+
+## 【核心解析】
+
+欺诈三角理论指出，机会是欺诈发生的三个主要原因之一，“机会通常由机构内部缺乏有效的内部控制提供”（P29）。在采购场景中，当招标流程缺乏足够监督时，便为索贿、收受回扣等腐败行为创造了条件——这正是选项C所描述的核心事实。同时，教材在阐述政治敏感人物腐败风险时给出了一个典型模式：“腐败可能表现为政治敏感人物将政府合同导向某组织以换取回扣”（P58）。这一机制与选项A“承包商在投标过程中受优待、抬高利润空间”高度吻合：承包商获得中标优待后，有能力在报价中预留回扣空间，腐败由此发生。题干问的是“公司内部货物服务供应为何易受腐败影响”，A和C分别从利益输送手段和制度漏洞两个层面回答了原因。
+
+教材原句："Opportunity is often provided by a lack of effective internal controls within an institution."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜题干要素不匹配**：“告知未中标者决定并给出详细理由”是透明合规的招标做法，它恰恰是减少腐败而非助长腐败的机制。题干问的是腐败的“原因”，而B描述的是防范腐败的实践，与题干逻辑方向相反。
+- **D 错误（题干对照）｜题干要素不匹配**：“发布投标信息”与B选项类似，属于信息公开的正面实践，会增加透明度而非制造腐败机会。题干问供应为何“易受腐败影响”，D描述的做法恰与产生腐败的条件背道而驰。
+
+## 【易错提醒】
+
+区分“腐败的机会条件”和“腐败的行为表现”：选项C指向机会条件（缺乏监督），选项A指向行为表现（优待承包商）。教材将二者联系起来——缺乏内控（P29）为回扣输送（P58）提供了温床。判断时自问：该选项是在描述“为什么能发生”还是“发生了什么”。
 
 ---
 

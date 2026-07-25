@@ -1,6 +1,6 @@
 # p3-ch9-h1 题库软件版解析预览
 
-可导出题目数：12
+可导出题目数：17
 
 教材章节：未映射
 
@@ -147,7 +147,7 @@ A
 
 选项：
 
-- A. 规定在FI的风险评估中必须考虑哪些犯罪行为.
+- A. 规定金融机构在风险评估中必须考虑哪些上游犯罪.
   English: Dictating what predicate offences must be considered in the FI's risk assessment
 - B. 就风险最高的客户类型和交易类型提供指导.
   English: Providing guidance on the types of customers and transactions that pose the highest risk
@@ -328,6 +328,53 @@ EWRA如何为高风险地区的业务扩张决策提供风险依据
 
 题型：single
 
+题干：采用基于风险的方法设计有效的控制框架的第一步是什么？
+
+英文题干：What is the first step in designing an effective controls framework using a risk-based approach?
+
+选项：
+
+- A. 建立风险控制机制
+  English: Establishing risk controls
+- B. 评估风险控制措施
+  English: Assessing risk controls
+- C. 持续的风险监测
+  English: Ongoing risk monitoring
+- D. 进行风险评估
+  English: Conducting a risk assessment
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+风险为本控制框架中风险评估与控制评价的先后顺序
+
+## 【核心解析】
+
+风险为本方法先识别、评估和理解洗钱及恐怖融资风险，再制定适当的风险缓解措施（P270）；相应的风险管理流程也将识别、评估风险置于制定控制和监测策略之前（P271）。企业全面风险评估的具体顺序是：确定固有风险、评估控制有效性、计算剩余风险、制定针对最高风险的行动计划（P268）。因此，无论机构是否已经存在控制，都必须先确定和评估所面对的固有风险，题干所问的第一步应是D“进行风险评估”。
+
+风险评估能够帮助组织了解风险类型及其潜在影响（P280）。在尚未识别和评估固有风险时，机构既不能有针对性地建立控制，也不能准确判断现有控制是否足以缓解相关风险。
+
+教材原句："The process begins by establishing inherent risks, assessing the effectiveness of controls, computing the residual risk, and obtaining a clear action plan on mitigating the highest risks."
+
+## 【错误项分析】
+
+- **A 错误（教材流程应用）｜阶段错配**：建立风险控制应以已经识别和评估的风险为依据。教材将制定控制策略置于风险识别和评估之后（P271），因此A不是控制框架设计的第一步。
+- **B 错误（教材流程应用）｜阶段错配**：评估风险控制措施是判断现有控制对固有风险的缓解效果。教材明确将“确定固有风险”置于“评估控制有效性”之前（P268），所以即使机构已经存在控制，B仍不是第一步。
+- **C 错误（教材流程应用）｜阶段错配**：持续风险监测属于风险识别、评估并制定控制策略后的持续活动（P271）。必须先确定风险，才能确定后续监测的重点。
+
+## 【易错提醒】
+
+“进行风险评估”评估的是机构面临的固有风险；“评估风险控制措施”评价的是现有控制对这些风险的缓解效果。两者的区别不是风险评估开始时“有没有控制”，而是评价顺序：先确定固有风险，再评价控制有效性，随后计算剩余风险并制定行动计划（P268）。
+
+---
+
+教材章节：未映射
+
+题型：single
+
 题干：对于一家在欧盟设立且在欧盟以外高风险第三国设有分支机构的银行，作为基于风险的方法（RBA）来管理反洗钱/打击资助恐怖主义（AML/CFT）风险的一部分，哪项控制措施最有效？
 
 英文题干：Which control would be most effective as part of a risk-based approach (RBA) to managing AML/CFT risk for a bank established in the EU that also has a branch in a high-risk third country outside of the EU?
@@ -347,9 +394,9 @@ EWRA如何为高风险地区的业务扩张决策提供风险依据
 
 B
 
-> **需人工复核**
+> **教材复核结论**
 >
-> - 答案冲突：解析{'B'} vs 题库{'D'}
+> - 教材证据支持B；原始题库答案字段D与其中文解析正文、英文参考答案及教材证据冲突。
 
 ## 【考点】
 
@@ -357,19 +404,19 @@ B
 
 ## 【核心解析】
 
-风险为本方法（RBA）的核心定义是识别、评估和理解洗钱/恐怖融资风险，并采取适当措施有效缓解这些风险（P270）。它要求金融机构根据风险暴露程度优先排序并采取适当措施（P267），确保合规水平与风险水平成比例（P218）。题干描述的银行在高风险第三国设有分支机构，面临的风险因客户而异——并非所有客户都因为身处高风险司法管辖区就自动成为高风险客户。选项B的“根据风险评估后每个客户所构成的风险程度，采取有针对性的尽职调查措施”直接吻合RBA的核心逻辑：先评估单个客户的风险程度，再匹配相应强度的尽职调查措施。这与教材所述“基于风险评级结果，机构可能需要进行强化尽职调查”（P374）一脉相承——是否升级措施取决于评估结果，而非统一自动升级。
+风险为本方法（RBA）要求机构识别、评估和理解洗钱/恐怖融资风险，并采取适当措施有效缓解风险（P270）；准确判断客户潜在金融犯罪风险，是采用RBA的重要前提（P271）。高风险司法管辖区是需要纳入评估的风险因素：FATF相关要求提出，应对与其认定的高风险司法管辖区内个人或机构之间的业务关系和交易实施强化尽职调查（P148）。但题干选项D的范围更宽，它要求仅凭分支机构所在地，对“所有客户”在“不论其风险等级”的情况下自动采取EDD，跳过了客户风险判断。相比之下，B明确包含“风险评估后”和“根据每个客户的风险程度”两个步骤，与教材所述按照风险暴露程度采取适当措施（P267）、对较高风险客户实施EDD并加强监控（P270）的逻辑完整对应。因此，本题按RBA原则应选B；高风险国家因素应提高审查强度，但不能把D中无视风险等级的一刀切表述当作RBA本身。
 
 教材原句："A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively."
 
 ## 【错误项分析】
 
 - **A 错误（教材定义应用）｜范围或程度偏差**：题干的核心是“管理AML/CFT风险”而非“获取受益所有人信息的手段”。教材要求以风险为本方法核实受益所有人身份并采取合理措施（P339），“完全依赖”某个外部登记册放弃独立核实，与RBA所要求的“合理”标准匹配度不如B。
-- **C 错误（教材定义应用）｜范围或程度偏差**：实时监控每笔跨境交易并全部标记，意味着不区分高风险交易和低风险交易。RBA要求根据风险暴露程度优先排序和分配资源（P267），对所有交易一视同仁的做法使资源分配不成比例，不如B那样精准匹配RBA的优先排序原则。
-- **D 错误（教材定义应用）｜范围或程度偏差**：“不论其风险等级如何”采取统一强化措施，取消了风险评估环节。RBA要求措施与风险水平成比例（P218），高风险司法管辖区不等于每个客户都是高风险，统一升级相当于放弃了识别和区分的过程，这与B按客户风险程度匹配措施相比，缺乏RBA最核心的“评估后调整”环节。
+- **C 错误（教材定义应用）｜范围或程度偏差**：跨境和国家风险可以支持加强监控，但C要求实时监控并标记“每笔”跨境交易。RBA要求根据风险暴露程度确定优先级和措施（P267）；C没有体现先评估再区分审查强度，匹配度不如B。
+- **D 错误（教材定义应用）｜范围或程度偏差**：教材确实要求对与FATF认定的高风险司法管辖区内个人或机构之间的业务关系和交易实施EDD（P148），所以不能把国家风险视为无关。但D进一步规定对分支机构“所有客户”自动采取EDD且“不论其风险等级如何”，这一绝对范围并非所引规则的表述，也取消了教材要求的客户风险判断（P271）。B同时纳入地域等风险因素和客户评估，更完整体现RBA。
 
 ## 【易错提醒】
 
-在高风险环境中，容易把“强化控制”等同于“对所有人一视同仁地强化”。RBA不是放弃风险区分，恰恰相反，它要求在看似高风险的环境里继续做更精细的差异化判断——哪些客户真的高风险、哪些只是恰好在这个地区。一刀切的强化措施（选项D）和全面标记（选项C）看似稳妥，实则放弃了RBA“评估后调整”的核心步骤。
+高风险司法管辖区会提高地域风险，对与该辖区内个人或机构的业务关系和交易可能需要EDD（P148）；这与D仍有范围差别。D把“分支机构位于高风险国家”直接扩展为“所有客户、不论风险等级”，而B要求把地域风险连同客户风险评估结果一起用于确定尽职调查强度。判断此类题时，应同时避免忽略国家风险和把单一风险因素无限扩大。
 
 ---
 
@@ -402,9 +449,9 @@ B
 
 ## 【核心解析】
 
-扩散融资指核、化学或生物武器及其运载工具和相关材料的转让和出口（P269）。题干问扩散融资的主要威胁是什么，关键在于识别哪个选项直接指向“大规模杀伤性武器（WMD）”这一核心要素。选项B描述的是利用金融系统转移资金以获取大规模杀伤性武器或其部件的网络，与教材对扩散融资的定义直接吻合——资金流动服务于WMD或其相关材料的获取，这正是扩散融资最本质的威胁表现。
+教材把扩散融资与核、化学、生物武器及其运载工具和相关材料的转让、出口联系起来（P269），并要求通过定向金融制裁预防和阻断大规模杀伤性武器扩散融资（P147）。题干四个选项中，只有B同时包含“利用金融系统转移资金”和“获取大规模杀伤性武器或其部件”两个要素，完整连接了融资活动与WMD扩散目的。A是关键基础设施攻击，C是跨国犯罪活动扩张，D是为意识形态暴力筹资，均缺少这一组合。因此答案为B。
 
-教材原句："Proliferation financing refers to the transfer and export of nuclear, chemical, or biological weapons, their delivery means, and related materials."
+教材原句："Similarly, jurisdictions should apply targeted financial sanctions to prevent and disrupt the financing of the proliferation of WMDs."
 
 ## 【错误项分析】
 
@@ -414,56 +461,7 @@ B
 
 ## 【易错提醒】
 
-扩散融资与恐怖融资容易混淆。扩散融资关注资金是否流向核、化学或生物武器及其相关材料的获取（P269），核心是“武器扩散”；恐怖融资关注资金是否支持以意识形态为动机的暴力行为（P36-38），核心是“恐怖活动”。一个组织可能同时涉及两者，但概念上的区分标准在于资金使用的最终目的——是获取WMD，还是实施恐怖暴力。
-
----
-
-教材章节：未映射
-
-题型：single
-
-题干：一家金融机构正在设计一项企业范围的风险评估（EWRA）。根据沃尔夫斯堡集团发布的关于基于风险的方法来识别和管理洗钱风险的指导，一种有效的方法应当：
-
-英文题干：A financial institution is designing an enterprise-wide risk assessment (EWRA). According to the guidance issued by the Wolfsberg Group regarding a risk-based approach to identifying and managing money laundering risks, an effective approach should:
-
-选项：
-
-- A. 在评估期内，重点关注新客户带来的风险，并了解用于降低相关洗钱风险的控制措施。
-  English: Focus on understanding the risks presented by new clients within the assessment period, and the controls to mitigate associated money laundering risks.
-- B. 应采取适当措施和控制手段，以降低来自高风险客户、产品和地区的洗钱风险。
-  English: Include appropriate measures and controls to mitigate money laundering risks stemming from higher-risk customers, products, and geographies.
-- C. 关注金融机构产品和服务提供的固有风险以及为降低潜在洗钱风险所采取的控制措施。
-  English: Focus on the inherent risk in the FI's product and service offerings and the controls to mitigate potential money laundering risks.
-- D. 使用由第三方供应商提供的框架，该框架在该司法管辖区内的其他金融机构中也有使用。
-  English: Use a framework provided by a third-party vendor and used by other FIs in the jurisdiction.
-
-## 【AI答案】
-
-C
-
-> **需人工复核**
->
-> - 答案冲突：解析{'C'} vs 题库{'B'}
-
-## 【考点】
-
-企业全面风险评估（EWRA）应聚焦固有风险与控制有效性
-
-## 【核心解析】
-
-企业全面风险评估（EWRA）流程始于“确定固有风险”，继而“评估控制有效性”，最终计算剩余风险并制定缓解计划（P268）。风险为本方法也强调识别和理解风险后采取适当缓解措施（P270）。简言之，EWRA 的核心工作就是两步：先看你有什么风险（固有风险），再看你现有的管控能不能挡住（控制措施）。题干问“有效的方法应当”做什么，C 选项直接复现了这两个核心步骤——关注“产品和服务提供的固有风险”以及“为降低潜在风险所采取的控制措施”，与教材 EWRA 流程定义完全吻合。
-
-教材原句："The process begins by establishing inherent risks, assessing the effectiveness of controls, computing the residual risk, and obtaining a clear action plan on mitigating the highest risks."
-
-## 【错误项分析】
-
-- **A 错误（教材定义应用）｜范围或程度偏差**：教材规定 EWRA 应审查所有客户类型，不限于“新客户”（P274 要求审查所有客户类型、司法管辖区、产品等）。选项A将关注范围限定在“新客户”，与教材对 EWRA 全面性要求相比，覆盖范围不够。
-- **B 错误（教材定义应用）｜范围或程度偏差**：B选项提到“降低来自高风险客户、产品和地区的洗钱风险”是风险管理的其中一个环节，但缺少对“固有风险”的识别与评估这一前置步骤。EWRA 的完整流程是先确定固有风险再评估控制措施，B 选项直接跳到了针对高风险客群的缓解措施，不如 C 选项完整匹配教材对 EWRA 流程的定义。
-- **D 错误（教材定义应用）｜概念混淆**：EWRA 应根据组织自身情况定制（P268：tailored to the specific organization），没有教材内容支持 EWRA 应当直接套用第三方供应商提供的、其他机构也在用的框架。使用外部框架并非 EWRA 有效性的内在要求，其匹配度不如C选项。
-
-## 【易错提醒】
-
-B选项描述的措施本身并无错误，但它对应的是EWRA流程中“评估控制后制定缓解计划”这个下游步骤，而非“有效方法应聚焦什么”这一更根本的定义性问题。题干问的是EWRA有效方法的核心焦点，C选项的“固有风险+控制措施”才是EWRA流程的起点和主干，B选项只是流程后半段的一个输出。遇到类似题目时，先判断题干问的是“流程定义”还是“后续措施”，避免将“需要做的事”等同于“方法的核心结构”。
+扩散融资与恐怖融资的区分点是资金用途：本题B明确指向获取WMD及其部件，D则指向为意识形态暴力筹资。两者都可能使用个人和实体网络，不能只看筹资主体，必须看资金的最终目的。
 
 ---
 
@@ -492,21 +490,23 @@ A
 
 ## 【考点】
 
-NRA/SRA与内部EWRA的对齐关系，而非照搬
+NRA/SRA作为内部EWRA的外部风险输入，而非照搬模板
 
 ## 【核心解析】
 
-风险为本方法要求金融机构根据自身风险暴露程度优先排序并采取适当措施（P267）。在此框架下，企业全面风险评估（EWRA）是“根据组织自身情况定制”的，需考虑客户、地域、产品和渠道特征（P268）。同时，EWRA“应纳入”NRA和SRA中识别的风险，利用国家和行业层面的风险见解来管理内部风险（P268）。这意味着NRA和SRA是输入和参考，而非直接照搬的模板。选项A抓住了这层关系——金融机构需要证明其内部评估识别的风险与国家/行业评估“相一致”（aligned），并且这些风险得到了有效管理。这与教材将EWRA定位为定制化但需参考外部评估的框架一致。相比之下，其他选项均将NRA/SRA视为强制照搬的清单，与EWRA的定制化本质冲突。
+教材直接将国家风险评估（NRA）、行业风险评估（SRA）和企业全面风险评估（EWRA）列为三类主要风险评估，并规定这些风险评估应相互关联，以形成有效的风险为本AFC框架（P268）。教材同时说明，EWRA根据具体组织定制，考虑其客户、司法管辖区、产品和交付渠道（P268），机构应依照监管预期采取针对性措施管理这些业务维度的风险（P268）。由此可以推断，内部评估不能脱离国家和行业层面的风险认识，但外部评估也不能取代机构自身的定制评估。
+
+选项A的“aligned”应理解为内部评估已体现并合理回应NRA/SRA识别的相关风险，而不是风险清单、因素或结论完全相同。教材没有逐字要求金融机构必须“证明”完全一致；但在四个选项中，只有A同时保留了外部评估的影响和机构有效管理风险的责任。B、C、D均要求直接、完全或严格照搬，明显违背EWRA的定制化原则，因此A是最佳答案。
 
 ## 【错误项分析】
 
-- **B 错误（教材定义应用）｜范围或程度偏差**：教材明确指出全球性组织的EWRA应“灵活协调”开展，子公司或分支机构“应被允许纳入其自身运营的特定风险动态和本地要素”（P275）。选项B要求“不得进行任何修改”直接应用SRA，这与EWRA的定制化和灵活性原则相悖。
-- **C 错误（教材定义应用）｜概念混淆**：教材规定需经董事会批准的是“风险偏好声明（RAS）”（P271），而非EWRA本身。同时，选项C要求“按照NRA和SRA中确切规定的内容”完成评估，这与EWRA“根据组织自身情况定制”的特性（P268）直接矛盾。受监管机构确实须有书面政策（P293），但并非照抄NRA/SRA。
-- **D 错误（教材定义应用）｜范围或程度偏差**：教材强调EWRA是“根据组织自身情况定制”的（P268），且“并非所有风险都适用于每个机构”（P267）。选项D要求“严格采用”“确切风险因素”，将NRA和SRA视为强制性检查清单，这取消了机构基于自身客户、产品和地域特点进行风险判断的空间，不符合风险为本方法的核心逻辑。
+- **B 错误（教材直接依据）｜范围或程度偏差**：全球性组织的EWRA应以共同方法论灵活协调开展，子公司和分支机构应被允许纳入自身运营的特定风险动态和本地要素（P275）。选项B要求SRA在所有子公司和分支机构“不得修改”地直接应用，与该规则直接冲突。
+- **C 错误（教材直接依据）｜范围或程度偏差**：选项C的决定性错误是要求内部评估“完全按照”NRA和SRA的具体内容编写。教材要求EWRA根据组织自身情况定制（P268），全球机构还应吸收各分支机构的本地风险要素（P275），因此外部评估不能替代内部评估。教材在本题相关段落没有规定EWRA是否必须由董事会批准，不能仅凭该附加表述作排他判断。
+- **D 错误（教材直接依据）｜范围或程度偏差**：教材要求EWRA考虑本机构的客户、司法管辖区、产品和交付渠道（P268）。选项D要求严格采用NRA/SRA中的“确切风险因素”，抹去了机构根据自身业务暴露识别其他风险或调整重点的空间。
 
 ## 【易错提醒】
 
-“对齐”（align）不等于“照搬”（adopt directly/without modification）。教材在P268-P275反复界定二者关系：EWRA是自下而上、根据自身情况定制的，同时从NRA/SRA中获取风险见解作为输入。风险为本方法的核心是比例性和相关性——机构需要证明其考虑了NRA/SRA的结论，但风险因素的选择和权重由自身业务特征决定。B、C、D的错误本质相同，都把“引用参考”抬高到了“强制照搬”。
+“相互关联”不等于“逐项一致”。教材把NRA、SRA和EWRA并列为三类评估，并要求它们相互关联，同时保留EWRA的组织定制和本地化判断。选项A中的“aligned”应按这种有限含义理解；教材并未直接规定内部风险因素及其权重必须与外部评估相同，也未在本题相关原文中使用“必须证明完全一致”的表述。
 
 ---
 
@@ -537,27 +537,258 @@ B、E
 
 > **需人工复核**
 >
-> - 答案冲突：解析{'B', 'E'} vs 题库{'C', 'A'}
+> - 中英文参考答案冲突：中文参考答案为A、C，英文参考答案为B、E；本解析按教材证据独立判断。
 
 ## 【考点】
 
-区分会计师的风险识别评估与金融机构自动化监控适用性
+会计师AML/CFT风险评估维度与监控控制的适配性
 
 ## 【核心解析】
 
-风险偏好（risk appetite）决定一个组织接受的客户类型、产品类型、运营的司法管辖区和渠道（P270）。客户接受政策是将风险偏好落到实处的直接体现，会计师可以通过起草这一政策，反过来厘清哪些客户超出了自身的风险承受边界——这与选项B直接吻合。同时，教材指出交易监控系统是帮助金融机构检测可疑交易模式的技术框架（P325），其场景和阈值通常基于大量同质化交易设计。会计师提供的是各类专业服务（P123），服务性质以人工专业判断为主、交易频次和模式与银行零售交易迥异，由此可推断金融机构使用的自动化系统未必适合会计师的日常风险识别和评估，选项E的“可能不适用”正体现了这一行业差异。
+风险偏好决定组织接受的客户类型、产品类型以及运营的司法管辖区和渠道（P270）；风险评估还应识别可能超出组织风险偏好的客户、产品和服务（P281）。因此，起草客户接受政策可以把风险偏好转化为客户准入边界，帮助会计师明确哪些客户超出其风险承受能力，B项直接符合教材框架。
+
+交易监控系统被教材定义为帮助金融机构检测可疑交易模式的技术框架（P325），但教材同时强调监控方式应随业务类型和风险特征调整：不同业务的交易量和模式不同，所需自动化程度也不同（P254），产品风险评估还应参与交易监控等控制措施的设计，以确保对产品充分覆盖（P286）。会计师提供多种专业服务，且不同服务对应不同洗钱风险（P123）。由此可推断，金融机构使用的自动化交易监控系统对会计师业务可能并不适用，E项的“可能”体现了风险为本和控制适配原则。这里是基于教材原则的合理推论，不是教材对会计师业务的逐字规定。
 
 教材原句："Every organization has its own risk appetite, which determines the type of customers it will accept, the product types it will offer, and the jurisdictions and channels in which it will operate."
 
 ## 【错误项分析】
 
-- **A 错误（题干对照）｜证据不足**：与教材对账户和沟通记录保存的要求基调不符（P361页可见记录保存的原则性要求），且在所有可用材料中都找不到可以将保存期限定在“两年”的依据，对会计师的适用性更不成立。
-- **C 错误（教材直接依据）｜证据不足**：在对法人或交易进行风险评估时，教材明确列出“地域风险评估涉及政治稳定性、监管环境和制裁状况”（P275），即司法管辖区本身就是风险维度之一，题干所言“不重要”与这一框架直接矛盾，不如选项B那样贴合教材对风险识别的全面性要求。
-- **D 错误（教材直接依据）｜范围或程度偏差**：教材中风险评估的第一步就是搜集客户、地域、产品、渠道四类信息（P275），意味着风险至少可按四种类别组织，而不是被限制为仅两种。题干中“仅被允许组织为客户风险或交易/服务风险”明显缩窄了教材框架的覆盖范围，匹配度远不如选项B来得直接。
+- **A 错误（教材直接依据）｜证据不足**：教材把记录保存和记录保留列为预防性控制（P277），要求按照组织的记录保留政策保存文件（P345），并通过妥善记录保存确保能够向监管和执法部门提供信息（P359）。这些原文支持记录保存义务，但没有支持“无需超过两年”这一具体期限，因此A缺乏教材依据。
+- **C 错误（教材直接依据）｜范围或程度偏差**：教材明确指出，地域风险评估可以考虑政治稳定性、监管环境和制裁状况（P275），司法管辖区本身就是风险维度之一。C项称其“不重要”，与教材风险评估框架直接相反。
+- **D 错误（教材直接依据）｜范围或程度偏差**：教材要求收集客户、司法管辖区、产品和渠道等信息（P275），风险评估并非只能组织为客户风险或交易/服务风险。D项以会计师规模和资源为由缩窄风险类别，超出了教材允许的风险为本框架。
 
 ## 【易错提醒】
 
-（无）
+不要把没有具体“两年”期限的A项误判为正确，也不要把金融机构的自动化交易监控系统直接套用于所有行业。风险评估和监控控制都应结合客户、服务、产品、交易模式和司法管辖区等因素进行适配。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)
+
+英文题干：Which of the following are AML risks associated with onboarding a high-risk customer? (Select Two.)
+
+选项：
+
+- A. 加强的客户尽职调查要求
+  English: Enhanced customer due diligence requirements.
+- B. 洗钱非法所得的可能性较高
+  English: Greater potential for laundering illicit proceeds.
+- C. 与低风险客户相比,监管审查力度降低
+  English: Reduced regulatory scrutiny compared to low-risk customers.
+- D. 更有可能从事金融犯罪活动
+  English: Increased likelihood of engaging in financial crimes.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+区分“风险本身”与“风险控制措施”
+
+## 【核心解析】
+
+题干要求区分高风险客户带来的风险与机构为控制风险采取的措施。风险为本方法按照客户的潜在金融犯罪风险进行分类；风险较高的客户可能接受强化尽职调查和加强监控（P270）。这说明“高风险”表示洗钱非法所得或涉及金融犯罪的风险暴露和可能性较高，并不等于已经证明客户持有非法资金或实施犯罪。B的“洗钱非法所得的更大潜力”和D的“更有可能从事金融犯罪活动”描述的正是这种较高的潜在风险。教材还举例说明，政治敏感人物可能更易受腐败影响，中介机构可能代客户促成非法交易（P104），进一步说明高风险分类关注犯罪利用的可能性。故应选择B、D。
+
+教材原句："A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk."
+
+## 【错误项分析】
+
+- **A 错误（风险应对措施）｜概念混淆**：强化尽职调查是机构识别出较高风险后采取的控制措施。教材指出，高风险客户通常会接受更深入的EDD审查（P306），因此A描述的是风险的处理方式，而不是接纳该客户产生的洗钱风险本身。
+- **C 错误（审查方向相反）｜范围或程度偏差**：高风险客户可能接受EDD和加强监控（P270），审查强度通常高于而不是低于低风险客户。C把风险为本方法的资源配置方向写反。
+
+## 【易错提醒】
+
+高风险标签表示风险概率或暴露程度较高，不是犯罪事实认定。B、D使用“潜力”“可能性”描述风险；A的EDD和加强监控则是识别风险后的控制措施。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]国家风险评估(NRA)可以通过以下两种方式影响组织反金融犯罪(AFC)合规计划中的风险为本方法(RBA):(选择两项.)
+
+英文题干：A national risk assessment (NRA) can inform the risk-based approach (RBA) in an organization's anti-financial crime (AFC) compliance program by: (Choose Two.)
+
+选项：
+
+- A. 帮助识别需要加强尽职调查(EDD)的高风险行业.
+  English: Helping to identify high-risk sectors that require enhanced due diligence (EDD).
+- B. 消除组织内部进行部门风险评估的需求
+  English: Eliminating the need for sectoral risk assessments within the organization.
+- C. 指导金融犯罪风险防范资源的分配
+  English: Guiding the allocation of resources for mitigating financial crime risks.
+- D. 要求所有组织采用标准化措施
+  English: Requiring all organizations to apply standardized measures.
+- E. 自动减轻组织自行开展风险评估的责任
+  English: Automatically reducing the organization's responsibility for conducting its own risk assessment.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+国家风险评估（NRA）对组织RBA的两种赋能方式
+
+## 【核心解析】
+
+国家风险评估（NRA）的核心功能有二：一是识别国家层面的洗钱/恐怖融资威胁，审查高风险行业和领域（P268）；二是其风险识别结果为机构分配资源提供依据。题干问NRA如何“inform”（为……提供信息/指导）组织的风险为本方法（RBA）。选项A对应第一项功能——NRA识别出高风险行业后，金融机构便可据此确定哪些行业需加强尽职调查（P268）。选项C对应资源分配逻辑——FinCEN等国家层面的风险评估目的之一就是协助资源分配（P184），且风险评估帮助机构制定控制策略以缓解已识别风险（P277），NRA作为外部风险信息来源，指导组织将有限资源投向高风险领域。两者都体现NRA作为“外部输入→内部应用”的传导机制。
+
+教材原句："NRAs identify national-level money laundering and terror financing threats and risks. These assessments review sectors and areas with higher risks."
+
+## 【错误项分析】
+
+- **B 错误（教材直接依据）｜概念混淆**：题干问的是NRA对组织RBA的影响，而选项B暗示NRA可以“消除”组织内部风险评估的需求。教材明确列出三种评估类型——NRA、行业风险评估（SRA）和企业全面风险评估（EWRA），三者应相互关联（P268）。NRA提供宏观层面输入，EWRA在组织内部仍需单独开展，NRA的存在并不替代它。
+- **D 错误（教材直接依据）｜范围或程度偏差**：RBA的核心理念是措施应与识别出的风险成比例（P147），而非一刀切地要求所有组织采用标准化措施。NRA识别的是国家层面的风险概况，各机构在此基础上结合自身客户、地域、产品特征定制措施，选项D的“所有”与RBA的“按比例”逻辑矛盾。
+- **E 错误**：教材指出，机构需定期进行独立评估以确保内部风险控制有效（P272），NRA是外部输入，不能“自动减轻”组织自身的评估责任。两者的主语和职责边界不同——NRA由国家机关完成宏观识别，组织内部评估由机构自身或其委托方完成，前者不能替代后者。
+
+## 【易错提醒】
+
+NRA（国家风险评估）由国家机关执行，识别国家层面的风险；SRA（行业风险评估）由监管机构等执行，聚焦特定行业风险；EWRA（企业全面风险评估）由组织自行执行，结合NRA和SRA的洞察管理内部风险（P268）。三者层次不同，不能相互替代或消除。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]以下哪三项属于基于风险的方法？(选择三项.)
+
+英文题干：Which of the following are part of a risk-based approach? (Choose three.)
+
+选项：
+
+- A. 进行全面的风险评估,以识别客户、交易和地域风险
+  English: Performing a comprehensive risk assessment to identify customer, transaction, and geographic risks.
+- B. 对于之前已标记的客户,重点进行监控而对于其他客户则采用标准控制措施
+  English: Focusing monitoring primarily on previously flagged customers while using standard controls for others.
+- C. 选择并应用与所识别风险等级相适应的有效控制措施
+  English: Choosing and applying effective controls that align with the identified risk levels.
+- D. 根据客户的活动和关系确定其详细的风险概况
+  English: Determining detailed risk profiles for customers based on their activities and relationships.
+- E. 在所有客户群体间平均分配资源以确保公平性
+  English: Allocating resources evenly among all customer segments to ensure fairness.
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+
+基于风险的方法核心原则：识别风险并按风险等级差异化分配资源与管控
+
+## 【核心解析】
+
+风险为本方法（RBA）指识别、评估和理解洗钱/恐怖融资风险，并采取适当的缓解措施（P270）。其核心是“优先处理高概率和严重影响的风险”（P276），确保“应对措施与识别出的风险成比例”（P147），而非平均分配资源。选项A对应RBA的“识别与评估”环节——通过全面风险评估识别客户、交易和地域风险，这是RBA的起点。选项C对应“采取适当缓解措施”——选择并应用与风险等级相匹配的控制措施，体现“成比例”原则。选项D对应“理解风险”——根据客户活动和关系确定风险概况（P301），将客户按风险分类（P275），以便后续差异化管控。三者共同构成RBA的完整闭环：识别风险→评估定级→匹配控制。
+
+教材原句："A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively."
+
+## 【错误项分析】
+
+- **B 错误（教材定义应用）｜概念混淆**：题干条件更直接匹配“按风险等级分配资源”而非“按是否曾被标记分配资源”。“之前已标记”不等同于“当前高风险”——RBA要求根据当前风险水平动态调整，教材指出应对“高风险客户、司法管辖区和服务”优先投入资源（P218），而非仅盯住历史标记。
+- **E 错误（教材定义应用）｜概念混淆**：“平均分配资源”与RBA的核心原则直接冲突。教材明确：RBA意味着“识别最高风险并优先分配资源”（P381）、“对最高风险投入更多资源”（P276），而非在所有群体间平均分配。选项E描述的恰恰是RBA所要反对的“一刀切”方式。
+
+## 【易错提醒】
+
+RBA的核心是“差异化”，而非“平均主义”或“一刀切”。判断一个做法是否属于RBA，关键看它是否根据风险水平来决定资源投入的多少——风险高的多投入，风险低的少投入。选项B把“曾被标记”当作唯一优先级，选项E追求“公平平分”，两者都偏离了“按风险等级成比例”这条主线。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]以下哪三项属于基于风险的方法？(选择三项.)
+
+英文题干：Which of the following are part of a risk-based approach? (Select Three.)
+
+选项：
+
+- A. 根据客户的活动和关系确定其详细的风险特征
+  English: Determining detailed risk profiles for customers based on their activities and relationships.
+- B. 对于之前已标记的客户,重点进行监控而对于其他客户则采用标准控制措施
+  English: Focusing monitoring primarily on previously flagged customers while using standard controls for others.
+- C. 选择并应用与所识别风险等级相适应的有效控制措施
+  English: Choosing and applying effective controls that align with the identified risk levels.
+- D. 进行全面的风险评估,以识别客户、交易和地域风险
+  English: Performing a comprehensive risk assessment to identify customer, transaction, and geographic risks.
+- E. 在所有客户群体之间平均分配资源以确保公平性
+  English: Allocating resources evenly among all customer segments to ensure fairness.
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+
+风险为本方法的核心是识别、评估风险并采取相称的缓解措施
+
+## 【核心解析】
+
+风险为本方法（RBA）是指识别、评估和理解组织面临的洗钱/恐怖融资风险，并采取适当措施有效缓解这些风险（P270）。其核心逻辑是“先评估风险，再按风险等级分配资源和控制”。选项A“根据客户的活动和关系确定详细风险特征”对应风险评估中的客户风险画像（P301），属于识别和评估环节；选项D“进行全面的风险评估以识别客户、交易和地域风险”直接对应RBA定义中的识别和评估风险（P254、P52）；选项C“选择并应用与所识别风险等级相适应的有效控制措施”对应RBA中“采取与风险成比例的措施”这一关键原则（P147），以及“应用控制措施将固有风险降至可接受的剩余风险水平”（P278）。三项共同构成RBA的完整动作链：评估风险 → 按风险等级匹配控制措施。
+
+教材原句："A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜概念混淆**：风险为本方法要求根据客户、交易、地域等多维风险特征动态分配监控资源，而非仅依赖“之前已标记”这一历史状态。教材指出适当的分群确保对不同客户群体进行适当监控，而非只关注已标记客户（P436）。以历史标记替代风险评级，无法捕捉尚未被标记但风险正在上升的客户，与RBA的主动、全面评估原则匹配度较低。
+- **E 错误（题干对照）｜概念混淆**：风险为本方法的核心是按风险高低分配资源，高风险客户接受强化尽职调查和加强监控，从而有效分配资源（P270）。在所有客户群体间平均分配资源，完全违背了RBA“措施与风险成比例”的基本原则，更像是一种不考虑风险差异的机械公平观。
+
+## 【易错提醒】
+
+风险为本方法容易与“平均主义”或“仅凭历史标记”混淆。教材明确：RBA要求基于当前风险评估差异化配置资源（P270），而非一刀切平均分配，也不能仅靠过去标记来决定监控强度。
+
+---
+
+教材章节：未映射
+
+题型：multiple
+
+题干：在设定风险偏好并起草风险偏好声明（RAS）之后，哪些措施最能提升整个组织的风险偏好意识？（选择三项。）
+
+英文题干：What are the most effective measures to boost risk appetite awareness across an organization after a risk appetite has been set and a risk appetite statement (RAS) has been drafted? (Select Three.)
+
+选项：
+
+- A. 对员工进行培训，使其了解风险偏好及其限额在安全开展业务中的作用
+  English: Provide training to staff so they understand the role risk appetite and its limits play in the safe conduct of business
+- B. 对所有管理人员进行培训，让他们了解良好风险承担的重要性和益处
+  English: Train all managers on the importance and benefits of good risk-taking
+- C. 将风险偏好嵌入日常流程和治理之中
+  English: Embed the risk appetite into everyday processes and governance
+- D. 向业务同事说明风险控制措施
+  English: Describe risk controls for business colleagues
+- E. 将与风险偏好的偏离纳入内部报告程序
+  English: Integrate misalignment with risk appetite into internal reporting procedures
+
+## 【AI答案】
+
+A、C、E
+
+## 【考点】
+
+如何将纸面风险偏好嵌入组织日常运作以提升全员意识
+
+## 【核心解析】
+
+风险偏好声明（RAS）制定了规则，但提升意识的关键在于让它“活”起来。题干问的是在RAS起草之后如何提升意识，这对应教材中三个层层递进的落地动作：第一，RAS会被“编入政策和程序”（P270），也就是嵌入日常流程和治理（选项C）；第二，要通过培训确保员工“理解其在缓解风险中的角色”（P262），也就是让他们知道风险限额在日常业务中的作用（选项A）；第三，要用风险评估去“识别可能超出机构风险偏好的客户、产品和服务”（P281），这本质上就是把偏离纳入内部报告程序（选项E）。三者合在一起，构成了从制度嵌入、人员赋能到监测反馈的完整闭环，直接回答了“如何让组织意识到风险偏好的存在”。
+
+教材原句："The risk appetite statement is codified in policies and procedures."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜概念混淆**：该选项强调“良好风险承担”的益处，但教材将风险偏好定义为“可接受的风险水平”（P271），其核心功能是“为业务设定边界”（P270），约束而非鼓励承担。题干问的是提升风险偏好意识，重点是让组织理解并遵守这条边界线，选项B聚焦于说服管理者承担风险，与“帮大家认出边界在哪”的题干目标匹配度较低。
+- **D 错误（题干对照）｜范围或程度偏差**：该选项仅仅是单向地告知控制措施是什么。教材指出，控制措施“是为降低风险并确保遵守政策和程序而采取的行动”（P244）。虽然培训中可能涉及控制措施，但题干更直接匹配的是通过培训让员工理解RAS本身的作用（A）以及将RAS嵌入日常流程（C），这才直接触及“意识”的提升，而非单纯的知识传递。
+
+## 【易错提醒】
+
+“培训”和“嵌入流程”是提升意识的两个不同抓手。培训解决的是“知道”的问题（让员工理解RAS的作用），嵌入流程解决的是“碰到”的问题（让员工在日常工作中反复遇到RAS的体现）。选项B之所以不匹配，是因为它把RAS的目标从“约束风险”偷换成了“鼓励承担”。
 
 ---
 

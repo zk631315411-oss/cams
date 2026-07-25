@@ -16,7 +16,7 @@
   English: Drafting detailed action plans for the audit team to execute to close the findings
 - B. 重新对审计发现中提及的控制措施进行测试，以确认审计结果
   English: Reperforming the testing for the controls mentioned in the findings to confirm the results of the audit
-- C. 根据调查结果的根本原因分析来确定补救措施
+- C. 根据审计发现的根本原因分析来确定补救措施
   English: Defining remedial actions based on the findings' root cause analysis
 - D. 将审查行动计划的责任分配给董事会
   English: Assigning responsibility for reviewing the action plan to the board of directors
@@ -73,31 +73,33 @@ C
 
 ## 【AI答案】
 
-B
+A
 
 > **需人工复核**
 >
-> - 答案冲突：解析{'B'} vs 题库{'A'}
+> - 中英文参考答案冲突：中文=A，英文=B
 
 ## 【考点】
 
-剩余风险由固有风险减去控制有效性得出，而非被完全消除
+强控制措施会显著降低高固有风险对应的剩余风险
 
 ## 【核心解析】
 
-剩余风险的计算公式为：固有风险减去控制有效性等于剩余风险（P278）。识别固有风险后，必须应用控制措施将其降至可接受的剩余风险水平（P278）。题干中，私人银行部门固有风险高，已实施严格的CDD、EDD和先进交易监控。这些控制措施会降低剩余风险，但教材同时指出，控制有效性取决于正确应用、功能性和全组织一致性（P278），并需从设计与运行两方面评估（P278）。由此可推断，控制措施能适度降低剩余风险，但由于私人银行业务固有的高复杂性和控制措施实际执行中的不确定性，通常无法单凭现有控制就将剩余风险降至完全无需担忧的水平，因此可能仍需进一步措施才能达到可接受水平。
+教材指出，剩余风险的评估逻辑是“固有风险 - 控制有效性 = 剩余风险”（P278）。因此，私人银行业务因高净值客户和复杂财务结构而具有较高固有风险，并不代表剩余风险一定仍然很高，关键要看现有控制措施是否能有效缓释该风险。
+
+题干中，机构已实施 **robust CDD/EDD procedures** 和 **sophisticated transaction monitoring systems**。这里的 robust 和 sophisticated 是重要判断线索，说明题干并非只说“存在控制”，而是在强调这些控制较为健全、成熟，具有较强的风险缓释能力。教材也举例说明，对于高风险客户，如果机构实施EDD、核实资金来源和财富来源并加强业务关系监控，且这些控制被判断为有效，剩余风险可以降至中等或较低水平（P278）。本题所列CDD、EDD和先进交易监控正是这类缓释措施，因此最符合题意的判断是：由于现有控制措施有效，剩余风险将显著降低。
 
 教材原句："inherent risk minus control effectiveness equals residual risk (inherent risk – control effectiveness = residual risk)."
 
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）｜范围或程度偏差**：题干明确指出私人银行部门固有风险高，且仅列举了已实施的控制措施，并未提供这些措施已被评估为“高度有效”的证据。题干条件更直接支持剩余风险“适度降低”而非“显著降低”，后者隐含了控制措施有效性的确定性结论，但教材强调有效性需经评估（P278）。
+- **B 错误（题干对照）｜范围或程度偏差**：B项虽然承认控制措施会降低风险，但进一步加入“可能仍需进一步控制才能达到可接受水平”这一判断。题干并未说明CDD/EDD执行不足、交易监控存在缺陷、控制运行不一致或剩余风险仍超过风险偏好；相反，robust 和 sophisticated 已经提示现有控制较强。因此B项比A项多引入了题干没有给出的控制不足假设。
 - **C 错误（教材定义应用）｜概念混淆**：教材明确，控制措施旨在降低固有风险（P278），剩余风险是在考虑控制措施之后的风险水平（P279）。选项C仅强调固有风险性质，完全忽视了题干中已实施的控制措施对风险的缓解作用，与教材的剩余风险计算逻辑不符。
 - **D 错误（教材定义应用）｜范围或程度偏差**：教材中提到，控制措施旨在将风险降至与机构风险偏好一致的水平（P278），并未声称控制措施能降低“所有潜在风险”或将剩余风险“完全消除”。在反洗钱/反恐怖融资领域，没有任何控制措施能保证消除所有风险。
 
 ## 【易错提醒】
 
-“固有风险”是未考虑任何控制措施时的原始风险暴露水平；“剩余风险”是应用控制措施后残余的风险水平。题目问的是剩余风险，要考虑控制措施的效果。混淆两者的后果是，要么像选项C那样认为固有风险高剩余风险就一定高，要么像选项D那样认为有控制措施就能完全消除风险。正确的思路是：控制措施能降低风险，但不能完全消除风险，因此“适度降低”比“显著降低”或“居高不下”更符合风险管理的现实。
+不要把“高固有风险”直接等同于“高剩余风险”。剩余风险必须结合控制有效性评估。本题中 robust CDD/EDD 和 sophisticated transaction monitoring 已经提示控制措施较强，所以应选“显著降低”，而不是额外假设还需要进一步控制；但风险缓释也不等于风险完全消除。
 
 ---
 
@@ -263,15 +265,15 @@ B
 
 ## 【核心解析】
 
-剩余风险的计算公式为：固有风险减去控制有效性（P278）。固有风险是未施加控制前的原始风险水平，控制有效性衡量控制措施对固有风险的削减程度。题干中固有风险为“中等”，控制有效性“低于令人满意”，意味着控制措施对固有风险的削减作用很弱。从公式看，中等固有风险减去一个很弱的控制有效性，扣减的量很小，剩余风险仍然接近甚至等于固有风险水平。由此可推断，在控制几乎不起作用的情况下，剩余风险不会维持不变或降低，而是会向较高方向偏移，因此最可能的结论是“高”。
+教材给出的关系是“固有风险－控制有效性＝剩余风险”（P278）。固有风险为“中等”而控制有效性“低于令人满意”，说明控制对风险的削减作用有限，剩余风险不会因为控制而降为低水平。在给定选项中，B所说的“高”最符合控制薄弱时剩余风险可能高于固有风险基准的方向；具体评级仍应以机构采用的风险分级方法为准。
 
 教材原句："The formula for calculating residual risk is: inherent risk minus control effectiveness equals residual risk (inherent risk – control effectiveness = residual risk)."
 
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）｜概念混淆**：选项A断言控制薄弱时剩余风险“保持不变”。这违背了P278的公式：控制有效性是公式中的减数，减数越小，结果越大。如果控制薄弱，剩余风险理应上升而非不变，因此题干条件更直接支持B而非A。
-- **C 错误（教材定义应用）｜范围或程度偏差**：选项C得出“中等”的结论，理由聚焦于“特定区域的风险结论可能会有所增加”。教材确实提到控制无效时应重点关注（P274），但剩余风险是整个风险评估的输出结果，并非仅限于特定区域。A和C结论相同，但C的理由偏离了题干“年度风险评估”的整体性框架，与P278的总体剩余风险计算逻辑匹配度不如B。
-- **D 错误（教材定义应用）｜概念混淆**：选项D得出“低”的结论，理由是“控制措施会降低风险”。控制措施确实能降低风险（P79），但前提是控制措施“有效”。题干明确控制有效性“低于令人满意”，即控制未能有效发挥降低风险的作用，因此“低”的结论在题干条件下不成立。B更吻合控制薄弱时风险不降反升的教材逻辑。
+- **A 错误（教材定义应用）｜方向不符**：选项A断言控制薄弱时剩余风险“保持不变”。控制有效性有限意味着风险削减有限，剩余风险至少不会因控制而降低；在给定选项中，B对风险上升方向的描述更符合题干。
+- **C 错误（教材定义应用）｜理由不充分**：选项C仍给出“中等”，但只说特定区域的风险结论可能增加，没有说明控制有效性不足如何影响整体剩余风险。在给定选项中，B更直接回应了控制薄弱所带来的风险上升方向。
+- **D 错误（教材定义应用）｜条件不符**：选项D以“控制措施会降低风险”为由得出“低”。控制只有在有效时才能显著降低风险；题干已说明控制有效性低于令人满意，因此“低”与题干条件不符。
 
 ## 【易错提醒】
 
@@ -283,44 +285,52 @@ B
 
 题型：single
 
-题干：采用基于风险的方法设计有效的控制框架的第一步是什么？
+题干：一家金融机构正在进行全企业范围的风险评估(EWRA),发现其私人银行部门存在较高的固有洗钱风险,原因是客户资产净值高且财务结构复杂.不过,该机构已实施了严格的客户尽职调查(CDD)和强化尽职调查(EDD)程序,并配备了先进的交易监控系统.这些控制措施会如何影响剩余风险的评估？
 
-英文题干：What is the first step in designing an effective controls framework using a risk-based approach?
+英文题干：A financial institution is conducting an enterprise-wide risk assessment (EWRA) and has identified a high inherent risk of money laundering associated with its private banking division due to the clientele's high net worth and complex financial structures. However, the institution has implemented robust customer due diligence (CDD) and enhanced due diligence (EDD) procedures, along with sophisticated transaction monitoring systems. How would these controls impact the assessment of residual risk?
 
 选项：
 
-- A. 建立风险控制机制
-  English: Establishing risk controls
-- B. 评估风险控制措施
-  English: Assessing risk controls
-- C. 持续的风险监测
-  English: Ongoing risk monitoring
-- D. 进行风险评估
-  English: Conducting a risk assessment
+- A. 剩余风险将被完全消除,因为这些控制措施足以降低所有潜在风险.
+  English: The residual risk would be eliminated entirely because the controls are sufficient to mitigate all potential risks.
+- B. 由于现有控制措施的有效性,剩余风险将显著降低.
+  English: The residual risk would be significantly reduced due to the effectiveness of the existing controls.
+- C. 由于私人银行业务的固有性质,剩余风险仍将居高不下
+  English: The residual risk would remain high due to the inherent nature of private banking.
+- D. 剩余风险会适度降低,但可能仍需进一步采取控制措施才能达到可接受的水平
+  English: The residual risk would be moderately reduced, but may still require further controls to reach an acceptable level.
 
 ## 【AI答案】
 
-D
+B
+
+> **需人工复核**
+>
+> - 答案冲突：解析{'B'} vs 英文参考答案{'D'}
 
 ## 【考点】
 
-风险为本方法下设计控制框架的第一步是风险评估
+根据控制有效性评估固有风险转化后的剩余风险
 
 ## 【核心解析】
 
-风险为本方法要求先识别、评估并理解风险，再据此制定控制措施（P270）。设计有效的控制框架必须以风险评估为起点，因为只有先了解组织面临的风险类型和潜在影响，才能有针对性地建立控制（P280）。题干问“第一步”，在流程上只能是先进行风险评估，而不是在尚未弄清风险时就建立或评估控制，或进入持续监测。
+教材将固有风险定义为实施任何缓解控制前的风险，并以“固有风险 − 控制有效性 = 剩余风险”说明二者关系（P275、P278）。本题私人银行客户净值高、财务结构复杂，说明固有风险较高；但题干同时明确存在严格的CDD/EDD程序和先进交易监控系统，问题要求评价这些控制对剩余风险的影响，而不是重新评价私人银行业务的固有风险。
 
-教材原句："Organizations need to conduct a risk assessment to understand the types of risk and their potential impacts."
+教材进一步给出，高固有风险客户在EDD、资金来源/财富核实和持续监控等控制措施被评估为有效时，剩余风险可能降至中等或低水平（P278）。因此，题干所说的“robust” CDD/EDD及“sophisticated”交易监控，支持控制有效性较高、剩余风险相对固有风险实质下降的判断。这里的“显著”是依据教材所举“高固有风险降至中或低”的情形作出的比较判断，并非声称风险被消除。
+
+综上，在给定选项中，B与题干和教材更符合：有效控制使剩余风险显著降低，但剩余风险仍应结合风险容忍度继续评估；若仍超出容忍度，再制定行动计划（P279）。
+
+教材原句："The formula for calculating residual risk is: inherent risk minus control effectiveness equals residual risk (inherent risk − control effectiveness = residual risk)."
 
 ## 【错误项分析】
 
-- **A 错误（教材定义应用）**：建立风险控制（Establishing risk controls）应在识别并评估风险之后进行，属于第三步“制定控制策略”，而非第一步。
-- **B 错误（教材定义应用）**：评估风险控制措施（Assessing risk controls）是针对已有控制有效性的评价，发生在风险评估之后，且题干问的是框架设计的第一步，此时控制尚未建立，无从评估。
-- **C 错误（教材定义应用）**：持续风险监测（Ongoing risk monitoring）是风险控制框架运行后的持续活动，不是设计阶段的第一步。
+- **A 错误**：控制措施的目标是将风险降低到可接受的剩余风险水平，而不是保证消除所有潜在风险（P278）。“完全消除”把风险降低绝对化，超出题干和教材支持范围。
+- **C 错误**：该项只根据私人银行业务的固有性质判断结果，忽略了题干明确给出的CDD/EDD和交易监控控制效果；教材说明控制有效性会影响固有风险转化后的剩余风险（P278）。
+- **D 不选（条件不足）**：剩余风险确实可能还需进一步控制，但教材要求先根据剩余风险判断是否超出风险容忍度（P279）。题干没有提供现有控制无效或剩余风险仍超出容忍度的事实；因此，“适度降低且仍需进一步控制”增加了未经给出的条件，匹配度不如B。
 
 ## 【易错提醒】
 
-“风险评估”与“评估风险控制措施”容易混淆：前者是识别固有风险并排序，后者是衡量已有控制的有效性。在风险为本框架的起点，尚未有控制，自然只能先做风险评估。
+固有风险是控制措施实施前的原始风险敞口，剩余风险是应用控制措施后残余的风险。不要把“风险显著降低”偷换成“风险完全消除”；是否需要进一步控制，还要看剩余风险是否超出风险容忍度（P275、P278-P279）。
 
 ---
 
@@ -328,13 +338,13 @@ D
 
 题型：multiple
 
-题干：金融机构(FI)在为新企业客户开设新银行账户时应审查哪些风险因素？(选择三项.)
+题干：金融机构（FI）应为拟开立新银行账户的新企业客户审查哪些风险因素？（选择三项。）
 
 英文题干：Which risk factors should a financial institution (FI) examine for a new corporate customer intending to open a new bank account? (Select three.)
 
 选项：
 
-- A. 新客户当前或之前有业务往来的所有金融机构
+- A. 新客户目前开户或曾经开户的所有金融机构
   English: All the financial institutions where the new customer currently banks or banked previously.
 - B. 该企业客户所从事的业务类型
   English: The type of business the corporate customer is engaged in.
@@ -355,18 +365,18 @@ B、D、E
 
 ## 【核心解析】
 
-教材在阐述客户风险评级时明确列出行业、交易量、腐败指数和地理位置（P275），因此“业务类型”和“国家/地区”均为固有风险评估的基本维度。同时，针对法人客户的KYC流程，教材明确规定须验证董事、高级管理层和授权签字人（P311），对应高管及授权操作账户人员的身份审查。这三项共同构成新企业客户开户审查中不可或缺的基础CDD要素。
+教材在阐述客户风险评级时列出行业、交易量、腐败指数和地理位置（P275），因此B“业务类型”和D“国家或地区”属于直接影响客户风险评级的因素。E的性质略有不同：它不是风险高低指标，而是法人客户开户CDD中的身份核实要求；教材要求验证董事、高级管理层和授权签字人（P311），与选项所述高级管理人员及获授权操作账户者直接对应。题干将风险审查和开户CDD要素合并询问，因而B、D、E是三个最符合教材的选项。
 
 教材原句："For customers, risk rating generally considers their industry, transaction volume, corruption index, and geographic location."
 
 ## 【错误项分析】
 
 - **A 错误（题干对照）｜范围或程度偏差**：选项要求审查客户“所有”曾往来的金融机构，而CDD的核心是了解客户自身的身份、业务与风险，而非其历史合作方清单。教材在开户审查框架下并未将此项列为固有风险因素或验证要点，匹配度远低于行业类型、地理位置等固有风险维度。
-- **C 错误（教材直接依据）｜主体或阶段错配**：教材要求为自然人客户收集就业和收入信息（P309），但针对法人客户，CDD验证对象明确限定为董事、高级管理层和授权签字人（P311），而非所有员工。题干针对的是“企业客户”，正确项E对高管和授权人的审查更直接匹配法人KYC的教材框架。
+- **C 错误（教材直接依据）｜范围或程度偏差**：教材对自然人客户列有就业和收入信息（P309）；法人客户则要求核实董事、高级管理层和授权签字人等相关人员（P311）。选项C把范围扩大到新客户的“所有员工”，既不是企业风险评级因素，也超出了这里列出的法人身份核实对象；E与法人开户CDD要求更直接对应。
 
 ## 【易错提醒】
 
-自然人KYC vs 法人KYC：前者要求就业和收入信息（P309），后者只到高管及授权签字人层面（P311），不对全体员工展开审查。做题时先看清客户主体是自然人还是企业，再调用对应CDD框架。
+自然人客户资料可以包括就业和收入信息（P309）；法人客户CDD则需要核实法人本身及与其控制、管理或账户操作有关的人员。本题引用的教材条目直接列出董事、高级管理层和授权签字人（P311），并不要求收集全体员工资料。这里不能把“无需审查所有员工”扩大解释为法人CDD只核实高管和授权签字人。
 
 ---
 
