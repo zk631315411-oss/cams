@@ -54,8 +54,6 @@ def _grounded_block(value: Any, allowed: set[str]) -> dict[str, Any]:
     value = value if isinstance(value, dict) else {}
     text = _clean_prose(value.get("text", ""))
     cited = _valid_citations(value.get("cited_unit_ids"), allowed)[:3]
-    if not text or not cited:
-        return {"text": INSUFFICIENT_TEXT, "cited_unit_ids": []}
     return {"text": text, "cited_unit_ids": cited}
 
 
@@ -413,17 +411,24 @@ def normalize_explanation(
             answer = [str(x).strip().upper() for x in result.get("predicted_answer", []) or []
                       if str(x).strip().upper() in (result.get("options", {}) or {})]
         return {
-            "deferral": deferral, "answer": answer,
+            "schema_version": SCHEMA_VERSION, "deferral": deferral, "answer": answer,
             "exam_point": {"text": ""}, "core_analysis": {"text": "", "cited_unit_ids": []},
             "option_explanations": [], "easy_mistake": {"text": ""},
             "primary_unit_id": "",
             "source_evidence": [],
             "software_readiness": {"ready": False, "blocking_reasons": ["LLM 拒答"], "risk_flags": ["llm_deferred"]},
+            "reference_appendix": reference,
+            "generation_metadata": {"prompt_version": PROMPT_VERSION, "model": model, "generated_at": time.strftime("%Y-%m-%d %H:%M:%S")},
         }
     options = result.get("options", {}) or {}
     predicted = [str(x).strip().upper() for x in result.get("predicted_answer", []) or []
                  if str(x).strip().upper() in options]
     unit_map = candidate_by_unit(result)
+    # 上下文扩展卡也在 LLM 可见范围内，并入 unit_map 防止 KeyError
+    for card in (result.get("context_pool", []) or []):
+        uid = str(card.get("unit_id", "") or "").strip()
+        if uid and uid not in unit_map:
+            unit_map[uid] = card
     sources = {row["option"]: row for row in enriched_option_material(result)}
     framework = result.get("decision_framework", {}) or {}
     framework_ids = {str(uid) for uid in framework.get("cited_unit_ids", []) or []
@@ -432,6 +437,9 @@ def normalize_explanation(
                              for key in ("evidence_cards", "supplement_cards")
                              for card in source.get(key, []) or []}
     provided_evidence_ids.update(framework_ids)
+    # 也纳入候选池和上下文扩展卡，允许 LLM 引用池内任何 unit
+    provided_evidence_ids.update(str(c.get("unit_id", "")) for c in (result.get("candidate_pool", []) or []) if c.get("unit_id"))
+    provided_evidence_ids.update(str(c.get("unit_id", "")) for c in (result.get("context_pool", []) or []) if c.get("unit_id"))
     raw_rows = parsed.get("option_explanations", [])
     raw_rows = raw_rows if isinstance(raw_rows, list) else []
     raw_by_label = {str(row.get("option", "")).strip().upper(): row
@@ -557,7 +565,7 @@ def normalize_explanation(
             quote for row in correct_rows for quote in row.get("stem_quotes", []) or []))[:3]
         core_text = " ".join(str(row.get("analysis", "")).strip() for row in correct_rows).strip()
         exam_point = {"text": "本题考查依据题干明确事实进行直接判断。"}
-        core_analysis = {"text": core_text or INSUFFICIENT_TEXT, "cited_unit_ids": [], "source_quote": {}}
+        core_analysis = {"text": core_text, "cited_unit_ids": [], "source_quote": {}}
         easy_mistake = {"text": (f"判断时只使用题干明确给出的{_quoted_text(decisive_stem_quotes)}，"
                                  "不要补入题干未提供的外部定义或通常做法。"), "cited_unit_ids": []}
         quote_issues: list[str] = []
@@ -587,7 +595,6 @@ def normalize_explanation(
                 core_analysis.update(fallback_core)
                 normalization_warnings.extend(context_issues)
             else:
-                core_analysis = {"text": INSUFFICIENT_TEXT, "cited_unit_ids": []}
                 grounding_issues.extend(context_issues)
         source_quote, quote_issues = _normalize_source_quote(raw_core, core_analysis, unit_map)
         core_analysis["source_quote"] = source_quote

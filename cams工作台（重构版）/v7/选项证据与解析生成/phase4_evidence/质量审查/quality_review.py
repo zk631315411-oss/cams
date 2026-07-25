@@ -79,8 +79,9 @@ AI答案：{ai_answer}
 3. **后合理化**：AI引用的核心证据是否真的支撑其答案？区分"合理推理"和"装饰性引用"：
    - 合理推理：证据提供了原则或定义，AI据此推导出结论 → 不算后合理化
    - 装饰性引用：证据与结论没有逻辑关联，只是恰好包含某个关键词 → 算后合理化
+   **注意**：如果 AI 引用的内容在同一页码的上下文扩展卡（±4邻居）中存在，即使不在被引用的具体 unit_id 中，也不应判为后合理化——跨单位引用同页内容属于合理使用。
 
-4. **页码幻觉**：AI引用的所有（PXX）页码是否都在"证据池所有有效页码"列表中？逐一核对，不在清单中的即为页码幻觉。
+4. **页码幻觉**：AI引用的所有（PXX）页码是否都在"证据池所有有效页码"列表中？逐一核对，不在清单中的即为页码幻觉。**注意**：同一页码可能对应多个 unit（主证据池 + 上下文扩展卡），只要该页码下**任何一个** unit 的内容与 AI 引文一致，就不算页码幻觉。不要只查被引用的 unit_id，要查该页码下的所有 unit。
 
 5. **语气放大**：AI是否将原文的不确定/限定表述升级为确定/绝对语气？
    注意区分"语气放大"和"合理总结"——从"面临风险"推出"缺乏监管会增加风险"属于合理推理，不算语气放大。
@@ -108,9 +109,9 @@ AI答案：{ai_answer}
 注意：
 - answer_judgment：仅当AI答案与题库答案冲突时给出参考意见；无冲突时填"n/a"。注意：answer_judgment 不影响 verdict —— 即使判了 ai_correct，只要存在五类错误或答案冲突，verdict 就不能是 pass
 - verdict 判定规则：
-  - pass：五类错误均未发现，且AI答案与题库一致（或题库无答案）
+  - pass：五类错误均未发现，且AI答案与题库一致（或题库无答案），且解析正文完整可用
   - minor_issue：存在轻微问题但不影响正确性
-  - needs_fix：存在实质错误，或AI答案与题库冲突（无论 answer_judgment 如何判断，冲突本身就是 needs_fix）
+  - needs_fix：存在实质错误，或AI答案与题库冲突（无论 answer_judgment 如何判断），或**解析不可用**——核心解析正文为空、所有选项分析均为空、或答案为空的，无论是否发现五类错误，一律 needs_fix
 - 每个error的detail：如found=true，必须写清具体证据（必须从AI解析原文中逐字引用，不得用自己的话转述）
 - summary：一句话总结复核结论"""
 
@@ -152,7 +153,7 @@ def _build_review_prompt(
     easy_mistake = str((exp.get("easy_mistake", {}) or {}).get("text", ""))
 
     # ── 全量证据池（盲判/解析/复核共享同一池）──
-    cited_uids = _collect_cited_uids(exp)
+    cited_uids = collect_cited_unit_ids(exp)
 
     # 从 source_evidence 构建页码查找表
     page_lookup: dict[str, dict[str, Any]] = {}
@@ -171,35 +172,77 @@ def _build_review_prompt(
             for u in kg.get("units", []) or []:
                 uid = str(u.get("unit_id", ""))
                 if uid:
-                    kg_page_map[uid] = {"pdf_page": u.get("pdf_page", ""), "printed_page": u.get("printed_page", "")}
+                    kg_page_map[uid] = {"pdf_page": u.get("pdf_page", ""), "printed_page": u.get("printed_page", ""), "knowledge_zh": u.get("knowledge_zh", ""), "en_quote": u.get("en_quote", "")}
     except Exception:
         pass
 
     evidence_parts: list[str] = []
     all_pool_pages: set[int] = set()
-    evidence_parts.append(f"## 本题证据池（共{len(unit_map)}个单元，盲判/解析/复核共享）\n")
+
+    # 从 context_pool 读取上下文扩展卡（±4 邻居），已在盲判阶段写入 JSON
+    context_pool = result.get("context_pool", []) or []
+    context_uid_page: dict[str, str] = {}
+    for card in context_pool:
+        uid = str(card.get("unit_id", "") or "").strip()
+        if uid and uid not in unit_map:
+            pg = card.get("printed_page", "") or ""
+            if pg:
+                context_uid_page[uid] = str(pg)
+                if str(pg).strip().isdigit():
+                    all_pool_pages.add(int(pg))
+    # ── 按页码合并展示（主池 + 上下文扩展卡），避免 LLM 跨段查找遗漏 ──
+    page_buckets: dict[int, list[dict[str, Any]]] = {}
+    def _add_to_bucket(uid: str, unit: dict, is_context: bool = False):
+        pg = unit.get("printed_page", "") or ""
+        if not str(pg).strip().isdigit():
+            return
+        p = int(pg)
+        all_pool_pages.add(p)
+        if p not in page_buckets:
+            page_buckets[p] = []
+        page_buckets[p].append({
+            "uid": uid, "is_cited": uid in cited_uids, "is_context": is_context,
+            "zh": str(unit.get("knowledge_zh", "") or ""),
+            "en": str(unit.get("en_quote", "") or ""),
+            "hc": str(unit.get("heading_context", "") or ""),
+        })
 
     for uid in sorted(unit_map.keys()):
         unit = unit_map.get(uid, {})
-        if not unit:
-            continue
-        zh = str(unit.get("knowledge_zh", "") or "")
-        en = str(unit.get("en_quote", "") or "")
-        hc = str(unit.get("heading_context", "") or "")
-        pg = page_lookup.get(uid, {}) or kg_page_map.get(uid, {})
-        printed = pg.get("printed_page", "") or unit.get("printed_page", "")
-        page_info = f"P{printed}" if printed else ""
-        if printed and str(printed).strip().isdigit():
-            all_pool_pages.add(int(printed))
-        is_cited = uid in cited_uids
-        marker = " [AI已引用]" if is_cited else ""
-        evidence_parts.append(
-            f"### {uid}{marker}\n"
-            f"章节路径：{hc}\n"
-            f"页码：{page_info}\n"
-            f"中文要点：{zh}\n"
-            f"英文原文：{en}\n"
-        )
+        if unit:
+            _add_to_bucket(uid, unit)
+    # 上下文扩展卡用完整的 KG unit 数据（含 knowledge_zh/en_quote），不用仅含页码的 kg_page_map
+    _full_kg: dict[str, dict[str, Any]] = {}
+    try:
+        kg_path = KG_GRAPH_PATH
+        if kg_path.exists():
+            with open(kg_path, "r", encoding="utf-8") as f:
+                kg = json.load(f)
+            for u in kg.get("units", []) or []:
+                _full_kg[str(u.get("unit_id", ""))] = u
+    except Exception:
+        pass
+
+    for uid, page_str in context_uid_page.items():
+        unit = _full_kg.get(uid, {})
+        if unit and uid not in unit_map:
+            _add_to_bucket(uid, unit, is_context=True)
+
+    total_units = sum(len(v) for v in page_buckets.values())
+    evidence_parts.append(f"## 证据池（按页码合并，共{total_units}个单元：主池+上下文扩展卡）\n")
+    evidence_parts.append("标记：★=AI已引用  [扩展]=±4邻居上下文卡\n\n")
+
+    for pg in sorted(page_buckets.keys()):
+        units = page_buckets[pg]
+        evidence_parts.append(f"### P{pg}（{len(units)}个单元）\n")
+        for u in units:
+            tag = " ★" if u["is_cited"] else ""
+            tag += " [扩展]" if u["is_context"] else ""
+            evidence_parts.append(
+                f"#### {u['uid']}{tag}\n"
+                f"中文：{u['zh']}\n"
+                f"英文：{u['en']}\n"
+            )
 
     evidence_text = "\n".join(evidence_parts) if evidence_parts else "（无引用证据）"
 
@@ -224,47 +267,6 @@ def _build_review_prompt(
         evidence_text=evidence_text,
         ref_final=ref_final, ref_cn=ref_cn, ref_en=ref_en, ref_analysis=ref_analysis,
     )
-
-
-def _collect_cited_uids(exp: dict[str, Any]) -> set[str]:
-    uids: set[str] = set()
-    core = exp.get("core_analysis", {}) or {}
-    for uid in (core.get("cited_unit_ids", []) or []):
-        uids.add(str(uid))
-    for row in (exp.get("option_explanations", []) or []):
-        for uid in (row.get("cited_unit_ids", []) or []):
-            uids.add(str(uid))
-        for sc in (row.get("source_claims", []) or []):
-            uid = str(sc.get("unit_id", "") or "")
-            if uid:
-                uids.add(uid)
-    easy = exp.get("easy_mistake", {}) or {}
-    for uid in (easy.get("cited_unit_ids", []) or []):
-        uids.add(str(uid))
-    return uids
-
-
-def _parse_review_response(raw: str) -> dict[str, Any]:
-    try:
-        return json.loads(raw)
-    except json.JSONDecodeError:
-        pass
-    m = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw, re.DOTALL)
-    if m:
-        try:
-            return json.loads(m.group(1))
-        except json.JSONDecodeError:
-            pass
-    m = re.search(r"\{.*\}", raw, re.DOTALL)
-    if m:
-        try:
-            return json.loads(m.group(0))
-        except json.JSONDecodeError:
-            pass
-    return {
-        "errors": {}, "answer_judgment": "n/a", "verdict": "parse_failed",
-        "recommendation": "", "summary": f"无法解析LLM响应。原始输出：{raw[:500]}",
-    }
 
 
 def _select_review_targets(
@@ -334,7 +336,7 @@ def _select_review_targets(
 
 
 def _load_standard_questions() -> dict[str, dict[str, Any]]:
-    qp = master.DEFAULT_QUESTIONS_PATH
+    qp = DEFAULT_QUESTIONS_PATH
     if not Path(qp).exists():
         return {}
     with open(qp, "r", encoding="utf-8") as f:
@@ -375,7 +377,7 @@ def process_question(
             if attempt == 2:
                 raise
             time.sleep(2 * (attempt + 1))
-    review = _parse_review_response(raw)
+    review = parse_llm_output(raw)
 
     review["question_id"] = qid
     review["review_type"] = review_type
@@ -393,6 +395,21 @@ def process_question(
 def _write_report(reviews: list[dict[str, Any]], output_dir: Path) -> None:
     review_dir = output_dir / "quality_reviews"
     review_dir.mkdir(parents=True, exist_ok=True)
+
+    # 从磁盘读取已有 review JSON，确保报告覆盖全部已复核题目
+    all_reviews: dict[str, dict[str, Any]] = {}
+    for path in sorted(review_dir.glob("v7_q_*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            qid = data.get("question_id", "")
+            if qid:
+                all_reviews[qid] = data
+        except Exception:
+            pass
+    # 当前运行的 review 覆盖旧的
+    for r in reviews:
+        all_reviews[r.get("question_id", "")] = r
+    reviews = list(all_reviews.values())
 
     total = len(reviews)
     verdict_counts: dict[str, int] = {}

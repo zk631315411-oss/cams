@@ -38,7 +38,6 @@ def write_markdown_report(results: list[dict[str, Any]], output_dir: Path) -> No
     """写入可读的 Markdown 报告。"""
     total = len(results)
     ok_count = sum(1 for r in results if r.get("pipeline_status") == "ok")
-    vf_count = sum(1 for r in results if r.get("pipeline_status") == "validation_failed")
     pf_count = sum(1 for r in results if r.get("pipeline_status") == "llm_parse_failed")
     issue_counts = Counter()
     for r in results:
@@ -49,7 +48,7 @@ def write_markdown_report(results: list[dict[str, Any]], output_dir: Path) -> No
         "# 盲判报告\n",
         f"生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n\n",
         f"## 总结\n\n",
-        f"总题数: {total} | ok: {ok_count} | validation_failed: {vf_count} | llm_parse_failed: {pf_count}\n\n",
+        f"总题数: {total} | ok: {ok_count} | llm_parse_failed: {pf_count}\n\n",
         f"## 校验问题分布\n\n",
     ]
     for issue, count in issue_counts.most_common(30):

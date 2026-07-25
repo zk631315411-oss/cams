@@ -44,16 +44,17 @@ from 公共函数.index import (
     BM25, INDEX_PKL, KG_GRAPH_PATH, P5_ALIAS_INDEX_PATH, QUESTIONS_PATH,
     get_bge_model, get_llm_config, load_index, load_kg_graph,
     load_p5_alias_index, load_questions, load_chapter_mapping_index,
+    _load_kg_units,
 )
 from 公共函数.llm_utils import call_llm, parse_llm_output
 
 # ── s1-s6 阶段模块 ─────────────────────────────────────────────────────
+from s1_indexing import _section_context_cards
 from s2_retrieval import (
     search_and_merge, retrieve_option_supplements,
     format_candidates, format_option_supplements,
 )
-from s4_llm import build_prompt, normalize_llm_result, filter_llm_citations
-from s5_validation import validate_result
+from s4_llm import process_question as _process_question_base
 from s6_output import write_question_json, write_summary_jsonl, write_markdown_report
 
 # ── P7E 路径常量 ───────────────────────────────────────────────────────
@@ -228,10 +229,6 @@ def _flow_context(question: dict[str, Any], max_cards: int = 6, max_nbr: int = 4
     lines.append("**重要提示：以上流程板块仅展示业务逻辑关系，不直接作为选项判断的证据。**")
     return "\n".join(lines)
 
-
-# 单题处理
-# ═════════════════════════════════════════════════════════════════════════
-
 def process_question(
     question: dict[str, Any],
     bge_vecs: np.ndarray,
@@ -248,155 +245,15 @@ def process_question(
     kg_max_extra: int = 30,
     p5_index: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """对一道题执行完整盲判流程（含 P7E 流程上下文）。"""
-    qid = question["question_id"]
-    qtype = question.get("question_type", "single")
-    tier = question.get("tier", "")
-
-    result: dict[str, Any] = {
-        "question_id": qid,
-        "stem": question.get("stem", ""),
-        "options": question.get("options", {}),
-        "question_type": qtype,
-        "tier": tier,
-        "pipeline_status": "ok",
-    }
-    if question.get("_chapter_mappings") is not None:
-        result["chapter_mappings"] = question.get("_chapter_mappings", [])
-    if question.get("_question_text_override") is not None:
-        result["question_text_override"] = question.get("_question_text_override", {})
-
-    try:
-        # 步骤 1: 检索 → 候选池
-        candidates = search_and_merge(
-            question,
-            bge_vecs=bge_vecs,
-            card_ids=card_ids,
-            unit_lookup=unit_lookup,
-            bm25_zh_index=bm25_zh_index,
-            bm25_en_index=bm25_en_index,
-            top_k=top_k,
-            merge_top_k=merge_top_k,
-            kg_index=kg_index,
-            kg_max_extra=kg_max_extra,
-            p5_index=p5_index,
-        )
-        result["candidate_pool"] = candidates
-        result["candidate_route_counts"] = dict(
-            Counter(c.get("route", "unknown") for c in candidates)
-        )
-        result["kg_enabled"] = kg_index is not None
-        result["p5_enabled"] = p5_index is not None
-
-        # 选项独立补充召回
-        supplement_pool = retrieve_option_supplements(
-            question,
-            bge_vecs=bge_vecs,
-            card_ids=card_ids,
-            unit_lookup=unit_lookup,
-            bm25_zh_index=bm25_zh_index,
-            bm25_en_index=bm25_en_index,
-            excluded_unit_ids={row["unit_id"] for row in candidates},
-            top_k=top_k,
-            per_option_limit=3,
-        )
-        result["option_supplement_pool"] = supplement_pool
-        result["option_supplement_counts"] = {
-            label: len(rows) for label, rows in supplement_pool.items()
-        }
-
-        # 步骤 2: 构建 prompt（含流程上下文）
-        flow_context = _flow_context(question) if _FLOW_CARD_VECS is not None else ""
-        prompt = build_prompt(question, candidates, supplement_pool, flow_context)
-
-        # 步骤 3: LLM 调用
-        from openai import OpenAI
-        client = OpenAI(api_key=api_key, base_url=base_url)
-        llm_output = call_llm(client, prompt, model=model, reasoning_effort="high")
-        result["llm_output"] = llm_output
-
-        # 步骤 4: 解析 LLM 响应
-        parsed = parse_llm_output(llm_output)
-        if parsed is None:
-            result["pipeline_status"] = "llm_parse_failed"
-            result["option_analysis"] = []
-            result["validation_checks"] = ["LLM 输出无法解析为 JSON"]
-            result["predicted_answer"] = []
-            return result
-        parsed = normalize_llm_result(parsed)
-
-        # 过滤池外引用
-        allowed_unit_ids = {row["unit_id"] for row in candidates}
-        allowed_unit_ids.update(
-            row["unit_id"]
-            for rows in supplement_pool.values()
-            for row in rows
-        )
-        parsed, citation_drops = filter_llm_citations(parsed, allowed_unit_ids)
-        result["citation_filter_drops"] = citation_drops
-
-        # 确定性修复 LLM 的机械一致性错误
-        framework_ids = {
-            str(uid) for uid in
-            (parsed.get("decision_framework") or {}).get("cited_unit_ids", []) or []
-        }
-        for opt in parsed.get("option_analysis", []) or []:
-            cards = opt.get("evidence_cards", [])
-            if not isinstance(cards, list):
-                cards = []
-                opt["evidence_cards"] = cards
-            # (a) evidence_status=negative 但没有 negative card → 对齐
-            if (opt.get("evidence_status") == "negative"
-                    and not any(c.get("support_type") == "negative"
-                                for c in cards if isinstance(c, dict))):
-                if cards:
-                    for c in cards:
-                        if isinstance(c, dict):
-                            c["support_type"] = "negative"
-                            break
-                else:
-                    opt["evidence_status"] = "none"
-            # (b) decision_reason 提到但未绑定的 unit_id → 自动补到 evidence_cards
-            reason = str(opt.get("decision_reason", "") or "")
-            mentioned = set(re.findall(r"v7u_N\d+", reason))
-            bound = {str(c.get("unit_id", "")) for c in cards if isinstance(c, dict)}
-            bound.update(framework_ids)
-            unbound = mentioned - bound
-            for uid in sorted(unbound):
-                if uid in allowed_unit_ids:
-                    cards.append({
-                        "unit_id": uid,
-                        "support_type": "indirect",
-                        "reason": "从 decision_reason 自动绑定",
-                    })
-            # (c) 有 evidence_cards 但 evidence_status=none → 对齐
-            if cards and opt.get("evidence_status") == "none":
-                opt["evidence_status"] = "indirect"
-
-        result["option_analysis"] = parsed.get("option_analysis", [])
-        result["predicted_answer"] = parsed.get("predicted_answer", [])
-        result["decision_framework"] = parsed.get("decision_framework")
-
-        # 步骤 5: 机械校验
-        validation_issues = validate_result(
-            result, candidates, unit_lookup, supplement_pool
-        )
-        result["validation_checks"] = validation_issues
-        if validation_issues:
-            result["pipeline_status"] = "validation_failed"
-
-    except Exception as exc:
-        result["pipeline_status"] = "llm_parse_failed"
-        result["option_analysis"] = []
-        result["validation_checks"] = [f"处理异常: {str(exc)[:200]}"]
-        result["predicted_answer"] = []
-        result["error_traceback"] = traceback.format_exc()
-
-    return result
+    """测试版流程包装：注入 P7E 流程上下文后调用公共 process_question。"""
+    flow_context = _flow_context(question) if _FLOW_CARD_VECS is not None else ""
+    return _process_question_base(
+        question, bge_vecs, card_ids, unit_lookup, bm25_zh_index, bm25_en_index,
+        api_key, base_url, model, top_k, merge_top_k, kg_index, kg_max_extra, p5_index,
+        flow_context=flow_context,
+    )
 
 
-# ═════════════════════════════════════════════════════════════════════════
-# 主入口
 # ═════════════════════════════════════════════════════════════════════════
 
 def main() -> None:
@@ -647,7 +504,6 @@ def main() -> None:
     print(f"\n[stats] 状态分布: {dict(status_counts)}")
     print(f"[stats] 共处理 {len(results)} 题")
     print(f"  [OK] ok: {status_counts.get('ok', 0)}")
-    print(f"  [WARN] validation_failed: {status_counts.get('validation_failed', 0)}")
     print(f"  [ERR] llm_parse_failed: {status_counts.get('llm_parse_failed', 0)}")
     print(f"\n[output] JSONL: {output_dir / 'blind_judgment_results.jsonl'}")
     print(f"[output] Markdown: {output_dir / 'blind_judgment_report.md'}")

@@ -8,9 +8,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import sys
 import time
 from pathlib import Path
 from typing import Any
+
+_PARENT = str(Path(__file__).resolve().parent.parent)
+if _PARENT not in sys.path:
+    sys.path.insert(0, _PARENT)
 
 from 解析撰写.s1_explanation_data import (
     DEFAULT_QUESTIONS_PATH, KG_GRAPH_PATH, SOURCE_QUOTE_MAX_LENGTH,
@@ -201,8 +207,7 @@ def export_by_section(
     section_dir = export_dir / "sections"
     section_dir.mkdir(parents=True, exist_ok=True)
 
-    # 导入格式 md 源目录
-    explanations_export_dir = output_dir / "explanations_export"
+    explanations_dir = output_dir / "explanations"
 
     exported_count = 0
     skipped_count = 0
@@ -214,18 +219,31 @@ def export_by_section(
         for result in results:
             qid = str(result.get("question_id", ""))
             explanation = result.get("generated_explanation", {}) or {}
+
+            # 从 explanations/ 读取内部格式 md（唯一 md 源）
+            md_path = explanations_dir / f"{qid}.md"
+            if md_path.exists():
+                preview = md_path.read_text(encoding="utf-8").strip()
+                # 去掉 # v7_q_ 标题行
+                preview = preview.replace(f"# {qid}\n\n", "", 1)
+                # 切除内部诊断区块（只保留考点/核心解析/错误项分析/易错提醒）
+                for cut_marker in ("\n## 【教材原文依据】", "\n## 【参考答案与参考解析】"):
+                    idx = preview.find(cut_marker)
+                    if idx != -1:
+                        preview = preview[:idx].rstrip()
+                # 从 md 提取答案用于判断是否可导出
+                answer_match = re.search(r'## 【AI答案】\s*\n+([A-D,\s]+?)(?:\n|$)', preview)
+                answer_from_md = [a.strip() for a in (answer_match.group(1).replace("、", ",").split(",") if answer_match else []) if a.strip()]
+                if answer_from_md:
+                    explanation["answer"] = answer_from_md  # 回填，供后续渲染使用
+            else:
+                preview = None
+
             if not explanation.get("answer"):
                 skipped_count += 1
                 continue
 
-            # 从 explanations_export/ 读取导入格式 md
-            export_md_path = explanations_export_dir / f"{qid}.md"
-            if export_md_path.exists():
-                preview = export_md_path.read_text(encoding="utf-8").strip()
-                # 去掉 # v7_q_ 标题行（小节 md 有自己的标题）
-                preview = preview.replace(f"# {qid}\n\n", "", 1)
-            else:
-                # 回退：从 JSON 构建
+            if preview is None:
                 preview = render_question_preview(
                     result, standard_questions.get(qid, {})
                 )

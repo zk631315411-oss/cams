@@ -750,7 +750,9 @@ class WorkbenchHandler(SimpleHTTPRequestHandler):
                 data["formal_explanation"] = published.get("explanation_markdown", "")
                 data["formal_evidence"] = published.get("evidence", [])
             else:
-                data["formal_answer"] = question.get("answer_reference", [])
+                # 无草稿无正式版时，预填 AI 盲判答案作为编辑起点
+                machinePredicted = question.get("predicted_answer", question.get("answer_reference", []))
+                data["formal_answer"] = machinePredicted
                 data["formal_explanation"] = question.get("explanation", "")
                 data["formal_evidence"] = question.get("source_evidence", [])
 

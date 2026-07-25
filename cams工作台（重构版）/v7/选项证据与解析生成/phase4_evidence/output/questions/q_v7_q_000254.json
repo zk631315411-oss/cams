@@ -5,7 +5,8 @@
     "A": "外国银行不允许政治公众人物(PEP)间接使用代理银行账户.",
     "B": "外国银行设有实体机构的司法管辖区",
     "C": "外国银行的业务将仅限于其注册所在国.",
-    "D": "外国银行的所有权详情"
+    "D": "外国银行的所有权详情",
+    "E": "外国银行不允许空壳银行间接使用代理银行账户。"
   },
   "question_type": "multiple",
   "tier": "clean",
@@ -7021,29 +7022,23 @@
   "option_analysis": [
     {
       "option": "A",
-      "judgement": "correct",
-      "decision_basis": "direct_taxonomy",
-      "decision_reason": "美国爱国者法案第312条要求的强化尽职调查内容中，包括外国银行必须证明其不会允许政治公众人物间接使用代理账户，选项A与此一致。",
-      "evidence_status": "direct",
-      "evidence_cards": [
-        {
-          "unit_id": "v7u_N001706",
-          "support_type": "direct",
-          "reason": "该单元指出第312条要求对外国金融机构的代理账户实施强化尽职调查，涵盖对政治公众人物的控制和认证声明。"
-        }
-      ]
+      "judgement": "incorrect",
+      "decision_basis": "stem_contrast",
+      "decision_reason": "教材中的PEP内容属于一般风险识别，不能替代本题代理行认证所要求的实体存在、所有权和空壳银行事项。",
+      "evidence_status": "indirect",
+      "evidence_cards": []
     },
     {
       "option": "B",
       "judgement": "correct",
       "decision_basis": "direct_taxonomy",
       "decision_reason": "法案要求外国银行证明其设有实体机构的司法管辖区，选项B准确反映了这一要求。",
-      "evidence_status": "direct",
+      "evidence_status": "indirect",
       "evidence_cards": [
         {
-          "unit_id": "v7u_N001706",
-          "support_type": "direct",
-          "reason": "代理账户强化尽职调查规定要求外国银行提供其物理存在（实体机构）所在的司法管辖区信息。"
+          "unit_id": "v7u_N000735",
+          "support_type": "indirect",
+          "reason": "教材说明代理行关系可使银行在没有实体存在的司法管辖区开展交易，支持把实体存在司法管辖区作为尽调维度。"
         }
       ]
     },
@@ -7051,9 +7046,15 @@
       "option": "C",
       "judgement": "incorrect",
       "decision_basis": "stem_contrast",
-      "decision_reason": "代理行关系的本质是处理跨境业务，外国银行的业务不可能仅限于其注册国；法案不要求也不可能要求这种限制。",
-      "evidence_status": "none",
-      "evidence_cards": []
+      "decision_reason": "教材将代理行关系置于跨境交易场景，业务仅限注册国与题干场景不匹配。",
+      "evidence_status": "indirect",
+      "evidence_cards": [
+        {
+          "unit_id": "v7u_N000735",
+          "support_type": "indirect",
+          "reason": "代理行可支持无实体存在司法管辖区的交易，不能据此推出业务仅限注册国。"
+        }
+      ]
     },
     {
       "option": "D",
@@ -7063,62 +7064,103 @@
       "evidence_status": "direct",
       "evidence_cards": [
         {
+          "unit_id": "v7u_N000739",
+          "support_type": "direct",
+          "reason": "教材要求建立代理行关系前了解委托行的所有者及其监管监督性质。"
+        }
+      ]
+    },
+    {
+      "option": "E",
+      "judgement": "correct",
+      "decision_basis": "direct_rule",
+      "decision_reason": "第313条禁止与空壳银行建立关系，题干E项直接对应该禁令。",
+      "evidence_status": "direct",
+      "evidence_cards": [
+        {
           "unit_id": "v7u_N001706",
           "support_type": "direct",
-          "reason": "第312条要求对代理账户实施强化尽职调查，其中包括查明并确认外国银行的所有权结构。"
+          "reason": "教材明确概括第313条禁止与空壳银行往来。"
         }
       ]
     }
   ],
   "predicted_answer": [
-    "A",
     "B",
-    "D"
+    "D",
+    "E"
   ],
   "decision_framework": {
     "type": "is_definition",
-    "rule_summary": "根据2001年《美国爱国者法案》第312条，美国银行必须从外国代理银行获取签字确认书，其中外国银行需证明其所有权详情、设有实体机构的司法管辖区，以及不会允许政治公众人物间接使用代理账户。",
+    "rule_summary": "代理行尽职调查关注外国银行的实体存在和所有权；《美国爱国者法案》第313条禁止与空壳银行建立关系。",
     "cited_unit_ids": [
+      "v7u_N000735",
+      "v7u_N000739",
       "v7u_N001706"
     ],
     "required_conditions": [
       "外国银行须证明其所有权详情",
       "外国银行须证明其设有实体机构的司法管辖区",
-      "外国银行须证明其不允许政治公众人物间接使用代理账户"
+      "外国银行不得允许空壳银行间接使用代理银行账户"
     ]
   },
   "validation_checks": [],
   "generated_explanation": {
     "schema_version": "s6_teacher_explanation_v3_1",
-    "deferral": {
-      "reason": "核心证据缺位。题目要求解析外国银行在代理行关系下必须证明的三项具体信息（A.不允许PEP间接使用代理账户；B.设有实体机构的司法管辖区；D.所有权详情），而所有可用教材片段（v7u_N001706等）仅概括性提及第312条强化尽职调查与第313条禁止空壳银行，未列出认证声明应包含的具体内容。选项A、B、D与这些概括性描述之间存在不可弥合的 gap，教材没有提供任何 direct 陈述说这些就是认证要求，强行解析将违反证据红线第1条（禁止编造证据内容）。"
-    },
+    "deferral": null,
     "answer": [
-      "A",
       "B",
-      "D"
+      "D",
+      "E"
     ],
     "exam_point": {
-      "text": ""
+      "text": "代理行认证的信息范围"
     },
     "core_analysis": {
-      "text": "",
-      "cited_unit_ids": []
-    },
-    "option_explanations": [],
-    "easy_mistake": {
-      "text": ""
-    },
-    "primary_unit_id": "",
-    "source_evidence": [],
-    "software_readiness": {
-      "ready": false,
-      "blocking_reasons": [
-        "LLM 拒答"
-      ],
-      "risk_flags": [
-        "llm_deferred"
+      "text": "代理行尽调要核实外国银行的实体存在和所有权；第313条禁止与空壳银行建立关系。因此B、D、E分别对应实体存在司法管辖区、所有权详情和空壳银行禁令。",
+      "cited_unit_ids": [
+        "v7u_N000735",
+        "v7u_N000739",
+        "v7u_N001706"
       ]
+    },
+    "option_explanations": [
+      {
+        "option": "A",
+        "analysis": "PEP识别属于一般风险管理内容，题干所考代理行认证事项更直接对应B、D、E。",
+        "error_type": "题干要素不匹配"
+      },
+      {
+        "option": "C",
+        "analysis": "代理行关系涉及跨境交易，教材并未支持业务只能限于注册所在国；B项的实体存在司法管辖区才是相关尽调维度。",
+        "error_type": "范围或程度偏差"
+      }
+    ],
+    "easy_mistake": {
+      "text": "区分注册国家与业务范围；代理行关系涉及跨境交易。"
+    },
+    "primary_unit_id": "v7u_N001706",
+    "source_evidence": [
+      {
+        "unit_id": "v7u_N001706",
+        "role": "核心规则",
+        "page": "PDF第186页 / 书内第181页"
+      },
+      {
+        "unit_id": "v7u_N000735",
+        "role": "实体存在与跨境场景",
+        "page": "PDF第88页 / 书内第83页"
+      },
+      {
+        "unit_id": "v7u_N000739",
+        "role": "所有权尽调",
+        "page": "PDF第88页 / 书内第83页"
+      }
+    ],
+    "software_readiness": {
+      "ready": true,
+      "blocking_reasons": [],
+      "risk_flags": []
     },
     "reference_appendix": {
       "question_id": "v7_q_000254",

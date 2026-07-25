@@ -12,13 +12,21 @@ _PARENT = str(_Path(__file__).resolve().parent.parent)
 if _PARENT not in sys.path:
     sys.path.insert(0, _PARENT)
 
+import traceback
+from collections import Counter
+from typing import Any
+
 from 公共函数.llm_utils import call_llm, parse_llm_output, strip_json_fence
-from s1_indexing import get_llm_config
-from s2_retrieval import format_candidates, format_option_supplements
+from s1_indexing import get_llm_config, _load_kg_units, _section_context_cards
+from s2_retrieval import (
+    search_and_merge, retrieve_option_supplements,
+    format_candidates, format_option_supplements,
+)
+from s5_validation import validate_result
 
 
 def normalize_llm_result(parsed: dict[str, Any]) -> dict[str, Any]:
-    """对 LLM JSON 做最小 schema 归一化。"""
+    """对 LLM JSON 做最小 schema 归一化，消除已知的格式不一致。"""
     # 确保 option_analysis 存在且为 list
     opts = parsed.get("option_analysis", [])
     if not isinstance(opts, list): parsed["option_analysis"] = []
@@ -38,6 +46,27 @@ def normalize_llm_result(parsed: dict[str, Any]) -> dict[str, Any]:
         # evidence_status=none 但 cards 不为空 → 对齐
         if opt.get("evidence_status") == "none" and opt["evidence_cards"]:
             opt["evidence_status"] = "indirect"
+        # insufficient 但判了 correct/incorrect → 改为 stem_contrast
+        if opt.get("decision_basis") == "insufficient" and opt.get("judgement") != "insufficient":
+            opt["decision_basis"] = "stem_contrast"
+
+    # definition_application 选项：自动从 cited_unit_ids 复制定义 unit
+    framework = parsed.get("decision_framework") or {}
+    cited_ids = set(framework.get("cited_unit_ids", []) or [])
+    if cited_ids:
+        for opt in parsed.get("option_analysis", []):
+            if not isinstance(opt, dict): continue
+            if opt.get("decision_basis") != "definition_application": continue
+            existing_ids = {c.get("unit_id", "") for c in opt.get("evidence_cards", []) if isinstance(c, dict)}
+            if not (existing_ids & cited_ids):
+                for uid in cited_ids:
+                    opt.setdefault("evidence_cards", []).append({
+                        "unit_id": uid, "support_type": "indirect",
+                        "reason": "从 decision_framework.cited_unit_ids 自动绑定（定义 unit）",
+                    })
+                if opt.get("evidence_status") == "none":
+                    opt["evidence_status"] = "indirect"
+
     # 确保 predicted_answer 存在
     if "predicted_answer" not in parsed: parsed["predicted_answer"] = []
     return parsed
@@ -205,3 +234,92 @@ def build_prompt(question: dict[str, Any], candidates: list[dict[str, Any]],
     }}
   ]
 }}"""
+
+
+def process_question(question: dict[str, Any], bge_vecs, card_ids: list[str],
+                     unit_lookup: dict[str, dict], bm25_zh_index, bm25_en_index,
+                     api_key: str, base_url: str, model: str,
+                     top_k: int=20, merge_top_k: int=30,
+                     kg_index: dict[str, Any]|None=None, kg_max_extra: int=30,
+                     p5_index: dict[str, Any]|None=None,
+                     flow_context: str="") -> dict[str, Any]:
+    """对一道题执行完整盲判流程。flow_context 为 P7E 流程上下文（可选）。"""
+    qid = question["question_id"]
+    result: dict[str, Any] = {
+        "question_id": qid, "stem": question.get("stem",""), "options": question.get("options",{}),
+        "question_type": question.get("question_type","single"), "tier": question.get("tier",""),
+        "pipeline_status": "ok",
+    }
+    if question.get("_chapter_mappings") is not None:
+        result["chapter_mappings"] = question.get("_chapter_mappings",[])
+    if question.get("_question_text_override") is not None:
+        result["question_text_override"] = question.get("_question_text_override",{})
+
+    try:
+        candidates = search_and_merge(question, bge_vecs=bge_vecs, card_ids=card_ids,
+            unit_lookup=unit_lookup, bm25_zh_index=bm25_zh_index, bm25_en_index=bm25_en_index,
+            top_k=top_k, merge_top_k=merge_top_k, kg_index=kg_index, kg_max_extra=kg_max_extra, p5_index=p5_index)
+        result["candidate_pool"] = candidates
+        result["candidate_route_counts"] = dict(Counter(c.get("route","unknown") for c in candidates))
+        result["kg_enabled"] = kg_index is not None; result["p5_enabled"] = p5_index is not None
+
+        supplement_pool = retrieve_option_supplements(question, bge_vecs=bge_vecs, card_ids=card_ids,
+            unit_lookup=unit_lookup, bm25_zh_index=bm25_zh_index, bm25_en_index=bm25_en_index,
+            excluded_unit_ids={r["unit_id"] for r in candidates}, top_k=top_k, per_option_limit=3)
+        result["option_supplement_pool"] = supplement_pool
+        result["option_supplement_counts"] = {l: len(rs) for l, rs in supplement_pool.items()}
+
+        prompt = build_prompt(question, candidates, supplement_pool, flow_context=flow_context)
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key, base_url=base_url)
+        llm_output = call_llm(client, prompt, model=model, reasoning_effort="high")
+        result["llm_output"] = llm_output
+
+        parsed = parse_llm_output(llm_output)
+        if parsed is None:
+            result["pipeline_status"] = "llm_parse_failed"
+            result["option_analysis"] = []; result["validation_checks"] = ["LLM 输出无法解析为 JSON"]
+            result["predicted_answer"] = []; return result
+        parsed = normalize_llm_result(parsed)
+
+        allowed_unit_ids = {r["unit_id"] for r in candidates}
+        allowed_unit_ids.update(row["unit_id"] for rows in supplement_pool.values() for row in rows)
+        kg_units = _load_kg_units()
+        context_pool_ids: set[str] = set()
+        if kg_units:
+            for c in candidates:
+                for card in _section_context_cards(c["unit_id"], allowed_unit_ids):
+                    allowed_unit_ids.add(card["unit_id"])
+                    context_pool_ids.add(card["unit_id"])
+        result["context_pool"] = [{"unit_id": uid, **kg_units.get(uid, {})} for uid in sorted(context_pool_ids)] if kg_units and context_pool_ids else []
+        parsed, citation_drops = filter_llm_citations(parsed, allowed_unit_ids)
+        result["citation_filter_drops"] = citation_drops
+
+        framework_ids = {str(uid) for uid in (parsed.get("decision_framework") or {}).get("cited_unit_ids",[]) or []}
+        for opt in (parsed.get("option_analysis",[]) or []):
+            cards = opt.get("evidence_cards",[])
+            if not isinstance(cards, list): cards = []; opt["evidence_cards"] = cards
+            if opt.get("evidence_status")=="negative" and not any(c.get("support_type")=="negative" for c in cards if isinstance(c,dict)):
+                if cards:
+                    for c in cards:
+                        if isinstance(c,dict): c["support_type"] = "negative"; break
+                else: opt["evidence_status"] = "none"
+            reason = str(opt.get("decision_reason","") or "")
+            mentioned = set(re.findall(r"v7u_N\d+", reason))
+            bound = {str(c.get("unit_id","")) for c in cards if isinstance(c,dict)}
+            bound.update(framework_ids)
+            for uid in sorted(mentioned - bound):
+                if uid in allowed_unit_ids:
+                    cards.append({"unit_id":uid,"support_type":"indirect","reason":"从 decision_reason 自动绑定"})
+            if cards and opt.get("evidence_status")=="none": opt["evidence_status"] = "indirect"
+
+        result["option_analysis"] = parsed.get("option_analysis",[])
+        result["predicted_answer"] = parsed.get("predicted_answer",[])
+        result["decision_framework"] = parsed.get("decision_framework")
+
+        result["validation_checks"] = validate_result(result, candidates, unit_lookup, supplement_pool)
+    except Exception as exc:
+        result["pipeline_status"] = "llm_parse_failed"; result["option_analysis"] = []
+        result["validation_checks"] = [f"处理异常: {str(exc)[:200]}"]
+        result["predicted_answer"] = []; result["error_traceback"] = traceback.format_exc()
+    return result

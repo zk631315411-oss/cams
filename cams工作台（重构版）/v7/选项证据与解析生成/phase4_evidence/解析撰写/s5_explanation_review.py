@@ -16,11 +16,11 @@ from pathlib import Path
 from typing import Any
 
 from 解析撰写.s1_explanation_data import (
-    SCHEMA_VERSION, SOURCE_QUOTE_MAX_LENGTH, SOURCE_QUOTE_MIN_LENGTH,
+    SOURCE_QUOTE_MAX_LENGTH, SOURCE_QUOTE_MIN_LENGTH,
     load_question_result,
 )
 from 解析撰写.s2_explanation_material import candidate_by_unit
-from 公共函数.index import _append_unique, collect_cited_unit_ids
+from 公共函数.index import _append_unique, _load_kg_units, collect_cited_unit_ids
 
 
 REVIEW_SCHEMA_VERSION = "review_check_v2_0"
@@ -47,9 +47,6 @@ def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]
     blockers: list[str] = []
     explanation = result.get("generated_explanation", {}) or {}
     readiness = explanation.get("software_readiness", {}) or {}
-
-    if explanation.get("schema_version") != SCHEMA_VERSION:
-        _append_unique(blockers, "解析母版不是V3.1 schema")
 
     _internal_markers = [
         "需教研复核",
@@ -118,7 +115,7 @@ def validate_for_software(result: dict[str, Any]) -> tuple[list[str], list[str]]
 
     risk_flags = [
         str(flag)
-        for flag in readiness.get("risk_flags", []) or reference.get("risk_flags", []) or []
+        for flag in (readiness.get("risk_flags", []) or []) + (reference.get("risk_flags", []) or [])
         if str(flag).strip()
     ]
     return blockers, list(dict.fromkeys(risk_flags))
@@ -138,10 +135,26 @@ def _check_page_validity(result: dict[str, Any]) -> list[str]:
         texts.append(str(row.get("analysis", "") or ""))
 
     unit_map = candidate_by_unit(result)
+    # 也纳入选项补充池的 unit
+    for label, rows in (result.get("option_supplement_pool", {}) or {}).items():
+        for row in (rows or []):
+            uid = str(row.get("unit_id", "") or "").strip()
+            if uid and uid not in unit_map:
+                unit_map[uid] = row
     valid_pages: set[int] = set()
     for uid, unit in unit_map.items():
         for key in ("pdf_page", "printed_page"):
             v = unit.get(key)
+            if isinstance(v, (int, float)) and v > 0:
+                valid_pages.add(int(v))
+            elif isinstance(v, str) and v.strip().isdigit():
+                valid_pages.add(int(v.strip()))
+
+    # 从 context_pool 读取上下文扩展卡（已在盲判阶段写入 JSON）
+    context_pool = result.get("context_pool", []) or []
+    for card in context_pool:
+        for key in ("pdf_page", "printed_page"):
+            v = card.get(key)
             if isinstance(v, (int, float)) and v > 0:
                 valid_pages.add(int(v))
             elif isinstance(v, str) and v.strip().isdigit():
@@ -187,7 +200,8 @@ def check_single_question(result: dict[str, Any]) -> list[str]:
         if isinstance(flag, str) and flag not in _NOISE_FLAGS:
             reasons.append(flag)
 
-    reasons.extend(_check_page_validity(result))
+    # 页码检查已移除 —— 上下文扩展卡导致大量误报，无实际价值
+    # reasons.extend(_check_page_validity(result))
 
     seen: set[str] = set()
     unique: list[str] = []

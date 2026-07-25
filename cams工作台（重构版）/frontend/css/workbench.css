@@ -133,6 +133,7 @@ button {
 /* ── 阅读面板 ── */
 .reader-pane {
   position: relative;
+  container-type: inline-size;
   display: flex;
   flex: 1;
   min-width: 0;
@@ -141,9 +142,13 @@ button {
 }
 
 .reader-bottom-pane {
-  min-height: 64px;
-  flex: 0 0 var(--reader-bottom-height);
-  background: var(--bg);
+  min-height: 14px;
+  flex: 0 0 14px;
+  background: var(--surface);
+}
+
+.reader-vertical-resizer {
+  display: none;
 }
 
 /* ── 右侧详情面板 ── */
@@ -249,11 +254,11 @@ body.is-resizing-vertical * {
 .topbar {
   z-index: 10;
   display: flex;
-  min-height: 56px;
+  min-height: 52px;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 10px 20px;
+  gap: 14px;
+  padding: 8px 16px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
@@ -264,24 +269,25 @@ body.is-resizing-vertical * {
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
 .brand-mark {
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 9px;
   background: var(--accent);
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .brand h1 {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: 0;
@@ -299,8 +305,8 @@ body.is-resizing-vertical * {
   flex: 1;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
 }
 
 .release-status {
@@ -311,6 +317,7 @@ body.is-resizing-vertical * {
 
 .history-controls {
   display: inline-flex;
+  flex: 0 0 auto;
   gap: 2px;
 }
 
@@ -322,6 +329,7 @@ body.is-resizing-vertical * {
 /* ── 语言切换（Segmented Control 风格） ── */
 .language-switch {
   display: inline-flex;
+  flex: 0 0 auto;
   border: 0;
   border-radius: 7px;
   background: #e5e5e7;
@@ -332,10 +340,11 @@ body.is-resizing-vertical * {
   border: 0;
   border-radius: 5px;
   background: transparent;
-  padding: 5px 10px;
+  height: 28px;
+  padding: 0 8px;
   cursor: pointer;
   color: var(--text-soft);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -369,32 +378,31 @@ body.is-resizing-vertical * {
 .pdf-reader-resizer {
   position: relative;
   z-index: 18;
-  height: 14px;
-  flex: 0 0 14px;
+  height: 12px;
+  flex: 0 0 12px;
   cursor: row-resize;
   touch-action: none;
   outline: none;
-  background: linear-gradient(to bottom, transparent 0, transparent 42%, var(--line) 42%, var(--line) 58%, transparent 58%, transparent 100%);
+  background: transparent;
 }
 
 .pdf-reader-resizer::before {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 72px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(99, 115, 129, 0.18);
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 1px;
+  background: var(--line);
   content: "";
-  transform: translate(-50%, -50%);
-  transition: background 0.15s ease, width 0.15s ease;
+  transition: height 0.15s ease, background 0.15s ease, bottom 0.15s ease;
 }
 
 .pdf-reader-resizer:hover::before,
 .pdf-reader-resizer:focus-visible::before,
 body.is-resizing-vertical .pdf-reader-resizer::before {
-  width: 112px;
-  background: rgba(0, 113, 227, 0.24);
+  bottom: 4px;
+  height: 3px;
+  background: var(--accent);
 }
 
 .pdf-control {
@@ -908,6 +916,7 @@ body.is-resizing-vertical .pdf-reader-resizer::before {
    ═══════════════════════════════════════════ */
 .work-mode-switch {
   display: inline-flex;
+  flex: 0 0 auto;
   border: 0;
   border-radius: 7px;
   background: #e5e5e7;
@@ -915,13 +924,13 @@ body.is-resizing-vertical .pdf-reader-resizer::before {
 }
 
 .work-mode-button {
-  height: 30px;
+  height: 28px;
   cursor: pointer;
   border-radius: 5px;
   background: transparent;
   color: var(--text-soft);
-  padding: 0 14px;
-  font-size: 13px;
+  padding: 0 9px;
+  font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
   transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
@@ -973,13 +982,13 @@ body.is-resizing-vertical .pdf-reader-resizer::before {
 
 .icon-button {
   display: grid;
-  width: 28px;
+  width: 26px;
   height: 28px;
   place-items: center;
   border-radius: 8px;
   background: transparent;
   color: var(--text-soft);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .icon-button:hover {
@@ -992,18 +1001,20 @@ body.is-resizing-vertical .pdf-reader-resizer::before {
    ═══════════════════════════════════════════ */
 .search-box {
   position: relative;
+  flex: 0 1 200px;
+  min-width: 150px;
 }
 
 .search-box input {
-  width: 270px;
-  height: 36px;
+  width: 100%;
+  height: 32px;
   border: 1px solid var(--line);
   border-radius: 8px;
   outline: none;
-  padding: 0 14px;
+  padding: 0 12px;
   background: var(--surface-soft);
   color: var(--text);
-  font-size: 13px;
+  font-size: 12px;
   transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -4433,10 +4444,6 @@ mark {
     --panel-width: 380px;
   }
 
-  .search-box input {
-    width: 220px;
-  }
-
   .reader-scroll {
     padding-right: 24px;
     padding-left: 24px;
@@ -4455,16 +4462,13 @@ mark {
 
 @media (max-width: 1440px) {
   .topbar {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .release-status {
     display: none;
   }
 
-  .search-box input {
-    width: 210px;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -4596,7 +4600,8 @@ mark {
 /* 映射表入口按钮 */
 .matrix-entry {
   display: inline-flex;
-  height: 30px;
+  height: 32px;
+  flex: 0 0 auto;
   cursor: pointer;
   align-items: center;
   gap: 5px;
@@ -4604,14 +4609,87 @@ mark {
   border-radius: 8px;
   background: var(--accent);
   color: #fff;
-  padding: 0 12px;
-  font-size: 13px;
+  padding: 0 11px;
+  font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 .matrix-entry:hover {
   background: var(--accent-hover);
+}
+
+@container (max-width: 860px) {
+  .topbar {
+    min-height: 76px;
+    align-items: center;
+    gap: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .top-actions {
+    flex-wrap: wrap;
+    gap: 6px;
+    row-gap: 6px;
+  }
+
+  .history-controls,
+  .work-mode-switch,
+  .language-switch,
+  .matrix-entry {
+    order: 1;
+  }
+
+  .icon-button {
+    width: 22px;
+    font-size: 16px;
+  }
+
+  .work-mode-button {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+
+  .language-button {
+    padding: 0 6px;
+    font-size: 12px;
+  }
+
+  .matrix-entry {
+    padding: 0 9px;
+  }
+
+  .search-box {
+    order: 2;
+    flex: 0 0 240px;
+    min-width: 0;
+    margin-left: auto;
+  }
+}
+
+@container (max-width: 720px) {
+  .topbar {
+    min-height: 52px;
+  }
+
+  .brand {
+    flex-basis: 32px;
+    gap: 0;
+  }
+
+  .brand h1,
+  .brand p {
+    display: none;
+  }
+
+  .top-actions {
+    flex-wrap: nowrap;
+  }
+
+  .search-box {
+    flex: 0 0 150px;
+  }
 }
 
 /* ═══════════════════════════════════════════

@@ -65,11 +65,6 @@ def process_file(
     md_path = explanations_dir / f"{qid}.md"
     md_path.write_text(render_markdown(result, explanation, standard_question), encoding="utf-8")
 
-    export_dir = output_dir / "explanations_export"
-    export_dir.mkdir(parents=True, exist_ok=True)
-    export_path = export_dir / f"{qid}.md"
-    export_path.write_text(render_markdown(result, explanation, standard_question, export_mode=True), encoding="utf-8")
-
     if write_back:
         result["generated_explanation"] = explanation
         result["generated_explanation_prompt"] = prompt
@@ -130,7 +125,8 @@ def main() -> None:
             try:
                 row = future.result()
                 rows.append(row)
-                print(f"[{i}/{len(files)}] {row['question_id']} | ok")
+                status = row.get('status', 'ok')
+                print(f"[{i}/{len(files)}] {row['question_id']} | {status}")
             except Exception as exc:
                 qid = path.stem.removeprefix("q_")
                 rows.append({"question_id": qid, "status": "error", "answer": [], "error": str(exc), "traceback": traceback.format_exc()})

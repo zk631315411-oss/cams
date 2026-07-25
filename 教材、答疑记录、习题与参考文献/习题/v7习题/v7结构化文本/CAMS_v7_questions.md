@@ -8941,10 +8941,10 @@ Which ML/TF risks are associated with cryptoassets? (Select three.)
 
 合规部门与其他职能部门或部门之间的互动有助于通过解决特定风险领域来增强反金融犯罪(AFC)合规计划的稳健性。哪些部门在加强组织的AFC合规计划方面发挥着关键作用？(选择两项。)
 
-- A. 信息安全办公室(ISO
+- A. 信息安全办公室(ISO)
 - B. 市场营销与销售
-- C. 人力资源(HR
-- D. 数据保护官(DPO
+- C. 人力资源(HR)
+- D. 数据保护官(DPO)
 
 ### English
 
