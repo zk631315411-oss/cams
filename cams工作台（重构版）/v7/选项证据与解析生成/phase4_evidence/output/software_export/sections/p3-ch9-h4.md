@@ -1,0 +1,52 @@
+# p3-ch9-h4 题库软件版解析预览
+
+可导出题目数：1
+
+教材章节：未映射
+
+题型：single
+
+题干：一个健全的反洗钱合规计划需要一个全面的治理框架,涵盖关键要素,以确保金融体系的完整性.哪个要素构成有效的反洗钱合规计划的起点？
+
+英文题干：A sound AML compliance program requires a comprehensive governance framework that addresses key elements to ensure the integrity of the financial system. Which element forms the starting point of an effective AML compliance program?
+
+选项：
+
+- A. 持续监测
+  English: Ongoing monitoring
+- B. 风险评估
+  English: Risk assessment
+- C. 政策与程序
+  English: Policies and procedures
+- D. 可疑活动报告
+  English: Suspicious activity reporting
+- E. 客户尽职调查
+  English: Customer due diligence
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+识别反洗钱合规计划各要素间的逻辑起点
+
+## 【核心解析】
+
+风险评估流程是强大风险管理项目的基础（P265）。题干问的是反洗钱合规计划的“起点”，在风险为本的方法论下，一个机构必须先识别、理解并评估其面临的洗钱/恐怖融资风险（即进行风险评估），才能据此制定与之匹配的政策与程序、确定客户尽职调查的深度、分配持续监测的资源，以及判断哪些活动需要提交可疑活动报告。换言之，后续所有控制措施都是基于风险评估的结果来设计和部署的，因此它构成了整个有效反洗钱合规计划的逻辑起点。
+
+教材原句："The risk assessment process is the foundation of a strong risk management program."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜主体或阶段错配**：持续监控是KYC计划的关键要素之一（P166），旨在跟踪客户活动以发现异常行为（P359），属于风险识别后的后续监控环节，需要基于风险评估的结果来设定监控参数和频率。
+- **C 错误（教材定义应用）｜概念混淆**：政策与程序是管理风险的指南（P244），属于反洗钱计划的“第一大支柱”（P244），但它们必须与组织的风险状况保持一致（P244），即依据风险评估的结果来制定，而非逻辑起点。
+- **D 错误（教材定义应用）｜概念混淆**：可疑活动报告是金融犯罪防控报告体系的基础（P359），其作用是输出可疑情报；而题干问的是整个合规计划的起点，该计划应先通过风险评估明确何为可疑，再触发报告。
+- **E 错误（教材定义应用）｜范围或程度偏差**：客户尽职调查是验证客户身份并评估风险的过程（P244），侧重于执行层面识别单一个体风险，不如全机构的风险评估更吻合“起点”的定义——后者决定了尽职调查应达到的强度。
+
+## 【易错提醒】
+
+选项C中的“第一大支柱”容易被误解为“起点”。“支柱”（pillar）指平行并立的构成部分，而“基础”（foundation）才指逻辑上居先的支撑要素。风险评估是基础，政策与程序是该基础之上的第一个支柱。
+
+---
+

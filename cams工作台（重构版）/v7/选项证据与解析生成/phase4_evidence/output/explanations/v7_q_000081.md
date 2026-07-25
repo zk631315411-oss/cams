@@ -1,0 +1,99 @@
+# v7_q_000081
+
+教材章节：未映射
+
+题型：single
+
+题干：一份金融犯罪风险偏好声明描述的是：
+
+英文题干：A financial crimes risk appetite statement describes:
+
+选项：
+
+- A. 组织如何定义其基于风险的方法
+  English: How an organization defines its risk-based approach
+- B. 组织如何确定其关键风险指标和绩效指标
+  English: How an organization determines its key risk and performance indicators
+- C. 组织为实现其目标愿意承担的风险水平和类型
+  English: The level and type of risk the organization is willing to take to meet its objectives
+- D. 组织金融犯罪合规计划的目的
+  English: The purpose of an organization's financial crimes compliance program
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+区分风险偏好声明、风险容忍度与基于风险的方法
+
+## 【核心解析】
+
+风险偏好声明（Risk Appetite Statement, RAS）是由高级管理层制定、董事会批准的形式文件，用于定义组织为实现目标愿意承担的风险水平和类型（P243、P272）。题干直接询问「金融犯罪风险偏好声明描述的是什么」，选项C「组织为实现其目标愿意承担的风险水平和类型」完整匹配该定义。P272进一步说明RAS明确了组织愿意接受、减轻或避免的风险类型，因此选项C不仅在水平上、也在类型上覆盖了教材定义。
+
+教材原句："The risk appetite statement defines the risk level the organization is willing to operate within to achieve its objectives."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜概念混淆**：基于风险的方法是指优先处理高概率和严重影响的风险（P276），属于资源配置原则，而非风险偏好声明本身。风险偏好声明定义了愿意承担的风险水平和类型，不直接描述「如何定义基于风险的方法」，题干更匹配C而非A。
+- **B 错误（教材定义应用）｜概念混淆**：关键风险指标（KRI）和关键绩效指标（KPI）是内部报告中用于评估风险和控制效果的指标（P296），属于风险管理监控工具，而非风险偏好声明的内容。题干问的是声明本身的描述，B指向后续执行层面，匹配度不如C直接。
+- **D 错误（教材定义应用）｜范围或程度偏差**：金融犯罪合规计划的目的在于预防、检测、减轻和报告非法金融活动（P288），范围较广。风险偏好声明是该计划的要素之一（P243），是计划中关于风险边界的具体描述，而非整个计划的目的。因此D不如C精确对应风险偏好声明本身。
+
+## 【易错提醒】
+
+风险偏好声明定义组织为实现目标愿意承担的风险水平和类型（P243），而风险容忍度则是在该偏好范围内为特定风险类别设定定量和定性界限（P244）。前者是整体方向和边界，后者是细化的可接受界限，两者易混淆。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002387`
+
+### `v7u_N002387`
+
+- 用于：核心解析、选项A、选项B、选项D、易错提醒
+- 章节：Introduction > AFC program components
+- 页码：PDF第248页 / 书内第243页
+- 中文要点：风险偏好声明定义了组织为实现目标愿意承担的风险水平。
+- 英文原文：The risk appetite statement defines the risk level the organization is willing to operate within to achieve its objectives.
+
+### `v7u_N002704`
+
+- 用于：核心解析、选项A、选项B、选项D
+- 章节：Types of risk assessment > Preparing a risk appetite statement
+- 页码：PDF第277页 / 书内第272页
+- 中文要点：风险偏好声明（RAS）是由高级管理层制定、董事会批准的形式文件
+- 英文原文：According to the Financial Stability Board in the US, the RAS is a formal document, developed by an organization’s senior management and approved by the board of directors. It establishes risk limits while supporting the organization’s business objectives. This prospective document defines what types of risks the organization is willing to accept, mitigate, or avoid based on its strategic targets, regulatory environment, and expectations.
+
+### `v7u_N002871`
+
+- 用于：选项D
+- 章节：Design Your AFC Program and Controls > Introduction: Design your AFC program and controls
+- 页码：PDF第293页 / 书内第288页
+- 中文要点：金融犯罪防控计划是金融犯罪风险管理的基石，确保组织预防、检测、减轻和报告非法金融活动。
+- 英文原文：An AFC program is the cornerstone of financial crime risk management, ensuring that organizations prevent, detect, mitigate, and report illicit financial activities.
+
+### `v7u_N002390`
+
+- 用于：易错提醒
+- 章节：Introduction > AFC program components
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：风险容忍度规定了整体风险偏好内的风险水平，为特定风险类别设定定量和定性界限。
+- 英文原文：Risk tolerance specifies the risk levels within the overall risk appetite. It represents the quantitative and qualitative limits for specific risk categories, establishing boundaries for business activities, including financial crime risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+金融犯罪风险偏好声明主要阐述组织在追求目标 时愿意承担的风险类型和水平.选项C准确描述 了这一点,即组织为实现目标愿意承担的风险水 平和类型.选项A描述的是基于风险的方法定 义,非风险偏好:选项B涉及关键风险指标和绩 效指标的确定,与风险偏好声明不直接相关;选 项D关于金融犯罪合规计划的目的,与风险偏好 声明内容不符.因此,C是正确答案.易错点在 于混淆风险偏好声明与其他风险管理文件的内 容.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+单选 -[RisksandMethodsofMoneyLaunderi ngandTerroristFinancing]AfinancialcrimesRi skappetitestatementdescribes: howanorganizationdefinesItsrisk-ba A sedapproach. howanorganizationdeterminesitske B yriskandperformanceindicators. thelevelandtypeofrisktheorganizati oniswillingtotaketomeetitsobjectiv es thepurposeofanorganization'sfinanc D ialcrimescomplianceprogram. 正确答案C您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

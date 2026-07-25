@@ -1,0 +1,91 @@
+# v7_q_000055
+
+教材章节：未映射
+
+题型：single
+
+题干：反洗钱/打击资助恐怖主义措施的有效性，可通过系统和控制措施在多大程度上做到以下事项来衡量：
+
+英文题干：The effectiveness of AML/CFT measures can be best measured by the extent to which systems and controls:
+
+选项：
+
+- A. 遵守相关法律法规
+  English: Comply with relevant laws and regulations
+- B. 最大限度降低金融机构的运营负担
+  English: Minimize the operational burden placed on the financial institution
+- C. 减轻金融犯罪的风险和威胁
+  English: Mitigate the risks and threats of financial crime
+- D. 以经济高效的方式实施
+  English: Are implemented in a cost-effective way
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+以风险降低程度衡量AML/CFT控制措施有效性
+
+## 【核心解析】
+
+教材将控制措施有效性定义为「降低固有风险」的能力（P278）。组织应评估控制措施以确定其在多大程度上减少了固有的洗钱/恐怖融资风险（P278），而控制措施本就是为将客户、地域等维度的固有风险降至可接受水平而设计（P278）。题干问的是系统和控制措施在多大程度上能做到什么——这一「做到」直接对应教材中衡量控制效果的核心标尺，即减轻金融犯罪的风险和威胁。因此，选项C抓住了有效性评估的实质，而非停留在合规达标或成本效率等外围指标。
+
+教材原句："Organizations should evaluate these control measures to determine their effectiveness in reducing inherent risks."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜概念混淆**：遵守法律法规是实现有效控制的前提条件，但教材框架下有效性的衡量直接指向固有风险的降低程度，合规本身不能替代对风险减少效果的评判，因此A不如C直接匹配有效性的定义。
+- **B 错误（题干对照）｜题干要素不匹配**：反洗钱与反恐怖融资措施通常会增加机构的运营负担，而非将其最小化，教材也未将运营负担的最小化作为有效性衡量标准；题干更支持以风险缓解结果为导向的C选项。
+- **D 错误（题干对照）｜概念混淆**：教材在技术治理语境下提到「运营效率」（P369），但那是实施手段而非有效性衡量标准；题干问的是控制措施在多大程度上‘做到’什么，C项聚焦的风险缓解更直接对应教材对控制目标的描述。
+
+## 【易错提醒】
+
+注意区分「合规达标」与「有效性」：教材要求评估控制措施降低固有风险的程度（P278），合规是手段，有效性是结果。也勿将「效率」误作「有效性」——成本效益不是衡量控制措施是否真正管住金融犯罪风险的核心标尺。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002771`
+
+### `v7u_N002771`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：组织应评估控制措施在降低固有风险方面的有效性
+- 英文原文：Organizations should evaluate these control measures to determine their effectiveness in reducing inherent risks.
+
+### `v7u_N002774`
+
+- 用于：核心解析、选项A
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：控制措施旨在将客户、地域、产品和渠道的固有反洗钱/反恐怖融资风险降至与风险偏好一致的水平
+- 英文原文：Control measures are designed to reduce the inherent AML/CTF risk with customers, jurisdictions, products, and delivery channels to a level consistent with the organization’s risk appetite statement.
+
+### `v7u_N001452`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > Impact of FATF mutual evaluation reports on jurisdictions
+- 页码：PDF第163页 / 书内第158页
+- 中文要点：FATF 建议 1 要求司法管辖区识别、评估并减轻洗钱和恐怖融资风险
+- 英文原文：Recommendation 1 of FATF standards requires jurisdictions to identify, assess, and understand their money laundering and terrorist financing risks and implement measures to ensure effective risk mitigation.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+反洗钱和打击资助恐怖主义的核心目标是降低金 融犯罪风险和威胁.选项A遵守相关法律法规是 基础要求,但不足以直接衡量措施有效性;选项 B减轻金融机构运营负担与反洗钱目标无直接关 联;选项C直接对应措施的核心目标,通过评估 风险和威胁的降低程度,可量化衡量措施有效 性;选项D以经济高效方式实施是管理手段,非 有效性衡量标准.因此,正确答案为C.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+-[AML/CFTCompliancePrograms]Thee 单选 ffectivenessofAML/CFTmeasurescanbebest measuredbytheextenttowhichsystemsandC ontrols: Complywithrelevantlawsandregulati A ons Minimizeoperationalburdenplacedon B thefinancialinstitution Mitigatetherisksandthreatsoffinanci alcrime Areimplementedinacost-effectivewa D y 正确答案C您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,54 @@
+# V3.1 教研解析索引
+
+| 题号 | 章节 | 盲判状态 | 软件就绪 | 答案 | 参考冲突 | Markdown |
+|---|---|---|---|---|---|---|
+| v7_q_000040 |  | ok | True | D | False | [打开](v7_q_000040.md) |
+| v7_q_000041 |  | ok | True | D | False | [打开](v7_q_000041.md) |
+| v7_q_000042 |  | ok | True | A | False | [打开](v7_q_000042.md) |
+| v7_q_000043 |  | ok | True | D | False | [打开](v7_q_000043.md) |
+| v7_q_000044 |  | ok | True | A | False | [打开](v7_q_000044.md) |
+| v7_q_000045 |  | ok | True | B | False | [打开](v7_q_000045.md) |
+| v7_q_000046 |  | ok | False | B | False | [打开](v7_q_000046.md) |
+| v7_q_000047 |  | ok | False | B | False | [打开](v7_q_000047.md) |
+| v7_q_000048 |  | ok | True | A | False | [打开](v7_q_000048.md) |
+| v7_q_000049 |  | ok | True | D | False | [打开](v7_q_000049.md) |
+| v7_q_000050 |  | ok | False | D | False | [打开](v7_q_000050.md) |
+| v7_q_000051 |  | ok | True | A | False | [打开](v7_q_000051.md) |
+| v7_q_000052 |  | ok | True | A | False | [打开](v7_q_000052.md) |
+| v7_q_000053 |  | ok | False | A | False | [打开](v7_q_000053.md) |
+| v7_q_000054 |  | ok | False | B | True | [打开](v7_q_000054.md) |
+| v7_q_000055 |  | ok | True | C | False | [打开](v7_q_000055.md) |
+| v7_q_000056 |  | ok | True | A | False | [打开](v7_q_000056.md) |
+| v7_q_000057 |  | ok | False | B | False | [打开](v7_q_000057.md) |
+| v7_q_000058 |  | ok | False | C | True | [打开](v7_q_000058.md) |
+| v7_q_000059 |  | ok | True | A | False | [打开](v7_q_000059.md) |
+| v7_q_000060 |  | ok | False | B | False | [打开](v7_q_000060.md) |
+| v7_q_000061 |  | ok | True | D | False | [打开](v7_q_000061.md) |
+| v7_q_000062 |  | ok | True | B | False | [打开](v7_q_000062.md) |
+| v7_q_000063 |  | ok | False | B | False | [打开](v7_q_000063.md) |
+| v7_q_000064 |  | ok | True | A | False | [打开](v7_q_000064.md) |
+| v7_q_000065 |  | ok | True | B | False | [打开](v7_q_000065.md) |
+| v7_q_000066 |  | ok | True | B | False | [打开](v7_q_000066.md) |
+| v7_q_000067 |  | ok | False | A | False | [打开](v7_q_000067.md) |
+| v7_q_000068 |  | ok | True | A | False | [打开](v7_q_000068.md) |
+| v7_q_000069 |  | ok | False | D | False | [打开](v7_q_000069.md) |
+| v7_q_000070 |  | ok | True | B | False | [打开](v7_q_000070.md) |
+| v7_q_000071 |  | ok | True | B | False | [打开](v7_q_000071.md) |
+| v7_q_000072 |  | ok | False | D | False | [打开](v7_q_000072.md) |
+| v7_q_000073 |  | ok | False | D | True | [打开](v7_q_000073.md) |
+| v7_q_000074 |  | ok | False | B | False | [打开](v7_q_000074.md) |
+| v7_q_000075 |  | ok | True | B | False | [打开](v7_q_000075.md) |
+| v7_q_000076 |  | ok | True | A | False | [打开](v7_q_000076.md) |
+| v7_q_000077 |  | ok | True | D | False | [打开](v7_q_000077.md) |
+| v7_q_000078 |  | ok | False | A | True | [打开](v7_q_000078.md) |
+| v7_q_000079 |  | ok | True | A | False | [打开](v7_q_000079.md) |
+| v7_q_000080 |  | ok | False | A | False | [打开](v7_q_000080.md) |
+| v7_q_000081 |  | ok | True | C | False | [打开](v7_q_000081.md) |
+| v7_q_000082 |  | ok | False | B,C | True | [打开](v7_q_000082.md) |
+| v7_q_000083 |  | ok | False | D | False | [打开](v7_q_000083.md) |
+| v7_q_000084 |  | ok | True | B | False | [打开](v7_q_000084.md) |
+| v7_q_000085 |  | ok | True | D | False | [打开](v7_q_000085.md) |
+| v7_q_000086 |  | ok | False | C | False | [打开](v7_q_000086.md) |
+| v7_q_000087 |  | ok | False | D | False | [打开](v7_q_000087.md) |
+| v7_q_000088 |  | ok | True | C | False | [打开](v7_q_000088.md) |
+| v7_q_000089 |  | ok | False | C | True | [打开](v7_q_000089.md) |
