@@ -1,0 +1,75 @@
+# v7_q_000019
+
+教材章节：未映射
+
+题型：single
+
+题干：一家保险公司的长期客户对其保单进行了变更，需要支付一笔额外的款项。这笔款项数额较大，但根据所收集的客户尽职调查信息，该客户有能力支付。付款是通过一家位于另一司法管辖区的公司进行的，而该司法管辖区以反洗钱控制薄弱而闻名。存在哪种可疑活动的迹象？
+
+英文题干：A long-term client of an insurance company makes changes to a policy that require payment of an additional lump sum. The amount payable is high, though within the client's means based on the KYC information collected. The payment is made via a company in another jurisdiction that is known to have lax AML controls. Which indicator of suspicious activity is present?
+
+选项：
+
+- A. 一位长期客户希望对已生效的某份保单进行修改
+  English: A long-term client wants a change to a policy that is already in force
+- B. 该款项是通过一家似乎由被保险客户拥有和控制的公司支付的.
+  English: The payment was made via a company that appears to be owned and controlled by the client being insured
+- C. 根据所收集的客户尽职调查信息,需额外支付的保费似乎在客户的支付能力范围内.
+  English: The additional premium payable appears to be within the client's means based on the KYC information collected
+- D. 该款项是通过一家位于反洗钱监管宽松的司法管辖区的公司支付的.
+  English: The payment was made via a company located in a jurisdiction with lax AML controls
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别地理风险中的「反洗钱法规薄弱」这一可疑活动指标
+
+## 【核心解析】
+
+在反洗钱的语境下，评估一项交易是否存在可疑活动迹象，不能只看客户本人，还要看资金的流转路径和参与方的所在地。教材指出：来自反洗钱法规薄弱或腐败严重司法管辖区的客户，会带来更高的风险（P73）。同理，题干中付款经由的公司所在司法管辖区以反洗钱控制薄弱闻名，这本身就构成了一个独立的风险指标——即便客户自身的财务状况看似合理，资金从监管宽松的地区流入，也为隐匿资金来源提供了条件，因此是可疑活动的迹象。
+
+教材原句："customers from jurisdictions with weak AML regulations or high levels of corruption present higher risks."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜题干要素不匹配**：题干中用户是长期客户且希望对已生效保单修改，这本身属于正常的业务操作描述，题干未提供该行为异常的证据。相较于D项明确指向了地理风险，A项描述的只是一个中性行为。
+- **B 错误（题干对照）｜题干要素不匹配**：题干仅说明付款是通过另一司法管辖区的公司进行，并未透露该公司是否由客户拥有或控制。此选项引入了题干未提供的信息，其匹配度不如直接指向已知地理风险的D项。
+- **C 错误（题干对照）｜题干要素不匹配**：题干已明确说明「根据所收集的客户尽职调查信息，该客户有能力支付」，这恰恰在试图削弱交易金额本身的异常感。但D项指出的支付路径风险是独立于客户支付能力的可疑迹象，更能解释为何该交易值得警惕。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000599`
+
+### `v7u_N000599`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > High-risk private banking and wealth management products
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：来自反洗钱法规薄弱或腐败严重司法管辖区的客户风险更高
+- 英文原文：For example, customers from jurisdictions with weak AML regulations or high levels of corruption present higher risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+题目描述中,关键可疑点在于付款通过反洗钱控 制薄弱的司法管辖区公司进行.选项D明确指出 款项是通过一家位于反洗钱监管宽松的司法管辖 区的公司支付的,这与题目中描述的可疑活动迹 象相吻合.而选项A、B、C均未提及与反洗钱控 制薄弱相关的信息,因此不符合题目描述的可疑 活动迹象.易错提醒:注意识别反洗钱控制 薄弱的关键信息,避免被其他看似合理但非关键 的信息干扰.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+ionthatisknowntoHavelaxAMLcontrols.Whi chindicatorofsuspiciousactivityispresent？ Along-termclientwantsachangetoa A policythatisalreadyinforce Thepaymentwasmadeviaacompan B ythatappearstobeownedandcontro lledbytheclientbeingInsured Theadditionalpremiumpayableappe C arstobewithintheclient'smeansbas edontheKYCInformationcollected Thepaymentwasmadeviaacompan yinajurisdictionknowntohavelaxA MLcontrols 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

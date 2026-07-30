@@ -1,0 +1,125 @@
+# v7_q_000135
+
+教材章节：未映射
+
+题型：single
+
+题干：一家赌场的合规部门正在审查近期的交易，并已发现了一些可能需要进一步调查的活动。哪笔交易需要进一步调查？
+
+英文题干：The compliance department of a casino is reviewing recent transactions and has identified activities that may require further scrutiny. Which transaction would require further investigation?
+
+选项：
+
+- A. 一位常去赌场的赌客，每次存入少量现金，却总是要求将赢来的钱换成大额支票提现
+  English: A patron who regularly visits the casino, deposits small amounts of cash, and consistently requests to cash out winnings in high-value checks
+- B. 一群游客用信用卡购买筹码，参与高额赌局，然后套现
+  English: A group of tourists who buy chips with credit cards and engage in high-stakes games before cashing out
+- C. 一名玩家使用现金和从国际账户通过电汇转入的5万美元购买筹码，但并未参与赌博，随后将筹码全部提现
+  English: A player who purchases USD 50,000 in chips using a combination of cash and a wire transfer from an international account, does not gamble, and then cashes out
+- D. 偶尔光顾的玩家，使用与国外账户关联的预付借记卡玩低注额的游戏
+  English: An occasional visitor who plays low-stakes games using a prepaid debit card linked to a foreign account
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+比较赌场交易风险信号并识别应优先调查的筹码兑现模式
+
+## 【核心解析】
+
+教材描述的赌场洗钱方式包括：用非法资金购买筹码，短暂赌博后兑现；赌场和在线博彩运营商也可能面临客户将非法资金转换为筹码、仅进行极少量游戏的风险（P120）。选项C中，玩家用现金和国际账户电汇转入的资金购买5万美元筹码，完全没有赌博便将筹码全部兑现。在给定选项中，这种“大额购入筹码—没有实际游戏—全部兑现”的组合与教材所述风险模式最直接匹配，因此C是风险信号最集中的交易。
+
+这里的判断是风险匹配，而不是预先认定该玩家的资金一定属于非法所得。现金与国际电汇并用增加了交易背景的复杂性，但决定C优先级的核心事实是购买大量筹码后完全不赌博并全部兑现。
+
+教材原句："Criminals can anonymously purchase chips with illicit funds, gamble briefly, and cash out, effectively "cleaning" their money."
+
+## 【错误项分析】
+
+- **A 相对不优（教材事实与题干对照）｜范围或程度偏差**：A同样具有调查价值：少量现金投入却持续以大额支票兑现，其金额关系和重复模式需要核实；教材要求审查同一客户的过往交易模式（P337）。但与C相比，A没有明确显示完全不赌博或仅进行形式性赌博，因此与教材“筹码转换后极少游戏即兑现”的直接匹配程度较低（P120）。按题干原文，A不能被视为当然正常，只是C的风险信号更集中。
+- **B 错误**：信用卡账户可能被用于洗钱的离析和融合阶段（P69），因此使用信用卡并不当然代表交易正常。不过B中的游客实际参与了高额赌局，题干没有显示筹码购买和兑现缺少博彩目的；相比之下，C完全没有赌博行为，更直接符合本题所考查的筹码转换风险模式（P120）。
+- **D 相对不优（教材事实与题干对照）｜概念与风险程度混淆**：教材指出，预付卡的可转让性可能带来较高洗钱风险，匿名购买、充值和较低的KYC要求也可能使其受到滥用（P68）。但教材同时区分预付卡与借记卡，指出预付卡“不与银行账户关联”（P68）；因此D中“预付借记卡”与“关联国外账户”的表述本身不严谨。即使按预付卡理解，D只描述低注额游戏，没有出现C所示的大额购入筹码后不赌博即全部兑现，风险信号不如C集中。
+
+## 【易错提醒】
+
+“具有调查价值”不等于“在单选题中最符合”。A的重复大额支票兑现同样需要结合交易历史、赌博记录和资金来源核实（P337）；D的预付卡风险也不能因金额较小而完全排除（P68）。C之所以更符合，是因为“大额购入筹码、完全不赌博、全部兑现”同时出现，与教材描述的赌场筹码转换风险模式最直接匹配（P120）。若按“需要进一步调查”的字面理解，A也可能需要调查；因此C应理解为给定选项中风险信号最集中、最应优先关注的选项。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001067`、`v7u_N001074`
+
+### `v7u_N001067`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：犯罪分子通过匿名购买筹码、短暂赌博后兑现来清洗非法资金
+- 英文原文：Criminals can anonymously purchase chips with illicit funds, gamble briefly, and cash out, effectively "cleaning" their money.
+
+### `v7u_N001074`
+
+- 用于：核心解析、选项A、选项B、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：赌场和在线运营商可能面临客户将非法资金转换为筹码并仅进行极少量游戏等洗钱风险
+- 英文原文：For example, both casinos and online operators are vulnerable to many forms of money laundering, such as customers converting illicit funds into chips, engaging in minimal play, and using falsified documents to open multiple accounts.
+
+### `v7u_N003331`
+
+- 用于：选项A、易错提醒
+- 章节：Transaction monitoring > Steps applied to an investigation
+- 页码：PDF第342页 / 书内第337页
+- 中文要点：应审查同一账户或客户的过往交易模式
+- 英文原文：Any patterns of previous transactions from the same account or customer should also be reviewed.
+
+### `v7u_N000566`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with retail and commercial banking > Card risks
+- 页码：PDF第74页 / 书内第69页
+- 中文要点：信用卡账户通常不用于洗钱的初始放置阶段，更可能用于离析和融合阶段
+- 英文原文：Credit card accounts are not typically used in the initial placement stage of money laundering and are more likely to be used in the layering and integration stages.
+
+### `v7u_N000559`
+
+- 用于：选项D、易错提醒
+- 章节：Money laundering risks associated with retail and commercial banking > Card risks
+- 页码：PDF第73页 / 书内第68页
+- 中文要点：预付卡作为可转让的持票人工具，具有较高洗钱风险
+- 英文原文：The characteristic of being a bearer instrument and transferable presents a high risk for money laundering.
+
+### `v7u_N000560`
+
+- 用于：选项D、易错提醒
+- 章节：Money laundering risks associated with retail and commercial banking > Card risks
+- 页码：PDF第73页 / 书内第68页
+- 中文要点：预付卡可匿名购买和充值，且KYC要求较低，容易被用于转移非法资金
+- 英文原文：Because prepaid cards can be purchased and reloaded anonymously, with minimal KYC being conducted, they are susceptible to exploitation by individuals seeking to move illicit funds without detection.
+
+### `v7u_N000558`
+
+- 用于：选项D
+- 章节：Money laundering risks associated with retail and commercial banking > Card risks
+- 页码：PDF第73页 / 书内第68页
+- 中文要点：预付卡可加载资金用于消费和取现，但不关联银行账户。
+- 英文原文：Prepaid cards allow users to load funds onto the card and use them for purchases and withdrawals via common payment processing networks. Unlike debit or credit cards, prepaid cards are not linked to a bank account.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+国际账户电汇的5万美元购买筹码,却未参与赌 博便全部提现,此行为符合洗钱特征中的“放置 离析-融合”阶段,即通过赌场将非法资金转化为 看似合法的筹码提现,规避资金追踪.其他选项 中,A属小额现金存取的常见行为,B涉及信用 卡套现但未体现资金跨境转移,D为普通预付卡 小额消费,均无显著异常.洗钱调查需重点关注 为.易错提醒:注意区分正常消费与无合理目的 的大额资金流转.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+在反洗钱和反恐融资中,需关注异常资金流动. 选项C中,玩家用现金和国际账户电汇购50,000 美元筹码,却不赌博直接兑现,资金未用于正常 赌博活动,存在洗钱嫌疑,因洗钱常涉及将非法 资金通过复杂交易伪装成合法收入,此行为符合 洗钱特征,需深入调查.其他选项中,A是常客 正常存取,B是游客正常消费,D是偶尔低风险 游戏,均无明显异常.易错提醒:注意资金流动 与正常业务活动的匹配性. 难 来 源
+
+### 答案冲突提示
+
+- 未发现答案冲突。

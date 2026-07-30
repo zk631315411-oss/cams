@@ -1,0 +1,139 @@
+# v7_q_000188
+
+教材章节：未映射
+
+题型：single
+
+题干：金融机构(FI)在收到执法部门要求提供文件的正式请求时应如何应对？
+
+英文题干：What should a financial institution (FI) do in response to a formal law enforcement request to produce documents?
+
+选项：
+
+- A. 要随时向高级管理层通报情况,以便从战略上组织应对措施,终止执法部门的请求.
+  English: Keep senior management informed at all times to strategically organize a defense to terminate the law enforcement request
+- B. 核实执法人员的身份,并告知其在首席执行官有空时前来送达执法请求,由首席执行官签收.
+  English: Verify the officer's identification and ask for the law enforcement request to be served when the Chief Executive Officer is available to sign for it
+- C. 在根据执法请求提供任何信息之前,要求延长审查期限,以便查看金融机构的隐私政策和保密政策.
+  English: Ask for an extension to review the FI's privacy policy and confidentiality policy before providing any information under the law enforcement request
+- D. 指定一名人员负责内部调查,以准备请求所需的文件
+  English: Designate a person responsible for the internal investigation to prepare the documents required by the request
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+执法请求的指定人员评估与协调响应机制
+
+## 【核心解析】
+
+收到执法请求后，金融机构应进行初步评估，评估通常由机构指定的合规团队官员负责，目的是了解请求的合法性、紧迫性和相关性（P362）。指定官员还需与法务、记录保存及其他响应部门建立有效关系，以提高透明度和问责性并缩短响应时间（P362）。D虽然使用了「负责内部调查」的表述，但其核心动作是指定人员统筹处理并准备请求所需文件，在四个选项中最接近教材要求的「指定官员评估并协调响应」。因此答案为D。
+
+教材原句："Upon receipt of a law enforcement request, the FI should make an initial assessment. The FI’s nominated or designated officer typically conducts this assessment."
+
+## 【错误项分析】
+
+- **A 错误**：选项A的核心动作是「终止执法部门的请求」。教材明确要求「必须迅速、完整地回应执法请求，否则可能给组织带来不必要的风险或损害」（P350）。试图终止合法请求与配合义务根本冲突，题干更支持D项遵循指定专人机制进行配合，而非组织防御性对抗。
+- **B 错误**：选项B将签收执法请求的责任限定于「首席执行官有空时」。核实执法人员身份是合理操作，但教材指出多数组织会指定专门联络人（P361），而非必须由CEO亲自签收。将响应时机绑定在单一高管的时间安排上，不如由指定人员及时启动评估与协调响应符合教材对响应效率的要求（P362）。
+- **C 错误**：传票和法院命令会规定提交记录的截止日期，但教材也明确保留了「获得延期」的可能（P361），因此申请延期并非一概错误。C的问题是把「为了查看本机构政策而先要求延期」设成默认响应；教材要求先由指定官员评估请求的合法性、紧迫性和相关性（P362）。确有需要时可以申请延期，但必须获得批准，D所体现的指定人员评估并协调响应更符合教材流程。
+
+## 【易错提醒】
+
+正式执法请求通常规定记录提交期限，但在获得批准时可以延期（P361）。正确判断标准不是「一律不得延期」，而是先由指定官员评估请求的合法性、紧迫性和相关性，再协调相关部门依法、及时响应（P362）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003637`
+
+### `v7u_N003636`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：收到执法请求后，金融机构应进行初步评估。
+- 英文原文：Upon receipt of a law enforcement request, the FI should make an initial assessment.
+
+### `v7u_N003618`
+
+- 用于：核心解析、选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：大多数组织指定专人作为与执法部门的联络点。
+- 英文原文：Most organizations designate a specific person to serve as the point of contact with law enforcement.
+
+### `v7u_N003637`
+
+- 用于：核心解析
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：初步评估通常由金融机构指定的合规团队官员进行。
+- 英文原文：The FI’s nominated or designated officer typically conducts this assessment. This officer is usually an employee from one of the compliance teams who has been specifically assigned to this task.
+
+### `v7u_N003638`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：初步评估的目的是了解请求的合法性、紧迫性和相关性。
+- 英文原文：The purpose of the assessment is to understand the legality, urgency, and relevance of the request.
+
+### `v7u_N003642`
+
+- 用于：核心解析
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：指定官员必须与法律团队、记录保存等部门建立有效关系以确保透明度和问责制并缩短响应时间
+- 英文原文：Additionally, the designated officer must develop effective relationships with legal teams, recordkeeping, and other departments likely to be involved in responding to a law enforcement agency's request. These relationships ensure transparency and accountability and decrease the FI’s response time.
+
+### `v7u_N003469`
+
+- 用于：选项A
+- 章节：Concluding an investigation and suspicious activity reporting > Protecting the organization during an investigation
+- 页码：PDF第355页 / 书内第350页
+- 中文要点：必须迅速、完整地回应执法请求，否则可能给组织带来不必要的风险或损害。
+- 英文原文：It is important to respond quickly and completely to any law enforcement requests. Failure to do so could cause unnecessary risk or damage to the organization.
+
+### `v7u_N003623`
+
+- 用于：选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：紧急情况下，执法机构可签发搜查令要求立即配合。
+- 英文原文：In urgent cases, law enforcement might issue a search warrant requiring immediate compliance.
+
+### `v7u_N003621`
+
+- 用于：选项C、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：传票和法院命令会规定记录提交期限，除非获得延期。
+- 英文原文：The most formal requests are subpoenas, or court orders, which specify deadlines by which records must be produced, unless an extension is granted.
+
+### `v7u_N003641`
+
+- 用于：易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：机构有义务协调活动以维护信息保密性和完整性并确保披露符合法律合规标准
+- 英文原文：They should coordinate their activities strategically and tactically to maintain the confidentiality and integrity of the information and ensure all disclosures meet legal compliance standards.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+金融机构在收到执法部门正式请求时,应指定专 人负责内部调查,准备请求所需文件,确保及 时、准确响应.选项A中终止执法请求错误,选 项B中告知有空再来和由首席执行官签收不合 理,选项C中要求延长审查期限以便查看隐私和 保密政策,不符合合规要求.选项D指定人员负 责内部调查,准备文件,符合合规流程,故正确 答案为D.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+金融反洗钱和反恐融资合规标准要求,金融机构 面对正式执法要求提供文件时,应指定专人负责 内部调查并准备相关文件.选项D符合这一要 求,确保了响应的规范性和高效性.选项A试图 组织防御终止请求,违反了合规义务:选项B强 调验证身份和高层签字,非首要步骤;选项C要 求审查隐私政策,非直接应对措施.因此,正确 选项是D.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

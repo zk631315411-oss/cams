@@ -1,0 +1,113 @@
+# v7_q_000208
+
+教材章节：未映射
+
+题型：single
+
+题干：一家金融机构计划采用具备人工智能(AI)/机器学习(ML)功能的系统来实施负面媒体报道筛查。在测试期间，该系统生成了大量不相关的新闻文章供审核。解决这个问题的最佳方法是什么？
+
+英文题干：During testing of media screening with artificial intelligence (AI)/machine learning (ML) capabilities, the system produces high volumes of irrelevant news articles for review. What is the best way to address this issue?
+
+选项：
+
+- A. 精简媒体来源，避免无关文章
+  English: Narrow the media sources to avoid unrelated articles
+- B. 依靠调查人员的人工筛选
+  English: Rely on manual filtering by investigators
+- C. 提高向媒体渠道更新的频率
+  English: Increase the frequency of updates to media sources
+- D. 调整人工智能/机器学习模型，使其重点关注高风险关键词/短语，并优先使用可信媒体来源
+  English: Adjust AI/ML models to focus on high-risk keywords or phrases from reputable media sources
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+AI/ML筛查系统的误报优化方法
+
+## 【核心解析】
+
+题干中的大量无关文章属于筛查误报。教材对该场景给出了直接调参规则：负面媒体筛查系统应调优关键词和短语，以过滤无关信息，并应选择可信、可靠的信息来源（P422）。D同时命中这两项要求，直接解决系统产生大量无关文章的问题，因此答案为D。机器学习模型利用历史筛查结果提高准确性、减少误报可作为辅助背景（P417），但「高风险关键词/短语」和「可信媒体来源」是对教材调参原则的场景化表述，不应扩展成教材规定的唯一固定参数。
+
+## 【错误项分析】
+
+- **A 错误**：简单缩减媒体来源可能减少文章数量，却也可能漏掉相关风险信息；它没有直接改善模型识别相关性的能力。D还保留可信来源并调整匹配重点，更贴合教材的模型优化路径（P422）。
+- **B 错误**：人工筛选只能在结果产生后处理噪音，不能解决系统持续产生大量误报的根因，也与采用AI/ML提升效率的目的不符（P320）。
+- **C 错误**：更新频率影响信息时效性，不会提高文章与筛查对象之间的相关性，不能解决题干所述大量无关结果。
+
+## 【易错提醒】
+
+负面媒体筛查应通过适当测试和调优减少误报（P320），并优先采用经过验证的来源（P323）。关键词和短语是可调参数之一（P422），具体设置仍应根据机构风险和筛查目标确定，并非只有一种固定配置。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004192`
+
+### `v7u_N004250`
+
+- 用于：核心解析、选项D
+- 章节：Technology for KYC > Screening system tuning
+- 页码：PDF第427页 / 书内第422页
+- 中文要点：针对负面媒体报道筛查系统，调优关键词和短语以过滤无关信息
+- 英文原文：For an adverse media screening system, tune parameters such as keywords and phrases to filter out irrelevant information, ensuring the organization focuses only on actual adverse media.
+
+### `v7u_N004251`
+
+- 用于：核心解析、选项D
+- 章节：Technology for KYC > Screening system tuning
+- 页码：PDF第427页 / 书内第422页
+- 中文要点：应谨慎选择来源，确保系统仅使用可信可靠的来源
+- 英文原文：Organizations should also carefully select their sources to ensure the system uses only credible and reliable sources.
+
+### `v7u_N003168`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Ongoing due diligence
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：经过适当测试和实施的AI筛查系统可提高准确性、减少误报并增强隐藏风险检测
+- 英文原文：AI-driven screening solutions: When appropriately tested and implemented, an AI-driven system can provide improved accuracy, reducing false positives and enhancing detection of hidden risks.
+
+### `v7u_N003204`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第328页 / 书内第323页
+- 中文要点：机构必须约定并优先使用经过验证的信息来源
+- 英文原文：Organizations must agree to and prioritize verified sources.
+
+### `v7u_N004191`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Understanding screening system logic
+- 页码：PDF第422页 / 书内第417页
+- 中文要点：机器学习模型利用历史数据学习并提高筛查系统准确性
+- 英文原文：Machine learning models use complex algorithms to learn from historical data and improve the accuracy of screening systems over time.
+
+### `v7u_N004192`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Understanding screening system logic
+- 页码：PDF第422页 / 书内第417页
+- 中文要点：示例：金融机构用机器学习模型分析历史筛查结果以减少误报
+- 英文原文：For example, a financial institution can develop a machine learning model that analyzes past screening results to improve the detection of screening matches, reducing false positives.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+金融机构采用AI/ML系统筛查负面媒体报道时, 生成大量不相关文章,说明模型筛选精准度不 题:选项B依赖人工筛选,效率低下且违背自动 化初衷;选项C提高更新频率与筛选准确性无 关.选项D通过调整AI/ML模型,使其聚焦知名 度,减少无关内容,是解决该问题的最佳方法. 治标不治本,后者才是核心.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+题目要求解决AI/ML系统在负面媒体筛查中产生 大量无关新闻的问题.选项A仅缩小媒体源,可 能遗漏重要信息;选项B依赖人工筛选,效率低 下且成本高;选项C增加更新频率,无法解决无 关内容问题.选项D通过调整AI/ML模型,聚焦 高风险关键词和权威媒体,可精准筛选信息,提 高筛查效率,是最佳方案.易错点在于可能误选 A或B,需注意技术优化优先于简单限制或人工 干预. 度 难
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,123 @@
+# v7_q_000173
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项最能全面增强反洗钱计划的有效性？
+
+英文题干：Which of the following attributes would most comprehensively enhance an AML program's effectiveness?
+
+选项：
+
+- A. 对所有员工进行基本的反洗钱培训
+  English: Providing basic AML training to all employees
+- B. 任命一名反洗钱专员作为董事会成员,使其成为管理层的正式成员,并赋予其更大的权力
+  English: An AML officer being appointed to the board as a working member of management with increased authority
+- C. 审计人员在审计结果不尽如人意的情况下,为项目提供具体的指导和支持
+  English: Auditors providing prescriptive guidance and support to the program following a less than satisfactory audit
+- D. 通过反洗钱工作人员提供有效的挑战以及持续的交叉培训
+  English: Having AML staff provide effective challenge and engage in continuous cross-training
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分防线职能与培训类型（基本与持续/交叉）
+
+## 【核心解析】
+
+教材支持两类有利于提高反洗钱计划质量的做法：第一，独立审计对第一、二道防线进行交叉检查（P256）；第二，通过提升员工能力、突出薄弱环节开展培训与持续改进（P314）。独立检查可以发现控制缺陷，持续培训和改进则帮助组织补足能力缺口，因此D在四个选项中最完整地覆盖了「有效挑战」和「持续能力建设」。相比之下，A只说基本培训，B可能削弱合规职能的独立挑战，C让审计人员直接提供处方式指导，均不如D匹配。
+
+教材原句："Training and continuous improvement by enhancing staff competency and highlighting any weaknesses."
+
+## 【错误项分析】
+
+- **A 错误**：教材要求的是「定期、持续的反洗钱培训」（P245），而非仅「基本」培训。A并非没有价值，而是覆盖程度低于D所代表的持续能力建设。
+- **B 错误**：教材将独立审计职能定位为直接向审计委员会或董事会报告以确保客观性（P256），这强调的是报告路径独立，而非让反洗钱专员「成为管理层的正式成员」。管理层身份可能削弱其独立挑战的能力，与题干要求的「增强有效性」在机制设计上不如选项D的交叉检查逻辑直接。
+- **C 错误**：审计人员的核心职责是独立评估控制有效性、识别并沟通缺陷，提供客观意见（P257）而非“具体的指导和支持”。若审计人员直接替项目设计方案，可能削弱第三道防线的独立性；因此C不如D所代表的“独立检查后由组织持续改进”这一组合稳妥。
+
+## 【易错提醒】
+
+「有效挑战」不等于日常管理监督。前者来自独立审计职能的交叉检查，以客观性为前提（P256-P257）；后者是第二道防线合规监控的日常职责。混淆两者容易把审计的「指导支持」误判为有效。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003125`
+
+### `v7u_N002524`
+
+- 用于：核心解析、易错提醒
+- 章节：Three lines of defense > Third line of defense AFC function
+- 页码：PDF第261页 / 书内第256页
+- 中文要点：独立审计职能对第一道和第二道防线的有效性进行交叉检查。
+- 英文原文：The independent audit function acts as a cross-check on the effectiveness of the first and second lines of defense. Independent auditors assess operational and compliance frameworks to ensure the organization’s controls align with regulatory requirements and function effectively.
+
+### `v7u_N003125`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios > Function of quality control
+- 页码：PDF第319页 / 书内第314页
+- 中文要点：通过提升员工能力和突出薄弱环节进行培训与持续改进
+- 英文原文：Training and continuous improvement by enhancing staff competency and highlighting any weaknesses.
+
+### `v7u_N002408`
+
+- 用于：选项A
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第三大支柱要求对员工进行定期、持续的反洗钱培训。
+- 英文原文：The third pillar mandates regular, ongoing AML training for employees.
+
+### `v7u_N002548`
+
+- 用于：选项A、选项B、选项C
+- 章节：未标注
+- 页码：PDF第263页 / 书内第258页
+- 中文要点：合规团队与内部审计之间的关系有时可能带有对抗性。
+- 英文原文：Despite these benefits, the relationship between the compliance team and internal audit can sometimes feel adversarial.
+
+### `v7u_N002534`
+
+- 用于：选项A、选项B、选项C、易错提醒
+- 章节：Three lines of defense > Third line of defense AFC function
+- 页码：PDF第262页 / 书内第257页
+- 中文要点：独立审计评估第一、二道防线控制的有效性和效率，确保反洗钱项目符合监管要求。
+- 英文原文：Independent audits: Assess the effectiveness and efficiency of the firstand second-line controls. Auditors ensure that the AML program meets regulatory requirements and industry standards, identifying and communicating deficiencies.
+
+### `v7u_N002523`
+
+- 用于：选项B
+- 章节：Three lines of defense > Third line of defense AFC function
+- 页码：PDF第261页 / 书内第256页
+- 中文要点：独立审计职能直接向审计委员会或董事会报告以确保独立性。
+- 英文原文：In a robust AML program, the independent audit function reports directly to the audit committee or board of directors. This ensures that the findings are independent and not influenced by any other priorities.
+
+### `v7u_N002407`
+
+- 用于：选项C
+- 章节：未标注
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第二大支柱要求指定一名合规官负责监督反洗钱流程，该官员须具备适当经验与知识。
+- 英文原文：The second pillar requires a designated compliance officer who oversees the AML process. The designated compliance officer is responsible for managing the program. Compliance officers must have the appropriate experience and knowledge.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+增强反洗钱计划的有效性需确保员工具备足够的 专业能力与警惕性.选项D中,通过反洗钱工作 人员提供有效的挑战以及持续的交叉培训,可以 提升员工对反洗钱工作的理解和应对能力,增强 整体计划的执行效果.选项A仅提供基本培训, 不够深入;选项B任命专员虽增强管理重视,但 未直接提升执行层能力;选项C审计指导虽重 要,但非直接增强计划有效性的核心措施.因 此,选项D最为贴切.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+选项D中,为反洗钱(AML)工作人员提供有效 质疑环境,并持续开展交叉培训,可确保AML团 队具备多样技能与批判性思维,能够灵活应对复 杂洗钱手段,显著提升AML项目有效性.选项A 仅提供基础培训,无法深入应对复杂风险;选项 B中AML官员加入董事会虽能提升战略地位,但 缺乏日常执行层面的直接优化:选项C中审计师 提供指导属于事后补救措施,无法主动预防风 险.因此,选项D的持续能力建设最为关键. 度 难
+
+### 答案冲突提示
+
+- 未发现答案冲突。

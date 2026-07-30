@@ -1,0 +1,115 @@
+# v7_q_000026
+
+教材章节：未映射
+
+题型：single
+
+题干：大量汇入的电汇交易触发对某客户的警报.资金随即通过现金提取和汇出交易被迅速转走.要调查此警报/案例,应首先审查哪些信息？
+
+英文题干：A high volume of incoming wire transfers generates an alert about a client. The funds are immediately debited by cash withdrawals and outgoing wire transfers. Which information should be reviewed first to investigate this alert or case?
+
+选项：
+
+- A. 开源信息
+  English: Open source information
+- B. 客户概况
+  English: Customer profile
+- C. 不良媒体搜索
+  English: Adverse media search
+- D. 账户活动
+  English: Account activity
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+警报初查时优先利用客户画像判断活动是否符合预期
+
+## 【核心解析】
+
+警报审查的第一阶段，分析师会综合评估警报性质、交易类型、客户资料、账户历史等数据点，以判断警报是否有效（P334）。客户概况提供客户业务性质、风险因素和预期交易行为等基线信息（P307、P337），有助于判断题干所述大量汇入后迅速转出的活动是否符合客户背景。因此，在给定选项中，B项最适合作为初步判断的基线。教材将客户概况与账户历史等并列为审查信息，并未明确规定两者在所有调查中必须遵循固定先后顺序；实际调查通常还需要结合账户活动共同判断。
+
+教材原句："An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：开源信息可补充客户背景并帮助识别风险信号（P337），但与题干所问的初步审查相比，客户概况更直接提供预期活动和业务性质等判断基线。
+- **C 错误（教材直接依据）｜主体或阶段错配**：不良媒体搜索可以补充风险信息，在教材中也常见于强化尽职调查（EDD）等场景（P310、P322）。但题干首先需要判断交易模式是否符合客户背景，B项与这一目的更直接相关。
+- **D 错误（题干对照）｜概念混淆**：账户活动是区分典型与异常行为的重要数据点（P337），实际调查中通常需要审查。题干已概述触发警报的账户活动，而B项可补充判断这些活动是否符合客户背景的基线，因此在本题的选项比较中更合适。
+
+## 【易错提醒】
+
+「账户历史与活动」和「客户概况」都是警报审查的重要信息：前者反映实际交易，后者提供业务性质和预期活动等判断基线。本题选择B，是因为题干已经概述了异常交易模式，而客户概况更能补充比较基准；不要据此理解为所有调查都必须机械地先查客户概况、后查账户活动。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003298`
+
+### `v7u_N003298`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第339页 / 书内第334页
+- 中文要点：分析师通过评估警报性质、交易类型、客户资料、账户历史等数据点检查警报有效性
+- 英文原文：An analyst examines the alert’s validity by evaluating various data points, including the alert's nature, transaction type, customer profile, account history, and previous alert history.
+
+### `v7u_N003042`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：客户画像包括自然人或法人、所有权结构、业务性质、行业及是否存在政治敏感人物
+- 英文原文：Customer profile: Include natural person or legal person, ownership structure, nature of business, industry, and presence of PEPs.
+
+### `v7u_N003336`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring > Information gathering
+- 页码：PDF第342页 / 书内第337页
+- 中文要点：了解你的客户数据包括客户档案、风险因素和历史行为
+- 英文原文：KYC data: Customer’s profile, risk factors, and historical behavior.
+
+### `v7u_N003341`
+
+- 用于：选项A
+- 章节：Transaction monitoring > Information gathering
+- 页码：PDF第342页 / 书内第337页
+- 中文要点：公开来源包括新闻文章、公共记录和其他在线资源。
+- 英文原文：Open sources: News articles, public records, and other online resources.
+
+### `v7u_N003073`
+
+- 用于：选项C
+- 章节：Onboarding AFC controls > KYC for a natural person
+- 页码：PDF第315页 / 书内第310页
+- 中文要点：EDD包括额外的不良媒体筛查
+- 英文原文：Additional adverse media screening.
+
+### `v7u_N003339`
+
+- 用于：易错提醒
+- 章节：Transaction monitoring > Information gathering
+- 页码：PDF第342页 / 书内第337页
+- 中文要点：账户历史与活动有助于区分典型和异常行为
+- 英文原文：Account history and activity: Account usage and trends that help distinguish between typical and unusual behavior.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+在制裁合规与筛查中,面对大量汇入电汇交易触 发警报,且资金迅速转走的情况,调查时应优先 审查客户概况.客户概况包含客户身份、背景、 交易习惯等关键信息,有助于判断交易是否符合 客户常规行为模式,从而快速识别潜在风险.账 户活动虽重要,但属于后续深入调查内容.开源 信息和不良媒体搜索则非首要调查方向.因此 应首先审查客户概况,选项B正确.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

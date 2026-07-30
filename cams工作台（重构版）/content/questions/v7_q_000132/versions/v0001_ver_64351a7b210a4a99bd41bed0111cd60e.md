@@ -1,0 +1,140 @@
+# v7_q_000132
+
+教材章节：未映射
+
+题型：single
+
+题干：谁应对批准金融机构与政治公众人物的关系承担最终责任？
+
+英文题干：Who bears the ultimate responsibility for approving a financial institution's relationship with a politically exposed person?
+
+选项：
+
+- A. KYC分析师
+  English: KYC analyst
+- B. 高级管理层
+  English: Senior management
+- C. 客户经理
+  English: Relationship manager
+- D. 强化尽职调查合规官
+  English: Enhanced due diligence compliance officer
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+PEP业务关系的审批层级及不同PEP类别的适用条件
+
+## 【核心解析】
+
+教材指出，金融机构在与政治敏感人物（PEP）建立业务关系时，应取得高级管理层批准（P148）；在高风险客户准入控制中，教材也将高级管理层批准列为账户激活前可采用的措施（P312）。题干问的是批准该类业务关系应由哪个层级承担责任，而不是由谁完成身份识别、资料收集或强化尽职调查，因此四个选项中只有B“高级管理层”直接对应教材规定的审批层级。
+
+但不能把这一结论扩大为“识别出任何类别的PEP后，一律无条件取得高级管理层批准”。教材将PEP分为外国PEP、国内PEP和国际组织PEP（P320）：外国PEP应始终视为高风险并接受强化尽职调查；国内PEP和国际组织PEP则应先进行风险评估，以确定风险等级和适当的尽职调查水平（P320）。FATF第12项建议进一步规定，对外国PEP，建立业务关系或继续现有业务关系时应取得高级管理层批准；对国内PEP和国际组织PEP，只有在业务关系风险较高时，才适用包括高级管理层批准在内的相应措施。因此，B回答的是“由谁批准”，PEP类别和风险水平决定的是“何时需要该项批准”。
+
+教材原句："financial institutions should identify PEPs, obtain senior management approval to establish a business relationship with a PEP, and verify their sources of wealth and funds."
+
+## 【错误项分析】
+
+- **A 错误（教材规定直接对照）｜主体或阶段错配**：KYC分析师可能参与客户身份识别或尽职调查，但题干问的是业务关系的批准层级。教材和FATF第12项建议均明确使用“高级管理层批准”，没有将该批准权限指定给KYC分析师。
+- **C 错误（教材规定直接对照）｜主体或阶段错配**：客户经理可能参与客户关系建立过程，但参与业务流程不等于承担该关系的批准责任。与选项C相比，选项B与教材“获得高级管理层批准”的表述直接对应。
+- **D 错误（教材规定直接对照）｜主体或阶段错配**：强化尽职调查与审批是两个不同环节；实施或审查强化尽职调查，并不当然等于拥有业务关系批准权。FATF第12项建议将高级管理层批准与财富来源、资金来源核实及强化持续监控并列为不同措施，因此D不如B符合题干所问的审批主体。
+
+## 【易错提醒】
+
+本题要区分“**由谁批准**”和“**何时要求批准**”。审批层级是高级管理层；但适用条件因PEP类别而异：外国PEP在建立业务关系或继续现有业务关系时适用该批准要求，国内PEP和国际组织PEP则在业务关系风险较高时适用相应强化措施。不能把所有PEP关系概括成无条件、一律审批。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001358`、`v7u_N003177`、`v7u_N003178`
+
+### `v7u_N001358`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构需识别政治敏感人物并验证其财富和资金来源
+- 英文原文：For instance, financial institutions should identify PEPs, obtain senior management approval to establish a business relationship with a PEP, and verify their sources of wealth and funds.
+
+### `v7u_N003110`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：高级管理层批准，例如要求在账户激活前取得合规委员会或董事会批准
+- 英文原文：Senior management approval, such as mandating compliance committee or board approval before account activation.
+
+### `v7u_N003174`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：外国政治敏感人物包括外国政府官员，如国家元首、高级政客、军事领导人、司法官员及国有企业高层
+- 英文原文：Foreign PEPs include officials in foreign governments, such as heads of state, senior politicians, military leaders, judicial officials, and high-ranking members of state-owned enterprises.
+
+### `v7u_N003175`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：国内政治敏感人物包括在机构运营所在国担任高级公职的官员
+- 英文原文：Domestic PEPs include officials who hold a high public office within the country of an organization’s operation.
+
+### `v7u_N003176`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：国际组织政治敏感人物包括联合国、国际货币基金组织、世界银行等全球实体的高管和董事会成员
+- 英文原文：International organization PEPs are executives and board members of global entities, such as the UN, International Monetary Fund, and World Bank.
+
+### `v7u_N003177`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：FATF指引规定，外国政治敏感人物应始终被视为高风险并接受强化尽职调查
+- 英文原文：FATF guidance provides that foreign PEPs should always be considered high risk and subject to enhanced due diligence.
+
+### `v7u_N003178`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：对于国内和国际组织政治敏感人物，FATF建议进行风险评估，以确定其风险等级和适当的尽职调查水平
+- 英文原文：For domestic and international organization PEPs, FATF recommends that a risk assessment be conducted to determine their level of risk and the appropriate level of due diligence.
+
+## 【外部权威依据】
+
+> 核心权威文件：金融行动特别工作组《FATF建议》
+
+### `FATF Recommendations - Recommendation 12: Politically exposed persons`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 发布机构：Financial Action Task Force（FATF）
+- 版本：2012年通过，后续定期更新（以FATF官网现行PDF为准）
+- 页码/条款：Recommendation 12（Politically exposed persons）
+- 官方资源页：[The FATF Recommendations](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html)
+- 官方PDF：[International Standards on Combating Money Laundering and the Financing of Terrorism & Proliferation](https://www.fatf-gafi.org/content/dam/fatf-gafi/recommendations/FATF%20Recommendations%202012.pdf.coredownload.inline.pdf)
+- 外国PEP审批原文：obtain senior management approval for establishing (or continuing, for existing customers) such business relationships;
+- 国内PEP及国际组织PEP适用条件原文：In cases of a higher risk business relationship with such persons, financial institutions should be required to apply the measures referred to in paragraphs (b), (c) and (d).
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+在金融机构的反洗钱和打击资助恐怖主义合规计划中，与政治公众人物建立关系需高度谨慎，因其可能涉及更高洗钱风险。根据多个技术资料显示，高级管理层对金融机构的重大决策和风险管理承担最终责任，包括批准与政治公众人物的关系。知识产权分析师、客户经理和增强型尽职调查合规官虽在不同环节发挥作用，但均不承担最终批准责任。因此，正确答案为B。
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在反洗钱和反恐融资(AML/CFT)合规计划中，与政治公众人物(Politically Exposed Person, PEP)建立业务关系需严格审批。KYC分析师负责客户身份识别，关系经理负责客户关系维护，强化尽职调查合规官负责深入调查，但均不承担最终审批责任。根据合规管理原则，此类高风险决策需由具备足够权限和责任心的主体承担，高级管理层(Senior management)具备整体风险控制和决策权，是最终审批者。因此，答案选B。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

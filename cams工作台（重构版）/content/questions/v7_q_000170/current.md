@@ -1,0 +1,131 @@
+# v7_q_000170
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项措施是金融行动特别工作组(FATF)建议金融机构和特定非金融行业及职业(DNFBP)采取的,以降低与外国政治公众人物(PEP)建立业务关系所产生的风险？
+
+英文题干：Which of the following measures is one that the FATF recommends that financial institutions and designated non-financial businesses and professions (DNFBPs) take to mitigate risks arising from business relationships with foreign politically exposed persons (PEPs)?
+
+选项：
+
+- A. 在自动化系统中提高政治公众人物账户的交易监控阈值,以适应较高的交易金额以及复杂的法律工具和金融结构.
+  English: Raise transaction monitoring thresholds for PEP accounts in automated systems to account for higher transaction values and complex legal vehicles and financial structures
+- B. 进入或继续业务关系须经审慎监管机构批准
+  English: Require approval from the prudential regulator for entering into or continuing the business relationship
+- C. 订阅商业数据库以协助识别政治公众人物(PEPs)
+  English: Subscribe to commercial databases to assist in identifying politically exposed persons (PEPs)
+- D. 建立流程以了解政治公众人物的财富来源
+  English: Establish processes to understand the source of wealth of politically exposed persons
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别FATF对PEP的强化尽职调查要求
+
+## 【核心解析】
+
+外国PEP始终被视为高风险客户，应接受强化尽职调查（P320）。相关措施包括识别PEP、取得高级管理层批准，并核实其财富来源和资金来源（P148）；EDD的一般要求也包括更深入地核实这两类来源（P306）。因此，D所述「建立流程以了解PEP的财富来源」直接对应高风险PEP的风险缓释措施。对于DNFBP，该要求适用于其受相关CDD规则约束的业务活动，不能理解为所有DNFBP在任何业务关系中都无条件适用（P201）。
+
+教材原句："financial institutions should identify PEPs, obtain senior management approval to establish a business relationship with a PEP, and verify their sources of wealth and funds."
+
+## 【错误项分析】
+
+- **A 错误**：PEP属于高风险客户，应接受强化尽职调查（P320）。提高交易监控阈值通常会减少警报触发频率，与加强高风险客户审查的方向不符。虽然阈值可以针对不同账户类型设定，但不能仅因PEP交易金额较高、结构较复杂就放宽监控。
+- **B 错误**：FATF建议12直接要求金融机构与外国PEP建立或继续业务关系时取得「高级管理层批准」（P148）；建议22将相关CDD措施延伸至规定活动中的DNFBP（P201），但批准主体仍是业务关系一方的内部高级管理层，而不是外部审慎监管机构。「高级管理层」与「审慎监管机构」的主体不同，题干更直接支持前者。
+- **C 错误**：订阅商业数据库有助于「识别」PEP，但题干问的是「降低建立业务关系后产生的风险」而非「如何找到PEP」。识别客户身份是尽职调查的前置步骤，而了解财富来源是识别出PEP后进一步降低风险的措施（P148、P306）。相比于识别环节，核实财富来源更直接匹配题干「降低风险」的诉求。
+
+## 【易错提醒】
+
+区分「财富来源」与「资金来源」：财富来源回答「这个人的财富整体上是怎么积累的」（如继承、经商），资金来源回答「这笔具体交易的钱从哪来」（如某账户汇款）。FATF建议12将两者并列要求核实（P148）；本题只问一项措施，因此D只写财富来源仍然成立。对于DNFBP，还应注意该要求是通过建议22适用于其规定活动（P201），而不是无条件适用于所有DNFBP业务关系。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001358`、`v7u_N003030`、`v7u_N003177`、`v7u_N001929`、`v7u_N001930`、`v7u_N001108`
+
+### `v7u_N001358`
+
+- 用于：核心解析、选项A、选项B、选项C、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构需识别政治敏感人物并验证其财富和资金来源
+- 英文原文：For instance, financial institutions should identify PEPs, obtain senior management approval to establish a business relationship with a PEP, and verify their sources of wealth and funds.
+
+### `v7u_N003030`
+
+- 用于：核心解析、易错提醒
+- 章节：Onboarding AFC controls > • EDD:
+- 页码：PDF第311页 / 书内第306页
+- 中文要点：强化尽职调查涉及更深入地核实财富来源和资金来源
+- 英文原文：EDD involves verifying source of wealth and source of funds more deeply, examining and verifying any claims through supporting documentation.
+
+### `v7u_N003177`
+
+- 用于：核心解析、选项A、选项B、选项C
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：FATF指引规定，外国政治敏感人物应始终被视为高风险并接受强化尽职调查。
+- 英文原文：FATF guidance provides that foreign PEPs should always be considered high risk and subject to enhanced due diligence.
+
+### `v7u_N001929`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > Japan AML regulations
+- 页码：PDF第206页 / 书内第201页
+- 中文要点：金融机构和DNFBP必须遵守客户尽职调查要求、报告可疑交易并实施基于风险的反洗钱计划。
+- 英文原文：According to Japan’s AML/CFT legislation, financial institutions and DNFBPs must adhere to CDD requirements, report suspicious transactions, and implement internal risk-based AML programs.
+
+### `v7u_N001930`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > Japan AML regulations
+- 页码：PDF第206页 / 书内第201页
+- 中文要点：法律要求对高风险客户（包括政治敏感人物）进行强化尽职调查。
+- 英文原文：Additionally, the legislation requires enhanced due diligence for high-risk customers, including PEPs.
+
+### `v7u_N001108`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：会计师能够评估买方的财务背景，为判断财富来源合法性和税务合规提供信息。
+- 英文原文：Accountants can evaluate buyers' financial backgrounds, offering insights into the legitimacy of their wealth and compliance with local tax obligations.
+
+## 【外部官方依据｜用于核验FATF建议12与建议22的衔接】
+
+- 发布机构：Financial Action Task Force（FATF）
+- 文件：*The FATF Recommendations*
+- 核验位置：Recommendation 12（Politically exposed persons）和Recommendation 22（DNFBPs）
+- 官方页面：[FATF Recommendations](https://www.fatf-gafi.org/en/topics/fatf-recommendations.html)
+- 官方PDF：[FATF Recommendations 2012](https://www.fatf-gafi.org/content/dam/fatf-gafi/recommendations/FATF%20Recommendations%202012.pdf)
+
+建议12要求金融机构针对外国PEP采取合理措施确定财富来源和资金来源，并对建立或继续业务关系取得高级管理层批准。建议22规定，建议10、11、12、15和17中的客户尽职调查措施，在DNFBP从事该建议列明的房地产、法律、会计、信托公司服务、贵金属交易或赌博等活动时同样适用。
+
+> “Financial institutions should be required, in relation to foreign politically exposed persons (PEPs) ... to take reasonable measures to establish the source of wealth and source of funds.”
+
+> “The customer due diligence measures set out in Recommendations 10, 11, 12, 15 and 17 apply to DNFBPs in the following situations...”
+
+交叉核验：[EUR-Lex Directive (EU) 2015/849](https://eur-lex.europa.eu/eli/dir/2015/849/oj)第2条和第20条。第2条列出审计师、会计师、税务顾问、公证人、房地产代理、信托公司服务商及赌博服务商等义务主体；第20条要求这些obliged entities在PEP业务关系中采取措施建立财富来源和资金来源。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+FATF建议金融机构和DNFBP降低与外国政治公 众人物(PEP)建立业务关系风险时,需建立流 顶口准确描述了这一要求通过了解咨全夹源
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+FATF建议金融机构和特定非金融行业及职业, 针对与外国政治公众人物(PEPs)的业务关系 建议的体现,有助于金融机构有效识别和管理 PEPs带来的潜在风险.选项A、B、C虽也是风 险管理措施,但非FATF针对PEPs业务关系的特 定建议.故正确答案为D.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

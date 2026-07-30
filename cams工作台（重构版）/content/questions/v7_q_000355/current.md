@@ -1,0 +1,88 @@
+# v7_q_000355
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪两项被视为高级管理层参与金融犯罪合规计划的最佳实践？(选择两项.)
+
+英文题干：Which of the following are considered best practices regarding senior management involvement in a financial crime compliance program? (Choose two.)
+
+选项：
+
+- A. 自上而下定基调
+  English: Setting the tone from the top
+- B. 必须参加所有监管检查
+  English: Mandatory participation in all regulatory inspections
+- C. 强制参加并审查所有金融犯罪培训课程
+  English: Mandatory attendance at and review of all financial crime training courses
+- D. 为向高级管理层升级问题设定明确的标准
+  English: Setting clear criteria for escalations to senior management
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+
+区分高级管理层战略引领角色与具体运作责任
+
+## 【核心解析】
+
+题干问的是高级管理层参与合规计划的「最佳实践」。材料所描述的最佳实践集中在管理层如何「引领」和「把控框架」，而非陷入每一项具体操作。这引出了两个关键概念：其一，领导层通过自身言行确立合规优先于商业利益的文化，教材将其定义为「高层基调」（P264），对应选项A「自上而下定基调」。这种做法直接影响整个组织的合规文化，正是高级管理层不可替代的战略角色。其二，教材明确要求反洗钱政策应包含「向高级管理层和董事会上报问题的程序」（P244-P245），这意味着管理层需要为「什么级别的问题值得自己关注」设定清晰门槛，而非亲自审核每一件事，对应选项D「为向高级管理层升级问题设定明确的标准」。两个正确项共同勾勒出高级管理层的核心职责：定方向、设规则，而不是做具体执行。
+
+## 【错误项分析】
+
+- **B 错误｜职责层级不符**：选项B要求高级管理层「必须参加所有监管检查」。与监管机构互动时，通常由指定的合规负责人作为联络人集中处理监管沟通，并不要求所有高管亲身到场。高级管理层的参与主要是战略监督与支持，而非替代合规职能部门执行每一次检查接待。
+- **C 错误｜表述过度**：选项C要求高级管理层「强制参加并审查所有金融犯罪培训课程」。员工应接受定期、持续的反洗钱培训，但这不等于高管必须亲自参加或审查每一门课程。高管在培训方面更侧重文化倡导和资源保障，而非逐课审查。
+
+## 【易错提醒】
+
+题干选项C把培训责任完全加给高级管理层，但材料在讲第三支柱时，培训的义务主语是「员工」而非特定层级的管理者（P245）。对于高层，教材强调的是他们通过「高层基调」来展现对培训的支持（P264），而不是亲自去审查每门课程。看到有关管理层的题目时，先判断它要求的是「亲自操作某件事」还是「确保某件事发生」，前者通常属于业务部门的执行责任。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002608`
+
+### `v7u_N002608`
+
+- 用于：核心解析
+- 章节：Second LOD's AFC role and its interaction with the front office > Establishing a culture of compliance
+- 页码：PDF第269页 / 书内第264页
+- 中文要点：这被称为“高层基调”
+- 英文原文：This is called the “tone from the top.”
+
+### `v7u_N002406`
+
+- 用于：核心解析
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：反洗钱政策应包含向高级管理层和董事会上报问题的程序。
+- 英文原文：AML policies should also include escalation procedures for escalating concerns to senior management and the board of directors.
+
+### `v7u_N002408`
+
+- 用于：易错提醒
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第三大支柱要求对员工进行定期、持续的反洗钱培训。
+- 英文原文：The third pillar mandates regular, ongoing AML training for employees.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+在金融犯罪合规计划中,高级管理层参与至关重 要.选项A“自上而下定基调”,表明高级管理层应 树立榜样,确立合规文化基调,是最佳实践之 一.选项D“为向高级管理层升级问题设定明确的 标准”,确保问题能及时、准确地传达给高级管理 层,以便其做出决策,同样是关键实践.选项 B"必须参加所有监管检查”不现实,也非最佳实 践;选项C“强制参加并审查所有金融犯罪培训课 程”虽重要,但不如A、D项直接体现高级管理层 的核心参与作用.因此,正确答案为A、D.易 错提醒:注意区分管理层核心职责与一般性要 求. 源
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+高级管理层的积极参与是有效金融犯罪合规计划 的关键要素."Settingtonefromthetop”(高层 定调)直接体现管理层通过言行传递合规承诺, 塑造组织整体的风险文化,源于FATF建议第1条 关于风险为本方法的要求.“Settingclearcriteria forescalations"(明确上报标准)确保可疑交 易、异常情况能及时汇报至决策层,符合各国监 管机构对可疑交易报告机制的要求,例如欧盟第 四反洗钱指令第8条.强制参与监管检查(B)属于 具体操作事务,非管理层核心职责;强制参与所 有培训(C)更多属于员工层面的执行要求.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

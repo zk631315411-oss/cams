@@ -1,0 +1,99 @@
+# v7_q_000184
+
+教材章节：未映射
+
+题型：single
+
+题干：一家金融机构正在探索采用自动化手段来协助调查人员审查被标记的交易。目前，调查人员花费大量时间从多个来源收集数据。以下哪项自动化功能最能有效提高调查人员的工作效率？
+
+英文题干：A financial institution is exploring automation to assist investigators in reviewing flagged transactions. Currently, investigators spend a significant amount of time gathering data from multiple sources. Which of the following automation features would be most effective in improving investigator efficiency?
+
+选项：
+
+- A. 预填充的可疑活动报告（SAR）申报模板
+  English: Pre-populated templates for SAR filing
+- B. 集成开源工具以收集实时情报
+  English: Integration of open-source tools to gather real-time intelligence
+- C. 基于风险评分的自动化案件优先级排序
+  English: Automated case prioritization based on risk scoring
+- D. AI驱动的被标记交易汇总仪表板
+  English: AI-powered dashboards summarizing flagged transactions
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别自动化调查中数据整合与效率提升的对应关系
+
+## 【核心解析】
+
+题干的效率瓶颈是调查人员需要花费大量时间从多个来源收集和整理数据。现代反洗钱平台能够集中客户和账户数据、整合不同来源的信息，并使调查人员更快地访问数据；案件管理工具还可以通过减少人工整理、汇总和组装数据来缩短调查时间（P455）。在四个选项中，D通过仪表板集中汇总被标记的交易，与教材所述的集中展示和减少人工数据整理功能最接近。A解决的是SAR申报填写，B用于补充公开来源信息，C用于确定案件处理顺序，均不如D直接针对题干中的数据收集瓶颈。因此答案为D。
+
+教材原句："These systems consolidate information from various sources, automate risk ratings, monitor ongoing customer activity, and allow investigators to access data more quickly."
+
+## 【错误项分析】
+
+- **A 错误**：预填充的SAR申报模板可以提高报告填写效率，但题干中的时间消耗发生在调查人员从多个来源收集数据时。D更直接对应数据汇总和查阅环节。
+- **B 错误**：开源情报（OSINT）指从公开来源收集和分析信息（P399），作用是补充外部信息。题干需要减少多源数据收集和整理的时间，集中汇总已有调查信息的D比扩展公开信息来源的B更直接匹配。
+- **C 错误**：自动化案件优先级排序可以让高风险案件得到优先处理（P452），解决的是「先查哪个案件」；题干问的是如何减少调查人员收集和整理数据的时间。D比C更直接针对这一效率瓶颈。
+
+## 【易错提醒】
+
+先定位题干中的具体效率瓶颈：数据汇总工具解决「查资料耗时」（P455），风险排序解决「先查哪个案件」（P452），OSINT解决「从哪里补充外部信息」（P399），SAR模板解决「如何更快填写报告」。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004541`
+
+### `v7u_N004541`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Network analysis solutions for transaction monitoring
+- 页码：PDF第460页 / 书内第455页
+- 中文要点：反洗钱系统整合多源信息、自动化风险评级、持续监控客户活动并加速调查数据访问。
+- 英文原文：These systems consolidate information from various sources, automate risk ratings, monitor ongoing customer activity, and allow investigators to access data more quickly.
+
+### `v7u_N004544`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Network analysis solutions for transaction monitoring
+- 页码：PDF第460页 / 书内第455页
+- 中文要点：案件管理工具减少手动数据整理，提升调查效率。
+- 英文原文：These tools make the management of cases more efficient by reducing the need for investigators to manually sort through data, reducing the time required to collate and assemble such data.
+
+### `v7u_N004004`
+
+- 用于：选项B、易错提醒
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：开源情报是从公开来源收集和分析信息。
+- 英文原文：Open-source intelligence (OSINT) is the collection and analysis of information from publicly available sources.
+
+### `v7u_N004518`
+
+- 用于：选项C、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Technology to assist investigation
+- 页码：PDF第457页 / 书内第452页
+- 中文要点：自动化可以通过优先处理高风险案件来简化调查流程。
+- 英文原文：Automation streamlines investigations by prioritizing high-risk cases, but overreliance on machine-generated outputs can overlook contextual factors that only human judgment can assess.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+题目聚焦于提高调查人员审查被标记交易的工作 效率.选项A预填充的搜救报告模板,对收集数 据帮助不大;选项B集成开源工具收集实时情 报,虽能获取情报,但未直接针对审查被标记交 易的数据收集效率提升;选项C基于风险评分的 自动化案件优先级排序,侧重于案件处理顺序, 而非数据收集环节.选项D由人工智能驱动的汇 数据,为调查人员提供全面且集中的信息展示, 节省大量收集数据时间,有效提高工作效率.所 以选D.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+题干聚焦于提升反洗钱与反恐融资调查人员处理 可疑交易的效率,关键在于减少数据收集时间.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,122 @@
+# v7_q_000260
+
+教材章节：反洗钱和反恐怖融资合规标准
+
+题型：multiple
+
+题干：[反洗钱和反恐怖融资合规标准]在没有制裁监管制度的国家,如何提高相关意识？(选择两项.)
+
+英文题干：How can awareness be raised within countries that do not have sanctions regulatory regimes? (Select Two.)
+
+选项：
+
+- A. 限制那些拥有健全的反洗钱/打击资助恐怖主义和制裁监管制度的国家与那些没有此类制度的国家之间的贸易往来.
+  English: Restrict trade between countries that have robust AML/CFT and sanctions regulatory regimes and those that do not.
+- B. 在这些国家举办反金融犯罪(AFC)和制裁相关的研讨会、网络研讨会及培训.
+  English: Conduct AFC (Anti-Financial Crime) and sanctions-related seminars, webinars, and training within these countries.
+- C. 对这些国家实施强制措施和处以罚款.
+  English: Enforcement and pecuniary fines against these countries.
+- D. 政府间的双边对话与合作.
+  English: Bilateral conversations and cooperation between governments.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+制裁意识提升路径：教育培训与国家合作
+
+## 【核心解析】
+
+题干的目标是“提高意识”，因此应优先寻找教育、培训、信息传播和合作，而不是事后处罚或经济施压。教材在“培训与意识”部分明确要求开展AML/CFT培训，使人员理解相关法规职责（P255）；教材还指出，FATF通过发布报告提高各辖区对最新犯罪和恐怖融资手法的认识（P144）。B项所描述的研讨会、网络研讨会和培训都属于意识建设措施，符合这一原则。
+
+对于D项，教材指出各国需要开展国家合作与协调，并建立基于风险评估的AML/CFT政策（P147）；同时，国际机构合作有助于加强AML/CFT框架（P145）。政府间对话与合作可以促进经验传播和制度建设。因此，B、D比贸易限制或罚款更直接匹配“提高意识”这一题干目标。
+
+## 【错误项分析】
+
+- **A 不如B、D匹配题干目标**：教材说明经济制裁或行业限制会给目标个人和实体施加财务、声誉和运营成本（P23），这体现的是经济施压或制裁后果，不是培训和合作式的意识提升。A并非完全没有制裁关联，但与题干所问的“提高意识”不如B、D直接匹配。
+- **C 属于执法处罚而非意识建设**：教材将罚款和执法行动列为监管机构确保合规的工具，并将增加制裁描述为惩罚AML/CFT失败（P228、P157）。这些措施面向不合规后的执法反应；题干问的是在制度缺失国家建立认知和能力，因而C的功能和适用主体都不如B、D吻合。
+
+## 【易错提醒】
+
+“提高意识”对应培训、信息传播和合作（P255、P144-P145、P147）；“罚款、执法行动、贸易限制”对应施压或事后惩罚（P23、P157、P228）。判断时先区分措施的功能，再检查其是否直接服务于题干目标。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002509`、`v7u_N001309`、`v7u_N001343`、`v7u_N001321`、`v7u_N000088`、`v7u_N002209`、`v7u_N001445`
+
+### `v7u_N002509`
+
+- 用于：核心解析（B项培训与意识建设）
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第260页 / 书内第255页
+- 中文要点：开展员工反洗钱/反恐怖融资培训，确保其理解相关法规下的职责及可疑交易报告结构。
+- 英文原文：Training and awareness: Conduct staff AML/CFT training, ensuring they understand their responsibilities under AML/CFT regulations and the reporting structures for suspicious transactions.
+
+### `v7u_N001309`
+
+- 用于：核心解析（意识提升的信息传播方式）
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第149页 / 书内第144页
+- 中文要点：FATF通过发布报告提高各辖区对最新犯罪和恐怖融资手法与趋势的认识。
+- 英文原文：FATF continuously monitors how criminals and terrorists raise, use, and move funds, and publishes reports to raise awareness of the latest techniques and trends.
+
+### `v7u_N001343`
+
+- 用于：核心解析（D项国家合作与协调）
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：各国需要建立基于风险评估的AML/CFT政策，并开展国家合作与协调。
+- 英文原文：Additionally, national cooperation and coordination are essential, requiring jurisdictions to establish AML/CFT policies informed by risk assessments.
+
+### `v7u_N001321`
+
+- 用于：核心解析（D项国际合作与框架建设）
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：与全球机构合作有助于加强AML/CFT框架。
+- 英文原文：Collaborating with global institutions to strengthen AML/CFT frameworks.
+
+### `v7u_N000088`
+
+- 用于：错误项A（贸易限制/经济制裁的功能）
+- 章节：Types of financial crime > Predicate crimes and money laundering
+- 页码：PDF第28页 / 书内第23页
+- 中文要点：经济制裁或行业限制会给目标个人和实体施加高额财务、声誉和运营成本。
+- 英文原文：Economic sanctions, whether asset freezes or sector-specific restrictions, impose high financial, reputational, and operational costs on individuals and entities targeted by them.
+
+### `v7u_N002209`
+
+- 用于：错误项C（罚款和执法行动属于监管工具）
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第233页 / 书内第228页
+- 中文要点：监管机构可使用罚款和执法行动等工具确保合规，严重案件可采取这些措施。
+- 英文原文：Regulators have a range of tools to ensure compliance, up to and including issuing fines and enforcement actions for serious cases.
+
+### `v7u_N001445`
+
+- 用于：错误项C（制裁用于惩罚AML/CFT失败）
+- 章节：Financial Action Task Force > Impact of FATF mutual evaluation reports on jurisdictions
+- 页码：PDF第162页 / 书内第157页
+- 中文要点：增加制裁频率和规模是为了惩罚AML/CFT失败。
+- 英文原文：Increasing the frequency and size of sanctions to penalize AML/CFT failures.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+在没有制裁监管制度的国家，提高相关意识应优先采用培训、信息传播和合作措施。B项通过研讨会、网络研讨会及培训进行意识建设；D项通过政府间对话与合作促进协调和制度建设。A项属于经济施压，C项属于执法处罚，均不是最直接的意识提升手段。
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+Awareness is best raised through education, information sharing, and cooperation. Seminars and training support B, while government-to-government dialogue and cooperation support D. Trade restrictions and fines are coercive or punitive measures rather than primary awareness-building tools.
+
+### 答案冲突提示
+
+- 未发现答案冲突。原自动盲判未返回答案，本次按题库答案和教材依据补充为B、D。

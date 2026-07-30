@@ -1,0 +1,124 @@
+# v7_q_000236
+
+教材章节：未映射
+
+题型：multiple
+
+题干：人工智能(AI)和机器学习(ML)程序有助于在反洗钱合规中采用基于风险的方法,具体体现在:(选择三项.)
+
+英文题干：Artificial intelligence (AI) and machine learning (ML) procedures help in applying a risk-based approach in AML compliance through: (Select three.)
+
+选项：
+
+- A. 自动生成可疑活动报告(SAR),无需人工审核
+  English: Automatically generating Suspicious Activity Reports (SARs) without the need for human review
+- B. 高级客户风险评估,将客户背景信息与额外数据综合起来进行分析
+  English: Advanced customer risk assessments that synthesize client background information with additional data
+- C. 查明看似毫无关联的客户之间存在的联系,这些客户建立了复杂的网络用于洗钱
+  English: Identification of links among apparently unrelated clients who have established complex networks for money laundering
+- D. 自动调整客户的风险阈值,无需任何人工干预
+  English: Automatically adapting risk thresholds for customers without any human intervention
+- E. 交易中复杂洗钱模式的检测
+  English: Detection of complex money laundering patterns in transactions
+
+## 【AI答案】
+
+B、C、E
+
+## 【考点】
+
+AI/ML在风险为本反洗钱中的具体应用场景与人工监督边界
+
+## 【核心解析】
+
+机器学习算法可通过识别可疑活动模式和异常来改进客户风险评估，对应B（P416）。网络分析模型能够揭示可能参与非法活动的个人或实体之间的隐藏网络，对应C（P418）。高级机器学习算法还可检测与洗钱和制裁规避相关的交易模式，并标记高风险活动供进一步调查，对应E（P456）。A、D都声称不需要人工审核或任何人工干预，但自动化仍须保留人工复核和模型治理，因此应选B、C、E。
+
+教材原句："Machine learning algorithms improve customer risk assessments by identifying patterns and anomalies that may indicate suspicious activity."（P416）
+
+## 【错误项分析】
+
+- **A 错误**：NLP可以自动生成SAR叙述、减少人工工作量（P385），但生成结果仍需人工审核确认，是否提交SAR也由人员最终判断。A中的「无需人工审核」把辅助起草扩大成了自动决策。
+- **D 错误**：客户风险阈值会影响风险分类和后续控制，调整过程需要模型治理和人工监督，以确保模型可解释、无偏见并符合伦理原则（P449）。D中的「无需任何人工干预」忽略了这些治理要求。
+
+## 【易错提醒】
+
+区分「AI辅助决策」与「AI替代决策」：SAR叙述可以自动生成（P385），但仍要人工审核；AI模型也需要治理监督（P449）。AI/ML可以增强检测和分析效率，但「without human intervention」或「without the need for human review」这类绝对表述忽略了必要的人工参与。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004176`、`v7u_N004199`、`v7u_N004562`
+
+### `v7u_N004176`
+
+- 用于：核心解析
+- 章节：Technology for KYC > How does technology help screening?
+- 页码：PDF第421页 / 书内第416页
+- 中文要点：机器学习算法通过识别可疑活动模式与异常，改进客户风险评估。
+- 英文原文：Machine learning algorithms improve customer risk assessments by identifying patterns and anomalies that may indicate suspicious activity.
+
+### `v7u_N004199`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Understanding screening system logic
+- 页码：PDF第423页 / 书内第418页
+- 中文要点：网络分析模型增强对复杂洗钱网络的检测
+- 英文原文：They enhance the detection of complex money laundering schemes by uncovering hidden networks of individuals or entities that might be involved in illicit activities.
+
+### `v7u_N004562`
+
+- 用于：核心解析、选项E
+- 章节：Transaction monitoring scenario calibration testing > Network analysis solutions for transaction monitoring
+- 页码：PDF第461页 / 书内第456页
+- 中文要点：高级机器学习算法检测与洗钱和制裁规避相关的交易模式，并标记高风险活动
+- 英文原文：Advanced machine learning algorithms, which help detect transaction patterns associated with money laundering and sanctions evasion, flagging high-risk activities for further investigation.
+
+### `v7u_N004506`
+
+- 用于：核心解析
+- 章节：Transaction monitoring scenario calibration testing > Governance for transaction monitoring
+- 页码：PDF第454页 / 书内第449页
+- 中文要点：治理委员会对检测复杂洗钱模式（如离析阶段和拆分）尤为重要
+- 英文原文：This is particularly important when detecting complex money laundering patterns, such as layering and structuring.
+
+### `v7u_N003850`
+
+- 用于：选项A、易错提醒
+- 章节：Understanding AFC technology > Artificial intelligence and machine learning
+- 页码：PDF第390页 / 书内第385页
+- 中文要点：利用自然语言处理自动化可疑活动报告（SAR）叙述可减少合规报告人工工作量
+- 英文原文：By using natural language processing to automate SAR narratives, organizations can reduce manual effort in compliance reporting. This allows the human in the loop to review and confirm results rather than spend time collecting data items from disparate systems. It also supports historical analysis and appraisal of unstructured data, enabling a review process that validates and sense-checks system outputs.
+
+### `v7u_N004504`
+
+- 用于：选项D
+- 章节：Transaction monitoring scenario calibration testing > Governance for transaction monitoring
+- 页码：PDF第454页 / 书内第449页
+- 中文要点：AI和机器学习驱动的反洗钱模型增加了复杂性
+- 英文原文：AI- and machine learning-driven AML models add complexity.
+
+### `v7u_N004505`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第454页 / 书内第449页
+- 中文要点：组织可设立AI委员会专门监督AI在金融犯罪防控中的应用
+- 英文原文：Organizations may choose to set up AI councils that specialize in AI oversight throughout the organization, including its application for AFC. These councils ensure AI models remain explainable, unbiased, and aligned with ethical AI principles.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C、E
+- 中文参考答案：B、C、E
+
+### 中文参考解析
+
+AI和ML程序在反洗钱合规中采用基于风险的方 法,具体体现在:B项,通过高级客户风险评 估,综合客户背景与额外数据进行分析,可更精 准识别风险;C项,能查明看似无关客户间的联 系,发现复杂洗钱网络,有效打击洗钱活动;E 项,可检测交易中复杂洗钱模式,及时识别可疑 交易,降低洗钱风险.而A项自动生成可疑活动 报告仍需人工审核,D项自动调整客户风险值 也需人工干预,均不符合基于风险方法的核心要 求.
+
+- 英文参考答案：B、C、E
+
+### 英文参考解析
+
+A ctivityReports(SARs)withoutthenee dforhumanreview Advancedcustomerriskassessments thatsynthesizeclientbackgroundinfor mationwithAdditionaldata Identificationoflinksamongapparentl yunrelatedclientswhohaveestablish edcomplexNetworksformoneylaund ering Automaticallyadaptingriskthresholds forcustomerswithoutanyhumaninter D vention Detectionofcomplexmoneylaunderin gpatternsintransactions 正确答案BCE您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

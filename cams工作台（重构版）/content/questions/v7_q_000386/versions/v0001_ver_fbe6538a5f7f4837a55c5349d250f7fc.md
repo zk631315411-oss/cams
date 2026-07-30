@@ -1,0 +1,37 @@
+# v7_q_000386
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些是证券行业可能存在的洗钱迹象？（选择两项。）
+
+英文题干：Which of the following are common indicators of possible money laundering within the securities industry? (Choose two.)
+
+选项：
+
+- A. 将经纪账户当作存款账户来使用。
+  English: Using brokerage accounts like deposit accounts.
+- B. 配偶去世后将证券接收至现有经纪账户。
+  English: Receiving securities into an existing brokerage account following the death of a spouse.
+- C. 允许固定收益证券到期。
+  English: Allowing fixed income securities to mature.
+- D. 与代名人或第三方进行交易。
+  English: Engaging in transactions involving nominees or third parties.
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+识别证券经纪账户用途异化和第三方/名义人交易风险。
+## 【核心解析】
+证券业在洗钱的离析和融合阶段尤其脆弱（P104）。A项将经纪账户当作存款账户使用，说明账户偏离投资用途而被用于存放或转移资金；D项所述与代名人或第三方交易，会隐藏真实所有权并增加追踪难度，尤其涉及名义账户或壳公司时。
+## 【错误项分析】
+- **B**：配偶去世后的证券转移有正常遗产安排解释，题干没有附加异常事实。
+- **C**：固定收益证券到期属于正常投资行为，不体现账户用途异化或所有权隐藏。
+## 【易错提醒】
+判断证券业红旗时，重点看账户是否偏离投资目的、是否出现不透明的第三方或名义人（P104），而不是把所有资产转移都视为洗钱。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N000917`、`v7u_N000948`；页码：P104、P106。

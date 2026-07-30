@@ -1,0 +1,115 @@
+# v7_q_000062
+
+教材章节：未映射
+
+题型：single
+
+题干：一家银行使用网络分析工具来识别客户与犯罪实体之间的联系。该系统能够识别潜在的间接关系，但无法对这些关系进行优先级排序。合规官应采取什么措施来提高该工具的有效性？
+
+英文题干：A bank is using a network analysis tool to identify links between its customers and criminal entities. The system identifies potential indirect relationships but is unable to prioritize them. What should the compliance officer do to enhance the tool's effectiveness?
+
+选项：
+
+- A. 手动审查所有被标记的关系以确保准确无误
+  English: Manually review all flagged relationships for accuracy
+- B. 对间接关联实施风险评分算法
+  English: Implement risk-scoring algorithms for indirect connections
+- C. 整合外部数据库和社交媒体资料，以交叉核对被标记的实体
+  English: Integrate external databases and social media profiles to cross-check flagged entities
+- D. 关注客户与犯罪实体之间的直接联系
+  English: Focus on direct connections between customers and criminal entities
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+识别「网络分析工具无法优先级排序」应通过风险评分算法解决
+
+## 【核心解析】
+
+风险评级模型通过基于交易行为、客户属性和高风险司法管辖区敞口分配风险评分来增强场景有效性（P444）。题干中系统能识别客户与犯罪实体之间的间接关系，但无法「优先级排序」，即缺乏区分哪些关系风险更高、更需要关注的能力。风险评分算法（risk-scoring algorithms）正是教材中为实体链接后评估潜在匹配、对警报进行优先级排序的方法——「严重性因素有助于对警报进行优先级排序以便调查」（P444）和「实体链接后，基于风险的评分模型评估潜在匹配」（P484）与此直接对应。因此，合规官实施该算法可使系统自动对间接关系赋予风险评分，按风险高低排列，从而精准提升工具的有效性。
+
+教材原句："Risk-rating models enhance scenario effectiveness by assigning risk scores based on transaction behaviors, customer attributes, and exposure to highrisk jurisdictions."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：手动审查所有被标记关系不能解决优先级排序问题。教材指出网络分析工具可自动分析交易并发现隐藏关联而无需人工干预（P330），手动检查此类数据耗时且劳动密集（P330）。题干核心矛盾是需要区分间接关系的风险高低，风险评分算法比全面手动审查更直接地对匹配进行排序。
+- **C 错误（教材直接依据）｜题干要素不匹配**：整合外部数据库和社交媒体资料主要提供额外背景信息、交叉检验实体身份（P467/P484），有助于提高识别的准确度，并非直接对已被系统发现的间接关系进行风险排序。题干明确目标是对已识别的间接关系进行优先级排序，实施风险评分算法比补充外部数据匹配该需求更直接。
+- **D 错误（题干对照）｜题干要素不匹配**：只关注直接联系会丢失系统已经识别出的间接关系，也无法解决这些间接关系如何排序的问题。网络分析的价值正在于揭示隐藏关联（P330），因此D会缩小分析范围，而不是提升现有工具的优先级判断能力。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004440`
+
+### `v7u_N004440`
+
+- 用于：核心解析
+- 章节：Technology for payment and batch screening > Transaction monitoring scenario development
+- 页码：PDF第449页 / 书内第444页
+- 中文要点：风险评级模型通过基于交易行为、客户属性和高风险司法管辖区敞口分配风险评分来增强场景有效性。
+- 英文原文：Risk-rating models enhance scenario effectiveness by assigning risk scores based on transaction behaviors, customer attributes, and exposure to highrisk jurisdictions.
+
+### `v7u_N004439`
+
+- 用于：核心解析
+- 章节：Technology for payment and batch screening > Transaction monitoring scenario development
+- 页码：PDF第449页 / 书内第444页
+- 中文要点：严重性因素有助于对警报进行优先级排序以便调查。
+- 英文原文：These factors help prioritize alerts for investigation.
+
+### `v7u_N004902`
+
+- 用于：核心解析
+- 章节：Data as an input for solutions > Entity resolution
+- 页码：PDF第489页 / 书内第484页
+- 中文要点：实体链接后，基于风险的评分模型评估潜在匹配。
+- 英文原文：Once entities are linked, risk-based scoring models assess potential matches.
+
+### `v7u_N003259`
+
+- 用于：选项A
+- 章节：Transaction monitoring > Technology solutions for transaction monitoring
+- 页码：PDF第335页 / 书内第330页
+- 中文要点：这些工具可自动分析交易并发现客户间的隐藏关联，无需人工干预。
+- 英文原文：These tools can automatically analyze transactions and identify hidden links between customers without manual intervention.
+
+### `v7u_N003260`
+
+- 用于：选项A
+- 章节：Transaction monitoring > Technology solutions for transaction monitoring
+- 页码：PDF第335页 / 书内第330页
+- 中文要点：自动化节省了大量手动追踪和追溯相关交易的时间。
+- 英文原文：This saves a significant amount of time by eliminating the need to manually track and trace related transactions.
+
+### `v7u_N004673`
+
+- 用于：选项C
+- 章节：Data as an input for solutions > Internal versus external data
+- 页码：PDF第472页 / 书内第467页
+- 中文要点：合规系统通过结合内部和外部数据并利用网络分析管理金融犯罪风险
+- 英文原文：Compliance systems manage financial crime risk by combining internal and external data, often using network analysis.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+在反洗钱和打击资助恐怖主义的背景下,银行需 有效识别客户与犯罪实体的联系.针对系统能识 别潜在间接关系但无法优先级排序的问题,合规 官应采取措施提升工具有效性.选项B提出对间 接关联实施风险评分算法,此方法能根据风险程 度对关系排序,使合规官聚焦高风险关系,提高 效率和准确性.选项A手动审查所有关系不现实 且低效;选项C整合外部数据虽有用,但不直接 解决优先级问题;选项D关注直接联系,忽略了 间接联系的重要性.因此,B是最佳选择.易错 提醒:注意区分直接和间接联系,间接联系同样 重要.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+题目要求增强工具识别潜在间接关系并排序的能 力.选项A,人工审查所有标记关系,虽能提高 准确性,但效率低且无法解决排序问题;选项 C,整合外部数据库和社交媒体资料,可增加数 据维度,但同样未直接解决排序问题;选项D, 聚焦直接联系,忽略了间接联系的价值.选项
+
+### 答案冲突提示
+
+- 未发现答案冲突。

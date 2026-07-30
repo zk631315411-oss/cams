@@ -1,0 +1,115 @@
+# v7_q_000180
+
+教材章节：未映射
+
+题型：single
+
+题干：一家机构正在制定一套全面的反洗钱(AML)框架.以下哪项陈述最能描述反洗钱政策与程序之间的关系？
+
+英文题干：An organization is developing a comprehensive anti-money laundering (AML) framework. Which of the following statements best describes the relationship between AML policies and procedures?
+
+选项：
+
+- A. 政策是对特定流程的详细说明,程序则是总体框架.政策和程序都不是强制性的,不一定要知晓和遵守.
+  English: Policies are detailed instructions for specific processes. Procedures are an overarching framework. Neither policies nor procedures are mandatory for knowledge and adherence.
+- B. 政策是宽泛的指导方针.程序是针对具体流程的详细说明.只有程序是必须了解并遵守的.
+  English: Policies are broad guidelines. Procedures are detailed instructions for specific processes. Only procedures are mandatory for knowledge and adherence.
+- C. 政策是针对特定流程的详细说明,程序则是总体框架.政策和程序都必须了解并遵守.
+  English: Policies are detailed instructions for specific processes. Procedures are an overarching framework. Both policies and procedures are mandatory for knowledge and adherence.
+- D. 政策规定了组织的原则,并影响程序的制定.程序是针对特定流程的详细说明.
+  English: Policies set out the organization's principles and influence the development of procedures. Procedures are detailed instructions for specific processes.
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分AML政策与程序的定义及层级关系
+
+## 【核心解析】
+
+在AML框架中，政策与程序是两个不同层级的概念。政策处于上层，负责确立组织的原则、目标和监管义务——它解释法律法规，并将法律要求转化为适用于组织的具体规定（P244、P291）；程序则处于执行层，是实施政策的逐步操作指南，提供详细的分步说明，确保政策在不同业务单元和司法管辖区被一致应用（P244、P291）。题干中机构正在制定「全面的反洗钱框架」，考查的正是政策与程序的区分。选项D准确抓住了这个关系：政策规定原则并影响程序的制定（上层→下层），程序则是针对具体流程的详细说明（执行层）。这与教材对两者的定义完全吻合。
+
+教材原句："Policies interpret laws and regulations, and provide the framework while procedures are the step-by-step instructions on how to implement the policies."
+
+## 【错误项分析】
+
+- **A 错误**：选项A将政策与程序的定义完全颠倒——实则政策是框架而非详细说明，程序是详细说明而非框架（P244、P291）。同时声称两者都非强制性，这与教材要求「政策和程序应持续对所有员工开放可访问」以及持续培训包括政策与程序的规定不符（P244）。题干要求的是对两者关系的准确描述，D项的定义及层级关系更直接匹配。
+- **B 错误**：选项B前半句对政策的描述（宽泛的指导方针）接近教材定义，但对强制性的判断存在偏差——后半句称「只有程序是必须了解并遵守的」，而教材明确持续员工培训同时涵盖AML政策和程序，且政策须持续对全员可访问（P244），二者在了解与遵守的要求上并无此等差别。D项在定义准确性上更优。
+- **C 错误**：选项C同样将政策与程序的定义颠倒——教材反复确认政策是框架/原则的载体，程序才是逐步的详细说明（P244、P291）。虽然「都必须了解并遵守」这一表述的方向正确，但定义层面的根本错误使其匹配度远低于D项。
+
+## 【易错提醒】
+
+政策在上层，规定原则和框架；程序在执行层，提供具体步骤和操作指南（P244、P291）。可以将二者分别理解为组织的「宪法」与「操作手册」。选项A和C都颠倒了两者的层级和功能。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002392`
+
+### `v7u_N002392`
+
+- 用于：核心解析、选项A、选项B、选项C、易错提醒
+- 章节：Introduction > AFC program components
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：政策解释法律法规并提供框架，程序是实施政策的逐步说明。
+- 英文原文：Policies interpret laws and regulations, and provide the framework while procedures are the step-by-step instructions on how to implement the policies.
+
+### `v7u_N002897`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第296页 / 书内第291页
+- 中文要点：政策确立金融犯罪防控合规的原则、目标和监管义务，将法律法规转化为业务承诺
+- 英文原文：Policies establish the principles, objectives, and regulatory obligations for AFC compliance. They translate legal and regulatory requirements into business-specific commitments.
+
+### `v7u_N002892`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Need for AFC policies and procedures
+- 页码：PDF第296页 / 书内第291页
+- 中文要点：程序是实施政策的逐步操作指南
+- 英文原文：Procedures are the step-bystep instructions on how to implement policies.
+
+### `v7u_N002399`
+
+- 用于：选项A、选项B
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：持续的员工培训包括反洗钱政策、程序和风险意识的定期培训。
+- 英文原文：Ongoing employee training: Regular training on AML policies, procedures, and risk awareness.
+
+### `v7u_N002898`
+
+- 用于：选项A、选项C
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第296页 / 书内第291页
+- 中文要点：程序提供详细的分步实施指南，确保政策在不同业务单元和司法管辖区一致应用
+- 英文原文：Procedures provide detailed, step-by-step implementation guidance to ensure policies are applied consistently across different business units and jurisdictions. Separate procedures are often written for a policy to tailor its execution to various business units and jurisdictions.
+
+### `v7u_N002403`
+
+- 用于：选项B
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：有效反洗钱计划的第一大支柱是确保持续合规的内部政策与控制系统。
+- 英文原文：The first pillar of an effective AML program is a system of internal policies and controls that ensure ongoing compliance with AML regulations.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+反洗钱政策是组织原则的体现,为程序制定提供 框架和方向,影响程序制定;程序则是针对特定 流程的详细说明,是政策的具体落实.选项A中 说政策和程序都不是强制性的,不准确,反洗钱 政策和程序都需了解并遵守.选项B说只有程序 必须了解并遵守,忽略了政策的重要性.选项C 对政策和程序的描述颠倒,政策是总体框架,程 序是详细说明.选项D准确描述了政策与程序的 关系,即政策规定组织原则并影响程序制定,程 序是针对特定流程的详细说明.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+政策规定组织的基本原则和合规目标,指导程序
+
+### 答案冲突提示
+
+- 未发现答案冲突。

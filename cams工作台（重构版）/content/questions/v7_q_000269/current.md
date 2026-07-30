@@ -1,0 +1,138 @@
+# v7_q_000269
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]一家国际银行正在调查其一家代理行提出的一笔付款请求,该请求在自动交易监控系统中触发了警报.这笔付款的发起方是一家位于香港的公司,最终收款人是一位位于纽约的个人.银行应首先采取哪些步骤来处理该警报？(选择三项.)
+
+英文题干：An international bank is investigating a payment requested by one of its correspondent relationships that generated an alert in the automated transaction monitoring system. The payment originated from a corporation located in Hong Kong and the final beneficiary is an individual located in New York. Which steps should the bank take first to address the alert? (Select three.)
+
+选项：
+
+- A. 向该公司在香港的银行发出314(b)请求
+  English: Send a 314(b) request to the corporation's bank in Hong Kong.
+- B. 与收款人联系以核实身份证明文件
+  English: Call the receiving individual to review identity verification documents.
+- C. 确认收款人和发起人均非受制裁方
+  English: Confirm that neither the beneficiary nor the originator are sanctioned parties.
+- D. 要求提供相关证明文件,包括发票和合同,以确认付款用途
+  English: Request relevant supporting documentation, including invoices and contracts, to confirm the purpose of the payment.
+- E. 通过公开来源核查汇款人和收款人的负面媒体信息
+  English: Check adverse media on the sender and recipient through public sources.
+
+## 【AI答案】
+
+C、D、E
+
+## 【考点】
+
+电汇警报调查的优先步骤：制裁筛查、负面媒体审查、交易文件核实
+
+## 【核心解析】
+
+教材将一级警报审查定义为核验警报有效性的初始阶段；若进入调查，应评估资金来源和去向、收集额外记录，并开展包括新闻和公共记录在内的开源研究（P334）。据此，银行首先应确认发起人和收款人均非受制裁方（C）（P78、P343），要求发票、合同等支持文件核实付款用途（D）（P334），并通过公开来源检查双方负面媒体（E）（P322、P334）。这三项都属于先利用内部资料、交易文件和外部公开信息验证警报的动作。
+
+## 【错误项分析】
+
+- **A 错误**：314(b)属于机构间信息共享机制，不是处理每一笔警报时当然优先于内部资料、支持文件和公开信息审查的第一步；且题干未说明香港银行属于可适用该机制的参与机构。
+- **B 错误**：题干关注的是付款警报，不是收款人的开户身份核验。直接联系收款人复核身份证件不能优先解释付款目的和交易背景。
+
+## 【易错提醒】
+
+题目问“首先”采取的步骤，应优先选择能直接验证交易主体、目的和风险背景的内部或非接触式调查措施（P322、P334、P343），而不是立即联系收款人或启动跨机构信息共享。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000688`
+
+### `v7u_N000688`
+
+- 用于：核心解析、易错提醒
+- 章节：Corporate and investment banking risks > Wire transfer risks
+- 页码：PDF第83页 / 书内第78页
+- 中文要点：受制裁个人或实体是电汇风险的红旗信号
+- 英文原文：Sanctioned individuals or entities
+
+### `v7u_N003190`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第327页 / 书内第322页
+- 中文要点：负面媒体检查（不良新闻筛查）用于识别与金融犯罪风险相关的公开信息
+- 英文原文：Adverse media checks—also known as negative news screening— identify publicly available information linking individuals or entities to financial crime risks.
+
+### `v7u_N003105`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：负面媒体：客户与负面报道、法律诉讼、监管罚款或金融犯罪调查相关
+- 英文原文：Adverse media: Customers linked to adverse media reports, undergoing legal proceedings, regulatory fines, or financial crime investigations
+
+### `v7u_N000448`
+
+- 用于：易错提醒
+- 章节：Money Laundering Risks in Financial Services > Shell and shelf companies risks
+- 页码：PDF第61页 / 书内第56页
+- 中文要点：使用虚假合同和发票等伪造文件为交易提供合法性
+- 英文原文：The use of false documentation, including fake contracts and invoices, provided legitimacy to the transactions.
+
+### `v7u_N003302`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第339页 / 书内第334页
+- 中文要点：二级审查对警报和初始审查数据进行详细分析，以判断异常行为是否可能指向金融犯罪。
+- 英文原文：During the Level 2 review, or investigation stage, analysts perform a detailed analysis of the alert and data from the initial review to establish whether the unusual behavior could indicate a financial crime. This stage typically includes:
+
+### `v7u_N003304`
+
+- 用于：核心解析、选项D
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第339页 / 书内第334页
+- 中文要点：调查应评估资金来源和去向。
+- 英文原文：Assessing the source and destination of funds.
+
+### `v7u_N003306`
+
+- 用于：核心解析、选项D
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第339页 / 书内第334页
+- 中文要点：调查阶段应收集额外记录，包括客户沟通和既往调查信息。
+- 英文原文：Gathering additional records, such as communication logs between the customer and institution, and any prior investigations related to the customer or account.
+
+### `v7u_N003307`
+
+- 用于：核心解析、选项E、易错提醒
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第339页 / 书内第334页
+- 中文要点：调查应开展开源研究，包括社交媒体、新闻、公共记录及监管和执法信息。
+- 英文原文：Conducting open-source research to include social media, news articles, public records and notices, alerts, or guidance issued by law enforcement and regulatory agencies, to inform their opinion on the escalated activity.
+
+### `v7u_N003406`
+
+- 用于：核心解析、选项C
+- 章节：Transaction monitoring > Analysis of information
+- 页码：PDF第348页 / 书内第343页
+- 中文要点：将现金流发现与公共记录或制裁名单等外部信息结合进行背景验证。
+- 英文原文：Integration with external information: Combine cash flow findings with external data, such as public records or sanctions lists, for context and validation.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+原题库未提供中文参考解析；本文件按交易监控调查阶段的教材证据补充了C、D、E的判断链。
+
+- 英文参考答案：C、D、E
+
+### 英文参考解析
+
+原题库未提供英文参考解析；本文件按教材证据补充了C、D、E的判断链。
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,D，英文=C,D,E

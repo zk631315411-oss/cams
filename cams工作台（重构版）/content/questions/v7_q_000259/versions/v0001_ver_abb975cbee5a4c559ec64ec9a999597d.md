@@ -1,0 +1,90 @@
+# v7_q_000259
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱/打击资助恐怖主义合规计划]技术有可能通过以下两种方式提高反洗钱/打击资助恐怖主义工作流程的效率和效果:(选择两项.)
+
+英文题干：Technology has the potential to increase the efficiency and effectiveness of AML/CFT workflows by: (Select Two.)
+
+选项：
+
+- A. 通过处理大量数据的能力消除积压工作
+  English: Eliminating backlogs through the ability to process large volumes of data.
+- B. 通过减少人为干预来最小化隐私担忧
+  English: Minimizing privacy concerns through minimized human intervention.
+- C. 减少重复性任务中的人工干预,提高数据准确性
+  English: Minimizing human intervention in repetitive tasks, increasing data accuracy.
+- D. 允许分析师在前端进行自动一站式搜索
+  English: Allowing analysts to conduct automatic one-stop searches at the front end.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+识别技术提升反洗钱效率与效果的两类核心路径
+
+## 【核心解析】
+
+题干考察技术如何同时提高反洗钱工作流程的效率和效果。自动化系统能够即时检查海量数据，由此可显著减少人工处理能力造成的积压，对应选项A（P330）；但A中的「消除」不应理解为保证任何情况下都不存在积压。对于重复任务，教材主张由技术自动化，同时保留专家对最终决策的监督；这种平衡方法可确保准确性、合规性和有效风险缓释，直接对应选项C所说的减少重复任务中的人工干预并提高数据准确性（P452）。
+
+教材原句："These automated systems can check vast amounts of data instantly."（P330）
+
+## 【错误项分析】
+
+- **B 错误**：教材强调组织应负责任地使用AI、尊重数据隐私（P388），但未提出「减少人为干预」能够「最小化隐私担忧」；相反，自动处理大量数据反而可能引发新的隐私与数据保护问题，因此该逻辑链不如A和C直接匹配教材对技术效益的界定。
+- **D 错误**：「前端自动一站式搜索」可能提升特定检索环节的效率，但它不是提高整个AML/CFT工作流效率和效果的通用机制；相比之下，A、C分别直接对应海量数据处理和重复任务自动化。
+
+## 【易错提醒】
+
+减少人工干预只有在「重复任务」这一限定下才与教材一致，同时仍要保留专家对最终决策的监督（P452）；不能把减少人工参与泛化为自动解决隐私问题或完全自动调查。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003261`
+
+### `v7u_N003261`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Technology solutions for transaction monitoring
+- 页码：PDF第335页 / 书内第330页
+- 中文要点：自动化系统可即时检查海量数据。
+- 英文原文：These automated systems can check vast amounts of data instantly.
+
+### `v7u_N004520`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Technology to assist investigation
+- 页码：PDF第457页 / 书内第452页
+- 中文要点：平衡方法是用技术自动化重复任务，同时保留专家对最终决策的监督，以确保准确性、合规性和有效风险缓释。
+- 英文原文：A balanced approach, using technology to automate repetitive tasks while maintaining expert oversight for final decisions, ensures accuracy, compliance, and effective risk mitigation.
+
+### `v7u_N003898`
+
+- 用于：易错提醒
+- 章节：Understanding AFC technology > Regulatory requirements for technology
+- 页码：PDF第393页 / 书内第388页
+- 中文要点：组织应负责任且合乎道德地使用AI，增强人类能力，尊重用户权利和数据隐私，优先考虑透明度和问责制。
+- 英文原文：Also, organizations should use AI responsibly and ethically, focusing on augmenting human capabilities, respecting user rights and data privacy, and prioritizing transparency and accountability in AI systems.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+260 多选 裁监管制 试题详解 两项. 限 过处理大量数据的能力消除积压工作 恐 A 先钱/打击资助恐怖主义工作流程的效率 没 正确.同时,技术可减少重复性任务中 预,提高数据准确性,增强反洗钱/打击 市主义工作流程的效果,故选项C正确. 在制训 中减少人为干预与最小化隐私担忧无直 选项D中允许分析师在前端进行自动一,虽能提高效率,但并非技术提高反洗 C 对 资助恐怖主义工作流程效率和效果的最直 政 因此,正确答案为AC. 【深度解心],联现源进思考过程 正确答案
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+中 -[AML/CFTCompliancePrograms]Tech 多选 nologyhasthepotentialtoincreasetheefficienc yandeffectivenessofAML/CFTworkflowsby: (SelectTwo.) Eliminatingbacklogsthroughtheabilit y.toprocesslargevolumesofdata Minimizingprivacyconcernsthrough B minimizedhumanintervention Minimizinghumaninterventioninrepet itivetasks,increasingdataaccuracy Allowingforautomaticone-stopsearch D esatthefrontendbyanalysts 正确答案AC您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

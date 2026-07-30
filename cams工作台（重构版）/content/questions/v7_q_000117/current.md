@@ -1,0 +1,123 @@
+# v7_q_000117
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项是表明可能通过贵金属或高价值物品经销商进行洗钱或恐怖融资的危险信号？
+
+英文题干：Which of the following is a red flag indicating potential money laundering or terrorism financing through dealers of precious metals or high-value items?
+
+选项：
+
+- A. 一位客户想用现金和加密货币的组合来购买金条
+  English: A customer wants to purchase gold bars with a combination of cash and cryptocurrency
+- B. 一位顾客明确要求购买经过金伯利进程认证的切割钻石
+  English: A customer specifically requests to purchase a Kimberley Process-certified cut diamond
+- C. 一位顾客使用信用卡向古董商购买一件高价值古董
+  English: A customer pays an antique dealer with a credit card for a high-value antique item
+- D. 一位顾客通过本人名下银行账户转账购买一款高端限量版豪华手表，并要求开具正式发票
+  English: A customer pays by bank transfer from their own account for a high-end, limited-edition luxury watch and requests a formal invoice
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别复杂支付方式与高价值商品相结合形成的洗钱风险链条
+
+## 【核心解析】
+
+选项A集中体现了教材所描述的多项洗钱风险因素。教材指出，应关注偏离预期交易模式或使用复杂支付结构的交易（P307）；加密资产虽然记录在区块链上，但其所有权可能难以识别和追踪（P111）。同时，犯罪分子可能使用非法资金购买、转售或走私高价值商品以规避审查，黄金被明确列为可以匿名转移价值的高价值商品（P18）。贵金属和宝石经销商也因商品便携、易变现和易跨境而面临较高风险，犯罪分子可能通过高价值购买和转售掩盖非法资金（P119）。因此，以现金和加密货币混合购买金条，会将较复杂的支付结构与便携、易变现且易转售的高价值资产结合起来，增加资金归属核实和价值流向追踪的难度，构成值得进一步核查的红旗信号。红旗并不等于已经证明洗钱，而是意味着经销商应进一步核实客户身份、资金来源和交易目的。
+
+教材原句："Criminals use high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜缺少可疑特征**：客户要求购买经金伯利进程认证的钻石，本身没有表现出匿名交易、复杂支付、来源异常或规避审查等可疑特征。认证不能当然证明整个交易不存在洗钱风险，但「要求认证」本身不构成本题所问的红旗信号。
+- **C 错误（题干对照）｜风险特征较弱**：教材指出，信用卡可用于洗钱的离析和融合阶段，使用信用卡购买高价值或奢侈品时仍需保持警惕（P69）。因此C并非完全没有风险。不过，题干只描述了一次信用卡购买，没有出现超额还款、快速还款、第三方付款或其他异常交易模式。相比之下，A同时叠加了混合支付、加密资产和可以匿名转移价值的黄金，红旗特征更集中。
+- **D 错误（教材条件对照）｜缺少可疑特征**：豪华手表属于高价值资产，交易中仍应做适当尽调；但D使用本人账户银行转账并要求正式发票，未出现现金来源不明、证明文件不足、匿名支付或复杂支付结构等红旗要素（P128）。与A相比，D更像正常留痕交易。
+
+## 【易错提醒】
+
+判断红旗不能只看到「贵金属」「加密货币」或「豪华手表」等单个关键词，而应观察完整交易链条。A的关键在于混合支付结构与金条这种便携、易转售的高价值商品相结合，使资金归属核实和价值追踪更加复杂。D虽涉及高价值商品，但银行转账和正式发票会留下较清晰的交易记录，不如A体现红旗特征。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000045`
+
+### `v7u_N000044`
+
+- 用于：核心解析
+- 章节：Money Laundering and Financial Crime > Commodity-based money laundering
+- 页码：PDF第23页 / 书内第18页
+- 中文要点：高价值商品可能被用非法资金购买，随后转售或走私以规避审查。
+- 英文原文：These assets are bought with illicit funds, resold, or smuggled to avoid scrutiny.
+
+### `v7u_N000045`
+
+- 用于：核心解析、易错提醒
+- 章节：Money Laundering and Financial Crime > Commodity-based money laundering
+- 页码：PDF第23页 / 书内第18页
+- 中文要点：犯罪分子使用黄金、钻石、豪华手表和艺术品等高价值商品匿名转移价值。
+- 英文原文：Criminals use high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously.
+
+### `v7u_N001000`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Cryptoasset risks
+- 页码：PDF第116页 / 书内第111页
+- 中文要点：加密资产所有权可能难以追踪，隐私币还会进一步增加交易归属识别难度。
+- 英文原文：For instance, despite the inherent transparency of blockchain technology, tracing ownership can be challenging, making it attractive to criminals looking to engage in illicit activities with minimal traceability. Some privacy coins utilize nonpublic blockchains to facilitate anonymous fund transfers, further complicating efforts to attribute transactions and heightening the risk of illicit activity.
+
+### `v7u_N001065`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：贵金属和宝石经销商因商品便携、易变现和易跨境而面临较高风险，犯罪分子可能通过高价值购买和转售掩盖非法资金。
+- 英文原文：Dealers in precious metals and stones: These dealers are at risk due to the portability of valuable goods that can be easily converted into cash or moved across borders. Criminals might exploit this sector to conceal illicit funds through high-value purchases and resales, often without triggering scrutiny or regulatory oversight. This is one of the higher-risk DNFPB types due to the high-value assets and high-volume and cross-border transactions.
+
+### `v7u_N003046`
+
+- 用于：核心解析、易错提醒
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：交易行为风险评估应识别偏离预期模式、异常大额跨境交易或复杂支付结构。
+- 英文原文：Transactional behavior: Identify deviations from expected transaction patterns, unexplained high-volume cross-border transactions, or the use of complex payment structures.
+
+### `v7u_N000567`
+
+- 用于：选项C
+- 章节：Money laundering risks associated with retail and commercial banking > Card risks
+- 页码：PDF第74页 / 书内第69页
+- 中文要点：信用卡洗钱风险虽低于预付卡，但超额还款、快速还款及购买高价值或奢侈品等情形仍需警惕。
+- 英文原文：While credit cards are less prone to money laundering risks when compared to prepaid cards, they still require vigilance due to their ability to be overpaid, paid down quickly, or use with purchasing of high-value or luxury goods.
+
+### `v7u_N001141`
+
+- 用于：选项D反向对照、易错提醒
+- 章节：High-risk business sectors > High-value asset risks
+- 页码：PDF第133页 / 书内第128页
+- 中文要点：大额现金购买在缺乏明确资金来源或证明文件不足时构成红旗信号。
+- 英文原文：Large cash purchases without a clear source of funds or with insufficient supporting documents
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+在贵金属或高价值物品交易中,潜在洗钱或恐怖主义融资常涉及高价值商品、现金、复杂支付结构或资金来源难以追踪等因素。A同时包含现金、加密货币和金条，风险要素最集中；B的认证钻石、C的信用卡支付和D的本人账户转账并开具正式发票，均未体现同等程度的可疑交易结构。
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+Option A combines cash, cryptocurrency, and gold bars, creating the clearest red flag among the options because the payment structure and high-value commodity make source-of-funds and value tracing more difficult.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,107 @@
+# v7_q_000076
+
+教材章节：未映射
+
+题型：single
+
+题干：为何预防金融犯罪如此重要？
+
+英文题干：Why is the prevention of financial crime so important?
+
+选项：
+
+- A. 金融犯罪对社会造成巨大危害,破坏市场诚信,损害消费者和市场参与者的信心
+  English: Financial crime does enormous damage to society, undermining market integrity and consumers' and market participants' confidence
+- B. 金融犯罪风险事件总是会给金融机构带来罚款和损失
+  English: Financial crime risk incidents always result in fines and losses for the financial firm
+- C. 防范金融犯罪的流程让客户的开户流程变得不必要地繁琐复杂,但却徒增了工作量
+  English: Financial crime prevention processes make the client onboarding process unnecessarily burdensome and complex and only create additional work
+- D. 防范金融犯罪很重要,因为它能降低成本并提升客户服务质量.
+  English: Financial crime prevention is important because it reduces costs and improves customer services
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+金融犯罪的社会及市场危害范围
+
+## 【核心解析】
+
+金融犯罪的核心特征在于其对经济和市场诚信的破坏。教材将金融犯罪定义为利用金融系统谋取个人或组织利益的非法活动，这些活动通常「破坏经济和市场的诚信」（undermining the integrity of economies and markets）P16。进一步地，金融犯罪的后果被描述为「具有深远的社会和经济后果，破坏制度、侵蚀公众信任」（P42）。题干问的是预防金融犯罪「为什么」重要，最根本的原因正是它造成的巨大社会危害——选项A中的「对社会造成巨大危害」「破坏市场诚信」「损害信心」，直接对应了教材对金融犯罪后果的全面描述。相比之下，其他选项只是从金融机构的商业得失或操作便捷性角度出发，范围更窄，没有触及金融犯罪预防最核心的社会公共利益考量。
+
+教材原句："Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜范围或程度偏差**：教材指出金融犯罪风险是「多方面的，远超直接经济损失」（P46），其后果包括声誉损害、市场份额损失甚至破产，但不一定每次事件都导致罚款和直接损失。题干更支持A项所概括的社会危害广度，而非B项中「总是」这一绝对化的商业损失描述。
+- **C 错误（教材直接依据）｜概念混淆**：教材明确指出，反金融犯罪技术「旨在提高效率、预防金融犯罪并改善客户体验」（P404），与C项声称的「不必要地繁琐复杂」相反。预防金融犯罪的重要理由在于其避免的危害，而非讨论操作流程是否繁琐。
+- **D 错误（题干对照）｜概念混淆**：金融犯罪的「严重后果」（P16）才是预防的根本原因，D项将「降低成本」和「提升客户服务」作为预防重要性的理由，颠倒了主次。教材指出成本降低是使用技术防范犯罪的「附带效果」（P408），而非预防犯罪本身重要的原因。
+
+## 【易错提醒】
+
+注意区分「金融犯罪本身的危害」与「金融机构面临的商业风险」。前者是社会层面的破坏（市场诚信、公众信任），是预防重要性的根本理由；后者是金融机构个体的罚款、成本或效率问题，是后果的一部分而非全部。选项B和D都偏向后者，范围更窄，不如A项直指问题核心。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000309`
+
+### `v7u_N000013`
+
+- 用于：核心解析、易错提醒
+- 章节：Money Laundering and Financial Crime > What is financial crime?
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：金融犯罪的定义：利用金融系统谋取个人或组织利益的非法活动
+- 英文原文：Financial crime encompasses a variety of illegal activities that exploit financial systems for personal or organizational gain, often undermining the integrity of economies and markets.
+
+### `v7u_N000309`
+
+- 用于：核心解析、易错提醒
+- 章节：Consequences of financial crime > Consequences of financial crime
+- 页码：PDF第47页 / 书内第42页
+- 中文要点：金融犯罪具有深远的社会和经济后果，破坏制度、侵蚀公众信任。
+- 英文原文：Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm.
+
+### `v7u_N000015`
+
+- 用于：核心解析
+- 章节：Money Laundering and Financial Crime > What is financial crime?
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：金融犯罪后果严重，需加强监管和合规以保护金融体系
+- 英文原文：These crimes have serious repercussions, emphasizing the need for robust regulatory measures and compliance efforts to protect financial systems and promote transparency.
+
+### `v7u_N004037`
+
+- 用于：选项C
+- 章节：Technology for KYC > How does technology help KYC?
+- 页码：PDF第409页 / 书内第404页
+- 中文要点：技术旨在提高效率、预防金融犯罪并改善客户体验
+- 英文原文：Technology improves process efficiency in several ways, but the ultimate goal is to prevent financial crime while enhancing the overall customer experience by reducing the time required to open an account.
+
+### `v7u_N004169`
+
+- 用于：选项C
+- 章节：Technology for KYC > How does technology help screening?
+- 页码：PDF第421页 / 书内第416页
+- 中文要点：技术显著提升金融犯罪预防与检测的效率和准确性，尤其在客户准入环节。
+- 英文原文：Technology has had a profound impact on financial crime prevention and detection by significantly enhancing the efficiency and accuracy of screening processes, particularly at customer onboarding.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+金融犯罪对社会危害巨大,不仅破坏市场诚信体 系,还会严重损害消费者和市场参与者的信心, 导致资金流失、经济动荡甚至社会不稳定.选项 B仅关注金融机构的罚款和损失,未全面体现社 会影响;选项C提到开户流程繁琐性,与预防金 融犯罪的重要性无直接关联;选项D强调降低成 本和提升服务质量,并非预防金融犯罪的核心目 的.因此,选项A最全面准确地阐述了预防金融 犯罪的重要性. 来
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+选项A正确,因为金融犯罪对社会危害极大,破 坏市场诚信,削弱消费者和市场参与者的信心, 影响经济稳定与可持续发展.选项B中“总是”过于 绝对,风险事件不必然导致罚款和损失.选项C 错误,预防过程虽增加客户准入复杂度,但旨在 保护而非制造负担.选项D表述片面,预防虽可 能降低成本,但核心价值在于维护金融安全和社 会稳定,而非单纯改善服务.因此,选项A最全 面准确.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

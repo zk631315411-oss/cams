@@ -1,0 +1,91 @@
+# v7_q_000198
+
+教材章节：未映射
+
+题型：single
+
+题干：一家银行注意到由于缺乏标准化的支付消息格式,区块链交易的标记存在不一致的情况.在交易筛查工具中,应优先考虑哪项功能来解决此问题？
+
+英文题干：A bank notices inconsistent tagging of blockchain transactions due to the lack of standardized payment message formats. Which functionality should be prioritized in the transaction screening tool to address this issue?
+
+选项：
+
+- A. 对传统支付信息加强制裁筛查
+  English: Enhanced sanctions screening of traditional payment messages
+- B. 定期人工审查与区块链相关的交易
+  English: Periodic manual review of blockchain-related transactions
+- C. 与区块链分析提供商的集成
+  English: Integration with blockchain analytics providers
+- D. 基于规则的系统仅关注已知的钱包地址
+  English: Rule-based systems that focus only on known wallet addresses
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+识别区块链交易筛查所需的专业数据与分析能力
+
+## 【核心解析】
+
+数字资产筛查需要分析钱包地址和交易历史等链上数据，并结合风险情报数据库等链下数据，以发现欺诈、洗钱和制裁规避（P434）。数字资产交易的假名性会增加所有权和身份核验难度，因此需要高级分析和区块链取证（P435）。区块链分析工具还能通过聚类显示哪些地址属于同一钱包或实体，从而加快分析（P487）。题干的障碍是区块链交易缺少标准化支付消息，导致标记不一致；在四项中，只有C能把上述链上数据、链下情报和地址关联能力接入筛查工具，以弥补传统支付字段不足。由此可推断，应优先集成区块链分析提供商。
+
+教材原句："The screening process involves analyzing blockchain addresses and transaction histories—or on-chain data—and using risk intelligence databases—or off-chain data—to detect illicit activities such as fraud, money laundering, and sanctions evasion."
+
+## 【错误项分析】
+
+- **A 错误**：A加强的是传统支付消息筛查，而题干缺失的恰恰是区块链交易中的标准化支付消息。数字资产筛查需要链上地址、交易历史和链下风险情报（P434），因此A没有补上题干所缺的数据类型。
+- **B 错误**：人工复核可以辅助判断，但题干问应优先配置的筛查工具功能。教材指出该类复杂性需要高级分析和区块链取证（P435）；定期人工审查没有给工具增加地址关联或风险情报能力，匹配度低于C。
+- **D 错误**：D把范围限定为已知钱包地址，而区块链分析工具可将多个地址聚类到同一钱包并显示实体关联（P487）。只查已知地址无法覆盖这种扩展分析能力，也不能充分弥补标准支付字段缺失。
+
+## 【易错提醒】
+
+不要把「缺少标准化支付消息」直接等同于「多个地址一定属于同一钱包」。本题的判断路径是：传统字段不足，需要专门的链上数据、链下风险情报和地址关联能力（P434-P435）；聚类是区块链分析工具提供的一项能力（P487），但不是题干所述不一致的唯一可能原因。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004356`
+
+### `v7u_N004356`
+
+- 用于：核心解析、选项A
+- 章节：Technology for payment and batch screening > Types of ongoing screening
+- 页码：PDF第439页 / 书内第434页
+- 中文要点：数字资产筛查结合链上地址和交易历史与链下风险情报数据库。
+- 英文原文：The screening process involves analyzing blockchain addresses and transaction histories—or on-chain data—and using risk intelligence databases—or off-chain data—to detect illicit activities such as fraud, money laundering, and sanctions evasion.
+
+### `v7u_N004939`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Data as an input for solutions > Clustering
+- 页码：PDF第492页 / 书内第487页
+- 中文要点：区块链分析工具可视化软件中的聚类功能将地址归入同一钱包以加速分析
+- 英文原文：Most blockchain analytic tools used by investigators have a clustering feature enabled in their visualization software. Instead of showing transactions made by individual addresses, the addresses will be clustered into a single wallet with multiple addresses inside that wallet. By demonstrating which addresses belong to the same entity, it speeds up the task of analyzing and comprehending the data.
+
+### `v7u_N004358`
+
+- 用于：核心解析、选项B
+- 章节：Technology for payment and batch screening > Types of ongoing screening
+- 页码：PDF第440页 / 书内第435页
+- 中文要点：这种复杂性需要高级分析和区块链取证来提高透明度和合规性。
+- 英文原文：This complexity requires advanced analytics and blockchain forensics to improve transparency and compliance efforts.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+题干指出银行面临区块链交易标记不一致问题, 源于缺乏标准化支付消息格式.选项A加强传统 支付信息制裁筛查,与区块链交易问题不相关; 选项B定期人工审查与区块链相关交易,效率低 且不能解决标记不一致问题;选项C与区块链分 析提供商集成,可利用其专业技术和标准化方 法,解决支付消息格式不一致问题,确保交易准 确标记和筛查;选项D基于规则的系统仅关注已 知钱包地址,不能解决标记不一致问题.所以应 选C.易错点为不清楚各选项功能与解决区块链 交易标记不一致问题的关联性.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+题目聚焦制裁合规与筛查,银行因区块链交易缺 乏标准化支付信息格式,导致筛查不致.选项 A针对传统支付信息,无法解决区块链交易问
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,91 @@
+# v7_q_000174
+
+教材章节：未映射
+
+题型：single
+
+题干：在了解您的客户/客户尽职调查(KYC/CDD)过程中,识别政治公众人物(PEP)的任何"家庭成员"或"密切关系人"至关重要,因为他们可能是:
+
+英文题干：It is essential to identify any 'family members' or 'close associates' of politically exposed persons (PEPs) as part of the KYC/CDD process because they could be:
+
+选项：
+
+- A. 为自身企业执行与该政治公众人物财富状况不相称的跨境交易。
+  English: executing cross-border transactions for their own business that are not commensurate with the PEP's wealth.
+- B. 能够提供更多关于该政治公众人物行踪和隐匿财产的信息.
+  English: in a position to provide more information about the PEP's whereabouts and concealed assets.
+- C. 经常前往离岸司法管辖区度假,这使他们面临更高的反洗钱风险.
+  English: travelling to offshore jurisdictions often on holiday, which exposes them to higher AML risks.
+- D. 作为中间人协助贿赂或腐败行为,或为政治公众人物隐瞒非法财富.
+  English: used as intermediaries to facilitate bribery or corruption or to conceal the illicit wealth of the PEP.
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别PEP家庭成员和密切关系人的核心风险在于贿赂腐败和隐藏财富
+
+## 【核心解析】
+
+政治敏感人物（PEP）指担任显要公职的个人；教材指出，PEP及其直系亲属或密切关联人可能面临更高的贿赂和腐败风险（P137）。教材还说明，部分司法管辖区把家庭成员和密切关联人纳入PEP分类，是因为其可能间接参与金融犯罪（P320）。因此，识别这些人是为了评估其是否可能被利用参与贿赂、腐败或其他金融犯罪。D所说的「作为中间人协助贿赂或腐败、隐瞒PEP非法财富」正是这种风险的具体表现，因此最符合题意。
+
+教材原句："A PEP is an individual in a prominent political function, or their immediate family or close associates, who could be at higher risk for involvement in bribery and corruption."
+
+## 【错误项分析】
+
+- **A 错误**：不相称交易可以是风险信号，但A强调的是客户自身业务交易，没有体现教材所强调的PEP关联人可能间接参与贿赂、腐败或金融犯罪这一身份风险（P137、P320）。
+- **B 错误**：能够提供PEP行踪或财产信息并不是将其纳入PEP筛查范围的合规理由；筛查关注的是其自身可能涉及的贿赂、腐败和金融犯罪风险。
+- **C 错误**：前往离岸司法管辖区可能增加地理风险，但“度假”本身不能推出金融犯罪参与；其与教材所述PEP关联人身份风险的对应关系弱于D（P137、P320）。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001257`
+
+### `v7u_N001257`
+
+- 用于：核心解析、选项A、选项C
+- 章节：Providing financial services to embassies, foreign consulates, and missions
+- 页码：PDF第142页 / 书内第137页
+- 中文要点：政治敏感人物指担任显要公职的个人及其直系亲属或密切关联人，可能面临更高的贿赂和腐败风险
+- 英文原文：A PEP is an individual in a prominent political function, or their immediate family or close associates, who could be at higher risk for involvement in bribery and corruption.
+
+### `v7u_N003179`
+
+- 用于：核心解析、选项A、选项B、选项C
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第325页 / 书内第320页
+- 中文要点：部分司法管辖区将政治敏感人物分类扩展至家庭成员和密切关联人，因其可能间接参与金融犯罪。
+- 英文原文：Note that some jurisdictions extend PEP classifications to family members and close associates because of their potential indirect involvement in financial crimes.
+
+### `v7u_N000585`
+
+- 用于：选项B
+- 章节：Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management
+- 页码：PDF第77页 / 书内第72页
+- 中文要点：政治敏感人物（政治敏感人物）或其密切关联人增加贿赂与腐败风险
+- 英文原文：Customers who are considered PEPs or have close associates who are PEPs increase the bribery and corruption risk of the business.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在反洗钱和打击资助恐怖主义的合规计划中,识 别政治公众人物(PEP)的“家庭成员”或“密切关 系人"至关重要,因为他们可能作为中间人,协助 PEP进行贿赂、腐败行为,或为PEP隐藏非法财 富.选项D准确描述了这一风险,即他们可能作 为中间人参与非法活动或协助隐藏非法财富.其 他选项A、B、C均未准确描述PEP家庭成员或密 切关系人可能涉及的非法行为或风险.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+在AML/CFT合规计划中,识别政治公众人物 (PEPs)的“家庭成员"或“亲密伙伴"至关重要, 因他们可能被利用作为中介,协助PEPs进行贿 赂、腐败活动或隐藏非法财富.选项D准确描述 了这一风险点,即他们可能被PEPs利用来掩盖 非法行为.选项A、B、C虽描述了PEPs相关人 员可能的行为,但并未直接关联到AML/CFT合规 中的核心风险,即可被利用进行非法金融活动. 因此,正确选项是D.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

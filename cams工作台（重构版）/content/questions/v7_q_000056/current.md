@@ -1,0 +1,83 @@
+# v7_q_000056
+
+教材章节：未映射
+
+题型：single
+
+题干：哪种涉及供应商的情况会给组织带来更高的反洗钱和/或制裁风险？
+
+英文题干：Which situation involving a vendor presents increased AML and/or sanctions risk to an organization?
+
+选项：
+
+- A. 供应商向位于受经济制裁地区的终端用户提供服务
+  English: The vendor provides services to end users located in an area subject to economic sanctions
+- B. 该供应商的销售代表小时候曾是来自一个受制裁司法管辖区的难民
+  English: The vendor's sales representative was a refugee from a sanctioned jurisdiction as a child
+- C. 该供应商是以私营公司形式组织的
+  English: The vendor is organized as a privately held company
+- D. 该供应商不存在拥有或控制公司10%以上权益的个人
+  English: The vendor has no individuals that own or control more than 10% of the company
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别第三方关系中的制裁相关高风险场景
+
+## 【核心解析】
+
+制裁相关风险可能产生于与受制裁或禁运地区、国家进行跨境交易时（P138），也可能源于与在受制裁国家开展经营活动的客户发生业务往来，因为这类关系具有较高的司法管辖区风险（P73）。题干考查供应商（第三方）的何种情况会升高制裁风险。选项A中，供应商的服务触达「位于受经济制裁地区的终端用户」，说明该供应商的商业活动通过客户关系间接延伸至受制裁法域。这构成了与受制裁地区的实质性业务关联，因而直接触发制裁风险。相比其他选项讨论的个人背景、组织形式或股权结构，选项A描述的是供应商的业务行为与受制裁地理区域的直接交汇，更符合制裁风险的核心定义。
+
+教材原句："Sanctions-related risks emerge when participating in cross-border transactions with regions or countries subject to sanctions or embargoes."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜题干要素不匹配**：销售代表的难民身份及其「小时候」的过往，与其当前业务行为无直接关联。制裁风险关注的是主体当下的交易对手与业务地理范围，而非雇员过去的个人经历。题干条件更支持基于实质性业务关联的风险判断。
+- **C 错误（题干对照）｜缺少风险特征**：「私营公司」这一组织形式本身不是高风险信号。判断制裁风险时，更应关注供应商的业务活动和交易对手，因此A项比C项更直接。
+- **D 错误（题干对照）｜推断链条不足**：无个人持股超10%只说明股权较为分散，不能直接推导出制裁风险升高。受益所有人的识别标准还需结合适用法规和客户风险，仅凭无人持股超10%这一事实，无法与制裁风险建立直接联系。
+
+## 【易错提醒】
+
+制裁风险聚焦于当下的业务关联与地理禁区。选项B利用「受制裁司法管辖区」字眼制造联想，但关键区别在于：接触是因业务交易还是因个人历史背景。制裁合规中，客观的业务触及远比人员的身世标签更重要。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001271`
+
+### `v7u_N001271`
+
+- 用于：核心解析、易错提醒
+- 章节：Providing financial services to embassies, foreign consulates, and missions > Drug-related businesses risks
+- 页码：PDF第143页 / 书内第138页
+- 中文要点：与受制裁地区或国家进行跨境交易会产生制裁相关风险。
+- 英文原文：Sanctions-related risks emerge when participating in cross-border transactions with regions or countries subject to sanctions or embargoes.
+
+### `v7u_N000600`
+
+- 用于：核心解析、易错提醒
+- 章节：Private banking and wealth management risks > High-risk private banking and wealth management products
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：在受制裁国家或金融犯罪高发国家经营的客户面临更高司法管辖区风险
+- 英文原文：Similarly, customers who operate out of sanctioned countries or countries with high levels of financial crime present higher jurisdiction risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+受经济制裁地区关联性高时,反洗钱和制裁风险 显著上升.选项A中供应商直接向受制裁地区终 端用户提供服务,资金流动可能涉受制裁实体 或个人,导致组织面临合规审查及法律处罚风 险.选项B仅涉及销售人员个人背景,与组织交 易无直接关联;选项C私营公司形式不直接增加 风险;选项D股权分散性不构成主要风险因素.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+在反洗钱(AML)和制裁风险管理中,与受制裁 地区有业务往来的实体通常被视为高风险.选项 A中,供应商为受经济制裁地区的终端用户提供 服务,直接涉及制裁风险,可能使组织面临法律 处罚和声誉损害.选项B中,供应商销售代表的 童年背景与当前业务风险无关;选项C中,供应 商为私营公司本身不构成风险;选项D中,无大 股东控制结构可能降低某些风险,但非制裁相关 因素.因此,选项A是唯一直接关联制裁风险的 情形.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

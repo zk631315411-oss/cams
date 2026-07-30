@@ -1,0 +1,89 @@
+# v7_q_000084
+
+教材章节：未映射
+
+题型：single
+
+题干：在以下哪种情况下，公司指定的反洗钱合规官最有必要对公司的反洗钱计划进行全面审查，包括识别风险和相应的控制措施？
+
+英文题干：In which of the following situations would it be most crucial for the designated AML compliance officer of a company to perform a complete review of the company's AML program, including identifying the risks and commensurate controls?
+
+选项：
+
+- A. 外部审计发现了一些不足之处
+  English: An external audit highlights several deficiencies
+- B. 该公司正在与另一实体合并或收购另一实体
+  English: The company is merging with or acquiring another entity
+- C. 公司所在辖区的立法机构提议制定广泛的反洗钱立法
+  English: Extensive AML legislation is proposed by a legislative body in the company's jurisdiction
+- D. 另一起涉及其他行业的重大洗钱案件被公开报道
+  English: A high-profile money laundering case involving another industry is publicized
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+识别触发反洗钱计划全面审查的关键事件类型
+
+## 【核心解析】
+
+反洗钱计划需与机构自身的风险状况相匹配。当机构的业务结构、风险敞口发生根本性变化时，原有的风险识别和控制措施可能不再适用，必须进行全面审查。合并或收购另一实体（选项B）正属于这种情况：教材指出，合并可能导致机构风险偏好发生变化，纳入更高风险的活动（P271）；并购交易本身涉及复杂的资金流动和所有权结构，洗钱风险较高（P80），且需对被收购公司进行法律与合规审查（P81）。题干中该公司正处于与另一实体合并或收购的阶段，这一事件将直接改变其客户、业务、地域等固有风险要素，因此最有必要对反洗钱计划进行全面审查，重新评估风险及相应控制。
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：外部审计发现不足之处，通常触发的是对特定缺陷的纠正或改进，而非必然引发对整个计划的「全面审查」。教材将审计（第三道防线）定位为对控制环境有效性的客观评估（P257），其发现的问题为董事会确保及时解决缺陷提供了方向（P260），但这与因机构根本性变化而驱动的全面再评估在触发原因和审查广度上存在差异。
+- **C 错误（题干对照）**：立法机构「提议」制定广泛的反洗钱立法，法案尚未生效，内容也未确定，监管要求尚未改变。相较之下，合并收购是已经发生或正在进行的、会即刻改变机构风险状况的事件，比一项未来可能变化的立法提议更需要立即启动全面审查。
+- **D 错误（题干对照）｜范围或程度偏差**：了解其他行业的洗钱案件虽有助于洞察合规计划的常见缺陷（P51），但这属于行业动态监测与经验借鉴的范畴，它为审视自身计划提供了外部参考，但其对机构自身风险状况的改变程度，不如一次正在进行的实质性的公司合并来得直接和根本。
+
+## 【易错提醒】
+
+解题的关键是区分「触发全面审查」与「触发改进/关注」的动因层级。合并收购直接、根本性地改变了机构的固有风险边界和业务模式，因此要求对反洗钱计划进行全面重估。而外部审计发现问题、立法动向、行业负面案件，通常触发的是对现有计划的局部修正、政策追加或风险关注，其影响的深度和广度不完全等同于一次全面审查。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000693`
+
+### `v7u_N000713`
+
+- 用于：核心解析
+- 章节：Corporate and investment banking risks > Mergers and acquisitions risks
+- 页码：PDF第85页 / 书内第80页
+- 中文要点：并购涉及公司或资产合并的各种交易
+- 英文原文：Mergers and acquisitions (M&A) involve various transactions for the consolidation of companies or assets.
+
+### `v7u_N000724`
+
+- 用于：核心解析
+- 章节：Corporate and investment banking risks > Mergers and acquisitions risks
+- 页码：PDF第86页 / 书内第81页
+- 中文要点：确保并购交易遵守相关法律法规，包括被收购公司的合规审查
+- 英文原文：Legal and compliance reviews to ensure adherence to relevant laws and regulations, including by the companies being subject to an acquisition.
+
+### `v7u_N002560`
+
+- 用于：选项A
+- 章节：Three lines of defense > Functions of board of directors and management oversight
+- 页码：PDF第265页 / 书内第260页
+- 中文要点：董事会为金融犯罪防控计划提供战略方向，评估新兴风险，并确保及时解决缺陷。
+- 英文原文：In addition, the board provides strategic direction for the AFC program, aligning it with the organization’s risk appetite. It assesses emerging risks and AFC control effectiveness, guiding management on any necessary adjustments. Ultimately, the board is accountable for the program's effectiveness and must ensure that any deficiencies are addressed promptly.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+当公司正在与另一实体合并或收购另一实体时, 业务结构和运营模式会发生变化,可能带来新的 洗钱和恐怖融资风险,如客户群体变化、业务范 围扩大等.此时全面审查反洗钱计划,重新识别 风险并调整控制措施,可有效应对新风险,保障 公司合规运营.选项A外部审计发现不足,只需 针对性改进;选项C立法机构提议立法,尚未实 施,无需立即全面审查;选项D其他重大洗钱案 被报道,对公司直接影响较小.故答案选B.易 错提醒:注意区分不同情况对公司反洗钱计划影 响的直接程度.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+公司合并或收购另一实体时,业务范围、客户群 体、地域分布及运营模式均会发生重大变化,带 来全新的洗钱与恐怖融资风险.此时,原AML程 序可能无法有效覆盖新风险,必须全面审查现有 程序,重新识别风险并调整控制措施,确保合并 后整体合规体系的有效性.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

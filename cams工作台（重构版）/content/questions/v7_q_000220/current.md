@@ -1,0 +1,140 @@
+# v7_q_000220
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家国际银行的总部设在西班牙马德里，在美国纽约市设有办事处。马德里办事处正在调查一笔来自纽约办事处客户的交易，并询问纽约办事处能否提供有关该个人的更多相关信息。经过进一步调查，纽约办事处发现他们在前一年已就该个人提交了一份可疑活动报告（SAR）。在分享所请求的信息之前，需要考虑哪些因素？（选择两项。）
+
+英文题干：An international bank is headquartered in Madrid, Spain, with an office in New York City (NYC), US. The Madrid office is investigating a transaction originating from a customer of the NYC office and inquires whether the NYC office can share any relevant further information on the individual. Upon further research, the NYC office finds that they have filed a suspicious activity report (SAR) on the individual in the previous year. Which factors need to be considered before sharing the requested information? (Select two.)
+
+选项：
+
+- A. 外国银行在跨境分享任何信息时，必须始终向其本国的反金融犯罪机构申请批准。
+  English: The foreign bank must always request approval by its national anti-financial crime authority to share any information cross-border.
+- B. 该银行应将此情况报告给金融犯罪执法网络（FinCEN），并在收到正式指导后才能分享相关信息。
+  English: The bank should report this to the Financial Crimes Enforcement Network (FinCEN) and receive formal guidance before sharing the information.
+- C. 银行应考虑司法管辖区的隐私要求以及自身的政策和程序，以确定要分享哪些信息。
+  English: The bank should consider jurisdictional privacy requirements and its own policies and procedures to determine what information to share.
+- D. 该信息仅应在确有必要知晓的情况下进行分享。
+  English: The information should only be shared on a need-to-know basis.
+
+## 【AI答案】
+
+C、D
+
+## 【考点】
+
+跨境内部共享客户信息时的隐私合规、权限控制与SAR保密
+
+## 【核心解析】
+
+题干请求的是有关客户的「更多相关信息」，同时提示纽约办事处曾提交SAR。判断前应区分底层客户/交易信息与SAR本身或其存在事实。教材直接指出，数据隐私法可能限制个人数据跨境传输，除非满足相应条件，金融机构必须确保跨境传输不违反适用法律（P209）。因此，马德里与纽约之间分享哪些客户信息，必须结合相关司法管辖区的隐私要求及银行内部的权限和程序判断，C成立。
+
+教材还规定，客户数据只能向确有需要知晓且具有相应许可和权限的人共享（P209）。对于SAR，限制更严格：即使在同一金融机构内部，也不是所有人员都应访问SAR信息，并应避免向未经授权方披露SAR（P352）。因此，马德里办事处是否因本次调查而具备必要知悉和授权，是共享前必须确认的事项，D成立。教材另有条文说明存在促进金融机构内部跨境共享SAR的机制（P183），但这不是无条件授权；隐私、内部权限和SAR保密要求仍需同时满足。
+
+教材原句："Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it."（P209）
+
+## 【错误项分析】
+
+- **A 错误**：金融机构内部可以存在跨境共享SAR的机制（P183），但跨境传输个人数据仍须满足适用隐私法的条件（P209）。具体审批要求取决于适用规则，不能一概表述为分享任何信息都必须先取得本国AFC机构批准。
+- **B 错误**：FinCEN负责收集、分析和传播金融交易数据，并发布法规、执行合规和监督AML计划（P184）。但内部跨境共享前的直接判断重点是隐私条件、必要知悉和授权范围，而不是每次都先向FinCEN报告并等待个案指导。
+
+## 【易错提醒】
+
+「可促进内部跨境共享」不等于「可以向集团内任何人披露」。应先判断请求对象是否有调查职责、是否确有必要知悉、是否取得相应权限，以及跨境传输是否满足两地隐私法（P209）。还要区分底层客户/交易材料与SAR本身：既有SAR的存在会提高保密要求，不能把一般客户信息共享规则理解为对SAR的无限制共享（P352）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002020`、`v7u_N002012`、`v7u_N003496`
+
+### `v7u_N002012`
+
+- 用于：核心解析、选项C、选项D、易错提醒
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：客户数据只能向确有需要知晓且具有相应许可和权限的人共享
+- 英文原文：Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it.
+
+### `v7u_N002020`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：数据隐私法可能限制个人数据跨境传输，除非满足同等保护等条件
+- 英文原文：Data privacy laws may place restrictions on the transfer of personal data outside the jurisdiction unless certain conditions are met. These conditions are intended to ensure that protections outside the jurisdiction are equivalent to those in the home jurisdiction.
+
+### `v7u_N002021`
+
+- 用于：核心解析、选项C
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：金融机构必须确保已满足合法跨境传输数据的条件
+- 英文原文：As a result, financial institutions must ensure that they have met the conditions to allow for the transfer of data without violating the laws affected if a data breach occurs.
+
+### `v7u_N001722`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：US AML/CFT regulatory landscape > The Anti-Money Laundering Act of 2020
+- 页码：PDF第188页 / 书内第183页
+- 中文要点：《反洗钱法》设有促进金融机构内部跨境共享SAR的机制
+- 英文原文：Additionally, there are provisions to facilitate cross-border sharing of SARs within financial institutions.
+
+### `v7u_N003495`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：SAR不应向金融机构及法定执法机构之外的主体共享，以免影响调查
+- 英文原文：A SAR should not be shared outside the financial institution and required law enforcement agencies, as this could compromise the investigation.
+
+### `v7u_N003496`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：即使在金融机构内部，也应谨慎处理SAR并限制访问范围
+- 英文原文：Even within a financial institution, SARs should be handled with care, as not everyone should have access to such information.
+
+### `v7u_N003498`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：常见SAR规则要求避免泄露线索或向客户及其他未经授权方披露SAR
+- 英文原文：Common regulations call for investigators to recommend a SAR upon suspicion of criminal activity, use factual information to support suspicions, and avoid "tipping off" or disclosing a SAR to the customer or other unauthorized parties.
+
+### `v7u_N001736`
+
+- 用于：选项B
+- 章节：US AML/CFT regulatory landscape > Financial Crimes Enforcement Network
+- 页码：PDF第189页 / 书内第184页
+- 中文要点：FinCEN收集、分析和传播金融交易数据，为执法、监管机构和政策制定者提供支持
+- 英文原文：The US Congress designates FinCEN as the central authority that collects, analyzes, and disseminates financial transaction data to support law enforcement, regulatory agencies, and policymakers.
+
+### `v7u_N001739`
+
+- 用于：选项B
+- 章节：US AML/CFT regulatory landscape > Financial Crimes Enforcement Network
+- 页码：PDF第189页 / 书内第184页
+- 中文要点：《银行保密法》授权FinCEN发布法规、执行合规并监督金融机构AML计划
+- 英文原文：The Bank Secrecy Act and its amendments grant FinCEN the authority to issue regulations, enforce compliance, and oversee AML programs in financial institutions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、D
+- 中文参考答案：C、D
+
+### 中文参考解析
+
+信息之前,需要考虑哪些因素？(选择两项.) A 始终向其本国的反金融犯罪机构申请批 准. 该银行应将此情况报告给金融犯罪执法 B 网络(FinCEN),并在收到正式指导 银行应考虑司法管辖区的隐私要求以及 信息. 该信息仅应在确有必要知晓的情况下进 正确答案CD您选择/ 试题详解
+
+- 英文参考答案：C、D
+
+### 英文参考解析
+
+在跨境共享反洗钱相关信息时,银行需考虑两关 键因素.选项C,因涉及不同司法管辖区,银行 需遵守当地隐私要求及自身政策,确保信息共享 合法合规.选项D,信息共享应遵循必要原则 仅共享与调查直接相关且必要的信息,避免泄露
+
+### 答案冲突提示
+
+- 未发现答案冲突。

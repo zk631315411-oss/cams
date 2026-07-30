@@ -1,0 +1,117 @@
+# v7_q_000052
+
+教材章节：未映射
+
+题型：single
+
+题干：在以下哪种情况下，金融机构可以披露可疑活动报告（SAR）？
+
+英文题干：In which of the following cases can a financial institution disclose a suspicious activity report (SAR)?
+
+选项：
+
+- A. 法院命令要求银行披露该 SAR，但须先获得法律团队的同意。
+  English: A court order requests the bank to disclose the SAR, subject to obtaining agreement from the legal team
+- B. 客户询问有关向当地金融情报机构（FIU）报告的可能性。
+  English: A customer asks about potential reporting to the local Financial Intelligence Unit (FIU)
+- C. 外部顾问询问 SAR 的详情。
+  English: An external consultant inquires about the details of the SAR
+- D. 第三国警方直接查询有关该客户的信息。
+  English: A third-country police force directly inquires about the customer
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+SAR的严格保密义务与正式法律请求的处理
+
+## 【核心解析】
+
+法规禁止金融机构向除特定执法机构外的任何人披露SAR，也不得披露足以表明已提交SAR的信息（P353）。因此，B项的客户询问和C项的外部顾问询问都不构成披露依据；D项仅说第三国警方查询客户信息，也没有说明经由适用的正式合作渠道请求披露SAR。
+
+教材另将法院命令和传票列为调取账户或交易记录的正式法律请求（P361），但这不等于法院命令必然突破SAR保密义务。在给定选项中，A项至少要求在作出任何披露前由法律团队核定适用法律和命令范围，因而相对更符合审慎处理要求。但能否披露仍取决于当地法律，不能仅凭「法院命令」得出肯定结论。
+
+教材原句："Regulations prohibit financial institutions from disclosing a SAR, or any information that would indicate a SAR was filed, to anyone except certain law enforcement agencies."
+
+## 【错误项分析】
+
+- **B 错误（教材直接依据）｜保密义务**：客户询问是否向FIU报告时，任何足以表明SAR已提交的回应都可能构成通风报信（P353）。
+- **C 错误（教材直接依据）｜披露对象不符**：外部顾问不因其顾问身份而当然成为可接收SAR的特定执法机构（P353）。
+- **D 错误（题干对照）｜正式程序缺失**：D项只描述第三国警方直接查询客户信息，没有说明该请求是否经由正式的跨境执法或司法协助渠道，也没有直接说明请求披露SAR。
+
+## 【易错提醒】
+
+法院命令或传票可以正式要求金融机构提供账户或交易记录，但这与披露SAR本身不是同一问题。面对此类请求，应由法律团队核定适用法律、请求范围和SAR保密限制，不能把法院命令自动视为SAR披露例外。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003507`
+
+### `v7u_N003507`
+
+- 用于：核心解析、选项B、选项C、选项D
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第358页 / 书内第353页
+- 中文要点：法规禁止金融机构向除执法机构外的任何人披露SAR或表明已提交SAR的信息。
+- 英文原文：Regulations prohibit financial institutions from disclosing a SAR, or any information that would indicate a SAR was filed, to anyone except certain law enforcement agencies.
+
+### `v7u_N003322`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第341页 / 书内第336页
+- 中文要点：法院命令可要求金融机构提供账户信息或交易记录
+- 英文原文：Court orders: A judge may direct the institution to release account information or transaction records related to an ongoing investigation.
+
+### `v7u_N003621`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：传票和法院命令是最正式的请求，规定记录提交的截止日期。
+- 英文原文：The most formal requests are subpoenas, or court orders, which specify deadlines by which records must be produced, unless an extension is granted.
+
+### `v7u_N003508`
+
+- 用于：选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第358页 / 书内第353页
+- 中文要点：向客户披露SAR内容构成“通风报信”的违法行为。
+- 英文原文：Disclosing the SAR or its contents to a customer would result in a prohibited offense called "tipping off."
+
+### `v7u_N003495`
+
+- 用于：选项D
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：SAR不得在金融机构和执法机构之外共享，以免影响调查。
+- 英文原文：A SAR should not be shared outside the financial institution and required law enforcement agencies, as this could compromise the investigation.
+
+### `v7u_N003325`
+
+- 用于：易错提醒
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第341页 / 书内第336页
+- 中文要点：执法机构的直接询问可促使金融机构调查可能涉及犯罪的活动
+- 英文原文：Other: Direct inquiries from law enforcement can prompt a financial institution to investigate activities possibly linked to criminal activities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+根据反洗钱和打击资助恐怖主义的相关规定,金 融机构在特定情况下可以披露可疑活动报告 (SAR).分析选项:A选项,法院命令要求银 行披露该特别行政区相关信息,虽须先获得法律 团队的同意,但本质是应司法要求披露,符合规 定;B选项,客户询问向金融情报机构报告的可 能性,金融机构不应披露;C选项,外部顾问询 问特别行政区详情,金融机构不应披露;D选 项,第三国警方直接向客户询问,金融机构不应 披露.因此,正确答案是A.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+根据反洗钱和反恐融资(AML/CFT)合规要求, 金融机构披露可疑活动报告(SAR)须严格遵循 保密规定.选项A中,法院命令要求银行披露且 需获得法律团队同意,符合法定披露程序,是唯 一合法情形.选项B、C、D分别涉及客户询问、 外部顾问咨询、第三国警方直接调查,均违反保 密原则,未获法律授权或司法程序支持.因此, 正确答案为A.易错点:误认为客户询问或警方 调查可触发披露,实则必须通过司法程序.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

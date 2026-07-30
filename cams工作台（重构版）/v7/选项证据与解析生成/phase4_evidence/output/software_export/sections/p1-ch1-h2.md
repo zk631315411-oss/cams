@@ -1,49 +1,36 @@
 # p1-ch1-h2 题库软件版解析预览
 
-可导出题目数：8
+可导出题目数：3
 
 教材章节：未映射
 
 题型：single
 
-题干：逃税是:
+题干：以下哪项是表明可能通过贵金属或高价值物品经销商进行洗钱或恐怖融资的危险信号？
 
-英文题干：Tax evasion is:
 
 选项：
 
-- A. 利用税法漏洞或对税法作非预期解释,以尽量减少纳税义务的做法
-  English: The practice of minimizing tax liability by exploiting loopholes or unintended interpretations of tax law
-- B. 作为分项扣除或标准扣除而减少应纳税所得额的规定
-  English: A provision that reduces taxable income as an itemized or standard deduction
-- C. 一门专注于合法税务规划的专业会计学科
-  English: A specialized accounting discipline focused on lawful tax planning
-- D. 通常指故意向税务机关作虚假申报或不申报从而不缴税或少缴税的行为
-  English: The non-payment or under-payment of taxes, usually by deliberately making a false declaration or no declaration to tax authorities
+- A. 一位客户想用现金和加密货币的组合来购买金条
+- B. 一位顾客明确要求购买经过金伯利进程认证的切割钻石
+- C. 一位顾客使用信用卡向古董商购买一件高价值古董
+- D. 一位顾客通过本人名下银行账户转账购买一款高端限量版豪华手表，并要求开具正式发票
 
-## 【AI答案】
+答案：A
 
-D
+解析：
 
-## 【考点】
+考点：**识别复杂支付方式与高价值商品相结合形成的洗钱风险链条**
 
-区分逃税、避税与激进避税的定义及法律后果
+核心解析：选项A集中体现了教材所描述的多项洗钱风险因素。教材指出，应关注偏离预期交易模式或使用复杂支付结构的交易（P307）；加密资产虽然记录在区块链上，但其所有权可能难以识别和追踪（P111）。同时，犯罪分子可能使用非法资金购买、转售或走私高价值商品以规避审查，黄金被明确列为可以匿名转移价值的高价值商品（P18）。贵金属和宝石经销商也因商品便携、易变现和易跨境而面临较高风险，犯罪分子可能通过高价值购买和转售掩盖非法资金（P119）。因此，**以现金和加密货币混合购买金条**，会将较复杂的支付结构与便携、易变现且易转售的高价值资产结合起来，增加资金归属核实和价值流向追踪的难度，构成值得进一步核查的红旗信号。红旗并不等于已经证明洗钱，而是意味着经销商应进一步核实客户身份、资金来源和交易目的。
 
-## 【核心解析】
+教材原句："Criminals use high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously."
 
-逃税指使用非法手段逃避纳税义务（P28），典型例子包括故意向税务机关作虚假申报或不申报（P28、P123）。题干选项D“通常指故意向税务机关作虚假申报或不申报从而不缴税或少缴税”直接吻合这一定义——“故意作虚假申报”和“不申报”都属于非法手段，与教材完全一致。
+B项错误：客户要求购买经金伯利进程认证的钻石，本身没有表现出匿名交易、复杂支付、来源异常或规避审查等可疑特征。认证不能当然证明整个交易不存在洗钱风险，但“要求认证”本身不构成本题所问的红旗信号。
+C项错误：教材指出，信用卡可用于洗钱的离析和融合阶段，使用信用卡购买高价值或奢侈品时仍需保持警惕（P69）。因此C并非完全没有风险。不过，题干只描述了一次信用卡购买，没有出现超额还款、快速还款、第三方付款或其他异常交易模式。相比之下，A同时叠加了混合支付、加密资产和可以匿名转移价值的黄金，红旗特征更集中。
+D项错误：豪华手表属于高价值资产，交易中仍应做适当尽调；但D使用本人账户银行转账并要求正式发票，未出现现金来源不明、证明文件不足、匿名支付或复杂支付结构等红旗要素（P128）。与A相比，D更像正常留痕交易。
 
-教材原句："Tax evasion is the use of illegal practices to avoid paying a tax liability."
-
-## 【错误项分析】
-
-- **A 错误（教材定义应用）｜概念混淆**：选项A描述的是避税（tax avoidance），即利用法律漏洞合法减少税负（P28）。题干问的是逃税，避税与逃税的匹配度不如选项D，因为教材明确将逃税定义为非法行为，而避税是合法活动。
-- **B 错误（题干对照）｜题干要素不匹配**：选项B描述的是税法中的扣除规定，并不是对逃税的定义。教材中未将此规定解释为逃税，题干直接要求定义逃税，该选项缺失逃税的核心要素，匹配度很低。
-- **C 错误（教材定义应用）｜概念混淆**：选项C将逃税说成是一门专注合法税务规划的学科，这与逃税概念完全相反。教材虽提及会计师可能涉及税务规划，但从未把逃税定义为一种学科，且逃税本质上是非法行为，学科描述与题干要求相差甚远。
-
-## 【易错提醒】
-
-避税（tax avoidance）是合法减少税负（P28），逃税（tax evasion）是使用非法手段逃避纳税义务（P28）。核心区分点在合法性：合法利用规则的是避税，虚假申报或不申报属非法逃税。
+易错提醒：判断红旗不能只看到“贵金属”“加密货币”或“豪华手表”等单个关键词，而应观察完整交易链条。A的关键在于混合支付结构与金条这种便携、易转售的高价值商品相结合，使资金归属核实和价值追踪更加复杂。D虽涉及高价值商品，但银行转账和正式发票会留下较清晰的交易记录，不如A体现红旗特征。
 
 ---
 
@@ -51,197 +38,29 @@ D
 
 题型：single
 
-题干：一位金融机构(FI)的客户投诉称,他们收到了多封看似来自该金融机构的电子邮件,催促他们点击链接或打开汇款附件进行确认.客户打开附件后,后来才发现自己银行账户中的资金在他们不知情的情况下被有计划地转走了.此情景中描述的是哪种类型的网络犯罪？
+题干：在房地产领域洗钱的置入阶段,可以采用哪种方法？
 
-英文题干：A customer of a financial institution (FI) complained that they had received multiple emails appearing to originate from the FI, urging them to click a link or open a remittance attachment for confirmation. After opening the attachment, the customer later realized that funds had been systematically transferred out of their bank account without their knowledge. Which type of cybercrime is described in this scenario?
-
-选项：
-
-- A. 语音钓鱼（vishing）
-  English: Vishing
-- B. 域名欺骗（pharming）
-  English: Pharming
-- C. 短信钓鱼（SMiShing）
-  English: SMiShing
-- D. 鱼叉式网络钓鱼
-  English: Spear phishing
-
-## 【AI答案】
-
-D
-
-> **本题为教材覆盖缺口，经教研手动撰写解析**
->
-> 教材P30网络犯罪章节未对phishing的四种亚型（vishing/pharming/SMiShing/spear phishing）分别定义，但描述了本题对应的行为模式。
-
-## 【考点】
-
-从题干攻击媒介（电子邮件）和攻击手法（冒充+欺诈链接+紧迫感）识别对应网络犯罪类型
-
-## 【核心解析】
-
-教材将网络犯罪的基础归结为一个词：信任（P30）。网络犯罪分子必须取得目标的信任才能成功——为此采用的手段包括冒充（impersonation）和钓鱼欺诈（phishing and spoofing）。教材进一步描述这类欺骗手法的运作方式：犯罪分子需要"说服目标点击欺诈链接""制造一种紧迫感和来源可靠性的组合"（P30）。
-
-将题干拆解对应：收到多封"看似来自该金融机构"的邮件 → 冒充（impersonation），伪造来源可靠性；"催促点击链接或打开附件" → 说服目标点击欺诈链接（fraudulent link），制造紧迫感。教材描述的行为模式与题干场景逐条吻合。
-
-进一步区分具体类型：题干明确攻击媒介为**电子邮件**（而非电话、短信或DNS劫持），并针对某金融机构的客户实施冒充，附带恶意附件导致资金被转走。在给定选项中，这种“定向冒充特定机构并诱导点击附件”的组合最符合鱼叉式网络钓鱼（Spear Phishing）。
-
-**术语辨析**：
-
-- Spear Phishing（鱼叉式钓鱼）：以电子邮件为媒介，冒充特定可信实体，向定向目标发送定制化欺诈邮件，诱导点击恶意链接或附件。
-- Vishing（语音钓鱼）：以电话或VoIP为媒介，冒充机构客服或权威人士来电，口头诱骗受害者透露敏感信息或执行转账。
-- SMiShing（短信钓鱼）：以SMS短信为媒介，发送伪装成银行、快递或政府机构的短信，含恶意链接诱导点击。
-- Pharming（域名欺骗）：以DNS/网络层为媒介，通过DNS缓存投毒或hosts篡改，将用户输入的合法网址静默重定向至假冒网站，用户全程无感知。
-
-本题通过题干的"电子邮件"媒介和"主动发送欺诈邮件+诱导打开附件"的攻击路径，排除A（电话）、B（DNS静默重定向）、C（短信），因此D在给定选项中最符合。
-
-教材原句："The foundation of all cyber-enabled crime is trust... to convince the target to click on a fraudulent link, cybercriminals must create a combination of urgency and source reliability."
-
-## 【错误项分析】
-
-- **A 错误（媒介不匹配）**：Vishing 的攻击媒介为电话或 VoIP 语音通话。题干明确攻击媒介为"电子邮件"，媒介层面直接排除。
-- **B 错误（攻击路径不匹配）**：Pharming 通过 DNS 缓存投毒或 hosts 篡改，将用户静默重定向至假冒网站——用户全程不会"收到邮件并打开附件"。攻击路径与题干不符。
-- **C 错误（媒介不匹配）**：SMiShing 的攻击媒介为 SMS 短信。题干攻击媒介为电子邮件，渠道不匹配。
-
-## 【易错提醒】
-
-四种网络钓鱼亚型的区分维度是**攻击媒介**——题干"电子邮件"一词直接排除 A（电话）和 C（短信），"收到欺诈邮件"的主动诱导路径排除 B（DNS 静默重定向）。锁定媒介后，再判断是否"定向冒充特定机构"即可确认 spear phishing。
-
----
-
-教材章节：未映射
-
-题型：single
-
-题干：逃税是:
-
-英文题干：Tax evasion is:
 
 选项：
 
-- A. 故意不缴纳应缴税款的行为.
-  English: a deliberate attempt not to pay the tax which is due or owed.
-- B. 违规操作以少缴应缴税款.
-  English: bending the rules to pay less tax than required.
-- C. 不是重要犯罪,因为它对社会没有影响.
-  English: not an important crime as it does not impact society.
-- D. 一个复杂的流程,其含义总是与避税相同.
-  English: a sophisticated process which always means the same as tax avoidance.
+- A. 通过网上银行向一家媒体公司支付用于房产营销的发票款项
+- B. 利用注册信托转移所有权
+- C. 用现金购买房产
+- D. 在购入房产后迅速将其重新投放市场
 
-## 【AI答案】
+答案：C
 
-A
+解析：
 
-## 【考点】
+考点：**根据资金进入渠道的时间节点识别房地产洗钱的置入行为**
 
-区分逃税与避税的核心界定标准
+核心解析：置入是对犯罪所得进行**初始处置，使其进入金融系统**（P16）。教材举出的方式包括通过银行账户处理犯罪所得，以及银行存款或购买货币工具（P16、P53）。判断一个行为是否属于置入，关键不是它是否使用银行，而是该行为本身是否完成了犯罪所得的**首次进入**。选项A描述的是通过网上银行支付营销发票；这项付款能够发生，通常意味着资金此前已经位于银行账户中。如果犯罪所得经过存款进入该账户，真正完成置入的是此前的存款，而不是后续付款。房地产交易中，现金比通过金融机构付款更难追踪，全部或主要使用现金购房属于洗钱红旗（P122）。题干已经限定为房地产领域的置入阶段，选项C描述了直接使用现金购买房产，即将待清洗的现金首次投入房地产交易并转换为可持有、登记和转售的资产。现金购房并不必然属于置入；但在本题给出的阶段和选项中，C与置入的行为功能和时间节点最匹配。
 
-## 【核心解析】
+A项错误：网上银行支付描述的是银行账户内资金的后续支付，而不是资金进入银行体系的动作。题干也没有说明该发票虚假，不能直接套用教材中“支付虚假发票”的离析示例（P16）。即使犯罪现金此前被存入账户，置入行为也是存款（P16、P53），而不是付款。
+B项错误：信托是分离资产法定所有权与控制权的法律安排（P73）。利用信托转移所有权的前提是相关房产或资产已经取得，重点在于改变产权关系，发生在初始购房之后，与置入阶段的时间节点相比匹配度较低。
+D项错误：选项明确写明“购入房产后”，说明初始购房已经完成。教材将房产频繁易主或涉及快速交易列为洗钱红旗（P122）；这类操作可能形成新的交易记录或增加资金路径复杂度，时间上晚于置入。
 
-教材明确定义，逃税指使用非法手段逃避纳税义务（Tax evasion is the use of illegal practices to avoid paying a tax liability，P28）。选项A中“故意不缴纳应缴税款”是对该定义中最常见非法手段的直接概括——教材举例包括不申报应税收入或隐藏应税资产（P28）。“故意”（deliberate）一词精准对应了逃税的违法属性，即主观上明知应缴而拒不缴纳。相比而言，避税是合法减少税负的行为（P28），是非法的逃税与合法的避税构成教材中反复强调的对照关系。因此A最直接契合逃税的核心定义。
-
-教材原句："Tax evasion is the use of illegal practices to avoid paying a tax liability."
-
-## 【错误项分析】
-
-- **B 错误（题干对照）｜范围或程度偏差**：“bending the rules”暗示行为处于合法与非法之间的灰色地带——绕开或钻规则漏洞但未必直接违法。教材将“激进避税”定义为激进地解释法律而不考虑其意图或精神（P28），B更接近这一概念而非严格意义上的逃税。逃税要求使用明确非法手段（如伪造记录、隐瞒收入——P123），B的描述与教材对逃税的“非法”门槛相比匹配度不够。
-- **C 错误（教材定义应用）｜题干要素不匹配**：教材明确表示逃税违法且是洗钱的上游犯罪（P28），并指出金融犯罪削弱政府和经济、降低民众生活水平（P41），与“不是重要犯罪”“对社会没有影响”直接矛盾。
-- **D 错误（教材定义应用）｜概念混淆**：教材持续对逃税与避税作严格区分：避税是合法减少税负的行为（P28），逃税使用非法手段（P28）。两者的含义边界清晰，从不相同。选项D断言两者“总是相同”，违背了教材的基本概念框架。
-
-## 【易错提醒】
-
-“bending the rules”（B选项英文原意）指在规则模糊处周旋，不一定触发教材对逃税的“非法手段”标准。如果题干场景是不申报收入或伪造记录，则匹配A；如果题干描述的是利用税法漏洞但行为本身未违法，则更接近避税或激进避税。核心区分线是行为是否非法，而非是否少缴了税。
-
----
-
-教材章节：未映射
-
-题型：single
-
-题干：一位欧盟信托和公司服务提供商的分析师在查看一位客户的财务报表和详细的分类账时,发现了一些异常活动.该客户从事机械进出口业务.哪项交易指标需要进一步上报给合规官？
-
-英文题干：An EU trust and company service provider analyst notices some unusual activity while looking through a customer's financial statements and detailed general ledger. The customer is in the business of importing and exporting machinery. Which transaction indicator warrants further escalation to the compliance officer?
-
-选项：
-
-- A. 向位于税收优惠地区的外国公司支付公司秘书常年顾问费
-  English: The payment of company secretarial retainer fees to a foreign company in a tax-efficient jurisdiction
-- B. 海外虚拟办公室服务的支付
-  English: The payment of virtual office services overseas
-- C. 母公司向子公司提供的用于支付机械设备运输费用的公司间贷款
-  English: Inter-company loans from the holding company to the subsidiary company to finance the shipment of machinery
-- D. 向在外国司法管辖区设立的无关联公司及服务提供商支付咨询费
-  English: The payment of consultancy fees to unrelated companies and service providers established in a foreign jurisdiction
-
-## 【AI答案】
-
-D
-
-> **需人工复核**
->
-> - 答案冲突：解析{'D'} vs 题库{'A'}
-
-## 【考点】
-
-识别咨询费与司法管辖区风险的组合红旗
-
-## 【核心解析】
-
-教材要求加强交易监控，尤其关注向**高风险司法管辖区**的个人或中介支付的“咨询费”（P27）；教材案例还展示了通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动的情形（P26）。同时，交易行为风险指标包括偏离预期模式、异常大额跨境交易或复杂支付结构（P307）。D涉及向外国司法管辖区的无关联公司及服务提供商支付咨询费，在给定选项中与教材所说的“咨询费风险”最接近，因此选择D。但必须保留一个条件边界：教材原文说的是“高风险司法管辖区”，题干只写“外国司法管辖区”，二者不能直接等同；D是相对匹配项，而不是教材对该选项的无条件证明。
-
-教材原句："Enhance transaction monitoring for suspicious activities, especially regarding “consultancy fees” to individuals or intermediaries located in high-risk jurisdictions."
-
-## 【错误项分析】
-
-- **A不选（范围或程度偏差）｜并非事实错误**：教材指出，犯罪分子可能选择监管宽松或税收优惠的司法管辖区来隐藏活动、减少税负（P76），离岸公司也通常设立在低税或高保密司法管辖区（P127）。但公司秘书本身承担记录、年报和公司治理职责（P126），题干没有给出虚假服务、异常金额、空壳结构或隐藏受益所有权等附加事实，因此A的交易风险不能仅由“税收优惠地区”和“公司秘书服务费”直接确定。
-- **B不选（证据不足）**：题干只说支付海外虚拟办公室服务费，没有提供该服务与客户业务不符、金额异常或交易结构复杂等事实。教材要求根据实际交易行为和客户预期模式识别偏离（P307），现有信息不足以使B比D更直接。
-- **C不选（范围或程度偏差）｜并非事实错误**：教材把缺乏合法经济联系或商业理由的无关联第三方贷款视为风险（P128）。本项是母公司向子公司提供、且用于支付机械运输费用的关联方融资，题干给出了业务用途，不能直接套用该红旗。
-
-## 【易错提醒】
-
-判断咨询费风险时，要同时核对司法管辖区风险等级、服务真实性、金额合理性、交易目的和受益所有权。“外国司法管辖区”不自动等于“高风险司法管辖区”；本题选择D，是因为它在现有选项中最接近教材关于高风险地区咨询费的风险提示。
-
----
-
-教材章节：第四章 开展和回应调查（补充依据：第45章 其他有助于降低风险的尽调要求）
-
-题型：multiple
-
-题干：[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)
-
-英文题干：An employee in a corporation's finance department hears news of an internal investigation into potential fraud within the company, quits her job, and disappears. If she had been observed before her resignation, which characteristics of the employee would have been considered red flags? (Select Two.)
-
-选项：
-
-- A. 该员工最初来自高风险司法管辖区.
-  English: The employee was originally from a high-risk jurisdiction.
-- B. 这名员工有在高风险行业工作的朋友
-  English: The employee had friends in high-risk industries.
-- C. 这名员工的生活方式与其收入极不相称.
-  English: The employee had a lavish lifestyle for her income.
-- D. 这位员工对于离职前一份企业财务工作的原因一直闪烁其词.
-  English: The employee was constantly evasive about the reasons for leaving her previous corporate finance job.
-
-## 【AI答案】
-
-C、D
-
-## 【考点】
-
-识别内部欺诈调查中员工个人行为的危险信号
-
-## 【核心解析】
-
-欺诈可能由员工实施，内部调查也可能源于员工欺诈（P324、P350）。在员工尽职调查（KYE）框架下，所有新员工都应接受背景调查，具体可能包括联系前雇主和信用检查，并应在任职期间持续检查其合规情况（P324）。因此，员工对上一份企业财务工作的离职原因持续闪烁其词，会使其任职经历难以核实；D项属于将员工背景调查原则应用到题干后的合理红旗。对于C项，信用检查说明员工财务状况属于KYE观察范围；欺诈三角还指出，赌博或其他债务等财务问题可能形成实施欺诈的压力（P29）。Goodwish Jade案例进一步显示，月薪约2500美元的企业经理却购买高价值珠宝，其消费能力被认为可疑（P130）。综合这些教材内容，生活方式明显超出收入可作为员工异常财务状况的风险线索。需要注意，教材P29-P30的通用欺诈红旗清单并未逐字列出“奢侈生活方式”或“回避离职原因”，所以C、D仍是基于教材原则和案例的应用推断，而不是教材直接列举的员工红旗。
-
-## 【错误项分析】
-
-- **A 不如C、D匹配**：教材将高风险司法管辖区作为客户或交易对手的风险维度（P122），并非员工出生地或来源地本身的内部欺诈红旗。题干关注员工的诚信和可核查行为，因此A与题干主体不如C、D直接匹配。
-- **B 不如C、D匹配**：教材中的行业风险用于评估客户本人从事的现金密集型或其他高风险业务（P312），而B说的是员工朋友所在行业。朋友的行业既不能证明员工本人参与高风险业务，也不能直接反映其诚信风险，证据链条明显更长。
-
-## 【易错提醒】
-
-本题容易混淆的是把客户风险评估中的地理或行业指标直接套用到员工筛查。判断员工内部欺诈风险时，应先确认教材是否提供员工尽调或背景调查依据，再看选项是否反映可核查的诚信或异常财富问题；不能仅因员工来自某地、或其朋友从事某行业，就推断其存在内部欺诈风险。
+易错提醒：判断洗钱阶段应关注行为完成的功能和发生顺序，不能仅根据支付工具判断。存入银行账户可能完成置入（P16），账户之间转账可能用于离析（P16），使用网上银行支付并不天然属于置入。资产购买也不必然属于某一个阶段：直接使用待清洗的犯罪现金购买资产，可能承担置入功能；使用经过多层交易的资金购买看似合法的资产，则更接近融合（P16）。
 
 ---
 
@@ -249,121 +68,28 @@ C、D
 
 题型：multiple
 
-题干：[洗钱和恐怖融资的风险及方法]哪些犯罪活动可能构成金融犯罪或洗钱活动的上游犯罪？(选择三项.)
+题干：与加密货币相关的可被洗钱者利用的技术包括:（选择两项。）
 
-英文题干：Which criminal activities could possibly serve as a predicate offense to financial crimes or money laundering activity? (Select Three.)
-
-选项：
-
-- A. 袭击
-  English: Assault
-- B. 纵火罪
-  English: Arson
-- C. 贿赂或腐败
-  English: Bribery or corruption
-- D. 诈骗
-  English: Fraud
-- E. 有组织犯罪或敲诈勒索罪
-  English: Organized crime or racketeering
-
-## 【AI答案】
-
-C、D、E
-
-## 【考点】
-
-判断上游犯罪的范畴：需产生可用于洗钱的非法收益
-
-## 【核心解析】
-
-上游犯罪指其收益可导致洗钱起诉的特定非法活动（P21）。题干问哪些犯罪活动“可能构成”上游犯罪，核心判断标准是该犯罪是否产生非法资金或收益。教材在FATF指定的21类上游犯罪清单中明确列出：参与有组织犯罪集团和敲诈勒索（P21）、腐败和贿赂（P22）、欺诈（P22）。贿赂或腐败通过权力滥用获取财务利益（P25），欺诈是为获取不正当利益而进行的故意欺骗（P29），有组织犯罪或敲诈勒索涉及系统性金融犯罪（P21）——三者均直接产生非法收益，因此必然属于上游犯罪。
-
-教材原句："Predicate crimes are specified unlawful activities whose proceeds can give rise to prosecution for money laundering."
-
-## 【错误项分析】
-
-- **A 错误（教材定义应用）｜题干要素不匹配**：袭击（Assault）通常不直接产生财务收益或非法资金。上游犯罪的核心特征是产生可用于洗钱的“proceeds”（收益），而袭击本身不以获取经济利益为必然结果，匹配度不如C、D、E直接涉及非法资金产生的犯罪类型。
-- **B 错误（教材定义应用）｜题干要素不匹配**：纵火罪（Arson）一般不直接产生非法资金收益。虽然教材将“谋杀和严重身体伤害”列入上游犯罪清单，但附有“driven by financial gain”的限定（P22），纵火未被列入。除非纵火系为获取保险金等财务目的（此时更接近欺诈），否则匹配度不及C、D、E。
-
-## 【易错提醒】
-
-不是所有刑事犯罪都能成为上游犯罪。上游犯罪的必备要素是产生“proceeds”（非法收益）。纯粹的暴力犯罪（如袭击）因不必然产生非法资金，不在FATF清单中；纵火未单独列入清单，但若以财务利益为目的（如骗保），可能归入欺诈范畴。教材在“Murder and grievous bodily injury”条目下特别标注了“motivated by financial gain”（P22），说明暴力犯罪是否能成为上游犯罪取决于是否具备财务动机——这是真题中特别容易挖坑的区分点。
-
----
-
-教材章节：未映射
-
-题型：multiple
-
-题干：一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.)
-
-英文题干：A bank is preparing for a regulatory exam after a previous regulatory exam identified weaknesses in the bank's AML program. Since the last exam, the bank has improved the written AML program, hired an experienced AML compliance officer, and taken actions to demonstrate a strong culture of compliance. The bank is now focused on clearing its transaction monitoring case backlog and completing enhancements to its sanctions screening program. Which of the following are correct? (Select Two.)
 
 选项：
 
-- A. 尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。
-  English: The bank is likely to face secondary sanctions from global financial institutions despite addressing many of the previous concerns.
-- B. 如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。
-  English: The bank may face civil or criminal penalties if it cannot demonstrate sustained improvement in addressing previous issues.
-- C. 尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。
-  English: Despite addressing many of the previous issues, the bank may still face the risk of an order from regulators requiring it to remediate its AML program.
+- A. 生成式辅助程序。
+- B. 小型语言模型。
+- C. 隐私币。
+- D. 加密货币混合器。
 
-## 【AI答案】
+答案：C、D
 
-B、C
+解析：
 
-## 【考点】
-识别监管审查后银行面临的处罚与整改指令风险，并区分次级制裁的适用前提。
-## 【核心解析】
-银行虽已改进书面计划、聘请合规官并展示合规文化，但交易监控积压和制裁筛查改进尚未完成，说明整改成效尚未充分证明。教材指出，反洗钱或制裁合规失败可能导致民事或刑事处罚（P23），因此B符合题干所述的持续改进风险。教材案例还表明，监管机构可以要求金融机构接受独立监督、全面改进风险管理并定期报告整改进展（P242），因此即使银行已经采取措施，仍可能面临整改指令，C更直接对应这一风险。
-## 【错误项分析】
-- **A**：次级制裁通常需要与受制裁对象发生相关交易等具体制裁违法事实。题干只描述银行反洗钱计划整改尚未完成，没有提供此类交易事实，不能由一般整改不足直接推出次级制裁风险。
-## 【易错提醒】
-“已经开始整改”不等于“已证明持续有效”。本题现列选项中，B对应处罚风险，C对应监管整改指令风险；不要把反洗钱计划缺陷直接等同于次级制裁。
+考点：识别可被洗钱者利用的加密资产相关匿名技术
 
----
+核心解析：教材在介绍数字资产洗钱技术时指出，洗钱者利用**混币服务和隐私币**来实现匿名（P17）。题干问的是“与加密货币相关的可被洗钱者利用的技术”，而隐私币和加密货币混合器正是为**混淆资金来源、切断交易可追溯性**而设计的匿名工具，直接对应教材列举的这两种手段，因此C和D成立。
 
-教材章节：未映射
+教材原句："Launderers use mixing services and privacy coins for anonymity."（P17）
 
-题型：multiple
-
-题干：公司内部的货物和服务供应可能因腐败而受到影响,尤其是索贿和收受贿赂、回扣,原因在于:(选择两项.)
-
-英文题干：The supply of goods and services can be vulnerable to corruption within a company, particularly the solicitation and receipt of bribes and kickbacks, because: (Choose Two.)
-
-选项：
-
-- A. 某些承包商可能会受到优待，使他们在投标过程中有机会抬高利润空间。
-  English: Certain contractors may receive preferential treatment, allowing them opportunities to inflate margins during the tender process.
-- B. 未中标者将被告知决定，并获提供授予合同的详细理由。
-  English: Unsuccessful bidders are informed of decisions and provided detailed justifications for awarding the contracts.
-- C. 采购和合同流程涉及招标过程的管理，而这一过程可能缺乏足够的监督。
-  English: Procurement and contracting processes involve the management of the tender process, which may lack sufficient oversight.
-- D. 发布投标信息。
-  English: Publishing tender information.
-
-## 【AI答案】
-
-A、C
-
-## 【考点】
-
-识别腐败机会：缺乏监督和内控如何为回扣贿赂创造条件
-
-## 【核心解析】
-
-欺诈三角理论指出，机会是欺诈发生的三个主要原因之一，“机会通常由机构内部缺乏有效的内部控制提供”（P29）。在采购场景中，当招标流程缺乏足够监督时，便为索贿、收受回扣等腐败行为创造了条件——这正是选项C所描述的核心事实。同时，教材在阐述政治敏感人物腐败风险时给出了一个典型模式：“腐败可能表现为政治敏感人物将政府合同导向某组织以换取回扣”（P58）。这一机制与选项A“承包商在投标过程中受优待、抬高利润空间”高度吻合：承包商获得中标优待后，有能力在报价中预留回扣空间，腐败由此发生。题干问的是“公司内部货物服务供应为何易受腐败影响”，A和C分别从利益输送手段和制度漏洞两个层面回答了原因。
-
-教材原句："Opportunity is often provided by a lack of effective internal controls within an institution."
-
-## 【错误项分析】
-
-- **B 错误（题干对照）｜题干要素不匹配**：“告知未中标者决定并给出详细理由”是透明合规的招标做法，它恰恰是减少腐败而非助长腐败的机制。题干问的是腐败的“原因”，而B描述的是防范腐败的实践，与题干逻辑方向相反。
-- **D 错误（题干对照）｜题干要素不匹配**：“发布投标信息”与B选项类似，属于信息公开的正面实践，会增加透明度而非制造腐败机会。题干问供应为何“易受腐败影响”，D描述的做法恰与产生腐败的条件背道而驰。
-
-## 【易错提醒】
-
-区分“腐败的机会条件”和“腐败的行为表现”：选项C指向机会条件（缺乏监督），选项A指向行为表现（优待承包商）。教材将二者联系起来——缺乏内控（P29）为回扣输送（P58）提供了温床。判断时自问：该选项是在描述“为什么能发生”还是“发生了什么”。
+A项错误：生成式AI辅助工具可用于增强风险评估、协助生成SAR叙述等合规工作（P397），但A并非本题所指用于增强加密资产匿名性的技术，因此匹配度远不如C、D。
+B项错误：小型语言模型是一类人工智能模型，并不以混淆加密资产交易来源或增强匿名性为其固有功能，与题干所问的加密资产洗钱技术不匹配。
 
 ---
 

@@ -1,0 +1,79 @@
+# v7_q_000078
+
+教材章节：未映射
+
+题型：single
+
+题干：一名反洗钱合规官正在评估新客户的资料。以下哪项最可能表明该客户存在洗钱风险？
+
+英文题干：An AML compliance officer is evaluating a new customer's profile. Which of the following is most likely to indicate that the customer presents a money laundering risk?
+
+选项：
+
+- A. 客户提供的信息与公开资料或业务活动不一致
+  English: The information provided by the customer is inconsistent with public records or business activity
+- B. 客户要求降低服务费用
+  English: The customer requests a reduction in service fees
+- C. 客户询问账户开立流程所需时间
+  English: The customer asks how long the account opening process will take
+- D. 客户提供了完整的身份证明文件
+  English: The customer provides complete identification documents
+
+## 【AI答案】
+
+A
+
+> **需人工复核**
+>
+> - 答案冲突：解析{'A'} vs 题库{'C'}
+
+## 【考点】
+
+识别「客户信息与可验证事实不一致」这一核心洗钱风险信号
+
+## 【核心解析】
+
+在反洗钱框架下，客户尽职调查的核心是核实客户所声称的身份和业务是否真实存在且合理。当客户提供的信息与独立的公开资料或其声称的业务活动不一致时，就产生了红旗警示（red flag），这直接指向潜在的可疑行为。教材在Goodwish Jade珠宝店案例（P129）中展示了这一逻辑：反洗钱官员发现该珠宝店有多笔超50万美元的夜间现金交易，但其官网明确写着营业时间为上午10时至下午6时，且没有网店——「交易时间与宣称的业务运营模式明显不符，引发了对交易合法性的质疑」。本题中，选项A描述的情景「客户提供的信息与公开资料或业务活动不一致」，与教材案例揭示的风险识别逻辑完全吻合，是评估新客户时最直接的洗钱风险信号。
+
+教材原句："GJ's website states that the shop operates daily from 10 a.m. to 6 p.m., and does not run an online store, raising questions about the legitimacy of these late-night transactions."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜题干要素不匹配**：要求降低服务费用本身是正常的商业谈判行为，与洗钱风险之间不存在教材定义的直接关联。教材讨论的风险指标更关注交易模式、信息真实性等因素，而非客户对价格的敏感度，题干条件更直接匹配信息不一致场景而非费用诉求。
+- **C 错误（题干对照）｜题干要素不匹配**：询问开户流程所需时间是新客户的常见行为，教材甚至提到电子KYC可「在数小时或数分钟内完成客户开户」（P405），表明客户关心开户效率本身并不构成风险信号。相比之下，信息不一致是教材反复强调的异常指标，更接近风险判断的核心。
+- **D 错误（题干对照）｜题干要素不匹配**：提供完整的身份证明文件是客户配合尽职调查的积极表现，教材在客户生命周期的身份识别与验证环节将其列为标准流程（P301）。这恰是机构希望客户做到的合规行为，与洗钱风险的方向相反，无法像选项A那样直接指向可疑信号。
+
+## 【易错提醒】
+
+初学者容易将「客户行为与常规不符」的各个选项都视为风险，但关键在于区分「正常客户也会做的事」和「异常矛盾点」。教材的核心判断标准并非行为本身是否少见，而是是否存在「可被独立验证的矛盾」——像营业时间与交易时间的冲突，这类矛盾难以被合理化解，因此风险权重远高于费用协商、开户咨询等日常行为。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001149`
+
+### `v7u_N001149`
+
+- 用于：核心解析、易错提醒
+- 章节：High-risk business sectors > Case example: Suspicious transactions at Goodwish Jade
+- 页码：PDF第134页 / 书内第129页
+- 中文要点：反洗钱官员发现 Goodwish Jade 近期有多笔午夜大额现金交易，与营业时间不符
+- 英文原文：During the review, the AML officer discovered several cash transactions exceeding US$500,000 that occurred at midnight in recent months. Notably, GJ's website states that the shop operates daily from 10 a.m. to 6 p.m., and does not run an online store, raising questions about the legitimacy of these late-night transactions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+恐怖主义融资常利用隐蔽渠道转移资金.选项A 及资金转移至现实,难以用于恐怖融资;选项 B,玩家间交换游戏内物品,同样未涉及现实资 金,无法用于恐怖融资;选项C,玩家间交易游 戏内物品且可兑换成法定货币,此过程隐蔽,易 被利用进行资金转移,符合恐怖融资特征;选项 D,通过游戏活动获取游戏内材料,未涉及现实 资金转移,无法用于恐怖融资.因此,答案选 C.易错点在于要识别出哪种行为涉及现实资金 转移.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+虚拟资产在游戏平台中被滥用的风险在于其潜在 的可兑换性.金融行动特别工作组(FATF)指 出,当虚拟物品或货币具备与现实法币双向兑换 的渠道时,可能形成资金转移的隐蔽通道.选项 C描述的场景直接涉及虚拟物品与法币的兑换链 路,这为非法资金流动提供了实际路径,而其他 选项仅停留在虚拟经济内部循环,缺乏外部变现 能力.FATF报告曾强调此类可兑换性特征是评 估风险的关键指标.
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=A，题库最终=C

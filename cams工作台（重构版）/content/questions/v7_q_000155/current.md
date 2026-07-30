@@ -1,0 +1,115 @@
+# v7_q_000155
+
+教材章节：未映射
+
+题型：single
+
+题干：哪一道防线负责解读新的反洗钱法规，并修订面向客户经理的培训内容？
+
+英文题干：Which line of defense would be tasked with interpreting new AML regulations and revising training for client-facing relationship managers?
+
+选项：
+
+- A. 第一道防线
+  English: The first line
+- B. 第二道防线
+  English: The second line
+- C. 高级管理层
+  English: Senior management
+- D. 第三道防线
+  English: The third line
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+三道防线模型中各道防线的职责分工
+
+## 【核心解析】
+
+三道防线模型中，第二道防线定义为金融犯罪防控合规职能，负责政策制定与员工培训（P246）。具体到培训职责，第二道防线审批关于监管要求、风险管理实践和员工职责的培训，确保面向客户的员工具备识别风险的能力（P261）。题干问的是「解读新反洗钱法规并修订面向客户经理的培训内容」——解读新法规本质上是对监管要求的识别与政策更新，修订培训内容则是培训审批职能的自然延伸，两项动作都落在第二道防线的定义边界内。相比之下，第一道防线的职责是实施政策并执行CDD，通常是被培训的对象而非培训的制定审批者。
+
+教材原句："Education and training: The second line approves training on regulatory requirements, risk management practices, and staff responsibilities, ensuring client-facing staff are equipped to identify risks and comply with AFC policies."
+
+## 【错误项分析】
+
+- **A 错误**：第一道防线由面向客户的员工组成，负责实施政策与程序（P246）。题干涉及的动作是「解读新法规」和「修订培训内容」，这属于政策制定与培训审批范畴，而非政策执行范畴。教材中第一道防线的定义更匹配「接受培训并执行合规要求」的角色，而非「解读法规并制定培训」的角色。
+- **C 错误**：高级管理层在教材中的角色是利用风险评估报告来决定人员、资源、技术和培训的配置以降低风险，或批准高风险客户开户（P281、P312）。题干描述的是具体操作层面的「解读法规并修订培训」，这更接近合规职能的日常工作，而非高级管理层基于报告做出的战略资源配置决策。
+- **D 错误**：第三道防线是内部审计职能，职责是独立审查前两道防线的风险管理与控制有效性（P246），其本质是事后的、独立的评估。解读新法规并修订培训内容是事中的合规管理活动，属于第二道防线的监督与政策职能范畴，而非第三道防线的审计审查范畴。
+
+## 【易错提醒】
+
+第一道防线与第二道防线在培训方面的角色容易混淆。第一道防线是培训的接收方——面向客户的员工接受培训以识别风险；第二道防线是培训的制定审批方——负责审批培训内容并确保其符合监管要求（P261）。题干中的「修订培训内容」是制定方的行为，而非接收方。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002572`
+
+### `v7u_N002419`
+
+- 用于：核心解析、选项A、选项C、选项D
+- 章节：Three lines of defense > Three lines of defense
+- 页码：PDF第251页 / 书内第246页
+- 中文要点：第二道防线（金融犯罪防控合规）包括洗钱报告官（洗钱RO），负责风险与控制职能、政策制定、活动监控及员工培训。
+- 英文原文：The second line, AFC compliance, includes the money laundering reporting officer (MLRO) and is responsible for risk and control functions, developing policies, managing and monitoring activity, and ensuring staff training and compliance. The second line performs compliance monitoring and testing, including monitoring the effectiveness of controls operated by the first line.
+
+### `v7u_N002572`
+
+- 用于：核心解析、易错提醒
+- 章节：Second LOD's AFC role and its interaction with the front office
+- 页码：PDF第266页 / 书内第261页
+- 中文要点：第二道防线审批监管要求与风险管理培训，确保前台人员具备识别风险的能力
+- 英文原文：Education and training: The second line approves training on regulatory requirements, risk management practices, and staff responsibilities, ensuring client-facing staff are equipped to identify risks and comply with AFC policies. External specialist providers or internal teams might develop the training.
+
+### `v7u_N002418`
+
+- 用于：选项A、选项C、选项D
+- 章节：Three lines of defense > Three lines of defense
+- 页码：PDF第251页 / 书内第246页
+- 中文要点：第一道防线（一线）由面向客户的员工组成，负责实施金融犯罪防控政策与程序、促进合规并执行客户尽职调查。
+- 英文原文：The first line of defense (LOD), the front line, consists of customer-facing employees who implement AFC policies and procedures, promote compliance, and perform CDD.
+
+### `v7u_N002420`
+
+- 用于：选项A、选项D
+- 章节：Three lines of defense > Three lines of defense
+- 页码：PDF第251页 / 书内第246页
+- 中文要点：第三道防线（内部审计）独立审查前两道防线的风险管理与控制有效性。
+- 英文原文：The third line, internal audit, independently reviews risk management and control effectiveness applied by the first two lines.
+
+### `v7u_N002822`
+
+- 用于：选项C
+- 章节：Enterprise-wide risk assessment > Reporting results of risk assessment
+- 页码：PDF第286页 / 书内第281页
+- 中文要点：高级管理层应利用风险评估报告决定人员、资源、技术和培训的配置以进一步降低风险
+- 英文原文：Senior management can meaningfully utilize the report to determine where to attribute staffing, resources, technology, and training to further mitigate risk.
+
+### `v7u_N003110`
+
+- 用于：选项C
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：高级管理层批准，如账户激活前需合规委员会或董事会批准
+- 英文原文：Senior management approval, such as mandating compliance committee or board approval before account activation.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+在反洗钱和反恐怖融资合规标准中,第二道防线 通常负责制定和更新合规政策、程序,解读新的 法规要求,并确保这些要求被纳入相关培训内 容.第一道防线主要是业务部门,负责日常操 作;高级管理层提供战略指导;第三道防线是内 部审计,负责监督和评估.因此,负责解读新法 规并修订客户经理培训内容的是第二道防线,即 选项B.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在反洗钱(AML)和反恐融资(CFT)合规标准 中第诺吃代日业文部门名丰口当提作和室
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -21,14 +21,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from openai import OpenAI
 
 _WORK = Path(__file__).resolve().parent / "work"
-_DS_API_KEY = "sk-795628e9d4584fc59545d7abac9d1209"
+_DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 
 _MODEL = "deepseek-chat"
 _BASE_URL = "https://api.deepseek.com/v1"
 _TEMPERATURE = 0.0
 _MAX_TOKENS = 2048
-_MIMO_API_KEY = "tp-cl5nzlniz5bfyk9i3wsdw88d25haf8ghdh6nccojrw1hqgc4"
-_DS_API_KEY = "sk-795628e9d4584fc59545d7abac9d1209"
+_MIMO_API_KEY = os.environ.get("MIMO_API_KEY", "")
 
 # CAMS 节点类型（对标数学 KG 的 Concept/Method/Theorem 等）
 VALID_NODE_TYPES = {"KnowledgePoint", "Regulation", "RiskIndicator", "CaseStudy", "Institution"}

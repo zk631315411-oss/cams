@@ -1,0 +1,75 @@
+# v7_q_000077
+
+教材章节：未映射
+
+题型：single
+
+题干：一项执法行动指控,在两个月内的多个交易日里,被告在一家电子交易平台进行了一系列铜、黄金、原油和天然气期货交易.其中一名被告多次以低价从另一名被告处买入期货合约,然后立即以高价卖回.结果,尽管双方的持仓量均未发生变化,但一名被告却实际赚取了另一名被告的同等损失.这种类型学叫什么名字？
+
+英文题干：A law enforcement action alleged that on several trading days over the course of two months, defendants engaged in a series of copper, gold, crude oil, and natural gas futures transactions on an electronic trading platform. One defendant repeatedly bought futures contracts at low prices from the other and then immediately sold them back at higher prices. As a result, one defendant effectively pocketed the same amount as the other lost even though there were no changes in the open positions held by either defendant. What is a name for this typology?
+
+选项：
+
+- A. 空头头寸
+  English: Short position
+- B. 反向翻转
+  English: Reverse flip
+- C. 买卖价差
+  English: Bid-ask spread
+- D. 对敲交易（wash trading）
+  English: Wash trading
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别期货市场制造虚假交易量的洗钱类型
+
+## 【核心解析】
+
+教材将“预先安排的交易”与制造虚假交易量、掩盖资金来源联系起来（P66）。题干中双方在同一平台反复进行低买高卖，持仓量没有变化，却形成一方获利、另一方承担等额损失的结果。在给定选项中，这种预先安排的循环交易最符合对敲交易（wash trading）的描述；这里的判断仅基于题干呈现的交易模式，不表示仅凭该模式即可认定已构成违法行为。
+
+教材原句："Pre-arranged trading that can create artificial trading volumes and obscure the origin of funds."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜概念混淆**：空头头寸（Short position）指卖出自身不持有的资产以期待价格下跌时回购获利的单边方向性持仓，题干描述的是双方配对交易且持仓无变化，空头头寸无法解释「持仓量均未发生变化却产生盈亏转移」这一核心特征。
+- **B 错误（概念错配）**：「反向翻转」（Reverse Flip）不是此类期货交易洗钱手法的标准名称。题干描述的是双方预先安排低买高卖，在持仓不变的情况下转移损益，更符合对敲交易的特征。
+- **C 错误（题干对照）｜概念混淆**：买卖价差（Bid-ask spread）指同一时刻买入价与卖出价之间的市场报价差额，是流动性指标，与题干中「跨时段以不同价格买回卖回同一对手方」的预谋循环交易逻辑完全不同。
+
+## 【易错提醒】
+
+对敲交易的核心在于「不转移实质所有权的循环交易」，而非单纯的价格差异。幌子交易（front running）或价格操纵虽也涉及期货市场，但对敲交易更特指同一控制人通过关联账户或合谋方进行对倒，以虚假成交量或盈亏转移资金（P66）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000534`
+
+### `v7u_N000534`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with retail and commercial banking > High-risk retail and commercial banking products
+- 页码：PDF第71页 / 书内第66页
+- 中文要点：预先安排的交易可制造虚假交易量并掩盖资金来源。
+- 英文原文：Pre-arranged trading that can create artificial trading volumes and obscure the origin of funds.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+确答案D您选择/ 单 试题详解 平 主 解析 目描述了一种在电子交易平台上,通过期货交 进行资金转移的手法,即一方低价买入后立即 介卖回给另一方,双方持仓量未变,但一方赚 了另一方的损失.分析选项,A选项“空头头寸” 题干描述不符;B选项“反向翻转”并非金融术 与题干无关;C选项“买卖价差”虽涉及交易 格差异,但并未体现资金转移;D选项“洗单交 指通过虚假交易转移资金,与题干描述手法一 因此,正确答案是D. 正 度
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+gasfuturestransactionsonAnelectronictradin gplatformOnedefendantrepeatedlyboughtfut urecontractsatlowpricesfromTheother,andt henimmediatelysoldthembackathigherprice s.Asaresult,onedefendantEffectivelypockete dthesameamountastheotherlosteventhoug htherewerenochangesintheOpenpositions heldbyeitherdefendant.Whatisanameforthi s typology? Shortposition A Reverseflip B C Bid-askspread Washtrading 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

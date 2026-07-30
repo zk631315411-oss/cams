@@ -1,0 +1,99 @@
+# v7_q_000172
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项陈述最能描述与虚拟资产服务提供商（VASP）、加密资产及相关产品相关的关键洗钱风险？
+
+英文题干：Which statement best describes a key money laundering risk associated with virtual asset service providers (VASPs), cryptoassets, and related products?
+
+选项：
+
+- A. 加密资产能够迅速跨境转移，但其价值的波动性仍使其在洗钱方面不如传统资产有吸引力
+  English: Cryptoassets can be transferred across borders quickly, but the volatility of their value still makes them less attractive for money laundering compared to traditional assets
+- B. 对某些类型的加密货币交易已实施强制报告要求，但监管和执法方面的漏洞仍为洗钱活动留下了空间
+  English: Mandatory reporting requirements have been implemented for certain types of crypto transactions, but gaps in regulation and enforcement still leave room for money laundering activities
+- C. 区块链技术的透明性有助于执法部门追踪交易，但它也可能让犯罪分子通过复杂的分层技术来掩盖其金融活动
+  English: The transparency of blockchain technology helps law enforcement trace transactions, but it can also provide criminals with ways to obscure their financial activities through complex layering techniques
+- D. 交易的匿名性使犯罪分子能够在全球范围内转移大笔资金的同时隐藏身份，这使得追踪最终受益所有人变得十分困难
+  English: The pseudonymous nature of transactions allows criminals to hide their identities while transferring large sums of money globally, making it difficult to trace the ultimate beneficial owner
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别加密资产假名性带来的身份与所有权核验风险
+
+## 【核心解析】
+
+稳定币、代币和NFT等数字资产因假名性、跨境可达性和监管监督不足，为洗钱和恐怖融资创造了新机会（P112）。假名交易并不表示区块链上没有交易记录，而是链上地址未必直接揭示背后的真实身份；许多数字资产交易因此增加了所有权和身份验证的难度（P435）。即使区块链具有透明性，追踪实际所有权仍可能具有挑战性（P111）。D所述身份隐藏、全球转移以及实际所有人难以追踪，最直接对应这些风险。判断重点是身份和所有权核验困难，而不是交易金额必须达到某个标准。
+
+教材原句："they create new opportunities for money laundering and terrorist financing due to their pseudonymity, cross-border reach, and lack of regulatory oversight."
+
+## 【错误项分析】
+
+- **A 错误**：价格波动本身不能推出加密资产对洗钱者的吸引力较低。教材指出，代币和NFT虽然高度波动，但其掩盖交易轨迹的能力仍使其呈现更高的洗钱风险（P113）。因此，A项用波动性推出「不如传统资产有吸引力」，与教材给出的风险判断不符。
+- **B 错误**：监管监督不足确实是数字资产的风险因素之一，所以B并非完全无关。但「某些类型交易已实施强制报告要求」取决于具体司法管辖区和交易类型，题干没有限定相关制度背景；D所述假名性、跨境可达性及所有权核验困难更具普遍性。
+- **C 错误**：区块链具有透明性，但透明性并不自动解决所有权追踪困难（P111）。C却把区块链透明性本身与犯罪分子采用复杂分层手段连接起来，两者不存在这样的直接因果关系。D所述假名性和身份、所有权核验困难与关键风险更直接对应。
+
+## 【易错提醒】
+
+假名性（pseudonymity）不等于所有交易都完全匿名。区块链可以保留可观察的交易轨迹，但地址背后的身份和所有权仍可能难以核验（P111、P435）；隐私币利用非公开区块链进行匿名转账，则属于教材另行说明的更强匿名场景（P111）。做题时应区分「能看到地址之间的交易」和「能确认地址实际控制人」。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001006`
+
+### `v7u_N001006`
+
+- 用于：核心解析、选项B
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Stablecoin, token, and NFT risks
+- 页码：PDF第117页 / 书内第112页
+- 中文要点：稳定币、代币和NFT在加密资产生态系统中带来重大洗钱风险
+- 英文原文：The increasing popularity of stablecoins, tokens, and NFTs within the cryptoasset ecosystem presents significant risks related to money laundering and illicit financial activities. While these digital assets offer benefits, such as efficient transactions, they create new opportunities for money laundering and terrorist financing due to their pseudonymity, cross-border reach, and lack of regulatory oversight.
+
+### `v7u_N004357`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology for payment and batch screening > Types of ongoing screening
+- 页码：PDF第440页 / 书内第435页
+- 中文要点：数字资产交易的假名性质使所有权和身份验证具有挑战性。
+- 英文原文：However, the pseudonymous nature of many digital asset transactions may make ownership and identity verification challenging.
+
+### `v7u_N001000`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Cryptoassets industry ecosystem
+- 页码：PDF第116页 / 书内第111页
+- 中文要点：尽管区块链透明，但追踪所有权困难；隐私币利用非公开区块链匿名转账，增加洗钱风险。
+- 英文原文：For instance, despite the inherent transparency of blockchain technology, tracing ownership can be challenging, making it attractive to criminals looking to engage in illicit activities with minimal traceability. Some privacy coins utilize nonpublic blockchains to facilitate anonymous fund transfers, further complicating efforts to attribute transactions and heightening the risk of illicit activity.
+
+### `v7u_N001015`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Stablecoin, token, and NFT risks
+- 页码：PDF第118页 / 书内第113页
+- 中文要点：代币和NFT价格波动大，易被用于投机和洗钱，因其能掩盖交易痕迹
+- 英文原文：In contrast to stablecoins, digital assets such as tokens and NFTs are not stable and highly volatile. Their price fluctuations make them prone to speculative activities and present greater money laundering risks due to their capacity to obscure transaction trails.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+虚拟资产服务提供商及相关加密资产的关键洗钱 风险在于其匿名性.选项D指出,交易的匿名性 使犯罪分子能在全球范围内转移大额资金并隐藏 身份,导致追踪最终受益人变得十分困难,这准 确描述了虚拟资产的核心洗钱风险.选项A错 误,因加密资产价值波动性大,反而增加了洗钱 吸引力:选项B仅提及监管漏洞,未突出匿名性 这一核心风险:选项C虽提到技术复杂性,但末 直接点明匿名性导致的追踪困难.因此,选项D 最贴切.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+虚拟资产服务提供商、加密资产及相关产品存在 洗钱风险.选项A,加密资产虽价值波动,但跨 境转移快,仍具洗钱吸引力,该选项错误.选项 B,强制报告要求及监管执法缺口虽存在,但非 关键风险.选项C,区块链技术透明性利于追 踪,但非本题关键风险点.选项D,交易的匿名 性使犯罪分子能隐藏身份,全球转移大额资金, 难以追踪最终受益人,是虚拟资产服务提供商、 加密资产及相关产品的主要洗钱风险,故该选项 正确.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

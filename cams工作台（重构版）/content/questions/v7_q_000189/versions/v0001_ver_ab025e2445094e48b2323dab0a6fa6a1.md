@@ -1,0 +1,121 @@
+# v7_q_000189
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项法律或法规可能会影响反洗钱/打击资助恐怖主义(AML/CFT)计划的应用,并要求金融机构（FI）平衡多项合规要求？
+
+英文题干：Which of the following laws or regulations can impact the application of AML/CFT programs and require financial institutions (FIs) to balance multiple compliance requirements?
+
+选项：
+
+- A. 在处理客户投诉或纠纷时,消费者保护法可能会与反洗钱/打击恐怖主义融资的要求产生交集,这可能会影响金融机构实施其合规计划的方式.
+  English: Consumer protection laws may intersect with AML/CFT requirements when handling customer complaints or disputes, potentially affecting how FIs implement their compliance programs
+- B. 反洗钱/打击资助恐怖主义相关法律是金融机构的主要关注点,而诸如数据隐私和消费者保护之类的其他法规可能只是间接影响其合规义务.
+  English: AML/CFT laws are the primary focus for FIs, and other regulations like data privacy and consumer protection may only indirectly influence their compliance obligations
+- C. 环境、社会和治理(ESG)框架能够影响金融机构的风险管理策略,但通常被认为与核心的反洗钱/打击恐怖主义融资合规要求是分开的.
+  English: Environmental, social, and governance (ESG) frameworks can influence an FI's risk management strategies but are generally considered separate from core AML/CFT compliance requirements
+- D. 数据隐私法可能会限制客户信息的共享,而金融普惠举措则要求金融机构避免过度去风险化,以免将弱势群体排除在外.
+  English: Data privacy laws may restrict the sharing of customer information, while financial inclusion initiatives require FIs to avoid excessive de-risking that could exclude vulnerable populations
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+数据隐私、金融普惠与反洗钱合规的平衡
+
+## 【核心解析】
+
+题干要求识别会影响AML/CFT计划应用并要求金融机构平衡多项合规要求的法律或监管因素。D包含两组具体的平衡关系：第一，教材明确指出，组织为AML/CFT合规处理客户身份数据并同时遵守GDPR时，必须平衡两项要求（P263）；教材还说明，数据隐私法可能限制个人数据的跨境传输（P209）。第二，教材指出，金融普惠关注弱势和边缘化群体，并对抗金融机构为规避风险而终止或限制客户关系的去风险化；FATF也通过防止CDD标准被过度适用来促进金融普惠（P214）。因此，D同时体现了数据使用与隐私保护、AFC风险控制与避免金融排斥之间的平衡，最完整地对应题干。
+
+## 【错误项分析】
+
+- **A 错误**：AFC合规可以通过打击欺诈、勒索软件等犯罪所得的洗钱活动间接增强消费者保护（P214），但A所述客户投诉或纠纷没有说明具体需要协调哪些相互制约的合规要求。D则明确涉及数据隐私限制和防止过度去风险化两方面要求，与题干更直接匹配。
+- **B 错误**：B将数据隐私等其他法规概括为可能「只是间接影响」。但教材明确指出，在为AML/CFT合规处理客户身份数据并遵守GDPR时，组织必须平衡两项要求（P263）。可见数据隐私可能直接影响合规实施，B低估了这种影响。
+- **C 错误**：C称ESG框架通常与核心AML/CFT要求分开，而教材明确指出，随着全球监管框架演进，ESG与AML/CFT法规正在趋于融合（P217）。教材表述与C的概括不一致；相比之下，D对多重合规要求的平衡描述更直接。
+
+## 【易错提醒】
+
+不能把「与AFC存在联系」直接等同于「要求平衡多项合规要求」。本题应检查选项是否说明具体的协调对象：D一方面涉及AML/CFT数据处理与隐私限制（P209、P263），另一方面涉及AFC风险控制与金融普惠对过度去风险化的约束（P214），因而比只描述一般性交集的选项更符合题干。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002594`
+
+### `v7u_N002594`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Second LOD's AFC role and its interaction with the front office > Second LOD's interaction with other functions
+- 页码：PDF第268页 / 书内第263页
+- 中文要点：组织在处理客户身份数据以符合反洗钱/反恐怖融资要求的同时，还需遵守欧盟《通用数据保护条例》，必须平衡两者。
+- 英文原文：If an organization processes customer identification data for AML/CFT compliance while also following the EU’s General Data Protection Regulation (GDPR), it must balance both requirements.
+
+### `v7u_N002020`
+
+- 用于：核心解析
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：数据隐私法可能限制将个人数据转移至境外，除非满足同等保护条件。
+- 英文原文：Data privacy laws may place restrictions on the transfer of personal data outside the jurisdiction unless certain conditions are met. These conditions are intended to ensure that protections outside the jurisdiction are equivalent to those in the home jurisdiction.
+
+### `v7u_N002117`
+
+- 用于：选项C
+- 章节：Other laws and regulations that impact organizations > ESG regulations
+- 页码：PDF第222页 / 书内第217页
+- 中文要点：ESG与反洗钱/反恐怖融资法规正趋于融合
+- 英文原文：ESG and AML/CFT regulations are converging as global regulatory frameworks continue to evolve to include sustainable business practices and financial crime prevention.
+
+### `v7u_N002075`
+
+- 用于：选项A
+- 章节：Other laws and regulations that impact organizations > Consumer protection and inclusive banking
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：金融犯罪防控合规通过打击欺诈和勒索软件等犯罪收益的洗钱，间接增强消费者保护，并增强消费者对金融体系安全性和完整性的信心。
+- 英文原文：AFC compliance initiatives indirectly increase consumer protection by countering the laundering of proceeds from offenses targeting consumers such as fraud and ransomware. In addition, compliance with AFC regulations strengthens consumer confidence in the security and integrity of the financia system.
+
+### `v7u_N002078`
+
+- 用于：核心解析、选项D
+- 章节：Other laws and regulations that impact organizations > Consumer protection and inclusive banking
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：普惠金融关注弱势群体、少数群体和边缘化个体。
+- 英文原文：Inclusive banking focuses on vulnerable individuals, minorities, and marginalized individuals.
+
+### `v7u_N002080`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Other laws and regulations that impact organizations > Consumer protection and inclusive banking
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：普惠金融对抗去风险化；去风险化是指金融机构为避免风险而终止或限制与客户或行业的业务关系。
+- 英文原文：In addition, it counters derisking, a phenomenon where financial institutions terminate or restrict business relationships with customers or sectors to avoid risk.
+
+### `v7u_N002081`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Other laws and regulations that impact organizations > Consumer protection and inclusive banking
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：FATF通过防止客户尽职调查标准被过度适用或滥用来促进金融普惠。
+- 英文原文：FATF has conducted various initiatives to promote financial inclusion by preventing overreach and abuse of the FATF standards regarding customer due diligence.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+法可能会与反洗钱/打击恐怖主义融资 A 的要求产生交集,这可能会影响金融机 构实施其合规计划的方式. 反洗钱/打击资助恐怖主义相关法律是 金融机构的主要关注点,而诸如数据隐 B 私和消费者保护之类的其他法规可能只 是间接影响其合规义务. 环境、社会和治理(ESG)框架能够影 响金融机构的风险管理策略,但通常被 认为与核心的反洗钱/打击恐怖主义融 资合规要求是分开的. 数据隐私法可能会限制客户信息的共 享,而金融普惠举措则要求金融机构避 免过度降低风险,以免将弱势群体排除 在外. 正确答案D您选择/ 试题详解
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+选项D正确.数据隐私法限制客户信息共享,影 求避免过度去风险化,防止排除弱势群体,这均 要求金融机构平衡多重合规要求.选项A仅提及 消费者保护法与AML/CFT的交叉影响,未全面体 现平衡要求.选项B指出其他法规仅间接影响, 未强调平衡必要性.选项C认为ESG框架与 AML/CFT分离,与平衡要求无关.因此,D最全 面准确.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,91 @@
+# v7_q_000118
+
+教材章节：未映射
+
+题型：single
+
+题干：哪项法规允许金融机构在向美国财政部发出通知后，相互分享信息，以识别并向联邦政府报告可能涉及洗钱或恐怖活动的行为？
+
+英文题干：Which regulation permits financial institutions, upon providing notice to the U.S. Department of the Treasury, to share information with one another in order to identify and report activities that may involve money laundering or terrorist activity to the federal government?
+
+选项：
+
+- A. 欧洲议会法规（EU）2024/1624
+  English: Regulation (EU) 2024/1624 of the European Parliament
+- B. 洗钱/恐怖融资（ML/TF）信息及案件的协同共享（COSMIC）
+  English: Collaborative Sharing of Money Laundering/Terrorism Financing (ML/TF) Information & Cases (COSMIC)
+- C. 美国《爱国者法案》第314(a)条
+  English: USA PATRIOT Act Section 314(a)
+- D. 美国《爱国者法案》第314(b)条
+  English: USA PATRIOT Act Section 314(b)
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分美国《爱国者法案》第314(a)条与第314(b)条的信息共享对象
+
+## 【核心解析】
+
+美国《爱国者法案》第314(b)条是私营部门信息共享的典型制度，允许金融机构在向美国财政部发出通知后，相互分享客户或交易信息，以协助反洗钱/反恐怖融资合规（P239）。题干要求找出「允许金融机构相互分享信息」并向联邦政府报告涉洗钱/恐怖活动行为的法规，且须「向美国财政部发出通知」，这正好吻合314(b)的机制——金融机构之间共享、通知财政部。相比之下，第314(a)条的信息共享发生在金融机构与执法部门之间（P298），不涉及机构间的相互分享；欧盟法规和新加坡COSMIC则不属于美国财政部监管框架。因此，第314(b)条最直接匹配题干所有关键要素。
+
+教材原句："314b allows financial institutions to share customer or transactional information with each other to assist with AML/CFT compliance."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜主体或阶段错配**：《欧盟反洗钱条例》(EU) 2024/1624 虽然包含跨境信息共享条款（P190、P239），但其主体是欧盟成员国机构，且不涉及向美国财政部通知的要求，与题干场景的匹配度远低于美国国内法第314(b)条。
+- **B 错误（题干对照）｜主体或阶段错配**：COSMIC是新加坡的金融情报共享平台（P239），适用于新加坡金融机构在出现红旗信号时共享信息，与题干「向美国财政部发出通知」的监管环境无直接关联。
+- **C 错误（教材直接依据）｜主体或阶段错配**：FinCEN 314(a) 请求实现的是金融机构与执法部门之间的信息共享（P298），而非题干所描述的金融机构「相互」分享信息。题干中的「相互分享信息」更直接对应第314(b)条。
+
+## 【易错提醒】
+
+第314(a)条是金融机构与执法部门单向信息共享（P298），而第314(b)条是金融机构之间的双向信息共享，并需要通知美国财政部（P239）。看到「相互分享」和「通知财政部」就选314(b)。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002348`
+
+### `v7u_N002348`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation involving the private sector > Private sector information sharing
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：第314b条允许金融机构相互共享客户或交易信息以协助反洗钱/反恐怖融资合规
+- 英文原文：314b allows financial institutions to share customer or transactional information with each other to assist with AML/CFT compliance.
+
+### `v7u_N002977`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Governance and oversight > • United States:
+- 页码：PDF第303页 / 书内第298页
+- 中文要点：FinCEN 314(a)请求允许金融机构与执法部门之间共享信息。
+- 英文原文：FinCEN 314(a) request: Enables information sharing between financial institutions and law enforcement.
+
+### `v7u_N002347`
+
+- 用于：核心解析
+- 章节：Cooperation involving the private sector > Private sector information sharing
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：美国《爱国者法案》第314b条是最早的私营部门信息共享示例之一
+- 英文原文：USA PATRIOT Act Section 314b is one of the oldest examples.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+《美国爱国老法案》第314(h)条分许金融机构在
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+美国《爱国者法案》第314(b)条允许金融机构在 向美国财政部提交通知后,出于识别和报告涉及
+
+### 答案冲突提示
+
+- 未发现答案冲突。

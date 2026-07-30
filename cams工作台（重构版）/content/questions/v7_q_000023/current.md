@@ -1,0 +1,75 @@
+# v7_q_000023
+
+教材章节：未映射
+
+题型：single
+
+题干：诸如律师、会计师以及信托和公司服务提供商(TCSP)等职业有时被称为“看门人”,因为他们:
+
+英文题干：Professions such as lawyers, accountants, and trust and company service providers (TCSPs) are sometimes referred to as gatekeepers because they:
+
+选项：
+
+- A. 往往不了解也不受反洗钱法律法规的约束,无意中让犯罪分子进入合法经济领域.
+  English: Often do not understand and are not covered by money laundering laws and regulations, unwittingly allowing criminals to enter the legitimate economy
+- B. 是进入金融体系的一个入口,也是防范非法资金渗入合法经济的第一道防线
+  English: Are an entry point to the financial system and a first line of defense against the infiltration of illicit funds into the legitimate economy
+- C. 根据所有司法管辖区的反洗钱法律法规,必须阻止任何犯罪分子将非法资金融入合法经济.
+  English: Are required under money laundering laws and regulations in all jurisdictions to stop any criminals from being able to integrate illicit funds into the legitimate economy
+- D. 是高风险主体,他们可能故意让犯罪分子进入合法经济领域.
+  English: Are high-risk actors who may deliberately allow criminals to enter the legitimate economy
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+理解DNFBP作为守门人的中介与第一道防线角色
+
+## 【核心解析】
+
+教材将指定的非金融企业及行业（DNFBP）常被称为「看门人」，指其充当犯罪分子与金融系统之间的中介（P119）。这种中介角色天然包含两个侧面：既是接触金融体系的入口，也是阻止非法资金进入的防线。题干中律师、会计师、信托与公司服务提供商正属于DNFBP，因此选项B所描述的「进入金融体系的一个入口」与「防范非法资金渗入合法经济的第一道防线」恰好对应了看门人作为中介的桥梁与屏障功能，比其他选项更直接契合教材定义。
+
+教材原句："Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜概念混淆**：DNFBP从事的部分业务容易被犯罪分子利用，但这不表示其通常不了解反洗钱要求或天然不受监管。看门人的关键特征是处于客户与金融体系之间的重要入口，而不是对法规无知或获得豁免。
+- **C 错误（教材定义应用）｜范围或程度偏差**：「所有司法管辖区」和「阻止任何犯罪分子」都是绝对化表述。DNFBP的具体义务取决于适用法律和业务风险，其作用是识别并降低风险，而不是保证在全球范围内阻止一切犯罪活动。
+- **D 错误（教材定义应用）｜概念混淆**：看门人可能被犯罪分子利用，也可能故意提供协助，但这些是具体行为风险，不能作为看门人概念本身的定义。该概念强调的是其中介位置以及由此产生的准入、防范责任，因此B更准确。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001060`
+
+### `v7u_N001060`
+
+- 用于：核心解析、选项A、选项C、选项D
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：DNFBP常被称为“看门人”，充当犯罪分子与金融系统之间的中介。
+- 英文原文：Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+律师、会计师及TCSP等职业被称为“看门人”,主 要因其处于金融体系入口,是防范非法资金流入 合法经济的第一道防线.选项A错误,因其受反 洗钱法规约束;选项C错误,因其表述过于绝 对,且未突出职业角色定位:选项D错误,因其 将职业群体直接定性为高风险主体,与“看门人” 的防范职责不符.选项B准确概括了此类职业在 反洗钱中的关键作用,即通过专业服务阻断非法 资金渗透.易错提醒:注意区分“防范职责”与主
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

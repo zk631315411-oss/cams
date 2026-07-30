@@ -1,0 +1,125 @@
+# v7_q_000113
+
+教材章节：未映射
+
+题型：single
+
+题干：一家大型银行的合规官接到任务，要对一位长期客户的一系列异常交易进行调查。该客户在短时间内向多个账户存入了多笔大额现金，这引起了警觉。在收集并分析交易数据、查阅客户记录以及与外部资料进行交叉比对后，合规官认定有合理理由怀疑存在洗钱行为。作为调查记录的一部分，合规官必须决定如何以及何时在内部上报此事，以及是否要提交可疑活动报告（SAR）。在这个过程中，接下来的关键步骤是什么？
+
+英文题干：A compliance officer at a large bank has been tasked with investigating a series of unusual transactions involving a long-time customer. The customer has made several large cash deposits into multiple accounts within a short period, raising red flags. After gathering and analyzing transaction data, reviewing customer records, and cross-referencing external sources, the compliance officer determines that there is a reasonable suspicion of money laundering. As part of documenting this investigation, the compliance officer must decide how and when to escalate the matter internally and whether to file a suspicious activity report (SAR). What is the next critical step in this process?
+
+选项：
+
+- A. 记录客户的交易历史，并在发现进一步可疑活动之前对调查内容保密
+  English: Document the customer's transaction history and keep the investigation confidential until further suspicious activity is detected
+- B. 立即将此情况上报给高级管理层，建议因潜在的声誉风险关闭该客户的账户
+  English: Immediately escalate the case to senior management, recommending the closure of the customer's accounts due to potential reputational risk
+- C. 将调查情况报告给外部审计员，并在采取任何行动之前等待进一步的指示
+  English: Report the investigation to external auditors and await further guidance before taking any action
+- D. 拟写一份可疑活动报告，其中应包含交易的详细时间线、客户背景以及产生怀疑的理由，并在监管规定的时间内提交给相关金融情报机构（FIU）
+  English: Draft a SAR that includes a detailed chronology of the transactions, customer background and the rationale for suspicion, and submit it to the relevant financial intelligence unit (FIU) within the regulatory timelines
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+合理怀疑成立后启动SAR程序并在监管期限内完成提交
+
+## 【核心解析】
+
+题干中合规官已经完成调查并形成合理的洗钱怀疑，SAR报告流程由此启动。教材要求在怀疑或知悉相关人员从事洗钱等犯罪活动时尽快建议SAR（P352）；一旦活动被认定为可疑，报告时限开始，SAR必须在监管机构规定的期限内提交（P352）。这意味着应当及时启动报告程序，但并非要求在形成怀疑的同一时刻完成提交。
+
+教材还要求SAR中的信息适当、完整且基于事实（P352），并包含客户信息、机构提供的服务、交易活动、怀疑理由及支持证据（P353）。选项D涵盖了拟写SAR、记录交易时间线和客户背景、说明怀疑理由以及在规定期限内向相关FIU提交，完整对应报告启动、内容准备和按期提交三个环节，因此正确。
+
+教材原句："You should recommend a SAR as soon as you suspect, or know, that a person is engaged in money laundering, terrorist financing, or other criminal activity."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜主体或阶段错配**：题干已经说明合理怀疑成立，教材要求此时尽快建议SAR，并从活动被认定为可疑时开始计算报告期限（P352）。A却要求等待发现进一步可疑活动后再采取行动，会不必要地推迟已经触发的报告流程。
+- **B 错误（教材直接依据）｜主体或阶段错配**：B从形成怀疑直接跳到建议关闭账户，遗漏了SAR报告程序。教材说明，提交SAR后，金融机构才决定保留还是关闭受影响账户（P356-357），因此账户处置不能替代本题所问的下一关键步骤。
+- **C 错误（教材直接依据）｜主体或阶段错配**：若案件事实表明需要对外报告，通常应向相关司法管辖区的主管机构提交SAR（P351）。外部审计员不是选项D所述SAR的接收主体，等待其进一步指示也不能替代在监管期限内履行报告义务。
+
+## 【易错提醒】
+
+应区分「尽快启动SAR程序」与「立即完成SAR提交」：形成怀疑后应及时建议并准备SAR，随后在监管机构规定期限内提交。账户是否保留或关闭是SAR提交后的后续决定，不能替代报告程序。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003501`
+
+### `v7u_N003501`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：一旦怀疑或知悉洗钱等犯罪活动，应尽快建议提交可疑活动报告（SAR）。
+- 英文原文：You should recommend a SAR as soon as you suspect, or know, that a person is engaged in money laundering, terrorist financing, or other criminal activity.
+
+### `v7u_N003493`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：一旦活动被认定为可疑，报告时限开始，必须在监管机构规定时限内提交SAR。
+- 英文原文：Once an activity is deemed suspicious, the reporting timeline begins, and a SAR must be filed within the timelines set by the regulator.
+
+### `v7u_N003504`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：SAR中的信息必须适当、完整且基于事实。
+- 英文原文：The information in a SAR must be appropriate, complete, and factual.
+
+### `v7u_N003505`
+
+- 用于：核心解析
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第358页 / 书内第353页
+- 中文要点：SAR应包含客户信息、机构提供的服务、交易活动、怀疑理由及支持证据。
+- 英文原文：You should include information about the customer, services offered by the institution, transaction activity, rationale for suspicions, and any supporting evidence.
+
+### `v7u_N003578`
+
+- 用于：选项B、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR
+- 页码：PDF第362页 / 书内第357页
+- 中文要点：提交可疑交易报告后必须决定如何处理客户账户
+- 英文原文：If a SAR is filed, they must then decide how to handle the customer’s accounts.
+
+### `v7u_N003560`
+
+- 用于：选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Maintaining an account after unusual activity
+- 页码：PDF第361页 / 书内第356页
+- 中文要点：提交 SAR 后，金融机构须决定是否保留或关闭受影响账户。
+- 英文原文：After filing a suspicious activity report (SAR), financial institutions must decide whether to maintain or close the impacted account.
+
+### `v7u_N003487`
+
+- 用于：选项C
+- 章节：Concluding an investigation and suspicious activity reporting > Duty to report
+- 页码：PDF第356页 / 书内第351页
+- 中文要点：若事实表明需对外报告，通常向主管机构提交可疑活动报告。
+- 英文原文：If the facts indicate an external report must be made, the most usual action is the submission of a suspicious activity report to the relevant authority in the jurisdiction.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在怀疑存在洗钱行为时,合规官需按监管要求处 理.选项A记录交易历史并在发现进一步可疑活 动前保密,未及时上报和提交可疑活动报告 (SAR),不符合流程.选项B立即上报并建议关 闭账户,虽及时上报但未提及提交SAR,且关闭 账户需更多证据支持,不够稳妥.选项C报告给 外部审计员并等待指示,外部审计员非处理可疑 活动主体,会延误处理.选项D拟写SAR,包含 交易时间线、客户背景及怀疑理由,并在规定时 间内提交给金融情报机构(FIU),符合反洗钱规定 和流程.因此选D.易错点:需明确上报和提交 SAR的流程及主体.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+合规官在确认存在合理洗钱嫌疑后,需按监管要 求及时上报可疑活动报告(SAR).选项D中“起 草包含交易时间线、客户背景及怀疑理由的 SAR,并在监管时限内提交至金融情报机构 (FIU)”完全符合反洗钱流程的核心要求.其他 选项均存在缺陷:A未履行上报义务,B过早关 闭账户可能破坏证据链,C依赖外部审计会延误 处理时机.根据《反洗钱法》及国际标准(如 FATF建议),SAR提交是合规调查的关键闭环 步骤.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

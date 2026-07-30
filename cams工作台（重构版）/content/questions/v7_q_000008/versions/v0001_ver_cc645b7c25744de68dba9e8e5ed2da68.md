@@ -1,0 +1,107 @@
+# v7_q_000008
+
+教材章节：未映射
+
+题型：single
+
+题干：一家银行的客户尽职调查团队经理发现,上个季度有一名高风险客户的活动未按银行内部规定的时间表进行审查.KYC团队经理应该做什么？
+
+英文题干：The manager of a bank's KYC team discovers that a high-risk customer's activity was not reviewed last quarter as the bank's internal schedule required. What should the KYC team manager do?
+
+选项：
+
+- A. 提交转介，建议报送可疑活动报告(SAR)
+  English: Submit a referral to file a suspicious activity report (SAR)
+- B. 评估客户身份识别(KYC)审查流程以了解为何审查未按要求进行,并在必要时采取纠正措施
+  English: Evaluate the KYC review process to understand why the review did not occur as required and take corrective action as necessary
+- C. 联系客户的客户经理,在完成定期的“了解您的客户”审查之前暂停账户访问权限
+  English: Contact the customer's relationship manager to suspend account access until the periodic KYC review is completed
+- D. 将客户从银行的高风险名单中移除
+  English: Remove the customer from the bank's high-risk list
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+KYC质量控制流程与纠错机制
+
+## 【核心解析】
+
+质量控制(QC)的核心目标是确保输出符合标准，包括「通过识别不完整、不正确或过时的KYC记录来检测和纠正错误」(P313)。定期KYC审查要求「通过系统审计客户档案和风险评估」来进行(P314)。题干中，团队经理发现的是内部流程执行出了问题——高风险客户的审查未按既定的时间表完成。这一情形直接对应质量控制职能中的「错误检测与纠正」，而非直接触发可疑活动报告或客户风险等级变更。经理首先应评估审查流程、找出漏审原因并采取纠正措施，属于QC/QA职能的标准动作。
+
+教材原句："Error detection and correction by identifying incomplete, incorrect, or outdated KYC records."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜题干要素不匹配**：提交SAR的前提是「怀疑或知悉某人从事洗钱等犯罪活动」(P352)，而题干只描述了审查延迟这一流程问题，未出现任何可支撑犯罪嫌疑的交易行为或风险信号，因此匹配度不如B项直接。
+- **C 错误（教材直接依据）｜主体或阶段错配**：教材提到「分析师常建议加强客户监控或限制账户作为预防措施」(P335)，但这是基于交易监控中发现的异常活动。题干的问题是KYC审查流程执行遗漏，优先动作应是诊断流程而非直接对客户账户采取措施，B项更吻合教材对质量控制职能的定义。
+- **D 错误（教材直接依据）｜题干要素不匹配**：客户风险评估基于KYC流程收集的信息判定(P285)。审查因内部流程问题被跳过，不等于客户风险已下降，直接移除高风险状态缺乏支撑。
+
+## 【易错提醒】
+
+「KYC审查延迟」与「发现可疑活动」是两类不同场景。前者触发质量控制流程——追查流程漏洞并纠正；后者才有义务考虑提交SAR。不能因为没做审查就直接预设账户有犯罪嫌疑。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003122`
+
+### `v7u_N003122`
+
+- 用于：核心解析、易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios > Function of quality control
+- 页码：PDF第318页 / 书内第313页
+- 中文要点：通过识别不完整、不正确或过时的了解你的客户记录来检测和纠正错误
+- 英文原文：Error detection and correction by identifying incomplete, incorrect, or outdated KYC records.
+
+### `v7u_N003127`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios > Function of quality control
+- 页码：PDF第319页 / 书内第314页
+- 中文要点：通过系统审计客户档案和风险评估进行定期了解你的客户审查
+- 英文原文：Conduct regular KYC reviews by systematically auditing customer files and risk assessments.
+
+### `v7u_N003501`
+
+- 用于：选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：一旦怀疑或知悉洗钱等犯罪活动，应立即提交可疑活动报告（SAR）。
+- 英文原文：You should recommend a SAR as soon as you suspect, or know, that a person is engaged in money laundering, terrorist financing, or other criminal activity.
+
+### `v7u_N003313`
+
+- 用于：选项C
+- 章节：Transaction monitoring > Procedures for alerts review
+- 页码：PDF第340页 / 书内第335页
+- 中文要点：分析师常建议加强客户监控或限制账户作为预防措施
+- 英文原文：Analysts often recommend enhanced customer monitoring or account restrictions as preventive measures.
+
+### `v7u_N002845`
+
+- 用于：选项D
+- 章节：Customer risk assessment versus enterprise-wide risk assessment
+- 页码：PDF第290页 / 书内第285页
+- 中文要点：CRA考虑通过了解你的客户流程收集的客户信息
+- 英文原文：The CRA considers information collected through KYC processes, such as documents, customer business activity, and requested products.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+单选 -[洗钱和恐怖融资的风险及方法]一家银行 的客户尽职调查团队经理发现,上个季度有一名 高风险客户的活动未按银行内部规定的时间表进 行审查.KYC团队经理应该做什么？ A提交转介以提交可疑活动报告(SAR) 评估客户身份识别(KYC)审查流程 以了解为何审查未按要求进行,并在必 要时采取纠正措施 联系客户的客户经理,在完成定期的 “了解您的客户”审查之前暂停账户访问 权限 D将客户从银行的高风险名单中移除 正确答案B您选择/ 试题详解
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

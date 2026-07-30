@@ -1,0 +1,139 @@
+# v7_q_000177
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪一项最能描述监管机构、执法机构和金融情报机构(FIU)在洗钱调查(包括跨境案件)期间的合作程度？
+
+英文题干：Which of the following best describes the degree of cooperation between regulatory authorities, law enforcement agencies, and Financial Intelligence Units (FIUs) during money laundering investigations, including cross-border cases?
+
+选项：
+
+- A. 监管机构主要独立开展工作,但应国际执法机构的要求会共享信息.
+  English: Regulatory authorities primarily work independently but share information when requested by international law enforcement agencies.
+- B. 金融情报机构主要处理金融机构提交的报告,而监管机构和执法部门则仅限于执行国内反洗钱法律,无法开展国际合作.
+  English: FIUs primarily handle reporting from financial institutions, while regulatory authorities and law enforcement agencies are limited to enforcing domestic AML laws without international cooperation.
+- C. 执法机构和金融情报机构仅在国内调查期间开展合作,而将跨境调查交由国际刑警组织等国际组织负责.
+  English: Law enforcement agencies and FIUs only cooperate during domestic investigations, leaving cross-border investigations to international organizations like Interpol.
+- D. 监管机构、执法部门和金融情报机构通过正式协议共享情报并协调行动,以简化跨境洗钱调查工作.
+  English: Regulatory authorities, law enforcement agencies, and FIUs share intelligence through formal agreements and coordinate actions to streamline cross-border money laundering investigations.
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+理解监管、执法与FIU在跨境调查中的正式合作机制
+
+## 【核心解析】
+
+公共部门当局之间的国际合作是打击跨国金融犯罪的关键。执法部门、监管机构和国家金融情报机构（FIU）会建立战略伙伴关系，也会在个案层面合作；相关机构还应与国际同行共享信息，以处理跨境洗钱和恐怖融资（P229）。国际合作使各方能够共同工作、共享情报并制定联合方法（P230），FIU还可把跨境洗钱数据纳入操作分析，并传递给执法部门采取行动（P231）。因此，D对「共享情报并协调行动」的描述最符合题意。需要注意，合作渠道会根据信息属于情报、证据还是监管信息而有所不同（P229），并非所有合作都采用同一种正式协议。
+
+教材原句："International cooperation among public sector authorities is key to fighting transnational financial crime. Law enforcement, regulators, and national FIUs develop strategic partnerships as well as cooperate at a case level."
+
+## 【错误项分析】
+
+- **A 错误**：相关机构应与国际同行共享信息以处理跨境洗钱，监管机构也在境内和国际层面合作（P229）。A将监管机构描述为「主要独立」且只在收到国际执法请求时共享，范围明显过窄。
+- **B 错误**：FATF建议明确要求当局通过信息交换和联合调查促进国际合作（P149），打击洗钱本身就需要国内与国际合作及信息共享（P233）。B将监管机构和执法部门限缩为「无法开展国际合作」，与教材多处强调的国际协作框架直接矛盾。
+- **C 错误**：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报，并可将其纳入操作分析后传播给执法部门采取行动（P231），这意味着FIU与执法机构的合作本身就涵盖跨境维度。C将其合作限定为「仅在国内调查期间」不符合教材描述的跨境情报共享机制。
+
+## 【易错提醒】
+
+跨境合作不等于把案件全部交给国际组织。监管机构负责跨境监管协调，FIU之间交换情报并开展操作分析，执法部门据此采取行动（P229-P231）；各主体仍在自身权限内协作。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002225`
+
+### `v7u_N002225`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Case study: J5-US law enforcement collaboration
+- 页码：PDF第234页 / 书内第229页
+- 中文要点：公共部门当局之间的国际合作是打击跨国金融犯罪的关键
+- 英文原文：International cooperation among public sector authorities is key to fighting transnational financial crime. Law enforcement, regulators, and national FIUs develop strategic partnerships as well as cooperate at a case level.
+
+### `v7u_N002222`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第234页 / 书内第229页
+- 中文要点：各机构必须合作并共享与各自职能相关的信息
+- 英文原文：There are many different models, but the main point is that the agencies cooperate and share information when it pertains to each other’s functions.
+
+### `v7u_N002223`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第234页 / 书内第229页
+- 中文要点：相关机构应与国际同行共享信息，以处理跨境洗钱和恐怖融资。
+- 英文原文：These agencies should also share information with their international counterparts to handle crossborder money laundering and terrorist financing.
+
+### `v7u_N002224`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第234页 / 书内第229页
+- 中文要点：信息共享可通过不同渠道进行，取决于信息属于情报、证据还是监管信息。
+- 英文原文：There are various channels for information sharing, depending on whether it is intelligence, evidence, or regulatory information.
+
+### `v7u_N001381`
+
+- 用于：选项B
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：FATF建议要求当局通过信息交换和联合调查促进国际合作以打击金融犯罪。
+- 英文原文：Authorities should facilitate international cooperation through information exchange and joint investigations to combat financial crimes effectively on a global scale.
+
+### `v7u_N002276`
+
+- 用于：选项B
+- 章节：Cooperation between authorities > Key takeaways
+- 页码：PDF第238页 / 书内第233页
+- 中文要点：打击洗钱需要国内与国际合作及信息共享
+- 英文原文：Addressing money laundering requires cooperation and information sharing both domestically and internationally.
+
+### `v7u_N002235`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation between authorities > Case study: J5-US law enforcement collaboration
+- 页码：PDF第235页 / 书内第230页
+- 中文要点：国际合作使当局能够共同工作、共享情报并制定联合方法。
+- 英文原文：It enables authorities to work together, share intelligence, and develop joint approaches.
+
+### `v7u_N002258`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+### `v7u_N002259`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：FIU可将跨境数据纳入操作分析并传播给执法部门采取行动
+- 英文原文：FIUs can incorporate this data into operational analysis relating to cross-border money laundering and disseminate it to law enforcement for action.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在洗钱调查,尤其是跨境案件中,监管机构、执 法机构和金融情报机构(FIU)的合作至关重 要.选项A中监管机构主要独立开展工作,仅应 国际执法机构要求共享信息,这不符合实际合作 需求;选项B中执法部门仅限于执行国内反洗钱 法律,无法开展国际合作,不符合跨境案件处理 要求;选项C中执法机构和金融情报机构仅在国 内调查期间合作,跨境调查交由国际组织负责, 也不符合实际情况.而选项D中,三者通过正式 协议共享情报并协调行动,能简化跨境洗钱调查 工作,符合实际合作模式.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

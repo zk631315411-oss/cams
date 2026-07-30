@@ -1,0 +1,107 @@
+# v7_q_000138
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融机构(FIs)应当了解其他司法管辖区的反金融犯罪(AFC)和制裁监管制度，这一点至关重要，以便:
+
+英文题干：It is important for financial institutions (FIs) to be aware of anti-financial crime (AFC) and sanctions regulatory regimes in other jurisdictions in order to:
+
+选项：
+
+- A. 确保遵守FI在其运营或有业务关系的所有国家的反洗钱和制裁要求，以避免因违反外国司法管辖区的规定而受到处罚
+  English: Maintain compliance with the AFC and sanctions requirements of all countries where the FI operates or has business relationships and avoid penalties for violations in foreign jurisdictions
+- B. 确保根据业务活动所在国的监管标准有选择地实施制裁制度，重点针对与本国监管标准一致的司法管辖区
+  English: Ensure that sanctions regimes are applied selectively based on the regulatory standards of the countries where business activities occur, focusing primarily on aligned jurisdictions
+- C. 弥补反金融犯罪和制裁法规对跨境交易适用性有限，以及这些法规与其他司法管辖区境内业务的相关性较低所带来的不足
+  English: Compensate for the limited applicability of AFC and sanctions regulations on cross-border transactions and their reduced relevance to domestic business in other jurisdictions
+- D. 确保FI能够在监管比其本国更严格或更宽松的司法管辖区管理业务关系，从而实现运营灵活性
+  English: Ensure that FIs can manage business relationships in jurisdictions with stricter or more lenient regulations than their home jurisdiction, providing operational flexibility
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+多司法辖区AFC与制裁制度的合规目的及适用范围
+
+## 【核心解析】
+
+教材明确，金融机构必须及时了解多个司法辖区的反金融犯罪（AFC）法规，以确保合规并有效管理风险（P388）。同时，组织是否需要遵守其他制裁制度，取决于自身地域足迹，以及客户、供应商和其他第三方活动造成的司法管辖暴露（P207）。据此，A在四个选项中最符合题干目的，因为它强调遵守相关AFC与制裁要求并避免违规后果；但其中「所有有业务关系的国家」不能脱离适用性条件作绝对理解，应限于因实际地域足迹或司法管辖暴露而适用的相关要求。跨国机构还应使政策与具体国家法律对齐，同时维持全球AFC原则（P292）。
+
+教材原句："Financial institutions must stay up to date with AFC regulations across multiple jurisdictions to ensure compliance and manage risks effectively."
+
+## 【错误项分析】
+
+- **B 错误**：教材要求跨国机构使政策与具体国家法律对齐，同时维持全球AFC原则，某些辖区还可能需要实施更高标准（P292）。B所称「有选择地」实施制裁制度并只关注与本国标准一致的辖区，会遗漏实际适用但标准不同的监管要求，因此不如A符合合规目的。
+- **C 错误**：教材指出，跨境交易会因各司法辖区在资金流动、货币管制、制裁和监管报告方面的法律差异而增加合规复杂性（P95）；其他制裁制度是否适用则取决于地域足迹和具体司法管辖暴露（P207）。C把了解外国制度解释为补偿法规「有限适用性」和「相关性降低」，没有对应教材所述的适用性判断与风险管理逻辑。
+- **D 错误**：监管标准严格程度不同，确实会影响跨境业务管理，但教材将了解多司法辖区法规的直接目的界定为确保合规和有效管理风险（P388），并要求政策与具体国家法律对齐（P292）。D把目的落在「运营灵活性」，不如A直接匹配题干所问的合规目的。
+
+## 【易错提醒】
+
+「需要了解哪些国家的制度」与「哪些外国制度实际适用」不是同一问题。金融机构应了解多司法辖区要求（P388），但具体适用范围仍要根据地域足迹，以及客户、供应商和其他第三方活动形成的司法管辖暴露判断（P207）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003891`
+
+### `v7u_N003891`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Understanding AFC technology > Regulatory requirements for technology
+- 页码：PDF第393页 / 书内第388页
+- 中文要点：金融机构必须及时了解多个司法辖区的金融犯罪防控法规，以确保合规并有效管理风险。
+- 英文原文：Financial institutions must stay up to date with AFC regulations across multiple jurisdictions to ensure compliance and manage risks effectively.
+
+### `v7u_N001998`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Other AFC regulations that impact organizations > Other sanctions regimes
+- 页码：PDF第212页 / 书内第207页
+- 中文要点：是否需要遵守其他制裁制度，取决于组织自身地域足迹，以及客户、供应商和其他第三方活动形成的司法管辖暴露。
+- 英文原文：Along with the major sanctions regimes, organizations might need to comply with other sanctions regimes. This depends on their own geographical footprint as well as jurisdictional exposure stemming from the activities of their customers, suppliers, and other third parties.
+
+### `v7u_N002910`
+
+- 用于：核心解析、选项B、选项D
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第297页 / 书内第292页
+- 中文要点：跨国机构需使政策符合各国法律，同时维持全球金融犯罪防控原则，可能需在部分司法管辖区实施更高标准。
+- 英文原文：To ensure jurisdictional compliance, multinational organizations must align policies with country-specific laws, while maintaining global AFC principles. This may result in implementing higher standards in some jurisdictions to maintain global consistency.
+
+### `v7u_N000837`
+
+- 用于：选项C
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第100页 / 书内第95页
+- 中文要点：跨境交易因各司法辖区在资金流动、货币管制、制裁和监管报告方面的法律差异而增加合规复杂性。
+- 英文原文：Cross-border transactions complicate compliance efforts. Different jurisdictions enforce varying laws regarding fund movement, currency controls, sanctions, and regulatory and tax reporting. Some countries implement strict restrictions on remittances, while others are more lenient.
+
+### `v7u_N000099`
+
+- 用于：核心解析
+- 章节：Types of financial crime > Predicate crimes and money laundering
+- 页码：PDF第28页 / 书内第23页
+- 中文要点：受监管实体必须建立健全的反洗钱和制裁合规计划；不合规及未能防止制裁规避可能受到处罚。
+- 英文原文：Regulated entities must have strong AML and sanctions compliance programs with robust policies, procedures, and internal controls for detecting and preventing sanctions evasion. The penalties for noncompliance and failing to prevent sanctions evasion could include:
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+金融机构了解其他司法管辖区的反金融犯罪和制 裁监管制度,核心目的是确保遵守所有相关国家 的反洗钱和制裁要求,避免因违反外国司法管辖 区的规定而受处罚.选项A准确概括了这一关键 要点,即确保遵守所有相关国家的规定以规避处 罚风险.选项B强调选择性实施制度,与全面合 规要求不符:选项C讨论跨境交易适用性,偏离 核心合规目标:选项D聚焦监管灵活性,未体现 风险规避本质.因此,A为正确答案. 度 难
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+金融反洗钱和反恐融资合规标准要求金融机构了 解其他司法管辖区的反金融犯罪和制裁监管制 度,主要目的是确保金融机构在其运营或有业务 关系的所有国家遵守反金融犯罪和制裁要求,避 免因违反外国司法管辖区的规定而受到处罚.选 项A准确反映了这一目的.选项B中提到的选择 性应用制裁制度不符合全面合规的要求:选项C 提到的补偿性措施并非了解其他司法管辖区制度 的主要目的:选项D提到的管理不同监管强度的 灵活性也不是主要目的.因此,选项A正确. 难
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A，英文=C

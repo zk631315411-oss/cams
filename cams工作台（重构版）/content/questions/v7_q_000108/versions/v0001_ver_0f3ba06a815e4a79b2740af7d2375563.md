@@ -1,0 +1,99 @@
+# v7_q_000108
+
+教材章节：未映射
+
+题型：single
+
+题干：哪种情形最能说明金融机构为何会关闭客户的账户？
+
+英文题干：Which scenario best justifies why a customer's account might be closed by a financial institution?
+
+选项：
+
+- A. 该客户是民事传票的对象
+  English: The customer is the object of a civil subpoena
+- B. 该客户使用与特别指定国民有业务往来的航运公司
+  English: The customer uses a shipping company dealing with specially designated nationals
+- C. 该账户显示定期有固定金额的汇款用于支付学费
+  English: The account shows periodic fixed-amount remittances for tuition fees
+- D. 该账户有引发多份可疑活动报告的交易
+  English: The account has transactions that triggered multiple suspicious activity reports
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+提交SAR后金融机构对受影响账户的处置义务
+
+## 【核心解析】
+
+教材指出，提交可疑活动报告（SAR）后，金融机构应决定是否保留或关闭受影响账户（P356）。这并不意味着提交SAR就必须关闭账户，而是要结合可疑活动的持续性、违法风险和机构风险偏好作出决定（P303）。在给定选项中，D项的多份SAR表明账户可能持续出现需要上报的可疑活动，因而比其他选项更能支持重新评估并终止客户关系。
+
+教材原句："After filing a suspicious activity report (SAR), financial institutions must decide whether to maintain or close the impacted account."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：民事传票本身并不构成关闭账户的直接理由。教材指出，传票等法律令状会触发客户审查，但不自动导致提交SAR，因为可能缺乏足够的支持信息（P357）。同时，执法机构还可能要求金融机构保持账户开放并监控以协助调查（P362）。相比D项已实际触发多份SAR的情形，A项中的传票与账户关闭决策之间的因果链条更长、匹配度更低。
+- **B 错误（题干对照）｜需要进一步评估**：使用与特别指定国民（SDN）有业务往来的航运公司可能构成制裁风险或红旗信号，但题干没有说明客户本身与SDN直接交易，也没有说明该关联构成实际制裁违规。相比之下，D项更直接表明账户存在持续的可疑活动。
+- **C 错误（题干对照）｜主体或阶段错配**：定期固定金额的学费汇款，单独看属于正常的账户使用模式。教材提及，直接为外国国民个人开支（如教育费）提供资金的账户，可能混淆官方与个人财务，但这属于使领馆账户场景下的风险指标（P138），并非普通零售账户关闭的典型理由。题干未提及任何使领馆或公共职务背景，该选项与关闭账户的关联非常薄弱，远不如多份SAR所代表的可疑活动直接。
+
+## 【易错提醒】
+
+传票触发审查不等于触发SAR，更不等于需要关闭账户。教材明确指出传票不自动导致SAR（P357），且执法机构可能要求保留账户以协助调查（P362）。不要将「收到传票→触发审查」与「提交SAR→关闭账户」这两条路径混为一谈。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003560`
+
+### `v7u_N003560`
+
+- 用于：核心解析
+- 章节：Concluding an investigation and suspicious activity reporting > Maintaining an account after unusual activity
+- 页码：PDF第361页 / 书内第356页
+- 中文要点：提交 SAR 后，金融机构须决定是否保留或关闭受影响账户。
+- 英文原文：After filing a suspicious activity report (SAR), financial institutions must decide whether to maintain or close the impacted account.
+
+### `v7u_N003008`
+
+- 用于：核心解析
+- 章节：Governance and oversight > 8. Customer offboarding and exit strategy:
+- 页码：PDF第308页 / 书内第303页
+- 中文要点：因涉嫌非法活动或不合规风险而终止客户关系需获得批准
+- 英文原文：Risk-based account closure: Based on reporting obligations, the organization might need approval to offboard customers due to suspected illicit activity or noncompliance risks.
+
+### `v7u_N003582`
+
+- 用于：选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR
+- 页码：PDF第362页 / 书内第357页
+- 中文要点：传票等法律令状会触发客户审查，但不自动导致提交SAR
+- 英文原文：Financial institutions routinely receive subpoenas and other legal orders related to civil and criminal matters. A request for information typically triggers a customer review, but does not automatically result in a SAR, because there might not be enough supporting information.
+
+### `v7u_N003631`
+
+- 用于：选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：执法机构可能要求金融机构保持账户开放并监控以协助调查。
+- 英文原文：Law enforcement might request that an FI keep a particular account open and monitor it for investigative purposes.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+金融机构关闭客户账户,通常与反洗钱和打击资 助恐怖主义相关.分析选项:A项民事传票对 象,不直接关联账户关闭;B项与特定国家有业 务往来的运输公司,也不直接导致账户关闭;C 项定期有固定金额汇款用于支付学费,属正常交 易:D项账户有引发多份可疑活动报告的交易, 这直接涉及反洗钱和打击资助恐怖主义的合规问 题,金融机构为防范风险,最可能关闭此类账 户.因此,D项最能说明金融机构关闭客户账户 的原因.易错提醒:注意区分正常交易与可疑交 易的特征.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+在AML/CFT合规计划中,金融机构需防范洗钱和 恐怖融资.分析选项:A项,民事传票不直接关 涉及风险,但非直接关闭账户理由;C项,定期 固定金额汇款支付学费,属正常交易;D项,账 户交易触发多次可疑活动报告,表明存在高风 险,符合金融机构关闭账户以防范风险的规要 求.因此,D项最合理.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

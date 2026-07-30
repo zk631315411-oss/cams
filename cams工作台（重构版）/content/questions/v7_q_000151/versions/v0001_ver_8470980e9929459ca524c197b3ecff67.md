@@ -1,0 +1,139 @@
+# v7_q_000151
+
+教材章节：未映射
+
+题型：single
+
+题干：《美国爱国者法案》第319(a)条:
+
+英文题干：Section 319(a) of the USA PATRIOT Act:
+
+选项：
+
+- A. 允许适当的联邦银行机构要求金融机构在120小时内提供与该机构反洗钱合规情况、其客户，或其在美国开设、维持、管理或运营的任何账户有关的记录或信息
+  English: Allows the appropriate federal banking agency to require a financial organization to produce, within 120 hours, records or information related to the organization's AML compliance, a customer of the organization, or any account opened, maintained, administered, or managed in the U.S. by the financial organization.
+- B. 授权美国财政部对外国司法管辖区、外国金融机构、国际交易类型或账户类型采取逐步递增且成比例的措施.
+  English: Provides the U.S. Department of the Treasury with the authority to apply graduated, proportionate measures against a foreign jurisdiction, foreign financial organization, type of international transaction, or type of account.
+- C. 允许美国政府从一家外国银行在美国开设并维持的代理行账户中扣押与该外国银行所存金额相同的资金.
+  English: Permits the U.S. government to seize funds from a correspondent account maintained in the U.S. by a foreign bank in the same amount as funds deposited with that foreign bank.
+- D. 对外国代理账户(包括组织与外国金融机构几乎所有的账户关系以及为非美国公民提供的私人银行业务)要求进行尽职调查
+  English: Requires due diligence for foreign correspondent accounts, including nearly all account relationships an organization has with foreign financial institutions, and for private banking services provided to non-U.S. persons.
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+识别《美国爱国者法案》第311条、第312条、第319(a)条和第319(b)条的核心功能
+
+## 【核心解析】
+
+《美国爱国者法案》第319(a)条规定，美国政府可以从外国银行在美国开立并维持的代理账户中扣押资金（P182）。在这一机制下，存入外国银行的资金可被视为存入其在美国的银行间账户，政府可以扣押不超过相应外国存款价值的资金，而无须证明被扣押资金可直接追溯至原存款。因此，C项最符合第319(a)条的核心机制。选项中的「相同数额」应理解为以相应外国存款价值为上限，而不是可以超额扣押。
+
+教材原句："Forfeiture from US correspondent account: This Act permits the US government to seize funds from a correspondent account in the US that a foreign bank has opened and maintained."
+
+## 【错误项分析】
+
+- **A 错误**：记录索取与代理账户资金扣押属于不同制度。第319(b)条的「120-hour rule」涉及金融机构反洗钱合规、客户以及在美国开立、维持、管理的账户资料；A描述的是记录提供要求（P181-P182），不对应第319(a)条的资金扣押机制。
+- **B 错误**：选项B描述的是第311条的特别措施授权。教材明确指出，第311条允许美国财政部针对被认定为主要洗钱关注对象的外国司法管辖区、金融机构或交易采取相应措施（P181），不属于第319(a)条。
+- **D 错误**：选项D描述的是第312条规定的外国代理账户和非美国人士私人银行账户强化尽职调查要求（P181）。第312条解决的是尽职调查问题，第319(a)条解决的是代理账户资金没收问题，因此D错误。
+
+## 【易错提醒】
+
+注意区分四项制度：第311条针对主要洗钱关注对象采取措施（P181）；第312条要求外国代理账户及非美国人士私人银行账户实施强化尽职调查（P181）；第319(a)条涉及从外国银行在美银行间账户中扣押资金（P182）；第319(b)条规定相关记录提供及120小时规则。第319(a)条的扣押金额以相应外国存款价值为上限。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001707`
+
+### `v7u_N001707`
+
+- 用于：核心解析、易错提醒
+- 章节：US AML/CFT regulatory landscape > USA PATRIOT Act
+- 页码：PDF第187页 / 书内第182页
+- 中文要点：允许美国政府扣押外国银行在美国代理账户中的资金，资金所有者可提出异议；本单元未写明「同等数额」或第319(a)条编号
+- 英文原文：Forfeiture from US correspondent account: This Act permits the US government to seize funds from a correspondent account in the US that a foreign bank has opened and maintained. The owner of the funds may contest the seizure.
+
+### `v7u_N001700`
+
+- 用于：选项A、易错提醒（仅支持记录保存和按要求提供记录的一般背景；不直接证明120小时或第319(b)条编号）
+- 章节：US AML/CFT regulatory landscape > Bank Secrecy Act
+- 页码：PDF第186页 / 书内第181页
+- 中文要点：在美国银行维持代理账户的外国金融机构承担部分BSA记录保存义务，并须应美国当局要求提供记录
+- 英文原文：Foreign financial institutions that maintain correspondent bank accounts with US banks are subject to some BSA requirements, including recordkeeping and the obligation to provide records in response to requests from US authorities.
+
+### `v7u_N001709`
+
+- 用于：选项A、易错提醒（仅支持代理账户记录制度背景；不直接证明120小时或第319(b)条编号）
+- 章节：US AML/CFT regulatory landscape > USA PATRIOT Act
+- 页码：PDF第187页 / 书内第182页
+- 中文要点：美国政府可要求外国银行提供代理账户记录，并指定在美国的注册代理人
+- 英文原文：Records relating to correspondent accounts for foreign banks: This Act allows the US government to request the production of various types of records, provides subpoena authority for correspondent accounts of foreign banks, and requires foreign banks to designate a registered agent in the US.
+
+### `v7u_N001705`
+
+- 用于：选项B、易错提醒
+- 章节：US AML/CFT regulatory landscape > USA PATRIOT Act
+- 页码：PDF第186页 / 书内第181页
+- 中文要点：美国财政部可指定外国司法管辖区或机构为洗钱风险，迫使银行停止交易
+- 英文原文：Jurisdictions of primary money laundering concern: Under section 311, the US Department of the Treasury can designate foreign jurisdictions, institutions, or transactions as money laundering risks, prompting actions by financial institutions. Designating a jurisdiction or financial organization forces banks to halt financial dealings with the designee.
+
+### `v7u_N001706`
+
+- 用于：选项D、易错提醒
+- 章节：US AML/CFT regulatory landscape > USA PATRIOT Act
+- 页码：PDF第186页 / 书内第181页
+- 中文要点：第313条禁止与空壳银行往来，第312条要求对外国金融机构代理账户实施强化尽职调查
+- 英文原文：EDD for foreign correspondent banking: Section 313 prohibits relationships with shell banks and Section 312 mandates EDD for correspondent accounts held by foreign financial institutions, affecting cross-border banking practices. Section 312 also applies to private banking accounts for non-US persons.
+
+> 外部权威法条补充核验（美国政府GovInfo，非v7教材引用单元）
+
+### `Public Law 107-56, §319(a)`
+
+- 用于：核心解析、选项C、易错提醒
+- 法条标题：Forfeiture From United States Interbank Account
+- 中文要点：存入外国银行的资金被视为存入其在美国的银行间账户；该账户中不超过外国存款价值的资金可以被扣押；政府无须证明被扣押资金可直接追溯至原存款
+- 英文原文（节选）：the funds shall be deemed to have been deposited into the interbank account in the United States
+- 英文原文（节选）：funds in the interbank account, up to the value of the funds deposited into the account at the foreign bank, may be restrained, seized, or arrested.
+- 英文原文：If a forfeiture action is brought against funds that are restrained, seized, or arrested under paragraph (1), it shall not be necessary for the Government to establish that the funds are directly traceable to the funds that were deposited into the foreign bank, nor shall it be necessary for the Government to rely on the application of section 984.
+- 官方来源：[GovInfo - Public Law 107-56](https://www.govinfo.gov/content/pkg/PLAW-107publ56/html/PLAW-107publ56.htm)
+
+### `18 U.S.C. §981(k)`
+
+- 用于：第319(a)条现行法典落点核验
+- 中文要点：GovInfo修法说明明确记载，该款由《美国爱国者法案》第319(a)条新增；现行法保留视为存入、按价值扣押和无须直接追踪的规则
+- 官方来源：[GovInfo - 18 U.S.C. §981](https://www.govinfo.gov/content/pkg/USCODE-2023-title18/html/USCODE-2023-title18-partI-chap46-sec981.htm)
+
+### `Public Law 107-56, §319(b)`
+
+- 用于：选项A、易错提醒
+- 法条标题：Bank Records
+- 中文要点：第319(b)条规定120小时规则，要求相关金融机构在收到适当联邦银行机构请求后不迟于120小时提供反洗钱合规、客户及美国境内账户相关资料
+- 英文原文：Not later than 120 hours after receiving a request by an appropriate Federal banking agency for information related to anti-money laundering compliance by a covered financial institution or a customer of such institution, a covered financial institution shall provide to the appropriate Federal banking agency, or make available at a location specified by the representative of the appropriate Federal banking agency, information and account documentation for any account opened, maintained, administered or managed in the United States by the covered financial institution.
+- 官方来源：[GovInfo - Public Law 107-56](https://www.govinfo.gov/content/pkg/PLAW-107publ56/html/PLAW-107publ56.htm)
+
+### `31 U.S.C. §5318(k)(2)`
+
+- 用于：第319(b)条现行法典落点核验
+- 中文要点：GovInfo修法说明明确记载，该款由《美国爱国者法案》第319(b)条新增；现行法仍保留120小时规则
+- 官方来源：[GovInfo - 31 U.S.C. §5318](https://www.govinfo.gov/content/pkg/USCODE-2023-title31/html/USCODE-2023-title31-subtitleIV-chap53-subchapII-sec5318.htm)
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+《美国爱国者法案》第319(a)条核心在于强化反 洗钱措施.选项A描述的是金融机构间记录提供 要求,非该条款重点;选项B涉及财政部对外国 司法管辖区的授权措施,与该条款不直接相关; 选项C准确指出,该条款允许美国政府从外国银 行在美国的代理行账户中扣押与外国银行存款额 相当的资金,这是直接针对反洗钱资金追踪与冻 结的关键措施;选项D关于代理账户尽职调查的 要求,虽为反洗钱重要环节,但非第319(a)条特 定内容.因此,C为正确答案.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+《美国爱国者法案》第319(a)条主要涉及对应账 户资金的扣押.分析选项,A选项描述的是联邦 银行机构要求金融机构提供反洗钱合规相关记录 的权限,与该条款不符;B选项描述的是美国财 政部对外国司法管辖区等采取分级措施的权力, 并非第319(a)条内容;D选项说的是对外国代理 账户的尽职调查要求,也不符合.C选项指出允 许美国政府扣押在美国开设并维持的外国银行代 理账户中的资金,与该条款规定相符,因此选 C.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

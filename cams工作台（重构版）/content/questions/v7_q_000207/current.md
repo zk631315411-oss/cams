@@ -1,0 +1,127 @@
+# v7_q_000207
+
+教材章节：未映射
+
+题型：single
+
+题干：一家金融机构正在进行全企业范围的风险评估(EWRA),发现其私人银行部门存在较高的固有洗钱风险,原因是客户资产净值高且财务结构复杂.不过,该机构已实施了严格的客户尽职调查(CDD)和强化尽职调查(EDD)程序,并配备了先进的交易监控系统.这些控制措施会如何影响剩余风险的评估？
+
+英文题干：A financial institution is conducting an enterprise-wide risk assessment (EWRA) and has identified a high inherent risk of money laundering associated with its private banking division due to the clientele's high net worth and complex financial structures. However, the institution has implemented robust customer due diligence (CDD) and enhanced due diligence (EDD) procedures, along with sophisticated transaction monitoring systems. How would these controls impact the assessment of residual risk?
+
+选项：
+
+- A. 剩余风险将被完全消除,因为这些控制措施足以降低所有潜在风险.
+  English: The residual risk would be eliminated entirely because the controls are sufficient to mitigate all potential risks.
+- B. 由于现有控制措施的有效性,剩余风险将显著降低.
+  English: The residual risk would be significantly reduced due to the effectiveness of the existing controls.
+- C. 由于私人银行业务的固有性质,剩余风险仍将居高不下
+  English: The residual risk would remain high due to the inherent nature of private banking.
+- D. 剩余风险会适度降低,但可能仍需进一步采取控制措施才能达到可接受的水平
+  English: The residual risk would be moderately reduced, but may still require further controls to reach an acceptable level.
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+根据控制有效性评估固有风险转化后的剩余风险
+
+## 【核心解析】
+
+教材将固有风险定义为实施任何缓解控制前的风险（P275），并以“固有风险 − 控制有效性 = 剩余风险”说明二者关系（P278）。本题私人银行客户净值高、财务结构复杂，说明固有风险较高；但题干同时明确存在严格的CDD/EDD程序和先进交易监控系统，问题要求评价这些控制对剩余风险的影响，而不是重新评价私人银行业务的固有风险。
+
+教材进一步给出，高固有风险客户在EDD、资金来源/财富核实和持续监控等控制措施被评估为有效时，剩余风险可能降至中等或低水平（P278）。因此，题干所说的“robust” CDD/EDD及“sophisticated”交易监控，支持控制有效性较高、剩余风险相对固有风险实质下降的判断。这里的“显著”是依据教材所举“高固有风险降至中或低”的情形作出的比较判断，并非声称风险被消除。
+
+综上，在给定选项中，B与题干和教材更符合：有效控制使剩余风险显著降低，但剩余风险仍应结合风险容忍度继续评估；若仍超出容忍度，再制定行动计划。
+
+教材原句："The formula for calculating residual risk is: inherent risk minus control effectiveness equals residual risk (inherent risk − control effectiveness = residual risk)."（P278）
+
+## 【错误项分析】
+
+- **A 错误**：控制措施的目标是将风险降低到可接受的剩余风险水平，而不是保证消除所有潜在风险。“完全消除”把风险降低绝对化，超出题干和教材支持范围。
+- **C 错误**：该项只根据私人银行业务的固有性质判断结果，忽略了题干明确给出的CDD/EDD和交易监控控制效果；教材说明控制有效性会影响固有风险转化后的剩余风险（P278-P279）。
+- **D 不选（条件不足）**：剩余风险确实可能还需进一步控制，但教材要求先根据剩余风险判断是否超出风险容忍度（P279）。题干没有提供现有控制无效或剩余风险仍超出容忍度的事实；因此，“适度降低且仍需进一步控制”增加了未经给出的条件，匹配度不如B。
+
+## 【易错提醒】
+
+固有风险是控制措施实施前的原始风险敞口（P275），剩余风险是应用控制措施后残余的风险（P278）。不要把“风险显著降低”偷换成“风险完全消除”；是否需要进一步控制，还要看剩余风险是否超出风险容忍度（P279）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002775`
+
+### `v7u_N002736`
+
+- 用于：核心解析、易错提醒
+- 章节：Enterprise-wide risk assessment > Inherent risk
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：固有风险是实施任何缓解控制前的风险。
+- 英文原文：Inherent risk is the level of risk before any mitigating controls are applied.
+
+### `v7u_N002769`
+
+- 用于：核心解析、易错提醒
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：剩余风险计算公式：固有风险减去控制有效性
+- 英文原文：The formula for calculating residual risk is: inherent risk minus control effectiveness equals residual risk (inherent risk – control effectiveness = residual risk).
+
+### `v7u_N002771`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：应评估控制措施在降低固有风险方面的有效性。
+- 英文原文：The effectiveness of the controls in reducing inherent risk should be assessed.
+
+### `v7u_N002775`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：高固有风险客户在EDD、资金来源/财富核实和持续监控等控制被评估为有效时，剩余风险可能降至中或低。
+- 英文原文：For a customer with high inherent risk, if the controls, such as EDD, source of funds/wealth verification and ongoing monitoring, are assessed as effective, the residual risk may be medium or low.
+
+### `v7u_N002773`
+
+- 用于：核心解析、易错提醒
+- 章节：Enterprise-wide risk assessment > Measuring control effectiveness
+- 页码：PDF第283页 / 书内第278页
+- 中文要点：识别固有风险后，必须应用控制措施将其降至可接受的剩余风险水平
+- 英文原文：In conducting a risk assessment, once an organization identifies inherent risks, it must apply control measures to mitigate them to an acceptable level of residual risk.
+
+### `v7u_N002787`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Residual risk
+- 页码：PDF第284页 / 书内第279页
+- 中文要点：剩余风险取决于固有风险水平和控制措施的有效性。
+- 英文原文：The level of residual risk depends on the level of inherent risk and the effectiveness of the controls.
+
+### `v7u_N002788`
+
+- 用于：核心解析、易错提醒
+- 章节：Enterprise-wide risk assessment > Residual risks action plan
+- 页码：PDF第284页 / 书内第279页
+- 中文要点：根据剩余风险判断是否在容忍度内或需要行动计划
+- 英文原文：Once an organization understands its residual risks, it can determine whether the risk is within its tolerance levels or if an action plan is required to mitigate those risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+剩余风险是固有风险减去控制措施后剩余的风 险.本题中,私人银行部门固有洗钱风险高,但 金融机构已实施严格的客户尽职调查(CDD) 强化尽职调查(EDD)程序,并配备先进交易监 控系统,这些控制措施能有效降低洗钱风险.因 此,由于现有控制措施的有效性,剩余风险将显 著降低.选项A准确描述了这一情况,选项B可 能仍需进一步控制未准确体现控制措施的显署效 果,选项C“剩余风险仍居高不下与事实不符 选项D“完全消除剩余风险”过于绝对.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+根据金融行动特别工作组(FATF)的方法,金 融机构(FI)在无法验证相关客户尽职调查文件 时,需考虑提交可疑活动报告.选项A中,交易 受益人为政治敏感人物,虽需加强尽职调查,但 并非直接触发报告的条件:选项C中,付款方为 贵金属或宝石经销商,需特别关注,但同样不构 成直接报告的理由;选项D中,涉及加密货币友 法定货币的兑换,虽为反洗钱关注点,但并非 FATF明确规定的报告触发情形.选项B准确反映 了FATF关于客户尽职调查的核心要求,即无法 验证客户身份时,应视为可疑活动并上报.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=B，英文=D

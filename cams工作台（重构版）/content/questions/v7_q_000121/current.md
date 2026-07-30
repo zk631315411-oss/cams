@@ -1,0 +1,91 @@
+# v7_q_000121
+
+教材章节：未映射
+
+题型：single
+
+题干：一家大型国际银行的首席合规官（CCO）正在探索如何通过更有效地利用情报数据来提高银行识别可疑活动的能力。其中一个潜在的解决方案是开展公私合作（PPP），以利用共享情报并加强与政府机构的合作。该银行正在考虑与当地金融情报机构（FIU）及其他金融机构合作参与公私合作（PPP）项目，以改善其获取相关数据和情报的能力。首席合规官（CCO）明白，虽然公私合作项目能够带来诸多益处，比如提升风险识别能力以及加强信息共享，但也存在一些潜在的局限性，包括数据隐私方面的担忧以及公私部门合作伙伴之间目标的差异。哪种方法能最大程度地发挥公私合作伙伴关系（PPP）对银行的益处，同时又能减轻与数据共享和情报相关的限制？
+
+英文题干：A large international bank's chief compliance officer (CCO) is exploring ways to enhance the bank's ability to identify suspicious activities by using intelligence data more effectively. One potential solution is to engage in public-private partnerships (PPPs) to leverage shared intelligence and enhance collaboration with government agencies. The bank considers joining a PPP initiative with the local Financial Intelligence Unit (FIU) and other financial institutions to improve its access to relevant data and intelligence. The CCO understands that while PPPs can provide significant benefits, such as improved risk detection and enhanced information sharing, there are also potential limitations, including data privacy concerns and differing priorities between public and private sector partners. Which approach would best maximize the benefits of PPPs for the bank while mitigating the limitations associated with data sharing and intelligence?
+
+选项：
+
+- A. 在没有严格的数据共享协议的情况下开展公私合作，允许银行、金融情报机构和其他金融机构之间信息自由且不受限制地流动
+  English: Engage in the PPP without strict data sharing protocols, allowing for open and unrestricted flow of information between the bank, FIUs, and other financial institutions
+- B. 仅依赖政府机构通过公私合作提供的情报，因为它们拥有关于可疑活动最全面的数据
+  English: Rely solely on the intelligence provided by government agencies through the PPP because they have the most comprehensive data on suspicious activities
+- C. 在公私合作中建立清晰框架，明确数据隐私保护，并确保信息共享符合所有相关司法管辖区的法律和监管要求
+  English: Establish a clear framework within the PPP that outlines data privacy protections and ensures that information sharing complies with legal and regulatory requirements in all jurisdictions involved
+- D. 优先使用银行内部数据来源，而不是来自公私合作的外部情报
+  English: Prioritize the bank's internal data sources over external intelligence from PPP
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+公私合作中的风险评估与合规框架搭建
+
+## 【核心解析】
+
+公私合作（PPP）的核心优势在于信息共享（P235）。但信息共享不是无条件的——司法管辖区必须建立明确的法律框架才能解决隐私和监管问题（「Jurisdictions can address privacy issues and regulatory concerns by establishing clear legal frameworks for information sharing」）P236。题干给出的挑战恰恰是「数据隐私担忧」和「目标差异」，而选项C明确回答了「建立清晰框架、确保合规」这一要求，直接对应教材对PPP成功运作的核心设计原则。相比之下，题干并没有质疑PPP本身的价值，而是关注如何在参与中控制风险——C选项正是在这个维度上直接切中要害。
+
+教材原句："Jurisdictions can address privacy issues and regulatory concerns by establishing clear legal frameworks for information sharing."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜概念混淆**：选项A主张「不受限制地流动」，而教材明确指出PPP的成功需要「明确的职权范围」（P235）和「适当的谅解备忘录、政策和程序」（P236），缺乏明确协议本身就是PPP的障碍之一。题干已点明数据隐私是关键顾虑，无协议的自由流动直接放大了这一风险，与教材对PPP治理框架的要求相悖。
+- **B 错误（教材直接依据）｜范围或程度偏差**：选项B主张「仅依赖」政府情报，但教材指出PPP的信息共享是双向的——既包括公共向私营部门的传递，也包括私营向公共部门的传递（「both public-to-private and private-to-public」）P235。「仅依赖」一方不仅放弃银行自身的情报贡献价值，也与PPP「合作共治」的设计初衷匹配度较低。
+- **D 错误（题干对照）｜题干要素不匹配**：选项D主张「优先使用内部数据」而非PPP情报，但教材指出私营部门信息共享可以提供机构原本无法获取的信息（「information they would not otherwise have」）P238，这正是PPP的补充价值所在。题干的核心是「如何最大化PPP的益处」，而D选项将PPP情报置于次要地位，与题干利用共享情报的目标方向不一致。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002309`
+
+### `v7u_N002309`
+
+- 用于：核心解析、选项A
+- 章节：Cooperation involving the private sector > Public-private partnership
+- 页码：PDF第241页 / 书内第236页
+- 中文要点：司法管辖区应建立明确的信息共享法律框架以解决隐私和监管问题。
+- 英文原文：Jurisdictions can address privacy issues and regulatory concerns by establishing clear legal frameworks for information sharing.
+
+### `v7u_N002297`
+
+- 用于：选项B
+- 章节：Cooperation involving the private sector > Public-private partnership
+- 页码：PDF第240页 / 书内第235页
+- 中文要点：PPP最常见的形式是公私部门间的信息共享
+- 英文原文：PPPs most commonly exist as a means of sharing information, both public-to-private and private-to-public, though the type of collaboration can vary.
+
+### `v7u_N002326`
+
+- 用于：选项B
+- 章节：Cooperation involving the private sector > Key takeaways
+- 页码：PDF第242页 / 书内第237页
+- 中文要点：公私部门合作打击金融犯罪
+- 英文原文：Enable collaboration between the public and private sectors in fighting financial crime.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+展公私合作伙伴关系,允许银行、金融 A 情报机构和其他金融机构之间信息自由 且不受限制地流动 完全依赖政府机构通过公私合作伙伴关 系提供的情报,因为它们掌握着有关可 B 疑活动的最全面的数据 在公私合作伙伴关系(PPP)中建立明确 的框架,阐明数据隐私保护措施,并确保 信息共享符合所有相关司法管辖区的 法律和监管要求. 自公私合作伙伴关系(PPPs)的外部情 报,因为内部数据更易于控制,且不存在 数据隐私方面的挑战. 正确答案C您选择/ 试题详解
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+题目讨论银行如何通过公私合作(PPP)最大化 反洗钱和反恐融资的效益,同时规避数据共享的 局限性.选项A无严格数据共享协议,易引发数 据隐私泄露,不可取;选项B仅依赖政府机构数 数据,放弃外部情报,限制了风险检测能力.选 项C建立清晰框架,明确数据隐私保护,确保信 息共享符合法律要求,既保障数据安全,又促进 有效合作,是最佳选择. 雪吉食
+
+### 答案冲突提示
+
+- 未发现答案冲突。

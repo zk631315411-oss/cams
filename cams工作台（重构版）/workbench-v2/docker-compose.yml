@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    environment:
+      DATABASE_URL: sqlite:////data/workbench.db
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-this-before-sharing}
+      JWT_SECRET: ${JWT_SECRET:-replace-this}
+      CONTENT_ROOT: /data/content
+      SOURCE_MARKDOWN_ROOT: /source/v7/选项证据与解析生成/phase4_evidence/output/explanations
+      SOURCE_DOCX_ROOT: /source/v7/选项证据与解析生成/phase4_evidence/output/software_export/sections/docx
+      KG_PATH: /source/v7/知识图谱提取/phases/phase06_kg_views/outputs/kg_retrieval_graph.json
+      TEXTBOOK_RELEASE_ROOT: /source/textbook-release
+    ports:
+      - "8010:8010"
+    volumes:
+      - ./runtime:/data
+      - ../v7:/source/v7:ro
+      - ../frontend/data/releases/v7:/source/textbook-release:ro
+  web:
+    build:
+      context: ./web
+    ports:
+      - "5173:80"
+    depends_on:
+      - api

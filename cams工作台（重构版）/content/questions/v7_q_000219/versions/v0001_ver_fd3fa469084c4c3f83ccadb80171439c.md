@@ -1,0 +1,101 @@
+# v7_q_000219
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项陈述最能描述与守门人相关的金融犯罪风险？
+
+英文题干：Which of the following statements best describes the financial crime risk associated with gatekeepers?
+
+选项：
+
+- A. 守门人掌握着专门的知识,这些知识可能被滥用,从而为非法资金的流动提供便利,并掩盖其客户参与非法活动的事实.
+  English: Gatekeepers have specialized knowledge that can be abused to facilitate the movement of illicit funds and conceal the involvement of their clients in illicit schemes.
+- B. 守门人职位具有隐蔽性,这往往使其财富来源难以核实.
+  English: Gatekeeper positions are of a secretive nature, often making it difficult to verify their source of wealth.
+- C. 守门人具有独特的关系结构,这使得确定最终受益人变得困难.
+  English: Gatekeepers have unique relationship structures, making it difficult to determine beneficial ownership.
+- D. 守门人被赋予了重要的职能和行为准则,这可能有助于洗钱活动.
+  English: Gatekeepers are entrusted with prominent functions and codes of conduct that may facilitate money laundering activities.
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别守门人专业服务及中介角色被犯罪分子利用的风险
+
+## 【核心解析】
+
+教材直接将DNFBP称为「gatekeepers」，并说明这些企业充当犯罪分子与金融系统之间的中介（P119）。在缺乏保障措施时，它们可能被利用来隐藏非法资金来源、创建法律结构或处理高价值物品（P119）。教材的具体例子还显示，会计师可能通过核实资金来源使非法交易看似合法，并协助犯罪所得的置入和离析（P120）；律师设立的信托或空壳公司则可能掩盖真实受益人，法律特权也可能被犯罪分子用于隐藏所涉金融犯罪（P119）。
+
+守门人凭借专业知识和服务连接客户与金融系统，这些服务可能被犯罪分子利用来转移资金、建立法律结构或掩盖非法资金来源（P119-P120）。选项A概括了这一普遍风险，覆盖范围比只描述某一种结构的C更完整，也没有把风险错误归因于守门人自身财富或行为准则，因此最符合题意。
+
+教材原句：“Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system.”（P119）
+
+## 【错误项分析】
+
+- **B 错误**：选项B把风险焦点放在守门人自身职位隐秘、难以核实其财富来源。但守门人风险的重点是其作为客户与金融系统之间的中介，以及其专业服务可能被利用（P119），而不是守门人自身的财富来源。
+- **C 错误**：教材确实说明律师可能协助建立信托或空壳公司，从而掩盖真实受益人的身份（P119）。但风险来自守门人创建或运用的法律结构，不是守门人本身具有所谓「独特的关系结构」；而且这只是守门人风险的一种具体表现，范围窄于A。
+- **D 错误**：风险来自守门人的中介角色和专业服务在缺乏保障时可能被犯罪分子利用（P119），而不是专业行为准则本身会促进洗钱。D把风险来源归错了对象。
+
+## 【易错提醒】
+
+守门人风险的判断重点是「专业服务如何被利用」，而不是守门人自身是否可疑。法律结构掩盖受益所有人、会计服务使交易看似合法、高价值物品便于价值转移，都是专业服务被利用的具体方式（P119-P120）；选项A概括的是共同机制，C只描述其中一种可能结果。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001060`、`v7u_N001061`、`v7u_N001069`
+
+### `v7u_N001060`
+
+- 用于：核心解析、选项B、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：DNFBP常被称为“守门人”，充当犯罪分子与金融系统之间的中介
+- 英文原文：Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system.
+
+### `v7u_N001061`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：缺乏保障措施时，DNFBP易被犯罪分子利用进行洗钱
+- 英文原文：If safeguards are absent, DNFBPs should be considered vulnerable to criminal enterprise as they can be exploited for illicit purposes through their roles in hiding the origins of illicit funds, creating legal structures, or handling high-value goods.
+
+### `v7u_N001064`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：律师可能设立掩盖真实受益人的复杂结构，法律特权也可能被犯罪分子用于隐藏金融犯罪
+- 英文原文：Lawyers: Lawyers might assist in establishing complex structures, such as trusts or shell companies, which can conceal the identities of true beneficiaries. The risk increases when handling customers with international connections or those involved in high-value transactions. Legal privilege is valuable for criminals to hide the financial crime involved.
+
+### `v7u_N001069`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：会计师可能通过核实资金来源使非法交易看似合法，并协助置入和离析
+- 英文原文：Accountants: Accountants might inadvertently assist criminals in making their illicit transactions appear legitimate by verifying the source of funds for a transaction, supporting the placement of illicit funds, and facilitating the layering stage of money laundering.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+守门人因掌握专门知识,易被滥用为非法资金流 动提供便利,并掩盖客户参与非法活动的事实. 选项A准确描述了守门人因专业知识可能被利 用,进而协助非法资金流动并掩盖真相的风险. 选项B中职位的隐秘性并非守门人特有风险;选 项C描述的关系结构复杂并非守门人金融犯罪的 核心风险;选项D中职责和行为准则本应防范洗 钱,而非助长洗钱活动.故最能描述与守门人相 关的金融犯罪风险的是选项A.易错提醒:需准 确理解守门人角色及其在金融犯罪中的潜在作 用. 度 难 源
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+“守门人“具备专业知识,这些知识可能被滥用, 以协助非法资金的流动,并掩盖其客户参与非法 活动的痕迹.选项A准确描述了与“守门人“相关的 金融犯罪风险.选项B中,守门人职位的秘密性 联:选项C中,虽然确定实际受益人可能存在
+
+### 答案冲突提示
+
+- 未发现答案冲突。

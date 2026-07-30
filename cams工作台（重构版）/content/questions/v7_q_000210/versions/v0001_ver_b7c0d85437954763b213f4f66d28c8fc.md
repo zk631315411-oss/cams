@@ -1,0 +1,133 @@
+# v7_q_000210
+
+教材章节：未映射
+
+题型：single
+
+题干：根据金融行动特别工作组(FATF)的方法,哪些情况需要金融机构(FI)考虑提交可疑活动报告？
+
+英文题干：According to the Financial Action Task Force (FATF) methodology, which situation would require a financial institution (FI) to consider filing a suspicious activity report?
+
+选项：
+
+- A. 交易的受益人是政治公众人物.
+  English: A beneficiary of a transaction is a politically exposed person.
+- B. 金融机构无法核实相关客户尽职调查文件.
+  English: An FI is unable to verify the relevant customer due diligence documents.
+- C. FI确认付款人是贵金属或宝石的经销商.
+  English: An FI identifies that the payer is a dealer in precious metals or stones.
+- D. 一笔交易涉及将资金从加密货币兑换为法定货币.
+  English: A transaction involves funds exchanged from crypto to fiat currencies.
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+区分风险升级、CDD缺陷与可疑活动报告触发条件
+
+## 【核心解析】
+
+FATF建议20的报告条件是：当金融机构对资金属于犯罪所得或与恐怖融资有关存在合理怀疑时，应调查并报告（P349）。因此，“考虑提交SAR”并不等于某一身份或某一交易类型自动触发报告，而是要看风险信息是否形成需要升级调查的合理怀疑。
+
+题干中的B“无法核实相关客户尽职调查文件”首先表明CDD核验无法完成，属于客户尽职调查控制的重大缺口（P266）。它不等于已经证明客户犯罪，但会使客户身份、资金来源或交易背景无法得到合理核实，因而最直接地要求金融机构升级审查，并在审查后判断是否存在合理怀疑、是否需要提交SAR。教材也说明，机构审查预警后可能因证据不足而决定不提交SAR（P357），这进一步表明B的正确含义是“需要考虑并调查”，而非“仅凭文件缺失必然提交”。
+
+所以，在给定选项中B最符合FATF的风险为本方法和题干的“consider filing”措辞。
+
+## 【错误项分析】
+
+- **A 不选（风险等级不等于报告触发）**：PEP被视为较高风险客户，并可能接受EDD和加强监控（P270），但PEP身份本身不证明存在犯罪资金或恐怖融资的合理怀疑。把“较高风险”直接写成“必须考虑提交SAR”，属于把风险分类偷换成报告结论。
+- **C 不选（行业风险不等于个案怀疑）**：贵金属和宝石经销商确实可能因商品便携、易变现和高价值交易而面临较高洗钱风险（P119），但题干没有给出异常金额、交易目的或资金来源等附加事实。经销商身份本身不足以替代FATF建议20所要求的合理怀疑。
+- **D 不选（交易类型缺少红旗组合）**：教材把加密货币兑换为法定货币列入正常业务场景（P109）；其列举的红旗是大额购买后在24小时内通过多笔小额交易提取为法币，或反复转往监管薄弱地区的法币交易所（P111）。题干只有一笔加密货币与法币兑换，没有这些附加特征，匹配度低于B。
+
+## 【易错提醒】
+
+PEP、高风险行业或加密货币业务都可能需要加强监控（P270、P119、P111），但不能仅凭这些标签直接得出SAR结论。判断重点是：CDD是否能够完成、是否存在合理怀疑，以及题干是否给出了足以形成可疑活动判断的具体红旗（P349）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003459`
+
+### `v7u_N003459`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding Investigations and Coordinating with Law Enforcement > Case study: Failure to file report
+- 页码：PDF第354页 / 书内第349页
+- 中文要点：FATF建议20要求在有合理理由怀疑资金来自犯罪活动或与恐怖融资有关时调查和报告。
+- 英文原文：Under FATF Recommendation 20, financial institutions (FI) must investigate and report any suspicious transactions when there are reasonable grounds to suspect the funds are proceeds of criminal activity or linked to terrorist financing.
+
+### `v7u_N002620`
+
+- 用于：核心解析、选项B
+- 章节：Types of risk assessment > Case study: Failure to update an EWRA at a wealth management firm
+- 页码：PDF第271页 / 书内第266页
+- 中文要点：薄弱的客户尽职调查控制包括未核实财富来源或未筛查最终受益人。
+- 英文原文：Weak customer due diligence controls: The firm onboarded high-risk customers without conducting enhanced due diligence, failing to verify sources of wealth or screen ultimate beneficial owners against watchlists.
+
+### `v7u_N003581`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Reasons and consequences for not filing a SAR
+- 页码：PDF第362页 / 书内第357页
+- 中文要点：金融机构审查预警后可能因证据不足决定不提交SAR。
+- 英文原文：For several reasons, a financial institution might decide not to file a SAR after reviewing an alert. For example, there might be insufficient evidence to support a suspicious activity claim.
+
+### `v7u_N002680`
+
+- 用于：核心解析、易错提醒
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：政治敏感人物（政治敏感人物）被视为较高风险
+- 英文原文：A PEP is considered higher risk.
+
+### `v7u_N002682`
+
+- 用于：选项A
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：较高风险客户可能接受强化尽职调查和加强监控。
+- 英文原文：A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk.
+
+### `v7u_N001065`
+
+- 用于：选项C
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：贵金属和宝石经销商因商品便携、易变现及高价值跨境交易而面临较高洗钱风险。
+- 英文原文：Dealers in precious metals and stones: These dealers are at risk due to the portability of valuable goods that can be easily converted into cash or moved across borders. Criminals might exploit this sector to conceal illicit funds through high-value purchases and resales, often without triggering scrutiny or regulatory oversight. This is one of the higher-risk DNFPB types due to the high-value assets and high-volume and cross-border transactions.
+
+### `v7u_N000963`
+
+- 用于：选项D
+- 章节：Cryptoassets > Cryptoasset ecosystem
+- 页码：PDF第114页 / 书内第109页
+- 中文要点：加密货币ATM等基础设施提供商允许用户兑换加密货币与法定货币。
+- 英文原文：Access and infrastructure providers, such as cryptocurrency ATMs: Allow users to exchange cryptocurrencies for fiat currency (and vice versa) at physical locations.
+
+### `v7u_N001003`
+
+- 用于：选项D
+- 章节：Cryptoassets > Money laundering red flags related to cryptoassets
+- 页码：PDF第116页 / 书内第111页
+- 中文要点：24小时内大额购买后通过多笔小额交易提取为法定货币是洗钱红旗。
+- 英文原文：Large purchases made within a 24-hour period, withdrawn as fiat currency through multiple small transactions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+金融行动特别工作组(FATF)规定,金融机构 在无法核实客户尽职调查文件时,应考虑提交可 疑活动报告.选项B中,金融机构无法核实相关 客户尽职调查文件,符合提交可疑活动报告的条 件.选项A中交易受益人是政治公众人物,并不 直接构成提交报告的理由:选项C中确认付款人 是贵金属或宝石经销商,也不直接构成提交报告 的条件;选项D中一笔交易涉及加密货币兑换为 法定货币的资金交易,虽需关注,但并非FATF 明确规定的需提交报告的情形.因此,选项B正 确. 工
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+根据金融行动特别工作组(FATF)的方法,金 融机构(FI)在无法验证相关客户尽职调查文件 时,需考虑提交可疑活动报告.选项A中,交易 受益人为政治敏感人物,虽需加强尽职调查,但 并非直接触发报告的条件:选项C中,付款方为 贵金属或宝石经销商,需特别关注,但同样不构 成直接报告的理由;选项D中,涉及加密货币友 法定货币的兑换,虽为反洗钱关注点,但并非 FATF明确规定的报告触发情形.选项B准确反映 了FATF关于客户尽职调查的核心要求,即无法 验证客户身份时,应视为可疑活动并上报.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

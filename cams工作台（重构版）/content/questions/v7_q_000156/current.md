@@ -1,0 +1,137 @@
+# v7_q_000156
+
+教材章节：未映射
+
+题型：single
+
+题干：采用基于风险的方法分配合规资源的主要优势是什么？
+
+英文题干：What is the primary advantage of using a risk-based approach in allocating compliance resources?
+
+选项：
+
+- A. 它降低了合规项目的总体成本
+  English: It reduces the overall cost of compliance programs.
+- B. 它消除了对低风险客户进行定期审计的必要
+  English: It eliminates the need for periodic audits of low-risk customers.
+- C. 它确保了对高风险领域的关注，同时保持了运营效率
+  English: It ensures focus on high-risk areas while maintaining operational efficiency.
+- D. 它使所有地区的合规流程标准化
+  English: It standardizes compliance processes across all regions.
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+风险为本方法如何实现聚焦高风险与保效率的平衡
+
+## 【核心解析】
+
+风险为本方法（risk-based approach）是识别最高风险，并优先分配资源应对这些风险的过程（P381）。FATF推广这一方法，是为了通过优先处理高风险威胁、优化资源配置和提高合规灵活性来提升效率（P158）。因此，机构可以把更多资源投入高风险领域，同时根据风险程度调整其他领域的控制强度（P218、P276）。选项C所述「关注高风险领域，同时保持运营效率」最符合这一资源配置优势。
+
+## 【错误项分析】
+
+- **A 错误**：教材显示，降低合规成本可以是风险为本方法（或相关技术如持续KYC）带来的一个有益结果（P407），但它并非该方法在核心定义层面上「主要优势」。风险为本方法的着力点始终是高效的资源分配和风险聚焦（P381），因此选项A的匹配度不如C直接。
+- **B 错误**：教材明确指出，基于风险的方法并非忽略其他风险，而是将更多资源集中于最高风险（P276）。对于低风险客户，可行的做法是简化尽职调查（SDD）（P285），但这绝不等于「消除了进行定期审计的必要」。选项B过度延伸了风险为本方法的豁免边界。
+- **D 错误**：「流程标准化」更多指向企业文化、质量控制（QC）或具体程序（Procedures）的执行目标，旨在确保政策在不同司法管辖区的一致应用（P291）。而风险为本方法本身要求政策根据不同的风险暴露情况进行「量身定制」（P292），这与标准化有所区别。题干问的是资源分配法带来的优势，而非具体执行标准。
+
+## 【易错提醒】
+
+风险为本方法强调按风险高低配置资源，以提高风险管理效率，而不只是降低成本（P158、P381）。成本可能因资源优化而下降，但这不是题干所问的主要优势。低风险也不等于无须管理，只是可以采用与风险程度相称的措施（P147、P285）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001453`
+
+### `v7u_N003790`
+
+- 用于：核心解析、选项A、选项B
+- 章节：Understanding AFC technology > Adopting a risk-based approach when choosing AFC technology
+- 页码：PDF第386页 / 书内第381页
+- 中文要点：风险为本方法是指识别最高风险并优先分配资源以应对风险的过程。
+- 英文原文：A risk-based approach refers to the process of identifying the highest risks and prioritizing resources to address them.
+
+### `v7u_N001453`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > Impact of FATF mutual evaluation reports on jurisdictions
+- 页码：PDF第163页 / 书内第158页
+- 中文要点：FATF 推广风险为本方法以提升效率
+- 英文原文：To achieve this, FATF promotes a risk-based approach, enabling jurisdictions to enhance efficiency by prioritizing high-risk threats, optimizing resource allocation, improving compliance flexibility, strengthening AML/CFT measures, and adapting to evolving financial crimes.
+
+### `v7u_N002126`
+
+- 用于：选项A、选项B、选项D
+- 章节：Other laws and regulations that impact organizations > ESG regulations
+- 页码：PDF第223页 / 书内第218页
+- 中文要点：采用风险为本方法使组织能够优先对高风险客户、司法管辖区和服务投入资源
+- 英文原文：The adoption of a risk-based approach enables organizations to prioritize resources on high-risk clients, jurisdictions, and services, ensuring that compliance levels are proportionate to the level of risk.
+
+### `v7u_N002752`
+
+- 用于：选项A、选项B
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第281页 / 书内第276页
+- 中文要点：基于风险的方法并非忽略其他风险，而是对最高风险投入更多资源
+- 英文原文：This does not mean an organization will not address other risks. It just means the organization will apply more resources, effort, and investment to building controls for the highest risks.
+
+### `v7u_N002846`
+
+- 用于：选项B
+- 章节：Customer risk assessment versus enterprise-wide risk assessment
+- 页码：PDF第290页 / 书内第285页
+- 中文要点：高风险客户可能需要强化尽职调查，低风险客户在部分司法管辖区可能适用简化尽职调查
+- 英文原文：Higher-risk customers might require EDD, while lower-risk customers might qualify for simplified due diligence (SDD) in some jurisdictions.
+
+### `v7u_N002898`
+
+- 用于：选项D
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第296页 / 书内第291页
+- 中文要点：程序提供详细的分步实施指南，确保政策在不同业务单元和司法管辖区一致应用
+- 英文原文：Procedures provide detailed, step-by-step implementation guidance to ensure policies are applied consistently across different business units and jurisdictions. Separate procedures are often written for a policy to tailor its execution to various business units and jurisdictions.
+
+### `v7u_N002902`
+
+- 用于：选项D
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第297页 / 书内第292页
+- 中文要点：基于风险的方法要求政策根据机构风险敞口、客户概况和地理风险因素量身定制。
+- 英文原文：To follow a risk-based approach, policies must be tailored to institutional risk exposure, customer profiles, and geographic risk factors.
+
+### `v7u_N001342`
+
+- 用于：选项D
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：风险为本方法确保应对措施与识别出的风险成比例
+- 英文原文：A riskbased approach ensures that responses are proportionate to the identified risks.
+
+### `v7u_N004078`
+
+- 用于：易错提醒
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第412页 / 书内第407页
+- 中文要点：持续了解你的客户降低成本和运营效率，减少不必要的审查
+- 英文原文：Investing in perpetual KYC practices not only reduces costs but also results in operational efficiencies by minimizing unnecessary reviews triggered by non-risk-increasing factors.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+采用基于风险的方法分配合规资源,能根据风险 高低灵活调整资源分配.选项C指出其优势在于 确保了对高风险领域的关注,同时保持了运营效 率.这符合风险管理原则,即优先处理高风险事 项,同时不忽视整体运营.选项A降低总体成本 非主要优势:选项B消除对低风险客户的定期审 计不准确,基于风险的方法仍可能对低风险客户 进行审计:选项D使所有地区合规流程标准化与 基于风险的方法不符,该方法强调差异化而非标 准化.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+翻译 单选 -[RisksandMethodsofMoneyLaunderi ngandTerroristFinancing]Whatistheprimary advantageofusingarisk-basedapproachinall ocatingcomplianceresources? Itreducestheoverallcostofcomplian A ceprograms. Iteliminatestheneedforperiodicaudit B soflow-riskcustomers. Itensuresfocusonhigh-riskareaswhi lemaintainingoperationalefficiency. ItStandardizescomplianceprocesses D acrossallregions. 正确答案C您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

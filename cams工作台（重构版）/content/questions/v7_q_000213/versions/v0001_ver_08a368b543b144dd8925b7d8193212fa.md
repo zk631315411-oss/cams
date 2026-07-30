@@ -1,0 +1,115 @@
+# v7_q_000213
+
+教材章节：未映射
+
+题型：single
+
+题干：哪个由金融情报机构（FIU）组成的联合组织成立目的是改善成员FIU之间的信息交流和共享机制，并通过增强其成员的能力来支持它们？
+
+英文题干：Which collective body of Financial Intelligence Units (FIUs) was formed with the objective of improving information exchange and sharing mechanisms among member FIUs, as well as supporting its members by enhancing their capabilities?
+
+选项：
+
+- A. 经济合作与发展组织(经合组织)
+  English: The Organisation for Economic Co-operation and Development (OECD)
+- B. 埃格蒙特集团
+  English: The Egmont Group
+- C. 沃尔夫斯堡集团
+  English: The Wolfsberg Group
+- D. 国际货币基金组织(IMF)
+  English: The International Monetary Fund (IMF)
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+埃格蒙特集团的组织性质与核心职能
+
+## 【核心解析】
+
+教材将埃格蒙特集团定义为由各国金融情报机构（FIU）组成的国际网络，其作用包括促进成员之间的合作与情报共享（P167）。在具体职能方面，教材指出，「信息共享」使FIU能够共享可疑金融活动情报，「能力建设」则通过培训和技术援助增强FIU的能力（P167）。题干中的「FIU集体组织」「改善信息交流和共享机制」以及「增强成员能力」，分别与埃格蒙特集团的组织构成、信息共享职能和能力建设职能直接对应，因此答案为B。
+
+教材原句："Capacity building, which provides training and technical assistance to enhance FIU capabilities."（P167）
+
+## 【错误项分析】
+
+- **A 错误**：OECD是1961年成立的政府间组织，其核心角色是与政策制定者合作制定基于证据的国际标准（P164），成员是各国政府，而非各国FIU。题干更直接匹配埃格蒙特集团作为FIU网络的定义。
+- **C 错误**：沃尔夫斯堡集团是由全球银行组成的协会，成员是银行而非FIU，聚焦于制定金融犯罪风险管理政策与指引（P168）。题干要求的主体是FIU的集体组织，而非银行协会。
+- **D 错误**：IMF的核心职能是监测全球经济并维护货币体系稳定（P163），其成员是主权国家而非FIU。题干针对的是FIU之间的信息交换和能力建设，这与IMF的宏观金融稳定职能不同。
+
+## 【易错提醒】
+
+四个选项中有两个名称带「Group」，容易混淆其成员主体。核心区分：埃格蒙特集团是FIU的国际网络（P167），沃尔夫斯堡集团是全球银行组成的协会（P168）；OECD和IMF则不是FIU网络。题干同时强调FIU之间的信息共享和能力建设，只有埃格蒙特集团与这些特征完整匹配。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001549`、`v7u_N001554`、`v7u_N001555`
+
+### `v7u_N001549`
+
+- 用于：核心解析、易错提醒
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N001554`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：信息共享使金融情报机构能够共享可疑金融活动的情报
+- 英文原文：Information sharing, which enables FIUs to share intelligence on suspicious financial activities.
+
+### `v7u_N001555`
+
+- 用于：核心解析、教材原句
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：能力建设通过培训和技术援助增强金融情报机构的能力
+- 英文原文：Capacity building, which provides training and technical assistance to enhance FIU capabilities.
+
+### `v7u_N001503`
+
+- 用于：选项A、易错提醒
+- 章节：AFC guidance from leading international organizations > Organisation for Economic Co-operation and Development AFC guidance
+- 页码：PDF第169页 / 书内第164页
+- 中文要点：OECD是1961年成立的政府间组织，与政策制定者、利益相关者和公民合作制定基于证据的国际标准。
+- 英文原文：The Organisation for Economic Co-operation and Development (OECD) is an intergovernmental organization founded in 1961. It works closely with policymakers, stakeholders, and citizens to establish evidence-based international standards for a variety of policy issues.
+
+### `v7u_N001563`
+
+- 用于：选项C、易错提醒
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第173页 / 书内第168页
+- 中文要点：沃尔夫斯堡集团是由全球银行组成的协会，制定金融犯罪风险管理政策与指引
+- 英文原文：The Wolfsberg Group is an association of global banks that develop policies and guidance for managing financial crime risk.
+
+### `v7u_N001488`
+
+- 用于：选项D
+- 章节：AFC guidance from leading international organizations > World Bank and International Monetary Fund AFC guidance
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：国际货币基金组织（IMF）监测全球经济并维护货币体系稳定
+- 英文原文：The International Monetary Fund (IMF) keeps track of the global economy while seeking to maintain the stability of the global monetary system and lend funds to member countries.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+埃格蒙特集团是由各国金融情报机构(FIUy组 成的集体组织,其成立目的在于改善成员FIU之 间的信息交流和共享机制,并通过能力建设支持 成员工作.其他选项中,经济合作与发展组织 (经合组织)主要关注经济政策协调,狼堡集团 并非国际公认的金融情据组细国际华币其全组
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+单选 -[AML/CFTCompliancePrograms]Whic hcollectivebodyofFinancialIntelligenceUnits (FIUs)wasformedwithanobjectivetoImprove Informationexchangeandsharingmechanisms amongmemberFiUsaswellastosupportitsM embersbyenhancingtheircapabilities'? TheOrganisationforEconomicCo-op A erationandDevelopment(OECD) TheEgmontGroup TheWolfsbergGroup C D TheInternationalMonetaryFund(IMF) 正确答案B您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

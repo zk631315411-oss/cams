@@ -1,0 +1,104 @@
+# v7_q_000296
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]关于欧盟反洗钱指令(AMLD)与成员国本地反洗钱法规的关系,以下哪两项表述准确？(选择两项.)
+
+英文题干：Which two statements accurately describe the relationship between the EU AML Directives (AMLD) and local AML regulations in EU member states? (Select Two.)
+
+选项：
+
+- A. 欧盟反洗钱指令(AMLD)和地方反洗钱法规是相互独立且毫无关联的法律框架.
+  English: The EU AMLD and local AML regulations are separate and unrelated legal frameworks.
+- B. 欧盟反洗钱指令与当地反洗钱法规必须具有相同的要求.
+  English: The EU AMLD and local AML regulations must have identical requirements.
+- C. 本地反洗钱法规可能会施加比欧盟《反洗钱指令》更严格或更多的要求.
+  English: Local AML regulations may impose additional or more stringent requirements than the EU AMLD.
+- D. 欧盟反洗钱指令无需成员国转化即可自动取代当地反洗钱法规.
+  English: The EU AMLD automatically replaces local AML regulations without transposition by member states.
+- E. 本地反洗钱法律法规优先于欧盟反洗钱指令的要求.
+  English: Local AML laws and regulations take precedence over the requirements of the EU AMLD.
+- F. 欧盟反洗钱指令设定共同原则和目标,成员国必须在规定期限内将其转化为本国法律.
+  English: The EU AMLD sets common principles and goals, and member states must transpose it into national law by the required deadline.
+
+## 【AI答案】
+
+C、F
+
+## 【考点】
+
+欧盟指令与成员国本地法规的层级关系和差异化适用
+
+## 【核心解析】
+
+欧盟反洗钱指令是设定原则和目标的欧盟立法行为，成员国必须在期限内将其转化为国内法，才能产生国内约束力（P189）。同时，成员国本地标准可以高于欧盟最低要求，并应记录更高标准（P194）。因此 C 对应“本地可以更严”，F 对应“指令设定共同目标并由成员国转化”，两项共同准确描述了 AMLD 与本地法规的关系。
+
+教材原句："If a jurisdiction in which a financial institution operates has a higher AML standard than its home jurisdiction, the financial institution should document this in the addendum."（P194）
+
+## 【错误项分析】
+
+- **A 错误（忽略转化关系）**：教材显示AMLD与本地法规存在紧密的「转化」关系，指令发布后成员国需将其纳入国内法（P189），因此两者并非「相互独立且毫无关联」的法律框架。
+- **B 错误（表述绝对化）**：教材表明本地标准可以高于母国，且成员国对上游犯罪的定义曾存在差异，这说明AMLD允许本地法规在最低标准之上有差异，而非必须「完全相同」。
+- **D 错误（范围或程度偏差）**：指令不是无需转化即可自动取代本地法的法规；教材明确要求成员国完成转化后才具有国内约束力。
+- **E 错误（概念混淆）**：本地法规是落实指令的国内法律工具，但不能据此概括为本地法规普遍优先于欧盟指令；本题准确表述是 F 的“设定原则目标并转化”，而不是 E 的绝对优先关系。
+
+## 【易错提醒】
+
+区分“指令”和“法规”：AMLD设定原则与目标，成员国需要转化为本国法（P189）；成员国还可以在最低标准之上增加更严格要求（P194）。因此 C 与 F 分别考查“本地可更严”和“指令需转化”两个层面。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001850`
+
+### `v7u_N001791`
+
+- 用于：核心解析、选项A、选项B、选项E、易错提醒
+- 章节：US AML/CFT regulatory landscape > History of AML regime in Europe
+- 页码：PDF第194页 / 书内第189页
+- 中文要点：一些成员国未能及时或完全将反洗钱指令转化为国内法。
+- 英文原文：For example, some member states did not transpose the AMLDs in their national legislation in a timely manner or in full compliance.
+
+### `v7u_N001850`
+
+- 用于：核心解析、选项A、选项B、易错提醒
+- 章节：US AML/CFT regulatory landscape > Local AML regulations and crossjurisdictional impact
+- 页码：PDF第199页 / 书内第194页
+- 中文要点：若当地反洗钱标准高于母国，金融机构应在附录中记录更高标准。
+- 英文原文：If a jurisdiction in which a financial institution operates has a higher AML standard than its home jurisdiction, the financial institution should document this in the addendum.
+
+### `v7u_N001785`
+
+- 用于：选项A、选项B、选项E
+- 章节：未标注
+- 页码：PDF第194页 / 书内第189页
+- 中文要点：指令是一种设定原则和目标的立法行为。
+- 英文原文：A directive is a legal act that sets principles and goals.
+
+### `v7u_N001792`
+
+- 用于：选项E
+- 章节：US AML/CFT regulatory landscape > History of AML regime in Europe
+- 页码：PDF第194页 / 书内第189页
+- 中文要点：转化不力导致银行未能遵守核心要求以及跨境实体合并监管缺陷。
+- 英文原文：These factors resulted in lapses, such as banks failing to comply with core requirements and deficiencies in consolidated supervision for cross-border entities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、F
+- 中文参考答案：C、F
+
+### 中文参考解析
+
+欧盟反洗钱指令设定原则和目标，成员国必须在规定期限内将其转化为本国法律，故 F 正确；成员国本地法规在落实过程中可以根据本国风险施加更严格或更多要求，故 C 正确。
+
+- 英文参考答案：C、F
+
+### 英文参考解析
+
+AMLD 与本地法规不是相互独立的框架：指令规定共同原则和目标，并由成员国转化为国内法；本地法规可以在最低标准之上增加要求。因此 C、F 构成唯一匹配项。
+
+### 答案冲突提示
+
+- 已恢复缺失的 F 选项，并将答案统一为 C、F。

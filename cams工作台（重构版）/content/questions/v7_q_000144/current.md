@@ -1,0 +1,107 @@
+# v7_q_000144
+
+教材章节：未映射
+
+题型：single
+
+题干：一位房地产买家在短时间内通过一系列交易用现金购买了多处高价值房产,且没有任何明确的经济理由.以下哪一项是房地产领域中这种行为最有可能涉及的洗钱风险？
+
+英文题干：A real estate buyer purchases multiple high-value properties in cash through a series of transactions in a short period of time and without any clear economic justification. Which of the following is the most likely money laundering risk associated with this behavior in the real estate sector?
+
+选项：
+
+- A. 买方正在利用高价值的房地产交易来掩盖资金来源
+  English: The buyer is using high-value real estate transactions to obscure the origin of the funds
+- B. 买方正通过安排付款方式迅速实现其投资组合的多元化,以利用房地产现金交易的流动性.
+  English: The buyer is quickly diversifying their investment portfolio through structuring payments in order to take advantage of the liquidity of cash transactions in real estate
+- C. 买方利用有利的市场条件,通过现金购买的方式,在竞争激烈的房地产市场中击败竞争对手.
+  English: The buyer is capitalizing on favorable market conditions and using cash purchases to outbid competitors in a competitive real estate market
+- D. 买方是一家房地产开发商,正与位于高风险司法管辖区的业务伙伴一起收购多处房产,以用于潜在的再开发项目.
+  English: The buyer is a real estate developer acquiring multiple properties with business partners located in high-risk jurisdictions for potential redevelopment projects
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别利用高价值房地产交易掩饰资金来源的洗钱风险
+
+## 【核心解析】
+
+选项A的含义是「买方利用高价值房地产交易掩饰资金来源」。房地产可被用于购买高价值有形资产，将非法资金融入合法经济；房地产交易也为掩饰资金来源提供机会（P121）。题干同时给出现金支付、短期内连续交易和缺乏明确经济理由：现金较通过金融机构支付更难追踪，全部或主要以现金购房属于红旗信号，一系列快速房地产交易也应引起怀疑（P122）。这些事实共同指向选项A所述的资金来源掩饰风险。
+
+教材原句："Criminals can utilize real estate to integrate illicit funds into the legitimate economy by purchasing tangible assets, typically of significant value."
+
+## 【错误项分析】
+
+- **B 错误**：「安排付款方式以实现投资组合多元化」描述的是一种投资策略，而不是对题干所示洗钱风险的解释。题干强调买方「无任何明确经济理由」，这也与有明确目的的投资组合多元化相矛盾。
+- **C 错误**：「利用有利市场条件」「现金购买」「击败竞争对手」这些短语描绘的是市场竞争中的交易策略，与洗钱语境基本不相关。洗钱关注的核心问题是资金来源是否合法、交易目的是否为掩盖非法来源。题干中现金购房的部分特征虽然在正常商业环境中也可能出现（P122），但本题需要判断的是洗钱风险，教材对洗钱的核心定义中并不涉及市场竞争或竞价行为。
+- **D 错误**：题干没有说明买方是「房地产开发商」，也没有出现「高风险司法管辖区的业务伙伴」或再开发计划。D项另设了一组情景事实，不能解释题干已经给出的现金、高价值、短期连续购买且无明确经济理由；A项与这些既有事实的对应更直接。
+
+## 【易错提醒】
+
+现金购房本身不是洗钱的充分证明，但「主要使用现金」与「短期内一系列快速交易」均属于教材提示的风险特征（P122）。本题还叠加了高价值和缺乏明确经济理由，因此应判断最可能涉及的风险，而不是把任一单项特征当作定罪结论。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001093`
+
+### `v7u_N001093`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：犯罪分子通过购买高价值房地产将非法资金融入合法经济
+- 英文原文：Criminals can utilize real estate to integrate illicit funds into the legitimate economy by purchasing tangible assets, typically of significant value.
+
+### `v7u_N001096`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：买卖或租赁房地产为犯罪分子通过模糊所有权结构掩饰资金来源提供机会
+- 英文原文：Buying, selling, or renting properties presents opportunities for criminals to disguise the origin of funds through obscured ownership structures.
+
+### `v7u_N001102`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：现金交易因难以追踪而增加洗钱风险
+- 英文原文：Cash transactions remain relatively common in some markets and increase the potential for money laundering, as cash is more challenging to trace than payments made through financial institutions.
+
+### `v7u_N001103`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：全部或主要用现金支付的买家是房地产洗钱红旗信号信号
+- 英文原文：Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm.
+
+### `v7u_N001105`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：频繁或快速转手的房产应引起洗钱怀疑。
+- 英文原文：Properties that frequently change ownership or are involved in a series of rapid transactions should also raise suspicions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+选项A描述了买家利用高价值房产交易掩盖资金 现金购买多处房产且无明确经济理由,买家可将 非法资金转化为看似合法的房地产资产,从而掩 化,与洗钱无直接关联;选项C描述的是市场竞 争行为,与洗钱目的不符;选项D涉及房地产开 发商与高风险地区业务伙伴的合作,虽可能存在 风险,但并非直接洗钱行为.因此,选项A最符 合洗钱风险特征.易错提醒:注意区分正常投资 行为与洗钱行为的动机差异.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+题目描述买家在短时间内无明确经济理由,以现 金多次购买高价房产,此行为最可能与洗钱相 关.选项A指出买家利用高价房产交易掩盖资金 源的特征.选项B提到投资组合多样化和结构化 支付,与洗钱无直接关联.选项C提到利用市场 优势和内幕信息,属于市场操纵行为.选项D提 到开发商为潜在项目购买房产,属正常商业行 为.因此,选项A最符合洗钱风险特征.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

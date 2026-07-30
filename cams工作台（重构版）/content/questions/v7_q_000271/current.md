@@ -1,0 +1,76 @@
+# v7_q_000271
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱/打击资助恐怖主义合规计划]委员会的ToR需要直接界定其权限、成员组成和授权链条。以下哪三项属于这些核心内容？(选择三项.)
+
+英文题干：A committee's ToR should directly define its powers, composition, and delegation chain. Which three items are core contents? (Select Three.)
+
+选项：
+
+- A. 参会人员组织结构图
+  English: Organization chart of the attendees
+- B. 权力范围和决策能力
+  English: Extent of power and decision-making abilities
+- C. 公司文化与价值观
+  English: Company culture and values
+- D. 组成与结构
+  English: Composition and structure
+- E. 权限的授予
+  English: Delegation of authority
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+理解委员会职权范围文件的规范性内容构成
+
+## 【核心解析】
+
+委员会必须依据职权范围文件（ToR）运作，该文件用于明确委员会的任务、职责和权力（P294）。因此，ToR需要说明委员会由谁组成、能够作出哪些决定，以及权力如何授予和行使。B项对应权力范围和决策能力，D项对应成员组成与结构，E项对应授权安排，三项共同界定委员会的治理边界。
+
+教材原句："Each committee must operate under a terms-of-reference document, which outlines its mandate, responsibilities, and authority."（P294）
+
+## 【错误项分析】
+
+- **A 错误（题干要素不匹配）**：组织结构图主要展示人员汇报关系或参会人员的行政信息，不能替代对委员会权力、正式组成和授权链条的界定。
+- **C 错误（范围或程度偏差）**：合规文化和高层基调属于组织整体的治理环境，而ToR关注委员会自身的职责、权力和运作边界。
+
+## 【易错提醒】
+
+判断 ToR 选项时，优先寻找直接界定委员会权限、成员构成和授权链条的内容（P294）；组织文化属于更上位的治理环境，参会人员组织图则不等于委员会的正式组成。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002932`
+
+### `v7u_N002932`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Governance committees and their functions
+- 页码：PDF第299页 / 书内第294页
+- 中文要点：每个委员会必须依据职权范围文件运作，该文件概述其任务、职责和权力。
+- 英文原文：Each committee must operate under a terms-of-reference document, which outlines its mandate, responsibilities, and authority.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+ToR 应当把委员会的任务、职责和权力转化为可执行的治理边界。B 规定权力范围和决策能力，D 规定成员组成与结构，E 规定权限授予和授权链条，三项共同构成题干所问的核心内容。A 只是参会人员的组织信息，C 属于更上位的组织文化，不是该委员会 ToR 的核心条款。因此答案为 B、D、E。
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+The ToR should define the committee's mandate, responsibilities, authority, composition, and delegation arrangements. B, D, and E directly match those elements. An attendee organization chart and general company culture are not substitutes for the committee's formal terms of reference. Therefore, the answer is B, D, and E.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,109 @@
+# v7_q_000134
+
+教材章节：未映射
+
+题型：single
+
+题干：在进行跨境洗钱(ML)调查时,以下哪项陈述最能描述执法机构和金融情报单位(FIU)面临的组织挑战？
+
+英文题干：Which statement best describes an organizational challenge for law enforcement agencies and Financial Intelligence Units (FIUs) when conducting cross-border money laundering (ML) investigations?
+
+选项：
+
+- A. 确定所有相关方之间通用的沟通方式和语言.
+  English: Defining a common communication approach and language between all involved parties
+- B. 由于外国金融情报机构在等待第三方所做查询的结果,导致调查延误.
+  English: Delays in the investigation due to a foreign FIU awaiting the results of queries performed by third parties
+- C. 当资金转移所经国家中有一个或多个国家没有金融情报机构时,在所有相关国家开展调查.
+  English: Conducting an investigation in all countries through which ML funds were transferred when one or more of the countries do not have an FIU
+- D. 涉及高级政客的调查,这些政客往往对当地金融情报机构有影响力.
+  English: Investigations that involve high-ranking politicians who often have influence over local FIUs
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+跨境洗钱调查中FIU组织节点缺失造成的协作障碍
+
+## 【核心解析】
+
+FATF建议要求各司法辖区设立金融情报机构（FIU），用于分析可疑交易报告并支持执法调查（P149）；根据FATF标准和埃格蒙特集团原则，各国FIU还应自发或应请求相互传播金融情报（P231）。因此，如果资金流经国中有国家未设立FIU，该国就无法通过FIU正常参与这一标准的FIU间情报交换流程，从而增加在所有相关国家协调调查的难度。四个选项中，C最直接描述了组织机构缺位造成的跨境协作障碍。
+
+教材同时说明，Eurojust和Europol等国际机构也会协调跨国调查和国际执法活动（P233）。因此，缺少FIU不等于所有国际合作渠道均告中断；本题选择C，是因为它比其他选项更直接体现“相关国家缺少FIU这一组织节点”，而不是因为FIU是跨境合作的唯一渠道。
+
+教材原句："Jurisdictions should establish an FIU to analyze suspicious transaction reports and support law enforcement investigations."
+
+## 【错误项分析】
+
+- **A 错误**：确定共同沟通方式和语言属于既有参与方之间的协调问题，但A没有描述承担金融情报职能的组织是否存在。相比之下，C直接指出某一相关国家没有FIU，更贴近题干所问的组织机构层面挑战。
+- **B 错误**：外国FIU等待第三方查询结果属于具体调查中的流程延迟，前提是该国已有FIU并正在处理请求。C描述的则是相关国家缺少FIU，因而无法正常使用标准FIU间交换渠道（P231），组织层面的匹配更直接。
+- **D 错误**：埃格蒙特集团的标准制定职能包括促进FIU的运作自主性（P167），因此外部影响确实可能构成FIU治理风险；但D限定于涉及高级政客的特定调查。C描述的是资金流经国缺少FIU这一组织节点，在四个选项中更直接对应题干所问的跨境调查组织挑战。
+
+## 【易错提醒】
+
+本题要比较的是不同问题与“组织挑战”的直接匹配程度：A、B描述已有参与方之间的沟通或流程问题；D描述已有FIU可能面临的运作自主性问题（P167）；C则描述相关国家根本没有FIU这一组织节点（P149）。还要注意，FIU间情报交换只是跨境合作的重要渠道之一（P231）；教材同时介绍了Eurojust、Europol等跨境协调主体（P233），不能把“缺少FIU”扩大为“所有国际合作均无法开展”。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001374`
+
+### `v7u_N001374`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：各辖区应设立金融情报机构以分析可疑交易报告并支持执法调查
+- 英文原文：Jurisdictions should establish an FIU to analyze suspicious transaction reports and support law enforcement investigations.
+
+### `v7u_N002258`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+### `v7u_N001557`
+
+- 用于：选项D、易错提醒
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团制定指南以提高金融情报运作的效率和有效性，包括促进FIU的运作自主性
+- 英文原文：Standard-setting, which develops guidelines to improve the efficiency and effectiveness of financial intelligence operations, including promoting the operational autonomy of FIUs.
+
+### `v7u_N002267`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation between authorities > Case study: Law enforcement and FIU cooperation
+- 页码：PDF第237页 / 书内第232页
+- 中文要点：Europol分析犯罪趋势、支持成员国调查，并协调需要国际合作的执法活动
+- 英文原文：Europol is an EU agency that analyzes crime trends in the EU, supports member states’ investigations, and coordinates law enforcement activity that requires an international approach.
+
+### `v7u_N002277`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation between authorities
+- 页码：PDF第238页 / 书内第233页
+- 中文要点：Eurojust和Europol等国际机构在协调此类活动中发挥重要作用
+- 英文原文：International bodies such as Eurojust and Europol have an important role in coordinating such activity.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+跨境洗钱调查中,执法机构和金融情报单位面临 诸多挑战.选项A描述的是沟通方式问题,非组 织挑战;选项B是调查延误原因,非组织结构问 题;选项D是特定调查对象的影响,不普遍.选 项C指出,当资金转移涉及的国家中有一个或多 个没有金融情报机构时,在所有相关国家开展调 查变得困难,这直接反映了组织层面的挑战,即 不同国家间金融情报机构的缺失导致的调查障 碍.因此,选项C最能描述组织挑战.易错提 醒:注意区分组织挑战与具体调查中的操作难 题.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+Definingacommoncommunicationap A proachandlanguagebetweenallinvol vedparties. Delaysintheinvestigationduetoafor B eignFIUawaitingtheresultsofquerie sperformedbyThirdparties. Conductinganinvestigationinallcoun triesthroughwhichMLfundsweretran sferredwhenoneOrmoreofthecount riesdonothaveanFIU. Investigationswhichinvolvehigh-ranki D ngpoliticians,whooftenhaveinfluenc eoverthelocalFIU. 正确答案C您选择 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,115 @@
+# v7_q_000099
+
+教材章节：未映射
+
+题型：single
+
+题干：埃格蒙特集团的一项基本原则是：
+
+英文题干：A basic principle of the Egmont Group is to:
+
+选项：
+
+- A. 发布有关报告可疑情况的标准
+  English: Publish standards for reporting suspicious matters
+- B. 促进监管机构的组织工作
+  English: Facilitate the organization of regulatory authorities
+- C. 发布关于国际调查所作决定的信息
+  English: Publish decisions taken on international investigations
+- D. 建立金融情报机构（FIU）之间的信息共享机制
+  English: Arrange information-sharing protocols between Financial Intelligence Units (FIUs)
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+埃格蒙特集团的核心性质是各国FIU间的合作与信息共享网络
+
+## 【核心解析】
+
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间的合作与情报共享，以打击洗钱和恐怖融资等金融犯罪（P167）。其核心要义在于连接各国FIU并促进信息互通。四个选项中，只有D将主体准确地落在FIU之间的信息共享上，直接体现了埃格蒙特集团的基本原则。
+
+教材原句："The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜范围或程度偏差**：发布报告可疑情况的标准：教材提到埃格蒙特集团有关键职能「标准制定」（Standard-setting），旨在提高FIU运作效率（P167）。但它的标准制定更多是为了协调FIU间的国际合作与信息交换标准（P167），而非作为核心原则直接对全行业发布「报告可疑情况」的普适性标准。相比之下，D提及的FIU间信息共享是其作为网络存在的根基，匹配度更直接。
+- **B 错误（教材定义应用）｜主体或阶段错配**：促进监管机构的组织工作（Facilitate the organization of regulatory authorities）：埃格蒙特集团是一个由「金融情报机构（FIU）」组成的网络（P167），其主体是FIU而非广义的「监管机构」（regulatory authorities）。教材在别处定义了监管联络的职能，但那属于合规部门（P255）或其他组织的职责，与该集团的定位不匹配。
+- **C 错误（教材定义应用）｜概念混淆**：发布关于国际调查所作决定的信息（Publish decisions taken on international investigations）：埃格蒙特集团的职能是促进FIU间的「情报共享」（intelligence sharing），即分享原始情报信息（P167），而非像一个司法机构那样去「发布关于国际调查的决定」。FATF建议中提及的信息交换和联合调查（P149）也是为了协助调查，而非发布调查决定。
+
+## 【易错提醒】
+
+埃格蒙特集团虽有「标准制定」职能，但它制定的标准更侧重于协调FIU间如何进行信息交换和国际合作（P167），而不是直接制定面向全行业金融机构的「报告可疑情况」标准。看到「标准」就选，容易掉坑。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001549`
+
+### `v7u_N001549`
+
+- 用于：核心解析、选项B
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N001557`
+
+- 用于：选项A、易错提醒
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：标准制定制定指南以提高金融情报运作的效率和有效性，包括促进金融情报机构的运作自主权
+- 英文原文：Standard-setting, which develops guidelines to improve the efficiency and effectiveness of financial intelligence operations, including promoting the operational autonomy of FIUs.
+
+### `v7u_N001558`
+
+- 用于：选项A、易错提醒
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团制定了一套治理文件，为未来工作奠定基础并标准化国际合作与信息交换
+- 英文原文：The Egmont Group has produced a set of governing documents to lay the foundation for future work and to help standardize international cooperation and information exchange among FIUs. They include:
+
+### `v7u_N001554`
+
+- 用于：选项A、选项C
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：信息共享使金融情报机构能够共享可疑金融活动的情报
+- 英文原文：Information sharing, which enables FIUs to share intelligence on suspicious financial activities.
+
+### `v7u_N001553`
+
+- 用于：选项B、选项C
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团的作用是落实反洗钱/反恐怖融资战略，其关键职能包括信息共享、能力建设、协作和标准制定
+- 英文原文：The Egmont Group’s role is to operationalize AML/CFT strategy. Their policies and guidance focus on improving cooperation and increasing the level of trust between jurisdictions to allow for the secure sharing of sensitive information. The Egmont Group’s key functions are:
+
+### `v7u_N001560`
+
+- 用于：选项B、选项C
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第173页 / 书内第168页
+- 中文要点：2013年文件记录了金融情报机构之间双边和多边信息交换的概念与实践
+- 英文原文：(2013): Documents concepts and practices for bilateral and multilateral information exchange between FIUs.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+埃格蒙特集团致力于加强全球金融情报机构 (FIU)的合作,其核心原则在于促进成员间信 息共享与协作.选项D“安排金融情报机构(FIU)之 间的信息共享协议”直接体现了这一原则,通过建 立协议确保反洗钱和反恐融资情报的高效传递. 其他选项中,A涉及报告标准、B涉及组织工 作、C涉及决策信息发布,均非其基本原则.因 此,正确答案为D. 度 难 源
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+单选 -[ConductingandResponding toInvestig ations]AbasicprincipleoftheEgmontGroupist :0 Publishstandardsforreportingsuspici A ons Facilitatetheorganizationofregulatory B authorities Publishdecisionstakenoninternation alinvestigations Arrangeinformation-sharingprotocols betweenFinancialIntelligenceUnits(F IUs) 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

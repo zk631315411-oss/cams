@@ -1,0 +1,94 @@
+# v7_q_000281
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]在完成豪华房地产购买时,以下哪两项属于教材直接列出的洗钱警示信号？(选择两项.)
+
+英文题干：When completing a luxury real estate purchase, which two situations are direct real estate money laundering red flags in the material? (Select Two.)
+
+选项：
+
+- A. 使用所有权透明且具有合理商业目的的公司或信托购买.
+  English: Using a company or trust with transparent ownership and a legitimate business purpose to make the purchase.
+- B. 以不相关的第三方名义购买.
+  English: In the names of unrelated third parties.
+- C. 在银行融资通常存在的地区,使用出售前一套房产或变现投资的所得进行全现金购房
+  English: In a region where bank financing is the norm, using proceeds from a prior property sale or liquidated investments to make an all-cash purchase.
+- D. 使用法人实体和中介机构,且已公开披露并合理解释其合法隐私安排.
+  English: Using legal entities and intermediaries with transparent disclosure and a reasonable explanation for a legitimate privacy arrangement.
+- E. 利用以现金或定期存款单作担保的贷款.
+  English: Using loans backed by cash or certificates of deposit.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+
+识别通过名义第三方或壳公司隐藏真实买家的房地产洗钱警示信号
+
+## 【核心解析】
+
+房地产洗钱的警示信号既包括买方身份和所有权结构异常，也包括在融资通常存在的地区由买方全部或主要以现金支付（P121-P122）。选项B的“不相关第三方名义”直接对应 nominee 买家；选项C的全现金购买直接对应现金支付红旗，题干英文进一步说明现金来自出售房产或变现投资，但这并不消除“全现金支付”这一交易形式的风险指示性。A、D都只说使用公司、信托、法人实体或中介来保护隐私，未给出教材要求的“缺乏合理解释”或不相关名义人条件，因此在本题条件下不如 B、C 直接。
+
+教材原句："For example, properties acquired by corporate entities, trusts, or nominees without a clear justification as to why they were not purchased directly by an individual are red flags."（P121）
+
+## 【错误项分析】
+
+- **A 错误（题干要素不匹配）**：公司或信托购买房产在缺乏合理解释时才更接近红旗（P121）；A明确说明所有权透明且具有合理商业目的，不具备所有权遮蔽或缺乏解释的异常特征。
+- **D 错误（题干要素不匹配）**：使用法人实体或中介只有在缺乏合理解释、掩盖真实所有权等条件下才更接近红旗（P121）；D强调安排已公开披露且有合理解释，风险指示性较弱。
+- **E 错误（业务场景错配）**：现金或存单担保贷款可能在其他信贷洗钱场景中需要关注，但E没有给出缺乏经济理由、异常提前还款或资金来源可疑等事实，与B、C所述房地产红旗相比不够直接。
+
+## 【易错提醒】
+
+判断公司、信托或中介安排是否构成房地产红旗，关键不在于是否使用这些结构，而在于该结构是否缺乏合理解释、是否隐藏真实买方或受益所有人（P121）。B明确使用不相关第三方名义，身份链条出现断裂；A、D则强调所有权透明并有合理解释，风险指示性较弱。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001097`
+
+### `v7u_N001097`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：由公司、信托或代名人购买房产且无合理解释是红旗信号信号
+- 英文原文：For example, properties acquired by corporate entities, trusts, or nominees without a clear justification as to why they were not purchased directly by an individual are red flags.
+
+### `v7u_N001103`
+
+- 用于：核心解析、选项C
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：在银行融资通常存在的地区，全部或主要用现金支付的买家属于房地产洗钱红旗
+- 英文原文：Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm.
+
+### `v7u_N001096`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：买卖或租赁房地产为犯罪分子通过模糊所有权结构掩饰资金来源提供机会
+- 英文原文：Buying, selling, or renting properties presents opportunities for criminals to disguise the origin of funds through obscured ownership structures.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C（按教材逐项复核修订）
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+房地产洗钱警示信号包括不相关第三方名义购买，以及在银行融资通常存在的地区进行全现金购买。B、C分别对应这两类直接指标；A、D明确给出透明或合理的合法目的，E未给出异常资金来源或还款行为，因此不作为本题答案。
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+房地产领域的直接红旗包括不相关第三方名义购买，以及在融资常态地区的全部或主要现金支付。合法、透明且有合理商业目的的实体安排，以及没有其他异常事实的担保贷款，不能仅凭形式认定为红旗。
+
+### 答案冲突提示
+
+- 解析修订说明：按英文选项与教材逐项对应，B、C均有直接红旗依据；原中文/英文参考答案存在标签错位，不能据此否定 C。
+- 原始参考答案存在中英文标签错位，已按教材直接依据修订为 B、C。

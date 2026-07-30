@@ -1,0 +1,99 @@
+# v7_q_000120
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪一项可被视为可靠、独立的原始文件、数据或信息？
+
+英文题干：Which of the following can be considered a reliable, independent source document, data, or information?
+
+选项：
+
+- A. 潜在客户提供的信息
+  English: Information provided by a prospective customer
+- B. 政府颁发的身份证明文件的复印件的复印件
+  English: A photocopy of a copy of a government-issued identity document
+- C. 从开源数据库获取的信息
+  English: Information obtained from an open-source database
+- D. 直接从政府管理的登记处获取的信息
+  English: Information obtained directly from a government-managed registry
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分可靠独立的原始信息来源与待验证或间接来源
+
+## 【核心解析】
+
+教材指出第三方可提供外部数据，例如来自政府机构的情报或来自注册机构（registries）的身份详情（P472），组织也可导入商业注册信息以改进KYC流程（P472）。题干要求识别可靠、独立的原始文件、数据或信息；在给定选项中，直接从政府管理的登记处获取的信息来源明确、传递环节较少，并具有官方记录属性，因此D最符合。官方来源也可能存在信息过时、登记错误或覆盖不全等情况，仍应根据风险核实数据是否最新、完整并与客户情况一致。
+
+教材原句："Third parties can also provide external data, such as lists for screening purposes, intelligence from government agencies, or identification details from registries."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜范围或程度偏差**：潜在客户提供的信息属于内部静态数据（P467），由客户自行提交，并非独立来源，必须经过核实后才能使用。相比直接从政府登记处获取的官方信息，客户自述不具有同等级的客观可靠性。
+- **B 错误（题干对照）｜范围或程度偏差**：政府颁发的身份证明文件经过多次复制，存在失真或难以验证完整性的风险，也不属于直接取得的原始资料。相比之下，直接从政府登记处获取的信息传递环节更少，更符合题干条件。
+- **C 错误（教材直接依据）｜范围或程度偏差**：开源数据库中的信息来源和维护标准可能不同，分析师在依赖前应确认其来源可靠性（P399）。D项直接来自政府管理的登记处，在本题比较中更符合可靠、独立和来源直接的要求。
+
+## 【易错提醒】
+
+政府登记处通常比一般开源数据库更具官方性和可追溯性，但「官方来源」不等于内容永远准确。实际尽调中仍要检查信息的时效性、完整性，并在风险较高时进行交叉核验。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004744`
+
+### `v7u_N004744`
+
+- 用于：核心解析、易错提醒
+- 章节：Data as an input for solutions > External data
+- 页码：PDF第477页 / 书内第472页
+- 中文要点：第三方可提供外部数据，如筛查名单、政府情报或注册信息。
+- 英文原文：Third parties can also provide external data, such as lists for screening purposes, intelligence from government agencies, or identification details from registries.
+
+### `v7u_N003198`
+
+- 用于：核心解析、选项A
+- 章节：Ongoing AFC controls > Politically exposed persons screening
+- 页码：PDF第327页 / 书内第322页
+- 中文要点：信息来源的可信度：可靠来源包括监管报告、主要金融出版物和执法通知
+- 英文原文：The credibility of the source: Reliable sources include regulatory reports, major financial publications, and law enforcement notices. Unverified social media posts and low-quality blogs should be carefully evaluated.
+
+### `v7u_N004681`
+
+- 用于：选项A
+- 章节：Data as an input for solutions > Internal static data
+- 页码：PDF第472页 / 书内第467页
+- 中文要点：客户提供的静态数据示例包括姓名、地址、出生日期等了解你的客户信息。
+- 英文原文：The data the customer provides includes KYC details such as name, address, date of birth, business registration number, and unique identifications such as passport or license numbers.
+
+### `v7u_N004011`
+
+- 用于：选项A、选项C、易错提醒
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：分析师必须确认OSINT信息来源的可靠性才能依赖
+- 英文原文：OSINT draws information from sources that may be unreliable, so analysts should confirm the source of information to be able to rely on it.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+可靠、独立的原始文件、数据或信息应直接来自 息,易受客户主观影响,不可靠;选项B政府颁 发的身份证明文件的复印件的复印件,经过多次 复制,真实性存疑:选项C从开源数据库获取的 证:选项D直接从政府管理的登记处获取的信 息,政府管理的登记处信息权威、可验证,符合 可靠、独立的原始文件、数据或信息的定义.因 此,正确答案是D.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+-[AML/CFTCompliancePrograms]Whic 单选 hofthefollowingcanbeconsideredareliable,i ndependentsourcedocument,data,orlnformat ion? Informationprovidedbyaprospective A customer Photocopyofacopyofagovernment-i B ssuedidentitydocument Informationobtainedfromanopen-sou rcedatabase Informationobtaineddirectlyfromago vernment-managedregistry 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

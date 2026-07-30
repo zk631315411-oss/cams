@@ -1,0 +1,101 @@
+# v7_q_000230
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一个国家金融情报机构(FIU)的主要职责包括:(选择两项.)
+
+英文题干：The main responsibilities of a national Financial Intelligence Unit (FIU) include: (Select two.)
+
+选项：
+
+- A. 与执法机构、金融机构及其他利益相关方合作,以发现并阻止非法金融活动.
+  English: Collaborating with law enforcement agencies, financial institutions, and other stakeholders to detect and prevent illicit financial activities.
+- B. 对金融机构进行检查,以确保其遵守反洗钱规定.
+  English: Conducting examinations of financial institutions to ensure compliance with anti-money laundering regulations.
+- C. 从事向公共和私营部门提供金融服务,包括银行业务和投资活动
+  English: Engaging in providing financial services, including banking and investment activities, to the public and private sectors.
+- D. 促进公共部门与私营部门之间的信息交流.
+  English: Facilitating the exchange of information between the public and private sectors.
+- E. 制定有关金融机构运营的立法.
+  English: Enacting legislation regarding the operations of financial institutions.
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+
+区分FIU职责与监管机构、立法机构职责
+
+## 【核心解析】
+
+国家金融情报机构（FIU）的核心职能是接收、分析和传播金融情报（P228），其设立目的即分析可疑交易报告并支持执法调查。由此可推断，FIU的职责本质上是一个「信息枢纽」——它自己不直接执法、不直接监管、不从事商业金融活动、也不立法。选项A「与执法机构、金融机构及其他利益相关方合作，以发现并阻止非法金融活动」直接对应FIU接收分析情报后传播给执法机构促成执法行动这一链条（P232）。选项D「促进公共部门与私营部门之间的信息交流」对应FIU作为信息枢纽在公私之间共享金融情报的职能，教材明确指出公私合作伙伴关系可用于促进公共和私营部门合作打击金融犯罪（P237）。两项均落在FIU「信息收集—分析—分发」的核心职能辐射范围内。
+
+教材原句："National FIUs receive, analyze, and disseminate financial intelligence."（P228）
+
+## 【错误项分析】
+
+- **B 错误**：「对金融机构进行检查以确保其遵守反洗钱规定」是监管机构的职责，而非FIU。教材在韩国案例中明确指出：金融监督院（Financial Supervisory Service）负责检查和监督金融机构的合规情况（P203），而韩国金融情报中心（Korea FIU）分析可疑交易报告并与执法机构共享信息。FIU的角色定位是情报分析而非合规检查（P228），题干更直接匹配A和D而非B。
+- **C 错误**：「从事向公共和私营部门提供金融服务」是商业银行等金融机构的业务活动，与FIU的公共职能完全无关。FIU是政府设立的情报机构，不从事商业银行业务或投资活动。题干要素不匹配。
+- **E 错误**：「制定有关金融机构运营的立法」是立法机关的职责。FIU本身是依据法律设立的机构，执行法律授权范围内的情报职能，而非制定法律。教材提到各辖区应通过立法对机构施加义务，但FIU是守法者/执行者而非立法者。题干更匹配A和D。
+
+## 【易错提醒】
+
+FIU的核心定位是金融情报枢纽，负责接收、分析和传播金融情报（P228）。对金融机构的检查监督由监管机构执行（P203），犯罪调查和强制执法则由执法机关负责。区分这些主体时，应根据其法定职能判断，而不能把信息分析、监管检查和执法行动混为一谈。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002218`
+
+### `v7u_N002218`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第233页 / 书内第228页
+- 中文要点：国家金融情报机构接收、分析和传播金融情报
+- 英文原文：National FIUs receive, analyze, and disseminate financial intelligence.
+
+### `v7u_N002261`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Case study: Law enforcement and FIU cooperation
+- 页码：PDF第237页 / 书内第232页
+- 中文要点：国家金融情报机构与执法机构合作可促成执法行动
+- 英文原文：Cooperation between national FIUs and law enforcement results in law enforcement action.
+
+### `v7u_N002326`
+
+- 用于：核心解析、选项B
+- 章节：Cooperation involving the private sector > Key takeaways
+- 页码：PDF第242页 / 书内第237页
+- 中文要点：公私部门合作打击金融犯罪
+- 英文原文：Enable collaboration between the public and private sectors in fighting financial crime.
+
+### `v7u_N001950`
+
+- 用于：选项B、易错提醒
+- 章节：US AML/CFT regulatory landscape > South Korea AML regulations
+- 页码：PDF第208页 / 书内第203页
+- 中文要点：金融监督院检查并监督金融机构遵守反洗钱义务的情况。
+- 英文原文：Under the Commission, the Financial Supervisory Service examines and supervises financial institutions to ensure compliance with AML obligations.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+金融情报机构(FIU)的核心职责聚焦于信息整 合与协作.选项A中,FIU与执法机构、金融机构 等合作,发现并阻止非法金融活动,符合其通过 分析可疑交易报告打击洗钱的核心职能.选项D 中,促进公共部门与私营部门间的信息交流,是 FIU构建反洗钱网络的关键环节,例如接收银行 可疑交易数据并反馈风险趋势.选项B为监管机 构职责,C为金融机构业务范畴,E属立法部门 权限,均非FIU直接职能.易错点:混淆FIU 与监管机构角色,需明确其定位为信息枢纽而非 执法或立法主体. 度 难
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+金融情报机构(FIU)的核心职能聚焦于信息处 理与协作.选项A中,FIU通过与执法机构、金融 机构等合作,能够更有效地识别和防范非法金融 活动:选项D强调FIU在促进公私部门间信息共享 方面的作用,这有助于提升反洗钱和反恐融资的 整体效能.而选项B是监管机构的职责,选项C 属于金融机构业务范畴,选项E则是立法机构的 职能,均与FIU的主要角色不符.因此,正确答 案为AD.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

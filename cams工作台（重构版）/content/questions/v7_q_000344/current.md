@@ -1,0 +1,98 @@
+# v7_q_000344
+
+教材章节：未映射
+
+题型：multiple
+
+题干：贸易型洗钱中贸易对手方的潜在风险指标包括：(选择三项。)
+
+英文题干：Potential risk indicators for a trade counterparty in trade-based money laundering include: (Select Three.)
+
+选项：
+
+- A. 交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符
+  English: Irregular or inconsistent trade volume and frequency that do not align with the historical trading behavior of the counterparty
+- B. 合同、发票或其他贸易单据，其中包含所交易商品的详细描述
+  English: Contracts, invoices, or other trade documents containing detailed descriptions of the traded commodities
+- C. 现金存款或其他交易持续低于相关报告门槛
+  English: Cash deposits or other transactions consistently below the relevant reporting thresholds
+- D. 从事不符合标准商业惯例的交易、运输路线或运输方式
+  English: Engaging in transactions, shipping routes, or shipping methods that are not in line with standard business practices
+- E. 透明的定价结构，当价格波动超过10%时向接收银行提供额外信息
+  English: Transparent pricing structures, with additional information provided to the receiving bank when price fluctuations exceed 10%
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+
+识别贸易型洗钱中交易对手的异常行为与风险指标
+
+## 【核心解析】
+
+贸易型洗钱（TBML）中，犯罪分子通过贸易交易掩盖资金真实性质（P66）。教材列举了若干TBML风险类型，其中包含「不经济或不合理的交易策略」和「异常交易模式，如对手方集中、异常盈亏率或中性化活动」（P445）。选项A描述的「交易量和交易频率不规律或不一致，与交易对手的历史交易行为不符」直接吻合教材对异常交易模式的界定——当交易行为偏离历史模式，频率、金额出现异常，正是需要关注的警示信号。选项C描述的「现金存款或其他交易持续低于相关报告门槛」对应教材中「structuring（拆分交易）」的概念：若报告阈值为1万美元，客户反复存入9900美元即为拆分（P131）。这种刻意规避报告门槛的行为在贸易洗钱场景中是重要的风险指标，洗钱者可能通过多笔小额交易转移非法资金。选项D描述的「从事不符合标准商业惯例的交易、运输路线或运输方式」吻合教材中「不经济或不合理的交易策略」——合理的商业主体通常遵循成本最低、效率最高的路线和方式，偏离这一原则即构成警示。三项均直接指向教材对TBML风险指标的定义框架。
+
+## 【错误项分析】
+
+- **B 错误（属于正常单据特征）**：合同、发票等贸易单据包含商品的详细描述，有助于核验交易真实性。风险在于单据虚假、矛盾或与实际货物不符，而不是信息详细本身。
+- **E 错误（属于透明披露）**：透明的定价结构，并在价格波动较大时提供补充信息，有助于解释交易，而不是洗钱风险指标。贸易洗钱更需关注价格操纵和缺乏合理解释的异常。
+
+## 【易错提醒】
+
+风险指标反映偏离正常商业行为的异常特征（P445）。详细、相互一致的单据和透明定价本身有助于核验交易；单据造假、价格操纵或无法解释的偏离才需要警惕。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000538`
+
+### `v7u_N000537`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with retail and commercial banking > High-risk retail and commercial banking products
+- 页码：PDF第71页 / 书内第66页
+- 中文要点：不经济或不合理的交易策略可能暗示洗钱风险。
+- 英文原文：Uneconomic or irrational trading strategies that do not make economic sense.
+
+### `v7u_N000538`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with retail and commercial banking > High-risk retail and commercial banking products
+- 页码：PDF第71页 / 书内第66页
+- 中文要点：异常交易模式如对手方集中、异常盈亏率或中性化活动是洗钱风险信号。
+- 英文原文：Unusual trading patterns such as counterparty concentration, unusual winloss rates, or flat or neutralizing activity.
+
+### `v7u_N004452`
+
+- 用于：核心解析
+- 章节：Transaction monitoring scenario calibration testing
+- 页码：PDF第450页 / 书内第445页
+- 中文要点：例如，若监管要求报告超过1万美元的现金存款，客户多次存入9900美元可能构成拆分交易
+- 英文原文：For example, if regulatory guidelines require reporting for cash deposits above US$10,000, a customer consistently depositing US$9,900 in multiple transactions might be structuring.
+
+### `v7u_N001164`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第136页 / 书内第131页
+- 中文要点：低开发票：以低于公平市场价的价格开具发票，卖方借此向买方转移价值。
+- 英文原文：Under-invoicing: This describes invoicing goods or services at a price below the fair market value. The seller can transfer value to the buyer by presenting an invoice that reflects a lower price than what is charged in the market.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、D
+- 中文参考答案：A、C、D
+
+### 中文参考解析
+
+贸易型洗钱中,需关注贸易对手方潜在风险指 标.A选项,交易量和频率不规律或不一致,与 历史交易行为不符,是异常信号,可能隐藏洗钱 行为.C选项,现金存款或其他交易持续低于相 关报告门槛,可规避监管,属潜在风险.D选 项,从事不符合标准商业惯例的交易、运输路线 或方式,也与洗钱风险相关.B选项合同发票含 详细描述,是正常贸易表现,非风险指标.E选 项透明定价结构,价格波动超土10%时提供额外 信息,是合规做法.故正确答案为ACD.易错提 醒:需准确区分正常贸易行为与洗钱风险指标.
+
+- 英文参考答案：A、C、D
+
+### 英文参考解析
+
+贸易洗钱中交易对手的潜在风险指标,A选项中 交易量和频率不规则且与历史交易行为不符,是 典型异常特征,易被用于掩盖非法资金流动;C 选项中现金存款或其他交易持续低于相关报告國 值,可规避监管审查,存在洗钱风险;D选项中 交易及运输路线或方式不符合标准商业惯例,可 能为转移资金或规避检测而设计.B选项合同、 发票等贸易文件包含详细商品描述,属正常商业 行为;E选项透明定价结构且价格波动时提供额 外信息,是合规操作.故答案选ACD.口诀:异 常交易要警惕,低于阈值有猫腻,不合惯例风险 高.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

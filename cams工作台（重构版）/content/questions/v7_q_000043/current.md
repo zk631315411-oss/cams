@@ -1,0 +1,91 @@
+# v7_q_000043
+
+教材章节：未映射
+
+题型：single
+
+题干：当一家机构受到监管机构的同意令或类似措施约束时,该机构内部谁最终对任何违反适用的反洗钱/打击恐怖主义融资法律法规的行为的整改负责？
+
+英文题干：When under a regulator's consent order or similar action, who at an organization is ultimately accountable for the remediation of any violations of applicable AML/CFT laws and regulations?
+
+选项：
+
+- A. 指定的反洗钱合规官
+  English: Designated AML compliance officer
+- B. 首席执行官
+  English: Chief executive officer
+- C. 首席运营官
+  English: Chief operating officer
+- D. 董事会
+  English: Board of directors
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+明确合规计划中承担「最终责任」的治理主体
+
+## 【核心解析】
+
+在教材框架下，董事会（Board of directors）对反洗钱/打击恐怖主义融资（AML/CFT）合规计划承担「最终责任」（ultimate responsibility）。P264明确写道：「董事会对合规计划承担最终责任。」P260同样指出，董事会最终对计划的有效性负责，且「必须确保任何缺陷得到及时解决」。题干问的是在收到监管机构同意令后，谁对违规行为的「整改」（remediation）最终负责——「整改」恰恰是解决已发现缺陷的过程，这与P260描述的董事会必须确保缺陷被及时处理的责任直接吻合。因此，在四个选项中，董事会是承担这一最终责任的主体。
+
+教材原句："The ultimate responsibility for the compliance program belongs to the board of directors."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜概念混淆**：指定的反洗钱合规官的职责是「监督反洗钱项目」（overseeing the program）P244，或负责计划的「日常活动」（day-to-day activities）P180。其角色更像计划的日常执行和管理者，并非像董事会那样对有效性缺陷的整改承担最终责任。
+- **B 错误（教材定义应用）｜范围或程度偏差**：教材在部分案例中提及首席执行官，但并未将其定位为「最终负责」的主体。相比之下，教材在两处直接写明董事会承担「最终责任」，对「谁最终负责整改」这一问题给予了更直接的匹配。
+- **C 错误（教材定义应用）｜范围或程度偏差**：首席运营官在教材中属于负责在日常运营中实施反洗钱政策的第一道防线角色（P295），承担的是执行层面的具体管理责任，与题干所问的「最终」（ultimate）责任层级不同。
+
+## 【易错提醒】
+
+指定反洗钱合规官与董事会容易混淆：前者负责计划的日常管理与执行（P244，P180），后者承担最终责任（P264，P260）。同属治理结构，但责任层次有别。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002601`
+
+### `v7u_N002601`
+
+- 用于：核心解析、选项A、选项B、选项C、易错提醒
+- 章节：Second LOD's AFC role and its interaction with the front office > Establishing a culture of compliance
+- 页码：PDF第269页 / 书内第264页
+- 中文要点：董事会对合规计划承担最终责任
+- 英文原文：The ultimate responsibility for the compliance program belongs to the board of directors.
+
+### `v7u_N002560`
+
+- 用于：核心解析、选项A、选项B、选项C
+- 章节：Three lines of defense > Functions of board of directors and management oversight
+- 页码：PDF第265页 / 书内第260页
+- 中文要点：董事会为金融犯罪防控计划提供战略方向，评估新兴风险，并确保及时解决缺陷。
+- 英文原文：In addition, the board provides strategic direction for the AFC program, aligning it with the organization’s risk appetite. It assesses emerging risks and AFC control effectiveness, guiding management on any necessary adjustments. Ultimately, the board is accountable for the program's effectiveness and must ensure that any deficiencies are addressed promptly.
+
+### `v7u_N002398`
+
+- 用于：选项A、易错提醒
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：指定的反洗钱合规官负责监督反洗钱项目。
+- 英文原文：Designated AML compliance officer: Individual responsible for overseeing the program.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在反洗钱和反恐怖融资合规标准下,董事会作为 公司治理的核心,对机构整体合规性负有最终责 任.当机构受到监管机构的同意令或类似措施约 束时,董事会需确保制定并监督执行有效的整改 计划,以纠正任何违反反洗钱打击恐怖主义融资 法律法规的行为.首席执行官、首席运营官或指 定合规官虽负责日常管理或具体合规事务,但最 终责任仍由董事会承担.因此,正确答案为董事 会(D). 食吉食
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+次(T△++二
+
+### 答案冲突提示
+
+- 未发现答案冲突。

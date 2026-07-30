@@ -1,0 +1,105 @@
+# v7_q_000209
+
+教材章节：未映射
+
+题型：single
+
+题干：在为组织选择反金融犯罪(AFC)工具时,最重要的考虑因素是该工具是否:
+
+英文题干：When selecting an anti-financial crime (AFC) tool for an organization, the most important factor to consider is whether the tool:
+
+选项：
+
+- A. 与现有系统和流程无缝集成.
+  English: Integrates seamlessly with existing systems and processes.
+- B. 符合预算和成本要求.
+  English: Meets budget and cost requirements.
+- C. 自动化所有监管报告要求.
+  English: Automates all regulatory reporting requirements.
+- D. 取代对员工进行人工合规培训的方式.
+  English: Replaces manual compliance training for employees.
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+选择AFC工具的核心标准：与风险状况和现有系统的匹配度
+
+## 【核心解析】
+
+教材在「选择和实施新的AFC工具」这一直接语境中，要求机构首先全面评估现有系统、数据质量和集成挑战（P389），并把集成列为评估新AFC技术的四项关键考虑之一（P389）。教材进一步说明，良好集成的方案应简化工作流并确保工具和数据集之间的互操作性（P390）。A与这些直接标准一致；其余选项或只是约束条件，或使用「所有」「取代」等绝对表述，均不能作为首要选择标准。因此答案为A。
+
+## 【错误项分析】
+
+- **B 错误**：预算和成本是实施约束，但题干问最重要因素。教材在选择新AFC工具时直接要求先评估现有系统和集成挑战（P389），故A的匹配度更高。
+- **C 错误**：单一工具未必能够自动化「所有」监管报告，而且报告自动化也只是工具功能之一。选择AFC工具还需考虑风险、数据、工作流、治理以及与现有系统的集成（P389-P390）。
+- **D 错误**：AFC工具不能取代员工合规培训。技术实施仍需人员理解、治理和监督，D把技术工具与人员培训错误地设为替代关系。
+
+## 【易错提醒】
+
+「无缝集成」是选项用语；教材的直接标准是兼容现有系统、处理集成挑战、简化工作流并实现互操作（P378、P389-P390）。解析可以据此选择A，但不应把预算、可扩展性或合规需求说成完全不重要。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003902`
+
+### `v7u_N003779`
+
+- 用于：核心解析、易错提醒
+- 章节：Understanding AFC technology > Technology implementation considerations
+- 页码：PDF第383页 / 书内第378页
+- 中文要点：与现有系统集成要求兼容遗留技术和核心银行系统
+- 英文原文：Integration with existing systems: Ensure compatibility with legacy technology and core banking systems.
+
+### `v7u_N003830`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > AFC tools, choices, and considerations
+- 页码：PDF第389页 / 书内第384页
+- 中文要点：机构应评估是将这些先进技术集成到现有系统还是完全替换旧系统。
+- 英文原文：Institutions should evaluate whether to integrate these advancements into existing systems or replace outdated systems entirely.
+
+### `v7u_N003902`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第394页 / 书内第389页
+- 中文要点：选择和实施新AFC工具前，应先评估现有系统、数据质量和集成挑战
+- 英文原文：When choosing and implementing a new AFC tool, organizations should first conduct a thorough assessment of existing systems, data quality, and integration challenges. A critical step is determining whether legacy databases and platforms are outdated and if they can be effectively migrated into the new system.
+
+### `v7u_N003904`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第394页 / 书内第389页
+- 中文要点：评估新AFC技术的四项关键考虑包括可扩展性、灵活架构、集成和协作
+- 英文原文：There are four key considerations for evaluating new AFC technology: scalability, flexible architecture, integration, and collaboration.
+
+### `v7u_N003909`
+
+- 用于：核心解析、易错提醒
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第395页 / 书内第390页
+- 中文要点：良好集成的AFC方案应简化工作流，并确保工具和数据集之间互操作
+- 英文原文：Integration: A well-integrated AFC solution should streamline workflows and ensure interoperability across tools and datasets. New technologies should focus on efficient data sharing and automation, enabling organizations to respond swiftly to regulatory changes and emerging risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+在为组织选择反金融犯罪(AFC)工具时,需确 保工具与组织现有系统流程无缝集成.选项A强 调工具与现有系统和流程的无缝集成,这是确保 工具有效运行、减少实施风险的关键.选项B虽 涉及预算和成本,但非最重要因素;选项C自动 化监管报告要求虽重要,但非首要考虑;选项D 提及取代人工合规培训,与工具选择核心要求不 符.因此,选择A最合理. 难
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+翻 单选 -[AML/CFTCompliancePrograms]When selectingananti-financialcrime(AFC)toolfora norganization,themostimportantfactortoCon sideriswhetherthetool: integratesseamlesslywithexistingsys temsandprocesses. B meetsbudgetandcostRequirements. automatesallregulatoryreportingrequ C irements. replacesmanualcompliancetrainingf D oremployees. 正确答案A您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

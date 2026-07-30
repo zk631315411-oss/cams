@@ -1,0 +1,62 @@
+# v7_q_000380
+
+教材章节：未映射
+
+题型：multiple
+
+题干：公私合作(PPP)如何促进打击金融犯罪方面的协作？(选择两项.)
+
+英文题干：How can public-private partnerships (PPPs) foster collaboration in the fight against financial crime? (Choose two.)
+
+选项：
+
+- A. 培育合规文化
+  English: Developing a culture of compliance
+- B. 通过向金融机构征求反馈意见来改善公共部门的治理
+  English: Improving governance in the public sector by requesting feedback from financial institutions
+- C. 减少所有金融机构的交易监测误报
+  English: Reducing transaction monitoring false positives for all financial institutions
+- D. 通过共享信息提高可用于分析的数据的质量和数量
+  English: Improving the quality and quantity of data available for analysis by sharing information
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+识别公私合作促进反金融犯罪协作的直接机制。
+
+## 【核心解析】
+B通过向金融机构征求反馈改进公共部门治理，体现公共部门与私营金融机构共同识别问题、调整政策和改善执行，是公私合作的直接协作方式；D通过共享信息提高数据的质量和数量，直接对应PPP在金融犯罪治理中的核心价值（P235-P237）。因此答案为B、D。
+
+A“培育合规文化”可能是公私合作的长期结果，但本身没有说明跨机构共同工作；C“减少所有金融机构的误报”过于绝对，也不是PPP的通用目标。
+
+## 【错误项分析】
+- **A**：可以是协作带来的效果，但不是题干所问的具体跨部门协作动作。
+- **C**：“所有金融机构”过于绝对，且误报率下降需要具体模型和数据条件，不能作为PPP的一般功能。
+
+## 【易错提醒】
+判断PPP选项时，先看是否存在公共部门与私营部门之间的共同反馈、信息共享或联合行动（P235-P237）。
+
+## 【教材原文依据】
+- 核心引用单元：`v7u_N002297`；页码：P235–237。
+- 外部依据：FATF关于私营部门信息共享的资料强调公共部门与金融机构通过信息交流提升金融犯罪识别能力，URL：https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Private-sector-information-sharing.html（访问日期：2026-07-25）。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+公私合作(PPP)在打击金融犯罪协作中作用显 著.选项A,培育合规文化,能增强公私双方对 反洗钱和反恐怖融资的意识,促进协作.选项 D,通过共享信息,可提高分析数据的质量和数 量,有助于更精准识别金融犯罪行为,加强打击 力度.而选项B,向金融机构征求反馈意见改善 公共部门治理,与打击金融犯罪协作关系不大; 选项C,减少所有金融机构交易监测误报,并非 PPP促进协作的直接体现.故答案选AD.易错 提醒:注意区分各选项与打击金融犯罪协作的直 接关联性.
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+公共私营合作(PPPS)通过多种方式促进反金 融犯罪合作.选项A,培育合规文化,能增强私 营部门对反洗钱(AML)和反恐融资(CFT)标 准的遵循,从而提升整体合规水平.选项D,通 过信息共享,提高数据分析的质量和数量,有助 于更精准识别可疑活动,增强反金融犯罪能力. 选项B虽涉及公私合作,但主要聚焦于公共部门 治理改进,非直接反金融犯罪合作.选项C关注 减少误报,虽重要,但非PPP促进合作的主要方 式.因此,正确选项为A和D.
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=B,D，题库最终=A,D

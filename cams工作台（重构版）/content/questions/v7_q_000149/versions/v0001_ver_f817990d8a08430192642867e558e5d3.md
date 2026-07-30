@@ -1,0 +1,115 @@
+# v7_q_000149
+
+教材章节：未映射
+
+题型：single
+
+题干：在以下哪种情形中,应认定客户拥有过于复杂的股权结构？
+
+英文题干：In which of the following scenarios should the customer be deemed to have an overly complex ownership structure?
+
+选项：
+
+- A. 一家由两个个人持有的私人公司,其权益由一系列信托和基金会持有
+  English: A privately held company owned by two individuals whose interests are held by a series of trusts and foundations
+- B. 由两名受托人共同设立的信托,其中一名受托人为委托人,另一名为公司服务提供商
+  English: A trust set up with two co-trustees, one of whom is the grantor and the other is a corporate service provider
+- C. 一个由两个家族共同拥有的客户,涉及家族内部十几位所有者
+  English: A customer that is owned by two families with the involvement of over a dozen owners within the families
+- D. 一家跨国代理银行,其与一家上市银行控股公司之间存在三层所有权关系
+  English: A multinational correspondent bank that has three layers of ownership between it and a publicly traded bank holding company
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别复杂所有权结构的判别标准
+
+## 【核心解析】
+
+离岸持股、名义董事或最终受益所有人（UBO）不明确，是复杂所有权结构的典型特征（P312）；多层所有者或离岸持股也属于复杂公司结构分析的重点（P311）。多层所有权可能掩盖受益所有人和控制人（P73），信托中法定所有权与受益所有权的分离也可能被用于掩盖关联（P74）。A中的个人权益并非直接持有，而是经过一系列信托和基金会，其穿透识别难度高于仅说明三层且给出所有权链终点的D，因此在四个选项中最符合「过于复杂」的判断。判断重点是结构能否解释以及UBO能否查明，不能仅以所有权层数自动认定。
+
+教材原句："Complex ownership structures: Entities with offshore holdings, nominee directors, or unclear UBO"
+
+## 【错误项分析】
+
+- **B 错误**：教材说明，在某些信托中委托人可以同时担任受托人，信托也常在公司服务提供商的指导下设立（P73）。这些角色组合需要核实和评估，但B已明确列出委托人和两名受托人，没有呈现A那种一系列信托、基金会造成的多层持有，也没有直接表明UBO不明确，因此不如A符合「过于复杂」。
+- **C 错误**：选项C涉及两个家族十几位所有者，股东人数较多可能增加透明度识别难度，但多股东本身不等同于所有权结构过于复杂。判断重点在于是否存在离岸持股、名义董事或UBO不明确等情况（P312）；如果家族成员均为已知自然人，结构仍可能清晰，因此C不如A匹配。
+- **D 错误**：三层所有权确实属于需要分析的多层结构信号（P311），不能仅因层级固定就认定没有风险。但D已经给出所有权链的层数和终点，题干没有进一步显示UBO或控制人不明确；相比之下，A通过一系列信托和基金会间接持有权益，更直接叠加多层所有权及法定所有权与受益所有权分离的识别难度（P73、P74），因此更符合「过于复杂」。
+
+## 【易错提醒】
+
+层级或参与人数是风险信号，但不能单独决定结构是否「过于复杂」。还要判断所有权链能否解释、相关自然人和控制人能否查实，以及法定所有权与受益所有权分离是否增加穿透识别难度（P74、P311-P312）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003104`
+
+### `v7u_N003104`
+
+- 用于：核心解析、选项B、选项C、选项D、易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：复杂所有权结构：拥有离岸持股、名义董事或最终受益所有人不明确的实体
+- 英文原文：Complex ownership structures: Entities with offshore holdings, nominee directors, or unclear UBO
+
+### `v7u_N003092`
+
+- 用于：核心解析、选项B、选项C、选项D
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：EDD包括分析复杂的公司结构，如多层所有者或离岸持股。
+- 英文原文：Complex corporate structure analysis, such as multiple layers of owners, or offshore holdings.
+
+### `v7u_N000616`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Private banking and wealth management risks > Trust risks
+- 页码：PDF第79页 / 书内第74页
+- 中文要点：犯罪分子可能利用信托中法定所有权与受益所有权的分离掩盖其与金融犯罪的关联。
+- 英文原文：Those seeking to disguise their connection with financial crime appreciate the separation of legal and beneficial ownership which gives an aura of legitimacy.
+
+### `v7u_N000611`
+
+- 用于：选项B
+- 章节：Private banking and wealth management risks > Trust risks
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：在某些信托中，委托人也可以是受托人、受益人或同时担任两者。
+- 英文原文：In certain trusts, the settlor may also be the trustee, the beneficiary, or even both.
+
+### `v7u_N000612`
+
+- 用于：选项B
+- 章节：Private banking and wealth management risks > Trust risks
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：信托通常在公司服务提供商指导下设立。
+- 英文原文：Trusts are often created with guidance from a corporate service provider.
+
+### `v7u_N000601`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Private banking and wealth management risks > High-risk private banking and wealth management products
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：多层所有权的复杂商业结构会掩盖受益所有人，增加尽职调查难度
+- 英文原文：Complex business structures with multiple layers of ownership can obscure the beneficial owners and controllers, making it harder to conduct thorough due diligence.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+过于复杂的股权结构通常涉及多层嵌套、难以追 踪实际控制人等特征.选项A中,私人公司权益 由一系列信托和基金会持有,信托和基金会本身 具有复杂性和不透明性,多层结构使得实际权益 归属难以追踪,符合过于复杂股权结构的特征. 选项B是共同设立信托,结构相对明确:选项C 是家族内部共同拥有,虽涉及多人但结构较清 晰:选项D是跨国代理银行与上市银行控股公司 间的三层关系,层级虽多但相对规范.因此,应 选A.易错提醒:注意区分复杂结构与多层结 构,复杂结构强调不透明性.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+在反洗钱/反恐融资合规计划中,判断客户所有权 结构是否过于复杂,需看其是否难以穿透识别最 终受益人.选项A中,私人公司由两人通过一系 列信托和基金会间接持股,存在多层嵌套结构, 导致所有权链条复杂且不透明,符合“过于复杂 的特征.选项B、C、D虽涉及多个主体或层级, 但结构相对清晰,未体现多层嵌套或隐蔽性.因 此,答案选A.易错提醒:注意所有权结构复杂 的核心在于“难以识别最终受益人”,而非单纯涉 及主体数量多.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

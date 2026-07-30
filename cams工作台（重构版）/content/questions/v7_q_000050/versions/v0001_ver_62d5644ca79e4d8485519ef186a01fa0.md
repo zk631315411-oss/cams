@@ -1,0 +1,89 @@
+# v7_q_000050
+
+教材章节：未映射
+
+题型：single
+
+题干：当一国政府对某一目标实施经济制裁时,其目的在于:
+
+英文题干：When a government imposes economic sanctions on a target, the purpose is to:
+
+选项：
+
+- A. 保护目标国公民的权利，使其免受本国政府侵害，并提高该地区的金融稳定性。
+  English: Protect the rights of the citizens of the target state against their own government and improve financial stability in the region
+- B. 表明除非该国家或非国家目标遵从实施制裁政府的利益诉求，否则很可能会动用军事力量。
+  English: Indicate that the use of military force is likely unless the state or non-state target complies with the government's interests
+- C. 鼓励非政府组织增加向目标对象提供人道主义和慈善援助。
+  English: Encourage non-governmental organizations to increase the provision of humanitarian and charitable aid to the target
+- D. 改变威胁实施制裁政府利益或违反国际规范的国家或非国家目标的行为。
+  English: Alter the behavior of the state or non-state target that threatens the interests of that government or violates international norms
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+经济制裁的核心目标是改变目标行为而非惩罚或军事威胁
+
+## 【核心解析】
+
+经济制裁作为一种外交工具，不同于经济处罚或军事行动。教材在定义OFAC职责时指出，制裁的目的是「基于美国外交政策和国家安全目标」来应对「外国司法管辖区和政权、恐怖分子、国际毒品贩运者、从事大规模杀伤性武器扩散的实体及其他威胁」(P187)。由此可推断，制裁的内在逻辑是对威胁本国利益或国际规范的行为体施加经济压力，迫使其改变行为。题干中的「改变……行为」直接对应这一核心目标——制裁不是为惩罚而惩罚，而是通过施加财务、声誉和运营成本(P23)来促使目标对象做出行为调整。选项D完整覆盖了制裁针对的两类对象（威胁政府利益的行为、违反国际规范的行为），与教材对联合国制裁旨在「促进国际和平与安全」(P206)的表述也一致，因为违反国际规范的行为恰恰破坏了国际和平与安全。
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜概念混淆**：教材指出制裁对目标施加「高额财务、声誉和运营成本」(P23)，目的是施压而非保护。制裁的本质是打击目标对象的经济利益，使其难以维持原有行为，与「保护目标国公民权利」方向相反。选项A描述的目标更接近人道主义干预而非经济制裁的范畴。
+- **B 错误（教材直接依据）｜概念混淆**：教材在定义制裁时将其置于联合国宪章第七章第41条的框架下，该条款涉及非武力措施，而第七章第42条才涉及军事行动。制裁被描述为「促进国际和平与安全」的手段(P206)，其威慑来源是经济压力而非军事威胁。将制裁等同于「否则可能动用军事力量」的最后通牒，混淆了制裁与军事威慑的边界。在教材对制裁目的的定义中，改变行为是直接目的，军事力量是制裁失败后可能升级的选项，不属于制裁定义本身。
+- **C 错误（题干对照）｜题干要素不匹配**：教材将慈善机构和非政府组织列为可能被利用进行洗钱或恐怖融资的「高风险实体」(P82)，因其跨境运营和资金量大。教材对非政府组织的关注在于其可能被滥用，而非制裁的目的是鼓励对其援助。选项C的「鼓励」方向与制裁的施压逻辑相反。
+
+## 【易错提醒】
+
+制裁与军事威胁易被混为一谈，但教材将联合国制裁置于宪章第七章第41条(非武力措施)，军事行动属于第42条。制裁通过经济施压改变行为，军事威胁则通过武力威慑迫使服从，二者手段不同、逻辑不同。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001772`
+
+### `v7u_N001772`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第192页 / 书内第187页
+- 中文要点：OFAC负责管理和执行基于美国外交政策和国家安全目标的经济与贸易制裁
+- 英文原文：OFAC is responsible for administering and enforcing economic and trade sanctions based on US foreign policy and national security goals against foreign jurisdictions and regimes, terrorists, international narcotics traffickers, entities engaged in the proliferation of WMDs, and other threats.
+
+### `v7u_N000088`
+
+- 用于：核心解析
+- 章节：Types of financial crime > Predicate crimes and money laundering
+- 页码：PDF第28页 / 书内第23页
+- 中文要点：制裁对目标个人和实体施加高额财务、声誉和运营成本
+- 英文原文：Economic sanctions, whether asset freezes or sector-specific restrictions, impose high financial, reputational, and operational costs on individuals and entities targeted by them.
+
+### `v7u_N001980`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Other AFC regulations that impact organizations > Major sanctions regimes
+- 页码：PDF第211页 / 书内第206页
+- 中文要点：联合国依据《联合国宪章》第七章第41条使用制裁促进国际和平与安全
+- 英文原文：The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+经济制裁是一国政府对目标国家或非国家实体采 取的强制措施,目的在于改变其威胁本国政府利 益或违反国际规范的行为.选项D准确描述了这 一目的,即通过经济手段迫使目标改变不当行 为.选项A中保护目标国公民权利并提高金融稳 定性的说法错误:选项B表明动用军事力量的说 法不准确,经济制裁是非军事手段;选项C提到 促使非政府组织增加人道主义援助,与经济制裁 目的不符.因此,正确答案是D.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+经济制裁是政府为达成特定外交或安全目标而采 取的非军事手段.选项A中保护目标国公民权利 并非制裁直接自的,且制裁可能加剧区域不稳 定:选项B中军事威胁与经济制裁性质不同,制 助与制裁无直接关联.选项D准确指出,经济制 裁旨在通过施加经济压力改变威胁政府利益或违 反国际规范的目标行为,符合国际关系中制裁的 实践逻辑.因此选D. 获取深度患考过程 度 难 来
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,115 @@
+# v7_q_000127
+
+教材章节：未映射
+
+题型：single
+
+题干：除了对个人造成的身心伤害之外,以下哪些问题与不受监管的网络赌博和游戏所带来的巨大成本有关？
+
+英文题干：Beyond the physical and mental harm caused to individuals, which of the following problems can be linked to significant costs from unregulated online gambling and gaming?
+
+选项：
+
+- A. 经济与社会
+  English: Economic and societal
+- B. 政治与监管
+  English: Political and regulatory
+- C. 治理与合规
+  English: Governance and compliance
+- D. 行业和司法管辖区方面
+  English: Sectoral and jurisdictional
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+游戏行业的金融犯罪风险及其经济与社会后果
+
+## 【核心解析】
+
+教材指出，游戏行业具有固有的高金融犯罪风险（P120），实体游戏和在线游戏均可能面临金融犯罪风险，并会接触有组织犯罪、高利贷、毒品交易、人口贩运等上游犯罪威胁（P121）。因此，不受监管并不是一种「成本类别」，而是可能使此类风险缺乏有效控制的条件。对于风险实现后的后果，教材明确概括为深远的社会和经济后果，包括破坏制度、侵蚀公众信任、造成长期经济损害（P42），并可能破坏经济稳定、产生更广泛的负面社会后果（P43）。题干问除个人身心伤害外还会带来哪一类巨大成本，最符合教材后果分类的是A「经济与社会」。这里应理解为网络赌博和游戏可能被金融犯罪利用并由此产生相关后果，不能把网络赌博本身直接等同于金融犯罪。
+
+教材原句："Both physical and online gaming are susceptible to certain financial crime risks."；"Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜成因与后果混淆**：教材确实把「监管环境碎片化」列为游戏行业的风险因素（P120），但这说明风险为何可能上升，不是题干所问的巨大成本属于哪一类后果。「政治与监管」不能替代教材明确使用的「经济与社会」后果分类。
+- **C 错误（题干对照）｜措施与后果混淆**：「治理与合规」属于预防、控制和应对金融犯罪风险的制度安排，不是风险实现后对外造成的结果。题干问的是除个人伤害之外的更广泛成本，教材对应的是经济损害和负面社会后果（P42—43）。
+- **D 错误（题干对照）｜风险边界与后果混淆**：跨境活动、不同行业或司法管辖区可能影响风险暴露及监管难度，教材也把跨境性质列为游戏行业风险因素（P120）；但「行业和司法管辖区方面」描述的是风险发生的行业或监管边界，并非题干所问的成本类型。
+
+## 【易错提醒】
+
+区分风险成因、治理措施和结果后果：监管碎片化、跨境活动属于风险因素，治理与合规属于应对措施；题干所问的「巨大成本」是风险实现后的结果，教材明确对应经济与社会后果。另需注意，在线游戏「易受金融犯罪风险影响」不等于在线游戏本身就是金融犯罪。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001075`、`v7u_N001088`、`v7u_N000309`
+
+### `v7u_N001075`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：游戏行业具有固有的高金融犯罪风险。
+- 英文原文：The gaming sector has unique characteristics that carry inherently high financial crime risks.
+
+### `v7u_N001076`
+
+- 用于：选项B、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：游戏行业的风险因素包括监管环境碎片化、活动的跨境性质以及提供准金融服务。
+- 英文原文：These include risks associated with a fragmented regulatory environment, the cross-border nature of activities, and the offering of quasi-financial services.
+
+### `v7u_N001088`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：实体游戏和在线游戏均易受特定金融犯罪风险影响。
+- 英文原文：Both physical and online gaming are susceptible to certain financial crime risks.
+
+### `v7u_N001089`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：游戏行业面临有组织犯罪、高利贷、卖淫、毒品交易和人口贩运等上游犯罪威胁。
+- 英文原文：They encounter criminal threats such as organized crime, loan sharking, prostitution, drug dealing, and human trafficking, all of which are predicate offenses.
+
+### `v7u_N000309`
+
+- 用于：核心解析
+- 章节：Consequences of financial crime > Consequences of financial crime
+- 页码：PDF第47页 / 书内第42页
+- 中文要点：金融犯罪具有深远的社会和经济后果，破坏制度、侵蚀公众信任。
+- 英文原文：Financial crime has far-reaching social and economic consequences, undermining institutions, eroding public trust, and inflicting long-term economic harm.
+
+### `v7u_N000321`
+
+- 用于：核心解析
+- 章节：Consequences of financial crime > Institutional accountability to prevent financial crime
+- 页码：PDF第48页 / 书内第43页
+- 中文要点：金融犯罪破坏经济稳定并带来负面社会后果。
+- 英文原文：Financial crime undermines economic stability and has wider negative societal consequences if ignored.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+不受监管的网络赌博和游戏除对个人造成身心伤 害外,还会带来巨大成本.经济上,可能引发资 金非法流动、债务危机等,影响经济秩序;社会 上,易滋生犯罪、破坏家庭关系等,影响社会稳 定.而政治与监管方面,主要侧重于政策制定和 监管执行;治理与合规方面,更多是企业内部管 理;部门和管辖权方面,主要涉及权力划分.所 以与巨大成本相关的是经济与社会问题,答案选 A.易错点:需准确区分各选项侧重点. 来
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

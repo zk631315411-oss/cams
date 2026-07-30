@@ -1,0 +1,92 @@
+# v7_q_000309
+
+教材章节：未映射
+
+题型：multiple
+
+题干：在开业前，银行至少应具备以下哪些 AML/CFT 安排？（选择三项。）
+
+英文题干：Which of the following AML/CFT arrangements should a bank have in place at minimum before opening for business? (Choose three.)
+
+选项：
+
+- A. 独立合规测试
+  English: Independent compliance testing
+- B. 有资质且知识渊博的员工
+  English: Qualified and knowledgeable staff
+- C. 第三方筛选软件
+  English: Third-party screening software
+- D. 自动化监测系统
+  English: An automated monitoring system
+- E. 书面政策和程序
+  English: Written policy and procedures
+
+## 【AI答案】
+
+A、B、E
+
+## 【考点】
+
+识别金融犯罪合规项目（AFC Program）的核心构成要素
+
+## 【核心解析】
+
+一个有效的金融犯罪防控项目（AFC Program）由几项基础支柱构成。教材明确指出其关键要素包括：风险偏好声明、风险容忍度、政策与程序、控制措施及独立测试（P243）。同时，员工的知识与能力通过培训来保障（P255），教材也将有资质的人员列为合规项目的基础前提（P196）。题干问的是银行「开业前至少应具备」的最低配置，这指向不可缺失的合规骨架：必须有书面的政策与程序来确立规则、必须有独立测试机制来验证有效性、必须有合格员工来执行。这三个选项构成了合规项目从制定、执行到验证的完整闭环，是任何银行开业的先决条件。
+
+教材原句："Key elements of the AFC program include the risk appetite statement, risk tolerance, policies and procedures, controls, and independent testing."（P243）
+
+## 【错误项分析】
+
+- **C 错误（并非最低必备配置）**：第三方筛选软件属于外部数据获取的具体工具选择，取决于银行的业务模式和风险状况，并非每家银行开业时的最低配置要求。相比之下，书面政策和合格员工是所有合规项目的基础，软件工具可根据风险需求配置。
+- **D 错误（并非最低必备配置）**：自动化监测系统是交易监控的一种技术实现方式，并非所有银行都必须在开业前采用自动化形式。业务量较小时也可采用与风险和规模相称的其他监控安排，而独立测试、政策和合格员工属于基础要素。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002386`
+
+### `v7u_N002386`
+
+- 用于：核心解析、选项C、选项D
+- 章节：Introduction > AFC program components
+- 页码：PDF第248页 / 书内第243页
+- 中文要点：金融犯罪防控项目的关键要素包括风险偏好声明、风险容忍度、政策与程序、控制措施及独立测试。
+- 英文原文：Key elements of the AFC program include the risk appetite statement, risk tolerance, policies and procedures, controls, and independent testing.
+
+### `v7u_N001876`
+
+- 用于：核心解析、选项C、选项D
+- 章节：US AML/CFT regulatory landscape > Australia AML regulations
+- 页码：PDF第201页 / 书内第196页
+- 中文要点：该法案要求报告实体实施并维护反洗钱/反恐怖融资合规计划
+- 英文原文：This act requires reporting entities to implement and maintain an AML/CFT compliance program. This program includes risk assessment, internal controls for CDD and regulatory reporting, employee training, and independent reviews.
+
+### `v7u_N002509`
+
+- 用于：核心解析、选项C、选项D
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第260页 / 书内第255页
+- 中文要点：培训与意识：开展员工反洗钱/反恐怖融资培训，确保其理解反洗钱/反恐怖融资法规下的职责及可疑交易报告结构
+- 英文原文：Training and awareness: Conduct staff AML/CFT training, ensuring they understand their responsibilities under AML/CFT regulations and the reporting structures for suspicious transactions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、E
+- 中文参考答案：A、B、E
+
+### 中文参考解析
+
+根据反洗钱和打击资助恐怖主义合规要求,银行 开业前需具备:独立合规性测试(A),确保合 规体系有效运行;有资质且知识渊博的员工 (B),保障业务合规操作;书面政策和程序 (E),明确合规标准与流程.第三方筛选软件 (C)和自动化监测系统(D)虽为合规工具 但非开业前必备条件.因此,正确答案为ABE
+
+- 英文参考答案：A、B、E
+
+### 英文参考解析
+
+国际反洗钱/反恐融资框架要求金融机构在运营前 建立基本合规机制.FATF建议及多数国家监管 指引明确,银行开业前必须配备的核心要素包 括:书面政策与规程(E)是制度基础,确保合 规要求明确落地;具备资质且经过培训的员工 (B)是执行主体,负责识别风险并操作流程; 独立合规测试(A)作为内控保障,通过定期审 计验证程序有效性.C(第三方筛查软件)和D (自动化监控系统)属于技术工具,通常属于增
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,115 @@
+# v7_q_000065
+
+教材章节：未映射
+
+题型：single
+
+题干：金融机构在遵守制裁要求时应采取哪一个步骤？
+
+英文题干：Which step should financial institutions take when complying with sanctions requirements?
+
+选项：
+
+- A. 若现有客户成为受制裁实体，则将其风险等级变更为高风险并继续对其后续交易进行监控
+  English: Change the risk profile to high-risk if an existing customer becomes a sanctioned entity and continue monitoring further transactions
+- B. 采用自动筛查系统来识别指定人员和实体
+  English: Adopt automatic screening systems to detect designated persons and entities
+- C. 对制裁名单上的禁止实体开展强化尽职调查
+  English: Conduct enhanced due diligence for prohibited entities on the sanctions list
+- D. 本决定经董事会批准后，冻结指定个人和实体的资金或资产
+  English: Freeze the funds or assets of designated persons and entities once this decision is approved by the board
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+制裁合规的核心步骤：以自动筛查系统落实名单筛查义务
+
+## 【核心解析】
+
+制裁合规要求金融机构建立有效的筛查机制来识别受制裁对象。教材要求金融机构实施制裁筛查（P203）、筛查交易以检测制裁风险（P306），并合理规划筛查对象、所用名单及名单管理测试（P419）。在给定选项中，B项所述系统能够服务于指定人员和实体的识别，最直接对应上述筛查要求。教材强调的是筛查机制及其有效性，并未据此规定所有机构都必须采用特定形式的自动化系统，也未将其明确界定为任何情形下固定的第一步；因此，B项是相对于其他选项更符合题意的做法。
+
+教材原句："Financial institutions and DNFBPs must implement sanctions screening programs in line with UN, UAE, and FATF sanctions lists."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜概念混淆**：教材在制裁语境下指出，制裁违规将上报监管机构，且相关客户通常会被终止关系（offboarded）（P319）。仅变更风险等级并继续监控，不能充分回应已经确认的制裁风险；相比之下，B项更直接对应制裁筛查要求。
+- **C 错误（教材直接依据）｜范围或程度偏差**：教材指出制裁违规应上报监管机构，客户通常被终止关系（P319），强化尽职调查（EDD）更多针对一般高风险客户（如PEPs），而非已被列入制裁名单的禁止实体。对制裁名单实体，「筛查并冻结/上报」的匹配度高于「开展EDD」。
+- **D 错误（教材直接依据）｜主体或阶段错配**：教材在FATF建议中要求「立即冻结」涉恐人员或实体的资产（P147），前置「须经董事会批准」的条件与该「without delay」要求不一致。D项的问题在于附加了不当的批准条件，而B项更直接对应题干所问的制裁合规措施。
+
+## 【易错提醒】
+
+制裁筛查用于识别指定人员和实体；一旦确认命中，则应依适用规则及时采取冻结、阻断或报告等措施。不要把一般高风险客户的EDD与制裁名单命中后的处置混为一谈，也不要为「立即冻结」擅自增加董事会批准条件。自动化是常见的筛查实现方式，但具体技术形式仍取决于机构规模、业务和适用要求。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001961`
+
+### `v7u_N001961`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > United Arab Emirates AML regulations
+- 页码：PDF第208页 / 书内第203页
+- 中文要点：金融机构和DNFBP必须根据联合国、阿联酋和FATF制裁名单实施制裁筛查
+- 英文原文：Financial institutions and DNFBPs must implement sanctions screening programs in line with UN, UAE, and FATF sanctions lists.
+
+### `v7u_N003035`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > • Ongoing due diligence, screening, monitoring, and KYC refresh:
+- 页码：PDF第311页 / 书内第306页
+- 中文要点：机构必须筛查每笔交易以检测制裁风险
+- 英文原文：The organization must screen each transaction the customer carries out to detect any sanctions exposure.
+
+### `v7u_N004208`
+
+- 用于：核心解析
+- 章节：Technology for KYC > List management
+- 页码：PDF第424页 / 书内第419页
+- 中文要点：有效制裁筛查需规划筛查对象、选用名单并测试名单管理流程。
+- 英文原文：Carefully considering how to plan to screen customers and transactions, which lists to use, and how to test that the list management process is working correctly ensures that the sanctions compliance program is effective.
+
+### `v7u_N003167`
+
+- 用于：选项A、选项C
+- 章节：Ongoing AFC controls > Ongoing due diligence
+- 页码：PDF第324页 / 书内第319页
+- 中文要点：升级与报告：高风险实体接受强化尽职调查，必要时向金融情报机构提交可疑活动报告；制裁违规上报监管机构，客户通常被终止关系。
+- 英文原文：Escalation and reporting: High-risk entities are subjected to enhanced due diligence, and where necessary, suspicious activity reports are filed with FIUs if money laundering or other financial crime concerns arise. Sanctions violations will be reported to the relevant regulatory bodies. Those customers would typically be offboarded in accordance with the
+
+### `v7u_N003036`
+
+- 用于：选项A
+- 章节：Onboarding AFC controls > • Ongoing due diligence, screening, monitoring, and KYC refresh:
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：检测到制裁风险时，机构应冻结支付并上报以确定后续步骤
+- 英文原文：If it detects such exposure, the organization blocks payments and escalates to establish further steps.
+
+### `v7u_N001350`
+
+- 用于：选项C、选项D
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：各国应实施定向金融制裁，立即冻结涉恐人员或实体的资产
+- 英文原文：Jurisdictions should also implement targeted financial sanctions in compliance with UN Security Council resolutions; this includes freezing the assets of designated persons or entities without delay to combat the financing of terrorism.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+金融机构在遵守制裁要求时,需有效识别指定人 员和实体.选项A变更风险等级并监控后续交 易,是识别后的措施,非首要步骤;选项C对禁 止实体开展强化尽职调查,同样基于已识别;选 项D冻结资金或资产,是制裁执行措施,非识别 步骤.选项B采用自动筛查系统来识别指定人员 和实体,是金融机构遵守制裁要求时应优先采取 的步骤,符合反洗钱和反恐怖融资合规标准. 度 合食食 难
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+金融机构在遵守制裁要求时,应采取有效措施识 别受制裁的个人和实体.选项B提到采用自动筛 查系统来检测指定人员和实体,这是符合反洗钱 和反恐融资(AML和CFT)合规标准的关键步 骤.自动筛查系统能够高效、准确地识别与制裁 名单匹配的交易或客户,从而及时采取冻结资产 等措施.其他选项虽涉及制裁后的处理措施,但 并非初始应采取的步骤.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

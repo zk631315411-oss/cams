@@ -1,0 +1,75 @@
+# v7_q_000005
+
+教材章节：未映射
+
+题型：single
+
+题干：一名客户经常向一个网络赌博账户存入大笔现金,并在存入不久后就提出取款请求,期间赌博活动极少.在博彩和游戏行业中,这种行为最有可能带来哪种洗钱风险？
+
+英文题干：A customer frequently deposits large amounts of cash into an online gambling account and requests withdrawals shortly after with minimal gambling activity. What is the most likely money laundering risk associated with this behavior in the gambling and gaming industry?
+
+选项：
+
+- A. 该客户正试图将非法资金转换为合法的取款.
+  English: The customer is attempting to convert illicit funds into clean withdrawals
+- B. 该客户试图通过减少赌博活动来避免高额费用.
+  English: The customer is attempting to avoid high fees by minimizing gambling activity
+- C. 该客户正在测试游戏平台的支付系统以排查是否存在欺诈行为.
+  English: The customer is testing the gaming platform's payout system for potential fraud
+- D. 该客户是一名高风险赌徒,经常下大注.
+  English: The customer is a high-risk gambler who regularly places large bets
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别博彩业中以「存取快、赌博少」为特征的洗钱手法
+
+## 【核心解析】
+
+教材描述了一种典型的博彩业洗钱手法：犯罪分子非法资金匿名购买筹码，进行极少量赌博活动后立即兑现，从而实现资金的「清洗」（P120）。题干中的行为模式——大笔现金存入、极少量赌博活动、短时间内取款——与这一手法完全吻合。客户的核心目的并非赌博，而是以赌场为管道将非法现金转换为表面合法的取款。
+
+教材原句："Criminals can anonymously purchase chips with illicit funds, gamble briefly, and cash out, effectively "cleaning" their money."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜题干要素不匹配**：题干并未提及费用问题，而「赌博活动极少」与规避费用之间也没有直接关联。相比之下，A项能直接解释「大额存入、少量赌博、快速取款」这一行为组合，关联更直接。
+- **C 错误（题干对照）｜题干事实不匹配**：选项要求推断客户有「测试」支付系统的主观意图，这超出了题干事实能支持的范围。频繁存入大额现金、少量赌博后快速取款，更符合A项所述的博彩业洗钱风险。
+- **D 错误（题干对照）｜题干要素不匹配**：题干明确指出「赌博活动极少」，这与「经常下大注」直接矛盾。相比之下，A项完整解释了「大笔存入、少玩、快取」这一组合行为的风险本质，匹配度更高。
+
+## 【易错提醒】
+
+区分合法高风险赌博与洗钱的关键在于「赌博活动是否与投入金额成比例」：少量赌博即兑现是洗钱红旗信号，而真正的高风险赌徒通常会有与投入金额匹配的持续下注行为。题干中「赌博活动极少」是判断洗钱而非正常赌博的核心线索。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001067`
+
+### `v7u_N001067`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：犯罪分子通过匿名购买筹码、短暂赌博后兑现来清洗非法资金
+- 英文原文：Criminals can anonymously purchase chips with illicit funds, gamble briefly, and cash out, effectively "cleaning" their money.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+客户频繁向网络赌博账户存入大额现金,且极少 参与赌博活动,存入不久便取款,这种行为符合 洗钱特征,即试图将非法资金通过看似合法的交 易转换为“合法“资金.选项A描述了客户试图将非 法资金转换为“合法"取款,与题目中客户行为相 符.选项B、C、D均未准确描述洗钱行为,与题 目不符.因此,最有可能带来的洗钱风险是选项 A.易错提醒:注意区分洗钱与正常赌博、测试 支付系统或高风险赌博行为.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+tomerisahigh-riskGamblerw arlyplaceslargebets [Risk 单选 ngandTerro 选择/ estateinvest shier'scheck 试题详解 rathree-mo rtments.This ctronictrans 行业中,客户频繁存入大额现金并 forUS$10,0 实际赌博行为,与洗钱行为高度关 suspiciouso 符合通过合法渠道将非法资金伪装 益的操作手法.选项A直接描述了 Receivi 进行资金清洗的风险,而其他选项 $10,000 A nstitutio 、测试平台或高风险投注)缺乏对 与洗钱意图的直接关联.《金融行 Usingc (FATF)建议》及反洗钱合规指 ecksov 类异常交易模式需被视为潜在洗钱 C、D均未准确反映洗钱的核心特 Perform C investm
+
+### 答案冲突提示
+
+- 未发现答案冲突。

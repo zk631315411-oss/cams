@@ -1,0 +1,99 @@
+# v7_q_000205
+
+教材章节：未映射
+
+题型：single
+
+题干：一家执法机构向一家金融机构提交了多项请求.哪项请求是合法的,并且需要银行作出回应？
+
+英文题干：A law enforcement agency submits several requests to a financial institution. Which request is legitimate and requires the bank to respond?
+
+选项：
+
+- A. 根据口头请求保持账户开放
+  English: Keep an account open upon verbal request
+- B. 在未获传票的情况下提供文件和证词
+  English: Produce documents and testimony without a subpoena
+- C. 根据书面请求扣押受法律特权保护的文件
+  English: Seize privileged documents upon written request
+- D. 根据法院命令冻结账户
+  English: Freeze an account pursuant to a court order
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别执法请求的合法形式与银行回应义务的法律要件
+
+## 【核心解析】
+
+教材要求执法机构提交书面请求，并指出传票和法院命令属于最正式的请求形式（P361）；不遵守法院命令可能导致重大的民事和刑事处罚（P361）。D项明确给出「法院命令」这一正式法律依据，并要求据此冻结账户，因此同时满足题干的「合法」和「需要银行作出回应」。
+
+教材原句："Failure to comply with a court-ordered request can result in substantial civil and criminal penalties."（P361）
+
+## 【错误项分析】
+
+- **A 错误**：教材确实提到执法机构可能要求金融机构保持特定账户开放并监控（P362），但同时明确执法机构必须提交书面请求（P361）。A项限定为「口头请求」，未满足这一形式要求。
+- **B 错误**：教材把传票、法院命令列为最正式的请求，并说明其规定记录提交期限（P361）。B项只说「未获传票」即提供文件和证词，也未给出法院命令、文件调取令等其他正式依据，不能建立题干所要求的强制回应义务。
+- **C 错误**：教材说明执法请求虽可采用不同书面形式，但法院命令和传票具有最正式的地位（P361）。C项只有一般「书面请求」，没有说明授权扣押受法律特权保护文件的法院命令或其他正式法律依据，其合法性与强制回应义务均不如D项明确。
+
+## 【易错提醒】
+
+保持账户开放这一事项本身不当然错误；错误在于A项只有口头请求。教材一方面允许执法机构提出保持账户开放的要求（P362），另一方面要求执法请求采用书面形式，并把法院命令列为最正式的请求（P361）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003624`
+
+### `v7u_N003620`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：执法部门必须提交书面请求，请求形式可能不同
+- 英文原文：Law enforcement must submit written requests, which might come in different forms.
+
+### `v7u_N003621`
+
+- 用于：核心解析、选项B、选项C、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：传票和法院命令是最正式的请求，规定记录提交的截止日期
+- 英文原文：The most formal requests are subpoenas, or court orders, which specify deadlines by which records must be produced, unless an extension is granted.
+
+### `v7u_N003624`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：不遵守法院命令可能导致重大的民事和刑事处罚。
+- 英文原文：Failure to comply with a court-ordered request can result in substantial civil and criminal penalties.
+
+### `v7u_N003631`
+
+- 用于：选项A、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：执法机构可能要求金融机构保持账户开放并监控以协助调查
+- 英文原文：Law enforcement might request that an FI keep a particular account open and monitor it for investigative purposes.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在反洗钱和反恐怖融资合规标准下,分析各选 项:A项,根据口头请求保持账户开放,缺乏正 式性和法律效力,金融机构可不予回应.B项, 未获传票提供文件和证词,不符合法律程序,金 融机构无需回应.C项,根据书面请求扣押受法 律特权保护的文件,特权文件受法律保护,非特 定程序不得获取,此请求不合法.D项,根据法院 命令冻结账户,具有法律效力,金融机构必须回 应.因此,D项是合法请求,银行需作出回应.易 错提醒:注意区分不同请求的法律效力. 度 难
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+中 翻译 -[ComplianceStandardsforAMLandCF 单选 TJAlawenforcementagencysubmitsseveralre queststoafinancialinstitution.Whichrequestis Legitimateandrequiresthebanktorespond? Keepanaccountopenuponverbalreq A uest Producedocumentsandtestimonywit B houtasubpoena Seizeprivilegeddocumentsuponwritt C enrequest Freezeanaccountintermsofacourt order 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

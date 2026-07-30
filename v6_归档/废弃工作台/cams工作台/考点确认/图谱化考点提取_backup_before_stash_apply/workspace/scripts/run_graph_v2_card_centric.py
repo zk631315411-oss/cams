@@ -42,7 +42,7 @@ PROMPTS_DIR = WORKSPACE_DIR / "prompts"
 DEFAULT_EMBED_MODEL = "BAAI/bge-large-zh-v1.5"  # 已缓存，立即可用；可换 BAAI/bge-m3
 DEFAULT_LLM_MODEL = "deepseek-v4-pro"
 DEFAULT_BASE_URL = "https://api.deepseek.com/v1"
-DEFAULT_API_KEY = "sk-c3bddb398abd4a12bdbb92f421744a88"  # 新 key，已验证可用
+DEFAULT_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 RECALL_THRESHOLD = 0.80  # 余弦相似度召回阈值
 
 

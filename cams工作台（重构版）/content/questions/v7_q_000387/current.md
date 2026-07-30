@@ -1,0 +1,84 @@
+# v7_q_000387
+
+教材章节：未映射
+
+题型：multiple
+
+题干：联合国制定制裁制度的主要目标包括:(选择三项.)
+
+英文题干：The primary objectives of the United Nations in developing sanctions regimes include: (Choose Three.)
+
+选项：
+
+- A. 强迫发展中国家采用自由民主或实质民主.
+  English: To force developing nations to adopt liberal or substantive democracies
+- B. 支持各国政府和政权和平解决冲突.
+  English: To support governments and regimes in the peaceful resolution of conflict
+- C. 对那些在金融犯罪管控方面存在薄弱环节的政府进行惩罚.
+  English: To punish governments for having weak financial crime controls
+- D. 遏制各国境内非民主和违宪的权力变更.
+  English: To deter non-democratic and non-constitutional changes within countries
+- E. 支持保护人权
+  English: To support the protection of human rights
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+联合国制裁制度的根本目的与联合国核心议程
+
+## 【核心解析】
+
+联合国制裁的法律依据是《联合国宪章》第七章第41条，核心目标是「促进国际和平与安全」（P206）。在此框架下，制裁作为一种非武力强制措施，直接服务于和平解决冲突（B）、遏制破坏稳定的非宪法变革（D）这两个安全维度的目标。同时，教材明确指出联合国的核心议程包括「维护人权」（P160），这构成了制裁制度在安全目标之外的另一个支柱，即保护人权（E）。综上，B、D、E三项分别从和平解决冲突、维护宪制稳定、保护人权三个维度，精确对应了联合国制裁制度的核心目标框架。
+
+教材原句："The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter."
+
+## 【错误项分析】
+
+- **A 错误｜目标不符**：联合国制裁旨在促进国际和平与安全、维护人权，而不是推广某种特定政体。
+- **C 错误｜目标不符**：联合国制裁不是惩罚金融犯罪管控薄弱国家的手段，其主要目标是维护和平、安全和人权。
+
+## 【易错提醒】
+
+制裁的目标是维护和平与安全、保护人权（P160、P206），而不是推广特定政体或惩罚监管不力的政府。区分关键在于：前者是制裁本身的制度目的，后者可能是制裁引发的间接效果或被其他机制覆盖的领域。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001980`
+
+### `v7u_N001980`
+
+- 用于：核心解析、易错提醒
+- 章节：Other AFC regulations that impact organizations > Major sanctions regimes
+- 页码：PDF第211页 / 书内第206页
+- 中文要点：联合国依据《联合国宪章》第七章第41条使用制裁促进国际和平与安全
+- 英文原文：The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter.
+
+### `v7u_N001468`
+
+- 用于：核心解析、易错提醒
+- 章节：AFC guidance from leading international organizations > United Nations AFC guidance
+- 页码：PDF第165页 / 书内第160页
+- 中文要点：联合国议程包括维护和平与安全、人道援助、人权和国际法
+- 英文原文：The UN’s agenda includes maintaining global peace and security, providing humanitarian assistance, upholding human rights, and maintaining international law.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+联合国制定制裁制度旨在维护国际和平与安全, 选项B支持各国政府和平解决冲突,符合这一目 标;选项E保护人权是联合国的重要宗旨,制裁 制度可支持此目标:选项D遏制非民主和非宪法 的变革,维护国际秩序稳定,也是制裁制度的目 标之一.而选项A强迫发展中国家采用特定政治 制度,违背了国家主权和不干涉内政原则:选项 C对金融犯罪管控薄弱环节的政府进行惩罚,并 非联合国制裁制度的主要目标.所以选BDE.易 错提醒:注意区分联合国制裁制度的主要目标与 一般性政治干预行为.
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+ndevelopingsanctionsregimesinclude:(Choos eThree.) toforcedevelopingnationstoadoptlib A eralorsubstantivedemocracies. tosupportgovernmentsandregimesi nthepeacefulresolutionofconflict. topunishGovernmentsforhavingwea C kfinancialcrimecontrols. todeternon-democraticandnon-const itutionalchangeswithincountries. tosupporttheProtectionofhumanrig hts. 正确答案BDE您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

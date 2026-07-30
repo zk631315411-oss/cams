@@ -30,6 +30,15 @@ HERE = Path(__file__).resolve().parent
 PHASE4 = HERE.parent
 
 
+def _normalize_select_hint(text: str) -> str:
+    """统一学生可见题干中的多选提示标点。"""
+    if not text:
+        return text
+    text = re.sub(r"[（(]\s*选择两项\s*[.。]?\s*[)）]", "（选择两项。）", text)
+    text = re.sub(r"[（(]\s*选择三项\s*[.。]?\s*[)）]", "（选择三项。）", text)
+    return text
+
+
 def _load_kg_section_index() -> dict[str, dict[str, Any]]:
     """加载 KG，返回 {unit_id: {real_chapter, real_section, section_order}} 索引。"""
     kg_path = KG_GRAPH_PATH
@@ -62,48 +71,14 @@ def _load_kg_section_index() -> dict[str, dict[str, Any]]:
 
 
 def _build_section_code_map(kg_index: dict[str, dict[str, Any]]) -> dict[str, str]:
-    """根据 real_chapter 和 section_order，生成 section_code → 'p1-ch01-h1' 映射。
-
-    规则：Part 编号从 real_chapter 提取（Ch1-Ch4→P1, Ch5-Ch7→P2, Ch8-Ch12→P3, Ch13-Ch16→P4），
-    Chapter 编号取 real_chapter 的数字，节序号在每章内按 section_order 递增。
-    """
-    chapter_to_part: dict[str, int] = {}
-    for ch_num in range(1, 17):
-        if ch_num <= 4:
-            chapter_to_part[f"Ch{ch_num}"] = 1
-        elif ch_num <= 7:
-            chapter_to_part[f"Ch{ch_num}"] = 2
-        elif ch_num <= 12:
-            chapter_to_part[f"Ch{ch_num}"] = 3
-        else:
-            chapter_to_part[f"Ch{ch_num}"] = 4
-
-    sections: dict[str, tuple[str, int]] = {}
-    for info in kg_index.values():
-        rs = info.get("real_section", "")
-        rc = info.get("real_chapter", "")
-        so = info.get("section_order", 0)
-        if rs and rc and so:
-            if rs not in sections or so < sections[rs][1]:
-                sections[rs] = (rc, so)
-
-    chapter_h_counter: dict[str, int] = {}
-    section_code: dict[str, str] = {}
-    for rs, (rc, so) in sorted(sections.items(), key=lambda x: (x[1][0], x[1][1])):
-        chapter_h_counter.setdefault(rc, 0)
-        chapter_h_counter[rc] += 1
-        h_num = chapter_h_counter[rc]
-        part = chapter_to_part.get(rc, 0)
-        ch_num = rc.replace("Ch", "")
-        section_code[rs] = f"p{part}-ch{ch_num}-h{h_num}"
-
-    code_map: dict[str, str] = {}
-    for uid, info in kg_index.items():
-        rs = info.get("real_section", "")
-        if rs in section_code:
-            code_map[uid] = section_code[rs]
-
-    return code_map
+    """直接采用 KG 已确定的 real_section 作为题目导出小节。"""
+    section_pattern = re.compile(r"^p[1-4]-ch(?:[1-9]|1[0-6])-h[1-9][0-9]*$")
+    return {
+        uid: real_section
+        for uid, info in kg_index.items()
+        if (real_section := str(info.get("real_section", "") or "").strip())
+        and section_pattern.fullmatch(real_section)
+    }
 
 
 def get_section_code(
@@ -121,6 +96,143 @@ def get_section_code(
         if uid in code_map:
             return code_map[uid]
     return ""
+
+
+def _convert_full_to_simplified(preview: str, qid: str) -> str:
+    """将 explanations/ 完整格式预览转换为 DOCX 转换器能解析的简化格式。"""
+    # 分离头部（题干+选项）和解析主体
+    first_h2 = preview.find('\n## 【')
+    if first_h2 == -1:
+        return preview
+    header = preview[:first_h2].strip()
+    body = preview[first_h2:]
+
+    # 移除英文题干行和选项英文行（DOCX只保留中文）
+    header_lines = []
+    for line in header.split('\n'):
+        s = line.strip()
+        if s.startswith('英文题干：') or s.startswith('English:'):
+            continue
+        if s.startswith('English:'):
+            continue
+        # 清理题干中的 [章节名] 前缀
+        s = re.sub(r'^(题干：|题目：)\[.+?\]', r'\1', s)
+        s = _normalize_select_hint(s)
+        # 统一选项行格式。部分原始解析为 "A. xxx" 而非 "- A. xxx"，
+        # DOCX 转换器只按 "- " 识别选项；这里补齐前缀，避免导入题库时选项不足。
+        if re.match(r'^[A-H][\.．、]\s+', s):
+            s = f'- {s}'
+        header_lines.append(s)
+    header = '\n'.join(header_lines)
+
+    # 移除 blockquote 块（> **需人工复核** 等），包括块内单独的空引用行。
+    body = re.sub(r'(?m)^(?:>[^\r\n]*(?:\r?\n|$))+', '', body)
+
+    # 提取各 ## 段落
+    sections: dict[str, str] = {}
+    current_sec = None
+    current_lines: list[str] = []
+    for line in body.split('\n'):
+        m = re.match(r'## 【(.+?)】', line)
+        if m:
+            if current_sec and current_lines:
+                sections[current_sec] = '\n'.join(current_lines).strip()
+            current_sec = m.group(1)
+            current_lines = []
+        else:
+            current_lines.append(line)
+    if current_sec and current_lines:
+        sections[current_sec] = '\n'.join(current_lines).strip()
+
+    # 答案
+    answer = sections.get('AI答案', '').strip()
+    # 移除答案后可能残留的 > 块（已在上面清理，但双保险）
+    answer = re.sub(r'\n> .*', '', answer).strip()
+    answer_letters = set(re.findall(r'[A-H]', answer))
+
+    # 核心解析中提取教材原句。按整行保留，避免多段引文只导出第一段。
+    core_text = sections.get('核心解析', '').strip()
+    quote = ''
+    m_quote = re.search(r'(?m)^教材原句[：:]\s*(.+?)\s*$', core_text)
+    if m_quote:
+        quote = m_quote.group(1).strip()
+        core_text = (
+            core_text[:m_quote.start()] + core_text[m_quote.end():]
+        ).strip()
+
+    # 构建简化格式
+    out: list[str] = [header, '', f'答案：{answer}', '', '解析：', '']
+
+    if '考点' in sections:
+        out.append(f'考点：{sections["考点"].strip()}')
+        out.append('')
+    if core_text:
+        out.append(f'核心解析：{core_text}')
+        out.append('')
+    if quote:
+        out.append(f'教材原句：{quote}')
+        out.append('')
+
+    if '错误项分析' in sections:
+        for line in sections['错误项分析'].split('\n'):
+            line = line.strip()
+            if not line or not line.startswith('-'):
+                continue
+            # 匹配所有变体：- **A 错误（x）｜y**： / - **A不选（x）｜y**： / - **A、B 正确｜x**：
+            m_err = re.match(
+                r'- \*\*([A-H](?:[、,][A-H])*)([^*]*)\*\*[：:]?\s*(.+)',
+                line,
+            )
+            if m_err:
+                letter = m_err.group(1)
+                source_status = m_err.group(2)
+                analysis = m_err.group(3).strip()
+                labels = set(re.findall(r'[A-H]', letter))
+                if labels & answer_letters and not labels <= answer_letters:
+                    raise ValueError(f'{qid}: 同组选项同时包含正确项和错误项: {letter}')
+
+                is_correct = bool(labels) and labels <= answer_letters
+                if '正确' in source_status and not is_correct:
+                    raise ValueError(f'{qid}: 原解析将非答案项标为正确: {letter}')
+                if re.search(r'错误|不选|不如', source_status) and is_correct:
+                    raise ValueError(f'{qid}: 原解析将答案项标为错误或不选: {letter}')
+
+                judgement = '正确' if is_correct else '错误'
+                out.append(f'{letter}项{judgement}：{analysis}')
+            else:
+                out.append(line)
+        out.append('')
+
+    easy_text = sections.get('易错提醒', '').strip()
+    if easy_text and easy_text not in {'（无）', '(无)', '无'}:
+        out.append(f'易错提醒：{easy_text}')
+        out.append('')
+
+    return '\n'.join(out)
+
+
+def _validate_student_preview(preview: str, qid: str) -> None:
+    """阻止答案与学生可见的选项正误标签发生矛盾。"""
+    answer_match = re.search(
+        r'^答案：\s*([A-H](?:\s*[、,，]\s*[A-H])*)\s*$', preview, re.M
+    )
+    if not answer_match:
+        raise ValueError(f'{qid}: 学生版解析缺少有效答案')
+
+    answer_letters = set(re.findall(r'[A-H]', answer_match.group(1)))
+    conflicts: list[str] = []
+    for match in re.finditer(
+        r'^([A-H](?:[、,，][A-H])*)项(正确|错误)：', preview, re.M
+    ):
+        labels = set(re.findall(r'[A-H]', match.group(1)))
+        judgement = match.group(2)
+        if judgement == '正确' and not labels <= answer_letters:
+            conflicts.append(f'{match.group(1)}项被标为正确但不在答案中')
+        if judgement == '错误' and labels & answer_letters:
+            conflicts.append(f'{match.group(1)}项被标为错误但属于答案')
+
+    if conflicts:
+        raise ValueError(f'{qid}: 学生版答案标签冲突: {"；".join(conflicts)}')
 
 
 def render_software_analysis(explanation: dict[str, Any]) -> str:
@@ -159,7 +271,7 @@ def render_question_preview(
     stem_en = str(standard_question.get("stem_en", "") or "").strip()
     options_en = standard_question.get("options_en", {}) or {}
     lines = [f"## {qid}\n\n", f"题型：{qtype}\n\n"]
-    lines.append(f"题目：{result.get('stem', '')}\n\n")
+    lines.append(f"题目：{_normalize_select_hint(str(result.get('stem', '') or ''))}\n\n")
     if stem_en:
         lines.append(f"English: {stem_en}\n\n")
     lines.append("选项：\n\n")
@@ -236,6 +348,8 @@ def export_by_section(
                 answer_from_md = [a.strip() for a in (re.split(r'[,、，]+', answer_match.group(1)) if answer_match else []) if a.strip()]
                 if answer_from_md:
                     explanation["answer"] = answer_from_md  # 回填，供后续渲染使用
+                # 转换为 DOCX 转换器能解析的简化格式
+                preview = _convert_full_to_simplified(preview, qid)
             else:
                 preview = None
 
@@ -249,6 +363,7 @@ def export_by_section(
                 )
 
             preview = preview.replace("「", "“").replace("」", "”")
+            _validate_student_preview(preview, qid)
             row = {
                 "question_id": qid,
                 "answer": explanation["answer"],

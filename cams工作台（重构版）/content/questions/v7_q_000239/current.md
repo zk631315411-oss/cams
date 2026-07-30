@@ -1,0 +1,160 @@
+# v7_q_000239
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪两项最能描述会计师在反洗钱/打击资助恐怖主义方面的风险识别和评估？（选择两项。）
+
+英文题干：Which of the following best describes AML/CFT risk identification and assessment for accountants? (Select two.)
+
+选项：
+
+- A. 会计师无需保存业务关系记录超过两年。
+  English: Accountants are not required to keep records of business relationships for more than two years.
+- B. 起草一份客户接受政策有助于会计师明确超出其风险承受能力的客户范围
+  English: Drafting a customer acceptance policy can help accountants define customers outside their risk appetite
+- C. 在确定交易和服务风险时，会计师提供服务所在的司法管辖区并不重要。
+  English: When determining transaction and service risk, the jurisdiction where the accountant provides the service is not important.
+- D. 由于规模较小且资源有限，会计师仅被允许将反洗钱/反恐怖融资风险组织为客户风险或交易/服务风险。
+  English: Due to their small size and limited resources, accountants are allowed to organize AML/CFT risk only as customer risk or transaction/service risk.
+- E. 由于会计师所提供服务的性质，金融机构使用的自动化交易监控系统可能并不适用。
+  English: Due to the nature of services accountants provide, automated transaction monitoring systems used by financial institutions may not be appropriate.
+
+## 【AI答案】
+
+B、E
+
+## 【考点】
+
+会计师AML/CFT风险评估维度与监控控制的适配性
+
+## 【核心解析】
+
+风险偏好决定组织接受的客户类型、产品类型以及运营的司法管辖区和渠道（P270）；风险评估还应识别可能超出组织风险偏好的客户、产品和服务（P281）。因此，起草客户接受政策可以把风险偏好转化为客户准入边界，帮助会计师明确哪些客户超出其风险承受能力，B项直接符合教材框架。
+
+交易监控系统被教材定义为帮助金融机构检测可疑交易模式的技术框架（P325），但监控方式应随业务类型和风险特征调整：不同业务的交易量和模式不同，所需自动化程度也不同（P254），产品风险评估还应参与交易监控等控制措施的设计，以确保对产品充分覆盖（P286）。会计师提供多种专业服务，且不同服务对应不同洗钱风险（P123）。因此，金融机构使用的自动化交易监控系统对会计师业务可能并不适用；E项中的「可能」体现了风险为本和控制适配原则。
+
+教材原句："Every organization has its own risk appetite, which determines the type of customers it will accept, the product types it will offer, and the jurisdictions and channels in which it will operate."（P270）
+
+## 【错误项分析】
+
+- **A 错误**：记录保存和记录保留属于预防性控制，文件应按照组织的记录保留政策保存，妥善的记录保存还应确保能够向监管和执法部门提供信息（P277、P345、P359）。因此，保存期限应依适用规则和机构政策确定，不能统一限定为“无需超过两年”。
+- **C 错误**：教材明确指出，地域风险评估可以考虑政治稳定性、监管环境和制裁状况，司法管辖区本身就是风险维度之一（P275）。C项称其“不重要”，与教材风险评估框架直接相反。
+- **D 错误**：教材要求收集客户、司法管辖区、产品和渠道等信息（P275），风险评估并非只能组织为客户风险或交易/服务风险。D项以会计师规模和资源为由缩窄风险类别，超出了教材允许的风险为本框架。
+
+## 【易错提醒】
+
+不要把没有具体“两年”期限的A项误判为正确，也不要把金融机构的自动化交易监控系统直接套用于所有行业。风险评估和监控控制都应结合客户、服务、产品、交易模式和司法管辖区等因素进行适配（P254、P275、P286、P325）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002674`、`v7u_N002820`、`v7u_N003219`、`v7u_N002503`、`v7u_N002858`、`v7u_N001117`、`v7u_N002764`、`v7u_N003428`、`v7u_N003598`、`v7u_N002746`、`v7u_N002742`
+
+### `v7u_N002674`
+
+- 用于：核心解析
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：风险偏好定义：决定组织接受的客户类型、产品类型及运营的司法管辖区和渠道
+- 英文原文：Every organization has its own risk appetite, which determines the type of customers it will accept, the product types it will offer, and the jurisdictions and channels in which it will operate.
+
+### `v7u_N003219`
+
+- 用于：核心解析
+- 章节：Transaction Monitoring and Investigation > Introduction: Transaction monitoring and investigation
+- 页码：PDF第330页 / 书内第325页
+- 中文要点：交易监控系统是帮助金融机构检测可疑交易模式的技术框架
+- 英文原文：Transaction monitoring (TM) systems are the technological frameworks that help financial institutions detect suspicious transaction patterns.
+
+### `v7u_N002503`
+
+- 用于：核心解析、选项E
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第259页 / 书内第254页
+- 中文要点：货币服务企业和支付服务提供商处理大量小额交易，需要比企业银行更自动化的监控方法。
+- 英文原文：MSBs and payment service providers (PSP) often handle higher volumes of smaller transactions, which require a more automated approach to monitoring than corporate banks.
+
+### `v7u_N002858`
+
+- 用于：核心解析、选项E
+- 章节：Customer risk assessment versus enterprise-wide risk assessment
+- 页码：PDF第291页 / 书内第286页
+- 中文要点：产品风险评估有助于设计交易监控等控制措施，以确保充分覆盖所有产品。
+- 英文原文：A product risk assessment is also very useful in designing controls such as transaction monitoring to ensure adequate coverage of all products.
+
+### `v7u_N001117`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第128页 / 书内第123页
+- 中文要点：会计师提供的各类服务对应不同的洗钱风险
+- 英文原文：Accountants provide various services, some of which are listed below. These services have corresponding money laundering risks.
+
+### `v7u_N002820`
+
+- 用于：核心解析、选项B
+- 章节：Enterprise-wide risk assessment > Reporting results of risk assessment
+- 页码：PDF第286页 / 书内第281页
+- 中文要点：风险评估应识别可能超出机构风险偏好的客户、产品和服务。
+- 英文原文：The risk assessment should identify clients, products, and services that might exceed the organization’s risk appetite.
+
+### `v7u_N002764`
+
+- 用于：错误项分析、选项A
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第282页 / 书内第277页
+- 中文要点：预防性控制包括尽职调查、记录保存和记录保留。
+- 英文原文：Preventive controls involve measures to prevent financial crime from occurring and include robust due diligence, recordkeeping, and record retention.
+
+### `v7u_N003428`
+
+- 用于：错误项分析、选项A
+- 章节：Transaction monitoring > Suspicious activity escalation process
+- 页码：PDF第350页 / 书内第345页
+- 中文要点：应按照机构记录保留政策，以PDF、打印件或其他方式保存文档。
+- 英文原文：Save documentation as PDFs, printed out, or collected in some other manner according to the organization’s record retention policy.
+
+### `v7u_N003598`
+
+- 用于：错误项分析、选项A
+- 章节：Concluding an investigation and suspicious activity reporting > Follow-up action when no SAR is filed
+- 页码：PDF第364页 / 书内第359页
+- 中文要点：妥善记录保存确保机构能随时向监管和执法部门提供必要信息。
+- 英文原文：Proper record keeping ensures that the organization can readily provide necessary information to regulators and law enforcement.
+
+### `v7u_N002746`
+
+- 用于：选项C
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：地域风险评估涉及政治稳定性、监管环境和制裁状况
+- 英文原文：Determining jurisdiction risk might involve assessing political stability, the regulatory environment, and sanctions status.
+
+### `v7u_N002742`
+
+- 用于：选项D
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：第一步：识别并收集客户、地域、产品和渠道的相关信息
+- 英文原文：First, identify and gather relevant information. Collect data on customers, jurisdictions, products, and channels, including customer profiles, country risk assessments, product specifications, and channel characteristics.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+选项B,起草客户接受政策,有助于会计师明确 超出其风险承受能力的客户范围,这是风险识别 和评估的重要环节,可确保会计师了解自身业务 边界,避免承接高风险客户.选项E,由于会计 易监控系统可能并不适用,这体现了会计师在反 洗钱/打击资助恐怖主义方面需考虑自身服务特点 进行风险识别,避免因系统不匹配而忽视潜在风 险.因此,BE两项最能描述会计师在反洗钱/打 击资助恐怖主义方面的风险识别和评估.易错提 醒:注意对每个选项涉及的风险识别和评估要素 进行准确理解.
+
+- 英文参考答案：B、E
+
+### 英文参考解析
+
+在反洗钱/反恐融资(AML/CFT)风险识别与评 估中,B选项正确,制定客户接纳政策可帮助会 计师明确超出其风险偏好的客户范围,是风险评 估的重要环节.E选项正确,会计师提供的服务 性质特殊,如审计、税务咨询等,与金融机构的 监控系统可能不适用于会计师.A选项错误,会 计师需按法规长期保存业务关系记录.C选项错 误,服务提供地司法管辖区是评估交易和服务风 险的关键因素.D选项错误,会计师无论规模大 小,均需全面评估客户、交易及服务等多维度风 险,而非仅限于两类.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,C，英文=B,E
+- 盲判与题库最终参考答案冲突：盲判=B,E，题库最终=A,C

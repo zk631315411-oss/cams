@@ -1,0 +1,98 @@
+# v7_q_000270
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]与房地产交易相关的风险包括:(选择两项.)
+
+英文题干：Risks associated with real estate transactions include: (Choose two.)
+
+选项：
+
+- A. 跨境购买
+  English: Cross-border purchases.
+- B. 以自然人名义购买
+  English: Purchases in the name of a natural person.
+- C. 按照真实的市场价格购买房产
+  English: Paying true market price for a property.
+- D. 无融资购买
+  English: Non-financed purchases.
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+
+识别房地产交易中跨境购买与无融资购买带来的洗钱风险
+
+## 【核心解析】
+
+教材直接指出，国际买家和跨境交易可能掩盖非法活动，使房地产市场中的洗钱检测更困难（P122），因此跨境购买（A）属于明确风险。教材还指出，房地产市场中的现金交易更难追踪，全部或主要以现金支付的买家属于红旗信号（P122）。未融资购买（D）本身不等于现金支付，但在给定选项中与全款、尤其现金支付的风险最接近，实际审查时仍需进一步核实付款方式。因此在本题选项中更符合的是A、D。
+
+教材原句："International buyers and cross-border transactions can mask illicit activities."；"Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm."（P122）
+
+## 【错误项分析】
+
+- **B 错误**：教材关注的是公司、信托或代名人等复杂所有权结构对真实所有权的遮蔽（P119）；以自然人本人名义购买通常更透明，选项本身没有呈现该风险特征。
+- **C 错误**：教材列示的风险是虚增房产价值或价格偏离合理市场水平（P119）。按真实市场价格购买缺少这一异常定价信号。
+
+## 【易错提醒】
+
+「未融资购买」不是说所有全款交易当然违法，也不必然意味着现金支付；它可能绕开常规贷款审查，因此在房地产风险识别中需要进一步核实资金来源和付款方式（P122）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001100`
+
+### `v7u_N001100`
+
+- 用于：核心解析、选项A
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：房地产市场的全球性使检测工作更加复杂，国际买家和跨境交易可能掩盖非法活动。
+- 英文原文：The global nature of the real estate market further complicates detection efforts. International buyers and cross-border transactions can mask illicit activities.
+
+### `v7u_N001102`
+
+- 用于：核心解析、选项D
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：现金交易因难以追踪而增加房地产洗钱风险。
+- 英文原文：Cash transactions remain relatively common in some markets and increase the potential for money laundering, as cash is more challenging to trace than payments made through financial institutions.
+
+### `v7u_N001103`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：全部或主要以现金支付的买家属于房地产洗钱红旗信号。
+- 英文原文：Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm.
+
+### `v7u_N001063`
+
+- 用于：选项B、选项C
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：房地产交易可通过虚增价值或复杂所有权结构被用于洗钱。
+- 英文原文：Real estate agents: Real estate transactions can be used to launder money by inflating property values or creating complex ownership structures that obscure true ownership. The risk increases with international buyers and high-value assets, especially in markets with limited regulatory oversight.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+与房地产交易相关的洗钱和恐怖融资风险中,A选项“跨境购买”因涉及不同司法管辖区和监管差异而增加风险；D选项“无融资购买”（即全款购房）因可能减少银行审查，也可能成为非法资金转移渠道。B选项以自然人名义购买属正常交易，C选项按市场价购房无异常特征，均非典型风险点。因此，跨境交易与全款购房是本题关注的风险情形。
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+在房地产交易中 洗钱和恐怖融资的风险堂与隐
+
+### 答案冲突提示
+
+- 未发现答案冲突。

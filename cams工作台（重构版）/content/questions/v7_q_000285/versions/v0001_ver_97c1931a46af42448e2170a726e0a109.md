@@ -1,0 +1,147 @@
+# v7_q_000285
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱和反恐怖融资合规标准]哪些法律法规领域对反洗钱/打击资助恐怖主义应用的影响最大?(选择三项.)
+
+英文题干：What areas of laws and regulations have the greatest impact on AML/CFT applications? (Choose Three.)
+
+选项：
+
+- A. 信息安全、数据隐私和网络安全
+  English: Information security, data privacy, and cybersecurity.
+- B. 外汇管制以及贵重宝石和金属交易
+  English: Foreign exchange controls and precious gemstone and metal dealing.
+- C. 监察专员和反垄断机构
+  English: Ombudsman and anti-competition authority.
+- D. 电子合同与生物特征签名的接受
+  English: Electronic contract and biometric signature acceptance.
+- E. 消费者保护、金融普惠以及环境、社会和治理
+  English: Consumer protection, financial inclusion, and environmental, social, and governance.
+
+## 【AI答案】
+
+A、B、E
+
+## 【考点】
+
+识别对金融机构反洗钱合规有直接影响的法律法规领域
+
+## 【核心解析】
+
+教材明确说明，金融机构受到隐私和数据安全法律约束（P209），跨境交易又受到资金流动、外汇/货币管制、制裁和报告法规影响（P217），贵金属和宝石经销商还属于高风险、受AML/CFT义务约束的行业（P119、P197）。消费者保护、金融普惠与ESG也分别与AFC法规发生交叉或趋于融合（P213-P214）。因此，A、B、E分别体现了数据隐私、跨境资金与行业监管以及交叉监管领域对AML/CFT应用的直接影响。D描述的是开户环节使用的电子身份验证和生物识别技术（P404），不能据此把“电子合同与生物特征签名的接受”认定为直接影响AML/CFT应用的法律法规领域。
+
+教材原句："Many jurisdictions have specific national privacy or data security laws, including laws and regulations that apply to financial institutions."（P209）
+
+## 【错误项分析】
+
+- **C 不选（业务领域错配）**：监察专员和反垄断机构主要处理行政申诉、公平竞争等问题，其职责与A、B、E所涉及的数据保护、跨境资金、行业义务和交叉监管相比，对AML/CFT应用的影响不够直接。
+
+## 【易错提醒】
+
+注意区分「反洗钱应关注的业务风险」（如贵金属交易商、跨境外汇管制）（P119、P217）与「对反洗钱合规框架本身有直接影响的法律领域」（如数据隐私法、消费者保护法）（P209、P213）。前者是合规工作要去识别和管理的对象，后者则直接约束金融机构如何开展合规工作。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002017`
+
+### `v7u_N002017`
+
+- 用于：核心解析
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：许多司法管辖区有专门的国家隐私或数据安全法律，适用于金融机构。
+- 英文原文：Many jurisdictions have specific national privacy or data security laws, including laws and regulations that apply to financial institutions.
+
+### `v7u_N002117`
+
+- 用于：核心解析
+- 章节：Other laws and regulations that impact organizations > ESG regulations
+- 页码：PDF第222页 / 书内第217页
+- 中文要点：ESG与反洗钱/反恐怖融资法规正趋于融合
+- 英文原文：ESG and AML/CFT regulations are converging as global regulatory frameworks continue to evolve to include sustainable business practices and financial crime prevention.
+
+### `v7u_N004036`
+
+- 用于：核心解析
+- 章节：Technology for KYC > How does technology help KYC?
+- 页码：PDF第409页 / 书内第404页
+- 中文要点：客户开户程序中采用电子身份验证、生物识别和OCR等技术
+- 英文原文：Many organizations incorporate technologies into their client onboarding procedures, such as electronic identity verification, biometric authentication, and optical character recognition.
+
+### `v7u_N000837`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第100页 / 书内第95页
+- 中文要点：跨境交易因不同司法管辖区的资金流动、货币管制、制裁和税务报告法律而复杂化
+- 英文原文：Cross-border transactions complicate compliance efforts. Different jurisdictions enforce varying laws regarding fund movement, currency controls, sanctions, and regulatory and tax reporting. Some countries implement strict restrictions on remittances, while others are more lenient.
+
+### `v7u_N001065`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：贵金属和宝石经销商因商品便携且易变现而面临较高洗钱风险
+- 英文原文：Dealers in precious metals and stones: These dealers are at risk due to the portability of valuable goods that can be easily converted into cash or moved across borders. Criminals might exploit this sector to conceal illicit funds through high-value purchases and resales, often without triggering scrutiny or regulatory oversight. This is one of the higher-risk DNFPB types due to the high-value assets and high-volume and cross-border transactions.
+
+### `v7u_N001880`
+
+- 用于：选项B（贵金属和宝石经销商的AML/CFT监管义务）
+- 章节：US AML/CFT regulatory landscape
+- 页码：PDF第202页 / 书内第197页
+- 中文要点：反洗钱/反恐怖融资义务扩展至包括贵金属和宝石经销商在内的DNFBPs。
+- 英文原文：Extending AML/CFT obligations to DNFBPs, such as real estate agents, legal professionals, accountants, and dealers in precious metals and stones. This includes the obligations to identify and verify customers, conduct ongoing monitoring, and report suspicious activities to AUSTRAC.
+
+### `v7u_N002069`
+
+- 用于：核心解析、选项E
+- 章节：Other laws and regulations that impact organizations
+- 页码：PDF第218页 / 书内第213页
+- 中文要点：消费者保护法规保护个人免受市场中的欺骗、不公平或有害行为。
+- 英文原文：Consumer protection regulations safeguards private individuals against deceptive, unfair, or harmful practices in the marketplace.
+
+### `v7u_N002075`
+
+- 用于：核心解析、选项E
+- 章节：Other laws and regulations that impact organizations
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：AFC合规通过打击面向消费者犯罪所得的洗钱间接增强消费者保护。
+- 英文原文：AFC compliance initiatives indirectly increase consumer protection by countering the laundering of proceeds from offenses targeting consumers such as fraud and ransomware.
+
+### `v7u_N002076`
+
+- 用于：核心解析、选项E
+- 章节：Other laws and regulations that impact organizations
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：普惠金融参与消费者保护。
+- 英文原文：Inclusive banking participates in consumer protection.
+
+### `v7u_N002081`
+
+- 用于：核心解析、选项E
+- 章节：Other laws and regulations that impact organizations
+- 页码：PDF第219页 / 书内第214页
+- 中文要点：FATF通过防止客户尽职调查标准滥用促进金融包容性。
+- 英文原文：FATF has conducted various initiatives to promote financial inclusion by preventing overreach and abuse of the FATF standards regarding customer due diligence.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、E
+- 中文参考答案：A、B、E
+
+### 中文参考解析
+
+反洗钱和打击资助恐怖主义需多领域法规协同. 选项A,信息安全、数据隐私和网络安全法规, 为反洗钱提供数据保护与交易监控基础;选项 B,外汇管制及贵重宝石和金属交易法规,直接 监管资金流动与高价值物品交易,防止洗钱;选 项E,消费者保护、金融普惠及环境、社会和治 理法规,通过保障消费者权益、促进金融透明及 强化社会责任,间接支持反洗钱工作.选项C、 D与反洗钱核心领域关联较弱.因此,正确答案 为ABE.
+
+- 英文参考答案：A、B、E
+
+### 英文参考解析
+
+选项A,信息安全、数据隐私和网络安全的法规 对AML/CFT应用至关重要,因其涉及客户身份识 别、交易监控及数据保护.选项B,外汇管制及 贵金属交易法规直接影响资金流动监控和可疑交 易识别,是AML/CFT核心领域.选项E,消费者 保护、金融包容性及ESG法规通过规范金融机构 行为,间接促进AML/CFT合规,如确保公平对待 客户及防止滥用金融产品.选项C和D虽涉及监 管,但与AML/CFT直接关联较弱.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

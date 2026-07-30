@@ -1,0 +1,116 @@
+# v7_q_000288
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]以下哪些是提高员工对金融犯罪相关风险的认识和培训的最佳实践？(选择三项.)
+
+英文题干：Which of the following are best practices to raise awareness and train staff regarding the risks related to financial crime? (Select Three.)
+
+选项：
+
+- A. 为所有员工量身定制培训计划并定期提供培训
+  English: Tailor training and offer regular training to all employees.
+- B. 在日常运营之外开展培训,提高合规意识
+  English: Train outside of daily operations and promote awareness of compliance.
+- C. 仅在入职时对相关员工进行一次核心反洗钱主题的培训.
+  English: Train relevant employees on core AML topics only once at onboarding.
+- D. 采用多种培训方法,并为员工提供必要的资源
+  English: Use a variety of training methods and provide necessary resources to employees.
+- E. 定期沟通并衡量培训效果
+  English: Communicate regularly and measure the effectiveness of training.
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+
+反洗钱培训需持续、多元且以效果为导向
+
+## 【核心解析】
+
+教材在阐述反洗钱项目第三大支柱时指出，要求对员工进行「定期」、「持续」的培训以了解其职责和识别风险（P245）。据此，一项完善的培训最佳实践应包含三个维度：覆盖所有员工并持续更新，对应选项A的「为所有员工量身定制并提供定期培训」，也有助于将合规文化嵌入组织（P254）；采用多种方法并配置资源，对应选项D，培训可由外部专家或内部团队开发，管理层还需决定资源、技术和培训的配置（P262）；建立反馈与衡量机制，对应选项E，通过衡量培训效果形成质量闭环（P261）。这三项共同构成了从内容、形式到质量保障的完整培训体系。
+
+教材原句："The third pillar mandates regular, ongoing AML training for employees."（P245）
+
+## 【错误项分析】
+
+- **B 错误（关键要素不足）**：培训当然可以安排在脱离日常业务的课堂中，但 B 只说明“在日常运营之外”，没有给出持续、岗位定制、资源配置或效果评估等教材要求的关键要素，因此信息不足以成为最佳实践项。
+- **C 错误（范围和频率不当）**：教材要求培训「定期且持续（regular, ongoing）」（P245），并强调法规与犯罪手法会变化、培训必须持续更新（P262）。C仅在入职时培训一次，与「定期、持续」的要求不符。
+
+## 【易错提醒】
+
+培训不能只停留在入职时的一次性安排。教材将培训视为持续（ongoing）过程（P245），需根据风险变化和效果衡量定期（regular）调整内容（P261-P262）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002408`
+
+### `v7u_N002408`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第三大支柱要求对员工进行定期、持续的反洗钱培训。
+- 英文原文：The third pillar mandates regular, ongoing AML training for employees.
+
+### `v7u_N002586`
+
+- 用于：核心解析、选项C
+- 章节：Second LOD's AFC role and its interaction with the front office > Second LOD's interaction with other functions
+- 页码：PDF第267页 / 书内第262页
+- 中文要点：培训与人力资源部门制定并实施员工合规、反洗钱法规及内部政策的材料，以嵌入合规文化。
+- 英文原文：Training and human resources (HR): Develops and implements materials on staff compliance, AML regulations, and internal policies to embed a culture of compliance, especially in the front office.
+
+### `v7u_N002572`
+
+- 用于：核心解析
+- 章节：Second LOD's AFC role and its interaction with the front office
+- 页码：PDF第266页 / 书内第261页
+- 中文要点：第二道防线审批监管要求与风险管理培训，确保前台人员具备识别风险的能力
+- 英文原文：Education and training: The second line approves training on regulatory requirements, risk management practices, and staff responsibilities, ensuring client-facing staff are equipped to identify risks and comply with AFC policies. External specialist providers or internal teams might develop the training.
+
+### `v7u_N002588`
+
+- 用于：选项C
+- 章节：Second LOD's AFC role and its interaction with the front office > Second LOD's interaction with other functions
+- 页码：PDF第267页 / 书内第262页
+- 中文要点：确保员工理解其在缓解风险（包括反洗钱/反恐怖融资相关风险）中的角色。
+- 英文原文：They ensure staff understand their roles in mitigating risks, including those related to AML/CFT.
+
+### `v7u_N002409`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：法规与犯罪手法及复杂程度频繁变化，因此培训必须持续更新。
+- 英文原文：Regulations and laws change frequently, and so do financial criminal tactics and sophistication.
+
+### `v7u_N002501`
+
+- 用于：易错提醒
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第259页 / 书内第254页
+- 中文要点：顾问建议各职能部门定期沟通以保持目标一致并分享新兴金融犯罪趋势洞察
+- 英文原文：In addition to the revised structure, the consultant recommended regular communication sessions among functions to remain aligned on objectives and share insights on emerging financial crime trends.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D、E
+- 中文参考答案：A、D、E
+
+### 中文参考解析
+
+提高员工对金融犯罪风险的培训应覆盖不同岗位并持续更新。A 强调按岗位量身定制并定期培训，D 强调采用多种方法并提供资源，E 强调沟通和效果评估，三者共同形成培训闭环。B 的“在日常运营之外”没有说明持续性、岗位针对性或效果评估；C 只在入职时培训一次，不能满足持续培训要求。因此答案为 A、D、E。
+
+- 英文参考答案：A、D、E
+
+### 英文参考解析
+
+Best practice requires role-appropriate and recurring training, varied delivery methods with adequate resources, and regular communication and effectiveness measurement. These requirements are reflected in A, D, and E. B lacks the necessary specificity about ongoing, role-based training, while C limits training to a single onboarding session. Therefore, the answer is A, D, and E.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

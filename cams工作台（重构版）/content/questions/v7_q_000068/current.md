@@ -1,0 +1,83 @@
+# v7_q_000068
+
+教材章节：未映射
+
+题型：single
+
+题干：联合国安全理事会在实施制裁方面的首要作用在于其有权：
+
+英文题干：The UN Security Council's primary role in imposing sanctions is that it has the authority to:
+
+选项：
+
+- A. 为维护或恢复国际和平与安全而实施制裁
+  English: Impose sanctions to maintain or restore international peace and security
+- B. 对缺乏反洗钱/反恐怖融资控制措施的国家实施制裁
+  English: Impose sanctions on countries that lack AML/CFT controls
+- C. 开展研究并分析制裁的影响，以提高制裁制度的有效性
+  English: Conduct research on and analyze the impacts of sanctions to improve the effectiveness of sanctions regimes
+- D. 对经济目标实施制裁，以维持或恢复一国的金融稳定
+  English: Impose sanctions on economic targets to maintain or restore financial stability within a country
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别联合国安理会实施制裁的根本法定目的
+
+## 【核心解析】
+
+教材定义联合国依据《联合国宪章》第七章第41条使用制裁，旨在「促进国际和平与安全」（P206）。同时，《联合国宪章》赋予安理会实施各种制裁的权力（P160）。题干聚焦安理会实施制裁的「首要作用」（primary role），即其权力的根本目的——而非实施对象、后续研究或国内金融稳定。选项A「为维护或恢复国际和平与安全而实施制裁」直接复现了这一法定目的（P206），与教材对安理会制裁职能的定义完全吻合。换言之，安理会制裁的终极目标是国际和平与安全，这一目的贯穿其所有制裁决议，由此可推断这即为其首要作用。
+
+教材原句："The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter."
+
+## 【错误项分析】
+
+- **B 错误（教材定义应用）｜概念混淆**：教材提及缺乏反洗钱/反恐怖融资控制是某些区域（如自由贸易区）的弱点（P132），但这并非安理会实施制裁的首要原因。安理会制裁的目的是维护国际和平与安全，而反洗钱缺陷只是触发制裁的众多可能情形之一，不如选项A直接命中教材对安理会制裁职能的根本目的的定义。
+- **C 错误（教材定义应用）｜主体或阶段错配**：教材提到机构需进行制裁筛查与名单管理以确保合规有效性（P419），以及联合国发布研究报告促进合作（P160-161），但这些是制裁实施后的合规、监督或研究活动。题干问的是「实施制裁」这一权力本身的「首要作用」，而非实施后的优化研究，因此选项C不如A直接对应安理会的制裁权目的。
+- **D 错误（教材定义应用）｜范围或程度偏差**：教材指出OFAC可实施行业制裁，针对特定经济部门（P188），且金融犯罪会破坏经济稳定（P43）。但安理会制裁的「首要作用」是国际层面的和平与安全，而非维持一国内部的金融稳定。选项D混淆了制裁的可能效果与安理会职权的根本宗旨，其匹配度不及A。
+
+## 【易错提醒】
+
+易混点：将安理会实施制裁的「根本目的」（国际和平与安全）与制裁的「中间手段」或「具体对象」（如缺乏反洗钱控制的国家、特定经济部门）相混淆。判断时需紧盯题干问的是权力的「primary role/首要作用」，即最顶层的法定宗旨，而非如何执行或针对谁执行。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001980`
+
+### `v7u_N001980`
+
+- 用于：核心解析、选项B、选项C、选项D、易错提醒
+- 章节：Other AFC regulations that impact organizations > Major sanctions regimes
+- 页码：PDF第211页 / 书内第206页
+- 中文要点：联合国依据《联合国宪章》第七章第41条使用制裁促进国际和平与安全
+- 英文原文：The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter.
+
+### `v7u_N001478`
+
+- 用于：核心解析、选项B、选项C、选项D
+- 章节：AFC guidance from leading international organizations > United Nations AFC guidance
+- 页码：PDF第165页 / 书内第160页
+- 中文要点：联合国宪章授权安理会实施制裁
+- 英文原文：As part of its risk management initiative, the UN Charter gives the UN Security Council the authority to impose various sanctions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+联合国安理会在实施制裁方面,首要作用是维护 或恢复国际和平与安全.选项A“为维护或恢复国 际和平与安全而实施制裁”准确反映了这一点.选 项B仅针对反洗钱和反恐怖融资措施缺失的国
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+联合国安理会的主要职责是维护国际和平与安 全.选项A准确描述了安理会实施制裁的权限, 即通过制裁来维护或恢复国际和平与安全.选项 B,安理会制裁并非专门针对缺乏AML/CFT(反 洗钱/反恐融资)控制的国家.选项C,安理会虽 会评估制裁影响,但主要职责并非研究分析.选 项D,安理会制裁目标不限于经济领域,也不局 限于维护国内金融稳定.因此,正确答案是A.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

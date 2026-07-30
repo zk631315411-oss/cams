@@ -1,0 +1,132 @@
+# v7_q_000204
+
+教材章节：未映射
+
+题型：single
+
+题干：一位欧盟信托和公司服务提供商的分析师在查看一位客户的财务报表和详细的分类账时,发现了一些异常活动.该客户从事机械进出口业务.哪项交易指标需要进一步上报给合规官？
+
+英文题干：An EU trust and company service provider analyst notices some unusual activity while looking through a customer's financial statements and detailed general ledger. The customer is in the business of importing and exporting machinery. Which transaction indicator warrants further escalation to the compliance officer?
+
+选项：
+
+- A. 向位于税收优惠地区的外国公司支付公司秘书常年顾问费
+  English: The payment of company secretarial retainer fees to a foreign company in a tax-efficient jurisdiction
+- B. 海外虚拟办公室服务的支付
+  English: The payment of virtual office services overseas
+- C. 母公司向子公司提供的用于支付机械设备运输费用的公司间贷款
+  English: Inter-company loans from the holding company to the subsidiary company to finance the shipment of machinery
+- D. 向在外国司法管辖区设立的无关联公司及服务提供商支付咨询费
+  English: The payment of consultancy fees to unrelated companies and service providers established in a foreign jurisdiction
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别咨询费与司法管辖区风险的组合红旗
+
+## 【核心解析】
+
+教材要求加强交易监控，尤其关注向**高风险司法管辖区**的个人或中介支付的「咨询费」（P27）；教材案例还展示了通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动的情形（P26）。同时，交易行为风险指标包括偏离预期模式、异常大额跨境交易或复杂支付结构（P307）。D涉及向外国司法管辖区的无关联公司及服务提供商支付咨询费，在给定选项中与教材所说的「咨询费风险」最接近，因此选择D。不过，「外国司法管辖区」并不等同于「高风险司法管辖区」，因此D只是相对匹配项，不能仅凭「外国」这一要素直接判定为高风险交易。
+
+教材原句："Enhance transaction monitoring for suspicious activities, especially regarding “consultancy fees” to individuals or intermediaries located in high-risk jurisdictions."（P27）
+
+## 【错误项分析】
+
+- **A不选（范围或程度偏差）｜并非事实错误**：教材指出，犯罪分子可能选择监管宽松或税收优惠的司法管辖区来隐藏活动、减少税负（P76），离岸公司也通常设立在低税或高保密司法管辖区（P127）。但公司秘书本身承担记录、年报和公司治理职责（P126），题干没有给出虚假服务、异常金额、空壳结构或隐藏受益所有权等附加事实，因此A的交易风险不能仅由「税收优惠地区」和「公司秘书服务费」直接确定。
+- **B不选（题干要素不足）**：题干只说支付海外虚拟办公室服务费，没有提供该服务与客户业务不符、金额异常或交易结构复杂等事实。实际交易行为需结合客户预期模式判断是否存在偏离（P307），现有信息不足以使B比D更直接。
+- **C不选（范围或程度偏差）｜并非事实错误**：教材把缺乏合法经济联系或商业理由的无关联第三方贷款视为风险（P128）。本项是母公司向子公司提供、且用于支付机械运输费用的关联方融资，题干给出了业务用途，不能直接套用该红旗。
+
+## 【易错提醒】
+
+判断咨询费风险时，要同时核对司法管辖区风险等级、服务真实性、金额合理性、交易目的和受益所有权。「外国司法管辖区」不自动等于「高风险司法管辖区」；本题选择D，是因为它在现有选项中最接近教材关于高风险地区咨询费的风险提示（P27）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000150`
+
+### `v7u_N000150`
+
+- 用于：核心解析、易错提醒
+- 章节：Types of financial crime > Key takeaways
+- 页码：PDF第32页 / 书内第27页
+- 中文要点：加强对高风险地区咨询费的可疑交易监控
+- 英文原文：Enhance transaction monitoring for suspicious activities, especially regarding “consultancy fees” to individuals or intermediaries located in high-risk jurisdictions.
+
+### `v7u_N003046`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：交易行为风险：识别偏离预期交易模式、异常大额跨境交易或复杂支付结构
+- 英文原文：Transactional behavior: Identify deviations from expected transaction patterns, unexplained high-volume cross-border transactions, or the use of complex payment structures.
+
+### `v7u_N000139`
+
+- 用于：核心解析、选项D
+- 章节：Types of financial crime > Case example: FullTechGlobal corruption scandal
+- 页码：PDF第31页 / 书内第26页
+- 中文要点：子公司通过虚增咨询费、伪造发票和壳公司掩盖非法资金流动。
+- 英文原文：According to the allegations and further investigative efforts, it appeared the subsidiary was systematically obscuring illicit financial flows through inflated consultancy fees, fabricated invoicing practices, and opaque shell companies.
+
+### `v7u_N000653`
+
+- 用于：选项A
+- 章节：Money Laundering Risks in Financial Services > Private banking and wealth management risks > Special purpose vehicle risks
+- 页码：PDF第81页 / 书内第76页
+- 中文要点：犯罪分子可能选择监管宽松或税收优惠的司法管辖区以隐藏活动和避税。
+- 英文原文：Criminals might select jurisdictions that have lenient regulatory oversight or tax-friendly environments. This enables them to hide their financial activities and minimize tax liabilities.
+
+### `v7u_N001132`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with DNFBPs > Trust and company service provider and company secretary sector risks
+- 页码：PDF第132页 / 书内第127页
+- 中文要点：离岸公司注册通常在低税或高保密司法管辖区设立公司。
+- 英文原文：Offshore company formation involves establishing a company outside the customer’s home country, usually in low-tax and/or high-secrecy jurisdictions.
+
+### `v7u_N001121`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with DNFBPs > Trust and company service provider and company secretary sector risks
+- 页码：PDF第131页 / 书内第126页
+- 中文要点：公司秘书负责确保公司治理合规、维护记录、提交年报及组织董事会会议。
+- 英文原文：Company secretaries ensure compliance with corporate governance standards and relevant laws and regulations. Their responsibilities include maintaining company records, filing annual reports, and organizing board meetings.
+
+### `v7u_N001124`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with DNFBPs > Trust and company service provider and company secretary sector risks
+- 页码：PDF第131页 / 书内第126页
+- 中文要点：公司秘书若未审查关键利益相关者或识别公司结构与交易中的红旗，洗钱风险升高。
+- 英文原文：For secretaries, heightened money laundering risks arise if they fail to vet key stakeholders or identify red flags in corporate structures and transactions.
+
+### `v7u_N001142`
+
+- 用于：选项C
+- 章节：Money laundering risks associated with DNFBPs > High-value asset risks
+- 页码：PDF第133页 / 书内第128页
+- 中文要点：无关联第三方之间的贷款协议缺乏合法经济理由，可能用于转移非法资金。
+- 英文原文：Loan agreements between unrelated third parties: The lender and borrower lack a legitimate connection or economic justification for the loan. Instead, the loan serves as a way to transfer illicit funds.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+在洗钱和恐怖融资风险识别中,向税收优惠地区 的外国公司支付费用可能涉及利用政策漏洞转移 资金或隐藏交易性质,属于典型可疑交易模式. 选项B的海外虚拟办公室服务支付、选项C的母 子公司间贷款、选项D的向无关公司支付咨询费 虽需关注,但均不如选项A的税收优惠地区支付 行为更直接关联洗钱风险.根据反洗钱国际标 准,向低税负地区支付费用需重点核查资金流向 及交易背景,因此选项A需优先上报合规官.* 易错提醒:需注意区分正常商业行为与洗钱特 征,如交易对手方是否为空壳公司、资金是否快 速转移等. 难 来 源
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+gandexportingmachineries.Whichtransaction indicatorwarrantsfurtherescalationtothecom plianceofficer? Thepaymentofcompanysecretarialr A etainerfeestoaforeigncompanyina tax-efficientJurisdiction Thepaymentofvirtualofficesservices B overseas Inter-companyloansfromtheholding companytothesubsidiarycompanyto financetheshipmentOfmachinery Thepaymentofconsultancyfeestoun relatedcompaniesandserviceprovide rsestablishedinaForeignjurisdiction 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A，英文=D
+- 盲判与题库最终参考答案冲突：盲判=D，题库最终=A

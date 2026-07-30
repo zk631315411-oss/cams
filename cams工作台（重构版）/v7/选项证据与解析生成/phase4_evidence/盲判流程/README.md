@@ -63,8 +63,8 @@ blind_adjudication.process_question()
 # 小批量盲判（默认 manual_reviewed 题）
 python blind_adjudication.py --limit 10 --concurrency 10
 
-# 全量（前 N 题）
-python blind_adjudication.py --all --limit 100 --concurrency 30
+# 按 question_id 排序取前 N 题，写入独立调试目录
+python blind_adjudication.py --limit 100 --concurrency 30 --output-dir ../output/debug_first100
 
 # 指定题号
 python blind_adjudication.py --question-id v7_q_000009 --concurrency 1
@@ -84,6 +84,8 @@ python blind_adjudication.py `
 ```
 
 ## 输出
+
+脚本没有 `--all` 参数。正式 395 题母版已存在，调试时必须使用新的 `--output-dir`，不得覆盖根 `output/`。
 
 ```
 output/<run>/

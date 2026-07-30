@@ -1,0 +1,100 @@
+# v7_q_000227
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融机构(FI)的哪些变化应触发对其固有反洗钱风险敞口的全企业范围重新评估？(选择三项.)
+
+英文题干：Which changes at a financial institution (FI) should trigger an enterprise-wide reassessment of its inherent AML risk exposure? (Select three.)
+
+选项：
+
+- A. 推出新产品或新服务
+  English: Introduction of new products or services.
+- B. 合并与收购
+  English: Mergers or acquisitions.
+- C. 金融机构风险与合规职能的重组
+  English: Restructuring of the FI's risk and compliance functions.
+- D. 利用新技术提供现有产品
+  English: Use of new technologies for delivering existing products.
+- E. 负责金融机构产品线和销售策略的个人发生变动
+  English: Changes in the individuals overseeing the FI's product lines and sales strategies.
+
+## 【AI答案】
+
+A、B、D
+
+## 【考点】
+
+触发全企业范围反洗钱风险重新评估的业务变化类型
+
+## 【核心解析】
+
+教材规定，组织在业务发生重大变化时必须重新评估风险，包括提供高风险产品、进入新市场或运营司法管辖区变更（P283）。全企业范围风险评估（EWRA）并非仅依赖定期审查，更应在可能改变风险状况的事件发生后启动，如新业务或新司法管辖区（P293）。题干问的是「应触发」全企业重新评估的变化，A「推出新产品或新服务」、B「合并与收购」和D「利用新技术提供现有产品」均直接改变了机构固有的业务结构、市场范围或运营方式，属于根本性的业务要素变化，与教材列举的触发条件（新产品、新业务、运营方式变更）完全吻合（P283-P284、P293）。合并还会使新实体的风险偏好包含原属机构的高风险活动，本质上是业务边界的重塑（P271）。相比之下，C是内部职能结构调整，E是人事变动，两者未触及业务要素本身，风险状况的改变是间接的、派生的，匹配度远不如A、B、D。
+
+教材原句："Organizations must reevaluate risks whenever there is a material change to their business. This could include higher-risk product offerings, entering a new market, or changes in jurisdictions where the organization operates."（P283）
+
+## 【错误项分析】
+
+- **C 错误**：教材提到，结构化、协作的合规职能可增强金融犯罪风险管理，合规人员应被授权实施反洗钱政策并跨职能共享信息。但这些论述讲的是「如何优化控制有效性」，而非「何时必须重新评估固有风险」。风险与合规职能重组属于内部控制架构调整，并不直接等于业务要素（产品、市场、运营方式）发生重大变化（P283-P284、P293），与题干条件的直接关联不如A、B、D。
+- **E 错误**：触发风险审查的变化包括交易模式偏离、客户请求新产品、客户对高风险司法管辖区敞口增加、客户行业变化、组织运营方式变化等（P283-P284）。产品线和销售策略的负责人变更属于人事变化，本身不必然改变业务结构或风险敞口，因此与题干要求的触发条件不匹配。
+
+## 【易错提醒】
+
+区分「业务要素变化」和「管理要素变化」。新业务、新产品、新市场属于业务要素变化，直接改变机构面临的固有风险种类和敞口规模（P283-P284、P293）；人事变动、汇报线调整属于管理要素变化，可能影响控制质量但不直接改变固有风险面。全企业范围重新评估关注的是风险本身是否变了，而不是管风险的人是否变了。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002825`
+
+### `v7u_N002825`
+
+- 用于：核心解析、选项C、选项E、易错提醒
+- 章节：The importance of continuous risk assessment > Continuously assessing financial crime risk
+- 页码：PDF第288页 / 书内第283页
+- 中文要点：组织在业务发生重大变化时必须重新评估风险
+- 英文原文：Organizations must reevaluate risks whenever there is a material change to their business. This could include higher-risk product offerings, entering a new market, or changes in jurisdictions where the organization operates.
+
+### `v7u_N002919`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Maintaining effective AFC policies and procedures
+- 页码：PDF第298页 / 书内第293页
+- 中文要点：机构还应在可能改变风险状况的事件（如新业务、新司法管辖区或审计结果）发生后进行审查。
+- 英文原文：Organizations should also conduct reviews in response to events that might change their risk profile, such as a new business or jurisdiction, or the results of an audit or regulatory examination.
+
+### `v7u_N002835`
+
+- 用于：核心解析、选项C、选项E、易错提醒
+- 章节：The importance of continuous risk assessment > Continuously assessing financial crime risk
+- 页码：PDF第289页 / 书内第284页
+- 中文要点：组织运营方式变化（如产品线变更或转向线上业务）是触发CRA审查的变化之一
+- 英文原文：Changes in how the organization operates, such as changing product lines or shifting to online business operations.
+
+### `v7u_N002693`
+
+- 用于：选项C、选项E
+- 章节：Types of risk assessment > The risk appetite statement
+- 页码：PDF第276页 / 书内第271页
+- 中文要点：合并可能导致风险偏好变化，纳入高风险活动
+- 英文原文：For example, an organization seeks a merger with another entity that has been traditionally involved in higher risk activities. This situation implies the newly formed organization’s risk appetite has changed and will now include higher risk activities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、D
+- 中文参考答案：A、B、D
+
+### 中文参考解析
+
+金融机构固有反洗钱风险口需全企业范围重新 评估,通常源于影响风险状况的关键变动.选项 A,新产品的引入可能带来未知风险,需重新评 估:选项B,合并与收购会改变业务结构,增加 复杂性,需全面审查风险;选项D,利用新技术 提供现有产品可能引入新风险,如数据安全、交 易透明度等,需重新评估.选项C,风险与合规 职能重组属内部管理调整,不直接触发风险口 重评:选项E,个人变动不改变整体风险状况 无需全企业范围重评.故正确答案为ABD.
+
+- 英文参考答案：A、B、D
+
+### 英文参考解析
+
+financialinstitution(Fl)should triggeranenterpr ise-widereassessmentofitsInherentAMLrisk exposure?(SelectThree.) Introductionofnewproductsorservice S Mergersoracquisitions RestructuringoftheFl'sriskandcomp liancefunctions Useofnewtechnologiesfordelivering existingproducts Changesintheindividualsoverseeing theFl'sproductlinesandsalesstrateg E ies 正确答案ABD您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

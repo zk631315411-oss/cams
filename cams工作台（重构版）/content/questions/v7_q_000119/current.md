@@ -1,0 +1,123 @@
+# v7_q_000119
+
+教材章节：未映射
+
+题型：single
+
+题干：反洗钱/打击资助恐怖主义部门通常会汇总有关客户活动和产品使用情况的信息，这些信息可能对组织的其他部门有价值。在允许该部门在内部传达此类信息之前，组织必须审查：
+
+英文题干：An AML/CFT unit often compiles information about customer activity and product usage that might be of interest to other parts of the organization. Before allowing the unit to communicate such information internally, the organization must review:
+
+选项：
+
+- A. 企业范围风险评估和员工手册，以确认其中是否存在共享商业敏感客户数据的限制
+  English: Enterprise-wide risk assessments and the employee handbook for any limitations on sharing commercially sensitive customer data
+- B. 客户的风险评级，以避免分享涉及高风险客户的资料
+  English: The risk rating of the customers to avoid sharing data relating to higher-risk customers
+- C. 组织的反洗钱合规政策，以确保客户数据能够在组织内部及跨境轻松共享
+  English: The organization's AML compliance policies to ensure that customer data can be easily shared internally and internationally
+- D. 相关司法管辖区适用的数据隐私法律，以及组织的数据安全和隐私政策中规定的任何限制
+  English: Applicable data privacy laws in relevant jurisdictions and the organization's data security and privacy policies for any limitations
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+内部共享客户数据前对法律、权限和机构政策限制的审查
+
+## 【核心解析】
+
+题干中的客户活动和产品使用信息属于受保护的客户数据。教材指出，金融机构对客户数据的安全和隐私负有高度注意义务，并且通常承担相应法律义务（P209）；客户数据只能向确有知悉需要、并具有相应许可和查看权限的人员共享（P209）。教材还说明，许多司法管辖区禁止将为某一目的收集的数据擅自用于其他目的，组织也应制定数据分类、保存和销毁政策（P209）。因此，在允许反洗钱/打击资助恐怖主义部门向组织其他部门传达客户信息前，组织必须审查适用的数据隐私法律以及自身数据安全和隐私政策规定的共享权限与限制。选项D同时覆盖外部法律和内部政策两个层面，最完整地对应教材要求。
+
+教材原句："Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it."
+
+## 【错误项分析】
+
+- **A 错误（教材条件对照）｜审查对象不准确**：企业范围风险评估用于系统识别和评估机构各项业务面临的洗钱和恐怖融资风险（P158），并不是决定客户数据能否在内部共享的直接依据。员工手册也不能替代适用的数据隐私法律和专门的数据安全与隐私政策。A既遗漏外部法律要求，也没有准确指向客户数据共享的授权和权限限制。
+- **B 错误（教材直接依据）｜混淆风险管理与数据权限**：教材指出，高风险客户可能需要接受强化尽职调查和加强监控（P270）。客户风险评级决定的是尽调、监控以及客户资料更新的强度，而不是为了避免分享而排除高风险客户的数据。是否可以共享仍取决于知悉需要、授权权限、适用法律和机构政策。
+- **C 错误（教材直接依据）｜与限制性要求相反**：教材要求客户数据只能向确有知悉需要且获授权的人员共享（P209），数据隐私法还可能对个人数据的跨境传输施加条件（P209）。审查的目的不是确保数据能够在组织内部及跨境「轻松共享」，而是确认共享是否合法、必要并符合权限及政策限制。
+
+## 【易错提醒】
+
+信息具有反洗钱用途，不等于可以在组织内部自由流通。判断本题时应区分两个问题：客户风险评级决定尽调和监控力度；数据隐私法律、知悉需要、访问权限以及机构数据政策决定信息能否共享。题干问的是后者，因此应选择同时涵盖外部法律和内部政策限制的D。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002012`
+
+### `v7u_N002011`
+
+- 用于：核心解析
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：金融机构对客户数据安全和隐私负有高度注意义务，并且通常承担相应法律义务。
+- 英文原文：Financial institutions have a high duty to care for—and often a legal obligation to ensure the security and privacy of—customer data.
+
+### `v7u_N002012`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：客户数据必须安全存储，只能向确有知悉需要并具有相应许可和查看权限的人员共享。
+- 英文原文：Your customer data must be stored securely and should only be shared with others who need to know and have the requisite permission and authority to view it.
+
+### `v7u_N002013`
+
+- 用于：核心解析
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：许多司法管辖区禁止将为某一目的收集的数据用于其他目的。
+- 英文原文：In many jurisdictions, it is prohibited by law for data collected for one purpose to be used for another purpose, such as marketing.
+
+### `v7u_N002016`
+
+- 用于：核心解析、选项A
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：组织应制定有关数据分类、保存期限和销毁时间的政策。
+- 英文原文：Your organization will have a policy on data categorization, how long data should be stored, and when data should be destroyed.
+
+### `v7u_N002020`
+
+- 用于：选项C
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：数据隐私法可能限制个人数据的跨境传输，除非满足规定条件。
+- 英文原文：Data privacy laws may place restrictions on the transfer of personal data outside the jurisdiction unless certain conditions are met. These conditions are intended to ensure that protections outside the jurisdiction are equivalent to those in the home jurisdiction.
+
+### `v7u_N001466`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > Impact of FATF mutual evaluation reports on jurisdictions
+- 页码：PDF第163页 / 书内第158页
+- 中文要点：企业范围风险评估确保组织系统识别和评估所有业务中的洗钱和恐怖融资风险。
+- 英文原文：Enterprise-wide risk assessments ensure that organizations systematically identify and assess money laundering and terrorist financing risks across all operations. These assessments strengthen compliance, internal controls, and regulatory alignment while optimizing risk management.
+
+### `v7u_N002682`
+
+- 用于：选项B、易错提醒
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：高风险客户可能需要接受强化尽职调查和加强监控，以便机构根据潜在金融犯罪风险配置资源。
+- 英文原文：A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在反洗钱/打击资助恐怖主义场景下,组织内部传 达客户信息需谨慎.选项A中企业风险评估和员 工手册规定,并非直接针对信息传达审查的关 高风险客户资料,不够全面:选项C组织反洗钱 合规政策,重点在合规,面非信息传达的审查要 点:选项D相关司法管辖区适用的数据隐私法以 及组织的数据安全和隐私政策所规定的任何限制 条件,全面涵盖了信息传达前需审查的法律和政 策限制,确保信息共享合法合规,故答案选D. 易错提醒:需全面考虑法律和政策限制.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+组织在允许反洗钱/反恐融资(AML/CFT)部门 查数据隐私法规及组织自身政策.选项D中提及 的“适用司法管辖区的数据隐私法”及“组织数据安 全与隐私政策”直接关联数据共享的合规性,是审 查的核心依据.其他选项或侧重风险评估 (A)、客户风险等级(B),或忽略国际数据 传输限制(C),均未全面覆盖法律合规要求. 因此,D为正确答案.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

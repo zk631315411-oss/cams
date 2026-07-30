@@ -1,0 +1,134 @@
+# v7_q_000295
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及手段]巴塞尔银行监管委员会发布了关于"妥善管理与洗钱和恐怖主义融资相关风险"的指导方针.关于识别和接纳客户,它建议银行:(选择两项.)
+
+英文题干：The Basel Committee on Banking Supervision published guidelines on the "Sound management of risks related to money laundering and financing of terrorism." With regard to identifying and accepting customers, it recommends that banks: (Select Two.)
+
+选项：
+
+- A. 制定政策和程序,确保对所有客户开展的尽职调查活动完全一致.
+  English: Establish policies and procedures to ensure due diligence activities are identical for all customers.
+- B. 制定政策和程序,以识别和核实客户、受益所有人以及任何能够代表客户进行交易的个人.
+  English: Establish policies and procedures to identify and verify customers, beneficial owners, and any individuals that can transact on behalf of their customers.
+- C. 制定基于风险程度不同的客户尽职调查政策和程序.
+  English: Establish policies and procedures for customer due diligence that vary based on risk.
+- D. 即使已建立程序来收集和保存尽职调查信息,也不得向客户提供编号账户.
+  English: Do not provide numbered accounts to customers, even if procedures are in place to collect and store due diligence information.
+- E. 制定相关政策和程序,鼓励在尽职调查信息建立和核实期间处理交易
+  English: Establish policies and procedures that encourage processing transactions while due diligence information is being established and verified.
+
+## 【AI答案】
+
+B、C
+
+
+## 【考点】
+
+BCBS指南对客户接纳与识别的风险为本原则
+
+## 【核心解析】
+
+BCBS指南支持银行和监管机构实施FATF的AML/CFT建议（P166）。在客户识别和接纳的具体内容上，教材直接要求识别和核实受益所有人以及董事、高级管理层和授权签字人（P311），这与B逐项对应。教材还明确规定CDD是强制性的，并应根据实体风险、司法管辖区要求和监管期望变化（P304），因此C对应风险差异化的CDD。这里B、C不是仅凭“BCBS支持FATF”作泛化推断，而是由具体CDD单元直接支撑；BCBS背景单元负责说明适用对象，CDD单元负责说明选项内容。
+
+教材原句："CDD is mandatory and varies based on entity risk, jurisdictional requirements, and regulatory expectations."（P304）
+
+## 【错误项分析】
+
+- **A 错误（未体现风险差异）**：教材强调风险为本方法的核心在于「应对措施与识别出的风险成比例」（P147、P218）。A项要求对所有客户尽职调查活动「完全一致」，正好违背了这一原则。相比之下，C项「基于风险程度不同而变化」更直接匹配BCBS指南倡导的方向。
+- **D 不选（范围或程度偏差）**：D将编号账户表述为一律不得提供，但题干考查的是客户识别和接纳的核心原则。相比之下，B直接要求识别和核实客户、受益所有人及授权交易人员，C直接体现风险差异化的CDD，两项与题干所问的BCBS建议更匹配。
+- **E 不选（业务阶段错配）**：KYC流程要求在建立或维持关系前识别、核实并评估客户风险，而E鼓励在尽职调查信息尚未建立和核实期间处理交易，与题干所考查的审慎客户接纳流程不匹配。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003088`
+
+### `v7u_N003088`
+
+- 用于：核心解析、选项B
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：识别和核实受益所有人及最终受益所有人。
+- 英文原文：Identification and verification of beneficial owners (BO) and ultimate beneficial owners (UBO).
+
+### `v7u_N003089`
+
+- 用于：核心解析、选项B
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：核实董事、高级管理层和授权签字人。
+- 英文原文：Verification of directors, senior management, and authorized signatories.
+
+### `v7u_N003012`
+
+- 用于：错误项E（CDD/KYC的阶段要求）
+- 章节：Onboarding AFC controls
+- 页码：PDF第309页 / 书内第304页
+- 中文要点：KYC在建立或维持关系前识别、核实并评估客户风险。
+- 英文原文：KYC identifies, verifies, and assesses customer risks before establishing and maintaining relationships.
+
+### `v7u_N001542`
+
+- 用于：核心解析、选项A
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：指南支持银行和监管机构实施FATF关于反洗钱和反恐怖融资的建议
+- 英文原文：Support banks and supervisors in implementing the FATF Recommendations concerning AML/CFT.
+
+### `v7u_N001341`
+
+- 用于：核心解析
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：FATF建议1和2要求各国评估洗钱和恐怖融资风险并采取风险为本方法
+- 英文原文：Recommendations 1 and 2 advise jurisdictions to assess and understand their money laundering and terrorist financing risks and take a risk-based approach to implementing measures that effectively mitigate these threats.
+
+### `v7u_N003090`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：客户尽职调查（客户尽职调查）是强制性的，并根据实体风险、司法管辖区要求和监管期望而变化。
+- 英文原文：CDD is mandatory and varies based on entity risk, jurisdictional requirements, and regulatory expectations.
+
+### `v7u_N001363`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构应实施反洗钱/反恐怖融资计划并对高风险辖区强化尽职调查
+- 英文原文：Financial institutions should implement AML/CFT programs, facilitate the sharing of information for AML/CFT purposes, and apply enhanced due diligence to business relationships and transactions with persons and institutions from jurisdictions FATF identifies as higher risk.
+
+### `v7u_N002126`
+
+- 用于：选项A
+- 章节：Other laws and regulations that impact organizations > ESG regulations
+- 页码：PDF第223页 / 书内第218页
+- 中文要点：采用风险为本方法使组织能够优先对高风险客户、司法管辖区和服务投入资源
+- 英文原文：The adoption of a risk-based approach enables organizations to prioritize resources on high-risk clients, jurisdictions, and services, ensuring that compliance levels are proportionate to the level of risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+巴塞尔银行监管委员会在客户识别和接纳方面提 出多项建议.选项B,制定政策和程序以识别和 核实客户、受益所有人及能代表客户交易的个 人,是客户识别接纳的基础要求,符合指导方 针:选项C,制定基于风险程度不同的客户尽职 调查政策程序,能根据风险合理分配资源,有效 防控风险,也符合要求.选项A中尽职调查活动 完全一致表述不准确:选项D不得向客户提供编 号账户与识别接纳客户无关:选项E鼓励在尽职 调查信息建立和核实期间处理交易不符合风险防 控逻辑.因此选BC.易错点为对各选项政策程 序理解不透彻.
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+该题涉及金融机构在招聘高风险岗位时进行背景 调查的资源选择,重点在于识别候选人潜在的欺 诈、洗钱风险.参考金融行动特别工作组 (FATF)关于反洗钱措施的建议及巴塞尔委员 会《银行合规职能指引1》,金融机构需通过多元 化渠道验证人员背景.选项A(过往工作记录) 可发现历史雇佣中的违规行为或解雇原因;选项 D(公共媒体搜索)能补充传统审查未覆盖的负 面公开信息(如社交媒体、新闻报道);选项E (犯罪记录筛查)直接关联法律风险,符合监管 要求(如《爱国者法案》第326条).选项B (私人推荐)存在利益关联性导致信息失真风 险,选项C(简历)属于候选人主观陈述而非验 证依据,故有效性不足.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

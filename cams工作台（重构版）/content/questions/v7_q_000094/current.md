@@ -1,0 +1,113 @@
+# v7_q_000094
+
+教材章节：未映射
+
+题型：single
+
+题干：一家美国银行最近收到监管部门的整改令，要求其改进反洗钱项目，其中包括多项违法行为。银行的高级管理层和员工可能面临何种程度的责任追究？
+
+英文题干：A U.S. bank recently received a regulatory order to remediate its AML program, which included several violations of law. What degree of accountability is it possible for the bank's senior management and employees to face?
+
+选项：
+
+- A. 由于银行收到了监管机构的命令，该银行指定的反洗钱合规官很可能面临刑事起诉
+  English: The bank's designated AML compliance officer is likely to face criminal prosecution because the bank received a regulatory order
+- B. 银行指定的反洗钱合规官和高级管理人员违反反洗钱法律时，可能面临民事起诉，但不会受到刑事起诉
+  English: The bank's designated AML compliance officer and senior management may face civil prosecution but not criminal prosecution for violations of AML laws
+- C. 如果银行指定的反洗钱合规官和高级管理人员在明知银行存在反洗钱违规行为的情况下未采取行动，他们可能会面临个人责任
+  English: The bank's designated AML compliance officer and senior management may face personal liability if they failed to take action while aware of AML violations
+- D. 银行指定的反洗钱合规官是公司高级管理团队中唯一可能因违反反洗钱法律而面临个人责任的人
+  English: The bank's designated AML compliance officer is the only member of the corporate senior management team who may face personal liability for violations of AML laws
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+高管与合规官的个人责任触发条件：明知且未行动
+
+## 【核心解析】
+
+反洗钱框架下，个人问责的触发关键不是机构是否收到整改令，而是相关人是否「明知」违规却未采取行动。教材指出，合规专业人员不仅受金融犯罪法律约束，还可能因合规缺陷而被起诉，高级领导（如 MLRO 或 BSA 官员）承担最大的个人责任（P44）。题干中银行因「多项违法行为」收到整改令，但并未说明高级管理层和合规官是否知晓并放任违规。选项 C 设定了「明知银行存在反洗钱违规行为的情况下未采取行动」这一前提，直接匹配教材所描述的个人责任触发条件，因此是最可能出现的责任形式。
+
+## 【错误项分析】
+
+- **A 错误（责任要件不完整）**：在严重违规情况下，高管和合规官可能面临刑事起诉（P143），但收到监管命令本身不会自动导致刑事起诉。相比之下，C项的「明知未行动」更直接对应个人责任所需的主观要件。
+- **B 错误（教材直接依据）｜范围或程度偏差**：教材载明个人可能因洗钱相关违规面临「民事和刑事起诉」（P23），B 选项完全排除刑事起诉的可能性，与教材事实不符。相较于 B 对刑事责任的绝对排除，C 选项保留了个人责任（含刑事）在特定主观状态下的可能性，更符合教材的整体描述。
+- **D 错误（教材直接依据）｜主体或阶段错配**：教材多处表明反洗钱治理责任不仅限于合规官。高级管理层也须确保控制措施跟上业务（P266），董事会和高级领导层必须积极监督合规（P289）。D 选项将个人责任主体限定为「唯一」的合规官，与教材所述的广泛高管问责制不符。C 选项同时提及合规官和高级管理人员，主体范围与教材更一致。
+
+## 【易错提醒】
+
+容易误以为收到监管整改令就必然导致刑事追责，从而选择 A 或认为合规官独自承担责任。教材区分了不同责任层级：一般违规或第一道防线员工多面临行政罚款（P44），而需明知、故意或严重疏忽才会引发个人刑事责任（P143）。题干未提供主观明知证据，因此 C 的条件式表述最严谨。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000334`
+
+### `v7u_N000334`
+
+- 用于：核心解析、选项D
+- 章节：Consequences of financial crime > Individual impact of violations of AFC regulations
+- 页码：PDF第49页 / 书内第44页
+- 中文要点：合规专业人员不仅受金融犯罪法律约束，还可能因合规缺陷面临起诉，高级领导承担最大个人责任。
+- 英文原文：Compliance professionals are not only held accountable under financial crime laws but are also subject to all applicable criminal statutes within their jurisdiction. AML professionals can face prosecution for aiding or failing to prevent financial crimes and as seen more recently, for deficiencies in their firm's compliance program of which they carry ultimate accountability. Senior leaders, such as MLROs or BSA officers, bear the greatest personal responsibility.
+
+### `v7u_N001295`
+
+- 用于：选项A、选项B、易错提醒
+- 章节：Global AFC Frameworks, Governance, and Regulations > Case example: Implementing AFC standards at FinTrust
+- 页码：PDF第148页 / 书内第143页
+- 中文要点：严重违规时高管和合规官可能面临刑事起诉和监禁
+- 英文原文：In more serious cases, senior executives and compliance officers might face criminal prosecution, asset forfeitures, and even imprisonment for willful violations.
+
+### `v7u_N000101`
+
+- 用于：选项B
+- 章节：Types of financial crime > Predicate crimes and money laundering
+- 页码：PDF第28页 / 书内第23页
+- 中文要点：个人可能面临洗钱相关民事和刑事起诉
+- 英文原文：Civil and criminal prosecution of individuals
+
+### `v7u_N002622`
+
+- 用于：选项D
+- 章节：Introduction > Case study: Failure to update an EWRA at a wealth management firm
+- 页码：PDF第271页 / 书内第266页
+- 中文要点：高级管理层未能确保反洗钱/反恐怖融资控制措施跟上业务扩张步伐
+- 英文原文：Management oversight failures: Senior management failed to ensure that AML/CFT controls kept pace with business expansion. The firm lacked riskbased governance and experienced internal audit failures.
+
+### `v7u_N002887`
+
+- 用于：选项D
+- 章节：Design Your AFC Program and Controls > Case study: Lack of governance at a Canadian bank
+- 页码：PDF第294页 / 书内第289页
+- 中文要点：董事会和高级领导层必须积极监督反洗钱合规
+- 英文原文：To ensure strong AML/CFT governance, boards of directors and senior leadership must actively oversee AML compliance.
+
+### `v7u_N000337`
+
+- 用于：易错提醒
+- 章节：Consequences of financial crime > Individual impact of violations of AFC regulations
+- 页码：PDF第49页 / 书内第44页
+- 中文要点：第一道防线或操作人员的合规违规更可能导致行政处罚或罚款，而非刑事起诉。
+- 英文原文：Compliance breaches made by first LoD or operational staff are more likely to result in administrative penalties or monetary fines rather than criminal prosecution, unless there is clear evidence of intentional wrongdoing or collusion.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+在反洗钱和反恐怖融资合规标准下,银行高级管 理层和员工若明知银行存在反洗钱违规行为却未 采取行动,根据《美国爱国者法案》等相关法 规,他们可能面临个人责任追究,包括民事诉 讼、罚款甚至刑事起诉.选项C准确描述了这一 情况,即若银行指定的反洗钱合规官和高级管理 人员在明知存在违规行为的情况下未采取行动, 他们可能会面临个人责任.其他选项A、B、D均 存在错误描述或遗漏关键信息.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+在反洗钱(AML)和反恐怖融资(CFT)合规标 准下,银行高级管理层和员工若明知存在AML 违规行为却未采取行动,可能面临个人责任.选 项A错误,因为并非仅因收到监管令就必然面临 刑事起诉:选项B错误,因为违反AML法律可能
+
+### 答案冲突提示
+
+- 未发现答案冲突。

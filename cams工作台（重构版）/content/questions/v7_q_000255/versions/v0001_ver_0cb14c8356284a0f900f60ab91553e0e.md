@@ -1,0 +1,98 @@
+# v7_q_000255
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]在美国一家大型银行中,有一名员工领导着一个团队,负责监督该行交易监控方法的治理和有效性.团队应实施哪些策略？(选择两项.)
+
+英文题干：In a large U.S. bank, an individual leads a team in charge of overseeing the governance and effectiveness of the bank's transaction monitoring approach. Which strategies should the team implement? (Select Two.)
+
+选项：
+
+- A. 定期及临时与法律团队合作,适当调查和监控传票对象或政府调查对象的交易
+  English: Periodic and ad hoc cooperation with the legal team to appropriately investigate and monitor the transactions of subjects of subpoenas or government inquiries.
+- B. 定期审查客户档案,以确保高风险客户的档案信息是最新的,符合银行内部政策和程序的要求.
+  English: Periodic review of client profiles to ensure that the most up-to-date information is on file for high-risk clients in line with the bank's internal policies and procedures.
+- C. 定期审查向金融犯罪执法网络(FinCEN)提交的可疑活动报告(SAR),以确定是否应撤回其中任何一份报告
+  English: Periodic review of suspicious activity reports (SARs) filed with FinCEN to determine whether any should be withdrawn.
+- D. 定期审查交易监测场景及其成效,以确保适当反映反洗钱的各类模式
+  English: Periodic review of transaction monitoring scenarios and their productivity to ensure that appropriate AML typologies are reflected.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+交易监控治理所需的客户画像维护与场景有效性审查
+
+## 【核心解析】
+
+交易监控并非只依赖交易金额或频率，还要以客户画像所界定的正常活动参数为比较基准；客户活动超出其画像的正常参数时，系统才生成警报（P328）。因此，高风险客户档案必须按风险等级定期更新客户信息、业务活动和风险分类（P315），选项B为交易监控提供持续有效的比较基准。场景部署后还应持续测试和调优以确保有效性（P446），故选项D直接对应题干中的「governance and effectiveness」。两项分别保障监控输入数据与监控场景本身。
+
+教材原句："Transaction monitoring systems generate alerts when customer activity or behavior is beyond normal parameters for the customer profile."（P328）
+
+## 【错误项分析】
+
+- **A 错误**：与法律团队建立关系的教材语境是「回应执法机构请求」，目的在于提高响应透明度、问责性和速度（P362）。它是执法请求响应安排，并非对交易监控方法本身进行治理或有效性测试。
+- **C 错误**：选项C审查的是已经向FinCEN提交的SAR并考虑撤回，题干要求的是交易监控方法的治理和有效性；该选项既不维护客户画像，也不审查监控场景。
+
+## 【易错提醒】
+
+不要把「客户档案维护」与「场景调优」视为互斥职责。前者维护监控所依赖的客户正常行为基准（P315、P328），后者验证规则能否有效发现偏离（P446）；两者共同影响交易监控方法的有效性。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003233`
+
+### `v7u_N003135`
+
+- 用于：核心解析、易错提醒
+- 章节：Ongoing AFC controls > Ongoing due diligence
+- 页码：PDF第320页 / 书内第315页
+- 中文要点：定期了解你的客户审查根据客户风险等级更新客户信息、所有权结构、业务活动和风险分类。
+- 英文原文：Periodic KYC reviews take place at regular intervals, based on the customer’s risk level. Financial institutions must review and update customer information, ownership structures, business activities, and risk classifications. For example:
+
+### `v7u_N003233`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring > Transaction monitoring controls
+- 页码：PDF第333页 / 书内第328页
+- 中文要点：交易监控系统在客户活动或行为超出客户画像的正常参数时生成警报。
+- 英文原文：Transaction monitoring systems generate alerts when customer activity or behavior is beyond normal parameters for the customer profile.
+
+### `v7u_N004463`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Ongoing testing and tuning for rules-based systems
+- 页码：PDF第451页 / 书内第446页
+- 中文要点：金融机构应持续测试和调优交易监控场景以确保有效性。
+- 英文原文：Once financial institutions develop, calibrate, and deploy transaction monitoring scenarios, they should continuously test and tune them to ensure effectiveness.
+
+### `v7u_N003642`
+
+- 用于：错误项分析
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：指定官员应与法律团队等部门建立有效关系，以回应执法机构请求。
+- 英文原文：Additionally, the designated officer must develop effective relationships with legal teams, recordkeeping, and other departments likely to be involved in responding to a law enforcement agency's request. These relationships ensure transparency and accountability and decrease the FI’s response time.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+为有效监督交易监控方法,团队应实施策略B和 D.策略B定期审查客户档案,可确保高风险客 户信息最新,符合银行内部政策程序,有助于及 时发现洗钱和恐怖融资风险:策略D定期审查交 易监控场景及其成效,能确保监控场景有效反映 反洗钱各类模式,及时发现潜在风险交易.策略 A中与法律团队合作调查传票对象或政府调查所 涉交易,并非团队核心职责;策略C审查向 FinCEN提交的可疑活动报告,非团队监督交易 监控方法的主要策略.
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+为有效监督交易监控方法,团队应实施策略B和 D.策略B定期审查客户档案,可确保高风险客 户信息最新,符合银行内部政策程序,有助于及 时发现洗钱和恐怖融资风险:策略D定期审查交 易监控场景及其成效,能确保监控场景有效反映 反洗钱各类模式,及时发现潜在风险交易.策略 A中与法律团队合作调查传票对象或政府调查所 涉交易,并非团队核心职责;策略C审查向 FinCEN提交的可疑活动报告,非团队监督交易 监控方法的主要策略.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

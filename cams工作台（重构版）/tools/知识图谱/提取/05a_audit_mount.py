@@ -9,6 +9,7 @@ Step 5A：LLM 审核句卡挂载候选。
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 from pathlib import Path
@@ -18,8 +19,8 @@ from openai import OpenAI
 _WORK = Path(__file__).resolve().parent / "work"
 _WORKSPACE = Path(__file__).resolve().parents[3]
 _CARDS_PATH = _WORKSPACE / "data" / "cards" / "cards_v6_sentence.json"
-_DS_API_KEY = "sk-795628e9d4584fc59545d7abac9d1209"
-_MIMO_API_KEY = "tp-cl5nzlniz5bfyk9i3wsdw88d25haf8ghdh6nccojrw1hqgc4"
+_DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+_MIMO_API_KEY = os.environ.get("MIMO_API_KEY", "")
 
 _TEMPERATURE = 0.0
 

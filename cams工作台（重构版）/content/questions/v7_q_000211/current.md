@@ -1,0 +1,129 @@
+# v7_q_000211
+
+教材章节：未映射
+
+题型：single
+
+题干：在房地产领域洗钱的置入阶段,可以采用哪种方法？
+
+英文题干：Which method could be used in the placement stage of money laundering in the real estate sector?
+
+选项：
+
+- A. 通过网上银行向一家媒体公司支付用于房产营销的发票款项
+  English: Paying an invoice to a media company via online banking for property marketing
+- B. 利用注册信托转移所有权
+  English: Using a registered trust to transfer ownership
+- C. 用现金购买房产
+  English: Using cash to purchase property
+- D. 在购入房产后迅速将其重新投放市场
+  English: Bringing a property back to market quickly after purchasing it
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+根据资金进入渠道的时间节点识别房地产洗钱的置入行为
+
+## 【核心解析】
+
+置入是对犯罪所得进行初始处置，使其进入金融系统（P16）。教材举出的方式包括通过银行账户处理犯罪所得，以及银行存款或购买货币工具（P16、P53）。判断一个行为是否属于置入，关键不是它是否使用银行，而是该行为本身是否完成了犯罪所得的首次进入。选项A描述的是通过网上银行支付营销发票；这项付款能够发生，通常意味着资金此前已经位于银行账户中。如果犯罪所得经过存款进入该账户，真正完成置入的是此前的存款，而不是后续付款。房地产交易中，现金比通过金融机构付款更难追踪，全部或主要使用现金购房属于洗钱红旗（P122）。题干已经限定为房地产领域的置入阶段，选项C描述了直接使用现金购买房产，即将待清洗的现金首次投入房地产交易并转换为可持有、登记和转售的资产。现金购房并不必然属于置入；但在本题给出的阶段和选项中，C与置入的行为功能和时间节点最匹配。
+
+## 【错误项分析】
+
+- **A 错误**：网上银行支付描述的是银行账户内资金的后续支付，而不是资金进入银行体系的动作。题干也没有说明该发票虚假，不能直接套用教材中「支付虚假发票」的离析示例（P16）。即使犯罪现金此前被存入账户，置入行为也是存款（P16、P53），而不是付款。
+- **B 错误**：信托是分离资产法定所有权与控制权的法律安排（P73）。利用信托转移所有权的前提是相关房产或资产已经取得，重点在于改变产权关系，发生在初始购房之后，与置入阶段的时间节点相比匹配度较低。
+- **D 错误**：选项明确写明「购入房产后」，说明初始购房已经完成。教材将房产频繁易主或涉及快速交易列为洗钱红旗（P122）；这类操作可能形成新的交易记录或增加资金路径复杂度，时间上晚于置入。
+
+## 【易错提醒】
+
+判断洗钱阶段应关注行为完成的功能和发生顺序，不能仅根据支付工具判断。存入银行账户可能完成置入（P16），账户之间转账可能用于离析（P16），使用网上银行支付并不天然属于置入。资产购买也不必然属于某一个阶段：直接使用待清洗的犯罪现金购买资产，可能承担置入功能；使用经过多层交易的资金购买看似合法的资产，则更接近融合（P16）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000021`
+
+### `v7u_N000021`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Money Laundering and Financial Crime > Money laundering
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：洗钱的第一阶段：将犯罪所得资金存入金融系统
+- 英文原文：The first stage of money laundering involves placement of funds into a financial system. This process begins with the collection or generation of proceeds derived from criminal activity. This so-called “dirty money” is placed into the financial system, such as through a bank account.
+
+### `v7u_N000415`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Money Laundering Risks in Financial Services > Money laundering risks associated with banking
+- 页码：PDF第58页 / 书内第53页
+- 中文要点：非法资金的置入可以通过银行存款或购买货币工具完成
+- 英文原文：Placement of illicit funds into the financial system might occur through bank deposits or purchase of monetary instruments.
+
+### `v7u_N000022`
+
+- 用于：选项A
+- 章节：Money Laundering and Financial Crime > Money laundering
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：支付虚假发票是离析阶段的示例
+- 英文原文：The proceeds are then layered. Layering involves activities to conceal the origin of the dirty money, such as transferring the proceeds from the bank account to a holding company. Other examples are paying the proceeds to a company in order to pay a false invoice and making a private loan to another company.
+
+### `v7u_N001102`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：现金交易因难以追踪而增加洗钱风险
+- 英文原文：Cash transactions remain relatively common in some markets and increase the potential for money laundering, as cash is more challenging to trace than payments made through financial institutions.
+
+### `v7u_N001103`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：全部或主要用现金支付的买家是房地产洗钱红旗
+- 英文原文：Red flags include buyers who pay entirely or primarily in cash, particularly in regions where bank financing is the norm.
+
+### `v7u_N000602`
+
+- 用于：选项B
+- 章节：Private banking and wealth management risks > Trust risks
+- 页码：PDF第78页 / 书内第73页
+- 中文要点：信托是分离资产法定所有权与控制权的法律安排
+- 英文原文：Trusts are legal arrangements that separate the legal title and control of an asset.
+
+### `v7u_N001105`
+
+- 用于：选项D
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：频繁或快速转手的房产应引起洗钱怀疑
+- 英文原文：Properties that frequently change ownership or are involved in a series of rapid transactions should also raise suspicions.
+
+### `v7u_N000023`
+
+- 用于：易错提醒
+- 章节：Money Laundering and Financial Crime > Money laundering
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：融合阶段将清洗后的资金用于合法经济中的商品和服务
+- 英文原文：Finally, the proceeds are integrated, or used, by the criminal to purchase goods and services in the legitimate economy.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+在房地产领域洗钱的置入阶段,关键在于将非法 资金转化为看似合法的资产.分析选项:A选项 通过网上银行支付房产营销发票款项,未直接体 现非法资金进入房地产:B选项利用注册信托转 移所有权,是后续操作:C选项用现金购买房 房产,符合洗钱置入阶段特征;D选项购入后迅 速重新投放市场,是洗钱后续处置阶段.所以选 C,需注意现金交易房产是洗钱高风险行为.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+B折题 翻译 -[RisksandMethodsofMoneyLaunderi 单选 ngandTerroristFinancing]Whichmethodcould beusedintheplacementstageofmoneylaund eringintherealestatesector? Payinganinvoicetoamediacompany viaonlinebankingforpropertymarketi A ng Usingaregisteredtrusttotransferown B ership Usingcashtopurchaseproperty Bringingapropertybacktomarketqui D cklyafterpurchasingit 正确答案C您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

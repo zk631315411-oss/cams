@@ -1,0 +1,91 @@
+# v7_q_000195
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪一项最能描述扩散融资的主要威胁之一？
+
+英文题干：Which of the following best describes one of the principal threats of proliferation financing?
+
+选项：
+
+- A. 敌对政府利用复杂攻击手段威胁关键基础设施和行业,包括金融、医疗保健和能源领域
+  English: Adversary governments using sophisticated attacks to threaten critical infrastructure and sectors, including finance, health care, and energy
+- B. 利用金融系统转移资金以获取大规模杀伤性武器或其部件的个人和实体网络
+  English: Networks of individuals and entities exploiting financial systems to move funds that will be used to acquire weapons of mass destruction or their components
+- C. 跨国犯罪组织将其活动范围扩大到更多种类的非法活动,包括人口贩运和腐败.
+  English: Transnational criminal organizations expanding their engagement into more varied types of illicit activities, including human trafficking and corruption
+- D. 通过非法暴力或武力行为全部或部分为其意识形态目标筹集资金的个人和实体网络
+  English: Networks of individuals and entities raising funds, in whole or in part, for their ideological goals through unlawful violence or force
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+扩散融资的核心定义：大规模杀伤性武器及其相关融资
+
+## 【核心解析】
+
+教材把扩散融资与核、化学、生物武器及其运载工具和相关材料的转让、出口联系起来（P269），并要求通过定向金融制裁预防和阻断大规模杀伤性武器扩散融资（P147）。题干四个选项中，只有B同时包含「利用金融系统转移资金」和「获取大规模杀伤性武器或其部件」两个要素，完整连接了融资活动与WMD扩散目的。A是关键基础设施攻击，C是跨国犯罪活动扩张，D是为意识形态暴力筹资，均缺少这一组合。因此答案为B。
+
+教材原句："Similarly, jurisdictions should apply targeted financial sanctions to prevent and disrupt the financing of the proliferation of WMDs."
+
+## 【错误项分析】
+
+- **A 错误**：选项A描述的是敌对政府对关键基础设施的网络攻击威胁，属于网络安全或关键基础设施保护范畴。教材中虽然有网络安全风险的相关讨论，但其定位是金融机构与第三方合作时面临的运营风险，与扩散融资的「大规模杀伤性武器」核心要素没有交集，题干条件更直接匹配B而非A。
+- **C 错误**：选项C描述的是跨国犯罪组织将活动范围扩大到人口贩运和腐败等非法活动，这是对跨国犯罪组织（TCO）特征的概括描述。教材确实提到环境犯罪常涉及跨国犯罪组织，人口贩运也可与TCO关联，但这些描述的语境是解释特定上游犯罪的复杂度，并未聚焦于大规模杀伤性武器扩散这一独特威胁。题干对扩散融资的聚焦度远高于对TCO一般犯罪活动的描述。
+- **D 错误**：选项D描述的是通过非法暴力为意识形态目标筹集资金的网络，这更接近恐怖融资（terrorism financing）的定义特征。教材在讨论恐怖融资时提到恐怖分子利用各种渠道转移和存储资金，其动机是意识形态驱动的暴力行为。扩散融资的核心是资金用于获取大规模杀伤性武器本身，而非为意识形态暴力行为筹集资金，两者的根本目的不同，题干条件更吻合B对扩散融资的定义。
+
+## 【易错提醒】
+
+扩散融资与恐怖融资的区分点是资金用途：本题B明确指向获取WMD及其部件（P269），D则指向为意识形态暴力筹资。两者都可能使用个人和实体网络，不能只看筹资主体，必须看资金的最终目的。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002669`、`v7u_N001351`
+
+### `v7u_N002669`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 章节：Types of risk assessment > Types of risk assessment within an organization
+- 页码：PDF第274页 / 书内第269页
+- 中文要点：扩散融资指核、化学或生物武器及其运载工具和相关材料的转让和出口
+- 英文原文：Proliferation financing refers to the transfer and export of nuclear, chemical, or biological weapons, their delivery means, and related materials.
+
+### `v7u_N002670`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 章节：Types of risk assessment > Types of risk assessment within an organization
+- 页码：PDF第274页 / 书内第269页
+- 中文要点：防扩散风险指有意或无意助长大规模杀伤性武器扩散的风险
+- 英文原文：Non-proliferation risk refers to contributing to the proliferation of these weapons of mass destruction (WMD) wittingly or unwittingly.
+
+### `v7u_N001351`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：各国应实施定向金融制裁以防止和阻断大规模杀伤性武器扩散融资
+- 英文原文：Similarly, jurisdictions should apply targeted financial sanctions to prevent and disrupt the financing of the proliferation of WMDs.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+扩散融资主要指为大规模杀伤性武器及其运载工 具的扩散提供资金支持.选项B准确描述了扩散 融资的威胁,即利用金融系统转移资金,以获取 大规模杀伤性武器或其部件的个人和实体网络. 选项A描述的是复杂攻击手段对基础设施的威 胁,与扩散融资无关;选项C涉及跨国犯罪组织 扩大非法活动范围,与扩散融资不直接相关;选 项D涉及为意识形态目标筹集资金,属于恐怖主 义融资,但未特指大规模杀伤性武器扩散.因 此,B选项最能描述扩散融资的主要威胁.易错 提醒:注意区分恐怖主义融资和扩散融资的不同 侧重点.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+ructureandSectors,includingfinance, healthcareandenergy Networksofindividualsandentitiesex ploitingfinancialsystemstomovefund sthatwillbeUsedtoacquireweapons ofmassdestructionortheircomponen ts Transnationalcriminalorganizationse xpandingtheirengagementintomore C variedtypesofllicitactivities,includin ghumantraffickingandcorruption Networksofindividualsandentitiesrai singfundstofurtherproliferatetheirid D eologicalGoalswhollyorinpartthroug hunlawfulactsofforceorviolence 正确答案B您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

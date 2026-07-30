@@ -1,0 +1,116 @@
+# v7_q_000226
+
+教材章节：未映射
+
+题型：multiple
+
+题干：政府金融情报机构(FIU)的职责有哪些？(选择三项.)
+
+英文题干：What are the roles of a government Financial Intelligence Unit (FIU)? (Select three.)
+
+选项：
+
+- A. 向外国司法系统传播可疑交易和可疑活动报告的分析结果,以增强其反洗钱和反恐融资的调查及起诉工作.
+  English: Disseminate analysis of suspicious transaction and suspicious activity reports to foreign judicial systems to enhance their anti-money laundering and terrorist financing investigations and prosecutions.
+- B. 接收报告机构或义务机构提交的可疑交易和可疑活动报告
+  English: Receive reports of suspicious transactions and suspicious activities from reporting institutions or obliged institutions.
+- C. 向当地执法机构和外国金融情报机构传播可疑交易和可疑活动报告的分析结果,以打击洗钱活动
+  English: Disseminate the analysis of suspicious transaction and suspicious activity reports to local law enforcement agencies and foreign FIUs to combat money laundering.
+- D. 对从报告机构或义务机构收到的所有可疑交易和可疑活动报告进行调查,并在适当情况下提起诉讼
+  English: Investigate all suspicious transaction and suspicious activity reports received from reporting institutions or obliged institutions and prosecute cases where appropriate.
+- E. 分析从报告机构或义务机构收到的所有可疑交易和可疑活动报告
+  English: Analyze all suspicious transaction and suspicious activity reports received from reporting institutions or obliged institutions.
+
+## 【AI答案】
+
+B、C、E
+
+## 【考点】
+
+FIU接收、分析、传播可疑报告的三大核心职能
+
+## 【核心解析】
+
+国家金融情报机构（FIU）的核心职能是接收、分析和传播金融情报（P228）。题干问FIU的职责，就是要找同时具备这三个动作的选项。选项B「接收」报告实体提交的可疑报告，选项E「分析」这些报告，选项C将分析结果「传播」给国内执法机构和外国FIU——三项合在一起，恰好完整覆盖了教材对FIU的职能定义。FATF也要求各辖区设立FIU来完成这三件事（P231），三者属于同一组不可分割的职责链条。
+
+教材原句："National FIUs receive, analyze, and disseminate financial intelligence."（P228）
+
+## 【错误项分析】
+
+- **A 错误**：教材指出FIU应向外国FIU传播金融情报，而非直接向「外国司法系统」传播（P231）。选项A用「外国司法系统」替代了「外国FIU」，传播对象发生了偏移，不如选项C中「外国金融情报机构」的表述更为准确。
+- **D 错误**：调查和起诉是执法机构的职责而非FIU的职责。教材说明FIU进行的是操作分析，目的是为执法机构提供可用于调查的情报，FIU传播的情报包有时仅供情报使用，不能直接作为法庭证据（P231-P232）。选项D将执法职能归入FIU，不如B、C、E更吻合教材对FIU「情报枢纽」而非「执法主体」的定位。
+
+## 【易错提醒】
+
+FIU的核心职责是接收、分析和传播金融情报（P228、P231），而不是直接调查、逮捕或起诉。涉及调查、起诉和逮捕的行动通常由执法或检察机关负责。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002218`
+
+### `v7u_N002218`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第233页 / 书内第228页
+- 中文要点：国家金融情报机构接收、分析和传播金融情报
+- 英文原文：National FIUs receive, analyze, and disseminate financial intelligence.
+
+### `v7u_N002250`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：FATF要求各司法辖区设立FIU以接收、分析和传播金融情报
+- 英文原文：FATF requires that jurisdictions have FIUs to receive, analyze, and disseminate financial intelligence.
+
+### `v7u_N002258`
+
+- 用于：选项A、选项D
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+### `v7u_N002253`
+
+- 用于：选项A
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：国家FIU根据操作分析向执法部门传播情报包
+- 英文原文：National FIUs disseminate intelligence packages to law enforcement based on their operational analysis.
+
+### `v7u_N002260`
+
+- 用于：选项A、选项D
+- 章节：未标注
+- 页码：PDF第237页 / 书内第232页
+- 中文要点：FIU向执法部门传播的材料通常仅供情报使用，不能直接作为法庭证据
+- 英文原文：Often, the material that FIUs disseminate to law enforcement is for intelligence use only, meaning that it usually cannot be used directly as evidence in court proceedings.
+
+### `v7u_N002252`
+
+- 用于：选项D、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：操作分析为执法部门提供可用于调查洗钱、恐怖融资和上游犯罪的情报
+- 英文原文：Operational analysis provides law enforcement with intelligence it can use for investigations into money laundering, terrorist financing, and predicate offenses. The intelligence can ultimately lead to disruptions, including arrests, prosecutions, convictions, and asset recovery.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C、E
+- 中文参考答案：B、C、E
+
+### 中文参考解析
+
+政府金融情报机构(FIU)的核心职责包括:接 收报告机构或义务机构提交的可疑交易和可疑活 动报告(B项),这是其获取信息的主要途径; 分析所有接收到的可疑交易和活动报告(E 项),通过专业手段挖掘潜在风险;向当地执法 机构和外国金融情报机构传播分析结果,以打击 洗钱活动(C项),实现信息共享与协作.A项 中向外国司法系统传播分析结果并非其主要职 丰
+
+- 英文参考答案：B、C、E
+
+### 英文参考解析
+
+金融情报中心(FIU)在反洗钱和反恐怖融资中 扮演关键角色.选项B正确,因其负责接收报告 机构或义务机构提交的可疑交易和活动报告;选 ☆
+
+### 答案冲突提示
+
+- 未发现答案冲突。

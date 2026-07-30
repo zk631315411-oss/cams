@@ -1,0 +1,65 @@
+# v7_q_000320
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪种公司结构由于透明度降低而具有更高的洗钱风险？(选择三项.)
+
+英文题干：Which of the following corporate structures present a higher money laundering risk because of reduced transparency? (Select Three.)
+
+选项：
+
+- A. 在外国司法管辖区注册成立的有限责任公司
+  English: A limited liability company incorporated in a foreign jurisdiction
+- B. 一家在避税天堂管辖区没有任何业务活动的私营公司
+  English: A private company that has no activity in a tax haven jurisdiction
+- C. 在当地司法管辖区设有代名股东和董事的公司
+  English: A company with nominee shareholders and directors in a local jurisdiction
+- D. 一家在避税天堂司法管辖区注册成立的无记名股票公司
+  English: A company with bearer shares incorporated in a tax haven jurisdiction
+- E. 一家在设有严格保密法的避税天堂司法管辖区注册成立的私人投资公司
+  English: A private investment company incorporated in a tax haven jurisdiction with strict secrecy laws
+
+## 【AI答案】
+
+C、D、E
+
+## 【考点】
+识别因受益所有权透明度下降而增加洗钱风险的公司结构。
+
+## 【核心解析】
+题干要求选择三种因透明度降低而具有较高风险的结构。C的代名股东和董事可能把实际控制人隐藏在名义人之后（P127）；D的不记名股票以持有为权利基础，难以确认真实持有人（P55）；E同时包含避税天堂、私人投资公司和严格保密法，进一步削弱受益所有权信息的可得性（P71）。因此答案为C、D、E（FATF建议24、25）。
+
+A仅说明在外国司法管辖区注册，外国注册本身不意味着透明度必然降低；B虽然提到避税天堂，但“没有任何业务活动”不是受益所有权被遮蔽的直接机制。
+
+## 【错误项分析】
+- **A**：跨境注册可能增加尽调复杂度，但没有给出保密法、代名人或不记名股票等具体透明度障碍。
+- **B**：无业务活动可能提示空壳风险，但单独不足以证明受益所有权信息不可得。
+
+## 【易错提醒】
+要区分“外国注册/避税天堂标签”与真正造成透明度下降的机制；优先识别代名安排、不记名股票和保密法（P55、P71、P127）。
+
+## 【教材原文依据】
+- 核心引用单元：`v7u_N001127`；页码：P55、P71、P127。
+- 外部依据：FATF《Recommendations》建议24（法人受益所有权透明度）和建议25（法律安排受益所有权透明度），URL：https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html（访问日期：2026-07-25）。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、D
+- 中文参考答案：A、C、D
+
+### 中文参考解析
+
+洗钱风险与公司结构透明度密切相关.选项A, 在外国司法管辖区注册的有限责任公司,可能因 跨国监管差异导致信息不透明,增加洗钱风险. 选项C,设有代名股东和董事的公司,实际控制 人身份被隐藏,透明度低,易被用于洗钱.选项 D,在避税天堂注册的无记名股票公司,股票持 有者身份无需登记,资金流向难以追踪,洗钱风 险极高.选项B和E虽涉及避税天堂,但无业务 活动或严格保密法本身不直接等同于高洗钱风 确答案为ACD.
+
+- 英文参考答案：C、D、E
+
+### 英文参考解析
+
+本题考查因透明度降低而带来更高洗钱风险的公
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,C,D，英文=C,D,E
+- 盲判与题库最终参考答案冲突：盲判=C,D,E，题库最终=A,C,D

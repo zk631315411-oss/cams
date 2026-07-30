@@ -1,0 +1,112 @@
+# v7_q_000039
+
+教材章节：未映射
+
+题型：single
+
+题干：为协助调查一起跨境洗钱案件，作为埃格蒙特集团成员的金融情报机构(FIU)可以:
+
+英文题干：To provide aid in investigating a cross-border money laundering case, a Financial Intelligence Unit (FIU) that is a member of the Egmont Group can:
+
+选项：
+
+- A. 直接与另一国的金融机构联系并分享与调查相关的信息
+  English: Directly contact financial institutions in another country and share information pertinent to the investigation
+- B. 直接与其他国家的金融情报机构(FIU)联系并分享与调查相关的信息
+  English: Directly contact other FIUs in another country and share information pertinent to the investigation
+- C. 授权其执法调查人员协助另一国正在进行的重大调查
+  English: Deputize its law enforcement investigators to assist in a material ongoing investigation in another country
+- D. 协助另一国执法部门进行重大在办案件的调查
+  English: Assist law enforcement in another country with a material ongoing investigation
+
+## 【AI答案】
+
+B
+
+> **需人工复核**
+>
+> - 答案冲突：解析{'B'} vs 题库{'D'}
+
+## 【考点】
+
+埃格蒙特集团框架下FIU的核心职能：FIU对FIU的情报交换
+
+## 【核心解析】
+
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间的合作与情报共享以打击洗钱等金融犯罪（P167）。根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报（P231），且FIU可与其他国家的FIU建立联系（P231）。题干问「作为埃格蒙特集团成员的FIU」在协助跨境洗钱调查时能做什么——关键词是「埃格蒙特集团成员」和「FIU」。教材框架下埃格蒙特集团直接连接的是各国FIU，而非金融机构或执法部门。因此FIU通过埃格蒙特网络直接与另一国FIU联系并分享情报是集团设计的最核心、最直接的协作方式。选项B的「直接联系其他国家的FIU」完整吻合这一框架。
+
+教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜主体或阶段错配**：埃格蒙特集团的网络连接的是各国FIU而非金融机构（P167）。题干场景下，FIU更应通过对方国家的FIU间接获取信息，而非直接联系另一国金融机构，后者超出了埃格蒙特框架下FIU之间情报交换的典型路径。
+- **C 错误（题干对照）｜主体或阶段错配**：某些辖区FIU可同时承担执法机构角色（P229），但题目问的是「作为埃格蒙特集团成员的FIU」能做什么——集团的职能聚焦于FIU之间的情报交换与协作，授权执法调查人员跨境行动更属于司法互助或执法合作的范畴，不如B直接匹配埃格蒙特的核心使命。
+- **D 错误（教材直接依据）｜主体或阶段错配**：FIU向执法部门传播情报是其国内职能（P231），但直接协助另一国执法部门进行案件调查并非埃格蒙特集团框架下FIU的典型跨境职能。教材描述的跨境合作路径是FIU→FIU→执法部门，而非FIU直接跳至另一国执法机构，选项B的FIU对FIU路径更吻合。
+
+## 【易错提醒】
+
+埃格蒙特集团搭建的是FIU对FIU的合作网络（P167），信息在FIU之间流通后再由各自FIU向国内执法部门传播（P231）。跨境场景下的协作链路是「FIU→外国FIU→外国执法部门」，而非FIU直接对外国执法部门或金融机构行动。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002258`
+
+### `v7u_N001549`
+
+- 用于：核心解析、选项A、选项D、易错提醒
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N002258`
+
+- 用于：核心解析、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+### `v7u_N002257`
+
+- 用于：核心解析、选项A
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：FIU从报告实体、国内来源及其他国家FIU获取信息
+- 英文原文：FIUs obtain SARs and other information from reporting entities and a range of other domestic sources. FIUs have access to other FIUs internationally.
+
+### `v7u_N002259`
+
+- 用于：选项D、易错提醒
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：FIU可将跨境数据纳入操作分析并传播给执法部门采取行动
+- 英文原文：FIUs can incorporate this data into operational analysis relating to cross-border money laundering and disseminate it to law enforcement for action.
+
+### `v7u_N002267`
+
+- 用于：选项D
+- 章节：Cooperation between authorities > Case study: Law enforcement and FIU cooperation
+- 页码：PDF第237页 / 书内第232页
+- 中文要点：Europol是分析犯罪趋势、协调国际执法行动的欧盟机构
+- 英文原文：Europol is an EU agency that analyzes crime trends in the EU, supports member states’ investigations, and coordinates law enforcement activity that requires an international approach.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+埃格蒙特集团是一个金融情报机构的全球性组 织,旨在促进成员间的安全信息交流与合作.其 核心职能是通过其指定的金融情报机构(FIU) 之间的正式渠道,交换金融情报以打击洗钱和恐 怖融资.因此,作为埃格蒙特集团成员的FIU, 其标准合作方式是与其他国家的金融情报机构 (即题目中的“另一国执法部门”,特别是其FIU或 相关执法单位)就重大案件进行调查协助和信息 案件的调查”最符合这一正式合作框架.选项A和 B涉及与非对口单位(金融机构、流感监测单 位)直接联系,通常不被允许或不是标准流程; 选项C提及“授权其执法调查人员协助”,这可能 超出FIU通常的直接权限(FIU主要是情报分析单 位,而非直接执法)
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+EgmontGroup成员金融情报机构(FIU)的核心 职能是通过成员国间直接的信息交换机制,协同 打击洗钱和恐怖融资.根据EgmontGroup确立 的原则,成员国FIU之间可通过安全网络 (EgmontSecureWeb)直接沟通,共享与调查 相关的情报.选项A涉及跨境直接联系境外金融 机构,通常需遵循当地法律或通过当地FIU协 调;选项C、D涉及跨境执法权限,需依托司法 互助或其他正式协议.Egmont框架下,FIU主要 角色是情报协作,而非执法行动的直接介入.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=D，英文=B
+- 盲判与题库最终参考答案冲突：盲判=B，题库最终=D

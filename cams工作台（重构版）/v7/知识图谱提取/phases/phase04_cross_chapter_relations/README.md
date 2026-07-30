@@ -84,7 +84,7 @@ outputs/p4_move_to_p5_candidates.jsonl
 
 P4C 只给已确认的 P4 关系绑定 unit 证据，不新增关系、不重判关系类型、不修改方向。
 
-输入：P4B review 后的 80 条关系，以及 source/target CP 的 P2B unit edges。
+输入：P4B review 后的正式关系，以及 source/target CP 的 P2B unit edges。当前 `p4_reviewed_cross_chapter_relations.jsonl` 为 1,404 条；本文其他 80 条口径属于早期抽样阶段。
 
 输出字段：
 
@@ -122,7 +122,7 @@ prompts/p4b_cross_chapter_relation_v1.md
 prompts/p4c_relation_evidence_binding_v1.md
 inputs/
 outputs/
-  p4_reviewed_cross_chapter_relations.jsonl           # 正式 P4 关系（80 条）
+  p4_reviewed_cross_chapter_relations.jsonl           # 当前正式 P4 关系（1,404 条）
   p4_move_to_p5_candidates.jsonl                       # 转 P5 候选
   p4c_reviewed_cross_chapter_relation_evidence.jsonl   # P4C 证据绑定
   p4_formal_all_chapters_top300_batch5x20_v1_*.jsonl   # 全书 Top300 批处理中间产物

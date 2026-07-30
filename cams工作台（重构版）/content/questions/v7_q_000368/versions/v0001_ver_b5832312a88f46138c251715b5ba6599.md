@@ -1,0 +1,56 @@
+# v7_q_000368
+
+教材章节：未映射
+
+题型：multiple
+
+题干：如果货币服务企业(MSB)的客户出现以下两种情况,则其带来的金融犯罪风险最大,需要加以防范:(选择两项.)
+
+英文题干：Money services business (MSB) customers present the greatest financial crime risks to mitigate if they: (Select two.)
+
+选项：
+
+- A. 处理客户下游客户的活动
+  English: Process the activity of a customer's customer
+- B. 进行大量低价值交易
+  English: Conduct a large volume of low-value transactions
+- C. 要求注册
+  English: Require registration
+- D. 经常进行跨境转账
+  English: Often send cross-border transfers
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+识别 MSB 客户的嵌套客户活动和跨境汇款风险。
+## 【核心解析】
+A项所说的「处理客户下游客户的活动」，是指嵌套或多层客户关系，增加了实际资金发送方、接收方和受益所有人的识别难度；D频繁跨境转账则涉及大规模跨境汇款和不同司法管辖区的监管差异（P95）。B虽然大量低价值交易也可能需要监控，但在本题的「最大风险」比较中，不如嵌套客户和跨境活动直接。
+## 【错误项分析】
+- **B**：大量低价值交易可能构成结构化或现金追踪风险，但题目考查的是更高层级的客户结构和跨境暴露。
+- **C**：要求注册是合规要求，不是客户带来的金融犯罪风险。
+## 【易错提醒】
+A项的“客户的客户”指客户的下游客户或嵌套客户，应结合上下游关系理解其识别和追踪难度（P95）。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N000835`；页码：P95。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+货币服务企业(MSB)防范金融犯罪风险时,需 重点关注客户行为特征.选项A“处理客户客户的 流向,增加洗钱风险.选项D“经常进行跨境转 账”,因跨境交易涉及不同监管体系,易利用监管 漏洞转移资金,增加恐怖融资风险.选项B“进行 大量低价值交易”虽可能涉及洗钱,但风险相对较 低;选项C“要求注册”是合规行为,与风险无直 接关联.因此,AD两项风险最大,需重点防 范.
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+翻译 -[RisksandMethodsofMoneyLaunderi 多选 ngandTerroristFinancing]Moneyservicesbusi ness(MSB)customerspresentthegreatestfina ncialcrimeriskstomitigateifThey:(SelectTw 0.) Processtheactivityofacustomer'scu stomer Conductalargevolumeoflow-valuetr B ansactions Requireregistration C Oftensendcross-bordertransfers 正确答案AD您选择/ 试题详解
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=B,D，题库最终=A,D

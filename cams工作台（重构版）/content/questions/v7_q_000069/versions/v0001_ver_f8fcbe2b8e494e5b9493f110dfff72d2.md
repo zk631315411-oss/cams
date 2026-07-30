@@ -1,0 +1,113 @@
+# v7_q_000069
+
+教材章节：未映射
+
+题型：single
+
+题干：在客户开户期间，哪一种外部数据源最可靠，可用于核实受益所有权？
+
+英文题干：Which external data source is most reliable for verifying beneficial ownership during onboarding?
+
+选项：
+
+- A. 不良媒体数据库
+  English: Adverse media databases
+- B. 非政府数据存储库中的公开可用信息
+  English: Publicly available information on non-government data repositories
+- C. 信用咨询机构
+  English: Credit reference agencies
+- D. 实体注册成立国可获取的受益所有权登记册
+  English: Beneficial ownership registers available in the country of incorporation of the entity
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分各外部数据源对核实受益所有权的直接性与可靠性
+
+## 【核心解析】
+
+核实受益所有权需要确认谁最终拥有或控制该实体。教材列举外部数据源时，将商业登记册和最终受益所有人数据库（Business registries, UBO databases）列为与此直接相关的数据类别（P467），并将受益所有权登记册列为可用的外部来源（P462）。因此，在给定选项中，实体注册成立国可获取的受益所有权登记册与核实目标最直接，通常也比不良媒体、一般公开信息或信用资料更具结构化和官方属性，D项最合适。登记册信息仍可能存在过时、自报不实或覆盖不全等局限，实际尽调中仍应根据风险使用其他可靠来源进行交叉核验。
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：负面媒体数据库（Adverse media databases）主要用于筛查客户是否涉及负面新闻、法律诉讼或金融犯罪调查（P312），而非直接核实受益所有权结构。其功能是发现风险信号，不提供所有权的权威证明，与题干「核实受益所有权」的直接目标匹配度不如官方登记册。
+- **B 错误（教材直接依据）｜范围或程度偏差**：非政府数据存储库（Non-government data repositories）中的公开信息虽属于外部数据，但来源非官方，信息准确性和完整性缺乏政府背书。教材将「公开可用信息」列为外部数据的泛称（P466），但核实受益所有权需要的是精准的官方记录，泛化的公开信息不如专门登记册可靠。
+- **C 错误（题干对照）｜题干要素不匹配**：信用咨询机构（Credit reference agencies）在教材中与信贷决策相关，其职责是评估客户信用状况、收集信用数据（P263），不涉及受益所有权信息的维护或核实。题干场景与信用评估无关，缺失受益所有权这一核心要素。
+
+## 【易错提醒】
+
+容易混淆「负面媒体数据库」与「受益所有权登记册」的用途——负面媒体用于识别风险信号（如客户是否卷入调查），而受益所有权登记册唯一且直接地回答「谁最终拥有该实体」这一问题。核实所有权首选官方登记册，负面媒体是辅助性质的风险筛查工具。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004662`
+
+### `v7u_N004662`
+
+- 用于：核心解析、易错提醒
+- 章节：Data as an input for solutions > Internal versus external data
+- 页码：PDF第472页 / 书内第467页
+- 中文要点：外部数据来源之一：商业登记与最终受益所有人数据库
+- 英文原文：Business registries, UBO databases
+
+### `v7u_N004613`
+
+- 用于：核心解析、选项B
+- 章节：Data as an input for solutions > Understanding your data
+- 页码：PDF第467页 / 书内第462页
+- 中文要点：外部来源包括其他组织持有的客户信息，如负面媒体报道和受益所有人登记册
+- 英文原文：External sources refer to information that other organizations have about a given organization's customers, such as data from adverse media reports and beneficial ownership registers.
+
+### `v7u_N004664`
+
+- 用于：选项A
+- 章节：Data as an input for solutions > Internal versus external data
+- 页码：PDF第472页 / 书内第467页
+- 中文要点：外部数据来源之一：负面媒体数据库
+- 英文原文：Adverse media databases
+
+### `v7u_N004671`
+
+- 用于：选项A
+- 章节：Data as an input for solutions > Internal versus external data
+- 页码：PDF第472页 / 书内第467页
+- 中文要点：第一种外部数据：特定客户数据，包括负面媒体、法院裁决、商业登记、UBO数据库等
+- 英文原文：The first type is data specific to a particular customer. This includes adverse media reports, court rulings, business registries, UBO databases, voter registers, and other publicly available sources. This data helps organizations complete appropriate due diligence.
+
+### `v7u_N004660`
+
+- 用于：选项B
+- 章节：Data as an input for solutions > Internal versus external data
+- 页码：PDF第471页 / 书内第466页
+- 中文要点：公开可用信息作为外部数据来源的标签。
+- 英文原文：Publicly available information
+
+### `v7u_N003105`
+
+- 用于：易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：负面媒体：客户与负面报道、法律诉讼、监管罚款或金融犯罪调查相关
+- 英文原文：Adverse media: Customers linked to adverse media reports, undergoing legal proceedings, regulatory fines, or financial crime investigations
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在客户开户期间,核实受益所有权需依赖权威、 准确的数据源.选项A“不良媒体数据库”信息可能 不准确且非权威:选项B“非政府数据存储库的公 开可用信息"缺乏权威性:选项C“信用咨询机构” 虽提供信用信息,但非专门针对受益所有权;选 项D“在实体注册成立国可获取的受益所有权登记 册”为官方登记信息,具有权威性和准确性,是核 实受益所有权最可靠的外部数据源.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+在客户尽职调查中,验证最终受益所有权需依赖
+
+### 答案冲突提示
+
+- 未发现答案冲突。

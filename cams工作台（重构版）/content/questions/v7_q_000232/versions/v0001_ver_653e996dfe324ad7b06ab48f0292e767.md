@@ -1,0 +1,111 @@
+# v7_q_000232
+
+教材章节：未映射
+
+题型：multiple
+
+题干：信托和公司服务提供商（TCSP）应通过以下方式应对洗钱风险：（选择三项。）
+
+英文题干：Trust and company service providers (TCSPs) should address money laundering risk by: (Select three.)
+
+选项：
+
+- A. 在为客户处理交易时建立双重控制和质量保证措施
+  English: Establishing dual controls and quality assurance practices when processing transactions for the client
+- B. 考虑当客户通过位于另一司法管辖区的另一家信托和公司服务提供商（TCSP）下达指令时，可能需要采取哪些额外的保障措施
+  English: Considering what additional safeguards may be required when client instructions are given through another TCSP located in another jurisdiction
+- C. 要求客户完成并向所在司法管辖区的金融情报机构（FIU）提交反洗钱风险自我评估表
+  English: Requiring the client to complete and submit an AML risk self-assessment to the jurisdiction's Financial Intelligence Unit (FIU)
+- D. 从客户处收集并记录信息，以了解法律实体的目的，以及管理人员和最终受益所有人的身份。
+  English: Gathering and recording information from clients to understand the purpose of the legal entity, as well as the identity of managers and ultimate beneficial owners
+- E. 建立相关程序，以记录信托和公司服务提供商（TCSP）作为客户注册官的依据，并保存相关参与记录
+  English: Establishing procedures to document the basis on which the TCSP will act as a registered officer for the client and retaining records of that involvement
+- F. 对客户进行现场评估以审查其内部控制措施
+  English: Conducting an onsite evaluation of the client to assess internal controls
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+TCSP固有洗钱风险的对应控制措施
+
+## 【核心解析】
+
+信托与公司服务提供商（TCSP）的核心洗钱风险在于其提供的服务可能被用于掩盖真实所有权和非法资金来源（P120）。例如，TCSP常提供名义服务，由第三方代表客户担任董事或股东，这便增加了识别最终受益所有人的难度（P127）。因此，应对TCSP的洗钱风险，需围绕穿透所有权结构、记录商业实质和管控跨境风险这三个核心来构建控制措施。选项D直接对应穿透所有权的核心要求：通过收集并记录法律实体的目的、管理人员及最终受益所有人身份，来打破TCSP结构可能造成的匿名性。选项E对应记录商业实质：由于犯罪分子可能利用名义董事和股东隐藏身份（P127），TCSP必须建立程序记录其担任客户注册代表的依据并保存参与记录，以确保有据可查，防止服务被滥用作掩护。选项B对应管控跨境风险：教材指出离岸公司有限的公开记录和复杂的国际交易流会加剧洗钱风险，使TCSP成为重要守门人。当客户通过另一司法管辖区的TCSP下达指令时，正是这种风险最高的国际复杂结构场景，因此必须考虑额外的保障措施来应对不同司法管辖区之间信息不透明和监管差异带来的挑战。
+
+教材原句："Trust or company service providers: These providers create structures that obscure beneficial ownership and the origin of funds, making them attractive to individuals seeking to launder money."（P120）
+
+## 【错误项分析】
+
+- **A 错误**：题干问的是TCSP「应对洗钱风险」的特定举措，而A项描述的「双重控制和质量保证措施」属于金融机构内部通用的合规运营流程（P249），它保障的是某个操作或流程本身的准确性，而非直接针对TCSP业务中被滥用于掩盖所有权的独特风险，因此匹配度不如B、D、E直接。
+- **C 错误**：报告可疑交易是金融机构对金融情报机构（FIU）的义务，而非客户对FIU的义务。要求客户自己向FIU提交反洗钱风险自我评估表在逻辑上与反洗钱合规的基本责任主体要求相悖。
+- **F 错误**：对客户进行现场评估以审查其内部控制措施，是金融机构对高风险客户采取加强尽职调查（EDD）的潜在手段之一，比如安排「定期审计和合规会议」（P313）。但这属于对已有客户关系的持续监控措施，而非TCSP行业为应对其业务固有风险所应建立的针对性的核心程序，B、D、E更直接地根植于TCSP业务自身的特点。
+
+## 【易错提醒】
+
+「加强尽职调查（EDD）」的某些措施（如定期审计）与TCSP需「建立程序记录」的义务容易混淆。区别在于，前者是金融机构对高风险客户的持续监督，主体是金融机构（P313）；后者是TCSP为预防其名义服务被利用而必须做的事前程序性记录，主体是TCSP自身（P120、P127）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001126`
+
+### `v7u_N001126`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Trust and company service provider and company secretary sector risks
+- 页码：PDF第132页 / 书内第127页
+- 中文要点：信托与公司服务提供商常提供名义服务，由第三方代表客户担任董事、高管或股东。
+- 英文原文：TCSPs often offer nominee services, where they provide third parties to act on behalf of customers in ownership and management roles, such as directors, officers, or shareholders.
+
+### `v7u_N001070`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：信托或公司服务提供商设立的结构会掩盖受益所有人和资金来源
+- 英文原文：Trust or company service providers: These providers create structures that obscure beneficial ownership and the origin of funds, making them attractive to individuals seeking to launder money. Those structures complicate regulatory oversight and increase the risk of exploitation.
+
+### `v7u_N001124`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第131页 / 书内第126页
+- 中文要点：公司秘书若未能审查关键利益相关者或识别公司结构与交易中的红旗信号信号，则洗钱风险升高。
+- 英文原文：For secretaries, heightened money laundering risks arise if they fail to vet key stakeholders or identify red flags in corporate structures and transactions.
+
+### `v7u_N002452`
+
+- 用于：选项A
+- 章节：Three lines of defense > Role of quality control and quality assurance
+- 页码：PDF第254页 / 书内第249页
+- 中文要点：第一道和第二道防线通常执行质量控制（QC）和质量保证（QA），QC检查产出质量，QA评估流程有效性。
+- 英文原文：Both the first and second lines of defense typically perform quality control (QC) and quality assurance (QA). QC focuses on inspecting the quality of outputs, while QA evaluates how effective the organization's processes are, especially in compliance and risk management.
+
+### `v7u_N003112`
+
+- 用于：易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第318页 / 书内第313页
+- 中文要点：定期审计和合规会议，监督客户内部控制、系统和合规报告的有效性
+- 英文原文：Regular audits and compliance meetings scheduled between the customer and financial institution to oversee and ensure the customer’s internal controls, systems, and reporting of compliance issues are adequate and effective.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+信托和公司服务提供商(TCSP)需有效应对洗 钱风险.选项B,考虑客户通过其他TCSP下达 指令时的额外保障措施,有助于识别潜在风险; 选项D,从客户处收集并记录信息,以了解法律 实体目的及管理人员和最终受益所有人身份,是 客户尽职调查的核心要求;选项E,建立相关程 序记录信托公司作为客户注册代表的依据,并保 存参与记录,有助于追踪交易链条,确保合规 性.因此,正确答案为BDE.
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+中 O Requiring theclienttocompleteands ubmitanAMLriskself-assessmenttot hejurisdiction'sFinancial Intelligence Unit(FIU) Gatheringandrecordinginformationfr omclientstounderstandthepurpose ofthelegalentity,Aswellastheidentit yofmanagersandultimatebeneficial owners Establishingprocedurestodocumentt hebasisonwhichtheTCSPwillactas aregisteredOfficerfortheclientandr etainingrecordsofthatinvolvement Conductinganonsiteevaluationofthe F clienttoassessinternalcontrols 正确答案BDE您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

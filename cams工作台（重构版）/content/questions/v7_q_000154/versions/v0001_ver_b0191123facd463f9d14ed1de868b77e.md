@@ -1,0 +1,105 @@
+# v7_q_000154
+
+教材章节：未映射
+
+题型：single
+
+题干：欧盟《第六项反洗钱指令》(6AMLD):
+
+英文题干：The EU's 6th Anti-Money Laundering Directive (6AMLD):
+
+选项：
+
+- A. 将反洗钱监管范围扩大至众筹平台和职业足球俱乐部
+  English: Extended AML oversight to crowdfunding platforms and professional football clubs
+- B. 取消了要求欧盟委员会进行风险评估的规定
+  English: Eliminated the requirement for the European Commission to conduct a risk assessment
+- C. 设立了一个欧盟中央监管机构来打击洗钱活动
+  English: Created a central EU watchdog to combat money laundering
+- D. 加强有关提交至中央受益所有权登记册的数据准确性的规定
+  English: Strengthened provisions relating to the accuracy of data submitted to central beneficial ownership registries
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分欧盟反洗钱立法包内各法规的职能归属（6AMLD与AMLR/AMLA-R）
+
+## 【核心解析】
+
+教材指出，6AMLD要求实施全面的客户尽职调查、维护受益所有权信息中央登记册，并开展国家及超国家层面的风险评估，因此受益所有权中央登记册属于6AMLD规范的事项（P190）。关于登记数据的具体质量要求，Directive (EU) 2024/1640第10(7)条进一步规定，中央登记册中的受益所有权信息必须充分、准确并保持最新（adequate, accurate and up-to-date），成员国还应建立相应机制，包括提交后的及时核验和此后的定期核验。选项D准确描述了这一强化要求，因此正确。
+
+补充法规原文（Directive (EU) 2024/1640, Article 10(7)）："Member States shall ensure that the beneficial ownership information held in the central registers is adequate, accurate and up-to-date, and shall put in place mechanisms to that effect."
+
+## 【错误项分析】
+
+- **A 错误**：教材将职业足球俱乐部、足球经纪人和投资移民运营商纳入义务实体范围的规定归入欧盟反洗钱条例（AMLR），而不是6AMLD（P190）。选项同时提到的众筹平台也未得到本段6AMLD教材内容支持，因此A错误。
+- **B 错误**：教材指出，6AMLD仍要求在国家和超国家层面开展风险评估（P190），因此B项所称「取消风险评估要求」与教材描述的制度方向不符。该段内容足以说明风险评估机制仍然存在，但没有进一步说明具体由哪个欧盟机构实施。
+- **C 错误**：教材明确指出，设立欧盟反洗钱管理局（AMLA）的是AMLA-R（Regulation (EU) 2024/1620），并非6AMLD（P191），因此C错误。
+
+## 【易错提醒】
+
+欧盟反洗钱一揽子计划中的文件分工不同：6AMLD在本题相关教材中涉及客户尽职调查、风险评估和受益所有权登记册（P190）；AMLR扩展义务实体范围（P190）；AMLA-R负责设立欧盟反洗钱管理局（P191）。看到「设立AMLA」应对应AMLA-R，看到「扩大义务实体范围」应优先考虑AMLR；本题的登记册数据准确性要求属于6AMLD。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001806`
+
+### `v7u_N001806`
+
+- 用于：核心解析、选项B、易错提醒（支持中央登记册及国家、超国家层面的风险评估；不直接证明数据准确性要求或欧盟委员会这一具体主体）
+- 章节：EU AML/CFT regulatory landscape > EU AML package
+- 页码：PDF第195页 / 书内第190页
+- 中文要点：6反洗钱D要求义务实体实施全面的客户尽职调查、维护受益所有人中央登记册并开展风险评估
+- 英文原文：The 6AMLD requires financial institutions and other obligated entities to implement comprehensive CDD procedures, maintain central registers of beneficial ownership information, and conduct risk assessments on state and supranational levels.
+
+### `v7u_N001813`
+
+- 用于：选项A、易错提醒
+- 章节：EU AML/CFT regulatory landscape > EU AML package
+- 页码：PDF第195页 / 书内第190页
+- 中文要点：反洗钱R将义务实体范围扩展至足球经纪人、职业足球俱乐部和投资移民运营商
+- 英文原文：AMLR expands the perimeter of obliged entities to include soccer agents, professional football clubs, and investment migration operators.
+
+### `v7u_N001815`
+
+- 用于：选项C
+- 章节：EU AML/CFT regulatory landscape > EU AML package
+- 页码：PDF第196页 / 书内第191页
+- 中文要点：反洗钱A-R设立欧盟反洗钱管理局（反洗钱A），负责直接监督部分金融行业义务实体
+- 英文原文：AMLA-R establishes an EU Anti-Money Laundering Authority (AML Authority, known as AMLA in Europe), which is responsible for the direct supervision of selected obliged entities in the financial sector.
+
+### `v7u_N001800`
+
+- 用于：易错提醒
+- 章节：EU AML/CFT regulatory landscape > EU AML package
+- 页码：PDF第195页 / 书内第190页
+- 中文要点：2024年欧盟通过反洗钱立法包“单一规则手册”，包含以下内容。
+- 英文原文：In 2024, the EU adopted a package of AML legislation known as the “Single Rulebook.” The package consists of:
+
+> 补充法规依据：Directive (EU) 2024/1640, Article 10(7)
+
+- 用于：核心解析、选项D
+- 英文原文：Member States shall ensure that the beneficial ownership information held in the central registers is adequate, accurate and up-to-date, and shall put in place mechanisms to that effect.
+- 核验链接：[EUR-Lex官方文本](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024L1640)
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+欧盟《第六项反洗钱指令》(6AMLD)核心在 于强化反洗钱与反恐融资措施.选项A提及扩大 监管范围至众筹平台和职业足球俱乐部,并非 6AMLD重点;选项B取消风险评估要求,与 6AMLD加强风险评估原则相:选项C设立欧盟 中央监管机构打击洗钱,非6AMLD内容;选项D 加强提交至中央受益所有权登记册的数据准确 性,符合6AMLD要求,旨在提高透明度,有效 打击洗钱和恐怖融资.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+欧盟第六反洗钱指令(6AMLD)重点在于完善 反洗钱框架,尤其在数据透明度和监管执行层 面.该指令明确要求成员国确保受益所有权信息 的及时更新与准确性,防止利用虚假信息掩盖非 权登记系统的强化要求,反映了欧盟对关键数据 质量管控的升级.其他选项如A涉及实体的扩展 属于5AMLD范畴,B与指令强化风险评估的宗旨 相,C提及的中央机构未在6AMLD中设立. 来
+
+### 答案冲突提示
+
+- 未发现答案冲突。

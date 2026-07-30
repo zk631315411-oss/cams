@@ -1,0 +1,104 @@
+# v7_q_000085
+
+教材章节：未映射
+
+题型：single
+
+题干：在离岸金融中心（OFC）设立的商业实体会给洗钱活动带来独特风险，因为它们通常：
+
+英文题干：Business entities established in offshore financial centers (OFCs) pose unique risks for money laundering because they often:
+
+选项：
+
+- A. 个人或实体之间存在非正式的业务安排
+  English: Have informal business arrangements between persons or entities
+- B. 位于不受美国法律约束的地区
+  English: Are located in geographies that are not accountable to U.S. laws
+- C. 包括信托、投资基金和保险公司
+  English: Include trusts, investment funds, and insurance companies
+- D. 设立这些商业实体时，组织披露和记录保存要求相对宽松
+  English: Have limited organizational disclosure and recordkeeping requirements for establishing these business entities
+
+## 【AI答案】
+
+D
+
+> **需人工复核**
+>
+> - 部分选项证据不足：A, C
+> - 盲判校验未通过
+
+## 【考点】
+
+识别离岸金融中心因透明度与披露要求宽松导致的洗钱风险
+
+## 【核心解析】
+
+离岸金融中心（OFC）指为非居民提供复杂金融服务的司法管辖区（P74）。教材指出，离岸司法管辖区通常具有相对宽松的报告和透明度要求（P75），缺乏透明度会使公司与交易信息更难获取。题干问 OFC 实体为什么带来“独特风险”，在给定选项中，D所说的设立环节披露和记录保存要求相对有限，最能概括这种制度环境带来的信息不透明风险。这里的“相对有限”是风险特征概括，并不表示所有OFC都完全没有披露或记录保存义务。
+
+教材原句："Offshore jurisdictions typically have less stringent reporting and transparency requirements."
+
+## 【错误项分析】
+
+- **A 错误**：题干问的是「因为离岸中心通常如何」而导致风险，核心在 OFC 制度环境的固有特征。选项 A 说的「非正式业务安排」发生在任何司法管辖区的实体之间都可能出现，并非 OFC 独有的结构性问题。教材在 P238 提到合规官间的非正式合作是正面实践，与题干的风险归因不在同一逻辑层面。
+- **B 错误（教材直接依据）｜范围或程度偏差**：OFC 确实可能享受「有利的监管环境」（P74），但教材对 OFC 风险的归因落在透明度与报告要求宽松上（P75），而非单纯的地理位置或不受某国法律约束。而且美国反贿赂法具有域外效力（P205），OFC 并非完全不受美国法律触及。选项 D 的「披露与记录保存要求有限」是教材直接给出的风险根因，比选项 B 的管辖权表述更直接匹配教材框架。
+- **C 错误**：信托、投资基金和保险公司确实可能在离岸中心运作（P72、P199），但它们本身是实体类型，而非 OFC「带来独特风险」的原因。在岸中心同样有这些实体。题干要求的是「因为 OFC 通常如何」——原因，不是「OFC 里有什么」——构成。选项 C 混淆了「离岸中心里存在的实体类型」与「离岸中心制度缺陷为何导致洗钱风险」。选项 D 直接指向制度缺陷本身，与题干因果逻辑更吻合。
+
+## 【易错提醒】
+
+容易把「离岸中心里有什么类型的实体」与「离岸中心为什么有洗钱风险」混为一谈。教材在 P74-75 定义的 OFC 风险根因是制度性缺陷（透明度与报告要求宽松），而非实体构成。判断时锚定题干问的是「原因」还是「组成」，原因对应制度特征，组成对应实体类型。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000638`
+
+### `v7u_N000638`
+
+- 用于：核心解析、易错提醒
+- 章节：Private banking and wealth management risks > Offshore financial center risks
+- 页码：PDF第80页 / 书内第75页
+- 中文要点：离岸司法管辖区通常报告与透明度要求较宽松
+- 英文原文：Offshore jurisdictions typically have less stringent reporting and transparency requirements.
+
+### `v7u_N000637`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Offshore financial center risks
+- 页码：PDF第80页 / 书内第75页
+- 中文要点：缺乏透明度导致难以获取公司与交易的完整信息
+- 英文原文：A lack of transparency makes it challenging to obtain complete information on companies and transactions.
+
+### `v7u_N000622`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Offshore financial center risks
+- 页码：PDF第79页 / 书内第74页
+- 中文要点：离岸金融中心为非居民提供复杂金融服务
+- 英文原文：An offshore financial center (OFC) is a jurisdiction that provides sophisticated financial services to non-residents. OFCs are also known as offshore booking centers.
+
+### `v7u_N000625`
+
+- 用于：选项B
+- 章节：Private banking and wealth management risks > Offshore financial center risks
+- 页码：PDF第79页 / 书内第74页
+- 中文要点：离岸金融中心客户受益于有利的监管环境与地理邻近性
+- 英文原文：Customers who use OFCs benefit from favorable regulatory environments due to their geographical proximity to key markets.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+离岸金融中心(OFC)设立的商业实体,因其对 设立实体的组织披露和记录保存要求有限,使得 洗钱活动带来独特风险.选项A中非正式业务安 排并非OFC商业实体特有风险:选项B中不受美 国法律约束表述不准确,且不是主要风险点;选 项C包含多种机构类型不是OFC商业实体给洗钱 带来风险的关键特点.易错提醒:需准确把握离 岸金融中心商业实体洗钱风险的核心在于信息披 露和记录保存要求有限.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+离岸金融中心(OFCs)设立的商业实体因具有 有限的组织披露和记录保存要求而构成洗钱风 险.这些实体在设立时,通常不需要提供详尽的 组织信息和记录,降低了透明度,为洗钱活动提 供了便利.选项A描述的是非正式商业安排,并 非OFCs商业实体的特性:选项B涉及地理位置与
+
+### 答案冲突提示
+
+- 未发现答案冲突。

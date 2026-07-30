@@ -1,0 +1,150 @@
+# v7_q_000298
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融行动特别工作组(FATF)的主要职能包括:(选择三项.)
+
+英文题干：Key functions of the Financial Action Task Force (FATF) include: (Select Three.)
+
+选项：
+
+- A. 起诉不合作司法管辖区
+  English: Prosecuting non-cooperative jurisdictions
+- B. 与其他国际组织和机构保持联系
+  English: Maintaining engagement with other international organizations and bodies
+- C. 制定打击洗钱、恐怖主义融资和扩散融资的国际标准
+  English: Developing international standards to combat money laundering, terrorist financing, and proliferation financing
+- D. 识别并应对存在战略缺陷的高风险、不合作司法管辖区
+  English: Identifying and engaging with high-risk, non-cooperative jurisdictions with strategic deficiencies
+- E. 暂停在相互评估中表现不佳的国家的成员资格
+  English: Suspending the membership of countries that perform poorly in mutual evaluations
+
+## 【AI答案】
+
+B、C、D
+
+## 【考点】
+
+FATF核心职能范围——标准制定、辖区识别、国际合作
+
+## 【核心解析】
+
+FATF的核心职能包括三类。第一，制定国际标准：FATF成立一年内发布40项建议，为全球反洗钱提供行动框架（P144），建议1–8进一步要求成员辖区建立打击洗钱、恐怖融资和扩散融资的全面法律监管框架（P147），对应C。第二，识别并应对存在战略缺陷的高风险、不合作司法管辖区：FATF定期评估标准实施情况，发现缺陷后监控整改计划并公开进展，其国际合作审查组负责识别高风险和不合作辖区（P155），对应D。第三，与其他国际组织和机构保持合作：世界银行和IMF与FATF密切合作、在金融部门评估中纳入FATF标准，并拥有观察员地位（P146），对应B。
+
+教材原句："Within a year of its founding, FATF issued its original 40 Recommendations setting forth guidance and a comprehensive action plan for fighting money laundering worldwide."（P144）
+
+## 【错误项分析】
+
+- **A 错误（职权不符）**：FATF应对不合作辖区的方式包括识别、列入灰名单或黑名单、监控整改计划和发布公开警告（P155），这些属于监督与公开施压手段，而非司法性质的「起诉」。Prosecuting 是执法机关职能，FATF作为政府间标准制定机构不具有执法权。题干更直接支持「识别与应对」（选项D）而非「起诉」。
+- **E 不选（职权依据不足）**：教材说明FATF有成员并要求成员实施建议、接受评估，但关于表现不佳辖区，教材写的是识别、列入灰/黑名单、监控整改和公开报告；没有赋予FATF因互评表现不佳而暂停成员资格的职权。不能把“存在成员”或名单措施扩张成E所述惩戒权。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001491`
+
+### `v7u_N001489`
+
+- 用于：核心解析、选项B
+- 章节：AFC guidance from leading international organizations
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：世界银行和IMF自2000年代初合作打击洗钱和恐怖融资。
+- 英文原文：The World Bank and IMF have cooperated since the early 2000s in efforts to combat money laundering and terrorist financing.
+
+### `v7u_N001491`
+
+- 用于：核心解析、选项B
+- 章节：AFC guidance from leading international organizations
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：世界银行和IMF与FATF密切合作，在金融部门评估中纳入FATF合规要求。
+- 英文原文：They work closely with FATF to implement FATF standards and incorporate FATF compliance in their Financial Sector Assessment Program reviews of member jurisdictions.
+
+### `v7u_N001492`
+
+- 用于：核心解析、选项B
+- 章节：AFC guidance from leading international organizations
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：世界银行和IMF在FATF中拥有观察员地位。
+- 英文原文：The World Bank and IMF have Observer status with FATF.
+
+### `v7u_N001305`
+
+### `v7u_N001305`
+
+- 用于：核心解析
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第149页 / 书内第144页
+- 中文要点：FATF成立一年内发布40项建议，指导全球反洗钱行动
+- 英文原文：Within a year of its founding, FATF issued its original 40 Recommendations setting forth guidance and a comprehensive action plan for fighting money laundering worldwide.
+
+### `v7u_N001340`
+
+- 用于：核心解析
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：FATF建议1-8确保成员国建立全面的法律和监管框架以打击洗钱、恐怖融资和扩散融资
+- 英文原文：FATF Recommendations 1 to 8 ensure that member jurisdictions implement comprehensive legal and regulatory frameworks to combat money laundering, terrorist financing, and the proliferation of weapons of mass destruction (WMD). These recommendations fall into three groups.
+
+### `v7u_N001310`
+
+- 用于：核心解析、选项A
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第149页 / 书内第144页
+- 中文要点：FATF将未达标辖区列入灰名单或黑名单，可能导致金融孤立
+- 英文原文：Identifying high-risk jurisdictions: Where FATF has determined that a jurisdiction has failed to implement its standards, FATF can designate it as a jurisdiction under increased monitoring on the "grey list" or a high-risk jurisdiction on the "black list." FATF designations on the grey and black lists can have severe consequences since inclusion on these lists might lead to isolation from the global financial system.
+
+### `v7u_N001308`
+
+- 用于：核心解析、选项D、错误项E
+- 章节：Financial Action Task Force
+- 页码：PDF第149页 / 书内第144页
+- 中文要点：FATF定期评估辖区标准实施情况，发现缺陷后监控整改计划并公开进展。
+- 英文原文：FATF conducts periodic formal evaluations and other assessments to determine whether jurisdictions have fully and effectively implemented its standards. If FATF identifies deficiencies, it implements and monitors action plans and publicly reports progress.
+
+### `v7u_N001412`
+
+- 用于：核心解析、选项D
+- 章节：Financial Action Task Force
+- 页码：PDF第160页 / 书内第155页
+- 中文要点：FATF通过全面审查流程识别高风险和不合作司法管辖区。
+- 英文原文：FATF identifies high-risk and noncooperative jurisdictions through a comprehensive review process. FATF’s International Cooperation Review Group oversees this process and assesses a jurisdiction's AML/CFT measures to identify threats, vulnerabilities, and risks.
+
+### `v7u_N001304`
+
+- 用于：错误项E
+- 章节：Financial Action Task Force
+- 页码：PDF第149页 / 书内第144页
+- 中文要点：FATF成员由最初15国和欧盟扩展至近40国及区域网络。
+- 英文原文：Its original membership included 15 countries and the EU, and it now includes nearly 40 countries as well as a global network of regional groups.
+
+### `v7u_N001323`
+
+- 用于：错误项E
+- 章节：Financial Action Task Force
+- 页码：PDF第151页 / 书内第146页
+- 中文要点：FATF要求成员实施建议并接受实施程度和项目有效性评估。
+- 英文原文：FATF expects its members to implement the Recommendations in their respective jurisdictions and assesses them on the extent of implementation and the effectiveness of their programs.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C、D
+- 中文参考答案：B、C、D
+
+### 中文参考解析
+
+FATF 的主要职能包括与国际组织合作、制定 AML/CFT/CPF 国际标准，以及识别并与存在战略缺陷的高风险和不合作司法管辖区接触。B、C、D 分别对应这三项职能。FATF 不直接起诉司法管辖区，也没有在本题材料中被赋予暂停成员资格的职权。因此答案为 B、C、D。
+
+- 英文参考答案：B、C、D
+
+### 英文参考解析
+
+FATF's functions include cooperation with other international bodies, development of international standards, and identification and engagement with high-risk, non-cooperative jurisdictions that have strategic deficiencies. These correspond to B, C, and D. Prosecuting a jurisdiction and suspending its membership are not stated functions here. Therefore, the answer is B, C, and D.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

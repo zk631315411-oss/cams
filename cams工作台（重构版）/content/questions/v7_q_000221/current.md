@@ -1,0 +1,124 @@
+# v7_q_000221
+
+教材章节：未映射
+
+题型：multiple
+
+题干：采取风险为本的方法对于金融机构了解自身面临的洗钱和恐怖融资风险至关重要。制定洗钱和恐怖融资风险评估是关键的起点。常用的风险因素包括：（选择三项。）
+
+英文题干：Having a risk-based approach is central to a financial institution's understanding of the money laundering and terrorist financing risks to which it is exposed. The development of a money laundering and terrorist financing risk assessment is a key starting point. Commonly used risk factors include: (Select three.)
+
+选项：
+
+- A. 产品风险.
+  English: Product risk.
+- B. 信用风险.
+  English: Credit risk.
+- C. 地理风险.
+  English: Geographic risk.
+- D. 客户风险.
+  English: Customer risk.
+- E. 流动性风险.
+  English: Liquidity risk.
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+
+洗钱/恐怖融资风险评估中识别固有风险的四大核心类别
+
+## 【核心解析】
+
+在制定机构自身的洗钱/恐怖融资风险评估时，国际反洗钱标准要求机构识别其面临的固有风险，这通常围绕几个关键维度展开。教材指出，收集数据的第一步就是「收集关于客户、司法管辖区、产品和渠道的信息」（P268），这直接对应了客户风险、地理风险、产品风险、渠道风险四大类别。随后，评估会逐一对各类别进行分析：「客户风险评级考虑其行业、交易量、腐败指数和地理位置」，「判断产品风险需考虑其复杂性、潜在滥用或对非法活动的吸引力」（P275），「判断司法管辖区风险涉及评估政治稳定性、监管环境和制裁状况」。此外，在制定基于风险的政策时，教材再次强调，政策必须「根据机构的风险敞口、客户概况和地理风险因素量身定制」（P292）。由此可见，客户风险、地理风险和产品风险是教材反复确认的洗钱/恐怖融资风险评估中最常用、最核心的危险因素类别。
+
+教材原句："To follow a risk-based approach, policies must be tailored to institutional risk exposure, customer profiles, and geographic risk factors."（P292）
+
+## 【错误项分析】
+
+- **B 错误**：「信用风险」（Credit risk）在教材中被定义为「借款人违约导致的潜在损失」（P243），其主管部门的核心工作是「评估信贷请求并收集客户信用状况数据」。这是金融机构面对的众多传统风险（如操作风险、市场风险）之一，而本题聚焦于洗钱和恐怖融资场景下的风险评估，两者属于不同管理范畴。题干所问的「洗钱和恐怖融资风险评估」更直接匹配于产品、客户、地理和渠道等维度（P268、P270、P275），而非信用风险。
+- **E 错误**：「流动性风险」（Liquidity risk）在教材中被归类为「财资与资本风险」的一部分，指「机构偿还其金融债务的能力」（P243），属于财务稳健性管理范畴。尽管在某些业务报告（如资本市场）中，「流动性高」可能被描述为对洗钱有「吸引力」，但这将流动性作为一种交易的「特征」而非需评估的「风险主体」。相比之下，产品、客户和地理风险是教材在阐述洗钱/恐怖融资风险评估方法论时直接列出的核心分析单元，与题干的匹配度更为直接。
+
+## 【易错提醒】
+
+机构面临的各类风险（信用、流动性、操作风险等）统称为「机构风险」，由企业风险管理框架（ERM）统筹；而洗钱/恐怖融资风险特指机构被犯罪分子利用进行非法资金转移和清洗的暴露程度，评估时聚焦于产品、客户、地理和渠道这四个维度的固有风险（P268、P270、P275）。试题常常将两者混合，需注意题干是否限定了「洗钱/恐怖融资」这一评估场景。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002902`
+
+### `v7u_N002745`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：客户风险评级考虑行业、交易量、腐败指数和地理位置
+- 英文原文：For customers, risk rating generally considers their industry, transaction volume, corruption index, and geographic location.
+
+### `v7u_N002747`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：产品风险评估考虑复杂性、潜在滥用或对非法活动的吸引力
+- 英文原文：To determine product risk, consider the complexity, potential misuse, or attractiveness of the product for illicit activities.
+
+### `v7u_N002902`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第297页 / 书内第292页
+- 中文要点：基于风险的方法要求政策根据机构风险敞口、客户概况和地理风险因素量身定制。
+- 英文原文：To follow a risk-based approach, policies must be tailored to institutional risk exposure, customer profiles, and geographic risk factors.
+
+### `v7u_N002377`
+
+- 用于：选项B、易错提醒
+- 章节：Introduction > AFC program components
+- 页码：PDF第248页 / 书内第243页
+- 中文要点：信用风险源于借款人违约导致的潜在损失
+- 英文原文：Credit risk arises from potential losses from borrower default.
+
+### `v7u_N002646`
+
+- 用于：选项B、选项E
+- 章节：未标注
+- 页码：PDF第273页 / 书内第268页
+- 中文要点：企业全面风险评估根据组织自身情况定制，考虑客户、地域、产品和渠道特征
+- 英文原文：These assessments are tailored to the specific organization conducting the assessment and consider customer characteristics, jurisdictions, products, and delivery channels.
+
+### `v7u_N002681`
+
+- 用于：选项B、选项E
+- 章节：未标注
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：产品、司法管辖区和渠道呈现不同风险水平
+- 英文原文：Products, jurisdictions, and channels also present varying risk levels.
+
+### `v7u_N002380`
+
+- 用于：选项E、易错提醒
+- 章节：Introduction > AFC program components
+- 页码：PDF第248页 / 书内第243页
+- 中文要点：财资与资本风险涉及现金、投资和资金管理，流动性风险指偿债能力
+- 英文原文：Treasury and capital risk involves risks in managing an organization's cash, investments, and funding. Liquidity risk refers to the organization’s ability to meet financial obligations.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、D
+- 中文参考答案：A、C、D
+
+### 中文参考解析
+
+金融机构洗钱和恐怖融资风险评估中,常用危险 因素包括产品风险、地理风险和客户风险.产品 风险涉及产品特性是否易被用于洗钱;地理风险 关联业务开展地区的洗钱威胁程度:客户风险则 聚焦客户身份、行为等是否异常.信用风险和流 动性风险虽为金融领域重要风险,但不属于洗钱 和恐怖融资风险评估的常用危险因素.故正确答 案为ACD. 度 难
+
+- 英文参考答案：A、C、D
+
+### 英文参考解析
+
+在反洗钱和反恐怖融资风险评估中,风险因素的 选择至关重要.产品风险(A)涉及金融产品或 服务可能被用于洗钱或恐怖融资的程度;地理风 险(C)涉及特定地区因政治、经济或社会因素 而增加的洗钱或恐怖融资风险;客户风险(D) 涉及客户身份、背景或行为可能带来的洗钱或恐 怖融资风险.而信用风险(B)和流动性风险 (E)主要与金融机构的财务稳健性相关,并非 反洗钱和反恐怖融资风险评估的直接因素.因 此,正确选项是ACD.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

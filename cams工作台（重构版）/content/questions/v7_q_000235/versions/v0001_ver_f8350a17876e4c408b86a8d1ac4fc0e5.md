@@ -1,0 +1,98 @@
+# v7_q_000235
+
+教材章节：未映射
+
+题型：multiple
+
+题干：合规官正在编制管理报告信息，以便为领导层提供有关机构客户群体所涉金融犯罪风险的见解。以下哪两项是应纳入报告的关键风险指标，以便领导层能够监测客户群体固有风险是否出现任何重大变化？(选择两项。)
+
+英文题干：A compliance officer is developing management reporting information to provide leadership with insights into the financial crime risk related to an institution's customer population. Which of the following is a key risk indicator to include in the reporting to allow leadership to monitor whether there are any key changes to the inherent risk of the customer population? (Choose two.)
+
+选项：
+
+- A. 针对高风险客户的监管报告中，未在规定监管期限内完成的报告占比
+  English: Percentage of regulatory reports for high-risk customers not completed within the required regulatory deadlines
+- B. 与上一季度相比，升级供调查的交易监控警报数量的百分比变化
+  English: Percentage change of transaction monitoring alerts escalated for investigation compared to the previous quarter
+- C. 未能在KYC政策服务级别协议(SLA)要求的时间内完成开户验证的客户所占百分比
+  English: Percentage of customers for whom onboarding verification was not completed within KYC policy service-level agreement (SLA) requirements
+- D. 过去一个季度新纳入的高级政治公众人物（PEP）数量及占比，与所有活跃客户数量相比
+  English: Number and percentage of newly onboarded senior politically exposed persons (PEPs) in the past quarter compared to all active customers
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+区分关键风险指标（KRI）与关键绩效指标（KPI）
+
+## 【核心解析】
+
+关键风险指标（KRI）是用来评估反金融犯罪风险的定量和定性指标，旨在识别潜在薄弱环节（P296）。它衡量的是风险本身，如可疑交易量和趋势（P296）。关键绩效指标（KPI）则衡量反洗钱控制措施的有效性和效率，如报告提交的及时性和误报率（P296）。题干要求监测客户群体的固有风险是否发生变化，因此需要寻找直接反映风险规模和构成的指标。选项B「交易监控警报数量变化」直接反映了可疑交易的趋势，属于KRI定义中列举的「可疑交易量及趋势」。选项D「新签约高级政治公众人物（PEP）的数量及占比」直接反映了客户群体中高风险客户构成的变化，因为PEP被视为较高风险（P270）。两者都直接衡量了固有风险的变化。
+
+教材原句："Key risk indicators (KRI) are quantitative and qualitative metrics assessing AFC risks, including suspicious transaction volumes and trends, due diligence review backlog, and monitoring system deficiencies."（P296）
+
+## 【错误项分析】
+
+- **A 错误**：此选项衡量的是「监管报告」在规定期限内完成的合规情况，关注点在于流程的时效性。这更符合关键绩效指标（KPI）的定义，即衡量反洗钱控制有效性和效率（P296），而非直接衡量客户群体的固有风险水平。
+- **C 错误**：此选项衡量的是「开户验证」在服务级别协议（SLA）规定时间内完成的效率。开户验证是风险控制措施的一部分，其完成时效属于衡量控制流程有效性的KPI（P296），不如直接反映客户群体风险构成变化的PEP数量（选项D）那样直接匹配题干对「固有风险」的监测需求。
+
+## 【易错提醒】
+
+关键风险指标（KRI）评估的是风险本身，包括可疑交易趋势和高风险客户构成变化（P296）。关键绩效指标（KPI）评估的是反洗钱控制的效率和效果，包括报告和审查完成的时间性、误报率等（P296）。题目要求监测固有风险变化，应选择KRI而非KPI。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002954`
+
+### `v7u_N002954`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：Governance and oversight > Internal reporting to governance committees
+- 页码：PDF第301页 / 书内第296页
+- 中文要点：关键风险指标是评估金融犯罪防控风险的定量和定性指标
+- 英文原文：Key risk indicators (KRI) are quantitative and qualitative metrics assessing AFC risks, including suspicious transaction volumes and trends, due diligence review backlog, and monitoring system deficiencies.
+
+### `v7u_N002955`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：未标注
+- 页码：PDF第301页 / 书内第296页
+- 中文要点：关键绩效指标衡量金融犯罪防控控制有效性，如可疑活动报告提交时限、误报率等
+- 英文原文：Key performance indicators (KPI) are measures of AFC control effectiveness, such as SAR filing timelines, false positive reduction rates in screening, and alert resolution times.
+
+### `v7u_N002680`
+
+- 用于：核心解析
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：政治敏感人物（政治敏感人物）被视为较高风险
+- 英文原文：A PEP is considered higher risk.
+
+### `v7u_N003883`
+
+- 用于：选项A、选项C
+- 章节：Understanding AFC technology > Governance of compliance technology
+- 页码：PDF第392页 / 书内第387页
+- 中文要点：持续报告包含关键风险指标（KRI）和关键绩效指标（KPI），用于衡量金融犯罪防控效率与效果。
+- 英文原文：Ongoing reporting includes key risk indicators to identify potential vulnerabilities and key performance indicators to measure efficiency and effectiveness in detecting and preventing financial crime.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+为监测客户群体固有风险重大变化,关键风险指 标应反映风险动态.选项B中,交易监控警报数 量百分比变化,直接体现异常交易风险趋势,是 重要动态指标;选项D里,新签约高级政治公众 人物(PEP)数量及占比,因PEP风险较高,其 数量和占比变化能反映高风险客户群体变动.选 项A仅反映报告完成情况,非风险变化;选项C 仅体现开户验证时效,不直接关联风险重大变 化.所以选BD.易错提醒:注意区分反映风险 动态变化和业务操作情况的指标.
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+关键风险指标用于监测客户群体固有风险的变 化.固有风险指客户本身属性带来的风险,而非 控制措施的有效性.选项B显示交易监控警报升 级调查的百分比变化,反映客户行为或交易模式 的风险变动.选项D衡量新增高级政治人物客户 占比,直接关联客户群体风险构成.A、C涉及 合规流程时效性,属于控制指标而非固有风险变
+
+### 答案冲突提示
+
+- 未发现答案冲突。

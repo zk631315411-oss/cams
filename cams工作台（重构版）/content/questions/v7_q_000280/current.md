@@ -1,0 +1,159 @@
+# v7_q_000280
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]货币服务企业(MSB)、支付服务提供商和电子商务平台通常每日交易量很大.这些类型的企业存在哪些风险？(选择两项.)
+
+英文题干：Money services businesses (MSBs), payment service providers, and e-commerce platforms usually have a high volume of daily transactions. What are the risks associated with these types of businesses? (Choose Two.)
+
+选项：
+
+- A. 这些企业都是现金密集型企业,增加了金融犯罪的风险.
+  English: These businesses are all cash intensive, increasing the risk of financial crime.
+- B. 了解客户(KYC)方面存在挑战,这是因为电子商务平台面向全球客户,使得客户尽职调查变得复杂且耗费资源.
+  English: KYC challenges arise because e-commerce platforms face global customers, making customer due diligence complex and resource intensive.
+- C. 这些企业受到严格监管,因此没有理由不合规,因为这会使它们面临制裁和罚款的风险.
+  English: These businesses are highly regulated and therefore have no reason to be non-compliant, as this would put them at risk of sanctions and fines.
+- D. 犯罪分子可以利用身份欺诈来完成KYC(了解你的客户)流程,以达到资金分层的目的.
+  English: Criminals can use identity fraud to complete the KYC process for layering purposes.
+- E. 这些企业的结算系统不够完善,无法应对高交易量
+  English: These businesses' settlement systems are not sufficiently robust to handle high transaction volumes.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+识别线上金融服务商面临的KYC挑战与身份欺诈风险
+
+## 【核心解析】
+
+题干列出的三类企业共同面临高交易量、跨司法管辖区和客户识别方面的金融犯罪风险。B项对电商平台的描述最直接：电商平台连接全球买家和卖家，买家与商户审查不足会带来金融犯罪、欺诈和监管风险（P87）；跨境经营还会使CDD受到不同司法辖区法律和数据要求影响，因而流程更复杂、资源投入更高（P410）。D项对应数字化和远程场景：MSB可通过在线平台和移动应用提供服务（P93），电商依赖互联网（P96）；远程开户验证容易被假身份或盗用身份利用（P312），而分层可通过复杂交易掩盖资金来源（P16）。因此B、D成立。A项把三类企业一概称为现金密集型，范围过宽；C项把监管义务误当作自动合规；E项则从高交易量直接推断结算系统能力不足，因果关系不成立。
+
+教材原句："Remote onboarding: The use of digital channels for onboarding new customers can introduce additional risks to the verification process, making it easier for criminals to use fake or stolen identities and exploit weaknesses in technology."（P312）
+
+## 【错误项分析】
+
+- **A 不选（范围过度泛化）**：MSB可能具有现金密集特征（P93、P95），但支付服务商和电商平台不当然都以现金为主；「都是」把部分行业特征扩大到了全部三类企业。
+- **C 不选（概念混淆）**：受到监管只说明存在合规义务，不等于企业自动合规；选项把“有制裁风险”错误地当成“没有不合规风险”。
+- **E 不选（因果推断过度）**：大量小额交易会提高监控和处理要求，但不能据此推断这些企业的结算系统普遍不完善或无法应对高交易量。
+
+## 【易错提醒】
+
+现金密集型不等于三类企业都以现金运营；本题的B、D分别依赖电商跨境KYC和数字化身份验证风险（P87、P312）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000768`
+
+### `v7u_N000768`
+
+- 用于：核心解析、选项B
+- 章节：Money Laundering Risks in Nonbank Financial Institutions > Case example: CashBayou's risk management challenges
+- 页码：PDF第92页 / 书内第87页
+- 中文要点：电商平台连接全球买家和卖家。
+- 英文原文：The platform connects buyers and sellers across the globe.
+
+### `v7u_N000774`
+
+### `v7u_N000774`
+
+- 用于：核心解析、选项B
+- 章节：Money Laundering Risks in Nonbank Financial Institutions > Case example: CashBayou's risk management challenges
+- 页码：PDF第92页 / 书内第87页
+- 中文要点：对买家和店主审查不足可能使平台面临金融犯罪、欺诈和监管风险。
+- 英文原文：Insufficient reviews of purchasers and storefront owners could expose the platform to financia crime, fraud risks, and potential regulatory issues, which might result in temporary service suspension.
+
+### `v7u_N004104`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Authentication and security technology
+- 页码：PDF第415页 / 书内第410页
+- 中文要点：了解你的客户技术存在复杂性、可扩展性差、成本高及数据隐私挑战。
+- 英文原文：However, these technologies come with some disadvantages, including complexity, scalability issues for long-term growth, and high implementation costs. Ensuring data privacy while implementing these technologies is another major challenge.
+
+### `v7u_N000503`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with retail and commercial banking > Retail and commercial banking products and risks
+- 页码：PDF第68页 / 书内第63页
+- 中文要点：远程开户的验证过程易被犯罪分子利用假身份或盗用身份
+- 英文原文：Remote onboarding: The use of digital channels for onboarding new customers can introduce additional risks to the verification process, making it easier for criminals to use fake or stolen identities and exploit weaknesses in technology.
+
+### `v7u_N000822`
+
+- 用于：核心解析、选项D（MSB数字化服务场景）
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce
+- 页码：PDF第98页 / 书内第93页
+- 中文要点：货币服务企业服务可通过在线平台、移动应用或实体网点提供。
+- 英文原文：These services can be delivered through online platforms, mobile apps, or physical branches.
+
+### `v7u_N000841`
+
+- 用于：核心解析、选项D（电商互联网平台场景）
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce
+- 页码：PDF第101页 / 书内第96页
+- 中文要点：电子商务平台通过互联网促进商品和服务买卖，作为买卖双方的数字市场中介。
+- 英文原文：Electronic commerce (e-commerce) platforms facilitate the buying and selling of goods and services over the internet. They serve as intermediaries between sellers and buyers, providing a digital marketplace for transactions.
+
+### `v7u_N000020`
+
+- 用于：核心解析、选项D（分层概念）
+- 章节：Money Laundering and Financial Crime
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：洗钱包括处置、离析和融合三个阶段。
+- 英文原文：There are three basic stages of money laundering. These are placement, layering, and integration.
+
+### `v7u_N000022`
+
+- 用于：核心解析、选项D（分层概念）
+- 章节：Money Laundering and Financial Crime
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：分层通过复杂交易掩盖脏钱来源。
+- 英文原文：Layering involves activities to conceal the origin of the dirty money, such as transferring the proceeds from the bank account to a holding company.
+
+### `v7u_N000834`
+
+- 用于：选项A、易错提醒
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第100页 / 书内第95页
+- 中文要点：无银行账户者依赖现金交易，给货币服务企业带来追踪和资金来源确认困难
+- 英文原文：Cash transactions: Unbanked individuals rely on cash, which can create vulnerabilities for MSBs, such as difficulty in tracking a high volume of transactions and ascertaining the source of these funds.
+
+### `v7u_N002503`
+
+- 用于：选项E
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第259页 / 书内第254页
+- 中文要点：货币服务企业和支付服务提供商（PSP）处理大量小额交易，需要比企业银行更自动化的监控方法
+- 英文原文：MSBs and payment service providers (PSP) often handle higher volumes of smaller transactions, which require a more automated approach to monitoring than corporate banks.
+
+### `v7u_N003102`
+
+- 用于：易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：行业风险：现金密集型或高风险行业，如货币服务、加密货币交易所、赌博、军火交易和奢侈品
+- 英文原文：Industry risk: Engaging in cash-intensive or high-risk businesses such as money services, cryptocurrency exchanges, gambling, arms trading, and luxury goods
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+货币服务企业等因交易量大,存在多方面风险. 选项B,电子商务平台面向全球客户,客户尽职 调查复杂且耗费资源,在了解客户(KYC)方面 存在挑战,易被洗钱者利用,该选项正确.选项 D,犯罪分子可通过身份欺诈完成KYC流程,实 现资金分层,达到洗钱目的,此情况确实存在, 该选项正确.选项A,这些企业并非都是现金密 集型,表述错误.选项C,受严格监管不代表不 会违规,监管不能完全杜绝违规行为,该选项错 误.选项E,结算系统不完善不是普遍必然存在 的风险,该选项错误.易错点:注意区分各选项 表述的合理性.
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+选项B,电商平台的客户来自全球,使得客户尽 职调查变得复杂且耗费资源,易产生KYC挑战, 增加洗钱和恐怖融资风险.选项D,犯罪分子可
+
+### 答案冲突提示
+
+- 未发现答案冲突。

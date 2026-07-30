@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from openai import OpenAI
 
 OUT = r"d:\守正公司工作区\cams考试\cams工作台\data"
-DS_KEY = "sk-9a4a0a5cf90a4a48858f40c619147b2d"
+DS_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DS_BASE = "https://api.deepseek.com/v1"
 os.makedirs(OUT, exist_ok=True)
 

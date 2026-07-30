@@ -11,6 +11,7 @@ LLM 逐条输出 accept / reject → 通过的回写 accepted 池，拒绝的归
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 from datetime import datetime
@@ -19,8 +20,8 @@ from pathlib import Path
 from openai import OpenAI
 
 _WORK = Path(__file__).resolve().parent / "work"
-_DS_API_KEY = "sk-795628e9d4584fc59545d7abac9d1209"
-_MIMO_API_KEY = "tp-cl5nzlniz5bfyk9i3wsdw88d25haf8ghdh6nccojrw1hqgc4"
+_DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+_MIMO_API_KEY = os.environ.get("MIMO_API_KEY", "")
 
 _TEMPERATURE = 0.0
 _MAX_TOKENS = 2048

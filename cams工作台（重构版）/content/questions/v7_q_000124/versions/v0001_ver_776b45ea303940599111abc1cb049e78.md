@@ -1,0 +1,133 @@
+# v7_q_000124
+
+教材章节：未映射
+
+题型：single
+
+题干：根据金融行动特别工作组(FATF)关于“通风报信”的建议，以下哪项陈述准确描述了报告实体的义务？
+
+英文题干：According to the Financial Action Task Force (FATF) recommendation regarding "tipping off," which of the following statements accurately describes the obligations of reporting entities?
+
+选项：
+
+- A. 报告主体不得向客户或第三方透露已提交可疑活动报告(SAR)，或相关调查正在进行
+  English: Reporting entities are prohibited from disclosing to clients or third parties that a suspicious activity report (SAR) has been filed or that an investigation is ongoing
+- B. 报告主体可以在组织内部共享有关可疑活动的一般信息，同时不泄露机密
+  English: Reporting entities can share general information about suspicious activities internally within the organization without compromising confidentiality
+- C. 报告主体必须在其向客户提交可疑活动报告(SAR)时告知客户，这是保持客户关系透明度的一部分
+  English: Reporting entities must inform their clients if a suspicious activity report (SAR) has been filed as part of maintaining transparency in customer relations
+- D. 报告主体在提交可疑活动报告之前，如果与客户讨论可疑活动有助于澄清情况，可与客户进行讨论
+  English: Reporting entities may discuss suspicious activity with the client before filing a suspicious activity report if doing so would help clarify the situation
+
+## 【AI答案】
+
+A
+
+> **需人工复核**
+>
+> - 部分选项证据不足：B
+
+## 【考点】
+
+FATF关于「通风报信」（tipping off）的禁止性定义
+
+## 【核心解析】
+
+「通风报信」（tipping off）是调查人员有意或无意让调查对象知道其活动正在被监控的行为，反洗钱法规禁止这种行为（P340）。关于SAR，常见规则要求避免向客户或其他未经授权方披露SAR（P352）；法规还禁止披露SAR或任何表明SAR已经提交的信息，但特定执法机构属于例外（P353）。因此，A最直接对应报告实体的保密义务。其中「第三方」应理解为未经授权的第三方，不能扩大为所有第三方；依法向有权机关披露与向客户或无权限人员泄露调查信息，性质不同。
+
+## 【错误项分析】
+
+- **B 条件不完整**：教材要求即使在金融机构内部，SAR也应谨慎处理，并非所有人员都应有访问权限（P352）。因此，在不披露SAR、申报事实或可据此推断申报的信息，并按权限控制的前提下，内部共享一般信息并非当然被禁止。B没有说明共享对象、授权范围和信息内容，也没有直接回答题干所问的通风报信禁止义务，因此不如A直接匹配。
+- **C 错误（教材定义应用）**：选项C主张将披露SAR作为「透明度」的一环，这与禁止通风报信的核心原则直接冲突。教材明确将向客户披露SAR内容定性为违法的「通风报信」行为（P353），而非透明度要求的一部分，因此其义务方向与A相反。
+- **D 错误（教材定义应用）｜概念混淆**：教材允许在信息确有必要且无法从内部或外部取得时规划客户外联（P340），但沟通人员必须保持保密并避免向客户通风报信（P339）；通风报信包括让调查对象知道自己正在被监控（P340）。因此，客户外联本身并非绝对禁止，但直接与客户“讨论可疑活动”可能暴露调查或怀疑状态，不能替代A所对应的明确保密义务。
+
+## 【易错提醒】
+
+「可以向客户询问以澄清情况」不等于可以向客户透露调查。教材允许为核实交易事实、发票或运营文件等关键信息而进行客户外联，但必须保持保密，不能透露SAR已提交、调查正在进行或客户已成为调查对象（P339-P340）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003498`
+
+### `v7u_N003498`
+
+- 用于：核心解析、选项C、选项D
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：常见SAR要求：建议申报、使用事实支持、避免“泄密”。
+- 英文原文：Common regulations call for investigators to recommend a SAR upon suspicion of criminal activity, use factual information to support suspicions, and avoid "tipping off" or disclosing a SAR to the customer or other unauthorized parties.
+
+### `v7u_N003508`
+
+- 用于：核心解析、选项C
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第358页 / 书内第353页
+- 中文要点：向客户披露SAR内容构成“通风报信”的违法行为。
+- 英文原文：Disclosing the SAR or its contents to a customer would result in a prohibited offense called "tipping off."
+
+### `v7u_N003507`
+
+- 用于：核心解析
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第358页 / 书内第353页
+- 中文要点：法规禁止金融机构向除执法机构外的任何人披露SAR或表明已提交SAR的信息。
+- 英文原文：Regulations prohibit financial institutions from disclosing a SAR, or any information that would indicate a SAR was filed, to anyone except certain law enforcement agencies.
+
+### `v7u_N003496`
+
+- 用于：选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：金融机构内部也应谨慎处理SAR，并非所有人员都有权访问。
+- 英文原文：Even within a financial institution, SARs should be handled with care, as not everyone should have access to such information.
+
+### `v7u_N003664`
+
+- 用于：选项C
+- 章节：Concluding an investigation and suspicious activity reporting > Refusing or terminating a customer
+- 页码：PDF第369页 / 书内第364页
+- 中文要点：存在金融犯罪嫌疑时，必须注意不得向客户通风报信。
+- 英文原文：If there are underlying suspicions of financial crime, you must take care not to tip off the customer.
+
+### `v7u_N003363`
+
+- 用于：选项D、易错提醒
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第344页 / 书内第339页
+- 中文要点：员工必须保持保密，避免向客户通风报信。
+- 英文原文：Staff must remember to maintain confidentiality and avoid tipping off the customer.
+
+### `v7u_N003368`
+
+- 用于：选项D
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第345页 / 书内第340页
+- 中文要点：通风报信指调查人员有意或无意向调查对象透露监控行为，反洗钱法规禁止此举，违者可能面临刑事责任、监管制裁和声誉损害。
+- 英文原文：How to avoid tipping off: Tipping off occurs when an investigator intentionally or unintentionally alerts the subject of an investigation that their activities are being monitored, particularly with suspicions of money laundering or financial crimes. Tipping off is prohibited under AML regulations and can have severe consequences including criminal liability, regulatory sanctions, and reputational damage.
+
+### `v7u_N003364`
+
+- 用于：易错提醒
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第345页 / 书内第340页
+- 中文要点：分析师在开展客户沟通前应确保信息关键且无法内部或外部获取，并规划最佳沟通方式。
+- 英文原文：Before conducting outreach, the analyst should ensure that the requested information is critical for making an informed determination, and not available internally or externally. If both conditions are met, analysts should consider the best outreach methods and plan accordingly. During outreach, anyone who communicates with the customer should consider:
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+答案A您选择/ 单选 蒙特 试题详解 换应 A 金融行动特别工作组(FATF)关于“通风报 建议,报告实体负有保密义务,不得向客户 三方披露已提交可疑活动报告(SAR)或正 B 受调查的情况,以防止干扰调查或破坏反洗 反恐怖融资措施的有效性.选项A准确描述 一义务,即报告实体不得向客户或第三方披 提交可疑活动报告或正在接受调查的情况. B、C、D均涉及可能泄露机密或干扰调查的 D 与FATF建议不符. 正确 度
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+ionexcha (FIUs)S With 关于“泄密”的建议,报告机构有义务保 A nho 动报告.(SAR)的机密性.选项A准确 点,即报告机构不得向客户或第三方 Only 交SAR或正在进行调查的情况,这是为 B elat 尤调查并保护信息的完整性.选项B虽 共享信息,但未直接回应“泄密”禁止的 Free 选项C和D均违反了保密原则,可能 st,c 或泄露敏感信息.因此,选项A是正确 With alai D ded 正确答案
+
+### 答案冲突提示
+
+- 未发现答案冲突。

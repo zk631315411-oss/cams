@@ -1,0 +1,113 @@
+# v7_q_000333
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些关键的金融犯罪风险与远程博彩行业直接相关？（选择三项。）
+
+英文题干：Which key financial crime risks relate to the remote gambling sector specifically? (Select three.)
+
+选项：
+
+- A. 客户未亲自到场进行身份验证。
+  English: Customers not being physically present for identification purposes.
+- B. 存入大量现金的客户。
+  English: Customers depositing large amounts of cash.
+- C. 使用匿名预付卡的客户。
+  English: Customers using anonymous prepaid cards.
+- D. 超出自身承受能力进行投注的客户。
+  English: Customers betting more than they can afford.
+- E. 客户为规避强化尽职调查而频繁进行小额交易。
+  English: Customers making numerous low-level transactions to avoid enhanced due diligence.
+
+## 【AI答案】
+
+A、C、E
+
+> **需人工复核**
+>
+> - 部分选项证据不足：D
+> - 盲判校验未通过
+
+## 【考点】
+
+识别远程博彩特有的非面对面、匿名化与规避CDD风险
+
+## 【核心解析】
+
+远程博彩的核心风险在于“非面对面”交互引入的匿名性漏洞。教材指出，在线博彩运营商远程为客户开户，使其面临高风险司法管辖区敞口并增加了身份欺诈的风险，因为缺乏必要的控制措施（P120）。同时，博彩业面临通过第三方或多笔交易来规避报告门槛的“结构化交易”风险（P121）。预付卡则因可匿名购买和充值，且了解你的客户要求极低，极易被用于转移非法资金（P121）。题干A、C、E三项分别对应远程博彩的非面对面身份验证缺陷、高度匿名化的价值转移工具，以及为规避强化尽职调查而刻意拆分交易金额的行为，直接指向该行业特有的金融犯罪风险链条。
+
+教材原句："Since online gaming operators onboard customers remotely, they might face exposure to high-risk jurisdictions."
+
+## 【错误项分析】
+
+- **B 错误（适用场景不同）**：大量现金交易是实体赌场较突出的洗钱风险（P120），但题干特指远程博彩。相比之下，A更直接聚焦远程场景下的身份验证漏洞。
+- **D 错误（风险类型不同）**：超出自身承受能力投注更多指向消费者保护或负责任博彩问题，而非本题所问的金融犯罪风险；E则明确涉及通过多笔小额交易规避控制。
+
+## 【易错提醒】
+
+注意区分「实体赌场的风险特征」与「远程博彩的特有风险」：前者侧重于大量现金匿名兑换筹码（P120），后者则更侧重于非面对面开户的身份伪造、远程使用匿名化工具及结构化交易规避线上的监测阈值（P120-P121）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001079`
+
+### `v7u_N001079`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：远程开户使在线博彩运营商面临高风险司法管辖区敞口
+- 英文原文：Since online gaming operators onboard customers remotely, they might face exposure to high-risk jurisdictions.
+
+### `v7u_N001080`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：快速开户流程吸引犯罪分子，缺乏控制时身份欺诈风险上升
+- 英文原文：The quick onboarding process appeals to criminals, and the risk of identity fraud escalates when necessary controls are lacking.
+
+### `v7u_N001090`
+
+- 用于：核心解析、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：博彩业存在通过第三方和多笔交易规避报告门槛的结构化交易风险
+- 英文原文：They are also at risk of transaction structuring to evade reporting thresholds, including the use of third parties and multiple transactions to arrange deposits.
+
+### `v7u_N001066`
+
+- 用于：选项B、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：赌场因大量现金交易而特别容易遭受洗钱风险
+- 英文原文：Casinos: Casinos are particularly vulnerable to money laundering due to high volumes of cash transactions.
+
+### `v7u_N001082`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with DNFBPs > Gaming sector risks
+- 页码：PDF第126页 / 书内第121页
+- 中文要点：实体赌场面临金融犯罪风险
+- 英文原文：Physical casinos encounter certain financial crime risks as well.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、E
+- 中文参考答案：A、C、E
+
+### 中文参考解析
+
+远程博彩行业因缺乏面对面交流,易滋生金融犯 罪风险.选项A中客户未亲自到场进行身份验 证,难以确认身份真实性,易被洗钱者利用:选 选项E中客户为规避强化尽职调查而频繁进行小 额交易,是典型的洗钱手段,通过分散交易来掩 可能有问题,但不具远程博彩行业特性:选项D 超出自身承受能力投注,属赌博行为,与金融犯 罪风险关联不大.易错提醒:注意区分赌博行为 和金融犯罪风险.
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+远程博彩业特有的关键金融犯罪风险包括:A选 项,客户无需亲临现场进行身份识别,易被不法 王选项,客户通过大量小额交易规避强化尽职调 查,逃避监管.B选项大额现金存入更多关联线 下交易,D选项客户过度投注属于个人财务问 题,均非远程博彩特有风险.因此,ACE选项正 确.易错提醒:注意区分行业特性风险与普遍性 风险.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,C,E，英文=A,C

@@ -1,0 +1,157 @@
+# v7_q_000299
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一位潜在客户走进一家会计事务所，想要成立一家公司。会面结束后，会计感觉很不自在。会计人员的哪两项观察结果需要上报给合规官？（选择两项。）
+
+英文题干：A prospective client walks into an accounting firm wanting to incorporate a company. The accountant feels uncomfortable after the meeting. Which two of the accountant's observations warrant escalation to the compliance officer? (Select two.)
+
+选项：
+
+- A. 拟成立公司的主要业务为进口和出口新家具。
+  English: The principal activities of the proposed company are importing and exporting new furniture.
+- B. 潜在客户对拟议业务的细节描述含混不清，并且对拟议的业务活动知之甚少。
+  English: The prospective client presents confusing details about the proposed business and has very little knowledge about the proposed business activity.
+- C. 潜在客户无法提供有关受益所有人的信息。
+  English: The prospective client is unable to provide information about the beneficial owners.
+- D. 当潜在客户向会计师提供个人详细信息时，表现出自信的态度。
+  English: The prospective client exhibits confidence when speaking to the accountant when providing personal details.
+- E. 潜在客户能够提供资金来源和财富来源的相关文件。
+  English: The prospective client is able to provide source of funds and source of wealth documents.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+
+在客户准入场景下识别信息不透明与受益所有人缺失这两类红旗信号
+
+## 【核心解析】
+
+在反洗钱框架下，客户尽职调查（CDD）要求机构识别并验证受益所有人（BO）及最终受益所有人（UBO），并了解实体的真实目的（P311）。无法提供受益所有人信息，直接违反这一核心义务，构成必须上报的严重红旗信号。与此同时，教材将「缺乏透明度」（lack of transparency）列为关键风险指标——它使获取公司和交易的完整信息变得困难（P341）。题干中客户对拟议业务细节描述含混不清且对业务活动知之甚少，正属于信息不透明的典型表现。当会计师面对一个既说不清自己生意、又无法交代公司真正所有者是谁的潜在客户时，这两个信号叠加在一起，意味着机构可能无法完成风险最低标准的评估，符合教材中「尽职调查后若风险不可接受，机构可要求补充文件或拒绝客户」的上报逻辑（P306）。
+
+教材原句："Identification and verification of beneficial owners (BO) and ultimate beneficial owners (UBO)."（P311）
+
+## 【错误项分析】
+
+- **A 错误（缺少风险触发条件）**：进出口行业并非天然无风险；教材指出该行业因跨多个司法管辖区而更易受到资金来源风险影响，并将「与特定司法管辖区有关联的进出口公司」列为红旗（P75-P76）。但题干没有给出高风险司法管辖区、异常单证或价格、可疑资金来源等额外要素，因此仅凭“进口和出口新家具”尚不足以触发上报。
+- **D 错误（未体现异常行为）**：教材提到工作人员应通过对话式沟通让客户放松，而非将面谈变成审讯。客户在提供个人信息时表现出自信，更吻合良好人际互动下的正常反应，而不具备与洗钱风险相关联的警示特征。
+- **E 错误（缺少文件异常要素）**：能够提供资金来源和财富来源文件，说明客户提供了KYC阶段需要识别、验证和评估风险的信息，但文件存在本身不能证明风险已经降低。题干没有描述文件矛盾、虚假或无法解释的情况，因此该选项单独不足以构成上报红旗。
+
+## 【易错提醒】
+
+自信（选项D）与信息透明是两回事。教材强调匿名与谨慎之间的区别——客户态度自信不意味着其提供的信息是准确或完整的。反之，真正需要警惕的是客户是否回避实质性问题，即对业务和所有权结构做含混处理（P341），而非其面谈时的神态是否紧张。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003088`
+
+### `v7u_N003088`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：CDD需识别和验证受益所有人（BO）及最终受益所有人（UBO）。
+- 英文原文：Identification and verification of beneficial owners (BO) and ultimate beneficial owners (UBO).
+
+### `v7u_N003375`
+
+- 用于：选项D、易错提醒
+- 章节：Transaction monitoring
+- 页码：PDF第346页 / 书内第341页
+- 中文要点：区分匿名与谨慎，向客户保证机构将谨慎处理数据并遵守数据法规
+- 英文原文：There is a difference between anonymity and discretion. Discretion is good, and commonly sought by customers, so assure them that the organization will treat their data with care and in adherence with relevant data regulations.
+
+### `v7u_N003376`
+
+- 用于：选项D、易错提醒
+- 章节：Transaction monitoring
+- 页码：PDF第346页 / 书内第341页
+- 中文要点：良好的人际交往能力和对话式沟通更容易让客户放松，而非像审讯
+- 英文原文：Having good interpersonal skills and engaging in a conversational manner is more likely to put the customer at ease, as opposed to making the meeting feel like an interrogation.
+
+### `v7u_N000637`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Offshore financial center risks
+- 页码：PDF第80页 / 书内第75页
+- 中文要点：缺乏透明度导致难以获取公司与交易的完整信息
+- 英文原文：A lack of transparency makes it challenging to obtain complete information on companies and transactions.
+
+### `v7u_N003031`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > • Potential rejection:
+- 页码：PDF第311页 / 书内第306页
+- 中文要点：尽职调查后若风险不可接受，机构可要求补充文件或拒绝客户
+- 英文原文：If, upon conducting due diligence, the organization is not comfortable with the level of risk a client presents, it might request additional documentation. Ultimately, if additional information also does not suffice, the organization might reject the customer to protect itself.
+
+### `v7u_N001113`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第128页 / 书内第123页
+- 中文要点：会计师设计过于复杂或不透明的交易可能是洗钱红旗信号信号
+- 英文原文：If an accountant designs overly complex or opaque transactions, it might raise a red flag for money laundering.
+
+### `v7u_N002170`
+
+- 用于：选项A
+- 章节：Using reports, guidance notes, and policy papers in your AML/CFT controls > Case example: Terrorist financing red flags
+- 页码：PDF第229页 / 书内第224页
+- 中文要点：银行拥有众多进出口公司客户，并已建立强化尽职调查（EDD）程序。
+- 英文原文：The bank has numerous import/export companies as clients. It has EDD procedures in place to provide extra scrutiny of such companies.
+
+### `v7u_N000659`
+
+- 用于：选项C、核心解析
+- 章节：Private banking and wealth management risks > Special purpose vehicle risks
+- 页码：PDF第81页 / 书内第76页
+- 中文要点：金融机构必须识别最终受益所有人并了解实体真实目的
+- 英文原文：Financial institutions must identify ultimate beneficial owners and understand the true purpose of these entities.
+
+### `v7u_N003012`
+
+- 用于：选项E
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第309页 / 书内第304页
+- 中文要点：KYC是金融犯罪合规核心要求，用于识别、验证和评估客户风险
+- 英文原文：The KYC process is a core requirement in AFC compliance, ensuring financial institutions identify, verify, and assess customer risks before establishing or maintaining business relationships.
+
+### `v7u_N001173`
+
+- 用于：选项A
+- 章节：High-risk business sectors > Key takeaways
+- 页码：PDF第137页 / 书内第132页
+- 中文要点：进出口行业因交易跨多个司法管辖区，资金来源风险尤为突出
+- 英文原文：The source of funds risk affects all businesses; however, the import/export sectors are particularly vulnerable as transactions often span multiple jurisdictions.
+
+### `v7u_N002169`
+
+- 用于：选项A
+- 章节：Using reports, guidance notes, and policy papers in your AML/CFT controls > Case example: Terrorist financing red flags
+- 页码：PDF第229页 / 书内第224页
+- 中文要点：与特定司法管辖区有关联的进出口公司可构成红旗
+- 英文原文：One red flag identifies the use of import/export companies with a connection to certain jurisdictions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+选项B中，潜在客户对拟议业务细节描述含混且对业务活动知之甚少，可能无法解释成立公司的真实目的，属于需要升级审查的透明度红旗。选项C中，客户无法提供受益所有人信息，机构无法完成基本的 KYC/BO 核验，也应上报合规官。A 虽涉及进出口行业，但题干没有给出高风险司法管辖区或异常交易事实；D 的自信态度本身不是风险信号；E 提供资金来源和财富来源文件，题干未描述矛盾或虚假。因此答案为 B、C。
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+Option B indicates that the proposed business purpose and activity are not transparent. Option C prevents identification of the beneficial owner and therefore blocks core KYC verification. The facts given for A, D, and E do not independently establish a red flag. The answer is B and C.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

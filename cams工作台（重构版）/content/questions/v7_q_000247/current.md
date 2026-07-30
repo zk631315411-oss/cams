@@ -1,0 +1,129 @@
+# v7_q_000247
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融行动特别工作组（FATF）式区域机构（FSRBs）的作用在于：（选择三项。）
+
+英文题干：The role of FATF-style regional bodies (FSRBs) is to: (Select three.)
+
+选项：
+
+- A. 通过发布源自其 FSRB 管辖区以外成员的金融犯罪类型学研究（犯罪模式），识别并应对当前的金融犯罪趋势。
+  English: Identify and address the current financial crime trends through the issuance of typologies originating in members outside of their FSRB's jurisdiction.
+- B. 向其 FSRB 管辖区内成员提供所需的 AML/CFT 技术援助。
+  English: Provide AML/CFT technical assistance needed by members in their FSRB jurisdiction.
+- C. 协调为其 FSRB 管辖区内成员提供技术援助。
+  English: Coordinate technical assistance for members in their FSRB jurisdiction.
+- D. 为其 FSRB 管辖区内成员制定和修订金融行动特别工作组（FATF）的40项建议。
+  English: Set and amend the FATF 40 Recommendations for members in their FSRB jurisdiction.
+- E. 识别并解决其 FSRB 管辖区以外成员在 AML/CFT 政策方面的任何漏洞。
+  English: Identify and address any gaps in the AML/CFT policies for members outside of their FSRB jurisdiction.
+- F. 为其 FSRB 管辖区内成员提供相互评估和后续流程。
+  English: Offer mutual evaluation and follow-up processes for members in their FSRB jurisdiction.
+
+## 【AI答案】
+
+B、C、F
+
+## 【考点】
+
+FSRBs核心职能：评估、技术援助与区域协调
+
+## 【核心解析】
+
+教材将FSRB界定为协助实施FATF标准的自治区域组织（P145），其职责包括促进区域合作、协助互评估以及向成员提供技术援助（P145），因此B所述向本区域成员提供技术援助成立。
+
+A和E均把工作对象限定为FSRB管辖区以外的成员，但教材说明FSRB与「各自成员」合作识别区域问题并制定解决方案（P145），两项均存在服务范围错位。D把制定和修订FATF四十项建议归给FSRB，而教材明确指出FATF仍是唯一的标准制定机构，FSRB只是采纳和实施这些建议（P145），因此D也可直接排除。
+
+C概括了FSRB促进区域合作并协调向本区域成员提供技术援助的职能（P145）。F中的「互评估」也有直接依据：FSRB通过开展评估和提出建议评价AML/CFT措施（P145），后续跟进则是互评估工作得以落实的延续。因此，应选择B、C、F。
+
+## 【错误项分析】
+
+- **A 错误**：FSRB确可发布识别AML/CFT类型学的报告（P145），但其工作围绕自身成员和区域问题展开。A特意把类型学来源限定为「FSRB管辖区以外成员」，与FSRB同其各自成员合作识别区域问题的定位不符（P145）。
+- **D 错误**：FATF仍是唯一的标准制定机构，FSRB的角色是采纳和实施FATF的40项建议（P145），无权为本区域成员制定或修订这些建议。
+- **E 错误**：FSRB的共同目标是推动其成员遵守国际AML/CFT标准，并与各自成员识别区域问题（P145）。E把对象限定为辖区以外成员，不符合其以本区域成员为中心的职责范围。
+
+## 【易错提醒】
+
+B直接对应技术援助，C对应区域协调，F对应相互评估及其后续跟进（P145）。A、E把工作对象错误地限定为辖区外成员，D则把FATF的标准制定职能错配给FSRB。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001313`
+
+### `v7u_N001311`
+
+- 用于：核心解析、选项A、选项E
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FSRB是协助实施FATF标准、独立运作的自治区域组织。
+- 英文原文：FATF-style regional bodies (FSRB) are autonomous regional organizations that assist in implementing FATF’s standards. These bodies closely align with FATF objectives and have similar forms and functions but operate independently of FATF. FSRBs are also considered FATF associate members.
+
+### `v7u_N001312`
+
+- 用于：选项D、易错提醒
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FATF会听取FSRB意见，但FATF仍是唯一的标准制定机构。
+- 英文原文：In setting standards, FATF depends on input from the FSRBs. However, FATF remains the only standard-setting body.
+
+### `v7u_N001313`
+
+- 用于：核心解析、选项B、选项C、选项F
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FSRB通过识别威胁、促进区域合作、协助互评估及向成员提供技术援助，维持全球AML/CFT工作的有效性。
+- 英文原文：FSRBs ensure global AML/CFT efforts remain effective by identifying and addressing threats to the financial system, facilitating regional cooperation, assisting with mutual evaluations, and providing technical assistance to their members.
+
+### `v7u_N001314`
+
+- 用于：选项D、易错提醒
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：每个FSRB采纳并实施FATF关于反洗钱和反恐怖融资的40项建议。
+- 英文原文：Each FSRB adopts and implements FATF’s 40 Recommendations against money laundering and terrorist financing.
+
+### `v7u_N001315`
+
+- 用于：核心解析、选项A、选项E
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FSRB与各自成员合作识别区域问题、分享经验并制定解决方案。
+- 英文原文：The FSRBs work with their respective members to identify regional issues, share their experiences, and develop solutions.
+
+### `v7u_N001318`
+
+- 用于：核心解析、选项F
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FSRB通过开展评估和提出建议来评价AML/CFT措施。
+- 英文原文：Evaluating AML/CFT measures by conducting assessments and issuing recommendations.
+
+### `v7u_N001320`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第150页 / 书内第145页
+- 中文要点：FSRB可发布报告识别影响FATF成员的AML/CFT类型学。
+- 英文原文：Publishing reports identifying AML/CFT typologies impacting FATF members.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C、F
+- 中文参考答案：B、C、F
+
+### 中文参考解析
+
+金融行动特别工作组(FATF)式区域机构 (FSRBs)的核心作用在于协调与支持成员的反 洗钱和反恐怖融资工作.选项B指出其协调为成 员在金融稳定监管委员会管辖范围内提供技术援 助,符合FSRBs通过能力建设支持成员的职能; 选项C强调协调提供技术援助,与B互补,体现 区域合作特征;选项F明确为成员提供相互评估 和后续流程,直接对应FATF框架下的合规评估 机制.三项共同覆盖技术支援、区域协调与合规 监督的关键职能.易错点:选项A混淆了情报发 布与区域机构职能,选项D涉及标准制定属FATF 而非区域机构,选项E超出区域机构管辖范围.
+
+- 英文参考答案：B、C、F
+
+### 英文参考解析
+
+provideAML/CFTtechnicalassistanc eneededbymembersintheirFSRBju nsdiction. Coordinatetechnicalassistanceforme mbersintheirFSRBjurisdiction setandamendtheFATF40Recomme ndationsformembersintheirFSRBju D risdiction. identifyandaddressanygapsintheA ML/CFTpoliciesformembersoutside E oftheirFSRBJurisdiction. offermutualevaluationandfollow-upp rocessesformembersintheirFSRBJ urisdiction. 正确答案BCF您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

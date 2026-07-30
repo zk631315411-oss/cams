@@ -1,0 +1,54 @@
+# v7_q_000321
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家银行正在为即将进行的监管审查做准备,此前的一次监管审查发现该行的反洗钱计划存在不足.自上次审查以来,该行已改进了书面反洗钱计划,聘请了一位经验丰富的反洗钱合规官,并采取了行动以彰显其强大的合规文化.目前,该行正专注于处理交易监控案件的积压,并完成对其制裁筛查程序的改进.以下哪两项是正确的？(选择两项.)
+
+英文题干：A bank is preparing for a regulatory exam after a previous regulatory exam identified weaknesses in the bank's AML program. Since the last exam, the bank has improved the written AML program, hired an experienced AML compliance officer, and taken actions to demonstrate a strong culture of compliance. The bank is now focused on clearing its transaction monitoring case backlog and completing enhancements to its sanctions screening program. Which of the following are correct? (Select Two.)
+
+选项：
+
+- A. 尽管该银行已解决了许多先前存在的问题，但仍有可能面临全球金融机构的次级制裁。
+  English: The bank is likely to face secondary sanctions from global financial institutions despite addressing many of the previous concerns.
+- B. 如果该银行无法证明其在解决先前问题方面已取得持续改进，可能会面临民事或刑事处罚。
+  English: The bank may face civil or criminal penalties if it cannot demonstrate sustained improvement in addressing previous issues.
+- C. 尽管银行已解决了许多先前存在的问题，但仍有可能面临监管机构要求其整改反洗钱计划的指令所带来的风险。
+  English: Despite addressing many of the previous issues, the bank may still face the risk of an order from regulators requiring it to remediate its AML program.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+识别监管审查后银行面临的处罚与整改指令风险，并区分次级制裁的适用前提。
+## 【核心解析】
+银行虽已改进书面计划、聘请合规官并展示合规文化，但交易监控积压和制裁筛查改进尚未完成，说明整改成效尚未充分证明。教材指出，反洗钱或制裁合规失败可能导致民事或刑事处罚（P23、P185、P187），因此B符合题干所述的持续改进风险。教材案例还表明，监管机构可以要求金融机构接受独立监督、全面改进风险管理并定期报告整改进展（P242），因此即使银行已经采取措施，仍可能面临整改指令，C更直接对应这一风险。
+## 【错误项分析】
+- **A**：次级制裁通常需要与受制裁对象发生相关交易等具体制裁违法事实。题干只描述银行反洗钱计划整改尚未完成，没有提供此类交易事实，不能由一般整改不足直接推出次级制裁风险。
+## 【易错提醒】
+「已经开始整改」不等于「已证明持续有效」。本题现列选项中，B对应处罚风险（P23、P185、P187），C对应监管整改指令风险（P242）；不要把反洗钱计划缺陷直接等同于次级制裁。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N000099`；页码：P23、P185、P187、P242。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、D
+- 中文参考答案：A、B、D
+
+### 中文参考解析
+
+金融机构在根据内部调查独立决定是否关闭账户 时,需要综合考虑多个关键因素以确保决策的合 理性、合规性以及风险可控性.以下是对各选项 的分析:A项(声誉风险):关闭账户可能引发 客户不满或媒体关注,进而对金融机构的声誉造 成负面影响.因此,声誉风险是决策时必须考虑 的重要因素之一.B项(客户的个人关系):虽 然客户关系管理对金融机构很重要,但在决定是 否关闭账户时,客户的个人关系通常不应作为主 要考量因素.决策应基于客观的风险评估和合规 要求,而非主观的个人关系.C项(账户活动的 频率):账户活动的频率本身并不直接决定是否 应关闭账户.虽然异常频繁的账户活动可能引发 关注,但还需结合其他因素(如交易性质、金额 等)进行综合评估.因此,它不是决策时的核心 考量因素.D项(该协会的政策和程序):金融 机构通常需遵循行业协会或监管机构制定的政策 和程序.这些政策和程序为账户关闭提供了明确 的指导和标准,确保决策的合规性和一致性.E
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+在反洗钱和反恐融资情境下,银行若不能持续改 进并解决先前问题,可能面临民事或刑事处罚, 选项B正确.即使银行已解决许多先前问题,仍 可能面临监管命令,要求其补救反洗钱程序,选 项C正确.选项A错误,因为银行已改进反洗钱 程序,不太可能面临次级制裁.选项D错误,因 为监管命令不一定会保密,银行仍可能面临声誉 风险.选项E错误,因为监管机构不一定会要求 正确选项是B和C. 度 难 源
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,B,D，英文=B,C
+- 盲判与题库最终参考答案冲突：盲判=B,C，题库最终=A,B,D

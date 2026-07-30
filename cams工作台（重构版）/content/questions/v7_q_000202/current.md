@@ -1,0 +1,99 @@
+# v7_q_000202
+
+教材章节：未映射
+
+题型：single
+
+题干：一家金融机构正在设计一项企业范围的风险评估（EWRA）。根据沃尔夫斯堡集团发布的关于基于风险的方法来识别和管理洗钱风险的指导，一种有效的方法应当：
+
+英文题干：A financial institution is designing an enterprise-wide risk assessment (EWRA). According to the guidance issued by the Wolfsberg Group regarding a risk-based approach to identifying and managing money laundering risks, an effective approach should:
+
+选项：
+
+- A. 在评估期内，重点关注新客户带来的风险，并了解用于降低相关洗钱风险的控制措施。
+  English: Focus on understanding the risks presented by new clients within the assessment period, and the controls to mitigate associated money laundering risks.
+- B. 应采取适当措施和控制手段，以降低来自高风险客户、产品和地区的洗钱风险。
+  English: Include appropriate measures and controls to mitigate money laundering risks stemming from higher-risk customers, products, and geographies.
+- C. 关注金融机构产品和服务提供的固有风险以及为降低潜在洗钱风险所采取的控制措施。
+  English: Focus on the inherent risk in the FI's product and service offerings and the controls to mitigate potential money laundering risks.
+- D. 使用由第三方供应商提供的框架，该框架在该司法管辖区内的其他金融机构中也有使用。
+  English: Use a framework provided by a third-party vendor and used by other FIs in the jurisdiction.
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+风险为本的EWRA应覆盖主要风险维度并采取相应控制
+
+## 【核心解析】
+
+教材说明，沃尔夫斯堡集团的风险为本指导强调金融机构应按客户、交易或司法管辖区所呈现的风险水平分配资源（P169）。在EWRA层面，评估还应结合组织自身情况，考虑客户特征、司法管辖区、产品和交付渠道（P268）；风险为本方法则要求识别、评估和理解风险，并采取适当措施有效缓解风险（P270）。B项把这些要素组合为「高风险客户、产品和地区」及相应措施和控制，既覆盖主要风险维度，也包含风险缓解，因而比只限新客户的A项和只限产品、服务的C项更完整。
+
+教材原句："A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively."（P270）
+
+## 【错误项分析】
+
+- **A 错误**：教材规定EWRA应审查所有客户类型，不限于「新客户」（即要求审查所有客户类型、司法管辖区、产品等）（P274）。选项A将关注范围限定在「新客户」，与教材对EWRA全面性要求相比，覆盖范围不够。
+- **C 错误**：C项提到产品、服务的固有风险和控制措施，内容本身属于EWRA的一部分，但遗漏客户和司法管辖区等风险维度。教材要求EWRA考虑客户特征、司法管辖区、产品和交付渠道（P268），故B项对题干「有效方法」的覆盖更完整。
+- **D 错误**：EWRA应根据组织自身的客户、司法管辖区、产品和渠道等情况定制（P268）。第三方框架可以作为工具，但其他机构采用同一框架并不能保证它适合本机构的风险状况，因此D不如B匹配。
+
+## 【易错提醒】
+
+判断EWRA选项是否全面，不能只看它是否提到「固有风险」或「控制」，还要核对风险维度是否覆盖客户、司法管辖区、产品和渠道（P268），以及是否包含有效缓解措施（P270）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001574`
+
+### `v7u_N001574`
+
+- 用于：核心解析、选项B
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第174页 / 书内第169页
+- 中文要点：金融机构应根据客户、交易或司法管辖区的风险水平分配资源
+- 英文原文：It emphasizes that financial institutions should allocate resources based on the level of risk posed by a customer, transaction, or jurisdiction.
+
+### `v7u_N002672`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：风险为本方法（RBA）定义：识别、评估和理解洗钱/恐怖融资风险并采取适当缓解措施
+- 英文原文：A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively.
+
+### `v7u_N002646`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 章节：Types of risk assessment > The importance of risk assessment in AFC
+- 页码：PDF第273页 / 书内第268页
+- 中文要点：企业全面风险评估根据组织自身情况定制，考虑客户、地域、产品和渠道特征
+- 英文原文：These assessments are tailored to the specific organization conducting the assessment and consider customer characteristics, jurisdictions, products, and delivery channels.
+
+### `v7u_N002728`
+
+- 用于：选项A
+- 章节：Enterprise-wide risk assessment > Enterprise-wide risk assessment
+- 页码：PDF第279页 / 书内第274页
+- 中文要点：EWRA 应审查所有客户类型、司法管辖区、产品、交付渠道、交易及运营环境，包括员工培训。
+- 英文原文：It should review all customer types, jurisdictions, products, delivery channels, transactions, and the operating environment, including staff education and training on the financial crime risk the organization needs to manage.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+沃尔夫斯堡集团强调金融机构应基于风险识别和 管理洗钱风险.选项A仅关注新客户风险,未全 面覆盖高风险客户、产品和地区,不全面.选项 C关注固有风险和控制措施,但未突出对高风险 领域的直接应对.选项D依赖第三方框架,缺乏 自主性和针对性.选项B提出采取适当措施和手 段,以降低来自高风险客户、产品和地区的洗钱 风险,符合沃尔夫斯堡集团基于风险的方法的核 心要求,能有效识别和管理洗钱风险. 度 难
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+根据WolfsbergGroup关于基于风险的方法识别 和管理洗钱风险的指导,有效的企业范围风险评 估(EWRA)方法应包含针对高风险客户、产品 和地理区域的适当措施和控制,以减轻洗钱风 险.选项B明确指出应包括针对高风险领域的适 当措施和控制,符合指导原则.其他选项A、 C、D分别侧重于新客户、产品和服务固有风 险、第三方框架,均未全面涵盖高风险客户、产 品和地理区域,不符合指导原则. 度 难 源
+
+### 答案冲突提示
+
+- 未发现答案冲突。

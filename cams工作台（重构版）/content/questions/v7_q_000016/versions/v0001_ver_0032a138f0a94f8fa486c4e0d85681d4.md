@@ -1,0 +1,111 @@
+# v7_q_000016
+
+教材章节：未映射
+
+题型：single
+
+题干：为什么在姓名筛查系统中使用多个制裁名单（如联合国、美国外国资产控制办公室（OFAC）和欧盟名单）很重要？
+
+英文题干：Why is it important to use multiple sanctions lists, such as United Nations (UN), Office of Foreign Assets Control (OFAC), and European Union (EU) lists, in name screening systems?
+
+选项：
+
+- A. 为避免与支付相关的制裁违规行为
+  English: To avoid sanctions breaches related to payments
+- B. 为避免重新接纳因真实匹配而退出的客户
+  English: To avoid onboarding customers previously exited due to a true match
+- C. 为满足国际监管要求并识别跨司法管辖区的风险
+  English: To meet international regulatory requirements and identify risks across jurisdictions
+- D. 与风险偏好声明保持一致
+  English: To be in line with the risk appetite statement
+
+## 【AI答案】
+
+C
+
+> **需人工复核**
+>
+> - 部分选项证据不足：B
+
+## 【考点】
+
+多制裁名单筛查的核心目的是满足国际监管要求并识别跨司法管辖区风险
+
+## 【核心解析】
+
+制裁筛查是将客户信息与联合国、欧盟、OFAC 及国家制裁名单进行交叉核对，以发现高风险实体（P305）。使用多个制裁名单，能够确保机构遵守 OFAC、欧盟和联合国等国际制裁规定（P374）。选择哪些名单，取决于地理位置、交易币种、业务模式、客户所在地及所从事的活动等跨司法管辖区因素（P419）。因此，在姓名筛查系统中同时使用多个国际制裁名单，本质上是为了满足不同司法管辖区的监管要求，并全面识别跨国界、跨辖区的制裁风险。
+
+教材原句："These tools ensure compliance with international regulations such as OFAC, EU, and UN sanctions lists."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜主体或阶段错配**：教材区分了姓名筛查与支付筛查的不同节点：姓名筛查在开户前及持续进行，支付筛查在交易前或交易中识别高风险实体（P329）。题干问的是姓名筛查系统中使用多个制裁名单的重要性，并非特指支付环节。虽然支付筛查同样必须防止制裁违规，但多名单的使用更直接关联的是整体国际合规和跨辖区风险覆盖，而非仅限于支付相关的违规防范。
+- **B 错误**：因真实匹配而退出客户是风险偏好不匹配时逐案审查的结果（P303），而使用多制裁名单的主要目的是持续的合规监测和风险识别，并非为了避免重新接纳已退出的客户。这一选项缺失了教材中与名单筛查目的的直接关联，因此在匹配度上不如 C。
+- **D 错误（题干对照）｜范围或程度偏差**：风险偏好声明（RAS）由董事会批准，规定机构可接受的风险水平（P271）。尽管内部控制框架应与风险偏好保持一致，但姓名筛查中使用联合国、OFAC 等多名单首先是基于外部监管义务和识别跨辖区风险的需要，而非仅为了与内部风险偏好对齐。正确项更直接体现了使用这些名单的强制性国际合规目的。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003752`
+
+### `v7u_N003752`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > AFC technology overview
+- 页码：PDF第379页 / 书内第374页
+- 中文要点：这些工具确保遵守OFAC、欧盟和联合国等国际制裁名单
+- 英文原文：These tools ensure compliance with international regulations such as OFAC, EU, and UN sanctions lists.
+
+### `v7u_N004212`
+
+- 用于：核心解析
+- 章节：Technology for KYC > List management
+- 页码：PDF第424页 / 书内第419页
+- 中文要点：选用哪些名单取决于地理位置、交易币种、业务模式等因素。
+- 英文原文：Which lists to use: This will be based on a number of factors, including geographic location, the currencies involved in transactions, the business model, where your customers are based, and the activities they undertake.
+
+### `v7u_N003024`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第310页 / 书内第305页
+- 中文要点：制裁筛查是将客户信息与联合国、欧盟、OFAC及国家制裁名单进行交叉核对
+- 英文原文：Sanctions screening is when customer details are cross-checked against UN, EU, OFAC, and national sanctions lists to detect high-risk entities.
+
+### `v7u_N003252`
+
+- 用于：选项A
+- 章节：Transaction monitoring > Transaction monitoring versus payment screening
+- 页码：PDF第334页 / 书内第329页
+- 中文要点：姓名筛查在开户前及持续通过批量筛查将客户姓名与制裁名单等观察名单比对。
+- 英文原文：Name screening identifies individuals who might be at higher risk for involvement in financial crime. It screens customers’ names against watchlists including sanctions lists. It occurs prior to onboarding and on an ongoing basis through batch screening.
+
+### `v7u_N003139`
+
+- 用于：选项A
+- 章节：Ongoing AFC controls > Ongoing due diligence
+- 页码：PDF第322页 / 书内第317页
+- 中文要点：机构必须进行支付筛查以防止违反制裁和恐怖融资
+- 英文原文：Organizations are required to perform payment screening to prevent sanctions breaches and the financing of terrorism.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+未提供。
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+名单(如联合国、OFAC、欧盟名单)进行姓名 筛查至关重要.选项C正确,因其直接关联国际 监管要求,并强调跨司法管辖区的风险识别.不 同制裁名单覆盖范围和侧重点各异,单一名单可 能遗漏关键风险.通过多名单交叉筛查,可确保 全面合规,避免因未识别受制裁实体而面临的法 律和声誉风险.其他选项虽涉及合规要素,但未 准确概括多名单筛查的核心目的. 欢取后里考可
+
+### 答案冲突提示
+
+- 未发现答案冲突。

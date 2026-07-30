@@ -1,0 +1,140 @@
+# v7_q_000225
+
+教材章节：未映射
+
+题型：multiple
+
+题干：巴塞尔银行监管委员会(BCBS)是一个由各国中央银行和银行业监管机构的高级代表组成的国际机构.以下哪项陈述准确描述了巴塞尔委员会提供的指导？(选择三项.)
+
+英文题干：The Basel Committee on Banking Supervision (BCBS) is an international body consisting of senior representatives of central banks and banking regulatory authorities. Which of the following statements accurately describe guidance provided by the BCBS? (Select three.)
+
+选项：
+
+- A. 由于巴塞尔委员会没有执法权,它依靠其成员的承诺来执行其指导方针.
+  English: Since the Basel Committee has no enforcement authority, it relies on the commitment of its members to carry out its guidance.
+- B. 巴塞尔指导方针包括应纳入当地法律框架的标准、实施指南以及最佳实践指导.
+  English: Basel guidance includes standards to be incorporated into local legal frameworks, guidelines for implementation, and best-practice guidance.
+- C. 巴塞尔委员会的核心原则包括有关客户身份识别和客户接纳政策的指导方针
+  English: The Basel Committee's Core Principles include guidance on customer identification and acceptance.
+- D. 巴塞尔银行监管委员会的成员必须执行其标准,否则将面临被暂停成员资格的处罚.
+  English: Members of the Basel Committee on Banking Supervision must implement its standards or face suspension of membership.
+- E. 巴塞尔委员会由全球28家最大的银行组成
+  English: The Basel Committee consists of the 28 largest banks in the world.
+
+## 【AI答案】
+
+A、B、C
+
+## 【考点】
+
+区分BCBS的执法机制、文件类型、成员构成与核心原则内容
+
+## 【核心解析】
+
+BCBS没有执法权，而是依靠成员履行承诺来实现其使命，因此A直接对应教材（P165）。教材分别说明，BCBS提供供纳入当地法律框架的标准、帮助实施标准的指南，以及描述实际观察做法的良好实践，三条直接事实共同对应B（P165-P166）。对于C，教材先说明BCBS发布反洗钱原则声明，并指出其KYC文件的关键要素包括客户身份识别和客户接纳政策；因此，C项所述内容属于BCBS反洗钱/KYC指导范围（P166）。这里的判断依据是“原则声明—KYC规则—具体关键要素”的上下文链条，而不是把两个孤立短语直接等同于完整的核心原则定义。综上，A、B、C均成立。
+
+教材原句："It does not have enforcement authority, but relies on its members’ commitment to achieve its mandate."（P165）
+
+## 【错误项分析】
+
+- **D 错误**：BCBS没有执法权，其指导落实依赖成员承诺（P165）。D所述「不执行即暂停成员资格」是一种强制处罚机制，与BCBS的制度定位不一致。
+- **E 错误**：教材指出BCBS成员包括来自28个成员国的银行监管机构和中央银行，而非28家银行（P165）。选项将监管主体错置为被监管的商业银行，不如教材原文准确。
+
+## 【易错提醒】
+
+BCBS的成员是银行监管机构和中央银行，题干提到的「28」对应的是28个成员国，而非28家最大的银行（P165）。容易因数字相同而混淆。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001523`、`v7u_N001526`、`v7u_N001527`、`v7u_N001528`、`v7u_N001529`、`v7u_N001536`、`v7u_N001537`、`v7u_N001539`
+
+### `v7u_N001523`
+
+- 用于：核心解析、选项A、选项D
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第170页 / 书内第165页
+- 中文要点：BCBS没有执法权，依赖成员承诺来实现其使命。
+- 英文原文：It does not have enforcement authority, but relies on its members’ commitment to achieve its mandate.
+
+### `v7u_N001526`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第170页 / 书内第165页
+- 中文要点：BCBS发布标准供各国纳入本地法律框架。
+- 英文原文：Standards to incorporate into local legal frameworks.
+
+### `v7u_N001527`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第170页 / 书内第165页
+- 中文要点：BCBS发布指南，帮助实施标准以保障银行安全、稳健和操守。
+- 英文原文：Guidelines for implementing the standards in areas where they are considered desirable for banks’ safety, soundness, and conduct, particularly internationally active banks.
+
+### `v7u_N001528`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：BCBS发布良好实践，描述实际观察到的做法，以促进共识并改进监管或银行方法。
+- 英文原文：Sound practices that describe actual observed practices, to promote common understanding and improve supervisory or banking approaches.
+
+### `v7u_N001529`
+
+- 用于：核心解析、选项C
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：1988年BCBS发布《银行系统用于洗钱的犯罪用途》原则声明，聚焦六项反洗钱要点。
+- 英文原文：In 1988, the BCBS issued a statement of principles, called Criminal Use of the Banking System for the Purpose of Money Laundering These principles are still useful for AML/CFT as they focus on:
+
+### `v7u_N001536`
+
+- 用于：核心解析、选项C
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：BCBS的KYC文件包含KYC规则，KYC计划的关键要素保持不变并包括后列项目。
+- 英文原文：This statement was followed in 1997 by the issuance of . This document included provisions regarding KYC rules. BCBS periodically updates the principles. However, the key elements of a KYC program remain unchanged and include:
+
+### `v7u_N001537`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：BCBS反金融犯罪指导所列KYC要素包括客户身份识别。
+- 英文原文：Customer identification.
+
+### `v7u_N001539`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：BCBS反金融犯罪指导所列KYC要素包括客户接纳政策。
+- 英文原文：Customer acceptance policy.
+
+### `v7u_N001524`
+
+- 用于：选项E、易错提醒
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第170页 / 书内第165页
+- 中文要点：BCBS成员包括来自28个成员国的银行监管机构和中央银行。
+- 英文原文：BCBS members include banking supervisory authorities and central banks from 28 member countries.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、C
+- 中文参考答案：A、B、C
+
+### 中文参考解析
+
+巴塞尔银行监管委员会无执法权,依赖成员承诺 执行其指导方针,A选项正确.其指导方针涵盖 纳入当地法律框架的标准、实施指南及最佳实践 指导,B选项正确.巴塞尔委员会核心原则包括 客户身份识别和接纳的指导方针,C选项正确. D选项中“暂停成员资格“的处罚并非必然,表述 不准确.E选项错误,巴塞尔委员会成员并非由 全球28家最大银行组成,而是各国中央银行和监 管机构代表.因此,正确答案为ABC. 难
+
+- 英文参考答案：A、B、C
+
+### 英文参考解析
+
+mitmentotitsMemperstocarryoutits guidance Baselguidanceincludesstandardsto beincorporatedintolocallegalframew orks,guidelinesForimplementation,a ndbest-practiceguidance TheBaselCommittee'sCorePrinciple sincludeguidanceon customeridentifi cationandAcceptance MembersoftheBCBSmustimplemen titsstandardsorfacesuspensionfrom D membership TheBaselCommitteeiscomposedoft E he28largestbanksintheworld 正确答案ABC您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

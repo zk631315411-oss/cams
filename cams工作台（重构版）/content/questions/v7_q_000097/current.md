@@ -1,0 +1,107 @@
+# v7_q_000097
+
+教材章节：未映射
+
+题型：single
+
+题干：以下关于2012年金融行动特别工作组（FATF）的40项建议和/或11项直接成果的陈述，哪一项是正确的？
+
+英文题干：Which of the following statements is true regarding the 2012 Financial Action Task Force (FATF) 40 Recommendations and/or 11 Immediate Outcomes?
+
+选项：
+
+- A. 40项建议尚未更新以反映新技术的影响
+  English: The 40 Recommendations have not been updated to reflect the impact of new technology
+- B. 各司法管辖区可联系金融行动特别工作组（FATF），以获得《40项建议》解释性说明的非公开访问权限
+  English: Each jurisdiction can reach out to the FATF for private access to the interpretive notes to the 40 Recommendations
+- C. 11项直接成果是针对需要加强监测的高风险司法管辖区提出的具体建议
+  English: The 11 Immediate Outcomes are recommendations specific to high-risk jurisdictions requiring enhanced monitoring
+- D. 40项建议的核心在于每个司法管辖区都应采取基于风险的方法
+  English: The cornerstone of the 40 Recommendations is the adoption of a risk-based approach by each jurisdiction
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+FATF 40项建议的核心原则与11项直接成果的定位
+
+## 【核心解析】
+
+FATF建议1和2要求各司法管辖区评估并理解自身面临的洗钱和恐怖融资风险，并采取风险为本方法实施与风险程度相称的缓释措施（P147）。风险为本方法位于40项建议的开端，并贯穿后续制度要求，因此D所称「40项建议的核心在于采取风险为本方法」最准确。
+
+教材原句："Recommendations 1 and 2 advise jurisdictions to assess and understand their money laundering and terrorist financing risks and take a risk-based approach to implementing measures that effectively mitigate these threats."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）**：教材在介绍FATF建议9至23时明确指出，金融机构应评估新技术带来的风险（P148）。这说明FATF建议体系已经纳入新技术风险，A所称「尚未更新以反映新技术影响」不符合教材内容。
+- **B 错误（事实不符）**：FATF的解释性说明随40项建议文件公开发布，并非需要各司法管辖区向FATF申请才能获得的非公开资料。互评估报告的公开性与解释性说明的获取方式并非同一问题，不能据此支持B项。
+- **C 错误（教材直接依据）**：11项直接成果用于评估司法管辖区AML/CFT体系的有效性，并按照低、中等、显著和高进行评级（P150）。它们是所有受评估司法管辖区通用的有效性评估框架，不是专门针对需要加强监测的高风险司法管辖区提出的建议。
+
+## 【易错提醒】
+
+40项建议规定各司法管辖区应建立哪些制度和控制措施，风险为本方法是其基础原则；11项直接成果则用于判断这些制度在实践中是否有效。直接成果是评估工具，不是针对灰名单或黑名单国家的整改建议。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001341`
+
+### `v7u_N001341`
+
+- 用于：核心解析
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：FATF建议1和2要求各国评估洗钱和恐怖融资风险并采取风险为本方法
+- 英文原文：Recommendations 1 and 2 advise jurisdictions to assess and understand their money laundering and terrorist financing risks and take a risk-based approach to implementing measures that effectively mitigate these threats.
+
+### `v7u_N001342`
+
+- 用于：核心解析
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：风险为本方法确保应对措施与识别出的风险成比例
+- 英文原文：A riskbased approach ensures that responses are proportionate to the identified risks.
+
+### `v7u_N001361`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构应评估新技术带来的风险，并确保电汇中的发端人和受益人数据准确。
+- 英文原文：Financial institutions should assess risks from new technologies and ensure accurate originator and beneficiary data in wire transfers.
+
+### `v7u_N001383`
+
+- 用于：选项C、易错提醒
+- 章节：Financial Action Task Force > FATF 11 Immediate Outcomes
+- 页码：PDF第155页 / 书内第150页
+- 中文要点：FATF使用11项直接目标（IO）评估有效性，评级分为低、中、显著、高。
+- 英文原文：FATF measures and rates effectiveness using 11 Immediate Outcomes (IOs), with each IO receiving an effectiveness rating of low, moderate, substantial, or high.
+
+### `v7u_N001385`
+
+- 用于：选项C、易错提醒
+- 章节：Financial Action Task Force > FATF 11 Immediate Outcomes
+- 页码：PDF第155页 / 书内第150页
+- 中文要点：FATF的直接目标并非检查清单，而是评估人员判断反洗钱/反恐怖融资框架有效性的起点。
+- 英文原文：FATF’s IOs are not meant to be a checklist, but rather a starting point to assist assessors in determining the effectiveness of a jurisdiction's AML/CFT framework. FATF expects assessors to use their judgment and experience in determining their ratings.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+根据多个技术资料显示,2012年金融行动特别工 作组(FATF)的40项建议核心在于每个司法管辖区 都应采取基于风险的方法,D选项正确.A选项 错误,40项建议已更新以反映新技术影响;B选 项错误,各司法管辖区无权获取非公开解析性说 明访问权限;C选项错误,11项即时成果是针对 高风险司法管辖区的整体改进要求,而非具体建 议.易错点在于混淆即时成果与具体建议的适用 对象.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,111 @@
+# v7_q_000313
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪两项是了解您的客户(KYC)流程的关键组成部分？(选择两项.)
+
+英文题干：Which of the following are key components of the Know Your Customer (KYC) process? (Select Two.)
+
+选项：
+
+- A. 询问财富来源和资金来源
+  English: Inquiring about the source of wealth and source of funds
+- B. 要求提供直系亲属名单
+  English: Asking to provide a list of immediate family members
+- C. 核实客户的金融犯罪防范意识
+  English: Verifying the financial crime awareness of the client
+- D. 收集必要的文件以核实信息的真实性
+  English: Collecting necessary documents to verify the veracity of information
+
+## 【AI答案】
+
+A、D
+
+> **需人工复核**
+>
+> - 部分选项证据不足：C
+> - 盲判校验未通过
+
+## 【考点】
+
+识别KYC流程的核心组成要素
+
+## 【核心解析】
+
+教材列出的KYC流程关键组成部分包括核实客户身份、受益所有人、风险分类和资金来源（P305）。同时，银行应调查并记录客户的财富来源与资金来源（P58）。验证则是对提供的信息进行认证，如通过政府文件等（P203）。选项A询问财富来源和资金来源，直接对应资金来源这一必要要素；选项D收集必要文件以核实信息真实性，正是验证步骤的体现。两项均处于KYC流程的核心环节，因此是正确答案。
+
+教材原句："These efforts include verifying customer identity, beneficial ownership, risk classification, and source of funds."（P305）
+
+## 【错误项分析】
+
+- **B 错误（并非普遍必备信息）**：直系亲属信息主要用于识别和评估政治敏感人物（PEP）等特定风险（P58），并非适用于所有客户的KYC关键组成部分。题干问及的是普遍流程，其匹配度不如资金来源核实与文件验证直接。
+- **C 错误**：核实客户的金融犯罪防范意识在教材中指向员工培训，关注的是机构内部能力建设，而非客户接纳时的KYC流程。题干要素与之无直接关联。
+
+## 【易错提醒】
+
+直系亲属名单通常只在客户被识别为政治敏感人物（PEP）时才需要收集（P58），属于强化尽职调查措施，而非所有客户KYC的必备环节。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001959`
+
+### `v7u_N001959`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > United Arab Emirates AML regulations
+- 页码：PDF第208页 / 书内第203页
+- 中文要点：这些工作包括核实客户身份、受益所有人、风险分类和资金来源。
+- 英文原文：These efforts include verifying customer identity, beneficial ownership, risk classification, and source of funds.
+
+### `v7u_N001572`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第174页 / 书内第169页
+- 中文要点：银行应调查并记录客户财富来源与资金来源
+- 英文原文：Source of wealth and funds: Banks should investigate and document how clients acquired their wealth.
+
+### `v7u_N003020`
+
+- 用于：核心解析
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第310页 / 书内第305页
+- 中文要点：验证是通过政府文件、生物识别等技术对信息进行认证
+- 英文原文：Verification is the authentication of provided information using government-issued documents, biometric authentication, AI-driven verification tools, and forensic analysis of identification records.
+
+### `v7u_N001537`
+
+- 用于：选项B
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：KYC要素包括客户身份识别。
+- 英文原文：Customer identification.
+
+### `v7u_N000473`
+
+- 用于：选项B、易错提醒
+- 章节：Money Laundering Risks in Financial Services > Politically exposed person risks
+- 页码：PDF第63页 / 书内第58页
+- 中文要点：政治敏感人物的直系亲属
+- 英文原文：Immediate family
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+了解您的客户(KYC)流程是反洗钱和打击资助 恐怖主义合规计划的重要组成部分.关键组成部 金的合法性;以及收集必要的文件以核实信息的 真实性,防止身份盗用和欺诈.选项A和D分别 对应了这两点.选项B要求提供直系亲属名单, 并非KYC流程的核心;选项C核实客户的金融犯 罪防范意识,虽重要但非KYC关键组成部分.
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+翻译 -[AML/CFTCompliancePrograms]Whic 多选 hofthefollowingarekeycomponentsoftheKn owYourCustomer(KYC)process?(SelectTw 0.) Inquiringaboutthesourceofwealthan dsourceoffunds Askingtoprovidealistofimmediatefa B milymembers Verifyingthefinancialcrimeawarenes softheclient Collectingnecessarydocumentstover ifytheveracityofinformation 正确答案AD您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

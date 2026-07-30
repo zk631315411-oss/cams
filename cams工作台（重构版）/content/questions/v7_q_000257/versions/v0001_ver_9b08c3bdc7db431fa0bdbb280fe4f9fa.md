@@ -1,0 +1,100 @@
+# v7_q_000257
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[制裁合规与筛查]哪些措施有助于确保名称筛查流程能够有效识别潜在风险？(选择三项.)
+
+英文题干：Which measures help ensure that the name screening process is effective in identifying potential risk? (Select Three.)
+
+选项：
+
+- A. 在政策和程序中明确界定筛查范围、频率以及警报裁决流程
+  English: Define in policies and procedures the screening scope, frequency, and alert adjudication process.
+- B. 确定行业内最常用的姓名筛查数据库
+  English: Identify the most commonly used name screening database in the industry.
+- C. 指定专人确保筛查控制措施得到一致实施
+  English: Assign a designated person to ensure consistent implementation of screening controls.
+- D. 进行风险评估,以确定要筛选的数据属性、筛选频率以及数据库的选择.
+  English: Conduct a risk assessment to determine which data attributes to screen, screening frequency, and database selection.
+- E. 定期进行测试,以验证筛查系统是否按预期运行
+  English: Conduct periodic testing to validate whether the screening system is operating as intended.
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+
+风险为本的名称筛查设计与测试
+
+## 【核心解析】
+
+有效的制裁筛查需要同时回答「如何筛」「筛什么、用什么名单」以及「系统是否真的按设计运行」。教材将规划客户和交易筛查方式、选择名单以及测试名单管理流程共同作为确保制裁合规计划有效的措施（P419）。选项A把范围、频率和警报裁决写入政策程序，固定筛查流程；选项D通过风险评估决定数据属性、频率和数据库，符合「根据法规和风险决定筛查对象及名单」的原则（P419）；选项E通过定期测试验证名单是否正确集成并产生相关警报（P420）。因此答案为A、D、E。
+
+教材原句："Carefully considering how to plan to screen customers and transactions, which lists to use, and how to test that the list management process is working correctly ensures that the sanctions compliance program is effective."（P419）
+
+## 【错误项分析】
+
+- **B 错误**：「行业内最常用」不能替代与机构自身地理位置、交易币种、业务模式、客户所在地和客户活动相匹配的名单选择（P419）。数据库的普及度本身不能保证筛查适合本机构的风险暴露。
+- **C 错误**：指定责任人有助于落实控制，但选项只说明「有人负责」，没有规定筛查范围、风险参数或验证机制。相比之下，A、D、E直接覆盖筛查的设计、风险校准和测试。
+
+## 【易错提醒】
+
+名单选择应以机构风险为本，而不是追随行业使用频率（P419）；测试则验证选定名单是否正确进入系统并产生相关警报（P420）。风险评估和测试分别解决「参数为何这样设」与「系统是否照此运行」。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004208`
+
+### `v7u_N004208`
+
+- 用于：核心解析
+- 章节：Technology for KYC > List management
+- 页码：PDF第424页 / 书内第419页
+- 中文要点：规划客户和交易筛查方式、选用名单并测试名单管理流程，可确保制裁合规计划有效。
+- 英文原文：Carefully considering how to plan to screen customers and transactions, which lists to use, and how to test that the list management process is working correctly ensures that the sanctions compliance program is effective.
+
+### `v7u_N004212`
+
+- 用于：错误项分析、易错提醒
+- 章节：Technology for KYC > List management
+- 页码：PDF第424页 / 书内第419页
+- 中文要点：名单选择取决于地理位置、交易币种、业务模式、客户所在地和客户活动等因素。
+- 英文原文：Which lists to use: This will be based on a number of factors, including geographic location, the currencies involved in transactions, the business model, where your customers are based, and the activities they undertake.
+
+### `v7u_N004213`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology for KYC > List management
+- 页码：PDF第424页 / 书内第419页
+- 中文要点：应根据法规和风险决定客户、受益所有人及交易需要针对哪些名单进行筛查。
+- 英文原文：What to screen: Consider which lists customers, beneficial owners, and transactions should be screened against based on regulation and risk.
+
+### `v7u_N004216`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology for KYC > List management
+- 页码：PDF第425页 / 书内第420页
+- 中文要点：应建立名单审查和技术保证流程，验证制裁名单被正确纳入系统并产生相关警报。
+- 英文原文：Testing and assurance: It is common practice to ensure there is a process in place for reviewing lists to screen against and a technical assurance process to verify that sanctions lists are incorporated correctly into your systems and producing relevant alerts.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D、E
+- 中文参考答案：A、D、E
+
+### 中文参考解析
+
+选项A,在政策和程序中明确界定筛查范围、频 率以及警报裁决流程,能确保筛查工作有章可 循,有效识别潜在风险.选项D,通过风险评估 确定筛选的数据属性、频率及数据库选择,可提 高筛查的针对性和准确性.选项E,定期测试可 验证筛查系统是否按预期运行,及时发现并解决 问题,保障筛查效果.选项B,确定行业常用姓 名筛查数据库,不能全面有效识别潜在风险;选 项C,指定专人确保措施实施,不如定期测试更 能直接保障筛查系统有效性.所以选ADE.易 错提醒:注意全面考虑筛查流程的各个环节,不 能遗漏关键步骤.
+
+- 英文参考答案：A、D、E
+
+### 英文参考解析
+
+金融犯罪调查中,开源工具的应用优势可从工具 特性及行业实践角度分析.部分自动化数据收集 与分析(A)体现在工具可批量处理重复性任 务,如网络爬虫抓取公开数据、自然语言处理解 析文档,减少人工操作.成本效益与数据广度 (B)源于开源软件的免费或低费用特性,降低 技术部署成本,同时整合政府公开数据库、社交 媒体等多源信息.实时监控(C)通常依赖专用 监控系统,对应商业软件功能;完全无人监管 (D)不符合调查工作需人工介入判断的特性; 跨数据关联(E)更多依赖算法设计而非工具本 身开源属性.国际反洗钱组织FATF报告曾提及 开源情报在数据获取阶段的效率优势.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,115 @@
+# v7_q_000200
+
+教材章节：未映射
+
+题型：single
+
+题干：一家全球性金融机构正在对其尽职调查流程进行全面审查，以加强其抵御金融犯罪的能力。近期事件凸显了与员工不当行为相关的漏洞，包括未经授权的交易和敏感客户信息泄露。此外，该金融机构还面临第三方供应商未能达到合规标准的问题，导致监管审查增加。以下哪项措施最能有效满足银行对员工、供应商和第三方的尽职调查需求，以降低内部威胁并确保遵守反洗钱法规？
+
+英文题干：A global financial institution is conducting a comprehensive review of its due diligence processes to strengthen its defenses against financial crime. Recent incidents have highlighted vulnerabilities related to employee misconduct, including unauthorized transactions and sharing of sensitive customer information. Additionally, the FI has faced issues with third-party vendors who failed to meet compliance standards, leading to increased regulatory scrutiny. Which of the following measures would be most effective in addressing the bank's due diligence needs for employees, vendors, and third parties to mitigate insider threats and ensure compliance with AML regulations?
+
+选项：
+
+- A. 依靠供应商和员工定期提交的自我报告合规证明来确认其是否遵守反洗钱标准
+  English: Relying on self-reported compliance certifications from vendors and employees to confirm adherence to AML standards on a periodic basis
+- B. 建立针对员工、供应商和第三方的监控计划，包括定期风险评估、访问控制以及对其遵守反洗钱政策情况的定期审查
+  English: Establishing a surveillance program for employees, vendors, and third parties, including periodic risk assessments, access controls, and regular reviews of their compliance with AML policies
+- C. 在员工和供应商入职或合作开始前实施背景调查，以识别任何潜在风险因素
+  English: Implementing background checks for employees and vendors prior to onboarding or the start of engagement to identify any red flags
+- D. 限制在高风险司法管辖区的供应商和第三方数量，以降低合规风险
+  English: Limiting the number of vendors and third parties in high-risk jurisdictions in order to reduce exposure to compliance risks
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+区分入职时点检查与涵盖全生命周期的持续监控计划
+
+## 【核心解析】
+
+健全的员工尽职调查（KYE）计划可以降低员工相关风险，了解你的供应商（KYV）计划用于评估第三方供应商风险（P324）。教材进一步要求，针对员工和供应商的风险，机构应在入职或合作开始时以及整个关系存续期间实施健全的尽职调查和监控计划（P324）；供应商管理还应开展尽职调查和风险评估，确认第三方遵守金融犯罪防控政策（P263）。题干同时出现已发生的员工不当行为和存续供应商合规失败，说明只做准入检查不够。B是唯一同时覆盖员工、供应商和第三方，并包含定期风险评估、访问控制和持续合规复核的选项，因此最完整地对应教材的全生命周期要求。
+
+教材原句："To mitigate or control those risks, organizations should have robust due diligence and monitoring programs at onboarding and throughout the lifetime of the relationship."
+
+## 【错误项分析】
+
+- **A 错误**：A只取得员工和供应商的自我声明，没有包含机构主动开展的尽职调查、风险评估和关系存续期监控。教材要求的是健全的尽职调查和监控计划（P324），因此A覆盖不足。
+- **C 错误**：新员工背景调查是必要措施，供应商在合作开始时也应接受尽职调查（P324）；但教材还指出，在员工整个任职期间持续检查其是否遵守政策可提供进一步保证（P324）。C只覆盖准入时点，无法回应题干中已经发生的存续期问题。
+- **D 错误**：D只限制高风险司法管辖区的供应商和第三方数量，既未覆盖员工，也没有建立对现有关系的风险评估和合规复核。它不能完整回应题干列出的两类风险（P263、P324）。
+
+## 【易错提醒】
+
+背景调查和持续监控的核心区别是时间覆盖。背景调查解决准入时点风险；教材要求的KYE/KYV计划还覆盖整个关系存续期（P324）。题干列举的未经授权交易、信息泄露和供应商持续不合规都发生在关系建立之后，因此B优于只做前置背景调查的C。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003210`
+
+### `v7u_N003206`
+
+- 用于：核心解析
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：健全的员工尽职调查（KYE）计划可降低员工相关风险。
+- 英文原文：A robust employee due diligence program, also known as a know your employee (KYE) program, lowers those risks.
+
+### `v7u_N003207`
+
+- 用于：核心解析
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：了解你的供应商（KYV）计划用于评估第三方供应商风险。
+- 英文原文：A know your vendor (KYV) program helps assess the risk of third-party vendors.
+
+### `v7u_N003210`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：机构应在入职时及关系存续期间实施健全的尽职调查和监控计划
+- 英文原文：To mitigate or control those risks, organizations should have robust due diligence and monitoring programs at onboarding and throughout the lifetime of the relationship.
+
+### `v7u_N002591`
+
+- 用于：核心解析
+- 章节：Second LOD's AFC role and its interaction with the front office > Second LOD's interaction with other functions
+- 页码：PDF第268页 / 书内第263页
+- 中文要点：供应商管理部门对第三方供应商进行尽职调查和风险评估，确保其遵守金融犯罪防控政策且不带来额外风险。
+- 英文原文：Vendor management: Conduct due diligence and risk assessments, ensuring third-party vendors comply with AFC policies and do not pose additional risks.
+
+### `v7u_N003211`
+
+- 用于：选项C、易错提醒
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：所有新员工必须根据当地就业和数据保护法进行背景调查
+- 英文原文：Background checks are necessary for all new employees in accordance with local employment laws and data protection laws.
+
+### `v7u_N003213`
+
+- 用于：选项C、易错提醒
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：在员工整个任职期间持续检查政策和程序合规情况可提供进一步保证。
+- 英文原文：While most organizations conduct these checks during onboarding, checking to confirm compliance with policies and procedures throughout the lifetime of the employee offers further assurance to organizations.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+为降低内部威胁并确保符合反洗钱法规,需对员 工、供应商和第三方进行全面尽职调查.选项A 依赖自我报告合规证明,存在主观性和不准确 性,无法有效识别潜在风险.选项C仅在入职或 合作前实施背景调查,忽略了持续监控的重要 性.选项D限制高风险地区供应商数量,虽降低 合规风险散口,但未全面解决尽职调查问题.选 项B建立监控计划,包括定期风险评估、访问控 制及反洗钱政策遵守情况审查,能全面、持续地 监控和评估风险,确保合规性,是最有效的措 施. 度 难
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+题目问的是美国反洗钱和反恐融资(AML/CFT) 立法的基石法规,该法规要求金融机构建立并维 护健全的AML计划,包括客户识别和尽职调查程 序,以及向金融犯罪执法网络(FinCEN)记录 和报告某些交易.根据多个技术资料显示,美国 《银行保密法(BankSecrecyAct,BSA)》是 AML/CFT立法的基石,它要求金融机构实施这些 措施以防止洗钱和恐怖融资活动.而《美国爱国 者法案》是对BSA的补充和强化,并非基石法 规.因此,正确答案是B.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

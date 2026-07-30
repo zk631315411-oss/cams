@@ -1,0 +1,90 @@
+# v7_q_000395
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些情况会导致政治公众人物(PEP)比一般高风险银行客户带来更大的风险？(选择两项.)
+
+英文题干：Which of the following conditions contribute to a politically exposed person (PEP) posing greater risk than a typical high-risk bank customer? (Select two.)
+
+选项：
+
+- A. 政治公众人物的家庭成员和密切关系人可能会参与非法活动.
+  English: The family members and close associates of PEPs may be involved in illicit activities
+- B. 根据国际银行业规定,政治公众人物可获得无限制的信贷和金融豁免.
+  English: PEPs are granted unlimited credit and financial immunity under international banking regulations
+- C. 政治公众人物可能会利用使馆活动来掩盖贿赂和腐败交易.
+  English: PEPs may exploit embassy activities to conceal bribery and corruption transactions
+- D. 即使资金来源不合法，其账户也不会因超出银行风险承受能力的活动而被合法关闭.
+  English: PEPs can have illegitimate fund sources but are legally protected from having their accounts closed for activities outside the bank's risk tolerance
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+PEP近亲属风险及利用使馆活动掩盖贿赂腐败的风险
+
+## 【核心解析】
+
+PEP指担任显要公职的个人及其直系亲属或密切关联人，可能面临更高的贿赂和腐败风险（P137）。题干问哪些条件导致PEP比一般高风险客户风险更大：家庭成员和密切关系人本身就是PEP定义的组成部分，其可能参与非法活动，天然扩大了受威胁的范围（A正确）。另一方面，使馆相关政府关系因涉及个人通常被归为PEP而给银行带来不同程度的风险，且通过个人账户开展使馆官方业务会引发交易透明度和合法性问题，容易被用来掩盖贿赂和腐败交易，这构成了PEP特有的额外风险通道（C正确）（P138）。
+
+教材原句："A PEP is an individual in a prominent political function, or their immediate family or close associates, who could be at higher risk for involvement in bribery and corruption."
+
+## 【错误项分析】
+
+- **B 错误（概念混淆）**：外国PEP应被视为高风险并接受强化尽职调查（P137），而不是享有无限信贷或金融豁免。B把更严格的风险管理要求误写成特殊金融待遇。
+- **D 错误（概念混淆）**：账户终止程序与PEP是否带来额外风险是两个问题。PEP账户并不因其身份获得免于合法关闭的特权；银行仍可根据风险承受能力、资金来源和客户活动采取控制或终止关系，因此D不能解释PEP风险为何更高。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001257`
+
+### `v7u_N001257`
+
+- 用于：核心解析
+- 章节：Providing financial services to embassies, foreign consulates, and missions
+- 页码：PDF第142页 / 书内第137页
+- 中文要点：政治敏感人物指担任显要公职的个人及其直系亲属或密切关联人，可能面临更高的贿赂和腐败风险
+- 英文原文：A PEP is an individual in a prominent political function, or their immediate family or close associates, who could be at higher risk for involvement in bribery and corruption.
+
+### `v7u_N001256`
+
+- 用于：核心解析
+- 章节：Providing financial services to embassies, foreign consulates, and missions
+- 页码：PDF第142页 / 书内第137页
+- 中文要点：使馆相关政府关系因涉及政治敏感人物而给银行带来不同程度的风险
+- 英文原文：Each of these governmental relationships poses different levels of risk to the bank because the individuals involved are usually classified as PEPs in most host countries.
+
+### `v7u_N001263`
+
+- 用于：核心解析
+- 章节：Providing financial services to embassies, foreign consulates, and missions
+- 页码：PDF第143页 / 书内第138页
+- 中文要点：通过个人账户进行使馆官方业务，引发交易透明度和合法性问题。
+- 英文原文：Official embassy business conducted through personal accounts, raising concerns about the transparency and legitimacy of transactions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+政治公众人物(PEP)因职位特殊性,其家庭成 员和密切关系人可能涉足非法活动,利用PEP影 响力或资源进行洗钱等,故选项A正确.同时, PEP可能利用使馆活动掩盖贿赂和腐败交易,因 其活动常具外交豁免权等特殊性,难以被有效监 管,选项C正确.而选项B中,国际银行业规定 并未赋予PEP无限制信贷和金融豁免,此说法错 因超出银行风险承受能力而被关闭,此说法同样 错误.
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

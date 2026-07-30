@@ -1,0 +1,98 @@
+# v7_q_000250
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些是接纳高风险客户相关的洗钱风险？(选择两项.)
+
+英文题干：Which of the following are AML risks associated with onboarding a high-risk customer? (Select Two.)
+
+选项：
+
+- A. 加强的客户尽职调查要求
+  English: Enhanced customer due diligence requirements.
+- B. 洗钱非法所得的可能性较高
+  English: Greater potential for laundering illicit proceeds.
+- C. 与低风险客户相比,监管审查力度降低
+  English: Reduced regulatory scrutiny compared to low-risk customers.
+- D. 更有可能从事金融犯罪活动
+  English: Increased likelihood of engaging in financial crimes.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+区分「风险本身」与「风险控制措施」
+
+## 【核心解析】
+
+题干要求区分高风险客户带来的风险与机构为控制风险采取的措施。风险为本方法按照客户的潜在金融犯罪风险进行分类；风险较高的客户可能接受强化尽职调查和加强监控（P270）。这说明「高风险」表示洗钱非法所得或涉及金融犯罪的风险暴露和可能性较高，并不等于已经证明客户持有非法资金或实施犯罪。B的「洗钱非法所得的更大潜力」和D的「更有可能从事金融犯罪活动」描述的正是这种较高的潜在风险。教材还举例说明，政治敏感人物可能更易受腐败影响，中介机构可能代客户促成非法交易，进一步说明高风险分类关注犯罪利用的可能性（P104）。故应选择B、D。
+
+教材原句："A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk."（P270）
+
+## 【错误项分析】
+
+- **A 错误**：强化尽职调查是机构识别出较高风险后采取的控制措施。教材指出，高风险客户通常会接受更深入的EDD审查（P306、P270），因此A描述的是风险的处理方式，而不是接纳该客户产生的洗钱风险本身。
+- **C 错误**：高风险客户可能接受EDD和加强监控（P270），审查强度通常高于而不是低于低风险客户。C把风险为本方法的资源配置方向写反。
+
+## 【易错提醒】
+
+高风险标签表示风险概率或暴露程度较高，不是犯罪事实认定。B、D使用「潜力」「可能性」描述风险；A的EDD和加强监控则是识别风险后的控制措施（P270、P306）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002682`
+
+### `v7u_N002682`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：机构根据客户的潜在金融犯罪风险进行分类，较高风险客户可能接受强化尽职调查和加强监控。
+- 英文原文：A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk.
+
+### `v7u_N000921`
+
+- 用于：核心解析、选项B、选项D
+- 章节：Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks
+- 页码：PDF第109页 / 书内第104页
+- 中文要点：高风险客户和中介机构需要谨慎评估；政治敏感人物可能更易受腐败影响，中介机构可能代客户促成非法交易。
+- 英文原文：High-risk customers, such as PEPs, and intermediaries require careful risk assessment. PEPs might be susceptible to corruption, while intermediaries might facilitate illicit transactions on behalf of customers.
+
+### `v7u_N003029`
+
+- 用于：选项A
+- 章节：Onboarding AFC controls > • Risk assessment:
+- 页码：PDF第311页 / 书内第306页
+- 中文要点：高风险客户需强化尽职调查，标准风险客户（含低、中风险）也需进行尽职调查
+- 英文原文：Customers deemed high risk are typically examined more deeply through enhanced due diligence. Customers deemed standard risk, which includes low and medium risk, also undergo a due diligence process.
+
+### `v7u_N003102`
+
+- 用于：核心解析、易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：现金密集型或高风险行业是客户高风险分类的行业风险因素。
+- 英文原文：Industry risk: Engaging in cash-intensive or high-risk businesses such as money services, cryptocurrency exchanges, gambling, arms trading, and luxury goods
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+接纳高风险客户会带来多方面洗钱风险.选项 B,洗钱非法所得因客户高风险有更大潜力,高 风险客户可能涉及更复杂交易,使非法资金更难 被发现和追踪,增加了洗钱可能性.选项C表述 错误,高风险客户监管审查力度应是加强配非降 低.选项D,高风险客户本身特性决定其更有可 能从事金融犯罪活动,比如洗钱、恐怖融资等. 选项A加强客户尽职调查要求是应对风险措施, 非风险.所以选BD.易错提醒:注意区分风险 本身和应对风险的措施.
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+-[RisksandMethodsofMoneyLaunderi 多选 ngandTerroristFinancing]Whichofthefollowin gareAMLrisksassociatedwithonboardingahi gh-riskcustomer?(SelectTwo.) Enhancedcustomerduediligencereq A uirements Greaterpotentialforlaunderingillicitpr oceeds Reducedregulatoryscrutinycompared C tolow-riskcustomers Increasedlikelihoodofengaginginfin ancialcrimes 正确答案BD您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

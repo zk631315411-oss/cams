@@ -1,0 +1,92 @@
+# v7_q_000229
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融机构（FI）应为拟开立新银行账户的新企业客户审查哪些风险因素？（选择三项。）
+
+英文题干：Which risk factors should a financial institution (FI) examine for a new corporate customer intending to open a new bank account? (Select three.)
+
+选项：
+
+- A. 新客户目前开户或曾经开户的所有金融机构
+  English: All the financial institutions where the new customer currently banks or banked previously.
+- B. 该企业客户所从事的业务类型
+  English: The type of business the corporate customer is engaged in.
+- C. 新客户所有员工的就业情况和信息
+  English: The employment profiles and information of all employees of the new customer.
+- D. 客户所属的国家或地区,或客户开展业务的国家或地区
+  English: The country or location where the customer is from or conducts business.
+- E. 高级管理人员的身份以及所有获授权操作该账户的个人身份
+  English: The identity of senior managing officials and all individuals authorized to operate the account.
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+企业客户开户时CDD风险因素审查的核心维度
+
+## 【核心解析】
+
+教材在阐述客户风险评级时列出行业、交易量、腐败指数和地理位置，因此B「业务类型」和D「国家或地区」属于直接影响客户风险评级的因素（P275）。E的性质略有不同：它不是风险高低指标，而是法人客户开户CDD中的身份核实要求；教材要求验证董事、高级管理层和授权签字人，与选项所述高级管理人员及获授权操作账户者直接对应（P311）。题干将风险审查和开户CDD要素合并询问，因而B、D、E是三个最符合教材的选项。
+
+教材原句："For customers, risk rating generally considers their industry, transaction volume, corruption index, and geographic location."（P275）
+
+## 【错误项分析】
+
+- **A 错误**：选项要求审查客户「所有」当前及以往往来的金融机构，范围过宽。法人客户开户审查的重点是客户自身的身份、业务、地理风险以及所有权和账户操作人员，而不是穷尽其全部历史银行关系，因此A不如B、D、E匹配。
+- **C 错误**：教材对自然人客户列有就业和收入信息（P309）；法人客户则要求核实董事、高级管理层和授权签字人等相关人员（P311）。选项C把范围扩大到新客户的「所有员工」，既不是企业风险评级因素，也超出了这里列出的法人身份核实对象；E与法人开户CDD要求更直接对应。
+
+## 【易错提醒】
+
+自然人客户资料可以包括就业和收入信息（P309）；法人客户CDD则需要核实法人本身及与其控制、管理或账户操作有关的人员（P311）。本题引用的教材条目直接列出董事、高级管理层和授权签字人，并不要求收集全体员工资料。这里不能把「无需审查所有员工」扩大解释为法人CDD只核实高管和授权签字人。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002745`
+
+### `v7u_N002745`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：客户风险评级考虑行业、交易量、腐败指数和地理位置
+- 英文原文：For customers, risk rating generally considers their industry, transaction volume, corruption index, and geographic location.
+
+### `v7u_N003089`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Onboarding AFC controls > KYC for a legal person
+- 页码：PDF第316页 / 书内第311页
+- 中文要点：CDD需验证董事、高级管理层和授权签字人。
+- 英文原文：Verification of directors, senior management, and authorized signatories.
+
+### `v7u_N003066`
+
+- 用于：易错提醒
+- 章节：Onboarding AFC controls > KYC for a natural person
+- 页码：PDF第314页 / 书内第309页
+- 中文要点：CDD需收集就业和收入信息
+- 英文原文：Employment and income information.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+金融机构为新企业客户开设新银行账户时,需审 查多项风险因素以防范洗钱和恐怖融资.选项 B,企业客户从事的业务类型,是关键因素,不 同业务洗钱风险不同.选项D,客户所属或开展 业务的国家或地区,高风险地区可能增加洗钱可 能性.选项E,高级管理人员及获授权操作账户 的个人身份,有助于识别潜在风险.选项A和 C,与洗钱和恐怖融资风险直接关联性较弱,故 不选.正确答案为BDE.易错提醒:需全面考虑 客户背景、业务类型及地域风险
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+Allthefinancialinstitutionswherethen A ewcustomercurrentlybanksorbanke dpreviously Thetypeofbusinessthecorporatecus tomerisengagedin Theemploymentprofilesandinformati onofallemployeesofthenewcustom C er Thecountryorlocationwherethecust omerisfromorconductsbusiness Theidentityofseniormanagingofficial sandallindividualsauthorizedtooper atetheaccount 正确答案BDE您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

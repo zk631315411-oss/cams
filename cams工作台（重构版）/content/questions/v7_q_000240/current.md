@@ -1,0 +1,114 @@
+# v7_q_000240
+
+教材章节：未映射
+
+题型：multiple
+
+题干：持续KYC包括：（选择两项。）
+
+英文题干：Perpetual KYC includes: (Choose two.)
+
+选项：
+
+- A. 触发器能够实时识别静态数据变化以及基于客户行为的数据变化
+  English: Triggers identifying static data changes and data based on client's behaviors in real time.
+- B. 每年、每三年和每五年定期更新
+  English: Periodic refreshing at one-, three- and five-year cycles.
+- C. 能够根据客户数据而非仅依据时间表来更好地确定优先级
+  English: Ability to prioritize better based on client data rather than driven by schedules alone.
+- D. 将客户分类为不同风险类别
+  English: Classification of clients into categories of risk.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+区分Perpetual KYC与传统定期KYC的核心特征
+
+## 【核心解析】
+
+教材将Perpetual KYC界定为持续过程：它持续监控最新数据点，识别可能触发客户KYC审查的事项，并通过客户行为和情况变化进行近实时更新（P406）。教材还明确说明，该过程能够捕捉地址等静态数据变化（P406）。因此，A所述触发器、静态数据变化和客户行为数据均与教材直接对应；其中选项使用的「实时」应按教材更审慎的「近实时」理解，而不是保证零延迟处理。教材进一步指出，数据驱动方法使客户档案审查聚焦最高风险客户，并按「需要时即审查」而非仅依固定周期安排（P407），直接支持C。故应选A、C。
+
+教材原句："Perpetual KYC monitors various up-to-date data points on an ongoing basis to identify any triggers that might warrant a KYC review of a customer."（P406）
+
+## 【错误项分析】
+
+- **B 错误**：B选项描述的「每年、每三年和每五年定期更新」是传统定期KYC的典型周期，教材指出这类周期过长、导致客户数据过时，机构正是为了规避此问题而转向Perpetual KYC（P406）。相比之下，题干更直接对应的是基于触发器而非固定时间表的持续更新。
+- **D 错误**：教材介绍Perpetual KYC前，先将客户准入时按高、中、低风险类别或风险评分进行分类，明确列为传统KYC流程（P406）。Perpetual KYC的区别性内容是根据持续更新的数据和触发器维护客户资料并安排必要审查，而不是首次建立风险类别。因此D属于一般或传统KYC步骤，不是本题所问Perpetual KYC的组成特征。
+
+## 【易错提醒】
+
+风险分类本身是KYC的一般步骤（P406）；Perpetual KYC的考点是持续、触发器驱动和数据驱动（P406-P407）。另需注意，教材使用的是「near-real-time」，答题时不应把A理解为技术上绝对零延迟的实时处理。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004063`、`v7u_N004069`、`v7u_N004071`、`v7u_N004074`
+
+### `v7u_N004063`
+
+- 用于：选项D、易错提醒
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第411页 / 书内第406页
+- 中文要点：传统KYC在客户准入时执行检查，并按风险类别或风险评分对客户进行分类
+- 英文原文：Traditional KYC within organizations involves performing KYC checks during customer onboarding and classifying customers according to risk categories (such as high, medium, or low) or risk scores.
+
+### `v7u_N004069`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第411页 / 书内第406页
+- 中文要点：持续了解你的客户持续监控数据点以识别触发了解你的客户审查的触发器
+- 英文原文：Perpetual KYC monitors various up-to-date data points on an ongoing basis to identify any triggers that might warrant a KYC review of a customer.
+
+### `v7u_N004071`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第411页 / 书内第406页
+- 中文要点：持续了解你的客户也监控静态数据变化如地址变更
+- 英文原文：Perpetual KYC also picks up static data changes, such as changes to a customer’s address or headquarters location.
+
+### `v7u_N004074`
+
+- 用于：核心解析
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第412页 / 书内第407页
+- 中文要点：数据驱动方法使客户档案审查聚焦于高风险客户
+- 英文原文：This approach leads organizations to adopt a data-led methodology, allowing customer file reviews to focus on the highest-risk customers on an “as-often-as-needed” basis.
+
+### `v7u_N004065`
+
+- 用于：选项B
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第411页 / 书内第406页
+- 中文要点：定期审查周期过长导致客户数据过时的风险
+- 英文原文：However, typical periodic review cycles, such as once every three to five years, are too infrequent, allowing customer data to become outdated.
+
+### `v7u_N004066`
+
+- 用于：选项B
+- 章节：Technology for KYC > Perpetual KYC
+- 页码：PDF第411页 / 书内第406页
+- 中文要点：机构从定期了解你的客户转向持续了解你的客户以提高效率
+- 英文原文：To avoid this problem, organizations are increasingly shifting from periodic KYC practices to perpetual KYC to improve the overall efficiency of KYC processes.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+持续的客户身份识别要求金融机构不仅依赖时间 表更新客户信息,还需结合客户行为数据动态调 整识别策略.选项A指出系统能实时识别静态数 据变化及基于客户行为的数据,符合持续识别要 求;选项C强调根据客户数据而非仅时间表确定 优先级,有助于更精准地识别高风险客户.选项 B的定期更新频率不符合持续识别要求,选项D 的风险等级分类是识别前的准备步骤,非持续识 别内容.因此,正确答案为AC. 度 难
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+持续的客户身份识别要求金融机构不仅依赖时间 表更新客户信息,还需结合客户行为数据动态调 整识别策略.选项A指出系统能实时识别静态数 据变化及基于客户行为的数据,符合持续识别要 求;选项C强调根据客户数据而非仅时间表确定 优先级,有助于更精准地识别高风险客户.选项 B的定期更新频率不符合持续识别要求,选项D 的风险等级分类是识别前的准备步骤,非持续识 别内容.因此,正确答案为AC. 度 难
+
+### 答案冲突提示
+
+- 未发现答案冲突。

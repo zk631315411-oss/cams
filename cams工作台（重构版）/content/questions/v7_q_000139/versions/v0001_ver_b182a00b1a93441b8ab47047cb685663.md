@@ -1,0 +1,91 @@
+# v7_q_000139
+
+教材章节：未映射
+
+题型：single
+
+题干：隐私增强技术(PETS)在反洗钱方面的一个关键优势在于它们能够提供:
+
+英文题干：A key advantage of privacy-enhancing technologies (PETs) in anti-money laundering is that they offer:
+
+选项：
+
+- A. 对底层数据进行同步加密和解密
+  English: Simultaneous encryption and decryption of underlying data
+- B. 对底层数据的完全访问权限,并能对数据进行完整且不间断的计算.
+  English: Full access to underlying data, with full and uninterrupted calculations made on the data
+- C. 在数据保持加密状态下对其进行安全处理.
+  English: Secure processing of data while it remains encrypted
+- D. 数据处理者对数据的传输、解密和存储.
+  English: Transfer, decryption, and storage of data by the data processor
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+识别同态加密这一类PET的加密态计算能力
+
+## 【核心解析】
+
+隐私增强技术（PETs）是能在保护个人隐私的同时实现数据共享与分析的一组工具（P393）。教材列举的同态加密允许直接对加密数据执行计算，无需先解密，并由此支持保护隐私的协作分析（P393）。因此，PETs可以通过同态加密提供「数据保持加密状态时仍可安全处理」的能力，选项C直接对应这一教材示例。该能力使反洗钱参与方能够分析敏感金融数据，同时降低暴露底层个人信息的风险（P393）。这里的加密态计算特征具体属于同态加密，并非对所有PET实现方式的统一定义。
+
+教材原句："Homomorphic encryption: Using this technique, computations can be performed on encrypted data without needing to decrypt it first. This enables collaborative analysis of encrypted data, preserving privacy while maintaining utility."
+
+## 【错误项分析】
+
+- **A 错误**：教材对同态加密的表述是「无需先解密即可计算」（P393），而非对底层数据同步执行加密和解密。选项A没有描述教材所列的加密态计算能力。
+- **B 错误**：PETs的核心设计目标是保护隐私（P393），因此「完全访问权限」（Full access）与教材定义直接矛盾——教材明确指出PETs使机构能在「不暴露个人身份信息（PII）」的前提下协作（P393）。题干更匹配在限制访问的同时进行计算，而非要求对底层数据的完全访问。
+- **D 错误**：数据传输、解密和存储是常规数据处理步骤，不能体现题干所问的隐私增强优势。与之相比，选项C直接对应同态加密「无需先解密即可计算」的教材原文（P393）。
+
+## 【易错提醒】
+
+PETs是包含多种实现方式的技术集合（P393）；本题C项具体对应其中的同态加密（P393）。可以说「同态加密支持加密态计算」，但不应反推所有PET都必须让数据全程保持加密状态。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003940`
+
+### `v7u_N003935`
+
+- 用于：核心解析、选项A、选项B、选项D
+- 章节：Understanding AFC technology > Privacy-enhancing technology
+- 页码：PDF第398页 / 书内第393页
+- 中文要点：隐私增强技术（PET）是能够在保护个人隐私的同时实现数据共享与分析的创新工具。
+- 英文原文：Privacy-enhancing technologies (PETs) are innovative tools that enable data sharing and analysis while preserving individual privacy.
+
+### `v7u_N003940`
+
+- 用于：核心解析、选项A、选项B、选项D、易错提醒
+- 章节：Understanding AFC technology > Privacy-enhancing technology
+- 页码：PDF第398页 / 书内第393页
+- 中文要点：同态加密允许对加密数据直接执行计算而无需解密，实现隐私保护的协作分析。
+- 英文原文：Homomorphic encryption: Using this technique, computations can be performed on encrypted data without needing to decrypt it first. This enables collaborative analysis of encrypted data, preserving privacy while maintaining utility.
+
+### `v7u_N003937`
+
+- 用于：核心解析、选项A、选项B、选项D
+- 章节：Understanding AFC technology > Privacy-enhancing technology
+- 页码：PDF第398页 / 书内第393页
+- 中文要点：在 金融犯罪防控 中，PET 使银行与执法机构能在不暴露个人身份信息的情况下协作分析敏感金融数据。
+- 英文原文：In AFC efforts, PETs allow banks and law enforcement to collaborate on sensitive financial data without exposing PII. This helps overcome jurisdiction-based data-sharing restrictions and allows organizations to share intelligence efficiently.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+隐私增强技术(PETs)旨在保护数据隐私,在 反洗钱方面,其关键优势在于能在数据加密状态 下进行安全处理.选项A的同步加密和解密底层 数据,未突出反洗钱中对隐私保护的核心需求; 选项B的完全访问权限和完整计算,与保护隐私 相;选项D的数据处理者对传输、解密和存储 的全面介入,易导致隐私泄露.而选项C能在数 据保持加密状态下进行安全处理,既满足反洗钱 对数据处理的需要,又能有效保护隐私,故答案 选C.易错提醒:注意区分数据处理需求与隐私 保护的关系.
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+单选 Akeyadvantageofprivacyenhancin 勾了 hnologies(PETs)inanti-moneylaundering 制 attheyOffer: 业务 避 simultaneousencryptionanddecryptic A 选 nforunderlyingdata. 择 页C fullaccesstounderlyingdatawithfull 制度 anduninterruptedcalculationsmadec B 的 nthe data. Secureprocessingofdatawhileitrem ainsencrypted. transfer,decryptionandstorageofdat D abythedataprocessor. 笔记 正确答案C您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

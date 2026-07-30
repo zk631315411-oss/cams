@@ -1,0 +1,115 @@
+# v7_q_000071
+
+教材章节：未映射
+
+题型：single
+
+题干：一家大型国际金融机构在美国和欧盟均有业务。一笔涉及一位拥有美国和法国双重国籍的高净值客户的跨境交易因其中介机构位于高风险地区而引发担忧。鉴于该交易受美国《银行保密法》（BSA）和美国海外资产控制办公室（OFAC）的要求，以及欧盟《第六号反洗钱指令》（6AMLD）和欧洲银行管理局（EBA）法规的约束，合规团队应采取何种最佳措施来确保合规？
+
+英文题干：A large international financial institution has operations in both the United States and the European Union. A cross-border transaction involving a high-net-worth customer with dual U.S. and French citizenship raises concerns because its intermediary institution is located in a high-risk jurisdiction. Given that the transaction is subject to the requirements of the U.S. Bank Secrecy Act (BSA), the U.S. Office of Foreign Assets Control (OFAC), the EU Sixth Anti-Money Laundering Directive (6AMLD), and European Banking Authority (EBA) regulations, what is the best action the compliance team should take to ensure compliance?
+
+选项：
+
+- A. 仅遵循欧盟法规,因为受益人位于法国
+  English: Follow only EU regulations because the beneficiary is located in France
+- B. 实施一种同时满足美国和欧盟AFC规定的双重合规方法
+  English: Implement a dual compliance approach that satisfies both U.S. and EU AFC requirements
+- C. 遵从最严格的监管制度以简化合规流程
+  English: Follow the strictest regulatory regime to simplify the compliance process
+- D. 仅遵循美国法规,因为交易起源于美国
+  English: Follow only U.S. regulations because the transaction originated in the United States
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+跨境交易下多司法管辖区法规并行的合规判断
+
+## 【核心解析】
+
+在跨境交易的金融犯罪合规（AFC）框架下，当一笔交易涉及多个司法管辖区时，合规团队需要同时考虑所有相关地区的法规。教材案例中，Hiroshi因机构的跨境交易涉及美国和欧盟，便同时参考了这两地的AFC法规（P178）。同样，教材也指出，国际金融机构需协调全球政策与当地法规，美国《银行保密法》要求外国金融机构的美国分行满足其最低标准（P194）。本题中，客户拥有美法双重国籍，中介机构位于高风险地区，交易同时触发美国BSA/OFAC要求和欧盟6AMLD/EBA法规，因此实施同时满足美国和欧盟AFC规定的双重合规方法，最能确保全面合规。
+
+教材原句："Hiroshi references the AFC regulations in both the US and EU because some of the cross-border transactions involve those jurisdictions."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜范围或程度偏差**：题干中客户拥有美国和法国双重国籍，且交易同时受美国BSA/OFAC和欧盟法规约束，仅遵循欧盟法规会遗漏美国一方的合规义务。教材案例也支持，当跨境交易涉及多个地区时，需同时考虑相关司法管辖区的法规（P178）。
+- **C 错误（教材定义应用）｜概念混淆**：教材描述的国际金融机构实践方式是「为集团政策附加特定司法管辖区的附录」（P194），而非简单地遵从最严格制度。当各地标准不同时，合规的关键是同时满足各方要求，而不是用一个层级覆盖另一个层级，该选项的「简化」思路与教材中处理差异性的协调框架不直接匹配。
+- **D 错误（教材定义应用）｜题干要素不匹配**：题干未明确提及交易起源于美国，且不论起源地，交易已明确受美国与欧盟双重法规约束。仅遵循美国法规会遗漏欧盟的合规要求，与教材中因跨境交易涉及多个地区而需同时考虑相关法规的原则不一致（P178）。
+
+## 【易错提醒】
+
+容易误将「最严格的制度」当作安全选择。但教材框架下，跨境合规的关键是「并行满足所有涉及司法辖区的要求」，而非用单一标准替代。教材以香港10%受益所有人规则为例，说明国际银行通过为集团政策附加「特定司法管辖区附录」来逐条满足高标准（P194），而非全盘替换成最严规则。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001673`
+
+### `v7u_N001673`
+
+- 用于：核心解析、选项A、选项D
+- 章节：Case example: Drafting policies for an AFC department based in APAC
+- 页码：PDF第183页 / 书内第178页
+- 中文要点：Hiroshi参考美国和欧盟的金融犯罪防控法规，因跨境交易涉及这些地区
+- 英文原文：Hiroshi references the AFC regulations in both the US and EU because some of the cross-border transactions involve those jurisdictions.
+
+### `v7u_N001847`
+
+- 用于：核心解析、选项A、选项D
+- 章节：US AML/CFT regulatory landscape > Local AML regulations and crossjurisdictional impact
+- 页码：PDF第199页 / 书内第194页
+- 中文要点：外国金融机构的美国分行须遵守《银行保密法》的最低标准。
+- 英文原文：For example, the Bank Secrecy Act, which is the primary AML law in the US, requires compliance from US branches of foreign financial institutions. This means foreign financial institutions must ensure that their group-wide policies meet the Bank Secrecy Act’s minimum standards.
+
+### `v7u_N001672`
+
+- 用于：选项A、选项C、选项D
+- 章节：Case example: Drafting policies for an AFC department based in APAC
+- 页码：PDF第183页 / 书内第178页
+- 中文要点：因涉及跨境交易，需考虑APAC及其他司法管辖区的法规
+- 英文原文：Because his organization will be active in cross-border transactions, he needs to consider regulations and standards within the APAC region as well as other jurisdictions.
+
+### `v7u_N001846`
+
+- 用于：选项C
+- 章节：US AML/CFT regulatory landscape > Local AML regulations and crossjurisdictional impact
+- 页码：PDF第199页 / 书内第194页
+- 中文要点：国际金融机构在各地实施反洗钱计划面临全球政策与当地法规协调的挑战。
+- 英文原文：An international financial institution often experiences complex operating environments. One of the operational challenges is the implementation of its AML program in all its locations. In this context, the interplay between a global, group-wide AML program and the local AML regulations is vital.
+
+### `v7u_N001849`
+
+- 用于：选项C、易错提醒
+- 章节：US AML/CFT regulatory landscape > Local AML regulations and crossjurisdictional impact
+- 页码：PDF第199页 / 书内第194页
+- 中文要点：国际金融机构常为集团反洗钱政策附加特定司法管辖区的附录。
+- 英文原文：To address potential differences in regulations, international financial institutions often attach jurisdiction-specific addenda to their group-wide AML policy.
+
+### `v7u_N001851`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第199页 / 书内第194页
+- 中文要点：香港曾实行10%受益所有人识别规则，高于美国25%标准，国际银行需附加香港附录。
+- 英文原文：For example, from 2012 to 2018, Hong Kong had a more stringent beneficial ownership identification rule of 10%, while the US’s rule was 25%. As a result, all international US banks operating in Hong Kong documented the higher standard in a Hong Kong-specific addendum.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+该金融机构业务受美国和欧盟双重监管,美国 《银行保密法》(BSA)美国海外资产控制办公 室(OFAC)及欧盟《第六项反洗钱指令》 (6AMLD)、欧洲银行管理局(EBA)法规均适用. 选项A、D仅遵循一方法规,无法满足全面合规 要求;选项C虽提到遵循最严格监管制度,但可 能遗漏关键合规点.选项B实施同时满足美国和 欧盟反洗钱及反资助恐怖主义规定的双重合规方 法,可确保全面合规,避免法律风险,是最佳措 施.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在跨国组织制定反金融犯罪(AFC)计划时,需 考虑不同司法辖区的合规要求.选项A忽略本地 法律,仅遵循国际制裁,不符合实际:选项B过 度强调美国法规,忽视其他国家规定;选项C主 张全球一致政策,无需适应本地法规,这在实践 中不可行;选项D强调确保集团政策符合各国特 定反洗钱(AML)和制裁法规,这是全面且实际 的方法.因此,确保集团政策符合各国特定AML 和制裁法规,是确保跨国合规的关键.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

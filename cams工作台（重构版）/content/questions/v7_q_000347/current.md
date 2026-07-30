@@ -1,0 +1,117 @@
+# v7_q_000347
+
+教材章节：未映射
+
+题型：multiple
+
+题干：在为组织选择反金融犯罪(AFC)工具时，应优先考虑哪些因素？(选择两项。)
+
+英文题干：Which factors should be prioritized when choosing an anti-financial crime (AFC) tool for an organization? (Select Two.)
+
+选项：
+
+- A. 实时数据分析能力作为更广泛战略的一部分
+  English: Real-time data analysis capabilities as part of a broader strategy
+- B. 倾向于选择成本最低的方案
+  English: Preference for the lowest-cost solution
+- C. 完全消除人工流程
+  English: Complete elimination of manual processes
+- D. 与现有IT基础设施的兼容性
+  English: Compatibility with existing IT infrastructure
+- E. 处理不断增长的交易量的可扩展性
+  English: Scalability to handle increasing transaction volumes
+
+## 【AI答案】
+
+D、E
+
+## 【考点】
+
+评估反金融犯罪工具选择的核心技术考量基准
+
+## 【核心解析】
+
+教材指出评估反金融犯罪新技术有四个关键考量：可扩展性、灵活架构、集成与协作（P389）。其中，可扩展性指能适应有机增长、并购及新产品服务引发的交易量增长，避免频繁系统更替（P390）。集成则要求确保与遗留技术及核心银行系统兼容，并简化工作流（P387）。本题询问选择反金融犯罪工具时的优先因素，选项 D「兼容性」和 E「可扩展性」正好落入教材列出的这些核心评估维度，因此为正确答案。
+
+教材原句："There are four key considerations for evaluating new AFC technology: scalability, flexible architecture, integration, and collaboration."
+
+## 【错误项分析】
+
+- **A 不选（属于具体功能）**：实时数据分析具有应用价值，但它是具体功能特性。兼容性和可扩展性属于更普遍的工具选型标准，决定工具能否融入现有环境并适应业务增长。
+- **B 错误（不能只看最低成本）**：工具选型应平衡成本、有效性、长期维护和合规价值，而不是单纯选择价格最低的方案。
+- **C 错误（表述绝对化）**：技术可以减少部分人工工作，但仍需保留适当的人工监督，不应把完全消除人工流程作为优先目标。
+
+## 【易错提醒】
+
+容易混淆「技术功能特性」与「技术评估标准」。教材系统地定义了选择反金融犯罪工具时的通用基准框架（如可扩展性、集成性）（P389-P390），而具体功能（如实时分析、自动化）是实现该基准的手段。在选工具时，「优先考虑」的是教材框架下的宽泛标准，而非某一项具体功能。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003904`
+
+### `v7u_N003904`
+
+- 用于：核心解析、选项A、选项B、易错提醒
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第394页 / 书内第389页
+- 中文要点：评估新金融犯罪防控技术的四个关键考量：可扩展性、灵活架构、集成与协作
+- 英文原文：There are four key considerations for evaluating new AFC technology: scalability, flexible architecture, integration, and collaboration.
+
+### `v7u_N003905`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第394页 / 书内第389页
+- 中文要点：可扩展性要求金融犯罪防控方案能适应有机增长、并购及新产品服务
+- 英文原文：Scalability: A robust AFC solution should accommodate organic growth, acquisitions, and new products or services. Scalability is essential to ensure compliance capabilities evolve alongside the organization’s expansion, minimizing the need for costly system replacements or frequent upgrades.
+
+### `v7u_N003779`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > Technology implementation considerations
+- 页码：PDF第383页 / 书内第378页
+- 中文要点：与现有系统集成：确保与遗留技术和核心银行系统兼容
+- 英文原文：Integration with existing systems: Ensure compatibility with legacy technology and core banking systems.
+
+### `v7u_N003911`
+
+- 用于：选项A、选项B
+- 章节：Understanding AFC technology > Integrating new AFC tools with existing systems and data
+- 页码：PDF第395页 / 书内第390页
+- 中文要点：机构应考虑金融犯罪防控工具的长期可持续性，确保其适应不断变化的合规环境
+- 英文原文：Additionally, organizations should consider the long-term sustainability of the AFC tool, ensuring it is built on adaptable frameworks that support evolving compliance landscapes. Prompt attention to data integrity, system compatibility, and governance processes will help institutions implement an AFC tool that not only meets current regulatory standards but also enables future technological advancements.
+
+### `v7u_N003869`
+
+- 用于：选项A、选项B、选项C、易错提醒
+- 章节：Understanding AFC technology > Transitioning from traditional systems to AIbased tools
+- 页码：PDF第392页 / 书内第387页
+- 中文要点：AI目前仍处于早期阶段，不太可能完全消除人工监督，而是起补充作用。
+- 英文原文：AI is still in its early days and, in its current state, is unlikely to completely eliminate the human in the loop. AI systems typically complement and support, rather than replace, human oversight.
+
+### `v7u_N004526`
+
+- 用于：易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Network analysis solutions for transaction monitoring
+- 页码：PDF第458页 / 书内第453页
+- 中文要点：网络分析支持实时分析，及时监控和响应新兴威胁
+- 英文原文：It enables real-time analysis, allowing investigators to promptly monitor and respond to emerging threats.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D、E
+- 中文参考答案：D、E
+
+### 中文参考解析
+
+在为组织选择反金融犯罪(AFC)工具时,应优 先考虑与现有IT基础设施的兼容性,以确保工具 选项D正确.同时,处理不断增长的交易量的可 扩展性也很关键,它能让工具适应组织业务的发 展,避免频繁更换工具带来的不便和额外成本, 选项E正确.而实时数据分析能力虽重要,但不 应作为更广泛战略的唯一考量,选项A错误:选 择成本最低的方案可能牺牲工具的有效性和可靠 性,选项B错误:完全消除人工流程不现实,且 可能降低灵活性和应对特殊情况的能力,选项C 错误.
+
+- 英文参考答案：D、E
+
+### 英文参考解析
+
+在为组织选择反金融犯罪(AFC)工具时,应优 先考虑与现有IT基础设施的兼容性,以确保工具 选项D正确.同时,处理不断增长的交易量的可 扩展性也很关键,它能让工具适应组织业务的发 展,避免频繁更换工具带来的不便和额外成本, 选项E正确.而实时数据分析能力虽重要,但不 应作为更广泛战略的唯一考量,选项A错误:选 择成本最低的方案可能牺牲工具的有效性和可靠 性,选项B错误:完全消除人工流程不现实,且 可能降低灵活性和应对特殊情况的能力,选项C 错误.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

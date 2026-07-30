@@ -1,0 +1,83 @@
+# v7_q_000193
+
+教材章节：未映射
+
+题型：single
+
+题干：专注于利用技术手段比现有能力更高效、更有效地满足监管要求的金融科技(FinTech)的一个子集被称为:
+
+英文题干：A subset of financial technology (FinTech) that focuses on technologies designed to facilitate the delivery of regulatory requirements more efficiently and effectively than existing capabilities is known as:
+
+选项：
+
+- A. 监管科技（SupTech）
+  English: SupTech
+- B. 子科技（SubTech）
+  English: SubTech
+- C. 合规科技（RegTech）
+  English: RegTech
+- D. 蓝色科技（BlueTech）
+  English: BlueTech
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+RegTech是专注于提升监管合规效率的金融科技子集
+
+## 【核心解析】
+
+世界经济论坛将regulatory technology描述为运用新技术，帮助受严格监管的行业主体履行监管治理、报告、合规和风险管理义务；FATF进一步指出，这类技术通过提高组织管理金融犯罪风险的效率和有效性来增强合规（P372）。题干同时给出「满足监管要求」和「更高效、更有效」两个要素，只有C项「合规科技」（RegTech）与教材所述术语及功能同时吻合。因此本题答案为C。
+
+## 【错误项分析】
+
+- **A 错误**：A的英文术语是SupTech，通常指监管机构利用技术提升监管能力；RegTech则服务于受监管行业主体履行合规义务。题干描述的是后者，因此C比A更匹配。
+- **B 错误**：SubTech并非题干所描述的监管合规技术术语，无法与利用技术提升合规效率的定义相匹配。
+- **D 错误**：BlueTech与题干所描述的监管合规技术概念无关，无法匹配利用技术提升合规效率的定义。
+
+## 【易错提醒】
+
+RegTech指受监管行业利用技术履行合规义务（P372）；SupTech则通常指监管机构利用技术开展监管。题干描述的是前者，因此应选择C。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003726`
+
+### `v7u_N003726`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > AFC technology overview
+- 页码：PDF第377页 / 书内第372页
+- 中文要点：世界经济论坛将监管技术定义为帮助受监管行业满足合规义务的新技术解决方案
+- 英文原文：The World Economic Forum describes regulatory technology as the application of new technological solutions that assist highly regulated industry stakeholders in setting, effectuating, and meeting regulatory governance, reporting, compliance, and risk management obligations.
+
+### `v7u_N003727`
+
+- 用于：核心解析
+- 章节：Understanding AFC technology > AFC technology overview
+- 页码：PDF第377页 / 书内第372页
+- 中文要点：FATF指出监管科技通过提高管理金融犯罪风险的效率和有效性来增强合规
+- 英文原文：According to FATF, the use of regulatory technology enhances compliance by enabling organizations to be more effective and efficient in managing financial crime risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A（中文源答案；与英文原题及教材定义冲突）
+- 中文参考答案：A（源题翻译将A、C重复译为「监管科技」）
+
+### 中文参考解析
+
+本题考查金融科技(FinTech)子领域的概念. 专注于利用技术手段比现有能力更高效、更有效 地满足监管要求”是监管科技(RegTech)的核心 定义.RegTech是FinTech的一个子集,旨在通 过技术(如人工智能、大数据)提高金融机构的 合规效率,降低合规成本,并增强风险管理能 力.选项A和C均为“监管科技”,其中C重复A, 可能是录入错误.选项B“子科技”和D“蓝色科技 非标准术语.因此,正确选项为A 度 难
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A，英文=C
+- 盲判与题库最终参考答案冲突：盲判=C，题库最终=A
+- 复核结论：英文原题C=RegTech，教材定义支持C；中文源答案A不可采用

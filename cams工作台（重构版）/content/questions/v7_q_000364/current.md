@@ -1,0 +1,58 @@
+# v7_q_000364
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家人寿保险公司的反洗钱报告官(MLRO)正在审查产品风险评估方法.以下哪些人寿保险产品的属性会被赋予较高的风险评级？(选择三项.)
+
+英文题干：The money laundering reporting officer (MLRO) of a life insurance company is reviewing the product risk assessment methodology. Which of the following attributes of life insurance products would be attributed a higher risk rating? (Select three.)
+
+选项：
+
+- A. 允许大额不规则缴费并具有资金积累功能的年金产品
+  English: Annuity products that allow large, irregular premium payments and accumulation of value
+- B. 允许在保单生效后变更指定受益人的产品
+  English: Products that allow the option to change the nominated beneficiary after the commencement of the policy
+- C. 具有国际健康保险保障的产品
+  English: Products with international health insurance coverage
+- D. 允许有现金退保价值的产品
+  English: Products that allow for a cash surrender value
+- E. 限制资金从一份保单转移到另一份保单的产品
+  English: Products that restrict the transfer of funds from one policy to another
+
+## 【AI答案】
+
+A、B、D
+
+## 【考点】
+按人寿保险产品的资金积累、受益人可变性和现金价值评估固有风险。
+## 【核心解析】
+高现金价值、灵活缴费或灵活改变资金受益安排的保险产品更容易被用于掩盖资金来源（P101）。A允许大额不规则缴费并具有资金积累功能，直接对应保险产品可被用于投入和保存资金的风险；B允许保单生效后变更受益人，增加资金最终归属的灵活性；D允许现金退保价值，能把非法投入较快转换为可支配现金。C的国际健康保障并不当然意味着具有现金价值或可转移性，E反而限制保单间资金转移。
+## 【错误项分析】
+- **C**：跨境属性可能增加尽调复杂度，但仅有国际健康保障不足以证明其具有保险洗钱的核心产品特征。
+- **E**：限制资金转移是降低流动性和滥用空间的控制性属性。
+## 【易错提醒】
+重点看产品能否灵活改变受益人、快速变现或转移资金（P101），而不是只看是否跨境。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N000882`；页码：P101。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、D
+- 中文参考答案：A、B、D
+
+### 中文参考解析
+
+根据反洗钱风险评估原则，具有资金积累、灵活缴费、受益人可变或现金退保价值的保险产品更容易被用于掩盖资金来源或转换资金形态。A允许大额不规则缴费并具有资金积累功能，B允许变更受益人，D允许现金退保价值，三项都比单纯国际健康保障或限制资金转移的产品更符合高风险属性。
+
+- 英文参考答案：A、B、D
+
+### 英文参考解析
+
+Higher-risk life insurance product attributes usually relate to value accumulation, flexible premium payments, flexible beneficiary arrangements, and cash surrender value. Options A, B, and D therefore best match the product features that can be misused to obscure source of funds or convert funds.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,132 @@
+# v7_q_000246
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些属于客户的可疑交易？(选择三项.)
+
+英文题干：Which of the following are suspicious transactions by a customer? (Select Three.)
+
+选项：
+
+- A. 一位客户存入了大量连续编号的汇票.
+  English: A customer deposits a large number of consecutively numbered money orders.
+- B. 一位客户要求提供向当地公司发放的贷款或由当地银行的债务作担保的贷款.
+  English: A customer requests loans made to local companies or secured by obligations of local banks.
+- C. 一位客户主要通过电汇进行定期的存款和取款.
+  English: A customer has regular deposits and withdrawals primarily in wire transfers.
+- D. 一名客户收到来自不同未知账户的电汇款项,这些款项随即又被电汇给第三方.
+  English: A customer receives wire transfers from different unknown accounts which are immediately wired onwards to a third party.
+- E. 一位客户每次取款金额都略低于报告限额.
+  English: A customer makes withdrawals each time just below the reporting threshold.
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+
+识别异常金融票据、快速过账与结构化交易模式
+
+## 【核心解析】
+
+危险信号是需要进一步调查的异常模式，并不等于已经证明客户实施洗钱。大额交易或频繁转账可能触发进一步调查（P329）；A中大量且连续编号的汇票显示这些票据可能来自同一批次或关联来源，属于需要核实购买人、资金来源和经济目的的异常金融工具组合，但题干并未证明其目的是规避现金记录要求。D同时具备多个未知来源、收款后立即转出和转给第三方三个特征；来源不明或可疑资金属于红旗信号，无法解释的资金转移可能表明金融犯罪（P128、P443），该账户因此呈现快速过账或资金中转特征。E每次取款均略低于报告限额，直接符合将交易拆分并控制在报告门槛以下的结构化交易（structuring）特征（P436）。故应选择A、D、E。
+
+教材原句："But criminals can evade triggering these controls by breaking down large transactions into multiple smaller ones, each of which is just below the reporting threshold, a practice known as structuring."（P436）
+
+## 【错误项分析】
+
+- **B 错误**：有担保和无担保贷款属于正常贷款产品，并可用于企业扩张、投资和现金流管理（P67）。B没有出现虚假担保、无关联第三方、异常提前还款或缺乏经济目的等条件，不如A、D、E直接体现可疑交易模式。
+- **C 错误**：电汇是正常的国内或跨境电子转账方式（P78）。C只说明客户定期使用电汇，没有未知交易对手、快速过账、高风险地区或与客户画像不符等异常背景，不能仅因交易渠道是电汇就认定可疑。
+
+## 【易错提醒】
+
+危险信号是调查起点，不是犯罪结论。解析只能依据题干已有事实描述异常模式；题干未说明现金购买、拆分金额或规避意图时，不能自行补充这些动机（P436）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004365`
+
+### `v7u_N004365`
+
+- 用于：核心解析
+- 章节：Technology for payment and batch screening > Rules-based transaction monitoring
+- 页码：PDF第441页 / 书内第436页
+- 中文要点：犯罪分子通过拆分交易至阈值以下（即结构化交易）规避控制。
+- 英文原文：But criminals can evade triggering these controls by breaking down large transactions into multiple smaller ones, each of which is just below the reporting threshold, a practice known as structuring.
+
+### `v7u_N003246`
+
+- 用于：核心解析、选项A
+- 章节：Transaction monitoring > Transaction monitoring versus payment screening
+- 页码：PDF第334页 / 书内第329页
+- 中文要点：大额交易、频繁转账或涉及高风险司法管辖区的交易可能触发警报并接受进一步调查。
+- 英文原文：For example, large transactions, frequent transfers, or transactions involving high-risk jurisdictions might trigger alerts for further investigation.
+
+### `v7u_N000819`
+
+- 用于：选项A（汇票工具背景）
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第98页 / 书内第93页
+- 中文要点：货币服务企业提供的服务包括汇票。
+- 英文原文：Money orders
+
+### `v7u_N001140`
+
+- 用于：核心解析
+- 章节：High-risk business sectors > High-value asset risks
+- 页码：PDF第133页 / 书内第128页
+- 中文要点：涉及来源不明或可疑资金的交易是洗钱红旗信号。
+- 英文原文：Transactions which involve funds from unknown or suspicious sources
+
+### `v7u_N000674`
+
+- 用于：选项C
+- 章节：Corporate and investment banking risks > Wire transfer risks
+- 页码：PDF第83页 / 书内第78页
+- 中文要点：电汇是通过安全支付网络（如SWIFT）进行的电子资金转账，可用于国内和跨境。
+- 英文原文：A wire transfer is an electronic transfer of funds between two parties. A wire transfer is conducted over a secure payment network such as SWIFT. Wire transfers are conducted domestically and cross-border.
+
+### `v7u_N004431`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Technology for payment and batch screening > Transaction monitoring scenario development
+- 页码：PDF第448页 / 书内第443页
+- 中文要点：与客户业务画像不符的交易、不明资金转移或休眠账户突然活动可能表明金融犯罪。
+- 英文原文：Transactions that do not align with a customer’s business profile, unexplained fund transfers, or sudden activity in dormant accounts might also indicate potential financial crime.
+
+### `v7u_N000547`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with retail and commercial banking > Credit-related product risks
+- 页码：PDF第72页 / 书内第67页
+- 中文要点：贷款产品包括个人贷款、住房融资以及有担保和无担保贷款。
+- 英文原文：Lending products, a subset of credit-related products, include personal loans, home ownership finance, and secured and unsecured loans.
+
+### `v7u_N000550`
+
+- 用于：选项B
+- 章节：Money laundering risks associated with retail and commercial banking > Credit-related product risks
+- 页码：PDF第72页 / 书内第67页
+- 中文要点：有担保和无担保贷款可为企业扩张、投资和现金流管理提供资本。
+- 英文原文：Secured and unsecured loans are crucial for businesses, offering the necessary capital to expand operations, invest in new projects, and manage cash flow effectively.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D、E
+- 中文参考答案：A、D、E
+
+### 中文参考解析
+
+选项A,客户存入大量连续编号的汇票,可能涉 到来自不同未知账户的电汇款项,随即又电汇给 第三方,资金流转异常,符合可疑交易特征.选 项E,客户每次取款金额都略低于报告限额,可 能是为了规避监管,属于危险信号.选项B,客 户要求提供向当地公司发放的贷款或由当地银行 的债务作担保的贷款,是正常的业务需求.选项 C,客户主要通过电汇进行定期的存款和取款 是正常的资金往来.因此,答案选ADE.易错提 醒:需准确识别可疑交易特征,避免误判正常业 务.
+
+- 英文参考答案：A、D、E
+
+### 英文参考解析
+
+consecutivelynumberedmoneyorder S. Acustomerrequestsloansmadetoloc B alcompaniesorsecuredbyobligation soflocalbanks. Acustomerhasregulardepositsandw C ithdrawalsprimarilyinwiretransfers. Acustomerreceiveswiretransfersfro mdifferentunknownaccountswhicha reimmediatelywiredonwardstoathir dparty. Acustomerwithdrawscashinamount sjustunderthereportingthreshold. 正确答案ADE您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

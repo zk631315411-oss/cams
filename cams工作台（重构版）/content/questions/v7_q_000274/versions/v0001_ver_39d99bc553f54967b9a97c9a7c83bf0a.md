@@ -1,0 +1,106 @@
+# v7_q_000274
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]根据金融行动特别工作组(FATF)第22条建议,房地产专业人士在参与涉及房地产买卖的客户交易时,需要采取哪些客户尽职调查(CDD)措施？(选择两项.)
+
+英文题干：According to the Financial Action Task Force (FATF) Recommendation 22, when involved in customer transactions that include the buying and selling of real estate, real estate professionals are required to apply which customer due diligence (CDD) measures? (Select Two.)
+
+选项：
+
+- A. 所有相关交易均需事先获得高级管理人员的批准
+  English: Obtaining prior senior manager approval for all related transactions.
+- B. 理解业务关系的目的
+  English: Understanding the purpose of the business relationship.
+- C. 对客户进行负面媒体报道搜索
+  English: Performing adverse media searches on the customer.
+- D. 确认并核实客户身份
+  English: Identifying and verifying the customer's identity.
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+区分标准CDD的核心要件与风险缓释类附加措施
+
+## 【核心解析】
+
+第五大支柱客户尽职调查明确要求机构识别并验证客户身份（P245），同时KYC流程规定机构必须了解并获取客户关系预期目的与性质的信息（P305）。这两项是CDD的基本构成要件，直接对应「确认并核实客户身份」与「理解业务关系的目的」。题干问的是房地产专业人士根据FATF建议须采取的CDD措施，上述两个要件在教材中属于普遍适用的CDD步骤，并不依赖特定行业或风险场景追加，因此B和D成立。
+
+教材原句："The fifth pillar, CDD, requires organizations to identify and verify the identity of customers."（P245）
+
+## 【错误项分析】
+
+- **A 错误（范围或程度偏差）**：高级管理层批准通常是针对高风险客户或特定情形的强化措施（P312），并非所有业务关系启动时都必须履行的标准CDD步骤。
+- **C 错误（业务阶段错配）**：负面媒体搜索主要用于风险评级和强化尽调（P312），属于额外筛查；题干所问的标准CDD措施更直接对应身份核实和了解业务关系目的。
+
+## 【易错提醒】
+
+标准CDD以身份识别验证和了解关系目的为核心（P245、P305）；高级管理层批准、负面媒体搜索等常见于高风险客户或强化尽职调查（EDD）场景（P312），不属于普适性CDD动作。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002414`
+
+### `v7u_N002414`
+
+- 用于：核心解析、选项A、选项C
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第五大支柱客户尽职调查要求机构识别并验证客户身份。
+- 英文原文：The fifth pillar, CDD, requires organizations to identify and verify the identity of customers.
+
+### `v7u_N003021`
+
+- 用于：核心解析、选项A、选项C
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第310页 / 书内第305页
+- 中文要点：机构必须了解客户关系的预期目的和性质
+- 英文原文：Organizations must understand and obtain information, as appropriate, on the purpose and intended nature of the customer’s relationship with the organization.
+
+### `v7u_N003065`
+
+- 用于：选项A、选项C
+- 章节：Onboarding AFC controls > KYC for a natural person
+- 页码：PDF第314页 / 书内第309页
+- 中文要点：客户尽职调查（客户尽职调查）评估客户风险等级、财务行为和预期交易
+- 英文原文：CDD assesses the customer’s risk level, financial behavior, and expected transactions, including, but not limited to:
+
+### `v7u_N003110`
+
+- 用于：易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：高级管理层批准，如账户激活前需合规委员会或董事会批准
+- 英文原文：Senior management approval, such as mandating compliance committee or board approval before account activation.
+
+### `v7u_N003105`
+
+- 用于：易错提醒
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：负面媒体：客户与负面报道、法律诉讼、监管罚款或金融犯罪调查相关
+- 英文原文：Adverse media: Customers linked to adverse media reports, undergoing legal proceedings, regulatory fines, or financial crime investigations
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+根据金融行动特别工作组(FATF)第22条建议,房 地产专业人士在参与涉及房地产买卖的客户交易 时,需采取合理的客户尽职调查措施.选项B“理 解业务关系的目的”是FATF明确要求的,有助于 评估交易风险;选项D“确认并核实客户身份”是 客户尽职调查的基础,确保交易主体真实可靠. 选项A“所有相关交易均需事先获得高级管理人员 的批准”过于绝对,非FATF直接要求;选项C"对 客户进行负面媒体报道搜索”虽为风险评估手段, 但非FATF第22条建议的直接内容.故正确答案 为BD. 度 难 源
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+根据金融行动特别工作组(FATF)第22条建议,房 地产专业人士在参与涉及房地产买卖的客户交易 时,需采取合理的客户尽职调查措施.选项B“理 解业务关系的目的”是FATF明确要求的,有助于 评估交易风险;选项D“确认并核实客户身份”是 客户尽职调查的基础,确保交易主体真实可靠. 选项A“所有相关交易均需事先获得高级管理人员 的批准”过于绝对,非FATF直接要求;选项C"对 客户进行负面媒体报道搜索”虽为风险评估手段, 但非FATF第22条建议的直接内容.故正确答案 为BD. 度 难 源
+
+### 答案冲突提示
+
+- 未发现答案冲突。

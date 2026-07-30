@@ -1,0 +1,58 @@
+# v7_q_000384
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些是使用搜索引擎进行负面媒体报道搜索的局限性？(选择三项.)
+
+英文题干：Which of the following are limitations of using search engines to screen adverse media? (Select Three.)
+
+选项：
+
+- A. 搜索引擎在全球语言覆盖方面存在局限性
+  English: Search engines have limited global language coverage
+- B. 搜索引擎提供的非结构化数据使媒体分析变得复杂
+  English: Search engines provide unstructured data that complicates media analysis
+- C. 搜索结果在识别相关负面媒体报道方面往往效率低下
+  English: Search results are often inefficient in identifying relevant adverse media
+- D. 这个过程耗时且需要大量的人工投入.
+  English: The process is time-consuming and requires significant manual effort
+- E. 由于搜索引擎算法的不同,结果可能会不一致
+  English: Outcomes can be inconsistent due to varying search engine algorithms
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+识别搜索引擎负面媒体筛查的结构化、效率和一致性局限。
+## 【核心解析】
+搜索引擎返回的网页内容通常是非结构化数据，需要额外清洗和筛选，因此整个筛查过程耗时且依赖大量人工投入；不同搜索引擎的算法、个性化设置和索引覆盖还可能导致检索结果不一致（P467）。B、D、E分别对应非结构化数据、人工处理耗时和结果不一致三类局限。
+## 【错误项分析】
+- **A**：语言和司法管辖区边界确实会增加总体筛查复杂性，但题干问的是搜索引擎本身的主要局限，教材更直接支持B、D、E。
+- **C**：该项把问题归结为搜索结果本身识别相关负面媒体的效率低；教材更直接支持的是非结构化结果需要人工处理，进而使整个筛查流程耗时。两者侧重点不同。
+## 【易错提醒】
+把「搜索结果难分析」「人工投入大」「同一查询结果不一致」与一般的跨语言数据治理问题区分开（P467）。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N004182`；页码：P467、P422、P429。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+搜索引擎筛选负面媒体报道存在局限性.选项 B,搜索引擎提供的数据非结构化,使得媒体分 耗时且需大量人工投入,因为需人工筛选和判断 搜索结果.选项E,由于搜索引擎算法不同,结 果可能不一致,影响筛选的准确性和全面性.选 项A全球语言覆盖非局限性,选项C未直接指出 搜索引擎在识别负面报道上的低效,故不选.因 此,正确答案为B、D、E.
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+B,搜索引擎提供的数据往往是非结构化的,这 使得媒体分析变得复杂,难以高效处理.选项 D,利用搜索引擎筛选负面媒体耗时且需大量人 工操作,因为需要逐一查看搜索结果并判断其相 关性.选项E,不同搜索引擎的算法差异可能导 致搜索结果不一致,影响筛选的准确性和可靠 性.选项A、C并非主要局限,故不选.
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=A,B,D，题库最终=B,D,E

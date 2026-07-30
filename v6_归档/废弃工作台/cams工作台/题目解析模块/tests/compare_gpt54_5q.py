@@ -31,7 +31,7 @@ import run_step1  # noqa: E402
 
 # gpt5.4 配置（用户提供的独立 endpoint）
 _GPT_MODEL = "gpt5.4"
-_GPT_KEY = "sk-aacfb76bfb19a8581912989369fe44a1a3a06b081e0236bb6fbaae317d05d50e"
+_GPT_KEY = os.environ.get("GPT54_API_KEY", "")
 _GPT_BASE_URL = "http://120.224.38.132:7361/v1"
 
 # monkey-patch run_step1：模型名 + 关闭思考（gpt5.4 走 empty dict）

@@ -1,0 +1,134 @@
+# v7_q_000216
+
+教材章节：未映射
+
+题型：single
+
+题干：一个健全的反洗钱合规计划需要一个全面的治理框架,涵盖关键要素,以确保金融体系的完整性.哪个要素构成有效的反洗钱合规计划的起点？
+
+英文题干：A sound AML compliance program requires a comprehensive governance framework that addresses key elements to ensure the integrity of the financial system. Which element forms the starting point of an effective AML compliance program?
+
+选项：
+
+- A. 持续监测
+  English: Ongoing monitoring
+- B. 风险评估
+  English: Risk assessment
+- C. 政策与程序
+  English: Policies and procedures
+- D. 可疑活动报告
+  English: Suspicious activity reporting
+- E. 客户尽职调查
+  English: Customer due diligence
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+风险评估对AML政策、系统和控制设计的前置作用
+
+## 【核心解析】
+
+风险评估流程是健全风险管理项目的基础（P265），其目标是识别、评估和缓解风险，并配置适当控制（P269）。风险评估结果会影响机构的政策、程序、系统、资源、人员配置和培训（P281）；在交易监控场景中，金融机构也是先完成风险评估，再根据已识别的威胁设计AML系统并实施交易监控规则和模型（P449）。因此，从风险为本计划的设计顺序看，机构需要先认识自身风险，再据此配置政策、系统和控制措施，B最符合题意。
+
+教材原句："The risk assessment process is the foundation of a strong risk management program."（P265）
+
+## 【错误项分析】
+
+- **A 错误**：持续监测是控制运行环节。教材明确描述金融机构在完成风险评估后，才根据已识别的威胁设计AML系统并实施交易监控规则和模型（P449），因此持续监测属于风险识别和评估后的控制措施，不是整个计划的逻辑起点。
+- **C 错误**：内部政策与控制体系确实是有效AML计划的「第一大支柱」（P244），但「第一支柱」是计划构成要素的排列编号，不等于风险为本设计中的逻辑起点。教材同时指出，风险评估结果会影响政策和程序（P281），说明其具体设计需要结合机构已经识别和评估的风险。
+- **D 错误**：教材称可疑活动报告是「AFC报告体系」的基础（P359），其重要性限定在报告子系统内，不能据此推断它是整个AML合规计划的起点。风险评估为监测和报告机制提供风险输入，SAR则是具体可疑活动被识别后形成的报告输出。
+- **E 错误**：CDD是AML计划的第五大支柱，要求机构识别并验证客户身份（P245）。教材还说明，客户和交易风险评估用于识别高风险客户和交易，并据此采取强化尽职调查（EDD）（P254）。因此CDD是针对具体客户落实风险控制的环节，其强度会受到风险评估结果影响，不是全套计划的逻辑起点。
+
+## 【易错提醒】
+
+「第一大支柱」「某一子系统的基础」和「整个计划的逻辑起点」是三个不同概念。政策与控制是AML计划的第一大支柱（P244），SAR是AFC报告体系的基础（P359）；风险评估则为政策、程序、系统、资源和控制措施提供风险输入（P265、P269、P281）。判断本题时，不能只看教材中的序号或「基础」一词，还要看哪个要素在风险为本设计中为其他要素提供前置信息。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002615`、`v7u_N002654`、`v7u_N002810`、`v7u_N004499`
+
+### `v7u_N002615`
+
+- 用于：核心解析、教材原句、易错提醒
+- 章节：Introduction > Introduction: Risk assessment
+- 页码：PDF第270页 / 书内第265页
+- 中文要点：风险评估流程是强大风险管理项目的基础
+- 英文原文：The risk assessment process is the foundation of a strong risk management program.
+
+### `v7u_N002654`
+
+- 用于：核心解析、易错提醒
+- 章节：Types of risk assessment > Types of risk assessment within an organization
+- 页码：PDF第274页 / 书内第269页
+- 中文要点：组织内各类风险评估旨在识别、评估和缓解风险，并配置适当控制
+- 英文原文：There are different types of risk assessments within organizations. The assessments vary, depending on the individual entity type, but their aim is to identify, assess, and mitigate various risks and apply appropriate controls.
+
+### `v7u_N002810`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Enterprise-wide risk assessment > Reporting results of risk assessment
+- 页码：PDF第286页 / 书内第281页
+- 中文要点：风险评估结果及高级管理层反馈会影响政策、程序、系统、资源、人员配置和培训
+- 英文原文：The results of the risk assessment, and feedback from senior management, have an impact on policies, procedures, systems, resources, staffing, and training.
+
+### `v7u_N004499`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Governance for transaction monitoring
+- 页码：PDF第454页 / 书内第449页
+- 中文要点：金融机构完成风险评估后，根据已识别的威胁设计AML系统并实施交易监控规则和模型
+- 英文原文：After financial institutions conduct risk assessments, they design AML systems to mitigate the threats they have identified by implementing transaction monitoring rules and models.
+
+### `v7u_N002403`
+
+- 用于：选项C、易错提醒
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第249页 / 书内第244页
+- 中文要点：有效反洗钱计划的第一大支柱是确保持续合规的内部政策与控制系统。
+- 英文原文：The first pillar of an effective AML program is a system of internal policies and controls that ensure ongoing compliance with AML regulations.
+
+### `v7u_N003602`
+
+- 用于：选项D、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Defensive suspicious activity reports
+- 页码：PDF第364页 / 书内第359页
+- 中文要点：可疑活动报告是金融犯罪防控报告体系的基础
+- 英文原文：Suspicious activity reporting is the foundation of the AFC reporting system.
+
+### `v7u_N002414`
+
+- 用于：选项E
+- 章节：Introduction > Pillars of an AFC compliance program
+- 页码：PDF第250页 / 书内第245页
+- 中文要点：第五大支柱客户尽职调查要求机构识别并验证客户身份
+- 英文原文：The fifth pillar, CDD, requires organizations to identify and verify the identity of customers.
+
+### `v7u_N002506`
+
+- 用于：选项E、易错提醒
+- 章节：Three lines of defense > Case example: Financial crime functions' structure at Global Finance, Corp.
+- 页码：PDF第259页 / 书内第254页
+- 中文要点：客户和交易风险评估用于识别高风险客户和交易，并据此采取强化尽职调查
+- 英文原文：Risk assessment: Conduct customer and transaction risk assessments, identify high-risk clients and transactions, and apply enhance due diligence (EDD).
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+有效的反洗钱合规计划起点是风险评估.风险评 估是全面治理框架的基础,它能帮助金融机构识 别、评估洗钱和恐怖融资风险,为后续制定政策 程序、持续监测、可疑活动报告等要素提供方 向.持续监测是依据风险评估结果开展,政策与 程序是风险评估后的应对措施,可疑活动报告是 风险评估后发现风险时的行动,客户尽职调查也 是基于风险评估来决定调查深度和范围.所以答 案选B.易错提醒:不要误以为政策程序是起 点,它是在风险评估后制定的.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+有效反洗钱合规计划的起点是风险评估.风险评 估是制定反洗钱策略的基础,通过识别、分析和 评估洗钱风险,为后续的客户尽职调查、政策制 定、持续监控和可疑活动报告等环节提供依据. 其他选项虽为重要环节,但均基于风险评估结果 展开.因此,风险评估是构建有效反洗钱合规计 划的逻辑起点.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,114 @@
+# v7_q_000222
+
+教材章节：未映射
+
+题型：multiple
+
+题干：根据金融行动特别工作组(FATF)关于恐怖主义融资的报告,慈善机构和非营利组织往往容易受到恐怖主义融资的影响,原因在于:(选择两项.)
+
+英文题干：According to the Financial Action Task Force (FATF) report on terrorist financing, charities and nonprofit organizations are often vulnerable to terrorist financing because they: (Select two.)
+
+选项：
+
+- A. 从各种渠道募集捐款,其主要目标是慈善事业和社会福祉
+  English: Collect donations from various sources, and their primary objective is philanthropy and social well-being.
+- B. 通常是合法机构,不会将通过捐赠筹集的资金用于个人或实体谋取私利
+  English: Are usually legitimate establishments and will not use the funds collected through donations for the profit of individuals or entities.
+- C. 具备全球业务布局,为国家和国际运营以及金融交易提供框架,而这些运营和交易往往发生在或临近恐怖活动高发地区.
+  English: Have a global presence that provides a framework for national and international operations and financial transactions that are often in or near areas most exposed to terrorist activity.
+- D. 享有公众信任,能够获取大量资金来源,并经常开展现金密集型活动
+  English: Enjoy public trust, can access large sources of funds, and often conduct cash-intensive activities.
+
+## 【AI答案】
+
+C、D
+
+## 【考点】
+
+识别慈善行业易被恐怖融资滥用的脆弱性特征
+
+## 【核心解析】
+
+慈善机构和非政府组织可能因享有公众信任、通常具有全球存在、可从未知或未披露来源获取大量资金、现金密集，以及位于或邻近恐怖活动暴露区域而被金融犯罪利用（P134）。选项C对应全球业务布局和高风险地区活动，选项D对应公众信任、大量资金和资金密集。题干问的是组织容易被恐怖融资利用的原因，而不是慈善机构的一般定义，因此应选C、D。
+
+教材原句："Often being in or near areas exposed to terrorist activity"（P134）
+
+## 【错误项分析】
+
+- **A 错误**：「从各种渠道募集捐款」和公益目标描述的是慈善机构的一般运作方式。真正增加滥用风险的是资金来源不明、现金密集、跨地域经营或在高风险地区活动等具体条件（P134），而不是募款和公益宗旨本身。
+- **B 错误**：大多数慈善机构和非政府组织虽然合法，仍可能被恐怖组织利用（P135）。「通常合法」不能排除被滥用的可能；「不会将资金用于私利」描述的是合法组织的规范状态，不是易受恐怖融资影响的原因。
+
+## 【易错提醒】
+
+慈善机构的公益宗旨或通常合法，属于组织的一般属性；全球存在、在恐怖活动暴露区域附近运作、公众信任、来源未知或未披露的大量资金及现金密集，才会增加被滥用的风险（P134-P135）。风险特征表示需要加强关注，不等于组织实际参与了恐怖融资。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001216`、`v7u_N001217`、`v7u_N001218`、`v7u_N001219`、`v7u_N001220`
+
+### `v7u_N001216`
+
+- 用于：核心解析、易错提醒
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：享有公众信任。
+- 英文原文：Enjoying the public trust
+
+### `v7u_N001217`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：通常具有全球存在。
+- 英文原文：Often having a global presence
+
+### `v7u_N001218`
+
+- 用于：选项A、选项B、易错提醒
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：可从未知或未披露来源获取大量资金。
+- 英文原文：Having access to considerable funds from unknown or undisclosed sources
+
+### `v7u_N001219`
+
+- 用于：选项A、选项B
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：现金密集型。
+- 英文原文：Being cash-intensive
+
+### `v7u_N001220`
+
+- 用于：核心解析、易错提醒
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：通常位于或邻近恐怖活动暴露区域。
+- 英文原文：Often being in or near areas exposed to terrorist activity
+
+### `v7u_N001222`
+
+- 用于：选项B
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第140页 / 书内第135页
+- 中文要点：大多数慈善机构和非政府组织合法，但恐怖组织可能利用它们资助非法活动。
+- 英文原文：Although most charities and NGOs are legitimate, terrorist organizations have used them as vehicles to fund their illicit activities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、D
+- 中文参考答案：C、D
+
+### 中文参考解析
+
+慈善机构和非营利组织易受恐怖主义融资影响, 原因在于:C项,其具备全球业务布局,为国际 运营及金融交易提供框架,而这些往往发生在或 临近恐怖活动高发地区,易被利用进行资金转 移;D项,它们享有公众信任,能获取大量资金 集和转移资金.A项描述的是其合法目标,与恐 怖融资无关;B项强调其合法性,非易受影响原 因. 度 难 来 源
+
+- 英文参考答案：C、D
+
+### 英文参考解析
+
+巴塞尔银行监管委员会(BCBS)无执法权,依 日册匀货 选顶正碗
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,105 @@
+# v7_q_000047
+
+教材章节：未映射
+
+题型：single
+
+题干：以下关于通风报信的陈述,哪一项是正确的？
+
+英文题干：Which of the following statements is true regarding tipping off?
+
+选项：
+
+- A. 禁止通风报信的义务仅适用于AFC专业人士和银行工作人员,因为他们需要提交可疑活动报告(SAR).
+  English: The tipping-off obligation is only applied to AFC professionals and bank staff because they are required to file a Suspicious Activity Report (SAR)
+- B. 通风报信是指未经授权向可能成为调查对象或可能妨碍调查的第三方披露有关金融犯罪调查的机密信息的犯罪行为.
+  English: Tipping off is a criminal act whereby confidential information about a financial crime investigation is disclosed in an unauthorized manner to a third party who may be the subject of the investigation or able to prejudice it
+- C. 当对交易监控系统已标记的客户进行详细询问时,不构成通风报信.
+  English: Tipping off is not committed when detailed inquiries are made with a customer whose transactions have been flagged by a transaction monitoring system
+- D. 当发现异常交易时,反洗钱专员可以指示客户经理与客户沟通,以决定是否应提交可疑交易报告.
+  English: When unusual transactions are identified, the AML specialist can instruct the relationship manager to communicate with the customer to decide whether a suspicious transaction report should be filed
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+通风报信（tipping off）的定义与法律后果
+
+## 【核心解析】
+
+通风报信指调查人员有意或无意地向调查对象透露其活动正被监控的行为（P340），反洗钱法规禁止此举，违者可能面临刑事责任、监管制裁和声誉损害（P340），通风报信在某些情况下属于重罪，员工可能面临刑事指控（P336）。选项B的表述——「未经授权向可能成为调查对象或可能妨碍调查的第三方披露有关金融犯罪调查的机密信息的犯罪行为」——与教材对通风报信的核心定义高度吻合：未经授权的披露（unauthorized disclosure）、机密信息、调查对象/妨碍调查的第三方。题干问的是关于通风报信的正确陈述，B项准确概括了这一行为的犯罪性质和核心要素。
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜范围或程度偏差**：教材规定员工必须保持保密，避免向客户通风报信（P339），保密义务不限于AFC专业人士和银行工作人员，而是涵盖所有可能接触调查信息的员工。选项A将义务主体限定为「仅适用于AFC专业人士和银行工作人员」，与教材的普遍性要求不匹配。
+- **C 错误（教材直接依据）｜概念混淆**：教材指出在开展客户沟通前，分析师应确保所需信息关键且无法从内部或外部获取（P340），这意味着向客户询问过多或不必要的问题存在通风报信风险。对已被标记的客户进行「详细询问（detailed inquiries）」若不当，可能泄露调查敏感性，教材对通风报信的禁止并未豁免此类沟通。
+- **D 错误（教材直接依据）｜主体或阶段错配**：教材规定提交SAR的决定权通常属于洗钱报告官（MLRO）或指定官员，由其最终决定是否提交SAR（P346）。反洗钱分析师进行调查和提出建议，但不指示客户经理与客户沟通「以决定是否应提交报告」。这种让客户参与决策的做法本身就可能导致通风报信。
+
+## 【易错提醒】
+
+通风报信的关键在于「未经授权」向「调查对象或可能妨碍调查的第三方」披露「机密信息」。日常的客户尽职调查沟通与通风报信的区分标准是：沟通是否出于获取合理必要信息的目的，以及沟通方式是否避免了向客户暗示其正被调查。若询问内容超出必要范围，或用语暗示客户行为可疑，就可能构成通风报信。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003368`
+
+### `v7u_N003368`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第345页 / 书内第340页
+- 中文要点：通风报信指调查人员有意或无意向调查对象透露监控行为，反洗钱法规禁止此举，违者可能面临刑事责任、监管制裁和声誉损害。
+- 英文原文：How to avoid tipping off: Tipping off occurs when an investigator intentionally or unintentionally alerts the subject of an investigation that their activities are being monitored, particularly with suspicions of money laundering or financial crimes. Tipping off is prohibited under AML regulations and can have severe consequences including criminal liability, regulatory sanctions, and reputational damage.
+
+### `v7u_N003328`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第341页 / 书内第336页
+- 中文要点：通风报信在某些情况下属于重罪，员工可能面临刑事指控
+- 英文原文：In some cases, tipping off is a felony that can result in criminal charges against the employee.
+
+### `v7u_N003363`
+
+- 用于：选项A、选项D
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第344页 / 书内第339页
+- 中文要点：员工必须保持保密，避免向客户通风报信。
+- 英文原文：Staff must remember to maintain confidentiality and avoid tipping off the customer.
+
+### `v7u_N003498`
+
+- 用于：选项A
+- 章节：Concluding an investigation and suspicious activity reporting > Regulations related to suspicious activity reporting
+- 页码：PDF第357页 / 书内第352页
+- 中文要点：常见SAR要求：建议申报、使用事实支持、避免通风报信。
+- 英文原文：Common regulations call for investigators to recommend a SAR upon suspicion of criminal activity, use factual information to support suspicions, and avoid "tipping off" or disclosing a SAR to the customer or other unauthorized parties.
+
+### `v7u_N003364`
+
+- 用于：选项A、选项D、易错提醒
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第345页 / 书内第340页
+- 中文要点：分析师在开展客户沟通前应确保信息关键且无法内部或外部获取，并规划最佳沟通方式。
+- 英文原文：Before conducting outreach, the analyst should ensure that the requested information is critical for making an informed determination, and not available internally or externally. If both conditions are met, analysts should consider the best outreach methods and plan accordingly. During outreach, anyone who communicates with the customer should consider:
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+泄密是指未经授权向可能成为调查对象或可能妨 碍调查的第三方披露有关金融犯罪调查的机密信 息的犯罪行为.选项A中提示义务并非仅适用于 AFC专业人士和银行工作人员,错误.选项C中 对已标记客户详细询问,若涉及关键信息可能构 成通风报信,错误.选项D中反洗钱专员不应指 示客户经理与客户沟通决定是否提交可疑交易报 告,应直接按规定处理,错误.选项B准确描述 了泄密行为,正确.易错提醒:注意通风报信行 为的关键在于未经授权披露机密信息.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+选项B准确描述了“tippingoff”(泄密)的定义, 即未经授权向可能是调查对象或能影响调查的第 三方披露有关金融犯罪调查的机密信息,是一种 犯罪行为.选项A错误,因为泄密义务不仅限于 反金融犯罪专业人员和银行员工;选项C错误 因为即使是对交易被监控系统标记的客户进行详 细询问,也可能构成泄密,选项D错误,因为检 测到异常交易时,AFC专业人员不能指示客户经 理与客户沟通决定是否提交可疑活动报告,这同 样可能涉及泄密风险. 便用【深度解题】,获取泽度职考过程 度 难
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,83 @@
+# v7_q_000203
+
+教材章节：未映射
+
+题型：single
+
+题干：欧盟反洗钱指令的关键目标是什么？
+
+英文题干：Which is a key goal of the EU's Directives on money laundering?
+
+选项：
+
+- A. 加强对欧盟国家支付活动的管控以减少洗钱活动.
+  English: Address control of payments in EU countries to reduce money laundering.
+- B. 在欧盟范围内建立一个由金融机构共同协作以防范洗钱活动的网络.
+  English: Build a network of financial institutions that work together to prevent money laundering across the EU.
+- C. 在整个欧盟建立一致的监管环境以防止洗钱.
+  English: Establish a consistent regulatory environment across the EU to prevent money laundering.
+- D. 允许各成员国在欧盟金融情报机构的协助下讨论该立法草案.
+  English: Allow member states to discuss the draft legislation with the cooperation of the EU financial intelligence units.
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+欧盟反洗钱指令的核心目标是统一各成员国的监管标准与协调机制
+
+## 【核心解析】
+
+2021年前，欧盟反洗钱制度由一系列需由成员国实施的指令组成；由于各成员国未能在全欧盟一致适用规则，监管和执法出现碎片化（P191）。此后建立的欧盟反洗钱管理局负责促进规则统一实施，并协调反洗钱和金融监管机构（P191）。因此，欧盟反洗钱制度的重要目标是减少成员国之间的规则与执行差异，建立更一致的监管环境，C最符合题意。
+
+教材原句："Because the members states did not apply the rules in a coherent manner across the EU, the AML regime faced fragmentation in supervision and enforcement."（P191）
+
+## 【错误项分析】
+
+- **A 错误**：A项只描述一种具体支付管控，没有回应教材所揭示的成员国规则适用不一致和监管碎片化问题（P191），与题干所问全欧盟层面的关键目标不匹配。
+- **B 错误**：B项把重点放在金融机构之间的协作网络，而教材讨论的是成员国实施规则的一致性及监管、执法协调（P191），主体和治理层级均不同。
+- **D 错误**：D项描述成员国讨论立法草案，属于立法讨论情形；教材强调的是规则实施、监管和执法的一致性（P191），C项与该结果层目标更直接对应。
+
+## 【易错提醒】
+
+不要把欧盟反洗钱指令、后续AMLR法规和欧盟反洗钱管理局视为同一法律工具。本题可用教材对旧指令实施碎片化的批评，以及后续统一实施机制的设置（P191），判断其共同指向的一致监管目标。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001822`
+
+### `v7u_N001822`
+
+- 用于：核心解析、选项A、选项B、选项D、易错提醒
+- 章节：US AML/CFT regulatory landscape > The role of AML Authority
+- 页码：PDF第196页 / 书内第191页
+- 中文要点：2021年前欧盟反洗钱制度因成员国执行不一致而碎片化
+- 英文原文：Prior to 2021, the EU’s AML regime was made up of a series of directives that member states were expected to implement. Because the members states did not apply the rules in a coherent manner across the EU, the AML regime faced fragmentation in supervision and enforcement.
+
+### `v7u_N001823`
+
+- 用于：核心解析、易错提醒
+- 章节：US AML/CFT regulatory landscape > The role of AML Authority
+- 页码：PDF第196页 / 书内第191页
+- 中文要点：欧盟设立反洗钱管理局以确保规则统一实施与协调
+- 英文原文：To mitigate these issues, the EU established a framework whose cornerstone is an EU Anti-Money Laundering Authority (AML Authority). This authority ensures the harmonized implementation of rules and coordination among AML and financial sector supervisors.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+未提供。
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

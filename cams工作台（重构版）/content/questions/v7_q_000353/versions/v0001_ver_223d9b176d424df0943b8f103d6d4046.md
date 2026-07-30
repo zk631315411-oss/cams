@@ -1,0 +1,101 @@
+# v7_q_000353
+
+教材章节：未映射
+
+题型：multiple
+
+题干：对于由自动化监控系统警报触发的涉及多家企业的异常活动模式的复杂调查,哪种技术最为高效？(选择两项.)
+
+英文题干：Which techniques would be most efficient for a complex investigation of unusual patterns of activity involving multiple businesses, triggered by an automated monitoring system alert? (Select Two.)
+
+选项：
+
+- A. 利用客户档案中现有的信息,对所涉及的企业进行控制权和所有权评估
+  English: Perform a control and ownership assessment of the businesses involved, using information available in the client files
+- B. 联系当地执法部门,请求他们协助进行分析和调查
+  English: Contact local law enforcement and request that they assist in the analysis and investigation
+- C. 查看自动化监控系统警报描述中呈现的信息,并拒绝任何未来的交易.
+  English: Review the information presented in the automated monitoring system's alert description and decline any future transactions
+- D. 联系客户经理,询问反洗钱警报中所强调的活动模式背后的原因.
+  English: Contact the relationship manager and ask about the reasons behind the activity pattern highlighted in the AML alert
+- E. 利用社交媒体平台与相关企业取得联系,并请求提供账户活动的详细信息
+  English: Use social media platforms to contact the relevant businesses and request details of account activity
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+
+复杂调查中，选择成本最低且信息密度最高的内部信息来源
+
+## 【核心解析】
+
+针对「涉及多家企业异常活动」的复杂调查，高效技术的核心是用最小成本获取穿透复杂结构与企业实际行为的信息。控制权和所有权评估（A）通过现有客户档案即可实施——教材指出，控制权和所有权在反洗钱中至关重要，因为它们经常被掩盖，使不法分子能伪装犯罪活动并便利金融犯罪（P468）；涉及多层公司的复杂所有权结构本身就是红旗信号（P76）。既然警报已由系统触发，调查员无需额外外部授权即可利用档案完成穿透分析。联系客户经理（D）同样高效：教材案例显示，调查员发现客户交易模式异常时，会标记并临时提高风险评级，以触发客户经理的审核（P59）。在调查阶段，客户经理是「了解你的客户」信息与客户实际行为之间最直接的解释桥梁——他们掌握账户目的、业务背景等非结构化信息，能快速判断「为什么会出现这种模式」，这是纯数据无法替代的。两项技术均面向内部已有资源，无需跨机构协调或公开暴露，在「触发警报后的复杂调查」语境下效率远高于其他选项。
+
+教材原句："Control and ownership play a vital role in AML efforts, as they can often be obscured or concealed, allowing bad actors to disguise criminal activities and facilitate financial crime."
+
+## 【错误项分析】
+
+- **B 错误｜主体或阶段错配**：在「触发警报后」的调查阶段，金融机构的职责是先完成自身调查，再根据结果决定是否移交执法。教材指出，组织应在完成自身调查后将案件移交执法部门（P361），而非在调查初期请求执法协助。题干更直接匹配「先内部调查」的流程要求，而非「直接寻求外部执法介入」。
+- **C 错误｜主体或阶段错配**：仅查看警报描述信息即拒绝未来交易，跳过了「审查案件事实并决定是否提交可疑交易报告」的完整调查流程。金融机构在审查预警后可能因事实不足而决定不提交可疑活动报告，这意味着预警本身不等于结论。题干要求的「高效技术」是信息收集分析手段，而非直接给出处置决定。
+- **E 错误｜概念混淆**：社交媒体资料可提供客户或相关方的额外背景信息，其用途是被动收集公开信息辅助判断，而非直接联系客户索要账户活动详情。调查中向客户直接索取信息应通过正式信息请求流程（RFI）进行。通过社交媒体平台直接联系企业请求账户详情，缺乏正式流程保障，且可能引发「提示」（tipping off）风险。相比之下，联系客户经理（D）和评估内部档案（A）在合规性与信息可靠性上更匹配调查需求。
+
+## 【易错提醒】
+
+调查阶段的信息收集与向执法部门「提交案件」是不同流程节点。组织应在完成自身调查后再将案件移交执法部门（P361）。执法介入不是调查的起点，而是调查完成后的后续步骤，两者在时间序列上不可倒置。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000702`
+
+### `v7u_N000483`
+
+- 用于：核心解析
+- 章节：Money Laundering Risks in Financial Services > Control and ownership for AML compliance
+- 页码：PDF第64页 / 书内第59页
+- 中文要点：控制权和所有权在反洗钱工作中至关重要
+- 英文原文：Control and ownership play a vital role in AML efforts, as they can often be obscured or concealed, allowing bad actors to disguise criminal activities and facilitate financial crime.
+
+### `v7u_N000650`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Special purpose vehicle risks
+- 页码：PDF第81页 / 书内第76页
+- 中文要点：涉及多层公司的复杂所有权结构是红旗信号
+- 英文原文：Complex ownership structures involving multiple layers of companies
+
+### `v7u_N004702`
+
+- 用于：核心解析
+- 章节：Data as an input for solutions > Internal observed data
+- 页码：PDF第473页 / 书内第468页
+- 中文要点：示例：调查员发现客户交易模式异常时标记并临时提高风险评级
+- 英文原文：For example, if an investigator finds that a customer is conducting transactions in a pattern that differs from the expected behavior based on the amount, location, industry, and stated expectations, the investigator assigns a flag for required review to temporarily increase the risk rating of the customer. This triggers a review by a relationship manager.
+
+### `v7u_N003617`
+
+- 用于：易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Communicating with law enforcement for an investigation
+- 页码：PDF第366页 / 书内第361页
+- 中文要点：在完成组织调查后将案件移交执法部门。
+- 英文原文：Referring cases to law enforcement after completing the organization’s investigation.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+选项A通过评估控制权和所有权,可快速锁定关 键企业,明确调查方向,提升效率.选项D直接 联系客户经理询问警报原因,能快速获取内部信 息,辅助判断异常活动性质.选项B依赖外部部 门,协调耗时;选项C仅查看警报描述并拒绝交 易,无法全面分析;选项E通过社交媒体联系企 业,信息可靠性低且耗时.因此,选项A和D最 为高效.易错提醒:注意区分直接获取信息与依 赖外部协调的效率差异.
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+选项A,对涉事企业进行控制权和所有权评估, 利用客户档案信息,可深入了解企业背景,是调 查关键步骤.选项D,联系账户经理询问AML警 报中突出活动模式的原因,能直接获取内部信 息,有助于快速定位问题.选项B依赖外部机
+
+### 答案冲突提示
+
+- 未发现答案冲突。

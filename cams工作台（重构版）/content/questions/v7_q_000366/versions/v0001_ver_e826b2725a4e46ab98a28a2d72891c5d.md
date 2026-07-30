@@ -1,0 +1,109 @@
+# v7_q_000366
+
+教材章节：未映射
+
+题型：multiple
+
+题干：某外国司法管辖区的执法机构(LEA)就某金融机构(FI)的一名客户与其取得联系。该执法机构告知，该客户因一系列人口贩卖指控目前正被通缉，以待起诉。FI应该怎么做?(选择两项.)
+
+英文题干：The law enforcement agency (LEA) of a foreign jurisdiction contacts a financial institution (FI) regarding one of the FI's clients. The LEA advises that the client is currently wanted for prosecution as a result of a series of human trafficking charges. What should the FI do? (Select two.)
+
+选项：
+
+- A. 将请求告知当地执法机构和监管机构以引起其注意
+  English: Notify the local LEA and regulator of the request for awareness
+- B. 立即关闭客户的账户以避免任何不必要的风险
+  English: Close the client's account immediately to avoid any undue risk
+- C. 审查客户的活动，确定是否存在可疑活动，并相应地进行报告
+  English: Review the client's activity, determine if suspicious activity exists, and report accordingly
+- D. 告知执法机构，需要联系政府办理引渡事宜
+  English: Advise the LEA that the government needs to be contacted for extradition
+- E. 立即遵守外国司法管辖区的规定，移交所有客户信息
+  English: Immediately comply with the foreign jurisdiction's regulations and transfer all customer information
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+收到外国执法请求后的初步评估与可疑活动审查义务
+
+## 【核心解析】
+
+教材规定，收到执法请求后，金融机构应首先进行初步评估，理解请求的合法性、紧迫性和相关性（P362）。这并非要求金融机构直接满足外国执法机构的要求，而是启动内部合规流程确认如何回应。题干中，外国执法机构因客户涉嫌人口贩卖指控与金融机构联系——这是一种「执法请求」。因此，金融机构的第一步应当是评估该请求，并将此请求告知当地执法机构和监管机构（选项A），以协调响应并确保信息处理符合当地法律框架。与此同时，FATF建议20要求金融机构在有合理理由怀疑资金与犯罪活动相关时进行调查和报告（P349）。题干已明确客户正被通缉，这直接构成「合理理由」怀疑账户可能涉及犯罪收益。因此，审查客户活动、确定可疑活动是否存在、并据此提交报告（选项C）是该场景下金融机构必须履行的义务。选项A与选项C分别代表接收请求后的「内部管控告知」与「账户活动审查」两条并行合规路径。
+
+教材原句："Upon receipt of a law enforcement request, the FI should make an initial assessment."
+
+## 【错误项分析】
+
+- **B 错误｜处置过早**：执法机构可能要求金融机构保持账户开放并监控，以协助调查。立即关户可能影响执法需要，更适当的做法是先审查客户活动并按规定报告。
+- **D 错误｜职责主体不符**：引渡是司法辖区之间的政府事务，金融机构的职责是评估请求并审查账户活动，而不是指导执法机构如何开展跨国司法协作。
+- **E 错误｜跳过必要审查**：金融机构的响应应当相称、合理，并符合适用的法律义务和信息保密要求。立即移交所有客户信息跳过了对请求合法性、范围和披露条件的初步评估。
+
+## 【易错提醒】
+
+「依法回应执法请求」≠「无条件遵从」。教材规定收到请求后必须先做初步评估，确认请求的合法性、紧迫性和相关性，并确保响应符合当地法律义务（P362）。收到外国执法请求时直接移交客户信息（E）或自行处置（B）都跳过了评估这个必要步骤。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003636`
+
+### `v7u_N003636`
+
+- 用于：核心解析、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：收到执法请求后，金融机构应进行初步评估。
+- 英文原文：Upon receipt of a law enforcement request, the FI should make an initial assessment.
+
+### `v7u_N003459`
+
+- 用于：核心解析
+- 章节：Concluding Investigations and Coordinating with Law Enforcement > Case study: Failure to file report
+- 页码：PDF第354页 / 书内第349页
+- 中文要点：金融行动特别工作组建议20要求金融机构在有合理理由怀疑资金来自犯罪活动或与恐怖融资有关时进行调查和报告。
+- 英文原文：Under FATF Recommendation 20, financial institutions (FI) must investigate and report any suspicious transactions when there are reasonable grounds to suspect the funds are proceeds of criminal activity or linked to terrorist financing.
+
+### `v7u_N003641`
+
+- 用于：核心解析、选项E
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：机构有义务协调活动以维护信息保密性和完整性并确保披露符合法律合规标准
+- 英文原文：They should coordinate their activities strategically and tactically to maintain the confidentiality and integrity of the information and ensure all disclosures meet legal compliance standards.
+
+### `v7u_N003631`
+
+- 用于：选项B
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：执法机构可能要求金融机构保持账户开放并监控以协助调查。
+- 英文原文：Law enforcement might request that an FI keep a particular account open and monitor it for investigative purposes.
+
+### `v7u_N003639`
+
+- 用于：选项E、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Responding to law enforcement requests
+- 页码：PDF第367页 / 书内第362页
+- 中文要点：金融机构的响应必须相称且合理，符合法律义务和运营能力。
+- 英文原文：It is crucial to ensure the FI's response is proportionate and justifiable, aligning with both legal obligations and operational capabilities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+根据反洗钱和反恐怖融资合规标准,金融机构 (FI)在得知客户因人口贩卖指控被通缉时,应 采取审慎措施.A项,将请求告知当地执法和监 管机构,可确保信息透明,引起相关机构注意并 获取进一步指导,符合合规要求.C项,审查客 户活动,确定是否存在可疑活动并相应报告,是 金融机构识别和报告可疑交易的重要环节,有助 于防止洗钱和恐怖融资.B项立即关闭账户可能 打草惊蛇,不利于后续调查;D项告知执法机构 联系政府办理引渡,非金融机构职责;E项立即 移交所有客户信息,可能违反隐私保护法规.因 此,选AC.
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+harges.Whatshould theFI do?(SelectTwo.) InformlocalLEAandregulatorofther equestforawareness Closetheclient'saccountsimmediatel B ytoavoidanyunduerisk Reviewtheclient'sactivity,determinei fsuspiciousactivityexists,andreport accordingly AdvisetheLEAthatthegovernmentn D eedstobecontactedforextradition Complyimmediatelywiththeforeignju E risdictionandturnoverallclientinform ation 正确答案AC您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,115 @@
+# v7_q_000169
+
+教材章节：未映射
+
+题型：single
+
+题干：一家公司正在迅速向多个国际市场扩张,其中包括一些在监管监督方面被视为高风险的司法管辖区.董事会要求反洗钱报告官(MLRO)审查并调整公司的反金融犯罪(AFC)合规框架,以适应不断变化的监管环境和扩张战略.在此过程中,MLRO发现了一些漏洞,尤其是在反洗钱制度存在缺陷的市场,并对框架进行了更新以降低这些风险.这一流程描述的是AFC合规计划中的哪个要素？
+
+英文题干：A company is rapidly expanding into several international markets, including jurisdictions considered high risk in terms of regulatory oversight. The board has requested the Money Laundering Reporting Officer (MLRO) to review and adjust the company's anti-financial crime (AFC) compliance framework to align with the evolving regulatory landscape and expansion strategy. During this process, the MLRO identifies vulnerabilities, particularly in markets with AML deficiencies, and updates the framework to mitigate these risks. Which element of the AFC compliance program does this process describe?
+
+选项：
+
+- A. 治理安排
+  English: Governance arrangements
+- B. 交易监控
+  English: Transaction monitoring
+- C. 培训与意识提升
+  English: Training and awareness
+- D. 风险评估
+  English: Risk assessment
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别风险评估作为AFC合规框架动态调整的触发要素
+
+## 【核心解析】
+
+风险评估流程是强大风险管理项目的基础（P265）。组织在业务发生重大变化时必须重新评估风险，教材举例包括进入新市场或经营司法管辖区发生变化；持续评估金融犯罪风险也有助于应对新兴地域风险（P283）。题干中，公司向多个国际市场扩张并进入高风险司法管辖区，MLRO据此审查AFC框架、识别存在反洗钱制度缺陷市场的漏洞，并更新框架以降低风险，与上述风险重新评估的触发条件和目的直接对应。董事会发出要求、MLRO负责执行体现了治理角色，但教材同时说明董事会或高管提供战略监督，而MLRO可领导风险评估（P295）。因此，在本题中，董事会和MLRO交代了谁授权、谁执行，流程的实际内容仍是因市场和司法管辖区变化而重新评估风险，D项最直接。
+
+教材原句："Organizations must reevaluate risks whenever there is a material change to their business. This could include higher-risk product offerings, entering a new market, or changes in jurisdictions where the organization operates."
+
+## 【错误项分析】
+
+- **A 错误**：治理安排与题干并非毫无关系：董事会提出要求、MLRO负责落实，分别体现了战略监督和职责执行；教材也说明董事会或高管提供AFC战略监督，MLRO可领导政策执行和风险评估（P295）。但题目问的是所描述流程的要素，其主要动作是因进入新市场而识别地域风险和控制漏洞，并更新框架以缓释风险，直接对应的风险重新评估（P283）。A项描述了题干中的角色与监督背景，但不如D项概括流程本身准确。
+- **B 错误**：交易监控指在开户后持续观察客户交易，以识别异常或非法活动及其对组织的风险（P329）。题干未涉及客户交易或异常交易检测，而是在市场扩张后审查整体AFC框架并识别风险漏洞，因此更直接匹配风险评估。
+- **C 错误**：题干未涉及向员工提供培训、传递知识或提升意识，全部动作都围绕新市场风险、框架漏洞及风险缓释展开，因此C项不如D项匹配。
+
+## 【易错提醒】
+
+不要仅凭题干出现「董事会」或「MLRO」就选择治理安排。教材一方面说明董事会或高管提供战略监督，另一方面也明确将风险评估列入MLRO可以领导的工作（P295），因此主体身份不能单独决定答案。应继续看其实际执行的流程：当主要动作是因进入新市场或经营司法管辖区变化而重新识别风险、分析漏洞并调整缓释措施时，直接指向风险评估（P283）；治理信息在本题中主要是授权和职责背景。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002825`
+
+### `v7u_N002825`
+
+- 用于：核心解析、A项分析、易错提醒
+- 章节：The importance of continuous risk assessment > Continuously assessing financial crime risk
+- 页码：PDF第288页 / 书内第283页
+- 中文要点：组织在业务发生重大变化时必须重新评估风险
+- 英文原文：Organizations must reevaluate risks whenever there is a material change to their business. This could include higher-risk product offerings, entering a new market, or changes in jurisdictions where the organization operates.
+
+### `v7u_N002826`
+
+- 用于：核心解析
+- 章节：The importance of continuous risk assessment > Continuously assessing financial crime risk
+- 页码：PDF第288页 / 书内第283页
+- 中文要点：持续评估金融犯罪风险有助于组织适应不断变化的洗钱/恐怖融资手法和威胁
+- 英文原文：Continuously assessing financial crime risk helps organizations adapt to evolving ML/TF techniques and threats, monitor transactions to detect patterns and significant changes, respond to emerging geographical risks, and meet regulations and international standards.
+
+### `v7u_N002615`
+
+- 用于：核心解析
+- 章节：Introduction > Introduction: Risk assessment
+- 页码：PDF第270页 / 书内第265页
+- 中文要点：风险评估流程是强大风险管理项目的基础
+- 英文原文：The risk assessment process is the foundation of a strong risk management program.
+
+### `v7u_N002941`
+
+- 用于：核心解析、A项分析、易错提醒
+- 章节：Governance and oversight > Governance committees and their functions
+- 页码：PDF第300页 / 书内第295页
+- 中文要点：董事会成员或高级管理人员为AFC合规提供战略监督和资源配置
+- 英文原文：Board members or senior executives to provide strategic oversight and resource allocation for AFC compliance.
+
+### `v7u_N002942`
+
+- 用于：核心解析、A项分析、易错提醒
+- 章节：Governance and oversight > Governance committees and their functions
+- 页码：PDF第300页 / 书内第295页
+- 中文要点：首席合规官、MLRO或其代表领导AFC政策执行、风险评估和监管沟通
+- 英文原文：The chief compliance officer, MLRO, or their delegates to lead AFC policy execution, risk assessments, and regulatory engagement.
+
+### `v7u_N003244`
+
+- 用于：B项分析
+- 章节：Transaction monitoring > Transaction monitoring versus payment screening
+- 页码：PDF第334页 / 书内第329页
+- 中文要点：交易监控是开户后持续观察客户交易以识别异常或非法活动。
+- 英文原文：Transaction monitoring is the continuous observation of customer transactions after onboarding to identify unusual or illicit activity and the risk it might have to the organization.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+题目描述了公司扩张至高风险司法管辖区时, MLRO审查并调整AFC合规框架,发现漏洞并更 新以降低风险的过程.治理安排涉及整体合规框 架的制定,交易监控关注具体交易,培训与意识 提升侧重员工教育,均不直接对应题干中审查调 整框架、降低风险的核心行为.而风险评估正是 识别、分析并应对潜在风险的过程,与题干中 MLRO的行为完全吻合.因此,正确答案是D, 即风险评估.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+题目描述公司扩张至高风险国际市场,反洗钱报 告官(MLRO)需审查并调整反金融犯罪
+
+### 答案冲突提示
+
+- 未发现答案冲突。

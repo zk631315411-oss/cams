@@ -1,0 +1,101 @@
+# v7_q_000264
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]以下哪些情形表现出可疑交易的典型迹象？(选择两项.)
+
+英文题干：Which of the following scenarios exhibit classic indicators of suspicious transactions? (Select two.)
+
+选项：
+
+- A. 一位企业主将其房产抵押给了一家最近因反洗钱违规行为而被罚款的金融机构.
+  English: A business owner mortgages his home with a financial institution that was recently fined for AML violations.
+- B. 一位客户定期使用其配偶的银行账户投资股票型基金（她是该账户的第二账户持有人）.
+  English: A customer regularly invests in equity funds using her spouse's bank account, where she is a second account holder.
+- C. 某政府官员的秘书经常进入银行的保险库取款.
+  English: An individual who is the secretary to a government official frequently accesses the bank's safe deposit vault to withdraw cash.
+- D. 个人经常进口用于民用的精密电子设备,并缴纳所有应缴的关税.
+  English: An individual regularly imports sophisticated electronic items for civil use and pays all applicable customs duties.
+- E. 有个人想向一个身处金融行动特别工作组(FATF)灰名单国家的人进行电汇,但以经济困难为由,请求一位密切的朋友代为处理
+  English: An individual wants to execute wire transfers to a person in a FATF grey-listed jurisdiction and asks a close friend to send the money on his behalf, citing financial difficulties.
+
+## 【AI答案】
+
+C、E
+
+## 【考点】
+
+识别异常现金行为以及借用第三方向高风险辖区汇款的红旗信号
+
+## 【核心解析】
+
+选项C包含两个应结合审查的事实：当事人与政府官员存在工作关系，且频繁通过银行保险库提取现金。教材指出，政府职员若突然出现频繁现金活动可能触发红旗信号（P436）；政治敏感人物及其相关关系也需要加强风险识别。这里不能仅凭“秘书”身份直接认定其为PEP密切关联人，但“公职关系背景+频繁现金提取”的组合属于典型异常模式。
+
+选项E同样由两个风险因素叠加构成：目的地属于FATF灰名单辖区，而汇款人又让朋友代其付款。教材将高风险司法管辖区列为电汇红旗信号，并指出第三方参与会增加复杂性、使资金来源更难追踪（P78、P66）；FATF灰名单本身也指AML/CFT体系存在战略缺陷但正积极整改的司法管辖区（P156）。因此C、E最符合题目所问的可疑交易典型迹象。
+
+## 【错误项分析】
+
+- **A 错误**：金融机构因反洗钱违规被罚款，反映的是该机构自身的合规缺陷；客户选择与哪家机构交易，本身不构成该客户的可疑行为指标。题干更直接匹配的是客户自身行为模式，而非其金融服务提供方的历史。
+- **B 错误**：客户本身是配偶账户的第二账户持有人，说明其具有账户权利。题干没有给出资金来源不明、隐瞒受益所有权或异常频率等附加事实，不能仅因使用共同账户投资就认定可疑。
+- **D 错误**：履行合规进口手续并缴纳全部关税，本身不构成可疑行为。题干没有给出资金来源不明、隐瞒交易对手、规避申报或异常付款路径等附加事实（P66、P78），不能把正常进口活动认定为红旗信号。
+
+## 【易错提醒】
+
+不要把身份背景单独当作结论。C之所以可疑，是因为公职关系背景与频繁现金提取叠加（P436）；E之所以可疑，是因为高风险辖区与第三方代付叠加（P66、P78、P156）。B仅体现共同账户的正常使用权，风险强度不同。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004373`
+
+### `v7u_N001428`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF high-risk and noncooperative jurisdictions
+- 页码：PDF第161页 / 书内第156页
+- 中文要点：FATF灰名单指在反洗钱/反恐怖融资体系存在战略缺陷但正积极整改的司法管辖区
+- 英文原文：The list is called the "grey list." It identifies jurisdictions with strategic deficiencies in their AML/CFT systems that are actively working with FATF to address these issues.
+
+### `v7u_N004373`
+
+- 用于：核心解析、选项C
+- 章节：Technology for payment and batch screening > Rules-based transaction monitoring
+- 页码：PDF第441页 / 书内第436页
+- 中文要点：政府职员若突然出现频繁现金活动，可能触发红旗信号。
+- 英文原文：However, if a government office clerk, who typically receives a salary via an automated transfer, suddenly starts making frequent cash deposits, it might raise red flags.
+
+### `v7u_N000687`
+
+- 用于：核心解析、选项E
+- 章节：Corporate and investment banking risks > Wire transfer risks
+- 页码：PDF第83页 / 书内第78页
+- 中文要点：高风险司法管辖区是电汇风险的红旗信号。
+- 英文原文：High-risk jurisdictions
+
+### `v7u_N000535`
+
+- 用于：核心解析、选项E、易错提醒
+- 章节：Money laundering risks associated with retail and commercial banking > High-risk retail and commercial banking products
+- 页码：PDF第71页 / 书内第66页
+- 中文要点：第三方指令或参与增加复杂性，使资金来源更难追踪。
+- 英文原文：Instructions or involvement from third parties that add layers of complexity, making it harder to trace the source of funds.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、E
+- 中文参考答案：C、E
+
+### 中文参考解析
+
+选项C,政府官员秘书频繁进入银行保险库取 款,存在利用职务之便进行非法资金转移的风 险,是可疑交易的典型迹象.选项E,个人向 FATF灰名单国家的人电汇,却以经济困难为由 用途,规避反洗钱监管,也表现出可疑交易的典 型迹象.而选项A企业主抵押房产给受反洗钱违 规处罚的金融机构,属正常业务;选项B客户用 配偶账户投资股票型基金,是常见投资行为;选 项D个人正常进口民用精密电子设备并缴纳关 税,均无可疑.所以选CE.易错提醒:注意分 析交易行为是否符合常规逻辑.
+
+- 英文参考答案：C、E
+
+### 英文参考解析
+
+选项C中,政府官员秘书频繁取现,存在利用职 务便利洗钱风险,符合可疑交易特征.选项E 中,向FATF灰名单国家转账目通过他人代付, 钱可疑交易标准.选项A抵押房产与金融机构违 户人属正常操作,选项D进口民用电子产品并缴 税属合法贸易,均不涉及洗钱或恐怖融资.因 此,CE为正确答案.易错提醒:需重点关注资
+
+### 答案冲突提示
+
+- 未发现答案冲突。

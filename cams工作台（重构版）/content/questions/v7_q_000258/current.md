@@ -1,0 +1,125 @@
+# v7_q_000258
+
+教材章节：未映射
+
+题型：multiple
+
+题干：在金融犯罪调查中，使用开源工具的主要优势有哪些？(选择两项.)
+
+英文题干：What are the primary advantages of using open-source tools in financial crime investigations? (Choose two.)
+
+选项：
+
+- A. 数据收集与分析的部分自动化
+  English: Partial automation of data collection and analysis.
+- B. 以经济高效的方式获取广泛的数据资源
+  English: Cost-effective access to a wide range of data.
+- C. 对选定交易和数据源进行实时监控
+  English: Real-time monitoring of selected transactions and data sources.
+- D. 具备在最少人工监督的情况下开展调查的能力
+  English: Ability to conduct investigations with minimal human oversight.
+- E. 更强的跨多个数据集识别关联的能力
+  English: Enhanced ability to identify connections across various datasets.
+
+## 【AI答案】
+
+A、B
+
+## 【考点】
+
+识别开源情报工具的数据获取与自动化优势
+
+## 【核心解析】
+
+开源情报（OSINT）是对公开来源信息的收集与分析（P399）。教材指出，网络上的公开数据规模庞大，搜索引擎可获取新闻、监管通知、社交媒体和存档网站等信息；OSINT还可使用新闻扫描和网络爬取工具从网站或在线数据库提取结构化数据（P399）。这分别支持选项B所说的以较低获取门槛访问广泛数据，以及选项A所说的数据收集与分析部分自动化。教材还指出金融犯罪团队可结合免费和订阅调查工具优化工作流程，进一步支持B的成本效益（P452）。RPA可自动执行开源情报搜索和证件数据提取，但仍不表示调查全程无人参与（P397）。
+
+教材原句："OSINT harnesses the vast amount of data available online to supplement traditional internal sources of information."（P399）
+
+## 【错误项分析】
+
+- **C 错误**：实时监控选定交易是交易监控或持续筛查系统的功能；OSINT专章强调的是公开信息的收集、搜索、扫描和网络爬取（P399），并未把交易实时监控列为其主要优势。
+- **D 错误**：教材展示的是RPA自动执行重复、规则化的搜索和数据提取任务（P397），并非以最少人工监督完成整个调查。自动化任务不等于自动作出调查结论。
+- **E 错误**：跨数据集识别关联是网络分析、实体解析等分析技术的能力；题干问开源工具的「主要优势」，教材对OSINT更直接强调的是公开数据覆盖和获取方式，而不是保证跨数据集关联。
+
+## 【易错提醒】
+
+这里的「open-source」按教材主题应理解为开源情报，即任何人无需特殊凭证即可访问的公开来源（P399），而不是单指免费软件。判断优势时应看公开数据覆盖和自动收集能力。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004007`
+
+### `v7u_N004004`
+
+- 用于：核心解析
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：开源情报是对公开可用来源信息的收集与分析。
+- 英文原文：Open-source intelligence (OSINT) is the collection and analysis of information from publicly available sources.
+
+### `v7u_N004007`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：OSINT利用网上的大量公开数据补充传统内部信息来源。
+- 英文原文：By leveraging publicly available information, organizations can assess reputational risks, detect potential red flags, and build more comprehensive client profiles—all while staying within legal and ethical boundaries. OSINT harnesses the vast amount of data available online to supplement traditional internal sources of information.
+
+### `v7u_N004009`
+
+- 用于：核心解析
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：搜索引擎可发现新闻、监管通知、社交媒体活动和存档网站等大量公开数据。
+- 英文原文：The most obvious and widely used tool is the search engine, which serves as the entry point to uncovering vast amounts of publicly available data. Search engines can find news articles, regulatory notices, social media activity, and archived websites that provide valuable context about individuals or organizations.
+
+### `v7u_N004010`
+
+- 用于：核心解析、错误项分析
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：OSINT技术包括社交媒体监控、新闻扫描和从网站或在线数据库提取结构化数据的网络爬取。
+- 英文原文：Beyond search engines, other techniques include: social media monitoring to evaluate public profiles and connections; news and media scans to track any adverse mentions; and web scraping tools to extract structured data from websites or online databases.
+
+### `v7u_N004012`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology and tools used across the customer life cycle > Open-source intelligence
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：OSINT只使用任何人无需特殊凭证即可访问的公开来源。
+- 英文原文：Importantly, OSINT relies only on information that is publicly accessible. It excludes any proprietary, confidential, or internal data and focuses solely on open sources—content that anyone can access without special credentials.
+
+### `v7u_N003973`
+
+- 用于：核心解析、错误项分析
+- 章节：Technology and tools used across the customer life cycle > Robotic process automation
+- 页码：PDF第402页 / 书内第397页
+- 中文要点：RPA可执行开源情报搜索、提取证件数据、自动填充系统及生成风险评级等重复规则任务。
+- 英文原文：For example, during the KYC process, RPA bots can conduct an open-source intelligence search, extract data from identification documents, autofill internal systems, and populate the risk rating—all tasks that are repetitive and rules-based.
+
+### `v7u_N004521`
+
+- 用于：核心解析
+- 章节：Transaction monitoring scenario calibration testing > Technology to assist investigation
+- 页码：PDF第457页 / 书内第452页
+- 中文要点：结合免费和订阅调查工具可优化金融犯罪团队的工作流程并加强合规工作。
+- 英文原文：By combining free and subscription-based investigative tools, financial crime teams can optimize their workflows and enhance regulatory compliance efforts.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B
+- 中文参考答案：A、B
+
+### 中文参考解析
+
+角答案 您选择/ AB 试题详解 术 恐 解析 项 金融犯罪调查领域,开源工具的应用聚焦于其 心优势.数据收集与分析的部分自动化(A) 现开源工具通过预设脚本或模块减少重复性人 操作,提升效率.以经济高效方式获取数据资 整合公开数据库、网络爬虫等渠道,降低资源 入.C涉及实时监控,但开源工具多用于事后 折而非持续实时追踪;D中“最少人工监督”不 合实际调查所需的专业判断;E强调跨数据集 联识别,但需特定算法支持,并非普遍优势. 正 案AB符合开放源码技术在实际调查场景中的 型应用特征.《金融犯罪调查技术白皮书》中 到,自动化与成本控制是开源方案的核心竞争 原 题收深度思考过程. 技
+
+- 英文参考答案：A、B
+
+### 英文参考解析
+
+gopen-sourcetoolsinfinancial crimeinvestigati ons?(Choosetwo.) Partialautomationofdatacollectionan danalysis Cost-effectiveaccesstoawiderange ofdata Real-timemonitoringofselectedtrans C actionsanddatasources AbilitytoconductInvestigationswithm D inimalhumanoversight Enhancedabilitytoidentityconnection E sacrossVariousdatasets 正确答案AB您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

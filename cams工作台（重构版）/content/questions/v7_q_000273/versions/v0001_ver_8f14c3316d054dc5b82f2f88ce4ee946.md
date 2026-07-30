@@ -1,0 +1,109 @@
+# v7_q_000273
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱/打击资助恐怖主义合规计划]一家机构正打算改变现有的基于阈值的监控方案,因为该方案产生了过多的警报,但并未生成可疑活动报告.提交给相关委员会以支持此提案的文件应包括以下内容的详细信息:(选择三项.)
+
+英文题干：An institution is looking to alter an existing threshold-based monitoring scenario because it is generating too many alerts that do not yield suspicious activity reports. Documentation submitted to the relevant committee to support this proposal should include details on: (Choose Three.)
+
+选项：
+
+- A. 证明因变更而增加的剩余风险在银行的风险偏好范围内.
+  English: Evidence that the increased residual risk arising from the change is within the bank's risk appetite.
+- B. 反洗钱报告专员对提案的批准.
+  English: Approval by the money-laundering reporting officer for the proposal.
+- C. 在效率较低的低阈值下投入了多少资源以及相关成本。
+  English: How many resources are spent on the less productive lower threshold and the associated costs.
+- D. 不再需要提交处理的案件数量,以及由此可释放用于其他任务的资源.
+  English: The number of cases that will not be filed and the resources that can be freed up for other tasks.
+- E. 与监管机构举行会议的纪要,其中达成一致意见,认为提高门槛是合理的.
+  English: Minutes of a meeting held with the regulator where agreement was obtained that the higher threshold was justified.
+- F. 历史分析证明,当前情景产生了数量不成比例的误报
+  English: Historical analysis proving that the current scenario generates a disproportionate number of false positives.
+
+## 【AI答案】
+
+A、C、F
+
+## 【考点】
+
+阈值调优提案需覆盖风险论证、资源释放和问题证据
+
+## 【核心解析】
+
+题干描述的是交易监控场景调优：现有阈值产生大量警报，却很少转化为可疑活动报告。支持调优提案需要说明三个方面。第一，提高阈值可能改变控制效果并增加剩余风险，因此应确认变更后的风险仍处于机构的风险偏好或容忍度内（P279）。第二，选项C要求量化当前低阈值消耗的资源和成本；减少误报、提高资源使用效率是阈值设定的重要目标，过多警报也会增加人工工作量和运营成本（P331、P383）。第三，选项F要求用历史分析确认当前场景确实产生了过多误报；交易监控场景需要持续测试和调优，测试不足会造成场景过时和误报过多（P446）。因此应选A、C、F。D项所说的「不提交案件」混淆了警报、调查和后续报告等环节，不能替代对误报率、资源成本和剩余风险的分析。
+
+## 【错误项分析】
+
+- **B 错误（主体或阶段错配）**：题干问的是提交给委员会、用于支持阈值调整的文件内容，而不是批准流程中的签字人。提案应重点说明风险变化、历史表现和资源影响，MLRO个人批准不能替代这些分析。
+- **D 不选（业务阶段错配）**：阈值变更影响告警生成和后续调查入口；“不提交案件”把告警、调查、SAR/诉讼等不同阶段混在一起，且不能先验断定未生成或未提交的案件都没有价值。资源效率应由现状成本、误报率和KPI量化，而不是用未经定义的“未提交案件数量”替代。
+- **E 错误（主体或阶段错配）**：机构可以就监管期望与监管机构沟通，但选项要求监管机构事先同意提高阈值。题干所问的支持材料应由机构用内部数据说明风险、误报和资源影响，外部沟通纪要不能替代内部治理和调优论证。
+
+## 【易错提醒】
+
+注意区分三类信息：风险偏好界定变更后的风险边界（P279），资源和成本反映调优收益（P331、P383），历史误报分析反映场景表现（P446）。三者都围绕监控场景本身，不应与MLRO个人签字、监管机构事先同意或下游诉讼结果混为一谈。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003283`
+
+### `v7u_N002788`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第284页 / 书内第279页
+- 中文要点：根据剩余风险判断是否在容忍度内或需要行动计划
+- 英文原文：Once an organization understands its residual risks, it can determine whether the risk is within its tolerance levels or if an action plan is required to mitigate those risks.
+
+### `v7u_N002789`
+
+- 用于：核心解析
+- 章节：Enterprise-wide risk assessment > Residual risks action plan
+- 页码：PDF第284页 / 书内第279页
+- 中文要点：向高风险地区加密资产服务商转账的剩余风险高，需加强控制
+- 英文原文：For example, if a traditional financial institution realizes it has many customers making transfers to cryptoasset service providers in high-risk jurisdictions and no additional controls exist, the residual risk is high. The organization will need to develop a control to mitigate this risk, so the residual risk is within risk appetite. This may include a process of prohibiting transactions to certain known, unlicensed providers, or increasing the monitoring where the risk is high, even if it is within a licensing regime.
+
+### `v7u_N003283`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Transaction monitoring system tuning
+- 页码：PDF第336页 / 书内第331页
+- 中文要点：减少误报是设定阈值的关键目标，以高效利用资源
+- 英文原文：Reducing the number of false positives is a key goal in setting thresholds to make the most efficient use of resources.
+
+### `v7u_N003828`
+
+- 用于：核心解析、选项C
+- 章节：Understanding AFC technology > AFC tools, choices, and considerations
+- 页码：PDF第388页 / 书内第383页
+- 中文要点：低效系统产生过多警报会增加人工工作量和运营成本。
+- 英文原文：Cost considerations include internal operating expenses and output management costs resulting from false positives. Inefficient systems drive up costs by producing excessive alerts, increasing manual workload.
+
+### `v7u_N004463`
+
+- 用于：核心解析、选项F
+- 章节：Technology for Ongoing Monitoring and Investigations > Rules-based systems
+- 页码：PDF第451页 / 书内第446页
+- 中文要点：规则场景需要持续测试和调优；测试不足会导致场景过时并产生过多误报。
+- 英文原文：Without proper testing and tuning, scenarios can become outdated and generate excessive false positives.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、F
+- 中文参考答案：A、C、F
+
+### 中文参考解析
+
+选项A,需证明变更后增加的剩余风险在银行风 险偏好范围内,这是变更监控方案的重要前提, 以确保风险可控.选项C,投入资源及成本是评 估变更可行性的关键因素,了解在较低生产率间 值上投入的资源及成本,有助于判断变更是否经 济合理.选项F,历史分析表明当前情形导致过 多误报,说明现有方案存在缺陷,为变更提供了 合理依据.选项B,反洗钱报告专员批准提案并 非核心要素;选项D,不提起诉讼案件数量与资 源释放,和变更监控方案直接关联性不大;选顶 E,与监管机构会议纪要并非必要内容.所以选 ACF.易错点在于要准确把握各选项与变更监控 方案提案的关联性.
+
+- 英文参考答案：A、C、F
+
+### 英文参考解析
+
+题目要求选择支持修改监测阀值场景提案应包含 的三个细节.A项,提供变更后残余风险在银行 风险承受范围内的证据,是修改风险控制措施的 重要依据.C项,说明低间值消耗的资源及成 本,体现效率优化必要性.F项,历史分析证明 当前场景产生过多误报,直接支持修改合理性. B项中仅反洗钱报告官批准不够全面,需委员会 层面决策;D项未提交案例减少和资源释放的具 体数据;E项与监管会议纪要非强制要求,提案 核心在于风险收益分析.因此选择ACF.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

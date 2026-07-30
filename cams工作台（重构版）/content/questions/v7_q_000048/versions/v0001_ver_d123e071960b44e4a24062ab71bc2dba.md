@@ -1,0 +1,75 @@
+# v7_q_000048
+
+教材章节：未映射
+
+题型：single
+
+题干：哪种运营情况可能表明洗钱活动正在一家吸收存款的金融机构内部发生或通过该机构进行？
+
+英文题干：Which operational situation might indicate that money laundering is occurring at or through a deposit-taking financial institution?
+
+选项：
+
+- A. 该机构注意到客户对大面额钞票的需求有所增加.
+  English: The institution has observed an increase in customer demand for large-denomination banknotes
+- B. 该机构保存一份按顺序编号的所售货币工具登记簿.
+  English: The institution maintains a sequentially numbered log of the monetary instruments it sells
+- C. 该机构注意到,在支持资金快速转移或汇款的交易服务中,结算时间有所缩短.
+  English: The institution has observed a reduced settlement time in the transaction services that support the rapid movement or remittance of funds
+- D. 该机构注意到其数字产品和服务的采用率有所上升.
+  English: The institution has observed an increase in the adoption of its digital products and services
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别大额现金交易作为洗钱活动的可疑指标
+
+## 【核心解析】
+
+教材指出，大额现金交易可能表明潜在的非法活动（P137）。题干问吸收存款的金融机构内部或通过该机构出现哪种运营情况可能指示洗钱活动。选项A描述客户对大面额钞票的需求增加，虽然不等同于已经发生大额现金交易，但在给定选项中最接近大额现金活动的异常信号。相较于正常业务活动，突然增长的大面额钞票需求与教材所述风险方向一致，因此从运营情况角度最直接指向洗钱风险。
+
+教材原句："Substantial cash transactions, which might indicate potential illicit activities."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜题干要素不匹配**：选项B所述「保存按顺序编号的所售货币工具登记簿」属于机构自身的合规与记录保存措施，而非客户引发的可疑运营情况。题干考查的是可能指示洗钱的外部异常迹象，而B项描述的是内控要求，与题干所需的风险指标性质不匹配。
+- **C 错误（题干对照）｜概念混淆**：选项C的「资金快速转移或汇款服务中结算时间缩短」可能是技术升级或效率提升的结果，教材在区块链技术特性中提及更快结算（P110），但并未将该现象列为洗钱风险指标。相比之下，选项A涉及的大额现金交易在教材中直接被界定为可能指示非法活动的信号，因此C不如A直接对应教材的洗钱识别框架。
+- **D 错误（题干对照）｜题干要素不匹配**：选项D「数字产品和服务的采用率上升」反映的是客户数字化转型趋势，教材将其与提高客户准入效率、加强风险管理等正面功能关联（P408），没有将其列为洗钱的指示信号。题干没有提供任何额外背景将该现象与非法活动建立联系，因此与正确项A的匹配度差距明显。
+
+## 【易错提醒】
+
+容易将机构自身的合规控制措施（如连续编号、记录保存）误认为洗钱的可疑指标。洗钱指标关注的应是客户行为或交易模式中的异常，而非机构为防范风险主动实施的程序。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001260`
+
+### `v7u_N001260`
+
+- 用于：核心解析
+- 章节：Providing financial services to embassies, foreign consulates, and missions
+- 页码：PDF第142页 / 书内第137页
+- 中文要点：大额现金交易可能表明潜在的非法活动
+- 英文原文：Substantial cash transactions, which might indicate potential illicit activities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+洗钱活动常涉及将非法资金通过金融机构转化为 看似合法的资金.分析选项,A选项中客户对大 面额钞票需求的增加,可能是为了将非法所得的 的特征.B选项对货币工具连续编号并记录在 案,是金融机构的合规操作,与洗钱无关.C选 项结算时间缩短,是金融服务效率提升的表现, 非洗钱迹象.D选项数字产品和服务采用率上 升,是金融科技发展的趋势,与洗钱无直接联 系.因此,A选项最可能表明洗钱活动.易错提 醒:需熟悉洗钱活动的常见手法及金融机构的合 规操作. 食食
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+Iinstitution? Theinstitutionhasobservedanincrea seincustomerdemandforlarge-deno minationbanknotes. Theinstitutionmaintainsasequentially B numberedlogofthemonetaryinstrum entsitsells. Theinstitutionhasobservedareduced settlementtimeinthetransactionservi C cesthatsupportTherapidmovement orremittanceoffunds. Theinstitutionhasobservedanincrea D seintheadoptionofitsdigitalproduct sandservices. 正确答案A您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

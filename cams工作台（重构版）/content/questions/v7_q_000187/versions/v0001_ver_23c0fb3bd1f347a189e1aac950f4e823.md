@@ -1,0 +1,83 @@
+# v7_q_000187
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪项是联合国安理会可用于尽量减少制裁对无辜平民负面影响的工具？
+
+英文题干：Which of the following is among the sanctions tools the United Nations Security Council could use that minimize negative effects on innocent civilian populations?
+
+选项：
+
+- A. 旅行禁令
+  English: Travel bans
+- B. 全面定向制裁
+  English: Comprehensive targeted sanctions
+- C. 全面制裁
+  English: Comprehensive sanctions
+- D. 定向制裁
+  English: Targeted sanctions
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分定向制裁与全面制裁的影响范围
+
+## 【核心解析】
+
+FATF建议要求各司法管辖区依照联合国安理会决议实施定向金融制裁，包括立即冻结被指定个人或实体的资产（P147）。联合国安理会综合清单也列明受到制裁的具体个人和实体（P206）。定向制裁把措施集中于被指定对象，而不是不加区分地覆盖一般群体，因此比全面制裁更能减少对无辜平民的附带影响。D项「定向制裁」（Targeted sanctions）与此直接对应，所以答案为D。
+
+教材原句："Jurisdictions should also implement targeted financial sanctions in compliance with UN Security Council resolutions; this includes freezing the assets of designated persons or entities without delay to combat the financing of terrorism."
+
+## 【错误项分析】
+
+- **A 错误**：旅行禁令只是限制人员移动的一种具体措施，不能完整概括以特定个人或实体为对象的制裁类别。D所指的定向制裁与题干更匹配。
+- **B 错误**：「全面」强调广泛覆盖，「定向」强调限定对象，将两者组合会混淆制裁范围。题干要求的是针对特定对象的定向制裁。
+- **C 错误**：全面制裁的覆盖范围更广，通常更容易影响未被特定指定的一般群体；定向制裁则把措施集中于被指定的个人或实体，因此更符合题干要求。
+
+## 【易错提醒】
+
+「Targeted sanctions」以被指定的个人或实体为作用对象（P147、P206）。题干用「尽量减少对无辜平民的负面影响」提示应选择对象范围受到限定的制裁类别，而不是单一限制措施或覆盖范围更广的全面制裁。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001350`
+
+### `v7u_N001350`
+
+- 用于：核心解析、选项A、选项B、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：各司法管辖区应依照联合国安理会决议实施定向金融制裁，包括立即冻结被指定个人或实体的资产。
+- 英文原文：Jurisdictions should also implement targeted financial sanctions in compliance with UN Security Council resolutions; this includes freezing the assets of designated persons or entities without delay to combat the financing of terrorism.
+
+### `v7u_N001983`
+
+- 用于：核心解析、易错提醒
+- 章节：Other AFC regulations that impact organizations > Major sanctions regimes
+- 页码：PDF第211页 / 书内第206页
+- 中文要点：联合国安理会综合清单列明所有受到联合国制裁的个人和实体。
+- 英文原文：The UN also maintains the United Nations Security Council Consolidated List, which includes all persons and entities that are subject to UN sanctions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+未提供。
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

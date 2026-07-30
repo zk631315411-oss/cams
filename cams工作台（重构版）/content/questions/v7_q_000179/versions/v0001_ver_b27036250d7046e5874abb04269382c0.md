@@ -1,0 +1,116 @@
+# v7_q_000179
+
+教材章节：未映射
+
+题型：single
+
+题干：对于一家在欧盟设立且在欧盟以外高风险第三国设有分支机构的银行，作为基于风险的方法（RBA）来管理反洗钱/打击资助恐怖主义（AML/CFT）风险的一部分，哪项控制措施最有效？
+
+英文题干：Which control would be most effective as part of a risk-based approach (RBA) to managing AML/CFT risk for a bank established in the EU that also has a branch in a high-risk third country outside of the EU?
+
+选项：
+
+- A. 完全依赖高风险第三国的中央受益所有人登记册记录来确定所有客户的最终受益所有人
+  English: Fully rely on central beneficial owner registry records in the high-risk third country to determine the ultimate beneficial owners of all customers
+- B. 根据风险评估后每个客户所构成的风险程度，采取有针对性的尽职调查措施
+  English: Apply tailored due diligence measures, based on the level of risk posed by each customer following risk assessment
+- C. 实时监控每笔跨境交易，鉴于该国风险等级，对所有交易进行标记以加强审查
+  English: Monitor every cross-border transaction in real time, flagging all for enhanced scrutiny due to the country risk level
+- D. 对高风险第三国分支机构的所有客户自动采取强化的客户尽职调查措施，不论其风险等级如何
+  English: Apply enhanced customer due diligence measures automatically to all customers of the high-risk third-country branch, regardless of their risk level
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+风险为本方法的核心：按风险程度匹配措施，不成比例或一刀切均不符合RBA
+
+## 【核心解析】
+
+风险为本方法（RBA）要求机构识别、评估和理解洗钱/恐怖融资风险，并采取适当措施有效缓解风险（P270）；准确判断客户潜在金融犯罪风险，是采用RBA的重要前提（P271）。高风险司法管辖区是需要纳入评估的风险因素：FATF相关要求提出，应对与其认定的高风险司法管辖区内个人或机构之间的业务关系和交易实施强化尽职调查（P148）。但题干选项D的范围更宽，它要求仅凭分支机构所在地，对「所有客户」在「不论其风险等级」的情况下自动采取EDD，跳过了客户风险判断。相比之下，B明确包含「风险评估后」和「根据每个客户的风险程度」两个步骤，与教材所述按照风险暴露程度采取适当措施、对较高风险客户实施EDD并加强监控的逻辑完整对应（P267、P270）。因此，本题按RBA原则应选B；高风险国家因素应提高审查强度，但不能把D中无视风险等级的一刀切表述当作RBA本身。
+
+教材原句："A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively."
+
+## 【错误项分析】
+
+- **A 错误**：题干的核心是「管理AML/CFT风险」而非「获取受益所有人信息的手段」。教材要求以风险为本方法核实受益所有人身份并采取合理措施（P339），「完全依赖」某个外部登记册放弃独立核实，与RBA所要求的「合理」标准匹配度不如B。
+- **C 错误**：跨境和国家风险可以支持加强监控，但C要求实时监控并标记「每笔」跨境交易。RBA要求根据风险暴露程度确定优先级和措施（P267）；C没有体现先评估再区分审查强度，匹配度不如B。
+- **D 错误**：教材确实要求对与FATF认定的高风险司法管辖区内个人或机构之间的业务关系和交易实施EDD（P148），所以不能把国家风险视为无关。但D进一步规定对分支机构「所有客户」自动采取EDD且「不论其风险等级如何」，这一绝对范围并非所引规则的表述，也取消了教材要求的客户风险判断（P271）。B同时纳入地域等风险因素和客户评估，更完整体现RBA。
+
+## 【易错提醒】
+
+高风险司法管辖区会提高地域风险，对与该辖区内个人或机构的业务关系和交易可能需要EDD（P148）；这与D仍有范围差别。D把「分支机构位于高风险国家」直接扩展为「所有客户、不论风险等级」，而B要求把地域风险连同客户风险评估结果一起用于确定尽职调查强度（P267、P271）。判断此类题时，应同时避免忽略国家风险和把单一风险因素无限扩大。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002672`
+
+### `v7u_N002672`
+
+- 用于：核心解析
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：风险为本方法（RBA）定义：识别、评估和理解洗钱/恐怖融资风险并采取适当缓解措施
+- 英文原文：A risk-based approach (RBA) is the process of identifying, assessing, and understanding the ML/TF risks to which organizations are exposed and taking appropriate measures to mitigate those risks effectively.
+
+### `v7u_N002638`
+
+- 用于：核心解析、选项C
+- 章节：Types of risk assessment > The importance of risk assessment in AFC
+- 页码：PDF第272页 / 书内第267页
+- 中文要点：风险为本方法要求国家和金融机构根据风险暴露程度优先排序并采取适当措施
+- 英文原文：An RBA requires countries and financial institutions to prioritize risks and apply appropriate measures based on their level of exposure.
+
+### `v7u_N002682`
+
+- 用于：核心解析
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：较高风险客户可能需要强化尽职调查和加强监控，机构据客户潜在金融犯罪风险分类以有效配置资源。
+- 英文原文：A customer representing higher risk may be subject to enhanced due diligence and heightened monitoring, thereby allowing the organization to allocate resources effectively by classifying customers based on their potential financial crime risk.
+
+### `v7u_N002685`
+
+- 用于：核心解析、选项D
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第276页 / 书内第271页
+- 中文要点：准确判断客户潜在参与金融犯罪的风险，是风险为本方法的重要前提。
+- 英文原文：Accurately judging a customer’s potential involvement in financial crime is an important prerequisite for the RBA.
+
+### `v7u_N003353`
+
+- 用于：选项A
+- 章节：Transaction monitoring > How much research is reasonably enough?
+- 页码：PDF第344页 / 书内第339页
+- 中文要点：FATF要求金融机构采取风险为本方法核实受益所有人身份。
+- 英文原文：According to FATF, financial institutions must use a risk-based approach and take reasonable measures to verify the identity of the beneficial owner. For legal persons and arrangements, this should include understanding the ownership and control structure of the customer.
+
+### `v7u_N001363`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构应对与FATF认定的高风险司法管辖区内个人或机构之间的业务关系和交易实施强化尽职调查。
+- 英文原文：Financial institutions should implement AML/CFT programs, facilitate the sharing of information for AML/CFT purposes, and apply enhanced due diligence to business relationships and transactions with persons and institutions from jurisdictions FATF identifies as higher risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D（原始题库字段；经教材复核不采纳）
+- 中文参考答案：D（原始答案字段；下方中文解析正文实际支持B）
+
+### 中文参考解析
+
+在基于风险的方法(RBA)框架下,管理反洗 钱/打击资助恐怖主义(AML/CFT)风险需针对 风险程度采取相应措施.选项A完全依赖高风险 第三国的中央受益所有人登记记录,存在信息不 准确风险:选项C实时监控每笔跨境交易并标 记,虽加强审查但缺乏针对性:选项D对所有客 户自动采取强化尽职调查,不论风险等级,过于 一刀切.选项B根据风险评估后每个客户构成的 风险程度,采取有针对性的尽职调查措施,符合 RBA框架下风险为本原则,最为有效. 南用【深度解！,获深顶思考过程
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在欧盟设立目在高风险第三国设有分行的银行 采用风险为本方法(RBA)管理反洗钱/反恐融 资(AML/CFT)风险时,最有效的控制措施是: 根据风险评估结果,针对不同客户的风险水平实 施定制化的尽职调查措施.此方法符合风险为本 原则,即根据客户风险等级调整尽职调查强度 而非一概而论.其他选项,如完全依赖高风险国 家的中央受益所有人登记记录、实时监控所有跨 境交易或对所有客户自动实施强化尽职调查,均 缺乏针对性,不符合风险为本的精细化管理要 求.
+
+### 答案冲突提示
+
+- 原始答案字段冲突：题库最终参考答案、中文参考答案标为D，但中文参考解析正文和英文参考答案均支持B。
+- 教材复核结论：AI答案B与RBA定义、客户风险判断及高风险辖区EDD规则能够形成闭环；原始题库D不作为本题正确答案。

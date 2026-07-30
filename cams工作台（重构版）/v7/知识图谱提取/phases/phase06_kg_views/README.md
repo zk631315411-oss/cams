@@ -20,7 +20,7 @@ chapters: 59
 sections: 339
 core_points: 983
 units: 4973
-edges: 7308
+edges: 8632
 relation_edges: 1070
 p5_terms: 1408 (external retrieval index)
 ```

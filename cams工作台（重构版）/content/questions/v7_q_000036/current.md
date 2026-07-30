@@ -1,0 +1,93 @@
+# v7_q_000036
+
+教材章节：未映射
+
+题型：single
+
+题干：在赌场中,哪种可疑活动可能是洗钱的最强有力的迹象？
+
+英文题干：Which suspicious activity may be the strongest indicator of money laundering through a casino?
+
+选项：
+
+- A. 一家非上市公司发起资金转移,通过赌场将资金转入多名赌客的投注账户.
+  English: A privately held company originates fund transfers through the casino into the betting accounts of multiple patrons
+- B. 一位赌客要求赌场将其赢来的钱转给另一家博彩运营商
+  English: A patron requests the casino to transfer their winnings to another gambling operator
+- C. 一位赌客在21点赌桌前用现金购买了大量筹码
+  English: A patron purchases a large amount of chips at a blackjack table using cash
+- D. 一位常客经常在相同的体育赛事上多次下注.
+  English: A patron routinely places multiple bets on the same sporting events
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别客户业务画像与资金转移模式的不匹配
+
+## 【核心解析】
+
+题目要求识别赌场洗钱的「最强」迹象，而不是判断哪些行为在任何情况下都属于正常交易。教材指出，与客户业务画像不符的交易、无法解释的资金转移等情况可能表明潜在金融犯罪（P443）。选项A中，一家非上市公司发起资金转移，通过赌场向多名赌客的投注账户转入资金，缺乏明显的正常业务理由，同时包含公司资金、第三方赌客和多个投注账户等异常要素，直接体现了业务画像不匹配和难以解释的资金转移。
+
+教材案例还表明，通过多个实体和账户转移资金会形成复杂、难以追踪的资金链路（P56）。相比之下，其他选项虽然可能在特定背景下需要进一步审查，但题干没有提供与A同等程度的第三方资金分散、业务画像不符或复杂资金流向。因此，A是四个选项中最强的洗钱迹象。教材同时指出，赌场因大量现金交易而特别容易受到洗钱活动侵害（P120）。这意味着C中的大额现金购买筹码也可能引起关注，但仅凭该行为，尚不足以证明其可疑程度高于A。
+
+教材原句："Transactions that do not align with a customer’s business profile, unexplained fund transfers, or sudden activity in dormant accounts might also indicate potential financial crime."
+
+## 【错误项分析】
+
+- **B 错误（题干对照）｜风险特征较弱**：将赢款转至另一家博彩运营商在特定情况下可能需要审查，但题干没有说明资金来源不明、涉及多个第三方账户或与客户画像不符。其异常程度不如A所体现的公司资金向多个赌客账户分散转移。
+- **C 错误（教材定义应用）｜范围或程度偏差**：赌场因大量现金交易而具有较高洗钱脆弱性（P120），因此大额现金购买筹码不能被直接认定为正常或无风险。但C只提供了现金购筹码这一项信息，没有体现A所具有的公司主体、第三方赌客和多账户资金分散等复合异常因素，所以不是最强迹象。
+- **D 错误（题干对照）｜风险特征较弱**：题干只说明常客在相同赛事上多次下注，没有显示资金来源异常、第三方代付、资金分散或其他无法解释的资金流向。因此，仅凭多次投注同一赛事，不能认定其比A项更能表明洗钱。
+
+## 【易错提醒】
+
+未被选为「最强迹象」不等于该行为完全正常。赌场中的大额现金交易本身可能需要关注（P120），但判断风险强弱还要看是否同时存在业务画像不符、第三方资金、多个账户和无法解释的资金流向（P443）。A同时具备多个异常要素，因此比仅描述大额现金购筹码的C更具识别力。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004431`
+
+### `v7u_N004431`
+
+- 用于：核心解析、易错提醒
+- 章节：Technology for payment and batch screening > Transaction monitoring scenario development
+- 页码：PDF第448页 / 书内第443页
+- 中文要点：与客户业务画像不符的交易、不明资金转移或休眠账户突然活动可能表明金融犯罪。
+- 英文原文：Transactions that do not align with a customer’s business profile, unexplained fund transfers, or sudden activity in dormant accounts might also indicate potential financial crime.
+
+### `v7u_N000447`
+
+- 用于：核心解析
+- 章节：Money Laundering Risks in Financial Services > Shell and shelf companies risks
+- 页码：PDF第61页 / 书内第56页
+- 中文要点：犯罪分子通过多个实体和账户转移资金制造混乱的追踪线索
+- 英文原文：By moving the money through various entities and accounts, the criminals created a convoluted trail that was challenging to untangle.
+
+### `v7u_N001066`
+
+- 用于：核心解析、选项C、易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：赌场因大量现金交易而特别容易遭受洗钱风险
+- 英文原文：Casinos: Casinos are particularly vulnerable to money laundering due to high volumes of cash transactions.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+选项A中，私人控股公司通过赌场将资金转入多个赌客的投注账户，此行为涉及资金分散转移，意图掩盖资金来源和流向，符合洗钱行为中“放置-离析-融合”的离析阶段特征，通过复杂交易使资金难以追溯，是洗钱的最有力迹象。选项B仅涉及资金转移至另一运营商，无复杂交易掩盖；选项C用现金买筹码属正常行为；选项D多次下注同一赛事也属正常。故选项A正确。易错提醒：注意区分正常交易与洗钱行为的界限，关注资金来源和流向的复杂性。
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+选项A中,私营公司通过赌场将资金转入多个顾 客的赌注账户,这种结构化和分散化的资金流动 采取的复杂交易特征,是典型的洗钱手法.相比 之下,其他选项如请求转账、大额现金购筹码或 重复投注,虽可能涉及违规操作,但缺乏将非法 资金合法化的典型特征.因此,选项A是最强的 洗钱嫌疑指标.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

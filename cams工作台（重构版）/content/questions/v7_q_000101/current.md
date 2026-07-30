@@ -1,0 +1,96 @@
+# v7_q_000101
+
+教材章节：未映射
+
+题型：unknown
+
+题干：欧洲一家银行的合规官正在调查该行在过去两年内为某客户开立的账户。银行记录显示，该公司的主要经济活动是进出口石化产品。在一年内，该账户的交易额超过5亿美元，期间先后收到也门供应商发起的多笔大额入账电汇，随后又向阿塞拜疆的交易对手汇出电汇。如果调查中发现以下哪项因素，最应引起合规官关注？
+
+英文题干：A compliance officer at a European bank is investigating an account opened by the bank for a customer during the last two years. According to bank records, the company's primary economic activity is the import and export of petrochemical products. Over a period of one year, the account transactions have exceeded US$500 million, with various high-value inward wire transfers received from suppliers in Yemen followed by outward wire transfers to counterparties in Azerbaijan. Which factor should give the compliance officer the greatest concern if observed in the investigation?
+
+选项：
+
+- A. 媒体检索发现一则报道，称该客户三年前曾被指控存在不当行为
+  English: Media searches reveal a report that the customer was accused of misconduct three years ago
+- B. 该欧盟银行将交易涉及的汇出国和汇入国视为高风险国家
+  English: The EU bank considers the origin and destination countries involved in the transactions to be high-risk
+- C. 该客户的活动包括涉及多个交易对手的多笔跨境交易
+  English: The customer's activity includes multiple cross-border transactions involving various counterparties
+- D. 欧盟银行未收到有关电汇的发起人或受益人信息
+  English: The EU bank did not receive originator or beneficiary information for the wire transfers
+- E. 该客户专门从事石化产品的进出口业务
+  English: The customer specializes in the import and export of petrochemical products
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别电汇主体信息缺失这一直接风险，并区分具体交易红旗与一般司法管辖区风险
+
+## 【核心解析】
+
+教材将隐瞒电汇信息，例如未提供充分的受益人信息，明确列为电汇风险指标（P79）。FATF建议还要求金融机构确保电汇中的发起人和受益人数据准确（P148）。选项D中，银行没有收到电汇的发起人或受益人信息，直接对应教材列明的信息隐瞒风险，也意味着银行无法落实上述电汇数据要求，因此是调查中最应关注的因素。
+
+选项B涉及高风险司法管辖区，同样会提高客户和交易风险。教材将司法管辖区列为客户风险评估需要考虑的因素（P307），但这属于一般风险背景；D反映的是本批电汇已经出现关键主体信息缺失。题目要求选择「the greatest concern」，因此D比B更直接，不能将B、D并列选择。
+
+教材原句："Concealing information, such as not providing adequate beneficiary information"
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜题干要素不匹配**：负面媒体指控值得进一步核查，但题干没有说明被指控行为的性质、信息可信度或最终处理结果。相比之下，D已经显示当前电汇的关键主体信息缺失，因此A不是最大关注因素。
+- **B 错误（教材直接依据）｜范围或程度偏差**：教材要求客户风险评估考虑高风险司法管辖区（P307），所以B确实是风险因素，可能提高客户风险评级并要求进一步审查。但B仅反映地理风险，D则直接命中电汇信息隐瞒红旗及发起人、受益人数据要求，因此D的关注优先级更高。
+- **C 错误（题干对照）｜题干要素不匹配**：该客户从事石化产品进出口，多笔跨境交易及多个交易对手可能与其业务模式相符。题干没有说明交易规模偏离客户画像、交易对手异常或缺乏经济目的，因此C单独不足以成为最大关注因素。
+- **E 错误（题干对照）｜题干要素不匹配**：从事石化产品进出口只是客户的主营业务。题干没有提供异常定价、虚假单据、货物流与资金流不匹配等贸易洗钱迹象，因此不能仅凭业务类型判断其比D更可疑。
+
+## 【易错提醒】
+
+「涉及高风险国家」不等于「必然是最严重的异常」。本题需要比较一般风险因素与具体交易红旗：B提高风险评级，D则表明电汇的发起人或受益人信息已经缺失，直接影响交易透明度，因此应选D。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000694`
+
+### `v7u_N000694`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Corporate and investment banking risks > Wire transfer risks
+- 页码：PDF第84页 / 书内第79页
+- 中文要点：隐瞒信息，如未提供充分的受益人信息
+- 英文原文：Concealing information, such as not providing adequate beneficiary information
+
+### `v7u_N001361`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 9-23
+- 页码：PDF第153页 / 书内第148页
+- 中文要点：金融机构需评估新技术风险并确保电汇中发端人和受益人数据准确
+- 英文原文：Financial institutions should assess risks from new technologies and ensure accurate originator and beneficiary data in wire transfers.
+
+### `v7u_N003043`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：司法管辖区风险：考虑客户是否来自或经营于FATF灰黑名单、OFAC、欧盟及当地监管机构所列的高风险司法管辖区
+- 英文原文：Jurisdiction: Consider whether a customer is from or conducts business in high-risk jurisdictions, as identified in FATF grey and black lists or the lists from OFAC, the EU, and local regulators.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在洗钱和恐怖融资的调查中,关键在于识别交易 中的异常或高风险因素.选项D指出,欧盟银行 未收到有关电汇的发起人或受益人信息,这直接 关联到反洗钱和反恐怖融资的核心要求,即了解 客户及其交易对手的身份.缺乏此类信息会阻碍 银行对交易合法性的评估,增加洗钱和恐怖融资 的风险.相比之下,其他选项虽可能涉及风险, 但不如D项直接且关键.因此,合规官应最为关 注D项因素.易错提醒:注意识别交易中的关键 信息缺失情况.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+根据反洗钱和反恐怖融资的相关规定,银行需确 保交易信息的透明度.选项D中,银行未收到汇 款人或收款人的信息,这违反了了解你的客 是洗钱和恐怖融资的典型手段.其他选项中,B 虽涉及高风险国家,但非直接违规;C为正常商 业行为:A为历史指控,无关当前交易:E为客 户正常业务范围.因此,D是最应关注的因素. 度 难
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=B,D，题库最终=D

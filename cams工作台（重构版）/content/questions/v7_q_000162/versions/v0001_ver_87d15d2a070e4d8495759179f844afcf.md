@@ -1,0 +1,123 @@
+# v7_q_000162
+
+教材章节：未映射
+
+题型：single
+
+题干：在私人银行内部,哪个职位最能发现并报告洗钱风险？
+
+英文题干：Which role within private banking is best placed to identify and report money laundering risk?
+
+选项：
+
+- A. 投资顾问
+  English: Investment advisor
+- B. 客户经理
+  English: Relationship manager
+- C. 运营经理
+  English: Operations manager
+- D. 合规官
+  English: Compliance officer
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+私人银行中各岗位识别洗钱风险的能力比较，核心在客户接触频率与信任关系
+
+## 【核心解析】
+
+判断哪个岗位的位置最有利，应看谁最接近客户、能够开展客户沟通并把取得的一手信息传递给分析人员。客户经理（relationship manager）或一线员工最适合开展客户沟通并将发现传递给分析人员，因为他们可以直接联系客户或合作机构，补充内部系统无法提供的信息（P339）。在私人银行场景中，客户经理与客户之间还存在保密与信任关系，但这种密切关系也可能使客户经理为了维护客户关系而忽视警示信号（P71）。因此，B所体现的是客户经理在获取和传递客户信息方面的位置优势，并不表示其专业判断在所有岗位中都更强。
+
+教材原句："Relationship managers and front line staff are best positioned to conduct customer outreach and communicate findings to analysts."
+
+## 【错误项分析】
+
+- **A 错误**：教材在证券和经纪服务中列举的资本市场研究、投资组合管理和基金分销等服务（P103），与投资顾问的业务侧重点更接近。相比之下，题干所问的位置优势更直接对应能够开展客户沟通并向分析人员传递信息的客户经理（P339）。
+- **C 错误**：运营经理执行交易并实施操作程序，「以内部检测和报告可疑活动」（P247），也能提供产品使用模式的洞察（P286），但其工作对象是交易流程和系统数据，而非直接面向客户。相比之下，题干要求的「发现」能力更依赖于对客户本人及其行为的直接了解，这在教材框架下更吻合客户经理的角色而非运营执行角色。
+- **D 错误**：合规官负责「评估信息并决定应采取的行动」（P351），在收到可疑情况报告后发挥关键作用。其职能集中在接收和处理已上报的信息，而非在客户关系中主动发现原始风险信号。题干问的是从源头上「发现」风险的最佳位置，这与教材中客户经理作为信息获取第一线的角色更匹配，合规官更偏向后续评估和决策环节。
+
+## 【易错提醒】
+
+合规官负责接收报告后的评估与决策（P351），客户经理负责在客户关系中捕捉原始可疑信号并传递信息（P339），两者在反洗钱流程中的分工经常被混淆——题干中「发现」对应的是信息来源端而非信息处理端。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003362`
+
+### `v7u_N003362`
+
+- 用于：核心解析、易错提醒
+- 章节：Transaction monitoring > Communication channels and tipping off
+- 页码：PDF第344页 / 书内第339页
+- 中文要点：客户经理或一线员工可通过联系客户、合作机构或代理行获取信息，并反馈给分析师。
+- 英文原文：Relationship managers or front line staff can obtain this information by contacting the customer, organizational partners, such as other financial institutions, or correspondent branches. Relationship managers and front line staff are best positioned to conduct customer outreach and communicate findings to analysts.
+
+### `v7u_N000578`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management
+- 页码：PDF第76页 / 书内第71页
+- 中文要点：私人银行的金融犯罪风险源于其高盈利性以及关系经理与客户间的保密与信任文化。
+- 英文原文：Some of the financial crime risks associated with private banking stem from its perceived high profitability for the organization and the culture of discretion and trust between the relationship managers and their customers.
+
+### `v7u_N000579`
+
+- 用于：核心解析
+- 章节：Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management
+- 页码：PDF第76页 / 书内第71页
+- 中文要点：关系经理为维护客户关系可能忽视警示信号，增加洗钱风险。
+- 英文原文：The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs.
+
+### `v7u_N000913`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with insurance, securities, brokerage, and custodian services > Securities and brokerage risks
+- 页码：PDF第108页 / 书内第103页
+- 中文要点：证券和经纪服务提供商提供资本市场研究、投资组合管理和投资基金分销等服务。
+- 英文原文：Providers offer various services including capital market research, portfolio management, and investment funds distribution.
+
+### `v7u_N002426`
+
+- 用于：选项C
+- 章节：Three lines of defense > First line of defense AFC function
+- 页码：PDF第252页 / 书内第247页
+- 中文要点：运营职能执行和处理交易，并实施操作程序以在内部检测和报告可疑活动。
+- 英文原文：Operations functions execute and process transactions, implementing operational procedures to detect and report suspicious activities internally.
+
+### `v7u_N002862`
+
+- 用于：选项C
+- 章节：Customer risk assessment versus enterprise-wide risk assessment
+- 页码：PDF第291页 / 书内第286页
+- 中文要点：运营部门提供产品使用模式方面的洞察。
+- 英文原文：Operations: Provides insights about product usage patterns
+
+### `v7u_N003485`
+
+- 用于：选项D、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Duty to report
+- 页码：PDF第356页 / 书内第351页
+- 中文要点：合规官负责评估信息并决定应采取的行动。
+- 英文原文：The assigned compliance officer will be responsible for assessing the information and deciding what actions must be taken.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+客户经理在私人银行内部与客户接触最为频繁, 能够深入了解客户的资金流动、交易背景等情 况.在与客户沟通和服务过程中,他们有机会发 异常都可能是洗钱风险的信号.而投资顾问主要 侧重于提供投资建议,运营经理负责银行日常运 营事务,合规官侧重于制定和监督合规政策,相 比之下,客户经理在发现并报告洗钱风险方面更 具优势.易错提醒:不要误以为合规官是直接发 现风险的第一线,他们更多是政策制定和监督角 色. 度 难 源
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在私人银行中,识别和报告洗钱风险的关键角色
+
+### 答案冲突提示
+
+- 未发现答案冲突。

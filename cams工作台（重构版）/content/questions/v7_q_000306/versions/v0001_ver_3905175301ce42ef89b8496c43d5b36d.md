@@ -1,0 +1,39 @@
+# v7_q_000306
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些人员必须始终遵守美国海外资产控制办公室（OFAC）的所有规定？（选择三项。）
+
+英文题干：Which persons must always comply with all Office of Foreign Assets Control (OFAC) regulations? (Select Three.)
+
+选项：
+
+- A. 无论身处何地的美国外籍永久居民
+  English: Permanent U.S. resident aliens regardless of location
+- B. 无论位于何处，销售美国原产商品的商家
+  English: Merchants that offer U.S.-origin goods for sale regardless of location
+- C. 无论位于何处，提供美元账户服务的非美国金融机构
+  English: Non-U.S. financial institutions that offer accounts in USD regardless of location
+- D. 无论身处何地的美国公民
+  English: U.S. citizens regardless of location
+- E. 美国注册实体及其外国分支机构
+  English: U.S.-incorporated entities and their foreign branches
+
+## 【AI答案】
+
+A、D、E
+
+## 【考点】
+识别OFAC所称「美国人士」（U.S. persons）的管辖范围。
+## 【核心解析】
+OFAC初级制裁直接约束美国人士，包括美国公民、美国永久居民、美国注册实体及其外国分支机构；这些主体原则上不因身处境外而脱离OFAC的全面合规义务（P187）。A、D、E分别对应永久居民、公民以及美国注册实体及其外国分支机构。B只描述销售美国原产商品，C只描述提供美元账户服务，均不能仅凭该事实取得美国人士身份；非美国人士可能在特定交易中触发次级制裁，但不等于始终遵守全部OFAC规定（OFAC「U.S. persons」适用规则）。
+## 【错误项分析】
+- **B**：商品的美国原产地可能带来交易层面的制裁限制，但不等于商家本身属于美国人士。
+- **C**：使用美元或提供美元账户可能形成清算、交易或次级制裁风险，但不等于非美国金融机构承担美国人士的全面义务。
+## 【易错提醒】
+区分「美国人士的身份管辖」（P187）与「非美国人士因特定交易受到的次级制裁或美元清算影响」。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N001777`；页码：P187。

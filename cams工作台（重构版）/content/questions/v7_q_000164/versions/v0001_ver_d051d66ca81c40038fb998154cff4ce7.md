@@ -1,0 +1,131 @@
+# v7_q_000164
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪一项是非政府组织（NGO）打击洗钱活动的常见策略？
+
+英文题干：Which of the following is a common strategy employed by non-governmental organizations (NGOs) to combat money laundering?
+
+选项：
+
+- A. 协助金融情报机构（FIU）分析可疑活动报告（SAR）
+  English: Helping Financial Intelligence Units (FIUs) to analyze suspicious activity reports (SARs)
+- B. 直接在法庭上起诉洗钱者
+  English: Directly prosecuting money launderers in court
+- C. 向各国政府提供财政援助，以加强其反洗钱工作
+  English: Providing financial assistance to governments to strengthen their anti-money laundering efforts
+- D. 提高对洗钱问题及其后果的认识
+  English: Raising awareness about the issue of money laundering and its consequences
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+区分NGO与政府/执法/监管机构在反洗钱体系中的职能定位
+
+## 【核心解析】
+
+透明国际（TI）属于非政府组织（P172），其工作方式包括政策倡导、研究和循证项目，以推动问责并预防腐败（P172）。TI的腐败感知指数（CPI）也用于提高认识、推动加强全球透明度的改革（P173）。这些做法说明，倡导、研究、预防项目和提高公众认识符合NGO参与反金融犯罪治理的通常方式。相比之下，A、B、C分别更接近FIU、执法或检察机关以及世界银行等国际金融机构的职能，因此D在给定选项中最符合题意。
+
+教材原句："The CPI helps raise awareness and encourages reforms to strengthen transparency worldwide, making it a key tool in the fight against corruption."
+
+## 【错误项分析】
+
+- **A 错误**：各辖区应设立FIU分析可疑交易报告并支持执法调查，因此分析此类报告是FIU的核心职能（P149）。NGO即使可能在个别项目中提供协助，这也不属于其打击洗钱活动的典型策略，因此A不如D匹配。
+- **B 错误**：教材指出，执法部门负责开展调查，将洗钱者绳之以法并剥夺其资产（P228）。直接在法庭上起诉涉及国家执法和检察权，不是NGO通常承担的职能，因此B错误。
+- **C 错误**：教材明确将向发展中国家提供资金、政策和技术援助列为世界银行的职能，并将机构能力建设列入世界银行和IMF的AML/CFT工作（P163）。因此，向政府提供财政援助更接近国际金融机构的职能，而不是本题所问NGO的常见策略。
+
+## 【易错提醒】
+
+不同主体在金融犯罪治理中的作用不同：TI等NGO通过倡导、研究、预防项目及提高公众认识参与治理（P172-P173）；FIU负责分析可疑交易报告（P149）；执法和检察机关负责调查、追诉（P228）；世界银行等国际金融机构提供资金、政策、技术援助和能力建设（P163）。D是对NGO倡导和提高公众认识这一工作方式的概括。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001609`、`v7u_N001629`
+
+### `v7u_N001609`
+
+- 用于：核心解析、选项D、易错提醒（证明TI是NGO及其反腐败、透明度和问责宗旨）
+- 章节：AFC guidance from other organizations > Transparency International AFC guidance
+- 页码：PDF第177页 / 书内第172页
+- 中文要点：透明国际（TI）是致力于制止腐败的非政府组织
+- 英文原文：Transparency International (TI) is a non-governmental organization committed to stopping corruption and promoting transparency, accountability, and integrity at both national and international levels.
+
+### `v7u_N001611`
+
+- 用于：核心解析、选项D、易错提醒（相关旁证）
+- 章节：AFC guidance from other organizations > Transparency International AFC guidance
+- 页码：PDF第177页 / 书内第172页
+- 中文要点：透明国际倡导通过政策追究权力人物和组织的责任
+- 英文原文：TI advocates for policies that hold powerful people and organizations accountable.
+
+### `v7u_N001612`
+
+- 用于：核心解析、选项D、易错提醒（相关旁证）
+- 章节：AFC guidance from other organizations > Transparency International AFC guidance
+- 页码：PDF第177页 / 书内第172页
+- 中文要点：透明国际研究腐败成因，并推动创新、可扩展、循证的项目以预防和制止腐败
+- 英文原文：It conducts research to understand the causes of corruption and initiates innovative, scalable, evidence-based projects that provide solutions to prevent and stop corruption.
+
+### `v7u_N001629`
+
+- 用于：核心解析、选项D、易错提醒（仅支持TI的反腐败工具提高认识，不直接证明NGO提高公众反洗钱意识）
+- 章节：AFC guidance from other organizations > Transparency International AFC guidance
+- 页码：PDF第178页 / 书内第173页
+- 中文要点：TI的腐败感知指数有助于提高认识并推动加强全球透明度的改革，是反腐败的重要工具
+- 英文原文：The CPI helps raise awareness and encourages reforms to strengthen transparency worldwide, making it a key tool in the fight against corruption.
+
+### `v7u_N001374`
+
+- 用于：选项A、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：各辖区应设立金融情报机构以分析可疑交易报告并支持执法调查
+- 英文原文：Jurisdictions should establish an FIU to analyze suspicious transaction reports and support law enforcement investigations.
+
+### `v7u_N002210`
+
+- 用于：选项B、易错提醒
+- 章节：Cooperation between authorities > Roles of regulators, law enforcement, and FIUs
+- 页码：PDF第233页 / 书内第228页
+- 中文要点：执法部门开展调查以将洗钱者绳之以法并没收资产
+- 英文原文：Law enforcement undertakes investigations to bring money launderers to justice, take away their assets, and achieve other disruptive effects.
+
+### `v7u_N001487`
+
+- 用于：选项C、易错提醒
+- 章节：AFC guidance from leading international organizations > World Bank and International Monetary Fund AFC guidance
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：世界银行向发展中国家提供资金、政策和技术援助
+- 英文原文：The World Bank is an international organization that provides funding, policies, and technical assistance to developing countries.
+
+### `v7u_N001496`
+
+- 用于：选项C、易错提醒
+- 章节：AFC guidance from leading international organizations > World Bank and International Monetary Fund AFC guidance
+- 页码：PDF第168页 / 书内第163页
+- 中文要点：建设机构能力是世界银行和IMF在AML/CFT领域的主要工作之一
+- 英文原文：Building institutional capacity
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+非政府组织(NGO)在打击洗钱活动时,通常不 具备直接起诉洗钱者或在法庭上采取法律行动的 权力,同时也不直接向各国政府提供财政援助以 加强反洗钱工作.协助金融情报机构(FIU)分
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+非政府组织(NGOs)在反洗钱斗争中主要扮演 宣传与教育的角色.分析选项,A项是金融情报 单位的职责,非NGOs的主要工作;B项是司法 机关的职能,NGOs不具备直接起诉权:C项 中,NGOs虽可能支持政府工作,但直接提供财 政援助并非其典型策略;D项,提高公众对洗钱 问题的认识及其后果,是NGOs常用的策略,有
+
+### 答案冲突提示
+
+- 未发现答案冲突。

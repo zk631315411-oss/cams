@@ -1,0 +1,109 @@
+# v7_q_000114
+
+教材章节：未映射
+
+题型：single
+
+题干：从国际标准的角度来看，欧盟和金融行动特别工作组（FATF）都认为数据共享是有效反洗钱措施的关键组成部分，因为数据共享：
+
+英文题干：From an international standards perspective, both the EU and Financial Action Task Force (FATF) consider data sharing a crucial component of effective anti-money laundering measures because data sharing:
+
+选项：
+
+- A. 允许金融情报机构（FIU）对金融犯罪的犯罪者实施制裁
+  English: Allows Financial Intelligence Units (FIUs) to enact sanctions against perpetrators of financial crime
+- B. 促进金融透明度，维护金融体系的完整性
+  English: Promotes financial transparency and protects the integrity of financial systems
+- C. 金融机构之间共享数据前，须经金融情报机构（FIU）批准
+  English: Needs to be approved by the Financial Intelligence Unit (FIU) before sharing between financial institutions
+- D. 借助数据分析帮助金融机构更有效地打击犯罪
+  English: Helps financial institutions to be more effective in fighting crime with data analysis
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+数据共享通过提高透明度和机构协作维护金融体系完整性
+
+## 【核心解析】
+
+教材指出，信息共享能够防止可疑客户从一家金融机构转向另一家继续洗钱，从而改善洗钱和恐怖融资的预防与检测（P239）。欧盟第75条允许符合条件的机构参加跨境信息共享伙伴关系，并共享客户身份、业务关系、交易和客户风险因素等信息（P239），说明信息共享是跨机构识别和缓释风险的重要机制。
+
+从国际标准的制度目标看，FATF建议24至40旨在加强透明度、机构监督和全球合作（P149）。信息共享通过减少机构间的信息缺口、提升透明度和协作能力，服务于金融体系完整性的维护，因此B最准确地概括了其制度作用。数据分析可以利用共享信息发现风险，但它是共享之后的处理方式，不是信息共享本身的必要特征，所以D不如B准确。
+
+教材原句："Information sharing prevents this and other typologies, leading to better prevention and detection of money laundering and terrorist financing."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜主体或阶段错配**：FIU的核心职责是接收和分析可疑交易报告，并向有权机关传播金融情报以支持调查（P149）。对行为人实施制裁属于有权监管或执法机关的职责，A混淆了情报分析与制裁执行。
+- **C 错误（教材直接依据）｜范围或程度偏差**：欧盟第75条规定，特定跨境信息共享伙伴关系可能需要国家监管机构批准（P239），批准主体是国家监管机构，而不是FIU；该规定也不等于所有金融机构间共享都必须事先获得FIU批准。因此C将主体和适用范围都作了错误扩大。
+- **D 错误（题干对照）｜概念混淆**：数据共享为风险识别提供更多信息，数据分析则是处理这些信息的方法，两者不是同一概念。题干问的是共享的制度作用，B所述的透明度、合作与金融体系完整性比D所述的具体分析手段更完整。
+
+## 【易错提醒】
+
+判断此类题目时，应区分「共享的机制」与「共享的制度目标」：数据共享的机制是让不同机构获得原本缺失的信息；其国际标准层面的目标是加强透明度、监督和合作，进而保护金融体系完整性。数据分析可以利用共享信息，但不能与数据共享本身画等号。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002345`
+
+### `v7u_N002345`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Cooperation involving the private sector > Private sector information sharing
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：信息共享可防止客户转向其他机构继续洗钱，提升洗钱和恐怖融资的预防与检测能力
+- 英文原文：However, that customer can then easily open an account with Bank B and continue laundering money. Information sharing prevents this and other typologies, leading to better prevention and detection of money laundering and terrorist financing.
+
+### `v7u_N002353`
+
+- 用于：核心解析、选项C
+- 章节：Cooperation involving the private sector > Private sector information sharing
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：欧盟第75条允许经国家监管机构批准的跨境信息共享伙伴关系，并允许共享客户及交易风险信息。
+- 英文原文：In the EU, Article 75 of Regulation (EU) 2024/1624 allows organizations to take part in cross-border information sharing partnerships, if their national supervisor approves it. Organizations may share information about customer identity, business relationships, transactions, and customer risk factors.
+
+### `v7u_N001367`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：FATF建议24至40概述了加强透明度、机构监督和全球合作的关键措施。
+- 英文原文：FATF Recommendations 24 to 40 outline key measures to strengthen transparency, institutional oversight, and global cooperation in AML/CFT efforts.
+
+### `v7u_N000015`
+
+- 用于：核心解析、易错提醒
+- 章节：Money Laundering and Financial Crime > What is financial crime?
+- 页码：PDF第21页 / 书内第16页
+- 中文要点：金融犯罪后果严重，需要通过健全的监管和合规措施保护金融体系并促进透明度。
+- 英文原文：These crimes have serious repercussions, emphasizing the need for robust regulatory measures and compliance efforts to protect financial systems and promote transparency.
+
+### `v7u_N001374`
+
+- 用于：选项A
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：各辖区应设立金融情报机构以分析可疑交易报告并支持执法调查
+- 英文原文：Jurisdictions should establish an FIU to analyze suspicious transaction reports and support law enforcement investigations.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+从国际反洗钱和反恐怖融资合规标准看,数据共 享之所以被视为关键,在于它能促进金融透明 度,维护金融体系的完整性.选项A说的是金融 情报机构对犯罪者实施制裁,非数据共享的直接 作用;选项C提到金融机构间共享前需金融情报 机构批准,这是数据共享的一个条件,非其意 义:选项D说的是数据分析帮助金融机构更有效 打击犯罪,虽与数据共享相关,但非其核心意 义.选项B准确指出了数据共享在促进金融透明 度、维护金融体系完整性方面的作用,符合国际 标准.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=D，题库最终=B

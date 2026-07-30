@@ -1,0 +1,58 @@
+# v7_q_000317
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些风险因素与获取被认为具有较高金融犯罪风险的客户并为其提供银行服务有关？(选择三项。)
+
+英文题干：Which risk factors are associated with acquiring and servicing the banking activities of customers considered higher risk for financial crime activities? (Select Three.)
+
+选项：
+
+- A. 声誉风险
+  English: Reputational risk
+- B. 操作风险
+  English: Operational risk
+- C. 制裁风险
+  English: Sanctions risk
+- D. 合规风险
+  English: Compliance risk
+- E. 贷款风险
+  English: Lending risk
+
+## 【AI答案】
+
+A、C、D
+
+## 【考点】
+区分高风险客户带来的声誉、制裁与合规风险。
+## 【核心解析】
+高风险客户可能因负面媒体、刑事指控或监管调查带来声誉风险（P322）；若客户与受制裁司法管辖区或受制裁对象存在关系，还会增加制裁风险（P243）；机构为高风险客户提供服务时若未履行法定义务，则面临合规风险。A、C、D分别对应这三类客户关联风险。操作风险主要来自内部流程、系统、人员或外部事件失败，贷款风险则属于具体信贷业务风险，不是本题所问的金融犯罪风险类别。
+## 【错误项分析】
+- **B**：操作风险可能因服务高风险客户而被放大，但其直接来源是机构内部流程和系统，而非客户的金融犯罪属性。
+- **E**：贷款风险与借款人违约或信贷损失相关，题干考查的是金融犯罪风险因素。
+## 【易错提醒】
+合规风险是「是否遵守法律法规」的问题，操作风险是「内部流程是否有效」的问题；不要因两者都可能导致损失而混同（P243、P322）。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N002385`；页码：P322、P243。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C、D
+- 中文参考答案：A、C、D
+
+### 中文参考解析
+
+为被认为从事金融犯罪活动风险较高的客户提供 银行服务,主要涉及声誉风险、制裁风险和合规 风险.声誉风险(A)源于与高风险客户关联可 能损害机构形象:制裁风险(C)涉及违反国际 或国内制裁规定导致的法律后果,合规风险 (D)则指未履行反洗钱等法定义务的潜在处 罚.操作风险(B)和贷款风险(E)虽为银行 业务风险,但与题干中“金融犯罪高风险客户的 直接关联较弱.因此,正确选项为ACD.易错提 醒:需区分一般业务风险与特定合规场景下的风 险类型.
+
+- 英文参考答案：A、C、D
+
+### 英文参考解析
+
+316395 -[RisksandMethodsofMoneyLaunderi 多选 ngandTerroristFinancing]Whichriskfactorsar eassociatedwithacquiringandservicing theba nkingactivitiesofcustomersConsideredhigher riskforfinancialcrimeactivities?(SelectThree.) Reputationalrisk Operationalrisk B Sanctionsrisk Compliance risk ELendingrisk 正确答案ACD您选择/ 试题详解
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=A,B,D，题库最终=A,C,D

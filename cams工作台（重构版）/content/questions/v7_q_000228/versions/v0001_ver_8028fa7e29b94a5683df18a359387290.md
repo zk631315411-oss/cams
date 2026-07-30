@@ -1,0 +1,104 @@
+# v7_q_000228
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下关于美国海外资产控制办公室(OFAC)制裁的陈述,哪两项是正确的？(选择两项.)
+
+英文题干：Which two of the following statements are true regarding Office of Foreign Assets Control (OFAC) sanctions? (Select two.)
+
+选项：
+
+- A. 制裁只能针对由美国海外资产控制办公室(OFAC)指定的外国特定个人实施.
+  English: Sanctions can only be placed on certain individuals in foreign countries as designated by OFAC.
+- B. 被冻结的资金必须存入金融机构账上的有息账户.
+  English: Blocked funds must be placed into an interest-bearing account on a financial institution's books.
+- C. 制裁可以是全面性的,也可以是有选择性的,通过冻结资产和贸易限制来实现外交政策和国家安全目标.
+  English: Sanctions can be either comprehensive or selective, using the blocking of assets and trade restrictions to accomplish foreign policy and national security goals.
+- D. 美国海外资产控制办公室(OFAC)的制裁措施在五年后会自动失效,除非国会予以延长.
+  English: OFAC sanctions automatically expire after five years unless renewed by Congress.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+
+OFAC制裁的分类方式与资金冻结的基本规则
+
+## 【核心解析】
+
+OFAC负责管理和执行基于美国外交政策和国家安全目标的经济与贸易制裁（P187）。制裁既可以是针对某一司法管辖区的全面制裁，也可以是针对特定个人或实体的选择性制裁，并可通过冻结资产和贸易限制实施（P187），因此C正确。B描述的是被冻结资金的一般处理规则：资金应存入金融机构账上的有息冻结账户，并在资产被冻结期间保留其孳息，因此B也成立。
+
+## 【错误项分析】
+
+- **A 错误**：该选项使用了绝对词「只能」（only），将制裁对象限定于「外国特定个人」。教材展示了更广泛的制裁对象，包括整个司法管辖区（如朝鲜、伊朗）（P187）和特定经济部门（如能源、金融业）（P188）。因此，相比只能针对个人，题干条件更匹配OFAC制裁对象的多样性。
+- **D 错误**：OFAC的法律授权来自法律、行政命令和法规的组合，制裁是否解除取决于相应法律依据和政策决定，不存在统一的五年自动失效规则。
+
+## 【易错提醒】
+
+制裁不仅针对「人」——管辖权制裁针对「整个国家」（全面性）（P187），名单制裁针对「特定个人或实体」（选择性）（P187），行业制裁针对「整个经济部门」（P188）。看到「只能针对」这类绝对词时，要警惕被忽略的管辖范围。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001772`
+
+### `v7u_N001772`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第192页 / 书内第187页
+- 中文要点：OFAC负责管理和执行基于美国外交政策和国家安全目标的经济与贸易制裁
+- 英文原文：OFAC is responsible for administering and enforcing economic and trade sanctions based on US foreign policy and national security goals against foreign jurisdictions and regimes, terrorists, international narcotics traffickers, entities engaged in the proliferation of WMDs, and other threats.
+
+### `v7u_N001774`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第192页 / 书内第187页
+- 中文要点：OFAC制裁项目禁止与列入名单的个人和组织交易，并可能冻结其资产
+- 英文原文：OFAC sanctions programs prohibit transactions with persons and organizations that appear on one of several lists that OFAC issues periodically and may require the blocking of their assets within US jurisdiction. OFAC sanctions lists primarily include:
+
+### `v7u_N001775`
+
+- 用于：核心解析、选项A、易错提醒
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第192页 / 书内第187页
+- 中文要点：基于管辖权的制裁针对整个司法管辖区，禁止几乎所有类型交易，如对朝鲜、伊朗和古巴的制裁
+- 英文原文：Jurisdiction-based sanctions: These sanctions are brought against entire jurisdictions and prohibit nearly all types of transactions, such as the sanctions against North Korea, Iran, and Cuba.
+
+### `v7u_N001776`
+
+- 用于：选项A、易错提醒
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第192页 / 书内第187页
+- 中文要点：基于名单的制裁针对特定实体和个人，包括SDN名单、综合制裁名单和外国制裁逃避者名单
+- 英文原文：List-based sanctions: These sanctions identify and target specific entities and individuals involved in illicit activities or who pose a threat to US national security. They include those on the Specially Designated Nationals and Blocked Persons (SDN) List, Consolidated Sanctions List, and Foreign Sanctions Evader List.
+
+### `v7u_N001778`
+
+- 用于：易错提醒
+- 章节：US AML/CFT regulatory landscape > Office of Foreign Assets Control
+- 页码：PDF第193页 / 书内第188页
+- 中文要点：行业制裁针对经济整体部门，如能源、金融或国防，而非特定个人或实体
+- 英文原文：Sectoral sanctions: These sanctions are applied against entire sectors of an economy, such as energy, finance, or defense, rather than specific individuals or entities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+选项B正确,被冻结的资金必须存入金融机构账 上的有息账户,这是OFAC制裁的明确要求,确 保资金被有效冻结且产生一定利息.选项C正 确,OFAC制裁可以是全面性的,也可以是有选 择性的,通过冻结资产和贸易限制来实现外交政 策和国家安全目标,这是OFAC制裁的重要手段 和目的.选项A错误,制裁可针对特定个人、实 体或国家,不局限于特定外国人.选项D错误, OFAC制裁措施不会在五年后自动失效,除非国 会予以延长或采取其他行动.
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+OFAC制裁不仅针对特定个人,也可针对实体或 国家,故A错误.根据多个技术资料显示,被冻 结资金必须存入金融机构账簿中的计息账户,B 正确.OFAC制裁可以是全面或选择性的,通过 冻结资产和贸易限制实现外交和安全目标,C正 确.OFAC制裁不会自动到期,需通过行政程序 更新,D错误.因此,正确选项为BC.易错点: 误认为制裁仅针对个人或自动到期. 来 源
+
+### 答案冲突提示
+
+- 未发现答案冲突。

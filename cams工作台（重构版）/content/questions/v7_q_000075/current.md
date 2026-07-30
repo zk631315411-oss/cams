@@ -1,0 +1,95 @@
+# v7_q_000075
+
+教材章节：未映射
+
+题型：single
+
+题干：沃尔夫斯堡集团关于私人银行业务的反洗钱原则包括以下哪项内容？
+
+英文题干：The Wolfsberg Group's AML Principles on Private Banking:
+
+选项：
+
+- A. 协助在数据隐私标准较高的司法管辖区开展业务的金融机构与易受洗钱影响的行业合作
+  English: Assist financial institutions conducting business in jurisdictions with high data privacy standards in working with industries susceptible to money laundering
+- B. 建议银行只接受资金来源和受益所有权已了解的客户
+  English: Advise banks to accept only those clients whose source of funds and beneficial ownership is understood
+- C. 为私人银行家制定有关如何处理政治公众人物（PEP）和来自高风险国家人士的规则
+  English: Establish rules for private bankers on how to deal with politically exposed persons (PEPs) and persons residing in high-risk countries
+- D. 要求银行更好地管理声誉风险并保护富裕客户的隐私
+  English: Require banks to better manage reputational risk and protect the privacy of wealthy clients
+
+## 【AI答案】
+
+B
+
+> **需人工复核**
+>
+> - 答案冲突：解析{'C'} vs 题库{'B'}
+
+## 【考点】
+
+沃尔夫斯堡集团私人银行原则要求了解客户的资金来源和受益所有权
+
+## 【核心解析】
+
+沃尔夫斯堡集团的私人银行原则强调，银行应充分了解客户，包括客户的资金或财富来源以及受益所有权。教材指出，银行应调查并记录客户如何获得财富（P169），这与选项B所述「只接受资金来源和受益所有权已得到了解的客户」最直接对应。选项C提到PEP和高风险国家人士，虽然与私人银行风险管理有关，但教材使用的是PEP、离岸实体和高风险客户等概念，不能把离岸实体或所有高风险客户简单等同于来自高风险国家的人士。因此，在给定选项中，B更符合沃尔夫斯堡私人银行原则的客户准入与尽职调查要求。
+
+教材原句："Source of wealth and funds: Banks should investigate and document how clients acquired their wealth."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）**：选项A描述数据隐私标准较高司法管辖区中的行业合作，并非沃尔夫斯堡私人银行原则关于客户准入和尽职调查的核心内容。
+- **C 错误（教材定义应用）｜概念范围偏差**：沃尔夫斯堡原则确实关注PEP、离岸实体和高风险客户，但「来自高风险国家人士」不能完整替代这些概念。相比之下，B对资金来源和受益所有权的要求更直接对应私人银行原则。
+- **D 错误（题干对照）｜目的错配**：沃尔夫斯堡集团发布的指引旨在协助成员管理金融犯罪风险，保护其业务免受犯罪滥用（P168），而不是以保护富裕客户隐私为核心目标。因此，D不如B符合私人银行原则的客户了解要求。
+
+## 【易错提醒】
+
+本题容易在B和C之间犹豫。C涉及PEP和高风险因素，但把离岸实体、高风险客户概括成「来自高风险国家人士」并不准确；B则直接落实了私人银行原则对资金来源和受益所有权透明度的要求，因此更符合题意。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001568`
+
+### `v7u_N001568`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第173页 / 书内第168页
+- 中文要点：沃尔夫斯堡集团定期修订原则，为高净值客户、政治敏感人物和离岸实体风险提供最佳实践
+- 英文原文：The Wolfsberg Group routinely revises these principles to outline best practices for financial institutions to detect and mitigate risks associated with high-net-worth clients, PEPs, and offshore entities.
+
+### `v7u_N001571`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第174页 / 书内第169页
+- 中文要点：对高风险客户特别是政治敏感人物应加强尽职调查
+- 英文原文：Due diligence: Banks should apply enhanced scrutiny for high-risk customers, particularly PEPs.
+
+### `v7u_N001572`
+
+- 用于：选项B、易错提醒
+- 章节：AFC guidance from leading international organizations > Wolfsberg Group AFC guidance
+- 页码：PDF第174页 / 书内第169页
+- 中文要点：银行应调查并记录客户财富来源与资金来源
+- 英文原文：Source of wealth and funds: Banks should investigate and document how clients acquired their wealth.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+沃尔夫斯堡集团关于私人银行业反洗钱原则,核 了的客户”,符合该原则要求,强调银行在反洗钱 工作中需确保客户资金透明,防止不法资金流 入.选项A关于协助合作、选项C关于处理特定 人员规则、选项D关于管理声誉风险和保护客户 隐私,均非该原则核心内容.故正确答案为B. 易错点在于需准确理解反洗钱原则的核心要求. 度 难 2026新直7中立
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+沃尔夫斯堡集团关于私人银行业反洗钱原则,核 了的客户”,符合该原则要求,强调银行在反洗钱 工作中需确保客户资金透明,防止不法资金流 入.选项A关于协助合作、选项C关于处理特定 人员规则、选项D关于管理声誉风险和保护客户 隐私,均非该原则核心内容.故正确答案为B. 易错点在于需准确理解反洗钱原则的核心要求. 度 难 2026新直7中立
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=C，题库最终=B

@@ -1,0 +1,58 @@
+# v7_q_000379
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些信托和公司服务提供商(TCSP)的特征可能使其容易受到金融犯罪的侵害？(选择三项.)
+
+英文题干：Which characteristics of trust and company service providers (TCSPs) can potentially make them vulnerable to financial crime? (Select Three.)
+
+选项：
+
+- A. 他们可能会专门向罪犯推销自己
+  English: They may market themselves specifically to criminals
+- B. 提供代名董事可能会通过隐瞒真实所有权来增加匿名性
+  English: Offering nominee directors may increase anonymity by concealing true ownership
+- C. 在大多数司法管辖区,他们无需遵守反洗钱法规
+  English: They do not have to comply with AML regulations in most jurisdictions
+- D. 向境外中介机构出售现成的公司
+  English: Selling ready-made, off-the-shelf companies to offshore intermediaries
+- E. 与客户面对面接触极少,尤其是在离岸安排的情况下
+  English: Having minimal face-to-face contact with customers, particularly in offshore arrangements
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+识别 TCSP 业务中导致匿名性和识别障碍的结构特征。
+## 【核心解析】
+B项中的代名董事会隐藏UBO身份；D项向境外中介出售现成公司，会叠加现成公司、离岸结构和跨境中介的透明度问题；E项所述与客户面对面接触极少，尤其是在离岸安排下，会降低机构核实客户和实际控制人的能力（P117）。三项均是业务模式本身的脆弱性。
+## 【错误项分析】
+- **A**：教材说明 TCSP 服务可能被犯罪分子利用，但没有把「主动向罪犯推销」列为普遍业务特征。
+- **C**：「大多数司法管辖区无需遵守 AML 法规」过于绝对；监管状态不能概括所有司法管辖区。
+## 【易错提醒】
+TCSP风险来自代名服务、现成公司、离岸和非面对面交付造成的透明度下降（P117），不应把某一司法管辖区的监管缺口扩大为普遍规则。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N001127`；页码：P117、P127。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+信托和公司服务提供商(TCSP)易受金融犯罪 侵害的特征包括:提供代名董事可能通过隐瞒真 实所有权来增加匿名性,使犯罪分子更易隐藏身 份,选项B正确:向境外中介机构出售现成公 司,这类公司常被用于快速设立匿名账户进行非 法资金转移,选项D正确;与客户面对面接触极 少,尤其在离岸安排情况下,缺乏面对面审核增 加了身份伪造和交易欺诈风险,选项E正确.而 专门向罪犯推销自己、在多数司法管辖区无需遵 守反洗钱法规的描述不符合实际,选项A、C错 误.
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+TCSPs易受金融犯罪侵害的特性包括:一是提供 名义董事服务,通过隐藏真实所有权增加匿名 二是向离岸中介出售现成公司,这类公司常被用 于快速转移资金,规避监管审查,选项D正确; 三是在离岸安排中与客户接触极少,缺乏面对面 审核,难以有效识别客户身份和评估风险,选项 E正确.选项A中“专门针对罪犯营销”并非普遍 特征,选项C中“多数司法管辖区无需遵守反洗钱 法规”与事实不符,多数地区已将TCSP纳入监管 范围.易错点:需区分名义董事服务与直接协助 犯罪,前者因匿名性被利用,后者属主观故意.
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=B,C,D，题库最终=B,D,E

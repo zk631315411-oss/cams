@@ -1,0 +1,99 @@
+# v7_q_000102
+
+教材章节：未映射
+
+题型：single
+
+题干：在确定定期客户尽职调查(CDD)更新的频率时,企业首先应考虑以下因素:
+
+英文题干：When deciding on the frequency of periodic customer due diligence (CDD) refresh, firms should foremost consider the:
+
+选项：
+
+- A. 客户的风险概况
+  English: Risk profile of customers
+- B. 该流程可实现的自动化程度
+  English: Available level of automation for the process
+- C. 定期刷新实施的操作负担
+  English: Operational burden of periodic refresh implementation
+- D. 实施成本
+  English: Cost of implementation
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+风险为本方法决定定期CDD审查频率
+
+## 【核心解析】
+
+定期KYC审查指「根据客户风险等级定期更新客户信息、所有权结构、业务活动和风险分类」（P315）。换言之，审查频率的差异来自客户风险等级的差异——高风险客户通常每年审查一次，中风险客户每两到三年审查一次（P315）。教材进一步明确，「风险决策决定客户调查的级别和频率」（P270）。题干问的是决定「定期CDD更新频率」的首要因素，而「客户风险概况」直接对应教材设定的频率决定因素——风险等级越高，审查越频繁。这符合风险为本方法（RBA）的核心逻辑：将资源集中于最需要和影响最大的领域（P271）。
+
+教材原句："Periodic KYC reviews take place at regular intervals, based on the customer’s risk level. Financial institutions must review and update customer information, ownership structures, business activities, and risk classifications."
+
+## 【错误项分析】
+
+- **B 错误（教材定义应用）｜概念混淆**：自动化程度（P384-385, P397）主要解决执行效率问题，而教材强调自动化前必须先进行流程再造，确保流程稳健合规（P397），频率决策是风险判断在先，技术手段在后，匹配度不如风险因素直接。
+- **C 错误（教材定义应用）｜主体或阶段错配**：操作负担（P382）是执行层面的效率考量，教材明确将定期KYC审查的触发逻辑归因于「基于客户风险等级」（P315），负担本身不驱动审查频率的设定，而是频率设定后的结果。
+- **D 错误（教材定义应用）｜范围或程度偏差**：实施成本（P383, P378）涉及系统与技术层面，教材虽然提及总拥有成本和无效系统推高成本，但成本考量定位于技术部署而非审查频率的规范设定，风险评级才是频率的直接锚点。
+
+## 【易错提醒】
+
+学生可能因看到「操作负担」而误选C，认为重复性任务的频率应基于操作可行性。教材中的区分标准是：操作负担描述执行层面的资源消耗（P382），而风险概况（P270, P315）是决定「何时执行什么」的规范标准——两者处在不同层次。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003135`
+
+### `v7u_N003135`
+
+- 用于：核心解析、选项B、选项C、选项D、易错提醒
+- 章节：Ongoing AFC controls > Ongoing due diligence
+- 页码：PDF第320页 / 书内第315页
+- 中文要点：定期了解你的客户审查：根据客户风险等级定期更新客户信息、所有权结构、业务活动和风险分类
+- 英文原文：Periodic KYC reviews take place at regular intervals, based on the customer’s risk level. Financial institutions must review and update customer information, ownership structures, business activities, and risk classifications. For example:
+
+### `v7u_N002683`
+
+- 用于：核心解析、选项B、选项C、选项D、易错提醒
+- 章节：Types of risk assessment > The risk-based approach
+- 页码：PDF第275页 / 书内第270页
+- 中文要点：风险决策决定客户调查的级别和频率
+- 英文原文：These decisions determine the level and frequency of customer research and updates to customer profiles.
+
+### `v7u_N003136`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第320页 / 书内第315页
+- 中文要点：高风险客户通常每年审查一次
+- 英文原文：High-risk customers are typically reviewed annually.
+
+### `v7u_N003032`
+
+- 用于：选项B、选项C、选项D
+- 章节：Onboarding AFC controls > • Ongoing due diligence, screening, monitoring, and KYC refresh:
+- 页码：PDF第311页 / 书内第306页
+- 中文要点：机构根据客户类别和司法管辖区要求定期进行风险为本的了解你的客户更新
+- 英文原文：In addition to due diligence at onboarding, organizations apply riskbased KYC refresh cycles periodically based on customer category and jurisdictional requirements. These refreshes ensure that the organization is noting any changes in the customer’s or business’s circumstances and updating the risk rating appropriately.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+在确定定期客户尽职调查(CDD)更新的频率时, 企业需综合考量多方面因素.其中,客户的风险 概况是首要考虑因素,风险高的客户需更频繁地 更新CDD,以有效管理风险.而流程自动化程 度、操作负担及实施成本虽也是考虑因素,但均 非首要.因此,企业应首先考虑客户的风险概 况,选项A正确.
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

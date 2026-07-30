@@ -1,0 +1,119 @@
+# v7_q_000045
+
+教材章节：未映射
+
+题型：single
+
+题干：国家风险评估(NRA)可以通过以下方式影响金融机构(FI)基于风险的反洗钱和反恐怖融资方法:
+
+英文题干：A National Risk Assessment (NRA) can impact a financial institution's (FI's) risk-based approach to anti-money laundering and terrorist financing by:
+
+选项：
+
+- A. 规定金融机构在风险评估中必须考虑哪些上游犯罪.
+  English: Dictating what predicate offences must be considered in the FI's risk assessment
+- B. 就风险最高的客户类型和交易类型提供指导.
+  English: Providing guidance on the types of customers and transactions that pose the highest risk
+- C. 明确规定必须实施的具体政策和程序.
+  English: Defining exactly what policies and procedures must be implemented
+- D. 确定可对反洗钱违规行为处以的最高罚款金额.
+  English: Determining the maximum fines that can be imposed for AML violations
+
+## 【AI答案】
+
+B
+
+> **需人工复核**
+>
+> - 盲判校验未通过
+
+## 【考点】
+
+NRA的定位：识别风险、提供指导，而非规定具体制度或处罚
+
+## 【核心解析】
+
+国家风险评估（NRA）是司法管辖区用于识别和评估洗钱威胁与脆弱性的文件（P225）。在风险为本的框架下，NRA的核心作用是「识别国家层面的洗钱与恐怖融资威胁和风险，并审查高风险行业和领域」（P268）。这意味着NRA会输出关于哪些客户类型、交易类型和行业风险更高的结论。金融机构在建立自身的风险评估体系时，会参考NRA的这些结论来识别和优先关注高风险领域，这正好对应了选项B所述的「就风险最高的客户类型和交易类型提供指导」。NRA本身是一种风险信息的整合和表达工具（P225），它不代替每个金融机构去制定内部制度，而是为其风险判断提供宏观依据，从而使机构的风险为本方法更聚焦。
+
+教材原句："NRAs identify national-level money laundering and terror financing threats and risks. These assessments review sectors and areas with higher risks."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜范围或程度偏差**：NRA的作用是识别和评估威胁与脆弱性，并审查高风险领域（P268），而不是「规定必须考虑哪些上游犯罪」。上游犯罪的定义和清单由FATF及各国法律确定（P21），虽然NRA会涉及对威胁的识别，但它不等同于对上游犯罪类型的强制划定。教材对NRA功能的描述更吻合提供风险指导（选项B），而非规定前置犯罪范围。
+- **C 错误（教材定义应用）｜范围或程度偏差**：选项C使用「明确规定必须实施的具体政策和程序」的表达，这与教材对NRA的定位不符。教材将NRA描述为识别风险、提供信息的文件（P225），而具体的政策和程序是金融机构根据自身风险状况自行制定并量体裁衣的（P292、P294）。NRA提供的是风险导向的「指导」（选项B），而非操作层面的制度强制。
+- **D 错误（概念错配）**：罚款金额属于执法和处罚范畴，通常由法律法规或监管机构确定，而不是由国家风险评估（NRA）确定。相比之下，B项的「提供指导」更符合NRA作为风险识别工具的功能。
+
+## 【易错提醒】
+
+注意区分「识别和评估风险的指导性文件」与「规定具体操作的政策文件」。NRA是前者，它告诉金融机构「哪里风险高」，但不替金融机构写操作规程。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002642`
+
+### `v7u_N002183`
+
+- 用于：核心解析、选项A、选项C、易错提醒
+- 章节：Using reports, guidance notes, and policy papers in your AML/CFT controls > National, sectoral, and thematic risk assessments
+- 页码：PDF第230页 / 书内第225页
+- 中文要点：国家风险评估（NRA）是司法管辖区识别和评估洗钱威胁与脆弱性的文件。
+- 英文原文：A national risk assessment (NRA) is a document that a jurisdiction produces to identify and evaluate money laundering threats and vulnerabilities, determine risk levels, and develop strategies to respond to risks.
+
+### `v7u_N002642`
+
+- 用于：核心解析、易错提醒
+- 章节：Types of risk assessment > The importance of risk assessment in AFC
+- 页码：PDF第273页 / 书内第268页
+- 中文要点：国家风险评估识别国家层面的洗钱与恐怖融资威胁和风险，并审查高风险行业
+- 英文原文：NRAs identify national-level money laundering and terror financing threats and risks. These assessments review sectors and areas with higher risks.
+
+### `v7u_N002186`
+
+- 用于：选项A
+- 章节：Using reports, guidance notes, and policy papers in your AML/CFT controls > National, sectoral, and thematic risk assessments
+- 页码：PDF第230页 / 书内第225页
+- 中文要点：NRA是司法管辖区整合和表达风险知识的工具。
+- 英文原文：Jurisdictions can consolidate and articulate their knowledge of these risks using an NRA.
+
+### `v7u_N000062`
+
+- 用于：选项A
+- 章节：Types of financial crime > Predicate crimes and money laundering
+- 页码：PDF第26页 / 书内第21页
+- 中文要点：FATF 确定了金融机构必须关注的 21 类上游犯罪
+- 英文原文：FATF has identified 21 categories of predicate offenses that financial institutions must acknowledge and monitor under AML compliance programs.
+
+### `v7u_N002902`
+
+- 用于：选项C
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第297页 / 书内第292页
+- 中文要点：基于风险的方法要求政策根据机构风险敞口、客户概况和地理风险因素量身定制。
+- 英文原文：To follow a risk-based approach, policies must be tailored to institutional risk exposure, customer profiles, and geographic risk factors.
+
+### `v7u_N002196`
+
+- 用于：选项C
+- 章节：未标注
+- 页码：PDF第231页 / 书内第226页
+- 中文要点：公开的风险评估和行动计划为组织提供政府对其行业及其他行业风险水平的信息。
+- 英文原文：Public risk assessments and action plans provide organizations with information about risk levels the government applies to their sector and other sectors, along with other highlevel information about risk and the government’s priorities for addressing it.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+国家风险评估(NRA)的核心在于识别和分析洗 钱和恐怖融资的风险程度,并据此指导金融机构 制定和实施基于风险的防控措施.选项B指出, NRA能够就风险最高的客户类型和交易类型提供 指导,这直接契合了NRA的核心功能,即帮助金 融机构精准定位高风险领域,从而合理分配资 源,加强监控和防范.其他选项要么偏离了NRA 的直接作用(如规定犯罪行为、明确具体政 策),要么与NRA的职能不相关(如确定罚款金 额). 度 难
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+国家风险评估(NRA)主要评估一国面临的洗钱 和恐怖融资风险,为金融机构提供风险管理的参 考.分析选项,A项,NRA并不直接规定金融机 构必须考虑哪些上游犯罪,而是提供整体风险状 况,排除;B项,NRA通过评估风险,为金融机 构提供关于哪些客户和交易类型风险最高的指 导,符合NRA对金融机构风险应对方式的影响, 当选;C项,NRA不定义具体政策和程序,这些 由金融机构自行制定,排除;D项,NRA不决定 对违反反洗钱规定的最高罚款,排除.故答案选 B.易错提醒:注意区分NRA的作用是提供风险 指导,而非制定具体规定或处罚措施.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,117 @@
+# v7_q_000241
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些风险因素被许多监管机构视为与货币服务企业相关的较高固有风险？(选择两项.)
+
+英文题干：Which of the following risk factors are considered by many supervisory authorities as representing a higher inherent risk associated with MSBs? (Select Two.)
+
+选项：
+
+- A. 利用新技术实现远程客户开户流程的便捷化
+  English: The use of new technologies to facilitate the onboarding of customers remotely
+- B. 国际电汇的普遍性
+  English: The prevalence of international wire transfers
+- C. 与中小企业的国内业务
+  English: Domestic business with small and medium-sized enterprises
+- D. 所提供服务的现金密集型特点
+  English: The cash-intensive nature of the services offered
+- E. 使用数字渠道和可追踪的支付方式
+  English: The use of digital channels and traceable payment methods
+
+## 【AI答案】
+
+B、D
+
+## 【考点】
+
+识别MSB较高固有风险的直接行业特征：大量跨境汇款与现金交易的可追踪性困难
+
+## 【核心解析】
+
+货币服务企业（MSB）经常服务缺乏传统银行服务的客户。教材指出，此类客户依赖现金交易，会使MSB难以追踪大量交易并确认资金来源（P95），因此D「所提供服务的现金密集型特点」直接增加MSB的固有洗钱风险。教材还明确指出，这些风险通常超出传统金融机构的风险偏好，尤其源于大量跨境汇款（P95）。大量国际汇款涉及资金跨越不同司法管辖区，增加交易追踪、制裁合规和监管协调的复杂性；教材也说明电汇具有国际性，更易用于跨境转移资金（P78），因此B「国际电汇的普遍性」也是MSB较高固有风险的直接表现。B、D分别对应MSB业务中的「大量跨境汇款」和「现金交易难以追踪」两项直接行业风险，故应选择B、D。
+
+教材原句："These risks typically fall outside the risk appetite of traditional financial institutions, particularly due to the substantial volume of cross-border remittances."（P95）
+
+## 【错误项分析】
+
+- **A 错误**：远程开户确实可能增加身份验证风险，使犯罪分子更容易使用虚假或被盗身份并利用技术弱点（P63）。但教材同时指出，非面对面业务关系只有在机构未实施适当风险缓解措施时才被视为较高风险情形（P404）。因此，A属于具有条件性的一般开户渠道风险，并非像大量跨境汇款和现金密集性那样，直接、普遍地体现MSB行业的较高固有风险。
+- **C 错误**：与中小企业开展国内业务本身不具有题干所强调的大量跨境汇款、现金密集或资金难以追踪等特征。不能仅因客户属于中小企业，就认定该业务构成MSB较高固有风险；相比之下，B与教材所述MSB大量跨境汇款风险直接对应。
+- **E 错误**：数字渠道本身不能一概认定为低风险，但本选项特别限定了「可追踪的支付方式」。较强的可追踪性能够形成更清晰的交易记录，有助于识别资金来源和流向，与教材所指出的现金交易难以追踪、难以确认资金来源的高风险特征方向相反。
+
+## 【易错提醒】
+
+远程开户可能带来附加验证风险（P63），但不能据此把所有数字化开户直接认定为MSB较高固有风险。作答时应抓住题干中的「与MSB相关」和「较高固有风险」，优先选择教材直接指出的大量跨境汇款和现金交易追踪困难（P95）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000835`
+
+### `v7u_N000835`
+
+- 用于：核心解析、选项B、易错提醒
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第100页 / 书内第95页
+- 中文要点：这些风险通常超出传统金融机构的风险偏好，尤其是大量跨境汇款
+- 英文原文：These risks typically fall outside the risk appetite of traditional financial institutions, particularly due to the substantial volume of cross-border remittances.
+
+### `v7u_N000834`
+
+- 用于：核心解析、选项D、选项E
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > Money services business
+- 页码：PDF第100页 / 书内第95页
+- 中文要点：无银行账户者依赖现金交易，给货币服务企业带来追踪和资金来源确认困难
+- 英文原文：Cash transactions: Unbanked individuals rely on cash, which can create vulnerabilities for MSBs, such as difficulty in tracking a high volume of transactions and ascertaining the source of these funds.
+
+### `v7u_N003102`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：行业风险：现金密集型或高风险行业，如货币服务、加密货币交易所、赌博、军火交易和奢侈品
+- 英文原文：Industry risk: Engaging in cash-intensive or high-risk businesses such as money services, cryptocurrency exchanges, gambling, arms trading, and luxury goods
+
+### `v7u_N000678`
+
+- 用于：核心解析
+- 章节：Corporate and investment banking risks > Wire transfer risks
+- 页码：PDF第83页 / 书内第78页
+- 中文要点：电汇具有国际性，更易用于跨境转移资金。
+- 英文原文：They are international, which makes them more attractive to use to send money across jurisdictions.
+
+### `v7u_N000503`
+
+- 用于：选项A
+- 章节：Money laundering risks associated with retail and commercial banking > Retail and commercial banking products and risks
+- 页码：PDF第68页 / 书内第63页
+- 中文要点：远程开户的验证过程易被犯罪分子利用假身份或盗用身份
+- 英文原文：Remote onboarding: The use of digital channels for onboarding new customers can introduce additional risks to the verification process, making it easier for criminals to use fake or stolen identities and exploit weaknesses in technology.
+
+### `v7u_N004035`
+
+- 用于：选项A
+- 章节：Technology for KYC > How does technology help KYC?
+- 页码：PDF第409页 / 书内第404页
+- 中文要点：非面对面业务关系仅在未采取适当风险缓解措施时被视为较高风险
+- 英文原文：The updated FATF recommendations clarify that non-face-to-face business relationships, such as those involving digital onboarding and transactions, are considered higher-risk situations only when organizations have not implemented appropriate risk mitigation measures, which can include AI.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D
+- 中文参考答案：B、D
+
+### 中文参考解析
+
+货币服务企业面临较高固有风险,选项B“国际电 汇的普遍性”因涉及跨境交易,易被利用进行资金 服务的现金密集型特点”,因现金交易匿名性强, A新技术虽可能带来风险,但非固有风险;选项 C中小企业国内业务风险相对较低;选项E数字 渠道和可追溯支付方式有助于监控资金流动,降 低风险.故答案选BD.易错提醒:注意区分固 有风险与新技术带来的风险. 来 源
+
+- 英文参考答案：B、D
+
+### 英文参考解析
+
+国际电汇因涉及跨境流动、不同司法管辖区法规 ☆
+
+### 答案冲突提示
+
+- 未发现答案冲突。

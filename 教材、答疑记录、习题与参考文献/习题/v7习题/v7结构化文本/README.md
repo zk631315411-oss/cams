@@ -1,15 +1,17 @@
-# CAMS v7 cleaned question bank
+# CAMS V7 题源与派生格式快照
 
-This directory now mirrors the Phase 3.5 cleaned v7 question bank used by the v7 option-evidence and explanation pipeline.
+本目录保存题源清洗后的 JSON、JSONL、CSV 和 Markdown 辅助格式，不是正式题库母版，也不保证与后续终审内容实时同步。
 
-Canonical cleaned source:
+唯一正式题库母版：
 - `..\..\..\..\cams工作台（重构版）\v7\选项证据与解析生成\phase3.5_questions\output\v7_questions.json`
+
+2026-07-30 交接核验发现，本目录 JSON 与正式母版虽均为 395 题，但存在题干、选项和 28 题答案差异。因此本目录只能作为来源与派生快照，禁止反向覆盖 Phase 3.5 正式母版。
 
 Original workbook source:
 - `..\CAMS_v7题库_中英对照_精修版.xlsx`
 
 Files:
-- `CAMS_v7_questions.json`: canonical cleaned JSON wrapper with `schema_version`, `generated_at`, `total_items`, and `items`.
+- `CAMS_v7_questions.json`: 历史清洗 JSON wrapper，含 `schema_version`、`generated_at`、`total_items` 和 `items`。
 - `CAMS_v7_questions.jsonl`: one cleaned question item per line.
 - `CAMS_v7_questions.csv`: flattened spreadsheet/database import version.
 - `CAMS_v7_questions.md`: human-readable browse version.
@@ -30,4 +32,4 @@ Important fields:
 - `raw_question_en`: original English OCR/source text retained when available.
 
 Operational note:
-- The v7 evidence pipeline reads the Phase 3.5 cleaned file directly. This directory is a synchronized asset copy so that the question-bank folder and the runtime pipeline use the same cleaned question content.
+- V7 evidence pipeline 只读取 Phase 3.5 正式母版。本目录不得作为运行输入，除非先完成从正式母版的受控同步和差异验收。

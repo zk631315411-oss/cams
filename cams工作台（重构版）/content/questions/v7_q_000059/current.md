@@ -1,0 +1,123 @@
+# v7_q_000059
+
+教材章节：未映射
+
+题型：single
+
+题干：为防范金融犯罪风险,所实施的政策、控制措施和程序必须:
+
+英文题干：In order to prevent financial crime risk, the implemented policies, controls, and procedures must:
+
+选项：
+
+- A. 与企业的规模和性质相称,经高级管理层批准,并定期审查
+  English: Be proportionate to the size and nature of the firm, approved by senior management, and regularly reviewed
+- B. 仅由第一道防线创建、批准和拥有,并每年进行审查
+  English: Be created, approved, and owned only by the first line of defense and reviewed annually
+- C. 由业务部门完成并由外部公司进行验证
+  English: Be completed by the business and validated by an external firm
+- D. 采用最新的可用技术,纳入复杂且自动化的控制措施
+  English: Include sophisticated and automated controls using the newest available technologies
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+金融犯罪防控政策的制定与维护须遵循风险相称、高层批准、定期审查三原则
+
+## 【核心解析】
+
+教材阐述了金融犯罪防控政策的三项核心原则：第一，「金融犯罪防控政策和程序应根据组织的具体风险状况、风险偏好和规模量身定制」（P294），即政策须与机构规模和性质相称；第二，「董事会必须批准金融犯罪防控计划以展示对合规和风险管理的承诺」（P259），即须经高级管理层批准；第三，「机构应定期审查和更新这些政策，频率应基于风险性质，通常每年一次」（P293），即须定期审查。题干要求识别这三项原则的综合表述，选项A完整包含了「与规模和性质相称」「经高级管理层批准」「定期审查」三个要素，直接匹配教材对AFC政策的核心要求。
+
+教材原句："AFC policies and procedures should be tailored to the specific risk profile, risk appetite, and size of the organization."
+
+## 【错误项分析】
+
+- **B 错误（教材定义应用）｜概念混淆**：教材明确划分三道防线的职责分工：第一道防线聚焦「日常执行准确性」（P256），而政策的制定与批准涉及董事会、高级管理层及第二道防线的独立监督（P295）。「仅由第一道防线」的说法排除了高层战略监督与独立合规审查的角色，与教材的治理结构不符。题干更直接支持多层级治理框架而非单一防线负责。
+- **C 错误（题干对照）｜主体或阶段错配**：教材要求「政策的制定和批准应包含法律顾问、其他内部利益相关方以及外部专家参与」（P293），但并未将政策完成和验证的全责交给单一的「业务部门」和「外部公司」。政策制定是一个需要多道防线共同参与的过程，包括董事会批准（P259）和合规职能的独立监督，C选项的参与主体过于局限，匹配度不如A完整。
+- **D 错误（教材定义应用）｜范围或程度偏差**：教材要求金融犯罪防控政策「清晰、基于风险、适应业务模式变化」（P291），核心是风险相称性，而非技术复杂度。教材在讨论技术采用时强调需要「战略、运营和合规考量」（P377），并指出「基于规则的监控是反洗钱合规的关键但不够充分」（P437），但从未将「最新可用技术」「复杂且自动化」作为政策的必备条件。题干的核心是政策治理原则，D选项将技术手段置于治理原则之上，匹配度弱于A。
+
+## 【易错提醒】
+
+选项B容易误选——学生可能将「第一道防线负责日常执行」误解为「政策由第一道防线制定」。教材区分清晰：第一道防线「执行政策并遵循程序」（P257），而政策的制定与批准属于董事会和高级管理层的战略职能（P259）。政策制定与政策执行的责任主体不同。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002927`
+
+### `v7u_N002927`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Maintaining effective AFC policies and procedures
+- 页码：PDF第299页 / 书内第294页
+- 中文要点：金融犯罪防控政策和程序应根据组织的具体风险状况、风险偏好和规模量身定制。
+- 英文原文：AFC policies and procedures should be tailored to the specific risk profile, risk appetite, and size of the organization.
+
+### `v7u_N002557`
+
+- 用于：核心解析、选项B、选项D、易错提醒
+- 章节：Three lines of defense > Functions of board of directors and management oversight
+- 页码：PDF第264页 / 书内第259页
+- 中文要点：董事会必须批准金融犯罪防控计划以展示对合规和风险管理的承诺。
+- 英文原文：To demonstrate commitment to compliance and managing financial crime risks, the board must endorse the AFC program.
+
+### `v7u_N002918`
+
+- 用于：核心解析
+- 章节：Governance and oversight > Maintaining effective AFC policies and procedures
+- 页码：PDF第298页 / 书内第293页
+- 中文要点：机构应定期（通常每年）审查和更新金融犯罪防控政策，频率应基于风险性质。
+- 英文原文：Organizations should regularly review and update these policies and procedures, typically on an annual basis, although the nature of the risks the organization is encountering should drive the frequency.
+
+### `v7u_N002944`
+
+- 用于：选项B
+- 章节：Governance and oversight > Governance committees and their functions
+- 页码：PDF第300页 / 书内第295页
+- 中文要点：第二道防线提供独立监督、政策执行和风险评估
+- 英文原文：The second line of defense to provide independent oversight, policy enforcement, and risk assessments (in addition to the MLRO, if needed).
+
+### `v7u_N002895`
+
+- 用于：选项B、选项D
+- 章节：Governance and oversight > Drafting AFC policies and procedures
+- 页码：PDF第296页 / 书内第291页
+- 中文要点：金融犯罪防控政策必须清晰、基于风险、适应业务模式变化，并与全球及司法管辖区标准一致
+- 英文原文：These policies must be clear, risk-based, and adaptable to evolving business models while aligning with global and jurisdictional AFC standards.
+
+### `v7u_N003776`
+
+- 用于：选项D
+- 章节：Understanding AFC technology > Technology implementation considerations
+- 页码：PDF第382页 / 书内第377页
+- 中文要点：采用金融犯罪技术涉及战略、运营和合规考量，影响效果、成本和可持续性
+- 英文原文：Adopting financial crime technology involves strategic, operational, and compliance considerations that impact effectiveness, cost, and sustainability. These considerations include:
+
+### `v7u_N002536`
+
+- 用于：易错提醒
+- 章节：Three lines of defense > Third line of defense AFC function
+- 页码：PDF第262页 / 书内第257页
+- 中文要点：第一道防线的运营系统执行政策并遵循程序。
+- 英文原文：The first line’s operational systems execute policies and follow procedures.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+防范金融犯罪风险的合规计划需全面且适配企业 实际.选项A指出政策、控制措施和程序应与企 业规模和性质相称,经高级管理层批准并定期审 查,符合反洗钱和打击资助恐怖主义合规的核心 要求,确保措施有效且适应企业变化.选项B仅 由第一道防线负责,缺乏全面性;选项C依赖外 部验证,非核心要求;选项D强调技术先进性, 非必要条件.因此,A为正确答案. 度 难
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+为防范金融犯罪风险,反洗钱/反恐融资合规计划 需遵循三项核心原则:一是政策措施需与企业规 模、业务性质相匹配,避免过度或不足;二是必 须经高级管理层审批,确保合规战略与企业目标 一致;三是需定期审查更新,以适应监管变化和 业务发展.选项A完整涵盖这三点要求,而B错 误限制责任主体、C过度依赖外部验证、D片面 强调技术先进性,均不符合全面风险管理框架. 易错点:需注意合规政策需动态调整,而非一次 性完成.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

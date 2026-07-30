@@ -1,0 +1,110 @@
+# v7_q_000157
+
+教材章节：未映射
+
+题型：single
+
+题干：一家金融机构（FI）的员工怀疑一名同事参与金融投资诈骗团伙。该员工接下来应采取哪一步骤？
+
+英文题干：An employee at a financial institution (FI) suspects that one of their co-workers is involved in a financial investment scam syndicate. Which step should be taken next by the employee who has the suspicion?
+
+选项：
+
+- A. 利用人工智能工具开展开源情报调查，以获取有关涉嫌员工活动的更多信息
+  English: Conduct an open-source intelligence investigation using artificial intelligence tools to gain more information on the activities of the suspected employee
+- B. 利用FI的举报渠道举报该可疑员工
+  English: Use the FI's whistleblowing channel to report the suspected employee
+- C. 在向金融机构的人力资源部门报告之前，先向该同事询问以确认自己的怀疑
+  English: Question their co-worker to determine if their suspicions are correct before reporting to the FI's Human Resources department
+- D. 提醒该金融机构的同事和客户，该员工提出的可疑金融投资建议可能是骗局
+  English: Warn colleagues and customers that the suspicious financial investment recommendation made by the employee may be a scam
+- E. 将涉嫌违规的员工报告给其在金融机构内的直属经理，由该经理采取必要行动
+  English: Report the employee suspected of violating rules to the FI's direct manager, who will take the necessary action
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+员工内部举报可疑行为的正确渠道与程序
+
+## 【核心解析】
+
+教材指出，内部热线和举报投诉可以成为反洗钱调查的信息来源（P335）；机构还应建立政策和程序，使员工能够向指定合规官报告怀疑（P351）。收到报告后，应由指定合规官评估相关信息并决定是否调查、升级或采取其他行动（P351）。本题中的员工只是产生了合理怀疑，不应自行调查、质问涉事人员或向其他人员扩散未经核实的信息。选项B通过金融机构的正式举报渠道报告，最符合教材规定的内部报告和后续评估流程，因此正确。
+
+教材原句："It is important that organizations implement policies and procedures to enable staff to report their suspicions to an assigned compliance officer."
+
+## 【错误项分析】
+
+- **A 错误**：普通员工的职责是报告怀疑，而不是自行使用人工智能或开源情报工具调查同事。自行调查可能涉及访问权限、个人信息处理和证据保全问题，也可能干扰机构后续的独立调查。教材规定，应由指定合规官在收到报告后评估信息并决定后续行动（P351），因此A不如B符合程序。
+- **C 错误**：在报告前直接质问被怀疑的同事，可能使潜在调查对象提前察觉、改变行为或毁损证据，也绕过了机构的正式报告和评估程序。教材要求避免向潜在调查对象通风报信（P336）；但是否构成法律意义上的通风报信，取决于具体法域和案件事实，不能仅凭本题事实直接认定。
+- **D 错误**：向同事和客户传播尚未核实的诈骗指控，可能造成信息泄露、声誉损害并间接惊动相关人员，也会妨碍机构按照正式程序开展调查。正确做法是先通过举报渠道提交怀疑，由指定合规官评估（P351），而不是由举报员工自行对外警告。
+- **E 错误**：某些机构可能允许员工向直属经理报告，因此该做法并非在所有情况下都错误。但本题明确提供了金融机构的正式举报渠道，该渠道更有利于保密处理，并能把信息交给具有评估职责的指定合规官，因此B优于E。
+
+## 【易错提醒】
+
+员工发现涉嫌金融犯罪的内部行为后，应「报告而非自行调查或对外扩散」。正式举报渠道负责将信息交给有权限的合规或调查人员（P351）。需要注意，「惊动相关人员」和法律意义上的「通风报信」并不完全等同；仅凭本题给出的事实，不能直接认定有关行为已经构成某一法域下的刑事通风报信。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003483`
+
+### `v7u_N003483`
+
+- 用于：核心解析、选项A、选项C、选项D、选项E、易错提醒
+- 章节：Concluding an investigation and suspicious activity reporting > Duty to report
+- 页码：PDF第356页 / 书内第351页
+- 中文要点：机构应制定政策和程序，使员工能够向合规官报告可疑情况。
+- 英文原文：It is important that organizations implement policies and procedures to enable staff to report their suspicions to an assigned compliance officer.
+
+### `v7u_N003315`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第340页 / 书内第335页
+- 中文要点：内部转介可来自多个部门，内部热线和举报投诉也是反洗钱调查的信息来源。
+- 英文原文：Internal referrals, can come from various departments—such as fraud, correspondent banks, branches, digital, and telephony teams—which are wellpositioned to identify suspicious activities. Internal hotlines and whistleblower complaints also serve as sources for AML investigations.
+
+### `v7u_N003485`
+
+- 用于：核心解析、选项A、选项E
+- 章节：Concluding an investigation and suspicious activity reporting > Duty to report
+- 页码：PDF第356页 / 书内第351页
+- 中文要点：指定合规官负责评估报告的信息并决定应采取的行动。
+- 英文原文：The assigned compliance officer will be responsible for assessing the information and deciding what actions must be taken.
+
+### `v7u_N003327`
+
+- 用于：选项C、选项D、易错提醒
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第341页 / 书内第336页
+- 中文要点：必须避免向潜在调查对象通风报信。
+- 英文原文：It is particularly important to avoid tipping off a potential subject of an investigation.
+
+### `v7u_N003328`
+
+- 用于：选项C、选项D、易错提醒（仅支持特定调查语境下的通风报信刑事风险）
+- 章节：Transaction monitoring > Other sources of investigation
+- 页码：PDF第341页 / 书内第336页
+- 中文要点：通风报信在某些情况下属于重罪，员工可能面临刑事指控
+- 英文原文：In some cases, tipping off is a felony that can result in criminal charges against the employee.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+在反洗钱和打击资助恐怖主义的合规要求下,金 融机构员工发现可疑行为时,应通过内部举报渠 道上报,以确保调查的合规性和保密性.选项B 利用F的举报渠道举报该可疑员工,符合合规流 程,能确保问题得到专业处理并保护举报人.选 项A利用人工智能工具开展开源情报调查,非员 工职责且可能违规:选项C向同事询问确定怀 疑,易打草惊蛇且不专业:选项D提醒同事和客 户,可能造成恐慌且非员工职责;选项E报给直 属经理,可能因层级问题影响调查效率.因此选 B.易错提醒:发现可疑行为切勿私下行动,应 通过正规渠道上报.
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+在反洗钱和反恐融资(AML/CFT)合规计划中,员工怀疑同事涉及金融投资诈骗时,应通过金融机构的举报渠道报告。直接质问同事、警告同事或客户、或仅向直属经理报告,均可能干扰调查或超出员工权限并涉及法律风险。通过举报渠道报告既保护举报人,又有利于机构按程序调查。因此,正确答案为B.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

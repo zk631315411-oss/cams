@@ -1,0 +1,83 @@
+# v7_q_000040
+
+教材章节：未映射
+
+题型：single
+
+题干：该国金融情报机构(FIU)收到一份可疑活动报告(SAR),其中涉及大量可疑资金转移,不仅在其本国境内,还涉及外国.为确定是否需要在本国移送起诉,还需从外国获取更多信息.在该情景中,以下哪个陈述是正确的？
+
+英文题干：The Financial Intelligence Unit (FIU) in a country has received a suspicious activity report (SAR) which involves significant suspicious fund transfers, not only within its jurisdiction but also in a foreign country. Further information is required from the foreign country to determine whether the matter needs to be referred for prosecution locally. Which of the following statements is true in this scenario?
+
+选项：
+
+- A. 从外国获取信息违反了国际数据保护法.
+  English: It is against international laws on data protection to access information from foreign countries
+- B. 国家主权意味着信息不能从外国获取
+  English: Sovereignty of nations means that information cannot be accessed from foreign countries
+- C. 任何与洗钱有关的信息,均可随时从任何组织接收,不受司法管辖区的限制.
+  English: Any information related to money laundering can be received at any time from any organization, regardless of jurisdiction
+- D. 埃格蒙特集团成员金融情报机构之间可以相互请求信息协助.
+  English: Egmont Group members can request information assistance from each other
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+埃格蒙特集团框架下FIU跨境信息共享机制
+
+## 【核心解析】
+
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间合作与情报共享以打击洗钱等金融犯罪（P167）。根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报（P231）。题干中，FIU收到涉及本辖区及外国的可疑资金转移报告，需要从外国获取更多信息以决定是否移交起诉——这正是埃格蒙特集团成员间信息协助机制的典型应用场景。因此，埃格蒙特集团成员金融情报机构之间可以相互请求信息协助，直接匹配题干所需。
+
+教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
+
+## 【错误项分析】
+
+- **A 错误（题干对照）｜范围或程度偏差**：选项A将跨境获取信息绝对化为「违反国际数据保护法」，但教材仅指出数据保护法律可能对信息共享构成挑战（P194），而非绝对禁止。在埃格蒙特集团框架下，成员间的信息共享本身是受认可的机制，题干场景更直接匹配的是合法合作渠道，而非违法风险。
+- **B 错误（题干对照）｜概念混淆**：选项B以「国家主权」为由否定从外国获取信息的可能，但教材明确记载FIU可以访问其他国家的FIU（P231），且打击洗钱需要国内与国际合作（P233）。国家主权并不排斥在既定合作框架内共享情报，题干描述的FIU间信息请求正是这种合作框架的体现。
+- **C 错误（题干对照）｜范围或程度偏差**：选项C说「不受司法管辖区的限制」「随时从任何组织接收」，表述过于绝对。教材记载FIU信息共享是在FATF标准和埃格蒙特集团原则的框架内进行的（P231），并非无边界无限制。题干需要的是有据可循的协助渠道，而非这种笼统的绝对陈述。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002258`
+
+### `v7u_N001549`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N002258`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+在反洗钱和反恐怖融资的情境中,各国金融情报 机构(FIU)间的合作至关重要.针对题目中的 选项分析如下:A选项错误,因国际合作在反洗 钱中是允许且必要的,不违反国际数据保护法; B选项错误,国家主权不阻碍国际间合法的信息 交流与协助;C选项错误,信息接收需遵循法律 程序和司法管辖限制;D选项正确,根据多个技 术资料显示,埃格蒙特集团成员国间可相互请求 并提供信息协助,以打击洗钱和恐怖融资活动. 因此,D选项是正确答案.
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+rueintnisscenario? Itisagainstinternational lawsondata protectiontoaccessinformationfromf A oreignCountries Sovereigntyofnationsmeansthatinfo rmationcannotbeaccessedfromforei B gn countries Anyinformationrelatedtomoneylaun deringcanbereceivedfromanyorgan izationatanytimeRegardlessofjurisd iction CountriesthataremembersoftheEg montGroupcanrequestassistancefor informationfromeachOther 正确答案D您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

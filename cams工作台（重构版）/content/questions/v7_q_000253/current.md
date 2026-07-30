@@ -1,0 +1,160 @@
+# v7_q_000253
+
+教材章节：第四章 开展和回应调查（补充依据：第45章 其他有助于降低风险的尽调要求）
+
+题型：multiple
+
+题干：[开展和回应调查]一家公司的财务部门员工听说公司内部正在调查可能存在的欺诈行为,于是辞职并消失了.如果在她辞职之前就已对其进行观察,哪些员工特征会被视为危险信号？(选择两项.)
+
+英文题干：An employee in a corporation's finance department hears news of an internal investigation into potential fraud within the company, quits her job, and disappears. If she had been observed before her resignation, which characteristics of the employee would have been considered red flags? (Select Two.)
+
+选项：
+
+- A. 该员工最初来自高风险司法管辖区.
+  English: The employee was originally from a high-risk jurisdiction.
+- B. 这名员工有在高风险行业工作的朋友
+  English: The employee had friends in high-risk industries.
+- C. 这名员工的奢华生活方式远超其收入水平。
+  English: The employee had a lavish lifestyle for her income.
+- D. 这位员工对于离职前一份企业财务工作的原因一直闪烁其词.
+  English: The employee was constantly evasive about the reasons for leaving her previous corporate finance job.
+
+## 【AI答案】
+
+C、D
+
+## 【考点】
+
+识别内部欺诈调查中员工个人行为的危险信号
+
+## 【核心解析】
+
+欺诈可能由员工实施，内部调查也可能源于员工欺诈（P324、P350）。在员工尽职调查（KYE）框架下，所有新员工都应接受背景调查，具体可能包括联系前雇主和信用检查，并应在任职期间持续检查其合规情况（P324）。因此，员工对上一份企业财务工作的离职原因持续闪烁其词，会使其任职经历难以核实，对应D。对于C项，信用检查说明员工财务状况属于KYE观察范围；欺诈三角还指出，赌博或其他债务等财务问题可能形成实施欺诈的压力（P29）。Goodwish Jade案例进一步显示，月薪约2500美元的企业经理购买高价值珠宝时，其消费能力会引起关注（P130）。因此，生活方式明显超出收入和刻意回避既往任职情况，都是值得进一步核查的员工风险信号。
+
+## 【错误项分析】
+
+- **A 不如C、D匹配**：教材将高风险司法管辖区作为客户或交易对手的风险维度（P14、P122），并非员工出生地或来源地本身的内部欺诈红旗。题干关注员工的诚信和可核查行为，因此A与题干主体不如C、D直接匹配。
+- **B 不如C、D匹配**：教材中的行业风险用于评估客户本人从事的现金密集型或其他高风险业务（P312），而B说的是员工朋友所在行业。朋友的行业既不能证明员工本人参与高风险业务，也不能直接反映其诚信风险，与员工欺诈风险的关联更间接。
+
+## 【易错提醒】
+
+本题容易混淆的是把客户风险评估中的地理或行业指标直接套用到员工筛查。判断员工内部欺诈风险时，应先确认教材是否提供员工尽调或背景调查依据（P324），再看选项是否反映可核查的诚信或异常财富问题；不能仅因员工来自某地、或其朋友从事某行业，就推断其存在内部欺诈风险。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000168`、`v7u_N000169`、`v7u_N003206`、`v7u_N003209`、`v7u_N003211`、`v7u_N003212`、`v7u_N003213`、`v7u_N003465`、`v7u_N001156`
+
+### `v7u_N000168`
+
+- 用于：核心解析（欺诈三角框架）
+- 章节：Types of financial crime > Key takeaways
+- 页码：PDF第34页 / 书内第29页
+- 中文要点：欺诈三角模型指出欺诈的三个主要原因是压力、机会和合理化
+- 英文原文：People commit fraud for three major reasons: pressure, opportunity, and rationalization. This three-sided model is referred to as the “Fraud Triangle.”
+
+### `v7u_N000169`
+
+- 用于：核心解析（C项的财务压力推断依据）
+- 章节：Types of financial crime > Key takeaways
+- 页码：PDF第34页 / 书内第29页
+- 中文要点：赌博或其他债务等财务问题可能形成驱动个人实施欺诈的压力
+- 英文原文：Pressure is sometimes called "incentive." It can be a financial problem that drives a person to commit fraud, such as gambling or other debt. This can create the pressure to commit fraud.
+
+### `v7u_N003206`
+
+- 用于：核心解析（KYE员工尽调框架）
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：健全的员工尽职调查（KYE）计划可降低员工相关风险
+- 英文原文：A robust employee due diligence program, also known as a know your employee (KYE) program, lowers those risks.
+
+### `v7u_N003209`
+
+- 用于：核心解析（确认内部欺诈的员工主体）
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：欺诈可由员工或供应商实施
+- 英文原文：Fraud can be committed by employees or vendors.
+
+### `v7u_N003211`
+
+- 用于：核心解析（员工背景调查原则）
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：所有新员工必须根据当地就业和数据保护法进行背景调查
+- 英文原文：Background checks are necessary for all new employees in accordance with local employment laws and data protection laws.
+
+### `v7u_N003212`
+
+- 用于：核心解析（联系前雇主支持D项；信用检查支持员工财务状况属于KYE观察范围）
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：背景调查示例包括联系前雇主、信用检查、制裁和PEP筛查、负面媒体检查
+- 英文原文：This might include contacting former employers, conducting credit checks, sanctions and PEP screening, and adverse media checks.
+
+### `v7u_N003213`
+
+- 用于：核心解析（任职期间持续监控原则）
+- 章节：Other due diligence requirements that help to mitigate risks > Know your employee and vendor
+- 页码：PDF第329页 / 书内第324页
+- 中文要点：在员工整个任职期间持续检查合规情况可提供进一步保证
+- 英文原文：While most organizations conduct these checks during onboarding, checking to confirm compliance with policies and procedures throughout the lifetime of the employee offers further assurance to organizations.
+
+### `v7u_N003465`
+
+- 用于：核心解析（确认题干的内部员工欺诈调查场景）
+- 章节：Concluding an investigation and suspicious activity reporting > Protecting the organization during an investigation
+- 页码：PDF第355页 / 书内第350页
+- 中文要点：调查可能源于员工欺诈
+- 英文原文：They might result from fraud by its employees.
+
+### `v7u_N001156`
+
+- 用于：核心解析（C项的案例类比；不是员工红旗的直接规定）
+- 章节：High-risk business sectors > Case example: Suspicious transactions at Goodwish Jade
+- 页码：PDF第135页 / 书内第130页
+- 中文要点：购买珠宝的买家是 Ong 企业的经理，月薪约2500美元，却购买高价值物品
+- 英文原文：Further investigation into GJ's transaction records revealed that the buyers of jade and precious stones during the midnight hours were managers from Ong’s businesses, as confirmed by financial records and the company registry maintained by the government. These managers reportedly earn monthly salaries of around US$2,500, making their ability to purchase high-value items suspicious.
+
+### `v7u_N000005`
+
+- 用于：选项A（客户/交易对手的司法管辖区风险，不是员工红旗）
+- 章节：Money Laundering and Financial Crime > Case example: Linguistix’s suspicious transactions
+- 页码：PDF第19页 / 书内第14页
+- 中文要点：调查发现Linguistix收入激增且交易来自高风险司法管辖区
+- 英文原文：To investigate further, Joyce reached out to the operations team. They confirmed her suspicions: Linguistix's revenue had surged, and many transactions were coming from high-risk jurisdictions. This raised red flags, prompting Joyce to dig deeper.
+
+### `v7u_N003102`
+
+- 用于：选项B（客户行业风险，不是员工朋友的行业风险）
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：行业风险：现金密集型或高风险行业，如货币服务、加密货币交易所、赌博、军火交易和奢侈品
+- 英文原文：Industry risk: Engaging in cash-intensive or high-risk businesses such as money services, cryptocurrency exchanges, gambling, arms trading, and luxury goods
+
+### `v7u_N001101`
+
+- 用于：易错提醒
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：来自高风险或未合作司法管辖区的买家构成额外洗钱风险
+- 英文原文：A buyer from a high-risk or uncooperative jurisdiction, one lacking an established local presence or legitimate reason for purchasing property, poses an additional risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、D
+- 中文参考答案：C、D
+
+### 中文参考解析
+
+-[开展和回应调查]一家公司的财务部门员 多选 工听说公司内部正在调查可能存在的欺诈行为, 于是辞职并消失了.如果在她辞职之前就已对其 进行观察,哪些员工特征会被视为危险信号？ (选择两项.) 该员工最初来自高风险地区. B 这名员工有在高风险行业工作的朋友 这名员工的生活方式与其收入极不相 称. 这位员工对于离职前一份企业财务工作 的原因一直闪烁其词. 正确答案CD您选择/ 试题详解
+
+- 英文参考答案：C、D
+
+### 英文参考解析
+
+左润本#左地汽行为时 旦工主现山上收入不竺 ☆
+
+### 答案冲突提示
+
+- 未发现答案冲突。

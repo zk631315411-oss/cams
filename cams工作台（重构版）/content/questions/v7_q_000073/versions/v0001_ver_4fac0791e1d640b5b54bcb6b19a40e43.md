@@ -1,0 +1,90 @@
+# v7_q_000073
+
+教材章节：未映射（教材覆盖缺口——教材描述了没收机制但未标注条款编号）
+
+题型：single
+
+题干：美国《爱国者法案》涉及资金没收并允许具有域外效力的条款是？
+
+英文题干：Which section of the USA PATRIOT Act involves the forfeiture of funds and permits extraterritorial reach?
+
+选项：
+
+- A. 第319(b)节
+  English: Section 319(b)
+- B. 第311节
+  English: Section 311
+- C. 第314(a)节
+  English: Section 314(a)
+- D. 第319(a)节
+  English: Section 319(a)
+
+## 【AI答案】
+
+D
+
+> **本题为教材覆盖缺口，经教研手动撰写解析**
+>
+> 教材P182描述了代理账户没收机制但未标319(a)条款号；中英文参考答案存在冲突（中文=D, 英文=A）
+
+## 【考点】
+
+《爱国者法案》核心条款的功能区分——特别是319(a)与319(b)在没收对象和域外效力上的本质区别
+
+## 【核心解析】
+
+美国《爱国者法案》第319(a)条规定了「从美国代理账户中没收资金」（Forfeiture from US correspondent account）。当美国政府追查的资金已存入某外国银行时，该条款允许美国政府从该外国银行在美国开立的代理账户中查封同等数额的资金，无需直接触及位于境外的那笔原始资金。这正是「域外效力」（extraterritorial reach）的含义——执法权力通过代理账户这一连接点，实质性地延伸到了外国银行持有的资金。
+
+教材P182描述：「允许美国政府扣押外国银行在美国代理账户中的资金，资金所有者可提出异议。」该描述即对应319(a)的没收机制。
+
+《爱国者法案》各项条款职能分工：
+
+- **Section 311**：授权财政部将外国司法管辖区或机构指定为「主要洗钱关注对象」（P181），核心是「指定与阻断」，不涉及没收。
+- **Section 312/313**：312要求对代理账户和私人银行账户实施EDD，313禁止为外国壳银行开设代理账户（P181），核心是「调查义务」和「禁止关系建立」，不涉及没收。
+- **Section 314**：允许银行之间、银行与执法机构之间共享信息以打击金融犯罪，并为共享方提供安全港责任保护（P182）。核心是「信息共享」，不涉及没收。
+- **Section 319(a)**：允许没收外国银行在美代理账户中的资金（P182），具有域外效力。**本题正确答案。**
+- **Section 319(b)**：银行记录调取条款——要求美国金融机构在120小时内向联邦银行监管机构提供AML合规相关信息，并授权财政部/司法部向在美国持有代理账户的外国银行发出传票调取记录。该条款不涉及资金没收。
+
+## 【错误项分析】
+
+- **A 错误（功能不匹配）**：319(b)是银行记录调取条款（120小时规则、对外国银行发传票），核心功能是调取记录和获取合规信息，不涉及题干所问的资金没收。题干中的「资金没收」直接对应319(a)，而非319(b)。
+- **B 错误（功能不匹配）**：311节授权财政部指定「主要洗钱关注对象」并采取特别措施，与资金没收和域外效力无关。
+- **C 错误（功能不匹配）**：314节是银行与执法机构之间的信息共享机制（P182），核心是「信息共享」，与没收和域外效力无关。
+
+## 【易错提醒】
+
+319(a)的核心功能是没收外国银行在美国代理账户中的资金；319(b)的核心功能是调取银行记录，包括120小时规则和对外国银行的传票程序。两者都可能产生域外影响，但作用对象不同：319(a)针对资金，319(b)针对记录。
+
+题干同时出现「资金没收（forfeiture of funds）」和「域外效力（extraterritorial reach）」时，「资金没收」直接锁定319(a)。如果题干问的是记录提供、120小时规则或传票，则应考虑319(b)。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001707`
+
+### `v7u_N001707`
+
+- 用于：核心解析
+- 章节：US AML/CFT regulatory landscape > USA PATRIOT Act
+- 页码：PDF第187页 / 书内第182页
+- 中文要点：允许美国政府扣押外国银行在美国代理账户中的资金，资金所有者可提出异议
+- 英文原文：Forfeiture from US correspondent account: This Act permits the US government to seize funds from a correspondent account in the US that a foreign bank has opened and maintained. The owner of the funds may contest the seizure.
+
+> **补充说明**：教材P182描述了没收机制但未标注条款编号。319(a) 对应 18 USC § 981(k)（没收外国银行在美代理账户资金），319(b) 对应 31 USC § 5318(k)（银行记录调取：120小时规则+对外国银行发传票），二者的条款号归属和功能区分来自 Patriot Act 法案原文。本题中文参考答案（D=319a）与英文参考答案（A=319b）存在冲突——319(b) 核心功能为记录调取而非资金没收，题干明确要求"涉及资金没收（forfeiture of funds）"，319(a) 为唯一正确答案。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：D
+- 中文参考答案：D
+
+### 中文参考解析
+
+美国《爱国者法案》第319(a)节涉及资金没收并允许具有域外效力。该条款规定，美国政府在追查境外资金时，可从外国银行在美国开立的代理账户中查封等额资金，无需直接触及境外原始资金——这正是"域外效力"的核心含义。319(b)为银行记录调取条款（120小时规则+对外国银行发传票），不涉及资金没收；311节为指定"主要洗钱关注对象"的特别措施；314节为银行与执法机构间的信息共享机制，均与没收和域外效力无关。
+
+### 英文参考解析
+
+Section 319(a) of the USA PATRIOT Act involves the forfeiture of funds and permits extraterritorial reach. It allows the US government to seize funds from a correspondent account that a foreign bank maintains in the US, equivalent to the amount being pursued abroad -- this is the core mechanism of extraterritorial reach through correspondent accounts. Section 319(b) is a bank records production provision (120-hour rule and subpoena authority over foreign banks) -- it does NOT involve forfeiture of funds. Section 311 authorizes special measures against jurisdictions of primary money laundering concern. Section 314 is an information sharing mechanism between banks and law enforcement -- neither involves forfeiture or extraterritorial reach.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=D（319a），英文=A（319b）。经核查，319(a) 正确，英文参考答案有误。
+- 教材未标注具体条款编号，319(a)与319(b)的编号归属来自 Patriot Act 标准知识补充。

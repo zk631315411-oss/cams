@@ -1,0 +1,85 @@
+# v7_q_000176
+
+教材章节：未映射
+
+题型：single
+
+题干：在对某保险公司的投保人兼客户进行常规的定期了解您的客户(KYC)信息更新时,最新的商业注册文件显示,该投保人的企业在过去一年中已变更地址五次,且最终受益所有人(UBO)两周前刚刚变更.应立即采取哪些行动？
+
+英文题干：During a routine periodic KYC information update, an insurance company discovers from the latest business registration documents that the policyholder's business address has changed five times in the past year and that the ultimate beneficial owner (UBO) changed two weeks ago. What actions should be taken immediately?
+
+选项：
+
+- A. 调查地址变更和最终受益人变更的情况,同时在调查完成并商定下一步措施之前,拒绝处理该保单的付款和提款指令
+  English: Investigate the address and UBO changes and, in the meantime, decline payment and withdrawal instructions relating to the policy until the investigation is complete and next steps are agreed.
+- B. 请客户经理安排与投保人会面,以更新其地址,并以提供优质客户服务的名义提交新受益所有人的详细信息.
+  English: Request that the relationship manager arrange a meeting with the policyholder to update the address and submit details of the new UBO in the name of providing good customer service.
+- C. 调查地址变更和最终受益人变更的情况,同时冻结客户的保单.
+  English: Investigate the address and UBO changes and, in the meantime, freeze the client's policy.
+- D. 提交可疑交易报告,因为保险公司未获知该企业实际受益人的变更情况
+  English: File a suspicious transaction report because the insurance company was not informed of the business's change in UBO.
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+根据客户信息重大变化判断是否采取交易限制与调查
+
+## 【核心解析】
+
+地址在一年内多次变更、UBO又于近期发生变化，至少构成需要立即核实的重大客户信息变化。机构应调查变更原因、更新客户和受益所有人资料，并根据调查结果重新评估风险，必要时启动EDD或采取临时限制措施（P312）。教材所述的「停止并持有直至调查完成」适用于支付筛查命中制裁名单的情形（P329），而本题并无制裁命中信息。因此，A是四项中相对完整的风险控制组合，但其中「拒绝付款和提款」应理解为依调查情况和机构政策决定的临时控制，不能仅凭地址或UBO变化自动实施。
+
+教材原句："Payment or transaction screening reviews payments made and received by customers. It reviews payments made to or from parties on sanctions lists. If a match is detected, it is stopped and held until investigations are complete."
+
+制裁筛查命中后应停止并持有相关支付（P329）；对高风险客户也可以采取临时或永久限制（P312）。但地址或UBO发生变化并不必然导致拒绝付款和提款，A中的交易限制仍须结合调查结果、EDD及机构政策实施。
+
+## 【错误项分析】
+
+- **B 错误**：更新资料本身是必要步骤，但B把行动限缩为客户服务安排，没有要求先调查频繁地址变化和新UBO的真实性、控制关系及资金风险；因此不足以回应题干的异常信号。
+- **C 错误**：“冻结保单”可能影响整个合同关系，范围大于针对具体付款/提款的临时限制；在未完成风险评估前，不能仅凭题干事实直接推出全面冻结。
+- **D 错误**：发现地址和UBO变更并不自动等于可疑交易已经成立。流程上应先调查并审视事实，再决定是否提交可疑交易报告。因此，更直接的做法是A项先调查、限交易，而非越过调查直接提交报告。
+
+## 【易错提醒】
+
+需区分“拒绝支付指令（decline payment）”与“冻结保单（freeze the policy）”。前者是可随调查、EDD和机构政策采取的交易层面临时控制；后者影响范围更广。题干没有制裁名单命中事实，不能把教材所述的制裁筛查规则机械套用为自动拒付规则（P329）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003253`
+
+### `v7u_N003253`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Transaction monitoring versus payment screening
+- 页码：PDF第334页 / 书内第329页
+- 中文要点：支付或交易筛查审查客户收付款项，若匹配制裁名单则暂停并调查。
+- 英文原文：Payment or transaction screening reviews payments made and received by customers. It reviews payments made to or from parties on sanctions lists. If a match is detected, it is stopped and held until investigations are complete.
+
+### `v7u_N003106`
+
+- 用于：选项C
+- 章节：未标注
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：对高风险客户可采取临时或永久限制措施
+- 英文原文：Financial institutions might apply temporary or permanent restrictions. Temporary controls might be applied until EDD is completed, such as limited account functionality. Permanent controls would be applied continuously for customers that have been labeled high-risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+根据反洗钱和打击资助恐怖主义合规要求,企业 频繁变更地址和最终受益所有人变更属于高风险 行为,需立即调查以确认是否存在洗钱或恐怖主 义资助风险.选项A中,调查地址变更和最终受 益所有人变更情况,并在调查完成并商定下一步 措施前,拒绝处理该保单的付款和提款指令,符 合合规要求,能及时控制风险.选项B未及时控 制风险,选项C冻结保单过于激进,选项D提交 可疑交易报告前未充分调查,均不妥.易错提 醒:合规行动需及时且基于充分调查. ★食食
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+在反洗钱和反恐融资合规计划中，保险公司在客户尽职调查(CDD)过程中发现保单持有人的业务地址且最终受益所有人(UBO)发生变更，可能涉及洗钱风险。根据合规要求，应立即调查地址变更和UBO变更的原因，同时暂停支付和提款指令，直至调查完成并确定后续步骤。选项A既进行了必要调查，又采取临时控制措施以防止潜在风险。其他选项要么措施不足(B)，要么过于激进(C)，要么忽视风险(D)。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

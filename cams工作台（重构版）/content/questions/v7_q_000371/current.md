@@ -1,0 +1,122 @@
+# v7_q_000371
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家金融机构(FI)的合规官正在审查一家虚拟资产服务提供商(VASP)的新客户申请.在确定客户是否属于金融机构的金融犯罪风险偏好范围时,风险评估应包含哪些细节？(选择三项.)
+
+英文题干：A compliance officer at a financial institution (FI) is reviewing a new client application for a Virtual Asset Service Provider (VASP). Which details should be part of the risk assessment to determine whether the customer falls within the FI's financial crimes risk appetite? (Select Three.)
+
+选项：
+
+- A. 虚拟资产服务提供商(VASP)的程序是否足以保护客户个人身份信息
+  English: Whether the VASP's procedures are sufficient for protecting client personally identifiable information
+- B. 该虚拟资产服务提供商(VASP)的客户中有多少比例被归类为高风险客户？
+  English: What percentage of the VASP's clients are classified as higher-risk
+- C. 哪些注册机构代表虚拟资产服务提供商（VASP）运营虚拟资产钱包和虚拟资产兑换营业点
+  English: Which registered institutions act on behalf of the VASP as operators of virtual asset wallets and virtual asset exchange offices
+- D. 该虚拟资产服务提供商(VASP)是否正在使用中央银行数字货币
+  English: Whether the VASP is utilizing central bank digital currencies
+- E. 该虚拟资产服务提供商(VASP)的客户是谁,包括外国和国内个人客户的详细信息
+  English: Who the VASP's clients are, including the breakdown of foreign and domestic individuals
+
+## 【AI答案】
+
+B、C、E
+
+## 【考点】
+
+客户风险评估需涵盖客户画像、管辖权及第三方关联信息
+
+## 【核心解析】
+
+客户风险评估（CRA）是一项合规流程，通过评估多种风险因素，确定客户构成的金融犯罪风险及所需的监控与审查级别（P312）。题目中，金融机构在准入阶段审查虚拟资产服务提供商（VASP）是否符合自身的金融犯罪风险偏好，本质上就是在执行CRA。依据教材列出的关键风险要素，了解「该VASP的客户是谁，包括国内外个人客户的详细信息」（选项E）直接对应客户画像要素，可揭示客户基础结构及管辖地风险（P307、P312）；了解「该VASP的客户中有多少比例被归类为高风险」（选项B）有助于剖析该VASP的客户组成与业务性质，分析客户群的固有风险水平；了解「哪些注册机构代表VASP运营虚拟资产钱包和虚拟资产兑换营业点」（选项C）能帮助识别是否存在监管框架外的高风险第三方，这与数字资产交易筛查侧重识别高风险VASP的逻辑一致（P434）。这三项分别从客户群构成、高风险敞口和第三方代理关系切入，共同构成了对VASP金融犯罪风险偏好的评估基础。
+
+## 【错误项分析】
+
+- **A 错误｜风险类型不符**：保护客户个人身份信息（PII）的程序主要属于数据安全与隐私保护范畴，不能像客户群构成、高风险客户比例和第三方代理关系那样直接反映VASP的金融犯罪风险。
+- **D 错误｜概念混淆**：中央银行数字货币（CBDC）是由央行发行和监管的数字法定货币。是否使用CBDC本身不能直接说明VASP的客户构成、地域暴露或第三方关系风险。
+
+## 【易错提醒】
+
+客户风险评估聚焦金融犯罪风险因素（如客户画像、管辖地、产品风险）（P307、P312），而非运营安全或技术保护措施。不要将与反洗钱合规间接相关的控制（如数据保护程序、使用的技术类型）直接等同于金融犯罪风险评估内容。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003040`
+
+### `v7u_N003040`
+
+- 用于：核心解析、选项A、选项D、易错提醒
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：客户风险评估是确定客户金融犯罪风险并决定监控级别的合规流程
+- 英文原文：A customer risk assessment (CRA) is a compliance process that determines the financial crime risk posed by a customer. A CRA evaluates multiple risk factors to determine the appropriate level of monitoring and scrutiny required for each customer.
+
+### `v7u_N003042`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：客户画像包括自然人或法人、所有权结构、业务性质、行业及是否存在政治敏感人物
+- 英文原文：Customer profile: Include natural person or legal person, ownership structure, nature of business, industry, and presence of PEPs.
+
+### `v7u_N003100`
+
+- 用于：核心解析
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：客户可能基于以下因素被归类为高风险。
+- 英文原文：Customers might be classified as high-risk based upon:
+
+### `v7u_N004354`
+
+- 用于：选项A
+- 章节：Technology for payment and batch screening > Types of ongoing screening
+- 页码：PDF第439页 / 书内第434页
+- 中文要点：数字资产交易筛查侧重于识别高风险第三方，特别是监管框架外的VASP。
+- 英文原文：Screening in digital asset transactions focuses on identifying high-risk third parties, particularly VASPs that operate outside regulatory frameworks.
+
+### `v7u_N003043`
+
+- 用于：选项A
+- 章节：Onboarding AFC controls > Customer risk assessment
+- 页码：PDF第312页 / 书内第307页
+- 中文要点：司法管辖区风险：考虑客户是否来自或经营于FATF灰黑名单、OFAC、欧盟及当地监管机构所列的高风险司法管辖区
+- 英文原文：Jurisdiction: Consider whether a customer is from or conducts business in high-risk jurisdictions, as identified in FATF grey and black lists or the lists from OFAC, the EU, and local regulators.
+
+### `v7u_N001012`
+
+- 用于：选项D
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Stablecoin, token, and NFT risks
+- 页码：PDF第117页 / 书内第112页
+- 中文要点：央行数字货币（CBDC）是政府发行的数字货币，通常不被归类为稳定币
+- 英文原文：Central Bank Digital Currency (CBDC): Government-issued digital currency, typically not classified as a stablecoin due to its direct link with state-issued fiat.
+
+### `v7u_N001016`
+
+- 用于：选项D
+- 章节：Money laundering risks associated with cryptoassets and other FinTechs > Central bank digital currency
+- 页码：PDF第118页 / 书内第113页
+- 中文要点：央行数字货币（CBDC）是由央行发行和监管的数字法定货币，具有法定货币地位
+- 英文原文：A central bank digital currency (CBDC) is a digital version of a country’s fiat currency issued and regulated by its central bank. It also functions as legal tender.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C、E
+- 中文参考答案：B、C、E
+
+### 中文参考解析
+
+在评估虚拟资产服务提供商(VASP)的金融犯 罪风险时,需关注客户风险分类、代理机构及客 户身份细节.选项B可了解高风险客户比例,评 估整体风险;选项C能明确代理机构情况,判断 潜在风险渠道;选项E可掌握客户身份构成,包 括国内外个人客户细分,有助于精准识别风险. 选项A关注的是程序对客户个人身份信息的 护,与风险偏好评估关联不大:选项D境外VASP
+
+- 英文参考答案：B、C、E
+
+### 英文参考解析
+
+在评估虚拟资产服务提供商(VASP)是否符合金融机构的反洗钱和反恐融资(AML/CFT)风险偏好时，需关注其客户风险特征及业务关联性。选项B(高风险客户占比)可反映VASP整体风险水平；选项C(合作注册机构信息)有助于识别潜在风险传导路径；选项E(客户身份及地域分布)可帮助判断客户基础风险。选项A关注数据保护，选项D关注是否使用央行数字货币，均非本题金融犯罪风险评估的核心要素。因此，正确答案为BCE。易错提醒：需区分数据安全与金融犯罪风险评估的核心要素。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

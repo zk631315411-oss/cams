@@ -1,0 +1,109 @@
+# v7_q_000196
+
+教材章节：未映射
+
+题型：single
+
+题干：荷兰一家银行已被要求向意大利一家银行提供一系列交易及相关客户的资料.这两家银行均受欧盟管辖.在分享信息之前,需要考虑的最重要因素是什么？
+
+英文题干：A bank in the Netherlands has been requested to share information about a series of transactions and related customers with a bank in Italy. Both banks are subject to European Union jurisdiction. Which factor is the most important to consider before the Dutch bank shares the requested information with the Italian bank?
+
+选项：
+
+- A. 荷兰银行应将信息共享限制在必要、合理且适度的范围内,符合适用的法律法规.
+  English: The Dutch bank should limit any information sharing to what is necessary, reasonable, and proportionate, in line with applicable laws and regulations
+- B. 该荷兰银行有保护客户隐私和银行保密信息的义务.
+  English: The Dutch bank's legal obligations to protect customer privacy and bank secrecy prohibit it from sharing any such information
+- C. 荷兰银行应要求意大利银行出具文件调取令,并在获得其法律部门批准后,再分享所请求的信息.
+  English: The Dutch bank should require a production order from the Italian bank and receive approval from its legal department before sharing the requested information
+- D. 打击金融犯罪的需求优先于欧盟的数据保护和隐私法规的要求
+  English: The need to combat financial crime overrides the requirements of EU data protection and privacy regulations
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+跨境信息共享需兼顾反洗钱法规与数据保护要求
+
+## 【核心解析】
+
+教材要求，机构参加私营部门间信息共享安排前，应认真考虑当地数据保护法和客户保密义务（P239）；在为反洗钱目的处理客户身份数据时，还必须同时平衡GDPR要求（P263）。GDPR强调数据最小化和目的限制（P392）。题干问荷兰银行在共享交易及客户资料前最重要的考虑因素，A要求把共享限制在必要、合理、适度的范围，并遵守适用法律，直接落实上述边界。B和D都把一项义务绝对化，C则把银行间共享误设为必须取得对方文件调取令。因此答案为A。
+
+教材原句："Organizations looking to join private-to-private sector information sharing arrangements should carefully consider their obligations under local data protection legislation and customer confidentiality requirements within their organization."
+
+## 【错误项分析】
+
+- **B 错误**：客户隐私和银行保密义务确实是共享前必须考虑的因素（P239），但B只指出了其中一项义务，没有说明如何在合法基础、必要性和比例原则下确定共享范围。相比之下，A同时涵盖适用法律、必要性和适度性，更完整地回答了题干。
+- **C 错误**：银行间信息共享应先审查适用的数据保护法、客户保密义务及相应合法基础（P239），但并不普遍以另一家银行出具文件调取令为前提。C混淆了银行间共享安排与正式文件调取程序。
+- **D 错误**：打击金融犯罪的需求与数据保护法规并非一方绝对优先。机构按反洗钱规定处理客户身份数据时，仍须同时遵守GDPR要求（P263）。D中的“override”意味着单方面排除数据保护义务，而A所述必要、合理、适度的共享更能体现二者的协调。
+
+## 【易错提醒】
+
+保密义务不等于绝对禁止信息共享。在存在法定豁免或监管批准的共享安排（如第75条）下（P239），保密义务转变为要求在共享过程中遵循必要、合理、适度的数据最小化原则（P392），而非彻底阻断信息流动。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002354`、`v7u_N002594`、`v7u_N003925`
+
+### `v7u_N002353`
+
+- 用于：选项B
+- 章节：Cooperation involving the private sector > Private sector information sharing
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：欧盟(EU)2024/1624号法规第75条允许经国家监管机构批准的跨境信息共享伙伴关系
+- 英文原文：In the EU, Article 75 of Regulation (EU) 2024/1624 allows organizations to take part in cross-border information sharing partnerships, if their national supervisor approves it. Organizations may share information about customer identity, business relationships, transactions, and customer risk factors.
+
+### `v7u_N002594`
+
+- 用于：核心解析、选项D
+- 章节：Second LOD's AFC role and its interaction with the front office > Second LOD's interaction with other functions
+- 页码：PDF第268页 / 书内第263页
+- 中文要点：组织在处理客户身份数据以符合反洗钱/反恐怖融资要求的同时，还需遵守欧盟《通用数据保护条例》，必须平衡两者。
+- 英文原文：If an organization processes customer identification data for AML/CFT compliance while also following the EU’s General Data Protection Regulation (GDPR), it must balance both requirements.
+
+### `v7u_N002354`
+
+- 用于：核心解析、易错提醒
+- 章节：未标注
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：加入私营部门信息共享安排前须考虑当地数据保护法和客户保密义务
+- 英文原文：Organizations looking to join private-to-private sector information sharing arrangements should carefully consider their obligations under local data protection legislation and customer confidentiality requirements within their organization.
+
+### `v7u_N002355`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第244页 / 书内第239页
+- 中文要点：第75条要求伙伴关系在处理个人信息前进行数据保护影响评估
+- 英文原文：National supervisor approval under Article 75 requires the partnership to carry out a data protection impact assessment before processing personal information.
+
+### `v7u_N003925`
+
+- 用于：核心解析、选项D、易错提醒
+- 章节：Understanding AFC technology > Impact of privacy regulations on technology use
+- 页码：PDF第397页 / 书内第392页
+- 中文要点：GDPR对欧盟公民个人数据处理施加严格规则，强调数据最小化和目的限制等原则
+- 英文原文：GDPR imposes strict rules on handling the personal data of EU citizens, emphasizing principles such as data minimization, purpose limitation, storage limitation, and the right to erasure.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B（结构化中文答案字段；与中文解析和英文原图冲突）
+- 中文参考答案：B（疑似答案抽取错误；中文解析实际结论为A）
+
+### 中文参考解析
+
+息时应限制在必要、合理且适度的范围内,并符 合适用法律法规,这符合欧盟数据保护和反洗钱 规定.选项B错误,因法律义务允许在合规前提 常无需文件调取令和法律部门批准.选项D错误, 因打击金融犯罪需求需在法律框架内平衡数据保 护和隐私法规.因此,A是正确答案,确保信息,度 难
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+根据欧盟相关法律,银行在跨境共享信息时,需 确保信息共享必要、合理且成比例,符合适用法 律法规.选项B过于绝对,未考虑法律允许的例 外;选项C要求文件调取令和法律部门批准,非首要 考虑;选项D强调打击金融犯罪,但未直接指出 信息共享的合规性.因此,选项A最符合欧盟法 律要求,强调信息共享的合规性、必要性和比例 性.
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=B，英文=A
+- 盲判与题库最终参考答案冲突：盲判=A，题库最终=B
+- 复核结论：英文原题标记A，中文参考解析也明确论证A，教材证据支持A

@@ -1,26 +1,37 @@
-# CAMS V7 教研工作区
+# CAMS V6 -> V7 研发与内容交付仓库
 
-本工作区以 CAMS v7 教材为唯一正式教研体系。正式结论必须能追溯到 v7 双语知识单元 `v7u_N*`；题库参考答案只用于审计，不作为教材证据。
+本仓库保存 V6 到 V7 的教材处理、证据检索、题目盲判、解析生产、质量复核、软件内容导出及研发记录。它是研发与内容资产仓库，不是正式工作台应用仓库。
 
-## 当前主线
+正式工作台位于本机同级目录 `D:/守正公司工作区/cams考试工作台（正式版）/`。该应用拥有独立的 `frontend/`、`backend/`、`data/`、`releases/` 和运行说明；本仓库内的 `frontend/`、`workbench-v2/` 均为历史原型。
 
-- `cams工作台（重构版）/v7/`：v7 冻结知识单元、知识图谱、题目证据与解析流水线。
-- `cams工作台（重构版）/tools/v7_release/`：将**已完成**的证据跑批冻结为工作台发布包的唯一入口。
-- `cams工作台（重构版）/frontend/`：静态 v7 教研工作台。它先读取 `data/releases/v7/textbook-active.json` 指向的双语教材包，再可选叠加 `active.json` 指向的题目证据包；不扫描跑批或实验目录。
+## 交接入口
 
-## 发布 v7 工作台
+- [项目交接说明](项目交接/README.md)
+- [V6 到 V7 研发总结](项目交接/V6到V7研发总结.md)
+- [正式资产与 SOP 索引](项目交接/正式资产与SOP索引.md)
+- [清理记录](项目交接/清理记录.md)
 
-当前双语教材已可独立发布和阅读。完成某一 v7 证据批次后，再按 [发布工具说明](cams工作台（重构版）/tools/v7_release/README.md) 生成可选证据包和 `active.json`。发布器会拒绝悬空 `unit_id`、重复题目结果、未知证据状态和 v6 句卡 ID。
+## 当前正式成果
 
-发布成功后启动静态前端：
+- `cams工作台（重构版）/v7/选项证据与解析生成/phase3.5_questions/output/v7_questions.json`：唯一正式的 395 题结构化母版。
+- `cams工作台（重构版）/v7/work/base_units/units/`：4,973 个冻结的 V7 双语知识单元，正式证据锚点为 `v7u_N*`。
+- `cams工作台（重构版）/v7/选项证据与解析生成/phase4_evidence/output/questions/`：395 题盲判、选项分析和证据数据。
+- `cams工作台（重构版）/v7/选项证据与解析生成/phase4_evidence/output/explanations/`：395 题教研解析母版。
+- `cams工作台（重构版）/v7/选项证据与解析生成/phase4_evidence/output/software_export/sections/`：面向题库软件的 63 个小节交付文件及 DOCX。
+- `题库解析SOP_DOCX/`：面向运营和交接的正式 SOP 文档。
 
-```powershell
-Set-Location "D:\守正公司工作区\cams考试\cams工作台（重构版）\frontend"
-python server.py --port 5175
-```
+上述产物中，`output/explanations/` 与 `output/software_export/` 存在尚未提交的终审修订，应按当前工作区内容处理，不能用旧提交覆盖。
 
-访问 `http://127.0.0.1:5173/`。工作台保留“看书备课 / 新题解析 / 学生答疑”三种模式及应用内前进、后退导航；当前可用的是教材阅读、搜索、题目证据定位与解析查看。新题解析和学生答疑的 v7 API 将后续接入，现阶段不会调用旧服务。
+题目的最终章节归属以 `software_export/sections/p*-ch*-h*.md` 中的实际小节分配和 `software_export/export_results.json` 为准。历史章节相似度映射与 Agent 映射只用于研发追溯。
 
-## V6 档案
+## 历史边界
 
-v6 仅保留为历史追溯材料，不再是工作台运行依赖，不恢复缺失的 v6 派生资产，也不能作为 v7 正式证据。见 [v6 归档索引](v6_归档/WORKBENCH_V6_ARCHIVE.md)。
+- `v6_归档/`：只读追溯档案，不作为 V7 正式教材依据。
+- `cams工作台（重构版）/frontend/`、`cams工作台（重构版）/workbench-v2/`：历史前端与审核原型，不是当前交付主线。
+- `教材、答疑记录、习题与参考文献/习题/v7习题/v7结构化文本/`：题源与派生格式快照，不是正式题库母版。
+- `cams工作台（重构版）/tools/考点生成/`、`cams工作台（重构版）/tools/知识图谱/提取/`：V6 研究 SOP，不迁移为 V7 正式依据。
+- V7 正式证据只能引用真实 `v7u_N*`；V6 的 `v6s_N*` 仅可用于历史核对。
+
+## 开始工作
+
+新教材、新题库按 [新教材新题库解析撰写 SOP](新教材新题库解析撰写SOP.md) 执行；在现有 V7 题库增加新题按 [新题加入处理 SOP](新题加入处理SOP.md) 执行。两条流程的选择规则见 [解析生产链路总览](重构版解析生产链路总结SOP.md)。

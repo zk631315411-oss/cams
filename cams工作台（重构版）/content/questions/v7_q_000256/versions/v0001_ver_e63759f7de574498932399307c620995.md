@@ -1,0 +1,98 @@
+# v7_q_000256
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱/打击资助恐怖主义合规计划]根据巴塞尔委员会的原则,以下哪两项行动会使银行的客户身份识别计划更加完善？(选择两项.)
+
+英文题干：According to the Basel Committee principles, which actions would make a customer identification program at a bank more robust? (Select Two.)
+
+选项：
+
+- A. 了解客户为何选择某家特定的金融机构办理银行业务
+  English: Understanding why a customer has selected a particular financial institution for banking.
+- B. 通过可靠的在线来源资料核实客户身份
+  English: Verifying the identity of a customer with reputable online source documentation.
+- C. 在新客户注册后的头两个月限制其在线活动
+  English: Limiting the online activities of a new customer during the first two months.
+- D. 了解新企业在银行开户的性质和目的
+  English: Understanding the nature and purpose behind a new business opening an account at the bank.
+
+## 【AI答案】
+
+A、D
+
+## 【考点】
+
+以客户关系目的和性质完善客户身份识别
+
+## 【核心解析】
+
+巴塞尔委员会的KYC原则把客户身份识别和客户接纳政策列为KYC计划的关键要素（P166）。落实到开户环节，机构必须了解客户关系的目的和预期性质（P305）。选项D直接询问新企业开户的性质和目的；选项A询问客户为何选择该金融机构，也有助于判断客户建立关系的目的及预期性质。A、D都能增加银行对客户关系背景的理解，使客户身份识别计划更稳健。
+
+教材原句："Organizations must understand and obtain information, as appropriate, on the purpose and intended nature of the customer’s relationship with the organization."（P305）
+
+## 【错误项分析】
+
+- **B 错误**：教材所称验证，是用政府签发文件、生物识别、AI验证工具或证件取证分析来认证客户提供的信息（P305）。「可靠的在线来源文件」可以作为补充信息，但选项没有说明其为政府签发文件或经过身份认证，不能仅凭「在线且可靠」替代身份验证。
+- **C 错误**：在开户后固定两个月限制线上活动，既不是客户身份识别方法，也没有体现按客户风险决定控制强度；它不回答客户是谁或为何建立关系。
+
+## 【易错提醒】
+
+客户身份识别计划不只收集姓名、证件等身份字段，还要理解建立客户关系的目的和预期性质（P305）；但外部在线资料本身不等于完成身份认证。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003021`
+
+### `v7u_N001537`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：KYC计划的关键要素包括客户身份识别。
+- 英文原文：Customer identification.
+
+### `v7u_N001539`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：KYC计划的关键要素包括客户接纳政策。
+- 英文原文：Customer acceptance policy.
+
+### `v7u_N003021`
+
+- 用于：核心解析、易错提醒
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第310页 / 书内第305页
+- 中文要点：机构必须适当了解并取得客户关系目的和预期性质的信息。
+- 英文原文：Organizations must understand and obtain information, as appropriate, on the purpose and intended nature of the customer’s relationship with the organization.
+
+### `v7u_N003020`
+
+- 用于：错误项分析、易错提醒
+- 章节：Onboarding AFC controls > The KYC process
+- 页码：PDF第310页 / 书内第305页
+- 中文要点：验证是通过政府签发文件、生物识别、AI验证工具及证件取证分析认证所提供的信息。
+- 英文原文：Verification is the authentication of provided information using government-issued documents, biometric authentication, AI-driven verification tools, and forensic analysis of identification records.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+巴塞尔委员会强调客户身份识别计划需全面且深入。选项A，了解客户选择特定金融机构的原因，有助于银行更全面地掌握客户背景，是完善客户身份识别的重要一环。选项D，理解新企业在银行开户的性质和目的，有助于银行了解客户关系背景。选项B仅依赖在线来源文件核实身份，不够全面；选项C限制新客户的在线活动，与完善客户身份识别计划无直接关联。因此选择A和D。
+
+- 英文参考答案：A、D
+
+### 英文参考解析
+
+According to the Basel Committee principles, understanding why the customer selected the institution and understanding the nature and purpose of the new business account make the customer identification program more robust.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

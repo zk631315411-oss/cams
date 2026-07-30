@@ -1,0 +1,108 @@
+# v7_q_000186
+
+教材章节：未映射
+
+题型：single
+
+题干：金融行动特别工作组(FATF)如何衡量一个国家打击洗钱和恐怖融资工作的成效？
+
+英文题干：How does the Financial Action Task Force (FATF) measure the effectiveness of a country's efforts to combat money laundering and terrorist financing?
+
+选项：
+
+- A. 金融行动特别工作组评估委员会
+  English: FATF Evaluation Committee
+- B. 内部审计系列工作,随后向金融行动特别工作组(FATF)报告
+  English: Series of internal audits followed by reporting to FATF
+- C. 巴塞尔委员会
+  English: Basel Committee
+- D. 相互评估
+  English: Mutual evaluation
+
+## 【AI答案】
+
+D
+
+## 【考点】
+
+识别FATF通过相互评估衡量成员国反洗钱成效
+
+## 【核心解析】
+
+FATF通过其他司法管辖区的反洗钱/反恐怖融资主管机关开展正式审查，定期对成员司法管辖区实施相互评估（P146、P153）。相互评估报告同时考察对FATF建议的技术合规性和一国整体反洗钱体系的有效性；在这一评估程序中，FATF使用11项直接目标对有效性进行衡量和评级（P150）。因此，「相互评估」是FATF评估国家反洗钱/反恐怖融资成效的程序，11项直接目标则是程序内部的具体有效性衡量框架。题目给出的选项中，只有D准确说出了这一评估程序。
+
+教材原句："FATF mutual evaluations are peer reviews between FATF member jurisdictions that result in thorough reports that analyze AML procedures and their effectiveness."
+
+## 【错误项分析】
+
+- **A 错误**：教材明确列出的FATF国家评估机制是相互评估（P146、P153），没有把「FATF评估委员会」作为成效衡量方式。A与教材所述机制名称不符。
+- **B 错误**：B描述由受评国家自行开展内部审计后向FATF报告；教材描述的相互评估则是由其他司法管辖区的反洗钱/反恐怖融资主管机关实施正式同行审查（P153）。两者的评估主体和程序均不同。
+- **C 错误**：巴塞尔委员会是全球银行监管标准制定者（P165），不是题干所问的FATF国家评估程序。题干主语是FATF，教材直接对应的程序是相互评估。
+
+## 【易错提醒】
+
+不要混淆评估程序与评估指标：相互评估是FATF审查国家反洗钱/反恐怖融资体系的程序（P146、P153）；11项直接目标是该程序中衡量有效性的具体框架（P150）。本题选项询问的是评估程序，因此选择D。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001387`
+
+### `v7u_N001387`
+
+- 用于：核心解析、选项A、选项B、选项C
+- 章节：Financial Action Task Force > FATF 11 Immediate Outcomes
+- 页码：PDF第158页 / 书内第153页
+- 中文要点：FATF互评估是成员国之间的同行评审，生成分析反洗钱程序及其有效性的详细报告。
+- 英文原文：FATF mutual evaluations are peer reviews between FATF member jurisdictions that result in thorough reports that analyze AML procedures and their effectiveness.
+
+### `v7u_N001334`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > Financial Action Task Force
+- 页码：PDF第151页 / 书内第146页
+- 中文要点：FATF通过定期互评估审查成员国合规情况
+- 英文原文：To assess member jurisdictions’ compliance with the Recommendations, FATF conducts periodic mutual evaluations through formal reviews by AML/CFT authorities from other jurisdictions.
+
+### `v7u_N001382`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF 11 Immediate Outcomes
+- 页码：PDF第155页 / 书内第150页
+- 中文要点：FATF互评估报告关注技术合规性和反洗钱体系有效性两大领域。
+- 英文原文：Mutual evaluation reports of member jurisdictions focus on two areas: technical compliance with the FATF Recommendations and the effectiveness of the jurisdiction's overall program.
+
+### `v7u_N001383`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF 11 Immediate Outcomes
+- 页码：PDF第155页 / 书内第150页
+- 中文要点：FATF使用11项直接目标衡量和评级有效性，每项评级分为低、中、显著或高。
+- 英文原文：FATF measures and rates effectiveness using 11 Immediate Outcomes (IOs), with each IO receiving an effectiveness rating of low, moderate, substantial, or high.
+
+### `v7u_N001521`
+
+- 用于：易错提醒
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第170页 / 书内第165页
+- 中文要点：巴塞尔银行监管委员会（BCBS）由G-10国家于1974年成立，是全球银行监管的主要标准制定者。
+- 英文原文：The Basel Committee on Banking Supervision (BCBS) was established by the G-10 countries in 1974 as the primary global standard setter for bank regulation and as a forum for global cooperation on banking supervision.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+金融行动特别工作组(FATF)通过设立专门的 评估委员会,对各国的反洗钱和反恐怖融资制度 进行全面评估,衡量其成效.选项A金融行动特 别工作组评估委员会正是这一机制的体现.其他 选项如内部审计系列工作后报告(B)、巴塞尔 委员会(C)和相互评估(D)虽与金融监管相 关,但并非FATF衡量反洗钱和反恐怖融资工作 成效的直接方式. 会食食
+
+- 英文参考答案：D
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A，英文=D
+- 盲判与题库最终参考答案冲突：盲判=D，题库最终=A

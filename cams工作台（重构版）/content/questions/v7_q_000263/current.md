@@ -1,0 +1,79 @@
+# v7_q_000263
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]一位居住在被列入欧盟高风险第三国名单的A国的富人代理人,找到欧盟成员国B国的一位公证人.该代理人希望尽快完成其委托人通过一家离岸公司近期在拍卖会上购得的资产的处置.代理人还持有由欧盟成员国C国一家知名律师事务所出具的授权委托书,授权其代表离岸公司行事.代理人要求公证人尽快办理,无需特别关注由此交易产生的相关费用或税款.公证人注意到拟议的转让价格远低于拍卖会上的成交价,但代理人不愿讨论此事,并声称这不在授权委托书的授权范围内.公证员应考虑哪些危险信号？(选择两项)
+
+英文题干：An agent of a wealthy individual residing in Country A, which is on the EU list of high-risk third jurisdictions, approaches a notary in Country B, which is in the EU. The agent wants to complete a disposal of assets recently acquired at auction by the wealthy individual through an offshore company. The agent also has a power of attorney to act on behalf of the offshore company, issued by a respectable law firm from Country C, which is also in the EU. The agent asks the notary to proceed with the disposal as quickly as possible without paying any specific attention to related costs or taxes to be paid as a result of this transaction. The notary notices the intended transfer price is significantly lower than the one recorded at auction, but the agent does not want to discuss this matter and claims that it is not covered by the power of attorney. Which red flags should the notary consider? (Select two.)
+
+选项：
+
+- A. 该代理人要求以低于近期收购价的价格处置资产.
+  English: The agent requests disposal of the assets at a price below the recent acquisition price.
+- B. 通过拍卖获得的资产被登记在一家离岸公司的名下
+  English: The assets acquired through auction were registered in the name of an offshore company.
+- C. 该代理人代表一名居住在欧盟高风险第三国名单所列司法管辖区的人士行事
+  English: The agent represents a person residing in a jurisdiction on the EU list of high-risk third countries.
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+
+识别高价值资产交易中价格操纵的危险信号
+
+## 【核心解析】
+
+在高价值资产交易中，犯罪分子可能抬高或压低资产价值，以操纵交易并掩盖资金的真实性质（P129）。题干显示，拟议转让价显著低于拍卖成交价，代理人又拒绝解释价差；这直接对应A所述的低价处置红旗。题干还明确说明委托人居住在欧盟列出的高风险第三国。教材将来自高风险或不合作司法管辖区的买家视为额外洗钱风险（P122），因此C也是独立的地理风险信号。综合交易行为和客户地理背景，应选择A、C。
+
+教材原句："Criminals inflate or deflate the asset’s value to manipulate financial transactions and obscure the true nature of the funds involved."（P129）
+
+## 【错误项分析】
+
+- **B 不如A、C直接**：离岸公司可能用于遮蔽所有权，但“资产登记在离岸公司名下”本身没有说明所有权结构为何不透明、是否缺乏合理商业理由。与题干明确的异常低价和高风险居住地相比，B需要额外事实才能达到同等红旗强度（P122、P129）。
+
+## 【易错提醒】
+
+本题同时考查交易异常和地理风险。低于近期成交价的处置属于估值操纵线索（P129）；来自高风险司法管辖区属于客户固有风险线索（P122）；离岸公司只有在伴随不透明所有权或缺乏合理商业理由时，才更接近直接红旗。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001146`、`v7u_N001101`
+
+### `v7u_N001146`
+
+- 用于：核心解析、易错提醒
+- 章节：High-risk business sectors > High-value asset risks
+- 页码：PDF第134页 / 书内第129页
+- 中文要点：犯罪分子抬高或压低资产价值以操纵金融交易并掩盖资金真实性质
+- 英文原文：Criminals inflate or deflate the asset’s value to manipulate financial transactions and obscure the true nature of the funds involved.
+
+### `v7u_N001101`
+
+- 用于：核心解析、选项C
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：来自高风险或不合作司法管辖区、缺乏当地存在或合理购买理由的买家构成额外洗钱风险。
+- 英文原文：A buyer from a high-risk or uncooperative jurisdiction, one lacking an established local presence or legitimate reason for purchasing property, poses an additional risk.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+选项A中,代理人要求以远低于近期收购价的价 格处置资产,存在资产价值被低估、可能用于洗 钱的风险,是危险信号.选项C里,代理人代表 居住在欧盟高风险司法管辖区名单上国家的个人 行事,该国被列为高风险,与洗钱和恐怖融资风 险关联度高,也是危险信号.而选项B中资产登 记在离岸公司名下,本身不一定是危险信号;选 项D授权委托书由不同欧盟国家律师事务所出 具,也不直接表明存在洗钱等风险.所以应选 AC.易错提醒:注意高风险国家、异常交易价 格等关键因素. 源
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+ider?(SelectTwo) Theagentrequestedadisposalofass etsatalowerpricethanrecentlyacqui red. Theassetsacquiredthroughanauctio B nwereputinthenameofanoffshore company Theagentactedonbehalfofanindivid ualresidinginacountrywhichisonth eEU'slistofHigh-riskjurisdictions Thepowerofattorneywasissuedbya lawfirminadifferentEUcountryfrom D wheretheTransactiontookplace. 正确答案AC您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

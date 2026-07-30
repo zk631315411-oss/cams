@@ -1,0 +1,98 @@
+# v7_q_000125
+
+教材章节：未映射
+
+题型：single
+
+题干：根据埃格蒙特集团原则，金融情报机构（FIU）之间的信息交换应遵循以下原则：
+
+英文题干：Under the Egmont Group Principles, information exchange among financial intelligence units (FIUs) should be conducted:
+
+选项：
+
+- A. 不要求在信息使用方式上获得对等安排
+  English: Without the expectation of reciprocity on how the information will be used
+- B. 仅当外国金融情报机构的地位与执法相关时
+  English: Only if the status of the foreign FIU is related to law enforcement
+- C. 自由地、自发地，并应请求，在互惠的基础上
+  English: Freely, spontaneously, and upon request, on the basis of reciprocity
+- D. 对所提供的财务和行政信息数量设定限制
+  English: With set limits on the amount of financial and administrative information provided
+
+## 【AI答案】
+
+C
+
+## 【考点】
+
+埃格蒙特原则下FIU信息交换的「自发、应请求、互惠」三要素
+
+## 【核心解析】
+
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间合作与情报共享（P167）。根据FATF标准及埃格蒙特集团原则，FIU应**自发地或应请求**（spontaneously or on request）相互传播金融情报（P231）。
+
+选项C中的「自发地，并应请求」与P231的措辞直接吻合：spontaneously对应主动分享，upon request对应应请求提供。B项把交换资格限定为执法型FIU，D项预设固定数量限制，都与FIU之间开展合作和情报共享的原则不符；A项也没有完整体现题干所问的信息交换方式。因此，在给定选项中C最合适。需要注意，本题所引教材原句直接支持的是「自发或应请求相互传播」，并未在该句中展开「自由地」和「互惠」的具体条件；这些表述应结合完整的埃格蒙特信息交换原则理解。
+
+教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
+
+## 【错误项分析】
+
+- **A 错误（教材定义应用）｜概念混淆**：选项A只是否定对信息使用方式的互惠期待，没有说明教材直接强调的两种交换方式，即FIU可以主动传播信息，也可以应请求提供信息（P231）。它没有完整回答题干所问的信息交换原则。
+- **B 错误（教材直接依据）｜范围或程度偏差**：埃格蒙特集团原则未将信息交换限定于对方FIU的地位与执法相关。P167明确埃格蒙特集团的成员是各国FIU，无论其在国内属于行政型、执法型还是司法型，均可参与信息交换与合作，不以执法地位为前置条件。
+- **D 错误（教材定义应用）｜概念混淆**：P231要求FIU可以主动或应请求传播金融情报，并未把信息交换方式定义为预先设定固定数量上限。实际共享范围仍应受目的、保密、授权和适用规则约束，但D项所述固定数量限制不是该原则的核心内容。
+
+## 【易错提醒】
+
+信息交换中的「互惠」不等于交易式报偿。判断本题时，先抓住教材直接给出的两种方式：FIU可以主动分享，也可以应请求提供；同时，具体信息的使用仍须遵守保密、授权和目的限制。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002258`
+
+### `v7u_N001549`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N002258`
+
+- 用于：核心解析
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+## 【外部权威依据】
+
+> 核心权威文件：埃格蒙特集团《金融情报机构之间信息交换原则》
+
+### `Egmont Group Principles for Information Exchange Between Financial Intelligence Units`
+
+- 用于：核心解析、选项A、选项B、选项D、易错提醒
+- 发布机构：Egmont Group of Financial Intelligence Units
+- 版本：2025年7月修订版（原文件于2013年7月批准）
+- 页码：PDF第5页
+- 条款：第11条、第13条、第15条
+- 官方资源页：[Egmont Group Principles for Information Exchange Between Financial Intelligence Units](https://egmontgroup.org/egmont-resources/egmont-group-of-financial-intelligence-units-principles-for-information-exchange-between-financial-intelligence-units/)
+- 官方PDF：[Principles for Information Exchange Between Financial Intelligence Units（2025年7月修订版）](https://egmontgroup.org/wp-content/uploads/2022/07/EG-Principles-for-Information-Exchange-Revised-July-2025.pdf)
+- 第11条原文：FIUs should exchange information with foreign FIUs, regardless of their status; be it administrative, law enforcement, judicial or other.
+- 第13条原文：FIUs should exchange information freely, spontaneously and upon request on the basis of reciprocity and mutual assistance.
+- 第15条原文：To conduct a proper analysis, FIUs should have access to the widest possible range of financial, administrative and law enforcement information.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C
+- 中文参考答案：C
+
+### 中文参考解析
+
+埃格蒙特集团是FIU的国际合作网络，促进会员间合作与情报共享。根据埃格蒙特集团原则，FIU间信息交换应自由、自发、应请求并在互惠基础上进行。选项A错误，因其否认互惠基础；选项B错误，因交换不限于执法型FIU；选项D错误，因原则鼓励广泛共享而非设限。故答案为C。
+
+- 英文参考答案：C
+
+### 英文参考解析
+
+The Egmont Group is an international network of FIUs that facilitates cooperation and intelligence sharing among its members. Under the Egmont Group Principles, information exchange among FIUs should be conducted freely, spontaneously, and upon request, on the basis of reciprocity. Option A is incorrect as it denies the reciprocal basis of exchange. Option B is incorrect as exchange is not limited to law-enforcement-type FIUs. Option D is incorrect as the Principles encourage broad sharing rather than setting limits. Therefore, C is correct.

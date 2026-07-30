@@ -1,0 +1,39 @@
+# v7_q_000385
+
+教材章节：未映射
+
+题型：multiple
+
+题干：在获取客户数据时,以下哪些可能是与金融犯罪相关的危险信号？(选择三项.)
+
+英文题干：Which of the following are potential financial crime-related red flags when obtaining client data? (Choose three.)
+
+选项：
+
+- A. 一位客户经常比要求时间早很多提交财务报表，显得过于急切
+  English: A client frequently submits financial statements much earlier than required, appearing overly eager
+- B. 客户坚持使用个人银行账户进行商业交易，尽管已被告知不应如此
+  English: A client insists on using a personal bank account for business transactions despite being advised otherwise
+- C. 新客户倾向于尽量减少直接交流，主要依赖间接沟通方式，称其更方便或因时间限制所致
+  English: A new client shows a preference for minimal direct interaction and relies primarily on indirect communication methods, citing convenience or time constraints
+- D. 该客户是一家上市公司，且业务非常多元化
+  English: The client is a publicly listed company with highly diversified operations
+- E. 最终受益所有权不明确
+  English: Ultimate beneficial ownership is unclear
+
+## 【AI答案】
+
+B、C、E
+
+## 【考点】
+识别客户数据收集阶段的账户用途、沟通方式和 UBO 红旗。
+## 【核心解析】
+B项中，客户坚持用个人账户处理商业交易，说明账户用途与实际业务不一致；C项中，新客户尽量减少直接交流、依赖间接沟通，可能反映隐藏身份或地点的意图；E项所述最终受益所有权不明确，则直接对应复杂或不透明的所有权结构（P99）。A项只表现为提前提交财务报表，在没有其他异常背景时可以由工作习惯或办事效率解释；D项所述上市和业务多元化本身也不构成红旗。
+## 【错误项分析】
+- **A**：提前提交文件可能是工作习惯或效率行为，题干没有其他异常事实支持金融犯罪推断。
+- **D**：上市和业务多元化只有在叠加高风险行业、复杂结构或异常交易时才需强化关注。
+## 【易错提醒】
+不要把「看起来反常」直接等同于红旗；应重点判断行为是否反映账户用途错配、身份隐藏或最终受益所有权不透明（P99）。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N001127`；页码：P99、P130、P312。

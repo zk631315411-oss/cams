@@ -1,0 +1,117 @@
+# v7_q_000266
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[洗钱和恐怖融资的风险及方法]在恐怖主义融资的背景下,以下哪两项可能是非营利组织(NPO)被滥用的潜在迹象？(选择两项.)
+
+英文题干：In the context of terrorist financing, which of the following are potential indicators of the abuse of non-profit organizations (NPOs)? (Choose two.)
+
+选项：
+
+- A. 参与社区发展和人道主义援助项目
+  English: Involvement in community development and humanitarian aid projects.
+- B. 来自匿名来源的大额且无法说明来源的现金捐赠
+  English: Large and unaccounted cash donations from anonymous sources.
+- C. 在监管有限的高风险司法管辖区开展业务
+  English: Operating in high-risk jurisdictions with limited oversight.
+- D. 领导层和使命宣言频繁变化
+  English: Frequent changes in leadership and mission statements.
+- E. 财务报告和治理实践高度透明
+  English: Extensive transparency in financial reporting and governance practices.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+
+识别慈善机构和非营利组织被恐怖融资滥用的风险特征
+
+## 【核心解析】
+
+教材明确指出，慈善机构和非政府组织可能获得来自未知或未披露来源的大量资金，并具有现金密集型特征；同时，这类组织往往在恐怖活动暴露区域附近开展活动，且可能处于监管很少或几乎没有监管的环境（P134）。教材进一步说明，恐怖组织曾利用合法慈善机构和非政府组织为非法活动筹资（P135）。因此，来自匿名来源的大额且无法说明来源的现金捐赠（B），以及在监管有限的高风险司法管辖区开展业务（C），均属于需要关注的潜在滥用迹象。
+
+教材原句："Having access to considerable funds from unknown or undisclosed sources"；"Often being subject to little or no regulation or having few obstacles to their creation"（P134）。
+
+## 【错误项分析】
+
+- **A 错误**：教材说明慈善机构和非政府组织本来就承担多种服务和人道主义职能（P134）。参与社区发展或人道主义援助本身属于正常使命，不能单独作为被恐怖融资滥用的迹象。
+- **D 错误**：领导层或使命宣言频繁变化本身并不是该类组织被滥用的典型指标，不能仅凭组织变化推定恐怖融资风险。
+- **E 错误**：高度透明的财务报告和治理实践有助于验证组织的持续合法性，风险方向与匿名资金、现金密集和监管薄弱相反。
+
+## 【易错提醒】
+
+慈善或人道主义活动本身不是红旗信号（P134）。应关注与正常公益使命叠加的资金和地域特征，例如未知来源的大额现金、恐怖活动暴露区域以及监管薄弱（P134-P135）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001218`
+
+### `v7u_N001210`
+
+- 用于：选项A
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：慈善机构和非政府组织提供多种服务和人道主义职能。
+- 英文原文：Similar to charities, they provide a variety of services and humanitarian functions.
+
+### `v7u_N001218`
+
+- 用于：核心解析、选项B
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：慈善机构和非政府组织可从未知或未披露来源获取大量资金。
+- 英文原文：Having access to considerable funds from unknown or undisclosed sources
+
+### `v7u_N001219`
+
+- 用于：核心解析、选项B
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：慈善机构和非政府组织可能具有现金密集型特征。
+- 英文原文：Being cash-intensive
+
+### `v7u_N001220`
+
+- 用于：核心解析、选项C
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：慈善机构和非政府组织通常位于或邻近恐怖活动暴露区域。
+- 英文原文：Often being in or near areas exposed to terrorist activity
+
+### `v7u_N001221`
+
+- 用于：核心解析、选项C
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第139页 / 书内第134页
+- 中文要点：该类组织可能受到很少或没有监管，设立障碍也较少。
+- 英文原文：Often being subject to little or no regulation or having few obstacles to their creation
+
+### `v7u_N001222`
+
+- 用于：核心解析
+- 章节：High-risk business sectors > Charity and NGO risks
+- 页码：PDF第140页 / 书内第135页
+- 中文要点：恐怖组织曾利用合法慈善机构和非政府组织为非法活动筹资。
+- 英文原文：Although most charities and NGOs are legitimate, terrorist organizations have used them as vehicles to fund their illicit activities.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+在恐怖主义融资背景下,非营利组织被滥用的潜 在迹象,关键在于识别异常资金流动和组织运营 征.选项C在监管有限的高风险司法管辖区开展 业务"则涉及地理风险,因监管薄弱地区易被利用 进行资金转移.其他选项如A(社区发展项 目)、D(管理层变动)、E(财务透明度高) 均不直接指向恐怖融资风险.因此,正确答案为 B、C. 来 源
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+在恐怖融资背景下,非营利组织被滥用的潜在迹 选项B中,大量无法解释的匿名现金捐赠,直接 选项C中,在高风险且监管薄弱地区运作,缺乏 外部监督,为恐怖组织渗透提供便利.选项A的 社区发展属正常活动,选项D的频繁变动可能反 映管理问题但非直接关联,选项E的透明性反而 是合规表现.因此,选择BC.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

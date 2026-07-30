@@ -1,0 +1,75 @@
+# v7_q_000066
+
+教材章节：未映射
+
+题型：single
+
+题干：联合国安理会的制裁旨在：
+
+英文题干：The United Nations Security Council's sanctions are intended to be:
+
+选项：
+
+- A. 包罗万象且广泛，必要时包括使用武力
+  English: Encompassing and broad, including the use of force if necessary
+- B. 设计用于维护和恢复国际和平与安全
+  English: Designed to maintain and restore international peace and security
+- C. 旨在为一组国家带来经济利益
+  English: Indefinite to produce economic benefit for a group of states
+- D. 惩罚性措施以影响外国政府改变其行为
+  English: Punitive to influence foreign governments to change their behavior
+
+## 【AI答案】
+
+B
+
+## 【考点】
+
+联合国安理会制裁的目的
+
+## 【核心解析】
+
+教材明确记载，联合国依据《联合国宪章》第七章第41条使用制裁，以促进国际和平与安全（P206）。英文原文为「The UN uses sanctions to promote international peace and security」。题干询问联合国安理会制裁的「意图」或根本目的，选项B「设计用于维护和恢复国际和平与安全」与此直接对应。「维护」与「恢复」国际和平与安全是对「促进」国际和平与安全这一终极目标的具体化表述，二者在本质上完全吻合。因此，B项正确揭示了联合国制裁的宗旨。
+
+教材原句："The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter."
+
+## 【错误项分析】
+
+- **A 错误（教材直接依据）｜范围或程度偏差**：教材指出联合国制裁的法律依据是《联合国宪章》第七章第41条（P206），该条款通常不涉及武力，而涉及非武力措施，题干描述与教材对联合国制裁的界定偏差较大。
+- **C 错误（教材直接依据）｜概念混淆**：制裁的根本目的是为了维护和平与安全，而非为一组国家创造经济利益。教材中也没有任何表述将获取经济利益与联合国制裁的目标联系起来。
+- **D 错误（教材直接依据）｜概念混淆**：将制裁目的描述为「惩罚性措施以影响外国政府」更接近一些国家单边制裁的特征。相比之下，教材对联合国制裁的定位是促进国际和平与安全（P206），而非单纯的惩罚或改变他国行为。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001980`
+
+### `v7u_N001980`
+
+- 用于：核心解析、选项A、选项C、选项D
+- 章节：Other AFC regulations that impact organizations > Major sanctions regimes
+- 页码：PDF第211页 / 书内第206页
+- 中文要点：联合国依据《联合国宪章》第七章第41条使用制裁促进国际和平与安全
+- 英文原文：The UN uses sanctions to promote international peace and security. This power is based on Article 41 of Chapter VII of the UN Charter.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B
+- 中文参考答案：B
+
+### 中文参考解析
+
+暂无解析
+
+- 英文参考答案：B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,114 @@
+# v7_q_000272
+
+教材章节：未映射
+
+题型：multiple
+
+题干：评估金融领域内某一产品相关的洗钱风险包括评估以下方面:(选择两项.)
+
+英文题干：Assessing the money laundering risk related to a product within the financial sector includes assessing the: (Select Two.)
+
+选项：
+
+- A. 治理安排
+  English: Governance arrangements
+- B. 产品的复杂性
+  English: Complexity of the product
+- C. 上次审计的结果
+  English: Results of the last audit
+- D. 企业的财务状况
+  English: Financial status of the business
+
+## 【AI答案】
+
+A、B
+
+## 【考点】
+
+产品洗钱风险评估的核心维度
+
+## 【核心解析】
+
+产品风险评估用于识别金融产品相关的洗钱风险，并分析犯罪分子可能如何利用产品清洗非法资金（P286）。B项所述产品复杂性属于产品本身的风险特征（P275）；A项所述治理安排则影响机构能否通过适当的系统、监督和控制管理产品风险（P51、P166、P294）。两项分别对应产品的固有特征和相关控制环境。
+
+教材原句："To determine product risk, consider the complexity, potential misuse, or attractiveness of the product for illicit activities."（P275）
+
+## 【错误项分析】
+
+- **C 不选（阶段不匹配）**：上次审计结果可以辅助判断既有控制是否有效，但它反映的是审查或保证活动的结果，不是产品本身的风险特征，也不能替代对当前治理和产品复杂性的评估。
+- **D 不选（主体错配）**：企业财务状况在教材中属于客户或交易对手的并购尽调信息，不是金融产品本身的风险特征或产品控制环境。
+
+## 【易错提醒】
+
+产品风险看产品自身的「复杂性」「潜在滥用可能性」「对非法活动的吸引力」（P275）；客户风险看客户的行业、交易量、腐败指数、地理位置等。两者评估对象不同，一个是产品特征，一个是客户画像。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000398`
+
+### `v7u_N000398`
+
+- 用于：核心解析、选项A（产品评估与控制相称性的推理基础）
+- 章节：Money Laundering Risks in Financial Services > Case example: A new corporate banking role
+- 页码：PDF第56页 / 书内第51页
+- 中文要点：应评估现有系统和控制是否与银行面临的洗钱和恐怖融资特定风险相称。
+- 英文原文：She will then need to assess the systems and controls that are in place to determine if they are commensurate with the specific risks of money laundering and terrorist financing that the bank faces.
+
+### `v7u_N001543`
+
+- 用于：选项A（治理安排属于金融机构风险分析和控制框架的推理基础）
+- 章节：AFC guidance from leading international organizations > Basel Committee on Banking Supervision AFC guidance
+- 页码：PDF第171页 / 书内第166页
+- 中文要点：倡导银行实施风险分析和治理安排。
+- 英文原文：Advocate for banks to implement risk analysis and governance arrangements.
+
+### `v7u_N002930`
+
+- 用于：选项A（说明治理委员会在AFC框架中的监督和问责功能）
+- 章节：Governance and oversight > Governance committees and their functions
+- 页码：PDF第299页 / 书内第294页
+- 中文要点：治理委员会在金融犯罪合规框架中提供战略监督、决策权和问责。
+- 英文原文：Governance committees provide strategic oversight, decision-making authority, and accountability in an organization’s financial crime compliance framework.
+
+### `v7u_N002849`
+
+- 用于：核心解析、选项C、选项D
+- 章节：Customer risk assessment versus enterprise-wide risk assessment
+- 页码：PDF第291页 / 书内第286页
+- 中文要点：产品风险评估帮助识别金融产品相关的洗钱风险并制定缓释措施
+- 英文原文：A product risk assessment helps organizations identify and understand the risks and threats associated with their financial products. It assesses how criminals might use these products to launder illicit funds. After identifying and assessing these risks and threats, organizations can implement measures to mitigate them.
+
+### `v7u_N002747`
+
+- 用于：核心解析、选项A、选项C、选项D、易错提醒
+- 章节：Enterprise-wide risk assessment > Determining inherent risks
+- 页码：PDF第280页 / 书内第275页
+- 中文要点：产品风险评估考虑复杂性、潜在滥用或对非法活动的吸引力
+- 英文原文：To determine product risk, consider the complexity, potential misuse, or attractiveness of the product for illicit activities.
+
+### `v7u_N002851`
+
+- 用于：选项C、选项D
+- 章节：未标注
+- 页码：PDF第291页 / 书内第286页
+- 中文要点：固有产品特征包括跨境支付、匿名性、远程访问等风险属性
+- 英文原文：Inherent product characteristics: Features or attributes such as crossborder wire payments, third-party payments, anonymity, remote access, third-party access, unusual complexity and structure, minimal transaction oversight, and cash-intensive nature.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B
+- 中文参考答案：A、B
+
+### 中文参考解析
+
+评估金融领域内某一产品相关的洗钱风险，重点应评估产品本身及其治理控制。治理安排(A)反映产品审批、监督和控制机制；产品复杂性(B)会影响客户理解、资金流向透明度和被滥用风险。上次审计的结果(C)和企业的财务状况(D)更多属于机构层面或经营状况，不是该产品风险本身的核心评估项。因此，正确答案为AB。
+
+- 英文参考答案：A、B
+
+### 英文参考解析
+
+未提供。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

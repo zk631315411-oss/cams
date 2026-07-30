@@ -1,5 +1,7 @@
 # CAMS v7 考点绑定工作区
 
+> 2026-07-30 交接口径：本目录的正式成果是 4,973 个冻结 unit、检索/KG 底座、395 题证据与解析及 63 个软件小节。Phase 5-8/P7 属于未完成实验；旧前端发布不再是正式主线。出现冲突时以 `选项证据与解析生成/README.md` 和仓库根 `项目交接/正式资产与SOP索引.md` 为准。
+
 本目录用于承接 CAMS v7 教材下的"考点 - 题目 - 知识单元"绑定工作。v7 教材本质上来自英文教材，并带有中英对照内容；中文题目、中文教研表达和英文原始概念之间可能存在翻译词不一致，因此 v7 不能简单沿用 v6 的"中文句卡直接召回"口径。
 
 ---
@@ -27,6 +29,8 @@ Phase 5-8 的设计 schema 保留在本文档"环节与产物接口规范"中，
 ## 输入资产
 
 当前已知的 v7 原始与中间资产：
+
+以下 `核心数据/` 下的五个早期源文/卡池路径已经不存在，仅作为历史记录；当前教材来源是后列 PDF、MinerU 中英文 MD 和 `work/sources/` 中的页码对齐资产。
 
 - 原始 PDF：
   `D:\守正公司工作区\cams考试\教材、答疑记录、习题与参考文献\教材原文\v7\CAMS英文版7.0（中英对照版）.pdf`
@@ -138,7 +142,7 @@ flowchart TD
     F --> G["输出 v7_q_*.md\n教研解析（考点/核心解析/\n错误项分析/易错提醒/教材依据）"]
   end
   
-  G --> H["review_check.py\n自动扫描生成复查清单\n395 题中 91 题需复核"]
+  G --> H["review_check.py\n生成阶段性复查清单\n历史统计不可作为当前验收数"]
   H --> I["人工复核 → 发布"]
 ```
 
@@ -180,7 +184,7 @@ v7 绑定过程中保留风险标记，例如：
 
 ### 质量审查
 
-`phase4_evidence/解析撰写/review_check.py` 自动扫描生成的解析，输出复查清单。全量 395 题中自动化识别 91 题需要人工复核，覆盖以下检查维度：证据引用完整性、解析逻辑一致性、拒答合理性、页码准确性。
+`phase4_evidence/解析撰写/review_check.py` 自动扫描生成的解析并输出阶段性复查清单。历史版本曾给出 91 或 148 题等不同统计，均早于后续终审，不得作为当前 395 题的最终验收数。
 
 ### DOCX 导出
 
@@ -194,9 +198,9 @@ v7 绑定过程中保留风险标记，例如：
 
 `phase4_evidence/解析撰写/export_software_explanations.py` 将解析按章节-题型重新组织，输出到 `software_export/sections/p*-ch*-h*.md`，供软件系统消费。
 
-### 前端发布工具
+### 历史前端发布工具
 
-`tools/v7_release/`（位于工作台根目录 `tools/` 下）：
+`tools/v7_release/`（位于工作台根目录 `tools/` 下）仅用于旧前端原型追溯：
 
 - `build_textbook_release.py`：构建教材发布包
 - `build_release.py`：构建前端发布包
@@ -449,14 +453,14 @@ phase4_evidence/output/
 
 | 工具 | 路径 | 说明 |
 |---|---|---|
-| review_check.py | `phase4_evidence/解析撰写/review_check.py` | 自动扫描生成复查清单，395 题中 91 题需复核 |
+| review_check.py | `phase4_evidence/解析撰写/review_check.py` | 自动扫描生成阶段性复查清单；旧统计不可作为当前验收数 |
 | quality_review.py | `phase4_evidence/质量审查/quality_review.py` | 深度质量审查 |
 | export_software_explanations.py | `phase4_evidence/解析撰写/export_software_explanations.py` | 导出为软件系统格式 |
 | md_to_docx.py | `phase4_evidence/md-to-docx/md_to_docx.py` | 中文 DOCX 导出 |
 | md_to_docx_en.py | `phase4_evidence/md-to-docx/md_to_docx_en.py` | 英文 DOCX 导出 |
 | md_to_html.py | `phase4_evidence/md-to-docx/md_to_html.py` | HTML 导出 |
 | simulate_student.py | `phase4_evidence/模拟学生/simulate_student.py` | 模拟学生测试 |
-| build_release.py | `tools/v7_release/build_release.py` | 前端发布构建 |
+| build_release.py | `tools/v7_release/build_release.py` | 历史前端原型发布构建 |
 | build_textbook_release.py | `tools/v7_release/build_textbook_release.py` | 教材发布构建 |
 
 ### Phase 5-8：未开始（设计稿，待基于 v7 盲判产物重跑）

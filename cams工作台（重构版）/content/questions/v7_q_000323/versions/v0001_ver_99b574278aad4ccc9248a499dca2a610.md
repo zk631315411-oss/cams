@@ -1,0 +1,69 @@
+# v7_q_000323
+
+教材章节：未映射
+
+题型：multiple
+
+题干：金融机构(FI)在根据内部调查独立决定是否关闭账户时,应考虑以下因素.(选择五项.)
+
+英文题干：When making an independent determination on whether to close an account based on an internal investigation, a financial institution (FI) should consider: (Select Five.)
+
+选项：
+
+- A. 声誉风险。
+  English: Reputational risk.
+- B. 客户的个人关系。
+  English: The customer's personal relationships.
+- C. 账户活动的频率。
+  English: The frequency of account activity.
+- D. 该金融机构的政策和程序。
+  English: The FI's policies and procedures.
+- E. 相关行为本身的严重程度。
+  English: The seriousness of the underlying conduct.
+- F. 与执法部门的往来信函。
+  English: Correspondence with law enforcement.
+- G. 关闭账户的法律依据。
+  English: The legal basis for closing the account.
+
+## 【AI答案】
+
+A、D、E、F、G
+
+## 【考点】
+基于风险的账户关闭决策因素。
+
+## 【核心解析】
+金融机构根据内部调查独立决定是否关闭账户时，应综合考虑声誉风险（A）、机构自身政策和程序（D）、相关行为的严重程度（E）、与执法部门的往来信函（F），以及关闭账户的法律依据（G）（P356、P358、P361-P362、P364；FATF基于风险方法指引）。
+
+这些因素分别覆盖机构风险、内部治理标准、行为性质、外部执法信息和法律授权。B客户个人关系不是客观的AML决策标准；C账户活动频率可以触发调查，但不能脱离交易性质、严重程度和法律依据单独决定关闭。因此答案为A、D、E、F、G。
+
+## 【错误项分析】
+- **B**：个人关系不应凌驾于风险评估、政策程序和法律要求之上。
+- **C**：频率是监测指标，不是独立的账户关闭结论。
+
+## 【易错提醒】
+区分“触发调查的指标”和“调查后作出关闭决定的治理与法律因素”（P356、P358、P361-P362、P364）。
+
+## 【教材原文依据】
+- 核心引用单元：`v7u_N003674`；页码：P356、P358、P361–362、P364。
+- 外部依据：FATF《Risk-Based Approach Guidance for the Banking Sector》要求金融机构依据风险评估和适用法律采取相称措施，URL：https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Risk-based-approach-banking-sector.html（访问日期：2026-07-25）。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D、E、F
+- 中文参考答案：A、D、E、F
+
+### 中文参考解析
+
+金融机构在根据内部调查独立决定是否关闭账户 时,需要综合考虑多个关键因素以确保决策的合 理性、合规性以及风险可控性.以下是对各选项 的分析:A项(声誉风险):关闭账户可能引发 客户不满或媒体关注,进而对金融机构的声誉造 成负面影响.因此,声誉风险是决策时必须考虑 的重要因素之一.B项(客户的个人关系):虽 然客户关系管理对金融机构很重要,但在决定是 否关闭账户时,客户的个人关系通常不应作为主 要考量因素.决策应基于客观的风险评估和合规 要求,而非主观的个人关系.C项(账户活动的 频率):账户活动的频率本身并不直接决定是否 应关闭账户.虽然异常频繁的账户活动可能引发 关注,但还需结合其他因素(如交易性质、金额 等)进行综合评估.因此,它不是决策时的核心 考量因素.D项(该协会的政策和程序):金融 机构通常需遵循行业协会或监管机构制定的政策 和程序.这些政策和程序为账户关闭提供了明确 的指导和标准,确保决策的合规性和一致性.E
+
+- 英文参考答案：A、B、C、D、E
+
+### 英文参考解析
+
+在决定是否关闭账户时,金融机构(FI)需综合考 虑多方面因素.首先,声誉风险( reputationalrisk)是重要考量,避免因不当 操作损害机构形象,对应选项A.其次,应遵循 金融机构自身的政策和程序( theFl'spoliciesandprocedures),确保决 策合规性,对应选项D.同时,还需评估潜在行 为的严重性( theseriousnessoftheunderlyingcond )、与执法部门的沟通情况( correspondencewithlawenforcement) 以及关闭账户的法律依据( thelegalbasisforclosingtheaccount ).但根据题目要求仅需选择五项中的两项,故正 确答案为AD. 度 难 食★★
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,D,E,F，英文=A,B,C,D,E
+- 盲判与题库最终参考答案冲突：盲判=A,D,E,F,G，题库最终=A,D,E,F

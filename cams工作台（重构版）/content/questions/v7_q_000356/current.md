@@ -1,0 +1,126 @@
+# v7_q_000356
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些受监管实体或守门人可能被要求进行客户尽职调查(CDD)?(选择四项.)
+
+英文题干：Which obliged entities or gatekeepers may be required to perform customer due diligence (CDD)? (Select Four.)
+
+选项：
+
+- A. 赌场保安人员
+  English: Casino security guards
+- B. 市法院法官
+  English: City court judges
+- C. 参与房地产交易的公证员
+  English: Notaries involved in real estate transactions
+- D. 贵金属和宝石经销商
+  English: Dealers in precious metals and stones
+- E. 房地产经纪人
+  English: Real estate agents
+- F. 会计和审计员
+  English: Accountants and auditors
+
+## 【AI答案】
+
+C、D、E、F
+
+## 【考点】
+
+识别DNFBP的范畴及CDD义务主体
+
+## 【核心解析】
+
+受监管实体（obliged entities）指依法承担反洗钱合规义务的机构，包括金融机构和指定非金融行业与职业（DNFBPs），它们必须进行客户尽职调查（P203）。DNFBP常被称为“守门人”（gatekeepers），充当犯罪分子与金融系统之间的中介（P119）。C项公证员属于法律专业人士；D项贵金属和宝石经销商因商品便携、易变现而面临较高洗钱风险（P122）；E项房地产经纪人可能接触被用于隐藏所有权或资金来源的交易（P121）；F项会计师提供的财务服务也可能被滥用（P120）。四者均属于承担CDD义务的DNFBP范畴。
+
+教材原句："As part of their compliance obligations, all regulated entities, including financial institutions and DNFBPs, must conduct CDD and KYC."
+
+## 【错误项分析】
+
+- **A 错误｜主体不符**：赌场本身因大量现金交易属于DNFBP，但“赌场保安人员”是雇佣岗位而非受监管实体。承担CDD义务的是赌场运营实体，而非其保安人员。
+- **B 错误｜主体不符**：“法院命令”是执法机构获取信息的法律工具，法官是发出命令的一方；法官本身不属于受监管实体或DNFBP。题干要求的是执行CDD的义务主体，而非执法或司法机关。
+
+## 【易错提醒】
+
+DNFBP指从事易被洗钱利用的活动但本身非金融机构的实体，具体包括房地产经纪人、贵金属经销商、律师/公证员、会计师等（P119-P122）。赌场、在线博彩运营商本身可能属于DNFBP，但其雇佣的保安、荷官等岗位人员不是。“守门人”指向的是实体而非受雇人员。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001958`
+
+### `v7u_N001958`
+
+- 用于：核心解析、选项A、选项B
+- 章节：US AML/CFT regulatory landscape > United Arab Emirates AML regulations
+- 页码：PDF第208页 / 书内第203页
+- 中文要点：所有受监管实体（包括金融机构和指定非金融行业与职业）必须进行客户尽职调查和了解你的客户。
+- 英文原文：As part of their compliance obligations, all regulated entities, including financial institutions and DNFBPs, must conduct CDD and KYC.
+
+### `v7u_N001060`
+
+- 用于：核心解析
+- 章节：未标注
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：DNFBP常被称为“看门人”，充当犯罪分子与金融系统之间的中介。
+- 英文原文：Often referred to as "gatekeepers," these businesses act as intermediaries between criminals and the financial system.
+
+### `v7u_N001107`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Real estate sector risks
+- 页码：PDF第127页 / 书内第122页
+- 中文要点：律师和公证人可确认产权、合同有效性及资金来源合法性
+- 英文原文：Lawyers and notaries can confirm the legitimacy of property ownership, ensure the validity of contracts, and examine the legality of the source of funds. They review transaction structures and the legitimacy of corporate buyers.
+
+### `v7u_N001063`
+
+- 用于：选项A、选项B
+- 章节：Money laundering risks associated with DNFBPs > Risks of banking designated nonfinancial businesses and professions
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：房地产经纪人可能通过虚增房产价值或复杂所有权结构洗钱
+- 英文原文：Real estate agents: Real estate transactions can be used to launder money by inflating property values or creating complex ownership structures that obscure true ownership. The risk increases with international buyers and high-value assets, especially in markets with limited regulatory oversight.
+
+### `v7u_N001069`
+
+- 用于：选项A、选项B
+- 章节：未标注
+- 页码：PDF第125页 / 书内第120页
+- 中文要点：会计师可能无意中通过验证资金来源协助洗钱的处置阶段和离析阶段
+- 英文原文：Accountants: Accountants might inadvertently assist criminals in making their illicit transactions appear legitimate by verifying the source of funds for a transaction, supporting the placement of illicit funds, and facilitating the layering stage of money laundering.
+
+### `v7u_N001059`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：DNFBP的定义：非金融机构但从事易受洗钱和恐怖融资风险的活动。
+- 英文原文：DNFBPs are entities that, while not primarily financial institutions, engage in activities that are at risk for money laundering and terrorist financing.
+
+### `v7u_N001062`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第124页 / 书内第119页
+- 中文要点：列举DNFBP类型及其固有洗钱风险的列表导语
+- 英文原文：Examples of DNFBPs and their inherent money laundering risks include:
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、D、E、F
+- 中文参考答案：C、D、E、F
+
+### 中文参考解析
+
+客户尽职调查(CDD)是反洗钱和打击资助恐怖 主义合规计划中的关键环节.分析选项:A选项 赌场保安人员,通常不直接参与金融交易,非主 要尽职调查对象;B选项市法院法官,负责司法 审判,与金融交易尽职调查无直接关联;C选项 参与房地产交易的公证员,涉及大额资金流动, 需进行尽职调查;D选项贵金属和宝石经销商, 易成为洗钱渠道,需严格尽职调查;E选项房地 产经纪人,处理房产交易,需确认客户身份及资 但提供服务时可能涉及资金流动,需尽职调查. 综上,选CDEF. 度 ★吉食 难
+
+- 英文参考答案：C、D、E、F
+
+### 英文参考解析
+
+在反洗钱和反恐怖融资(AML/CFT)合规计划 中,需履行客户尽职调查(CDD)的义务主体通 常为参与高风险交易或金融活动的专业机构.根 据国际标准(如FATF建议),房地产交易中的 公证人(C)、贵金属和宝石交易商(D) *房地产经纪人(E)*及*会计师和审计师 (F)均属于需执行CDD的“守门人”,因其业务 易被用于洗钱或恐怖融资.而赌场保安(A)和 法院法官(B)不直接参与客户资金或资产管 理,通常无需履行CDD义务.易错点在于混淆 “业务性质”与“职业身份”,需重点关注是否涉及资 金流动或资产处置.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,113 @@
+# v7_q_000329
+
+教材章节：未映射
+
+题型：multiple
+
+题干：一家银行的反洗钱分析师正在调查由交易监控警报触发的案件.哪些情况可能会使分析师怀疑某个案例涉及恐怖主义融资？(选择两项.)
+
+英文题干：An AML analyst at a bank is investigating cases triggered by transaction monitoring alerts. Which circumstances might cause the analyst to suspect a case involves terrorist financing? (Select Two.)
+
+选项：
+
+- A. 涉及无互联网存在的非营利组织的交易。
+  English: Transactions involving non-profit organizations with no internet presence.
+- B. 发送给有详细项目说明的众筹活动的小额捐款。
+  English: Small-dollar payments sent to crowdfunding initiatives with detailed descriptions of the project being financed.
+- C. 涉及低于报告门槛的结构性货币存款的交易，以逃避纳税。
+  English: Transactions involving structured currency deposits below the reporting threshold to avoid paying taxes.
+- D. 向无过往记录的高风险司法管辖区汇出的小额款项。
+  English: Small-dollar payments sent to higher-risk jurisdictions with no prior history.
+- E. 涉及国内非营利组织向来自高风险国家的难民提供慈善援助的交易。
+  English: Transactions involving domestic non-profit organizations providing charitable assistance to refugees from high-risk countries.
+
+## 【AI答案】
+
+A、D
+
+> **需人工复核**
+>
+> - 盲判校验未通过
+
+## 【考点】
+
+区分恐怖融资与一般洗钱的资金来源和交易特征
+
+## 【核心解析】
+
+恐怖融资的资金来源与洗钱不同——它可以来自合法渠道，包括「同情恐怖组织事业的个人或实体的慈善捐款」，也可以来自非法渠道如绑架、毒品贩运（P36-P37）。这意味着判断恐怖融资嫌疑时，核心不是资金来源是否合法，而是资金去向是否可能流向恐怖组织。选项A中，非营利组织缺乏公开网络信息，透明度相对较低；结合教材对慈善机构可能被利用于掩盖非法活动的提示，在给定选项中更符合需要进一步核查的情形（P36），但该特征单独并不能证明恐怖融资。选项D中，向高风险司法管辖区汇款，直接符合教材所述可能触发进一步调查的情形（P80、P82、P329）；“无过往记录”进一步增加了核查必要性。两者在给定选项中更符合恐怖融资风险线索。
+
+教材原句："Legitimate sources may include revenue from business fronts and charitable donations from individuals or entities sympathetic to a terrorist organization's cause."（P36）
+
+## 【错误项分析】
+
+- **B 不选（透明度相对较高）**：有详细项目说明的众筹活动比匿名、信息不明的众筹项目更易核实。该事实不能完全排除风险，但在给定选项中不如A、D直接提示需要进一步调查。
+- **C 错误（犯罪目的不同）**：「以逃避纳税」明确了结构化行为的目的为逃税，而非资助恐怖活动。结构化本身可能构成金融犯罪风险，但题干给出的动机更匹配逃税或洗钱场景。
+- **E 不选（缺少异常要素）**：国内非营利组织向难民提供慈善援助可以是合法人道主义活动。题干没有说明组织不透明、资金去向异常或与受制裁对象存在联系，因此该项不如A、D具有风险指示性。
+
+## 【易错提醒】
+
+恐怖融资与洗钱的核心区分不在资金来源是否合法，而在资金去向是否支持恐怖活动。恐怖融资可使用合法慈善捐款（P36），洗钱仅涉及犯罪所得的非法资金。因此看到非营利组织时，应重点判断其透明度、运营特征和资金去向地；任何单一红旗都需要结合其他事实核实，而不能仅凭「慈善」二字排除或定性。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000250`
+
+### `v7u_N000250`
+
+- 用于：核心解析、易错提醒
+- 章节：Examples of predicate crimes > Terrorism financing
+- 页码：PDF第41页 / 书内第36页
+- 中文要点：合法来源包括商业前线收入和同情恐怖组织的个人或实体的慈善捐款
+- 英文原文：Legitimate sources may include revenue from business fronts and charitable donations from individuals or entities sympathetic to a terrorist organization's cause.
+
+### `v7u_N000731`
+
+- 用于：核心解析、选项E
+- 章节：Corporate and investment banking risks > High-risk corporate and investment banking products
+- 页码：PDF第87页 / 书内第82页
+- 中文要点：慈善机构和非政府组织（NGO）因跨境运营和资金量大，且可能涉及政治敏感人物或恐怖融资，属于高风险实体
+- 英文原文：Charities and NGOs, which often operate across borders and handle significant amounts of money. These organizations can also have increased exposure to PEPs, public officials, or be associated with groups linked to terrorist financing or sanctioned activities. Lax regulatory oversight in some jurisdictions over these types of organizations can be exploited to channel illicit funds under the cover of legitimate charitable activities.
+
+### `v7u_N003246`
+
+- 用于：核心解析
+- 章节：Transaction monitoring > Transaction monitoring versus payment screening
+- 页码：PDF第334页 / 书内第329页
+- 中文要点：大额交易、频繁转账或涉及高风险司法管辖区的交易可能触发警报。
+- 英文原文：For example, large transactions, frequent transfers, or transactions involving high-risk jurisdictions might trigger alerts for further investigation.
+
+### `v7u_N000708`
+
+- 用于：选项B
+- 章节：Corporate and investment banking risks > Fundraising risks
+- 页码：PDF第85页 / 书内第80页
+- 中文要点：众筹的去中心化和监管较少的特点可能被用于洗钱
+- 英文原文：The decentralized and less regulated nature of crowdfunding can make it an attractive avenue for money laundering, as it is often challenging to trace the sources of numerous small donations.
+
+### `v7u_N000252`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第42页 / 书内第37页
+- 中文要点：洗钱仅涉及掩盖腐败、欺诈或有组织犯罪等犯罪活动产生的非法资金
+- 英文原文：In contrast, money laundering is exclusively concerned with obscuring the illegal origins of money generated from criminal activities such as corruption, fraud, or organized crime.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、D
+- 中文参考答案：A、D
+
+### 中文参考解析
+
+试题计 原解析 恐怖主义融资常涉及向高风险地区或组织转移资 金,且行为隐蔽.A选项中,涉及无互联网存在 的非营利组织的交易,此类组织可能被恐怖组织 利用,隐蔽性强,易使分析师怀疑:D选项里 向无过往记录的高风险司法管辖区汇出小额款 项,符合恐怖融资分散、隐蔽的特点,也易引发 怀疑.B选项众筹有详细项目说明,资金用途较 明确,不太可能是恐怖融资;C选项低报门槛存 款为逃税,非恐怖融资;E选项是国内非营利组 织向高风险国家难民提供援助,属正常慈善,非 恐怖融资.易错提醒:注意恐怖融资隐蔽、分散 的特点. 度 难
+
+- 英文参考答案：A、B、E
+
+### 英文参考解析
+
+根据多个技术资料显示,EgmontGroup强调公 私合作伙伴关系(PPPS)对金融情报中心 (FIUs)具有重要作用.选项A中,PPPs有助于 克服数据保护和信息共享限制,增强情报交流能 力;选项B中,通过私营部门协作,FIUs可提升 报告质量并获取额外信息输入;选项E中,PPPs 提供灵活性,使FIUs能快速适应洗钱(ML)和 恐怖融资(TF)威胁环境的变化.选项C中减轻 执法成本负担并非EgmontGroup明确提及的核 心收益,选项D中设计共同方法属于战略层面协 作,未被列为直接优势.因此,正确答案为 ABE. 度 难
+
+### 答案冲突提示
+
+- 中英文参考答案冲突：中文=A,D，英文=A,B,E

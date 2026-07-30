@@ -1,0 +1,122 @@
+# v7_q_000268
+
+教材章节：未映射
+
+题型：multiple
+
+题干：关于使用网络分析工具确定犯罪关联，以下哪些陈述是正确的？（选择三项。）
+
+英文题干：Which statements regarding using network analysis tools to determine links to criminality are true? (Choose three.)
+
+选项：
+
+- A. 在利用网络分析数据打击洗钱和金融犯罪时，可以不顾数据保护和隐私问题，因为打击犯罪优先。
+  English: When using network analysis data to fight money laundering and financial crime, data protection and privacy can be disregarded because fighting crime takes precedence.
+- B. 网络分析工具能够高效生成相关结果，因为它们只需要有限的数据和计算能力，而且人工智能（AI）使技能水平较低的人也能迅速学会使用这些系统。
+  English: Network analysis tools are an efficient means of generating relevant results because they only need a limited amount of data and computation power and artificial intelligence (AI) allows less-skilled people to quickly learn to use these systems.
+- C. 在将人工智能（AI）与网络分析工具结合使用时，必须确保所采用的算法不会对诸如种族、性别或宗教等社会标准产生偏见。
+  English: When using artificial intelligence (AI) with network analysis tools, it must be ensured that the algorithms used are not biased towards social criteria, such as race, gender, or religion.
+- D. 网络分析通过分析网络中个体或实体之间的连接或关联，能够识别出这些个体或实体，并可用于研究各种各样的系统，例如社交网络或交通网络。
+  English: Network analysis allows for the identification of individuals or entities in a network by analyzing connections or links between them and can be used to study a wide range of systems, such as social or transportation networks.
+- E. 分析社交网络中个体之间的关系有助于识别等级制度、发现行为模式和地理移动情况，或者了解群体的组织方式。
+  English: Analyzing relationships between individuals in a social network allows for the identification of hierarchies, the detection of behaviors and geographical movements, or an understanding of how groups are organized.
+
+## 【AI答案】
+
+C、D、E
+
+## 【考点】
+
+网络分析的概念定义、能力边界及AI偏见风险
+
+## 【核心解析】
+
+网络分析通过识别和可视化数据中的关系与交互，映射个人、实体及共享属性之间的连接（P398、P342），因此D对其基本机制和适用范围的描述正确。教材还说明，网络分析可识别行为模式和隐藏关系（P342、P398）；据此分析社交关系以理解层级、行为、移动和群体组织方式，属于这一方法的合理应用，E正确。AI与网络分析结合时必须控制算法偏见，教材明确要求使用多样化数据集测试AI方案以帮助消除偏见（P331），因此C正确。
+
+## 【错误项分析】
+
+- **A 错误**：金融机构对客户数据安全和隐私负有法律义务（P209），使用网络分析不能以打击犯罪为由忽略数据保护要求。
+- **B 错误**：教材明确指出网络分析需要专业工具和专业知识，比其他金融犯罪防控技术更耗费资源（P399），与“只需有限数据和计算能力、低技能人员可迅速掌握”的表述相反。
+
+## 【易错提醒】
+
+网络分析虽强大，但资源密集且需要专业知识和工具（P399），不可误认为简单即用的技术。AI虽增强检测能力，但存在偏见与可解释性挑战（P385），不能替代人类判断。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003998`
+
+### `v7u_N003998`
+
+- 用于：核心解析
+- 章节：Technology and tools used across the customer life cycle > Behavioral and profile monitoring
+- 页码：PDF第403页 / 书内第398页
+- 中文要点：网络分析通过可视化和分析数据点之间的连接来补充行为监控和AI
+- 英文原文：Network analysis complements both behavioral monitoring and AI by visually and analytically mapping connections between data points, such as business relationships between individuals and entities or shared addresses.
+
+### `v7u_N004000`
+
+- 用于：核心解析
+- 章节：Technology and tools used across the customer life cycle > Behavioral and profile monitoring
+- 页码：PDF第403页 / 书内第398页
+- 中文要点：识别中心节点、共享受益人或账户重叠可揭示隐藏关系和交易分层策略
+- 英文原文：Identifying central nodes, shared beneficiaries, or account overlaps can uncover hidden relationships and transaction layering strategies.
+
+### `v7u_N003269`
+
+- 用于：核心解析、选项C
+- 章节：Transaction monitoring > Technology solutions for transaction monitoring
+- 页码：PDF第336页 / 书内第331页
+- 中文要点：AI解决方案必须使用多样化数据集测试，以帮助消除偏见。
+- 英文原文：These solutions must be tested with diverse data sets to help eliminate bias.
+
+### `v7u_N004002`
+
+- 用于：易错提醒
+- 章节：Technology and tools used across the customer life cycle > Behavioral and profile monitoring
+- 页码：PDF第404页 / 书内第399页
+- 中文要点：网络分析需要专业工具和专业知识，资源密集度高于其他金融犯罪防控技术
+- 英文原文：Though highly effective, network analysis often requires specialized tools and expertise, making it more resource-intensive than other AFC techniques.
+
+### `v7u_N002011`
+
+- 用于：选项A
+- 章节：Other laws and regulations that impact organizations > Data security and privacy
+- 页码：PDF第214页 / 书内第209页
+- 中文要点：金融机构对客户数据安全与隐私负有高度注意义务和法律责任。
+- 英文原文：Financial institutions have a high duty to care for—and often a legal obligation to ensure the security and privacy of—customer data.
+
+### `v7u_N003401`
+
+- 用于：核心解析、选项D、选项E
+- 章节：Transaction monitoring > Analysis of information
+- 页码：PDF第347页 / 书内第342页
+- 中文要点：网络分析可视化复杂关系和交易流，并识别行为模式。
+- 英文原文：Network analysis helps visualize complex relationships and transaction flows. It allows AFC professionals to represent connections graphically, identify behavioral patterns, and clarify complicated relationships associated with money laundering.
+
+### `v7u_N003852`
+
+- 用于：易错提醒
+- 章节：Understanding AFC technology > Artificial intelligence and machine learning
+- 页码：PDF第390页 / 书内第385页
+- 中文要点：AI在金融犯罪防控中存在幻觉、测试数据偏差和可解释性不足等局限
+- 英文原文：However, AI solutions are not perfect at mitigating financial crime. Hallucinations, bias in testing data, and lack of explainability in some AI models are some of the challenges that organizations will need to address to ensure a sustainable solution.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：C、D、E
+- 中文参考答案：C、D、E
+
+### 中文参考解析
+
+选项C正确,因AI与网络分析工具结合时,确保 算法无偏见是反洗钱合规的基本要求,避免因算 法歧视引发法律风险.选项D正确,网络分析通 过识别个体或实体间的连接关系,可应用于社交 网络、交通网络等场景的关联分析.选项E正 确,社交网络分析能揭示等级制度、行为模式及 群体组织方式,为打击资助恐怖主义提供线索. 选项A错误,数据保护和隐私问题不可忽视.选 项B错误,网络分析工具依赖大量数据和复杂算 法,且A技术门槛较高.
+
+- 英文参考答案：C、D、E
+
+### 英文参考解析
+
+网络分析工具在反洗钱/打击恐怖融资 (AML/CFT)中的应用需兼顾技术效能与合规伦 理.选项C涉及算法公平性,符合《FATF建议》 对技术应用中避免歧视的要求;D描述网络分析 的基本原理,常见于《金融犯罪执法手册》;E 列举具体分析场景,体现网络分析的实际功能 如《犯罪网络分析指南》中提到的行为模式识 别.A错误,因数据保护不可忽视(如GDPR规 定):B错误,AI工具仍需高质量数据及专业技 能支撑.C、D、E综合覆盖技术应用、合规原则 及实践价值.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

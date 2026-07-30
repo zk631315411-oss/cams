@@ -21,8 +21,8 @@ from pathlib import Path
 from openai import OpenAI
 
 _WORK = Path(__file__).resolve().parent / "work"
-_DS_API_KEY = "sk-795628e9d4584fc59545d7abac9d1209"
-_MIMO_API_KEY = "tp-cl5nzlniz5bfyk9i3wsdw88d25haf8ghdh6nccojrw1hqgc4"
+_DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+_MIMO_API_KEY = os.environ.get("MIMO_API_KEY", "")
 _TEMPERATURE = 0.0
 _MAX_TOKENS = 512
 

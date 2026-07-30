@@ -1,0 +1,114 @@
+# v7_q_000267
+
+教材章节：未映射
+
+题型：multiple
+
+题干：使用人工智能（AI）和机器学习技术进行负面媒体报道筛查，可以：（选择三项。）
+
+英文题干：Using artificial intelligence (AI) and machine learning-based techniques in adverse media screening can: (Choose three.)
+
+选项：
+
+- A. 确保所有负面媒体来源都得到全面分析，而无需人工审查
+  English: Ensure that all adverse media sources are comprehensively analyzed without the need for human review.
+- B. 通过提供一致且高度准确的分析，显著减少重复性任务产生的人为错误
+  English: Significantly reduce human errors arising from repetitive tasks by delivering consistent and highly accurate analysis.
+- C. 能够立即识别媒体文章背后的意图，从而更有效地进行风险评分
+  English: Instantly identify intent behind media articles, allowing for more effective risk scoring.
+- D. 自动识别新信息并将其与以前遇到的数据区分开来
+  English: Automate the process of identifying new information and distinguishing it from previously encountered data.
+- E. 覆盖多种语言和文字，超越人类语言能力的局限
+  English: Cover multiple languages and scripts, surpassing the limitations of human linguistics.
+
+## 【AI答案】
+
+B、D、E
+
+## 【考点】
+
+区分AI/机器学习在反洗钱应用中的能力边界与局限
+
+## 【核心解析】
+
+机器学习能够从数据和历史表现中学习，并通过模式识别改进结果（P384）；自动化筛查可以提高处理速度和一致性，降低重复工作中的人为错误（P416），因此B正确。AI支持历史分析和非结构化数据审查，能够把新内容与既有模式或历史结果比较，从而自动识别新增信息（P385），D正确。AI结合自然语言处理还能识别语言变体和翻译差异，扩大跨语言筛查覆盖（P426），E正确。
+
+## 【错误项分析】
+
+- **A 错误**：声称可以覆盖“所有”来源且“无需人工审查”，范围过大。教材要求在自动化效率与人工监督之间保持平衡，人工分析师仍须审查和验证警报（P452）。
+- **C 错误**：“立即识别文章背后的意图”超出教材所述能力。AI仍存在幻觉、偏差和可解释性不足（P385），不能把模式分析等同于对作者主观意图的确定判断。
+
+## 【易错提醒】
+
+AI可以扩大覆盖、提高一致性并辅助比较新旧信息（P385、P416、P426），但不能保证穷尽所有来源，也不能取消人工复核（P452）。题目中的“所有”“无需”“立即识别意图”等绝对措辞是关键排除点。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N004177`
+
+### `v7u_N004177`
+
+- 用于：核心解析、选项B
+- 章节：Technology for KYC > How does technology help screening?
+- 页码：PDF第421页 / 书内第416页
+- 中文要点：技术提高批量筛查的速度、效率和一致性，并降低人为错误风险。
+- 英文原文：For financial institutions with extensive customer bases or high transactional volumes, technology has improved the speed and efficiency of batch screening by processing millions of records quickly. Automated systems provide results in a fraction of the time required for manual screening. Technology also ensures consistency in batch screening, reducing the risk of human error and ensuring consistent compliance.
+
+### `v7u_N003842`
+
+- 用于：核心解析、选项D
+- 章节：Understanding AFC technology > Artificial intelligence and machine learning
+- 页码：PDF第389页 / 书内第384页
+- 中文要点：机器学习通过模式识别从数据和历史表现中学习并改进。
+- 英文原文：Machine learning is a subset of AI that enables systems to learn from data and historical performance and improve performance through pattern recognition.
+
+### `v7u_N003849`
+
+- 用于：核心解析、选项D
+- 章节：Understanding AFC technology > Artificial intelligence and machine learning
+- 页码：PDF第390页 / 书内第385页
+- 中文要点：AI支持历史分析和非结构化数据审查。
+- 英文原文：AI can enhance detection capabilities. It supports historical analysis and appraisal of unstructured data, enabling a review process that validates and sense-checks system outputs.
+
+### `v7u_N004280`
+
+- 用于：核心解析、选项E
+- 章节：Technology for KYC > Using AI for screening
+- 页码：PDF第431页 / 书内第426页
+- 中文要点：AI通过机器学习和自然语言处理识别语言变体和翻译差异。
+- 英文原文：AI, through machine learning and NLP, better recognizes linguistic variations, translations, and common name patterns, drastically reducing false positives by applying advanced matching algorithms.
+
+### `v7u_N004517`
+
+- 用于：选项A、易错提醒
+- 章节：Transaction monitoring scenario calibration testing > Technology to assist investigation
+- 页码：PDF第457页 / 书内第452页
+- 中文要点：自动化调查必须与人工监督保持平衡，人工分析师需要审查和验证警报。
+- 英文原文：Deciding the level of automation in an investigation requires balancing machine-driven efficiency with human oversight. For example, automated transaction monitoring systems flag unusual activity, but human analysts must review and validate alerts to avoid false positives.
+
+### `v7u_N003852`
+
+- 用于：选项C
+- 章节：Understanding AFC technology > Artificial intelligence and machine learning
+- 页码：PDF第390页 / 书内第385页
+- 中文要点：AI存在幻觉、测试数据偏差和可解释性不足等局限。
+- 英文原文：However, AI solutions are not perfect at mitigating financial crime. Hallucinations, bias in testing data, and lack of explainability in some AI models are some of the challenges that organizations will need to address to ensure a sustainable solution.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、D、E
+- 中文参考答案：B、D、E
+
+### 中文参考解析
+
+选项B正确,A和机器学习技术能提供一致且高 度准确的分析,减少重复任务产生的错误;选项 D正确,该技术可自动化识别新信息,并与之前 数据区分,提高筛查效率;选项E正确,AI和机 器学习能覆盖多种语言和文字,突破人类语言学 局限.选项A错误,AI筛查仍需人工审核确保准 确性:选项C错误,AI虽能分析文本,但识别背 后意图能力有限,需人工辅助风险评估.
+
+- 英文参考答案：B、D、E
+
+### 英文参考解析
+
+选项B，人工智能和机器学习能通过一致且高度准确的分析，显著减少重复性任务中的人为错误。选项D，其可自动化识别新信息，并区分于已遇数据，提升筛选效率。选项E，人工智能和机器学习能处理多语言和脚本，突破人类语言能力的局限。选项A错误，因为人工智能虽能分析大量数据，但仍需人类审阅以确保准确性。选项C错误，因为人工智能能辅助分析文本，但准确识别意图仍具挑战，需结合其他方法。因此，正确答案为BDE。易错提醒：注意人工智能和机器学习在处理复杂任务时的局限性。
+
+### 答案冲突提示
+
+- 未发现答案冲突。

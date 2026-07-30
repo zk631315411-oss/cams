@@ -1,0 +1,110 @@
+# v7_q_000311
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些是进行地平线扫描的有效方法？(选择两项.)
+
+英文题干：Which of the following are efficient approaches for performing horizon scanning? (Select Two.)
+
+选项：
+
+- A. 订阅监管机构的通讯简报
+  English: Subscribing to a regulator's newsletter
+- B. 使用专门的监管地平线扫描服务提供商
+  English: Using a specific provider for regulatory horizon scanning
+- C. 定期与监管机构联系，询问最新情况和未来发展趋势
+  English: Regularly contacting the regulator to inquire about updates and future developments
+- D. 依靠来自同行和工作小组的信息及见解
+  English: Relying on information and insights from peers and working groups
+
+## 【AI答案】
+
+A、B
+
+> **需人工复核**
+>
+> - 盲判校验未通过
+
+## 【考点】
+
+区分组织进行地平线扫描的系统化、主动式方法与日常互动方式
+
+## 【核心解析】
+
+地平线扫描指组织主动监测新兴趋势、监管动态和未来威胁的系统化过程（P293、P296）。题干问的是进行地平线扫描的「有效方法」，关键是看哪些选项建立了结构化、持续的信息获取机制。选项A「订阅监管机构的通讯简报」是一种持续监管监测通道，教材将持续监管监测列为确保持续合规的结构化方法之一（P388），通讯简报正是监管机构发布指导说明和法规更新的官方渠道，直接构成地平线扫描的信息来源。选项B「使用专门的监管地平线扫描服务提供商」借助外部专业力量，《内部报告》章节强调地平线扫描需要可观的提前时间和资源规划，专门服务商恰好承担这种系统化监测任务，与教材提到的「主动的地平线扫描有助于组织及时有效地规划、资源配置」相呼应（P293）。两项共同体现了结构化、持续性和前瞻性的扫描特征，因此成为有效方法。
+
+教材原句："A structured approach to ensuring ongoing compliance includes continuous regulatory monitoring, proactive engagement with regulators and other stakeholders, and the strategic use of technology."（P388）
+
+## 【错误项分析】
+
+- **C 不选（系统性较弱）**：主动与监管机构沟通有助于了解监管期望，但逐次联系询问不如官方通讯订阅和专门扫描服务那样形成持续、结构化的信息获取机制。在只能选择两项时，A、B与地平线扫描的系统性要求更直接吻合。
+- **D 不选（系统性相对较弱）**：同行和工作小组的信息有助于了解新兴趋势，也可作为地平线扫描的补充来源。相比之下，A提供持续更新的官方渠道，B提供专门、系统化的扫描服务，与题干所强调的高效、持续监测更直接匹配。
+
+## 【易错提醒】
+
+选项C、D也可能提供前瞻信息，并非当然无效；但在只能选择两项时，应优先选择能够持续、系统获取监管动态的官方订阅和专门扫描服务（P293、P388）。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N003895`
+
+### `v7u_N002921`
+
+- 用于：核心解析、选项C
+- 章节：Governance and oversight > Maintaining effective AFC policies and procedures
+- 页码：PDF第298页 / 书内第293页
+- 中文要点：由于金融犯罪防控环境高度动态，组织需要进行地平线扫描以关注新兴问题和监管动态。
+- 英文原文：Additionally, organizations need to maintain awareness of emerging issues and regulatory activity. This “horizon scanning” is particularly important because the AFC environment is highly dynamic.
+
+### `v7u_N003895`
+
+- 用于：核心解析、选项C、选项D、易错提醒
+- 章节：Understanding AFC technology > Regulatory requirements for technology
+- 页码：PDF第393页 / 书内第388页
+- 中文要点：确保持续合规的结构化方法包括持续监管监测、主动与监管机构及其他利益相关方互动，以及战略性技术运用。
+- 英文原文：A structured approach to ensuring ongoing compliance includes continuous regulatory monitoring, proactive engagement with regulators and other stakeholders, and the strategic use of technology.
+
+### `v7u_N002956`
+
+- 用于：核心解析、易错提醒
+- 章节：Governance and oversight > Internal reporting to governance committees
+- 页码：PDF第301页 / 书内第296页
+- 中文要点：监管合规更新应包括新金融犯罪防控法规、执法趋势和新兴风险的摘要
+- 英文原文：Regulatory and compliance updates should include summaries of new AFC regulations, enforcement trends, and emerging risks, to ensure that policies remain aligned with current legal obligations. Horizon scanning for emerging risks and trends is particularly important because it requires considerable lead time and resource planning.
+
+### `v7u_N002923`
+
+- 用于：选项C、选项D
+- 章节：Governance and oversight > Maintaining effective AFC policies and procedures
+- 页码：PDF第298页 / 书内第293页
+- 中文要点：主动的地平线扫描有助于组织及时有效地规划、资源配置和实施新政策。
+- 英文原文：Proactive horizon scanning helps organizations plan, resource, and implement new policies in a timely and effective manner.
+
+### `v7u_N002334`
+
+- 用于：选项D
+- 章节：Cooperation involving the private sector > Private sector collaboration
+- 页码：PDF第242页 / 书内第237页
+- 中文要点：私营部门合作团体分享最佳实践、类型学和风险信息，并吸纳公共部门代表
+- 英文原文：Other groups collaborate to share industry best practices, such as best practices for suspicious activity reporting. Many of these groups include representatives from public sector bodies or collaborate closely with them. Such groups might also share typologies and information on risks.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B
+- 中文参考答案：A、B
+
+### 中文参考解析
+
+地平线扫描旨在识别未来可能影响反洗钱/打击资 助恐怖主义合规计划的新风险、趋势等.选项 A,订阅监管机构的通讯简报,能及时获取监管 动态、政策变化等关键信息,有助于提前识别潜 进行监管动态扫描,可借助专业力量全面、深入 地收集和分析监管信息,发现新趋势,也是有效 方法.选项C,定期与监管机构联系询问,信息 获取不够及时全面;选项D,同行和工作小组信 息见解可能片面,不如A、B专业全面.易错提 醒:注意区分不同方法的信息获取全面性和及时 性. 来 源
+
+- 英文参考答案：A、B
+
+### 英文参考解析
+
+翻译 多选 -[AML/CFTCompliancePrograms]Whic hofthefollowingateefficientapproachesloper forminghorizonscanning?(SelectTwo.) Subscribingloaregulators'newsletter Usingaspecificproviderforregulatory horizonscanning Regularlycontactingtheregulatortoin quireaboutupdatesandfuturedevelo pments Relyingoninformationandinsightsfro D mpeersandworkinggroups 正确答案AB您选择/ 试题详解
+
+### 答案冲突提示
+
+- 未发现答案冲突。

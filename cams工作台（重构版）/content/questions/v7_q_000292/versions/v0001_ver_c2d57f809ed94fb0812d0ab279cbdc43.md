@@ -1,0 +1,127 @@
+# v7_q_000292
+
+教材章节：未映射
+
+题型：multiple
+
+题干：哪些危险信号可能表明与文化物品相关的恐怖主义融资和洗钱风险增加？（选择三项。）
+
+英文题干：Which red flags could indicate increased terror financing and money laundering risks related to cultural objects? (Select three.)
+
+选项：
+
+- A. 聘请第三方艺术顾问代表买方参加艺术品拍卖,但未披露实际买方或受益所有人。
+  English: Engaging a third-party art advisor to represent the buyer at an auction without disclosing the actual buyer or beneficial owner.
+- B. 匿名账号在社交媒体平台以明显偏离市场价格销售高价值、高品质单件文化物品。
+  English: Anonymous accounts selling high-quality cultural objects of significant value on social media platforms at prices clearly inconsistent with market value.
+- C. 利用艺术品和古董专家来鉴定物品的真伪。
+  English: Use of art and antiquity experts to verify an item's authenticity.
+- D. 身份透明的买方在拍卖会上以经独立估值确认的公平市场价格购买有价值的艺术品、宝石或贵金属。
+  English: A transparent buyer paying an independently appraised fair market value for valuable art, gems, or precious metals at auction.
+- E. 使用位于免税区的艺术品存储设施。
+  English: Use of art storage facilities located in tax-free zones.
+
+## 【AI答案】
+
+A、B、E
+
+## 【考点】
+
+识别文化物品洗钱中，利用匿名代理、非传统渠道与监管洼地的风险信号
+
+## 【核心解析】
+
+文化物品相关风险来自高价值、易转移、难估值以及交易链条不透明等特征（P132-P133）。A 将艺术顾问作为拍卖代表，属于中介或代理层；在艺术品交易中，这种第三方代表若使真实买方或受益所有人难以识别，就与名义服务形成的匿名风险相近（P127）。B 同时出现匿名账号、社交媒体非传统渠道和价格明显偏离市场价值，直接对应身份隐藏与价格不一致风险（P99、P132）。E 直接对应自由贸易区用于存储艺术品、古董和贵金属并可能成为被盗艺术品非法贸易平台的情形（P18）。三项比 C、D 更直接地指向匿名代理、非传统销售渠道和监管薄弱环境。
+
+## 【错误项分析】
+
+- **C 错误（缺少异常情形）**：专家鉴定真伪通常增加交易透明度、降低假货和估值不确定性；题干没有给出专家与卖方串通、虚假鉴定或借鉴定掩盖来源等额外事实，因此单独不构成红旗。
+- **D 错误（风险指示性较弱）**：教材将价格与公平市场价值不一致列为风险信号（P133）；D 明确为身份透明买方按独立估值确认的公平市场价购买，题干没有给出价格偏离、身份隐藏或来源异常等事实，因此其风险指示性弱于 A、B、E。
+
+## 【易错提醒】
+
+本题易混淆点为「利用专家鉴定真伪」与「利用第三方隐藏身份」。前者是正常的身份核实或价值确认，后者（如名义顾问）目的是制造匿名层（P127）。区分关键在于该行为是增加透明度还是增加不透明性。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001191`
+
+### `v7u_N001126`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with DNFBPs > Trust and company service provider and company secretary sector risks
+- 页码：PDF第132页 / 书内第127页
+- 中文要点：信托与公司服务提供商常提供名义服务，由第三方代表客户担任董事、高管或股东。
+- 英文原文：TCSPs often offer nominee services, where they provide third parties to act on behalf of customers in ownership and management roles, such as directors, officers, or shareholders.
+
+### `v7u_N000861`
+
+- 用于：核心解析
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > E-commerce risks
+- 页码：PDF第104页 / 书内第99页
+- 中文要点：难以估值的商品或服务销售是电子商务洗钱风险之一
+- 英文原文：Sales of goods or services that are difficult to value
+
+### `v7u_N000045`
+
+- 用于：核心解析
+- 章节：Money Laundering and Financial Crime > • Commodity-based money laundering:
+- 页码：PDF第23页 / 书内第18页
+- 中文要点：犯罪分子使用黄金、钻石、奢侈品等高价商品匿名转移价值
+- 英文原文：Criminals use high-value commodities such as gold, diamonds, luxury watches, and fine art to transfer value anonymously.
+
+### `v7u_N000860`
+
+- 用于：选项D
+- 章节：Money laundering risks associated with MSBs, payment service providers, and ecommerce > E-commerce risks
+- 页码：PDF第104页 / 书内第99页
+- 中文要点：价格与商品或服务的公平市场价值不一致。
+- 英文原文：Prices inconsistent with the fair market value of goods or services being sold
+
+### `v7u_N001127`
+
+- 用于：易错提醒
+- 章节：未标注
+- 页码：PDF第132页 / 书内第127页
+- 中文要点：名义董事或股东可被用于隐藏最终受益所有人身份，增加洗钱风险。
+- 英文原文：These nominee directors or shareholders can be used to conceal the identity of the UBO or operator of the business, creating a layer of anonymity that heightens money laundering risks through obfuscation.
+
+### `v7u_N001184`
+
+- 用于：核心解析、选项E
+- 章节：High-risk business sectors > Free-trade zones risks
+- 页码：PDF第137页 / 书内第132页
+- 中文要点：自由贸易区常用于存储艺术品、古董、贵金属和葡萄酒，并对贸易体系完整性构成新兴威胁
+- 英文原文：The European Commission has also pointed out that since FTZs are popular for storing artwork, antiquities, precious metals, and wine, and that they pose emerging threats to the integrity of the trade system.
+
+### `v7u_N001191`
+
+- 用于：核心解析、选项E
+- 章节：High-risk business sectors > Free-trade zones risks
+- 页码：PDF第138页 / 书内第133页
+- 中文要点：自由贸易区为毒品、象牙、艺术品走私和人口贩运提供平台
+- 英文原文：This environment also provides a platform for illegal trades, such as drug trafficking, ivory trade, stolen artwork, and people smuggling.
+
+### 外部权威参考：FATF 艺术与古董市场风险研究
+
+- 来源：[FATF, Money Laundering and Terrorist Financing in the Art and Antiquities Market](https://www.fatf-gafi.org/en/publications/Methodsandtrends/Money-laundering-terrorist-financing-art-antiquities-market.html)
+- 要点：艺术市场中的经纪人、顾问和代理安排可能增加交易匿名性；应结合客户身份、受益所有权、交易对手和资金来源进行审查。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、B、E
+- 中文参考答案：A、B、E
+
+### 中文参考解析
+
+选项A中，第三方艺术顾问在未披露实际买方或受益所有人的情况下增加了匿名层；选项B中，在社交媒体平台出售高价值单件商品，交易对手和资金来源较难核验；选项E中，免税区艺术品存储设施可能被用于规避监管并隐藏物品流转。三项分别对应匿名代理、非传统销售渠道和自由贸易区存储风险，因此答案为 A、B、E。
+
+- 英文参考答案：A、B、E
+
+### 英文参考解析
+
+Option A adds an undisclosed intermediary and obscures the actual buyer or beneficial owner. Option B combines a high-value item with a less transparent sales channel. Option E concerns storage in a free-trade/tax-free zone that may weaken transparency and oversight. C is a normal authenticity-control measure, and D does not state any suspicious pricing or funding circumstance. Therefore, the answer is A, B, and E.
+
+### 答案冲突提示
+
+- 未发现答案冲突。

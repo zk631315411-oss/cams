@@ -1,0 +1,83 @@
+# v7_q_000185
+
+教材章节：未映射
+
+题型：single
+
+题干：以下哪个选项是可能表明存在潜在的内部人员不当行为、需要进一步调查的指标？
+
+英文题干：Which of the options below is an indicator of potential insider activity that may warrant escalation for further investigation?
+
+选项：
+
+- A. 一位客户经理主张推翻公司客户风险评级模型得出的某客户高风险评级的结果.
+  English: A relationship manager advocates for overriding the results of the company's client risk rating model that resulted in a client's high-risk rating
+- B. 一名员工在行业大会上向其他公司的员工透露其所在公司的风险管理框架信息。
+  English: An employee shares information about the firm's risk management framework with employees of other firms at an industry convention
+- C. 调查人员未在公司规定的时限内完成分配给他们的自动化交易监控系统警报的处理.
+  English: An investigator does not complete the automated transaction monitoring system alerts assigned to them before the time required by company procedures
+- D. 客户经理违反公司政策,在未记录客户护照信息以进行身份识别的情况下,仍为客户办理开户手续.
+  English: A relationship manager violates company policy by opening an account for a customer without recording the customer's passport information for identification purposes
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+识别关系经理不当影响客户风险评级的潜在内部人员信号
+
+## 【核心解析】
+
+关系经理为了维持客户关系，可能忽视客户活动中的警示信号；私人银行的业务指标和薪酬安排也可能形成利益冲突，使关系经理低估客户风险（P71）。A中，客户经理主张推翻模型给出的高风险评级，直接涉及对客户风险判断结果的干预，可能表明业务人员正在对风险控制施加不当影响，因此需要进一步调查其override理由及是否存在潜在利益冲突。题干只要求识别「潜在指标」，并不表示该客户经理已经篡改评级或掩盖风险。在四个选项中，A与教材所述的关系经理忽视风险信号的场景最接近，因此答案为A。
+
+教材原句："The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs."
+
+## 【错误项分析】
+
+- **B 错误**：在行业会议上分享风险管理框架可能涉及信息管理要求，但题干没有说明相关信息属于机密、分享行为未经授权，或其目的是帮助他人规避控制。A直接涉及对已经形成的高风险判断施加影响，与潜在内部人员干预的匹配度更高。
+- **C 错误**：未按公司时限处理警报首先反映处理时效、工作量或绩效问题；题干没有显示调查人员故意压案、帮助客户规避监控或干预风险判断。相比之下，A描述的是主动推动改变高风险评级结果，更值得从潜在利益冲突角度升级调查。
+- **D 错误**：在缺少护照身份信息时仍然开户属于严重的客户尽职调查政策违规，也应接受合规调查，不能简单视为疏忽。但题干没有进一步说明该行为涉及客户勾结、利益关联或掩盖风险。A则直接表现为客户经理试图影响已经形成的高风险判断，与题目所问的潜在内部人员干预信号更直接匹配。
+
+## 【易错提醒】
+
+「潜在指标」不等于已经证实的内部违规。客户经理对高风险评级提出异议并不自动证明其存在不当行为；判断重点是该行为是否反映了对警示信号的忽视，或是否受到潜在利益冲突影响（P71），因此需要进一步核实其理由而不是直接定性。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N000579`
+
+### `v7u_N000579`
+
+- 用于：核心解析、易错提醒
+- 章节：Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management
+- 页码：PDF第76页 / 书内第71页
+- 中文要点：关系经理为维护客户关系可能忽视警示信号，增加洗钱风险。
+- 英文原文：The desire to establish and maintain close relationships with their customers might cause relationship managers to overlook warning signs.
+
+### `v7u_N000581`
+
+- 用于：核心解析、易错提醒
+- 章节：Private banking and wealth management risks > Money laundering risks associated with private banking and wealth management
+- 页码：PDF第76页 / 书内第71页
+- 中文要点：私人银行薪酬结构导致利益冲突，构成金融犯罪防控固有风险
+- 英文原文：Due to this compensation structure, private banking managers might not recognize certain aspects of their customer activities as high risk from an AFC perspective. This conflict of interest is an inherent risk of private banking and wealth management.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+选项A中,客户经理主张推翻公司客户风险评级 模型得出的某客户高风险评级结果,这可能涉及 人为干预评级、掩盖风险等潜在的内部人员不当 行为,需进一步调查.选项B是员工在行业大会上 透露公司风险管理框架信息,属于正常交流;选项 C是调查人员未在规定时限内完成自动化交易监 控系统警报处理,属于操作延误;选项D是客户经 理违反公司政策为客户办理开户手续,属于违规 操作.因此,只有选项A符合可能表明存在潜在的 内部人员不当行为、需要进一步调查的指标. 度 难 源
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+选项A中,关系经理主张推翻公司客户风险评级
+
+### 答案冲突提示
+
+- 未发现答案冲突。

@@ -1,0 +1,91 @@
+# v7_q_000112
+
+教材章节：未映射
+
+题型：single
+
+题干：A国发布的新闻报道称，一名政治公众人物（PEP）从一家总部位于发展中国家的跨国公司收受了约150万美元的贿赂，这笔钱存入了位于B国的一家金融机构（FI）的账户。两国均为埃格蒙特集团成员。该账户属于该政治公众人物的直系亲属。为核实事实，A国金融情报机构（FIU）通过安全通信渠道向B国对口金融情报机构（FIU）发出正式请求，要求提供进一步信息。根据埃格蒙特原则，B国金融情报机构可以：
+
+英文题干：News published in Country A reports that a politically exposed person (PEP) had received a bribe from a transnational company headquartered in a developing country of approximately US$1.5 million, deposited into an account at a financial institution (FI) located in Country B. Both countries are members of the Egmont Group. The account where the money was deposited belongs to the PEP's immediate family member. To corroborate the facts, the FIU of Country A sent a formal request via secure communication channels for further information from its counterpart FIU in Country B. According to Egmont principles, the FIU of Country B can:
+
+选项：
+
+- A. 提供其掌握的信息，因为该交换发生在两个均为埃格蒙特集团成员的金融情报机构之间，且正式请求是通过安全通信渠道提出的
+  English: Provide the information available to them because the exchange is between two FIUs that are members of the Egmont Group, and the formal request was made using secure communication channels
+- B. 仅在A国与B国签署谅解备忘录（MoU）的情况下提供所要求的信息
+  English: Provide the requested information only if Country A has signed a memorandum of understanding (MoU) with Country B
+- C. 指示A国金融情报机构向开设账户的金融机构进一步了解情况
+  English: Instruct Country A's FIU to inquire further with the financial institution where the account is held
+- D. 如果B国金融情报机构未收到开设账户的金融机构提交的可疑活动报告（SAR），则拒绝该请求
+  English: Refuse the request if Country B's FIU has not received a suspicious activity report (SAR) from the financial institution where the account is held
+
+## 【AI答案】
+
+A
+
+## 【考点】
+
+埃格蒙特集团框架下金融情报机构间的情报共享原则
+
+## 【核心解析】
+
+埃格蒙特集团是各国金融情报机构（FIU）的国际网络，旨在促进成员间合作与情报共享以打击洗钱、恐怖融资及其他金融犯罪（P167）。根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报（P231）。题干中，A国FIU通过安全通信渠道向同为埃格蒙特成员的B国FIU发出正式请求，这两个条件——同为埃格蒙特成员、通过安全渠道提出正式请求——直接匹配教材所述的情报共享框架，因此B国FIU可以提供其掌握的信息。
+
+教材原句："Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request."
+
+## 【错误项分析】
+
+- **B 错误（教材直接依据）｜概念混淆**：谅解备忘录（MoU）可以补充和简化跨境合作程序（P233，P236），但埃格蒙特集团已通过其治理文件标准化了成员间的信息交换（P167-P168），MoU并非成员间情报共享的前提条件。A项所依据的「埃格蒙特成员+安全渠道」框架对本题场景的匹配更直接。
+- **C 错误（题干对照）｜主体或阶段错配**：金融机构确有义务响应FIU的信息请求（P362），但这描述的是FIU与本国金融机构之间的关系。题干场景是两国FIU之间的情报交换，B国FIU的角色是「提供信息」而非指示对方FIU代行职权，该项不符合埃格蒙特集团下的FIU间合作模式。
+- **D 错误（信息共享条件错配）**：FIU的信息来源包括报告实体、国内来源及其他国家FIU（P231），其向境外FIU传递情报，不以本国金融机构已就同一事项提交SAR为前提。因此，未收到SAR不是拒绝境外FIU请求的充分理由。
+
+## 【易错提醒】
+
+（无）
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N002258`
+
+### `v7u_N001549`
+
+- 用于：核心解析
+- 章节：AFC guidance from leading international organizations > Egmont Group AFC guidance
+- 页码：PDF第172页 / 书内第167页
+- 中文要点：埃格蒙特集团是各国金融情报机构的国际网络，促进合作与情报共享以打击洗钱、恐怖融资和其他金融犯罪
+- 英文原文：The Egmont Group is an international network of national FIUs that facilitates cooperation and intelligence sharing among its members to combat money laundering, terrorist financing, and other financial crimes.
+
+### `v7u_N002258`
+
+- 用于：核心解析、选项B、选项D
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：根据FATF标准和埃格蒙特集团原则，FIU应自发或应请求相互传播金融情报
+- 英文原文：Under FATF standards and principles set by the Egmont Group of FIUs, FIUs are expected to disseminate financial intelligence to each other, either spontaneously or on request.
+
+### `v7u_N002257`
+
+- 用于：选项D
+- 章节：Cooperation between authorities > Law enforcement and FIU AFC cooperation
+- 页码：PDF第236页 / 书内第231页
+- 中文要点：FIU从报告实体、国内来源及其他国家FIU获取信息
+- 英文原文：FIUs obtain SARs and other information from reporting entities and a range of other domestic sources. FIUs have access to other FIUs internationally.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A
+- 中文参考答案：A
+
+### 中文参考解析
+
+根据埃格蒙特原则,成员国金融情报机构间应积 极合作,交换与洗钱、恐怖融资等犯罪相关的情 报信息.本题中,A国与B国均为埃格蒙特集团 十口
+
+- 英文参考答案：A
+
+### 英文参考解析
+
+根据Egmont集团原则,成员国金融情报机构 (FIU)之间应基于安全通信渠道进行信息交换 与合作.题目中,A国FIU已通过安全渠道向同为 Egmont成员的B国FIU提出正式请求,且信息交 换主体均为FIU,符合Egmont框架下信息共享的 核心要求.选项B中提到的谅解备忘录(MoU) 并非Egmont原则的强制前提:选项C中B国FIU 无权直接转交请求至金融机构,需由其自身处 理:选项D中SAR报告并非信息交换的必要条 件,Egmont原则允许基于预防性目的的信息共 享.因此,选项A正确. 源
+
+### 答案冲突提示
+
+- 未发现答案冲突。

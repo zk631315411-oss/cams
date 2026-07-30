@@ -1,0 +1,120 @@
+# v7_q_000293
+
+教材章节：未映射
+
+题型：multiple
+
+题干：[反洗钱和反恐怖融资合规标准]以下哪两项分别直接对应2012年FATF 40项建议中的定向金融制裁和法人受益所有权透明度要求？(选择两项.)
+
+英文题干：Which two statements directly correspond to the 2012 FATF Recommendations on targeted financial sanctions and beneficial ownership transparency? (Select Two.)
+
+选项：
+
+- A. 客户隐私法规应当指导尽职调查及其他预防洗钱和恐怖融资措施的制定.
+  English: Customer privacy regulations should guide the development of due diligence and other money laundering and terrorist financing preventive measures.
+- B. 各国应努力实施与联合国安理会决议相一致的定向金融制裁.
+  English: Nations should work toward implementing targeted financial sanctions in alignment with United Nations Security Council resolutions.
+- C. 各国应采取措施确保法人受益所有权的透明度.
+  English: Nations should take measures to ensure transparency of the beneficial ownership of legal persons.
+- D. 各国必须采用完全相同且不得根据本国风险调整的统一框架,以预防和打击洗钱及恐怖主义融资活动.
+  English: Nations must adopt an identical, non-adjustable framework to prevent and combat money laundering and terrorist financing.
+- E. 各国政府必须努力构建统一的行政和运作框架,以调查和起诉犯罪.
+  English: National governments must strive to build a uniform administrative and operational framework to investigate and prosecute crime.
+- F. 监管机构应指示金融机构建立适当的框架,以避免接纳高风险客户.
+  English: Supervisors should instruct financial institutions to establish appropriate frameworks to avoid accepting high-risk customers.
+
+## 【AI答案】
+
+B、C
+
+## 【考点】
+
+辨别FATF 40项建议中的定向金融制裁与受益所有权透明度要求
+
+## 【核心解析】
+
+FATF 40项建议中，B直接对应建议6关于依照联合国安理会决议实施定向金融制裁的要求（P149）；C直接对应建议24关于确保法人受益所有权透明度的要求（P117）。题干要求的是分别对应这两个具体主题的两项，因此答案为 B、C。
+
+教材原句："Jurisdictions should also implement targeted financial sanctions in compliance with UN Security Council resolutions; this includes freezing the assets of designated persons or entities without delay to combat the financing of terrorism."（P149）
+
+## 【错误项分析】
+
+- **A 错误（范围或程度偏差）**：客户隐私与反洗钱报告义务之间需要取得平衡，但这不等于由隐私法规主导尽职调查和其他预防措施的制定。B、C则分别直接对应题干点明的定向金融制裁和受益所有权透明度要求。
+- **D 错误（范围或程度偏差）**：FATF建议1要求风险为本、与识别风险相称的措施（P147），而不是所有国家采用完全相同且不得调整的统一框架；D加入了与风险为本原则相反的绝对化条件。
+- **E 错误（题干要素不匹配）**：指定负责机关、建立协调机制与构建「统一的行政和运作框架」并非同一要求；E还转向一般性的犯罪调查和起诉，没有对应题干指定的定向金融制裁或受益所有权透明度。
+- **F 错误（概念混淆）**：风险为本的准入要求对高风险客户进行额外审查，而不是一律避免接纳高风险客户。F把强化风险管理误写成全面拒绝，与风险为本原则不符。
+
+## 【易错提醒】
+
+FATF建议中的风险为本方法是贯穿各项措施的原则（P147），而定向金融制裁和受益所有权透明度是独立、强制性的具体建议（P117、P149）。判断时应优先选择与这两项具体要求直接对应的表述，而非仅体现一般原则的选项。
+
+## 【教材原文依据】
+
+> 核心引用单元：`v7u_N001350`
+
+### `v7u_N001350`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：各国应实施定向金融制裁，立即冻结涉恐人员或实体的资产
+- 英文原文：Jurisdictions should also implement targeted financial sanctions in compliance with UN Security Council resolutions; this includes freezing the assets of designated persons or entities without delay to combat the financing of terrorism.
+
+### `v7u_N001369`
+
+- 用于：核心解析、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 24-40
+- 页码：PDF第154页 / 书内第149页
+- 中文要点：各辖区应确保主管机关能获取准确、最新的受益所有人信息
+- 英文原文：Jurisdictions should also ensure competent authorities can access accurate, up-to-date beneficial ownership information on legal persons and trusts, requiring trustees to obtain and maintain such data for transparency and compliance.
+
+### `v7u_N001057`
+
+- 用于：选项A
+- 章节：Money Laundering Risks in DNFBPs and Other High-Risk Sectors > Case example: DNFBP risks in the Hendricks case
+- 页码：PDF第122页 / 书内第117页
+- 中文要点：要求DNFBP建立反洗钱/反恐怖融资框架并在客户隐私与报告要求间取得平衡。
+- 英文原文：Requiring DNFBPs to set up an AML/CFT framework and find the right balance between customer privacy and AML reporting requirements could deter the financial benefits of enabling such activities and reduce the occurrence of money laundering.
+
+### `v7u_N001341`
+
+- 用于：选项D、易错提醒
+- 章节：Financial Action Task Force > FATF Recommendations 1-8
+- 页码：PDF第152页 / 书内第147页
+- 中文要点：FATF建议1和2要求各国评估洗钱和恐怖融资风险并采取风险为本方法
+- 英文原文：Recommendations 1 and 2 advise jurisdictions to assess and understand their money laundering and terrorist financing risks and take a risk-based approach to implementing measures that effectively mitigate these threats.
+
+### `v7u_N002630`
+
+- 用于：选项D
+- 章节：Types of risk assessment > The importance of risk assessment in AFC
+- 页码：PDF第272页 / 书内第267页
+- 中文要点：FATF建议1要求各国识别、评估并了解洗钱和恐怖融资风险，并采取协调行动
+- 英文原文：FATF Recommendation 1 states, “Countries should identify, assess, and understand the money laundering and terrorist financing risks for the country, and should take action, including designating an authority or mechanism to coordinate actions to assess risks, and apply resources, aimed at ensuring the risks are mitigated effectively.”
+
+### `v7u_N003099`
+
+- 用于：选项F
+- 章节：Additional onboarding controls for high-risk scenarios
+- 页码：PDF第317页 / 书内第312页
+- 中文要点：FATF建议、欧盟反洗钱指令等监管框架要求对高风险客户采用基于风险的方法进行准入。
+- 英文原文：Regulatory frameworks such as FATF Recommendations, EU AML Directives, and FinCEN regulations require a risk-based approach to onboarding, ensuring that higher-risk customers undergo additional scrutiny before gaining full access to financial services.
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：B、C
+- 中文参考答案：B、C
+
+### 中文参考解析
+
+2012年FATF 40项建议中，B直接对应建议6的定向金融制裁要求；C直接对应建议24的法人受益所有权透明度要求。D加入“完全相同且不得调整”的条件，与风险为本原则相反。因此答案为 B、C。
+
+- 英文参考答案：B、C
+
+### 英文参考解析
+
+B、C 分别对应 FATF 建议6和建议24。D不是风险为本方法的准确表述，因为它要求所有国家采用不可调整的同一框架。
+
+### 答案冲突提示
+
+- 题干已限定为“分别对应定向金融制裁和法人受益所有权透明度”，因此 B、C 唯一匹配。

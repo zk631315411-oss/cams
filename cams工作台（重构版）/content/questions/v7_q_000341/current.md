@@ -1,0 +1,57 @@
+# v7_q_000341
+
+教材章节：未映射
+
+题型：multiple
+
+题干：以下哪些业务需要增强或额外的场景来识别异常交易？(选择两项。)
+
+英文题干：Which of the following businesses require enhanced or additional scenarios for identifying anomalous transactions? (Select Two.)
+
+选项：
+
+- A. 从事现金密集型业务且不受许可要求约束的公司
+  English: Companies operating in cash-intensive businesses that are not subject to licensing requirements
+- B. 经营医院和医疗保健服务的公司
+  English: Companies operating hospitals and health-care services
+- C. 从事现金密集型业务且受许可要求约束的公司
+  English: Companies operating in cash-intensive businesses that are subject to licensing requirements
+- D. 生产药品和医疗器械的公司、从事矿业的公司
+  English: Companies producing pharmaceutical products and medical devices, and companies engaged in mining
+- E. 在全国范围内经营零售店的公司
+  English: Companies operating retail stores nationwide
+
+## 【AI答案】
+
+A、C
+
+## 【考点】
+识别需要增强交易监控场景的现金密集型业务。
+## 【核心解析】
+现金密集型业务本身会增加交易追踪和资金来源确认难度，无论是否持牌，都需要与其业务模式相匹配的监控场景（P65）。A项是不受许可约束的现金密集型业务，监管覆盖更弱；C项是受许可约束的现金密集型业务，虽然有外部监管，仍可能出现大量现金和异常交易，因此仍需增强或额外场景。D项所列制药、医疗器械和矿业可能具有各自的行业风险，但该项没有说明现金密集或其他需要额外交易监控场景的具体交易特征，匹配度不如A、C直接。
+## 【错误项分析】
+- **B、D、E**：这些行业或许在特定情形下需要风险评估，但题干要求的是教材中应额外配置场景的现金密集型业务（P65），A、C匹配更直接。
+## 【易错提醒】
+「持牌」只说明存在监管，不代表现金密集型业务可以使用普通监控；许可状态不会消除固有现金风险（P65）。
+
+## 【教材原文依据】
+核心引用单元：`v7u_N003102`；页码：P65、P311–312。
+
+## 【参考答案与参考解析】
+
+- 题库最终参考答案：A、C
+- 中文参考答案：A、C
+
+### 中文参考解析
+
+从事现金密集型业务且不受许可要求约束的公司 (选项A),因缺乏监管,交易隐蔽性高,易被 用于洗钱或恐怖融资,需增强识别.从事现金密 集型业务且受许可要求约束的公司(选项C) 虽受监管,但现金交易频繁、金额大,仍存在较 高风险,需额外场景识别异常交易.其他选项 如经营医院和医疗保健服务的公司、生产药品和 医疗器械及从事采矿业的公司、在全国范围内经 营零售店的公司,因业务性质或监管要求,洗钱 和恐怖融资风险相对较低,无需特别增强识别.
+
+- 英文参考答案：A、C
+
+### 英文参考解析
+
+在反洗钱和反恐怖融资领域,现金密集型企业因 交易量大、资金流动快,易成为洗钱渠道.其 中,无牌照要求的现金密集型企业(A选项), 因监管缺失,风险更高,需加强异常交易识别. 有牌照要求的现金密集型企业(C选项),虽受 监管,但因业务特性,仍存在较高风险,也需额 外识别措施.而医院、药店、矿企及零售店等, 因业务特性,洗钱风险相对较低,无需特别加强 识别.故正确答案为A、C.
+
+### 答案冲突提示
+
+- 盲判与题库最终参考答案冲突：盲判=A,D，题库最终=A,C
