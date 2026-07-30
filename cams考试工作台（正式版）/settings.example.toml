@@ -1,0 +1,21 @@
+[workspace]
+version = "v7"
+# 运行时可通过 CAMS_WORKSPACE_ROOT 或 --workspace-root 覆盖；不要写入机器专属路径。
+
+[server]
+host = "127.0.0.1"
+port = 8765
+
+[codex]
+# 在 Codex 的 MCP 配置中将 command 设为当前 Python，args 设为 backend/mcp_server.py 的绝对路径。
+actor = "codex"
+
+[retrieval]
+# 与重构版 Phase 4 对齐的默认参数。每次检索会将实际值写入 evidence_packet。
+profile = "v7_legacy_202607"
+top_k = 20
+merge_top_k = 30
+kg_max_extra = 30
+per_option_limit = 3
+per_head_minimum = 2
+rrf_k = 60

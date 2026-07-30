@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAMS 证据审阅台</title>
+  <link rel="stylesheet" href="/css/workbench.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-lockup"><strong>CAMS 证据审阅台</strong><span>题目 · 依据 · 原页</span></div>
+    <div class="topbar-tools">
+      <span class="connection"><i id="health-dot"></i><span id="health">连接中</span></span>
+      <button id="settings-open" class="icon-button" type="button" title="辅助研判设置" aria-label="辅助研判设置">⚙</button>
+      <button id="refresh" class="icon-button" type="button" title="刷新" aria-label="刷新">↻</button>
+    </div>
+  </header>
+
+  <nav class="process-bar" aria-label="正式处理里程碑">
+    <span data-process="intake">接收整理</span><b>→</b>
+    <span data-process="duplicate_check">重复检查</span><b>→</b>
+    <span data-process="evidence_research">证据研究</span><b>→</b>
+    <span data-process="evidence_confirmation">证据确认</span><b>→</b>
+    <span data-process="analysis">正式解析</span><b>→</b>
+    <span data-process="final_verification">最终核验</span><b>→</b>
+    <span data-process="human_approval">教研批准</span><b>→</b>
+    <span data-process="release">发布</span>
+  </nav>
+
+  <section id="task-strip" class="task-strip" aria-live="polite">
+    <span class="task-pulse"></span><strong id="task-title">当前无运行任务</strong>
+    <span id="task-summary">选择题目后显示执行者、等待对象和下一步</span>
+    <em id="task-owner"></em>
+  </section>
+
+  <main class="app-main">
+    <aside id="queue" class="queue" aria-label="选题抽屉">
+      <div class="queue-heading"><div><small>题目档案</small><h1>选择题目</h1></div><span id="count" class="queue-count">0</span></div>
+      <div class="queue-controls">
+        <label>范围<select id="status-filter">
+          <option value="active">当前待处理</option>
+          <option value="evidence_research">证据研究</option>
+          <option value="evidence_confirmation">待确认依据</option>
+          <option value="analysis_revision">解析润色</option>
+          <option value="final_verification">最终核验</option>
+          <option value="human_approval">待教研批准</option>
+          <option value="release_ready">可发布</option>
+          <option value="all">全部题库</option>
+        </select></label>
+        <label class="search-field"><span>⌕</span><input id="question-filter" placeholder="题号或题干关键词" autocomplete="off"></label>
+      </div>
+      <div id="question-list" class="question-list"></div>
+      <div class="queue-footnote">后台更新不会自动换题、切换标签或跳转教材。</div>
+    </aside>
+
+    <section id="empty" class="empty-state">
+      <div class="empty-mark">⌁</div><small>当前没有活动题</small><h2>从左侧选择一道题</h2>
+    </section>
+
+    <section id="detail" class="detail" hidden>
+      <div class="detail-heading">
+        <div><span id="qid" class="qid"></span><span id="question-type" class="question-type"></span><span id="stage" class="status"></span></div>
+        <div class="detail-actions"><span id="version" class="version"></span><button id="edit-question" class="quiet-button" type="button">编辑题目</button><button id="open-queue" class="quiet-button" type="button">☰ 选题</button></div>
+      </div>
+      <div id="sync-notice" class="sync-notice" hidden><span>后台有新版本</span><button id="sync-refresh" type="button">刷新查看</button><button id="sync-keep" type="button">保留当前批注</button></div>
+
+      <div id="split-workspace" class="split-workspace">
+        <section class="question-pane" aria-label="题目与审核内容">
+          <div class="pane-tabs" role="tablist">
+            <button class="pane-tab active" type="button" data-view="question">题目</button>
+            <button class="pane-tab" type="button" data-view="evidence">证据结论<span id="evidence-dot" class="notice-dot" hidden></span></button>
+            <button class="pane-tab" type="button" data-view="analysis">正式解析<span id="analysis-dot" class="notice-dot" hidden></span></button>
+          </div>
+
+          <div id="question-view" class="pane-view active" data-pane="question">
+            <article id="question-read" class="question-read"></article>
+            <form id="question-edit" class="question-edit" hidden>
+              <label>题干<textarea id="edit-stem" rows="4"></textarea></label>
+              <div id="edit-options" class="edit-options"></div>
+              <label>答案<input id="edit-answer" placeholder="例如 B"></label>
+              <label>修改理由<textarea id="edit-reason" rows="2"></textarea></label>
+              <div class="form-actions"><button id="cancel-edit" type="button" class="quiet-button">取消</button><button type="submit" class="danger-button">确认并重新核验</button></div>
+            </form>
+            <details class="archive-details"><summary>题源与操作记录</summary><div id="archive-details"></div></details>
+          </div>
+
+          <div id="evidence-view" class="pane-view" data-pane="evidence" hidden>
+            <div class="view-title"><div><small>教研门禁</small><h2>最终证据候选</h2></div><span id="candidate-version" class="subtle"></span></div>
+            <div id="candidate-content" class="evidence-conclusion"></div>
+            <section id="evidence-decision-panel" class="review-panel" hidden>
+              <label>处理意见<textarea id="evidence-decision-reason" rows="3" placeholder="退回补证时必须说明缺口"></textarea></label>
+              <div class="form-actions"><button id="return-evidence" type="button" class="danger-button">退回补证</button><button id="confirm-evidence" type="button" class="primary-button">确认最终证据</button></div>
+            </section>
+          </div>
+
+          <div id="analysis-view" class="pane-view" data-pane="analysis" hidden>
+            <div class="view-title"><div><small>固定模板</small><h2>正式解析</h2></div><span id="analysis-version" class="subtle"></span></div>
+            <article id="analysis-content" class="analysis-content"></article>
+            <section id="feedback-panel" class="review-panel" hidden>
+              <label>批注位置<select id="feedback-section"><option value="overall">整体</option><option value="exam_point">考点</option><option value="core_analysis">核心解析</option><option value="option_analysis">错误项分析</option><option value="pitfall">易错提醒</option><option value="evidence">教材依据</option></select></label>
+              <label>教研批注<textarea id="feedback-comment" rows="3"></textarea></label>
+              <div class="form-actions"><button id="add-feedback" type="button" class="quiet-button">提交批注</button><button id="polishing-complete" type="button" class="primary-button">润色完成，交最终核验</button></div>
+            </section>
+            <section id="final-check-panel" class="final-check"></section>
+            <section id="decision-panel" class="review-panel" hidden>
+              <div class="decision-choices"><label><input type="radio" name="decision" value="approved" checked>批准</label><label><input type="radio" name="decision" value="returned">退回</label><label><input type="radio" name="decision" value="hold">暂缓</label><label><input type="radio" name="decision" value="rejected">不收录</label></div>
+              <label>决定说明<textarea id="decision-notes" rows="3" placeholder="退回、暂缓或不收录必须填写理由"></textarea></label>
+              <button id="save-decision" class="primary-button" type="button">提交教研决定</button>
+            </section>
+          </div>
+        </section>
+
+        <div id="splitter" class="splitter" role="separator" aria-label="调整题目与 PDF 宽度" aria-valuemin="30" aria-valuemax="70" aria-valuenow="40" tabindex="0"><span>⋮</span></div>
+
+        <section id="pdf-pane" class="pdf-pane" aria-label="教材 PDF">
+          <div class="pdf-toolbar">
+            <div class="pdf-name"><span class="pdf-icon">▧</span><span>CAMS 学习指南 · 冻结版</span></div>
+            <div class="language-switch" role="group"><button class="language-button active" type="button" data-language="zh">中文</button><button class="language-button" type="button" data-language="en">English</button><button class="language-button" type="button" data-language="both">双语</button></div>
+            <label class="page-jump"><input id="page-input" type="number" min="1" value="1" aria-label="跳转页码"><span>/ <b id="page-count">547</b></span></label>
+            <button id="zoom-out" class="icon-button" type="button" title="缩小">−</button><span id="zoom-label" class="zoom-label">100%</span><button id="zoom-in" class="icon-button" type="button" title="放大">＋</button>
+            <button id="pdf-maximize" class="icon-button" type="button" title="最大化 PDF">⛶</button>
+          </div>
+          <div id="pdf-scroll" class="pdf-scroll"><div class="pdf-loading">正在加载冻结教材…</div></div>
+          <div id="evidence-tray" class="evidence-tray">
+            <div class="evidence-bar">
+              <button id="evidence-toggle" class="evidence-toggle" type="button" aria-expanded="false"><span>⌃</span><strong>证据</strong><em id="curated-count">0 精选</em><em id="raw-count">0 原始</em></button>
+              <div id="command-helper" class="command-helper">
+                <button id="command-helper-trigger" class="command-helper-trigger" type="button" aria-expanded="false" aria-haspopup="menu">下一步：在 Codex 中继续</button>
+                <div id="command-popover" class="command-popover" role="menu" aria-label="复制给 Codex 的指令">
+                  <small>复制给 Codex</small>
+                  <button type="button" role="menuitem" data-copy-command="整理证据">整理证据</button>
+                  <button type="button" role="menuitem" data-copy-command="处理当前题">处理当前题</button>
+                  <input id="command-copy-fallback" class="command-copy-fallback" aria-label="手动复制指令" readonly hidden>
+                </div>
+              </div>
+            </div>
+            <div id="evidence-drawer" class="evidence-drawer" hidden>
+              <div class="drawer-tabs"><button class="drawer-tab active" data-scope="curated" type="button">精选依据</button><button class="drawer-tab" data-scope="all" type="button">原始候选</button></div>
+              <div id="raw-filters" class="evidence-filters" hidden><select id="run-filter"><option value="">全部轮次</option></select><select id="method-filter"><option value="">全部方式</option><option value="question_rag">题目 RAG</option><option value="general_rag">一般 RAG</option><option value="kg_expand">KG 扩展</option><option value="grep_keyword">grep</option><option value="direct_page_review">直接翻页</option><option value="external_search">外部搜索</option></select><select id="source-filter"><option value="">全部来源</option><option value="textbook">教材</option><option value="external">外部资料</option></select><select id="option-filter"><option value="">全部选项</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+              <div id="evidence-list" class="evidence-list"></div>
+              <div id="evidence-pagination" class="pagination" hidden><button id="evidence-prev" type="button">上一页</button><span id="evidence-page"></span><button id="evidence-next" type="button">下一页</button></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer id="message" class="message-bar">读取工作台…</footer>
+
+  <dialog id="settings-dialog" class="settings-dialog">
+    <form id="settings-form" method="dialog">
+      <div class="dialog-heading"><div><small>可选能力</small><h2>DS 辅助研判</h2></div><button id="settings-close" class="icon-button" type="button" aria-label="关闭">×</button></div>
+      <label class="toggle-row"><input id="ds-enabled" type="checkbox"><span>启用 DeepSeek 独立第二意见</span></label>
+      <label>接口地址<input id="ds-base-url" type="url"></label>
+      <label>模型<input id="ds-model"></label>
+      <label>API Key<input id="ds-api-key" type="password" placeholder="已配置时留空即可"></label>
+      <p id="ds-configured" class="settings-state"></p>
+      <div class="form-actions"><button id="settings-cancel" class="quiet-button" type="button">暂不启用</button><button id="settings-save" class="primary-button" type="submit">保存设置</button></div>
+    </form>
+  </dialog>
+  <script src="/js/pdf-reader.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
